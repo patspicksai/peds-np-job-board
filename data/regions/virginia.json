@@ -19,7 +19,7 @@
       "careers_url": "https://careers.vcuhealth.org/us/en/chor-jobs",
       "careers_platform": "phenom",
       "careers_search_url": "https://careers.vcuhealth.org/us/en/search-results?keywords=nurse%20practitioner",
-      "careers_notes": "VCU Health career site on Phenom (assets from cdn.phenompeople.com, CareerConnectResources/VHSVHSUS, /us/en/ paths). Fetched https://careers.vcuhealth.org/us/en/search-results and the CHoR landing page on 2026-10-19: page shell only, listings are JS-rendered and none appeared in the fetch. CHoR category page: https://careers.vcuhealth.org/us/en/chor-jobs ; job detail pattern /us/en/job/R<number>/<title-slug> (e.g. R38048 Nurse Clinician Acute Care Pediatrics). Keyword param ?keywords= is the usual Phenom pattern but was not confirmed to filter in a fetch.",
+      "careers_notes": "VCU Health career site on Phenom (assets from cdn.phenompeople.com, CareerConnectResources/VHSVHSUS, /us/en/ paths). Fetched https://careers.vcuhealth.org/us/en/search-results and the CHoR landing page on 2026-10-19: page shell only, listings are JS-rendered and none appeared in the fetch. CHoR category page: https://careers.vcuhealth.org/us/en/chor-jobs ; job detail pattern /us/en/job/R<number>/<title-slug> (e.g. R38048 Nurse Clinician Acute Care Pediatrics). Keyword param ?keywords= is the usual Phenom pattern but was not confirmed to filter in a fetch. [enrich 2026-10-20] careers_url -> HTTP 200 at https://careers.vcuhealth.org/us/en/chor-jobs; ATS link seen: https://vcuhealth.wd1.myworkdayjobs.com/VCUHealth_careers/job/Richmond-VA/Behavioral-Health-Security-Specialist---Various-shifts--Day-Eve-Night-_R42450/apply; search_url -> HTTP 200, mentions NP: True, job links: 0",
       "ats_config": {
         "host": "careers.vcuhealth.org"
       },
@@ -80,7 +80,14 @@
       ],
       "notes": "Top Richmond target: the only PICU, Level I peds trauma and Level IV NICU in the Richmond market. peds_beds is the 144 pediatric beds in the Wikipedia infobox (the Wikipedia hospital list gives 208 counting 40 beds inside VCU Medical Center); PICU bed count not published on pages read. VCU Medical Center (865 beds, adult Level I trauma) is the parent and is not listed separately. Wikipedia claims the only Level I pediatric trauma center in the state, but CHKD and UVA also hold pediatric trauma designations, so the CHoR page wording (central Virginia) is used. Peds NP roles post on careers.vcuhealth.org under VCU Health System.",
       "confidence": "high",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "Children's Hospital of Richmond at VCU",
+          "url": "https://en.wikipedia.org/wiki/Children%27s_Hospital_of_Richmond_at_VCU",
+          "extract": "Children's Hospital of Richmond at VCU (CHoR) is a nationally ranked pediatric acute care children's hospital located within VCU Medical Center in Richmond, Virginia, United States. The hospital has 144 pediatric beds. It is affiliated with The Virginia Commonwealth University School of Medicine, and is a member of VCU Health. The hospital provides comprehensive pediatric specialties and subspecialties to infants, children, teens, and young adults aged 0–17 throughout eastern Virginia. CHOR also has a helipad to transport critically ill pediatric patients. Children's Hospital of Richmond features the only pediatric Level 1 Trauma Center in the region and the state.\nThe hospital is rated as the second best children's hospital in Virginia on the 2020-21 U.S. News & World Report."
+        }
+      }
     },
     {
       "slug": "chkd-norfolk",
@@ -100,7 +107,7 @@
       "careers_url": "https://www.chkdcareers.org/jobs/search",
       "careers_platform": "custom",
       "careers_search_url": "https://www.chkdcareers.org/search/advanced-practice/jobs",
-      "careers_notes": "CHKD job board at chkdcareers.org (linked from chkd.org/careers). Path-segment facets: /search/advanced-practice/jobs (APP jobs), /search/physician-assistant-nurse-practitioner-specialty/jobs, /search/inpatient-nursing-outpatient-nursing/jobs; job detail /jobs/<id>-<slug> (e.g. 2216011 Office Nurse Practitioner (Contract), Newport News). This URL layout matches the TalentBrew/Talemetry style boards other agents saw. Every WebFetch of chkdcareers.org on 2026-10-19 failed (client error or permission timeout), so rendering and ATS were not confirmed. Subspecialty APPs are often employed by Children's Specialty Group, PLLC, with a separate board at https://csgdocs.com/careers/.",
+      "careers_notes": "CHKD job board at chkdcareers.org (linked from chkd.org/careers). Path-segment facets: /search/advanced-practice/jobs (APP jobs), /search/physician-assistant-nurse-practitioner-specialty/jobs, /search/inpatient-nursing-outpatient-nursing/jobs; job detail /jobs/<id>-<slug> (e.g. 2216011 Office Nurse Practitioner (Contract), Newport News). This URL layout matches the TalentBrew/Talemetry style boards other agents saw. Every WebFetch of chkdcareers.org on 2026-10-19 failed (client error or permission timeout), so rendering and ATS were not confirmed. Subspecialty APPs are often employed by Children's Specialty Group, PLLC, with a separate board at https://csgdocs.com/careers/. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.chkdcareers.org/jobs/search; search_url -> HTTP 200, mentions NP: True, job links: 25",
       "ats_config": {
         "host": "www.chkdcareers.org",
         "csg_careers": "https://csgdocs.com/careers/"
@@ -171,7 +178,8 @@
       ],
       "notes": "Top Hampton Roads target and the only pediatric ICU in southeastern Virginia. Hospital-employed APPs post on chkdcareers.org; many subspecialty and hospitalist APPs are employed through Children's Specialty Group (CSG), so check csgdocs.com/careers too. Magnet status not stated on pages read. CHKD also staffs pediatric units inside Sentara hospitals in some markets (not verified this session).",
       "confidence": "high",
-      "active": true
+      "active": true,
+      "_enrich": {}
     },
     {
       "slug": "uva-childrens-charlottesville",
@@ -191,7 +199,7 @@
       "careers_url": "https://uva.wd1.myworkdayjobs.com/UVAJobs",
       "careers_platform": "workday",
       "careers_search_url": "https://uva.wd1.myworkdayjobs.com/en-US/UVAJobs?q=nurse%20practitioner",
-      "careers_notes": "UVA Health (medical center and UVA Physicians Group) posts on the University of Virginia Workday tenant, site UVAJobs (job detail pattern /UVAJobs/job/<location>/<title>_R00xxxxx, e.g. R0043427 UVA Pediatrics Harrisonburg Nurse Practitioner seen in search results 2026-10-19). Workday search pages are JS-rendered; the direct fetch of the UVAJobs search page was blocked (permission timeout), so rendering not tested. Scraper should use the Workday CXS JSON endpoint (POST /wday/cxs/uva/UVAJobs/jobs with searchText). Same tenant also hosts UVAStudentJobs; ignore that site.",
+      "careers_notes": "UVA Health (medical center and UVA Physicians Group) posts on the University of Virginia Workday tenant, site UVAJobs (job detail pattern /UVAJobs/job/<location>/<title>_R00xxxxx, e.g. R0043427 UVA Pediatrics Harrisonburg Nurse Practitioner seen in search results 2026-10-19). Workday search pages are JS-rendered; the direct fetch of the UVAJobs search page was blocked (permission timeout), so rendering not tested. Scraper should use the Workday CXS JSON endpoint (POST /wday/cxs/uva/UVAJobs/jobs with searchText). Same tenant also hosts UVAStudentJobs; ignore that site. [enrich 2026-10-20] careers_url -> HTTP 200 at https://uva.wd1.myworkdayjobs.com/UVAJobs; ATS link seen: https://uva.wd1.myworkdayjobs.com/UVAJobs; search_url -> HTTP 200, mentions NP: False, job links: 0",
       "ats_config": {
         "host": "uva.wd1.myworkdayjobs.com",
         "tenant": "uva",
@@ -249,7 +257,14 @@
       ],
       "notes": "Strong academic option. peds_beds is the 111 from the Wikipedia hospital list (not confirmed on a UVA page); beds is the University Medical Center count (679, FY2025). NICU had 51 beds per a third-party NICU directory; UVA's 2025 Vision and Voice story describes a NICU expansion (not read). Pediatric ED presence inferred from UVA pediatric emergency department RN postings seen in search results and the main ED serving children; a dedicated peds ED footprint was not confirmed on a page read. Magnet status not stated on pages read.",
       "confidence": "medium",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "UVA Children's Hospital",
+          "url": "https://en.wikipedia.org/wiki/UVA_Children%27s_Hospital",
+          "extract": "UVA Children's Hospital is a nationally ranked, acute care children's hospital in Charlottesville, Virginia. It is affiliated with the University of Virginia School of Medicine. The hospital features 112 pediatric beds. The hospital provides comprehensive pediatric specialties and subspecialties to infants, children, teens, and young adults aged 0–21 throughout the region. The hospital also sometimes treats adults that require pediatric care. The hospital has a rooftop helipad to transport critical pediatric cases. The hospital features a regional pediatric intensive-care unit and a level IV neonatal intensive care unit."
+        }
+      }
     },
     {
       "slug": "carilion-childrens-roanoke",
@@ -269,7 +284,7 @@
       "careers_url": "https://carilionclinic.wd12.myworkdayjobs.com/External_Careers",
       "careers_platform": "workday",
       "careers_search_url": "https://carilionclinic.wd12.myworkdayjobs.com/External_Careers?q=nurse%20practitioner",
-      "careers_notes": "Carilion Clinic has two job front ends: jobs.carilionclinic.org (job detail pattern /job/<City>-<Title>-VA-<zip>/<id>/ and /content/...?locale=en_US pages, the SAP SuccessFactors Recruiting Marketing layout, plus a /us/en/home landing page) and a Workday tenant carilionclinic.wd12.myworkdayjobs.com/External_Careers (surfaced in search 2026-10-19). Fetch of the Workday site returned only metadata (JS-rendered, no listings); fetch of jobs.carilionclinic.org was rate limited. Which board is current was not confirmed; the Workday tenant on wd12 looks like the newer system. Pediatric postings seen in search: RN PICU Nights (Roanoke 24014), Clinical Nurse Specialist Pediatrics, RN Neonatal/Pediatric Transport.",
+      "careers_notes": "Carilion Clinic has two job front ends: jobs.carilionclinic.org (job detail pattern /job/<City>-<Title>-VA-<zip>/<id>/ and /content/...?locale=en_US pages, the SAP SuccessFactors Recruiting Marketing layout, plus a /us/en/home landing page) and a Workday tenant carilionclinic.wd12.myworkdayjobs.com/External_Careers (surfaced in search 2026-10-19). Fetch of the Workday site returned only metadata (JS-rendered, no listings); fetch of jobs.carilionclinic.org was rate limited. Which board is current was not confirmed; the Workday tenant on wd12 looks like the newer system. Pediatric postings seen in search: RN PICU Nights (Roanoke 24014), Clinical Nurse Specialist Pediatrics, RN Neonatal/Pediatric Transport. [enrich 2026-10-20] careers_url -> HTTP 200 at https://carilionclinic.wd12.myworkdayjobs.com/External_Careers; ATS link seen: https://carilionclinic.wd12.myworkdayjobs.com/External_Careers; search_url -> HTTP 200, mentions NP: False, job links: 0",
       "ats_config": {
         "host": "carilionclinic.wd12.myworkdayjobs.com",
         "tenant": "carilionclinic",
@@ -307,7 +322,15 @@
         "Pediatrics department includes 14 advanced care practitioners (2024 fact sheet)",
         "Teaching site for Virginia Tech Carilion School of Medicine"
       ],
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/1/1b/Carilion_Roanoke_Memorial_Hospital.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original",
+          "caption": "Carilion Roanoke Memorial Hospital",
+          "credit": "Patriarca12",
+          "license": "CC BY-SA 3.0",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Carilion_Roanoke_Memorial_Hospital.jpg"
+        }
+      ],
       "wikipedia_title": "Carilion Roanoke Memorial Hospital",
       "sources": [
         "https://www.carilionclinic.org/Childrens-Fact-Sheet-6-20-24.pdf",
@@ -318,7 +341,14 @@
       ],
       "notes": "Main pediatric acute care employer in western Virginia. peds_beds 92 is the sum of the fact sheet's 24 inpatient, 8 PICU and 60 NICU beds. beds is the Wikipedia infobox figure for Carilion Roanoke Memorial (703; the article text says 825). NICU recorded as level 3 (fact sheet says Level IIIB). Carilion Roanoke Memorial has Magnet status per the Wikipedia hospital list note, but that note is for Roanoke Community and Memorial together, so magnet left null.",
       "confidence": "high",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "Carilion Roanoke Memorial Hospital",
+          "url": "https://en.wikipedia.org/wiki/Carilion_Roanoke_Memorial_Hospital",
+          "extract": "Carilion Roanoke Memorial Hospital (CRMH) is a private teaching hospital in Roanoke, Virginia, United States. With 825 beds, Carilion Roanoke Memorial Hospital is one of the largest hospitals in the state. It is part of Carilion Clinic.\nThe region's only level I trauma center, the hospital operates three medical helicopters (LifeGuard 10, 11, and 12) to provide air ambulance transport, including one in Moneta, one in Christiansburg, and one in Lexington."
+        }
+      }
     },
     {
       "slug": "bon-secours-st-marys-richmond",
@@ -338,7 +368,7 @@
       "careers_url": "https://careers.bsmhealth.org/us/en/search-results",
       "careers_platform": "phenom",
       "careers_search_url": "https://careers.bsmhealth.org/us/en/search-results?keywords=nurse%20practitioner",
-      "careers_notes": "Bon Secours Mercy Health career site careers.bsmhealth.org (also careers.bonsecours.com) uses Phenom-style /us/en/ paths, regional landing pages /us/en/jobs-in-richmond and /us/en/jobs-in-hampton-roads, and job detail /us/en/job/R<number>/<title> (e.g. R272073 RN NICU St. Francis). NP and PA roles are mostly on the separate provider board physiciancareers.bsmhealth.org (job detail /search/jobdetails/<slug>/<guid>; seen 2026-10-19 with Richmond and Suffolk NP postings). Neither board was fetched (permission/rate limits), so rendering not tested.",
+      "careers_notes": "Bon Secours Mercy Health career site careers.bsmhealth.org (also careers.bonsecours.com) uses Phenom-style /us/en/ paths, regional landing pages /us/en/jobs-in-richmond and /us/en/jobs-in-hampton-roads, and job detail /us/en/job/R<number>/<title> (e.g. R272073 RN NICU St. Francis). NP and PA roles are mostly on the separate provider board physiciancareers.bsmhealth.org (job detail /search/jobdetails/<slug>/<guid>; seen 2026-10-19 with Richmond and Suffolk NP postings). Neither board was fetched (permission/rate limits), so rendering not tested. [enrich 2026-10-20] careers_url -> HTTP 200 at https://careers.bsmhealth.org/us/en/search-results; search_url -> HTTP 200, mentions NP: True, job links: 0",
       "ats_config": {
         "host": "careers.bsmhealth.org",
         "provider_host": "physiciancareers.bsmhealth.org",
@@ -372,7 +402,15 @@
         "Hospital-based pediatric surgery, endocrinology and neurology practices actively recruiting",
         "Bon Secours publishes a Richmond pediatric impact report for its children's services"
       ],
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/d/db/New_York_Counties.svg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original",
+          "caption": "List of hospitals in New York (state)",
+          "credit": "André Koehne",
+          "license": "CC BY-SA 3.0",
+          "source_page": "https://commons.wikimedia.org/wiki/File:New_York_Counties.svg"
+        }
+      ],
       "wikipedia_title": null,
       "sources": [
         "https://en.wikipedia.org/wiki/List_of_hospitals_in_Virginia",
@@ -385,7 +423,10 @@
       ],
       "notes": "Pediatric ED (open 24 hours) and NICU confirmed from Bon Secours page titles and NICU RN postings seen in search results; the pages themselves could not be fetched (rate limits). peds_inpatient set true because the seed brief and Bon Secours pediatric surgery and subspecialty recruiting point to an inpatient pediatric unit, but no page read stated bed counts; PICU not confirmed (set false). Verify before relying on it. Good second Richmond target after CHoR for PNP-AC ED or hospitalist roles.",
       "confidence": "low",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {}
+      }
     },
     {
       "slug": "chippenham-richmond",
@@ -405,7 +446,7 @@
       "careers_url": "https://careers.hcahealthcare.com/search/jobs/in/va-virginia",
       "careers_platform": "custom",
       "careers_search_url": "https://careers.hcahealthcare.com/search/nurse-practitioner/jobs/in/va-virginia",
-      "careers_notes": "HCA Healthcare central job board careers.hcahealthcare.com (TalentBrew-style paths: /search/jobs/in/va-virginia, /search/<keyword>/jobs, facility pages /pages/<facility-slug>, job detail /jobs/<id>-<title-slug>). WebFetch was refused by robots.txt (2026-10-19), so rendering was not tested. Underlying ATS not confirmed from a page read, so platform is recorded as custom. The Richmond keyword search URL combines the two observed path patterns (/search/<keyword>/jobs and /jobs/in/<place>) and is untested. Richmond facility jobs post under CJW Medical Center (Chippenham and Johnston-Willis share one license).",
+      "careers_notes": "HCA Healthcare central job board careers.hcahealthcare.com (TalentBrew-style paths: /search/jobs/in/va-virginia, /search/<keyword>/jobs, facility pages /pages/<facility-slug>, job detail /jobs/<id>-<title-slug>). WebFetch was refused by robots.txt (2026-10-19), so rendering was not tested. Underlying ATS not confirmed from a page read, so platform is recorded as custom. The Richmond keyword search URL combines the two observed path patterns (/search/<keyword>/jobs and /jobs/in/<place>) and is untested. Richmond facility jobs post under CJW Medical Center (Chippenham and Johnston-Willis share one license). [enrich 2026-10-20] careers_url -> HTTP 403 at https://careers.hcahealthcare.com/search/jobs/in/va-virginia; search_url -> HTTP 403, mentions NP: False, job links: 0",
       "ats_config": {
         "host": "careers.hcahealthcare.com"
       },
@@ -447,7 +488,10 @@
       ],
       "notes": "Facts from page titles and search listings only; every fetch of hcavirginia.com, WTVR and 12onyourside was rate limited (HTTP 429) on 2026-10-19. Pediatric ER confirmed by HCA's own kids' ER location page title. peds_inpatient true per the seed brief (pediatric ER and peds inpatient) and HCA's pediatrics specialty page; bed count unknown. beds is the combined CJW license from the Wikipedia list. teaching true because CJW hosts HCA GME programs (FREIDA lists CJW institutions), not verified in detail.",
       "confidence": "low",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {}
+      }
     },
     {
       "slug": "johnston-willis-richmond",
@@ -467,7 +511,7 @@
       "careers_url": "https://careers.hcahealthcare.com/search/jobs/in/va-virginia",
       "careers_platform": "custom",
       "careers_search_url": "https://careers.hcahealthcare.com/search/nurse-practitioner/jobs/in/va-virginia",
-      "careers_notes": "HCA Healthcare central job board careers.hcahealthcare.com (TalentBrew-style paths: /search/jobs/in/va-virginia, /search/<keyword>/jobs, facility pages /pages/<facility-slug>, job detail /jobs/<id>-<title-slug>). WebFetch was refused by robots.txt (2026-10-19), so rendering was not tested. Underlying ATS not confirmed from a page read, so platform is recorded as custom. The Richmond keyword search URL combines the two observed path patterns (/search/<keyword>/jobs and /jobs/in/<place>) and is untested. Jobs post under CJW Medical Center.",
+      "careers_notes": "HCA Healthcare central job board careers.hcahealthcare.com (TalentBrew-style paths: /search/jobs/in/va-virginia, /search/<keyword>/jobs, facility pages /pages/<facility-slug>, job detail /jobs/<id>-<title-slug>). WebFetch was refused by robots.txt (2026-10-19), so rendering was not tested. Underlying ATS not confirmed from a page read, so platform is recorded as custom. The Richmond keyword search URL combines the two observed path patterns (/search/<keyword>/jobs and /jobs/in/<place>) and is untested. Jobs post under CJW Medical Center. [enrich 2026-10-20] careers_url -> HTTP 403 at https://careers.hcahealthcare.com/search/jobs/in/va-virginia; search_url -> HTTP 403, mentions NP: False, job links: 0",
       "ats_config": {
         "host": "careers.hcahealthcare.com"
       },
@@ -505,7 +549,10 @@
       ],
       "notes": "Listed for NICU NP and neonatal roles (neonatal NPs are often employed by Pediatrix or another neonatology group rather than HCA). NICU bed count may have grown after the 2022 consolidation; not confirmed. beds left null because Wikipedia gives only the combined CJW figure (667), recorded on the Chippenham record.",
       "confidence": "medium",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {}
+      }
     },
     {
       "slug": "henrico-doctors-richmond",
@@ -525,7 +572,7 @@
       "careers_url": "https://careers.hcahealthcare.com/search/jobs/in/va-virginia",
       "careers_platform": "custom",
       "careers_search_url": "https://careers.hcahealthcare.com/search/nurse-practitioner/jobs/in/va-virginia",
-      "careers_notes": "HCA Healthcare central job board (TalentBrew-style paths); robots.txt refused WebFetch on 2026-10-19 so rendering untested. Keyword plus place path combines two observed patterns and is untested. Filter by facility name. Facility filter: Henrico Doctors' Hospital (HCA Virginia).",
+      "careers_notes": "HCA Healthcare central job board (TalentBrew-style paths); robots.txt refused WebFetch on 2026-10-19 so rendering untested. Keyword plus place path combines two observed patterns and is untested. Filter by facility name. Facility filter: Henrico Doctors' Hospital (HCA Virginia). [enrich 2026-10-20] careers_url -> HTTP 403 at https://careers.hcahealthcare.com/search/jobs/in/va-virginia; search_url -> HTTP 403, mentions NP: False, job links: 0",
       "ats_config": {
         "host": "careers.hcahealthcare.com"
       },
@@ -563,7 +610,10 @@
       ],
       "notes": "Pediatric unit closure (April 2022), pediatric ER and NICU from search result headlines and the HCA NICU page title recorded in the R5b scratch; the pages were not opened. Coordinates from the R5b scratch (Google Places, Forest campus). NICU NP roles likely.",
       "confidence": "low",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {}
+      }
     },
     {
       "slug": "bon-secours-st-francis-midlothian",
@@ -583,7 +633,7 @@
       "careers_url": "https://careers.bsmhealth.org/us/en/search-results",
       "careers_platform": "phenom",
       "careers_search_url": "https://careers.bsmhealth.org/us/en/search-results?keywords=nurse%20practitioner",
-      "careers_notes": "Bon Secours Mercy Health Phenom-style board (also careers.bonsecours.com); NP and PA roles are mostly on the provider board physiciancareers.bsmhealth.org. Rendering not tested.",
+      "careers_notes": "Bon Secours Mercy Health Phenom-style board (also careers.bonsecours.com); NP and PA roles are mostly on the provider board physiciancareers.bsmhealth.org. Rendering not tested. [enrich 2026-10-20] careers_url -> HTTP 200 at https://careers.bsmhealth.org/us/en/search-results; search_url -> HTTP 200, mentions NP: True, job links: 0",
       "ats_config": {
         "host": "careers.bsmhealth.org",
         "provider_host": "physiciancareers.bsmhealth.org",
@@ -621,7 +671,8 @@
       ],
       "notes": "NICU confirmed by directory and an RN NICU posting (R272073) seen in search results. No inpatient pediatric unit known. Coordinates from the R5b scratch (Google Places).",
       "confidence": "low",
-      "active": true
+      "active": true,
+      "_enrich": {}
     },
     {
       "slug": "bon-secours-memorial-regional-mechanicsville",
@@ -641,7 +692,7 @@
       "careers_url": "https://careers.bsmhealth.org/us/en/search-results",
       "careers_platform": "phenom",
       "careers_search_url": "https://careers.bsmhealth.org/us/en/search-results?keywords=nurse%20practitioner",
-      "careers_notes": "Bon Secours Mercy Health Phenom-style board (also careers.bonsecours.com); NP and PA roles are mostly on the provider board physiciancareers.bsmhealth.org. Rendering not tested.",
+      "careers_notes": "Bon Secours Mercy Health Phenom-style board (also careers.bonsecours.com); NP and PA roles are mostly on the provider board physiciancareers.bsmhealth.org. Rendering not tested. [enrich 2026-10-20] careers_url -> HTTP 200 at https://careers.bsmhealth.org/us/en/search-results; search_url -> HTTP 200, mentions NP: True, job links: 0",
       "ats_config": {
         "host": "careers.bsmhealth.org",
         "provider_host": "physiciancareers.bsmhealth.org",
@@ -669,8 +720,16 @@
         "Bon Secours community hospital in Hanover County",
         "About 20 minutes from downtown Richmond"
       ],
-      "photos": [],
-      "wikipedia_title": null,
+      "photos": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/5/56/Bon_Secours_Memorial_Regional_Medical_Center.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original",
+          "caption": "Bon Secours Memorial Regional Medical Center",
+          "credit": "Packer1028",
+          "license": "CC0",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Bon_Secours_Memorial_Regional_Medical_Center.jpg"
+        }
+      ],
+      "wikipedia_title": "Bon Secours Memorial Regional Medical Center",
       "sources": [
         "https://neonatologysolutions.com/?p=19552",
         "https://en.wikipedia.org/wiki/List_of_hospitals_in_Virginia",
@@ -678,7 +737,14 @@
       ],
       "notes": "NICU from the directory and an RN NICU posting seen in search results. No inpatient pediatric unit known. Coordinates from the R5b scratch (Google Places).",
       "confidence": "low",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "Bon Secours Memorial Regional Medical Center",
+          "url": "https://en.wikipedia.org/wiki/Bon_Secours_Memorial_Regional_Medical_Center",
+          "extract": "Bon Secours Memorial Regional Medical Center is located in Mechanicsville, Virginia and operated by Bon Secours, part of Bon Secours Mercy Health."
+        }
+      }
     },
     {
       "slug": "bon-secours-southside-petersburg",
@@ -698,7 +764,7 @@
       "careers_url": "https://careers.bsmhealth.org/us/en/search-results",
       "careers_platform": "phenom",
       "careers_search_url": "https://careers.bsmhealth.org/us/en/search-results?keywords=nurse%20practitioner",
-      "careers_notes": "Bon Secours Mercy Health Phenom-style board (also careers.bonsecours.com); NP and PA roles are mostly on the provider board physiciancareers.bsmhealth.org. Rendering not tested.",
+      "careers_notes": "Bon Secours Mercy Health Phenom-style board (also careers.bonsecours.com); NP and PA roles are mostly on the provider board physiciancareers.bsmhealth.org. Rendering not tested. [enrich 2026-10-20] careers_url -> HTTP 200 at https://careers.bsmhealth.org/us/en/search-results; search_url -> HTTP 200, mentions NP: True, job links: 0",
       "ats_config": {
         "host": "careers.bsmhealth.org",
         "provider_host": "physiciancareers.bsmhealth.org",
@@ -735,7 +801,14 @@
       ],
       "notes": "Directory bed count conflicts (7 vs 14). Inpatient pediatric unit status unknown. Coordinates from the R5b scratch (Google Places).",
       "confidence": "low",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "Bon Secours - Southside Medical Center",
+          "url": "https://en.wikipedia.org/wiki/Bon_Secours_-_Southside_Medical_Center",
+          "extract": "Bon Secours - Southside Medical Center is a 300-bed  hospital near the Petersburg, VA tri-cities, VA area."
+        }
+      }
     },
     {
       "slug": "sentara-norfolk-general-norfolk",
@@ -755,7 +828,7 @@
       "careers_url": "https://sentara.wd1.myworkdayjobs.com/SCS",
       "careers_platform": "workday",
       "careers_search_url": "https://sentara.wd1.myworkdayjobs.com/SCS?q=nurse%20practitioner",
-      "careers_notes": "Sentara Health Workday (tenant sentara, site SCS) seen in search results 2026-10-19; JS-rendered, use the CXS JSON endpoint. careers.sentara.com is the marketing front door. Facility filter: Sentara Norfolk General Hospital.",
+      "careers_notes": "Sentara Health Workday (tenant sentara, site SCS) seen in search results 2026-10-19; JS-rendered, use the CXS JSON endpoint. careers.sentara.com is the marketing front door. Facility filter: Sentara Norfolk General Hospital. [enrich 2026-10-20] careers_url -> HTTP None at None; search_url -> HTTP 200, mentions NP: False, job links: 0",
       "ats_config": {
         "host": "sentara.wd1.myworkdayjobs.com",
         "tenant": "sentara",
@@ -785,7 +858,15 @@
         "NICU in partnership with CHKD (Sentara NICU page)",
         "Shares the Eastern Virginia Medical Center campus with CHKD"
       ],
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/1/10/Sentara_Norfolk_General.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original",
+          "caption": "Sentara Norfolk General Hospital",
+          "credit": "Sichensliu",
+          "license": "CC BY-SA 4.0",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Sentara_Norfolk_General.jpg"
+        }
+      ],
       "wikipedia_title": "Sentara Norfolk General Hospital",
       "sources": [
         "https://www.sentara.com/medicalservices/nicu-special-care-nurseries",
@@ -794,7 +875,14 @@
       ],
       "notes": "Included as an academic medical center. NICU level not stated on the Sentara page (nicu_level null); neonatal care is shared with CHKD next door. No separate pediatric inpatient unit (CHKD covers pediatrics). Coordinates from the R5b scratch (Google Places).",
       "confidence": "medium",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "Sentara Norfolk General Hospital",
+          "url": "https://en.wikipedia.org/wiki/Sentara_Norfolk_General_Hospital",
+          "extract": "Sentara Norfolk General Hospital (SNGH) is a large academic hospital, which serves as the primary teaching institution for the adjacent Eastern Virginia Medical School.  Located in Norfolk, Virginia, in the Ghent neighborhood and adjacent to Downtown, the hospital serves as the Hampton Roads region's only Level I trauma center.  The hospital is interconnected to the Sentara Heart Hospital; however, it is considered a separate institution. Together with the  adjacent Children's Hospital of the King's Daughters, Eastern Virginia Medical School and the Norfolk Department of Health, the Eastern Virginia Medical Center is the largest conglomerate center for health in Hampton Roads. For a time, the U.S. News & World Report rated it the best in Virginia. In 2016, SNGH is tied with VCU Medical Center ranked as #2 while University of Virginia Health System ranked first."
+        }
+      }
     },
     {
       "slug": "sentara-princess-anne-virginia-beach",
@@ -814,7 +902,7 @@
       "careers_url": "https://sentara.wd1.myworkdayjobs.com/SCS",
       "careers_platform": "workday",
       "careers_search_url": "https://sentara.wd1.myworkdayjobs.com/SCS?q=nurse%20practitioner",
-      "careers_notes": "Sentara Health Workday (tenant sentara, site SCS) seen in search results 2026-10-19; JS-rendered, use the CXS JSON endpoint. careers.sentara.com is the marketing front door. Facility filter: Sentara Princess Anne Hospital.",
+      "careers_notes": "Sentara Health Workday (tenant sentara, site SCS) seen in search results 2026-10-19; JS-rendered, use the CXS JSON endpoint. careers.sentara.com is the marketing front door. Facility filter: Sentara Princess Anne Hospital. [enrich 2026-10-20] careers_url -> HTTP 200 at https://sentara.wd1.myworkdayjobs.com/SCS; ATS link seen: https://sentara.wd1.myworkdayjobs.com/SCS; search_url -> HTTP 200, mentions NP: False, job links: 0",
       "ats_config": {
         "host": "sentara.wd1.myworkdayjobs.com",
         "tenant": "sentara",
@@ -843,8 +931,16 @@
         "Main Sentara maternity hospital for Virginia Beach",
         "About 20 minutes from the Oceanfront"
       ],
-      "photos": [],
-      "wikipedia_title": null,
+      "photos": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/0/0c/Sentara_VB_General_Hospital.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original",
+          "caption": "Sentara Health",
+          "credit": "Wikimedia Commons",
+          "license": "see source page",
+          "source_page": "https://en.wikipedia.org/wiki/Sentara_Health"
+        }
+      ],
+      "wikipedia_title": "Sentara Health",
       "sources": [
         "https://www.sentara.com/medicalservices/nicu-special-care-nurseries",
         "https://en.wikipedia.org/wiki/List_of_hospitals_in_Virginia",
@@ -852,7 +948,14 @@
       ],
       "notes": "NICU listed by Sentara without a level; reportedly Level III, verify (nicu_level null). No inpatient pediatric unit known. Coordinates from the R5b scratch (Google Places).",
       "confidence": "low",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "Sentara Health",
+          "url": "https://en.wikipedia.org/wiki/Sentara_Health",
+          "extract": "Sentara Health is a not-for-profit healthcare organization serving Virginia, northeastern North Carolina and Florida. It is based in Norfolk, Virginia, has services in 12 acute care hospitals, and has 1.2 million health plan members in three states. It also operates four medical groups."
+        }
+      }
     },
     {
       "slug": "sentara-leigh-norfolk",
@@ -872,7 +975,7 @@
       "careers_url": "https://sentara.wd1.myworkdayjobs.com/SCS",
       "careers_platform": "workday",
       "careers_search_url": "https://sentara.wd1.myworkdayjobs.com/SCS?q=nurse%20practitioner",
-      "careers_notes": "Sentara Health Workday (tenant sentara, site SCS) seen in search results 2026-10-19; JS-rendered, use the CXS JSON endpoint. careers.sentara.com is the marketing front door. Facility filter: Sentara Leigh Hospital.",
+      "careers_notes": "Sentara Health Workday (tenant sentara, site SCS) seen in search results 2026-10-19; JS-rendered, use the CXS JSON endpoint. careers.sentara.com is the marketing front door. Facility filter: Sentara Leigh Hospital. [enrich 2026-10-20] careers_url -> HTTP 200 at https://sentara.wd1.myworkdayjobs.com/SCS; ATS link seen: https://sentara.wd1.myworkdayjobs.com/SCS; search_url -> HTTP 200, mentions NP: False, job links: 0",
       "ats_config": {
         "host": "sentara.wd1.myworkdayjobs.com",
         "tenant": "sentara",
@@ -900,8 +1003,16 @@
         "Maternity hospital for eastern Norfolk and western Virginia Beach",
         "Near Norfolk International Airport"
       ],
-      "photos": [],
-      "wikipedia_title": null,
+      "photos": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/1/10/Sentara_Norfolk_General.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original",
+          "caption": "Sentara Norfolk General Hospital",
+          "credit": "Sichensliu",
+          "license": "CC BY-SA 4.0",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Sentara_Norfolk_General.jpg"
+        }
+      ],
+      "wikipedia_title": "Sentara Norfolk General Hospital",
       "sources": [
         "https://www.sentara.com/medicalservices/nicu-special-care-nurseries",
         "https://en.wikipedia.org/wiki/List_of_hospitals_in_Virginia",
@@ -909,7 +1020,14 @@
       ],
       "notes": "nicu_level 2 inferred from Sentara listing a special care nursery (AAP Level II); verify. Coordinates from the R5b scratch (Google Places).",
       "confidence": "low",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "Sentara Norfolk General Hospital",
+          "url": "https://en.wikipedia.org/wiki/Sentara_Norfolk_General_Hospital",
+          "extract": "Sentara Norfolk General Hospital (SNGH) is a large academic hospital, which serves as the primary teaching institution for the adjacent Eastern Virginia Medical School.  Located in Norfolk, Virginia, in the Ghent neighborhood and adjacent to Downtown, the hospital serves as the Hampton Roads region's only Level I trauma center.  The hospital is interconnected to the Sentara Heart Hospital; however, it is considered a separate institution. Together with the  adjacent Children's Hospital of the King's Daughters, Eastern Virginia Medical School and the Norfolk Department of Health, the Eastern Virginia Medical Center is the largest conglomerate center for health in Hampton Roads. For a time, the U.S. News & World Report rated it the best in Virginia. In 2016, SNGH is tied with VCU Medical Center ranked as #2 while University of Virginia Health System ranked first."
+        }
+      }
     },
     {
       "slug": "sentara-careplex-hampton",
@@ -929,7 +1047,7 @@
       "careers_url": "https://sentara.wd1.myworkdayjobs.com/SCS",
       "careers_platform": "workday",
       "careers_search_url": "https://sentara.wd1.myworkdayjobs.com/SCS?q=nurse%20practitioner",
-      "careers_notes": "Sentara Health Workday (tenant sentara, site SCS) seen in search results 2026-10-19; JS-rendered, use the CXS JSON endpoint. careers.sentara.com is the marketing front door. Facility filter: Sentara CarePlex Hospital.",
+      "careers_notes": "Sentara Health Workday (tenant sentara, site SCS) seen in search results 2026-10-19; JS-rendered, use the CXS JSON endpoint. careers.sentara.com is the marketing front door. Facility filter: Sentara CarePlex Hospital. [enrich 2026-10-20] careers_url -> HTTP 200 at https://sentara.wd1.myworkdayjobs.com/SCS; ATS link seen: https://sentara.wd1.myworkdayjobs.com/SCS; search_url -> HTTP 200, mentions NP: False, job links: 0",
       "ats_config": {
         "host": "sentara.wd1.myworkdayjobs.com",
         "tenant": "sentara",
@@ -957,8 +1075,16 @@
         "Sentara's Virginia Peninsula hospital in Hampton",
         "Serves the Joint Base Langley-Eustis community"
       ],
-      "photos": [],
-      "wikipedia_title": null,
+      "photos": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/0/0c/Sentara_VB_General_Hospital.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original",
+          "caption": "Sentara Health",
+          "credit": "Wikipediasaurus",
+          "license": "CC BY-SA 4.0",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Sentara_VB_General_Hospital.jpg"
+        }
+      ],
+      "wikipedia_title": "Sentara Health",
       "sources": [
         "https://www.sentara.com/medicalservices/nicu-special-care-nurseries",
         "https://en.wikipedia.org/wiki/List_of_hospitals_in_Virginia",
@@ -966,7 +1092,14 @@
       ],
       "notes": "nicu_level 2 inferred from the special care nursery listing; verify. Coordinates from the R5b scratch (Google Places).",
       "confidence": "low",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "Sentara Health",
+          "url": "https://en.wikipedia.org/wiki/Sentara_Health",
+          "extract": "Sentara Health is a not-for-profit healthcare organization serving Virginia, northeastern North Carolina and Florida. It is based in Norfolk, Virginia, has services in 12 acute care hospitals, and has 1.2 million health plan members in three states. It also operates four medical groups."
+        }
+      }
     },
     {
       "slug": "riverside-regional-newport-news",
@@ -986,7 +1119,7 @@
       "careers_url": "https://rivhs.wd1.myworkdayjobs.com/ProviderRHS",
       "careers_platform": "workday",
       "careers_search_url": "https://rivhs.wd1.myworkdayjobs.com/ProviderRHS?q=nurse%20practitioner",
-      "careers_notes": "Riverside Health System Workday (tenant rivhs); provider roles (NP, PA, MD) on site ProviderRHS, other roles on Non-ProviderRHS. Seen in search results 2026-10-19; not fetched. Facility filter: Riverside Regional Medical Center.",
+      "careers_notes": "Riverside Health System Workday (tenant rivhs); provider roles (NP, PA, MD) on site ProviderRHS, other roles on Non-ProviderRHS. Seen in search results 2026-10-19; not fetched. Facility filter: Riverside Regional Medical Center. [enrich 2026-10-20] careers_url -> HTTP 200 at https://rivhs.wd1.myworkdayjobs.com/ProviderRHS; ATS link seen: https://rivhs.wd1.myworkdayjobs.com/ProviderRHS; search_url -> HTTP 200, mentions NP: False, job links: 0",
       "ats_config": {
         "host": "rivhs.wd1.myworkdayjobs.com",
         "tenant": "rivhs",
@@ -1018,7 +1151,7 @@
         "Teaching hospital with residency programs"
       ],
       "photos": [],
-      "wikipedia_title": null,
+      "wikipedia_title": "Riverside Regional Medical Center",
       "sources": [
         "https://neonatologysolutions.com/?p=19552",
         "https://en.wikipedia.org/wiki/List_of_hospitals_in_Virginia",
@@ -1026,7 +1159,14 @@
       ],
       "notes": "No inpatient pediatric unit confirmed (CHKD runs outpatient pediatric centers on the Peninsula). Riverside provider jobs post on the ProviderRHS Workday site. Coordinates from the R5b scratch (Google Places).",
       "confidence": "medium",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "Riverside Regional Medical Center",
+          "url": "https://en.wikipedia.org/wiki/Riverside_Regional_Medical_Center",
+          "extract": "Riverside Regional Medical Center may refer to:\n\nRiverside University Health System Medical Center, a county-run hospital in Moreno Valley, California\nRiverside Regional Medical Center, part of Riverside Health in Newport News, Virginia"
+        }
+      }
     },
     {
       "slug": "chesapeake-regional-chesapeake",
@@ -1044,9 +1184,9 @@
       "hotspot": false,
       "website": "https://www.chesapeakeregional.com/",
       "careers_url": "https://www.chesapeakeregional.com/careers",
-      "careers_platform": "unknown",
+      "careers_platform": "ultipro",
       "careers_search_url": null,
-      "careers_notes": "Chesapeake Regional Healthcare careers page (path unverified); ATS not confirmed.",
+      "careers_notes": "Chesapeake Regional Healthcare careers page (path unverified); ATS not confirmed. [enrich 2026-10-20] careers_url -> HTTP 200 at https://chesapeakeregional.com/careers",
       "ats_config": {
         "host": "www.chesapeakeregional.com"
       },
@@ -1082,7 +1222,14 @@
       ],
       "notes": "Inclusion is borderline: maternity service confirmed, but a NICU of Level II or higher is only reportedly present (nicu_level null). Kept because it is a large independent regional hospital near the Outer Banks hotspot; verify NICU level or drop. Coordinates from the R5b scratch (Google Places).",
       "confidence": "low",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "Chesapeake Regional Healthcare",
+          "url": "https://en.wikipedia.org/wiki/Chesapeake_Regional_Healthcare",
+          "extract": "Chesapeake Regional Medical Center (CRMC) is a hospital accredited by the Joint Commission with an advanced certification as a primary stroke center."
+        }
+      }
     },
     {
       "slug": "bon-secours-mary-immaculate-newport-news",
@@ -1102,7 +1249,7 @@
       "careers_url": "https://careers.bsmhealth.org/us/en/search-results",
       "careers_platform": "phenom",
       "careers_search_url": "https://careers.bsmhealth.org/us/en/search-results?keywords=nurse%20practitioner",
-      "careers_notes": "Bon Secours Mercy Health Phenom-style board (also careers.bonsecours.com); NP and PA roles are mostly on the provider board physiciancareers.bsmhealth.org. Rendering not tested.",
+      "careers_notes": "Bon Secours Mercy Health Phenom-style board (also careers.bonsecours.com); NP and PA roles are mostly on the provider board physiciancareers.bsmhealth.org. Rendering not tested. [enrich 2026-10-20] careers_url -> HTTP 200 at https://careers.bsmhealth.org/us/en/search-results; search_url -> HTTP 200, mentions NP: True, job links: 0",
       "ats_config": {
         "host": "careers.bsmhealth.org",
         "provider_host": "physiciancareers.bsmhealth.org",
@@ -1139,7 +1286,8 @@
       ],
       "notes": "Not in the original prompt list; added because the directory lists a Level III NICU. Coordinates from the R5b scratch (Google Places).",
       "confidence": "low",
-      "active": true
+      "active": true,
+      "_enrich": {}
     },
     {
       "slug": "cumberland-hospital-new-kent",
@@ -1159,7 +1307,7 @@
       "careers_url": "https://www.cumberlandhospital.com/careers",
       "careers_platform": "unknown",
       "careers_search_url": null,
-      "careers_notes": "Cumberland Hospital careers page (path unverified); the hospital is reportedly owned by Universal Health Services, so jobs may also post on the UHS board.",
+      "careers_notes": "Cumberland Hospital careers page (path unverified); the hospital is reportedly owned by Universal Health Services, so jobs may also post on the UHS board. [enrich 2026-10-20] careers_url -> HTTP 403 at https://www.cumberlandhospital.com/careers",
       "ats_config": {
         "host": "www.cumberlandhospital.com"
       },
@@ -1195,7 +1343,10 @@
       ],
       "notes": "Included as a pediatric specialty hospital (rule 5) on thin evidence: Google Places reviews in the R5b scratch point to youth residential and eating disorder care. Verify whether medical (non-psych) inpatient programs and NP roles exist; drop if it is purely behavioral. Coordinates from the R5b scratch (Google Places).",
       "confidence": "low",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {}
+      }
     },
     {
       "slug": "mary-washington-fredericksburg",
@@ -1215,8 +1366,10 @@
       "careers_url": "https://www.marywashingtonhealthcare.com/careers/",
       "careers_platform": "unknown",
       "careers_search_url": null,
-      "careers_notes": "Mary Washington Healthcare careers page (also reachable from mwhc.com); platform not confirmed. Facility filter: Mary Washington Hospital. Children's National provides specialty pediatric care at MWH, so some pediatric provider roles may post under Children's National.",
-      "ats_config": {},
+      "careers_notes": "Mary Washington Healthcare careers page (also reachable from mwhc.com); platform not confirmed. Facility filter: Mary Washington Hospital. Children's National provides specialty pediatric care at MWH, so some pediatric provider roles may post under Children's National. [enrich 2026-10-20] careers_url -> HTTP 403 at https://www.marywashingtonhealthcare.com/careers/",
+      "ats_config": {
+        "host": "www.marywashingtonhealthcare.com"
+      },
       "nearest_airport": "DCA Reagan National (about 50 mi); RIC Richmond International (about 60 mi)",
       "beds": null,
       "peds_beds": null,
@@ -1243,8 +1396,16 @@
         "Children's National specialty pediatric care on site",
         "VRE commuter rail to Northern Virginia and DC"
       ],
-      "photos": [],
-      "wikipedia_title": null,
+      "photos": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/f/f6/Mary_Washington_Hospital_Fredericksburg_VA.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original",
+          "caption": "Mary Washington Hospital",
+          "credit": "Mojo Hand",
+          "license": "CC BY-SA 4.0",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Mary_Washington_Hospital_Fredericksburg_VA.jpg"
+        }
+      ],
+      "wikipedia_title": "Mary Washington Hospital",
       "sources": [
         "https://neonatologysolutions.com/?p=18112",
         "https://childrensnational.org/departments/neonatology/regional-nicus",
@@ -1253,7 +1414,14 @@
       ],
       "notes": "peds_inpatient set true on the strength of a reportedly present pediatric unit with Children's National hospitalists; verify. Sister hospital Stafford is in md_dc_va.json. Coordinates from the R5b scratch (Google Places).",
       "confidence": "low",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "Mary Washington Hospital",
+          "url": "https://en.wikipedia.org/wiki/Mary_Washington_Hospital",
+          "extract": "Mary Washington Hospital is a 451-bed, full-service hospital in Fredericksburg, Virginia. It is one of seven level II trauma centers in Virginia and is ranked as the 9th best in the state by U.S. News and World Report"
+        }
+      }
     },
     {
       "slug": "spotsylvania-regional-fredericksburg",
@@ -1273,7 +1441,7 @@
       "careers_url": "https://careers.hcahealthcare.com/search/jobs/in/va-virginia",
       "careers_platform": "custom",
       "careers_search_url": "https://careers.hcahealthcare.com/search/nurse-practitioner/jobs/in/va-virginia",
-      "careers_notes": "HCA Healthcare central job board (TalentBrew-style paths); robots.txt refused WebFetch on 2026-10-19 so rendering untested. Keyword plus place path combines two observed patterns and is untested. Filter by facility name. Facility filter: Spotsylvania Regional Medical Center (HCA Virginia).",
+      "careers_notes": "HCA Healthcare central job board (TalentBrew-style paths); robots.txt refused WebFetch on 2026-10-19 so rendering untested. Keyword plus place path combines two observed patterns and is untested. Filter by facility name. Facility filter: Spotsylvania Regional Medical Center (HCA Virginia). [enrich 2026-10-20] careers_url -> HTTP 403 at https://careers.hcahealthcare.com/search/jobs/in/va-virginia; search_url -> HTTP 403, mentions NP: False, job links: 0",
       "ats_config": {
         "host": "careers.hcahealthcare.com"
       },
@@ -1300,7 +1468,7 @@
         "Serves the fast-growing Spotsylvania County corridor"
       ],
       "photos": [],
-      "wikipedia_title": null,
+      "wikipedia_title": "Spotsylvania Regional Medical Center",
       "sources": [
         "https://neonatologysolutions.com/?p=19552",
         "https://en.wikipedia.org/wiki/List_of_hospitals_in_Virginia",
@@ -1308,7 +1476,14 @@
       ],
       "notes": "No inpatient pediatric unit known. Coordinates from the R5b scratch (Google Places).",
       "confidence": "low",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "Spotsylvania Regional Medical Center",
+          "url": "https://en.wikipedia.org/wiki/Spotsylvania_Regional_Medical_Center",
+          "extract": "Spotsylvania Regional Medical Center (SRMC) is a hospital in Spotsylvania County, Virginia. The hospital is a subsidiary of Hospital Corporation of America."
+        }
+      }
     },
     {
       "slug": "winchester-medical-center-winchester",
@@ -1328,7 +1503,7 @@
       "careers_url": "https://www.valleyhealthlink.com/careers/career-paths/physicians-advanced-practice-providers/opportunities/",
       "careers_platform": "unknown",
       "careers_search_url": null,
-      "careers_notes": "Valley Health provider and APP opportunities page (seen in search results 2026-10-19); underlying ATS not confirmed.",
+      "careers_notes": "Valley Health provider and APP opportunities page (seen in search results 2026-10-19); underlying ATS not confirmed. [enrich 2026-10-20] careers_url -> HTTP 403 at https://www.valleyhealthlink.com/careers/career-paths/physicians-advanced-practice-providers/opportunities/",
       "ats_config": {
         "host": "www.valleyhealthlink.com"
       },
@@ -1366,7 +1541,8 @@
       ],
       "notes": "peds_inpatient true on a reportedly present pediatric unit (Valley Health pediatrics page title); verify unit size. Coordinates from the R5b scratch (Google Places).",
       "confidence": "medium",
-      "active": true
+      "active": true,
+      "_enrich": {}
     },
     {
       "slug": "sentara-rmh-harrisonburg",
@@ -1386,7 +1562,7 @@
       "careers_url": "https://sentara.wd1.myworkdayjobs.com/SCS",
       "careers_platform": "workday",
       "careers_search_url": "https://sentara.wd1.myworkdayjobs.com/SCS?q=nurse%20practitioner",
-      "careers_notes": "Sentara Health Workday (tenant sentara, site SCS) seen in search results 2026-10-19; JS-rendered, use the CXS JSON endpoint. careers.sentara.com is the marketing front door. Facility filter: Sentara RMH Medical Center (Harrisonburg).",
+      "careers_notes": "Sentara Health Workday (tenant sentara, site SCS) seen in search results 2026-10-19; JS-rendered, use the CXS JSON endpoint. careers.sentara.com is the marketing front door. Facility filter: Sentara RMH Medical Center (Harrisonburg). [enrich 2026-10-20] careers_url -> HTTP 200 at https://sentara.wd1.myworkdayjobs.com/SCS; ATS link seen: https://sentara.wd1.myworkdayjobs.com/SCS; search_url -> HTTP 200, mentions NP: False, job links: 0",
       "ats_config": {
         "host": "sentara.wd1.myworkdayjobs.com",
         "tenant": "sentara",
@@ -1417,8 +1593,16 @@
         "Pediatric hospitalist service (Sentara page)",
         "Next to James Madison University's Harrisonburg"
       ],
-      "photos": [],
-      "wikipedia_title": null,
+      "photos": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/0/0c/Sentara_VB_General_Hospital.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original",
+          "caption": "Sentara Health",
+          "credit": "Wikipediasaurus",
+          "license": "CC BY-SA 4.0",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Sentara_VB_General_Hospital.jpg"
+        }
+      ],
+      "wikipedia_title": "Sentara Health",
       "sources": [
         "https://neonatologysolutions.com/?p=19552",
         "https://www.sentara.com/medicalservices/nicu-special-care-nurseries",
@@ -1427,7 +1611,14 @@
       ],
       "notes": "peds_inpatient true inferred from the pediatric hospitalist practice page title; verify. Coordinates from the R5b scratch (Google Places).",
       "confidence": "low",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "Sentara Health",
+          "url": "https://en.wikipedia.org/wiki/Sentara_Health",
+          "extract": "Sentara Health is a not-for-profit healthcare organization serving Virginia, northeastern North Carolina and Florida. It is based in Norfolk, Virginia, has services in 12 acute care hospitals, and has 1.2 million health plan members in three states. It also operates four medical groups."
+        }
+      }
     },
     {
       "slug": "augusta-health-fishersville",
@@ -1447,7 +1638,7 @@
       "careers_url": "https://www.augustahealth.com/careers/physicians-advanced-practice-providers/",
       "careers_platform": "unknown",
       "careers_search_url": null,
-      "careers_notes": "Augusta Health physician and APP careers page; provider jobs are reportedly listed through PracticeMatch (R5b scratch). ATS not confirmed.",
+      "careers_notes": "Augusta Health physician and APP careers page; provider jobs are reportedly listed through PracticeMatch (R5b scratch). ATS not confirmed. [enrich 2026-10-20] careers_url -> HTTP 200 at https://employer.practicematch.com/employer/augusta-health-physician-jobs/",
       "ats_config": {
         "host": "www.augustahealth.com"
       },
@@ -1476,14 +1667,21 @@
         "About 35 minutes from UVA"
       ],
       "photos": [],
-      "wikipedia_title": null,
+      "wikipedia_title": "Augusta Health",
       "sources": [
         "https://en.wikipedia.org/wiki/List_of_hospitals_in_Virginia",
         "model knowledge (to verify); enrichment pending"
       ],
       "notes": "Inclusion is borderline (rule 3, regional referral center): a pediatric hospitalist group ('Newborn Care Providers') is confirmed by a page title, but no NICU level or inpatient pediatric unit was confirmed. Verify, or drop. Coordinates from the R5b scratch (Google Places).",
       "confidence": "low",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "Augusta Health",
+          "url": "https://en.wikipedia.org/wiki/Augusta_Health",
+          "extract": "Augusta Health, formerly Augusta Medical Center, is a hospital in Fishersville, Virginia.  It serves Augusta County, Virginia, as well as the cities of Staunton and Waynesboro.  It is located near I-64.  Augusta Medical Center was formed in 1994 as a consolidation of Kings Daughters Hospital in Staunton, and Waynesboro Community Hospital in Waynesboro.  Augusta Medical Center changed its name to Augusta Health in June 2009.The campus went tobacco-free in 2009. Augusta Health has a member only gym. It provides cardio, weight lifting, inside and outside tennis courts, basketball, track, pool, and spa for its members. Many classes are offered including wellness and fitness programs. In March 2013 it opened a new $32 million cardiovascular center which is a 67,000-square-foot facility offering nuclear stress-testing machines and two heart catheterization labs. The hospital completed an expansion of its emergency department in November 2019, with major donations of around $2.13 million."
+        }
+      }
     },
     {
       "slug": "centra-virginia-baptist-lynchburg",
@@ -1503,7 +1701,7 @@
       "careers_url": "https://ejid.fa.us6.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/jobs",
       "careers_platform": "oracle_cloud",
       "careers_search_url": "https://ejid.fa.us6.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/jobs?keyword=nurse+practitioner",
-      "careers_notes": "Centra Health on Oracle Cloud HCM (site CX_1001), seen in search results 2026-10-19; keyword URL untested. Facility filter: Virginia Baptist Hospital.",
+      "careers_notes": "Centra Health on Oracle Cloud HCM (site CX_1001), seen in search results 2026-10-19; keyword URL untested. Facility filter: Virginia Baptist Hospital. [enrich 2026-10-20] careers_url -> HTTP 200 at https://ejid.fa.us6.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/jobs; ATS link seen: https://ejid.fa.us6.oraclecloud.com:443; search_url -> HTTP 200, mentions NP: False, job links: 0",
       "ats_config": {
         "host": "ejid.fa.us6.oraclecloud.com",
         "site_number": "CX_1001"
@@ -1544,7 +1742,10 @@
       ],
       "notes": "Chose Virginia Baptist rather than Lynchburg General as the Centra pediatric site because the NICU is here; confirm where the inpatient pediatric unit sits (Virginia Baptist vs Lynchburg General). Coordinates from the R5b scratch (Google Places).",
       "confidence": "low",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {}
+      }
     },
     {
       "slug": "lewisgale-medical-center-salem",
@@ -1564,7 +1765,7 @@
       "careers_url": "https://careers.hcahealthcare.com/search/jobs/in/va-virginia",
       "careers_platform": "custom",
       "careers_search_url": "https://careers.hcahealthcare.com/search/nurse-practitioner/jobs/in/va-virginia",
-      "careers_notes": "HCA Healthcare central job board (TalentBrew-style paths); robots.txt refused WebFetch on 2026-10-19 so rendering untested. Keyword plus place path combines two observed patterns and is untested. Filter by facility name. Facility filter: LewisGale Medical Center (HCA Virginia, Salem).",
+      "careers_notes": "HCA Healthcare central job board (TalentBrew-style paths); robots.txt refused WebFetch on 2026-10-19 so rendering untested. Keyword plus place path combines two observed patterns and is untested. Filter by facility name. Facility filter: LewisGale Medical Center (HCA Virginia, Salem). [enrich 2026-10-20] careers_url -> HTTP 403 at https://careers.hcahealthcare.com/search/jobs/in/va-virginia; search_url -> HTTP 403, mentions NP: False, job links: 0",
       "ats_config": {
         "host": "careers.hcahealthcare.com"
       },
@@ -1599,7 +1800,10 @@
       ],
       "notes": "NICU opening from an HCA Virginia newsroom headline noted in the R5b scratch (not opened). No inpatient pediatric unit known (Carilion Children's is the valley's pediatric center). Coordinates from the R5b scratch (Google Places).",
       "confidence": "low",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {}
+      }
     },
     {
       "slug": "sentara-martha-jefferson-charlottesville",
@@ -1619,7 +1823,7 @@
       "careers_url": "https://sentara.wd1.myworkdayjobs.com/SCS",
       "careers_platform": "workday",
       "careers_search_url": "https://sentara.wd1.myworkdayjobs.com/SCS?q=nurse%20practitioner",
-      "careers_notes": "Sentara Health Workday (tenant sentara, site SCS) seen in search results 2026-10-19; JS-rendered, use the CXS JSON endpoint. careers.sentara.com is the marketing front door. Facility filter: Sentara Martha Jefferson Hospital (Charlottesville).",
+      "careers_notes": "Sentara Health Workday (tenant sentara, site SCS) seen in search results 2026-10-19; JS-rendered, use the CXS JSON endpoint. careers.sentara.com is the marketing front door. Facility filter: Sentara Martha Jefferson Hospital (Charlottesville). [enrich 2026-10-20] careers_url -> HTTP 200 at https://sentara.wd1.myworkdayjobs.com/SCS; ATS link seen: https://sentara.wd1.myworkdayjobs.com/SCS; search_url -> HTTP 200, mentions NP: False, job links: 0",
       "ats_config": {
         "host": "sentara.wd1.myworkdayjobs.com",
         "tenant": "sentara",
@@ -1657,7 +1861,8 @@
       ],
       "notes": "Not in the original prompt list; added because Sentara lists a special care nursery (nicu_level 2 inferred; verify). Coordinates from the R5b scratch (Google Places).",
       "confidence": "low",
-      "active": true
+      "active": true,
+      "_enrich": {}
     },
     {
       "slug": "sovah-danville-danville",
@@ -1677,8 +1882,10 @@
       "careers_url": "https://www.lifepointhealth.net/careers",
       "careers_platform": "unknown",
       "careers_search_url": null,
-      "careers_notes": "Sovah Health is a Lifepoint Health system; jobs post on the Lifepoint careers board (a 'Registered Nurse RN Pediatrics Danville VA' posting was seen in search results 2026-10-19). ATS not confirmed.",
-      "ats_config": {},
+      "careers_notes": "Sovah Health is a Lifepoint Health system; jobs post on the Lifepoint careers board (a 'Registered Nurse RN Pediatrics Danville VA' posting was seen in search results 2026-10-19). ATS not confirmed. [enrich 2026-10-20] careers_url -> HTTP 404 at https://www.lifepointhealth.net/careers",
+      "ats_config": {
+        "host": "www.lifepointhealth.net"
+      },
       "nearest_airport": "GSO Piedmont Triad International (about 50 mi)",
       "beds": null,
       "peds_beds": null,
@@ -1702,15 +1909,30 @@
         "Pediatric RN postings suggest an inpatient pediatric unit",
         "About an hour from Greensboro, NC"
       ],
-      "photos": [],
-      "wikipedia_title": null,
+      "photos": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/0/0c/Sentara_VB_General_Hospital.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original",
+          "caption": "Sentara Health",
+          "credit": "Wikipediasaurus",
+          "license": "CC BY-SA 4.0",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Sentara_VB_General_Hospital.jpg"
+        }
+      ],
+      "wikipedia_title": "Sentara Health",
       "sources": [
         "https://en.wikipedia.org/wiki/List_of_hospitals_in_Virginia",
         "model knowledge (to verify); enrichment pending"
       ],
       "notes": "peds_inpatient rests on a single 'Registered Nurse RN Pediatrics Danville VA' job title seen in search results (R5b scratch); verify. NICU level unknown. Coordinates from the R5b scratch (Google Places).",
       "confidence": "low",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "Sentara Health",
+          "url": "https://en.wikipedia.org/wiki/Sentara_Health",
+          "extract": "Sentara Health is a not-for-profit healthcare organization serving Virginia, northeastern North Carolina and Florida. It is based in Norfolk, Virginia, has services in 12 acute care hospitals, and has 1.2 million health plan members in three states. It also operates four medical groups."
+        }
+      }
     },
     {
       "slug": "centra-lynchburg-general-lynchburg",
@@ -1730,7 +1952,7 @@
       "careers_url": "https://ejid.fa.us6.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/jobs",
       "careers_platform": "oracle_cloud",
       "careers_search_url": "https://ejid.fa.us6.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/jobs?keyword=nurse+practitioner",
-      "careers_notes": "Centra Health on Oracle Cloud HCM (site CX_1001), seen in search results 2026-10-19; keyword URL untested. Facility filter: Lynchburg General Hospital.",
+      "careers_notes": "Centra Health on Oracle Cloud HCM (site CX_1001), seen in search results 2026-10-19; keyword URL untested. Facility filter: Lynchburg General Hospital. [enrich 2026-10-20] careers_url -> HTTP 200 at https://ejid.fa.us6.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/jobs; ATS link seen: https://ejid.fa.us6.oraclecloud.com:443; search_url -> HTTP 200, mentions NP: False, job links: 0",
       "ats_config": {
         "host": "ejid.fa.us6.oraclecloud.com",
         "site_number": "CX_1001"
@@ -1765,7 +1987,10 @@
       ],
       "notes": "Included as a large regional referral center (rule 3) because the assignment named it; no dedicated pediatric unit is confirmed here. Confirm whether Centra's inpatient pediatric unit is at Lynchburg General or Virginia Baptist and update flags. Coordinates from the R5b scratch (Google Places).",
       "confidence": "low",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {}
+      }
     }
   ]
 }
