@@ -197,15 +197,21 @@ def _resniff(hospital: dict, deadline: float, res: "BoardResult", current: Adapt
     """Sniff careers_url / website for a board different from the one that just failed or came back empty."""
     cur_key = (getattr(current, "platform", ""), (getattr(current, "cfg", {}) or {}).get("host"),
                (getattr(current, "cfg", {}) or {}).get("site"))
+    tried: set[str] = set()
+    stop = min(deadline, time.time() + 120)
     for field in ("careers_url", "careers_search_url", "website"):
         url = hospital.get(field)
-        if not url:
+        if not url or time.time() > stop:
             continue
+        key = urlsplit(url).netloc.lower().removeprefix("www.") + urlsplit(url).path.rstrip("/")
+        if key in tried:
+            continue
+        tried.add(key)
         h2 = {k: v for k, v in hospital.items() if k not in ("careers_search_url", "careers_url")}
         h2["careers_url"] = url
         h2["ats_config"] = {k: v for k, v in (hospital.get("ats_config") or {}).items()
                             if k in ("location_aliases", "flagship")}
-        alt = sniff_adapter(h2, deadline, res.notes)
+        alt = sniff_adapter(h2, stop, res.notes)
         if alt is None:
             continue
         key = (alt.platform, alt.cfg.get("host"), alt.cfg.get("site"))
@@ -556,6 +562,9 @@ def assemble(results: list[BoardResult], started: str, opts) -> dict:
                 status, err = "error", r.error
             elif not r.listings and r.adapter_used != "generic":
                 status, err = "zero_results", "board reachable but returned 0 listings for every keyword (check search URL / adapter)"
+            elif not r.listings:
+                status, err = "no_listings", ("careers page reachable but no job listings recognized (generic adapter): "
+                                              "set careers_search_url / ats_config to the real job board")
             else:
                 status, err = "ok", None
             entry = {
