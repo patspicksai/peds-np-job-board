@@ -79,8 +79,14 @@ def parse_detail_html(html: str, url: str) -> dict:
     jp = textutil.jsonld_jobposting(html)
     if jp:
         out.update(textutil.jobposting_fields(jp))
-    if not out.get("description") or len(out.get("description", "")) < 200:
-        out["description"] = textutil.page_main_text(html)
+    jd = out.get("description") or ""
+    if len(jd) < 200:
+        # JSON-LD description missing or very short: use the page's main text if it is clearly richer
+        main = textutil.page_main_text(html)
+        if len(main) > max(2 * len(jd), 200):
+            out["description"] = main
+        elif not jd:
+            out["description"] = main
     low = (html or "")[:200000].lower()
     if any(p in low for p in ("no longer available", "no longer accepting", "position has been filled",
                               "job has expired", "this job is closed", "job-expired", "posting has closed")) and not jp:

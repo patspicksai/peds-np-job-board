@@ -23,7 +23,7 @@ APP_RE = re.compile(
 )
 # Upper-case acronyms only (avoid matching ordinary words); applied to the raw string.
 APP_ACRONYM_RE = re.compile(r"\b(?:NPs?|APPs?|C?PNPs?|NNPs?|FNPs?|ACNPs?|AG-?ACNPs?|PNP-AC|PNP-PC|CPNP-AC|CPNP-PC|DNP)\b")
-PA_RE = re.compile(r"physician[\s-]+assistant|physician[\s-]+associate|\bPA-?C?s?\b")
+PA_RE = re.compile(r"(?i:physician[\s-]+assistant|physician[\s-]+associate)|\bPA-?C?s?\b")
 NP_OR_PA_RE = re.compile(r"\bNP\s*(?:or|/|and|&)\s*PA\b|\bPA\s*(?:or|/|and|&)\s*NP\b|nurse practitioner\s*(?:or|/|and)\s*physician", _I)
 NON_NP_APRN_RE = re.compile(r"\bCRNAs?\b|nurse[\s-]+anesthetist|midwi(?:fe|ves|fery)|\bCNMs?\b|clinical[\s-]+nurse[\s-]+specialist", _I)
 NOT_A_JOB_RE = re.compile(r"\b(?:student|shadow(?:ing)?|preceptorship\s+for\s+students|volunteer)\b", _I)
