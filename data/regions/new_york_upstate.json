@@ -19,7 +19,7 @@
       "careers_url": "https://rochester.wd5.myworkdayjobs.com/UR_Nursing",
       "careers_platform": "workday",
       "careers_search_url": "https://rochester.wd5.myworkdayjobs.com/UR_Nursing?q=nurse%20practitioner",
-      "careers_notes": "University of Rochester runs Workday. Per the UR Human Resources careers page, nursing, respiratory therapy and APP (NP and PA) jobs are on the UR_Nursing site and all other staff jobs on UR_Staff (the URMC PICU page also links UR_Staff); faculty and physician roles go through Interfolio. A test fetch of the Workday board was blocked in this session (permission timeout), so rendering is unconfirmed; Workday boards are normally JS-rendered, so use the CXS JSON endpoint. Postings cover Strong Memorial, Golisano Children's and the affiliate hospitals. [enrich 2026-10-20] careers_url -> HTTP 200 at https://rochester.wd5.myworkdayjobs.com/UR_Nursing; ATS link seen: https://rochester.wd5.myworkdayjobs.com/UR_Nursing; search_url -> HTTP 200, mentions NP: False, job links: 0",
+      "careers_notes": "University of Rochester runs Workday. Per the UR Human Resources careers page, nursing, respiratory therapy and APP (NP and PA) jobs are on the UR_Nursing site and all other staff jobs on UR_Staff (the URMC PICU page also links UR_Staff); faculty and physician roles go through Interfolio. A test fetch of the Workday board was blocked in this session (permission timeout), so rendering is unconfirmed; Workday boards are normally JS-rendered, so use the CXS JSON endpoint. Postings cover Strong Memorial, Golisano Children's and the affiliate hospitals. [enrich 2026-10-20] careers_url -> HTTP 200 at https://rochester.wd5.myworkdayjobs.com/UR_Nursing; ATS link seen: https://rochester.wd5.myworkdayjobs.com/UR_Nursing; search_url -> HTTP 200, mentions NP: False, job links: 0 [enrich 2026-10-20] careers_url -> HTTP 200 at https://rochester.wd5.myworkdayjobs.com/UR_Nursing; ATS link seen: https://rochester.wd5.myworkdayjobs.com/UR_Nursing; search_url -> HTTP 200, mentions NP: False, job links: 0",
       "ats_config": {
         "host": "rochester.wd5.myworkdayjobs.com",
         "tenant": "rochester",
@@ -84,7 +84,13 @@
       "notes": "Parent Strong Memorial Hospital (886 beds, Level I adult trauma) is not listed separately; pediatric postings appear under Strong Memorial or Golisano Children's on the UR Workday boards. Bed counts differ by source: the hospital quick facts page lists 148 beds, Wikipedia lists 190 (168 private pediatric beds). The URMC PICU page describes a 12 bed unit on 6 North, which may predate the 2017 PICU expansion. NYS DOH lists Strong as a Regional Perinatal Center with PICU beds. UR Medicine also owns Highland Hospital, Jones Memorial (Wellsville) and other affiliates.",
       "confidence": "high",
       "active": true,
-      "_enrich": {}
+      "_enrich": {
+        "wikipedia": {
+          "title": "Golisano Children's Hospital (Rochester)",
+          "url": "https://en.wikipedia.org/wiki/Golisano_Children%27s_Hospital_(Rochester)",
+          "extract": "University of Rochester-Golisano Children's Hospital (GCH) formerly Children's Hospital at Strong, is a nationally ranked, freestanding acute care children's hospital in Rochester, New York. It is affiliated with the University of Rochester School of Medicine and Dentistry. The hospital features all private rooms that consist of 168 pediatric beds. The hospital provides comprehensive pediatric specialties and subspecialties to infants, children, teens, and young adults aged 0–21 throughout the region. The hospital also sometimes treats adults that require pediatric care. The hospital shares the rooftop helipad for the attached Strong Memorial Hospital and is an ACS verified level I pediatric trauma center, one of the only ones in the region. The hospital features a regional pediatric intensive-care unit and an American Academy of Pediatrics verified level IV neonatal intensive care unit. GCH also offers one of the country's few Ronald McDonald Houses that is located within a hospital."
+        }
+      }
     },
     {
       "slug": "upstate-golisano-childrens-syracuse",
@@ -104,7 +110,7 @@
       "careers_url": "https://careers.upstate.edu/cw/en-us/listing/",
       "careers_platform": "pageup",
       "careers_search_url": "https://careers.upstate.edu/cw/en-us/filter/?search-keyword=nurse%20practitioner",
-      "careers_notes": "SUNY Upstate posts jobs on a PageUp board at careers.upstate.edu (a search result showed a posting at /cw/en-us/job/510525/clinical-assistant-professorhospitalist). The listing and filter URLs here follow the standard PageUp pattern and were not test fetched (fetch was rate limited). Some Upstate titles also appear on statejobs.ny.gov because Upstate is a SUNY state employer. A full time Pediatric APP Hospitalist role at Upstate Golisano was seen on Ladders (12 hour rotating shifts). [enrich 2026-10-20] careers_url -> HTTP 404 at https://careers.upstate.edu/cw/en-us/listing/; search_url -> HTTP 404, mentions NP: False, job links: 4",
+      "careers_notes": "SUNY Upstate posts jobs on a PageUp board at careers.upstate.edu (a search result showed a posting at /cw/en-us/job/510525/clinical-assistant-professorhospitalist). The listing and filter URLs here follow the standard PageUp pattern and were not test fetched (fetch was rate limited). Some Upstate titles also appear on statejobs.ny.gov because Upstate is a SUNY state employer. A full time Pediatric APP Hospitalist role at Upstate Golisano was seen on Ladders (12 hour rotating shifts). [enrich 2026-10-20] careers_url -> HTTP 404 at https://careers.upstate.edu/cw/en-us/listing/; search_url -> HTTP 404, mentions NP: False, job links: 4 [enrich 2026-10-20] careers_url -> HTTP 404 at https://careers.upstate.edu/cw/en-us/listing/; search_url -> HTTP 404, mentions NP: False, job links: 4",
       "ats_config": {
         "host": "careers.upstate.edu",
         "listing_path": "/cw/en-us/listing/"
@@ -194,7 +200,7 @@
       "careers_url": "https://www.kaleidahealth.org/careers/",
       "careers_platform": "unknown",
       "careers_search_url": null,
-      "careers_notes": "Kaleida Health careers. careers_url is a best guess at the kaleidahealth.org careers path and is unverified. The ATS was not confirmed in this session; requisition IDs on aggregator copies (for example 73340BR, Nurse Practitioner FNP/PNP, OCH Dept of Neurology) use the BrassRing style suffix. Kaleida postings syndicate to DirectEmployers (dejobs.org, usnlx.com) with department names such as 'OCH ...' for the children's hospital. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.kaleidahealth.org/careers/",
+      "careers_notes": "Kaleida Health careers. careers_url is a best guess at the kaleidahealth.org careers path and is unverified. The ATS was not confirmed in this session; requisition IDs on aggregator copies (for example 73340BR, Nurse Practitioner FNP/PNP, OCH Dept of Neurology) use the BrassRing style suffix. Kaleida postings syndicate to DirectEmployers (dejobs.org, usnlx.com) with department names such as 'OCH ...' for the children's hospital. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.kaleidahealth.org/careers/ [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.kaleidahealth.org/careers/",
       "ats_config": {
         "host": "www.kaleidahealth.org"
       },
@@ -277,8 +283,10 @@
       "careers_url": "https://www.crouse.org/careers/",
       "careers_platform": "unknown",
       "careers_search_url": null,
-      "careers_notes": "Crouse posts many listings via DirectEmployers (dejobs) per R3b; own ATS not identified. URL is a best guess; verify.",
-      "ats_config": {},
+      "careers_notes": "Crouse posts many listings via DirectEmployers (dejobs) per R3b; own ATS not identified. URL is a best guess; verify. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.crouse.org/careers/",
+      "ats_config": {
+        "host": "www.crouse.org"
+      },
       "nearest_airport": "SYR Syracuse Hancock International (15 min)",
       "beds": 502,
       "peds_beds": null,
@@ -303,7 +311,15 @@
         "Only pediatric cardiac catheterization program in the region",
         "Pomeroy College of Nursing on campus"
       ],
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/d/db/New_York_Counties.svg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original",
+          "caption": "List of hospitals in New York (state)",
+          "credit": "André Koehne",
+          "license": "CC BY-SA 3.0",
+          "source_page": "https://commons.wikimedia.org/wiki/File:New_York_Counties.svg"
+        }
+      ],
       "wikipedia_title": "Crouse Hospital",
       "sources": [
         "https://profiles.health.ny.gov/hospital/bed_type/Pediatric+Beds",
@@ -311,7 +327,14 @@
       ],
       "notes": "Facts from the R3b scratch (births, NICU, cath lab). DOH lists pediatric beds, but general pediatric inpatient care in Syracuse is mainly at Upstate Golisano next door; verify what the Crouse pediatric beds are used for. NYS DOH profiles lists pediatric beds at this hospital (bed counts not shown). nicu_level mapped from the NYS DOH perinatal designation lists recorded in the R3 scratch (Regional Perinatal Center treated as AAP level IV, Level 3 as III, Level 2 as II).",
       "confidence": "medium",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "List of hospitals in New York (state)",
+          "url": "https://en.wikipedia.org/wiki/List_of_hospitals_in_New_York_(state)",
+          "extract": "This is a list of hospitals in the U.S. state of New York. The hospitals are  listed by the most recent hospital name with the name of the health system, county, city, date the hospital first opened, and most recent number of beds, when known. For defunct hospitals, the closing date is included, when known. Military hospitals and psychiatric hospitals are listed separately.  More detailed descriptions are in the lists of hospitals in New York City's five boroughs and separate articles for many notable hospitals.\nThe American Hospital Directory lists 261 active hospitals in New York State in 2022. 210 of these hospitals have staffed beds, with a total of 64,515 beds. The largest number of hospitals are in New York City.  The January 1, 2022 listing by the New York Health Department of general hospitals covered by the New York Healthcare Reform Act show 165 hospitals 63 closed hospitals, and 51 hospitals that had been merged with other hospitals.\nThe oldest hospital in New York State and also oldest hospital in the United States is the Bellevue Hospital in Manhattan, established in 1736. The hospital with the largest number of staffed beds is the NewYork-Presbyterian Hospital in Manhattan, with 2,678 beds in its hospital complex."
+        }
+      }
     },
     {
       "slug": "rochester-general-hospital-rochester",
@@ -331,7 +354,7 @@
       "careers_url": "https://careers.rochesterregional.org/",
       "careers_platform": "unknown",
       "careers_search_url": null,
-      "careers_notes": "Rochester Regional careers site (req_ style job URLs seen by R3b); platform not confirmed.",
+      "careers_notes": "Rochester Regional careers site (req_ style job URLs seen by R3b); platform not confirmed. [enrich 2026-10-20] careers_url -> HTTP 200 at https://careers.rochesterregional.org/; ATS link seen: https://rrhs.wd5.myworkdayjobs.com/RRH/login",
       "ats_config": {
         "host": "careers.rochesterregional.org"
       },
@@ -359,7 +382,15 @@
         "Rochester Regional Health flagship",
         "URMC pediatrics residency rotation site"
       ],
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/2/2d/RGHHospital.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original",
+          "caption": "Rochester General Hospital",
+          "credit": "Rochester Regional Health",
+          "license": "CC BY-SA 4.0",
+          "source_page": "https://commons.wikimedia.org/wiki/File:RGHHospital.jpg"
+        }
+      ],
       "wikipedia_title": "Rochester General Hospital",
       "sources": [
         "https://profiles.health.ny.gov/hospital/bed_type/Pediatric+Beds",
@@ -367,7 +398,14 @@
       ],
       "notes": "Trauma level and pediatric ED flag from model knowledge. Inpatient peds RN postings seen in R3b searches confirm an active unit. NYS DOH profiles lists pediatric beds at this hospital (bed counts not shown). nicu_level mapped from the NYS DOH perinatal designation lists recorded in the R3 scratch (Regional Perinatal Center treated as AAP level IV, Level 3 as III, Level 2 as II).",
       "confidence": "medium",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "Rochester General Hospital",
+          "url": "https://en.wikipedia.org/wiki/Rochester_General_Hospital",
+          "extract": "Rochester General Hospital, an affiliate hospital of Rochester Regional Health, is a 528-bed tertiary care hospital, located in Rochester, New York. Rochester General Hospital has been serving the residents of the Rochester Region and beyond since 1847. Rochester General Hospital offers primary medical care and a broad range of specialties. Rochester General Hospital's medical staff includes over 1,000 primary care physicians and specialists, many of whom have offices at the hospital and throughout the community."
+        }
+      }
     },
     {
       "slug": "unity-hospital-rochester",
@@ -387,7 +425,7 @@
       "careers_url": "https://careers.rochesterregional.org/",
       "careers_platform": "unknown",
       "careers_search_url": null,
-      "careers_notes": "Rochester Regional careers site (req_ style job URLs seen by R3b); platform not confirmed.",
+      "careers_notes": "Rochester Regional careers site (req_ style job URLs seen by R3b); platform not confirmed. [enrich 2026-10-20] careers_url -> HTTP 200 at https://careers.rochesterregional.org/; ATS link seen: https://rrhs.wd5.myworkdayjobs.com/RRH/login",
       "ats_config": {
         "host": "careers.rochesterregional.org"
       },
@@ -420,7 +458,8 @@
       ],
       "notes": "Not on the DOH pediatric bed list or the R3 Level 2 list; DOH bed-type list shows intermediate neonatal beds, so nicu_level left null pending verification. Mailing city is Rochester.",
       "confidence": "low",
-      "active": true
+      "active": true,
+      "_enrich": {}
     },
     {
       "slug": "st-josephs-hospital-syracuse",
@@ -438,10 +477,12 @@
       "hotspot": false,
       "website": "https://www.sjhsyr.org/",
       "careers_url": "https://jobs.trinity-health.org/",
-      "careers_platform": "unknown",
+      "careers_platform": "phenom",
       "careers_search_url": null,
-      "careers_notes": "Trinity Health system job board (best guess; verify) covers St. Joseph's Syracuse and St. Peter's Albany.",
-      "ats_config": {},
+      "careers_notes": "Trinity Health system job board (best guess; verify) covers St. Joseph's Syracuse and St. Peter's Albany. [enrich 2026-10-20] careers_url -> HTTP 200 at https://jobs.trinity-health.org/",
+      "ats_config": {
+        "host": "jobs.trinity-health.org"
+      },
       "nearest_airport": "SYR Syracuse Hancock International (15 min)",
       "beds": 431,
       "peds_beds": null,
@@ -463,14 +504,29 @@
         "Part of Trinity Health",
         "St. Joseph's College of Nursing on campus"
       ],
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/d/db/New_York_Counties.svg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original",
+          "caption": "List of hospitals in New York (state)",
+          "credit": "André Koehne",
+          "license": "CC BY-SA 3.0",
+          "source_page": "https://commons.wikimedia.org/wiki/File:New_York_Counties.svg"
+        }
+      ],
       "wikipedia_title": "St. Joseph's Hospital Health Center",
       "sources": [
         "model knowledge (to verify); enrichment pending"
       ],
       "notes": "nicu_level mapped from the NYS DOH perinatal designation lists recorded in the R3 scratch (Regional Perinatal Center treated as AAP level IV, Level 3 as III, Level 2 as II).",
       "confidence": "medium",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "List of hospitals in New York (state)",
+          "url": "https://en.wikipedia.org/wiki/List_of_hospitals_in_New_York_(state)",
+          "extract": "This is a list of hospitals in the U.S. state of New York. The hospitals are  listed by the most recent hospital name with the name of the health system, county, city, date the hospital first opened, and most recent number of beds, when known. For defunct hospitals, the closing date is included, when known. Military hospitals and psychiatric hospitals are listed separately.  More detailed descriptions are in the lists of hospitals in New York City's five boroughs and separate articles for many notable hospitals.\nThe American Hospital Directory lists 261 active hospitals in New York State in 2022. 210 of these hospitals have staffed beds, with a total of 64,515 beds. The largest number of hospitals are in New York City.  The January 1, 2022 listing by the New York Health Department of general hospitals covered by the New York Healthcare Reform Act show 165 hospitals 63 closed hospitals, and 51 hospitals that had been merged with other hospitals.\nThe oldest hospital in New York State and also oldest hospital in the United States is the Bellevue Hospital in Manhattan, established in 1736. The hospital with the largest number of staffed beds is the NewYork-Presbyterian Hospital in Manhattan, with 2,678 beds in its hospital complex."
+        }
+      }
     },
     {
       "slug": "st-peters-hospital-albany",
@@ -488,10 +544,12 @@
       "hotspot": false,
       "website": "https://www.sphp.com/",
       "careers_url": "https://jobs.trinity-health.org/",
-      "careers_platform": "unknown",
+      "careers_platform": "phenom",
       "careers_search_url": null,
-      "careers_notes": "Trinity Health system job board (best guess; verify) covers St. Joseph's Syracuse and St. Peter's Albany.",
-      "ats_config": {},
+      "careers_notes": "Trinity Health system job board (best guess; verify) covers St. Joseph's Syracuse and St. Peter's Albany. [enrich 2026-10-20] careers_url -> HTTP 200 at https://jobs.trinity-health.org/",
+      "ats_config": {
+        "host": "jobs.trinity-health.org"
+      },
       "nearest_airport": "ALB Albany International (15 min)",
       "beds": 482,
       "peds_beds": null,
@@ -524,7 +582,14 @@
       ],
       "notes": "Ellis Medicine sued St. Peter's in 2026 over a soured affiliation (headline only). Bed count from Wikipedia list per R3 scratch. NYS DOH profiles lists pediatric beds at this hospital (bed counts not shown). nicu_level mapped from the NYS DOH perinatal designation lists recorded in the R3 scratch (Regional Perinatal Center treated as AAP level IV, Level 3 as III, Level 2 as II).",
       "confidence": "medium",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "St. Peter's Hospital",
+          "url": "https://en.wikipedia.org/wiki/St._Peter%27s_Hospital",
+          "extract": "St. Peter's Hospital  may refer to:\n\nCanada\nSt. Peter's Hospital (Hamilton) in Hamilton, Ontario\nUnited Kingdom\nSt Peter's Hospital, Bristol, in Bristol\nSt Peter's Hospital, Chertsey, an NHS district general hospital in Chertsey, Surrey, England\nSt Peter's Hospital, Covent Garden, a former hospital in London\nUnited States\nSt. Peter's Hospital (Albany, New York), a hospital in New York State\nSt. Peter's Hospital (Brooklyn), former hospital in New York City\nSt. Peter's Hospital (Helena, Montana), a hospital in Montana\nProvidence St. Peter Hospital, Olympia, Washington, also known as St. Peter's Hospital\nSaint Peter's University Hospital in New Brunswick, New Jersey"
+        }
+      }
     },
     {
       "slug": "sisters-of-charity-hospital-buffalo",
@@ -544,8 +609,10 @@
       "careers_url": "https://www.chsbuffalo.org/careers",
       "careers_platform": "unknown",
       "careers_search_url": null,
-      "careers_notes": "Catholic Health Buffalo careers page; URL is a best guess; verify.",
-      "ats_config": {},
+      "careers_notes": "Catholic Health Buffalo careers page; URL is a best guess; verify. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.chsbuffalo.org/careers/",
+      "ats_config": {
+        "host": "www.chsbuffalo.org"
+      },
       "nearest_airport": "BUF Buffalo Niagara International (15 min)",
       "beds": 310,
       "peds_beds": null,
@@ -567,13 +634,20 @@
         "Catholic Health Buffalo women's and newborn hub"
       ],
       "photos": [],
-      "wikipedia_title": null,
+      "wikipedia_title": "Sisters of Charity Hospital",
       "sources": [
         "model knowledge (to verify); enrichment pending"
       ],
       "notes": "nicu_level mapped from the NYS DOH perinatal designation lists recorded in the R3 scratch (Regional Perinatal Center treated as AAP level IV, Level 3 as III, Level 2 as II).",
       "confidence": "medium",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "Sisters of Charity Hospital",
+          "url": "https://en.wikipedia.org/wiki/Sisters_of_Charity_Hospital",
+          "extract": "Sisters of Charity Hospital can refer to:\n\nSisters of Charity Hospital (Zagreb) in Croatia\nSisters of Charity Hospital (Buffalo) in the United States\nThe Hospital of the Sisters of Charity, the original name of SSM Health DePaul Hospital in the United States"
+        }
+      }
     },
     {
       "slug": "mercy-hospital-buffalo",
@@ -593,8 +667,10 @@
       "careers_url": "https://www.chsbuffalo.org/careers",
       "careers_platform": "unknown",
       "careers_search_url": null,
-      "careers_notes": "Catholic Health Buffalo careers page; URL is a best guess; verify.",
-      "ats_config": {},
+      "careers_notes": "Catholic Health Buffalo careers page; URL is a best guess; verify. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.chsbuffalo.org/careers/",
+      "ats_config": {
+        "host": "www.chsbuffalo.org"
+      },
       "nearest_airport": "BUF Buffalo Niagara International (20 min)",
       "beds": 470,
       "peds_beds": null,
@@ -625,7 +701,8 @@
       ],
       "notes": "NYS DOH profiles lists pediatric beds at this hospital (bed counts not shown). nicu_level mapped from the NYS DOH perinatal designation lists recorded in the R3 scratch (Regional Perinatal Center treated as AAP level IV, Level 3 as III, Level 2 as II).",
       "confidence": "medium",
-      "active": true
+      "active": true,
+      "_enrich": {}
     },
     {
       "slug": "millard-fillmore-suburban-williamsville",
@@ -645,7 +722,7 @@
       "careers_url": "https://www.kaleidahealth.org/careers/",
       "careers_platform": "unknown",
       "careers_search_url": null,
-      "careers_notes": "Kaleida Health careers; ATS not confirmed (requisition IDs look BrassRing style per R3b scratch).",
+      "careers_notes": "Kaleida Health careers; ATS not confirmed (requisition IDs look BrassRing style per R3b scratch). [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.kaleidahealth.org/careers/",
       "ats_config": {
         "host": "www.kaleidahealth.org"
       },
@@ -670,14 +747,29 @@
         "Part of Kaleida Health",
         "Serves Amherst and the northern suburbs"
       ],
-      "photos": [],
-      "wikipedia_title": null,
+      "photos": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/d/db/New_York_Counties.svg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original",
+          "caption": "List of hospitals in New York (state)",
+          "credit": "André Koehne",
+          "license": "CC BY-SA 3.0",
+          "source_page": "https://commons.wikimedia.org/wiki/File:New_York_Counties.svg"
+        }
+      ],
+      "wikipedia_title": "List of hospitals in New York (state)",
       "sources": [
         "model knowledge (to verify); enrichment pending"
       ],
       "notes": "nicu_level mapped from the NYS DOH perinatal designation lists recorded in the R3 scratch (Regional Perinatal Center treated as AAP level IV, Level 3 as III, Level 2 as II).",
       "confidence": "medium",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "List of hospitals in New York (state)",
+          "url": "https://en.wikipedia.org/wiki/List_of_hospitals_in_New_York_(state)",
+          "extract": "This is a list of hospitals in the U.S. state of New York. The hospitals are  listed by the most recent hospital name with the name of the health system, county, city, date the hospital first opened, and most recent number of beds, when known. For defunct hospitals, the closing date is included, when known. Military hospitals and psychiatric hospitals are listed separately.  More detailed descriptions are in the lists of hospitals in New York City's five boroughs and separate articles for many notable hospitals.\nThe American Hospital Directory lists 261 active hospitals in New York State in 2022. 210 of these hospitals have staffed beds, with a total of 64,515 beds. The largest number of hospitals are in New York City.  The January 1, 2022 listing by the New York Health Department of general hospitals covered by the New York Healthcare Reform Act show 165 hospitals 63 closed hospitals, and 51 hospitals that had been merged with other hospitals.\nThe oldest hospital in New York State and also oldest hospital in the United States is the Bellevue Hospital in Manhattan, established in 1736. The hospital with the largest number of staffed beds is the NewYork-Presbyterian Hospital in Manhattan, with 2,678 beds in its hospital complex."
+        }
+      }
     },
     {
       "slug": "erie-county-medical-center-buffalo",
@@ -695,10 +787,12 @@
       "hotspot": false,
       "website": "https://www.ecmc.edu/",
       "careers_url": "https://www.ecmc.edu/careers/",
-      "careers_platform": "unknown",
+      "careers_platform": "ultipro",
       "careers_search_url": null,
-      "careers_notes": "careers URL is a best guess from the hospital domain; verify in enrichment.",
-      "ats_config": {},
+      "careers_notes": "careers URL is a best guess from the hospital domain; verify in enrichment. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.ecmc.edu/careers/",
+      "ats_config": {
+        "host": "www.ecmc.edu"
+      },
       "nearest_airport": "BUF Buffalo Niagara International (15 min)",
       "beds": 330,
       "peds_beds": null,
@@ -721,7 +815,15 @@
         "University at Buffalo teaching hospital",
         "Regional burn and transplant programs"
       ],
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/2/28/ECMCBuffaloNY_cropped.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original",
+          "caption": "Erie County Medical Center",
+          "credit": "Andre Carrotflower",
+          "license": "CC BY-SA 4.0",
+          "source_page": "https://commons.wikimedia.org/wiki/File:ECMCBuffaloNY_cropped.jpg"
+        }
+      ],
       "wikipedia_title": "Erie County Medical Center",
       "sources": [
         "https://profiles.health.ny.gov/hospital/bed_type/Pediatric+Beds",
@@ -729,7 +831,14 @@
       ],
       "notes": "DOH pediatric beds may be adolescent psychiatry or a small unit; verify what they are before treating as a peds floor. NYS DOH profiles lists pediatric beds at this hospital (bed counts not shown).",
       "confidence": "low",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "Erie County Medical Center",
+          "url": "https://en.wikipedia.org/wiki/Erie_County_Medical_Center",
+          "extract": "Erie County Medical Center (ECMC) is a hospital with 550 beds located in the East Side of Buffalo, New York and a member of the Great Lakes Health System. It is the primary teaching hospital for the University at Buffalo. It is also a New York State public-benefit corporation."
+        }
+      }
     },
     {
       "slug": "arnot-ogden-medical-center-elmira",
@@ -747,10 +856,12 @@
       "hotspot": false,
       "website": "https://www.arnothealth.org/",
       "careers_url": "https://www.arnothealth.org/careers",
-      "careers_platform": "unknown",
+      "careers_platform": "workday",
       "careers_search_url": null,
-      "careers_notes": "Arnot Health and Cayuga Health merged as Centralus Health in 2025; postings may move to a shared board. URL is a best guess; verify.",
-      "ats_config": {},
+      "careers_notes": "Arnot Health and Cayuga Health merged as Centralus Health in 2025; postings may move to a shared board. URL is a best guess; verify. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.arnothealth.org/careers; ATS link seen: https://cayugahealth.wd12.myworkdayjobs.com/CentralusH",
+      "ats_config": {
+        "host": "www.arnothealth.org"
+      },
       "nearest_airport": "ELM Elmira Corning Regional (15 min)",
       "beds": null,
       "peds_beds": null,
@@ -784,7 +895,14 @@
       ],
       "notes": "Bed count unclear in R3 scratch (112 flagged with a question mark); left null. NYS DOH profiles lists pediatric beds at this hospital (bed counts not shown). nicu_level mapped from the NYS DOH perinatal designation lists recorded in the R3 scratch (Regional Perinatal Center treated as AAP level IV, Level 3 as III, Level 2 as II).",
       "confidence": "medium",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "Arnot Ogden Medical Center",
+          "url": "https://en.wikipedia.org/wiki/Arnot_Ogden_Medical_Center",
+          "extract": "Arnot Ogden Medical Center is a medical facility in Elmira, New York, previously known as Arnot-Ogden Memorial Hospital, founded in 1888."
+        }
+      }
     },
     {
       "slug": "cayuga-medical-center-ithaca",
@@ -804,8 +922,10 @@
       "careers_url": "https://www.cayugahealth.org/careers/",
       "careers_platform": "unknown",
       "careers_search_url": null,
-      "careers_notes": "Arnot Health and Cayuga Health merged as Centralus Health in 2025; postings may move to a shared board. URL is a best guess; verify.",
-      "ats_config": {},
+      "careers_notes": "Arnot Health and Cayuga Health merged as Centralus Health in 2025; postings may move to a shared board. URL is a best guess; verify. [enrich 2026-10-20] careers_url -> HTTP 200 at https://cayugahealth.org/careers/",
+      "ats_config": {
+        "host": "cayugahealth.org"
+      },
       "nearest_airport": "ITH Ithaca Tompkins International (15 min)",
       "beds": 193,
       "peds_beds": null,
@@ -828,7 +948,15 @@
         "Part of Centralus Health",
         "Regional hospital for Ithaca and Tompkins County"
       ],
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/e/ed/Cayuga_Medical_Center_color_logo.svg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original",
+          "caption": "Cayuga Medical Center",
+          "credit": "Unknown authorUnknown author",
+          "license": "Public domain",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Cayuga_Medical_Center_color_logo.svg"
+        }
+      ],
       "wikipedia_title": "Cayuga Medical Center",
       "sources": [
         "https://www.chiefhealthcareexecutive.com/view/new-york-hospitals-complete-merger-and-unveil-new-name",
@@ -837,7 +965,14 @@
       ],
       "notes": "nicu_level mapped from the NYS DOH perinatal designation lists recorded in the R3 scratch (Regional Perinatal Center treated as AAP level IV, Level 3 as III, Level 2 as II).",
       "confidence": "medium",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "Cayuga Medical Center",
+          "url": "https://en.wikipedia.org/wiki/Cayuga_Medical_Center",
+          "extract": "Cayuga Medical Center, officially referred to as Cayuga Medical Center at Ithaca and abbreviated as CMC, is a not-for-profit general hospital in Ithaca, New York, serving the residents of Broome, Cayuga, Chemung, Cortland, Schuyler, Seneca, Tioga, and Tompkins counties. The hospital has 204 beds in total, and is one of the largest hospitals in the Finger Lakes region and the Southern Tier.\nIn 2014, the hospital announced its partnership with Schuyler Hospital, another not-for-profit general hospital in nearby Montour Falls, New York and the creation of an umbrella organization for the two hospitals, the Cayuga Health System.\nIn January 2025, Cayuga Health joined with Arnot Health to operate together as Centralus Health, a private health company."
+        }
+      }
     },
     {
       "slug": "samaritan-medical-center-watertown",
@@ -855,10 +990,12 @@
       "hotspot": false,
       "website": "https://samaritanhealth.com/",
       "careers_url": "https://samaritanhealth.com/careers/",
-      "careers_platform": "unknown",
+      "careers_platform": "workday",
       "careers_search_url": null,
-      "careers_notes": "careers URL is a best guess from the hospital domain; verify in enrichment.",
-      "ats_config": {},
+      "careers_notes": "careers URL is a best guess from the hospital domain; verify in enrichment. [enrich 2026-10-20] careers_url -> HTTP 200 at https://samaritanhealth.com/careers/career-opportunities/; ATS link seen: https://samaritanhealth.wd12.myworkdayjobs.com/shsny",
+      "ats_config": {
+        "host": "samaritanhealth.com"
+      },
       "nearest_airport": "ART Watertown International (SYR for most flights)",
       "beds": 294,
       "peds_beds": null,
@@ -883,14 +1020,21 @@
         "Regional hospital for the North Country"
       ],
       "photos": [],
-      "wikipedia_title": null,
+      "wikipedia_title": "Samaritan Medical Center",
       "sources": [
         "https://profiles.health.ny.gov/hospital/bed_type/Pediatric+Beds",
         "model knowledge (to verify); enrichment pending"
       ],
       "notes": "Fort Drum relationship from model knowledge. NYS DOH profiles lists pediatric beds at this hospital (bed counts not shown). nicu_level mapped from the NYS DOH perinatal designation lists recorded in the R3 scratch (Regional Perinatal Center treated as AAP level IV, Level 3 as III, Level 2 as II).",
       "confidence": "medium",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "Samaritan Medical Center",
+          "url": "https://en.wikipedia.org/wiki/Samaritan_Medical_Center",
+          "extract": "Samaritan Medical Center is a 294-bed not-for-profit medical facility located in Watertown, New York.\nThe hospital was awarded \"gold recognition for its efforts to increase organ, eye, and tissue donor registrations\" via education and outreach programs."
+        }
+      }
     },
     {
       "slug": "wynn-hospital-utica",
@@ -910,7 +1054,7 @@
       "careers_url": "https://www.mvhealthsystem.org/careers",
       "careers_platform": "unknown",
       "careers_search_url": null,
-      "careers_notes": "MVHS careers page; platform not confirmed.",
+      "careers_notes": "MVHS careers page; platform not confirmed. [enrich 2026-10-20] careers_url -> HTTP 404 at https://www.mvhealthsystem.org/careers",
       "ats_config": {
         "host": "www.mvhealthsystem.org"
       },
@@ -938,7 +1082,15 @@
         "New downtown hospital opened in 2023",
         "Part of Mohawk Valley Health System"
       ],
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/6/62/Wynn_Hospital%2C_Utica%2C_New_York.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original",
+          "caption": "Mohawk Valley Health System",
+          "credit": "Kenneth C. Zirkel",
+          "license": "CC BY-SA 4.0",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Wynn_Hospital,_Utica,_New_York.jpg"
+        }
+      ],
       "wikipedia_title": "Wynn Hospital",
       "sources": [
         "https://profiles.health.ny.gov/hospital/bed_type/Pediatric+Beds",
@@ -946,7 +1098,14 @@
       ],
       "notes": "Opening year from model knowledge. NYS DOH profiles lists pediatric beds at this hospital (bed counts not shown). nicu_level mapped from the NYS DOH perinatal designation lists recorded in the R3 scratch (Regional Perinatal Center treated as AAP level IV, Level 3 as III, Level 2 as II).",
       "confidence": "medium",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "Mohawk Valley Health System",
+          "url": "https://en.wikipedia.org/wiki/Mohawk_Valley_Health_System",
+          "extract": "Mohawk Valley Health System (MVHS) is a non-profit health system providing services to residents of the Mohawk Valley in Central New York. It was created in 2014 as an affiliation of Faxton St. Luke's Healthcare and St. Elizabeth Medical Center. In October 2023, MVHS moved all acute care beds and emergency services to a new hospital, the Wynn Hospital, in downtown Utica.\nMVHS is a designated Children's Miracle Network Hospital."
+        }
+      }
     },
     {
       "slug": "uhs-wilson-medical-center-johnson-city",
@@ -964,9 +1123,9 @@
       "hotspot": false,
       "website": "https://www.nyuhs.org/",
       "careers_url": "https://www.nyuhs.org/careers",
-      "careers_platform": "unknown",
+      "careers_platform": "workday",
       "careers_search_url": null,
-      "careers_notes": "UHS system careers page; platform not confirmed.",
+      "careers_notes": "UHS system careers page; platform not confirmed. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.nyuhs.org/careers; ATS link seen: https://nyuhs.wd12.myworkdayjobs.com/nyuhscareers1",
       "ats_config": {
         "host": "www.nyuhs.org"
       },
@@ -993,15 +1152,30 @@
         "Inpatient pediatric beds (NYS DOH)",
         "UHS flagship hospital"
       ],
-      "photos": [],
-      "wikipedia_title": null,
+      "photos": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/en/7/78/United_Health_Services_logo.svg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original",
+          "caption": "United Health Services",
+          "credit": "United Health Services",
+          "license": "PD",
+          "source_page": "https://en.wikipedia.org/wiki/File:United_Health_Services_logo.svg"
+        }
+      ],
+      "wikipedia_title": "United Health Services",
       "sources": [
         "https://profiles.health.ny.gov/hospital/bed_type/Pediatric+Beds",
         "model knowledge (to verify); enrichment pending"
       ],
       "notes": "Trauma level from model knowledge. NYS DOH profiles lists pediatric beds at this hospital (bed counts not shown). nicu_level mapped from the NYS DOH perinatal designation lists recorded in the R3 scratch (Regional Perinatal Center treated as AAP level IV, Level 3 as III, Level 2 as II).",
       "confidence": "medium",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "United Health Services",
+          "url": "https://en.wikipedia.org/wiki/United_Health_Services",
+          "extract": "United Health Services (UHS) (United Health Services Hospitals, Inc.) is the largest and most comprehensive provider of healthcare services in upstate New York's Southern Tier.\nA locally owned, not-for-profit system, it is governed by a volunteer board of directors composed of residents from around the region. Founded in Greater Binghamton in 1981, UHS was formed through the consolidation of three highly respected community hospitals.  Over the years it has grown to encompass four hospitals, long-term care and home care services, walk-in centers and affiliated physician practices in Broome and surrounding counties.\nThe organization operates primary care centers throughout Broome, Chenango, Delaware and Tioga, Otsego, and Sullivan counties, plus school-based health centers that offer primary and preventive care to students in the region.\nUHS cares for two-thirds of the population of the Southern Tier region and produces $1.3 billion a year in total non-profit economic impact.  With a 6,300-member work force across 60 locations, UHS is one of the region's largest employers.\nUHS is the regional referral center for a number of life-saving and life-enhancing medical, surgical and rehabilitative specialties, including:  trauma and emergency care, heart and vascular surgery, cardiac care, neurosurgery and neurosciences, cancer care, orthopedics, behavioral health services, high-risk obstetrics, neonatal intensive care, and physical rehabilitation.\nA teaching hospital, UHS Wilson Medical Center is home to a long-standing medical residency program, training tomorrow's practicing doctors.  The program is an affiliate of the Clinical Campus at Binghamton of SUNY Upstate Medical University in Syracuse and the New York Institute of Technology College of Osteopathic Medicine."
+        }
+      }
     },
     {
       "slug": "guthrie-lourdes-hospital-binghamton",
@@ -1019,10 +1193,12 @@
       "hotspot": false,
       "website": "https://www.guthrie.org/",
       "careers_url": "https://www.guthrie.org/careers",
-      "careers_platform": "unknown",
+      "careers_platform": "oracle_cloud",
       "careers_search_url": null,
-      "careers_notes": "careers URL is a best guess from the hospital domain; verify in enrichment.",
-      "ats_config": {},
+      "careers_notes": "careers URL is a best guess from the hospital domain; verify in enrichment. [enrich 2026-10-20] careers_url -> HTTP 200 at https://careers.guthrie.org/; ATS link seen: https://elfw.fa.us2.oraclecloud.com",
+      "ats_config": {
+        "host": "careers.guthrie.org"
+      },
       "nearest_airport": "BGM Greater Binghamton (20 min)",
       "beds": 242,
       "peds_beds": null,
@@ -1045,14 +1221,21 @@
         "Catholic community hospital in Binghamton"
       ],
       "photos": [],
-      "wikipedia_title": null,
+      "wikipedia_title": "Guthrie Lourdes Hospital",
       "sources": [
         "https://profiles.health.ny.gov/hospital/bed_type/Pediatric+Beds",
         "model knowledge (to verify); enrichment pending"
       ],
       "notes": "Unit size unknown; Guthrie join date from model knowledge. Bed count from Wikipedia list per R3 scratch. NYS DOH profiles lists pediatric beds at this hospital (bed counts not shown).",
       "confidence": "low",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "Guthrie Lourdes Hospital",
+          "url": "https://en.wikipedia.org/wiki/Guthrie_Lourdes_Hospital",
+          "extract": "Guthrie Lourdes Hospital, formerly Our Lady of Lourdes Memorial Hospital is a 197 bed community hospital in Binghamton, New York, United States.\nBishop Daniel Curley had specifically requested that nuns Martina Disney, Gertrude Eisele, Rose Anna Hastings, and Louise McParland, later known as the Four Daughters of Charity, open a hospital in Binghamton in 1925. Thus began the 25 bed Our Lady of Lourdes Memorial Hospital in the Corbett mansion where they lived.\nIn 1983, the hospital was selected by the US Federal Government to take part in a national cancer research project.  In 2006, a flood cost the hospital several million dollars in damages.\nIn 2017, Lourdes was granted a three-year/full accreditation designation by the National Accreditation Program for Breast Centers (NAPBC).\nIn 2018, Lourdes was ranked as the 21st best hospital in New York according to the U.S. News Best Hospitals specialty rankings.\nOn February 1, 2024, Our Lady of Lourdes Memorial Hospital was acquired by the Guthrie Clinic based in Sayre, Pennsylvania."
+        }
+      }
     },
     {
       "slug": "ellis-hospital-schenectady",
@@ -1072,8 +1255,10 @@
       "careers_url": "https://www.ellismedicine.org/careers",
       "careers_platform": "unknown",
       "careers_search_url": null,
-      "careers_notes": "Ellis Medicine is independent; Albany Med interest and a lawsuit against St. Peter's were reported in 2026, so its system may change. URL is a best guess; verify.",
-      "ats_config": {},
+      "careers_notes": "Ellis Medicine is independent; Albany Med interest and a lawsuit against St. Peter's were reported in 2026, so its system may change. URL is a best guess; verify. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.ellismedicine.org/careers/",
+      "ats_config": {
+        "host": "www.ellismedicine.org"
+      },
       "nearest_airport": "ALB Albany International (20 min)",
       "beds": 398,
       "peds_beds": null,
@@ -1097,7 +1282,15 @@
         "Independent Ellis Medicine flagship",
         "Affiliation in flux in 2026"
       ],
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/d/db/New_York_Counties.svg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original",
+          "caption": "List of hospitals in New York (state)",
+          "credit": "André Koehne",
+          "license": "CC BY-SA 3.0",
+          "source_page": "https://commons.wikimedia.org/wiki/File:New_York_Counties.svg"
+        }
+      ],
       "wikipedia_title": "Ellis Hospital",
       "sources": [
         "https://profiles.health.ny.gov/hospital/bed_type/Pediatric+Beds",
@@ -1107,7 +1300,14 @@
       ],
       "notes": "Record covers the Nott Street hospital and the Bellevue Woman's Care Center (2210 Troy-Schenectady Rd, Niskayuna, 42.79265,-73.87898). Bed count from Wikipedia list per R3 scratch. NYS DOH profiles lists pediatric beds at this hospital (bed counts not shown). nicu_level mapped from the NYS DOH perinatal designation lists recorded in the R3 scratch (Regional Perinatal Center treated as AAP level IV, Level 3 as III, Level 2 as II).",
       "confidence": "medium",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "List of hospitals in New York (state)",
+          "url": "https://en.wikipedia.org/wiki/List_of_hospitals_in_New_York_(state)",
+          "extract": "This is a list of hospitals in the U.S. state of New York. The hospitals are  listed by the most recent hospital name with the name of the health system, county, city, date the hospital first opened, and most recent number of beds, when known. For defunct hospitals, the closing date is included, when known. Military hospitals and psychiatric hospitals are listed separately.  More detailed descriptions are in the lists of hospitals in New York City's five boroughs and separate articles for many notable hospitals.\nThe American Hospital Directory lists 261 active hospitals in New York State in 2022. 210 of these hospitals have staffed beds, with a total of 64,515 beds. The largest number of hospitals are in New York City.  The January 1, 2022 listing by the New York Health Department of general hospitals covered by the New York Healthcare Reform Act show 165 hospitals 63 closed hospitals, and 51 hospitals that had been merged with other hospitals.\nThe oldest hospital in New York State and also oldest hospital in the United States is the Bellevue Hospital in Manhattan, established in 1736. The hospital with the largest number of staffed beds is the NewYork-Presbyterian Hospital in Manhattan, with 2,678 beds in its hospital complex."
+        }
+      }
     },
     {
       "slug": "glens-falls-hospital-glens-falls",
@@ -1127,7 +1327,7 @@
       "careers_url": "https://albanymed.wd5.myworkdayjobs.com/Albany_Med_System_Career_Site",
       "careers_platform": "workday",
       "careers_search_url": "https://albanymed.wd5.myworkdayjobs.com/Albany_Med_System_Career_Site?q=nurse%20practitioner",
-      "careers_notes": "Albany Med Health System Workday board, shared by Albany Med, Glens Falls, Saratoga and Columbia Memorial; filter by location.",
+      "careers_notes": "Albany Med Health System Workday board, shared by Albany Med, Glens Falls, Saratoga and Columbia Memorial; filter by location. [enrich 2026-10-20] careers_url -> HTTP 200 at https://albanymed.wd5.myworkdayjobs.com/Albany_Med_System_Career_Site; ATS link seen: https://albanymed.wd5.myworkdayjobs.com/Albany_Med_System_Career_Site; search_url -> HTTP 200, mentions NP: False, job links: 0",
       "ats_config": {
         "host": "albanymed.wd5.myworkdayjobs.com",
         "tenant": "albanymed",
@@ -1155,7 +1355,15 @@
         "Member of Albany Med Health System",
         "Regional hospital for the southern Adirondacks"
       ],
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/e/e1/Glens_Falls_Hospital.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original",
+          "caption": "Glens Falls Hospital",
+          "credit": "JBC3",
+          "license": "Public domain",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Glens_Falls_Hospital.jpg"
+        }
+      ],
       "wikipedia_title": "Glens Falls Hospital",
       "sources": [
         "https://profiles.health.ny.gov/hospital/bed_type/Pediatric+Beds",
@@ -1163,7 +1371,14 @@
       ],
       "notes": "Bed count from Wikipedia list per R3 scratch. NYS DOH profiles lists pediatric beds at this hospital (bed counts not shown).",
       "confidence": "medium",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "Glens Falls Hospital",
+          "url": "https://en.wikipedia.org/wiki/Glens_Falls_Hospital",
+          "extract": "Glens Falls Hospital is a 410-bed not-for-profit community hospital located in Glens Falls, New York. It serves the communities in Warren, Washington, Hamilton, Essex and northern Saratoga and Rensselaer counties. The hospital operates 28 off-campus health care facilities throughout the region. The hospital is the largest employer in the region with over 2,800 employees. In 2019, the hospital affiliated with Albany Medical Center."
+        }
+      }
     },
     {
       "slug": "saratoga-hospital-saratoga-springs",
@@ -1183,7 +1398,7 @@
       "careers_url": "https://albanymed.wd5.myworkdayjobs.com/Albany_Med_System_Career_Site",
       "careers_platform": "workday",
       "careers_search_url": "https://albanymed.wd5.myworkdayjobs.com/Albany_Med_System_Career_Site?q=nurse%20practitioner",
-      "careers_notes": "Albany Med Health System Workday board, shared by Albany Med, Glens Falls, Saratoga and Columbia Memorial; filter by location.",
+      "careers_notes": "Albany Med Health System Workday board, shared by Albany Med, Glens Falls, Saratoga and Columbia Memorial; filter by location. [enrich 2026-10-20] careers_url -> HTTP 200 at https://albanymed.wd5.myworkdayjobs.com/Albany_Med_System_Career_Site; ATS link seen: https://albanymed.wd5.myworkdayjobs.com/Albany_Med_System_Career_Site; search_url -> HTTP 200, mentions NP: False, job links: 0",
       "ats_config": {
         "host": "albanymed.wd5.myworkdayjobs.com",
         "tenant": "albanymed",
@@ -1219,7 +1434,8 @@
       ],
       "notes": "Magnet status from model knowledge. Inclusion rests on the NYS DOH pediatric bed list; the unit may be small or a few licensed beds. Verify it is staffed. NYS DOH profiles lists pediatric beds at this hospital (bed counts not shown).",
       "confidence": "low",
-      "active": true
+      "active": true,
+      "_enrich": {}
     },
     {
       "slug": "uvm-cvph-plattsburgh",
@@ -1239,8 +1455,10 @@
       "careers_url": "https://www.uvmhealth.org/careers",
       "careers_platform": "unknown",
       "careers_search_url": null,
-      "careers_notes": "UVM Health Network careers covers CVPH and Alice Hyde; URL is a best guess; verify.",
-      "ats_config": {},
+      "careers_notes": "UVM Health Network careers covers CVPH and Alice Hyde; URL is a best guess; verify. [enrich 2026-10-20] careers_url -> HTTP 202 at https://www.uvmhealth.org/careers",
+      "ats_config": {
+        "host": "www.uvmhealth.org"
+      },
       "nearest_airport": "PBG Plattsburgh International (15 min)",
       "beds": null,
       "peds_beds": null,
@@ -1271,7 +1489,14 @@
       ],
       "notes": "Inclusion rests on the NYS DOH pediatric bed list; the unit may be small or a few licensed beds. Verify it is staffed. NYS DOH profiles lists pediatric beds at this hospital (bed counts not shown).",
       "confidence": "low",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "Champlain Valley Physicians Hospital",
+          "url": "https://en.wikipedia.org/wiki/Champlain_Valley_Physicians_Hospital",
+          "extract": "Champlain Valley Physicians Hospital (CVPH) is a hospital located in Plattsburgh, New York.\nChamplain Valley Physicians' Hospital was created in 1972 by the merger of the private Physician's Hospital with Champlain Valley Hospital, a charitable hospital operated by the Grey Nuns.  As UVM Health Network - Champlain Valley Physicians Hospital, it is currently a not-for-profit facility incorporating a variety of inpatient, outpatient, and community outreach care services, including an oncology center, a nursing home unit, renal dialysis center, adult and child/adolescent mental health wards, and medical and surgical capabilities.  In recent years, the cardiology services provided by Lake Champlain Cardiology Associates have expanded to include coronary interventional care provided by Champlain Valley Cardiology and open-heart surgery, provided by Champlain Valley Cardiothoracic Surgeons.  The hospital also has a variety of diagnostic and rehabilitation services.\nIn 2012, CVPH Medical Center joined Fletcher Allen Partners, now the University of Vermont Health Network."
+        }
+      }
     },
     {
       "slug": "olean-general-hospital-olean",
@@ -1291,7 +1516,7 @@
       "careers_url": "https://www.kaleidahealth.org/careers/",
       "careers_platform": "unknown",
       "careers_search_url": null,
-      "careers_notes": "Kaleida Health careers; ATS not confirmed (requisition IDs look BrassRing style per R3b scratch).",
+      "careers_notes": "Kaleida Health careers; ATS not confirmed (requisition IDs look BrassRing style per R3b scratch). [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.kaleidahealth.org/careers/",
       "ats_config": {
         "host": "www.kaleidahealth.org"
       },
@@ -1324,7 +1549,8 @@
       ],
       "notes": "Kaleida network membership from the R3 scratch. Inclusion rests on the NYS DOH pediatric bed list; the unit may be small or a few licensed beds. Verify it is staffed. NYS DOH profiles lists pediatric beds at this hospital (bed counts not shown).",
       "confidence": "low",
-      "active": true
+      "active": true,
+      "_enrich": {}
     },
     {
       "slug": "nathan-littauer-hospital-gloversville",
@@ -1344,8 +1570,10 @@
       "careers_url": "https://www.nlh.org/careers/",
       "careers_platform": "unknown",
       "careers_search_url": null,
-      "careers_notes": "careers URL is a best guess from the hospital domain; verify in enrichment.",
-      "ats_config": {},
+      "careers_notes": "careers URL is a best guess from the hospital domain; verify in enrichment. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.nlh.org/careers",
+      "ats_config": {
+        "host": "www.nlh.org"
+      },
       "nearest_airport": "ALB Albany International (1 hr)",
       "beds": null,
       "peds_beds": null,
@@ -1367,15 +1595,30 @@
         "Independent community hospital",
         "Serves Fulton County"
       ],
-      "photos": [],
-      "wikipedia_title": null,
+      "photos": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/d/db/New_York_Counties.svg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original",
+          "caption": "List of hospitals in New York (state)",
+          "credit": "André Koehne",
+          "license": "CC BY-SA 3.0",
+          "source_page": "https://commons.wikimedia.org/wiki/File:New_York_Counties.svg"
+        }
+      ],
+      "wikipedia_title": "List of hospitals in New York (state)",
       "sources": [
         "https://profiles.health.ny.gov/hospital/bed_type/Pediatric+Beds",
         "model knowledge (to verify); enrichment pending"
       ],
       "notes": "Inclusion rests on the NYS DOH pediatric bed list; the unit may be small or a few licensed beds. Verify it is staffed. NYS DOH profiles lists pediatric beds at this hospital (bed counts not shown).",
       "confidence": "low",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "List of hospitals in New York (state)",
+          "url": "https://en.wikipedia.org/wiki/List_of_hospitals_in_New_York_(state)",
+          "extract": "This is a list of hospitals in the U.S. state of New York. The hospitals are  listed by the most recent hospital name with the name of the health system, county, city, date the hospital first opened, and most recent number of beds, when known. For defunct hospitals, the closing date is included, when known. Military hospitals and psychiatric hospitals are listed separately.  More detailed descriptions are in the lists of hospitals in New York City's five boroughs and separate articles for many notable hospitals.\nThe American Hospital Directory lists 261 active hospitals in New York State in 2022. 210 of these hospitals have staffed beds, with a total of 64,515 beds. The largest number of hospitals are in New York City.  The January 1, 2022 listing by the New York Health Department of general hospitals covered by the New York Healthcare Reform Act show 165 hospitals 63 closed hospitals, and 51 hospitals that had been merged with other hospitals.\nThe oldest hospital in New York State and also oldest hospital in the United States is the Bellevue Hospital in Manhattan, established in 1736. The hospital with the largest number of staffed beds is the NewYork-Presbyterian Hospital in Manhattan, with 2,678 beds in its hospital complex."
+        }
+      }
     },
     {
       "slug": "rome-health-rome",
@@ -1395,8 +1638,10 @@
       "careers_url": "https://romehealth.org/careers/",
       "careers_platform": "unknown",
       "careers_search_url": null,
-      "careers_notes": "careers URL is a best guess from the hospital domain; verify in enrichment.",
-      "ats_config": {},
+      "careers_notes": "careers URL is a best guess from the hospital domain; verify in enrichment. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.romehealth.org/hospital-jobs-near-rome-ny/",
+      "ats_config": {
+        "host": "www.romehealth.org"
+      },
       "nearest_airport": "SYR Syracuse Hancock International (50 min)",
       "beds": null,
       "peds_beds": null,
@@ -1418,15 +1663,30 @@
         "Independent community hospital",
         "Formerly Rome Memorial Hospital"
       ],
-      "photos": [],
-      "wikipedia_title": null,
+      "photos": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/6/62/Wynn_Hospital%2C_Utica%2C_New_York.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original",
+          "caption": "Mohawk Valley Health System",
+          "credit": "Kenneth C. Zirkel",
+          "license": "CC BY-SA 4.0",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Wynn_Hospital,_Utica,_New_York.jpg"
+        }
+      ],
+      "wikipedia_title": "Mohawk Valley Health System",
       "sources": [
         "https://profiles.health.ny.gov/hospital/bed_type/Pediatric+Beds",
         "model knowledge (to verify); enrichment pending"
       ],
       "notes": "Inclusion rests on the NYS DOH pediatric bed list; the unit may be small or a few licensed beds. Verify it is staffed. NYS DOH profiles lists pediatric beds at this hospital (bed counts not shown).",
       "confidence": "low",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "Mohawk Valley Health System",
+          "url": "https://en.wikipedia.org/wiki/Mohawk_Valley_Health_System",
+          "extract": "Mohawk Valley Health System (MVHS) is a non-profit health system providing services to residents of the Mohawk Valley in Central New York. It was created in 2014 as an affiliation of Faxton St. Luke's Healthcare and St. Elizabeth Medical Center. In October 2023, MVHS moved all acute care beds and emergency services to a new hospital, the Wynn Hospital, in downtown Utica.\nMVHS is a designated Children's Miracle Network Hospital."
+        }
+      }
     },
     {
       "slug": "oswego-hospital-oswego",
@@ -1446,8 +1706,10 @@
       "careers_url": "https://www.oswegohealth.org/careers/",
       "careers_platform": "unknown",
       "careers_search_url": null,
-      "careers_notes": "careers URL is a best guess from the hospital domain; verify in enrichment.",
-      "ats_config": {},
+      "careers_notes": "careers URL is a best guess from the hospital domain; verify in enrichment. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.oswegohealth.org/careers/",
+      "ats_config": {
+        "host": "www.oswegohealth.org"
+      },
       "nearest_airport": "SYR Syracuse Hancock International (40 min)",
       "beds": 164,
       "peds_beds": null,
@@ -1469,15 +1731,30 @@
         "Main hospital for Oswego County",
         "Lake Ontario shoreline location"
       ],
-      "photos": [],
-      "wikipedia_title": null,
+      "photos": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/d/db/New_York_Counties.svg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original",
+          "caption": "List of hospitals in New York (state)",
+          "credit": "André Koehne",
+          "license": "CC BY-SA 3.0",
+          "source_page": "https://commons.wikimedia.org/wiki/File:New_York_Counties.svg"
+        }
+      ],
+      "wikipedia_title": "List of hospitals in New York (state)",
       "sources": [
         "https://profiles.health.ny.gov/hospital/bed_type/Pediatric+Beds",
         "model knowledge (to verify); enrichment pending"
       ],
       "notes": "Inclusion rests on the NYS DOH pediatric bed list; the unit may be small or a few licensed beds. Verify it is staffed. NYS DOH profiles lists pediatric beds at this hospital (bed counts not shown).",
       "confidence": "low",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "List of hospitals in New York (state)",
+          "url": "https://en.wikipedia.org/wiki/List_of_hospitals_in_New_York_(state)",
+          "extract": "This is a list of hospitals in the U.S. state of New York. The hospitals are  listed by the most recent hospital name with the name of the health system, county, city, date the hospital first opened, and most recent number of beds, when known. For defunct hospitals, the closing date is included, when known. Military hospitals and psychiatric hospitals are listed separately.  More detailed descriptions are in the lists of hospitals in New York City's five boroughs and separate articles for many notable hospitals.\nThe American Hospital Directory lists 261 active hospitals in New York State in 2022. 210 of these hospitals have staffed beds, with a total of 64,515 beds. The largest number of hospitals are in New York City.  The January 1, 2022 listing by the New York Health Department of general hospitals covered by the New York Healthcare Reform Act show 165 hospitals 63 closed hospitals, and 51 hospitals that had been merged with other hospitals.\nThe oldest hospital in New York State and also oldest hospital in the United States is the Bellevue Hospital in Manhattan, established in 1736. The hospital with the largest number of staffed beds is the NewYork-Presbyterian Hospital in Manhattan, with 2,678 beds in its hospital complex."
+        }
+      }
     },
     {
       "slug": "auburn-community-hospital-auburn",
@@ -1497,8 +1774,10 @@
       "careers_url": "https://www.auburnhospital.org/careers/",
       "careers_platform": "unknown",
       "careers_search_url": null,
-      "careers_notes": "careers URL is a best guess from the hospital domain; verify in enrichment.",
-      "ats_config": {},
+      "careers_notes": "careers URL is a best guess from the hospital domain; verify in enrichment. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.auburnhospital.org/careers/",
+      "ats_config": {
+        "host": "www.auburnhospital.org"
+      },
       "nearest_airport": "SYR Syracuse Hancock International (35 min)",
       "beds": 99,
       "peds_beds": null,
@@ -1528,7 +1807,8 @@
       ],
       "notes": "Inclusion rests on the NYS DOH pediatric bed list; the unit may be small or a few licensed beds. Verify it is staffed. NYS DOH profiles lists pediatric beds at this hospital (bed counts not shown).",
       "confidence": "low",
-      "active": true
+      "active": true,
+      "_enrich": {}
     },
     {
       "slug": "adirondack-medical-center-saranac-lake",
@@ -1548,8 +1828,10 @@
       "careers_url": "https://www.adirondackhealth.org/careers/",
       "careers_platform": "unknown",
       "careers_search_url": null,
-      "careers_notes": "careers URL is a best guess from the hospital domain; verify in enrichment.",
-      "ats_config": {},
+      "careers_notes": "careers URL is a best guess from the hospital domain; verify in enrichment. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.adirondackhealth.org/careers",
+      "ats_config": {
+        "host": "www.adirondackhealth.org"
+      },
       "nearest_airport": "SLK Adirondack Regional (ALB for most flights) (15 min)",
       "beds": null,
       "peds_beds": null,
@@ -1572,14 +1854,21 @@
         "Rural Adirondack setting"
       ],
       "photos": [],
-      "wikipedia_title": null,
+      "wikipedia_title": "Adirondack Medical Center",
       "sources": [
         "https://profiles.health.ny.gov/hospital/bed_type/Pediatric+Beds",
         "model knowledge (to verify); enrichment pending"
       ],
       "notes": "Inclusion rests on the NYS DOH pediatric bed list; the unit may be small or a few licensed beds. Verify it is staffed. NYS DOH profiles lists pediatric beds at this hospital (bed counts not shown).",
       "confidence": "low",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "Adirondack Medical Center",
+          "url": "https://en.wikipedia.org/wiki/Adirondack_Medical_Center",
+          "extract": "Adirondack Medical Center is a multi-site medical system with facilities in Lake Placid, New York, Saranac Lake, New York, and other locations.  The original Lake Placid facility was replaced by a new one; and the site of the old facility was demolished to build a sports complex for the 2023 Winter World University Games."
+        }
+      }
     },
     {
       "slug": "carthage-area-hospital-carthage",
@@ -1599,7 +1888,7 @@
       "careers_url": "https://www.carthagehospital.com/careers/",
       "careers_platform": "unknown",
       "careers_search_url": null,
-      "careers_notes": "careers URL is a best guess from the hospital domain; verify in enrichment.",
+      "careers_notes": "careers URL is a best guess from the hospital domain; verify in enrichment. [enrich 2026-10-20] careers_url -> HTTP None at None",
       "ats_config": {},
       "nearest_airport": "ART Watertown International (SYR for most flights)",
       "beds": null,
@@ -1622,14 +1911,21 @@
         "Small North Country hospital near Fort Drum"
       ],
       "photos": [],
-      "wikipedia_title": null,
+      "wikipedia_title": "Carthage Area Hospital",
       "sources": [
         "https://profiles.health.ny.gov/hospital/bed_type/Pediatric+Beds",
         "model knowledge (to verify); enrichment pending"
       ],
       "notes": "Critical access status assumed from size; verify. Inclusion rests on the NYS DOH pediatric bed list; the unit may be small or a few licensed beds. Verify it is staffed. NYS DOH profiles lists pediatric beds at this hospital (bed counts not shown).",
       "confidence": "low",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "Carthage Area Hospital",
+          "url": "https://en.wikipedia.org/wiki/Carthage_Area_Hospital",
+          "extract": "Carthage Area Hospital is named for its location, Carthage, New York, \"a medically underserved area.\""
+        }
+      }
     },
     {
       "slug": "chenango-memorial-hospital-norwich",
@@ -1647,9 +1943,9 @@
       "hotspot": false,
       "website": "https://www.nyuhs.org/",
       "careers_url": "https://www.nyuhs.org/careers",
-      "careers_platform": "unknown",
+      "careers_platform": "workday",
       "careers_search_url": null,
-      "careers_notes": "UHS system careers page; platform not confirmed.",
+      "careers_notes": "UHS system careers page; platform not confirmed. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.nyuhs.org/careers; ATS link seen: https://nyuhs.wd12.myworkdayjobs.com/nyuhscareers1",
       "ats_config": {
         "host": "www.nyuhs.org"
       },
@@ -1674,15 +1970,30 @@
         "Part of United Health Services",
         "Rural Chenango County"
       ],
-      "photos": [],
-      "wikipedia_title": null,
+      "photos": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/en/7/78/United_Health_Services_logo.svg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original",
+          "caption": "United Health Services",
+          "credit": "United Health Services",
+          "license": "PD",
+          "source_page": "https://en.wikipedia.org/wiki/File:United_Health_Services_logo.svg"
+        }
+      ],
+      "wikipedia_title": "United Health Services",
       "sources": [
         "https://profiles.health.ny.gov/hospital/bed_type/Pediatric+Beds",
         "model knowledge (to verify); enrichment pending"
       ],
       "notes": "Critical access status assumed from size; verify. Inclusion rests on the NYS DOH pediatric bed list; the unit may be small or a few licensed beds. Verify it is staffed. NYS DOH profiles lists pediatric beds at this hospital (bed counts not shown).",
       "confidence": "low",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "United Health Services",
+          "url": "https://en.wikipedia.org/wiki/United_Health_Services",
+          "extract": "United Health Services (UHS) (United Health Services Hospitals, Inc.) is the largest and most comprehensive provider of healthcare services in upstate New York's Southern Tier.\nA locally owned, not-for-profit system, it is governed by a volunteer board of directors composed of residents from around the region. Founded in Greater Binghamton in 1981, UHS was formed through the consolidation of three highly respected community hospitals.  Over the years it has grown to encompass four hospitals, long-term care and home care services, walk-in centers and affiliated physician practices in Broome and surrounding counties.\nThe organization operates primary care centers throughout Broome, Chenango, Delaware and Tioga, Otsego, and Sullivan counties, plus school-based health centers that offer primary and preventive care to students in the region.\nUHS cares for two-thirds of the population of the Southern Tier region and produces $1.3 billion a year in total non-profit economic impact.  With a 6,300-member work force across 60 locations, UHS is one of the region's largest employers.\nUHS is the regional referral center for a number of life-saving and life-enhancing medical, surgical and rehabilitative specialties, including:  trauma and emergency care, heart and vascular surgery, cardiac care, neurosurgery and neurosciences, cancer care, orthopedics, behavioral health services, high-risk obstetrics, neonatal intensive care, and physical rehabilitation.\nA teaching hospital, UHS Wilson Medical Center is home to a long-standing medical residency program, training tomorrow's practicing doctors.  The program is an affiliate of the Clinical Campus at Binghamton of SUNY Upstate Medical University in Syracuse and the New York Institute of Technology College of Osteopathic Medicine."
+        }
+      }
     },
     {
       "slug": "guthrie-cortland-medical-center-cortland",
@@ -1700,10 +2011,12 @@
       "hotspot": false,
       "website": "https://www.guthrie.org/",
       "careers_url": "https://www.guthrie.org/careers",
-      "careers_platform": "unknown",
+      "careers_platform": "oracle_cloud",
       "careers_search_url": null,
-      "careers_notes": "careers URL is a best guess from the hospital domain; verify in enrichment.",
-      "ats_config": {},
+      "careers_notes": "careers URL is a best guess from the hospital domain; verify in enrichment. [enrich 2026-10-20] careers_url -> HTTP 200 at https://careers.guthrie.org/; ATS link seen: https://elfw.fa.us2.oraclecloud.com",
+      "ats_config": {
+        "host": "careers.guthrie.org"
+      },
       "nearest_airport": "SYR Syracuse Hancock International (40 min)",
       "beds": 44,
       "peds_beds": null,
@@ -1726,14 +2039,21 @@
         "Serves Cortland County"
       ],
       "photos": [],
-      "wikipedia_title": null,
+      "wikipedia_title": "Guthrie Cortland Medical Center",
       "sources": [
         "https://profiles.health.ny.gov/hospital/bed_type/Pediatric+Beds",
         "model knowledge (to verify); enrichment pending"
       ],
       "notes": "Inclusion rests on the NYS DOH pediatric bed list; the unit may be small or a few licensed beds. Verify it is staffed. NYS DOH profiles lists pediatric beds at this hospital (bed counts not shown).",
       "confidence": "low",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "Guthrie Cortland Medical Center",
+          "url": "https://en.wikipedia.org/wiki/Guthrie_Cortland_Medical_Center",
+          "extract": "The Guthrie Cortland Medical Center, formerly known as Cortland Regional Medical Center, is a large rural hospital in Cortland, New York founded in 1891. Cortland Regional Medical Center was ranked the top hospital in New York State by Centers for Medicare and Medicaid in 2015 and 2017. In 2016, it was received the Blue Distinction Center+ for Maternity Care award."
+        }
+      }
     },
     {
       "slug": "medina-memorial-hospital-medina",
@@ -1753,8 +2073,10 @@
       "careers_url": "https://orleanscommunityhealth.org/careers/",
       "careers_platform": "unknown",
       "careers_search_url": null,
-      "careers_notes": "careers URL is a best guess from the hospital domain; verify in enrichment.",
-      "ats_config": {},
+      "careers_notes": "careers URL is a best guess from the hospital domain; verify in enrichment. [enrich 2026-10-20] careers_url -> HTTP 200 at https://orleanscommunityhealth.org/careers/",
+      "ats_config": {
+        "host": "orleanscommunityhealth.org"
+      },
       "nearest_airport": "BUF Buffalo Niagara International (50 min)",
       "beds": null,
       "peds_beds": null,
@@ -1785,7 +2107,8 @@
       ],
       "notes": "Inclusion rests on the NYS DOH pediatric bed list; the unit may be small or a few licensed beds. Verify it is staffed. NYS DOH profiles lists pediatric beds at this hospital (bed counts not shown).",
       "confidence": "low",
-      "active": true
+      "active": true,
+      "_enrich": {}
     },
     {
       "slug": "jones-memorial-hospital-wellsville",
@@ -1805,7 +2128,7 @@
       "careers_url": "https://rochester.wd5.myworkdayjobs.com/UR_Nursing",
       "careers_platform": "workday",
       "careers_search_url": "https://rochester.wd5.myworkdayjobs.com/UR_Nursing?q=nurse%20practitioner",
-      "careers_notes": "URMC Workday; UR_Nursing is the nursing, RT and APP board; UR_Staff holds other staff roles.",
+      "careers_notes": "URMC Workday; UR_Nursing is the nursing, RT and APP board; UR_Staff holds other staff roles. [enrich 2026-10-20] careers_url -> HTTP 200 at https://rochester.wd5.myworkdayjobs.com/UR_Nursing; ATS link seen: https://rochester.wd5.myworkdayjobs.com/UR_Nursing; search_url -> HTTP 200, mentions NP: False, job links: 0",
       "ats_config": {
         "host": "rochester.wd5.myworkdayjobs.com",
         "tenant": "rochester",
@@ -1835,15 +2158,30 @@
         "UR Medicine affiliate",
         "Rural Allegany County"
       ],
-      "photos": [],
-      "wikipedia_title": null,
+      "photos": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/d/db/New_York_Counties.svg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original",
+          "caption": "List of hospitals in New York (state)",
+          "credit": "André Koehne",
+          "license": "CC BY-SA 3.0",
+          "source_page": "https://commons.wikimedia.org/wiki/File:New_York_Counties.svg"
+        }
+      ],
+      "wikipedia_title": "List of hospitals in New York (state)",
       "sources": [
         "https://profiles.health.ny.gov/hospital/bed_type/Pediatric+Beds",
         "model knowledge (to verify); enrichment pending"
       ],
       "notes": "Critical access status assumed from size; verify. Inclusion rests on the NYS DOH pediatric bed list; the unit may be small or a few licensed beds. Verify it is staffed. NYS DOH profiles lists pediatric beds at this hospital (bed counts not shown).",
       "confidence": "low",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "List of hospitals in New York (state)",
+          "url": "https://en.wikipedia.org/wiki/List_of_hospitals_in_New_York_(state)",
+          "extract": "This is a list of hospitals in the U.S. state of New York. The hospitals are  listed by the most recent hospital name with the name of the health system, county, city, date the hospital first opened, and most recent number of beds, when known. For defunct hospitals, the closing date is included, when known. Military hospitals and psychiatric hospitals are listed separately.  More detailed descriptions are in the lists of hospitals in New York City's five boroughs and separate articles for many notable hospitals.\nThe American Hospital Directory lists 261 active hospitals in New York State in 2022. 210 of these hospitals have staffed beds, with a total of 64,515 beds. The largest number of hospitals are in New York City.  The January 1, 2022 listing by the New York Health Department of general hospitals covered by the New York Healthcare Reform Act show 165 hospitals 63 closed hospitals, and 51 hospitals that had been merged with other hospitals.\nThe oldest hospital in New York State and also oldest hospital in the United States is the Bellevue Hospital in Manhattan, established in 1736. The hospital with the largest number of staffed beds is the NewYork-Presbyterian Hospital in Manhattan, with 2,678 beds in its hospital complex."
+        }
+      }
     },
     {
       "slug": "niagara-falls-memorial-medical-center-niagara-falls",
@@ -1863,8 +2201,10 @@
       "careers_url": "https://www.nfmmc.org/careers/",
       "careers_platform": "unknown",
       "careers_search_url": null,
-      "careers_notes": "careers URL is a best guess from the hospital domain; verify in enrichment.",
-      "ats_config": {},
+      "careers_notes": "careers URL is a best guess from the hospital domain; verify in enrichment. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.nfmmc.org/careers",
+      "ats_config": {
+        "host": "www.nfmmc.org"
+      },
       "nearest_airport": "BUF Buffalo Niagara International (30 min)",
       "beds": 133,
       "peds_beds": null,
@@ -1887,7 +2227,7 @@
         "Unionized workforce (1199SEIU)"
       ],
       "photos": [],
-      "wikipedia_title": null,
+      "wikipedia_title": "Niagara Falls Memorial Medical Center",
       "sources": [
         "https://profiles.health.ny.gov/hospital/bed_type/Pediatric+Beds",
         "https://www.yahoo.com/news/articles/1199seiu-niagara-falls-memorial-medical-211732077.html",
@@ -1895,7 +2235,14 @@
       ],
       "notes": "Inclusion rests on the NYS DOH pediatric bed list; the unit may be small or a few licensed beds. Verify it is staffed. NYS DOH profiles lists pediatric beds at this hospital (bed counts not shown).",
       "confidence": "low",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "Niagara Falls Memorial Medical Center",
+          "url": "https://en.wikipedia.org/wiki/Niagara_Falls_Memorial_Medical_Center",
+          "extract": "Niagara Falls Memorial Medical Center is a hospital in downtown Niagara Falls in the state of New York, founded in 1895, that has been serving the Greater Niagara region for over 100 years."
+        }
+      }
     },
     {
       "slug": "oneida-health-hospital-oneida",
@@ -1913,10 +2260,12 @@
       "hotspot": false,
       "website": "https://www.oneidahealth.org/",
       "careers_url": "https://www.oneidahealth.org/careers/",
-      "careers_platform": "unknown",
+      "careers_platform": "paycom",
       "careers_search_url": null,
-      "careers_notes": "careers URL is a best guess from the hospital domain; verify in enrichment.",
-      "ats_config": {},
+      "careers_notes": "careers URL is a best guess from the hospital domain; verify in enrichment. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.oneidahealth.org/careers/",
+      "ats_config": {
+        "host": "www.oneidahealth.org"
+      },
       "nearest_airport": "SYR Syracuse Hancock International (35 min)",
       "beds": null,
       "peds_beds": null,
@@ -1938,15 +2287,30 @@
         "Independent community hospital",
         "Serves Madison County"
       ],
-      "photos": [],
-      "wikipedia_title": null,
+      "photos": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/d/db/New_York_Counties.svg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original",
+          "caption": "List of hospitals in New York (state)",
+          "credit": "André Koehne",
+          "license": "CC BY-SA 3.0",
+          "source_page": "https://commons.wikimedia.org/wiki/File:New_York_Counties.svg"
+        }
+      ],
+      "wikipedia_title": "List of hospitals in New York (state)",
       "sources": [
         "https://profiles.health.ny.gov/hospital/bed_type/Pediatric+Beds",
         "model knowledge (to verify); enrichment pending"
       ],
       "notes": "Inclusion rests on the NYS DOH pediatric bed list; the unit may be small or a few licensed beds. Verify it is staffed. NYS DOH profiles lists pediatric beds at this hospital (bed counts not shown).",
       "confidence": "low",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "List of hospitals in New York (state)",
+          "url": "https://en.wikipedia.org/wiki/List_of_hospitals_in_New_York_(state)",
+          "extract": "This is a list of hospitals in the U.S. state of New York. The hospitals are  listed by the most recent hospital name with the name of the health system, county, city, date the hospital first opened, and most recent number of beds, when known. For defunct hospitals, the closing date is included, when known. Military hospitals and psychiatric hospitals are listed separately.  More detailed descriptions are in the lists of hospitals in New York City's five boroughs and separate articles for many notable hospitals.\nThe American Hospital Directory lists 261 active hospitals in New York State in 2022. 210 of these hospitals have staffed beds, with a total of 64,515 beds. The largest number of hospitals are in New York City.  The January 1, 2022 listing by the New York Health Department of general hospitals covered by the New York Healthcare Reform Act show 165 hospitals 63 closed hospitals, and 51 hospitals that had been merged with other hospitals.\nThe oldest hospital in New York State and also oldest hospital in the United States is the Bellevue Hospital in Manhattan, established in 1736. The hospital with the largest number of staffed beds is the NewYork-Presbyterian Hospital in Manhattan, with 2,678 beds in its hospital complex."
+        }
+      }
     },
     {
       "slug": "ummc-batavia",
@@ -1966,7 +2330,7 @@
       "careers_url": "https://careers.rochesterregional.org/",
       "careers_platform": "unknown",
       "careers_search_url": null,
-      "careers_notes": "Rochester Regional careers site (req_ style job URLs seen by R3b); platform not confirmed.",
+      "careers_notes": "Rochester Regional careers site (req_ style job URLs seen by R3b); platform not confirmed. [enrich 2026-10-20] careers_url -> HTTP 200 at https://careers.rochesterregional.org/; ATS link seen: https://rrhs.wd5.myworkdayjobs.com/RRH/login",
       "ats_config": {
         "host": "careers.rochesterregional.org"
       },
@@ -1991,15 +2355,30 @@
         "Part of Rochester Regional Health",
         "Serves Genesee County"
       ],
-      "photos": [],
-      "wikipedia_title": null,
+      "photos": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/6/6d/RRH_Logo_UMMC_wiki.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original",
+          "caption": "United Memorial Medical Center",
+          "credit": "Rochester Regional Health",
+          "license": "CC BY-SA 4.0",
+          "source_page": "https://commons.wikimedia.org/wiki/File:RRH_Logo_UMMC_wiki.png"
+        }
+      ],
+      "wikipedia_title": "United Memorial Medical Center",
       "sources": [
         "https://profiles.health.ny.gov/hospital/bed_type/Pediatric+Beds",
         "model knowledge (to verify); enrichment pending"
       ],
       "notes": "Inclusion rests on the NYS DOH pediatric bed list; the unit may be small or a few licensed beds. Verify it is staffed. NYS DOH profiles lists pediatric beds at this hospital (bed counts not shown).",
       "confidence": "low",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "United Memorial Medical Center",
+          "url": "https://en.wikipedia.org/wiki/United_Memorial_Medical_Center",
+          "extract": "United Memorial Medical Center (UMMC) is an affiliate hospital, a part of Rochester Regional Health. Located in Batavia, New York, United Memorial Medical Hospital is a 131-bed community hospital serving the residents of Genesee County and surrounding rural communities. \nUnited Memorial is the sole Maternity services provider for Genesee and Orleans Counties, it manages the New York State Cancer Services Partnership Grant for Orleans and Genesee Counties and provide Orthopaedic services in Genesee, Orleans and Wyoming Counties. United Memorial is a NICHE hospital and a New York State-designated Stroke Center.\nUnited Memorial Medical Center is the largest private employer in Genesee County, employing 785 employees."
+        }
+      }
     },
     {
       "slug": "upmc-chautauqua-jamestown",
@@ -2019,8 +2398,10 @@
       "careers_url": "https://careers.upmc.com/",
       "careers_platform": "unknown",
       "careers_search_url": null,
-      "careers_notes": "UPMC system careers board; filter for Jamestown. URL from model knowledge; verify.",
-      "ats_config": {},
+      "careers_notes": "UPMC system careers board; filter for Jamestown. URL from model knowledge; verify. [enrich 2026-10-20] careers_url -> HTTP 200 at https://careers.upmc.com/",
+      "ats_config": {
+        "host": "careers.upmc.com"
+      },
       "nearest_airport": "JHW Chautauqua County Jamestown (BUF for most flights)",
       "beds": null,
       "peds_beds": null,
@@ -2050,7 +2431,8 @@
       ],
       "notes": "Inclusion rests on the NYS DOH pediatric bed list; the unit may be small or a few licensed beds. Verify it is staffed. NYS DOH profiles lists pediatric beds at this hospital (bed counts not shown).",
       "confidence": "low",
-      "active": true
+      "active": true,
+      "_enrich": {}
     },
     {
       "slug": "roswell-park-buffalo",
@@ -2068,10 +2450,12 @@
       "hotspot": false,
       "website": "https://www.roswellpark.org/",
       "careers_url": "https://www.roswellpark.org/careers",
-      "careers_platform": "unknown",
+      "careers_platform": "workday",
       "careers_search_url": null,
-      "careers_notes": "Roswell Park is a NYS public benefit corporation; careers URL is a best guess; verify.",
-      "ats_config": {},
+      "careers_notes": "Roswell Park is a NYS public benefit corporation; careers URL is a best guess; verify. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.roswellpark.org/careers; ATS link seen: https://roswellpark.wd5.myworkdayjobs.com/ExternalCareers",
+      "ats_config": {
+        "host": "www.roswellpark.org"
+      },
       "nearest_airport": "BUF Buffalo Niagara International (15 min)",
       "beds": null,
       "peds_beds": null,
@@ -2095,7 +2479,15 @@
         "Pediatric hematology and oncology program",
         "Founded in 1898 (reportedly)"
       ],
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/5/50/Roswell_Park_Cancer_Institute%2C_Buffalo%2C_New_York_-_20191009.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original",
+          "caption": "Roswell Park Comprehensive Cancer Center",
+          "credit": "Andre Carrotflower",
+          "license": "CC BY-SA 4.0",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Roswell_Park_Cancer_Institute,_Buffalo,_New_York_-_20191009.jpg"
+        }
+      ],
       "wikipedia_title": "Roswell Park Comprehensive Cancer Center",
       "sources": [
         "https://profiles.health.ny.gov/hospital/bed_type/Pediatric+Beds",
@@ -2103,7 +2495,14 @@
       ],
       "notes": "Specialty hospital included under inclusion rule 5. Partnership details with Golisano Children's of Buffalo not confirmed. NYS DOH profiles lists pediatric beds at this hospital (bed counts not shown).",
       "confidence": "low",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "Roswell Park Comprehensive Cancer Center",
+          "url": "https://en.wikipedia.org/wiki/Roswell_Park_Comprehensive_Cancer_Center",
+          "extract": "Roswell Park Comprehensive Cancer Center is a cancer research and treatment center located in Buffalo, New York. Founded by surgeon Roswell Park in 1898, the center was the first in the United States to specifically focus on cancer research. The center is usually called Roswell Park in short. The center, which conducts clinical research on cancer as well as the development new drugs, provides advanced treatment for all forms of adult and pediatric cancer, and serves as a member of the National Comprehensive Cancer Network. Until 2025, Roswell Park Comprehensive Cancer Center was the only Western New York facility to hold the National Cancer Institute designation of \"comprehensive cancer center\".\nThe Roswell Park campus, spread out in 15 separate buildings of approximately two million square feet, occupies 28 acres (11 ha) on the 100-acre (40 ha) Buffalo Niagara Medical Campus in downtown Buffalo, and includes 1,500,000 square feet (140,000 m2) of space equally distributed between clinical programs and research/education functions. A separate hospital building, completed in 1998, houses a diagnostic and treatment center. The campus also includes a medical research complex as well as research and education focused spaces."
+        }
+      }
     }
   ]
 }
