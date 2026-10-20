@@ -24,7 +24,7 @@ concurrency:
   cancel-in-progress: true
 jobs:
   deploy:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
@@ -53,12 +53,21 @@ jobs:
           fi
           touch _site/.nojekyll
           ls -la _site _site/data
-      - uses: actions/configure-pages@v5
+      - id: configure
+        uses: actions/configure-pages@v5
+        continue-on-error: true
         with:
           enablement: true
           token: ${{ secrets.PAGES_TOKEN || github.token }}
+      - name: Pages not enabled
+        if: steps.configure.outcome != 'success'
+        run: |
+          MSG="GitHub Pages is not enabled for this repo and GITHUB_TOKEN cannot enable it. Enable it once: Settings > Pages > Build and deployment > Source: GitHub Actions (or add a PAGES_TOKEN secret with Pages+Administration write). The site artifact was built but not deployed."
+          echo "::warning::$MSG"; echo "$MSG" >> "$GITHUB_STEP_SUMMARY"
       - uses: actions/upload-pages-artifact@v3
+        if: steps.configure.outcome == 'success'
         with:
           path: _site
       - id: deployment
+        if: steps.configure.outcome == 'success'
         uses: actions/deploy-pages@v4

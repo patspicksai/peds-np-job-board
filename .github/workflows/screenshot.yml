@@ -1,17 +1,19 @@
 name: screenshot
-# Open the published site at 1440x900 and 390x844, full-page screenshots before and after clicking the
-# first job card; commit PNGs to ci-logs under logs/screenshots/<timestamp>/.
+# Full-page screenshots of a URL at 1440x900 (desktop) and 390x844 (phone), before and after clicking the first
+# job card, committed to the ci-logs branch under logs/screenshots/<timestamp>/ (plus report.txt with console errors).
+# url = "local" serves this checkout's site/ (with data/hospitals.json and data/jobs.json copied into site/data/,
+# exactly as pages.yml assembles it) on http://127.0.0.1:8000/ so the page can be checked before Pages is live.
 on:
   workflow_dispatch:
     inputs:
       url:
-        description: "page to capture"
+        description: "page to capture, or 'local' to serve site/ from this commit"
         default: "https://patspicksai.github.io/peds-np-job-board/"
 permissions:
   contents: write
 jobs:
   shoot:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
@@ -21,12 +23,27 @@ jobs:
       - run: |
           pip install playwright==1.56.0
           python -m playwright install --with-deps chromium
+      - name: Serve site/ locally
+        id: serve
+        run: |
+          URL="${{ inputs.url }}"
+          if [ "$URL" = "local" ]; then
+            mkdir -p "$RUNNER_TEMP/_site/data"
+            [ -d site ] && cp -r site/. "$RUNNER_TEMP/_site/"
+            [ -f data/hospitals.json ] && cp data/hospitals.json "$RUNNER_TEMP/_site/data/hospitals.json"
+            [ -f data/jobs.json ] && cp data/jobs.json "$RUNNER_TEMP/_site/data/jobs.json"
+            (cd "$RUNNER_TEMP/_site" && nohup python -m http.server 8000 --bind 127.0.0.1 > "$RUNNER_TEMP/http.log" 2>&1 &)
+            for i in $(seq 1 20); do curl -fsS -o /dev/null http://127.0.0.1:8000/ && break; sleep 0.5; done
+            URL="http://127.0.0.1:8000/"
+          fi
+          echo "url=$URL" >> "$GITHUB_OUTPUT"
       - name: Capture
         id: cap
         run: |
           TS=$(date -u +%Y%m%dT%H%M%SZ); echo "ts=$TS" >> "$GITHUB_OUTPUT"
           mkdir -p "$RUNNER_TEMP/shots"
-          python scripts/screenshot_site.py "${{ inputs.url }}" "$RUNNER_TEMP/shots" || true
+          python scripts/screenshot_site.py "${{ steps.serve.outputs.url }}" "$RUNNER_TEMP/shots" || true
+          echo "source: ${{ inputs.url }} (${{ github.sha }})" >> "$RUNNER_TEMP/shots/report.txt"
           ls -la "$RUNNER_TEMP/shots"
       - name: Publish to ci-logs
         if: always()
