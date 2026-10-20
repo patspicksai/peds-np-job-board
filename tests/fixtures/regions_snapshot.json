@@ -2,6 +2,220 @@
  "generated_at": null,
  "hospitals": [
   {
+   "slug": "duker-childrens-albany",
+   "name": "Bernard & Millie Duker Children's Hospital at Albany Medical Center",
+   "parent_hospital": "Albany Medical Center",
+   "health_system": "Albany Med Health System",
+   "hospital_type": "childrens_hospital_within_hospital",
+   "city": "Albany",
+   "state": "NY",
+   "region": "Upstate NY",
+   "hotspot": false,
+   "website": "https://www.albanymed.org/albany/childrens-hospital/",
+   "careers_url": "https://albanymed.wd5.myworkdayjobs.com/Albany_Med_System_Career_Site",
+   "careers_platform": "workday",
+   "careers_search_url": "https://albanymed.wd5.myworkdayjobs.com/Albany_Med_System_Career_Site?q=nurse%20practitioner",
+   "careers_notes": "Workday board linked from albanymed.org/careers as Albany Med Health System Careers. Direct fetch blocked this session (permission timeout); Workday is JS-rendered, use the cxs JSON API. Glens Falls Hospital's careers subpage instead links an Oracle Cloud board (hdbg.fa.us2.oraclecloud.com, site CX_1).",
+   "ats_config": {
+    "host": "albanymed.wd5.myworkdayjobs.com",
+    "tenant": "albanymed",
+    "site": "Albany_Med_System_Career_Site"
+   },
+   "active": true
+  },
+  {
+   "slug": "uva-childrens-charlottesville",
+   "name": "UVA Health Children's",
+   "parent_hospital": "UVA Health University Medical Center",
+   "health_system": "UVA Health",
+   "hospital_type": "childrens_hospital_within_hospital",
+   "city": "Charlottesville",
+   "state": "VA",
+   "region": "Virginia (other)",
+   "hotspot": false,
+   "website": "https://childrens.uvahealth.com/",
+   "careers_url": "https://uva.wd1.myworkdayjobs.com/UVAJobs",
+   "careers_platform": "workday",
+   "careers_search_url": "https://uva.wd1.myworkdayjobs.com/en-US/UVAJobs?q=nurse%20practitioner",
+   "careers_notes": "UVA Health (medical center and UVA Physicians Group) posts on the University of Virginia Workday tenant, site UVAJobs (job detail pattern /UVAJobs/job/<location>/<title>_R00xxxxx, e.g. R0043427 UVA Pediatrics Harrisonburg Nurse Practitioner seen in search results 2026-10-19). Workday search pages are JS-rendered; the direct fetch of the UVAJobs search page was blocked (permission timeout), so rendering not tested. Scraper should use the Workday CXS JSON endpoint (POST /wday/cxs/uva/UVAJobs/jobs with searchText). Same tenant also hosts UVAStudentJobs; ignore that site.",
+   "ats_config": {
+    "host": "uva.wd1.myworkdayjobs.com",
+    "tenant": "uva",
+    "site": "UVAJobs"
+   },
+   "active": true
+  },
+  {
+   "slug": "prisma-childrens-midlands-columbia",
+   "name": "Prisma Health Children's Hospital-Midlands",
+   "parent_hospital": "Prisma Health Richland Hospital",
+   "health_system": "Prisma Health",
+   "hospital_type": "childrens_hospital_within_hospital",
+   "city": "Columbia",
+   "state": "SC",
+   "region": "South Carolina (other)",
+   "hotspot": false,
+   "website": "https://prismahealthchildrens.org/",
+   "careers_url": "https://careers.prismahealth.org/us/en",
+   "careers_platform": "phenom",
+   "careers_search_url": "https://careers.prismahealth.org/us/en/search-results?keywords=nurse%20practitioner",
+   "careers_notes": "Careers link taken from the prismahealth.org hospital page footer. The /us/en/search-results layout matches Phenom (same structure as careers.rsfh.com, which serves cdn.phenompeople.com assets). Fetch of careers.prismahealth.org was blocked this session, so rendering was not tested; expect JS-rendered listings like other Phenom boards.",
+   "ats_config": {
+    "host": "careers.prismahealth.org"
+   },
+   "active": true
+  },
+  {
+   "slug": "dartmouth-health-childrens-lebanon",
+   "name": "Dartmouth Health Children's (Golisano Children's Hospital at Dartmouth Hitchcock Medical Center)",
+   "parent_hospital": "Dartmouth Hitchcock Medical Center",
+   "health_system": "Dartmouth Health",
+   "hospital_type": "childrens_hospital_within_hospital",
+   "city": "Lebanon",
+   "state": "NH",
+   "region": "New Hampshire",
+   "hotspot": false,
+   "website": "https://childrens.dartmouth-health.org/departments-services/childrens-hospital",
+   "careers_url": "https://careers.dartmouth-health.org/dartmouth-health/results",
+   "careers_platform": "icims",
+   "careers_search_url": "https://careers.dartmouth-health.org/results?paged=1&cp_dh_area=Associate%20Provider",
+   "careers_notes": "Dartmouth Health public job site careers.dartmouth-health.org is a Liquid Compass front end (Next.js) over iCIMS; provider postings live on providers-dartmouth-hitchcock.icims.com and staff postings on careers-dartmouth-hitchcock.icims.com. The Advanced Practice Provider filter (cp_dh_area=Associate Provider) was fetched 2026-10-19 and returned only unrendered template placeholders, so listings are JS-rendered: use the web-search fallback or the iCIMS provider host. Location filters use posting_location=<facility name>. Keyword parameter not identified. Children's careers page (childrens.dartmouth-health.org/health-care-professionals/careers) links to the same results board. [enrich 2026-10-20] careers_url -> HTTP 200 at https://careers.dartmouth-health.org/dartmouth-health/results; ATS link seen: https://careers-dartmouth-hitchcock.icims.com/jobs/login?loginOnly=1&redirect=&in_iframe=1&hashed=-435679131; search_url -> HTTP 200, mentions NP: False, job links: 3",
+   "ats_config": {
+    "host": "careers.dartmouth-health.org",
+    "frontend": "Liquid Compass",
+    "icims_provider_host": "providers-dartmouth-hitchcock.icims.com",
+    "icims_staff_host": "careers-dartmouth-hitchcock.icims.com"
+   },
+   "active": true
+  },
+  {
+   "slug": "mainegeneral-medical-center-augusta",
+   "name": "MaineGeneral Medical Center (Alfond Center for Health)",
+   "parent_hospital": null,
+   "health_system": "MaineGeneral Health",
+   "hospital_type": "regional_hospital",
+   "city": "Augusta",
+   "state": "ME",
+   "region": "Maine (other)",
+   "hotspot": false,
+   "website": "https://www.mainegeneral.org/",
+   "careers_url": "https://www.mainegeneral.org/",
+   "careers_platform": "workday",
+   "careers_search_url": null,
+   "careers_notes": "A MaineGeneral Health recruiter posting (via simplify.jobs) names Workday as the system's ATS, but the Workday tenant URL was not found and mainegeneral.org could not be fetched this session. Find the myworkdayjobs.com tenant (likely under MaineGeneral) before scraping; use web search as fallback. [enrich 2026-10-20] careers_url -> HTTP 403 at https://www.mainegeneral.org/",
+   "ats_config": {
+    "host": "www.mainegeneral.org"
+   },
+   "active": true
+  },
+  {
+   "slug": "cohen-childrens-new-hyde-park",
+   "name": "Cohen Children's Medical Center",
+   "parent_hospital": "Long Island Jewish Medical Center",
+   "health_system": "Northwell Health",
+   "hospital_type": "childrens_hospital_within_hospital",
+   "city": "New Hyde Park",
+   "state": "NY",
+   "region": "NYC metro",
+   "hotspot": false,
+   "website": "https://www.northwell.edu/cohen-childrens-medical-center",
+   "careers_url": "https://jobs.northwell.edu/",
+   "careers_platform": "unknown",
+   "careers_search_url": "https://jobs.northwell.edu/",
+   "careers_notes": "Northwell system board (host from the repo probe list). Could not be fetched this session (permission prompt timed out); platform and query format unverified. One board for all Northwell hospitals; filter by facility.",
+   "ats_config": {
+    "host": "jobs.northwell.edu"
+   },
+   "active": true
+  },
+  {
+   "slug": "hassenfeld-childrens-nyu-manhattan",
+   "name": "Hassenfeld Children's Hospital at NYU Langone",
+   "parent_hospital": "NYU Langone Tisch Hospital / Kimmel Pavilion",
+   "health_system": "NYU Langone Health",
+   "hospital_type": "childrens_hospital_within_hospital",
+   "city": "New York",
+   "state": "NY",
+   "region": "NYC metro",
+   "hotspot": false,
+   "website": "https://nyulangone.org/locations/hassenfeld-childrens-hospital",
+   "careers_url": "https://jobs.nyulangone.org/",
+   "careers_platform": "unknown",
+   "careers_search_url": "https://jobs.nyulangone.org/",
+   "careers_notes": "NYU Langone system board (host from the repo probe list). Not fetchable this session; platform and query format unverified. Covers Tisch/Kimmel/Hassenfeld, Brooklyn, Long Island and Suffolk.",
+   "ats_config": {
+    "host": "jobs.nyulangone.org"
+   },
+   "active": true
+  },
+  {
+   "slug": "golisano-childrens-rochester",
+   "name": "UR Medicine Golisano Children's Hospital",
+   "parent_hospital": "Strong Memorial Hospital",
+   "health_system": "UR Medicine (University of Rochester Medical Center)",
+   "hospital_type": "childrens_hospital_within_hospital",
+   "city": "Rochester",
+   "state": "NY",
+   "region": "Upstate NY",
+   "hotspot": false,
+   "website": "https://www.urmc.rochester.edu/childrens-hospital",
+   "careers_url": "https://rochester.wd5.myworkdayjobs.com/UR_Staff",
+   "careers_platform": "workday",
+   "careers_search_url": "https://rochester.wd5.myworkdayjobs.com/UR_Staff?q=nurse%20practitioner",
+   "careers_notes": "Workday board linked as Job Opportunities from the Golisano Children's and PICU pages on urmc.rochester.edu. Direct fetch of the board was blocked this session; Workday boards are JS-rendered, use the cxs JSON API.",
+   "ats_config": {
+    "host": "rochester.wd5.myworkdayjobs.com",
+    "tenant": "rochester",
+    "site": "UR_Staff"
+   },
+   "active": true
+  },
+  {
+   "slug": "childrens-hospital-montefiore-bronx",
+   "name": "The Children's Hospital at Montefiore",
+   "parent_hospital": "Montefiore Medical Center (Moses Division)",
+   "health_system": "Montefiore Health System",
+   "hospital_type": "childrens_hospital_within_hospital",
+   "city": "Bronx",
+   "state": "NY",
+   "region": "NYC metro",
+   "hotspot": false,
+   "website": "https://www.montefiore.org/",
+   "careers_url": "https://www.montefiore.org/",
+   "careers_platform": "unknown",
+   "careers_search_url": null,
+   "careers_notes": "Careers board not identified this session (montefiore.org fetch blocked by permission timeout and web search budget exhausted). careers_url is the system home page placeholder; find the real job board before scraping.",
+   "ats_config": {
+    "host": "www.montefiore.org"
+   },
+   "active": true
+  },
+  {
+   "slug": "uconn-john-dempsey-farmington",
+   "name": "UConn John Dempsey Hospital",
+   "parent_hospital": null,
+   "health_system": "UConn Health",
+   "hospital_type": "academic_medical_center",
+   "city": "Farmington",
+   "state": "CT",
+   "region": "Connecticut",
+   "hotspot": false,
+   "website": "https://www.uconnhealth.org/",
+   "careers_url": "https://www.uconnhealth.org/about-us/careers",
+   "careers_platform": "unknown",
+   "careers_search_url": null,
+   "careers_notes": "UConn Health's own careers landing page is www.uconnhealth.org/about-us/careers (health.uconn.edu/jobs redirects to the nursing careers page). The underlying job board platform could not be confirmed (fetch blocked this session). NICU APRN roles at this hospital are employed by Connecticut Children's and post on its Oracle board: fa-evav-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/connecticutchildrenscareers.",
+   "ats_config": {
+    "host": "www.uconnhealth.org",
+    "nicu_employer_ats": {
+     "platform": "oracle_cloud",
+     "host": "fa-evav-saasfaprod1.fa.ocs.oraclecloud.com",
+     "site_number": "connecticutchildrenscareers"
+    }
+   },
+   "active": true
+  },
+  {
    "slug": "maine-medical-center-biddeford",
    "name": "MaineHealth Maine Medical Center Biddeford",
    "parent_hospital": "MaineHealth Maine Medical Center",
@@ -15,7 +229,7 @@
    "careers_url": "https://www.careersatmainehealth.org/search/jobs",
    "careers_platform": "jobvite",
    "careers_search_url": "https://providers.careersatmainehealth.org/search/advanced-practice-provider/jobs",
-   "careers_notes": "MaineHealth career site (careersatmainehealth.org) with Jobvite as the apply ATS (apply.app.jobvite.com, applyCompany 'mainehealth'). Separate provider board providers.careersatmainehealth.org renders listings server-side (fetched 2026-10-19: 88 APP results, 25 per page, ?page=N). Filters are path segments: /search/advanced-practice-provider-<specialty or facility slug>/jobs, e.g. -pediatric, -nicu, -barbara-bush-childrens-hospital; keyword query parameter not confirmed. Job detail URLs look like /jobs/<id>-<slug>. Internal applicants use Infor (hcm-mh-prd.inforcloudsuite.com).",
+   "careers_notes": "MaineHealth career site (careersatmainehealth.org) with Jobvite as the apply ATS (apply.app.jobvite.com, applyCompany 'mainehealth'). Separate provider board providers.careersatmainehealth.org renders listings server-side (fetched 2026-10-19: 88 APP results, 25 per page, ?page=N). Filters are path segments: /search/advanced-practice-provider-<specialty or facility slug>/jobs, e.g. -pediatric, -nicu, -barbara-bush-childrens-hospital; keyword query parameter not confirmed. Job detail URLs look like /jobs/<id>-<slug>. Internal applicants use Infor (hcm-mh-prd.inforcloudsuite.com). [enrich 2026-10-20] careers_url -> HTTP 403 at https://www.careersatmainehealth.org/search/jobs; search_url -> HTTP 403, mentions NP: False, job links: 0",
    "ats_config": {
     "host": "www.careersatmainehealth.org",
     "provider_host": "providers.careersatmainehealth.org",
@@ -224,49 +438,45 @@
    "active": true
   },
   {
-   "slug": "duker-childrens-albany",
-   "name": "Bernard & Millie Duker Children's Hospital at Albany Medical Center",
-   "parent_hospital": "Albany Medical Center",
-   "health_system": "Albany Med Health System",
+   "slug": "brenner-childrens-winston-salem",
+   "name": "Atrium Health Levine Children's Brenner Children's Hospital",
+   "parent_hospital": "Atrium Health Wake Forest Baptist Medical Center",
+   "health_system": "Atrium Health (Advocate Health)",
    "hospital_type": "childrens_hospital_within_hospital",
-   "city": "Albany",
-   "state": "NY",
-   "region": "Upstate NY",
+   "city": "Winston-Salem",
+   "state": "NC",
+   "region": "Triad",
    "hotspot": false,
-   "website": "https://www.albanymed.org/albany/childrens-hospital/",
-   "careers_url": "https://albanymed.wd5.myworkdayjobs.com/Albany_Med_System_Career_Site",
+   "website": "https://www.wakehealth.edu/about-us/about-brenner-childrens",
+   "careers_url": "https://careers.advocatehealth.org/locations/atrium-health-wake-forest-baptist/",
    "careers_platform": "workday",
-   "careers_search_url": "https://albanymed.wd5.myworkdayjobs.com/Albany_Med_System_Career_Site?q=nurse%20practitioner",
-   "careers_notes": "Workday board linked from albanymed.org/careers as Albany Med Health System Careers. Direct fetch blocked this session (permission timeout); Workday is JS-rendered, use the cxs JSON API. Glens Falls Hospital's careers subpage instead links an Oracle Cloud board (hdbg.fa.us2.oraclecloud.com, site CX_1).",
+   "careers_search_url": "https://careers.advocatehealth.org/job-search-results/?keyword=nurse%20practitioner&location=Winston-Salem%2C%20NC%2C%20USA&latitude=36.0948221&longitude=-80.2434028&radius=5",
+   "careers_notes": "Advocate Health careers front end (careers.advocatehealth.org, WordPress) over Workday tenant aah, site External (aah.wd5.myworkdayjobs.com/en-US/External). The location page links a Brenner-specific search: /job-search-results/?keyword=%22BCH%22%20or%20%22Brenner%22&location=Winston-Salem...&radius=5. Fetched 2026-10-19: results are JS-rendered and showed '0 Live Results' in a static fetch, so the scraper should hit the Workday CXS API (aah/External) with searchText 'nurse practitioner' and filter on Winston-Salem / Brenner. Direct Workday URL was blocked for fetch this session. NNP and pediatric APP postings for Brenner also syndicate to AANP JobCenter and PracticeMatch (employer listed as Atrium Health Wake Forest Baptist & Wake Forest University School of Medicine). Physician jobs are on Avature (advocateaurorahealth.avature.net/careers).",
    "ats_config": {
-    "host": "albanymed.wd5.myworkdayjobs.com",
-    "tenant": "albanymed",
-    "site": "Albany_Med_System_Career_Site"
+    "host": "aah.wd5.myworkdayjobs.com",
+    "tenant": "aah",
+    "site": "External",
+    "front_end_host": "careers.advocatehealth.org"
    },
    "active": true
   },
   {
-   "slug": "uconn-john-dempsey-farmington",
-   "name": "UConn John Dempsey Hospital",
-   "parent_hospital": null,
-   "health_system": "UConn Health",
-   "hospital_type": "academic_medical_center",
-   "city": "Farmington",
-   "state": "CT",
-   "region": "Connecticut",
+   "slug": "kravis-childrens-mount-sinai-manhattan",
+   "name": "Mount Sinai Kravis Children's Hospital",
+   "parent_hospital": "The Mount Sinai Hospital",
+   "health_system": "Mount Sinai Health System",
+   "hospital_type": "childrens_hospital_within_hospital",
+   "city": "New York",
+   "state": "NY",
+   "region": "NYC metro",
    "hotspot": false,
-   "website": "https://www.uconnhealth.org/",
-   "careers_url": "https://www.uconnhealth.org/about-us/careers",
+   "website": "https://www.mountsinai.org/locations/kravis-childrens",
+   "careers_url": "https://careers.mountsinai.org/",
    "careers_platform": "unknown",
-   "careers_search_url": null,
-   "careers_notes": "UConn Health's own careers landing page is www.uconnhealth.org/about-us/careers (health.uconn.edu/jobs redirects to the nursing careers page). The underlying job board platform could not be confirmed (fetch blocked this session). NICU APRN roles at this hospital are employed by Connecticut Children's and post on its Oracle board: fa-evav-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/connecticutchildrenscareers.",
+   "careers_search_url": "https://careers.mountsinai.org/",
+   "careers_notes": "Mount Sinai system board (host from the repo probe list). Not fetchable this session; platform and query format unverified.",
    "ats_config": {
-    "host": "www.uconnhealth.org",
-    "nicu_employer_ats": {
-     "platform": "oracle_cloud",
-     "host": "fa-evav-saasfaprod1.fa.ocs.oraclecloud.com",
-     "site_number": "connecticutchildrenscareers"
-    }
+    "host": "careers.mountsinai.org"
    },
    "active": true
   },
@@ -295,257 +505,22 @@
    "active": true
   },
   {
-   "slug": "prisma-childrens-midlands-columbia",
-   "name": "Prisma Health Children's Hospital-Midlands",
-   "parent_hospital": "Prisma Health Richland Hospital",
-   "health_system": "Prisma Health",
-   "hospital_type": "childrens_hospital_within_hospital",
-   "city": "Columbia",
-   "state": "SC",
-   "region": "South Carolina (other)",
-   "hotspot": false,
-   "website": "https://prismahealthchildrens.org/",
-   "careers_url": "https://careers.prismahealth.org/us/en",
-   "careers_platform": "phenom",
-   "careers_search_url": "https://careers.prismahealth.org/us/en/search-results?keywords=nurse%20practitioner",
-   "careers_notes": "Careers link taken from the prismahealth.org hospital page footer. The /us/en/search-results layout matches Phenom (same structure as careers.rsfh.com, which serves cdn.phenompeople.com assets). Fetch of careers.prismahealth.org was blocked this session, so rendering was not tested; expect JS-rendered listings like other Phenom boards.",
-   "ats_config": {
-    "host": "careers.prismahealth.org"
-   },
-   "active": true
-  },
-  {
-   "slug": "golisano-childrens-rochester",
-   "name": "UR Medicine Golisano Children's Hospital",
-   "parent_hospital": "Strong Memorial Hospital",
-   "health_system": "UR Medicine (University of Rochester Medical Center)",
-   "hospital_type": "childrens_hospital_within_hospital",
-   "city": "Rochester",
-   "state": "NY",
-   "region": "Upstate NY",
-   "hotspot": false,
-   "website": "https://www.urmc.rochester.edu/childrens-hospital",
-   "careers_url": "https://rochester.wd5.myworkdayjobs.com/UR_Staff",
-   "careers_platform": "workday",
-   "careers_search_url": "https://rochester.wd5.myworkdayjobs.com/UR_Staff?q=nurse%20practitioner",
-   "careers_notes": "Workday board linked as Job Opportunities from the Golisano Children's and PICU pages on urmc.rochester.edu. Direct fetch of the board was blocked this session; Workday boards are JS-rendered, use the cxs JSON API.",
-   "ats_config": {
-    "host": "rochester.wd5.myworkdayjobs.com",
-    "tenant": "rochester",
-    "site": "UR_Staff"
-   },
-   "active": true
-  },
-  {
-   "slug": "ynhch-bridgeport",
-   "name": "Yale New Haven Children's Hospital at Bridgeport Hospital",
-   "parent_hospital": "Bridgeport Hospital",
-   "health_system": "Yale New Haven Health",
-   "hospital_type": "childrens_hospital_within_hospital",
-   "city": "Bridgeport",
-   "state": "CT",
-   "region": "Connecticut",
-   "hotspot": false,
-   "website": "https://www.bridgeporthospital.org/services/childrens-pediatrics",
-   "careers_url": "https://jobs.ynhhs.org/",
-   "careers_platform": "custom",
-   "careers_search_url": "https://jobs.ynhhs.org/jobs?keywords=nurse%20practitioner&sortBy=relevance&page=1",
-   "careers_notes": "Yale New Haven Health posts all hospitals (YNHH and YNHCH, Bridgeport, Greenwich, Lawrence + Memorial, Westerly) on one Jibe career site at jobs.ynhhs.org (assets on cms.jibecdn.com; talent network at ynhhs.jibeapply.com). The pediatric nursing category page /jobs/categories/NURSING-STAFF+-+PEDIATRICS was fetched 2026-10-19 and returned only page chrome, so listings are JS-rendered. The careers page links a pre-filtered search of the form /jobs?sortBy=relevance&page=1&categories=ADVANCED%20PRACTICE&tags2=..., so categories=ADVANCED%20PRACTICE is the APP filter. The keyword search URL uses the standard Jibe keywords parameter; a test fetch was blocked in this session, so it is unverified. Jibe sites usually expose a JSON endpoint at /api/jobs with the same parameters.",
-   "ats_config": {
-    "host": "jobs.ynhhs.org",
-    "vendor": "Jibe",
-    "talent_network_host": "ynhhs.jibeapply.com",
-    "app_category": "ADVANCED PRACTICE"
-   },
-   "active": true
-  },
-  {
-   "slug": "dartmouth-health-childrens-lebanon",
-   "name": "Dartmouth Health Children's (Golisano Children's Hospital at Dartmouth Hitchcock Medical Center)",
-   "parent_hospital": "Dartmouth Hitchcock Medical Center",
-   "health_system": "Dartmouth Health",
-   "hospital_type": "childrens_hospital_within_hospital",
-   "city": "Lebanon",
-   "state": "NH",
-   "region": "New Hampshire",
-   "hotspot": false,
-   "website": "https://childrens.dartmouth-health.org/departments-services/childrens-hospital",
-   "careers_url": "https://careers.dartmouth-health.org/dartmouth-health/results",
-   "careers_platform": "icims",
-   "careers_search_url": "https://careers.dartmouth-health.org/results?paged=1&cp_dh_area=Associate%20Provider",
-   "careers_notes": "Dartmouth Health public job site careers.dartmouth-health.org is a Liquid Compass front end (Next.js) over iCIMS; provider postings live on providers-dartmouth-hitchcock.icims.com and staff postings on careers-dartmouth-hitchcock.icims.com. The Advanced Practice Provider filter (cp_dh_area=Associate Provider) was fetched 2026-10-19 and returned only unrendered template placeholders, so listings are JS-rendered: use the web-search fallback or the iCIMS provider host. Location filters use posting_location=<facility name>. Keyword parameter not identified. Children's careers page (childrens.dartmouth-health.org/health-care-professionals/careers) links to the same results board.",
-   "ats_config": {
-    "host": "careers.dartmouth-health.org",
-    "frontend": "Liquid Compass",
-    "icims_provider_host": "providers-dartmouth-hitchcock.icims.com",
-    "icims_staff_host": "careers-dartmouth-hitchcock.icims.com"
-   },
-   "active": true
-  },
-  {
-   "slug": "tufts-medical-center-boston",
-   "name": "Tufts Medical Center",
+   "slug": "duke-regional-durham",
+   "name": "Duke Regional Hospital",
    "parent_hospital": null,
-   "health_system": "Tufts Medicine",
-   "hospital_type": "academic_medical_center",
-   "city": "Boston",
-   "state": "MA",
-   "region": "Boston metro",
-   "hotspot": false,
-   "website": "https://www.tuftsmedicine.org/tufts-medical-center",
-   "careers_url": "https://careers.tuftsmedicine.org/us/en",
-   "careers_platform": "phenom",
-   "careers_search_url": "https://careers.tuftsmedicine.org/us/en/search-results?keywords=nurse%20practitioner",
-   "careers_notes": "Tufts Medicine careers site careers.tuftsmedicine.org/us/en (linked from tuftsmedicine.org). The /us/en path matches the Phenom pattern; the search URL follows the Phenom search-results?keywords= convention and was not fetched (blocked), so rendering is untested. Covers Tufts MC, Lowell General, MelroseWakefield and Lawrence Memorial.",
-   "ats_config": {
-    "host": "careers.tuftsmedicine.org",
-    "locale_path": "/us/en"
-   },
-   "active": true
-  },
-  {
-   "slug": "brenner-childrens-winston-salem",
-   "name": "Atrium Health Levine Children's Brenner Children's Hospital",
-   "parent_hospital": "Atrium Health Wake Forest Baptist Medical Center",
-   "health_system": "Atrium Health (Advocate Health)",
-   "hospital_type": "childrens_hospital_within_hospital",
-   "city": "Winston-Salem",
+   "health_system": "Duke Health",
+   "hospital_type": "regional_hospital",
+   "city": "Durham",
    "state": "NC",
-   "region": "Triad",
-   "hotspot": false,
-   "website": "https://www.wakehealth.edu/about-us/about-brenner-childrens",
-   "careers_url": "https://careers.advocatehealth.org/locations/atrium-health-wake-forest-baptist/",
-   "careers_platform": "workday",
-   "careers_search_url": "https://careers.advocatehealth.org/job-search-results/?keyword=nurse%20practitioner&location=Winston-Salem%2C%20NC%2C%20USA&latitude=36.0948221&longitude=-80.2434028&radius=5",
-   "careers_notes": "Advocate Health careers front end (careers.advocatehealth.org, WordPress) over Workday tenant aah, site External (aah.wd5.myworkdayjobs.com/en-US/External). The location page links a Brenner-specific search: /job-search-results/?keyword=%22BCH%22%20or%20%22Brenner%22&location=Winston-Salem...&radius=5. Fetched 2026-10-19: results are JS-rendered and showed '0 Live Results' in a static fetch, so the scraper should hit the Workday CXS API (aah/External) with searchText 'nurse practitioner' and filter on Winston-Salem / Brenner. Direct Workday URL was blocked for fetch this session. NNP and pediatric APP postings for Brenner also syndicate to AANP JobCenter and PracticeMatch (employer listed as Atrium Health Wake Forest Baptist & Wake Forest University School of Medicine). Physician jobs are on Avature (advocateaurorahealth.avature.net/careers).",
-   "ats_config": {
-    "host": "aah.wd5.myworkdayjobs.com",
-    "tenant": "aah",
-    "site": "External",
-    "front_end_host": "careers.advocatehealth.org"
-   },
-   "active": true
-  },
-  {
-   "slug": "greenwich-hospital-greenwich",
-   "name": "Greenwich Hospital",
-   "parent_hospital": null,
-   "health_system": "Yale New Haven Health",
-   "hospital_type": "community_hospital",
-   "city": "Greenwich",
-   "state": "CT",
-   "region": "Connecticut",
-   "hotspot": false,
-   "website": "https://www.greenwichhospital.org/",
-   "careers_url": "https://jobs.ynhhs.org/",
-   "careers_platform": "custom",
-   "careers_search_url": "https://jobs.ynhhs.org/jobs?keywords=nurse%20practitioner&sortBy=relevance&page=1",
-   "careers_notes": "Yale New Haven Health posts all hospitals (YNHH and YNHCH, Bridgeport, Greenwich, Lawrence + Memorial, Westerly) on one Jibe career site at jobs.ynhhs.org (assets on cms.jibecdn.com; talent network at ynhhs.jibeapply.com). The pediatric nursing category page /jobs/categories/NURSING-STAFF+-+PEDIATRICS was fetched 2026-10-19 and returned only page chrome, so listings are JS-rendered. The careers page links a pre-filtered search of the form /jobs?sortBy=relevance&page=1&categories=ADVANCED%20PRACTICE&tags2=..., so categories=ADVANCED%20PRACTICE is the APP filter. The keyword search URL uses the standard Jibe keywords parameter; a test fetch was blocked in this session, so it is unverified. Jibe sites usually expose a JSON endpoint at /api/jobs with the same parameters.",
-   "ats_config": {
-    "host": "jobs.ynhhs.org",
-    "vendor": "Jibe",
-    "talent_network_host": "ynhhs.jibeapply.com",
-    "app_category": "ADVANCED PRACTICE"
-   },
-   "active": true
-  },
-  {
-   "slug": "central-maine-medical-center-lewiston",
-   "name": "Central Maine Medical Center",
-   "parent_hospital": null,
-   "health_system": "Prime Healthcare (Central Maine Healthcare)",
-   "hospital_type": "regional_hospital",
-   "city": "Lewiston",
-   "state": "ME",
-   "region": "Maine (other)",
-   "hotspot": false,
-   "website": "https://cmhc.org/location/central-maine-medical-center",
-   "careers_url": "https://careers-primehealthcare.icims.com/jobs/search?ss=1",
-   "careers_platform": "icims",
-   "careers_search_url": "https://careers-primehealthcare.icims.com/jobs/search?ss=1&searchKeyword=nurse%20practitioner",
-   "careers_notes": "Central Maine Healthcare jobs post on Prime Healthcare's iCIMS board (individual CMMC postings at careers-primehealthcare.icims.com/jobs/<id>/<slug>/job fetched and rendered server-side; location shown as US-ME-LEWISTON or US-ME-AUBURN). The search URL uses the standard iCIMS searchKeyword parameter and was not fetched this session; filter results to Maine locations. cmhc.org/careers is the marketing landing page.",
-   "ats_config": {
-    "host": "careers-primehealthcare.icims.com"
-   },
-   "active": true
-  },
-  {
-   "slug": "chor-vcu-richmond",
-   "name": "Children's Hospital of Richmond at VCU",
-   "parent_hospital": "VCU Medical Center",
-   "health_system": "VCU Health",
-   "hospital_type": "childrens_hospital_within_hospital",
-   "city": "Richmond",
-   "state": "VA",
-   "region": "Richmond",
-   "hotspot": false,
-   "website": "https://www.chrichmond.org/",
-   "careers_url": "https://careers.vcuhealth.org/us/en/chor-jobs",
+   "region": "Triangle",
+   "hotspot": true,
+   "website": "https://www.dukehealth.org/hospitals/duke-regional-hospital",
+   "careers_url": "https://careers.dukehealth.org/us/en/search-results",
    "careers_platform": "phenom",
-   "careers_search_url": "https://careers.vcuhealth.org/us/en/search-results?keywords=nurse%20practitioner",
-   "careers_notes": "VCU Health career site on Phenom (assets from cdn.phenompeople.com, CareerConnectResources/VHSVHSUS, /us/en/ paths). Fetched https://careers.vcuhealth.org/us/en/search-results and the CHoR landing page on 2026-10-19: page shell only, listings are JS-rendered and none appeared in the fetch. CHoR category page: https://careers.vcuhealth.org/us/en/chor-jobs ; job detail pattern /us/en/job/R<number>/<title-slug> (e.g. R38048 Nurse Clinician Acute Care Pediatrics). Keyword param ?keywords= is the usual Phenom pattern but was not confirmed to filter in a fetch.",
+   "careers_search_url": "https://careers.dukehealth.org/us/en/search-results?keywords=nurse%20practitioner",
+   "careers_notes": "Phenom career site; listings are JS-rendered (fetch returned only the shell on 2026-10-19), so use the Phenom widgets API or a headless browser. One board covers Duke University Hospital, Duke Regional and Duke Raleigh. Filter to Duke Regional Hospital.",
    "ats_config": {
-    "host": "careers.vcuhealth.org"
-   },
-   "active": true
-  },
-  {
-   "slug": "mainegeneral-medical-center-augusta",
-   "name": "MaineGeneral Medical Center (Alfond Center for Health)",
-   "parent_hospital": null,
-   "health_system": "MaineGeneral Health",
-   "hospital_type": "regional_hospital",
-   "city": "Augusta",
-   "state": "ME",
-   "region": "Maine (other)",
-   "hotspot": false,
-   "website": "https://www.mainegeneral.org/",
-   "careers_url": "https://www.mainegeneral.org/",
-   "careers_platform": "workday",
-   "careers_search_url": null,
-   "careers_notes": "A MaineGeneral Health recruiter posting (via simplify.jobs) names Workday as the system's ATS, but the Workday tenant URL was not found and mainegeneral.org could not be fetched this session. Find the myworkdayjobs.com tenant (likely under MaineGeneral) before scraping; use web search as fallback.",
-   "ats_config": {},
-   "active": true
-  },
-  {
-   "slug": "cohen-childrens-new-hyde-park",
-   "name": "Cohen Children's Medical Center",
-   "parent_hospital": "Long Island Jewish Medical Center",
-   "health_system": "Northwell Health",
-   "hospital_type": "childrens_hospital_within_hospital",
-   "city": "New Hyde Park",
-   "state": "NY",
-   "region": "NYC metro",
-   "hotspot": false,
-   "website": "https://www.northwell.edu/cohen-childrens-medical-center",
-   "careers_url": "https://jobs.northwell.edu/",
-   "careers_platform": "unknown",
-   "careers_search_url": "https://jobs.northwell.edu/",
-   "careers_notes": "Northwell system board (host from the repo probe list). Could not be fetched this session (permission prompt timed out); platform and query format unverified. One board for all Northwell hospitals; filter by facility.",
-   "ats_config": {
-    "host": "jobs.northwell.edu"
-   },
-   "active": true
-  },
-  {
-   "slug": "bon-secours-st-marys-richmond",
-   "name": "Bon Secours St. Mary's Hospital",
-   "parent_hospital": null,
-   "health_system": "Bon Secours Mercy Health",
-   "hospital_type": "regional_hospital",
-   "city": "Richmond",
-   "state": "VA",
-   "region": "Richmond",
-   "hotspot": false,
-   "website": "https://www.bonsecours.com/locations/hospitals-medical-centers/richmond",
-   "careers_url": "https://careers.bsmhealth.org/us/en/search-results",
-   "careers_platform": "phenom",
-   "careers_search_url": "https://careers.bsmhealth.org/us/en/search-results?keywords=nurse%20practitioner",
-   "careers_notes": "Bon Secours Mercy Health career site careers.bsmhealth.org (also careers.bonsecours.com) uses Phenom-style /us/en/ paths, regional landing pages /us/en/jobs-in-richmond and /us/en/jobs-in-hampton-roads, and job detail /us/en/job/R<number>/<title> (e.g. R272073 RN NICU St. Francis). NP and PA roles are mostly on the separate provider board physiciancareers.bsmhealth.org (job detail /search/jobdetails/<slug>/<guid>; seen 2026-10-19 with Richmond and Suffolk NP postings). Neither board was fetched (permission/rate limits), so rendering not tested.",
-   "ats_config": {
-    "host": "careers.bsmhealth.org",
-    "provider_host": "physiciancareers.bsmhealth.org",
-    "alt_host": "careers.bonsecours.com"
+    "host": "careers.dukehealth.org"
    },
    "active": true
   },
@@ -574,22 +549,63 @@
    "active": true
   },
   {
-   "slug": "hassenfeld-childrens-nyu-manhattan",
-   "name": "Hassenfeld Children's Hospital at NYU Langone",
-   "parent_hospital": "NYU Langone Tisch Hospital / Kimmel Pavilion",
-   "health_system": "NYU Langone Health",
+   "slug": "maria-fareri-childrens-valhalla",
+   "name": "Maria Fareri Children's Hospital",
+   "parent_hospital": "Westchester Medical Center",
+   "health_system": "Westchester Medical Center Health Network (WMCHealth)",
    "hospital_type": "childrens_hospital_within_hospital",
-   "city": "New York",
+   "city": "Valhalla",
    "state": "NY",
-   "region": "NYC metro",
+   "region": "Hudson Valley",
    "hotspot": false,
-   "website": "https://nyulangone.org/locations/hassenfeld-childrens-hospital",
-   "careers_url": "https://jobs.nyulangone.org/",
+   "website": "https://www.wmchealth.org/service-line/pediatric-services",
+   "careers_url": "https://wmchealthjobs.org",
    "careers_platform": "unknown",
-   "careers_search_url": "https://jobs.nyulangone.org/",
-   "careers_notes": "NYU Langone system board (host from the repo probe list). Not fetchable this session; platform and query format unverified. Covers Tisch/Kimmel/Hassenfeld, Brooklyn, Long Island and Suffolk.",
+   "careers_search_url": "https://wmchealthjobs.org",
+   "careers_notes": "wmchealthjobs.org is linked as Careers from wmchealth.org. Board could not be fetched this session (permission timeout); platform unverified.",
    "ats_config": {
-    "host": "jobs.nyulangone.org"
+    "host": "wmchealthjobs.org"
+   },
+   "active": true
+  },
+  {
+   "slug": "central-maine-medical-center-lewiston",
+   "name": "Central Maine Medical Center",
+   "parent_hospital": null,
+   "health_system": "Prime Healthcare (Central Maine Healthcare)",
+   "hospital_type": "regional_hospital",
+   "city": "Lewiston",
+   "state": "ME",
+   "region": "Maine (other)",
+   "hotspot": false,
+   "website": "https://cmhc.org/location/central-maine-medical-center",
+   "careers_url": "https://careers-primehealthcare.icims.com/jobs/search?ss=1",
+   "careers_platform": "icims",
+   "careers_search_url": "https://careers-primehealthcare.icims.com/jobs/search?ss=1&searchKeyword=nurse%20practitioner",
+   "careers_notes": "Central Maine Healthcare jobs post on Prime Healthcare's iCIMS board (individual CMMC postings at careers-primehealthcare.icims.com/jobs/<id>/<slug>/job fetched and rendered server-side; location shown as US-ME-LEWISTON or US-ME-AUBURN). The search URL uses the standard iCIMS searchKeyword parameter and was not fetched this session; filter results to Maine locations. cmhc.org/careers is the marketing landing page. [enrich 2026-10-20] careers_url -> HTTP 200 at https://careers-primehealthcare.icims.com/jobs/search?ss=1; ATS link seen: https://c-9940-20260303-www-primehealthcare-com.i.icims.com; search_url -> HTTP 200, mentions NP: False, job links: 0",
+   "ats_config": {
+    "host": "careers-primehealthcare.icims.com"
+   },
+   "active": true
+  },
+  {
+   "slug": "tufts-medical-center-boston",
+   "name": "Tufts Medical Center",
+   "parent_hospital": null,
+   "health_system": "Tufts Medicine",
+   "hospital_type": "academic_medical_center",
+   "city": "Boston",
+   "state": "MA",
+   "region": "Boston metro",
+   "hotspot": false,
+   "website": "https://www.tuftsmedicine.org/tufts-medical-center",
+   "careers_url": "https://careers.tuftsmedicine.org/us/en",
+   "careers_platform": "phenom",
+   "careers_search_url": "https://careers.tuftsmedicine.org/us/en/search-results?keywords=nurse%20practitioner",
+   "careers_notes": "Tufts Medicine careers site careers.tuftsmedicine.org/us/en (linked from tuftsmedicine.org). The /us/en path matches the Phenom pattern; the search URL follows the Phenom search-results?keywords= convention and was not fetched (blocked), so rendering is untested. Covers Tufts MC, Lowell General, MelroseWakefield and Lawrence Memorial.",
+   "ats_config": {
+    "host": "careers.tuftsmedicine.org",
+    "locale_path": "/us/en"
    },
    "active": true
   },
@@ -616,64 +632,42 @@
    "active": true
   },
   {
-   "slug": "childrens-hospital-montefiore-bronx",
-   "name": "The Children's Hospital at Montefiore",
-   "parent_hospital": "Montefiore Medical Center (Moses Division)",
-   "health_system": "Montefiore Health System",
-   "hospital_type": "childrens_hospital_within_hospital",
-   "city": "Bronx",
+   "slug": "oishei-childrens-buffalo",
+   "name": "Golisano Children's Hospital of Buffalo (formerly John R. Oishei Children's Hospital)",
+   "parent_hospital": null,
+   "health_system": "Kaleida Health",
+   "hospital_type": "childrens_hospital",
+   "city": "Buffalo",
    "state": "NY",
-   "region": "NYC metro",
+   "region": "Upstate NY",
    "hotspot": false,
-   "website": "https://www.montefiore.org/",
-   "careers_url": "https://www.montefiore.org/",
+   "website": "https://www.ochbuffalo.org/",
+   "careers_url": "https://www.kaleidahealth.org/",
    "careers_platform": "unknown",
    "careers_search_url": null,
-   "careers_notes": "Careers board not identified this session (montefiore.org fetch blocked by permission timeout and web search budget exhausted). careers_url is the system home page placeholder; find the real job board before scraping.",
+   "careers_notes": "Kaleida careers board not identified this session (home page fetch showed no careers link and web search budget was exhausted). careers_url is the system home page placeholder.",
    "ats_config": {
-    "host": "www.montefiore.org"
+    "host": "www.kaleidahealth.org"
    },
    "active": true
   },
   {
-   "slug": "uva-childrens-charlottesville",
-   "name": "UVA Health Children's",
-   "parent_hospital": "UVA Health University Medical Center",
-   "health_system": "UVA Health",
+   "slug": "chor-vcu-richmond",
+   "name": "Children's Hospital of Richmond at VCU",
+   "parent_hospital": "VCU Medical Center",
+   "health_system": "VCU Health",
    "hospital_type": "childrens_hospital_within_hospital",
-   "city": "Charlottesville",
+   "city": "Richmond",
    "state": "VA",
-   "region": "Virginia (other)",
+   "region": "Richmond",
    "hotspot": false,
-   "website": "https://childrens.uvahealth.com/",
-   "careers_url": "https://uva.wd1.myworkdayjobs.com/UVAJobs",
-   "careers_platform": "workday",
-   "careers_search_url": "https://uva.wd1.myworkdayjobs.com/en-US/UVAJobs?q=nurse%20practitioner",
-   "careers_notes": "UVA Health (medical center and UVA Physicians Group) posts on the University of Virginia Workday tenant, site UVAJobs (job detail pattern /UVAJobs/job/<location>/<title>_R00xxxxx, e.g. R0043427 UVA Pediatrics Harrisonburg Nurse Practitioner seen in search results 2026-10-19). Workday search pages are JS-rendered; the direct fetch of the UVAJobs search page was blocked (permission timeout), so rendering not tested. Scraper should use the Workday CXS JSON endpoint (POST /wday/cxs/uva/UVAJobs/jobs with searchText). Same tenant also hosts UVAStudentJobs; ignore that site.",
+   "website": "https://www.chrichmond.org/",
+   "careers_url": "https://careers.vcuhealth.org/us/en/chor-jobs",
+   "careers_platform": "phenom",
+   "careers_search_url": "https://careers.vcuhealth.org/us/en/search-results?keywords=nurse%20practitioner",
+   "careers_notes": "VCU Health career site on Phenom (assets from cdn.phenompeople.com, CareerConnectResources/VHSVHSUS, /us/en/ paths). Fetched https://careers.vcuhealth.org/us/en/search-results and the CHoR landing page on 2026-10-19: page shell only, listings are JS-rendered and none appeared in the fetch. CHoR category page: https://careers.vcuhealth.org/us/en/chor-jobs ; job detail pattern /us/en/job/R<number>/<title-slug> (e.g. R38048 Nurse Clinician Acute Care Pediatrics). Keyword param ?keywords= is the usual Phenom pattern but was not confirmed to filter in a fetch.",
    "ats_config": {
-    "host": "uva.wd1.myworkdayjobs.com",
-    "tenant": "uva",
-    "site": "UVAJobs"
-   },
-   "active": true
-  },
-  {
-   "slug": "kravis-childrens-mount-sinai-manhattan",
-   "name": "Mount Sinai Kravis Children's Hospital",
-   "parent_hospital": "The Mount Sinai Hospital",
-   "health_system": "Mount Sinai Health System",
-   "hospital_type": "childrens_hospital_within_hospital",
-   "city": "New York",
-   "state": "NY",
-   "region": "NYC metro",
-   "hotspot": false,
-   "website": "https://www.mountsinai.org/locations/kravis-childrens",
-   "careers_url": "https://careers.mountsinai.org/",
-   "careers_platform": "unknown",
-   "careers_search_url": "https://careers.mountsinai.org/",
-   "careers_notes": "Mount Sinai system board (host from the repo probe list). Not fetchable this session; platform and query format unverified.",
-   "ats_config": {
-    "host": "careers.mountsinai.org"
+    "host": "careers.vcuhealth.org"
    },
    "active": true
   },
@@ -701,66 +695,6 @@
    "active": true
   },
   {
-   "slug": "maria-fareri-childrens-valhalla",
-   "name": "Maria Fareri Children's Hospital",
-   "parent_hospital": "Westchester Medical Center",
-   "health_system": "Westchester Medical Center Health Network (WMCHealth)",
-   "hospital_type": "childrens_hospital_within_hospital",
-   "city": "Valhalla",
-   "state": "NY",
-   "region": "Hudson Valley",
-   "hotspot": false,
-   "website": "https://www.wmchealth.org/service-line/pediatric-services",
-   "careers_url": "https://wmchealthjobs.org",
-   "careers_platform": "unknown",
-   "careers_search_url": "https://wmchealthjobs.org",
-   "careers_notes": "wmchealthjobs.org is linked as Careers from wmchealth.org. Board could not be fetched this session (permission timeout); platform unverified.",
-   "ats_config": {
-    "host": "wmchealthjobs.org"
-   },
-   "active": true
-  },
-  {
-   "slug": "bellevue-hospital-manhattan",
-   "name": "NYC Health + Hospitals/Bellevue",
-   "parent_hospital": null,
-   "health_system": "NYC Health + Hospitals",
-   "hospital_type": "academic_medical_center",
-   "city": "New York",
-   "state": "NY",
-   "region": "NYC metro",
-   "hotspot": false,
-   "website": "https://www.nychealthandhospitals.org/locations/bellevue/",
-   "careers_url": "https://jobs.nyulangone.org/",
-   "careers_platform": "unknown",
-   "careers_search_url": "https://jobs.nyulangone.org/",
-   "careers_notes": "Two employers on this campus: NYC Health + Hospitals and NYU Langone (affiliated physician and APP staff). jobs.nyulangone.org (host from the repo probe list) could not be fetched this session; platform unverified. The H+H careers board was not identified this session.",
-   "ats_config": {
-    "host": "jobs.nyulangone.org"
-   },
-   "active": true
-  },
-  {
-   "slug": "oishei-childrens-buffalo",
-   "name": "Golisano Children's Hospital of Buffalo (formerly John R. Oishei Children's Hospital)",
-   "parent_hospital": null,
-   "health_system": "Kaleida Health",
-   "hospital_type": "childrens_hospital",
-   "city": "Buffalo",
-   "state": "NY",
-   "region": "Upstate NY",
-   "hotspot": false,
-   "website": "https://www.ochbuffalo.org/",
-   "careers_url": "https://www.kaleidahealth.org/",
-   "careers_platform": "unknown",
-   "careers_search_url": null,
-   "careers_notes": "Kaleida careers board not identified this session (home page fetch showed no careers link and web search budget was exhausted). careers_url is the system home page placeholder.",
-   "ats_config": {
-    "host": "www.kaleidahealth.org"
-   },
-   "active": true
-  },
-  {
    "slug": "upstate-golisano-childrens-syracuse",
    "name": "Upstate Golisano Children's Hospital",
    "parent_hospital": "Upstate University Hospital",
@@ -777,6 +711,28 @@
    "careers_notes": "State university hospital; careers board not identified this session (upstate.edu fetch rate limited). careers_url is the hospital home page placeholder. SUNY hospitals often post on a state HR system plus their own job site.",
    "ats_config": {
     "host": "www.upstate.edu"
+   },
+   "active": true
+  },
+  {
+   "slug": "bon-secours-st-marys-richmond",
+   "name": "Bon Secours St. Mary's Hospital",
+   "parent_hospital": null,
+   "health_system": "Bon Secours Mercy Health",
+   "hospital_type": "regional_hospital",
+   "city": "Richmond",
+   "state": "VA",
+   "region": "Richmond",
+   "hotspot": false,
+   "website": "https://www.bonsecours.com/locations/hospitals-medical-centers/richmond",
+   "careers_url": "https://careers.bsmhealth.org/us/en/search-results",
+   "careers_platform": "phenom",
+   "careers_search_url": "https://careers.bsmhealth.org/us/en/search-results?keywords=nurse%20practitioner",
+   "careers_notes": "Bon Secours Mercy Health career site careers.bsmhealth.org (also careers.bonsecours.com) uses Phenom-style /us/en/ paths, regional landing pages /us/en/jobs-in-richmond and /us/en/jobs-in-hampton-roads, and job detail /us/en/job/R<number>/<title> (e.g. R272073 RN NICU St. Francis). NP and PA roles are mostly on the separate provider board physiciancareers.bsmhealth.org (job detail /search/jobdetails/<slug>/<guid>; seen 2026-10-19 with Richmond and Suffolk NP postings). Neither board was fetched (permission/rate limits), so rendering not tested.",
+   "ats_config": {
+    "host": "careers.bsmhealth.org",
+    "provider_host": "physiciancareers.bsmhealth.org",
+    "alt_host": "careers.bonsecours.com"
    },
    "active": true
   },
@@ -814,7 +770,7 @@
    "careers_url": "https://www.kaleidahealth.org/careers/",
    "careers_platform": "unknown",
    "careers_search_url": null,
-   "careers_notes": "Kaleida Health careers. careers_url is a best guess at the kaleidahealth.org careers path and is unverified. The ATS was not confirmed in this session; requisition IDs on aggregator copies (for example 73340BR, Nurse Practitioner FNP/PNP, OCH Dept of Neurology) use the BrassRing style suffix. Kaleida postings syndicate to DirectEmployers (dejobs.org, usnlx.com) with department names such as 'OCH ...' for the children's hospital.",
+   "careers_notes": "Kaleida Health careers. careers_url is a best guess at the kaleidahealth.org careers path and is unverified. The ATS was not confirmed in this session; requisition IDs on aggregator copies (for example 73340BR, Nurse Practitioner FNP/PNP, OCH Dept of Neurology) use the BrassRing style suffix. Kaleida postings syndicate to DirectEmployers (dejobs.org, usnlx.com) with department names such as 'OCH ...' for the children's hospital. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.kaleidahealth.org/careers/",
    "ats_config": {
     "host": "www.kaleidahealth.org"
    },
@@ -831,111 +787,6 @@
    "region": "Jersey Shore",
    "hotspot": true,
    "website": "https://www.rwjbh.org/unterberg-childrens-hospital-at-monmouth-medical/",
-   "careers_url": "https://www.rwjbarnabashealthcareers.org/jobs/",
-   "careers_platform": "custom",
-   "careers_search_url": "https://www.rwjbarnabashealthcareers.org/jobs/nurse-practitioner/",
-   "careers_notes": "System-wide career site renders server-side: the nurse practitioner category returned 86 jobs over 9 pages on a test fetch on 2026-10-19. City filter pattern is /jobs/nurse-practitioner/us-nj-<city>/ and job detail pages are /job/<id>/<slug>/. Applicant accounts sit on pm.healthcaresource.com (HealthcareSource), so treat as custom. NP roles are usually titled Advanced Practice Nurse and are often posted under Barnabas Health Medical Group or Rutgers University Medical Group rather than the hospital name. Physician and some APP roles also appear at rwjbh.org/careers/physician-careers/career-opportunities/.",
-   "ats_config": {
-    "host": "www.rwjbarnabashealthcareers.org",
-    "applicant_host": "pm.healthcaresource.com"
-   },
-   "active": true
-  },
-  {
-   "slug": "community-medical-center-toms-river",
-   "name": "Community Medical Center",
-   "parent_hospital": null,
-   "health_system": "RWJBarnabas Health",
-   "hospital_type": "regional_hospital",
-   "city": "Toms River",
-   "state": "NJ",
-   "region": "Jersey Shore",
-   "hotspot": true,
-   "website": "https://www.rwjbh.org/community-medical-center/",
-   "careers_url": "https://www.rwjbarnabashealthcareers.org/jobs/",
-   "careers_platform": "custom",
-   "careers_search_url": "https://www.rwjbarnabashealthcareers.org/jobs/nurse-practitioner/",
-   "careers_notes": "System-wide career site renders server-side: the nurse practitioner category returned 86 jobs over 9 pages on a test fetch on 2026-10-19. City filter pattern is /jobs/nurse-practitioner/us-nj-<city>/ and job detail pages are /job/<id>/<slug>/. Applicant accounts sit on pm.healthcaresource.com (HealthcareSource), so treat as custom. NP roles are usually titled Advanced Practice Nurse and are often posted under Barnabas Health Medical Group or Rutgers University Medical Group rather than the hospital name. Physician and some APP roles also appear at rwjbh.org/careers/physician-careers/career-opportunities/.",
-   "ats_config": {
-    "host": "www.rwjbarnabashealthcareers.org",
-    "applicant_host": "pm.healthcaresource.com"
-   },
-   "active": true
-  },
-  {
-   "slug": "monmouth-medical-center-southern-campus-lakewood",
-   "name": "Monmouth Medical Center Southern Campus",
-   "parent_hospital": null,
-   "health_system": "RWJBarnabas Health",
-   "hospital_type": "community_hospital",
-   "city": "Lakewood",
-   "state": "NJ",
-   "region": "Jersey Shore",
-   "hotspot": true,
-   "website": "https://www.rwjbh.org/monmouth-medical-center-southern-campus/",
-   "careers_url": "https://www.rwjbarnabashealthcareers.org/jobs/",
-   "careers_platform": "custom",
-   "careers_search_url": "https://www.rwjbarnabashealthcareers.org/jobs/nurse-practitioner/",
-   "careers_notes": "System-wide career site renders server-side: the nurse practitioner category returned 86 jobs over 9 pages on a test fetch on 2026-10-19. City filter pattern is /jobs/nurse-practitioner/us-nj-<city>/ and job detail pages are /job/<id>/<slug>/. Applicant accounts sit on pm.healthcaresource.com (HealthcareSource), so treat as custom. NP roles are usually titled Advanced Practice Nurse and are often posted under Barnabas Health Medical Group or Rutgers University Medical Group rather than the hospital name. Physician and some APP roles also appear at rwjbh.org/careers/physician-careers/career-opportunities/.",
-   "ats_config": {
-    "host": "www.rwjbarnabashealthcareers.org",
-    "applicant_host": "pm.healthcaresource.com"
-   },
-   "active": true
-  },
-  {
-   "slug": "childrens-specialized-new-brunswick",
-   "name": "Children's Specialized Hospital",
-   "parent_hospital": null,
-   "health_system": "RWJBarnabas Health",
-   "hospital_type": "specialty_pediatric",
-   "city": "New Brunswick",
-   "state": "NJ",
-   "region": "North Jersey",
-   "hotspot": false,
-   "website": "https://www.childrens-specialized.org/",
-   "careers_url": "https://www.rwjbarnabashealthcareers.org/jobs/",
-   "careers_platform": "custom",
-   "careers_search_url": "https://www.rwjbarnabashealthcareers.org/jobs/nurse-practitioner/",
-   "careers_notes": "System-wide career site renders server-side: the nurse practitioner category returned 86 jobs over 9 pages on a test fetch on 2026-10-19. City filter pattern is /jobs/nurse-practitioner/us-nj-<city>/ and job detail pages are /job/<id>/<slug>/. Applicant accounts sit on pm.healthcaresource.com (HealthcareSource), so treat as custom. NP roles are usually titled Advanced Practice Nurse and are often posted under Barnabas Health Medical Group or Rutgers University Medical Group rather than the hospital name. Physician and some APP roles also appear at rwjbh.org/careers/physician-careers/career-opportunities/.",
-   "ats_config": {
-    "host": "www.rwjbarnabashealthcareers.org",
-    "applicant_host": "pm.healthcaresource.com"
-   },
-   "active": true
-  },
-  {
-   "slug": "bristol-myers-squibb-childrens-new-brunswick",
-   "name": "Bristol-Myers Squibb Children's Hospital at Robert Wood Johnson University Hospital",
-   "parent_hospital": "Robert Wood Johnson University Hospital",
-   "health_system": "RWJBarnabas Health",
-   "hospital_type": "childrens_hospital_within_hospital",
-   "city": "New Brunswick",
-   "state": "NJ",
-   "region": "North Jersey",
-   "hotspot": false,
-   "website": "https://www.rwjbh.org/bristol-myers-squibb-childrens-hospital-at-rwjuh/",
-   "careers_url": "https://www.rwjbarnabashealthcareers.org/jobs/",
-   "careers_platform": "custom",
-   "careers_search_url": "https://www.rwjbarnabashealthcareers.org/jobs/nurse-practitioner/",
-   "careers_notes": "System-wide career site renders server-side: the nurse practitioner category returned 86 jobs over 9 pages on a test fetch on 2026-10-19. City filter pattern is /jobs/nurse-practitioner/us-nj-<city>/ and job detail pages are /job/<id>/<slug>/. Applicant accounts sit on pm.healthcaresource.com (HealthcareSource), so treat as custom. NP roles are usually titled Advanced Practice Nurse and are often posted under Barnabas Health Medical Group or Rutgers University Medical Group rather than the hospital name. Physician and some APP roles also appear at rwjbh.org/careers/physician-careers/career-opportunities/.",
-   "ats_config": {
-    "host": "www.rwjbarnabashealthcareers.org",
-    "applicant_host": "pm.healthcaresource.com"
-   },
-   "active": true
-  },
-  {
-   "slug": "childrens-hospital-of-nj-newark-beth-israel",
-   "name": "Children's Hospital of New Jersey at Newark Beth Israel Medical Center",
-   "parent_hospital": "Newark Beth Israel Medical Center",
-   "health_system": "RWJBarnabas Health",
-   "hospital_type": "childrens_hospital_within_hospital",
-   "city": "Newark",
-   "state": "NJ",
-   "region": "North Jersey",
-   "hotspot": false,
-   "website": "https://www.rwjbh.org/childrens-hospital-of-nj-at-newark-beth-israel/",
    "careers_url": "https://www.rwjbarnabashealthcareers.org/jobs/",
    "careers_platform": "custom",
    "careers_search_url": "https://www.rwjbarnabashealthcareers.org/jobs/nurse-practitioner/",
@@ -989,24 +840,6 @@
    "health_system": "Virtua Health",
    "hospital_type": "regional_hospital",
    "city": "Voorhees",
-   "state": "NJ",
-   "region": "South Jersey",
-   "hotspot": false,
-   "website": "https://www.virtua.org/",
-   "careers_url": "https://www.virtua.org/",
-   "careers_platform": "unknown",
-   "careers_search_url": null,
-   "careers_notes": "Careers site could not be verified this session: the web search budget ran out and direct fetches of Virtua Health pages were blocked. careers_url is the main website as a placeholder; locate the real job search page and platform before scraping.",
-   "ats_config": {},
-   "active": true
-  },
-  {
-   "slug": "virtua-mount-holly-hospital-mount-holly",
-   "name": "Virtua Mount Holly Hospital",
-   "parent_hospital": null,
-   "health_system": "Virtua Health",
-   "hospital_type": "community_hospital",
-   "city": "Mount Holly",
    "state": "NJ",
    "region": "South Jersey",
    "hotspot": false,
@@ -1289,27 +1122,6 @@
    "active": true
   },
   {
-   "slug": "jersey-city-medical-center-jersey-city",
-   "name": "Jersey City Medical Center",
-   "parent_hospital": null,
-   "health_system": "RWJBarnabas Health",
-   "hospital_type": "regional_hospital",
-   "city": "Jersey City",
-   "state": "NJ",
-   "region": "North Jersey",
-   "hotspot": false,
-   "website": "https://www.rwjbh.org/jersey-city-medical-center/",
-   "careers_url": "https://www.rwjbarnabashealthcareers.org/jobs/",
-   "careers_platform": "custom",
-   "careers_search_url": "https://www.rwjbarnabashealthcareers.org/jobs/nurse-practitioner/",
-   "careers_notes": "System-wide career site renders server-side: the nurse practitioner category returned 86 jobs over 9 pages on a test fetch on 2026-10-19. City filter pattern is /jobs/nurse-practitioner/us-nj-<city>/ and job detail pages are /job/<id>/<slug>/. Applicant accounts sit on pm.healthcaresource.com (HealthcareSource), so treat as custom. NP roles are usually titled Advanced Practice Nurse and are often posted under Barnabas Health Medical Group or Rutgers University Medical Group rather than the hospital name. Physician and some APP roles also appear at rwjbh.org/careers/physician-careers/career-opportunities/.",
-   "ats_config": {
-    "host": "www.rwjbarnabashealthcareers.org",
-    "applicant_host": "pm.healthcaresource.com"
-   },
-   "active": true
-  },
-  {
    "slug": "university-hospital-newark",
    "name": "University Hospital",
    "parent_hospital": null,
@@ -1343,27 +1155,6 @@
    "careers_search_url": null,
    "careers_notes": "Careers site could not be verified this session: the web search budget ran out and direct fetches of Penn Medicine Princeton Health pages were blocked. careers_url is the main website as a placeholder; locate the real job search page and platform before scraping.",
    "ats_config": {},
-   "active": true
-  },
-  {
-   "slug": "cooperman-barnabas-medical-center-livingston",
-   "name": "Cooperman Barnabas Medical Center",
-   "parent_hospital": null,
-   "health_system": "RWJBarnabas Health",
-   "hospital_type": "academic_medical_center",
-   "city": "Livingston",
-   "state": "NJ",
-   "region": "North Jersey",
-   "hotspot": false,
-   "website": "https://www.rwjbh.org/cooperman-barnabas-medical-center/",
-   "careers_url": "https://www.rwjbarnabashealthcareers.org/jobs/",
-   "careers_platform": "custom",
-   "careers_search_url": "https://www.rwjbarnabashealthcareers.org/jobs/nurse-practitioner/",
-   "careers_notes": "System-wide career site renders server-side: the nurse practitioner category returned 86 jobs over 9 pages on a test fetch on 2026-10-19. City filter pattern is /jobs/nurse-practitioner/us-nj-<city>/ and job detail pages are /job/<id>/<slug>/. Applicant accounts sit on pm.healthcaresource.com (HealthcareSource), so treat as custom. NP roles are usually titled Advanced Practice Nurse and are often posted under Barnabas Health Medical Group or Rutgers University Medical Group rather than the hospital name. Physician and some APP roles also appear at rwjbh.org/careers/physician-careers/career-opportunities/.",
-   "ats_config": {
-    "host": "www.rwjbarnabashealthcareers.org",
-    "applicant_host": "pm.healthcaresource.com"
-   },
    "active": true
   },
   {
@@ -1475,42 +1266,6 @@
    "active": true
   },
   {
-   "slug": "virtua-our-lady-of-lourdes-camden",
-   "name": "Virtua Our Lady of Lourdes Hospital",
-   "parent_hospital": null,
-   "health_system": "Virtua Health",
-   "hospital_type": "regional_hospital",
-   "city": "Camden",
-   "state": "NJ",
-   "region": "South Jersey",
-   "hotspot": false,
-   "website": "https://www.virtua.org/",
-   "careers_url": "https://www.virtua.org/",
-   "careers_platform": "unknown",
-   "careers_search_url": null,
-   "careers_notes": "Careers site could not be verified this session: the web search budget ran out and direct fetches of Virtua Health pages were blocked. careers_url is the main website as a placeholder; locate the real job search page and platform before scraping.",
-   "ats_config": {},
-   "active": true
-  },
-  {
-   "slug": "inspira-medical-center-mullica-hill",
-   "name": "Inspira Medical Center Mullica Hill",
-   "parent_hospital": null,
-   "health_system": "Inspira Health",
-   "hospital_type": "community_hospital",
-   "city": "Mullica Hill",
-   "state": "NJ",
-   "region": "South Jersey",
-   "hotspot": false,
-   "website": "https://www.inspirahealthnetwork.org/",
-   "careers_url": "https://www.inspirahealthnetwork.org/",
-   "careers_platform": "unknown",
-   "careers_search_url": null,
-   "careers_notes": "Careers site could not be verified this session: the web search budget ran out and direct fetches of Inspira Health pages were blocked. careers_url is the main website as a placeholder; locate the real job search page and platform before scraping.",
-   "ats_config": {},
-   "active": true
-  },
-  {
    "slug": "shore-medical-center-somers-point",
    "name": "Shore Medical Center",
    "parent_hospital": null,
@@ -1526,27 +1281,6 @@
    "careers_search_url": null,
    "careers_notes": "Careers site could not be verified this session: the web search budget ran out and direct fetches of Shore Medical Center pages were blocked. careers_url is the main website as a placeholder; locate the real job search page and platform before scraping.",
    "ats_config": {},
-   "active": true
-  },
-  {
-   "slug": "clara-maass-medical-center-belleville",
-   "name": "Clara Maass Medical Center",
-   "parent_hospital": null,
-   "health_system": "RWJBarnabas Health",
-   "hospital_type": "community_hospital",
-   "city": "Belleville",
-   "state": "NJ",
-   "region": "North Jersey",
-   "hotspot": false,
-   "website": "https://www.rwjbh.org/clara-maass-medical-center/",
-   "careers_url": "https://www.rwjbarnabashealthcareers.org/jobs/",
-   "careers_platform": "custom",
-   "careers_search_url": "https://www.rwjbarnabashealthcareers.org/jobs/nurse-practitioner/",
-   "careers_notes": "System-wide career site renders server-side: the nurse practitioner category returned 86 jobs over 9 pages on a test fetch on 2026-10-19. City filter pattern is /jobs/nurse-practitioner/us-nj-<city>/ and job detail pages are /job/<id>/<slug>/. Applicant accounts sit on pm.healthcaresource.com (HealthcareSource), so treat as custom. NP roles are usually titled Advanced Practice Nurse and are often posted under Barnabas Health Medical Group or Rutgers University Medical Group rather than the hospital name. Physician and some APP roles also appear at rwjbh.org/careers/physician-careers/career-opportunities/.",
-   "ats_config": {
-    "host": "www.rwjbarnabashealthcareers.org",
-    "applicant_host": "pm.healthcaresource.com"
-   },
    "active": true
   },
   {
@@ -1586,45 +1320,75 @@
    "active": true
   },
   {
-   "slug": "rwj-university-hospital-somerset-somerville",
-   "name": "Robert Wood Johnson University Hospital Somerset",
+   "slug": "lankenau-medical-center-wynnewood",
+   "name": "Lankenau Medical Center",
    "parent_hospital": null,
-   "health_system": "RWJBarnabas Health",
-   "hospital_type": "community_hospital",
-   "city": "Somerville",
-   "state": "NJ",
-   "region": "North Jersey",
+   "health_system": "Main Line Health",
+   "hospital_type": "regional_hospital",
+   "city": "Wynnewood",
+   "state": "PA",
+   "region": "Philadelphia metro",
    "hotspot": false,
-   "website": "https://www.rwjbh.org/rwj-university-hospital-somerset/",
-   "careers_url": "https://www.rwjbarnabashealthcareers.org/jobs/",
-   "careers_platform": "custom",
-   "careers_search_url": "https://www.rwjbarnabashealthcareers.org/jobs/nurse-practitioner/",
-   "careers_notes": "System-wide career site renders server-side: the nurse practitioner category returned 86 jobs over 9 pages on a test fetch on 2026-10-19. City filter pattern is /jobs/nurse-practitioner/us-nj-<city>/ and job detail pages are /job/<id>/<slug>/. Applicant accounts sit on pm.healthcaresource.com (HealthcareSource), so treat as custom. NP roles are usually titled Advanced Practice Nurse and are often posted under Barnabas Health Medical Group or Rutgers University Medical Group rather than the hospital name. Physician and some APP roles also appear at rwjbh.org/careers/physician-careers/career-opportunities/.",
-   "ats_config": {
-    "host": "www.rwjbarnabashealthcareers.org",
-    "applicant_host": "pm.healthcaresource.com"
-   },
+   "website": "http://www.mainlinehealth.org",
+   "careers_url": "http://www.mainlinehealth.org",
+   "careers_platform": "unknown",
+   "careers_search_url": null,
+   "careers_notes": "Careers site could not be verified this session: the web search budget ran out and direct fetches of Main Line Health pages were blocked. careers_url is the main website as a placeholder; locate the real job search page and platform before scraping.",
+   "ats_config": {},
    "active": true
   },
   {
-   "slug": "trinitas-regional-medical-center-elizabeth",
-   "name": "Trinitas Regional Medical Center",
+   "slug": "childrens-home-of-pittsburgh",
+   "name": "Children's Home of Pittsburgh and Lemieux Family Center",
    "parent_hospital": null,
-   "health_system": "RWJBarnabas Health",
-   "hospital_type": "community_hospital",
-   "city": "Elizabeth",
-   "state": "NJ",
-   "region": "North Jersey",
+   "health_system": null,
+   "hospital_type": "specialty_pediatric",
+   "city": "Pittsburgh",
+   "state": "PA",
+   "region": "Pennsylvania (other)",
    "hotspot": false,
-   "website": "https://www.rwjbh.org/trinitas-regional-medical-center/",
-   "careers_url": "https://www.rwjbarnabashealthcareers.org/jobs/",
-   "careers_platform": "custom",
-   "careers_search_url": "https://www.rwjbarnabashealthcareers.org/jobs/nurse-practitioner/",
-   "careers_notes": "System-wide career site renders server-side: the nurse practitioner category returned 86 jobs over 9 pages on a test fetch on 2026-10-19. City filter pattern is /jobs/nurse-practitioner/us-nj-<city>/ and job detail pages are /job/<id>/<slug>/. Applicant accounts sit on pm.healthcaresource.com (HealthcareSource), so treat as custom. NP roles are usually titled Advanced Practice Nurse and are often posted under Barnabas Health Medical Group or Rutgers University Medical Group rather than the hospital name. Physician and some APP roles also appear at rwjbh.org/careers/physician-careers/career-opportunities/.",
-   "ats_config": {
-    "host": "www.rwjbarnabashealthcareers.org",
-    "applicant_host": "pm.healthcaresource.com"
-   },
+   "website": "http://www.childrenshomepgh.org",
+   "careers_url": "http://www.childrenshomepgh.org",
+   "careers_platform": "unknown",
+   "careers_search_url": null,
+   "careers_notes": "Careers site could not be verified this session: the web search budget ran out and direct fetches of Children's Home of Pittsburgh pages were blocked. careers_url is the main website as a placeholder; locate the real job search page and platform before scraping.",
+   "ats_config": {},
+   "active": true
+  },
+  {
+   "slug": "pennsylvania-hospital-philadelphia",
+   "name": "Pennsylvania Hospital",
+   "parent_hospital": null,
+   "health_system": "Penn Medicine (University of Pennsylvania Health System)",
+   "hospital_type": "academic_medical_center",
+   "city": "Philadelphia",
+   "state": "PA",
+   "region": "Philadelphia metro",
+   "hotspot": false,
+   "website": "https://www.pennmedicine.org/",
+   "careers_url": "https://www.pennmedicine.org/",
+   "careers_platform": "unknown",
+   "careers_search_url": null,
+   "careers_notes": "Careers site could not be verified this session: the web search budget ran out and direct fetches of Penn Medicine pages were blocked. careers_url is the main website as a placeholder; locate the real job search page and platform before scraping.",
+   "ats_config": {},
+   "active": true
+  },
+  {
+   "slug": "upmc-magee-womens-pittsburgh",
+   "name": "UPMC Magee-Womens Hospital",
+   "parent_hospital": null,
+   "health_system": "UPMC",
+   "hospital_type": "regional_hospital",
+   "city": "Pittsburgh",
+   "state": "PA",
+   "region": "Pennsylvania (other)",
+   "hotspot": false,
+   "website": "https://www.upmc.com/",
+   "careers_url": "https://www.upmc.com/",
+   "careers_platform": "unknown",
+   "careers_search_url": null,
+   "careers_notes": "Careers site could not be verified this session: the web search budget ran out and direct fetches of UPMC pages were blocked. careers_url is the main website as a placeholder; locate the real job search page and platform before scraping.",
+   "ats_config": {},
    "active": true
   },
   {
@@ -1649,23 +1413,23 @@
    "active": true
   },
   {
-   "slug": "wakemed-north-raleigh",
-   "name": "WakeMed North Hospital",
+   "slug": "unc-rex-raleigh",
+   "name": "UNC Rex Hospital",
    "parent_hospital": null,
-   "health_system": "WakeMed",
-   "hospital_type": "community_hospital",
+   "health_system": "UNC Health",
+   "hospital_type": "regional_hospital",
    "city": "Raleigh",
    "state": "NC",
    "region": "Triangle",
    "hotspot": true,
-   "website": "https://www.wakemed.org/",
-   "careers_url": "https://jobs.wakemed.org/search-jobs",
+   "website": "https://www.rexhealth.com/",
+   "careers_url": "https://jobs.unchealthcare.org/jobs/search",
    "careers_platform": "custom",
-   "careers_search_url": "https://jobs.wakemed.org/search-jobs/nurse%20practitioner/1241/1",
-   "careers_notes": "Radancy TalentBrew style board (path /search-jobs/<keyword>/1241/<page>). Server-rendered: the nurse practitioner search showed 294 results on 2026-10-19, about 15 per page, including 'NNP, Neonatology (NICU)' and 'PNP, Neonatology (Newborn Nursery)' in Raleigh. The keyword match is broad, so filter titles for NP, PNP, APP.",
+   "careers_search_url": "https://jobs.unchealthcare.org/search/advanced-practice-provider/jobs",
+   "careers_notes": "UNC Health systemwide board: Talemetry (TTC portals) front end with Infor Cloud Suite HCM behind it. Server-rendered: the Advanced Practice Provider category page listed 155 APP jobs on 2026-10-19. The ?q= keyword parameter did not filter results, so use the category path and then the Facility/Division facet (UNC Rex).",
    "ats_config": {
-    "host": "jobs.wakemed.org",
-    "org_id": "1241"
+    "host": "jobs.unchealthcare.org",
+    "category_path": "/search/advanced-practice-provider/jobs"
    },
    "active": true
   },
@@ -1683,7 +1447,7 @@
    "careers_url": "https://css-emh-prd.inforcloudsuite.com/hcm/Jobs/page/JobsHomePage?csk.showusingxi=true&csk.JobBoard=EXTERNAL&csk.HROrganization=10",
    "careers_platform": "custom",
    "careers_search_url": "https://css-emh-prd.inforcloudsuite.com/hcm/Jobs/page/JobsHomePage?csk.showusingxi=true&csk.JobBoard=EXTERNAL&csk.HROrganization=10",
-   "careers_notes": "Northern Light Health posts all member-hospital jobs on one Infor CloudSuite HCM external job board (URL taken from northernlighthealth.org/Careers/FAQ, which also points applicants to careers.northernlighthealth.org). The board could not be fetched in this session (fetch blocked), so rendering is untested; Infor boards are usually JS-heavy, so plan on the web-search fallback. Provider roles are also recruited by email at ProviderCareers@northernlight.org and syndicated to dejobs.org and AANP JobCenter.",
+   "careers_notes": "Northern Light Health posts all member-hospital jobs on one Infor CloudSuite HCM external job board (URL taken from northernlighthealth.org/Careers/FAQ, which also points applicants to careers.northernlighthealth.org). The board could not be fetched in this session (fetch blocked), so rendering is untested; Infor boards are usually JS-heavy, so plan on the web-search fallback. Provider roles are also recruited by email at ProviderCareers@northernlight.org and syndicated to dejobs.org and AANP JobCenter. [enrich 2026-10-20] careers_url -> HTTP 200 at https://css-emh-prd.inforcloudsuite.com:443/hcm/Jobs/page/JobsHomePage?csk.showusingxi=true&csk.JobBoard=EXTERNAL&csk.HROrganization=10; search_url -> HTTP 200, mentions NP: False, job links: 0",
    "ats_config": {
     "host": "css-emh-prd.inforcloudsuite.com",
     "vendor": "Infor CloudSuite HCM",
@@ -1706,34 +1470,11 @@
    "careers_url": "https://www.uvmhealthcareers.org/jobs/nurse-practitioner-physician-assistant/",
    "careers_platform": "custom",
    "careers_search_url": "https://www.uvmhealthcareers.org/jobs/nurse-practitioner-physician-assistant/",
-   "careers_notes": "UVM Health network job site uvmhealthcareers.org renders server-side (fetched 2026-10-19: 11 NP/PA listings across the network, including Pediatric Hematology/Oncology NP at UVMMC). Category path /jobs/nurse-practitioner-physician-assistant/ with optional location segment (e.g. /us-vt/) and ?entity= filter; detail pages /job/<id>/<slug>/. No keyword parameter found, so filter by title text. Vendor not identified.",
+   "careers_notes": "UVM Health network job site uvmhealthcareers.org renders server-side (fetched 2026-10-19: 11 NP/PA listings across the network, including Pediatric Hematology/Oncology NP at UVMMC). Category path /jobs/nurse-practitioner-physician-assistant/ with optional location segment (e.g. /us-vt/) and ?entity= filter; detail pages /job/<id>/<slug>/. No keyword parameter found, so filter by title text. Vendor not identified. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.uvmhealthcareers.org/jobs/nurse-practitioner-physician-assistant/; search_url -> HTTP 200, mentions NP: True, job links: 120",
    "ats_config": {
     "host": "www.uvmhealthcareers.org",
     "category_path": "/jobs/nurse-practitioner-physician-assistant/",
     "detail_pattern": "/job/<id>/<slug>/"
-   },
-   "active": true
-  },
-  {
-   "slug": "northern-light-emmc-bangor",
-   "name": "Northern Light Eastern Maine Medical Center",
-   "parent_hospital": null,
-   "health_system": "Northern Light Health",
-   "hospital_type": "regional_hospital",
-   "city": "Bangor",
-   "state": "ME",
-   "region": "Maine (other)",
-   "hotspot": false,
-   "website": "https://northernlighthealth.org/Our-System/Eastern-Maine-Medical-Center",
-   "careers_url": "https://css-emh-prd.inforcloudsuite.com/hcm/Jobs/page/JobsHomePage?csk.showusingxi=true&csk.JobBoard=EXTERNAL&csk.HROrganization=10",
-   "careers_platform": "custom",
-   "careers_search_url": "https://css-emh-prd.inforcloudsuite.com/hcm/Jobs/page/JobsHomePage?csk.showusingxi=true&csk.JobBoard=EXTERNAL&csk.HROrganization=10",
-   "careers_notes": "Northern Light Health posts all member-hospital jobs on one Infor CloudSuite HCM external job board (URL taken from northernlighthealth.org/Careers/FAQ, which also points applicants to careers.northernlighthealth.org). The board could not be fetched in this session (fetch blocked), so rendering is untested; Infor boards are usually JS-heavy, so plan on the web-search fallback. Provider roles are also recruited by email at ProviderCareers@northernlight.org and syndicated to dejobs.org and AANP JobCenter.",
-   "ats_config": {
-    "host": "css-emh-prd.inforcloudsuite.com",
-    "vendor": "Infor CloudSuite HCM",
-    "job_board": "EXTERNAL",
-    "hr_organization": "10"
    },
    "active": true
   },
@@ -1751,30 +1492,7 @@
    "careers_url": "https://careers.elliot-hs.org/search-jobs/",
    "careers_platform": "custom",
    "careers_search_url": "https://careers.elliot-hs.org/category/physicians-and-other-providers-jobs/47438/8852768/1/",
-   "careers_notes": "SolutionHealth (Elliot Health System and Southern New Hampshire Health) uses a Radancy TalentBrew career site (tbcdn.talentbrew.com assets, Radancy search analytics, account id 47438), reachable at careers.elliot-hs.org and careers.solutionhealth.org. Job URLs look like /job/<city>/<title-slug>/47438/<id>. The search URL here is the Physician/Provider category linked from elliothospital.org/careers; not fetched (blocked), so rendering is untested. Several SolutionHealth NP postings were visible in search results (hospitalist, med-surg, psychiatry, primary care) in Manchester.",
-   "ats_config": {
-    "host": "careers.elliot-hs.org",
-    "alt_host": "careers.solutionhealth.org",
-    "vendor": "Radancy TalentBrew",
-    "org_id": "47438"
-   },
-   "active": true
-  },
-  {
-   "slug": "southern-nh-medical-center-nashua",
-   "name": "Southern New Hampshire Medical Center",
-   "parent_hospital": null,
-   "health_system": "SolutionHealth",
-   "hospital_type": "community_hospital",
-   "city": "Nashua",
-   "state": "NH",
-   "region": "New Hampshire",
-   "hotspot": false,
-   "website": "https://www.snhhealth.org/pediatrics/inpatient-pediatrics",
-   "careers_url": "https://careers.elliot-hs.org/search-jobs/",
-   "careers_platform": "custom",
-   "careers_search_url": "https://careers.elliot-hs.org/category/physicians-and-other-providers-jobs/47438/8852768/1/",
-   "careers_notes": "SolutionHealth (Elliot Health System and Southern New Hampshire Health) uses a Radancy TalentBrew career site (tbcdn.talentbrew.com assets, Radancy search analytics, account id 47438), reachable at careers.elliot-hs.org and careers.solutionhealth.org. Job URLs look like /job/<city>/<title-slug>/47438/<id>. The search URL here is the Physician/Provider category linked from elliothospital.org/careers; not fetched (blocked), so rendering is untested. Several SolutionHealth NP postings were visible in search results (hospitalist, med-surg, psychiatry, primary care) in Manchester.",
+   "careers_notes": "SolutionHealth (Elliot Health System and Southern New Hampshire Health) uses a Radancy TalentBrew career site (tbcdn.talentbrew.com assets, Radancy search analytics, account id 47438), reachable at careers.elliot-hs.org and careers.solutionhealth.org. Job URLs look like /job/<city>/<title-slug>/47438/<id>. The search URL here is the Physician/Provider category linked from elliothospital.org/careers; not fetched (blocked), so rendering is untested. Several SolutionHealth NP postings were visible in search results (hospitalist, med-surg, psychiatry, primary care) in Manchester. [enrich 2026-10-20] careers_url -> HTTP 200 at https://careers.elliot-hs.org/search-jobs/; search_url -> HTTP 200, mentions NP: True, job links: 15",
    "ats_config": {
     "host": "careers.elliot-hs.org",
     "alt_host": "careers.solutionhealth.org",
@@ -1797,7 +1515,7 @@
    "careers_url": "https://careers.hcahealthcare.com/",
    "careers_platform": "unknown",
    "careers_search_url": null,
-   "careers_notes": "HCA Healthcare corporate career site. URL not verified this session (fetch blocked and search budget exhausted); confirm the board and its platform before scraping, and filter to New Hampshire.",
+   "careers_notes": "HCA Healthcare corporate career site. URL not verified this session (fetch blocked and search budget exhausted); confirm the board and its platform before scraping, and filter to New Hampshire. [enrich 2026-10-20] careers_url -> HTTP 403 at https://careers.hcahealthcare.com/",
    "ats_config": {
     "host": "careers.hcahealthcare.com"
    },
@@ -1817,8 +1535,10 @@
    "careers_url": "http://www.concordhospital.org",
    "careers_platform": "unknown",
    "careers_search_url": null,
-   "careers_notes": "Careers board not located: concordhospital.org could not be fetched this session and web search was exhausted. Find the job board from the site's Careers link before scraping.",
-   "ats_config": {},
+   "careers_notes": "Careers board not located: concordhospital.org could not be fetched this session and web search was exhausted. Find the job board from the site's Careers link before scraping. [enrich 2026-10-20] careers_url -> HTTP 403 at https://www.concordhospital.org/",
+   "ats_config": {
+    "host": "www.concordhospital.org"
+   },
    "active": true
   },
   {
@@ -1835,27 +1555,9 @@
    "careers_url": "https://wdhospital.org",
    "careers_platform": "unknown",
    "careers_search_url": null,
-   "careers_notes": "Careers board not located (wdhospital.org fetch blocked, search exhausted). As a Mass General Brigham member, postings may be on the MGB board; confirm before scraping.",
-   "ats_config": {},
-   "active": true
-  },
-  {
-   "slug": "portsmouth-regional-portsmouth",
-   "name": "Portsmouth Regional Hospital",
-   "parent_hospital": null,
-   "health_system": "HCA Healthcare",
-   "hospital_type": "regional_hospital",
-   "city": "Portsmouth",
-   "state": "NH",
-   "region": "New Hampshire",
-   "hotspot": false,
-   "website": "https://www.google.com/maps/place/?q=place_id:ChIJsd7OuvS_4okRZdmrtOjaBD0",
-   "careers_url": "https://careers.hcahealthcare.com/",
-   "careers_platform": "unknown",
-   "careers_search_url": null,
-   "careers_notes": "HCA Healthcare corporate career site. URL not verified this session (fetch blocked and search budget exhausted); confirm the board and its platform before scraping, and filter to New Hampshire.",
+   "careers_notes": "Careers board not located (wdhospital.org fetch blocked, search exhausted). As a Mass General Brigham member, postings may be on the MGB board; confirm before scraping. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.massgeneralbrigham.org/en/about/wentworth-douglass-hospital",
    "ats_config": {
-    "host": "careers.hcahealthcare.com"
+    "host": "www.massgeneralbrigham.org"
    },
    "active": true
   },
@@ -1869,7 +1571,7 @@
    "state": "VT",
    "region": "Vermont",
    "hotspot": false,
-   "website": "https://www.google.com/maps/place/?q=place_id:ChIJiTi0ofkk4IkRaf3TCvL9olU",
+   "website": "http://www.rrmc.org/",
    "careers_url": "https://www.google.com/maps/place/?q=place_id:ChIJiTi0ofkk4IkRaf3TCvL9olU",
    "careers_platform": "unknown",
    "careers_search_url": null,
@@ -1891,97 +1593,9 @@
    "careers_url": "https://careers.covenanthealth.net/",
    "careers_platform": "unknown",
    "careers_search_url": null,
-   "careers_notes": "Covenant Health posts jobs at careers.covenanthealth.net/job/<id>/<slug> (seen for St. Joseph Hospital Nashua, St. Joseph Bangor and St. Mary's Lewiston). Underlying platform not identifiable from the fetched posting. Provider (APP) roles name a provider recruiter and ask for a CV by email.",
+   "careers_notes": "Covenant Health posts jobs at careers.covenanthealth.net/job/<id>/<slug> (seen for St. Joseph Hospital Nashua, St. Joseph Bangor and St. Mary's Lewiston). Underlying platform not identifiable from the fetched posting. Provider (APP) roles name a provider recruiter and ask for a CV by email. [enrich 2026-10-20] careers_url -> HTTP 403 at https://careers.covenanthealth.net/",
    "ats_config": {
     "host": "careers.covenanthealth.net"
-   },
-   "active": true
-  },
-  {
-   "slug": "st-joseph-hospital-nashua",
-   "name": "St. Joseph Hospital",
-   "parent_hospital": null,
-   "health_system": "Covenant Health",
-   "hospital_type": "community_hospital",
-   "city": "Nashua",
-   "state": "NH",
-   "region": "New Hampshire",
-   "hotspot": false,
-   "website": "https://www.google.com/maps/place/?q=place_id:ChIJ06NAbzS344kR1HGBkdeGDCI",
-   "careers_url": "https://careers.covenanthealth.net/",
-   "careers_platform": "unknown",
-   "careers_search_url": null,
-   "careers_notes": "Covenant Health posts jobs at careers.covenanthealth.net/job/<id>/<slug> (seen for St. Joseph Hospital Nashua, St. Joseph Bangor and St. Mary's Lewiston). Underlying platform not identifiable from the fetched posting. Provider (APP) roles name a provider recruiter and ask for a CV by email.",
-   "ats_config": {
-    "host": "careers.covenanthealth.net"
-   },
-   "active": true
-  },
-  {
-   "slug": "central-vermont-medical-center-berlin",
-   "name": "Central Vermont Medical Center",
-   "parent_hospital": null,
-   "health_system": "University of Vermont Health",
-   "hospital_type": "regional_hospital",
-   "city": "Berlin",
-   "state": "VT",
-   "region": "Vermont",
-   "hotspot": false,
-   "website": "https://www.uvmhealth.org/about-the-uvm-health-network/the-uvm-health-network-hospitals",
-   "careers_url": "https://www.uvmhealthcareers.org/jobs/nurse-practitioner-physician-assistant/",
-   "careers_platform": "custom",
-   "careers_search_url": "https://www.uvmhealthcareers.org/jobs/nurse-practitioner-physician-assistant/",
-   "careers_notes": "UVM Health network job site uvmhealthcareers.org renders server-side (fetched 2026-10-19: 11 NP/PA listings across the network, including Pediatric Hematology/Oncology NP at UVMMC). Category path /jobs/nurse-practitioner-physician-assistant/ with optional location segment (e.g. /us-vt/) and ?entity= filter; detail pages /job/<id>/<slug>/. No keyword parameter found, so filter by title text. Vendor not identified.",
-   "ats_config": {
-    "host": "www.uvmhealthcareers.org",
-    "category_path": "/jobs/nurse-practitioner-physician-assistant/",
-    "detail_pattern": "/job/<id>/<slug>/"
-   },
-   "active": true
-  },
-  {
-   "slug": "northern-light-ar-gould-presque-isle",
-   "name": "Northern Light AR Gould Hospital",
-   "parent_hospital": null,
-   "health_system": "Northern Light Health",
-   "hospital_type": "community_hospital",
-   "city": "Presque Isle",
-   "state": "ME",
-   "region": "Maine (other)",
-   "hotspot": false,
-   "website": "https://northernlighthealth.org",
-   "careers_url": "https://css-emh-prd.inforcloudsuite.com/hcm/Jobs/page/JobsHomePage?csk.showusingxi=true&csk.JobBoard=EXTERNAL&csk.HROrganization=10",
-   "careers_platform": "custom",
-   "careers_search_url": "https://css-emh-prd.inforcloudsuite.com/hcm/Jobs/page/JobsHomePage?csk.showusingxi=true&csk.JobBoard=EXTERNAL&csk.HROrganization=10",
-   "careers_notes": "Northern Light Health posts all member-hospital jobs on one Infor CloudSuite HCM external job board (URL taken from northernlighthealth.org/Careers/FAQ, which also points applicants to careers.northernlighthealth.org). The board could not be fetched in this session (fetch blocked), so rendering is untested; Infor boards are usually JS-heavy, so plan on the web-search fallback. Provider roles are also recruited by email at ProviderCareers@northernlight.org and syndicated to dejobs.org and AANP JobCenter.",
-   "ats_config": {
-    "host": "css-emh-prd.inforcloudsuite.com",
-    "vendor": "Infor CloudSuite HCM",
-    "job_board": "EXTERNAL",
-    "hr_organization": "10"
-   },
-   "active": true
-  },
-  {
-   "slug": "northern-light-acadia-bangor",
-   "name": "Northern Light Acadia Hospital",
-   "parent_hospital": null,
-   "health_system": "Northern Light Health",
-   "hospital_type": "specialty_pediatric",
-   "city": "Bangor",
-   "state": "ME",
-   "region": "Maine (other)",
-   "hotspot": false,
-   "website": "https://northernlighthealth.org/Our-System/Acadia-Hospital/About-Us/Working-at-Acadia/Apply-for-a-position-with-Acadia",
-   "careers_url": "https://css-emh-prd.inforcloudsuite.com/hcm/Jobs/page/JobsHomePage?csk.showusingxi=true&csk.JobBoard=EXTERNAL&csk.HROrganization=10",
-   "careers_platform": "custom",
-   "careers_search_url": "https://css-emh-prd.inforcloudsuite.com/hcm/Jobs/page/JobsHomePage?csk.showusingxi=true&csk.JobBoard=EXTERNAL&csk.HROrganization=10",
-   "careers_notes": "Northern Light Health posts all member-hospital jobs on one Infor CloudSuite HCM external job board (URL taken from northernlighthealth.org/Careers/FAQ, which also points applicants to careers.northernlighthealth.org). The board could not be fetched in this session (fetch blocked), so rendering is untested; Infor boards are usually JS-heavy, so plan on the web-search fallback. Provider roles are also recruited by email at ProviderCareers@northernlight.org and syndicated to dejobs.org and AANP JobCenter.",
-   "ats_config": {
-    "host": "css-emh-prd.inforcloudsuite.com",
-    "vendor": "Infor CloudSuite HCM",
-    "job_board": "EXTERNAL",
-    "hr_organization": "10"
    },
    "active": true
   },
@@ -1999,8 +1613,10 @@
    "careers_url": "http://www.brattlebororetreat.org",
    "careers_platform": "unknown",
    "careers_search_url": null,
-   "careers_notes": "Careers board not located (site fetch blocked, search exhausted). Find the job board from the site's careers link.",
-   "ats_config": {},
+   "careers_notes": "Careers board not located (site fetch blocked, search exhausted). Find the job board from the site's careers link. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.brattlebororetreat.org/",
+   "ats_config": {
+    "host": "www.brattlebororetreat.org"
+   },
    "active": true
   },
   {
@@ -2022,24 +1638,6 @@
    "active": true
   },
   {
-   "slug": "st-christophers-philadelphia",
-   "name": "St. Christopher's Hospital for Children",
-   "parent_hospital": null,
-   "health_system": "Tower Health and Drexel University (joint venture)",
-   "hospital_type": "childrens_hospital",
-   "city": "Philadelphia",
-   "state": "PA",
-   "region": "Philadelphia metro",
-   "hotspot": false,
-   "website": "https://www.stchristophershospital.com/",
-   "careers_url": "https://www.stchristophershospital.com/",
-   "careers_platform": "unknown",
-   "careers_search_url": null,
-   "careers_notes": "Careers page not reached this session (search budget exhausted and fetches rate limited). NP openings (PICU, NICU, CT surgery, Center for the Urban Child) are syndicated to NAPNAP and AAP career centers. Verify whether St. Chris posts through Tower Health's applicant system or its own.",
-   "ats_config": {},
-   "active": true
-  },
-  {
    "slug": "mcleod-childrens-florence",
    "name": "McLeod Children's Hospital",
    "parent_hospital": "McLeod Regional Medical Center",
@@ -2056,46 +1654,6 @@
    "careers_notes": "Careers URL taken from a mcleodhealth.org page. Fetch of jobs.mcleodhealth.org was blocked this session, so the platform and query format were not confirmed; search URL is the base page.",
    "ats_config": {
     "host": "jobs.mcleodhealth.org"
-   },
-   "active": true
-  },
-  {
-   "slug": "grand-strand-medical-center-myrtle-beach",
-   "name": "Grand Strand Medical Center",
-   "parent_hospital": null,
-   "health_system": "HCA Healthcare",
-   "hospital_type": "regional_hospital",
-   "city": "Myrtle Beach",
-   "state": "SC",
-   "region": "Grand Strand",
-   "hotspot": false,
-   "website": "https://mygrandstrandhealth.com/",
-   "careers_url": "https://careers.hcahealthcare.com/",
-   "careers_platform": "unknown",
-   "careers_search_url": "https://careers.hcahealthcare.com/",
-   "careers_notes": "HCA Healthcare system careers site; fetch was blocked this session so platform and query format were not confirmed. HCA South Carolina listings do render server-side on the DirectEmployers syndication page https://dejobs.org/south-carolina/usa/jobs/hca-healthcare/careers (employer shown only as HCA Healthcare plus city: Charleston, North Charleston, Summerville, Moncks Corner, Walterboro, Myrtle Beach, North Myrtle Beach, Little River, Greenville).",
-   "ats_config": {
-    "host": "careers.hcahealthcare.com"
-   },
-   "active": true
-  },
-  {
-   "slug": "summerville-medical-center-summerville",
-   "name": "Summerville Medical Center",
-   "parent_hospital": null,
-   "health_system": "HCA Healthcare (Trident Health)",
-   "hospital_type": "community_hospital",
-   "city": "Summerville",
-   "state": "SC",
-   "region": "Charleston SC",
-   "hotspot": false,
-   "website": "https://tridenthealthsystem.com",
-   "careers_url": "https://careers.hcahealthcare.com/",
-   "careers_platform": "unknown",
-   "careers_search_url": "https://careers.hcahealthcare.com/",
-   "careers_notes": "HCA Healthcare system careers site; fetch was blocked this session so platform and query format were not confirmed. HCA South Carolina listings do render server-side on the DirectEmployers syndication page https://dejobs.org/south-carolina/usa/jobs/hca-healthcare/careers (employer shown only as HCA Healthcare plus city: Charleston, North Charleston, Summerville, Moncks Corner, Walterboro, Myrtle Beach, North Myrtle Beach, Little River, Greenville).",
-   "ats_config": {
-    "host": "careers.hcahealthcare.com"
    },
    "active": true
   },
@@ -2143,26 +1701,6 @@
    "active": true
   },
   {
-   "slug": "brigham-and-womens-boston",
-   "name": "Brigham and Women's Hospital",
-   "parent_hospital": null,
-   "health_system": "Mass General Brigham",
-   "hospital_type": "academic_medical_center",
-   "city": "Boston",
-   "state": "MA",
-   "region": "Boston metro",
-   "hotspot": false,
-   "website": "https://www.brighamandwomens.org",
-   "careers_url": "https://jobs.massgeneralbrigham.org/",
-   "careers_platform": "unknown",
-   "careers_search_url": null,
-   "careers_notes": "Mass General Brigham posts all jobs on jobs.massgeneralbrigham.org; fetch blocked this session, so the platform and query parameter are unconfirmed.",
-   "ats_config": {
-    "host": "jobs.massgeneralbrigham.org"
-   },
-   "active": true
-  },
-  {
    "slug": "south-shore-hospital-weymouth",
    "name": "South Shore Hospital",
    "parent_hospital": null,
@@ -2201,46 +1739,6 @@
     "host": "pm.healthcaresource.com",
     "vendor": "HealthcareSource (Symplr)",
     "client_path": "/CS/lawrence"
-   },
-   "active": true
-  },
-  {
-   "slug": "newton-wellesley-hospital-newton",
-   "name": "Newton-Wellesley Hospital",
-   "parent_hospital": null,
-   "health_system": "Mass General Brigham",
-   "hospital_type": "community_hospital",
-   "city": "Newton",
-   "state": "MA",
-   "region": "Boston metro",
-   "hotspot": false,
-   "website": "https://www.nwh.org",
-   "careers_url": "https://jobs.massgeneralbrigham.org/",
-   "careers_platform": "unknown",
-   "careers_search_url": null,
-   "careers_notes": "Mass General Brigham posts jobs on jobs.massgeneralbrigham.org; fetch blocked this session, so the platform and query parameter are unconfirmed. Filter to Newton-Wellesley Hospital.",
-   "ats_config": {
-    "host": "jobs.massgeneralbrigham.org"
-   },
-   "active": true
-  },
-  {
-   "slug": "salem-hospital-salem",
-   "name": "Salem Hospital",
-   "parent_hospital": null,
-   "health_system": "Mass General Brigham",
-   "hospital_type": "community_hospital",
-   "city": "Salem",
-   "state": "MA",
-   "region": "Boston metro",
-   "hotspot": false,
-   "website": "https://salem.massgeneralbrigham.org",
-   "careers_url": "https://jobs.massgeneralbrigham.org/",
-   "careers_platform": "unknown",
-   "careers_search_url": null,
-   "careers_notes": "Mass General Brigham posts jobs on jobs.massgeneralbrigham.org; fetch blocked this session, so the platform and query parameter are unconfirmed. Filter to Salem Hospital.",
-   "ats_config": {
-    "host": "jobs.massgeneralbrigham.org"
    },
    "active": true
   },
@@ -2288,28 +1786,6 @@
     "keyword_param": "query",
     "entity_filter_param": "dropdown_field_3_uids[]",
     "entity_filter_value": "d81aa1febab5c3c902cac2b7acfd5651"
-   },
-   "active": true
-  },
-  {
-   "slug": "boston-medical-center-south-brockton",
-   "name": "Boston Medical Center - South",
-   "parent_hospital": null,
-   "health_system": "Boston Medical Center Health System",
-   "hospital_type": "community_hospital",
-   "city": "Brockton",
-   "state": "MA",
-   "region": "Boston metro",
-   "hotspot": false,
-   "website": "https://www.bmchealthsystem.org/bmc-south",
-   "careers_url": "https://careers.bmc.org/jobs/search",
-   "careers_platform": "unknown",
-   "careers_search_url": "https://careers.bmc.org/jobs/search?page=1&query=nurse%20practitioner",
-   "careers_notes": "BMC Health System board careers.bmc.org (query= keyword); a BMC South entity filter id was not identified. Not fetched (blocked).",
-   "ats_config": {
-    "host": "careers.bmc.org",
-    "search_path": "/jobs/search",
-    "keyword_param": "query"
    },
    "active": true
   },
@@ -2429,26 +1905,6 @@
    "active": true
   },
   {
-   "slug": "charlton-memorial-fall-river",
-   "name": "Charlton Memorial Hospital",
-   "parent_hospital": null,
-   "health_system": "Southcoast Health",
-   "hospital_type": "regional_hospital",
-   "city": "Fall River",
-   "state": "MA",
-   "region": "Massachusetts (other)",
-   "hotspot": false,
-   "website": "https://www.southcoast.org/locations/charlton-memorial-hospital/",
-   "careers_url": "https://southcoasthealthcareers.org/",
-   "careers_platform": "unknown",
-   "careers_search_url": null,
-   "careers_notes": "southcoast.org/careers redirects to southcoasthealthcareers.org; fetch blocked, platform unconfirmed.",
-   "ats_config": {
-    "host": "southcoasthealthcareers.org"
-   },
-   "active": true
-  },
-  {
    "slug": "berkshire-medical-center-pittsfield",
    "name": "Berkshire Medical Center",
    "parent_hospital": null,
@@ -2482,26 +1938,6 @@
    "careers_search_url": null,
    "careers_notes": "Tenet Healthcare hospital; jobs post on Tenet's corporate career board. URL and platform not verified this session (careers_url is the hospital home page).",
    "ats_config": {},
-   "active": true
-  },
-  {
-   "slug": "cooley-dickinson-northampton",
-   "name": "Cooley Dickinson Hospital",
-   "parent_hospital": null,
-   "health_system": "Mass General Brigham",
-   "hospital_type": "community_hospital",
-   "city": "Northampton",
-   "state": "MA",
-   "region": "Massachusetts (other)",
-   "hotspot": false,
-   "website": "https://www.cooleydickinson.org",
-   "careers_url": "https://jobs.massgeneralbrigham.org/",
-   "careers_platform": "unknown",
-   "careers_search_url": null,
-   "careers_notes": "Mass General Brigham member; jobs post on jobs.massgeneralbrigham.org (fetch blocked, platform unconfirmed). Filter to Cooley Dickinson.",
-   "ats_config": {
-    "host": "jobs.massgeneralbrigham.org"
-   },
    "active": true
   },
   {
@@ -2598,27 +2034,7 @@
     "host": "careers.hcahealthcare.com"
    },
    "active": true
-  },
-  {
-   "slug": "johnston-willis-richmond",
-   "name": "Johnston-Willis Hospital",
-   "parent_hospital": "CJW Medical Center",
-   "health_system": "HCA Healthcare (HCA Virginia)",
-   "hospital_type": "regional_hospital",
-   "city": "Richmond",
-   "state": "VA",
-   "region": "Richmond",
-   "hotspot": false,
-   "website": "https://www.hcavirginia.com/locations/johnston-willis-hospital",
-   "careers_url": "https://careers.hcahealthcare.com/search/jobs/in/va-virginia",
-   "careers_platform": "custom",
-   "careers_search_url": "https://careers.hcahealthcare.com/search/nurse-practitioner/jobs/in/va-virginia",
-   "careers_notes": "HCA Healthcare central job board careers.hcahealthcare.com (TalentBrew-style paths: /search/jobs/in/va-virginia, /search/<keyword>/jobs, facility pages /pages/<facility-slug>, job detail /jobs/<id>-<title-slug>). WebFetch was refused by robots.txt (2026-10-19), so rendering was not tested. Underlying ATS not confirmed from a page read, so platform is recorded as custom. The Richmond keyword search URL combines the two observed path patterns (/search/<keyword>/jobs and /jobs/in/<place>) and is untested. Jobs post under CJW Medical Center.",
-   "ats_config": {
-    "host": "careers.hcahealthcare.com"
-   },
-   "active": true
   }
  ],
- "note": "Coverage-test snapshot of data/regions/*.json (careers fields only), one hospital per job board, platforms interleaved. Regenerate: python -m scraper.tools.snapshot_ledger data/regions/*.json -o tests/fixtures/regions_snapshot.json --one-per-board --minimal --exclude tests/fixtures/hospitals_sample.json"
+ "note": "Coverage-test snapshot of data/regions/*.json (careers fields only), one hospital per job board; boards that failed in live_test 39367605148 first, then platforms interleaved. Regenerate: python -m scraper.tools.snapshot_ledger data/regions/*.json -o tests/fixtures/regions_snapshot.json --one-per-board --minimal --exclude tests/fixtures/hospitals_sample.json"
 }
