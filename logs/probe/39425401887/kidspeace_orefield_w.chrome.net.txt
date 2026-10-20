@@ -1,0 +1,12 @@
+200 GET document https://www.kidspeace.org/
+200 GET fetch https://harnessapp.com/v2.0/charity/371f43620c353717c9a2/widget
+200 GET fetch https://harnessapp.com/v2.0/whitelabel/371f43620c353717c9a2/config
+200 GET fetch https://harnessapp.com/v2.0/charity/371f43620c353717c9a2/campaigns
+200 GET document https://www.google.com/recaptcha/api2/anchor?ar=1&k=6LeNyXYdAAAAAFNsE9xJGbQ_kS7pRJ9VtOOzvVBl&co=aHR0cHM6Ly93d3cua2lkc3BlYWNlLm9yZzo0NDM.&hl=en&v=4EDjxXf4knsT8wRTp1lOoMFE&size=invisible&anchor-ms=20000&execute-ms=30000&ovv=CAB5am5W&cb=48tja317yt8s
+200 GET xhr https://cdn.buttonizer.io/static/build-v4.15.4/assets/embed.css
+200 POST xhr https://api.buttonizer.io/serve/cac01ace-bce0-40df-a298-2e0c34337c1e
+    POSTDATA: {"preview":0}
+204 POST xhr https://www.kidspeace.org/cdn-cgi/rum?
+    POSTDATA: {"startTime":1792500864361,"pageloadId":"f985fbf9-224d-46df-a0ba-d21cf08058a7","eventType":1,"nt":"navigate","location":"https://www.kidspeace.org/","versions":{"fl":"2024.11.0","js":"2026.10.1","timings":2},"bi":{"be":"Blink","bev":"155","bv":"155"},"memory":{"totalJSHeapSize":30487584,"usedJSHeapSize":22678016,"jsHeapSizeLimit":4395630592},"firstPaint":156,"firstContentfulPaint":204,"timingsV2":{"nextHopProtocol":"h3","domainLookupStart":1,"domainLookupEnd":1,"connectStart":1,"connectEnd":1,"secureConnectionStart":1,"requestStart":3,"responseStart":37,"responseEnd":38,"domInteractive":221,"domComplete":824,"loadEventStart":824,"loadEventEnd":826,"finalResponseHeadersStart":37,"firstInterimResponseStart":0,"transferSize":27908,"decodedBodySize":142348},"siteToken":"4ec22a39c8204714a478bca0d594b4e3","st":2}
+200 POST fetch https://www.kidspeace.org/wp-json/iawp/search
+    POSTDATA: {"referrer_url":null,"payload":{"resource":"singular","singular_id":15,"page":1},"signature":"cdbb1dfcb249264b8786bd37f48a0bd7"}
