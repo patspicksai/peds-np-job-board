@@ -1,0 +1,36 @@
+# name url [POST:json] [ACT:json] [MODES:a,b]   ATS boards without adapters (brief classes 3, 4, 5, 9)
+nlh_home https://css-emh-prd.inforcloudsuite.com/hcm/Jobs/page/JobsHomePage?csk.showusingxi=true&csk.JobBoard=EXTERNAL&csk.HROrganization=10 ACT:[{"click": "a.lm-card-field.hyperlink >> nth=4"}, {"wait": 4000}]
+nlh_list https://css-emh-prd.inforcloudsuite.com/hcm/Jobs/list/JobPosting.SearchForJobsResults?pageop=load&pagesize=100&pagepanel=JobsHomePage.Jobs.NewJobsForAnonymous&csk.showusingxi=true&csk.JobBoard=EXTERNAL&csk.HROrganization=10
+nlh_search https://css-emh-prd.inforcloudsuite.com/hcm/Jobs/navigation/JobBoard(10%2CEXTERNAL).JobSearchCompositeFormNav?csk.HROrganization=10&csk.JobBoard=EXTERNAL&web10x=true MODES:chrome
+kaleida_careers https://www.kaleidahealth.org/careers/
+kaleida_home https://css-y9x4ku9mqsygapwx-prd.inforcloudsuite.com/hcm/Jobs/page/JobsHomePage?csk.showusingxi=true&csk.JobBoard=KH-EXTERNAL&csk.HROrganization=1000
+chesapeake_board https://crhukg.rec.pro.ukg.net/CHE1503CHPE/JobBoard/09584b08-b32f-4882-8c7b-223bbd8e3851/?q=nurse+practitioner MODES:chrome
+chesapeake_api https://crhukg.rec.pro.ukg.net/CHE1503CHPE/JobBoard/09584b08-b32f-4882-8c7b-223bbd8e3851/JobBoardView/LoadSearchResults POST:{"opportunitySearch": {"Top": 5, "Skip": 0, "QueryString": "nurse practitioner", "OrderBy": [{"Value": "postedDateDesc", "PropertyName": "PostedDate", "Ascending": false}], "Filters": []}, "matchCriteria": {"PreferredJobs": [], "Educations": [], "LicenseAndCertifications": [], "Skills": [], "hasNoLicenses": false, "SkippedSkills": []}}
+meritus_api https://recruiting.ultipro.com/MER1012MERH/JobBoard/23a054d5-dd9d-4a01-ba62-0bc75b4673d6/JobBoardView/LoadSearchResults POST:{"opportunitySearch": {"Top": 5, "Skip": 0, "QueryString": "nurse practitioner", "OrderBy": [{"Value": "postedDateDesc", "PropertyName": "PostedDate", "Ascending": false}], "Filters": []}, "matchCriteria": {"PreferredJobs": [], "Educations": [], "LicenseAndCertifications": [], "Skills": [], "hasNoLicenses": false, "SkippedSkills": []}}
+frederick_api https://recruiting.ultipro.com/FRE1010FRHS/JobBoard/776a147e-2e0b-43d0-844e-bbd49deeb24d/JobBoardView/LoadSearchResults POST:{"opportunitySearch": {"Top": 5, "Skip": 0, "QueryString": "nurse practitioner", "OrderBy": [{"Value": "postedDateDesc", "PropertyName": "PostedDate", "Ascending": false}], "Filters": []}, "matchCriteria": {"PreferredJobs": [], "Educations": [], "LicenseAndCertifications": [], "Skills": [], "hasNoLicenses": false, "SkippedSkills": []}}
+ecmc_careers https://www.ecmc.edu/careers/
+chesapeake_careers https://www.chesapeakeregional.com/careers/job-board
+meritus_careers https://www.meritushealth.com/careers
+hcs_lawrence https://pm.healthcaresource.com/CS/lawrence/#/search MODES:chrome,req
+hcs_caromont https://pm.healthcaresource.com/cs/caromont#/search MODES:chrome
+paylocity_chp https://recruiting.paylocity.com/Recruiting/Jobs/All/bb1b4b91-a596-4d4b-aab4-3265f0735227
+paylocity_iredell https://recruiting.paylocity.com/Recruiting/Jobs/All/e48fa797-ce91-4d50-b81e-d93ea7e1a2e0/Iredell-Memorial-Hospital-Incorporated
+upstate_home https://careers.upstate.edu/
+upstate_jobs https://careers.upstate.edu/jobs?keywords=nurse%20practitioner
+downstate https://jobs.downstate.edu/en-us/listing/
+ukgready_mwph https://secure4.entertimeonline.com/ta/6108366.jobs?JobsSearch=1
+ukgready_stmarys https://prd01-hcm01.prd.mykronos.com/ta/6156032.careers?ShowAllOpenings=
+appone_beaufort https://www2.appone.com/Search/Search.aspx?servervar=beaufortmemorialhospital.appone.com
+silkroad_temple https://jobs.silkroad.com/templehealth/Careers
+wellspan https://www.joinwellspan.org/jobs
+uchc https://jobs.uchc.edu/CSS_External/CSSPage_Welcome.asp
+englewood https://careers.englewoodhealth.org/search/?q=nurse+practitioner
+englewood_home https://careers.englewoodhealth.org/
+rrh_wd https://rrhs.wd5.myworkdayjobs.com/wday/cxs/rrhs/RRH/jobs POST:{"appliedFacets":{},"limit":5,"offset":0,"searchText":"nurse practitioner"}
+rrh_opps https://careers.rochesterregional.org/career-opportunities/
+christiana_wd https://christianacare.wd5.myworkdayjobs.com/wday/cxs/christianacare/CCHS/jobs POST:{"appliedFacets":{},"limit":5,"offset":0,"searchText":"nurse practitioner"}
+christiana_careers https://careers.christianacare.org/
+saintpeters https://careers.saintpetershcs.com/
+medisys https://medisyscareers.org/job-category/nursing/
+maimo https://careers.maimo.org/nursing-careers
+guthrie_careers https://careers.guthrie.org/

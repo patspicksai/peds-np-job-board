@@ -1,27 +1,25 @@
 name: probe
-# Development helper: fetch a list of careers URLs (requests + Playwright), capture raw HTML,
-# network traffic and ATS signatures, and publish them to the ci-logs branch.
+# Development helper: fetch a list of careers URLs (requests, curl_cffi Chrome impersonation, Playwright bundled
+# Chromium, installed Google Chrome headed under xvfb), capture raw HTML, network traffic, XHR bodies, iframes,
+# ATS links and signatures, and publish them to the ci-logs branch (logs/probe/<run_id>/).
 on:
   workflow_dispatch:
     inputs:
       urls:
-        description: "path to a urls file in the repo (lines: name url [POST:json])"
+        description: "path to a urls file in the repo (lines: name url [POST:json] [ACT:json] [MODES:a,b])"
         default: "tests/fixtures/probe_urls.txt"
-      browser:
-        description: "also render with Playwright"
-        default: "true"
-      capture:
-        description: "regex of document URLs whose bodies to save"
-        default: ""
+      modes:
+        description: "comma-separated: req,cffi,pw,chrome"
+        default: "req,cffi,chrome"
 permissions:
   contents: write
 concurrency:
-  group: probe
+  group: probe-${{ inputs.urls }}
   cancel-in-progress: false
 jobs:
   probe:
-    runs-on: ubuntu-latest
-    timeout-minutes: 30
+    runs-on: ubuntu-24.04
+    timeout-minutes: 40
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -31,16 +29,16 @@ jobs:
           cache-dependency-path: scraper/requirements.txt
       - run: pip install -r scraper/requirements.txt
       - name: Install Chromium
-        if: inputs.browser == 'true'
-        run: python -m playwright install --with-deps chromium
+        run: |
+          python -m playwright install --with-deps chromium
+          google-chrome --version || true
       - name: Probe
         run: |
           set +e
           mkdir -p "$RUNNER_TEMP/probe"
-          FLAG=""; [ "${{ inputs.browser }}" = "true" ] || FLAG="--no-browser"
-          PROBE_CAPTURE="${{ inputs.capture }}" python -m scraper.tools.probe "${{ inputs.urls }}" "$RUNNER_TEMP/probe" $FLAG > "$RUNNER_TEMP/probe/run.log" 2>&1
+          timeout --kill-after=30s 35m xvfb-run -a python -m scraper.tools.probe "${{ inputs.urls }}" "$RUNNER_TEMP/probe" "--modes=${{ inputs.modes }}" > "$RUNNER_TEMP/probe/run.log" 2>&1
           echo "exit=$?" >> "$RUNNER_TEMP/probe/run.log"
-          tail -50 "$RUNNER_TEMP/probe/run.log"
+          tail -80 "$RUNNER_TEMP/probe/run.log"
       - name: Publish to ci-logs
         if: always()
         run: bash scraper/tools/ci_publish.sh "$RUNNER_TEMP/probe" "probe/${{ github.run_id }}" "probe ${{ github.run_id }}"
