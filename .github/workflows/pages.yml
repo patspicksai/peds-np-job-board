@@ -1,0 +1,54 @@
+name: pages
+# Deploy site/ (with data/hospitals.json and data/jobs.json copied into site/data/) to GitHub Pages.
+# configure-pages with enablement: true creates the Pages site on first run (build type: GitHub Actions).
+on:
+  push:
+    branches: [main]
+    paths:
+      - "site/**"
+      - "data/**"
+  workflow_dispatch:
+permissions:
+  pages: write
+  id-token: write
+  contents: read
+concurrency:
+  group: pages
+  cancel-in-progress: true
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Assemble site
+        run: |
+          mkdir -p _site
+          if [ -d site ]; then cp -r site/. _site/; fi
+          mkdir -p _site/data
+          [ -f data/hospitals.json ] && cp data/hospitals.json _site/data/hospitals.json
+          [ -f data/jobs.json ] && cp data/jobs.json _site/data/jobs.json
+          if [ ! -f _site/index.html ]; then
+            cat > _site/index.html <<'HTML'
+          <!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+          <title>Peds NP Job Board</title>
+          <style>:root{color-scheme:light dark}body{margin:0;font:16px/1.5 system-ui,sans-serif;background:#f7f7f5;color:#222;display:grid;place-items:center;min-height:100vh;padding:16px}
+          @media (prefers-color-scheme:dark){body{background:#151515;color:#eee}}main{max-width:520px;text-align:center}</style></head>
+          <body><main><h1>Peds NP Job Board</h1><p>Coming soon.</p><p id="c"></p></main>
+          <script>fetch('data/jobs.json').then(r=>r.json()).then(d=>{document.getElementById('c').textContent=(d.jobs||[]).length+' jobs tracked'}).catch(()=>{})</script>
+          </body></html>
+          HTML
+            echo "placeholder index.html deployed (site/index.html not present)"
+          fi
+          touch _site/.nojekyll
+          ls -la _site _site/data
+      - uses: actions/configure-pages@v5
+        with:
+          enablement: true
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+      - id: deployment
+        uses: actions/deploy-pages@v4

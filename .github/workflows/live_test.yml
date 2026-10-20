@@ -1,0 +1,62 @@
+name: live_test
+# Development loop: run the scraper in --dry-run against a ledger and publish the per-hospital
+# status table plus sample jobs to the ci-logs branch (logs/live_test/<run_id>/).
+on:
+  workflow_dispatch:
+    inputs:
+      ledger:
+        description: "ledger JSON path"
+        default: "tests/fixtures/hospitals_sample.json"
+      limit:
+        description: "max hospitals (0 = all)"
+        default: "0"
+      only:
+        description: "comma-separated slugs (optional)"
+        default: ""
+      platform:
+        description: "only this detected platform (optional)"
+        default: ""
+      no_details:
+        description: "skip detail fetches (true/false)"
+        default: "false"
+permissions:
+  contents: write
+concurrency:
+  group: live-test
+  cancel-in-progress: false
+jobs:
+  live:
+    runs-on: ubuntu-latest
+    timeout-minutes: 50
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: scraper/requirements.txt
+      - run: pip install -r scraper/requirements.txt
+      - name: Install Chromium
+        run: python -m playwright install --with-deps chromium
+      - name: Unit tests
+        run: |
+          mkdir -p "$RUNNER_TEMP/out"
+          python -m pytest -q tests > "$RUNNER_TEMP/out/pytest.txt" 2>&1; echo "pytest exit=$?" >> "$RUNNER_TEMP/out/pytest.txt"
+          tail -5 "$RUNNER_TEMP/out/pytest.txt"
+      - name: Scrape (dry run)
+        run: |
+          set +e
+          ARGS="--dry-run --ledger ${{ inputs.ledger }} --report-dir $RUNNER_TEMP/out"
+          [ "${{ inputs.limit }}" != "0" ] && [ -n "${{ inputs.limit }}" ] && ARGS="$ARGS --limit ${{ inputs.limit }}"
+          [ -n "${{ inputs.only }}" ] && ARGS="$ARGS --only ${{ inputs.only }}"
+          [ -n "${{ inputs.platform }}" ] && ARGS="$ARGS --platform ${{ inputs.platform }}"
+          [ "${{ inputs.no_details }}" = "true" ] && ARGS="$ARGS --no-details"
+          echo "args: $ARGS" > "$RUNNER_TEMP/out/args.txt"
+          timeout 45m python -m scraper.run $ARGS > "$RUNNER_TEMP/out/run.log" 2>&1
+          echo "scraper exit=$?" >> "$RUNNER_TEMP/out/run.log"
+          tail -c 200000 "$RUNNER_TEMP/out/run.log" > "$RUNNER_TEMP/out/run_tail.log"
+          rm -f "$RUNNER_TEMP/out/run.log"
+          cat "$RUNNER_TEMP/out/status.txt" 2>/dev/null || tail -50 "$RUNNER_TEMP/out/run_tail.log"
+      - name: Publish to ci-logs
+        if: always()
+        run: bash scraper/tools/ci_publish.sh "$RUNNER_TEMP/out" "live_test/${{ github.run_id }}" "live_test ${{ github.run_id }}"

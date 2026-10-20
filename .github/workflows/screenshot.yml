@@ -1,0 +1,33 @@
+name: screenshot
+# Open the published site at 1440x900 and 390x844, full-page screenshots before and after clicking the
+# first job card; commit PNGs to ci-logs under logs/screenshots/<timestamp>/.
+on:
+  workflow_dispatch:
+    inputs:
+      url:
+        description: "page to capture"
+        default: "https://patspicksai.github.io/peds-np-job-board/"
+permissions:
+  contents: write
+jobs:
+  shoot:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: |
+          pip install playwright==1.56.0
+          python -m playwright install --with-deps chromium
+      - name: Capture
+        id: cap
+        run: |
+          TS=$(date -u +%Y%m%dT%H%M%SZ); echo "ts=$TS" >> "$GITHUB_OUTPUT"
+          mkdir -p "$RUNNER_TEMP/shots"
+          python scripts/screenshot_site.py "${{ inputs.url }}" "$RUNNER_TEMP/shots" || true
+          ls -la "$RUNNER_TEMP/shots"
+      - name: Publish to ci-logs
+        if: always()
+        run: bash scraper/tools/ci_publish.sh "$RUNNER_TEMP/shots" "screenshots/${{ steps.cap.outputs.ts }}" "screenshots ${{ steps.cap.outputs.ts }}"
