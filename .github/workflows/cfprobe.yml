@@ -1,0 +1,44 @@
+name: cfprobe
+# Development helper: compare clients (requests, curl_cffi Chrome impersonation, Playwright bundled Chromium,
+# Playwright + installed Google Chrome headless/headed, patchright) against bot-walled careers pages.
+# Results go to the ci-logs branch under logs/cfprobe/<run_id>/.
+on:
+  workflow_dispatch:
+    inputs:
+      urls:
+        description: "path to a urls file (lines: name url)"
+        default: "tests/fixtures/cfprobe_urls.txt"
+      modes:
+        description: "comma-separated modes"
+        default: "requests,curl_cffi,pw_headless,pw_chrome,pw_chrome_headed,patchright"
+permissions:
+  contents: write
+concurrency:
+  group: cfprobe
+  cancel-in-progress: false
+jobs:
+  probe:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install
+        run: |
+          pip install -r scraper/requirements.txt curl_cffi==0.13.0 patchright==1.56.0
+          python -m playwright install --with-deps chromium
+          python -m patchright install chromium || true
+          google-chrome --version || true
+      - name: Probe
+        run: |
+          set +e
+          mkdir -p "$RUNNER_TEMP/out"
+          xvfb-run -a python -m scraper.tools.cfprobe "${{ inputs.urls }}" "$RUNNER_TEMP/out" "--modes=${{ inputs.modes }}" > "$RUNNER_TEMP/out/run.log" 2>&1
+          echo "exit=$?" >> "$RUNNER_TEMP/out/run.log"
+          rm -rf "$RUNNER_TEMP/out/pr-profile"
+          tail -80 "$RUNNER_TEMP/out/run.log"
+      - name: Publish to ci-logs
+        if: always()
+        run: bash scraper/tools/ci_publish.sh "$RUNNER_TEMP/out" "cfprobe/${{ github.run_id }}" "cfprobe ${{ github.run_id }}"
