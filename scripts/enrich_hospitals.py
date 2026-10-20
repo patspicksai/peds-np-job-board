@@ -233,6 +233,42 @@ def probe_url(url: str, want_text: str | None = None) -> dict:
     return out
 
 
+CAREERS_LINK_RE = re.compile(r'href=["\']([^"\']*(?:career|careers|jobs|employment|join-our-team|work-with-us|joinus|opportunit)[^"\']*)["\']', re.I)
+
+
+def discover_careers_link(page_url: str) -> str | None:
+    """Fetch a page and return the most careers-looking link on it (absolute URL), else None."""
+    try:
+        r = requests.get(page_url, headers={"User-Agent": BROWSER_UA, "Accept-Language": "en-US,en;q=0.9"},
+                         timeout=30, allow_redirects=True)
+        if r.status_code != 200:
+            return None
+        from urllib.parse import urljoin
+        cands = []
+        for m in CAREERS_LINK_RE.finditer(r.text[:600000]):
+            href = m.group(1).strip()
+            if href.startswith(("mailto:", "javascript:", "#")):
+                continue
+            absu = urljoin(r.url, href)
+            score = 0
+            lo = absu.lower()
+            for needle, name in SIGNATURES:
+                if needle in lo:
+                    score += 10
+            if "career" in lo or "jobs" in lo:
+                score += 3
+            if lo.endswith((".pdf", ".jpg", ".png")):
+                continue
+            cands.append((score, absu))
+        if not cands:
+            return None
+        cands.sort(reverse=True)
+        return cands[0][1]
+    except Exception as e:  # noqa: BLE001
+        log("   discover error", e)
+        return None
+
+
 def enrich(h: dict) -> dict:
     e = h.setdefault("_enrich", {})
     e["enriched_at"] = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
@@ -257,6 +293,19 @@ def enrich(h: dict) -> dict:
     cu = h.get("careers_url")
     if cu and not is_placeholder(cu):
         e["careers_probe"] = probe_url(cu)
+        # If the "careers" URL is really the main site (or landed on a marketing page with no ATS
+        # signals), look for a careers / jobs link on that page and follow it.
+        cp = e["careers_probe"]
+        if cp.get("status") == 200 and not cp.get("platform_guess") and not cp.get("ats_link_seen"):
+            found = discover_careers_link(cp.get("final_url") or cu)
+            if found:
+                e["careers_discovered"] = probe_url(found)
+                e["careers_discovered"]["from"] = cp.get("final_url") or cu
+    elif h.get("website") and not is_placeholder(h.get("website")):
+        found = discover_careers_link(h["website"])
+        if found:
+            e["careers_discovered"] = probe_url(found)
+            e["careers_discovered"]["from"] = h["website"]
     su = h.get("careers_search_url")
     if su and not is_placeholder(su):
         e["careers_search_probe"] = probe_url(su, want_text="nurse practitioner")

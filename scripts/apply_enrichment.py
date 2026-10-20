@@ -51,6 +51,13 @@ def apply(h: dict, e: dict) -> list[str]:
         h["website"] = e["website_from_wikidata"]
         changed.append("website:wikidata")
     cp = e.get("careers_probe") or {}
+    cd = e.get("careers_discovered") or {}
+    if cd.get("status") == 200 and (cd.get("platform_guess") or cd.get("ats_link_seen")) and (not cp or not cp.get("platform_guess")):
+        # a real careers page was discovered from the main site; adopt it
+        if is_placeholder(h.get("careers_url")) or h.get("careers_url") == h.get("website") or not cp.get("platform_guess"):
+            h["careers_url"] = cd.get("final_url") or h.get("careers_url")
+            changed.append("careers_url:discovered")
+        cp = {**cd, "status": cd.get("status")}
     if cp:
         guess = cp.get("platform_guess")
         if h.get("careers_platform") in (None, "unknown", "custom") and guess in PLATFORMS_OK and guess != "custom":
