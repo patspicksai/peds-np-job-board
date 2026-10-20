@@ -1,0 +1,28 @@
+<title>Peds NP Job Board</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Acute care pediatric nurse practitioner jobs at East Coast hospitals, South Carolina to Maine.">
+<style>
+:root{--bg:#EEF2F1;--surface:#FFFFFF;--ink:#16262B;--muted:#56686D;--rule:#D3DCDB;--accent:#1D6A6F;--beacon:#C98A1B;color-scheme:light}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#0E191C;--surface:#152429;--ink:#E2EBE9;--muted:#93A6A8;--rule:#27393E;--accent:#73C2BA;--beacon:#E3B553;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0E191C;--surface:#152429;--ink:#E2EBE9;--muted:#93A6A8;--rule:#27393E;--accent:#73C2BA;--beacon:#E3B553;color-scheme:dark}
+body{background:var(--bg);color:var(--ink);font:16px/1.5 system-ui,sans-serif;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+</style>
+<main id="app"><h1>Peds NP Job Board</h1><p id="status">Loading jobs...</p><ol id="feed"></ol></main>
+<script>
+(function(){
+  var qs = new URLSearchParams(location.search);
+  var base = qs.get('data');
+  var bust = 'v=' + Date.now();
+  function get(u){ return fetch(u + (u.indexOf('?') > -1 ? '&' : '?') + bust, {cache:'no-store'}).then(function(r){ if(!r.ok) throw new Error(r.status); return r.json(); }); }
+  function load(b){ return Promise.all([get(b + 'hospitals.json'), get(b + 'jobs.json')]); }
+  var bases = (base ? [base.replace(/\/?$/, '/')] : []).concat(['./data/', 'https://raw.githubusercontent.com/patspicksai/peds-np-job-board/main/data/']);
+  (function next(i){
+    if (i >= bases.length) { document.getElementById('status').textContent = 'Could not load the job data.'; return; }
+    load(bases[i]).then(function(d){
+      var jobs = d[1].jobs.filter(function(j){ return j.status !== 'closed'; }).sort(function(a,b){ return a.first_seen_at < b.first_seen_at ? 1 : -1; });
+      document.getElementById('status').textContent = jobs.length + ' jobs';
+      document.getElementById('feed').innerHTML = jobs.map(function(j){ return '<li><a target="_blank" rel="noopener" href="' + j.url + '">' + j.title + '</a></li>'; }).join('');
+    }).catch(function(){ next(i + 1); });
+  })(0);
+})();
+</script>
