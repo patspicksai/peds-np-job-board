@@ -1,0 +1,1667 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head><meta charset="UTF-8" /><script>if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\/7\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf("?")==-1){if(href.indexOf("#")==-1){document.location.href=href+"?nowprocket=1"}else{document.location.href=href.replace("#","?nowprocket=1#")}}else{if(href.indexOf("#")==-1){document.location.href=href+"&nowprocket=1"}else{document.location.href=href.replace("#","&nowprocket=1#")}}}}</script><script>(()=>{class RocketLazyLoadScripts{constructor(){this.v="1.2.6",this.triggerEvents=["keydown","mousedown","mousemove","touchmove","touchstart","touchend","wheel"],this.userEventHandler=this.t.bind(this),this.touchStartHandler=this.i.bind(this),this.touchMoveHandler=this.o.bind(this),this.touchEndHandler=this.h.bind(this),this.clickHandler=this.u.bind(this),this.interceptedClicks=[],this.interceptedClickListeners=[],this.l(this),window.addEventListener("pageshow",(t=>{this.persisted=t.persisted,this.everythingLoaded&&this.m()})),this.CSPIssue=sessionStorage.getItem("rocketCSPIssue"),document.addEventListener("securitypolicyviolation",(t=>{this.CSPIssue||"script-src-elem"!==t.violatedDirective||"data"!==t.blockedURI||(this.CSPIssue=!0,sessionStorage.setItem("rocketCSPIssue",!0))})),document.addEventListener("DOMContentLoaded",(()=>{this.k()})),this.delayedScripts={normal:[],async:[],defer:[]},this.trash=[],this.allJQueries=[]}p(t){document.hidden?t.t():(this.triggerEvents.forEach((e=>window.addEventListener(e,t.userEventHandler,{passive:!0}))),window.addEventListener("touchstart",t.touchStartHandler,{passive:!0}),window.addEventListener("mousedown",t.touchStartHandler),document.addEventListener("visibilitychange",t.userEventHandler))}_(){this.triggerEvents.forEach((t=>window.removeEventListener(t,this.userEventHandler,{passive:!0}))),document.removeEventListener("visibilitychange",this.userEventHandler)}i(t){"HTML"!==t.target.tagName&&(window.addEventListener("touchend",this.touchEndHandler),window.addEventListener("mouseup",this.touchEndHandler),window.addEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.addEventListener("mousemove",this.touchMoveHandler),t.target.addEventListener("click",this.clickHandler),this.L(t.target,!0),this.S(t.target,"onclick","rocket-onclick"),this.C())}o(t){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler),t.target.removeEventListener("click",this.clickHandler),this.L(t.target,!1),this.S(t.target,"rocket-onclick","onclick"),this.M()}h(){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler)}u(t){t.target.removeEventListener("click",this.clickHandler),this.L(t.target,!1),this.S(t.target,"rocket-onclick","onclick"),this.interceptedClicks.push(t),t.preventDefault(),t.stopPropagation(),t.stopImmediatePropagation(),this.M()}O(){window.removeEventListener("touchstart",this.touchStartHandler,{passive:!0}),window.removeEventListener("mousedown",this.touchStartHandler),this.interceptedClicks.forEach((t=>{t.target.dispatchEvent(new MouseEvent("click",{view:t.view,bubbles:!0,cancelable:!0}))}))}l(t){EventTarget.prototype.addEventListenerWPRocketBase=EventTarget.prototype.addEventListener,EventTarget.prototype.addEventListener=function(e,i,o){"click"!==e||t.windowLoaded||i===t.clickHandler||t.interceptedClickListeners.push({target:this,func:i,options:o}),(this||window).addEventListenerWPRocketBase(e,i,o)}}L(t,e){this.interceptedClickListeners.forEach((i=>{i.target===t&&(e?t.removeEventListener("click",i.func,i.options):t.addEventListener("click",i.func,i.options))})),t.parentNode!==document.documentElement&&this.L(t.parentNode,e)}D(){return new Promise((t=>{this.P?this.M=t:t()}))}C(){this.P=!0}M(){this.P=!1}S(t,e,i){t.hasAttribute&&t.hasAttribute(e)&&(event.target.setAttribute(i,event.target.getAttribute(e)),event.target.removeAttribute(e))}t(){this._(this),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",this.R.bind(this)):this.R()}k(){let t=[];document.querySelectorAll("script[type=rocketlazyloadscript][data-rocket-src]").forEach((e=>{let i=e.getAttribute("data-rocket-src");if(i&&!i.startsWith("data:")){0===i.indexOf("//")&&(i=location.protocol+i);try{const o=new URL(i).origin;o!==location.origin&&t.push({src:o,crossOrigin:e.crossOrigin||"module"===e.getAttribute("data-rocket-type")})}catch(t){}}})),t=[...new Map(t.map((t=>[JSON.stringify(t),t]))).values()],this.T(t,"preconnect")}async R(){this.lastBreath=Date.now(),this.j(this),this.F(this),this.I(),this.W(),this.q(),await this.A(this.delayedScripts.normal),await this.A(this.delayedScripts.defer),await this.A(this.delayedScripts.async);try{await this.U(),await this.H(this),await this.J()}catch(t){console.error(t)}window.dispatchEvent(new Event("rocket-allScriptsLoaded")),this.everythingLoaded=!0,this.D().then((()=>{this.O()})),this.N()}W(){document.querySelectorAll("script[type=rocketlazyloadscript]").forEach((t=>{t.hasAttribute("data-rocket-src")?t.hasAttribute("async")&&!1!==t.async?this.delayedScripts.async.push(t):t.hasAttribute("defer")&&!1!==t.defer||"module"===t.getAttribute("data-rocket-type")?this.delayedScripts.defer.push(t):this.delayedScripts.normal.push(t):this.delayedScripts.normal.push(t)}))}async B(t){if(await this.G(),!0!==t.noModule||!("noModule"in HTMLScriptElement.prototype))return new Promise((e=>{let i;function o(){(i||t).setAttribute("data-rocket-status","executed"),e()}try{if(navigator.userAgent.indexOf("Firefox/")>0||""===navigator.vendor||this.CSPIssue)i=document.createElement("script"),[...t.attributes].forEach((t=>{let e=t.nodeName;"type"!==e&&("data-rocket-type"===e&&(e="type"),"data-rocket-src"===e&&(e="src"),i.setAttribute(e,t.nodeValue))})),t.text&&(i.text=t.text),i.hasAttribute("src")?(i.addEventListener("load",o),i.addEventListener("error",(function(){i.setAttribute("data-rocket-status","failed-network"),e()})),setTimeout((()=>{i.isConnected||e()}),1)):(i.text=t.text,o()),t.parentNode.replaceChild(i,t);else{const i=t.getAttribute("data-rocket-type"),s=t.getAttribute("data-rocket-src");i?(t.type=i,t.removeAttribute("data-rocket-type")):t.removeAttribute("type"),t.addEventListener("load",o),t.addEventListener("error",(i=>{this.CSPIssue&&i.target.src.startsWith("data:")?(console.log("WPRocket: data-uri blocked by CSP -> fallback"),t.removeAttribute("src"),this.B(t).then(e)):(t.setAttribute("data-rocket-status","failed-network"),e())})),s?(t.removeAttribute("data-rocket-src"),t.src=s):t.src="data:text/javascript;base64,"+window.btoa(unescape(encodeURIComponent(t.text)))}}catch(i){t.setAttribute("data-rocket-status","failed-transform"),e()}}));t.setAttribute("data-rocket-status","skipped")}async A(t){const e=t.shift();return e&&e.isConnected?(await this.B(e),this.A(t)):Promise.resolve()}q(){this.T([...this.delayedScripts.normal,...this.delayedScripts.defer,...this.delayedScripts.async],"preload")}T(t,e){var i=document.createDocumentFragment();t.forEach((t=>{const o=t.getAttribute&&t.getAttribute("data-rocket-src")||t.src;if(o&&!o.startsWith("data:")){const s=document.createElement("link");s.href=o,s.rel=e,"preconnect"!==e&&(s.as="script"),t.getAttribute&&"module"===t.getAttribute("data-rocket-type")&&(s.crossOrigin=!0),t.crossOrigin&&(s.crossOrigin=t.crossOrigin),t.integrity&&(s.integrity=t.integrity),i.appendChild(s),this.trash.push(s)}})),document.head.appendChild(i)}j(t){let e={};function i(i,o){return e[o].eventsToRewrite.indexOf(i)>=0&&!t.everythingLoaded?"rocket-"+i:i}function o(t,o){!function(t){e[t]||(e[t]={originalFunctions:{add:t.addEventListener,remove:t.removeEventListener},eventsToRewrite:[]},t.addEventListener=function(){arguments[0]=i(arguments[0],t),e[t].originalFunctions.add.apply(t,arguments)},t.removeEventListener=function(){arguments[0]=i(arguments[0],t),e[t].originalFunctions.remove.apply(t,arguments)})}(t),e[t].eventsToRewrite.push(o)}function s(e,i){let o=e[i];e[i]=null,Object.defineProperty(e,i,{get:()=>o||function(){},set(s){t.everythingLoaded?o=s:e["rocket"+i]=o=s}})}o(document,"DOMContentLoaded"),o(window,"DOMContentLoaded"),o(window,"load"),o(window,"pageshow"),o(document,"readystatechange"),s(document,"onreadystatechange"),s(window,"onload"),s(window,"onpageshow");try{Object.defineProperty(document,"readyState",{get:()=>t.rocketReadyState,set(e){t.rocketReadyState=e},configurable:!0}),document.readyState="loading"}catch(t){console.log("WPRocket DJE readyState conflict, bypassing")}}F(t){let e;function i(e){return t.everythingLoaded?e:e.split(" ").map((t=>"load"===t||0===t.indexOf("load.")?"rocket-jquery-load":t)).join(" ")}function o(o){function s(t){const e=o.fn[t];o.fn[t]=o.fn.init.prototype[t]=function(){return this[0]===window&&("string"==typeof arguments[0]||arguments[0]instanceof String?arguments[0]=i(arguments[0]):"object"==typeof arguments[0]&&Object.keys(arguments[0]).forEach((t=>{const e=arguments[0][t];delete arguments[0][t],arguments[0][i(t)]=e}))),e.apply(this,arguments),this}}o&&o.fn&&!t.allJQueries.includes(o)&&(o.fn.ready=o.fn.init.prototype.ready=function(e){return t.domReadyFired?e.bind(document)(o):document.addEventListener("rocket-DOMContentLoaded",(()=>e.bind(document)(o))),o([])},s("on"),s("one"),t.allJQueries.push(o)),e=o}o(window.jQuery),Object.defineProperty(window,"jQuery",{get:()=>e,set(t){o(t)}})}async H(t){const e=document.querySelector("script[data-webpack]");e&&(await async function(){return new Promise((t=>{e.addEventListener("load",t),e.addEventListener("error",t)}))}(),await t.K(),await t.H(t))}async U(){this.domReadyFired=!0;try{document.readyState="interactive"}catch(t){}await this.G(),document.dispatchEvent(new Event("rocket-readystatechange")),await this.G(),document.rocketonreadystatechange&&document.rocketonreadystatechange(),await this.G(),document.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this.G(),window.dispatchEvent(new Event("rocket-DOMContentLoaded"))}async J(){try{document.readyState="complete"}catch(t){}await this.G(),document.dispatchEvent(new Event("rocket-readystatechange")),await this.G(),document.rocketonreadystatechange&&document.rocketonreadystatechange(),await this.G(),window.dispatchEvent(new Event("rocket-load")),await this.G(),window.rocketonload&&window.rocketonload(),await this.G(),this.allJQueries.forEach((t=>t(window).trigger("rocket-jquery-load"))),await this.G();const t=new Event("rocket-pageshow");t.persisted=this.persisted,window.dispatchEvent(t),await this.G(),window.rocketonpageshow&&window.rocketonpageshow({persisted:this.persisted}),this.windowLoaded=!0}m(){document.onreadystatechange&&document.onreadystatechange(),window.onload&&window.onload(),window.onpageshow&&window.onpageshow({persisted:this.persisted})}I(){const t=new Map;document.write=document.writeln=function(e){const i=document.currentScript;i||console.error("WPRocket unable to document.write this: "+e);const o=document.createRange(),s=i.parentElement;let n=t.get(i);void 0===n&&(n=i.nextSibling,t.set(i,n));const c=document.createDocumentFragment();o.setStart(c,0),c.appendChild(o.createContextualFragment(e)),s.insertBefore(c,n)}}async G(){Date.now()-this.lastBreath>45&&(await this.K(),this.lastBreath=Date.now())}async K(){return document.hidden?new Promise((t=>setTimeout(t))):new Promise((t=>requestAnimationFrame(t)))}N(){this.trash.forEach((t=>t.remove()))}static run(){const t=new RocketLazyLoadScripts;t.p(t)}}RocketLazyLoadScripts.run()})();</script>
+
+<meta name='viewport' content='width=device-width, initial-scale=1.0' />
+<meta http-equiv='X-UA-Compatible' content='IE=edge' />
+<link rel="profile" href="https://gmpg.org/xfn/11" />
+<title>Columbus Regional Healthcare System &#8211; Patient First. Technology Forward.</title><link rel="preload" data-rocket-preload as="style" href="https://fonts.googleapis.com/css?family=DM%20Sans%3A400%2C700%2C600%2C500%2C300&#038;display=swap" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=DM%20Sans%3A400%2C700%2C600%2C500%2C300&#038;display=swap" media="print" onload="this.media='all'" /><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=DM%20Sans%3A400%2C700%2C600%2C500%2C300&#038;display=swap" /></noscript><link rel="preload" data-rocket-preload as="image" href="https://crhealthcare.org/wp-content/uploads/2025/06/Header_Background-1.jpg" fetchpriority="high">
+<meta name='robots' content='max-image-preview:large' />
+<link rel='dns-prefetch' href='//www.google.com' />
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link href='https://fonts.gstatic.com' crossorigin rel='preconnect' />
+<link rel="alternate" type="application/rss+xml" title="Columbus Regional Healthcare System &raquo; Feed" href="https://crhealthcare.org/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Columbus Regional Healthcare System &raquo; Comments Feed" href="https://crhealthcare.org/comments/feed/" />
+<link rel="alternate" type="text/calendar" title="Columbus Regional Healthcare System &raquo; iCal Feed" href="https://crhealthcare.org/events/?ical=1" />
+<link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="https://crhealthcare.org/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fcrhealthcare.org%2F" />
+<link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="https://crhealthcare.org/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fcrhealthcare.org%2F&#038;format=xml" />
+<link rel="preload" href="https://crhealthcare.org/wp-content/plugins/bb-plugin/fonts/fontawesome/7.2.0/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://crhealthcare.org/wp-content/plugins/bb-plugin/fonts/fontawesome/7.2.0/webfonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<style id="wp-img-auto-sizes-contain-inline-css">
+img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
+/*# sourceURL=wp-img-auto-sizes-contain-inline-css */
+</style>
+<link rel='stylesheet' id='pt-cv-public-style-css' href='https://crhealthcare.org/wp-content/plugins/content-views-query-and-display-post-page/public/assets/css/cv.css?ver=4.5.1.2' media='all' />
+<link rel='stylesheet' id='pt-cv-public-pro-style-css' href='https://crhealthcare.org/wp-content/plugins/pt-content-views-pro/public/assets/css/cvpro.min.css?ver=7.4.1' media='all' />
+<link rel='stylesheet' id='tribe-events-pro-mini-calendar-block-styles-css' href='https://crhealthcare.org/wp-content/plugins/events-calendar-pro/build/css/tribe-events-pro-mini-calendar-block.css?ver=7.8.0' media='all' />
+<style id="wp-emoji-styles-inline-css">
+
+	img.wp-smiley, img.emoji {
+		display: inline !important;
+		border: none !important;
+		box-shadow: none !important;
+		height: 1em !important;
+		width: 1em !important;
+		margin: 0 0.07em !important;
+		vertical-align: -0.1em !important;
+		background: none !important;
+		padding: 0 !important;
+	}
+/*# sourceURL=wp-emoji-styles-inline-css */
+</style>
+<style id="wp-block-library-inline-css">
+:root{--wp-block-synced-color:#7a00df;--wp-block-synced-color--rgb:122,0,223;--wp-bound-block-color:var(--wp-block-synced-color);--wp-editor-canvas-background:#ddd;--wp-admin-theme-color:#007cba;--wp-admin-theme-color--rgb:0,124,186;--wp-admin-theme-color-darker-10:#006ba1;--wp-admin-theme-color-darker-10--rgb:0,107,160.5;--wp-admin-theme-color-darker-20:#005a87;--wp-admin-theme-color-darker-20--rgb:0,90,135;--wp-admin-border-width-focus:2px}@media (min-resolution:192dpi){:root{--wp-admin-border-width-focus:1.5px}}.wp-element-button{cursor:pointer}:root .has-very-light-gray-background-color{background-color:#eee}:root .has-very-dark-gray-background-color{background-color:#313131}:root .has-very-light-gray-color{color:#eee}:root .has-very-dark-gray-color{color:#313131}:root .has-vivid-green-cyan-to-vivid-cyan-blue-gradient-background{background:linear-gradient(135deg,#00d084,#0693e3)}:root .has-purple-crush-gradient-background{background:linear-gradient(135deg,#34e2e4,#4721fb 50%,#ab1dfe)}:root .has-hazy-dawn-gradient-background{background:linear-gradient(135deg,#faaca8,#dad0ec)}:root .has-subdued-olive-gradient-background{background:linear-gradient(135deg,#fafae1,#67a671)}:root .has-atomic-cream-gradient-background{background:linear-gradient(135deg,#fdd79a,#004a59)}:root .has-nightshade-gradient-background{background:linear-gradient(135deg,#330968,#31cdcf)}:root .has-midnight-gradient-background{background:linear-gradient(135deg,#020381,#2874fc)}:root{--wp--preset--font-size--normal:16px;--wp--preset--font-size--huge:42px}.has-regular-font-size{font-size:1em}.has-larger-font-size{font-size:2.625em}.has-normal-font-size{font-size:var(--wp--preset--font-size--normal)}.has-huge-font-size{font-size:var(--wp--preset--font-size--huge)}:root .has-text-align-center{text-align:center}:root .has-text-align-left{text-align:left}:root .has-text-align-right{text-align:right}.has-fit-text{white-space:nowrap!important}#end-resizable-editor-section{display:none}.aligncenter{clear:both}.items-justified-left{justify-content:flex-start}.items-justified-center{justify-content:center}.items-justified-right{justify-content:flex-end}.items-justified-space-between{justify-content:space-between}.screen-reader-text{word-wrap:normal!important;border:0;clip-path:inset(50%);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px;word-break:normal!important}.screen-reader-text:focus{background-color:#ddd;clip-path:none;color:#444;display:block;font-size:1em;height:auto;left:5px;line-height:normal;padding:15px 23px 14px;text-decoration:none;top:5px;width:auto;z-index:100000}html :where(.has-border-color){border-style:solid}html :where([style^=border-color],[style*=";border-color"],[style*="; border-color"]){border-style:solid}html :where([style^=border-top-color],[style*=";border-top-color"],[style*="; border-top-color"]){border-top-style:solid}html :where([style^=border-right-color],[style*=";border-right-color"],[style*="; border-right-color"]){border-right-style:solid}html :where([style^=border-bottom-color],[style*=";border-bottom-color"],[style*="; border-bottom-color"]){border-bottom-style:solid}html :where([style^=border-left-color],[style*=";border-left-color"],[style*="; border-left-color"]){border-left-style:solid}html :where([style^=border-width],[style*=";border-width"],[style*="; border-width"]){border-style:solid}html :where([style^=border-top-width],[style*=";border-top-width"],[style*="; border-top-width"]){border-top-style:solid}html :where([style^=border-right-width],[style*=";border-right-width"],[style*="; border-right-width"]){border-right-style:solid}html :where([style^=border-bottom-width],[style*=";border-bottom-width"],[style*="; border-bottom-width"]){border-bottom-style:solid}html :where([style^=border-left-width],[style*=";border-left-width"],[style*="; border-left-width"]){border-left-style:solid}html :where(img[class*=wp-image-]){height:auto;max-width:100%}:where(figure){margin:0 0 1em}html :where(.is-position-sticky){--wp-admin--admin-bar--position-offset:var(--wp-admin--admin-bar--height,0px)}@media screen and (max-width:600px){html :where(.is-position-sticky){--wp-admin--admin-bar--position-offset:0px}}
+
+/*# sourceURL=/wp-includes/css/dist/block-library/common.min.css */
+</style>
+<style id="wp-block-heading-inline-css">
+h1:where(.wp-block-heading).has-background,h2:where(.wp-block-heading).has-background,h3:where(.wp-block-heading).has-background,h4:where(.wp-block-heading).has-background,h5:where(.wp-block-heading).has-background,h6:where(.wp-block-heading).has-background{padding:1.25em 2.375em}h1.has-text-align-left[style*=writing-mode]:where([style*=vertical-lr]),h1.has-text-align-right[style*=writing-mode]:where([style*=vertical-rl]),h2.has-text-align-left[style*=writing-mode]:where([style*=vertical-lr]),h2.has-text-align-right[style*=writing-mode]:where([style*=vertical-rl]),h3.has-text-align-left[style*=writing-mode]:where([style*=vertical-lr]),h3.has-text-align-right[style*=writing-mode]:where([style*=vertical-rl]),h4.has-text-align-left[style*=writing-mode]:where([style*=vertical-lr]),h4.has-text-align-right[style*=writing-mode]:where([style*=vertical-rl]),h5.has-text-align-left[style*=writing-mode]:where([style*=vertical-lr]),h5.has-text-align-right[style*=writing-mode]:where([style*=vertical-rl]),h6.has-text-align-left[style*=writing-mode]:where([style*=vertical-lr]),h6.has-text-align-right[style*=writing-mode]:where([style*=vertical-rl]){rotate:180deg}
+/*# sourceURL=https://crhealthcare.org/wp-includes/blocks/heading/style.min.css */
+</style>
+<style id="wp-block-paragraph-inline-css">
+.is-small-text{font-size:.875em}.is-regular-text{font-size:1em}.is-large-text{font-size:2.25em}.is-larger-text{font-size:3em}.has-drop-cap:not(:focus):first-letter{float:left;font-size:8.4em;font-style:normal;font-weight:100;line-height:.68;margin:.05em .1em 0 0;text-transform:uppercase}body.rtl .has-drop-cap:not(:focus):first-letter{float:none;margin-left:.1em}p.has-drop-cap.has-background{overflow:hidden}:root :where(p.has-background){padding:1.25em 2.375em}:where(p.has-text-color:not(.has-link-color)) a{color:inherit}p.has-text-align-left[style*="writing-mode:vertical-lr"],p.has-text-align-right[style*="writing-mode:vertical-rl"]{rotate:180deg}
+/*# sourceURL=https://crhealthcare.org/wp-includes/blocks/paragraph/style.min.css */
+</style>
+
+<style id="classic-theme-styles-inline-css">
+/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}
+/*# sourceURL=/wp-includes/css/classic-themes.min.css */
+</style>
+
+<style id="global-styles-inline-css">
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--color--fl-heading-text: #333333;--wp--preset--color--fl-body-bg: #f2f2f2;--wp--preset--color--fl-body-text: #757575;--wp--preset--color--fl-accent: #2b7bb9;--wp--preset--color--fl-accent-hover: #2b7bb9;--wp--preset--color--fl-topbar-bg: #ffffff;--wp--preset--color--fl-topbar-text: #000000;--wp--preset--color--fl-topbar-link: #2b7bb9;--wp--preset--color--fl-topbar-hover: #2b7bb9;--wp--preset--color--fl-header-bg: #ffffff;--wp--preset--color--fl-header-text: #000000;--wp--preset--color--fl-header-link: #2b7bb9;--wp--preset--color--fl-header-hover: #2b7bb9;--wp--preset--color--fl-nav-bg: #ffffff;--wp--preset--color--fl-nav-link: #2b7bb9;--wp--preset--color--fl-nav-hover: #2b7bb9;--wp--preset--color--fl-content-bg: #ffffff;--wp--preset--color--fl-footer-widgets-bg: #ffffff;--wp--preset--color--fl-footer-widgets-text: #000000;--wp--preset--color--fl-footer-widgets-link: #2b7bb9;--wp--preset--color--fl-footer-widgets-hover: #2b7bb9;--wp--preset--color--fl-footer-bg: #ffffff;--wp--preset--color--fl-footer-text: #757575;--wp--preset--color--fl-footer-link: #2b7bb9;--wp--preset--color--fl-footer-hover: #2b7bb9;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgb(6,147,227) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgb(252,185,0) 0%,rgb(255,105,0) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgb(255,105,0) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgb(255, 255, 255), 6px 6px rgb(0, 0, 0);--wp--preset--shadow--crisp: 6px 6px 0px rgb(0, 0, 0);}.wp-block-button{--wp--preset--dimension--25: 25%;--wp--preset--dimension--50: 50%;--wp--preset--dimension--75: 75%;--wp--preset--dimension--100: 100%;}:where(body) { margin: 0; }:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}body{padding-top: 0px;padding-right: 0px;padding-bottom: 0px;padding-left: 0px;}:root :where(.wp-element-button, .wp-block-button__link){background-color: #32373c;border-width: 0;color: #fff;font-family: inherit;font-size: inherit;font-style: inherit;font-weight: inherit;letter-spacing: inherit;line-height: inherit;padding-top: calc(0.667em + 2px);padding-right: calc(1.333em + 2px);padding-bottom: calc(0.667em + 2px);padding-left: calc(1.333em + 2px);text-decoration: none;text-transform: inherit;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-fl-heading-text-color{color: var(--wp--preset--color--fl-heading-text) !important;}.has-fl-body-bg-color{color: var(--wp--preset--color--fl-body-bg) !important;}.has-fl-body-text-color{color: var(--wp--preset--color--fl-body-text) !important;}.has-fl-accent-color{color: var(--wp--preset--color--fl-accent) !important;}.has-fl-accent-hover-color{color: var(--wp--preset--color--fl-accent-hover) !important;}.has-fl-topbar-bg-color{color: var(--wp--preset--color--fl-topbar-bg) !important;}.has-fl-topbar-text-color{color: var(--wp--preset--color--fl-topbar-text) !important;}.has-fl-topbar-link-color{color: var(--wp--preset--color--fl-topbar-link) !important;}.has-fl-topbar-hover-color{color: var(--wp--preset--color--fl-topbar-hover) !important;}.has-fl-header-bg-color{color: var(--wp--preset--color--fl-header-bg) !important;}.has-fl-header-text-color{color: var(--wp--preset--color--fl-header-text) !important;}.has-fl-header-link-color{color: var(--wp--preset--color--fl-header-link) !important;}.has-fl-header-hover-color{color: var(--wp--preset--color--fl-header-hover) !important;}.has-fl-nav-bg-color{color: var(--wp--preset--color--fl-nav-bg) !important;}.has-fl-nav-link-color{color: var(--wp--preset--color--fl-nav-link) !important;}.has-fl-nav-hover-color{color: var(--wp--preset--color--fl-nav-hover) !important;}.has-fl-content-bg-color{color: var(--wp--preset--color--fl-content-bg) !important;}.has-fl-footer-widgets-bg-color{color: var(--wp--preset--color--fl-footer-widgets-bg) !important;}.has-fl-footer-widgets-text-color{color: var(--wp--preset--color--fl-footer-widgets-text) !important;}.has-fl-footer-widgets-link-color{color: var(--wp--preset--color--fl-footer-widgets-link) !important;}.has-fl-footer-widgets-hover-color{color: var(--wp--preset--color--fl-footer-widgets-hover) !important;}.has-fl-footer-bg-color{color: var(--wp--preset--color--fl-footer-bg) !important;}.has-fl-footer-text-color{color: var(--wp--preset--color--fl-footer-text) !important;}.has-fl-footer-link-color{color: var(--wp--preset--color--fl-footer-link) !important;}.has-fl-footer-hover-color{color: var(--wp--preset--color--fl-footer-hover) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-fl-heading-text-background-color{background-color: var(--wp--preset--color--fl-heading-text) !important;}.has-fl-body-bg-background-color{background-color: var(--wp--preset--color--fl-body-bg) !important;}.has-fl-body-text-background-color{background-color: var(--wp--preset--color--fl-body-text) !important;}.has-fl-accent-background-color{background-color: var(--wp--preset--color--fl-accent) !important;}.has-fl-accent-hover-background-color{background-color: var(--wp--preset--color--fl-accent-hover) !important;}.has-fl-topbar-bg-background-color{background-color: var(--wp--preset--color--fl-topbar-bg) !important;}.has-fl-topbar-text-background-color{background-color: var(--wp--preset--color--fl-topbar-text) !important;}.has-fl-topbar-link-background-color{background-color: var(--wp--preset--color--fl-topbar-link) !important;}.has-fl-topbar-hover-background-color{background-color: var(--wp--preset--color--fl-topbar-hover) !important;}.has-fl-header-bg-background-color{background-color: var(--wp--preset--color--fl-header-bg) !important;}.has-fl-header-text-background-color{background-color: var(--wp--preset--color--fl-header-text) !important;}.has-fl-header-link-background-color{background-color: var(--wp--preset--color--fl-header-link) !important;}.has-fl-header-hover-background-color{background-color: var(--wp--preset--color--fl-header-hover) !important;}.has-fl-nav-bg-background-color{background-color: var(--wp--preset--color--fl-nav-bg) !important;}.has-fl-nav-link-background-color{background-color: var(--wp--preset--color--fl-nav-link) !important;}.has-fl-nav-hover-background-color{background-color: var(--wp--preset--color--fl-nav-hover) !important;}.has-fl-content-bg-background-color{background-color: var(--wp--preset--color--fl-content-bg) !important;}.has-fl-footer-widgets-bg-background-color{background-color: var(--wp--preset--color--fl-footer-widgets-bg) !important;}.has-fl-footer-widgets-text-background-color{background-color: var(--wp--preset--color--fl-footer-widgets-text) !important;}.has-fl-footer-widgets-link-background-color{background-color: var(--wp--preset--color--fl-footer-widgets-link) !important;}.has-fl-footer-widgets-hover-background-color{background-color: var(--wp--preset--color--fl-footer-widgets-hover) !important;}.has-fl-footer-bg-background-color{background-color: var(--wp--preset--color--fl-footer-bg) !important;}.has-fl-footer-text-background-color{background-color: var(--wp--preset--color--fl-footer-text) !important;}.has-fl-footer-link-background-color{background-color: var(--wp--preset--color--fl-footer-link) !important;}.has-fl-footer-hover-background-color{background-color: var(--wp--preset--color--fl-footer-hover) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-fl-heading-text-border-color{border-color: var(--wp--preset--color--fl-heading-text) !important;}.has-fl-body-bg-border-color{border-color: var(--wp--preset--color--fl-body-bg) !important;}.has-fl-body-text-border-color{border-color: var(--wp--preset--color--fl-body-text) !important;}.has-fl-accent-border-color{border-color: var(--wp--preset--color--fl-accent) !important;}.has-fl-accent-hover-border-color{border-color: var(--wp--preset--color--fl-accent-hover) !important;}.has-fl-topbar-bg-border-color{border-color: var(--wp--preset--color--fl-topbar-bg) !important;}.has-fl-topbar-text-border-color{border-color: var(--wp--preset--color--fl-topbar-text) !important;}.has-fl-topbar-link-border-color{border-color: var(--wp--preset--color--fl-topbar-link) !important;}.has-fl-topbar-hover-border-color{border-color: var(--wp--preset--color--fl-topbar-hover) !important;}.has-fl-header-bg-border-color{border-color: var(--wp--preset--color--fl-header-bg) !important;}.has-fl-header-text-border-color{border-color: var(--wp--preset--color--fl-header-text) !important;}.has-fl-header-link-border-color{border-color: var(--wp--preset--color--fl-header-link) !important;}.has-fl-header-hover-border-color{border-color: var(--wp--preset--color--fl-header-hover) !important;}.has-fl-nav-bg-border-color{border-color: var(--wp--preset--color--fl-nav-bg) !important;}.has-fl-nav-link-border-color{border-color: var(--wp--preset--color--fl-nav-link) !important;}.has-fl-nav-hover-border-color{border-color: var(--wp--preset--color--fl-nav-hover) !important;}.has-fl-content-bg-border-color{border-color: var(--wp--preset--color--fl-content-bg) !important;}.has-fl-footer-widgets-bg-border-color{border-color: var(--wp--preset--color--fl-footer-widgets-bg) !important;}.has-fl-footer-widgets-text-border-color{border-color: var(--wp--preset--color--fl-footer-widgets-text) !important;}.has-fl-footer-widgets-link-border-color{border-color: var(--wp--preset--color--fl-footer-widgets-link) !important;}.has-fl-footer-widgets-hover-border-color{border-color: var(--wp--preset--color--fl-footer-widgets-hover) !important;}.has-fl-footer-bg-border-color{border-color: var(--wp--preset--color--fl-footer-bg) !important;}.has-fl-footer-text-border-color{border-color: var(--wp--preset--color--fl-footer-text) !important;}.has-fl-footer-link-border-color{border-color: var(--wp--preset--color--fl-footer-link) !important;}.has-fl-footer-hover-border-color{border-color: var(--wp--preset--color--fl-footer-hover) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+/*# sourceURL=global-styles-inline-css */
+</style>
+
+<link rel='stylesheet' id='font-awesome-5-css' href='https://crhealthcare.org/wp-content/plugins/bb-plugin/fonts/fontawesome/7.2.0/css/all.min.css?ver=2.11.0.3' media='all' />
+<link rel='stylesheet' id='jquery-magnificpopup-css' href='https://crhealthcare.org/wp-content/plugins/bb-plugin/css/jquery.magnificpopup.min.css?ver=2.11.0.3' media='all' />
+<link rel='stylesheet' id='fl-builder-layout-bundle-fd965d3b09469474987e8c9a11b76177-css' href='https://crhealthcare.org/wp-content/uploads/bb-plugin/cache/fd965d3b09469474987e8c9a11b76177-layout-bundle.css?ver=2.11.0.3-1.6' media='all' />
+<link rel='stylesheet' id='uag-style-15204-css' href='https://crhealthcare.org/wp-content/uploads/uag-plugin/assets/15000/uag-css-15204.css?ver=1792436844' media='all' />
+<link rel='stylesheet' id='base-css' href='https://crhealthcare.org/wp-content/themes/bb-theme/css/base.min.css?ver=1.7.20' media='all' />
+<link rel='stylesheet' id='fl-automator-skin-css' href='https://crhealthcare.org/wp-content/uploads/bb-theme/skin-6a89b3a5366ae.css?ver=1.7.20' media='all' />
+
+<script id="jquery-core-js" src="https://crhealthcare.org/wp-includes/js/jquery/jquery.min.js?ver=3.7.1"></script>
+<script type="rocketlazyloadscript" id="jquery-migrate-js" data-rocket-src="https://crhealthcare.org/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1"></script>
+<link rel="https://api.w.org/" href="https://crhealthcare.org/wp-json/" /><link rel="alternate" title="JSON" type="application/json" href="https://crhealthcare.org/wp-json/wp/v2/pages/15204" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://crhealthcare.org/xmlrpc.php?rsd" />
+<meta name="generator" content="WordPress 7.1.3" />
+<link rel="canonical" href="https://crhealthcare.org/" />
+<link rel='shortlink' href='https://crhealthcare.org/' />
+<meta name="tec-api-version" content="v1"><meta name="tec-api-origin" content="https://crhealthcare.org"><link rel="alternate" href="https://crhealthcare.org/wp-json/tribe/events/v1/" /><!-- Analytics by WP Statistics - https://wp-statistics.com -->
+<link rel="icon" href="https://crhealthcare.org/wp-content/uploads/2021/10/cropped-crhs-logo_icon_100-32x32.png" sizes="32x32" />
+<link rel="icon" href="https://crhealthcare.org/wp-content/uploads/2021/10/cropped-crhs-logo_icon_100-192x192.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://crhealthcare.org/wp-content/uploads/2021/10/cropped-crhs-logo_icon_100-180x180.png" />
+<meta name="msapplication-TileImage" content="https://crhealthcare.org/wp-content/uploads/2021/10/cropped-crhs-logo_icon_100-270x270.png" />
+<link rel='stylesheet' id='tec-events-pro-archives-style-css' href='https://crhealthcare.org/wp-content/plugins/events-calendar-pro/build/css/custom-tables-v1/archives.css?ver=7.8.0' media='all' />
+<link rel='stylesheet' id='tribe-events-pro-widgets-v2-events-list-skeleton-css' href='https://crhealthcare.org/wp-content/plugins/events-calendar-pro/build/css/widget-events-list-skeleton.css?ver=7.8.0' media='all' />
+<link rel='stylesheet' id='tribe-events-pro-widgets-v2-events-list-full-css' href='https://crhealthcare.org/wp-content/plugins/events-calendar-pro/build/css/widget-events-list-full.css?ver=7.8.0' media='all' />
+
+<style id="rocket-lazyrender-inline-css">[data-wpr-lazyrender] {content-visibility: auto;}</style><meta name="generator" content="WP Rocket 3.17.4" data-wpr-features="wpr_delay_js wpr_automatic_lazy_rendering wpr_oci wpr_desktop wpr_preload_links" /></head>
+<body class="home wp-singular page-template-default page page-id-15204 wp-theme-bb-theme fl-builder-2-11-0-3 fl-themer-1-6 fl-theme-1-7-20 fl-no-js tribe-no-js fl-theme-builder-header fl-theme-builder-header-main-header fl-theme-builder-footer fl-theme-builder-footer-footer fl-theme-builder-singular fl-theme-builder-singular-home fl-framework-base fl-preset-default fl-full-width fl-search-active" itemscope="itemscope" itemtype="https://schema.org/WebPage">
+<a aria-label="Skip to content" class="fl-screen-reader-text" href="#fl-main-content">Skip to content</a><div  class="fl-page">
+	<header  class="fl-builder-content fl-builder-content-17006 fl-builder-global-templates-locked" data-post-id="17006" data-type="header" data-sticky="0" data-sticky-on="" data-sticky-breakpoint="medium" data-shrink="0" data-overlay="0" data-overlay-bg="transparent" data-shrink-image-height="50px" role="banner" itemscope="itemscope" itemtype="http://schema.org/WPHeader"><div  class="fl-row fl-row-full-width fl-row-bg-color fl-node-u0xr6te3pv18 fl-row-custom-height fl-row-align-center fl-visible-desktop fl-visible-large fl-visible-medium" data-node="u0xr6te3pv18">
+	<div class="fl-row-content-wrap">
+						<div class="fl-row-content fl-row-fixed-width fl-node-content">
+		
+<div class="fl-col-group fl-node-pdurivqs47k5 fl-col-group-equal-height fl-col-group-align-center" data-node="pdurivqs47k5">
+			<div class="fl-col fl-node-d2e94otyalif fl-col-bg-color" data-node="d2e94otyalif">
+	<div class="fl-col-content fl-node-content"><div class="fl-module fl-module-menu fl-node-oq5f3cwirv0g" data-node="oq5f3cwirv0g" aria-label="Menu">
+	<div class="fl-module-content fl-node-content">
+		<div class="fl-menu fl-menu-responsive-toggle-mobile">
+	<button class="fl-menu-mobile-toggle hamburger fl-content-ui-button" aria-haspopup="menu" aria-label="Menu"><span class="fl-menu-icon svg-container"><svg version="1.1" class="hamburger-menu" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512">
+<rect class="fl-hamburger-menu-top" width="512" height="102"/>
+<rect class="fl-hamburger-menu-middle" y="205" width="512" height="102"/>
+<rect class="fl-hamburger-menu-bottom" y="410" width="512" height="102"/>
+</svg>
+</span></button>	<div class="fl-clear"></div>
+	<nav aria-label="Navigation Menu" itemscope="itemscope" itemtype="https://schema.org/SiteNavigationElement"><ul id="menu-top-navigation-menu" class="menu fl-menu-horizontal fl-toggle-none"><li id="menu-item-15442" class="menu-item menu-item-type-custom menu-item-object-custom"><a href="/news">News</a></li><li id="menu-item-15440" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://crhealthcare.org/about-us/careers/">Careers</a></li><li id="menu-item-15577" class="menu-item menu-item-type-custom menu-item-object-custom"><a href="/about-us/foundation/">Give</a></li><li id="menu-item-18211" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://crhealthcare.org/medical-students/">Medical Students</a></li><li id="menu-item-17944" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://crhealthcare.org/about-us/mycolumbushealth/">Patient Portal</a></li><li id="menu-item-17929" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://crhealthcare.org/about-us/choose-your-bill/">Pay Bill</a></li><li id="menu-item-15441" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://crhealthcare.org/about-us/physician-recruitment/">Physician Recruitment</a></li><li id="menu-item-17010" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://crhealthcare.org/about-us/contact-us/">Contact Us</a></li></ul></nav></div>
+	</div>
+</div>
+</div>
+</div>
+	</div>
+		</div>
+	</div>
+</div>
+<div  class="fl-row fl-row-full-width fl-row-bg-color fl-node-10yjn2g8aef6 fl-row-default-height fl-row-align-center" data-node="10yjn2g8aef6">
+	<div class="fl-row-content-wrap">
+						<div class="fl-row-content fl-row-fixed-width fl-node-content">
+		
+<div class="fl-col-group fl-node-o7936i5rq0bf fl-col-group-equal-height fl-col-group-align-center fl-col-group-custom-width" data-node="o7936i5rq0bf">
+			<div class="fl-col fl-node-owf25nl0ujbq fl-col-bg-color fl-col-small fl-col-small-custom-width" data-node="owf25nl0ujbq">
+	<div class="fl-col-content fl-node-content"><div role="figure" class="fl-module fl-module-photo fl-photo fl-photo-align-center fl-node-gd0m75qnla81" data-node="gd0m75qnla81" aria-label="Photo" itemscope itemtype="https://schema.org/ImageObject">
+	<div class="fl-photo-content fl-photo-img-png">
+				<a href="https://crhealthcare.org/home/" target="_self" itemprop="url">
+					<img loading="lazy" decoding="async" class="fl-photo-img wp-image-14800 size-full" src="https://crhealthcare.org/wp-content/uploads/2021/09/crhs-2021-logo.png" alt="crhs-2021-logo" height="176" width="552" title="crhs-2021-logo"  data-no-lazy="1" itemprop="image" />
+							</a>
+					</div>
+	</div>
+</div>
+</div>
+			<div class="fl-col fl-node-fh15mkay8vr7 fl-col-bg-color fl-col-small-custom-width" data-node="fh15mkay8vr7">
+	<div class="fl-col-content fl-node-content"><div class="fl-module fl-module-menu fl-node-5pzxah8r3tcs" data-node="5pzxah8r3tcs" aria-label="Menu">
+	<div class="fl-module-content fl-node-content">
+		<div class="fl-menu fl-menu-responsive-toggle-mobile">
+	<button class="fl-menu-mobile-toggle hamburger fl-content-ui-button" aria-haspopup="menu" aria-label="Menu"><span class="fl-menu-icon svg-container"><svg version="1.1" class="hamburger-menu" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512">
+<rect class="fl-hamburger-menu-top" width="512" height="102"/>
+<rect class="fl-hamburger-menu-middle" y="205" width="512" height="102"/>
+<rect class="fl-hamburger-menu-bottom" y="410" width="512" height="102"/>
+</svg>
+</span></button>	<div class="fl-clear"></div>
+	<nav aria-label="Navigation Menu" itemscope="itemscope" itemtype="https://schema.org/SiteNavigationElement"><ul id="menu-main-navigation" class="menu fl-menu-horizontal fl-toggle-arrows"><li id="menu-item-14789" class="menu-item menu-item-type-custom menu-item-object-custom"><a href="/services">Services</a></li><li id="menu-item-14788" class="menu-item menu-item-type-custom menu-item-object-custom"><a href="/locations">Locations</a></li><li id="menu-item-14843" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://crhealthcare.org/patients-visitors/">Patients &#038; Visitors</a></li><li id="menu-item-17463" class="menu-item menu-item-type-custom menu-item-object-custom"><a href="/providers">Providers</a></li><li id="menu-item-17926" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://crhealthcare.org/about-us/">About Us</a></li></ul></nav></div>
+	</div>
+</div>
+</div>
+</div>
+	</div>
+		</div>
+	</div>
+</div>
+</header>	<div  id="fl-main-content" class="fl-page-content" itemprop="mainContentOfPage" role="main">
+
+		<div  class="fl-builder-content fl-builder-content-17788 fl-builder-global-templates-locked" data-post-id="17788"><div class="fl-row fl-row-full-width fl-row-bg-photo fl-node-qnekb8m25g7x fl-row-default-height fl-row-align-center fl-visible-desktop fl-visible-large fl-visible-medium header-featured" data-node="qnekb8m25g7x">
+	<div class="fl-row-content-wrap">
+						<div class="fl-row-content fl-row-fixed-width fl-node-content">
+		
+<div class="fl-col-group fl-node-buk95xm1dyc3 fl-col-group-equal-height fl-col-group-align-center fl-col-group-custom-width" data-node="buk95xm1dyc3">
+			<div class="fl-col fl-node-ce153kthrpu4 fl-col-bg-photo fl-col-small fl-col-small-custom-width fl-visible-desktop fl-visible-large fl-visible-medium fade-mask" data-node="ce153kthrpu4">
+	<div class="fl-col-content fl-node-content"></div>
+</div>
+			<div class="fl-col fl-node-xrhtlv41byks fl-col-bg-color fl-col-small fl-col-small-custom-width fl-visible-desktop fl-visible-large fl-visible-medium" data-node="xrhtlv41byks">
+	<div class="fl-col-content fl-node-content"><h6  class="fl-module fl-module-heading fl-heading fl-heading-text fl-node-ojxv721zeh83" data-node="ojxv721zeh83" aria-label="Heading">
+			Advancing the	</h6>
+<h6  class="fl-module fl-module-heading fl-heading fl-heading-text fl-node-nmyrwqu68cia" data-node="nmyrwqu68cia" aria-label="Heading">
+			future of healthcare.	</h6>
+</div>
+</div>
+	</div>
+		</div>
+	</div>
+</div>
+<div class="fl-row fl-row-full-width fl-row-bg-color fl-node-fepqzlw21d6b fl-row-default-height fl-row-align-center" data-node="fepqzlw21d6b">
+	<div class="fl-row-content-wrap">
+						<div class="fl-row-content fl-row-full-width fl-node-content">
+		<div  class="fl-module fl-module-box fl-node-c9yehak65u1z" data-node="c9yehak65u1z" aria-label="Box">
+	<div  class="fl-module fl-module-box fl-node-sadrn8ktuj3p" data-node="sadrn8ktuj3p" aria-label="Box">
+	<h6  class="fl-module fl-module-heading fl-heading fl-heading-text fl-node-1qxigo6sejbh" data-node="1qxigo6sejbh" aria-label="Heading">
+			Innovation with you at the center.	</h6>
+<h6  class="fl-module fl-module-heading fl-heading fl-heading-text fl-node-35t1wm4ufy69" data-node="35t1wm4ufy69" aria-label="Heading">
+			Columbus Regional Healthcare System is home to one of the highest volume and most experienced robotic surgical programs in Southeastern North Carolina. We have a long history of utilizing the most advanced technologies—like the da Vinci 5 robotic system from Intuitive Surgical—to deliver precision, safety, and better outcomes for our patients.	</h6>
+	</div>
+<div  class="fl-module fl-module-box fl-node-yavp0rb2ezjh fl-visible-desktop fl-visible-large fl-visible-medium" data-node="yavp0rb2ezjh" aria-label="Box">
+	<div role="figure" class="fl-module fl-module-photo fl-photo fl-photo-align-center fl-node-kfvuq3on4xe8" data-node="kfvuq3on4xe8" aria-label="Photo" itemscope itemtype="https://schema.org/ImageObject">
+	<div class="fl-photo-content fl-photo-img-webp">
+					<img decoding="async" class="fl-photo-img wp-image-18076 size-full" src="https://crhealthcare.org/wp-content/uploads/2025/07/png_medium-dv_sys_dv5_firstaccess_1_fullsystem_21march24.png.webp" alt="png_medium-dv_sys_dv5_firstaccess_1_fullsystem_21march24.png" height="601" width="1200" title="png_medium-dv_sys_dv5_firstaccess_1_fullsystem_21march24.png" loading="lazy" itemprop="image" srcset="https://crhealthcare.org/wp-content/uploads/2025/07/png_medium-dv_sys_dv5_firstaccess_1_fullsystem_21march24.png.webp 1200w, https://crhealthcare.org/wp-content/uploads/2025/07/png_medium-dv_sys_dv5_firstaccess_1_fullsystem_21march24.png-300x150.webp 300w, https://crhealthcare.org/wp-content/uploads/2025/07/png_medium-dv_sys_dv5_firstaccess_1_fullsystem_21march24.png-1024x513.webp 1024w, https://crhealthcare.org/wp-content/uploads/2025/07/png_medium-dv_sys_dv5_firstaccess_1_fullsystem_21march24.png-400x200.webp 400w, https://crhealthcare.org/wp-content/uploads/2025/07/png_medium-dv_sys_dv5_firstaccess_1_fullsystem_21march24.png-768x385.webp 768w" sizes="auto, (max-width: 1200px) 100vw, 1200px" />
+					</div>
+	</div>
+	</div>
+	</div>
+		</div>
+	</div>
+</div>
+<div class="fl-row fl-row-full-width fl-row-bg-none fl-node-bua40lmei1vo fl-row-custom-height fl-row-align-center fl-visible-desktop fl-visible-large fl-visible-medium bg-color-image" data-node="bua40lmei1vo">
+	<div class="fl-row-content-wrap">
+						<div class="fl-row-content fl-row-full-width fl-node-content">
+		<div  class="fl-module fl-module-box fl-node-lwa1qimep60y" data-node="lwa1qimep60y" aria-label="Box">
+	<div  class="fl-module fl-module-box fl-node-zlexs9j1bfdo" data-node="zlexs9j1bfdo" aria-label="Box">
+	<h6  class="fl-module fl-module-heading fl-heading fl-heading-text fl-node-1ibpv32rg5nx" data-node="1ibpv32rg5nx" aria-label="Heading">
+			Advanced care, close to home.	</h6>
+<h6  class="fl-module fl-module-heading fl-heading fl-heading-text fl-node-jzaqtspoxhyc" data-node="jzaqtspoxhyc" aria-label="Heading">
+			The Columbus Regional Health Network provides a comprehensive continuum of care to the entire family.  Our hospital-owned practices provide medical services in Primary Care, Pediatrics, Cancer Care, Orthopedics, Urology, OB/GYN, Pain Management, and Imaging.	</h6>
+<div class="fl-module fl-module-menu fl-node-cyilgs30k9u1 menu-two-columns" data-node="cyilgs30k9u1" aria-label="Menu">
+	<div class="fl-module-content fl-node-content">
+		<div class="fl-menu">
+		<div class="fl-clear"></div>
+	<nav aria-label="Navigation Health Network" itemscope="itemscope" itemtype="https://schema.org/SiteNavigationElement"><ul id="menu-footer-health-network" class="menu fl-menu-horizontal fl-toggle-none"><li id="menu-item-15881" class="menu-item menu-item-type-post_type menu-item-object-services"><a href="https://crhealthcare.org/services/imaging-services/">Advanced Imaging</a></li><li id="menu-item-15882" class="menu-item menu-item-type-post_type menu-item-object-services"><a href="https://crhealthcare.org/services/advanced-orthopedics/">Advanced Orthopedics</a></li><li id="menu-item-17927" class="menu-item menu-item-type-post_type menu-item-object-locations"><a href="https://crhealthcare.org/locations/advanced-pain-solutions-whiteville/">Advanced Pain Solutions</a></li><li id="menu-item-17928" class="menu-item menu-item-type-post_type menu-item-object-locations"><a href="https://crhealthcare.org/locations/advanced-pediatrics-whiteville/">Advanced Pediatrics &amp; Family Care</a></li><li id="menu-item-15884" class="menu-item menu-item-type-post_type menu-item-object-services"><a href="https://crhealthcare.org/services/primary-care-services/">Advanced Primary Care</a></li><li id="menu-item-15885" class="menu-item menu-item-type-post_type menu-item-object-services"><a href="https://crhealthcare.org/services/urology/">Advanced Urology</a></li><li id="menu-item-18065" class="menu-item menu-item-type-post_type menu-item-object-services"><a href="https://crhealthcare.org/services/ob-gyn/">Baldwin Woods OB/GYN</a></li><li id="menu-item-15873" class="menu-item menu-item-type-post_type menu-item-object-locations"><a href="https://crhealthcare.org/locations/columbus-regional-preoperative-clinic/">Columbus Regional Preoperative Clinic</a></li><li id="menu-item-15880" class="menu-item menu-item-type-post_type menu-item-object-locations"><a href="https://crhealthcare.org/locations/donayre-cancer-care-center/">Donayre Cancer Care Center</a></li><li id="menu-item-15877" class="menu-item menu-item-type-post_type menu-item-object-locations"><a href="https://crhealthcare.org/locations/wound-healing-center/">Wound Healing Center</a></li></ul></nav></div>
+	</div>
+</div>
+	</div>
+<div  class="fl-module fl-module-box fl-node-tsn6k49u0roc fl-visible-desktop fl-visible-large fl-visible-medium" data-node="tsn6k49u0roc" aria-label="Box">
+		</div>
+	</div>
+		</div>
+	</div>
+</div>
+<div class="fl-row fl-row-full-width fl-row-bg-none fl-node-o1zq3fu0mvcn fl-row-default-height fl-row-align-center fl-visible-desktop fl-visible-large fl-visible-medium" data-node="o1zq3fu0mvcn">
+	<div class="fl-row-content-wrap">
+						<div class="fl-row-content fl-row-fixed-width fl-node-content">
+		
+<div class="fl-col-group fl-node-9va31txk6q2d" data-node="9va31txk6q2d">
+			<div class="fl-col fl-node-34q2i0dzahv8 fl-col-bg-color" data-node="34q2i0dzahv8">
+	<div class="fl-col-content fl-node-content"><h2  class="fl-module fl-module-heading fl-heading fl-heading-text fl-node-6j4dzv9qoxem" data-node="6j4dzv9qoxem" aria-label="Heading">
+			News & Events	</h2>
+</div>
+</div>
+	</div>
+		</div>
+	</div>
+</div>
+<div class="fl-row fl-row-full-width fl-row-bg-none fl-node-cr3geqb804pf fl-row-custom-height fl-row-align-center fl-visible-desktop fl-visible-large fl-visible-medium" data-node="cr3geqb804pf">
+	<div class="fl-row-content-wrap">
+						<div class="fl-row-content fl-row-full-width fl-node-content">
+		<div  class="fl-module fl-module-box fl-node-hv076u8f9era" data-node="hv076u8f9era" aria-label="Box">
+	<div  class="fl-module fl-module-box fl-node-41j6tye9mqp0" data-node="41j6tye9mqp0" aria-label="Box">
+	<div class="fl-module fl-module-post-grid fl-node-r0eqmzl72byi" data-node="r0eqmzl72byi" aria-label="Posts">
+	<div class="fl-module-content fl-node-content">
+			<div class="fl-post-grid" itemscope="itemscope" itemtype="https://schema.org/Blog">
+	<div class="fl-post-column">
+
+<div class="fl-post-grid-post fl-post-grid-image-above-title fl-post-columns-post fl-post-align-default post-18390 post type-post status-publish format-standard has-post-thumbnail hentry category-cancer category-uncategorized" itemscope="itemscope" itemtype="https://schema.org/BlogPosting">
+	<meta itemscope itemprop="mainEntityOfPage" itemtype="https://schema.org/WebPage" itemid="https://crhealthcare.org/donayre-cancer-care-center-received-certification-for-high-qualitycancer-care-from-the-largest-oncology-association-in-united-states/" content="Donayre Cancer Care Center Received Certification for High-Quality Cancer Care from the Largest Oncology Association in United States" /><meta itemprop="datePublished" content="2026-09-29" /><meta itemprop="dateModified" content="2026-09-29" /><div itemprop="publisher" itemscope itemtype="https://schema.org/Organization"><meta itemprop="name" content="Columbus Regional Healthcare System"></div><div itemscope itemprop="author" itemtype="https://schema.org/Person"><meta itemprop="url" content="https://crhealthcare.org/author/smillercrhealthcare-org/" /><meta itemprop="name" content="Stephanie Miller" /></div><div itemscope itemprop="image" itemtype="https://schema.org/ImageObject"><meta itemprop="url" content="https://crhealthcare.org/wp-content/uploads/2026/09/QOPI-Cert-Pic.png" /><meta itemprop="width" content="640" /><meta itemprop="height" content="480" /></div><div itemprop="interactionStatistic" itemscope itemtype="https://schema.org/InteractionCounter"><meta itemprop="interactionType" content="https://schema.org/CommentAction" /><meta itemprop="userInteractionCount" content="0" /></div>
+<div class="fl-post-image">
+	<a href='https://crhealthcare.org/donayre-cancer-care-center-received-certification-for-high-qualitycancer-care-from-the-largest-oncology-association-in-united-states/' title='Donayre Cancer Care Center Received Certification for High-Quality Cancer Care from the Largest Oncology Association in United States'><img width="640" height="480" src="https://crhealthcare.org/wp-content/uploads/2026/09/QOPI-Cert-Pic.png" class=" wp-post-image" alt="" itemprop="image" decoding="async" loading="lazy" srcset="https://crhealthcare.org/wp-content/uploads/2026/09/QOPI-Cert-Pic.png 640w, https://crhealthcare.org/wp-content/uploads/2026/09/QOPI-Cert-Pic-300x225.png 300w, https://crhealthcare.org/wp-content/uploads/2026/09/QOPI-Cert-Pic-400x300.png 400w" sizes="auto, (max-width: 640px) 100vw, 640px" /></a>
+</div>
+
+
+<div class="fl-post-text">
+
+    <h2 class="fl-post-title"><a href='https://crhealthcare.org/donayre-cancer-care-center-received-certification-for-high-qualitycancer-care-from-the-largest-oncology-association-in-united-states/' title='Donayre Cancer Care Center Received Certification for High-Quality Cancer Care from the Largest Oncology Association in United States'>Donayre Cancer Care Center Received Certification for High-Quality Cancer Care from the Largest Oncology Association in United States</a></h2>
+
+    <div class="fl-post-meta">
+    	By <a href="https://crhealthcare.org/author/smillercrhealthcare-org/">Stephanie Miller</a>
+    	<span class="fl-post-meta-sep"> | </span>
+    	September 29, 2026
+    </div>
+
+    <div class="fl-post-excerpt">
+    	<p>WHITEVILLE, NC —September 24, 2026. Donayre Cancer Care Center has received certification by the QOPI® Certification Program, LLC, a wholly owned subsidiary of the Association for Clinical Oncology and an affiliate of the American Society of Clinical Oncology. The QOPI ® Certification Program builds on the Society’s Quality Oncology Practice Initiative (QOPI ® ), providing&#8230;</p>
+
+    </div>
+
+    <div class="fl-post-more-link">
+    	<a href='https://crhealthcare.org/donayre-cancer-care-center-received-certification-for-high-qualitycancer-care-from-the-largest-oncology-association-in-united-states/' title='Read More...'>Read More...</a>
+    </div>
+
+</div></div>
+
+</div>
+<div class="fl-post-column">
+
+<div class="fl-post-grid-post fl-post-grid-image-above-title fl-post-columns-post fl-post-align-default post-18357 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized" itemscope="itemscope" itemtype="https://schema.org/BlogPosting">
+	<meta itemscope itemprop="mainEntityOfPage" itemtype="https://schema.org/WebPage" itemid="https://crhealthcare.org/columbus-regional-healthcare-system-nationally-recognized-for-commitment-to-excellence-in-stroke-care/" content="Columbus Regional Healthcare System nationally recognized for commitment to excellence in stroke care" /><meta itemprop="datePublished" content="2026-07-28" /><meta itemprop="dateModified" content="2026-07-28" /><div itemprop="publisher" itemscope itemtype="https://schema.org/Organization"><meta itemprop="name" content="Columbus Regional Healthcare System"></div><div itemscope itemprop="author" itemtype="https://schema.org/Person"><meta itemprop="url" content="https://crhealthcare.org/author/smillercrhealthcare-org/" /><meta itemprop="name" content="Stephanie Miller" /></div><div itemscope itemprop="image" itemtype="https://schema.org/ImageObject"><meta itemprop="url" content="https://crhealthcare.org/wp-content/uploads/2026/07/2026-stroke-award.png" /><meta itemprop="width" content="233" /><meta itemprop="height" content="388" /></div><div itemprop="interactionStatistic" itemscope itemtype="https://schema.org/InteractionCounter"><meta itemprop="interactionType" content="https://schema.org/CommentAction" /><meta itemprop="userInteractionCount" content="0" /></div>
+<div class="fl-post-image">
+	<a href='https://crhealthcare.org/columbus-regional-healthcare-system-nationally-recognized-for-commitment-to-excellence-in-stroke-care/' title='Columbus Regional Healthcare System nationally recognized for commitment to excellence in stroke care'><img width="233" height="388" src="https://crhealthcare.org/wp-content/uploads/2026/07/2026-stroke-award.png" class=" wp-post-image" alt="" itemprop="image" decoding="async" loading="lazy" srcset="https://crhealthcare.org/wp-content/uploads/2026/07/2026-stroke-award.png 233w, https://crhealthcare.org/wp-content/uploads/2026/07/2026-stroke-award-180x300.png 180w" sizes="auto, (max-width: 233px) 100vw, 233px" /></a>
+</div>
+
+
+<div class="fl-post-text">
+
+    <h2 class="fl-post-title"><a href='https://crhealthcare.org/columbus-regional-healthcare-system-nationally-recognized-for-commitment-to-excellence-in-stroke-care/' title='Columbus Regional Healthcare System nationally recognized for commitment to excellence in stroke care'>Columbus Regional Healthcare System nationally recognized for commitment to excellence in stroke care</a></h2>
+
+    <div class="fl-post-meta">
+    	By <a href="https://crhealthcare.org/author/smillercrhealthcare-org/">Stephanie Miller</a>
+    	<span class="fl-post-meta-sep"> | </span>
+    	July 28, 2026
+    </div>
+
+    <div class="fl-post-excerpt">
+    	<p>The American Heart Association presents Get With The Guidelines® &#8211; Stroke Gold Plus award for demonstrating commitment to delivering evidence-based, life-saving stroke care WHITEVILLE, NC —July 28, 2026. Columbus Regional Healthcare System has received the American Heart Association’s Get With The Guidelines® &#8211; Stroke Gold Plus quality achievement award for its commitment to ensuring people&#8230;</p>
+
+    </div>
+
+    <div class="fl-post-more-link">
+    	<a href='https://crhealthcare.org/columbus-regional-healthcare-system-nationally-recognized-for-commitment-to-excellence-in-stroke-care/' title='Read More...'>Read More...</a>
+    </div>
+
+</div></div>
+
+</div>
+<div class="fl-post-column">
+
+<div class="fl-post-grid-post fl-post-grid-image-above-title fl-post-columns-post fl-post-align-default post-18338 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized" itemscope="itemscope" itemtype="https://schema.org/BlogPosting">
+	<meta itemscope itemprop="mainEntityOfPage" itemtype="https://schema.org/WebPage" itemid="https://crhealthcare.org/columbus-regional-healthcare-syste-and-crhs-foundation-awards-scholarships-to-area-high-school-graduates/" content="Columbus Regional Healthcare Syste and CRHS Foundation Awards Scholarships to Area High School Graduates" /><meta itemprop="datePublished" content="2026-06-02" /><meta itemprop="dateModified" content="2026-06-02" /><div itemprop="publisher" itemscope itemtype="https://schema.org/Organization"><meta itemprop="name" content="Columbus Regional Healthcare System"></div><div itemscope itemprop="author" itemtype="https://schema.org/Person"><meta itemprop="url" content="https://crhealthcare.org/author/smillercrhealthcare-org/" /><meta itemprop="name" content="Stephanie Miller" /></div><div itemscope itemprop="image" itemtype="https://schema.org/ImageObject"><meta itemprop="url" content="https://crhealthcare.org/wp-content/uploads/2026/06/IMG_3655.jpg" /><meta itemprop="width" content="640" /><meta itemprop="height" content="480" /></div><div itemprop="interactionStatistic" itemscope itemtype="https://schema.org/InteractionCounter"><meta itemprop="interactionType" content="https://schema.org/CommentAction" /><meta itemprop="userInteractionCount" content="0" /></div>
+<div class="fl-post-image">
+	<a href='https://crhealthcare.org/columbus-regional-healthcare-syste-and-crhs-foundation-awards-scholarships-to-area-high-school-graduates/' title='Columbus Regional Healthcare Syste and CRHS Foundation Awards Scholarships to Area High School Graduates'><img width="640" height="480" src="https://crhealthcare.org/wp-content/uploads/2026/06/IMG_3655.jpg" class=" wp-post-image" alt="" itemprop="image" decoding="async" loading="lazy" srcset="https://crhealthcare.org/wp-content/uploads/2026/06/IMG_3655.jpg 640w, https://crhealthcare.org/wp-content/uploads/2026/06/IMG_3655-300x225.jpg 300w, https://crhealthcare.org/wp-content/uploads/2026/06/IMG_3655-400x300.jpg 400w" sizes="auto, (max-width: 640px) 100vw, 640px" /></a>
+</div>
+
+
+<div class="fl-post-text">
+
+    <h2 class="fl-post-title"><a href='https://crhealthcare.org/columbus-regional-healthcare-syste-and-crhs-foundation-awards-scholarships-to-area-high-school-graduates/' title='Columbus Regional Healthcare Syste and CRHS Foundation Awards Scholarships to Area High School Graduates'>Columbus Regional Healthcare Syste and CRHS Foundation Awards Scholarships to Area High School Graduates</a></h2>
+
+    <div class="fl-post-meta">
+    	By <a href="https://crhealthcare.org/author/smillercrhealthcare-org/">Stephanie Miller</a>
+    	<span class="fl-post-meta-sep"> | </span>
+    	June 2, 2026
+    </div>
+
+    <div class="fl-post-excerpt">
+    	<p>Whiteville, NC – Columbus Regional Healthcare System (CRHS) and the CRHS Foundation are proud to announce the awarding of nine (9) $1,000 scholarships to outstanding Health Occupations Students of America (HOSA) students from area high schools. Each student honored has successfully completed a second-level Health Occupation class and demonstrated a strong commitment to pursuing a&#8230;</p>
+
+    </div>
+
+    <div class="fl-post-more-link">
+    	<a href='https://crhealthcare.org/columbus-regional-healthcare-syste-and-crhs-foundation-awards-scholarships-to-area-high-school-graduates/' title='Read More...'>Read More...</a>
+    </div>
+
+</div></div>
+
+</div>
+	</div>
+<div class="fl-clear"></div>
+	<div class="fl-builder-pagination">
+	<ul class='page-numbers'>
+	<li><span aria-current="page" class="page-numbers current">1</span></li>
+	<li><a class="page-numbers" href="https://crhealthcare.org/page/2/">2</a></li>
+	<li><a class="page-numbers" href="https://crhealthcare.org/page/3/">3</a></li>
+	<li><span class="page-numbers dots">&hellip;</span></li>
+	<li><a class="page-numbers" href="https://crhealthcare.org/page/40/">40</a></li>
+	<li><a class="next page-numbers" href="https://crhealthcare.org/page/2/">Next &raquo;</a></li>
+</ul>
+	</div>
+		</div>
+</div>
+	</div>
+<div  class="fl-module fl-module-box fl-node-7oy2vf60xw5a" data-node="7oy2vf60xw5a" aria-label="Box">
+	<div  class="fl-module fl-module-html fl-html fl-node-2qdrznpmkcsa" data-node="2qdrznpmkcsa" aria-label="HTML">
+	<div  class="tribe-compatibility-container" >
+	<div
+		 class="tribe-common tribe-events tribe-events-view tribe-events-view--widget-events-list tribe-events-widget" 		data-js="tribe-events-view"
+		data-view-rest-url="https://crhealthcare.org/wp-json/tribe/views/v2/html"
+		data-view-manage-url="1"
+							data-view-breakpoint-pointer="5071bafb-5ec0-41e2-829b-5ebeeb929bf8"
+			>
+		<div class="tribe-events-widget-events-list">
+
+			
+			<script data-js="tribe-events-view-data" type="application/json">
+	{"slug":"widget-events-list","prev_url":"","next_url":"https:\/\/crhealthcare.org\/?post_type=tribe_events&eventDisplay=widget-events-list&paged=2","view_class":"Tribe\\Events\\Views\\V2\\Views\\Widgets\\Widget_List_View","view_slug":"widget-events-list","view_label":"View","view":null,"should_manage_url":true,"id":null,"alias-slugs":null,"title":"Columbus Regional Healthcare System \u2013 Patient First. Technology Forward.","limit":"11","no_upcoming_events":false,"featured_events_only":null,"jsonld_enable":false,"tribe_is_list_widget":true,"admin_fields":{"title":{"label":"Title:","type":"text","parent_classes":"","classes":"","dependency":"","id":"widget-tribe-widget-events-list--1-title","name":"widget-tribe-widget-events-list[-1][title]","options":[],"placeholder":"","value":null},"limit":{"label":"Show:","type":"number","default":5,"min":1,"max":10,"step":1,"parent_classes":"","classes":"","dependency":"","id":"widget-tribe-widget-events-list--1-limit","name":"widget-tribe-widget-events-list[-1][limit]","options":[],"placeholder":"","value":null},"metadata_section":{"type":"fieldset","classes":"tribe-common-form-control-checkbox-checkbox-group","label":"Display:","children":{"cost":{"type":"checkbox","label":"Price","parent_classes":"","classes":"","dependency":"","id":"widget-tribe-widget-events-list--1-cost","name":"widget-tribe-widget-events-list[-1][cost]","options":[],"placeholder":"","value":null},"venue":{"type":"checkbox","label":"Venue","parent_classes":"","classes":"","dependency":"","id":"widget-tribe-widget-events-list--1-venue","name":"widget-tribe-widget-events-list[-1][venue]","options":[],"placeholder":"","value":null},"street":{"type":"checkbox","label":"Street","parent_classes":"","classes":"","dependency":"","id":"widget-tribe-widget-events-list--1-street","name":"widget-tribe-widget-events-list[-1][street]","options":[],"placeholder":"","value":null},"city":{"type":"checkbox","label":"City","parent_classes":"","classes":"","dependency":"","id":"widget-tribe-widget-events-list--1-city","name":"widget-tribe-widget-events-list[-1][city]","options":[],"placeholder":"","value":null},"region":{"type":"checkbox","label":"State (US) Or Province (Int)","parent_classes":"","classes":"","dependency":"","id":"widget-tribe-widget-events-list--1-region","name":"widget-tribe-widget-events-list[-1][region]","options":[],"placeholder":"","value":null},"zip":{"type":"checkbox","label":"Postal Code","parent_classes":"","classes":"","dependency":"","id":"widget-tribe-widget-events-list--1-zip","name":"widget-tribe-widget-events-list[-1][zip]","options":[],"placeholder":"","value":null},"country":{"type":"checkbox","label":"Country","parent_classes":"","classes":"","dependency":"","id":"widget-tribe-widget-events-list--1-country","name":"widget-tribe-widget-events-list[-1][country]","options":[],"placeholder":"","value":null},"phone":{"type":"checkbox","label":"Phone","parent_classes":"","classes":"","dependency":"","id":"widget-tribe-widget-events-list--1-phone","name":"widget-tribe-widget-events-list[-1][phone]","options":[],"placeholder":"","value":null},"organizer":{"type":"checkbox","label":"Organizer","parent_classes":"","classes":"","dependency":"","id":"widget-tribe-widget-events-list--1-organizer","name":"widget-tribe-widget-events-list[-1][organizer]","options":[],"placeholder":"","value":null},"website":{"type":"checkbox","label":"Website","parent_classes":"","classes":"","dependency":"","id":"widget-tribe-widget-events-list--1-website","name":"widget-tribe-widget-events-list[-1][website]","options":[],"placeholder":"","value":null}},"parent_classes":"","dependency":"","id":"widget-tribe-widget-events-list--1-metadata_section","name":"widget-tribe-widget-events-list[-1][metadata_section]","options":[],"placeholder":"","value":null},"taxonomy_section":{"type":"section","classes":["calendar-widget-filters-container"],"label":"Filters:","children":{"filters":{"type":"taxonomy-filters","parent_classes":"","classes":"","dependency":"","id":"widget-tribe-widget-events-list--1-filters","label":"","name":"widget-tribe-widget-events-list[-1][filters]","options":[],"placeholder":"","value":null,"list_items":[]},"operand":{"type":"fieldset","classes":"tribe-common-form-control-checkbox-radio-group","label":"Operand:","selected":"OR","children":[{"type":"radio","label":"Match any","button_value":"OR","parent_classes":"","classes":"","dependency":"","id":"widget-tribe-widget-events-list--1-operand","name":"widget-tribe-widget-events-list[-1][operand]","options":[],"placeholder":"","value":null},{"type":"radio","label":"Match all","button_value":"AND","parent_classes":"","classes":"","dependency":"","id":"widget-tribe-widget-events-list--1-operand","name":"widget-tribe-widget-events-list[-1][operand]","options":[],"placeholder":"","value":null}],"parent_classes":"","dependency":"","id":"widget-tribe-widget-events-list--1-operand","name":"widget-tribe-widget-events-list[-1][operand]","options":[],"placeholder":"","value":null}},"parent_classes":"","dependency":"","id":"widget-tribe-widget-events-list--1-taxonomy_section","name":"widget-tribe-widget-events-list[-1][taxonomy_section]","options":[],"placeholder":"","value":null},"taxonomy":{"type":"taxonomy","classes":"calendar-widget-add-filter","label":"Add a filter:","placeholder":"Select a Taxonomy Term","parent_classes":"","dependency":"","id":"widget-tribe-widget-events-list--1-taxonomy","name":"widget-tribe-widget-events-list[-1][taxonomy]","options":[],"value":null},"no_upcoming_events":{"label":"Hide this widget if there are no upcoming events.","type":"checkbox","parent_classes":"","classes":"","dependency":"","id":"widget-tribe-widget-events-list--1-no_upcoming_events","name":"widget-tribe-widget-events-list[-1][no_upcoming_events]","options":[],"placeholder":"","value":null},"featured_events_only":{"label":"Limit to featured events only","type":"checkbox","parent_classes":"","classes":"","dependency":"","id":"widget-tribe-widget-events-list--1-featured_events_only","name":"widget-tribe-widget-events-list[-1][featured_events_only]","options":[],"placeholder":"","value":null},"jsonld_enable":{"label":"Generate JSON-LD data","type":"checkbox","parent_classes":"","classes":"","dependency":"","id":"widget-tribe-widget-events-list--1-jsonld_enable","name":"widget-tribe-widget-events-list[-1][jsonld_enable]","options":[],"placeholder":"","value":null}},"venue":false,"country":false,"street":false,"city":false,"region":false,"zip":false,"phone":false,"cost":false,"organizer":false,"website":false,"operand":"OR","filters":{"post_tag":[],"tribe_events_cat":[]},"address":false,"events":[10000091,10000031,10000092,10000032,10000093,10000033,10000094,10000034,10000095,10000035,10000096],"url":"https:\/\/crhealthcare.org\/?post_type=tribe_events&eventDisplay=widget-events-list","url_event_date":false,"bar":{"keyword":"","date":""},"today":"2026-10-20 00:00:00","now":"2026-10-20 01:49:48","home_url":"https:\/\/crhealthcare.org","rest_url":"https:\/\/crhealthcare.org\/wp-json\/tribe\/views\/v2\/html","rest_method":"GET","rest_nonce":"","today_url":"https:\/\/crhealthcare.org\/?post_type=tribe_events&eventDisplay=widget-events-list","today_title":"Click to select today's date","today_label":"Today","prev_label":"","next_label":"","date_formats":{"compact":"n\/j\/Y","month_and_year_compact":"n\/Y","month_and_year":"F Y","time_range_separator":" - ","date_time_separator":" @ "},"messages":[],"start_of_week":"1","header_title":"","header_title_element":"h1","content_title":"","show_content_title":false,"breadcrumbs":[],"backlink":false,"before_events":"","after_events":"\n<!--\nThis calendar is powered by The Events Calendar.\nhttp:\/\/evnt.is\/18wn\n-->\n","display_events_bar":false,"disable_event_search":false,"live_refresh":true,"ical":{"display_link":true,"link":{"url":"https:\/\/crhealthcare.org\/?post_type=tribe_events&#038;eventDisplay=widget-events-list&#038;ical=1","text":"Export Events","title":"Use this to share calendar data with Google Calendar, Apple iCal and other compatible apps"}},"container_classes":["tribe-common","tribe-events","tribe-events-view","tribe-events-view--widget-events-list","tribe-events-widget"],"container_data":[],"is_past":false,"breakpoints":{"xsmall":500,"medium":768,"full":960},"breakpoint_pointer":"5071bafb-5ec0-41e2-829b-5ebeeb929bf8","is_initial_load":true,"public_views":{"list":{"view_class":"Tribe\\Events\\Views\\V2\\Views\\List_View","view_url":"https:\/\/crhealthcare.org\/events\/list\/","view_label":"List","aria_label":"Display Events in List View"},"month":{"view_class":"Tribe\\Events\\Views\\V2\\Views\\Month_View","view_url":"https:\/\/crhealthcare.org\/events\/month\/","view_label":"Month","aria_label":"Display Events in Month View"},"day":{"view_class":"Tribe\\Events\\Views\\V2\\Views\\Day_View","view_url":"https:\/\/crhealthcare.org\/events\/today\/","view_label":"Day","aria_label":"Display Events in Day View"},"photo":{"view_class":"Tribe\\Events\\Pro\\Views\\V2\\Views\\Photo_View","view_url":"https:\/\/crhealthcare.org\/events\/photo\/","view_label":"Photo","aria_label":"Display Events in Photo View"},"week":{"view_class":"Tribe\\Events\\Pro\\Views\\V2\\Views\\Week_View","view_url":"https:\/\/crhealthcare.org\/events\/week\/","view_label":"Week","aria_label":"Display Events in Week View"},"map":{"view_class":"Tribe\\Events\\Pro\\Views\\V2\\Views\\Map_View","view_url":"https:\/\/crhealthcare.org\/events\/map\/","view_label":"Map","aria_label":"Display Events in Map View"}},"show_latest_past":false,"past":false,"compatibility_classes":["tribe-compatibility-container"],"view_more_text":"View Calendar","view_more_title":"View more events.","view_more_link":"https:\/\/crhealthcare.org\/events\/","widget_title":"","hide_if_no_upcoming_events":false,"display":{"cost":false,"venue":false,"street":false,"city":false,"region":false,"zip":false,"country":false,"phone":false,"organizer":false,"website":false},"subscribe_links":{"gcal":{"label":"Google Calendar","single_label":"Add to Google Calendar","visible":true,"block_slug":"hasGoogleCalendar"},"ical":{"label":"iCalendar","single_label":"Add to iCalendar","visible":true,"block_slug":"hasiCal"},"outlook-365":{"label":"Outlook 365","single_label":"Outlook 365","visible":true,"block_slug":"hasOutlook365"},"outlook-live":{"label":"Outlook Live","single_label":"Outlook Live","visible":true,"block_slug":"hasOutlookLive"},"ics":{"label":"Export .ics file","single_label":"Export .ics file","visible":true,"block_slug":null},"outlook-ics":{"label":"Export Outlook .ics file","single_label":"Export Outlook .ics file","visible":true,"block_slug":null}},"display_recurring_toggle":true,"_context":{"slug":"widget-events-list"}}</script>
+
+			
+			
+				<div class="tribe-events-widget-events-list__events">
+											<div  class="tribe-common-g-row tribe-events-widget-events-list__event-row" >
+
+	<div class="tribe-events-widget-events-list__event-date-tag tribe-common-g-col">
+	<time class="tribe-events-widget-events-list__event-date-tag-datetime" datetime="2026-10-27">
+		<span class="tribe-events-widget-events-list__event-date-tag-month">
+			Oct		</span>
+		<span class="tribe-events-widget-events-list__event-date-tag-daynum tribe-common-h2 tribe-common-h4--min-medium">
+			27		</span>
+	</time>
+</div>
+
+	<div class="tribe-events-widget-events-list__event-wrapper tribe-common-g-col">
+		<article  class="tribe-events-widget-events-list__event post-10000091 tribe_events type-tribe_events status-publish hentry tribe-recurring-event tribe-recurring-event-parent" >
+			<div class="tribe-events-widget-events-list__event-details">
+
+				<header class="tribe-events-widget-events-list__event-header">
+					<div class="tribe-events-widget-events-list__event-datetime-wrapper tribe-common-b2 tribe-common-b3--min-medium">
+		<time class="tribe-events-widget-events-list__event-datetime" datetime="2026-10-27">
+		<span class="tribe-event-date-start">4:00 pm</span> - <span class="tribe-event-time">5:00 pm</span>	</time>
+	
+<span class="tribe-events-calendar-series-archive__container">
+	<a
+		href="https://crhealthcare.org/series/columbus-regional-joint-camp/"
+		aria-label="Event series: Columbus Regional Joint Camp"
+		class="tribe-events-calendar-series-archive__link"
+	>
+		
+<svg  class="tribe-common-c-svgicon tribe-common-c-svgicon--series tribe-events-series-archive__icon"  width="14" height="12" viewBox="0 0 14 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+	<rect x="0.5" y="4.5" width="9" height="7" />
+	<path d="M2 2.5H11.5V10" />
+	<path d="M4 0.5H13.5V8" />
+</svg>
+	</a>
+</span>
+</div>
+					<h3 class="tribe-events-widget-events-list__event-title tribe-common-h7">
+	<a
+		href="https://crhealthcare.org/event/columbus-regional-joint-camp/2026-10-27/"
+		title="Columbus Regional Joint Camp"
+		rel="bookmark"
+		class="tribe-events-widget-events-list__event-title-link tribe-common-anchor-thin"
+	>
+		Columbus Regional Joint Camp	</a>
+</h3>
+				</header>
+
+				
+			</div>
+		</article>
+	</div>
+
+</div>
+											<div  class="tribe-common-g-row tribe-events-widget-events-list__event-row" >
+
+	<div class="tribe-events-widget-events-list__event-date-tag tribe-common-g-col">
+	<time class="tribe-events-widget-events-list__event-date-tag-datetime" datetime="2026-11-05">
+		<span class="tribe-events-widget-events-list__event-date-tag-month">
+			Nov		</span>
+		<span class="tribe-events-widget-events-list__event-date-tag-daynum tribe-common-h2 tribe-common-h4--min-medium">
+			5		</span>
+	</time>
+</div>
+
+	<div class="tribe-events-widget-events-list__event-wrapper tribe-common-g-col">
+		<article  class="tribe-events-widget-events-list__event post-10000031 tribe_events type-tribe_events status-publish hentry tribe-recurring-event tribe-recurring-event-parent" >
+			<div class="tribe-events-widget-events-list__event-details">
+
+				<header class="tribe-events-widget-events-list__event-header">
+					<div class="tribe-events-widget-events-list__event-datetime-wrapper tribe-common-b2 tribe-common-b3--min-medium">
+		<time class="tribe-events-widget-events-list__event-datetime" datetime="2026-11-05">
+		<span class="tribe-event-date-start">5:00 pm</span> - <span class="tribe-event-time">6:00 pm</span>	</time>
+	
+<span class="tribe-events-calendar-series-archive__container">
+	<a
+		href="https://crhealthcare.org/series/weight-loss-surgery-seminar/"
+		aria-label="Event series: Weight Loss Surgery Seminar"
+		class="tribe-events-calendar-series-archive__link"
+	>
+		
+<svg  class="tribe-common-c-svgicon tribe-common-c-svgicon--series tribe-events-series-archive__icon"  width="14" height="12" viewBox="0 0 14 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+	<rect x="0.5" y="4.5" width="9" height="7" />
+	<path d="M2 2.5H11.5V10" />
+	<path d="M4 0.5H13.5V8" />
+</svg>
+	</a>
+</span>
+</div>
+					<h3 class="tribe-events-widget-events-list__event-title tribe-common-h7">
+	<a
+		href="https://crhealthcare.org/event/weight-loss-surgery-seminar/2026-11-05/"
+		title="Weight Loss Surgery Seminar"
+		rel="bookmark"
+		class="tribe-events-widget-events-list__event-title-link tribe-common-anchor-thin"
+	>
+		Weight Loss Surgery Seminar	</a>
+</h3>
+				</header>
+
+				
+			</div>
+		</article>
+	</div>
+
+</div>
+											<div  class="tribe-common-g-row tribe-events-widget-events-list__event-row" >
+
+	<div class="tribe-events-widget-events-list__event-date-tag tribe-common-g-col">
+	<time class="tribe-events-widget-events-list__event-date-tag-datetime" datetime="2026-11-24">
+		<span class="tribe-events-widget-events-list__event-date-tag-month">
+			Nov		</span>
+		<span class="tribe-events-widget-events-list__event-date-tag-daynum tribe-common-h2 tribe-common-h4--min-medium">
+			24		</span>
+	</time>
+</div>
+
+	<div class="tribe-events-widget-events-list__event-wrapper tribe-common-g-col">
+		<article  class="tribe-events-widget-events-list__event post-10000092 tribe_events type-tribe_events status-publish hentry tribe-recurring-event tribe-recurring-event-parent" >
+			<div class="tribe-events-widget-events-list__event-details">
+
+				<header class="tribe-events-widget-events-list__event-header">
+					<div class="tribe-events-widget-events-list__event-datetime-wrapper tribe-common-b2 tribe-common-b3--min-medium">
+		<time class="tribe-events-widget-events-list__event-datetime" datetime="2026-11-24">
+		<span class="tribe-event-date-start">4:00 pm</span> - <span class="tribe-event-time">5:00 pm</span>	</time>
+	
+<span class="tribe-events-calendar-series-archive__container">
+	<a
+		href="https://crhealthcare.org/series/columbus-regional-joint-camp/"
+		aria-label="Event series: Columbus Regional Joint Camp"
+		class="tribe-events-calendar-series-archive__link"
+	>
+		
+<svg  class="tribe-common-c-svgicon tribe-common-c-svgicon--series tribe-events-series-archive__icon"  width="14" height="12" viewBox="0 0 14 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+	<rect x="0.5" y="4.5" width="9" height="7" />
+	<path d="M2 2.5H11.5V10" />
+	<path d="M4 0.5H13.5V8" />
+</svg>
+	</a>
+</span>
+</div>
+					<h3 class="tribe-events-widget-events-list__event-title tribe-common-h7">
+	<a
+		href="https://crhealthcare.org/event/columbus-regional-joint-camp/2026-11-24/"
+		title="Columbus Regional Joint Camp"
+		rel="bookmark"
+		class="tribe-events-widget-events-list__event-title-link tribe-common-anchor-thin"
+	>
+		Columbus Regional Joint Camp	</a>
+</h3>
+				</header>
+
+				
+			</div>
+		</article>
+	</div>
+
+</div>
+											<div  class="tribe-common-g-row tribe-events-widget-events-list__event-row" >
+
+	<div class="tribe-events-widget-events-list__event-date-tag tribe-common-g-col">
+	<time class="tribe-events-widget-events-list__event-date-tag-datetime" datetime="2026-12-03">
+		<span class="tribe-events-widget-events-list__event-date-tag-month">
+			Dec		</span>
+		<span class="tribe-events-widget-events-list__event-date-tag-daynum tribe-common-h2 tribe-common-h4--min-medium">
+			3		</span>
+	</time>
+</div>
+
+	<div class="tribe-events-widget-events-list__event-wrapper tribe-common-g-col">
+		<article  class="tribe-events-widget-events-list__event post-10000032 tribe_events type-tribe_events status-publish hentry tribe-recurring-event tribe-recurring-event-parent" >
+			<div class="tribe-events-widget-events-list__event-details">
+
+				<header class="tribe-events-widget-events-list__event-header">
+					<div class="tribe-events-widget-events-list__event-datetime-wrapper tribe-common-b2 tribe-common-b3--min-medium">
+		<time class="tribe-events-widget-events-list__event-datetime" datetime="2026-12-03">
+		<span class="tribe-event-date-start">5:00 pm</span> - <span class="tribe-event-time">6:00 pm</span>	</time>
+	
+<span class="tribe-events-calendar-series-archive__container">
+	<a
+		href="https://crhealthcare.org/series/weight-loss-surgery-seminar/"
+		aria-label="Event series: Weight Loss Surgery Seminar"
+		class="tribe-events-calendar-series-archive__link"
+	>
+		
+<svg  class="tribe-common-c-svgicon tribe-common-c-svgicon--series tribe-events-series-archive__icon"  width="14" height="12" viewBox="0 0 14 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+	<rect x="0.5" y="4.5" width="9" height="7" />
+	<path d="M2 2.5H11.5V10" />
+	<path d="M4 0.5H13.5V8" />
+</svg>
+	</a>
+</span>
+</div>
+					<h3 class="tribe-events-widget-events-list__event-title tribe-common-h7">
+	<a
+		href="https://crhealthcare.org/event/weight-loss-surgery-seminar/2026-12-03/"
+		title="Weight Loss Surgery Seminar"
+		rel="bookmark"
+		class="tribe-events-widget-events-list__event-title-link tribe-common-anchor-thin"
+	>
+		Weight Loss Surgery Seminar	</a>
+</h3>
+				</header>
+
+				
+			</div>
+		</article>
+	</div>
+
+</div>
+											<div  class="tribe-common-g-row tribe-events-widget-events-list__event-row" >
+
+	<div class="tribe-events-widget-events-list__event-date-tag tribe-common-g-col">
+	<time class="tribe-events-widget-events-list__event-date-tag-datetime" datetime="2026-12-22">
+		<span class="tribe-events-widget-events-list__event-date-tag-month">
+			Dec		</span>
+		<span class="tribe-events-widget-events-list__event-date-tag-daynum tribe-common-h2 tribe-common-h4--min-medium">
+			22		</span>
+	</time>
+</div>
+
+	<div class="tribe-events-widget-events-list__event-wrapper tribe-common-g-col">
+		<article  class="tribe-events-widget-events-list__event post-10000093 tribe_events type-tribe_events status-publish hentry tribe-recurring-event tribe-recurring-event-parent" >
+			<div class="tribe-events-widget-events-list__event-details">
+
+				<header class="tribe-events-widget-events-list__event-header">
+					<div class="tribe-events-widget-events-list__event-datetime-wrapper tribe-common-b2 tribe-common-b3--min-medium">
+		<time class="tribe-events-widget-events-list__event-datetime" datetime="2026-12-22">
+		<span class="tribe-event-date-start">4:00 pm</span> - <span class="tribe-event-time">5:00 pm</span>	</time>
+	
+<span class="tribe-events-calendar-series-archive__container">
+	<a
+		href="https://crhealthcare.org/series/columbus-regional-joint-camp/"
+		aria-label="Event series: Columbus Regional Joint Camp"
+		class="tribe-events-calendar-series-archive__link"
+	>
+		
+<svg  class="tribe-common-c-svgicon tribe-common-c-svgicon--series tribe-events-series-archive__icon"  width="14" height="12" viewBox="0 0 14 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+	<rect x="0.5" y="4.5" width="9" height="7" />
+	<path d="M2 2.5H11.5V10" />
+	<path d="M4 0.5H13.5V8" />
+</svg>
+	</a>
+</span>
+</div>
+					<h3 class="tribe-events-widget-events-list__event-title tribe-common-h7">
+	<a
+		href="https://crhealthcare.org/event/columbus-regional-joint-camp/2026-12-22/"
+		title="Columbus Regional Joint Camp"
+		rel="bookmark"
+		class="tribe-events-widget-events-list__event-title-link tribe-common-anchor-thin"
+	>
+		Columbus Regional Joint Camp	</a>
+</h3>
+				</header>
+
+				
+			</div>
+		</article>
+	</div>
+
+</div>
+											<div  class="tribe-common-g-row tribe-events-widget-events-list__event-row" >
+
+	<div class="tribe-events-widget-events-list__event-date-tag tribe-common-g-col">
+	<time class="tribe-events-widget-events-list__event-date-tag-datetime" datetime="2027-01-07">
+		<span class="tribe-events-widget-events-list__event-date-tag-month">
+			Jan		</span>
+		<span class="tribe-events-widget-events-list__event-date-tag-daynum tribe-common-h2 tribe-common-h4--min-medium">
+			7		</span>
+	</time>
+</div>
+
+	<div class="tribe-events-widget-events-list__event-wrapper tribe-common-g-col">
+		<article  class="tribe-events-widget-events-list__event post-10000033 tribe_events type-tribe_events status-publish hentry tribe-recurring-event tribe-recurring-event-parent" >
+			<div class="tribe-events-widget-events-list__event-details">
+
+				<header class="tribe-events-widget-events-list__event-header">
+					<div class="tribe-events-widget-events-list__event-datetime-wrapper tribe-common-b2 tribe-common-b3--min-medium">
+		<time class="tribe-events-widget-events-list__event-datetime" datetime="2027-01-07">
+		<span class="tribe-event-date-start">5:00 pm</span> - <span class="tribe-event-time">6:00 pm</span>	</time>
+	
+<span class="tribe-events-calendar-series-archive__container">
+	<a
+		href="https://crhealthcare.org/series/weight-loss-surgery-seminar/"
+		aria-label="Event series: Weight Loss Surgery Seminar"
+		class="tribe-events-calendar-series-archive__link"
+	>
+		
+<svg  class="tribe-common-c-svgicon tribe-common-c-svgicon--series tribe-events-series-archive__icon"  width="14" height="12" viewBox="0 0 14 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+	<rect x="0.5" y="4.5" width="9" height="7" />
+	<path d="M2 2.5H11.5V10" />
+	<path d="M4 0.5H13.5V8" />
+</svg>
+	</a>
+</span>
+</div>
+					<h3 class="tribe-events-widget-events-list__event-title tribe-common-h7">
+	<a
+		href="https://crhealthcare.org/event/weight-loss-surgery-seminar/2027-01-07/"
+		title="Weight Loss Surgery Seminar"
+		rel="bookmark"
+		class="tribe-events-widget-events-list__event-title-link tribe-common-anchor-thin"
+	>
+		Weight Loss Surgery Seminar	</a>
+</h3>
+				</header>
+
+				
+			</div>
+		</article>
+	</div>
+
+</div>
+											<div  class="tribe-common-g-row tribe-events-widget-events-list__event-row" >
+
+	<div class="tribe-events-widget-events-list__event-date-tag tribe-common-g-col">
+	<time class="tribe-events-widget-events-list__event-date-tag-datetime" datetime="2027-01-26">
+		<span class="tribe-events-widget-events-list__event-date-tag-month">
+			Jan		</span>
+		<span class="tribe-events-widget-events-list__event-date-tag-daynum tribe-common-h2 tribe-common-h4--min-medium">
+			26		</span>
+	</time>
+</div>
+
+	<div class="tribe-events-widget-events-list__event-wrapper tribe-common-g-col">
+		<article  class="tribe-events-widget-events-list__event post-10000094 tribe_events type-tribe_events status-publish hentry tribe-recurring-event tribe-recurring-event-parent" >
+			<div class="tribe-events-widget-events-list__event-details">
+
+				<header class="tribe-events-widget-events-list__event-header">
+					<div class="tribe-events-widget-events-list__event-datetime-wrapper tribe-common-b2 tribe-common-b3--min-medium">
+		<time class="tribe-events-widget-events-list__event-datetime" datetime="2027-01-26">
+		<span class="tribe-event-date-start">4:00 pm</span> - <span class="tribe-event-time">5:00 pm</span>	</time>
+	
+<span class="tribe-events-calendar-series-archive__container">
+	<a
+		href="https://crhealthcare.org/series/columbus-regional-joint-camp/"
+		aria-label="Event series: Columbus Regional Joint Camp"
+		class="tribe-events-calendar-series-archive__link"
+	>
+		
+<svg  class="tribe-common-c-svgicon tribe-common-c-svgicon--series tribe-events-series-archive__icon"  width="14" height="12" viewBox="0 0 14 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+	<rect x="0.5" y="4.5" width="9" height="7" />
+	<path d="M2 2.5H11.5V10" />
+	<path d="M4 0.5H13.5V8" />
+</svg>
+	</a>
+</span>
+</div>
+					<h3 class="tribe-events-widget-events-list__event-title tribe-common-h7">
+	<a
+		href="https://crhealthcare.org/event/columbus-regional-joint-camp/2027-01-26/"
+		title="Columbus Regional Joint Camp"
+		rel="bookmark"
+		class="tribe-events-widget-events-list__event-title-link tribe-common-anchor-thin"
+	>
+		Columbus Regional Joint Camp	</a>
+</h3>
+				</header>
+
+				
+			</div>
+		</article>
+	</div>
+
+</div>
+											<div  class="tribe-common-g-row tribe-events-widget-events-list__event-row" >
+
+	<div class="tribe-events-widget-events-list__event-date-tag tribe-common-g-col">
+	<time class="tribe-events-widget-events-list__event-date-tag-datetime" datetime="2027-02-04">
+		<span class="tribe-events-widget-events-list__event-date-tag-month">
+			Feb		</span>
+		<span class="tribe-events-widget-events-list__event-date-tag-daynum tribe-common-h2 tribe-common-h4--min-medium">
+			4		</span>
+	</time>
+</div>
+
+	<div class="tribe-events-widget-events-list__event-wrapper tribe-common-g-col">
+		<article  class="tribe-events-widget-events-list__event post-10000034 tribe_events type-tribe_events status-publish hentry tribe-recurring-event tribe-recurring-event-parent" >
+			<div class="tribe-events-widget-events-list__event-details">
+
+				<header class="tribe-events-widget-events-list__event-header">
+					<div class="tribe-events-widget-events-list__event-datetime-wrapper tribe-common-b2 tribe-common-b3--min-medium">
+		<time class="tribe-events-widget-events-list__event-datetime" datetime="2027-02-04">
+		<span class="tribe-event-date-start">5:00 pm</span> - <span class="tribe-event-time">6:00 pm</span>	</time>
+	
+<span class="tribe-events-calendar-series-archive__container">
+	<a
+		href="https://crhealthcare.org/series/weight-loss-surgery-seminar/"
+		aria-label="Event series: Weight Loss Surgery Seminar"
+		class="tribe-events-calendar-series-archive__link"
+	>
+		
+<svg  class="tribe-common-c-svgicon tribe-common-c-svgicon--series tribe-events-series-archive__icon"  width="14" height="12" viewBox="0 0 14 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+	<rect x="0.5" y="4.5" width="9" height="7" />
+	<path d="M2 2.5H11.5V10" />
+	<path d="M4 0.5H13.5V8" />
+</svg>
+	</a>
+</span>
+</div>
+					<h3 class="tribe-events-widget-events-list__event-title tribe-common-h7">
+	<a
+		href="https://crhealthcare.org/event/weight-loss-surgery-seminar/2027-02-04/"
+		title="Weight Loss Surgery Seminar"
+		rel="bookmark"
+		class="tribe-events-widget-events-list__event-title-link tribe-common-anchor-thin"
+	>
+		Weight Loss Surgery Seminar	</a>
+</h3>
+				</header>
+
+				
+			</div>
+		</article>
+	</div>
+
+</div>
+											<div  class="tribe-common-g-row tribe-events-widget-events-list__event-row" >
+
+	<div class="tribe-events-widget-events-list__event-date-tag tribe-common-g-col">
+	<time class="tribe-events-widget-events-list__event-date-tag-datetime" datetime="2027-02-23">
+		<span class="tribe-events-widget-events-list__event-date-tag-month">
+			Feb		</span>
+		<span class="tribe-events-widget-events-list__event-date-tag-daynum tribe-common-h2 tribe-common-h4--min-medium">
+			23		</span>
+	</time>
+</div>
+
+	<div class="tribe-events-widget-events-list__event-wrapper tribe-common-g-col">
+		<article  class="tribe-events-widget-events-list__event post-10000095 tribe_events type-tribe_events status-publish hentry tribe-recurring-event tribe-recurring-event-parent" >
+			<div class="tribe-events-widget-events-list__event-details">
+
+				<header class="tribe-events-widget-events-list__event-header">
+					<div class="tribe-events-widget-events-list__event-datetime-wrapper tribe-common-b2 tribe-common-b3--min-medium">
+		<time class="tribe-events-widget-events-list__event-datetime" datetime="2027-02-23">
+		<span class="tribe-event-date-start">4:00 pm</span> - <span class="tribe-event-time">5:00 pm</span>	</time>
+	
+<span class="tribe-events-calendar-series-archive__container">
+	<a
+		href="https://crhealthcare.org/series/columbus-regional-joint-camp/"
+		aria-label="Event series: Columbus Regional Joint Camp"
+		class="tribe-events-calendar-series-archive__link"
+	>
+		
+<svg  class="tribe-common-c-svgicon tribe-common-c-svgicon--series tribe-events-series-archive__icon"  width="14" height="12" viewBox="0 0 14 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+	<rect x="0.5" y="4.5" width="9" height="7" />
+	<path d="M2 2.5H11.5V10" />
+	<path d="M4 0.5H13.5V8" />
+</svg>
+	</a>
+</span>
+</div>
+					<h3 class="tribe-events-widget-events-list__event-title tribe-common-h7">
+	<a
+		href="https://crhealthcare.org/event/columbus-regional-joint-camp/2027-02-23/"
+		title="Columbus Regional Joint Camp"
+		rel="bookmark"
+		class="tribe-events-widget-events-list__event-title-link tribe-common-anchor-thin"
+	>
+		Columbus Regional Joint Camp	</a>
+</h3>
+				</header>
+
+				
+			</div>
+		</article>
+	</div>
+
+</div>
+											<div  class="tribe-common-g-row tribe-events-widget-events-list__event-row" >
+
+	<div class="tribe-events-widget-events-list__event-date-tag tribe-common-g-col">
+	<time class="tribe-events-widget-events-list__event-date-tag-datetime" datetime="2027-03-04">
+		<span class="tribe-events-widget-events-list__event-date-tag-month">
+			Mar		</span>
+		<span class="tribe-events-widget-events-list__event-date-tag-daynum tribe-common-h2 tribe-common-h4--min-medium">
+			4		</span>
+	</time>
+</div>
+
+	<div class="tribe-events-widget-events-list__event-wrapper tribe-common-g-col">
+		<article  class="tribe-events-widget-events-list__event post-10000035 tribe_events type-tribe_events status-publish hentry tribe-recurring-event tribe-recurring-event-parent" >
+			<div class="tribe-events-widget-events-list__event-details">
+
+				<header class="tribe-events-widget-events-list__event-header">
+					<div class="tribe-events-widget-events-list__event-datetime-wrapper tribe-common-b2 tribe-common-b3--min-medium">
+		<time class="tribe-events-widget-events-list__event-datetime" datetime="2027-03-04">
+		<span class="tribe-event-date-start">5:00 pm</span> - <span class="tribe-event-time">6:00 pm</span>	</time>
+	
+<span class="tribe-events-calendar-series-archive__container">
+	<a
+		href="https://crhealthcare.org/series/weight-loss-surgery-seminar/"
+		aria-label="Event series: Weight Loss Surgery Seminar"
+		class="tribe-events-calendar-series-archive__link"
+	>
+		
+<svg  class="tribe-common-c-svgicon tribe-common-c-svgicon--series tribe-events-series-archive__icon"  width="14" height="12" viewBox="0 0 14 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+	<rect x="0.5" y="4.5" width="9" height="7" />
+	<path d="M2 2.5H11.5V10" />
+	<path d="M4 0.5H13.5V8" />
+</svg>
+	</a>
+</span>
+</div>
+					<h3 class="tribe-events-widget-events-list__event-title tribe-common-h7">
+	<a
+		href="https://crhealthcare.org/event/weight-loss-surgery-seminar/2027-03-04/"
+		title="Weight Loss Surgery Seminar"
+		rel="bookmark"
+		class="tribe-events-widget-events-list__event-title-link tribe-common-anchor-thin"
+	>
+		Weight Loss Surgery Seminar	</a>
+</h3>
+				</header>
+
+				
+			</div>
+		</article>
+	</div>
+
+</div>
+											<div  class="tribe-common-g-row tribe-events-widget-events-list__event-row" >
+
+	<div class="tribe-events-widget-events-list__event-date-tag tribe-common-g-col">
+	<time class="tribe-events-widget-events-list__event-date-tag-datetime" datetime="2027-03-23">
+		<span class="tribe-events-widget-events-list__event-date-tag-month">
+			Mar		</span>
+		<span class="tribe-events-widget-events-list__event-date-tag-daynum tribe-common-h2 tribe-common-h4--min-medium">
+			23		</span>
+	</time>
+</div>
+
+	<div class="tribe-events-widget-events-list__event-wrapper tribe-common-g-col">
+		<article  class="tribe-events-widget-events-list__event post-10000096 tribe_events type-tribe_events status-publish hentry tribe-recurring-event tribe-recurring-event-parent" >
+			<div class="tribe-events-widget-events-list__event-details">
+
+				<header class="tribe-events-widget-events-list__event-header">
+					<div class="tribe-events-widget-events-list__event-datetime-wrapper tribe-common-b2 tribe-common-b3--min-medium">
+		<time class="tribe-events-widget-events-list__event-datetime" datetime="2027-03-23">
+		<span class="tribe-event-date-start">4:00 pm</span> - <span class="tribe-event-time">5:00 pm</span>	</time>
+	
+<span class="tribe-events-calendar-series-archive__container">
+	<a
+		href="https://crhealthcare.org/series/columbus-regional-joint-camp/"
+		aria-label="Event series: Columbus Regional Joint Camp"
+		class="tribe-events-calendar-series-archive__link"
+	>
+		
+<svg  class="tribe-common-c-svgicon tribe-common-c-svgicon--series tribe-events-series-archive__icon"  width="14" height="12" viewBox="0 0 14 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+	<rect x="0.5" y="4.5" width="9" height="7" />
+	<path d="M2 2.5H11.5V10" />
+	<path d="M4 0.5H13.5V8" />
+</svg>
+	</a>
+</span>
+</div>
+					<h3 class="tribe-events-widget-events-list__event-title tribe-common-h7">
+	<a
+		href="https://crhealthcare.org/event/columbus-regional-joint-camp/2027-03-23/"
+		title="Columbus Regional Joint Camp"
+		rel="bookmark"
+		class="tribe-events-widget-events-list__event-title-link tribe-common-anchor-thin"
+	>
+		Columbus Regional Joint Camp	</a>
+</h3>
+				</header>
+
+				
+			</div>
+		</article>
+	</div>
+
+</div>
+									</div>
+
+				<div class="tribe-events-widget-events-list__view-more tribe-common-b1 tribe-common-b2--min-medium">
+	<a
+		href="https://crhealthcare.org/events/"
+		class="tribe-events-widget-events-list__view-more-link tribe-common-anchor-thin"
+		title="View more events."
+	>
+		View Calendar	</a>
+</div>
+
+					</div>
+	</div>
+</div>
+<script type="rocketlazyloadscript" class="tribe-events-breakpoints">
+	( function () {
+		var completed = false;
+
+		function initBreakpoints() {
+			if ( completed ) {
+				// This was fired already and completed no need to attach to the event listener.
+				document.removeEventListener( 'DOMContentLoaded', initBreakpoints );
+				return;
+			}
+
+			if ( 'undefined' === typeof window.tribe ) {
+				return;
+			}
+
+			if ( 'undefined' === typeof window.tribe.events ) {
+				return;
+			}
+
+			if ( 'undefined' === typeof window.tribe.events.views ) {
+				return;
+			}
+
+			if ( 'undefined' === typeof window.tribe.events.views.breakpoints ) {
+				return;
+			}
+
+			if ( 'function' !== typeof (window.tribe.events.views.breakpoints.setup) ) {
+				return;
+			}
+
+			var container = document.querySelectorAll( '[data-view-breakpoint-pointer="5071bafb-5ec0-41e2-829b-5ebeeb929bf8"]' );
+			if ( ! container ) {
+				return;
+			}
+
+			window.tribe.events.views.breakpoints.setup( container );
+			completed = true;
+			// This was fired already and completed no need to attach to the event listener.
+			document.removeEventListener( 'DOMContentLoaded', initBreakpoints );
+		}
+
+		// Try to init the breakpoints right away.
+		initBreakpoints();
+		document.addEventListener( 'DOMContentLoaded', initBreakpoints );
+	})();
+</script>
+<script data-js='tribe-events-view-nonce-data' type='application/json'>{"tvn1":"713bc7909a","tvn2":""}</script></div>
+	</div>
+	</div>
+		</div>
+	</div>
+</div>
+<div class="fl-row fl-row-full-width fl-row-bg-color fl-node-g3bh7wy4ucra fl-row-default-height fl-row-align-center fl-visible-desktop fl-visible-large fl-visible-medium" data-node="g3bh7wy4ucra">
+	<div class="fl-row-content-wrap">
+						<div class="fl-row-content fl-row-full-width fl-node-content">
+		<div  class="fl-module fl-module-box fl-node-sklydnpwz8v9" data-node="sklydnpwz8v9" aria-label="Box">
+	<div  class="fl-module fl-module-box fl-node-5wxjpuiyfh3l" data-node="5wxjpuiyfh3l" aria-label="Box">
+	<h6  class="fl-module fl-module-heading fl-heading fl-heading-text fl-node-rj83puodwzmx" data-node="rj83puodwzmx" aria-label="Heading">
+			Join a team moving medicine forward.	</h6>
+<h6  class="fl-module fl-module-heading fl-heading fl-heading-text fl-node-xlbmte8fs6vc" data-node="xlbmte8fs6vc" aria-label="Heading">
+			Be part of a team dedicated to excellent patient care and technological advancement.	</h6>
+<div  class="fl-module fl-module-button-group fl-button-group fl-button-group-buttons fl-button-group-layout-horizontal fl-button-group-width- fl-node-vb6pg8k10arf" role="group" data-node="vb6pg8k10arf" aria-roledescription="Button Group">
+	<div id="fl-button-group-button-vb6pg8k10arf-0" class="fl-button-group-button fl-button-group-button-vb6pg8k10arf-0"><div id="fl-node-vb6pg8k10arf-0" class="fl-button-wrap fl-button-width-full fl-button-left"><a href="https://crhealthcare.org/careers/" target="_self" class="fl-button"><span class="fl-button-text">View Careers</span></a></div></div><div id="fl-button-group-button-vb6pg8k10arf-1" class="fl-button-group-button fl-button-group-button-vb6pg8k10arf-1"><div id="fl-node-vb6pg8k10arf-1" class="fl-button-wrap fl-button-width-full fl-button-left"><a href="https://crhealthcare.org/volunteers/" target="_self" class="fl-button"><span class="fl-button-text">Volunteer</span></a></div></div></div>
+	</div>
+<div  class="fl-module fl-module-box fl-node-eh5klov0cqfb" data-node="eh5klov0cqfb" aria-label="Box">
+	<div role="figure" class="fl-module fl-module-photo fl-photo fl-photo-align-center fl-node-xb215fyoiza4" data-node="xb215fyoiza4" aria-label="Photo" itemscope itemtype="https://schema.org/ImageObject">
+	<div class="fl-photo-content fl-photo-img-jpg">
+					<img decoding="async" class="fl-photo-img wp-image-17813 size-full" src="https://crhealthcare.org/wp-content/uploads/2025/07/FeaturedImage_Hiring.jpg" alt="FeaturedImage_Hiring" height="270" width="605" title="FeaturedImage_Hiring" loading="lazy" itemprop="image" srcset="https://crhealthcare.org/wp-content/uploads/2025/07/FeaturedImage_Hiring.jpg 605w, https://crhealthcare.org/wp-content/uploads/2025/07/FeaturedImage_Hiring-300x134.jpg 300w, https://crhealthcare.org/wp-content/uploads/2025/07/FeaturedImage_Hiring-400x179.jpg 400w" sizes="auto, (max-width: 605px) 100vw, 605px" />
+					</div>
+	</div>
+	</div>
+	</div>
+		</div>
+	</div>
+</div>
+<div class="fl-row fl-row-fixed-width fl-row-bg-none fl-node-rzk6x7f2pgb3 fl-row-default-height fl-row-align-center fl-visible-desktop fl-visible-large fl-visible-medium" data-node="rzk6x7f2pgb3">
+	<div class="fl-row-content-wrap">
+						<div class="fl-row-content fl-row-fixed-width fl-node-content">
+		
+<div class="fl-col-group fl-node-85ndekmbaqh9" data-node="85ndekmbaqh9">
+			<div class="fl-col fl-node-xung340blqfi fl-col-bg-color" data-node="xung340blqfi">
+	<div class="fl-col-content fl-node-content"><h2  class="fl-module fl-module-heading fl-heading fl-heading-text fl-node-qbgtudmoyalh" data-node="qbgtudmoyalh" aria-label="Heading">
+			Nationally Accredited. Locally Trusted.	</h2>
+<div  class="fl-module fl-module-loop fl-node-8u75fwb2qo0a" data-node="8u75fwb2qo0a" aria-label="Loop">
+		<ul class="fl-loop-grid">
+		<li  class="fl-loop-item"><div  class="fl-module fl-module-box fl-node-3m9ekgyswf78" data-node="3m9ekgyswf78" aria-label="Box">
+	<div role="figure" class="fl-module fl-module-photo fl-photo fl-photo-align-center fl-node-7xslg8ewmrf4" data-node="7xslg8ewmrf4" aria-label="Photo" itemscope itemtype="https://schema.org/ImageObject">
+	<div class="fl-photo-content fl-photo-img-png">
+					<img decoding="async" class="fl-photo-img wp-image-18406 size-large" src="https://crhealthcare.org/wp-content/uploads/2026/10/ACHC-Accredited-Logo-967x1024.png" alt="ACHC Accredited Logo" height="1024" width="967" title="ACHC Accredited Logo" loading="lazy" itemprop="image" srcset="https://crhealthcare.org/wp-content/uploads/2026/10/ACHC-Accredited-Logo-967x1024.png 967w, https://crhealthcare.org/wp-content/uploads/2026/10/ACHC-Accredited-Logo-283x300.png 283w, https://crhealthcare.org/wp-content/uploads/2026/10/ACHC-Accredited-Logo-378x400.png 378w, https://crhealthcare.org/wp-content/uploads/2026/10/ACHC-Accredited-Logo-768x813.png 768w, https://crhealthcare.org/wp-content/uploads/2026/10/ACHC-Accredited-Logo-1451x1536.png 1451w, https://crhealthcare.org/wp-content/uploads/2026/10/ACHC-Accredited-Logo-1935x2048.png 1935w" sizes="auto, (max-width: 967px) 100vw, 967px" />
+					</div>
+	</div>
+	</div>
+</li><li  class="fl-loop-item"><div  class="fl-module fl-module-box fl-node-3m9ekgyswf78" data-node="3m9ekgyswf78" aria-label="Box">
+	<div role="figure" class="fl-module fl-module-photo fl-photo fl-photo-align-center fl-node-7xslg8ewmrf4" data-node="7xslg8ewmrf4" aria-label="Photo" itemscope itemtype="https://schema.org/ImageObject">
+	<div class="fl-photo-content fl-photo-img-png">
+					<img decoding="async" class="fl-photo-img wp-image-18368 size-full" src="https://crhealthcare.org/wp-content/uploads/2026/08/QOPICertEmblem_CMYK_web.png" alt="QOPI Logo" height="1000" width="1000" title="QOPICertEmblem_CMYK_web" loading="lazy" itemprop="image" srcset="https://crhealthcare.org/wp-content/uploads/2026/08/QOPICertEmblem_CMYK_web.png 1000w, https://crhealthcare.org/wp-content/uploads/2026/08/QOPICertEmblem_CMYK_web-300x300.png 300w, https://crhealthcare.org/wp-content/uploads/2026/08/QOPICertEmblem_CMYK_web-400x400.png 400w, https://crhealthcare.org/wp-content/uploads/2026/08/QOPICertEmblem_CMYK_web-768x768.png 768w" sizes="auto, (max-width: 1000px) 100vw, 1000px" />
+					</div>
+	</div>
+	</div>
+</li><li  class="fl-loop-item"><div  class="fl-module fl-module-box fl-node-3m9ekgyswf78" data-node="3m9ekgyswf78" aria-label="Box">
+	<div role="figure" class="fl-module fl-module-photo fl-photo fl-photo-align-center fl-node-7xslg8ewmrf4" data-node="7xslg8ewmrf4" aria-label="Photo" itemscope itemtype="https://schema.org/ImageObject">
+	<div class="fl-photo-content fl-photo-img-png">
+					<img decoding="async" class="fl-photo-img wp-image-18361 size-full" src="https://crhealthcare.org/wp-content/uploads/2026/07/CQA_2026-v2.png" alt="American Heart Association Commitment to Qulaity" height="610" width="609" title="CQA_2026-v2" loading="lazy" itemprop="image" srcset="https://crhealthcare.org/wp-content/uploads/2026/07/CQA_2026-v2.png 609w, https://crhealthcare.org/wp-content/uploads/2026/07/CQA_2026-v2-300x300.png 300w, https://crhealthcare.org/wp-content/uploads/2026/07/CQA_2026-v2-400x400.png 400w" sizes="auto, (max-width: 609px) 100vw, 609px" />
+					</div>
+	</div>
+	</div>
+</li><li  class="fl-loop-item"><div  class="fl-module fl-module-box fl-node-3m9ekgyswf78" data-node="3m9ekgyswf78" aria-label="Box">
+	<div role="figure" class="fl-module fl-module-photo fl-photo fl-photo-align-center fl-node-7xslg8ewmrf4" data-node="7xslg8ewmrf4" aria-label="Photo" itemscope itemtype="https://schema.org/ImageObject">
+	<div class="fl-photo-content fl-photo-img-png">
+					<img decoding="async" class="fl-photo-img wp-image-17958 size-full" src="https://crhealthcare.org/wp-content/uploads/2025/07/DNV-Mark_Hospital_Accreditation.png" alt="DNV-Mark_Hospital_Accreditation" height="416" width="336" title="DNV-Mark_Hospital_Accreditation" loading="lazy" itemprop="image" srcset="https://crhealthcare.org/wp-content/uploads/2025/07/DNV-Mark_Hospital_Accreditation.png 336w, https://crhealthcare.org/wp-content/uploads/2025/07/DNV-Mark_Hospital_Accreditation-242x300.png 242w, https://crhealthcare.org/wp-content/uploads/2025/07/DNV-Mark_Hospital_Accreditation-323x400.png 323w" sizes="auto, (max-width: 336px) 100vw, 336px" />
+					</div>
+	</div>
+	</div>
+</li><li  class="fl-loop-item"><div  class="fl-module fl-module-box fl-node-3m9ekgyswf78" data-node="3m9ekgyswf78" aria-label="Box">
+	<div role="figure" class="fl-module fl-module-photo fl-photo fl-photo-align-center fl-node-7xslg8ewmrf4" data-node="7xslg8ewmrf4" aria-label="Photo" itemscope itemtype="https://schema.org/ImageObject">
+	<div class="fl-photo-content fl-photo-img-png">
+					<img decoding="async" class="fl-photo-img wp-image-17959 size-full" src="https://crhealthcare.org/wp-content/uploads/2025/07/hip.png" alt="hip" height="288" width="226" title="hip" loading="lazy" itemprop="image" />
+					</div>
+	</div>
+	</div>
+</li><li  class="fl-loop-item"><div  class="fl-module fl-module-box fl-node-3m9ekgyswf78" data-node="3m9ekgyswf78" aria-label="Box">
+	<div role="figure" class="fl-module fl-module-photo fl-photo fl-photo-align-center fl-node-7xslg8ewmrf4" data-node="7xslg8ewmrf4" aria-label="Photo" itemscope itemtype="https://schema.org/ImageObject">
+	<div class="fl-photo-content fl-photo-img-jpg">
+					<img decoding="async" class="fl-photo-img wp-image-17960 size-full" src="https://crhealthcare.org/wp-content/uploads/2025/07/achc.jpg" alt="achc" height="474" width="474" title="achc" loading="lazy" itemprop="image" srcset="https://crhealthcare.org/wp-content/uploads/2025/07/achc.jpg 474w, https://crhealthcare.org/wp-content/uploads/2025/07/achc-300x300.jpg 300w, https://crhealthcare.org/wp-content/uploads/2025/07/achc-400x400.jpg 400w" sizes="auto, (max-width: 474px) 100vw, 474px" />
+					</div>
+	</div>
+	</div>
+</li><li  class="fl-loop-item"><div  class="fl-module fl-module-box fl-node-3m9ekgyswf78" data-node="3m9ekgyswf78" aria-label="Box">
+	<div role="figure" class="fl-module fl-module-photo fl-photo fl-photo-align-center fl-node-7xslg8ewmrf4" data-node="7xslg8ewmrf4" aria-label="Photo" itemscope itemtype="https://schema.org/ImageObject">
+	<div class="fl-photo-content fl-photo-img-png">
+					<img decoding="async" class="fl-photo-img wp-image-18353 size-full" src="https://crhealthcare.org/wp-content/uploads/2026/07/2026-stroke-award.png" alt="2026-stroke-award" height="388" width="233" title="2026-stroke-award" loading="lazy" itemprop="image" srcset="https://crhealthcare.org/wp-content/uploads/2026/07/2026-stroke-award.png 233w, https://crhealthcare.org/wp-content/uploads/2026/07/2026-stroke-award-180x300.png 180w" sizes="auto, (max-width: 233px) 100vw, 233px" />
+					</div>
+	</div>
+	</div>
+</li><li  class="fl-loop-item"><div  class="fl-module fl-module-box fl-node-3m9ekgyswf78" data-node="3m9ekgyswf78" aria-label="Box">
+	<div role="figure" class="fl-module fl-module-photo fl-photo fl-photo-align-center fl-node-7xslg8ewmrf4" data-node="7xslg8ewmrf4" aria-label="Photo" itemscope itemtype="https://schema.org/ImageObject">
+	<div class="fl-photo-content fl-photo-img-png">
+					<img decoding="async" class="fl-photo-img wp-image-17962 size-full" src="https://crhealthcare.org/wp-content/uploads/2025/07/COERS.png" alt="COERS" height="500" width="500" title="COERS" loading="lazy" itemprop="image" srcset="https://crhealthcare.org/wp-content/uploads/2025/07/COERS.png 500w, https://crhealthcare.org/wp-content/uploads/2025/07/COERS-300x300.png 300w, https://crhealthcare.org/wp-content/uploads/2025/07/COERS-400x400.png 400w" sizes="auto, (max-width: 500px) 100vw, 500px" />
+					</div>
+	</div>
+	</div>
+</li><li  class="fl-loop-item"><div  class="fl-module fl-module-box fl-node-3m9ekgyswf78" data-node="3m9ekgyswf78" aria-label="Box">
+	<div role="figure" class="fl-module fl-module-photo fl-photo fl-photo-align-center fl-node-7xslg8ewmrf4" data-node="7xslg8ewmrf4" aria-label="Photo" itemscope itemtype="https://schema.org/ImageObject">
+	<div class="fl-photo-content fl-photo-img-png">
+					<img decoding="async" class="fl-photo-img wp-image-17963 size-full" src="https://crhealthcare.org/wp-content/uploads/2025/07/awards-4.png" alt="awards-4" height="172" width="271" title="awards-4" loading="lazy" itemprop="image" />
+					</div>
+	</div>
+	</div>
+</li><li  class="fl-loop-item"><div  class="fl-module fl-module-box fl-node-3m9ekgyswf78" data-node="3m9ekgyswf78" aria-label="Box">
+	<div role="figure" class="fl-module fl-module-photo fl-photo fl-photo-align-center fl-node-7xslg8ewmrf4" data-node="7xslg8ewmrf4" aria-label="Photo" itemscope itemtype="https://schema.org/ImageObject">
+	<div class="fl-photo-content fl-photo-img-png">
+					<img decoding="async" class="fl-photo-img wp-image-17964 size-full" src="https://crhealthcare.org/wp-content/uploads/2025/07/QualitySysCert_ISO9001_col.png" alt="QualitySysCert_ISO9001_col" height="709" width="591" title="QualitySysCert_ISO9001_col" loading="lazy" itemprop="image" srcset="https://crhealthcare.org/wp-content/uploads/2025/07/QualitySysCert_ISO9001_col.png 591w, https://crhealthcare.org/wp-content/uploads/2025/07/QualitySysCert_ISO9001_col-250x300.png 250w, https://crhealthcare.org/wp-content/uploads/2025/07/QualitySysCert_ISO9001_col-333x400.png 333w" sizes="auto, (max-width: 591px) 100vw, 591px" />
+					</div>
+	</div>
+	</div>
+</li><li  class="fl-loop-item"><div  class="fl-module fl-module-box fl-node-3m9ekgyswf78" data-node="3m9ekgyswf78" aria-label="Box">
+	<div role="figure" class="fl-module fl-module-photo fl-photo fl-photo-align-center fl-node-7xslg8ewmrf4" data-node="7xslg8ewmrf4" aria-label="Photo" itemscope itemtype="https://schema.org/ImageObject">
+	<div class="fl-photo-content fl-photo-img-jpg">
+					<img decoding="async" class="fl-photo-img wp-image-17965 size-large" src="https://crhealthcare.org/wp-content/uploads/2025/07/baby-friendly-647x1024.jpg" alt="baby-friendly" height="1024" width="647" title="baby-friendly" loading="lazy" itemprop="image" srcset="https://crhealthcare.org/wp-content/uploads/2025/07/baby-friendly-647x1024.jpg 647w, https://crhealthcare.org/wp-content/uploads/2025/07/baby-friendly-190x300.jpg 190w, https://crhealthcare.org/wp-content/uploads/2025/07/baby-friendly-253x400.jpg 253w, https://crhealthcare.org/wp-content/uploads/2025/07/baby-friendly.jpg 680w" sizes="auto, (max-width: 647px) 100vw, 647px" />
+					</div>
+	</div>
+	</div>
+</li><li  class="fl-loop-item"><div  class="fl-module fl-module-box fl-node-3m9ekgyswf78" data-node="3m9ekgyswf78" aria-label="Box">
+	<div role="figure" class="fl-module fl-module-photo fl-photo fl-photo-align-center fl-node-7xslg8ewmrf4" data-node="7xslg8ewmrf4" aria-label="Photo" itemscope itemtype="https://schema.org/ImageObject">
+	<div class="fl-photo-content fl-photo-img-png">
+					<img decoding="async" class="fl-photo-img wp-image-18364 size-full" src="https://crhealthcare.org/wp-content/uploads/2025/07/primary-stroke.png" alt="Certified Primary Stroke Center" height="415" width="335" title="primary-stroke" loading="lazy" itemprop="image" srcset="https://crhealthcare.org/wp-content/uploads/2025/07/primary-stroke.png 335w, https://crhealthcare.org/wp-content/uploads/2025/07/primary-stroke-242x300.png 242w, https://crhealthcare.org/wp-content/uploads/2025/07/primary-stroke-323x400.png 323w" sizes="auto, (max-width: 335px) 100vw, 335px" />
+					</div>
+	</div>
+	</div>
+</li>	</ul>
+					<script type="application/ld+json">{
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Home",
+    "url": "https://crhealthcare.org/",
+    "itemListElement": [
+        {
+            "@type": "ListItem",
+            "headline": "Sleep Lab Accreditation",
+            "url": "https://crhealthcare.org/accreditations/sleep-lab-accreditation/",
+            "datePublished": "2026-10-19T14:07:22-05:00",
+            "dateModified": "2026-10-19T14:07:24-05:00",
+            "description": "",
+            "mainEntityOfPage": {
+                "@type": "WebPage",
+                "@id": "https://crhealthcare.org/accreditations/sleep-lab-accreditation/"
+            },
+            "author": {
+                "@type": "Person",
+                "name": "jon@inspirenc.com"
+            },
+            "publisher": {
+                "@type": "Organization",
+                "name": "Columbus Regional Healthcare System"
+            },
+            "interactionStatistic": {
+                "@type": "InteractionCounter",
+                "interactionType": "https://schema.org/CommentAction",
+                "userInteractionCount": 0
+            },
+            "position": 1,
+            "image": "https://crhealthcare.org/wp-content/uploads/2026/10/ACHC-Accredited-Logo.png"
+        },
+        {
+            "@type": "ListItem",
+            "headline": "Quality Oncology Practice Initiative (QOPI\u00ae) Certification Program",
+            "url": "https://crhealthcare.org/accreditations/quality-oncology-practice-initiative-qopi-certification-program/",
+            "datePublished": "2026-08-13T07:45:37-05:00",
+            "dateModified": "2026-08-13T07:45:39-05:00",
+            "description": "",
+            "mainEntityOfPage": {
+                "@type": "WebPage",
+                "@id": "https://crhealthcare.org/accreditations/quality-oncology-practice-initiative-qopi-certification-program/"
+            },
+            "author": {
+                "@type": "Person",
+                "name": "jon@inspirenc.com"
+            },
+            "publisher": {
+                "@type": "Organization",
+                "name": "Columbus Regional Healthcare System"
+            },
+            "interactionStatistic": {
+                "@type": "InteractionCounter",
+                "interactionType": "https://schema.org/CommentAction",
+                "userInteractionCount": 0
+            },
+            "position": 2,
+            "image": "https://crhealthcare.org/wp-content/uploads/2026/08/QOPICertEmblem_CMYK_web.png"
+        },
+        {
+            "@type": "ListItem",
+            "headline": "American Heart Association Committment to Quality 2026",
+            "url": "https://crhealthcare.org/accreditations/american-heart-association-committment-to-quality-2026/",
+            "datePublished": "2026-07-28T21:17:34-05:00",
+            "dateModified": "2026-07-28T21:32:27-05:00",
+            "description": "",
+            "mainEntityOfPage": {
+                "@type": "WebPage",
+                "@id": "https://crhealthcare.org/accreditations/american-heart-association-committment-to-quality-2026/"
+            },
+            "author": {
+                "@type": "Person",
+                "name": "jon@inspirenc.com"
+            },
+            "publisher": {
+                "@type": "Organization",
+                "name": "Columbus Regional Healthcare System"
+            },
+            "interactionStatistic": {
+                "@type": "InteractionCounter",
+                "interactionType": "https://schema.org/CommentAction",
+                "userInteractionCount": 0
+            },
+            "position": 3,
+            "image": "https://crhealthcare.org/wp-content/uploads/2026/07/CQA_2026-v2.png"
+        },
+        {
+            "@type": "ListItem",
+            "headline": "Quality and Patient Safety Accredited Hospital",
+            "url": "https://crhealthcare.org/accreditations/quality-and-patient-safety-accredited-hospital/",
+            "datePublished": "2025-07-20T15:34:47-05:00",
+            "dateModified": "2025-07-20T15:34:49-05:00",
+            "description": "",
+            "mainEntityOfPage": {
+                "@type": "WebPage",
+                "@id": "https://crhealthcare.org/accreditations/quality-and-patient-safety-accredited-hospital/"
+            },
+            "author": {
+                "@type": "Person",
+                "name": "jon@inspirenc.com"
+            },
+            "publisher": {
+                "@type": "Organization",
+                "name": "Columbus Regional Healthcare System"
+            },
+            "interactionStatistic": {
+                "@type": "InteractionCounter",
+                "interactionType": "https://schema.org/CommentAction",
+                "userInteractionCount": 0
+            },
+            "position": 4,
+            "image": "https://crhealthcare.org/wp-content/uploads/2025/07/DNV-Mark_Hospital_Accreditation.png"
+        },
+        {
+            "@type": "ListItem",
+            "headline": "Hip and Knee Replacement Advanced Certification",
+            "url": "https://crhealthcare.org/accreditations/hip-and-knee-replacement-advanced-certification/",
+            "datePublished": "2025-07-20T15:33:31-05:00",
+            "dateModified": "2025-07-21T10:30:18-05:00",
+            "description": "",
+            "mainEntityOfPage": {
+                "@type": "WebPage",
+                "@id": "https://crhealthcare.org/accreditations/hip-and-knee-replacement-advanced-certification/"
+            },
+            "author": {
+                "@type": "Person",
+                "name": "jon@inspirenc.com"
+            },
+            "publisher": {
+                "@type": "Organization",
+                "name": "Columbus Regional Healthcare System"
+            },
+            "interactionStatistic": {
+                "@type": "InteractionCounter",
+                "interactionType": "https://schema.org/CommentAction",
+                "userInteractionCount": 0
+            },
+            "position": 5,
+            "image": "https://crhealthcare.org/wp-content/uploads/2025/07/hip.png"
+        },
+        {
+            "@type": "ListItem",
+            "headline": "ACHC Accredited",
+            "url": "https://crhealthcare.org/accreditations/achc-accredited/",
+            "datePublished": "2025-07-20T15:32:16-05:00",
+            "dateModified": "2025-07-20T15:32:18-05:00",
+            "description": "",
+            "mainEntityOfPage": {
+                "@type": "WebPage",
+                "@id": "https://crhealthcare.org/accreditations/achc-accredited/"
+            },
+            "author": {
+                "@type": "Person",
+                "name": "jon@inspirenc.com"
+            },
+            "publisher": {
+                "@type": "Organization",
+                "name": "Columbus Regional Healthcare System"
+            },
+            "interactionStatistic": {
+                "@type": "InteractionCounter",
+                "interactionType": "https://schema.org/CommentAction",
+                "userInteractionCount": 0
+            },
+            "position": 6,
+            "image": "https://crhealthcare.org/wp-content/uploads/2025/07/achc.jpg"
+        },
+        {
+            "@type": "ListItem",
+            "headline": "Stroke Gold from American Heart Association",
+            "url": "https://crhealthcare.org/accreditations/rural-stroke-silver-from-american-heart-association/",
+            "datePublished": "2025-07-20T15:31:16-05:00",
+            "dateModified": "2026-07-01T18:28:55-05:00",
+            "description": "",
+            "mainEntityOfPage": {
+                "@type": "WebPage",
+                "@id": "https://crhealthcare.org/accreditations/rural-stroke-silver-from-american-heart-association/"
+            },
+            "author": {
+                "@type": "Person",
+                "name": "jon@inspirenc.com"
+            },
+            "publisher": {
+                "@type": "Organization",
+                "name": "Columbus Regional Healthcare System"
+            },
+            "interactionStatistic": {
+                "@type": "InteractionCounter",
+                "interactionType": "https://schema.org/CommentAction",
+                "userInteractionCount": 0
+            },
+            "position": 7,
+            "image": "https://crhealthcare.org/wp-content/uploads/2026/07/2026-stroke-award.png"
+        },
+        {
+            "@type": "ListItem",
+            "headline": "Center of Excellence Robotic Surgery",
+            "url": "https://crhealthcare.org/accreditations/center-of-excellence-robotic-surgery/",
+            "datePublished": "2025-07-20T15:29:27-05:00",
+            "dateModified": "2025-07-21T10:29:40-05:00",
+            "description": "",
+            "mainEntityOfPage": {
+                "@type": "WebPage",
+                "@id": "https://crhealthcare.org/accreditations/center-of-excellence-robotic-surgery/"
+            },
+            "author": {
+                "@type": "Person",
+                "name": "jon@inspirenc.com"
+            },
+            "publisher": {
+                "@type": "Organization",
+                "name": "Columbus Regional Healthcare System"
+            },
+            "interactionStatistic": {
+                "@type": "InteractionCounter",
+                "interactionType": "https://schema.org/CommentAction",
+                "userInteractionCount": 0
+            },
+            "position": 8,
+            "image": "https://crhealthcare.org/wp-content/uploads/2025/07/COERS.png"
+        },
+        {
+            "@type": "ListItem",
+            "headline": "American College of Radiology Accredited Facility",
+            "url": "https://crhealthcare.org/accreditations/american-college-of-radiology-accredited-facility/",
+            "datePublished": "2025-07-20T15:27:37-05:00",
+            "dateModified": "2025-07-20T15:30:02-05:00",
+            "description": "",
+            "mainEntityOfPage": {
+                "@type": "WebPage",
+                "@id": "https://crhealthcare.org/accreditations/american-college-of-radiology-accredited-facility/"
+            },
+            "author": {
+                "@type": "Person",
+                "name": "jon@inspirenc.com"
+            },
+            "publisher": {
+                "@type": "Organization",
+                "name": "Columbus Regional Healthcare System"
+            },
+            "interactionStatistic": {
+                "@type": "InteractionCounter",
+                "interactionType": "https://schema.org/CommentAction",
+                "userInteractionCount": 0
+            },
+            "position": 9,
+            "image": "https://crhealthcare.org/wp-content/uploads/2025/07/awards-4.png"
+        },
+        {
+            "@type": "ListItem",
+            "headline": "DNV ISO 9001",
+            "url": "https://crhealthcare.org/accreditations/dnv-iso-9001/",
+            "datePublished": "2025-07-20T15:26:46-05:00",
+            "dateModified": "2025-07-20T15:26:48-05:00",
+            "description": "",
+            "mainEntityOfPage": {
+                "@type": "WebPage",
+                "@id": "https://crhealthcare.org/accreditations/dnv-iso-9001/"
+            },
+            "author": {
+                "@type": "Person",
+                "name": "jon@inspirenc.com"
+            },
+            "publisher": {
+                "@type": "Organization",
+                "name": "Columbus Regional Healthcare System"
+            },
+            "interactionStatistic": {
+                "@type": "InteractionCounter",
+                "interactionType": "https://schema.org/CommentAction",
+                "userInteractionCount": 0
+            },
+            "position": 10,
+            "image": "https://crhealthcare.org/wp-content/uploads/2025/07/QualitySysCert_ISO9001_col.png"
+        },
+        {
+            "@type": "ListItem",
+            "headline": "Baby Friendly Designated Hospital",
+            "url": "https://crhealthcare.org/accreditations/baby-friendly-designated-hospital/",
+            "datePublished": "2025-07-20T15:16:40-05:00",
+            "dateModified": "2025-07-20T15:16:42-05:00",
+            "description": "",
+            "mainEntityOfPage": {
+                "@type": "WebPage",
+                "@id": "https://crhealthcare.org/accreditations/baby-friendly-designated-hospital/"
+            },
+            "author": {
+                "@type": "Person",
+                "name": "jon@inspirenc.com"
+            },
+            "publisher": {
+                "@type": "Organization",
+                "name": "Columbus Regional Healthcare System"
+            },
+            "interactionStatistic": {
+                "@type": "InteractionCounter",
+                "interactionType": "https://schema.org/CommentAction",
+                "userInteractionCount": 0
+            },
+            "position": 11,
+            "image": "https://crhealthcare.org/wp-content/uploads/2025/07/baby-friendly.jpg"
+        },
+        {
+            "@type": "ListItem",
+            "headline": "Certified Primary Stroke Center",
+            "url": "https://crhealthcare.org/accreditations/acute-stroke-ready/",
+            "datePublished": "2025-07-20T15:15:05-05:00",
+            "dateModified": "2026-07-28T21:39:06-05:00",
+            "description": "",
+            "mainEntityOfPage": {
+                "@type": "WebPage",
+                "@id": "https://crhealthcare.org/accreditations/acute-stroke-ready/"
+            },
+            "author": {
+                "@type": "Person",
+                "name": "jon@inspirenc.com"
+            },
+            "publisher": {
+                "@type": "Organization",
+                "name": "Columbus Regional Healthcare System"
+            },
+            "interactionStatistic": {
+                "@type": "InteractionCounter",
+                "interactionType": "https://schema.org/CommentAction",
+                "userInteractionCount": 0
+            },
+            "position": 12,
+            "image": "https://crhealthcare.org/wp-content/uploads/2025/07/primary-stroke.png"
+        }
+    ]
+}</script></div>
+<h2  class="fl-module fl-module-heading fl-heading fl-heading-text fl-node-pa63tbnfdrys" data-node="pa63tbnfdrys" aria-label="Heading">
+				</h2>
+</div>
+</div>
+	</div>
+		</div>
+	</div>
+</div>
+<div class="fl-row fl-row-full-width fl-row-bg-photo fl-node-x67fpo80rib5 fl-row-custom-height fl-row-align-center fl-row-bg-overlay" data-node="x67fpo80rib5">
+	<div class="fl-row-content-wrap">
+						<div class="fl-row-content fl-row-fixed-width fl-node-content">
+				</div>
+	</div>
+</div>
+</div>
+	</div><!-- .fl-page-content -->
+	<footer data-wpr-lazyrender="1" class="fl-builder-content fl-builder-content-17013 fl-builder-global-templates-locked" data-post-id="17013" data-type="footer" itemscope="itemscope" itemtype="http://schema.org/WPFooter"><div  class="fl-row fl-row-full-width fl-row-bg-color fl-node-9ud85kh7s4bn fl-row-default-height fl-row-align-center" data-node="9ud85kh7s4bn">
+	<div class="fl-row-content-wrap">
+						<div class="fl-row-content fl-row-fixed-width fl-node-content">
+		
+<div class="fl-col-group fl-node-ny4vg8hj0w3x" data-node="ny4vg8hj0w3x">
+			<div class="fl-col fl-node-61ujxoyltis2 fl-col-bg-color fl-col-small" data-node="61ujxoyltis2">
+	<div class="fl-col-content fl-node-content"><div role="figure" class="fl-module fl-module-photo fl-photo fl-photo-align-center fl-node-a34mzdgrktwn" data-node="a34mzdgrktwn" aria-label="Photo" itemscope itemtype="https://schema.org/ImageObject">
+	<div class="fl-photo-content fl-photo-img-png">
+					<img decoding="async" class="fl-photo-img wp-image-14818 size-full" src="https://crhealthcare.org/wp-content/uploads/2021/10/crhs-logo-without-slogan_white.png" alt="CRHS Logo White" height="376" width="1746" title="crhs-logo-without-slogan_white" loading="lazy" itemprop="image" />
+					</div>
+	</div>
+<div class="fl-module fl-module-icon fl-node-wniv1l5d4z2a" data-node="wniv1l5d4z2a" aria-label="Icon">
+	<div class="fl-module-content fl-node-content">
+		<div class="fl-icon-wrap">
+	<span class="fl-icon">
+								<a href="#" target="_self" tabindex="-1" aria-hidden="true">
+							<i class="far fa-map" aria-hidden="true"></i>
+								</a>
+			</span>
+			<div id="fl-icon-text-wniv1l5d4z2a" class="fl-icon-text">
+						<a href="#" target="_self" class="fl-icon-text-link fl-icon-text-wrap">
+						<p>500 Jefferson St. Whiteville, NC 28472</p>										</a>
+					</div>
+	</div>
+	</div>
+</div>
+<div class="fl-module fl-module-icon fl-node-d0u1h24omwvn" data-node="d0u1h24omwvn" aria-label="Icon">
+	<div class="fl-module-content fl-node-content">
+		<div class="fl-icon-wrap">
+	<span class="fl-icon">
+								<a target="_self" tabindex="-1" aria-hidden="true">
+							<i class="fas fa-phone" aria-hidden="true"></i>
+								</a>
+			</span>
+			<div id="fl-icon-text-d0u1h24omwvn" class="fl-icon-text">
+						<a target="_self" class="fl-icon-text-link fl-icon-text-wrap">
+						<p>910-642-8011</p>										</a>
+					</div>
+	</div>
+	</div>
+</div>
+</div>
+</div>
+			<div class="fl-col fl-node-kveiyqxwfz2l fl-col-bg-color fl-col-small" data-node="kveiyqxwfz2l">
+	<div class="fl-col-content fl-node-content"><h3  class="fl-module fl-module-heading fl-heading fl-heading-text fl-node-8ifcyuvlod5t" data-node="8ifcyuvlod5t" aria-label="Heading">
+			HEALTH NETWORK	</h3>
+<div class="fl-module fl-module-menu fl-node-dichetpxrqk7" data-node="dichetpxrqk7" aria-label="Menu">
+	<div class="fl-module-content fl-node-content">
+		<div class="fl-menu fl-menu-responsive-toggle-mobile">
+	<button class="fl-menu-mobile-toggle hamburger fl-content-ui-button" aria-haspopup="menu" aria-label="Menu"><span class="fl-menu-icon svg-container"><svg version="1.1" class="hamburger-menu" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512">
+<rect class="fl-hamburger-menu-top" width="512" height="102"/>
+<rect class="fl-hamburger-menu-middle" y="205" width="512" height="102"/>
+<rect class="fl-hamburger-menu-bottom" y="410" width="512" height="102"/>
+</svg>
+</span></button>	<div class="fl-clear"></div>
+	<nav aria-label="Navigation Menu" itemscope="itemscope" itemtype="https://schema.org/SiteNavigationElement"><ul id="menu-footer-health-network-1" class="menu fl-menu-vertical fl-toggle-none"><li id="menu-item-15881" class="menu-item menu-item-type-post_type menu-item-object-services"><a href="https://crhealthcare.org/services/imaging-services/">Advanced Imaging</a></li><li id="menu-item-15882" class="menu-item menu-item-type-post_type menu-item-object-services"><a href="https://crhealthcare.org/services/advanced-orthopedics/">Advanced Orthopedics</a></li><li id="menu-item-17927" class="menu-item menu-item-type-post_type menu-item-object-locations"><a href="https://crhealthcare.org/locations/advanced-pain-solutions-whiteville/">Advanced Pain Solutions</a></li><li id="menu-item-17928" class="menu-item menu-item-type-post_type menu-item-object-locations"><a href="https://crhealthcare.org/locations/advanced-pediatrics-whiteville/">Advanced Pediatrics &amp; Family Care</a></li><li id="menu-item-15884" class="menu-item menu-item-type-post_type menu-item-object-services"><a href="https://crhealthcare.org/services/primary-care-services/">Advanced Primary Care</a></li><li id="menu-item-15885" class="menu-item menu-item-type-post_type menu-item-object-services"><a href="https://crhealthcare.org/services/urology/">Advanced Urology</a></li><li id="menu-item-18065" class="menu-item menu-item-type-post_type menu-item-object-services"><a href="https://crhealthcare.org/services/ob-gyn/">Baldwin Woods OB/GYN</a></li><li id="menu-item-15873" class="menu-item menu-item-type-post_type menu-item-object-locations"><a href="https://crhealthcare.org/locations/columbus-regional-preoperative-clinic/">Columbus Regional Preoperative Clinic</a></li><li id="menu-item-15880" class="menu-item menu-item-type-post_type menu-item-object-locations"><a href="https://crhealthcare.org/locations/donayre-cancer-care-center/">Donayre Cancer Care Center</a></li><li id="menu-item-15877" class="menu-item menu-item-type-post_type menu-item-object-locations"><a href="https://crhealthcare.org/locations/wound-healing-center/">Wound Healing Center</a></li></ul></nav></div>
+	</div>
+</div>
+</div>
+</div>
+			<div class="fl-col fl-node-ypsf0gh86uc7 fl-col-bg-color fl-col-small" data-node="ypsf0gh86uc7">
+	<div class="fl-col-content fl-node-content"><div class="fl-module fl-module-heading fl-node-3otne67x2pc0" data-node="3otne67x2pc0" aria-label="Heading">
+	<div class="fl-module-content fl-node-content">
+		<h3 class="fl-heading">
+			<span class="fl-heading-text">RESOURCES</span>
+	</h3>
+	</div>
+</div>
+<div class="fl-module fl-module-menu fl-node-ckzsmbnr81xp" data-node="ckzsmbnr81xp" aria-label="Menu">
+	<div class="fl-module-content fl-node-content">
+		<div class="fl-menu fl-menu-responsive-toggle-mobile">
+	<button class="fl-menu-mobile-toggle hamburger fl-content-ui-button" aria-haspopup="menu" aria-label="Menu"><span class="fl-menu-icon svg-container"><svg version="1.1" class="hamburger-menu" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512">
+<rect class="fl-hamburger-menu-top" width="512" height="102"/>
+<rect class="fl-hamburger-menu-middle" y="205" width="512" height="102"/>
+<rect class="fl-hamburger-menu-bottom" y="410" width="512" height="102"/>
+</svg>
+</span></button>	<div class="fl-clear"></div>
+	<nav aria-label="Navigation Menu" itemscope="itemscope" itemtype="https://schema.org/SiteNavigationElement"><ul id="menu-footer-resources" class="menu fl-menu-vertical fl-toggle-none"><li id="menu-item-15214" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://crhealthcare.org/about-us/careers/">Careers</a></li><li id="menu-item-15217" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://crhealthcare.org/about-us/choose-your-bill/">Online Bill Pay</a></li><li id="menu-item-15215" class="menu-item menu-item-type-custom menu-item-object-custom"><a href="https://www.mypatientpoint.com/hospital/NC_Columbus">Patient Guide</a></li><li id="menu-item-15216" class="menu-item menu-item-type-custom menu-item-object-custom"><a href="http://mycolumbushealth.iqhealth.com/">Patient Portal</a></li><li id="menu-item-15218" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://crhealthcare.org/patients-visitors/phone-directory/">Phone Directory</a></li><li id="menu-item-15219" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://crhealthcare.org/providers/">Providers</a></li></ul></nav></div>
+	</div>
+</div>
+</div>
+</div>
+			<div class="fl-col fl-node-hpa8diuz20lg fl-col-bg-color fl-col-small" data-node="hpa8diuz20lg">
+	<div class="fl-col-content fl-node-content"><div class="fl-module fl-module-heading fl-node-rjb7auvz098l" data-node="rjb7auvz098l" aria-label="Heading">
+	<div class="fl-module-content fl-node-content">
+		<h3 class="fl-heading">
+			<span class="fl-heading-text">DISCLOSURES</span>
+	</h3>
+	</div>
+</div>
+<div class="fl-module fl-module-menu fl-node-6ksbdfy1u5vo" data-node="6ksbdfy1u5vo" aria-label="Menu">
+	<div class="fl-module-content fl-node-content">
+		<div class="fl-menu fl-menu-responsive-toggle-mobile">
+	<button class="fl-menu-mobile-toggle hamburger fl-content-ui-button" aria-haspopup="menu" aria-label="Menu"><span class="fl-menu-icon svg-container"><svg version="1.1" class="hamburger-menu" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512">
+<rect class="fl-hamburger-menu-top" width="512" height="102"/>
+<rect class="fl-hamburger-menu-middle" y="205" width="512" height="102"/>
+<rect class="fl-hamburger-menu-bottom" y="410" width="512" height="102"/>
+</svg>
+</span></button>	<div class="fl-clear"></div>
+	<nav aria-label="Navigation Menu" itemscope="itemscope" itemtype="https://schema.org/SiteNavigationElement"><ul id="menu-footer-disclosures" class="menu fl-menu-vertical fl-toggle-none"><li id="menu-item-16019" class="menu-item menu-item-type-custom menu-item-object-custom"><a href="https://crhealthcare.org/wp-content/uploads/2025/10/CHNA-2025-CHNA5.docx">Community Health Needs Assessment</a></li><li id="menu-item-16802" class="menu-item menu-item-type-custom menu-item-object-custom"><a href="https://crhealthcare.org/wp-content/uploads/2025/02/CRHS-NC-Medical-Debt-Policy_rev-2.18.2025.docx">Medical Debt Relief Policy</a></li><li id="menu-item-16439" class="menu-item menu-item-type-custom menu-item-object-custom"><a href="https://crhealthcare.org/wp-content/uploads/2024/01/Columbus-Regional-Healthcare-System-Notifies-Affected-Individuals-of-Info-Security-Incident-33021944.12.pdf">Notice of Data Security Incident</a></li><li id="menu-item-15222" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://crhealthcare.org/about-us/disclosures/notice-of-non-discrimination-and-accessibility/">Notice of Non-Discrimination and Accessibility</a></li><li id="menu-item-15221" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://crhealthcare.org/patients-visitors/crhs-financial-assistance/">Price Transparency</a></li><li id="menu-item-15223" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://crhealthcare.org/about-us/disclosures/privacy-notice/">Privacy &#038; Patient Rights</a></li><li id="menu-item-15224" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://crhealthcare.org/about-us/disclosures/dnvglhealthcare/">Public Notice</a></li></ul></nav></div>
+	</div>
+</div>
+</div>
+</div>
+	</div>
+		</div>
+	</div>
+</div>
+<div  class="fl-row fl-row-full-width fl-row-bg-color fl-node-lchk3o25z0y1 fl-row-default-height fl-row-align-center" data-node="lchk3o25z0y1">
+	<div class="fl-row-content-wrap">
+						<div class="fl-row-content fl-row-fixed-width fl-node-content">
+		
+<div class="fl-col-group fl-node-hsqpdc10jieo" data-node="hsqpdc10jieo">
+			<div class="fl-col fl-node-s1xid4tyl0na fl-col-bg-color" data-node="s1xid4tyl0na">
+	<div class="fl-col-content fl-node-content"><div  class="fl-module fl-module-separator fl-node-cvun4j2kb7xy" data-node="cvun4j2kb7xy" aria-label="Separator">
+	<div class="fl-separator"></div>
+</div>
+<div  class="fl-module fl-module-rich-text fl-rich-text fl-node-64pku3wm1a9j" data-node="64pku3wm1a9j" aria-label="Text Editor">
+	<p style="text-align: center;">© 2026 Columbus Regional Healthcare System. All Rights Reserved.</p>
+</div>
+</div>
+</div>
+	</div>
+		</div>
+	</div>
+</div>
+</footer>	</div><!-- .fl-page -->
+<script type="speculationrules">
+{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":["/wp-*.php","/wp-admin/*","/wp-content/uploads/*","/wp-content/*","/wp-content/plugins/*","/wp-content/themes/bb-theme/*","/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+</script>
+		<script type="rocketlazyloadscript">
+		( function ( body ) {
+			'use strict';
+			body.className = body.className.replace( /\btribe-no-js\b/, 'tribe-js' );
+		} )( document.body );
+		</script>
+		<script type="rocketlazyloadscript"> /* <![CDATA[ */var tribe_l10n_datatables = {"aria":{"sort_ascending":": activate to sort column ascending","sort_descending":": activate to sort column descending"},"length_menu":"Show _MENU_ entries","empty_table":"No data available in table","info":"Showing _START_ to _END_ of _TOTAL_ entries","info_empty":"Showing 0 to 0 of 0 entries","info_filtered":"(filtered from _MAX_ total entries)","zero_records":"No matching records found","search":"Search:","all_selected_text":"All items on this page were selected. ","select_all_link":"Select all pages","clear_selection":"Clear Selection.","pagination":{"all":"All","next":"Next","previous":"Previous"},"select":{"rows":{"0":"","_":": Selected %d rows","1":": Selected 1 row"}},"datepicker":{"dayNames":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"dayNamesShort":["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],"dayNamesMin":["S","M","T","W","T","F","S"],"monthNames":["January","February","March","April","May","June","July","August","September","October","November","December"],"monthNamesShort":["January","February","March","April","May","June","July","August","September","October","November","December"],"monthNamesMin":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"nextText":"Next","prevText":"Prev","currentText":"Today","closeText":"Done","today":"Today","clear":"Clear"}};/* ]]> */ </script><link rel='stylesheet' id='tec-variables-skeleton-css' href='https://crhealthcare.org/wp-content/plugins/the-events-calendar/common/build/css/variables-skeleton.css?ver=6.13.2' media='all' />
+<link rel='stylesheet' id='tribe-common-skeleton-style-css' href='https://crhealthcare.org/wp-content/plugins/the-events-calendar/common/build/css/common-skeleton.css?ver=6.13.2' media='all' />
+<link rel='stylesheet' id='tribe-events-widgets-v2-events-list-skeleton-css' href='https://crhealthcare.org/wp-content/plugins/the-events-calendar/build/css/widget-events-list-skeleton.css?ver=6.18.2' media='all' />
+<link rel='stylesheet' id='tec-variables-full-css' href='https://crhealthcare.org/wp-content/plugins/the-events-calendar/common/build/css/variables-full.css?ver=6.13.2' media='all' />
+<link rel='stylesheet' id='tribe-common-full-style-css' href='https://crhealthcare.org/wp-content/plugins/the-events-calendar/common/build/css/common-full.css?ver=6.13.2' media='all' />
+<link rel='stylesheet' id='tribe-events-widgets-v2-events-list-full-css' href='https://crhealthcare.org/wp-content/plugins/the-events-calendar/build/css/widget-events-list-full.css?ver=6.18.2' media='all' />
+<link rel='stylesheet' id='tribe-events-virtual-widgets-v2-common-skeleton-css' href='https://crhealthcare.org/wp-content/plugins/events-calendar-pro/build/css/widgets-events-common-skeleton.css?ver=7.8.0' media='all' />
+<link rel='stylesheet' id='tribe-events-virtual-widgets-v2-common-full-css' href='https://crhealthcare.org/wp-content/plugins/events-calendar-pro/build/css/widgets-events-common-full.css?ver=7.8.0' media='all' />
+<script type="rocketlazyloadscript" id="tec-user-agent-js" data-rocket-src="https://crhealthcare.org/wp-content/plugins/the-events-calendar/common/build/js/user-agent.js?ver=da75d0bdea6dde3898df"></script>
+<script id="pt-cv-content-views-script-js-extra">
+var PT_CV_PUBLIC = {"_prefix":"pt-cv-","page_to_show":"5","_nonce":"3f956342fd","is_admin":"","is_mobile":"","ajaxurl":"https://crhealthcare.org/wp-admin/admin-ajax.php","lang":"","loading_image_src":"data:image/gif;base64,R0lGODlhDwAPALMPAMrKygwMDJOTkz09PZWVla+vr3p6euTk5M7OzuXl5TMzMwAAAJmZmWZmZszMzP///yH/C05FVFNDQVBFMi4wAwEAAAAh+QQFCgAPACwAAAAADwAPAAAEQvDJaZaZOIcV8iQK8VRX4iTYoAwZ4iCYoAjZ4RxejhVNoT+mRGP4cyF4Pp0N98sBGIBMEMOotl6YZ3S61Bmbkm4mAgAh+QQFCgAPACwAAAAADQANAAAENPDJSRSZeA418itN8QiK8BiLITVsFiyBBIoYqnoewAD4xPw9iY4XLGYSjkQR4UAUD45DLwIAIfkEBQoADwAsAAAAAA8ACQAABC/wyVlamTi3nSdgwFNdhEJgTJoNyoB9ISYoQmdjiZPcj7EYCAeCF1gEDo4Dz2eIAAAh+QQFCgAPACwCAAAADQANAAAEM/DJBxiYeLKdX3IJZT1FU0iIg2RNKx3OkZVnZ98ToRD4MyiDnkAh6BkNC0MvsAj0kMpHBAAh+QQFCgAPACwGAAAACQAPAAAEMDC59KpFDll73HkAA2wVY5KgiK5b0RRoI6MuzG6EQqCDMlSGheEhUAgqgUUAFRySIgAh+QQFCgAPACwCAAIADQANAAAEM/DJKZNLND/kkKaHc3xk+QAMYDKsiaqmZCxGVjSFFCxB1vwy2oOgIDxuucxAMTAJFAJNBAAh+QQFCgAPACwAAAYADwAJAAAEMNAs86q1yaWwwv2Ig0jUZx3OYa4XoRAfwADXoAwfo1+CIjyFRuEho60aSNYlOPxEAAAh+QQFCgAPACwAAAIADQANAAAENPA9s4y8+IUVcqaWJ4qEQozSoAzoIyhCK2NFU2SJk0hNnyEOhKR2AzAAj4Pj4GE4W0bkJQIAOw==","is_mobile_tablet":"","sf_no_post_found":"No posts found.","lf__separator":","};
+var PT_CV_PAGINATION = {"first":"\u00ab","prev":"\u2039","next":"\u203a","last":"\u00bb","goto_first":"Go to first page","goto_prev":"Go to previous page","goto_next":"Go to next page","goto_last":"Go to last page","current_page":"Current page is","goto_page":"Go to page"};
+//# sourceURL=pt-cv-content-views-script-js-extra
+</script>
+<script type="rocketlazyloadscript" id="pt-cv-content-views-script-js" data-rocket-src="https://crhealthcare.org/wp-content/plugins/content-views-query-and-display-post-page/public/assets/js/cv.js?ver=4.5.1.2"></script>
+<script type="rocketlazyloadscript" id="pt-cv-public-pro-script-js" data-rocket-src="https://crhealthcare.org/wp-content/plugins/pt-content-views-pro/public/assets/js/cvpro.min.js?ver=7.4.1"></script>
+<script type="rocketlazyloadscript" id="imagesloaded-js" data-rocket-src="https://crhealthcare.org/wp-content/plugins/bb-plugin/js/libs/jquery.imagesloaded.min.js?ver=2.11.0.3"></script>
+<script type="rocketlazyloadscript" id="jquery-throttle-js" data-rocket-src="https://crhealthcare.org/wp-content/plugins/bb-plugin/js/libs/jquery.ba-throttle-debounce.min.js?ver=2.11.0.3"></script>
+<script type="rocketlazyloadscript" id="jquery-magnificpopup-js" data-rocket-src="https://crhealthcare.org/wp-content/plugins/bb-plugin/js/libs/jquery.magnificpopup.min.js?ver=2.11.0.3"></script>
+<script type="rocketlazyloadscript" id="fl-builder-layout-bundle-f19668087e9464e9361a835defb4aecb-js" data-rocket-src="https://crhealthcare.org/wp-content/uploads/bb-plugin/cache/f19668087e9464e9361a835defb4aecb-layout-bundle.js?ver=2.11.0.3-1.6"></script>
+<script type="rocketlazyloadscript" id="rocket-browser-checker-js-after">
+"use strict";var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||!1,descriptor.configurable=!0,"value"in descriptor&&(descriptor.writable=!0),Object.defineProperty(target,descriptor.key,descriptor)}}return function(Constructor,protoProps,staticProps){return protoProps&&defineProperties(Constructor.prototype,protoProps),staticProps&&defineProperties(Constructor,staticProps),Constructor}}();function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor))throw new TypeError("Cannot call a class as a function")}var RocketBrowserCompatibilityChecker=function(){function RocketBrowserCompatibilityChecker(options){_classCallCheck(this,RocketBrowserCompatibilityChecker),this.passiveSupported=!1,this._checkPassiveOption(this),this.options=!!this.passiveSupported&&options}return _createClass(RocketBrowserCompatibilityChecker,[{key:"_checkPassiveOption",value:function(self){try{var options={get passive(){return!(self.passiveSupported=!0)}};window.addEventListener("test",null,options),window.removeEventListener("test",null,options)}catch(err){self.passiveSupported=!1}}},{key:"initRequestIdleCallback",value:function(){!1 in window&&(window.requestIdleCallback=function(cb){var start=Date.now();return setTimeout(function(){cb({didTimeout:!1,timeRemaining:function(){return Math.max(0,50-(Date.now()-start))}})},1)}),!1 in window&&(window.cancelIdleCallback=function(id){return clearTimeout(id)})}},{key:"isDataSaverModeOn",value:function(){return"connection"in navigator&&!0===navigator.connection.saveData}},{key:"supportsLinkPrefetch",value:function(){var elem=document.createElement("link");return elem.relList&&elem.relList.supports&&elem.relList.supports("prefetch")&&window.IntersectionObserver&&"isIntersecting"in IntersectionObserverEntry.prototype}},{key:"isSlowConnection",value:function(){return"connection"in navigator&&"effectiveType"in navigator.connection&&("2g"===navigator.connection.effectiveType||"slow-2g"===navigator.connection.effectiveType)}}]),RocketBrowserCompatibilityChecker}();
+//# sourceURL=rocket-browser-checker-js-after
+</script>
+<script id="rocket-preload-links-js-extra">
+var RocketPreloadLinksConfig = {"excludeUris":"/(?:.+/)?feed(?:/(?:.+/?)?)?$|/(?:.+/)?embed/|/(index.php/)?(.*)wp-json(/.*|$)|/refer/|/go/|/recommend/|/recommends/","usesTrailingSlash":"1","imageExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php","fileExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php|html|htm","siteUrl":"https://crhealthcare.org","onHoverDelay":"100","rateThrottle":"3"};
+//# sourceURL=rocket-preload-links-js-extra
+</script>
+<script type="rocketlazyloadscript" id="rocket-preload-links-js-after">
+(function() {
+"use strict";var r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},e=function(){function i(e,t){for(var n=0;n<t.length;n++){var i=t[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(e,i.key,i)}}return function(e,t,n){return t&&i(e.prototype,t),n&&i(e,n),e}}();function i(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var t=function(){function n(e,t){i(this,n),this.browser=e,this.config=t,this.options=this.browser.options,this.prefetched=new Set,this.eventTime=null,this.threshold=1111,this.numOnHover=0}return e(n,[{key:"init",value:function(){!this.browser.supportsLinkPrefetch()||this.browser.isDataSaverModeOn()||this.browser.isSlowConnection()||(this.regex={excludeUris:RegExp(this.config.excludeUris,"i"),images:RegExp(".("+this.config.imageExt+")$","i"),fileExt:RegExp(".("+this.config.fileExt+")$","i")},this._initListeners(this))}},{key:"_initListeners",value:function(e){-1<this.config.onHoverDelay&&document.addEventListener("mouseover",e.listener.bind(e),e.listenerOptions),document.addEventListener("mousedown",e.listener.bind(e),e.listenerOptions),document.addEventListener("touchstart",e.listener.bind(e),e.listenerOptions)}},{key:"listener",value:function(e){var t=e.target.closest("a"),n=this._prepareUrl(t);if(null!==n)switch(e.type){case"mousedown":case"touchstart":this._addPrefetchLink(n);break;case"mouseover":this._earlyPrefetch(t,n,"mouseout")}}},{key:"_earlyPrefetch",value:function(t,e,n){var i=this,r=setTimeout(function(){if(r=null,0===i.numOnHover)setTimeout(function(){return i.numOnHover=0},1e3);else if(i.numOnHover>i.config.rateThrottle)return;i.numOnHover++,i._addPrefetchLink(e)},this.config.onHoverDelay);t.addEventListener(n,function e(){t.removeEventListener(n,e,{passive:!0}),null!==r&&(clearTimeout(r),r=null)},{passive:!0})}},{key:"_addPrefetchLink",value:function(i){return this.prefetched.add(i.href),new Promise(function(e,t){var n=document.createElement("link");n.rel="prefetch",n.href=i.href,n.onload=e,n.onerror=t,document.head.appendChild(n)}).catch(function(){})}},{key:"_prepareUrl",value:function(e){if(null===e||"object"!==(void 0===e?"undefined":r(e))||!1 in e||-1===["http:","https:"].indexOf(e.protocol))return null;var t=e.href.substring(0,this.config.siteUrl.length),n=this._getPathname(e.href,t),i={original:e.href,protocol:e.protocol,origin:t,pathname:n,href:t+n};return this._isLinkOk(i)?i:null}},{key:"_getPathname",value:function(e,t){var n=t?e.substring(this.config.siteUrl.length):e;return n.startsWith("/")||(n="/"+n),this._shouldAddTrailingSlash(n)?n+"/":n}},{key:"_shouldAddTrailingSlash",value:function(e){return this.config.usesTrailingSlash&&!e.endsWith("/")&&!this.regex.fileExt.test(e)}},{key:"_isLinkOk",value:function(e){return null!==e&&"object"===(void 0===e?"undefined":r(e))&&(!this.prefetched.has(e.href)&&e.origin===this.config.siteUrl&&-1===e.href.indexOf("?")&&-1===e.href.indexOf("#")&&!this.regex.excludeUris.test(e.href)&&!this.regex.images.test(e.href))}}],[{key:"run",value:function(){"undefined"!=typeof RocketPreloadLinksConfig&&new n(new RocketBrowserCompatibilityChecker({capture:!0,passive:!0}),RocketPreloadLinksConfig).init()}}]),n}();t.run();
+}());
+
+//# sourceURL=rocket-preload-links-js-after
+</script>
+<script id="gforms_recaptcha_recaptcha-js-extra">
+var gforms_recaptcha_recaptcha_strings = {"nonce":"aa51461c0e","disconnect":"Disconnecting","change_connection_type":"Resetting","spinner":"https://crhealthcare.org/wp-content/plugins/gravityforms/images/spinner.svg","connection_type":"classic","disable_badge":"","change_connection_type_title":"Change Connection Type","change_connection_type_message":"Changing the connection type will delete your current settings.  Do you want to proceed?","disconnect_title":"Disconnect","disconnect_message":"Disconnecting from reCAPTCHA will delete your current settings.  Do you want to proceed?","site_key":"6LdwXrMUAAAAAHDci19wSTg5wXDPgPXLLsUoe1vU"};
+//# sourceURL=gforms_recaptcha_recaptcha-js-extra
+</script>
+<script data-wp-strategy="defer" defer id="gforms_recaptcha_recaptcha-js" src="https://www.google.com/recaptcha/api.js?render=6LdwXrMUAAAAAHDci19wSTg5wXDPgPXLLsUoe1vU&#038;ver=2.2.2"></script>
+<script data-wp-strategy="defer" defer id="gforms_recaptcha_frontend-js" src="https://crhealthcare.org/wp-content/plugins/gravityformsrecaptcha/js/frontend.min.js?ver=2.2.2"></script>
+<script id="wp-statistics-tracker-js-extra">
+var WP_Statistics_Tracker_Object = {"requestUrl":"https://crhealthcare.org/wp-json/wp-statistics/v2","ajaxUrl":"https://crhealthcare.org/wp-admin/admin-ajax.php","hitParams":{"wp_statistics_hit":1,"source_type":"home","source_id":15204,"search_query":"","signature":"fdd70d6512f98336fd7def9140789f32","endpoint":"hit"},"option":{"dntEnabled":false,"bypassAdBlockers":false,"consentIntegration":{"name":null,"status":[]},"isPreview":false,"userOnline":false,"isWpConsentApiActive":false},"isLegacyEventLoaded":"","customEventAjaxUrl":"https://crhealthcare.org/wp-admin/admin-ajax.php?action=wp_statistics_custom_event&nonce=1aadf5c5a2","onlineParams":{"wp_statistics_hit":1,"source_type":"home","source_id":15204,"search_query":"","signature":"fdd70d6512f98336fd7def9140789f32","action":"wp_statistics_online_check"},"jsCheckTime":"60000"};
+//# sourceURL=wp-statistics-tracker-js-extra
+</script>
+<script type="rocketlazyloadscript" id="wp-statistics-tracker-js" data-rocket-src="https://crhealthcare.org/wp-content/plugins/wp-statistics/assets/js/tracker.js?ver=14.16.11"></script>
+<script type="rocketlazyloadscript" id="jquery-fitvids-js" data-rocket-src="https://crhealthcare.org/wp-content/plugins/bb-plugin/js/libs/jquery.fitvids.min.js?ver=1.2"></script>
+<script id="fl-automator-js-extra">
+var themeopts = {"medium_breakpoint":"992","mobile_breakpoint":"768","lightbox":"enabled","scrollTopPosition":"800"};
+//# sourceURL=fl-automator-js-extra
+</script>
+<script type="rocketlazyloadscript" id="fl-automator-js" data-rocket-src="https://crhealthcare.org/wp-content/themes/bb-theme/js/theme.min.js?ver=1.7.20"></script>
+<script type="rocketlazyloadscript" id="tribe-common-js" data-rocket-src="https://crhealthcare.org/wp-content/plugins/the-events-calendar/common/build/js/tribe-common.js?ver=9c44e11f3503a33e9540"></script>
+<script type="rocketlazyloadscript" id="tribe-query-string-js" data-rocket-src="https://crhealthcare.org/wp-content/plugins/the-events-calendar/common/build/js/utils/query-string.js?ver=694b0604b0c8eafed657"></script>
+<script type="rocketlazyloadscript" data-rocket-src='https://crhealthcare.org/wp-content/plugins/the-events-calendar/common/build/js/underscore-before.js'></script>
+<script type="rocketlazyloadscript" id="underscore-js" data-rocket-src="https://crhealthcare.org/wp-includes/js/underscore.min.js?ver=1.13.8"></script>
+<script type="rocketlazyloadscript" data-rocket-src='https://crhealthcare.org/wp-content/plugins/the-events-calendar/common/build/js/underscore-after.js'></script>
+<script type="rocketlazyloadscript" id="wp-hooks-js" data-rocket-src="https://crhealthcare.org/wp-includes/js/dist/hooks.min.js?ver=f0f188028580e8dc1255"></script>
+<script type="rocketlazyloadscript" defer id="tribe-events-views-v2-manager-js" data-rocket-src="https://crhealthcare.org/wp-content/plugins/the-events-calendar/build/js/views/manager.js?ver=76866c0f9c1f9f397a02"></script>
+<script type="rocketlazyloadscript" id="tribe-events-views-v2-breakpoints-js" data-rocket-src="https://crhealthcare.org/wp-content/plugins/the-events-calendar/build/js/views/breakpoints.js?ver=4208de2df2852e0b91ec"></script>
+</body>
+</html>
+
+<!-- This website is like a Rocket, isn't it? Performance optimized by WP Rocket. Learn more: https://wp-rocket.me - Debug: cached@1792475389 -->

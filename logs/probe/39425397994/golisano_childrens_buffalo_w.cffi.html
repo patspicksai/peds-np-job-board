@@ -1,0 +1,1517 @@
+<!doctype html>
+<html lang="en" class=”no-js”>
+
+<head>
+  
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Welcome to Golisano Children's Hospital of Buffalo</title>
+  <meta name="description"
+    content="Golisano Children's Hospital of Buffalo is the regional center for comprehensive pediatric trauma, surgical and medical care, including neonatal, perinatal and obstetrical services.">
+    <meta name="cf-2fa-verify" value="4pUBGkoAroLP6bCUU951" />
+
+  <!--Web Fonts-->
+  <link rel="stylesheet" href="https://use.typekit.net/tbk7sxy.css">
+  <link rel="stylesheet" href="https://use.typekit.net/hto8oaw.css">
+  <script src="https://kit.fontawesome.com/4e4d01726e.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+  integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g=="
+  crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!--Preload-->
+  <link rel="preload" href="/css/styles.css" as="style">
+  <link rel="stylesheet" href="/css/styles.css">
+
+  <!--VUE CDN-->
+  <!--<script src="https://unpkg.com/vue/dist/vue.min.js"></script>-->
+  <!--FOR PRODUCTION-->
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+  <!--Modernizer-->
+  <script src="/js/modernizr-custom.js"></script>
+  <script>
+    console.log(Modernizr.webp); // undefined
+  </script>
+  <script>document.documentElement.classList.remove("no-js"); </script>
+    <!-- SiteImprove -->
+  <script async src="https://siteimproveanalytics.com/js/siteanalyze_6294607.js"></script>
+  <style>
+    .alert-heading {
+      background: #ffbd13;
+      color: black;
+      font-size: .875rem;
+      text-transform: uppercase;
+      padding: .25rem .75rem;
+    }
+
+    .alert p {
+      padding: .5rem .75rem;
+    }
+
+    #news .article-photo-none {
+      width: 100%;
+      height: 140px;
+      background: var(--khblue) url('/images/news-och-generic.jpg');
+    }
+
+    .article-photo-wrap {
+      width: 100%;
+      height: 160px !important;
+      background-color: var(--primary);
+      position: relative;
+      margin-bottom: 1rem !important;
+    }
+
+    .bg-blur {
+      filter: blur(12px);
+      -webkit-filter: blur(12px);
+      width: 100%;
+      height: 160px;
+      overflow: hidden;
+      position: absolute;
+      z-index: 0;
+      opacity: .3;
+    }
+
+    #news .article-photo {
+      width: 100%;
+      height: 160px !important;
+      background-repeat: no-repeat !important;
+      background-position: center center !important;
+      background-size: auto 100% !important;
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      margin: auto auto;
+      z-index: 1;
+    }
+
+    #news-events-wrap #news .article {
+      padding: 0 !important;
+    }
+
+    #news .date {
+      font-size: 14px;
+      font-weight: 600;
+      color: black;
+      text-transform: uppercase;
+    }
+
+    #news #articleOthers .article-title {
+      border-top: solid 1px #d6cae0;
+      font-size: 1rem !important;
+      padding: .5rem 0;
+      margin: 0;
+    }
+
+    .news-date-wrap {
+      color: var(--khblue);
+
+    }
+
+
+    #events h2 {
+      border-bottom: 1px solid #f9f7fb;
+    }
+
+    #events .nav-pills .nav-link {
+      color: var(--khblue) !important;
+      background: transparent;
+      border: solid 1px var(--khblue);
+      border-radius: 0;
+      font-weight: 500;
+    }
+
+    #events .nav-pills .nav-link.active {
+      color: #fff !important;
+      background: var(--khblue);
+      border: solid 1px var(--khblue);
+      font-weight: 500;
+    }
+
+    #events .nav-pills .nav-link.active:hover {
+      color: #fff !important;
+      background: var(--khblue) !important;
+      border: solid 1px var(--khblue);
+    }
+
+    #events .nav-pills .nav-link:hover {
+      color: #fff !important;
+      background-color: var(--khblue) !important;
+    }
+
+    #events .nav-pills .nav-link:hover {
+      color: white !important;
+    }
+
+    #events .event-date-wrap {
+      background-color: var(--khblue);
+      color: white;
+    }
+
+
+    @media all and (-ms-high-contrast: none),
+    (-ms-high-contrast: active) {
+      #hero #hero-text #mom {
+        margin-left: 15%;
+      }
+
+      #home #maternity .row {
+        background-position: bottom left -320px;
+      }
+
+      .thanks {
+        display: table;
+      }
+
+      .boychair,
+      .video {
+        display: table-cell;
+        width: 50%;
+      }
+
+      .video {
+        vertical-align: middle;
+      }
+
+      .chobf-logo {
+        height: 60px;
+      }
+
+      #videos {
+        display: none;
+      }
+    }
+
+    #ems {
+      background: #acdfe8 url('/images/EMG-week-bkg.jpg') no-repeat center center/ cover;
+      padding: 2rem 0;
+    }
+
+    #ems img {
+      height: 300px;
+      width: auto;
+    }
+
+    @media screen and (max-width: 992px) {
+      #ems img {
+        height: 200px;
+        width: auto;
+      }
+    }
+
+    /*   #closings{
+      background:#0C3860;
+      padding:.5rem 2%;
+    }*/
+    #closings a {
+      color: white;
+      display: block;
+    }
+
+    #closings a:hover {
+      color: white;
+      text-decoration: underline;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    #videos {
+      background-color: #d7e9f7 !important;
+    }
+
+    #awards h2::after {
+      text-align: center !important;
+      left: 50% !important;
+      transform: translate(-50%) !important;
+    }
+
+    @media screen and (max-width: 768px) {
+      #awards .logo {
+        width: auto !important;
+        height: 90px !important;
+      }
+    }
+
+    #gi {
+      background: linear-gradient(to right, #C8C4B2 0%, #C8C4B2 50%, #7B3763 50%, #7B3763 100%);
+    }
+
+    @media screen and (max-width: 992px) {
+      #gi {
+        background: #C8C4B2
+      }
+    }
+
+    #gi .left {
+      padding: 4rem 4rem 4rem 6.5rem;
+      background: url('/images/38017-OCH-GI.png') no-repeat right -110px top -160px/90%;
+      position: relative;
+      overflow: hidden;
+      box-sizing: border-box;
+      /* background-image: url(/images/arrow-peach.svg), url(/images/38017-OCH-GI.png);
+background-position: center left, right -80px top -160px;
+background-repeat: no-repeat;
+background-size: 50%, 90%; */
+    }
+
+    @media screen and (max-width: 2000px) {
+      #gi .left {
+        padding: 4rem 4rem 4rem 5.5rem;
+        background: url('/images/38017-OCH-GI.png') no-repeat right -10px bottom -50px/70%;
+      }
+    }
+
+    @media screen and (max-width: 1500px) {
+      #gi.container-fluid {
+        padding: 0 !important;
+      }
+
+      #gi .left {
+        padding: 4rem 4rem 4rem 9.5rem;
+        background: url('/images/38017-OCH-GI.png') no-repeat right -10px bottom -50px/65%;
+      }
+    }
+
+    @media screen and (max-width: 1300px) {
+      #gi .left {
+        padding: 4rem 4rem 4rem 6.5em;
+        background: url('/images/38017-OCH-GI.png') no-repeat right -10px bottom -30px/65%;
+      }
+    }
+
+    @media screen and (max-width: 1100px) {
+      #gi .left {
+        padding: 4rem 4rem 4rem 6.5em;
+        background: url('/images/38017-OCH-GI.png') no-repeat right -60px bottom/70%;
+      }
+    }
+
+    @media screen and (max-width: 992px) {
+      #gi .left {
+        padding: 4rem 4rem 4rem 10em;
+        background: url('/images/38017-OCH-GI.png') no-repeat right bottom/60%;
+      }
+    }
+
+    @media screen and (max-width: 768px) {
+      #gi .left {
+        padding: 3rem 3rem 3rem 7em;
+        background: url('/images/38017-OCH-GI.png') no-repeat right bottom/60%;
+      }
+    }
+
+    @media screen and (max-width: 650px) {
+      #gi .left {
+        padding: 2.5rem 2.5rem 2.5rem 5em;
+        background: url('/images/38017-OCH-GI.png') no-repeat right -40px bottom -30px/68%;
+      }
+    }
+
+    @media screen and (max-width: 520px) {
+      #gi .left {
+        padding: 2em;
+        background: url('/images/38017-OCH-GI.png') no-repeat right -65px bottom /78%;
+      }
+    }
+
+    @media screen and (max-width: 320px) {
+      #gi .left {
+        padding: 2em;
+        background: url('/images/38017-OCH-GI.png') no-repeat right -55px bottom /78%;
+      }
+    }
+
+    #gi .left:before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: -80%;
+      z-index: 0;
+      background: url('/images/arrow-peach.svg') no-repeat center left/35%;
+      transform: rotate(-180deg);
+    }
+
+    .peach {
+      color: #DC5E68;
+    }
+
+    @media screen and (max-width: 2300px) {
+      #gi .left:before {
+        left: -75%;
+        z-index: 0;
+        background: url('/images/arrow-peach.svg') no-repeat center left/45%;
+      }
+    }
+
+    @media screen and (max-width: 2000px) {
+      #gi .left:before {
+        left: -80%;
+        z-index: 0;
+        background: url('/images/arrow-peach.svg') no-repeat center left/35%;
+      }
+    }
+
+    @media screen and (max-width: 1500px) {
+      #gi .left:before {
+        left: -78%;
+        z-index: 0;
+        background: url('/images/arrow-peach.svg') no-repeat center left/35%;
+      }
+    }
+
+    #gi .btn-primary {
+      background-color: #5D3260;
+      border-color: #5D3260;
+      z-index: 50;
+    }
+
+    #gi .btn-primary:hover {
+      color: #fff;
+      border-color: #DC5E68;
+      background-color: #DC5E68;
+    }
+
+    #gi h2 {
+      font-size: 3.2rem;
+      line-height: 3.2rem;
+      width: 330px;
+      color: #000 !important;
+      margin: 0;
+    }
+
+    #gi h2::after {
+      display: none;
+    }
+
+    @media screen and (max-width: 768px) {
+      #gi h2 {
+        font-size: 2.8rem;
+        line-height: 2.8rem;
+        width: 290px;
+      }
+    }
+
+    @media screen and (max-width: 650px) {
+      #gi h2 {
+        font-size: 2.3rem;
+        line-height: 2.3rem;
+        width: 240px;
+      }
+    }
+
+    @media screen and (max-width: 375px) {
+      #gi h2 {
+        font-size: 2rem;
+        line-height: 2rem;
+        width: 210px;
+      }
+    }
+
+    @media screen and (max-width: 320px) {
+      #gi h2 {
+        font-size: 1.7rem;
+        line-height: 1.7rem;
+        width: 190px;
+      }
+    }
+
+    #gi .right {
+      background: linear-gradient(90deg, #5d3260, #613361, #653361, #6a3462, #6e3562, #723563, #763663, #7a3763);
+      position: relative;
+    }
+
+    #gi .right:after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: 0;
+      background: url('/images/arrow-pink.svg') no-repeat center left -120px/cover;
+    }
+
+    @media screen and (max-width: 1500px) {
+      #gi .right:after {
+        background: url('/images/arrow-pink.svg') no-repeat center left -80px/cover;
+      }
+    }
+
+    #gi .right .logo {
+      position: relative;
+      z-index: 10;
+      width: 300px;
+    }
+
+    @media screen and (max-width: 992px) {
+      #gi .right {
+        background: linear-gradient(90deg, #5d3260, #613361, #653361, #6a3462, #6e3562, #723563, #763663, #7a3763);
+        padding: 2rem;
+      }
+
+      #gi .right .logo {
+        width: 200px;
+      }
+
+      #gi .right:after {
+        background: url('/images/arrow-pink.svg') no-repeat center left 20%/60%;
+      }
+    }
+
+    @media screen and (max-width:520px) {
+      #gi .right {
+        padding: 1.35rem;
+      }
+    }
+
+    @media screen and (max-width: 540px) {
+      #care #video-wrap #buffalos {
+        right: -60px;
+        width: 320px;
+        height: 90px;
+      }
+    }
+
+    @media screen and (max-width: 600px) {
+      /* #news-events-wrap #news .article-photo {
+        height: 250px;
+      } */
+
+      #hero #hero-text {
+        overflow: hidden;
+      }
+    }
+
+    #home #videos .btn-outline-primary {
+      background-color: transparent !important;
+    }
+
+    #home #videos .title {
+      padding: 0.5rem 1rem;
+      margin: 0px;
+      color: rgb(255, 255, 255) !important;
+      background-color: var(--khnavy);
+      /* background-image: url("/images/ochbug-pattern-opacity.svg");
+      background-size: cover;
+      background-position: bottom -90px left -60px;
+      background-repeat: repeat-x; */
+      font-weight: 600;
+    }
+
+    #awards .arrow {
+      font-size: 50px;
+    }
+
+    #awards a .arrow {
+      color: var(--khblue)
+      /*  height:100%;
+    width:auto; */
+      /* width:50px; */
+    }
+
+    #awards .logo {
+      height: 160px;
+      width: auto;
+      /* background: gray; */
+      text-align: center;
+    }
+
+    #awards .card-body {
+      background-color: #CFEDF8;
+      font-weight: 500;
+      line-height: 1.1rem;
+    }
+
+    /* #awards .col-lg-3 {
+-webkit-box-flex: 0;
+-ms-flex: 0 0 20%;
+flex: 0 0 20%;
+max-width: 20%;
+} */
+    #awards .arrow {
+      font-size: 50px;
+    }
+
+    #awards a .arrow {
+      color: var(--khblue);
+      /*  height:100%;
+    width:auto; */
+      /* width:50px; */
+    }
+
+    #awards .logo {
+      height: 140px;
+      width: auto;
+      /* background: gray; */
+      text-align: center;
+    }
+
+    .carousel-control-next,
+    .carousel-control-prev {
+      opacity: 1;
+      height: 174px
+    }
+
+    .carousel-control-next:hover,
+    .carousel-control-prev:hover {
+      opacity: .5;
+    }
+
+    .carousel-control-next,
+    .carousel-control-prev {
+      opacity: 1;
+      height: 174px;
+    }
+
+    .carousel-control-next {
+      right: 0;
+      margin-right: -7rem;
+    }
+
+    .carousel-control-prev {
+      left: 0;
+      margin-left: -7rem;
+    }
+
+    .carousel-indicators {
+      bottom: 60px;
+    }
+
+    #carouselButtons .btn {
+      padding: 1rem .1rem;
+    }
+
+    .carousel-indicators {
+      bottom: 60px;
+    }
+
+    #carouselButtons .btn {
+      padding: 1rem .1rem;
+    }
+    .owl-carousel .owl-stage {
+      display: flex;
+      align-items: center !important;
+    }
+    .owl-carousel .owl-item img {
+      display: inline;
+    }
+    .owl-prev,
+    .owl-next {
+      width: 15px;
+      height: 100% !important ;
+      position: absolute;
+      top: 40%;
+      transform: translateY(-50%);
+      display: block !important;
+      border: none;
+    }
+
+    .owl-carousel .owl-item {
+      font-size: 1.1rem;
+      line-height: 1.4rem;
+      font-weight: 600;
+      margin-right:0 !important; 
+    }
+
+    .owl-prev {
+      left: -50px;
+      top:50%;
+    }
+
+    .owl-next {
+      right: -50px;
+      top:50%
+    }
+
+    .owl-prev i,
+    .owl-next i {
+      color: var(--khblue);
+      font-size: 40px;
+    }
+    @media screen and (max-width: 768px) {
+      .owl-prev i{
+        margin-left:20px;
+      }
+      .owl-next i {
+        margin-right:20px;
+      }
+
+    }
+    .owl-carousel .owl-stage {
+      display: flex;
+    }
+
+    .owl-carousel .item {
+      height: 100%;
+    }
+
+    .owl-theme .owl-nav [class*=owl-]:hover,
+    .owl-theme .owl-nav [class*=owl-]:hover.owl-prev i,
+    .owl-theme .owl-nav [class*=owl-]:hover.owl-next i {
+      background: #fff !important;
+      color: var(--raspberry);
+    }
+
+    .owl-carousel .owl-nav .owl-next {
+      margin-right: 15px;
+    }
+    .owl-carousel .owl-stage-outer {
+position: relative;
+overflow: hidden;
+-webkit-transform: translate3d(0,0,0);
+}
+.owl-carousel .owl-nav button.owl-next, .owl-carousel .owl-nav button.owl-prev, .owl-carousel button.owl-dot {
+background: 0 0;
+color: inherit;
+border: none;
+padding: 0!important;
+font: inherit;
+}
+    .carouselButtons .fa-play-circle:hover,
+    .carouselButtons .fa-pause-circle:hover {
+      color: var(--khdarkpurple);
+    }
+ #foundation-wrap{
+  & .forgraphic{
+    width:65%;
+    margin:auto auto;
+  }
+  & h2{
+    color:black;
+    ;
+  }
+ 
+ }
+ #news-events-wrap{
+  & .btn-outline-primary{
+    background-color: transparent;
+    &:hover{
+      background-color: var(--khblue);
+    }
+  }
+ }
+ #news{
+  background-color: color-mix(in srgb, var(--khblue), #fff 90%);
+   
+ }
+#news-events-wrap #events{
+  background-color: color-mix(in srgb, var(--khblue), #fff 95%);
+
+  & h2{
+    border:none;
+  }
+ }
+ #foundation-wrap{
+    background-color: var(--khblue);
+    color:white;
+
+    & h2{
+      color:var(--khyellow) !important;
+    }
+    & .logo{
+      filter:brightness(0) invert(1);
+    }
+ }
+ .btn-yellow{
+    background-color: var(--khyellow);
+    &:hover{
+      background-color: var(--khdarkpink);
+    }
+  }
+
+  /* =========================
+       MYCHART FULL-WIDTH TOP BANNER
+    ========================= */
+    #mychart-top-banner {
+        background-color: #002043;
+        color: white;
+        padding: 0.75rem 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1.5rem;
+        flex-wrap: wrap;
+        text-align: center;
+        width: 100%;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        z-index: 50;
+        position: relative;
+    }
+    #mychart-top-banner p {
+        margin: 0;
+        font-size: 1.15rem;
+        font-weight: 500;
+    }
+    #mychart-top-banner .mychart-logo-small {
+        height: 24px;
+        width: auto;
+        vertical-align: middle;
+        margin-right: 8px;
+        position: relative;
+        top: -2px;
+    }
+    #mychart-top-banner .btn-banner {
+        background-color: #ffde17; /* Matches the new hero yellow */
+        color: #002043;
+        font-weight: 600;
+        padding: 0.4rem 1.25rem;
+        border-radius: 50px;
+        text-decoration: none;
+        transition: background-color 0.2s, transform 0.2s;
+        white-space: nowrap;
+        font-size: 1rem;
+    }
+    #mychart-top-banner .btn-banner:hover {
+        background-color: #fff;
+        color: #002043;
+        transform: translateY(-2px);
+        text-decoration: none;
+    }
+    @media (max-width: 768px) {
+        #mychart-top-banner {
+            flex-direction: column;
+            padding: 1rem;
+            gap: 1rem;
+        }
+    }
+
+    /* =========================
+      MYCHART HERO
+    ========================= */
+    #mychart-hero {
+        position: relative;
+        background-color: #002043;
+        padding: 2rem 3rem 3rem 3rem;
+    }
+    #mychart-hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: url('https://www.kaleidahealth.org/images/MyChart-hero.webp') no-repeat center right 16%/ auto 100%;
+        pointer-events: none;
+        z-index: 20;
+    }
+    #mychart-hero .container-fluid {
+        position: relative;
+        padding: 0 4% 0 4% !important;
+        background: url('https://www.kaleidahealth.org/images/hero-wave-scrubgreen.svg') no-repeat top right -2px / 90vw,
+                    #0065a8;
+
+        -webkit-border-radius: 50px;
+        -webkit-border-top-right-radius: 200px;
+        -webkit-border-bottom-left-radius: 200px;
+        -moz-border-radius: 50px;
+        -moz-border-radius-topright: 200px;
+        -moz-border-radius-bottomleft: 200px;
+        border-radius: 50px;
+        border-top-right-radius: 200px;
+        border-bottom-left-radius: 200px;
+    }
+    #mychart-hero h2.care-title {
+        font-size: 6rem;
+        line-height: 6.5rem;
+        font-weight: 600 !important;
+        color: white;
+        margin-top: 0;
+    }
+    #mychart-hero .copy {
+        padding: 6rem 0 6rem 0;
+        position: relative;
+        z-index: 40;
+        font-size: 1.7rem !important;
+        line-height: 2rem !important;
+        font-weight: 400 !important;
+    }
+    #mychart-hero .logo {
+        width: 400px;
+        height: auto;
+    }
+    #mychart-hero .navy-wrap {
+        background:
+            linear-gradient(rgba(255, 255, 255, 0.93), rgba(255, 255, 255, 0.93)),
+            url('https://www.kaleidahealth.org/images/kh-bug-pattern-lower-left-navy.svg') repeat bottom left / 40vw,
+            #ffffff;
+
+        color: #002043;
+        border-radius: 20px;
+        padding: 2rem;
+        text-align: center;
+        font-size: 1.4rem;
+        line-height: 1.6rem;
+        font-weight: 400;
+
+        -webkit-border-radius: 20px;
+        -webkit-border-top-right-radius: 100px;
+        -webkit-border-bottom-left-radius: 100px;
+        -moz-border-radius: 20px;
+        -moz-border-radius-topright: 100px;
+        -moz-border-radius-bottomleft: 100px;
+        border-radius: 20px;
+        border-top-right-radius: 100px;
+        border-bottom-left-radius: 100px;
+    }
+    #mychart-hero .app-badge {
+        height: 48px;
+        width: auto;
+        transition: opacity 0.2s;
+    }
+    #mychart-hero .app-badge:hover {
+        opacity: 0.8;
+    }
+    #mychart-hero #signup-btn {
+        margin-top: 12px;
+        border-radius: 10px;
+        padding: 12px 20px;
+    }
+
+    /* BREAKPOINTS */
+    @media (min-width: 768px) {
+        #mychart-hero #signup-btn { width: auto !important; }
+        #mychart-hero .app-badge { height: 50px; margin: .5rem auto 0 auto; }
+        #mychart-hero .photo { display: none; }
+    }
+    @media screen and (max-width: 1700px) {
+        #mychart-hero::before { background: url('https://www.kaleidahealth.org/images/MyChart-hero.webp') no-repeat bottom 0 right 2%/ auto 85%; }
+        #mychart-hero .copy { padding: 5rem 6% 5rem 0; }
+        #mychart-hero h2.care-title { font-size: 4.3rem; line-height: 5rem; }
+        #mychart-hero .container-fluid {
+            border-radius: 30px;
+            border-top-right-radius: 100px;
+            border-bottom-left-radius: 100px;
+        }
+    }
+    @media screen and (max-width: 1300px) {
+        #mychart-hero::before { background: url('https://www.kaleidahealth.org/images/MyChart-hero.webp') no-repeat bottom 0 right 1rem/ auto 75%; }
+    }
+    @media screen and (max-width: 1200px) {
+        #mychart-hero { padding: 3rem; text-align: center; }
+        #mychart-hero::before { background: none; }
+        #mychart-hero .photo { display: block; }
+        #mychart-hero h2.care-title { font-size: 4rem; line-height: 4.5rem; }
+        #mychart-hero .img-fluid { width: 100%; }
+        #mychart-hero .container-fluid { padding: 4rem; }
+        #mychart-hero .navy-wrap { border-radius: 10px; border-top-right-radius: 50px; border-bottom-left-radius: 50px; }
+    }
+    @media screen and (max-width: 800px) {
+        #mychart-hero .container-fluid { padding: 2rem 2rem 0 2rem !important; }
+        #mychart-hero .copy { font-size: 1.1rem; line-height: 1.3rem; }
+        #mychart-hero .logo { width: 65%; height: auto; }
+        #mychart-hero h2.care-title { font-size: 2.3rem; line-height: 2.8rem; margin: .5rem 0 0 0; }
+    }
+    @media screen and (max-width: 600px) {
+        #mychart-hero { padding: 1rem 1rem 2rem 1rem; }
+    }
+  </style>
+</head>
+
+<body id="home">
+  
+
+  <button onclick="topFunction()" id="topBtn" aria-label="Scroll to Top"><i class="fas fa-chevron-up"></i>Top</button>
+  <a href="#logo" class="sr-only sr-only-focusable">Skip to Main Content</a>
+  <div id="header"></div>
+  <main>
+
+    <!--EMERGENCY / PHONE ISSUE MESSAGE-->
+    <!--<div id="outage"></div>-->
+    <!--Holiday Closings-->
+    <div id="holidays"></div>
+    <!--HERO-->
+    <div id="mychart-top-banner">
+        <p>
+            <img src="https://www.kaleidahealth.org/images/MyChart-logo-white.svg" alt="MyChart" class="mychart-logo-small">
+            Your health, all in one place. Manage your family's healthcare anytime, anywhere!
+        </p>
+        <a href="#mychart-hero" class="btn-banner">Sign Up Today <i class="fas fa-arrow-down ml-1"></i></a>
+    </div>
+    <section id="hero" aria-label="Quick links for your visit">
+      <div id="welcome" class="row row-eq-height no-gutters">
+        <div id="hero-text" class="col-md-6 col-xl-4 d-flex flex-column  order-2 order-md-1">
+          <div id="mom" class="d-none d-xl-block"><img alt="Pregnant mother drawing"
+              src="/images/home/pregnant-mom.svg"></div>
+          <div id="logo" class="mx-auto">
+            <h1 class="sr-only sr-only-focusable">Welcome to Golisano Children's Hospital of Buffalo</h1>
+            <picture>
+              <source media="(max-width: 1200px)" srcset="/images/home/welcome-mom.svg">
+              <source media="(min-width: 1201px)" srcset="/images/home/welcome.svg">
+              <img alt="Welcome to Golisano Children's Hospital of Buffalo" id="welcome-logo" src="/images/home/welcome.svg">
+            </picture>
+            <div id="kite"><img alt="Kite drawing" src="/images/home/kite.svg"></div>
+            <div id="sun"><img alt="Sun drawing" src="/images/home/sun.svg"></div>
+          </div>
+          <div id="hero-buttons" class="mx-auto mt-0 mt-xl-5">
+            <div class="row row-eq-height"> <a class="col-6 col-sm-4 info-btn mb-4" href="/care-treatment/"> <span
+                  class="icon d-block mx-auto fa-stack fa-2x"> <i class="fas fa-circle fa-stack-2x"></i> <i
+                    class="fal fa-stethoscope fa-stack-1x"></i> </span> Hospital Services </a> <a
+                class="col-6 col-sm-4 info-btn mb-4" href="/visitors/visiting-hours/"> <span
+                  class="icon d-block mx-auto fa-stack fa-2x"> <i class="fas fa-circle fa-stack-2x"></i> <i
+                    class="fal fa-clock fa-stack-1x"></i> </span> Visiting Hours </a> <a
+                class="col-6 col-sm-4 info-btn mb-4" href="/find-a-doctor/"> <span
+                  class="icon d-block mx-auto fa-stack fa-2x"> <i class="fas fa-circle fa-stack-2x"></i> <i
+                    class="fal fa-user-md fa-stack-1x"></i> </span> Find a Doctor </a> <a
+                class="col-6 col-sm-4 info-btn" href="/find-your-way/"> <span
+                  class="icon d-block mx-auto fa-stack fa-2x"> <i class="fas fa-circle fa-stack-2x"></i> <i
+                    class="fal fa-shoe-prints fa-stack-1x"></i> </span> Find Your Way </a> <a
+                class="col-6 col-sm-4 info-btn" href="/about/phone-directory/"> <span
+                  class="icon d-block mx-auto fa-stack fa-2x"> <i class="fas fa-circle fa-stack-2x"></i> <i
+                    class="fal fa-mobile-alt fa-stack-1x"></i> </span> Phone Directory </a> <a
+                class="col-6 col-sm-4 info-btn" href="https://www.kaleidahealth.org/billpay/" target="_blank" rel="noreferrer">
+                <span class="icon d-block mx-auto fa-stack fa-2x"> <i class="fas fa-circle fa-stack-2x"></i> <i
+                    class="fal fa-credit-card-front fa-stack-1x"></i> </span> Pay My Bill </a> </div>
+          </div>
+        </div>
+        <div id="hero-photo" class="col-md-6 col-xl-8 d-flex flex-column order-1 order-md-2"></div>
+      </div>
+    </section>
+    </section> <section id="mychart-hero">
+        <div class="container-fluid pb-0">
+            <div class="row m-0">
+                <div class="col-12 col-xl-7 pr-5 copy pl-xxl-4">
+                    <h2 class="pb-2 mb-0 text-uppercase text-white care-title">
+                        <span class="d-block">Your health,</span> all in one place
+                    </h2>
+                    
+                    <img src="https://www.kaleidahealth.org/images/MyChart-logo-white.svg" alt="MyChart logo" class="pt-3 pb-3 pt-lg-4 pb-lg-4 mt-lg-3 mb-lg-3 logo">
+        
+                    <div class="text-white">
+                        <p class=""><strong>Introducing MyChart</strong> — your easy way to manage your and your family’s healthcare anytime, anywhere!</p>
+                    </div>
+                    <div class="navy-wrap mt-5"><p class="pb-0 mb-0">Sign up below or download the app and select <strong>Kaleida Health</strong> to get started.</p>
+                        <div class="d-flex flex-column flex-md-row justify-content-center align-items-center ">
+                            <a href="https://apps.apple.com/app/mychart/id382952264" 
+                               class="mb-3 mb-md-0 mr-md-3 text-center"
+                               aria-label="Download MyChart on the Apple App Store">
+                                <img src="https://www.kaleidahealth.org/images/apple-app-store-badge.svg" 
+                                     data-hover="https://www.kaleidahealth.org/images/apple-app-store-badge-black.svg" 
+                                     alt="App Store" 
+                                     class="app-badge">
+                            </a>
+
+                            <a href="https://play.google.com/store/apps/details?id=epic.mychart.android" 
+                               class="mb-3 mb-md-0 mr-md-3 text-center"
+                               aria-label="Get MyChart on Google Play">
+                                <img src="https://www.kaleidahealth.org/images/google-play-badge.svg" 
+                                     data-hover="https://www.kaleidahealth.org/images/google-play-badge-black.svg" 
+                                     alt="Google Play" 
+                                     class="app-badge">
+                            </a>
+
+                            <a href="https://mychart.kaleidahealth.org/MyChart/" 
+                               class="btn btn-primary btn-lg w-100"
+                               id="signup-btn" aria-label="Sign up for MyChart at Kaleida Health, opens secure patient portal"
+                               role="button">
+                                Sign Up Now
+                                <span class="sr-only">Opens the Kaleida Health MyChart secure patient portal</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-xl-6 photo">
+                    <picture>
+                        <source 
+                            srcset="https://www.kaleidahealth.org/images/MyChart-hero.webp" 
+                            media="(max-width: 1200px)" 
+                            type="image/webp">
+                    
+                        <img 
+                            src="https://www.kaleidahealth.org/images/MyChart-hero.webp" 
+                            class="img-fluid" 
+                            alt="Senior African American woman smiling holding her cell phone" 
+                            loading="lazy" 
+                            height="500">
+                    </picture>
+                </div>
+            </div>
+        </div> 
+    </section>
+
+    <!--Tour Video-->
+    <section id="care" class="container-fluid pb-0" aria-label="Tour our facility and read about our patients">
+      <div class="row row-eq-height">
+        <div class="col-md-6 d-flex flex-column order-2 order-md-1">
+          <div id="video-wrap"><img alt="Girl holding video drawing" id="girl" src="/images/home/girl-video.svg"> <img
+              alt="Illustration of Buffalos and flowers" src="/images/home/buffalos.svg" id="buffalos">
+            <div id="video">
+              <div class="embed-responsive embed-responsive-16by9">
+                <iframe allowfullscreen="" class="embed-responsive-item" frameborder="0" mozallowfullscreen=""
+                  src="https://player.vimeo.com/video/310799708" title="Welcome to Golisano Children's Hospital of Buffalo video"
+                  webkitallowfullscreen=""></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 order-1 order-md-2" id="care-text">
+          <h2>Providing the Best Care</h2>
+          <p>Tour our facility and learn what makes our physicians, nurses, staff and patients so very special. Our
+            success is measured not only by our patients’ outcomes, but their satisfaction with our services. We are
+            committed to providing the best care for babies, kids and moms in Western New York and beyond. </p>
+          <a href="/about/patient-stories/" class="btn btn-outline-primary">See Our Stories</a>
+        </div>
+      </div>
+    </section>
+    <!-- GI (05/17/24) JGL removed per Amy Burfiend request
+    <section id="gi" class="container-fluid pt-0 pb-0 " aria-label="Tour our facility and read about our patients">
+      <div class="row h-100 m-0">
+        <div class="col-12 col-lg-8 left">
+          <h2><span class="peach">This</span> is the place where GI questions are answered.</h2>
+          <p class="mb-0 mt-3"><a href="/care-treatment/Gastroenterology-And-Nutrition" class="btn btn-primary">See
+              Gastroenterology &amp; Nutrition</a></p>
+        </div>
+        <div class="col-12 col-lg-4 right d-flex justify-content-center flex-column"><img alt="Oishei stacked logo"
+            src="/images/OCH-stack-logo-white.svg" class="logo align-self-center"></div>
+      </div>
+    </section>
+  -->
+    <!-- Maternity -->
+    <section id="maternity" aria-label="Information about Maternity Services at Golisano Children's Hospital of Buffalo">
+      <div class="container-fluid">
+        <div class="row no-gutters">
+          <div class="col copy-wrap">
+            <h2 class="black">Maternity Services</h2>
+            <p>The day you deliver your baby is a day you’ll never forget. Golisano Children's Hospital of Buffalo specializes in
+              making childbirth a special experience for all women. That’s why it’s important for both the mother and
+              child to be followed closely throughout the pregnancy, during the delivery and after the birth. Our caring
+              team of healthcare providers combines a brand new state-of-the-art facility with family-centered care to
+              help welcome your baby.</p>
+            <a href="/care-treatment/#Maternity-Services" class="btn btn-secondary mt-3">See Maternity Services</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--Foundation-->
+    <section id="foundation-wrap"
+      aria-label="Children's Hospital of Buffalo Foundation information with supporting video">
+      <div class="container-fluid text-center">
+        <p class="container text-center pl-md-5 pr-md-5">
+        <!-- <img alt="The Children’s Hospital of Buffalo Foundation logo" src="/images/home/FOR_graphic-Yellow-chair.webp"
+          title="Graphic with large FOR yellow text and a boy in a wheelchair" class="forgraphic"> -->
+        <h2 class="pb-2 mt-0">Your Donation is FOR the kids with all the courage</h2>
+        <img alt="The Children’s Hospital of Buffalo Foundation logo" src="/images/foundation/chobf-logo-4c.svg"
+          title="The Children’s Hospital of Buffalo Foundation logo" class="logo pb-3">
+        <p class="pl-md-5 pr-md-5">The Children’s Hospital of Buffalo Foundation supports the critical programs, lifesaving technology and
+          care to our community’s most vulnerable. Your donation makes a direct impact in the lives of the moms,
+          kids and babies right here in Western New York.</p>
+        <p class="text-center"><a class="btn btn-yellow" href="/foundation/">Learn How to Help</a></p>
+        </div>
+     </div>
+        <!-- <div class="row no-gutters">
+          <div class="row thanks">
+            <div class="col-sm-12 col-md-6 boychair">
+              <h2>Your Donation is FOR the kids with all the courage</h2>
+              <img alt="The Children’s Hospital of Buffalo Foundation logo"
+                src="/images/foundation/chobf-logo-4c.svg" class="The Children’s Hospital of Buffalo Foundatio logo">
+              <p>The Children’s Hospital of Buffalo Foundation supports the critical programs, lifesaving technology and
+                care to our community’s most vulnerable. Your donation makes a direct impact in the lives of the moms,
+                kids and babies right here in Western New York.</p>
+              <div class="text-center text-sm-left"><a class="btn btn-primary" href="/foundation/">Learn How to Help</a>
+              </div>
+            </div>
+            <div class="col-sm-12 col-md-6 video align-self-center">
+              <div style="padding:56.25% 0 0 0;position:relative;">
+                <iframe allow="autoplay; fullscreen" allowfullscreen="" frameborder="0"
+                  src="https://player.vimeo.com/video/552411490?color=6CCACD&amp;title=0&amp;byline=0&amp;portrait=0"
+                  style="position:absolute;top:0;left:0;width:100%;height:100%;"
+                  title="The Children’s Hospital of Buffalo Foundation campaign video"></iframe>
+              </div>
+            </div>
+          </div>
+        </div> -->
+    </section>
+
+    <!-- NEWS & EVENTS -->
+    <section id="news-events-wrap" aria-label="Get the latest hospital updates and events">
+      <div class="container-fluid p-0">
+        <div class="row row-eq-height no-gutters">
+
+          <!-- NEWS -->
+          <div class="col-12 col-lg-6 pr-lg-5" id="news">
+            <h2>Latest News</h2>
+            <div id="articleFeature" class="row m-0 p-0">
+              <div class="col-12 col-lg-3 col-xl-5 p-0">
+                <div class="article-photo-wrap m-0">
+                  <div class="bg-blur"></div>
+                  <div class="article-photo"></div>
+                </div>
+              </div>
+              <div class="article-title col-12 col-lg-9 col-xl-7  p-0 mt-4 mt-lg-0 pl-lg-4">
+                <div class="date"><span id='featureMonth' class='news-month'></span>
+                  <span id='featureDay' class='news-day'></span>,
+                  <span id='featureYear' class='news-year'></span>
+                </div>
+
+                <h3 class="article-title" id='featureTitle'></h3>
+              </div>
+              <div class="col-12 p-0 pt-2">
+
+                <p id="featureDescription" class="mb-0"></p>
+
+              </div>
+            </div>
+            <div class="col-12 p-0 mt-2" id="articleOthers"></div>
+            <div id="articles"></div>
+          </div>
+
+          <!-- EVENTS -->
+          <div class="col-12 col-lg-6 pl-md-5" id="events">
+            <h2>Upcoming Events</h2>
+            <!--<div class="alert alert-warning black p-0 mb-3">
+                <div class="alert-heading">
+                  <i class="far fa-exclamation-triangle"></i> <strong>COVID-19 Update</strong>
+                </div>
+                <p class="m-0 small">Due to the ongoing COVID-19 situation, we are reviewing and evaluating all of our events and following the guidance of the Centers for Disease Control (CDC) and our clinical experts. </p>
+              </div>-->
+
+            <ul class="nav nav-pills mb-3 text-center mt-0" id="pills-tab" role="tablist">
+              <li class="nav-item col-12 col-lg-6 p-0" role="presentation"> <a
+                  class="nav-link btn-outline-purple w-100 " id="pills-events-tab" data-toggle="pill"
+                  href="#pills-events" role="tab" aria-controls="pills-events" aria-selected="false">Events</a> </li>
+              <li class="nav-item col-lg-6 p-0 " role="presentation"> <a
+                  class="nav-link btn-outline-purple active w-100" id="pills-classes-tab" data-toggle="pill"
+                  href="#pills-classes" role="tab" aria-controls="pills-classes" aria-selected="true">Classes</a> </li>
+            </ul>
+            <div class="tab-content" id="pills-tabContent">
+              <div class="tab-pane fade" id="pills-events" role="tabpanel" aria-labelledby="pills-events-tab">
+                <div id="eventsList"></div>
+              </div>
+              <div class="tab-pane fade show active" id="pills-classes" role="tabpanel"
+                aria-labelledby="pills-classes-tab">
+                <div id="classes"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </section>
+
+    <!-- VIDEOS -->
+    <!--
+    <section id="videos">
+      <div class="container-fluid">
+        <div class="video-wrap">
+          <div class="row">
+            <div class="col-12 col-sm-6">
+              <h2>Latest Videos</h2>
+            </div>
+            <div class="col-12 col-sm-6"> <a href="/about/videos/" title="See all our videos"
+                class="btn btn-primary float-right d-none d-sm-block">More Videos</a></div>
+          </div>
+          <div class="row">
+            <div class="col-12 col-sm-6 col-lg-4 text-truncate" data-toggle="tooltip" title="Premature Birth">
+              <div style="padding:56.25% 0 0 0;position:relative;">
+                <iframe
+                  src="https://player.vimeo.com/video/647456662?h=9c913b8186&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+                  frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen
+                  style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Premature Birth"></iframe>
+              </div>
+              <div class="title">Premature Birth</div>
+            </div>
+            <div class="col-12 col-sm-6 col-lg-4 text-truncate" data-toggle="tooltip"
+              title="COVID-19 Vaccine & Pregnancy">
+              <div style="padding:56.25% 0 0 0;position:relative;">
+                <iframe
+                  src="https://player.vimeo.com/video/603944874?h=318ae46705&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+                  frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen
+                  style="position:absolute;top:0;left:0;width:100%;height:100%;"
+                  title="COVID-19 Vaccines and Reproduction - Dr. Link"></iframe>
+              </div>
+              <div class="title">COVID-19 Vaccine & Pregnancy</div>
+            </div>
+            <div class="col-12 col-sm-6 col-lg-4 text-truncate" data-toggle="tooltip"
+              title="COVID-19 Vaccine & Reproduction">
+              <div style="padding:56.25% 0 0 0;position:relative;">
+                <iframe
+                  src="https://player.vimeo.com/video/509835685?h=f025aa0c82&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+                  frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen
+                  style="position:absolute;top:0;left:0;width:100%;height:100%;"
+                  title="COVID-19 Vaccine and Reproduction"></iframe>
+              </div>
+              <div class="title">COVID-19 Vaccine & Reproduction</div>
+            </div>
+          </div>
+          <a href="/about/videos/" title="See all our videos"
+            class="btn btn-outline-primary float-left w-100 d-block d-sm-none mb-5">More Videos</a>
+        </div>
+      </div>
+    </section>
+    -->
+    <!--Awards-->
+    <section id="awards">
+      <div class="container-fluid text-center">
+        <h2 class="gradient gradient d-inline-block">Awards &amp; Certifications</h2>
+        <p>Golisano Children's Hospital of Buffalo strives to provide the best possible care to our
+          patients. We are honored to have our hospital and services recognized by local, state and national
+          publications and organizations for our unwavering commitment to quality and outcomes.</p>
+
+          <div class="owl-carousel">
+            <div class="align-self-center text-center"> <img class="logo img-fluid"
+              src="https://drive.tiny.cloud/1/fma0ckgi8l71unwv372o9bkc28qzcn65s72m80cndsw3awok/0cc5afc7-1007-4878-b749-75a6df12db6d"
+              alt="DNV Accredited Hospital"></div>
+            <div class="align-self-center text-center"><img class="logo img-fluid"
+              src="https://drive.tiny.cloud/1/fma0ckgi8l71unwv372o9bkc28qzcn65s72m80cndsw3awok/623b1bf0-4e3c-4916-8c4c-6b0ea2504191"
+              alt="ISO 9001 certification"></div>
+            <div class="align-self-center text-center"><img
+              src="https://drive.tiny.cloud/1/fma0ckgi8l71unwv372o9bkc28qzcn65s72m80cndsw3awok/b244a0a8-8a94-4027-aea0-e8315baa4d6c" alt="Best of the Best Winner logo"
+              class="logo img-fluid"> </div>
+              <div class="align-self-center text-center">
+                <img src="/images/awards/GOLD-PNG.png"
+                    alt="Cribs for Kids Safe Sleep Hospital logo" class="logo img-fluid">
+              </div>
+              <div class="align-self-center text-center">
+                <img
+                    src="https://drive.tiny.cloud/1/fma0ckgi8l71unwv372o9bkc28qzcn65s72m80cndsw3awok/9c721b2e-0894-41a7-b6e0-9afcc02348b0" alt="NAEC Level 4 Epilepsy Center"
+                    style="max-width:100%" class="img-fluid">
+              </div>
+              <!--<div class="align-self-center text-center">
+                <div class="card h-100 border-0 rounded p-3">
+                  <div class="card-body primary">New York State Obstetric Hemorrhage 2021 Quality Improvement Award</div>
+              </div>
+              </div>-->
+              <div class="align-self-center text-center">
+                <img
+                  src="/images/awards/SQP-Trauma_Point-to-Point_rgb.png" alt="SQP Trauma Point-to-Point award logo" class="img-fluid" style="width:75%;">
+              </div>
+              <div class="align-self-center text-center">
+                <img src="https://drive.tiny.cloud/1/fma0ckgi8l71unwv372o9bkc28qzcn65s72m80cndsw3awok/6294559a-d4b6-438d-a7f2-fe2b0023bf96" alt="DNV Sterile Processing Advanced certificate logo" class="logo img-fluid">
+              </div>
+          </div>
+          <div class="carouselButtons text-center mt-3">
+            <a class="button secondary play"><i class="fal fa-play-circle khblue fa-2x" aria-hidden="true"></i><span
+                class="sr-only">Play</span></a>
+            <a class="button secondary stop"><i class="fal fa-pause-circle khblue fa-2x" aria-hidden="true"></i><span
+                class="sr-only">Stop</span></a>
+          </div>
+      </div>
+    </section>
+
+  </main>
+  <div id="footer"></div>
+  <!--DONT DELETE this div below, it closes the app-->
+
+  <!--End Wrap-->
+
+  <!-- JavaScript -->
+  <!--Boostrap & JS Scripts-->
+  <script src="https://code.jquery.com/jquery-3.5.0.min.js"
+    integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
+    </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+  integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
+  crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://player.vimeo.com/api/player.js"></script>
+  <script src="https://www.kaleidahealth.org/js/custom.js"></script>
+  <script src="https://www.kaleidahealth.org/includes/outage.js"></script>
+  <script src="/includes/header.js"></script>
+  <script src="/includes/footer.js"></script>
+  <script src="https://www.kaleidahealth.org/includes/holidays.js"></script>
+  <script src="https://www.kaleidahealth.org/js/timeit.js"></script>
+  
+  <script>
+    $(document).ready(function () {
+      getArticles('OCH', '4') // OCH Articles | 4 Articles
+      getEvents('214,215,216', '2') // 10-Maternity, 214-Foundation, 215-Community, 216-Hospital | 2 Events
+      getClasses('10', '2') // 10-Maternity, 214-Foundation, 215-Community, 216-Hospital | 2 Events
+
+      var owl = $('.owl-carousel');
+      owl.owlCarousel({
+        loop: true,
+        margin: 10,
+        navText: ["<i class='fa fa-angle-left'></i>", "<i class='fa fa-angle-right'></i>"],
+        nav: true,
+        dots: false,
+        autoplay: true,
+        autoplayTimeout: 5000,
+        autoplayHoverPause: true,
+        responsiveClass: true,
+        responsive: {
+          0: {
+            items: 1,
+            nav: true,
+            loop: true
+          },
+          600: {
+            items: 3,
+            nav: true,
+            loop: true
+          },
+          992: {
+            items: 4,
+            nav: true,
+            loop: false,
+            loop: true
+          },
+          1200: {
+            items: 5,
+            nav: true,
+            loop: false,
+            loop: true
+          }
+        }
+      });
+      $('.play').on('click', function () {
+        owl.trigger('play.owl.autoplay', [1000])
+      })
+      $('.stop').on('click', function () {
+        owl.trigger('stop.owl.autoplay')
+      })
+    })
+
+    function getArticles(Site, Qty) {
+      $.ajax({
+        url: "https://www.kaleidahealth.org/api/news/getNewsArticlesByQty.asp?Site=" + Site + "&Q=" + Qty,
+        dataType: 'json',
+        cache: false,
+        async: false,
+        success: function (jsonObj) {
+          const Data = jsonObj['ArticleData'];
+          var articleOthers = ""
+
+          for (var j = 0; j < Data.length; j++) {
+            var date = new Date(Data[j].ArticlePlainDate);
+            var newsMonth = date.toLocaleString('en', {
+              month: 'long'
+            });
+            var newsDay = date.getDate();
+            var newsYear = date.getFullYear();
+
+            if (j === 0) { // FEATURED ARTICLE - FIRST BASED ON RELEASE DATE/TIME
+              var Photo = Data[j].Photo
+              if (Photo !== '') {
+                if (Photo.indexOf('drive.tiny.cloud') !== -1) {
+                  $('.article-photo').css('background-image', 'url(' + Photo + ')');
+                  $('.bg-blur').css('background-image', 'url(' + Photo + ')')
+                } else {
+                  $('.article-photo-none').css('background-image',
+                    'url("https://www.kaleidahealth.org/kyi/news/images/' + Photo + '")')
+                }
+              }
+              $('#featureMonth').text(newsMonth)
+              $('#featureDay').text(newsDay)
+              $('#featureYear').text(newsYear)
+              $('#featureTitle').html('<a href="/news/read/' + Data[j].TitleHash + '/' + Data[j].ArticleID +
+                '/">' + Data[j].Title + '</a>')
+              $('#featureDescription').html(Data[j].Description)
+            } else { // ALL OTHER ARTICLES
+              articleOthers = articleOthers + '<div class="article">'
+              //articleOthers = articleOthers +
+              //' <div class="left"><div class="news-date-wrap"><div class="news-month">' + newsMonth + '</div><div class="news-day">' + newsDay + '</div></div></div>'
+              articleOthers = articleOthers +
+                '<h3 class="article-title mb-0"><a href="/news/read/' + Data[j].TitleHash + '/' +
+                Data[j].ArticleID + '/">' + Data[j].Title + '</a></h3>'
+              articleOthers = articleOthers + '</div>'
+            }
+          }
+          articleOthers = articleOthers +
+            '<a href="/news/index.html#latestnews" class="btn btn-outline-primary w-100 mt-3">More News</a>'
+          $("#articleOthers").append(articleOthers)
+        },
+        error: function (err) {
+          alert("ERROR: " + JSON.stringify(err))
+        }
+      });
+    }
+
+    function getEvents(CTIDs, Qty) {
+      var EventContent = ''
+
+      $.ajax({
+        url: "https://www.kaleidahealth.org/api/classes-events/getClassesEventsUpcomingByClassType.asp?CTID=" + CTIDs + "&Q=" + Qty,
+        dataType: 'json',
+        cache: false,
+        async: false,
+        success: function (jsonObj) {
+          var Data = jsonObj['ClassEventData'];
+          if (Data.length > 0) {
+            for (var j = 0; j < Data.length; j++) {
+              var date = new Date(Data[j].ScheduleDate);
+              var eventMonth = date.toLocaleString('en', { month: 'short' });
+              var eventDay = date.getDate();
+
+              EventContent = EventContent + "<div class='event-row'>"
+              EventContent = EventContent + "   <div class='left'>"
+              EventContent = EventContent + "     <div class='event-date-wrap'><div class='event-month'>" + eventMonth + "</div><div class='event-day'>" + eventDay + "</div></div></div>"
+              EventContent = EventContent + "     <div class='right'><h3 class='event-title'>" + Data[j].Name + "</h3>"
+              if (Data[j].StartTime != "") { EventContent = EventContent + "     <p class='mb-0 e_time'>" + Data[j].StartTime + " - " + Data[j].EndTime + "</p>" }
+              if (Data[j].ListingName != "") { EventContent = EventContent + "     <p class='mb-0'>" + Data[j].ListingName + "</p>" }
+              if (Data[j].TagCSSClass) {
+                EventContent = EventContent + "   <div class='e_tag " + Data[j].TagCSSClass + "'>" + Data[j].ClassTypeName + "</div>"
+              }
+              EventContent = EventContent + "   </div>"
+              EventContent = EventContent + "</div>";
+            }
+          } else {
+            EventContent = EventContent + "<div class='event-row'>No Upcoming Events</div>";
+          }
+          EventContent = EventContent + "<a href='/events' class='btn btn-outline-primary w-100 mt-1'>More Events</a>"
+          $("#eventsList").append(EventContent)
+        },
+        error: function (err) {
+          alert("ERROR: " + JSON.stringify(err))
+        }
+      });
+    }
+    function getClasses(CTIDs, Qty) {
+      var EventContent = ''
+
+      $.ajax({
+        url: "https://www.kaleidahealth.org/api/classes-events/getClassesEventsUpcomingByClassType.asp?CTID=" + CTIDs + "&Q=" + Qty,
+        dataType: 'json',
+        cache: false,
+        async: false,
+        success: function (jsonObj) {
+          var Data = jsonObj['ClassEventData'];
+          if (Data.length > 0) {
+            for (var j = 0; j < Data.length; j++) {
+              var date = new Date(Data[j].ScheduleDate);
+              var eventMonth = date.toLocaleString('en', { month: 'short' });
+              var eventDay = date.getDate();
+
+              EventContent = EventContent + "<div class='event-row'>"
+              EventContent = EventContent + "   <div class='left'>"
+              EventContent = EventContent + "     <div class='event-date-wrap'><div class='event-month'>" + eventMonth + "</div><div class='event-day'>" + eventDay + "</div></div></div>";
+              EventContent = EventContent + "     <div class='right'><h3 class='event-title'>" + Data[j].Name + "</h3><p class='mb-0 e_time'>" + Data[j].StartTime + " - " + Data[j].EndTime + "</p><p class='mb-0'>" + Data[j].ListingName + "</p>";
+              if (Data[j].TagCSSClass) {
+                EventContent = EventContent + "   <div class='e_tag " + Data[j].TagCSSClass + "'>" + Data[j].ClassTypeName + "</div>";
+              }
+              EventContent = EventContent + "   </div>"
+              EventContent = EventContent + "</div>";
+            }
+          } else {
+            EventContent = EventContent + "<div class='event-row'>No Upcoming Classes</div>";
+          }
+          EventContent = EventContent + "<a href='/events/#maternity' class='btn btn-outline-primary w-100 mt-1'>More Classes</a>"
+          $("#classes").append(EventContent)
+        },
+        error: function (err) {
+          alert("ERROR: " + JSON.stringify(err))
+        }
+      });
+    }
+    $(function () {
+      $('#awardcarousel').carousel({
+        interval: 8000,
+        pause: "false"
+      });
+
+      $('#playButton').click(function () {
+        $('#awardcarousel').carousel('cycle');
+      });
+      $('#pauseButton').click(function () {
+        $('#awardcarousel').carousel('pause');
+      });
+    });
+  </script>
+</body>
+
+</html>
