@@ -358,6 +358,7 @@ def main():
     ap.add_argument("--out-dir", default=None)
     ap.add_argument("--limit", type=int, default=0)
     ap.add_argument("--photos-only", action="store_true", help="only look for a website share image for records without photos")
+    ap.add_argument("--regeocode", action="store_true", help="re-geocode records whose coord_source cites Google Places using Wikipedia then OpenStreetMap; keeps the OSM point only if within 2.5 km of the current one")
     a = ap.parse_args()
     for f in a.files:
         src = Path(f)
@@ -369,7 +370,26 @@ def main():
         for i, h in enumerate(hs):
             t0 = time.time()
             try:
-                if a.photos_only:
+                if a.regeocode:
+                    h.setdefault("_enrich", {})
+                    if "google" in (h.get("coord_source") or "").lower() and isinstance(h.get("lat"), (int, float)):
+                        import math
+                        def _km(a1, b1):
+                            p1, p2 = math.radians(a1[0]), math.radians(b1[0]); dl = math.radians(b1[1] - a1[1]); dp = p2 - p1
+                            x = math.sin(dp / 2) ** 2 + math.cos(p1) * math.cos(p2) * math.sin(dl / 2) ** 2
+                            return 2 * 6371 * math.asin(math.sqrt(x))
+                        cand = None
+                        title = wiki_resolve_title(h)
+                        w = wiki_fetch(title) if title else {}
+                        if w.get("coords") and _km((h["lat"], h["lng"]), (w["coords"]["lat"], w["coords"]["lng"])) < 2.5:
+                            cand = (w["coords"]["lat"], w["coords"]["lng"], f"Wikipedia article coordinates ({w.get('title')})")
+                        if not cand:
+                            n = nominatim(h)
+                            if n and _km((h["lat"], h["lng"]), (n["lat"], n["lng"])) < 2.5:
+                                cand = (n["lat"], n["lng"], f"OpenStreetMap Nominatim ({n.get('osm_type')}) for '{n.get('query')}'")
+                        if cand:
+                            h["_enrich"]["regeocode"] = {"lat": cand[0], "lng": cand[1], "coord_source": cand[2]}
+                elif a.photos_only:
                     h.setdefault("_enrich", {})
                     if not h.get("photos") and h.get("website") and not is_placeholder(h.get("website")):
                         og = website_og_image(h["website"])

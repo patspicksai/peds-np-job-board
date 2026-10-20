@@ -25,6 +25,10 @@ def apply(h: dict, e: dict) -> list[str]:
     changed = []
     w = e.get("wikipedia") or {}
     nom = e.get("nominatim")
+    rg = e.get("regeocode")
+    if rg and "google" in (h.get("coord_source") or "").lower():
+        h["lat"], h["lng"], h["coord_source"] = rg["lat"], rg["lng"], rg["coord_source"]
+        changed.append("coords:regeocoded")
     if not (isinstance(h.get("lat"), (int, float)) and isinstance(h.get("lng"), (int, float))):
         if w.get("coords"):
             h["lat"], h["lng"] = w["coords"]["lat"], w["coords"]["lng"]
