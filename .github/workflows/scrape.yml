@@ -30,6 +30,9 @@ on:
       notify:
         description: "send the ntfy push (true/false)"
         default: "true"
+      commit:
+        description: "commit data/jobs.json + data/runs to main (false = test run; results only on ci-logs)"
+        default: "true"
 permissions:
   contents: write
 concurrency:
@@ -116,7 +119,7 @@ jobs:
           exit 0
       - name: Commit and push
         id: commit
-        if: steps.guard.outputs.skip != 'true' && steps.scrape.outputs.run_file != ''
+        if: steps.guard.outputs.skip != 'true' && steps.scrape.outputs.run_file != '' && inputs.commit != 'false'
         run: |
           git config user.name "peds-np-scraper"; git config user.email "actions@users.noreply.github.com"
           git add data/runs
@@ -142,6 +145,11 @@ jobs:
         if: always() && steps.guard.outputs.skip != 'true'
         run: |
           mkdir -p "$RUNNER_TEMP/out"; rm -f "$RUNNER_TEMP/out/run.json"
+          RF="${{ steps.scrape.outputs.run_file }}"
+          [ -n "$RF" ] && [ -f "${RF%.json}.md" ] && cp "${RF%.json}.md" "$RUNNER_TEMP/out/digest.md"
+          if [ "${{ inputs.commit }}" = "false" ] && [ -f data/jobs.json ]; then
+            python -c "import json;d=json.load(open('data/jobs.json'));print(json.dumps({'last_run':d.get('last_run'),'jobs':len(d['jobs']),'sample':d['jobs'][:2]},indent=1))" > "$RUNNER_TEMP/out/jobs_preview.json"
+          fi
           bash scraper/tools/ci_publish.sh "$RUNNER_TEMP/out" "scrape/${{ github.run_id }}" "scrape ${{ github.run_id }}"
       - name: Fail on safety stop or missing run file
         if: steps.guard.outputs.skip != 'true' && steps.ledger.outputs.path != '' && (steps.scrape.outputs.run_file == '' || steps.merge.outputs.rc == '3' || steps.merge.outputs.rc == '4')
