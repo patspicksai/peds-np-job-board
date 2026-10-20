@@ -1555,119 +1555,107 @@
       "hospital_type": "childrens_hospital",
       "city": "Philadelphia",
       "state": "PA",
-      "address": "3401 Civic Center Boulevard, Philadelphia, PA 19104",
+      "address": "3401 Civic Center Blvd, Philadelphia, PA 19104",
       "lat": 39.94873,
       "lng": -75.19392,
-      "coord_source": "Google Places (CHOP Main Building); Wikipedia 39.948, -75.194 agrees",
+      "coord_source": "Google Places (CHOP Main Building); agrees with Wikipedia infobox 39.948, -75.194",
       "region": "Philadelphia metro",
       "hotspot": false,
-      "website": "https://www.chop.edu/",
+      "website": "https://www.chop.edu",
       "careers_url": "https://careers.chop.edu/us/en",
       "careers_platform": "phenom",
-      "careers_search_url": null,
-      "careers_notes": "Careers site could not be verified this session: the web search budget ran out and direct fetches of CHOP pages were blocked. careers_url is the main website as a placeholder; locate the real job search page and platform before scraping. [enrich 2026-10-20] careers_url -> HTTP 200 at https://careers.chop.edu/us/en; ATS link seen: https://chop.wd108.myworkdayjobs.com/CHOPExternalCareers/login",
+      "careers_search_url": "https://careers.chop.edu/us/en/search-results?keywords=nurse%20practitioner",
+      "careers_notes": "CHOP career site is a Phenom People front end (paths like careers.chop.edu/us/en/how-we-hire, job ids shaped PDN-<guid>). A test fetch of the search URL was blocked in this session, so rendering is unconfirmed; Phenom search pages are usually JS-rendered, so the scraper may need the Phenom widgets API. NP postings name the campus (Main Hospital, King of Prussia, Virtua Voorhees NICU, etc.).",
       "ats_config": {
-        "host": "careers.chop.edu"
+        "host": "careers.chop.edu",
+        "locale_path": "/us/en"
       },
       "nearest_airport": "PHL Philadelphia International (about 6 mi straight-line)",
-      "beds": 692,
-      "peds_beds": null,
+      "beds": 535,
+      "peds_beds": 535,
       "peds_inpatient": true,
       "picu": true,
       "picu_beds": null,
-      "nicu_level": null,
+      "nicu_level": 4,
       "peds_ed": true,
       "peds_trauma_level": "Level I pediatric trauma center",
       "magnet": null,
       "teaching": true,
-      "affiliated_university": "Perelman School of Medicine at the University of Pennsylvania",
+      "affiliated_university": "University of Pennsylvania Perelman School of Medicine",
       "peds_services": [
+        "pediatric emergency medicine",
         "pediatric critical care",
         "cardiac intensive care",
-        "cardiac surgery",
         "neonatology",
         "fetal surgery",
+        "hospitalist",
+        "cardiology",
+        "cardiac surgery",
         "hematology/oncology",
-        "transplant",
         "neurosurgery",
+        "transplant",
         "orthopedics",
         "endocrinology",
-        "gastroenterology",
-        "pulmonology",
-        "urology",
-        "pediatric emergency medicine",
-        "hospitalist",
-        "transport team",
-        "behavioral health"
+        "behavioral health",
+        "trauma",
+        "transport team"
       ],
-      "description": "The Children's Hospital of Philadelphia, founded in 1855, is one of the top ranked pediatric hospitals in the United States and the pediatric teaching hospital of Penn's Perelman School of Medicine. Its main campus on Civic Center Boulevard in University City has roughly 600 to 700 beds, nearly 40 percent of them intensive care across the NICU, PICU and cardiac ICU, and it opened the country's first NICU (1962) and first PICU (1967). It is a Level I pediatric trauma center with a helicopter transport program dating to 1973. CHOP also staffs pediatric units across South Jersey and central New Jersey through partnerships (Virtua, Princeton, AtlantiCare, Lancaster General), which widens the NP job pool well beyond Philadelphia. It is about 65 miles from Asbury Park.",
+      "description": "Children's Hospital of Philadelphia is the freestanding flagship of one of the largest pediatric systems in the country, sitting on Civic Center Boulevard in University City next to Penn Medicine and the University of Pennsylvania. It runs a Level I pediatric trauma center, a Level IV NICU of roughly 95 beds, a full pediatric ED and essentially every pediatric subspecialty, and it trains residents and fellows through Penn's Perelman School of Medicine. The campus keeps growing, with a research tower on Schuylkill Avenue, a 2024 behavioral health crisis center and a new inpatient tower planned for later in the decade. For an acute care PNP it is one of the biggest single employers of pediatric NPs on the East Coast, with inpatient, ICU, surgical and ED teams. The neighborhood is dense and urban, with most staff commuting from the city, the Main Line or South Jersey.",
       "highlights": [
-        "Ranked among U.S. News top 10 children's hospitals every year since 2009",
-        "#1 nationally in pediatric diabetes/endocrinology and orthopedics (2024-25)",
-        "Nation's first NICU (1962) and first PICU (1967)",
-        "Level I pediatric trauma center with helicopter transport since 1973",
-        "CHOP physicians staff pediatric units at partner hospitals in NJ and PA (Virtua, Princeton, AtlantiCare, Lancaster General)"
+        "Consistently ranked among the top 10 U.S. News children's hospitals since 2009",
+        "Level I pediatric trauma center and Level IV NICU (about 95 NICU beds)",
+        "Penn Perelman teaching hospital with large residency and fellowship programs",
+        "Ranked No. 1 nationally in pediatric diabetes and endocrinology and orthopedics (2024-2025)",
+        "Second inpatient hospital in King of Prussia since 2022; satellite NICUs at partner hospitals",
+        "New 24-story main campus tower planned by about 2028"
       ],
       "photos": [
         {
           "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Children%27s%20Hospital%20of%20Philadelphia.jpg?width=1200",
-          "caption": "Children's Hospital of Philadelphia main campus",
-          "credit": "Wikimedia Commons contributor (author listed on the file page)",
-          "license": "Free license per Wikimedia Commons file page (not individually verified this session)",
-          "source_page": "https://commons.wikimedia.org/wiki/File:Children%27s_Hospital_of_Philadelphia.jpg"
-        },
-        {
-          "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Children%27s%20Hospital%20of%20Philadelphia%20%28CHOP%29%20%2853590379823%29.jpg?width=1200",
-          "caption": "CHOP buildings in University City",
-          "credit": "Wikimedia Commons contributor (author listed on the file page)",
-          "license": "Free license per Wikimedia Commons file page (not individually verified this session)",
-          "source_page": "https://commons.wikimedia.org/wiki/File:Children%27s_Hospital_of_Philadelphia_%28CHOP%29_%2853590379823%29.jpg"
+          "caption": "Main building of Children's Hospital of Philadelphia on Civic Center Boulevard",
+          "credit": "Wikimedia Commons contributor (see file page)",
+          "license": "See Wikimedia Commons file page",
+          "source_page": "https://en.wikipedia.org/wiki/Children%27s_Hospital_of_Philadelphia"
         }
       ],
       "wikipedia_title": "Children's Hospital of Philadelphia",
       "sources": [
         "https://en.wikipedia.org/wiki/Children%27s_Hospital_of_Philadelphia",
-        "https://en.wikipedia.org/wiki/Virtua_Voorhees_Hospital",
-        "https://en.wikipedia.org/wiki/Penn_Medicine_Princeton_Medical_Center",
-        "https://en.wikipedia.org/wiki/AtlantiCare",
-        "https://en.wikipedia.org/wiki/Lancaster_General_Hospital"
+        "https://en.wikipedia.org/wiki/List_of_hospitals_in_Pennsylvania",
+        "https://neonatologysolutions.com/?p=19209",
+        "https://neonatologysolutions.com/?p=24291",
+        "https://blackcareernetwork.com/job/nurse-practitioner-emergency-department-260781"
       ],
-      "notes": "Beds: Wikipedia infobox 594, body text 692 (2024 annual report). NICU level left null because no page read this session states the AAP level (it is a quaternary referral NICU). CHOP careers site (careers.chop.edu) was blocked; platform unknown. Children's Seashore House (45 beds, developmental disabilities and chronic illness) is part of CHOP.",
-      "confidence": "medium",
-      "active": true,
-      "_enrich": {
-        "wikipedia": {
-          "title": "Children's Hospital of Philadelphia",
-          "url": "https://en.wikipedia.org/wiki/Children%27s_Hospital_of_Philadelphia",
-          "extract": "The Children's Hospital of Philadelphia (CHOP) is a children's hospital in Philadelphia, Pennsylvania. Its primary campus is located in the University City neighborhood of West Philadelphia, next to the University of Pennsylvania. The hospital has 692 beds and more than 1.6 million outpatient and inpatient visits annually. It is one of the world's largest and oldest children's hospitals and was the first hospital in the United States dedicated to the healthcare of children.\nCHOP has been ranked among the best ten children's hospitals in the United States by U.S. News & World Report since 2009. As of 2024, it was ranked number one in the nation by U.S. News & World Report for two out of eleven specialties. The hospital treats infants, children, teens, and young adults aged 0–21.\nThe hospital also treats adults who would benefit from advanced pediatric care. Most of its physicians serve in the pediatrics and other specialty departments of the Perelman School of Medicine."
-        }
-      }
+      "notes": "Bed counts differ: 535 licensed beds on the Wikipedia PA list (used here), 594 in the Wikipedia infobox, and 692 in CHOP's 2024 annual report per Wikipedia. CHOP NPs are also placed at partner NICUs and pediatric units (for example Virtua Voorhees, Penn Medicine Princeton, HUP and Pennsylvania Hospital nurseries); CHOP ED NP postings have listed the main hospital plus King of Prussia or Virtua Voorhees as secondary sites. Magnet status not confirmed this session.",
+      "confidence": "high",
+      "active": true
     },
     {
       "slug": "chop-king-of-prussia",
-      "name": "CHOP King of Prussia Hospital, Middleman Family Pavilion",
+      "name": "CHOP King of Prussia Hospital (Middleman Family Pavilion)",
       "parent_hospital": null,
       "health_system": "Children's Hospital of Philadelphia",
       "hospital_type": "childrens_hospital",
       "city": "King of Prussia",
       "state": "PA",
-      "address": "550 South Goddard Boulevard, King of Prussia, PA 19406",
+      "address": "550 S Goddard Blvd, King of Prussia, PA 19406",
       "lat": 40.08728,
       "lng": -75.40768,
       "coord_source": "Google Places (CHOP King of Prussia Hospital, Middleman Family Pavilion)",
       "region": "Philadelphia metro",
       "hotspot": false,
-      "website": "https://www.chop.edu/",
+      "website": "https://www.chop.edu/locations/king-prussia-hospital",
       "careers_url": "https://careers.chop.edu/us/en",
       "careers_platform": "phenom",
-      "careers_search_url": null,
-      "careers_notes": "Careers site could not be verified this session: the web search budget ran out and direct fetches of CHOP pages were blocked. careers_url is the main website as a placeholder; locate the real job search page and platform before scraping. [enrich 2026-10-20] careers_url -> HTTP 200 at https://careers.chop.edu/us/en; ATS link seen: https://chop.wd108.myworkdayjobs.com/CHOPExternalCareers/login",
+      "careers_search_url": "https://careers.chop.edu/us/en/search-results?keywords=nurse%20practitioner",
+      "careers_notes": "CHOP career site is a Phenom People front end (paths like careers.chop.edu/us/en/how-we-hire, job ids shaped PDN-<guid>). A test fetch of the search URL was blocked in this session, so rendering is unconfirmed; Phenom search pages are usually JS-rendered, so the scraper may need the Phenom widgets API. NP postings name the campus (Main Hospital, King of Prussia, Virtua Voorhees NICU, etc.).",
       "ats_config": {
-        "host": "careers.chop.edu"
+        "host": "careers.chop.edu",
+        "locale_path": "/us/en"
       },
       "nearest_airport": "PHL Philadelphia International (about 17 mi straight-line)",
       "beds": 52,
-      "peds_beds": 36,
+      "peds_beds": 52,
       "peds_inpatient": true,
       "picu": true,
       "picu_beds": 16,
@@ -1676,70 +1664,67 @@
       "peds_trauma_level": null,
       "magnet": null,
       "teaching": true,
-      "affiliated_university": "Perelman School of Medicine at the University of Pennsylvania",
+      "affiliated_university": "University of Pennsylvania Perelman School of Medicine",
       "peds_services": [
         "pediatric emergency medicine",
         "pediatric critical care",
         "hospitalist",
-        "pediatric surgery"
+        "orthopedics",
+        "plastic surgery",
+        "ENT",
+        "radiology"
       ],
-      "description": "CHOP's King of Prussia hospital opened in January 2022 as the system's first inpatient hospital outside Philadelphia, inside the Middleman Family Pavilion in Montgomery County. It has 52 beds, 16 of them PICU and 36 medical surgical, plus a pediatric emergency department, with shell space for future growth. It brings CHOP emergency and inpatient care to Philadelphia's western suburbs. King of Prussia is about 20 miles northwest of Center City.",
+      "description": "CHOP's King of Prussia Hospital, branded the Middleman Family Pavilion, is the system's second inpatient children's hospital and opened in January 2022 off Goddard Boulevard in Montgomery County. The 250,000 square foot building has 52 private rooms split between 36 medical-surgical beds and a 16 bed PICU, plus a pediatric emergency department and a small surgical suite for orthopedic, plastic surgery and ENT cases needing an overnight stay. It connects to CHOP's existing specialty and urgent care center on the same campus. The suburban setting near the King of Prussia mall and the Turnpike makes it a very different commute from University City, and staff often rotate between the two hospitals. Shell space was built in for future growth.",
       "highlights": [
-        "Opened January 2022, CHOP's first suburban inpatient hospital",
-        "16 bed PICU and 36 medical surgical beds",
-        "Dedicated pediatric emergency department",
-        "Shell space reserved for expansion"
+        "Opened January 26, 2022 as CHOP's second inpatient hospital",
+        "16 bed PICU and 36 medical-surgical beds, all private rooms",
+        "Pediatric emergency department on site",
+        "Built with shell space; expansion toward about 108 beds has been discussed",
+        "Suburban Main Line and Route 422 corridor location"
       ],
       "photos": [
         {
           "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Children%27s%20Hospital%20of%20Philadelphia%2C%20King%20of%20Prussia%2C%20Pennsylvania%20%2846809168874%29.jpg?width=1200",
           "caption": "CHOP King of Prussia campus",
-          "credit": "Wikimedia Commons contributor (author listed on the file page)",
-          "license": "Free license per Wikimedia Commons file page (not individually verified this session)",
-          "source_page": "https://commons.wikimedia.org/wiki/File:Children%27s_Hospital_of_Philadelphia%2C_King_of_Prussia%2C_Pennsylvania_%2846809168874%29.jpg"
+          "credit": "Wikimedia Commons contributor (see file page)",
+          "license": "See Wikimedia Commons file page",
+          "source_page": "https://en.wikipedia.org/wiki/Children%27s_Hospital_of_Philadelphia"
         }
       ],
       "wikipedia_title": "Children's Hospital of Philadelphia",
       "sources": [
         "https://en.wikipedia.org/wiki/Children%27s_Hospital_of_Philadelphia",
-        "https://en.wikipedia.org/wiki/List_of_hospitals_in_Pennsylvania"
+        "https://6abc.com/amp/post/chop-king-of-prussia-childrens-hospital-philadelphia-the-middleman-family-pavilion-goddard-boulevard/11510361/",
+        "https://en.wikipedia.org/wiki/List_of_hospitals_in_Pennsylvania",
+        "https://blackcareernetwork.com/job/nurse-practitioner-emergency-department-260781"
       ],
-      "notes": "Newer, smaller unit; a good target for PICU or hospitalist NP roles away from the main campus. Postings appear on the CHOP career site.",
-      "confidence": "medium",
-      "active": true,
-      "_enrich": {
-        "wikipedia": {
-          "title": "Children's Hospital of Philadelphia",
-          "url": "https://en.wikipedia.org/wiki/Children%27s_Hospital_of_Philadelphia",
-          "extract": "The Children's Hospital of Philadelphia (CHOP) is a children's hospital in Philadelphia, Pennsylvania. Its primary campus is located in the University City neighborhood of West Philadelphia, next to the University of Pennsylvania. The hospital has 692 beds and more than 1.6 million outpatient and inpatient visits annually. It is one of the world's largest and oldest children's hospitals and was the first hospital in the United States dedicated to the healthcare of children.\nCHOP has been ranked among the best ten children's hospitals in the United States by U.S. News & World Report since 2009. As of 2024, it was ranked number one in the nation by U.S. News & World Report for two out of eleven specialties. The hospital treats infants, children, teens, and young adults aged 0–21.\nThe hospital also treats adults who would benefit from advanced pediatric care. Most of its physicians serve in the pediatrics and other specialty departments of the Perelman School of Medicine."
-        }
-      }
+      "notes": "Listed separately from the Philadelphia campus because it is a licensed hospital with its own PICU, inpatient units and ED (52 licensed beds on the PA list). NP roles here are posted on the CHOP career site with King of Prussia as the location; some ED NP roles split time with the main campus. The Commons photo may predate the 2022 opening.",
+      "confidence": "high",
+      "active": true
     },
     {
       "slug": "st-christophers-childrens-philadelphia",
       "name": "St. Christopher's Hospital for Children",
       "parent_hospital": null,
-      "health_system": "Tower Health and Drexel University (joint owners)",
+      "health_system": "Tower Health and Drexel University (joint venture)",
       "hospital_type": "childrens_hospital",
       "city": "Philadelphia",
       "state": "PA",
-      "address": "160 East Erie Avenue, Philadelphia, PA 19134",
+      "address": "160 E Erie Ave, Philadelphia, PA 19134",
       "lat": 40.00627,
       "lng": -75.12566,
-      "coord_source": "Google Places (St. Christopher's Hospital for Children); Wikipedia 40.0066, -75.1245 agrees",
+      "coord_source": "Google Places (St. Christopher's Hospital for Children); agrees with Wikipedia 40.0066, -75.1245",
       "region": "Philadelphia metro",
       "hotspot": false,
       "website": "https://www.stchristophershospital.com/",
-      "careers_url": "https://www.towercareers.org/careers-home",
+      "careers_url": "https://www.stchristophershospital.com/",
       "careers_platform": "unknown",
       "careers_search_url": null,
-      "careers_notes": "Careers site could not be verified this session: the web search budget ran out and direct fetches of St. Christopher's pages were blocked. careers_url is the main website as a placeholder; locate the real job search page and platform before scraping. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.towercareers.org/careers-home; ATS link seen: https://www.icims.com/legal/privacy-notice-website/",
-      "ats_config": {
-        "host": "www.towercareers.org"
-      },
+      "careers_notes": "Careers page not reached this session (search budget exhausted and fetches rate limited). NP openings (PICU, NICU, CT surgery, Center for the Urban Child) are syndicated to NAPNAP and AAP career centers. Verify whether St. Chris posts through Tower Health's applicant system or its own.",
+      "ats_config": {},
       "nearest_airport": "PHL Philadelphia International (about 11 mi straight-line)",
       "beds": 189,
-      "peds_beds": null,
+      "peds_beds": 189,
       "peds_inpatient": true,
       "picu": true,
       "picu_beds": null,
@@ -1750,41 +1735,35 @@
       "teaching": true,
       "affiliated_university": "Drexel University College of Medicine; Temple University School of Medicine",
       "peds_services": [
+        "pediatric emergency medicine",
         "pediatric critical care",
         "neonatology",
-        "pediatric emergency medicine",
-        "pediatric trauma",
+        "burn center",
+        "cardiothoracic surgery",
         "hospitalist",
-        "cardiology",
-        "nephrology",
-        "gastroenterology",
-        "burn care"
+        "Center for the Urban Child"
       ],
-      "description": "St. Christopher's Hospital for Children is a freestanding pediatric hospital in North Philadelphia, founded in 1875 and on its current Erie Avenue campus since 1990. It has about 189 beds, a Level IV NICU and a Level I pediatric trauma center, one of four pediatric trauma centers in Pennsylvania. After Hahnemann University Hospital's 2019 bankruptcy, Tower Health and Drexel University bought it jointly. It is affiliated with the Drexel and Temple medical schools and achieved Magnet status in 2009.",
+      "description": "St. Christopher's Hospital for Children is a freestanding pediatric hospital at Erie Avenue and Front Street in North Philadelphia, serving one of the most Medicaid-dependent pediatric populations in the country. It holds Level I pediatric trauma status, runs a Level IV NICU and a pediatric burn center, and trains Drexel and Temple residents. Tower Health and Drexel bought it out of the Hahnemann bankruptcy in 2019 and run it as a joint venture; in 2026 Jefferson, Temple, PCOM and CHOP pledged a combined 30 million dollars to help keep it stable. Finances remain tight, and in 2026 it cut about 60 positions and ended its small kidney transplant program. For a PNP it offers high-acuity, safety-net pediatrics with a strong community health mission.",
       "highlights": [
-        "Level I pediatric trauma center, one of four in PA",
-        "Level IV NICU",
-        "Freestanding children's hospital since 1875",
-        "Jointly owned by Tower Health and Drexel since 2019",
-        "Magnet designation (2009)"
+        "One of four Level I pediatric trauma centers in Pennsylvania",
+        "Level IV NICU and a pediatric burn center",
+        "Magnet designation (first earned 2009)",
+        "About 85 percent of patients on Medicaid, the highest share of any U.S. children's hospital per Drexel",
+        "30 million dollar support pledge from Jefferson, Temple, PCOM and CHOP (2026)",
+        "Teaching site for Drexel and Temple medical schools"
       ],
       "photos": [],
       "wikipedia_title": "St. Christopher's Hospital for Children",
       "sources": [
         "https://en.wikipedia.org/wiki/St._Christopher%27s_Hospital_for_Children",
-        "https://en.wikipedia.org/wiki/Reading_Hospital",
-        "https://en.wikipedia.org/wiki/List_of_hospitals_in_Pennsylvania"
+        "https://en.wikipedia.org/wiki/List_of_hospitals_in_Pennsylvania",
+        "https://neonatologysolutions.com/?p=24291",
+        "https://hoodline.com/2026/05/north-philly-reeling-as-st-chris-slashes-jobs-axes-kids-kidney-transplants/",
+        "https://drexelmagazine.org/2026/a-30m-commitment-for-st-christophers-hospital/"
       ],
-      "notes": "Owner and address details in Wikipedia are partly inconsistent (3601 A Street vs. Erie Avenue); Google Places gives 160 E Erie Ave. Ownership changes since 2019 have been frequent; verify current owner and careers platform before scraping.",
+      "notes": "Financial stability is a real question for a job seeker: 2026 brought roughly 60 position cuts (about half reassigned) and the end of pediatric kidney transplant, though FY2025 showed a small operating profit thanks to city Medicaid funding. Wikipedia infobox lists 189 beds (body says 188). Magnet per Wikipedia (2009); current status not confirmed.",
       "confidence": "medium",
-      "active": true,
-      "_enrich": {
-        "wikipedia": {
-          "title": "St. Christopher's Hospital for Children",
-          "url": "https://en.wikipedia.org/wiki/St._Christopher%27s_Hospital_for_Children",
-          "extract": "St. Christopher's Hospital for Children is a pediatric acute care hospital located in Philadelphia, Pennsylvania. The hospital has 188 beds and is affiliated with both the Drexel University College of Medicine and the Temple University School of Medicine. The hospital provides comprehensive pediatric specialties and subspecialties to pediatric patients aged 0–21 throughout eastern Pennsylvania and is one of the oldest full-service hospitals in the United States totally dedicated to the care of children.\nSt. Christopher's Hospital for Children also features a Level 1 Pediatric Trauma Center, one of four Pediatric Trauma Centers in the state."
-        }
-      }
+      "active": true
     },
     {
       "slug": "penn-state-childrens-hershey",
