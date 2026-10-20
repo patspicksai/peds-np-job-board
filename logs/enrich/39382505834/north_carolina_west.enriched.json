@@ -1,0 +1,186 @@
+{
+  "region_group": "R6b NC Triad and other",
+  "hospitals": [
+    {
+      "slug": "brenner-childrens-winston-salem",
+      "name": "Atrium Health Levine Children's Brenner Children's Hospital",
+      "parent_hospital": "Atrium Health Wake Forest Baptist Medical Center",
+      "health_system": "Atrium Health (Advocate Health)",
+      "hospital_type": "childrens_hospital_within_hospital",
+      "city": "Winston-Salem",
+      "state": "NC",
+      "address": "1 Medical Center Blvd, Winston-Salem, NC 27157",
+      "lat": 36.09022,
+      "lng": -80.27105,
+      "coord_source": "Google Places (Atrium Health Wake Forest Baptist | Brenner Children's Hospital)",
+      "region": "Triad",
+      "hotspot": false,
+      "website": "https://www.wakehealth.edu/about-us/about-brenner-childrens",
+      "careers_url": "https://careers.advocatehealth.org/locations/atrium-health-wake-forest-baptist/",
+      "careers_platform": "workday",
+      "careers_search_url": "https://careers.advocatehealth.org/job-search-results/?keyword=nurse%20practitioner&location=Winston-Salem%2C%20NC%2C%20USA&latitude=36.0948221&longitude=-80.2434028&radius=5",
+      "careers_notes": "Advocate Health careers front end (careers.advocatehealth.org, WordPress) over Workday tenant aah, site External (aah.wd5.myworkdayjobs.com/en-US/External). The location page links a Brenner-specific search: /job-search-results/?keyword=%22BCH%22%20or%20%22Brenner%22&location=Winston-Salem...&radius=5. Fetched 2026-10-19: results are JS-rendered and showed '0 Live Results' in a static fetch, so the scraper should hit the Workday CXS API (aah/External) with searchText 'nurse practitioner' and filter on Winston-Salem / Brenner. Direct Workday URL was blocked for fetch this session. NNP and pediatric APP postings for Brenner also syndicate to AANP JobCenter and PracticeMatch (employer listed as Atrium Health Wake Forest Baptist & Wake Forest University School of Medicine). Physician jobs are on Avature (advocateaurorahealth.avature.net/careers).",
+      "ats_config": {
+        "host": "aah.wd5.myworkdayjobs.com",
+        "tenant": "aah",
+        "site": "External",
+        "front_end_host": "careers.advocatehealth.org"
+      },
+      "nearest_airport": "GSO Piedmont Triad International (about 25 min)",
+      "beds": 850,
+      "peds_beds": 182,
+      "peds_inpatient": true,
+      "picu": true,
+      "picu_beds": 11,
+      "nicu_level": 4,
+      "peds_ed": true,
+      "peds_trauma_level": "Level I pediatric trauma center",
+      "magnet": null,
+      "teaching": true,
+      "affiliated_university": "Wake Forest University School of Medicine",
+      "peds_services": [
+        "neonatology",
+        "pediatric critical care",
+        "pediatric intermediate care",
+        "pediatric emergency medicine",
+        "pediatric trauma",
+        "pediatric surgery",
+        "cardiology",
+        "cardiac surgery",
+        "hematology/oncology",
+        "kidney transplant",
+        "ECMO",
+        "orthopaedics",
+        "adolescent medicine",
+        "behavioral health",
+        "newborn nursery",
+        "neonatal transport team",
+        "child life"
+      ],
+      "description": "Brenner Children's is the children's hospital of Atrium Health Wake Forest Baptist, operating as a hospital within the academic medical center on the Medical Center Boulevard campus in Winston-Salem. Since 2024 it carries the Atrium Health Levine Children's brand, tying it to Levine Children's in Charlotte under one pediatric network. It is the only Level I pediatric trauma center in the Triad and northwest North Carolina, and it draws critically ill children from southwest Virginia and east Tennessee as well. Inpatient services include an 11-bed PICU with a 7-bed intermediate care unit, the Dale and Karen Sisel Level IV NICU, a pediatric behavioral health unit and a dedicated pediatric emergency department. Wake Forest University School of Medicine faculty staff more than 30 pediatric subspecialties. Winston-Salem is a mid-sized, affordable city about 25 minutes from Piedmont Triad International Airport.",
+      "highlights": [
+        "Only Level I pediatric trauma center in the Triad and northwest NC; first in North Carolina (2011)",
+        "Level IV NICU (Dale and Karen Sisel NICU), with a neonatal transport team since 1987",
+        "11-bed PICU plus 7-bed pediatric intermediate care unit, more than 1,500 critically ill children a year",
+        "Verified Level I children's surgery center, the only one in the 68-hospital Advocate Health system",
+        "Part of Atrium Health Levine Children's since 2024 (three children's hospitals, 668 beds)",
+        "Academic home of Wake Forest University School of Medicine pediatrics; active NNP and pediatric APP hiring seen on AANP JobCenter"
+      ],
+      "photos": [
+        {
+          "url": "https://www.wakehealth.edu/-/media/wakeforest/clinical/images/masonry-tiles/modal/brenner-rebrand-hero.jpg",
+          "caption": "Brenner Children's Hospital rebrand hero image",
+          "credit": "Atrium Health Wake Forest Baptist",
+          "license": "Hospital website image, all rights reserved",
+          "source_page": "https://www.wakehealth.edu/about-us/about-brenner-childrens"
+        }
+      ],
+      "wikipedia_title": "Brenner Children's Hospital",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Brenner_Children%27s_Hospital",
+        "https://en.wikipedia.org/wiki/Atrium_Health_Wake_Forest_Baptist",
+        "https://school.wakehealth.edu/about-the-school/facilities-and-environment/campuses-and-virtual-tours/brenner-childrens",
+        "https://www.wakehealth.edu/about-us/about-brenner-childrens",
+        "https://www.wakehealth.edu/locations/clinics/p/pediatric-intensive-care-unit",
+        "https://newsroom.wakehealth.edu/news-releases/2024/03/atrium-health-childrens-services-unify-under-levine-childrens-brand",
+        "https://www.practicematch.com/physicians/job-details.cfm/1056854",
+        "https://jobcenter.aanp.org/job/neonatal-nurse-practitioner-brenner-childrens-winston-salem-nc/79554045",
+        "https://careercenter.njaap.org/job/neonatal-nurse-practitioner/83167075/",
+        "https://www.wakehealth.edu/careers",
+        "https://careers.advocatehealth.org/locations/atrium-health-wake-forest-baptist/",
+        "https://en.wikipedia.org/wiki/List_of_hospitals_in_North_Carolina"
+      ],
+      "notes": "Primary Triad target for an acute care PNP: PICU, PIMC, peds ED, Level IV NICU and peds hospital medicine all on one campus. Bed counts vary by source: Wikipedia says 144 beds, the medical school campus page says 155, and a 2025 PracticeMatch employer description says 182 (79 NICU, 12 PICU, 16 behavioral health); peds_beds uses 182 and picu_beds uses the 11 on the hospital's own PICU page. Whole-hospital beds (850) are from the Wikipedia list of NC hospitals; the system has 1,535 acute beds. NNP postings in Oct 2026 listed pay of $57.85 to $86.80 per hour with an $18,000 sign-on bonus and relocation help. Magnet status not confirmed this session.",
+      "confidence": "high",
+      "active": true,
+      "_enrich": {
+        "regeocode": {
+          "lat": 36.0902,
+          "lng": -80.2693,
+          "coord_source": "Wikipedia article coordinates (Brenner Children's Hospital)"
+        }
+      }
+    },
+    {
+      "slug": "novant-forsyth-winston-salem",
+      "name": "Novant Health Forsyth Medical Center",
+      "parent_hospital": null,
+      "health_system": "Novant Health",
+      "hospital_type": "regional_hospital",
+      "city": "Winston-Salem",
+      "state": "NC",
+      "address": "3333 Silas Creek Pkwy, Winston-Salem, NC 27103",
+      "lat": 36.07658,
+      "lng": -80.29628,
+      "coord_source": "Google Places (Forsyth Medical Center)",
+      "region": "Triad",
+      "hotspot": false,
+      "website": "https://www.novanthealth.org/locations/medical-centers/forsyth-medical-center/",
+      "careers_url": "https://external-novanthealth.icims.com/jobs/search?ss=1",
+      "careers_platform": "icims",
+      "careers_search_url": "https://external-novanthealth.icims.com/jobs/search?ss=1&searchKeyword=nurse%20practitioner",
+      "careers_notes": "Novant Health uses iCIMS. Main board external-novanthealth.icims.com (a 2026 Forsyth ED RN posting applies at external-novanthealth.icims.com/jobs/235093/rn/job). Provider jobs may also post on physicians-novanthealth.icims.com; easyapply-novanthealth.icims.com is the hourly board. The keyword search URL was blocked for fetch this session, so rendering was not verified; iCIMS search pages usually render server-side when in_iframe=1 is appended.",
+      "ats_config": {
+        "host": "external-novanthealth.icims.com",
+        "alt_hosts": [
+          "physicians-novanthealth.icims.com",
+          "easyapply-novanthealth.icims.com"
+        ]
+      },
+      "nearest_airport": "GSO Piedmont Triad International (about 25 min)",
+      "beds": 921,
+      "peds_beds": null,
+      "peds_inpatient": false,
+      "picu": false,
+      "picu_beds": null,
+      "nicu_level": 3,
+      "peds_ed": false,
+      "peds_trauma_level": null,
+      "magnet": null,
+      "teaching": true,
+      "affiliated_university": null,
+      "peds_services": [
+        "neonatology",
+        "maternity",
+        "high-risk obstetrics"
+      ],
+      "description": "Forsyth Medical Center is Novant Health's flagship hospital in the Triad, a large regional referral center on a 77-acre campus along Silas Creek Parkway in southwest Winston-Salem. It draws patients from more than 22 counties for heart, cancer, neuroscience, orthopedic and maternity care, and its labor and delivery service handles more than 300 births a month. The hospital runs a 56-bed Level III NICU staffed with Pediatrix neonatologists, which is the main pediatric draw for an NP. Children who need a PICU or pediatric trauma care in Winston-Salem are generally served across town at Brenner Children's. Novant runs family medicine residency training at the campus.",
+      "highlights": [
+        "921 beds, Novant Health's largest Triad hospital and a referral center for 22-plus counties",
+        "56-bed Level III NICU (Pediatrix Medical Group neonatology coverage)",
+        "More than 300 deliveries a month",
+        "Critical care ground and air transport based on campus",
+        "About 3 miles from Brenner Children's, the Triad's pediatric tertiary center"
+      ],
+      "photos": [
+        {
+          "url": "https://www.novanthealth.org/globalassets/image-field/2-medium-size-image/images-1424x978/place-images/3333-silas-creek-pkwy-winston-salem-nc-dusk-1424-978px.webp",
+          "caption": "Forsyth Medical Center at dusk, 3333 Silas Creek Parkway",
+          "credit": "Novant Health",
+          "license": "Hospital website image, all rights reserved",
+          "source_page": "https://www.novanthealth.org/locations/medical-centers/forsyth-medical-center/"
+        }
+      ],
+      "wikipedia_title": "Forsyth Medical Center",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Forsyth_Medical_Center",
+        "https://www.novanthealth.org/locations/medical-centers/forsyth-medical-center/",
+        "https://www.novanthealth.org/locations/medical-centers/forsyth-medical-center/services/",
+        "https://neonatologysolutions.com/?p=17380",
+        "https://blog.pediatrix.com/pediatrix-medical-group-of-north-carolina-expands-neonatal-physician-services-at-novant-health",
+        "https://social.icims.com/job/RN-Job-NC-Winston-Salem-48254191.html",
+        "https://novanthealth.org/medical-education/residency-programs/family-medicine-residency/training-facilities"
+      ],
+      "notes": "Included for the Level III NICU. A general pediatric inpatient unit, pediatric ED or PICU was not confirmed on any page read this session (the services page lists no pediatric line and the ED posting describes an all-ages ED), so those flags are false pending confirmation. NNP or mixed newborn roles are the most likely NP fit here; Pediatrix employs the neonatal physicians. Beds from Wikipedia (921); the Wikipedia NC hospital list gives 898.",
+      "confidence": "medium",
+      "active": true,
+      "_enrich": {
+        "regeocode": {
+          "lat": 36.0758,
+          "lng": -80.29694,
+          "coord_source": "Wikipedia article coordinates (Novant Health Forsyth Medical Center)"
+        }
+      }
+    }
+  ]
+}
