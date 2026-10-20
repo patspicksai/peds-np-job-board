@@ -28,8 +28,11 @@ CONNECT_TIMEOUT = 15
 READ_TIMEOUT = 40
 RETRIES = 2
 
-# Budgets
-RUN_BUDGET_SECONDS = int(os.environ.get("SCRAPER_BUDGET", str(38 * 60)))
+# Budgets. RUN_BUDGET is the soft deadline (no new boards / pages / details after it); boards still running
+# HARD_GRACE_SECONDS later are abandoned and the run file is written anyway. 34 min + 3 min grace + shutdown
+# keeps the whole scrape step inside the workflow's hard 40 minute limit.
+RUN_BUDGET_SECONDS = int(os.environ.get("SCRAPER_BUDGET", str(34 * 60)))
+HARD_GRACE_SECONDS = int(os.environ.get("SCRAPER_HARD_GRACE", "180"))
 HOSPITAL_BUDGET_SECONDS = int(os.environ.get("SCRAPER_HOSPITAL_BUDGET", str(9 * 60)))
 WORKERS = int(os.environ.get("SCRAPER_WORKERS", "6"))
 BROWSER_WORKERS = int(os.environ.get("SCRAPER_BROWSER_WORKERS", "2"))

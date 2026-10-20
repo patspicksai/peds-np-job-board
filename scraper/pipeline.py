@@ -329,28 +329,33 @@ def run(hospitals: list[dict], known: dict[str, dict], opts) -> dict:
     global_deadline = t0 + opts.budget
     boards = group_boards(hospitals)
     results: list[BoardResult] = []
-    with cf.ThreadPoolExecutor(max_workers=config.WORKERS) as ex:
-        futs = {ex.submit(run_board, k, p, g, known, opts, global_deadline): (k, p, g) for k, p, g in boards}
-        try:
-            for fut in cf.as_completed(futs, timeout=opts.budget + 240):
-                k, p, g = futs[fut]
-                try:
-                    results.append(fut.result())
-                except Exception as e:  # noqa: BLE001
-                    br = BoardResult(key=k, platform=p, hospitals=g, error=f"{type(e).__name__}: {e}")
-                    for h in g:
-                        br.per_hospital[h["slug"]] = {"listings": 0, "candidates": 0, "new": 0, "known": 0, "samples": []}
-                    results.append(br)
-        except cf.TimeoutError:
-            done_keys = {r.key for r in results}
-            for f, (k, p, g) in futs.items():
-                if k not in done_keys:
-                    f.cancel()
-                    br = BoardResult(key=k, platform=p, hospitals=g, error="hard run budget exceeded; board abandoned")
-                    for h in g:
-                        br.per_hospital[h["slug"]] = {"listings": 0, "candidates": 0, "new": 0, "known": 0, "samples": []}
-                    results.append(br)
-            ex.shutdown(wait=False, cancel_futures=True)
+    # Not a `with` block: its __exit__ waits for every thread, which would let one hung board defeat the
+    # hard budget. Daemon-ish behaviour: abandoned threads keep running until process exit.
+    ex = cf.ThreadPoolExecutor(max_workers=config.WORKERS, thread_name_prefix="board")
+    # most expensive boards first (system boards with many hospitals, browser-only platforms)
+    boards.sort(key=lambda b: (-(b[1] in ("careersite", "symphony", "generic")), -len(b[2])))
+    futs = {ex.submit(run_board, k, p, g, known, opts, global_deadline): (k, p, g) for k, p, g in boards}
+    hard_timeout = max(60.0, global_deadline + config.HARD_GRACE_SECONDS - time.time())
+    try:
+        for fut in cf.as_completed(futs, timeout=hard_timeout):
+            k, p, g = futs[fut]
+            try:
+                results.append(fut.result())
+            except Exception as e:  # noqa: BLE001
+                br = BoardResult(key=k, platform=p, hospitals=g, error=f"{type(e).__name__}: {e}")
+                for h in g:
+                    br.per_hospital[h["slug"]] = {"listings": 0, "candidates": 0, "new": 0, "known": 0, "samples": []}
+                results.append(br)
+    except cf.TimeoutError:
+        done_keys = {r.key for r in results}
+        for f, (k, p, g) in futs.items():
+            if k not in done_keys:
+                f.cancel()
+                br = BoardResult(key=k, platform=p, hospitals=g, error="hard run budget exceeded; board abandoned")
+                for h in g:
+                    br.per_hospital[h["slug"]] = {"listings": 0, "candidates": 0, "new": 0, "known": 0, "samples": []}
+                results.append(br)
+    ex.shutdown(wait=False, cancel_futures=True)
     try:
         browser.shutdown()
     except Exception:  # noqa: BLE001
