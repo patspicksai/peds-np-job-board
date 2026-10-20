@@ -21,7 +21,8 @@
       "careers_search_url": "https://careers.nyp.org/us/en/search-results?keywords=nurse%20practitioner",
       "careers_notes": "careers.nyp.org is linked as Careers from nyp.org pages. Platform recorded as Phenom because the repo's phenom adapter names careers.nyp.org/us/en; the board itself could not be fetched this session (permission prompt timed out), so the search URL is untested. One system board for all NYP campuses; filter by location. [enrich 2026-10-20] careers_url -> HTTP 200 at https://careers.nyp.org/us/en; search_url -> HTTP 200, mentions NP: True, job links: 0",
       "ats_config": {
-        "host": "careers.nyp.org"
+        "host": "careers.nyp.org",
+        "flagship": true
       },
       "nearest_airport": "LGA LaGuardia Airport",
       "beds": 299,
@@ -188,7 +189,8 @@
       "careers_search_url": "https://jobs.northwell.edu/",
       "careers_notes": "Northwell system board (host from the repo probe list). Could not be fetched this session (permission prompt timed out); platform and query format unverified. One board for all Northwell hospitals; filter by facility. [enrich 2026-10-20] careers_url -> HTTP 200 at https://jobs.northwell.edu/; ATS link seen: https://eppr.fa.us2.oraclecloud.com/fscmUI/faces/deeplink?objType=IRC_RECRUITING&#038;action=ICE_JOB_SEARCH_RESP; search_url -> HTTP 200, mentions NP: True, job links: 2",
       "ats_config": {
-        "host": "jobs.northwell.edu"
+        "host": "jobs.northwell.edu",
+        "flagship": true
       },
       "nearest_airport": "JFK John F. Kennedy International Airport",
       "beds": 195,
@@ -501,7 +503,8 @@
       "careers_search_url": "https://wmchealthjobs.org",
       "careers_notes": "wmchealthjobs.org is linked as Careers from wmchealth.org. Board could not be fetched this session (permission timeout); platform unverified. [enrich 2026-10-20] careers_url -> HTTP 200 at https://wmchealthjobs.org/; search_url -> HTTP 200, mentions NP: False, job links: 0",
       "ats_config": {
-        "host": "wmchealthjobs.org"
+        "host": "wmchealthjobs.org",
+        "flagship": true
       },
       "nearest_airport": "HPN Westchester County Airport",
       "beds": null,
@@ -658,7 +661,8 @@
       "ats_config": {
         "host": "albanymed.wd5.myworkdayjobs.com",
         "tenant": "albanymed",
-        "site": "Albany_Med_System_Career_Site"
+        "site": "Albany_Med_System_Career_Site",
+        "flagship": true
       },
       "nearest_airport": "ALB Albany International Airport (15 min)",
       "beds": 125,
@@ -734,7 +738,8 @@
       "careers_search_url": "https://careers.stonybrookmedicine.edu/",
       "careers_notes": "Stony Brook Medicine careers host from the repo probe list; not fetchable this session, platform unverified. [enrich 2026-10-20] careers_url -> HTTP None at None; search_url -> HTTP None, mentions NP: None, job links: None",
       "ats_config": {
-        "host": "careers.stonybrookmedicine.edu"
+        "host": "careers.stonybrookmedicine.edu",
+        "flagship": true
       },
       "nearest_airport": "ISP Long Island MacArthur Airport (20 min)",
       "beds": null,
@@ -1713,9 +1718,9 @@
       "city": "Brooklyn",
       "state": "NY",
       "address": "150 55th Street, Brooklyn, NY 11220",
-      "lat": 40.74011,
-      "lng": -73.64274,
-      "coord_source": "Wikipedia article coordinates (API)",
+      "lat": 40.645,
+      "lng": -74.0198,
+      "coord_source": "Manual from street address (approximate, verify); Wikipedia match was a different hospital",
       "region": "NYC metro",
       "hotspot": false,
       "website": "https://nyulangone.org/locations/nyu-langone-hospital-brooklyn",
@@ -1751,16 +1756,8 @@
         "Level I adult trauma center",
         "Formerly Lutheran Medical Center"
       ],
-      "photos": [
-        {
-          "url": "https://upload.wikimedia.org/wikipedia/commons/1/1b/Mineola_Winthrop_Hosp_02.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original",
-          "caption": "NYU Langone Hospital – Long Island",
-          "credit": "Tdorante10",
-          "license": "CC BY-SA 4.0",
-          "source_page": "https://commons.wikimedia.org/wiki/File:Mineola_Winthrop_Hosp_02.jpg"
-        }
-      ],
-      "wikipedia_title": "NYU Langone Hospital-Brooklyn",
+      "photos": [],
+      "wikipedia_title": null,
       "sources": [
         "https://profiles.health.ny.gov/hospital/bed_type/Pediatric+Beds",
         "model knowledge (to verify); enrichment pending"
@@ -1769,11 +1766,7 @@
       "confidence": "medium",
       "active": true,
       "_enrich": {
-        "wikipedia": {
-          "title": "NYU Langone Hospital – Long Island",
-          "url": "https://en.wikipedia.org/wiki/NYU_Langone_Hospital_%E2%80%93_Long_Island",
-          "extract": "NYU Langone Hospital – Long Island is a hospital in Mineola, New York, on Long Island, affiliated with NYU Langone Health.  It founded in 1896 as Long Island's first hospital as Nassau Hospital, and was renamed in 1985 to Winthrop-University Hospital."
-        }
+        "wikipedia": {}
       }
     },
     {
@@ -2684,9 +2677,9 @@
       "city": "Queens",
       "state": "NY",
       "address": "327 Beach 19th Street, Far Rockaway, NY 11691",
-      "lat": 40.67833,
-      "lng": -73.9375,
-      "coord_source": "Wikipedia article coordinates (API)",
+      "lat": 40.6035,
+      "lng": -73.749,
+      "coord_source": "Manual from street address (approximate, verify); Wikipedia match was a different hospital",
       "region": "NYC metro",
       "hotspot": false,
       "website": "https://www.ehs.org/",
@@ -2721,7 +2714,7 @@
         "Episcopal Health Services"
       ],
       "photos": [],
-      "wikipedia_title": "St. John's Episcopal Hospital South Shore",
+      "wikipedia_title": null,
       "sources": [
         "https://profiles.health.ny.gov/hospital/bed_type/Pediatric+Beds",
         "model knowledge (to verify); enrichment pending"
@@ -2730,11 +2723,7 @@
       "confidence": "medium",
       "active": true,
       "_enrich": {
-        "wikipedia": {
-          "title": "St. John's Episcopal Hospital",
-          "url": "https://en.wikipedia.org/wiki/St._John%27s_Episcopal_Hospital",
-          "extract": "St. John's Episcopal Hospital was founded in 1871 as an American sectarian hospital. It was later known as St. John's Hospital of Brooklyn, 1545 Atlantic Avenue, in the Bedford-Stuyvesant neighborhood of Central Brooklyn, New York, and became a major teaching affiliate of the SUNY Downstate College of Medicine.\nAfter severe financial difficulties in the early to mid-1970s because of construction of a new addition being completed in 1972, St. John's (the original hospital building along with the new addition) closed on October 20, 1975 and both buildings became vacant and closed until December 31, 1982. On December 31, 1982, it merged with the larger Brooklyn Jewish Hospital and Medical Center (this hospital building closed to be converted into apartments in the 2000s), forming Interfaith Medical Center (reopening the original hospital building along with the addition)."
-        }
+        "wikipedia": {}
       }
     },
     {
@@ -4087,9 +4076,9 @@
       "city": "Poughkeepsie",
       "state": "NY",
       "address": "241 North Road, Poughkeepsie, NY 12601",
-      "lat": 41.08613,
-      "lng": -73.80542,
-      "coord_source": "Wikipedia article coordinates (API)",
+      "lat": 41.6982,
+      "lng": -73.929,
+      "coord_source": "Manual from street address (approximate, verify); Wikipedia match was a different hospital",
       "region": "Hudson Valley",
       "hotspot": false,
       "website": "https://www.wmchealth.org/",
@@ -4124,16 +4113,8 @@
         "Part of WMCHealth",
         "Formerly St. Francis Hospital, Poughkeepsie"
       ],
-      "photos": [
-        {
-          "url": "https://upload.wikimedia.org/wikipedia/commons/1/17/Westchester_Medical_Center.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original",
-          "caption": "Westchester Medical Center",
-          "credit": "Ɱ",
-          "license": "CC BY-SA 4.0",
-          "source_page": "https://commons.wikimedia.org/wiki/File:Westchester_Medical_Center.png"
-        }
-      ],
-      "wikipedia_title": "Westchester Medical Center",
+      "photos": [],
+      "wikipedia_title": null,
       "sources": [
         "https://profiles.health.ny.gov/hospital/bed_type/Pediatric+Beds",
         "model knowledge (to verify); enrichment pending"
@@ -4142,11 +4123,7 @@
       "confidence": "medium",
       "active": true,
       "_enrich": {
-        "wikipedia": {
-          "title": "Westchester Medical Center",
-          "url": "https://en.wikipedia.org/wiki/Westchester_Medical_Center",
-          "extract": "Westchester Medical Center University Hospital (WMC), formerly Grasslands Hospital, is an 895-bed Regional Trauma Center providing health services to residents of the Hudson Valley, northern New Jersey, and southern Connecticut. It is known for having one of the highest case mix index rates of all hospitals in the United States. 652 beds are at the hospital's primary location in Valhalla, while the other 243 beds are at the MidHudson Regional Hospital campus in Poughkeepsie. It is organized as Westchester County Health Care Corporation, and is a New York State public-benefit corporation.\nWestchester Medical Center is the primary academic medical center and University Hospital of New York Medical College.  Many of New York Medical College's faculty provide patient care, teach, and conduct research at the adjacent campus. Westchester Medical Center provides various specialty services to patients, hosts one of the leading kidney and liver transplant programs in New York, and is home to Maria Fareri Children's Hospital, the only all-specialty children's hospital in the region."
-        }
+        "wikipedia": {}
       }
     },
     {
@@ -4158,9 +4135,9 @@
       "city": "Nyack",
       "state": "NY",
       "address": "160 North Midland Avenue, Nyack, NY 10960",
-      "lat": 40.88038,
-      "lng": -73.87908,
-      "coord_source": "Wikipedia article coordinates (API)",
+      "lat": 41.0905,
+      "lng": -73.9185,
+      "coord_source": "Manual from street address (approximate, verify); Wikipedia match was a different hospital",
       "region": "Hudson Valley",
       "hotspot": false,
       "website": "https://www.montefiorenyack.org/",
@@ -4193,16 +4170,8 @@
         "NYS Level 2 perinatal center",
         "Part of Montefiore Health System (Montefiore Einstein)"
       ],
-      "photos": [
-        {
-          "url": "https://upload.wikimedia.org/wikipedia/commons/d/d3/Montefiore_Medical_Center_IMG_2268_HLG.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original",
-          "caption": "Montefiore Einstein Medical Center",
-          "credit": "Hugo L. González",
-          "license": "CC BY-SA 4.0",
-          "source_page": "https://commons.wikimedia.org/wiki/File:Montefiore_Medical_Center_IMG_2268_HLG.jpg"
-        }
-      ],
-      "wikipedia_title": "Nyack Hospital",
+      "photos": [],
+      "wikipedia_title": null,
       "sources": [
         "https://profiles.health.ny.gov/hospital/bed_type/Pediatric+Beds",
         "model knowledge (to verify); enrichment pending"
@@ -4211,11 +4180,7 @@
       "confidence": "medium",
       "active": true,
       "_enrich": {
-        "wikipedia": {
-          "title": "Montefiore Einstein Medical Center",
-          "url": "https://en.wikipedia.org/wiki/Montefiore_Einstein_Medical_Center",
-          "extract": "Montefiore Einstein Medical Center is an academic medical center that is the primary teaching hospital of the Albert Einstein College of Medicine in the Bronx, New York City. Its main campus, the Henry and Lucy Moses Division, is in the Norwood section of the northern Bronx. Named for Moses Montefiore, it was one of the 50 largest employers in New York as of 2005. In 2025, Montefiore was ranked No. 5 among New York City metropolitan area hospitals by U.S. News & World Report. Adjacent to the main hospital is the Children's Hospital at Montefiore, which serves individuals aged 0–21."
-        }
+        "wikipedia": {}
       }
     },
     {
@@ -4351,9 +4316,9 @@
       "city": "Newburgh",
       "state": "NY",
       "address": "70 Dubois Street, Newburgh, NY 12550",
-      "lat": 40.88038,
-      "lng": -73.87908,
-      "coord_source": "Wikipedia article coordinates (API)",
+      "lat": 41.5157,
+      "lng": -74.029,
+      "coord_source": "Manual from street address (approximate, verify); Wikipedia match was a different hospital",
       "region": "Hudson Valley",
       "hotspot": false,
       "website": "https://www.montefioreslc.org/",
@@ -4386,16 +4351,8 @@
         "NYS Level 2 perinatal center",
         "Part of Montefiore Health System (Montefiore Einstein)"
       ],
-      "photos": [
-        {
-          "url": "https://upload.wikimedia.org/wikipedia/commons/d/d3/Montefiore_Medical_Center_IMG_2268_HLG.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original",
-          "caption": "Montefiore Einstein Medical Center",
-          "credit": "Hugo L. González",
-          "license": "CC BY-SA 4.0",
-          "source_page": "https://commons.wikimedia.org/wiki/File:Montefiore_Medical_Center_IMG_2268_HLG.jpg"
-        }
-      ],
-      "wikipedia_title": "Montefiore Einstein Medical Center",
+      "photos": [],
+      "wikipedia_title": null,
       "sources": [
         "https://profiles.health.ny.gov/hospital/bed_type/Pediatric+Beds",
         "model knowledge (to verify); enrichment pending"
@@ -4404,11 +4361,7 @@
       "confidence": "medium",
       "active": true,
       "_enrich": {
-        "wikipedia": {
-          "title": "Montefiore Einstein Medical Center",
-          "url": "https://en.wikipedia.org/wiki/Montefiore_Einstein_Medical_Center",
-          "extract": "Montefiore Einstein Medical Center is an academic medical center that is the primary teaching hospital of the Albert Einstein College of Medicine in the Bronx, New York City. Its main campus, the Henry and Lucy Moses Division, is in the Norwood section of the northern Bronx. Named for Moses Montefiore, it was one of the 50 largest employers in New York as of 2005. In 2025, Montefiore was ranked No. 5 among New York City metropolitan area hospitals by U.S. News & World Report. Adjacent to the main hospital is the Children's Hospital at Montefiore, which serves individuals aged 0–21."
-        }
+        "wikipedia": {}
       }
     },
     {

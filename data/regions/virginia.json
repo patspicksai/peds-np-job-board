@@ -21,7 +21,8 @@
       "careers_search_url": "https://careers.vcuhealth.org/us/en/search-results?keywords=nurse%20practitioner",
       "careers_notes": "VCU Health career site on Phenom (assets from cdn.phenompeople.com, CareerConnectResources/VHSVHSUS, /us/en/ paths). Fetched https://careers.vcuhealth.org/us/en/search-results and the CHoR landing page on 2026-10-19: page shell only, listings are JS-rendered and none appeared in the fetch. CHoR category page: https://careers.vcuhealth.org/us/en/chor-jobs ; job detail pattern /us/en/job/R<number>/<title-slug> (e.g. R38048 Nurse Clinician Acute Care Pediatrics). Keyword param ?keywords= is the usual Phenom pattern but was not confirmed to filter in a fetch. [enrich 2026-10-20] careers_url -> HTTP 200 at https://careers.vcuhealth.org/us/en/chor-jobs; ATS link seen: https://vcuhealth.wd1.myworkdayjobs.com/VCUHealth_careers/job/Richmond-VA/Behavioral-Health-Security-Specialist---Various-shifts--Day-Eve-Night-_R42450/apply; search_url -> HTTP 200, mentions NP: True, job links: 0",
       "ats_config": {
-        "host": "careers.vcuhealth.org"
+        "host": "careers.vcuhealth.org",
+        "flagship": true
       },
       "nearest_airport": "RIC Richmond International (about 10 mi)",
       "beds": null,
@@ -110,7 +111,8 @@
       "careers_notes": "CHKD job board at chkdcareers.org (linked from chkd.org/careers). Path-segment facets: /search/advanced-practice/jobs (APP jobs), /search/physician-assistant-nurse-practitioner-specialty/jobs, /search/inpatient-nursing-outpatient-nursing/jobs; job detail /jobs/<id>-<slug> (e.g. 2216011 Office Nurse Practitioner (Contract), Newport News). This URL layout matches the TalentBrew/Talemetry style boards other agents saw. Every WebFetch of chkdcareers.org on 2026-10-19 failed (client error or permission timeout), so rendering and ATS were not confirmed. Subspecialty APPs are often employed by Children's Specialty Group, PLLC, with a separate board at https://csgdocs.com/careers/. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.chkdcareers.org/jobs/search; search_url -> HTTP 200, mentions NP: True, job links: 25",
       "ats_config": {
         "host": "www.chkdcareers.org",
-        "csg_careers": "https://csgdocs.com/careers/"
+        "csg_careers": "https://csgdocs.com/careers/",
+        "flagship": true
       },
       "nearest_airport": "ORF Norfolk International (about 6 mi)",
       "beds": 266,
@@ -203,7 +205,8 @@
       "ats_config": {
         "host": "uva.wd1.myworkdayjobs.com",
         "tenant": "uva",
-        "site": "UVAJobs"
+        "site": "UVAJobs",
+        "flagship": true
       },
       "nearest_airport": "CHO Charlottesville-Albemarle (about 9 mi)",
       "beds": 679,

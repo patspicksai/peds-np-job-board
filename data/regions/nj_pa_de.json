@@ -27,7 +27,13 @@
           "physician-hackensackmeridianhealth.icims.com"
         ],
         "front_end_host": "jobs.hackensackmeridianhealth.org",
-        "talentbrew_company_id": "19511"
+        "talentbrew_company_id": "19511",
+        "flagship": true,
+        "location_aliases": [
+          "Hovnanian",
+          "K Hovnanian Children's Hospital",
+          "K. Hovnanian"
+        ]
       },
       "nearest_airport": "JFK John F. Kennedy International (about 33 mi straight-line); EWR Newark Liberty International about 34 mi",
       "beds": 88,
@@ -801,7 +807,8 @@
       "careers_notes": "System-wide career site renders server-side: the nurse practitioner category returned 86 jobs over 9 pages on a test fetch on 2026-10-19. City filter pattern is /jobs/nurse-practitioner/us-nj-<city>/ and job detail pages are /job/<id>/<slug>/. Applicant accounts sit on pm.healthcaresource.com (HealthcareSource), so treat as custom. NP roles are usually titled Advanced Practice Nurse and are often posted under Barnabas Health Medical Group or Rutgers University Medical Group rather than the hospital name. Physician and some APP roles also appear at rwjbh.org/careers/physician-careers/career-opportunities/. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.rwjbarnabashealthcareers.org/jobs/; search_url -> HTTP 200, mentions NP: True, job links: 137",
       "ats_config": {
         "host": "www.rwjbarnabashealthcareers.org",
-        "applicant_host": "pm.healthcaresource.com"
+        "applicant_host": "pm.healthcaresource.com",
+        "flagship": true
       },
       "nearest_airport": "EWR Newark Liberty International (about 20 mi straight-line)",
       "beds": 105,
@@ -1564,7 +1571,8 @@
       "careers_notes": "CHOP career site is a Phenom People front end (paths like careers.chop.edu/us/en/how-we-hire, job ids shaped PDN-<guid>). A test fetch of the search URL was blocked in this session, so rendering is unconfirmed; Phenom search pages are usually JS-rendered, so the scraper may need the Phenom widgets API. NP postings name the campus (Main Hospital, King of Prussia, Virtua Voorhees NICU, etc.).",
       "ats_config": {
         "host": "careers.chop.edu",
-        "locale_path": "/us/en"
+        "locale_path": "/us/en",
+        "flagship": true
       },
       "nearest_airport": "PHL Philadelphia International (about 6 mi straight-line)",
       "beds": 535,
@@ -1717,7 +1725,9 @@
       "careers_platform": "unknown",
       "careers_search_url": null,
       "careers_notes": "Careers page not reached this session (search budget exhausted and fetches rate limited). NP openings (PICU, NICU, CT surgery, Center for the Urban Child) are syndicated to NAPNAP and AAP career centers. Verify whether St. Chris posts through Tower Health's applicant system or its own.",
-      "ats_config": {},
+      "ats_config": {
+        "flagship": true
+      },
       "nearest_airport": "PHL Philadelphia International (about 11 mi straight-line)",
       "beds": 189,
       "peds_beds": 189,
@@ -1781,7 +1791,8 @@
       "careers_search_url": null,
       "careers_notes": "Careers site could not be verified this session: the web search budget ran out and direct fetches of Penn State Health pages were blocked. careers_url is the main website as a placeholder; locate the real job search page and platform before scraping. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.pennstatehealth.org/childrens",
       "ats_config": {
-        "host": "www.pennstatehealth.org"
+        "host": "www.pennstatehealth.org",
+        "flagship": true
       },
       "nearest_airport": "MDT Harrisburg International (about 7 mi straight-line); BWI Baltimore/Washington International about 75 mi",
       "beds": 134,
@@ -1852,12 +1863,13 @@
       "region": "Pennsylvania (other)",
       "hotspot": false,
       "website": "https://www.chp.edu/",
-      "careers_url": "https://www.chp.edu/",
-      "careers_platform": "unknown",
+      "careers_url": "https://careers.upmc.com/",
+      "careers_platform": "custom",
       "careers_search_url": null,
-      "careers_notes": "Careers site could not be verified this session: the web search budget ran out and direct fetches of UPMC pages were blocked. careers_url is the main website as a placeholder; locate the real job search page and platform before scraping. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.chp.edu/",
+      "careers_notes": "Careers site could not be verified this session: the web search budget ran out and direct fetches of UPMC pages were blocked. careers_url is the main website as a placeholder; locate the real job search page and platform before scraping. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.chp.edu/ [fix 2026-10-20] all UPMC jobs post on careers.upmc.com; host set so the shared-board attribution includes this hospital.",
       "ats_config": {
-        "host": "www.chp.edu"
+        "host": "careers.upmc.com",
+        "flagship": true
       },
       "nearest_airport": "PIT Pittsburgh International (about 15 mi straight-line)",
       "beds": 317,
@@ -4567,12 +4579,12 @@
       "region": "Pennsylvania (other)",
       "hotspot": false,
       "website": "https://www.upmc.com/",
-      "careers_url": "https://www.upmc.com/",
-      "careers_platform": "unknown",
+      "careers_url": "https://careers.upmc.com/",
+      "careers_platform": "custom",
       "careers_search_url": null,
-      "careers_notes": "Careers site could not be verified this session: the web search budget ran out and direct fetches of UPMC pages were blocked. careers_url is the main website as a placeholder; locate the real job search page and platform before scraping. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.upmc.com/",
+      "careers_notes": "Careers site could not be verified this session: the web search budget ran out and direct fetches of UPMC pages were blocked. careers_url is the main website as a placeholder; locate the real job search page and platform before scraping. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.upmc.com/ [fix 2026-10-20] all UPMC jobs post on careers.upmc.com; host set so the shared-board attribution includes this hospital.",
       "ats_config": {
-        "host": "www.upmc.com"
+        "host": "careers.upmc.com"
       },
       "nearest_airport": "PIT Pittsburgh International (about 15 mi straight-line)",
       "beds": 335,
@@ -4601,6 +4613,67 @@
       ],
       "notes": "Women's hospital; typed regional_hospital because the schema has no women's hospital type. Included for likely NICU and NNP roles; NICU not confirmed from a page read this session, verify.",
       "confidence": "low",
+      "active": true,
+      "_enrich": {}
+    },
+    {
+      "slug": "jersey-shore-university-medical-center-neptune",
+      "name": "Jersey Shore University Medical Center",
+      "parent_hospital": null,
+      "health_system": "Hackensack Meridian Health",
+      "hospital_type": "academic_medical_center",
+      "city": "Neptune",
+      "state": "NJ",
+      "address": "1945 Route 33, Neptune, NJ 07753",
+      "lat": 40.20801,
+      "lng": -74.04171,
+      "coord_source": "Wikipedia infobox (K. Hovnanian Children's Hospital); matches Google Places point for the JSUMC campus",
+      "region": "Jersey Shore",
+      "hotspot": true,
+      "website": "https://hackensackmeridianhealth.org/en/locations/k-hovnanian-children-hospital",
+      "careers_url": "https://jobs.hackensackmeridianhealth.org/search-jobs",
+      "careers_platform": "icims",
+      "careers_search_url": "https://careers-hackensackmeridianhealth.icims.com/jobs/search?ss=1&searchKeyword=nurse+practitioner",
+      "careers_notes": "Radancy TalentBrew front end at jobs.hackensackmeridianhealth.org (job URLs follow /job/<city>/<title>/19511/<id>; physicians and advanced practice filter is /search-jobs?acm=55884,55264). Applications run on iCIMS under the careers-, nursing- and physician- subdomains of hackensackmeridianhealth.icims.com. A test fetch of the search URL was blocked in this session, so rendering is unconfirmed; individual iCIMS job pages do render server-side text. Postings name the hospital and town (for example US-NJ-Neptune). [enrich 2026-10-20] careers_url -> HTTP 200 at https://jobs.hackensackmeridianhealth.org/search-jobs; ATS link seen: https://internal-hackensackmeridianhealth.icims.com/jobs/login?loginOnly=1&amp;redirect=&amp;hashed=-435623455; search_url -> HTTP 200, mentions NP: False, job links: 1",
+      "ats_config": {
+        "host": "careers-hackensackmeridianhealth.icims.com",
+        "alt_hosts": [
+          "nursing-hackensackmeridianhealth.icims.com",
+          "physician-hackensackmeridianhealth.icims.com"
+        ],
+        "front_end_host": "jobs.hackensackmeridianhealth.org",
+        "talentbrew_company_id": "19511",
+        "location_aliases": [
+          "Jersey Shore University Medical Center",
+          "JSUMC",
+          "Jersey Shore"
+        ]
+      },
+      "nearest_airport": "JFK John F. Kennedy International (about 33 mi straight-line); EWR Newark Liberty International about 34 mi",
+      "beds": 88,
+      "peds_beds": null,
+      "peds_inpatient": false,
+      "picu": false,
+      "picu_beds": null,
+      "nicu_level": null,
+      "peds_ed": false,
+      "peds_trauma_level": null,
+      "magnet": null,
+      "teaching": true,
+      "affiliated_university": "Hackensack Meridian School of Medicine; Rutgers Robert Wood Johnson Medical School",
+      "peds_services": [],
+      "description": "Jersey Shore University Medical Center is Hackensack Meridian Health's flagship academic medical center and Level I trauma center in Neptune, home to K. Hovnanian Children's Hospital (listed separately). This record exists so system-wide postings that name Jersey Shore University Medical Center are attributed here.",
+      "highlights": [
+        "Flagship campus of Hackensack Meridian Health",
+        "Pediatric services are recorded on the children's hospital record for this campus"
+      ],
+      "photos": [],
+      "wikipedia_title": null,
+      "sources": [
+        "derived from the children's hospital record on the same campus"
+      ],
+      "notes": "Adult flagship record added so system-board postings naming this hospital are attributed correctly. Pediatric units live on the sibling children's record.",
+      "confidence": "medium",
       "active": true,
       "_enrich": {}
     }

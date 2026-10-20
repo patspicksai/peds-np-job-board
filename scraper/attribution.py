@@ -87,5 +87,6 @@ def attribute(group: list[dict], location_text: str, extra_text: str = "", pedia
     if len(cands) > 1:
         pref = ("childrens_hospital", "childrens_hospital_within_hospital") if pediatric_title else \
             ("academic_medical_center", "regional_hospital", "community_hospital")
-        cands.sort(key=lambda h: 0 if h.get("hospital_type") in pref else 1)
+        # rank by position in the preference tuple (academic before regional before community, or children's first)
+        cands.sort(key=lambda h: pref.index(h.get("hospital_type")) if h.get("hospital_type") in pref else 9)
     return cands[0], ("name" if best >= 2 else "city")

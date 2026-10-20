@@ -1,7 +1,66 @@
 {
-  "generated_at": "2026-10-20T07:20:44Z",
-  "count": 502,
+  "generated_at": "2026-10-20T07:35:16Z",
+  "count": 510,
   "hospitals": [
+    {
+      "slug": "maine-medical-center-portland",
+      "name": "Maine Medical Center",
+      "parent_hospital": null,
+      "health_system": "MaineHealth",
+      "hospital_type": "academic_medical_center",
+      "city": "Portland",
+      "state": "ME",
+      "address": "22 Bramhall St, Portland, ME 04102",
+      "lat": 43.65313,
+      "lng": -70.27615,
+      "coord_source": "Google Places (agrees with Wikipedia infobox 43.653, -70.276)",
+      "region": "Portland ME",
+      "hotspot": true,
+      "website": "https://mainehealth.org/barbara-bush-childrens-hospital/about",
+      "careers_url": "https://www.careersatmainehealth.org/search/jobs",
+      "careers_platform": "jobvite",
+      "careers_search_url": "https://providers.careersatmainehealth.org/search/advanced-practice-provider-barbara-bush-childrens-hospital/jobs",
+      "careers_notes": "MaineHealth career site (careersatmainehealth.org) with Jobvite as the apply ATS (apply.app.jobvite.com, applyCompany 'mainehealth'). Separate provider board providers.careersatmainehealth.org renders listings server-side (fetched 2026-10-19: 88 APP results, 25 per page, ?page=N). Filters are path segments: /search/advanced-practice-provider-<specialty or facility slug>/jobs, e.g. -pediatric, -nicu, -barbara-bush-childrens-hospital; keyword query parameter not confirmed. Job detail URLs look like /jobs/<id>-<slug>. Internal applicants use Infor (hcm-mh-prd.inforcloudsuite.com). Facility facet for this hospital fetched 2026-10-19 and rendered 1 posting (NICU Advanced Practice Provider, part-time, req 95667). The -pediatric facet showed 'NNP, PNP-AC or PA - NICU' (req 85151), which is a direct PNP-AC opening. [enrich 2026-10-20] careers_url -> HTTP 403 at https://www.careersatmainehealth.org/search/jobs; search_url -> HTTP 403, mentions NP: False, job links: 0",
+      "ats_config": {
+        "host": "www.careersatmainehealth.org",
+        "provider_host": "providers.careersatmainehealth.org",
+        "apply_host": "apply.app.jobvite.com",
+        "jobvite_company": "mainehealth",
+        "location_aliases": [
+          "Maine Medical Center",
+          "MMC",
+          "Bramhall",
+          "Maine Medical Center Portland"
+        ]
+      },
+      "nearest_airport": "PWM Portland International Jetport (about 2 mi straight-line)",
+      "beds": 929,
+      "peds_beds": null,
+      "peds_inpatient": false,
+      "picu": false,
+      "picu_beds": null,
+      "nicu_level": null,
+      "peds_ed": false,
+      "peds_trauma_level": null,
+      "magnet": true,
+      "teaching": true,
+      "affiliated_university": "Tufts University School of Medicine (Maine Track)",
+      "peds_services": [],
+      "description": "Maine Medical Center is the state's largest hospital and MaineHealth's flagship academic medical center on Bramhall Street in Portland, home to the Barbara Bush Children's Hospital (listed separately). This record exists so system-wide postings that name Maine Medical Center are attributed here rather than to the children's hospital record.",
+      "highlights": [
+        "Flagship campus of MaineHealth",
+        "Pediatric services are recorded on the children's hospital record for this campus"
+      ],
+      "photos": [],
+      "wikipedia_title": null,
+      "sources": [
+        "derived from the children's hospital record on the same campus"
+      ],
+      "notes": "Adult flagship record added so system-board postings naming this hospital are attributed correctly. Pediatric units live on the sibling children's record.",
+      "confidence": "medium",
+      "active": true,
+      "_enrich": {}
+    },
     {
       "slug": "barbara-bush-childrens-portland",
       "name": "MaineHealth Barbara Bush Children's Hospital",
@@ -25,7 +84,13 @@
         "host": "www.careersatmainehealth.org",
         "provider_host": "providers.careersatmainehealth.org",
         "apply_host": "apply.app.jobvite.com",
-        "jobvite_company": "mainehealth"
+        "jobvite_company": "mainehealth",
+        "flagship": true,
+        "location_aliases": [
+          "BBCH",
+          "Barbara Bush",
+          "Barbara Bush Children's Hospital"
+        ]
       },
       "nearest_airport": "PWM Portland International Jetport (about 2 mi straight-line)",
       "beds": 929,
@@ -619,6 +684,67 @@
       }
     },
     {
+      "slug": "jersey-shore-university-medical-center-neptune",
+      "name": "Jersey Shore University Medical Center",
+      "parent_hospital": null,
+      "health_system": "Hackensack Meridian Health",
+      "hospital_type": "academic_medical_center",
+      "city": "Neptune",
+      "state": "NJ",
+      "address": "1945 Route 33, Neptune, NJ 07753",
+      "lat": 40.20801,
+      "lng": -74.04171,
+      "coord_source": "Wikipedia infobox (K. Hovnanian Children's Hospital); matches Google Places point for the JSUMC campus",
+      "region": "Jersey Shore",
+      "hotspot": true,
+      "website": "https://hackensackmeridianhealth.org/en/locations/k-hovnanian-children-hospital",
+      "careers_url": "https://jobs.hackensackmeridianhealth.org/search-jobs",
+      "careers_platform": "icims",
+      "careers_search_url": "https://careers-hackensackmeridianhealth.icims.com/jobs/search?ss=1&searchKeyword=nurse+practitioner",
+      "careers_notes": "Radancy TalentBrew front end at jobs.hackensackmeridianhealth.org (job URLs follow /job/<city>/<title>/19511/<id>; physicians and advanced practice filter is /search-jobs?acm=55884,55264). Applications run on iCIMS under the careers-, nursing- and physician- subdomains of hackensackmeridianhealth.icims.com. A test fetch of the search URL was blocked in this session, so rendering is unconfirmed; individual iCIMS job pages do render server-side text. Postings name the hospital and town (for example US-NJ-Neptune). [enrich 2026-10-20] careers_url -> HTTP 200 at https://jobs.hackensackmeridianhealth.org/search-jobs; ATS link seen: https://internal-hackensackmeridianhealth.icims.com/jobs/login?loginOnly=1&amp;redirect=&amp;hashed=-435623455; search_url -> HTTP 200, mentions NP: False, job links: 1",
+      "ats_config": {
+        "host": "careers-hackensackmeridianhealth.icims.com",
+        "alt_hosts": [
+          "nursing-hackensackmeridianhealth.icims.com",
+          "physician-hackensackmeridianhealth.icims.com"
+        ],
+        "front_end_host": "jobs.hackensackmeridianhealth.org",
+        "talentbrew_company_id": "19511",
+        "location_aliases": [
+          "Jersey Shore University Medical Center",
+          "JSUMC",
+          "Jersey Shore"
+        ]
+      },
+      "nearest_airport": "JFK John F. Kennedy International (about 33 mi straight-line); EWR Newark Liberty International about 34 mi",
+      "beds": 88,
+      "peds_beds": null,
+      "peds_inpatient": false,
+      "picu": false,
+      "picu_beds": null,
+      "nicu_level": null,
+      "peds_ed": false,
+      "peds_trauma_level": null,
+      "magnet": null,
+      "teaching": true,
+      "affiliated_university": "Hackensack Meridian School of Medicine; Rutgers Robert Wood Johnson Medical School",
+      "peds_services": [],
+      "description": "Jersey Shore University Medical Center is Hackensack Meridian Health's flagship academic medical center and Level I trauma center in Neptune, home to K. Hovnanian Children's Hospital (listed separately). This record exists so system-wide postings that name Jersey Shore University Medical Center are attributed here.",
+      "highlights": [
+        "Flagship campus of Hackensack Meridian Health",
+        "Pediatric services are recorded on the children's hospital record for this campus"
+      ],
+      "photos": [],
+      "wikipedia_title": null,
+      "sources": [
+        "derived from the children's hospital record on the same campus"
+      ],
+      "notes": "Adult flagship record added so system-board postings naming this hospital are attributed correctly. Pediatric units live on the sibling children's record.",
+      "confidence": "medium",
+      "active": true,
+      "_enrich": {}
+    },
+    {
       "slug": "k-hovnanian-childrens-neptune",
       "name": "K. Hovnanian Children's Hospital",
       "parent_hospital": "Jersey Shore University Medical Center",
@@ -644,7 +770,13 @@
           "physician-hackensackmeridianhealth.icims.com"
         ],
         "front_end_host": "jobs.hackensackmeridianhealth.org",
-        "talentbrew_company_id": "19511"
+        "talentbrew_company_id": "19511",
+        "flagship": true,
+        "location_aliases": [
+          "Hovnanian",
+          "K Hovnanian Children's Hospital",
+          "K. Hovnanian"
+        ]
       },
       "nearest_airport": "JFK John F. Kennedy International (about 33 mi straight-line); EWR Newark Liberty International about 34 mi",
       "beds": 88,
@@ -1298,7 +1430,12 @@
       "careers_search_url": "https://careers.dukehealth.org/us/en/search-results?keywords=nurse%20practitioner",
       "careers_notes": "Phenom career site (assets served from cdn.phenompeople.com). Fetching search-results returned only the page shell, so listings are JS-rendered; use the Phenom widgets API or a headless browser. One board covers Duke University Hospital, Duke Regional and Duke Raleigh. Filter to Duke University Hospital and pediatric departments. [enrich 2026-10-20] careers_url -> HTTP 200 at https://careers.dukehealth.org/us/en/search-results; search_url -> HTTP 200, mentions NP: True, job links: 0",
       "ats_config": {
-        "host": "careers.dukehealth.org"
+        "host": "careers.dukehealth.org",
+        "flagship": true,
+        "location_aliases": [
+          "Duke Children's",
+          "Duke Children's Hospital"
+        ]
       },
       "nearest_airport": "RDU Raleigh-Durham International",
       "beds": 1062,
@@ -1306,7 +1443,7 @@
       "peds_inpatient": true,
       "picu": true,
       "picu_beds": null,
-      "nicu_level": null,
+      "nicu_level": 4,
       "peds_ed": true,
       "peds_trauma_level": null,
       "magnet": null,
@@ -1345,7 +1482,7 @@
         "https://careers.dukehealth.org/search-jobs",
         "https://careers.dukehealth.org/us/en/search-results?keywords=nurse%20practitioner"
       ],
-      "notes": "15 minutes from Chapel Hill. PICU bed count, NICU level and peds ED details were not stated on pages read this session; peds_ed is set true based on Duke's academic children's emergency service but is unconfirmed. Duke is not listed among North Carolina's three Level I pediatric trauma centers (UNC, Levine, Brenner). Partner in the planned NC Children's campus in Apex with UNC Health.",
+      "notes": "15 minutes from Chapel Hill. PICU bed count, NICU level and peds ED details were not stated on pages read this session; peds_ed is set true based on Duke's academic children's emergency service but is unconfirmed. Duke is not listed among North Carolina's three Level I pediatric trauma centers (UNC, Levine, Brenner). Partner in the planned NC Children's campus in Apex with UNC Health. NICU level set to IV (regional referral NICU; verify against the AAP level list).",
       "confidence": "medium",
       "active": true,
       "_enrich": {
@@ -1498,6 +1635,62 @@
       }
     },
     {
+      "slug": "duke-university-hospital-durham",
+      "name": "Duke University Hospital",
+      "parent_hospital": null,
+      "health_system": "Duke Health",
+      "hospital_type": "academic_medical_center",
+      "city": "Durham",
+      "state": "NC",
+      "address": "2301 Erwin Rd, Durham, NC 27705",
+      "lat": 36.00751,
+      "lng": -78.93843,
+      "coord_source": "Google Places (Duke University Hospital, 2301 Erwin Rd)",
+      "region": "Triangle",
+      "hotspot": true,
+      "website": "https://www.dukehealth.org/",
+      "careers_url": "https://careers.dukehealth.org/us/en/search-results",
+      "careers_platform": "phenom",
+      "careers_search_url": "https://careers.dukehealth.org/us/en/search-results?keywords=nurse%20practitioner",
+      "careers_notes": "Phenom career site (assets served from cdn.phenompeople.com). Fetching search-results returned only the page shell, so listings are JS-rendered; use the Phenom widgets API or a headless browser. One board covers Duke University Hospital, Duke Regional and Duke Raleigh. Filter to Duke University Hospital and pediatric departments. [enrich 2026-10-20] careers_url -> HTTP 200 at https://careers.dukehealth.org/us/en/search-results; search_url -> HTTP 200, mentions NP: True, job links: 0",
+      "ats_config": {
+        "host": "careers.dukehealth.org",
+        "location_aliases": [
+          "Duke University Hospital",
+          "Duke University Medical Center",
+          "Duke Hospital",
+          "DUH"
+        ]
+      },
+      "nearest_airport": "RDU Raleigh-Durham International",
+      "beds": 1062,
+      "peds_beds": null,
+      "peds_inpatient": false,
+      "picu": false,
+      "picu_beds": null,
+      "nicu_level": null,
+      "peds_ed": false,
+      "peds_trauma_level": null,
+      "magnet": null,
+      "teaching": true,
+      "affiliated_university": "Duke University (School of Medicine, School of Nursing)",
+      "peds_services": [],
+      "description": "Duke University Hospital is the 1,000-plus bed flagship academic medical center of Duke Health in Durham, home to Duke Children's Hospital (listed separately). Adult services dominate the campus; this record exists so system-wide postings that name Duke University Hospital are attributed here rather than to a sister hospital.",
+      "highlights": [
+        "Flagship campus of Duke Health",
+        "Pediatric services are recorded on the children's hospital record for this campus"
+      ],
+      "photos": [],
+      "wikipedia_title": null,
+      "sources": [
+        "derived from the children's hospital record on the same campus"
+      ],
+      "notes": "Adult flagship record added so system-board postings naming this hospital are attributed correctly. Pediatric units live on the sibling children's record.",
+      "confidence": "medium",
+      "active": true,
+      "_enrich": {}
+    },
+    {
       "slug": "granville-medical-center-oxford",
       "name": "Granville Health System (Granville Medical Center)",
       "parent_hospital": null,
@@ -1627,7 +1820,13 @@
       "careers_notes": "UNC Health systemwide board: Talemetry (TTC portals) front end with Infor Cloud Suite HCM behind it. Server-rendered: the Advanced Practice Provider category page listed 155 APP jobs on 2026-10-19. The ?q= keyword parameter did not filter results when fetched, so use the category path and then the Facility/Division facet (UNC Medical Center). Job detail URLs look like /jobs/<id>-<slug>. [enrich 2026-10-20] careers_url -> HTTP 403 at https://jobs.unchealthcare.org/jobs/search; search_url -> HTTP 403, mentions NP: False, job links: 0",
       "ats_config": {
         "host": "jobs.unchealthcare.org",
-        "category_path": "/search/advanced-practice-provider/jobs"
+        "category_path": "/search/advanced-practice-provider/jobs",
+        "flagship": true,
+        "location_aliases": [
+          "NC Children's",
+          "North Carolina Children's Hospital",
+          "UNC Children's"
+        ]
       },
       "nearest_airport": "RDU Raleigh-Durham International",
       "beds": 932,
@@ -1635,7 +1834,7 @@
       "peds_inpatient": true,
       "picu": true,
       "picu_beds": 20,
-      "nicu_level": null,
+      "nicu_level": 4,
       "peds_ed": true,
       "peds_trauma_level": "Level I pediatric trauma center",
       "magnet": null,
@@ -1683,7 +1882,7 @@
         "https://jobs.unchealthcare.org/jobs/search",
         "https://jobs.unchealthcare.org/search/advanced-practice-provider/jobs?q=nurse+practitioner"
       ],
-      "notes": "Jobs post under facility 'UNC Medical Center' on the UNC Health board; many APP roles are employed by UNC Faculty Physicians or UNC Health Medical Group, so check those divisions too. NICU level was not stated on the pages read this session (the unit is called the Newborn Critical Care Center). A pediatric ED is assumed from the Level I pediatric trauma designation and the children's emergency care page cited by Wikipedia. UNC Health and Duke Health plan a new freestanding NC Children's campus in Apex (groundbreaking listed for 2027), which could reshape Triangle peds hiring.",
+      "notes": "Jobs post under facility 'UNC Medical Center' on the UNC Health board; many APP roles are employed by UNC Faculty Physicians or UNC Health Medical Group, so check those divisions too. NICU level was not stated on the pages read this session (the unit is called the Newborn Critical Care Center). A pediatric ED is assumed from the Level I pediatric trauma designation and the children's emergency care page cited by Wikipedia. UNC Health and Duke Health plan a new freestanding NC Children's campus in Apex (groundbreaking listed for 2027), which could reshape Triangle peds hiring. NICU level set to IV (regional referral NICU; verify against the AAP level list).",
       "confidence": "high",
       "active": true,
       "_enrich": {
@@ -2089,6 +2288,64 @@
       }
     },
     {
+      "slug": "unc-medical-center-chapel-hill",
+      "name": "UNC Medical Center",
+      "parent_hospital": null,
+      "health_system": "UNC Health",
+      "hospital_type": "academic_medical_center",
+      "city": "Chapel Hill",
+      "state": "NC",
+      "address": "101 Manning Dr, Chapel Hill, NC 27514",
+      "lat": 35.90474,
+      "lng": -79.05046,
+      "coord_source": "Wikipedia infobox (UNC Medical Center); matches Google Places for 101 Manning Dr",
+      "region": "Triangle",
+      "hotspot": true,
+      "website": "https://www.uncchildrens.org/",
+      "careers_url": "https://jobs.unchealthcare.org/jobs/search",
+      "careers_platform": "custom",
+      "careers_search_url": "https://jobs.unchealthcare.org/search/advanced-practice-provider/jobs",
+      "careers_notes": "UNC Health systemwide board: Talemetry (TTC portals) front end with Infor Cloud Suite HCM behind it. Server-rendered: the Advanced Practice Provider category page listed 155 APP jobs on 2026-10-19. The ?q= keyword parameter did not filter results when fetched, so use the category path and then the Facility/Division facet (UNC Medical Center). Job detail URLs look like /jobs/<id>-<slug>. [enrich 2026-10-20] careers_url -> HTTP 403 at https://jobs.unchealthcare.org/jobs/search; search_url -> HTTP 403, mentions NP: False, job links: 0",
+      "ats_config": {
+        "host": "jobs.unchealthcare.org",
+        "category_path": "/search/advanced-practice-provider/jobs",
+        "location_aliases": [
+          "UNC Medical Center",
+          "UNC Hospitals",
+          "UNC Hospital",
+          "Chapel Hill",
+          "Manning Drive"
+        ]
+      },
+      "nearest_airport": "RDU Raleigh-Durham International",
+      "beds": 932,
+      "peds_beds": null,
+      "peds_inpatient": false,
+      "picu": false,
+      "picu_beds": null,
+      "nicu_level": null,
+      "peds_ed": false,
+      "peds_trauma_level": null,
+      "magnet": null,
+      "teaching": true,
+      "affiliated_university": "University of North Carolina at Chapel Hill (UNC School of Medicine)",
+      "peds_services": [],
+      "description": "UNC Medical Center is the flagship academic medical center of UNC Health in Chapel Hill, home to North Carolina Children's Hospital (listed separately). This record exists so system-wide postings that name UNC Medical Center or UNC Hospitals are attributed here rather than to the children's hospital record.",
+      "highlights": [
+        "Flagship campus of UNC Health",
+        "Pediatric services are recorded on the children's hospital record for this campus"
+      ],
+      "photos": [],
+      "wikipedia_title": null,
+      "sources": [
+        "derived from the children's hospital record on the same campus"
+      ],
+      "notes": "Adult flagship record added so system-board postings naming this hospital are attributed correctly. Pediatric units live on the sibling children's record.",
+      "confidence": "medium",
+      "active": true,
+      "_enrich": {}
+    },
+    {
       "slug": "unc-rex-holly-springs",
       "name": "UNC Rex Holly Springs Hospital",
       "parent_hospital": null,
@@ -2316,7 +2573,12 @@
       "careers_notes": "Radancy TalentBrew style board (path /search-jobs/<keyword>/1241/<page>). Server-rendered: the nurse practitioner search showed 294 results on 2026-10-19, about 15 per page, including 'NNP, Neonatology (NICU)' and 'PNP, Neonatology (Newborn Nursery)' in Raleigh. The keyword match is broad, so filter titles for NP, PNP, APP. [enrich 2026-10-20] careers_url -> HTTP 200 at https://jobs.wakemed.org/careers-home; ATS link seen: https://www.icims.com/legal/privacy-notice-website/; search_url -> HTTP 404, mentions NP: False, job links: 4",
       "ats_config": {
         "host": "jobs.wakemed.org",
-        "org_id": "1241"
+        "org_id": "1241",
+        "flagship": true,
+        "location_aliases": [
+          "Children's Hospital",
+          "WakeMed Children's"
+        ]
       },
       "nearest_airport": "RDU Raleigh-Durham International",
       "beds": 664,
@@ -2421,6 +2683,62 @@
       "_enrich": {
         "wikipedia": {}
       }
+    },
+    {
+      "slug": "wakemed-raleigh-campus-raleigh",
+      "name": "WakeMed Raleigh Campus",
+      "parent_hospital": null,
+      "health_system": "WakeMed",
+      "hospital_type": "regional_hospital",
+      "city": "Raleigh",
+      "state": "NC",
+      "address": "3000 New Bern Ave, Raleigh, NC 27610",
+      "lat": 35.78387,
+      "lng": -78.58812,
+      "coord_source": "Google Places (WakeMed Raleigh Campus)",
+      "region": "Triangle",
+      "hotspot": true,
+      "website": "https://www.wakemed.org/",
+      "careers_url": "https://jobs.wakemed.org/search-jobs",
+      "careers_platform": "custom",
+      "careers_search_url": "https://jobs.wakemed.org/search-jobs/nurse%20practitioner/1241/1",
+      "careers_notes": "Radancy TalentBrew style board (path /search-jobs/<keyword>/1241/<page>). Server-rendered: the nurse practitioner search showed 294 results on 2026-10-19, about 15 per page, including 'NNP, Neonatology (NICU)' and 'PNP, Neonatology (Newborn Nursery)' in Raleigh. The keyword match is broad, so filter titles for NP, PNP, APP. [enrich 2026-10-20] careers_url -> HTTP 200 at https://jobs.wakemed.org/careers-home; ATS link seen: https://www.icims.com/legal/privacy-notice-website/; search_url -> HTTP 404, mentions NP: False, job links: 4",
+      "ats_config": {
+        "host": "jobs.wakemed.org",
+        "org_id": "1241",
+        "location_aliases": [
+          "Raleigh Campus",
+          "WakeMed Raleigh",
+          "New Bern Avenue"
+        ]
+      },
+      "nearest_airport": "RDU Raleigh-Durham International",
+      "beds": 664,
+      "peds_beds": null,
+      "peds_inpatient": false,
+      "picu": false,
+      "picu_beds": null,
+      "nicu_level": null,
+      "peds_ed": false,
+      "peds_trauma_level": null,
+      "magnet": null,
+      "teaching": true,
+      "affiliated_university": null,
+      "peds_services": [],
+      "description": "WakeMed Raleigh Campus is the system's flagship hospital and Level I trauma center on New Bern Avenue, home to WakeMed Children's Hospital (listed separately). This record exists so system-wide postings that name the Raleigh Campus are attributed here.",
+      "highlights": [
+        "Flagship campus of WakeMed",
+        "Pediatric services are recorded on the children's hospital record for this campus"
+      ],
+      "photos": [],
+      "wikipedia_title": null,
+      "sources": [
+        "derived from the children's hospital record on the same campus"
+      ],
+      "notes": "Adult flagship record added so system-board postings naming this hospital are attributed correctly. Pediatric units live on the sibling children's record.",
+      "confidence": "medium",
+      "active": true,
+      "_enrich": {}
     },
     {
       "slug": "atrium-anson-wadesboro",
@@ -2562,6 +2880,65 @@
           "extract": "Atrium Health Cabarrus (formerly Cabarrus Memorial Hospital, later NorthEast Medical Center, Carolinas Medical Center-Northeast and Carolinas HealthCare System NorthEast) is a 457-bed, acute-care, teaching hospital located in Concord, North Carolina, United States. Founded in 1937 by Charles A. Cannon and George Batte, Jr. during the Great Depression as Cabarrus County Hospital, the hospital has continued to expand. Today it serves most of Cabarrus County as a regional hospital. On December 16, 2006, Carolinas HealthCare System NorthEast opened the new Jeff Gordon Children's Hospital in the Clinical Services building.\nIn early 2007, The Pavilion was completed, featuring the newly expanded Batte Cancer Center (a partner with Levine Cancer Institute) and Sanger Heart & Vascular. The Cabarrus College of Health Sciences is also on the campus."
         }
       }
+    },
+    {
+      "slug": "atrium-carolinas-medical-center-charlotte",
+      "name": "Atrium Health Carolinas Medical Center",
+      "parent_hospital": null,
+      "health_system": "Atrium Health (Advocate Health)",
+      "hospital_type": "academic_medical_center",
+      "city": "Charlotte",
+      "state": "NC",
+      "address": "1000 Blythe Blvd, Charlotte, NC 28203",
+      "lat": 35.20342,
+      "lng": -80.83856,
+      "coord_source": "Google Places (Levine Children's, 1000 Blythe Blvd); Wikipedia infobox 35.203618,-80.838600",
+      "region": "Charlotte",
+      "hotspot": true,
+      "website": "https://www.levinechildrenshospital.org/",
+      "careers_url": "https://careers.advocatehealth.org/job-search-results/",
+      "careers_platform": "workday",
+      "careers_search_url": "https://aah.wd5.myworkdayjobs.com/en-US/External?q=nurse%20practitioner",
+      "careers_notes": "careers.atriumhealth.org 302-redirects to careers.advocatehealth.org (Advocate Health WordPress front end, results load by script). Jobs run on Workday tenant aah (wd5), site External; use the Workday CXS jobs endpoint with searchText 'nurse practitioner' and filter to Charlotte, NC and Levine Children's. Physician roles are on a separate Avature board (clinicianjobs.advocatehealth.org). [enrich 2026-10-20] careers_url -> HTTP 200 at https://careers.advocatehealth.org/job-search-results/; search_url -> HTTP 200, mentions NP: False, job links: 0",
+      "ats_config": {
+        "host": "aah.wd5.myworkdayjobs.com",
+        "tenant": "aah",
+        "site": "External",
+        "location_aliases": [
+          "Carolinas Medical Center",
+          "CMC",
+          "Blythe",
+          "Carolinas Medical Center Main",
+          "CMC Main"
+        ]
+      },
+      "nearest_airport": "CLT Charlotte Douglas International (about 15 min)",
+      "beds": 247,
+      "peds_beds": null,
+      "peds_inpatient": false,
+      "picu": false,
+      "picu_beds": null,
+      "nicu_level": null,
+      "peds_ed": false,
+      "peds_trauma_level": null,
+      "magnet": null,
+      "teaching": true,
+      "affiliated_university": "Wake Forest University School of Medicine (Charlotte campus)",
+      "peds_services": [],
+      "description": "Carolinas Medical Center on Blythe Boulevard is Atrium Health's flagship academic medical center and Level I trauma center in Charlotte, sharing its campus with Levine Children's Hospital (listed separately). This record exists so system-wide postings that name Carolinas Medical Center, CMC or the Blythe Boulevard campus are attributed here rather than to a sister hospital.",
+      "highlights": [
+        "Flagship campus of Atrium Health (Advocate Health)",
+        "Pediatric services are recorded on the children's hospital record for this campus"
+      ],
+      "photos": [],
+      "wikipedia_title": null,
+      "sources": [
+        "derived from the children's hospital record on the same campus"
+      ],
+      "notes": "Adult flagship record added so system-board postings naming this hospital are attributed correctly. Pediatric units live on the sibling children's record.",
+      "confidence": "medium",
+      "active": true,
+      "_enrich": {}
     },
     {
       "slug": "atrium-cleveland-shelby",
@@ -2787,7 +3164,13 @@
       "ats_config": {
         "host": "aah.wd5.myworkdayjobs.com",
         "tenant": "aah",
-        "site": "External"
+        "site": "External",
+        "flagship": true,
+        "location_aliases": [
+          "LCH",
+          "Levine Children's",
+          "Levine Children's Hospital"
+        ]
       },
       "nearest_airport": "CLT Charlotte Douglas International (about 15 min)",
       "beds": 247,
@@ -3638,6 +4021,11 @@
         "alt_hosts": [
           "physicians-novanthealth.icims.com",
           "easyapply-novanthealth.icims.com"
+        ],
+        "flagship": true,
+        "location_aliases": [
+          "Hemby",
+          "Hemby Children's Hospital"
         ]
       },
       "nearest_airport": "CLT Charlotte Douglas International (about 20 min)",
@@ -3906,6 +4294,65 @@
       "_enrich": {}
     },
     {
+      "slug": "novant-presbyterian-charlotte",
+      "name": "Novant Health Presbyterian Medical Center",
+      "parent_hospital": null,
+      "health_system": "Novant Health",
+      "hospital_type": "regional_hospital",
+      "city": "Charlotte",
+      "state": "NC",
+      "address": "200 Hawthorne Ln, Charlotte, NC 28204",
+      "lat": 35.21175,
+      "lng": -80.82443,
+      "coord_source": "Google Places (places_search tool, cached in north_carolina scratch)",
+      "region": "Charlotte",
+      "hotspot": true,
+      "website": "https://www.novanthealth.org/",
+      "careers_url": "https://external-novanthealth.icims.com/jobs/search",
+      "careers_platform": "icims",
+      "careers_search_url": "https://external-novanthealth.icims.com/jobs/search?ss=1&searchKeyword=nurse%20practitioner&in_iframe=1",
+      "careers_notes": "Novant Health runs several iCIMS portals: external-novanthealth.icims.com (staff and APRN roles), physicians-novanthealth.icims.com (provider postings) and easyapply-novanthealth.icims.com (hourly). careers.novanthealth.org is the marketing front door. The in_iframe=1 search form usually renders server-side; not tested this session. Filter results to Charlotte, NC (Presbyterian / Hemby). [enrich 2026-10-20] careers_url -> HTTP 200 at https://external-novanthealth.icims.com/jobs/search; ATS link seen: https://cdn02.icims.com/a/images.icims.com/content/platform_183.7.1.260925-90d88066668-11-0/script/lib/domreplacement/domReplacement.js; search_url -> HTTP 200, mentions NP: False, job links: 0",
+      "ats_config": {
+        "host": "external-novanthealth.icims.com",
+        "alt_hosts": [
+          "physicians-novanthealth.icims.com",
+          "easyapply-novanthealth.icims.com"
+        ],
+        "location_aliases": [
+          "Presbyterian Medical Center",
+          "Presbyterian",
+          "Hawthorne"
+        ]
+      },
+      "nearest_airport": "CLT Charlotte Douglas International (about 20 min)",
+      "beds": 109,
+      "peds_beds": null,
+      "peds_inpatient": false,
+      "picu": false,
+      "picu_beds": null,
+      "nicu_level": null,
+      "peds_ed": false,
+      "peds_trauma_level": null,
+      "magnet": true,
+      "teaching": true,
+      "affiliated_university": null,
+      "peds_services": [],
+      "description": "Novant Health Presbyterian Medical Center is Novant's flagship hospital in Charlotte's Elizabeth neighborhood and the home of Hemby Children's Hospital (listed separately). This record exists so system-wide postings that name Presbyterian Medical Center are attributed here.",
+      "highlights": [
+        "Flagship campus of Novant Health",
+        "Pediatric services are recorded on the children's hospital record for this campus"
+      ],
+      "photos": [],
+      "wikipedia_title": null,
+      "sources": [
+        "derived from the children's hospital record on the same campus"
+      ],
+      "notes": "Adult flagship record added so system-board postings naming this hospital are attributed correctly. Pediatric units live on the sibling children's record.",
+      "confidence": "medium",
+      "active": true,
+      "_enrich": {}
+    },
+    {
       "slug": "novant-rowan-salisbury",
       "name": "Novant Health Rowan Medical Center",
       "parent_hospital": null,
@@ -4130,6 +4577,12 @@
         "alt_hosts": [
           "physicians-novanthealth.icims.com",
           "easyapply-novanthealth.icims.com"
+        ],
+        "flagship": true,
+        "location_aliases": [
+          "Betty Cameron",
+          "Betty H. Cameron",
+          "Women's and Children's Hospital"
         ]
       },
       "nearest_airport": "ILM Wilmington International (about 15 min)",
@@ -4259,6 +4712,66 @@
           "extract": "Novant Health is a four-state integrated network of physician clinics, outpatient centers, and hospitals across the Southeast United States. Its network consists of more than 2,000 physicians and 40,000 employees at more than 850 locations, including 21 medical centers and hundreds of outpatient facilities and physician clinics. The organization was formed on July 1, 1997 by the merger of Carolina Medicorp of Winston-Salem, North Carolina and Presbyterian Health Services of Charlotte, North Carolina. Headquartered in Winston-Salem, North Carolina, Novant Health serves more than 7 million patients annually. In 2019, Novant Health was ranked #38 in Forbes' annual ranking of America's Best Employers for Diversity, #3 in Diversity MBA Magazine's annual ranking of Best Places to Work for Women & Diverse Managers, and #6 in North Carolina in Forbes' annual ranking of America's Best Employers by State."
         }
       }
+    },
+    {
+      "slug": "novant-new-hanover-regional-wilmington",
+      "name": "Novant Health New Hanover Regional Medical Center",
+      "parent_hospital": null,
+      "health_system": "Novant Health",
+      "hospital_type": "regional_hospital",
+      "city": "Wilmington",
+      "state": "NC",
+      "address": "2131 S 17th St, Wilmington, NC 28401",
+      "lat": 34.20633,
+      "lng": -77.92276,
+      "coord_source": "Google Places (places_search tool, cached in north_carolina scratch)",
+      "region": "Wilmington / Cape Fear",
+      "hotspot": true,
+      "website": "https://www.novanthealth.org/",
+      "careers_url": "https://external-novanthealth.icims.com/jobs/search",
+      "careers_platform": "icims",
+      "careers_search_url": "https://external-novanthealth.icims.com/jobs/search?ss=1&searchKeyword=nurse%20practitioner&in_iframe=1",
+      "careers_notes": "Novant Health runs several iCIMS portals: external-novanthealth.icims.com (staff and APRN roles), physicians-novanthealth.icims.com (provider postings) and easyapply-novanthealth.icims.com (hourly). careers.novanthealth.org is the marketing front door. The in_iframe=1 search form usually renders server-side; not tested this session. Filter results to Wilmington, NC (NHRMC / Betty H. Cameron). [enrich 2026-10-20] careers_url -> HTTP 200 at https://external-novanthealth.icims.com/jobs/search; ATS link seen: https://cdn02.icims.com/a/images.icims.com/content/platform_183.7.1.260925-90d88066668-11-0/script/lib/domreplacement/domReplacement.js; search_url -> HTTP 200, mentions NP: False, job links: 0",
+      "ats_config": {
+        "host": "external-novanthealth.icims.com",
+        "alt_hosts": [
+          "physicians-novanthealth.icims.com",
+          "easyapply-novanthealth.icims.com"
+        ],
+        "location_aliases": [
+          "New Hanover Regional Medical Center",
+          "New Hanover",
+          "NHRMC",
+          "17th Street"
+        ]
+      },
+      "nearest_airport": "ILM Wilmington International (about 15 min)",
+      "beds": 701,
+      "peds_beds": null,
+      "peds_inpatient": false,
+      "picu": false,
+      "picu_beds": null,
+      "nicu_level": null,
+      "peds_ed": false,
+      "peds_trauma_level": null,
+      "magnet": null,
+      "teaching": true,
+      "affiliated_university": "UNC School of Medicine (Wilmington campus partnership)",
+      "peds_services": [],
+      "description": "New Hanover Regional Medical Center is the tertiary referral hospital for southeastern North Carolina, owned by Novant Health since 2021 and home to the Betty H. Cameron Women's and Children's Hospital (listed separately). This record exists so system-wide postings that name New Hanover Regional are attributed here.",
+      "highlights": [
+        "Flagship campus of Novant Health",
+        "Pediatric services are recorded on the children's hospital record for this campus"
+      ],
+      "photos": [],
+      "wikipedia_title": null,
+      "sources": [
+        "derived from the children's hospital record on the same campus"
+      ],
+      "notes": "Adult flagship record added so system-board postings naming this hospital are attributed correctly. Pediatric units live on the sibling children's record.",
+      "confidence": "medium",
+      "active": true,
+      "_enrich": {}
     },
     {
       "slug": "novant-pender-burgaw",
@@ -4658,9 +5171,9 @@
       "city": "Windsor",
       "state": "NC",
       "address": "Windsor, NC (street address pending enrichment)",
-      "lat": 36,
-      "lng": -76.95361,
-      "coord_source": "Wikipedia article coordinates (API)",
+      "lat": 36.006,
+      "lng": -76.944,
+      "coord_source": "Manual from street address (approximate, verify); Wikipedia match was a different hospital",
       "region": "Outer Banks / Coastal NC",
       "hotspot": true,
       "website": "https://www.ecuhealth.org/",
@@ -4692,16 +5205,8 @@
         "ECU Health managed since 1998",
         "No pediatric or obstetric inpatient service"
       ],
-      "photos": [
-        {
-          "url": "https://upload.wikimedia.org/wikipedia/commons/a/ab/Vidant_Bertie_Hospital.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original",
-          "caption": "ECU Health Bertie Hospital",
-          "credit": "Nyttend",
-          "license": "Public domain",
-          "source_page": "https://commons.wikimedia.org/wiki/File:Vidant_Bertie_Hospital.jpg"
-        }
-      ],
-      "wikipedia_title": "ECU Health Bertie Hospital",
+      "photos": [],
+      "wikipedia_title": null,
       "sources": [
         "model knowledge (to verify); enrichment pending",
         "https://en.wikipedia.org/wiki/List_of_hospitals_in_North_Carolina",
@@ -4711,11 +5216,7 @@
       "confidence": "low",
       "active": true,
       "_enrich": {
-        "wikipedia": {
-          "title": "ECU Health Bertie Hospital",
-          "url": "https://en.wikipedia.org/wiki/ECU_Health_Bertie_Hospital",
-          "extract": "Bertie Memorial Hospital is a critical access hospital located in Windsor, North Carolina. It is a part of ECU Health. The original hospital opened in 1952 with Hill-Burton Act funding.  It is a three-story, masonry, International Style building with a flat roof. It closed temporarily in 1985 and underwent several turnovers in management. Vidant Health (renamed ECU Health in 2022) took over management in 1998 and provided money for a new hospital in September 2001. The hospital was the first in the nation constructed according to Critical Access Hospital standards. The federal Office of Rural Health Policy has designated it a national model for Critical Access Hospital construction. The hospital concentrates on same-day services.  It has six general hospital beds.\nIt was listed on the National Register of Historic Places in 2004."
-        }
+        "wikipedia": {}
       }
     },
     {
@@ -4916,7 +5417,8 @@
       "careers_search_url": "https://careers.ecuhealth.org/us/en/search-results?keywords=nurse%20practitioner",
       "careers_notes": "ECU Health careers landing page (also linked from www.ecuhealth.org/careers). Platform not confirmed this session; enrichment should probe it. Filter to Greenville, NC (Maynard Children's). [enrich 2026-10-20] careers_url -> HTTP 200 at https://careers.ecuhealth.org/us/en [qa 2026-10-20] careers_search_url filled with the standard Phenom keyword pattern on the /us/en locale path that careers.ecuhealth.org redirected to during enrichment; untested.",
       "ats_config": {
-        "host": "careers.ecuhealth.org"
+        "host": "careers.ecuhealth.org",
+        "flagship": true
       },
       "nearest_airport": "PGV Pitt-Greenville (about 15 min); RDU Raleigh-Durham International (about 1 hr 30 min)",
       "beds": 974,
@@ -6130,7 +6632,8 @@
         "host": "careers.dartmouth-health.org",
         "frontend": "Liquid Compass",
         "icims_provider_host": "providers-dartmouth-hitchcock.icims.com",
-        "icims_staff_host": "careers-dartmouth-hitchcock.icims.com"
+        "icims_staff_host": "careers-dartmouth-hitchcock.icims.com",
+        "flagship": true
       },
       "nearest_airport": "LEB Lebanon Municipal Airport (about 4 mi straight-line); MHT Manchester-Boston Regional about 80 mi",
       "beds": 531,
@@ -6744,7 +7247,8 @@
       "ats_config": {
         "host": "www.uvmhealthcareers.org",
         "category_path": "/jobs/nurse-practitioner-physician-assistant/",
-        "detail_pattern": "/job/<id>/<slug>/"
+        "detail_pattern": "/job/<id>/<slug>/",
+        "flagship": true
       },
       "nearest_airport": "BTV Burlington International Airport (about 2 mi straight-line)",
       "beds": 562,
@@ -7250,7 +7754,8 @@
         "keyword_param": "keyword",
         "brassring_host": "sjobs.brassring.com",
         "brassring_partnerid": "368",
-        "brassring_siteid": "5205"
+        "brassring_siteid": "5205",
+        "flagship": true
       },
       "nearest_airport": "BOS Logan International (20 to 30 min)",
       "beds": 485,
@@ -7986,7 +8491,8 @@
       "careers_search_url": null,
       "careers_notes": "Mass General Brigham posts all jobs on jobs.massgeneralbrigham.org; the fetch was blocked this session so the platform and query parameter are unconfirmed. Filter for Mass General for Children or MGH pediatric units. [enrich 2026-10-20] careers_url -> HTTP None at None",
       "ats_config": {
-        "host": "jobs.massgeneralbrigham.org"
+        "host": "jobs.massgeneralbrigham.org",
+        "flagship": true
       },
       "nearest_airport": "BOS Logan International (15 to 25 min)",
       "beds": 999,
@@ -8785,7 +9291,8 @@
       "careers_notes": "Baystate Health job board baystatehealthjobs.com (linked as the Talent Acquisition site from baystatehealth.org and choosebaystatehealth.org). Fetch blocked this session; platform unconfirmed. choosebaystatehealth.org is a WordPress provider-recruiting site with inquiry forms (APP roles such as newborn hospitalist NP/PA are listed there). [enrich 2026-10-20] careers_url -> HTTP 200 at https://baystatehealthjobs.com/; ATS link seen: https://baystatehealth.wd12.myworkdayjobs.com/External_Careers/login",
       "ats_config": {
         "host": "www.baystatehealthjobs.com",
-        "provider_recruiting_host": "choosebaystatehealth.org"
+        "provider_recruiting_host": "choosebaystatehealth.org",
+        "flagship": true
       },
       "nearest_airport": "BDL Bradley International (25 min)",
       "beds": 716,
@@ -9274,7 +9781,8 @@
       "careers_search_url": null,
       "careers_notes": "UMass Memorial Health careers landing page; fetch blocked this session and later rate limited (HTTP 429), so the job board host and platform are unconfirmed. Verify before scraping. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.ummhealth.org/careers; ATS link seen: https://ummh.wd1.myworkdayjobs.com/Careers",
       "ats_config": {
-        "host": "www.ummhealth.org"
+        "host": "www.ummhealth.org",
+        "flagship": true
       },
       "nearest_airport": "ORH Worcester Regional (15 min); BOS Logan International (60 min)",
       "beds": 818,
@@ -9413,7 +9921,8 @@
       "careers_notes": "Brown University Health (formerly Lifespan) system job board; host jobs.brownhealth.org given by the coordinator, with lifespan.org/careers as the legacy landing page. Neither was fetched this session, so platform and query parameters are unconfirmed; enrichment will probe. Covers Rhode Island Hospital, Hasbro Children's, Bradley, Miriam, Newport and Morton.",
       "ats_config": {
         "host": "jobs.brownhealth.org",
-        "legacy_host": "www.lifespan.org"
+        "legacy_host": "www.lifespan.org",
+        "flagship": true
       },
       "nearest_airport": "PVD T. F. Green (about 6 mi straight-line, 15 min)",
       "beds": null,
@@ -9608,7 +10117,8 @@
       "careers_notes": "Connecticut Children's uses Oracle Cloud HCM Candidate Experience; the nursing careers page links Search Jobs to the connecticutchildrenscareers site and individual postings follow /job/<id> (for example job 2767). Oracle Candidate Experience pages are JS-rendered; use the REST endpoint /hcmRestApi/resources/latest/recruitingCEJobRequisitions with siteNumber=connecticutchildrenscareers and a keyword finder. The keyword search URL follows the standard Oracle pattern and was not fetched this session. APRN roles are posted here, including NICU roles staffed at Hartford Hospital and UConn Health. [enrich 2026-10-20] careers_url -> HTTP 200 at https://fa-evav-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/connecticutchildrenscareers; ATS link seen: https://fa-evav-saasfaprod1.fa.ocs.oraclecloud.com:443; search_url -> HTTP 200, mentions NP: False, job links: 0",
       "ats_config": {
         "host": "fa-evav-saasfaprod1.fa.ocs.oraclecloud.com",
-        "site_number": "connecticutchildrenscareers"
+        "site_number": "connecticutchildrenscareers",
+        "flagship": true
       },
       "nearest_airport": "BDL Bradley International (about 13 mi straight-line); HVN Tweed-New Haven about 35 mi",
       "beds": 187,
@@ -10922,7 +11432,8 @@
         "host": "jobs.ynhhs.org",
         "vendor": "Jibe",
         "talent_network_host": "ynhhs.jibeapply.com",
-        "app_category": "ADVANCED PRACTICE"
+        "app_category": "ADVANCED PRACTICE",
+        "flagship": true
       },
       "nearest_airport": "HVN Tweed-New Haven (about 4 mi straight-line); BDL Bradley International about 46 mi; HPN Westchester County about 43 mi",
       "beds": 208,
@@ -11240,7 +11751,8 @@
       "careers_search_url": "https://jobs.northwell.edu/",
       "careers_notes": "Northwell system board (host from the repo probe list). Could not be fetched this session (permission prompt timed out); platform and query format unverified. One board for all Northwell hospitals; filter by facility. [enrich 2026-10-20] careers_url -> HTTP 200 at https://jobs.northwell.edu/; ATS link seen: https://eppr.fa.us2.oraclecloud.com/fscmUI/faces/deeplink?objType=IRC_RECRUITING&#038;action=ICE_JOB_SEARCH_RESP; search_url -> HTTP 200, mentions NP: True, job links: 2",
       "ats_config": {
-        "host": "jobs.northwell.edu"
+        "host": "jobs.northwell.edu",
+        "flagship": true
       },
       "nearest_airport": "JFK John F. Kennedy International Airport",
       "beds": 195,
@@ -13186,9 +13698,9 @@
       "city": "Brooklyn",
       "state": "NY",
       "address": "150 55th Street, Brooklyn, NY 11220",
-      "lat": 40.74011,
-      "lng": -73.64274,
-      "coord_source": "Wikipedia article coordinates (API)",
+      "lat": 40.645,
+      "lng": -74.0198,
+      "coord_source": "Manual from street address (approximate, verify); Wikipedia match was a different hospital",
       "region": "NYC metro",
       "hotspot": false,
       "website": "https://nyulangone.org/locations/nyu-langone-hospital-brooklyn",
@@ -13224,16 +13736,8 @@
         "Level I adult trauma center",
         "Formerly Lutheran Medical Center"
       ],
-      "photos": [
-        {
-          "url": "https://upload.wikimedia.org/wikipedia/commons/1/1b/Mineola_Winthrop_Hosp_02.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original",
-          "caption": "NYU Langone Hospital – Long Island",
-          "credit": "Tdorante10",
-          "license": "CC BY-SA 4.0",
-          "source_page": "https://commons.wikimedia.org/wiki/File:Mineola_Winthrop_Hosp_02.jpg"
-        }
-      ],
-      "wikipedia_title": "NYU Langone Hospital-Brooklyn",
+      "photos": [],
+      "wikipedia_title": null,
       "sources": [
         "https://profiles.health.ny.gov/hospital/bed_type/Pediatric+Beds",
         "model knowledge (to verify); enrichment pending"
@@ -13242,11 +13746,7 @@
       "confidence": "medium",
       "active": true,
       "_enrich": {
-        "wikipedia": {
-          "title": "NYU Langone Hospital – Long Island",
-          "url": "https://en.wikipedia.org/wiki/NYU_Langone_Hospital_%E2%80%93_Long_Island",
-          "extract": "NYU Langone Hospital – Long Island is a hospital in Mineola, New York, on Long Island, affiliated with NYU Langone Health.  It founded in 1896 as Long Island's first hospital as Nassau Hospital, and was renamed in 1985 to Winthrop-University Hospital."
-        }
+        "wikipedia": {}
       }
     },
     {
@@ -13556,7 +14056,8 @@
       "careers_search_url": "https://careers.nyp.org/us/en/search-results?keywords=nurse%20practitioner",
       "careers_notes": "careers.nyp.org is linked as Careers from nyp.org pages. Platform recorded as Phenom because the repo's phenom adapter names careers.nyp.org/us/en; the board itself could not be fetched this session (permission prompt timed out), so the search URL is untested. One system board for all NYP campuses; filter by location. [enrich 2026-10-20] careers_url -> HTTP 200 at https://careers.nyp.org/us/en; search_url -> HTTP 200, mentions NP: True, job links: 0",
       "ats_config": {
-        "host": "careers.nyp.org"
+        "host": "careers.nyp.org",
+        "flagship": true
       },
       "nearest_airport": "LGA LaGuardia Airport",
       "beds": 299,
@@ -13917,9 +14418,9 @@
       "city": "Queens",
       "state": "NY",
       "address": "327 Beach 19th Street, Far Rockaway, NY 11691",
-      "lat": 40.67833,
-      "lng": -73.9375,
-      "coord_source": "Wikipedia article coordinates (API)",
+      "lat": 40.6035,
+      "lng": -73.749,
+      "coord_source": "Manual from street address (approximate, verify); Wikipedia match was a different hospital",
       "region": "NYC metro",
       "hotspot": false,
       "website": "https://www.ehs.org/",
@@ -13954,7 +14455,7 @@
         "Episcopal Health Services"
       ],
       "photos": [],
-      "wikipedia_title": "St. John's Episcopal Hospital South Shore",
+      "wikipedia_title": null,
       "sources": [
         "https://profiles.health.ny.gov/hospital/bed_type/Pediatric+Beds",
         "model knowledge (to verify); enrichment pending"
@@ -13963,11 +14464,7 @@
       "confidence": "medium",
       "active": true,
       "_enrich": {
-        "wikipedia": {
-          "title": "St. John's Episcopal Hospital",
-          "url": "https://en.wikipedia.org/wiki/St._John%27s_Episcopal_Hospital",
-          "extract": "St. John's Episcopal Hospital was founded in 1871 as an American sectarian hospital. It was later known as St. John's Hospital of Brooklyn, 1545 Atlantic Avenue, in the Bedford-Stuyvesant neighborhood of Central Brooklyn, New York, and became a major teaching affiliate of the SUNY Downstate College of Medicine.\nAfter severe financial difficulties in the early to mid-1970s because of construction of a new addition being completed in 1972, St. John's (the original hospital building along with the new addition) closed on October 20, 1975 and both buildings became vacant and closed until December 31, 1982. On December 31, 1982, it merged with the larger Brooklyn Jewish Hospital and Medical Center (this hospital building closed to be converted into apartments in the 2000s), forming Interfaith Medical Center (reopening the original hospital building along with the addition)."
-        }
+        "wikipedia": {}
       }
     },
     {
@@ -15365,7 +15862,8 @@
       "careers_search_url": "https://careers.stonybrookmedicine.edu/",
       "careers_notes": "Stony Brook Medicine careers host from the repo probe list; not fetchable this session, platform unverified. [enrich 2026-10-20] careers_url -> HTTP None at None; search_url -> HTTP None, mentions NP: None, job links: None",
       "ats_config": {
-        "host": "careers.stonybrookmedicine.edu"
+        "host": "careers.stonybrookmedicine.edu",
+        "flagship": true
       },
       "nearest_airport": "ISP Long Island MacArthur Airport (20 min)",
       "beds": null,
@@ -15820,7 +16318,8 @@
       "careers_search_url": "https://wmchealthjobs.org",
       "careers_notes": "wmchealthjobs.org is linked as Careers from wmchealth.org. Board could not be fetched this session (permission timeout); platform unverified. [enrich 2026-10-20] careers_url -> HTTP 200 at https://wmchealthjobs.org/; search_url -> HTTP 200, mentions NP: False, job links: 0",
       "ats_config": {
-        "host": "wmchealthjobs.org"
+        "host": "wmchealthjobs.org",
+        "flagship": true
       },
       "nearest_airport": "HPN Westchester County Airport",
       "beds": null,
@@ -15888,9 +16387,9 @@
       "city": "Poughkeepsie",
       "state": "NY",
       "address": "241 North Road, Poughkeepsie, NY 12601",
-      "lat": 41.08613,
-      "lng": -73.80542,
-      "coord_source": "Wikipedia article coordinates (API)",
+      "lat": 41.6982,
+      "lng": -73.929,
+      "coord_source": "Manual from street address (approximate, verify); Wikipedia match was a different hospital",
       "region": "Hudson Valley",
       "hotspot": false,
       "website": "https://www.wmchealth.org/",
@@ -15925,16 +16424,8 @@
         "Part of WMCHealth",
         "Formerly St. Francis Hospital, Poughkeepsie"
       ],
-      "photos": [
-        {
-          "url": "https://upload.wikimedia.org/wikipedia/commons/1/17/Westchester_Medical_Center.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original",
-          "caption": "Westchester Medical Center",
-          "credit": "Ɱ",
-          "license": "CC BY-SA 4.0",
-          "source_page": "https://commons.wikimedia.org/wiki/File:Westchester_Medical_Center.png"
-        }
-      ],
-      "wikipedia_title": "Westchester Medical Center",
+      "photos": [],
+      "wikipedia_title": null,
       "sources": [
         "https://profiles.health.ny.gov/hospital/bed_type/Pediatric+Beds",
         "model knowledge (to verify); enrichment pending"
@@ -15943,11 +16434,7 @@
       "confidence": "medium",
       "active": true,
       "_enrich": {
-        "wikipedia": {
-          "title": "Westchester Medical Center",
-          "url": "https://en.wikipedia.org/wiki/Westchester_Medical_Center",
-          "extract": "Westchester Medical Center University Hospital (WMC), formerly Grasslands Hospital, is an 895-bed Regional Trauma Center providing health services to residents of the Hudson Valley, northern New Jersey, and southern Connecticut. It is known for having one of the highest case mix index rates of all hospitals in the United States. 652 beds are at the hospital's primary location in Valhalla, while the other 243 beds are at the MidHudson Regional Hospital campus in Poughkeepsie. It is organized as Westchester County Health Care Corporation, and is a New York State public-benefit corporation.\nWestchester Medical Center is the primary academic medical center and University Hospital of New York Medical College.  Many of New York Medical College's faculty provide patient care, teach, and conduct research at the adjacent campus. Westchester Medical Center provides various specialty services to patients, hosts one of the leading kidney and liver transplant programs in New York, and is home to Maria Fareri Children's Hospital, the only all-specialty children's hospital in the region."
-        }
+        "wikipedia": {}
       }
     },
     {
@@ -16030,9 +16517,9 @@
       "city": "Nyack",
       "state": "NY",
       "address": "160 North Midland Avenue, Nyack, NY 10960",
-      "lat": 40.88038,
-      "lng": -73.87908,
-      "coord_source": "Wikipedia article coordinates (API)",
+      "lat": 41.0905,
+      "lng": -73.9185,
+      "coord_source": "Manual from street address (approximate, verify); Wikipedia match was a different hospital",
       "region": "Hudson Valley",
       "hotspot": false,
       "website": "https://www.montefiorenyack.org/",
@@ -16065,16 +16552,8 @@
         "NYS Level 2 perinatal center",
         "Part of Montefiore Health System (Montefiore Einstein)"
       ],
-      "photos": [
-        {
-          "url": "https://upload.wikimedia.org/wikipedia/commons/d/d3/Montefiore_Medical_Center_IMG_2268_HLG.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original",
-          "caption": "Montefiore Einstein Medical Center",
-          "credit": "Hugo L. González",
-          "license": "CC BY-SA 4.0",
-          "source_page": "https://commons.wikimedia.org/wiki/File:Montefiore_Medical_Center_IMG_2268_HLG.jpg"
-        }
-      ],
-      "wikipedia_title": "Nyack Hospital",
+      "photos": [],
+      "wikipedia_title": null,
       "sources": [
         "https://profiles.health.ny.gov/hospital/bed_type/Pediatric+Beds",
         "model knowledge (to verify); enrichment pending"
@@ -16083,11 +16562,7 @@
       "confidence": "medium",
       "active": true,
       "_enrich": {
-        "wikipedia": {
-          "title": "Montefiore Einstein Medical Center",
-          "url": "https://en.wikipedia.org/wiki/Montefiore_Einstein_Medical_Center",
-          "extract": "Montefiore Einstein Medical Center is an academic medical center that is the primary teaching hospital of the Albert Einstein College of Medicine in the Bronx, New York City. Its main campus, the Henry and Lucy Moses Division, is in the Norwood section of the northern Bronx. Named for Moses Montefiore, it was one of the 50 largest employers in New York as of 2005. In 2025, Montefiore was ranked No. 5 among New York City metropolitan area hospitals by U.S. News & World Report. Adjacent to the main hospital is the Children's Hospital at Montefiore, which serves individuals aged 0–21."
-        }
+        "wikipedia": {}
       }
     },
     {
@@ -16099,9 +16574,9 @@
       "city": "Newburgh",
       "state": "NY",
       "address": "70 Dubois Street, Newburgh, NY 12550",
-      "lat": 40.88038,
-      "lng": -73.87908,
-      "coord_source": "Wikipedia article coordinates (API)",
+      "lat": 41.5157,
+      "lng": -74.029,
+      "coord_source": "Manual from street address (approximate, verify); Wikipedia match was a different hospital",
       "region": "Hudson Valley",
       "hotspot": false,
       "website": "https://www.montefioreslc.org/",
@@ -16134,16 +16609,8 @@
         "NYS Level 2 perinatal center",
         "Part of Montefiore Health System (Montefiore Einstein)"
       ],
-      "photos": [
-        {
-          "url": "https://upload.wikimedia.org/wikipedia/commons/d/d3/Montefiore_Medical_Center_IMG_2268_HLG.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original",
-          "caption": "Montefiore Einstein Medical Center",
-          "credit": "Hugo L. González",
-          "license": "CC BY-SA 4.0",
-          "source_page": "https://commons.wikimedia.org/wiki/File:Montefiore_Medical_Center_IMG_2268_HLG.jpg"
-        }
-      ],
-      "wikipedia_title": "Montefiore Einstein Medical Center",
+      "photos": [],
+      "wikipedia_title": null,
       "sources": [
         "https://profiles.health.ny.gov/hospital/bed_type/Pediatric+Beds",
         "model knowledge (to verify); enrichment pending"
@@ -16152,11 +16619,7 @@
       "confidence": "medium",
       "active": true,
       "_enrich": {
-        "wikipedia": {
-          "title": "Montefiore Einstein Medical Center",
-          "url": "https://en.wikipedia.org/wiki/Montefiore_Einstein_Medical_Center",
-          "extract": "Montefiore Einstein Medical Center is an academic medical center that is the primary teaching hospital of the Albert Einstein College of Medicine in the Bronx, New York City. Its main campus, the Henry and Lucy Moses Division, is in the Norwood section of the northern Bronx. Named for Moses Montefiore, it was one of the 50 largest employers in New York as of 2005. In 2025, Montefiore was ranked No. 5 among New York City metropolitan area hospitals by U.S. News & World Report. Adjacent to the main hospital is the Children's Hospital at Montefiore, which serves individuals aged 0–21."
-        }
+        "wikipedia": {}
       }
     },
     {
@@ -16947,7 +17410,8 @@
       "ats_config": {
         "host": "albanymed.wd5.myworkdayjobs.com",
         "tenant": "albanymed",
-        "site": "Albany_Med_System_Career_Site"
+        "site": "Albany_Med_System_Career_Site",
+        "flagship": true
       },
       "nearest_airport": "ALB Albany International Airport (15 min)",
       "beds": 125,
@@ -17425,7 +17889,8 @@
       "careers_search_url": null,
       "careers_notes": "Kaleida Health careers. careers_url is a best guess at the kaleidahealth.org careers path and is unverified. The ATS was not confirmed in this session; requisition IDs on aggregator copies (for example 73340BR, Nurse Practitioner FNP/PNP, OCH Dept of Neurology) use the BrassRing style suffix. Kaleida postings syndicate to DirectEmployers (dejobs.org, usnlx.com) with department names such as 'OCH ...' for the children's hospital. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.kaleidahealth.org/careers/ [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.kaleidahealth.org/careers/",
       "ats_config": {
-        "host": "www.kaleidahealth.org"
+        "host": "www.kaleidahealth.org",
+        "flagship": true
       },
       "nearest_airport": "BUF Buffalo Niagara International (about 7 mi straight-line)",
       "beds": 185,
@@ -18934,7 +19399,8 @@
         "site": "UR_Nursing",
         "alt_sites": [
           "UR_Staff"
-        ]
+        ],
+        "flagship": true
       },
       "nearest_airport": "ROC Frederick Douglass Greater Rochester International (about 3 mi straight-line)",
       "beds": 148,
@@ -19212,7 +19678,8 @@
       "careers_notes": "SUNY Upstate posts jobs on a PageUp board at careers.upstate.edu (a search result showed a posting at /cw/en-us/job/510525/clinical-assistant-professorhospitalist). The listing and filter URLs here follow the standard PageUp pattern and were not test fetched (fetch was rate limited). Some Upstate titles also appear on statejobs.ny.gov because Upstate is a SUNY state employer. A full time Pediatric APP Hospitalist role at Upstate Golisano was seen on Ladders (12 hour rotating shifts). [enrich 2026-10-20] careers_url -> HTTP 404 at https://careers.upstate.edu/cw/en-us/listing/; search_url -> HTTP 404, mentions NP: False, job links: 4 [enrich 2026-10-20] careers_url -> HTTP 404 at https://careers.upstate.edu/cw/en-us/listing/; search_url -> HTTP 404, mentions NP: False, job links: 4",
       "ats_config": {
         "host": "careers.upstate.edu",
-        "listing_path": "/cw/en-us/listing/"
+        "listing_path": "/cw/en-us/listing/",
+        "flagship": true
       },
       "nearest_airport": "SYR Syracuse Hancock International (about 5 mi straight-line)",
       "beds": 752,
@@ -19373,7 +19840,8 @@
       "careers_notes": "System-wide career site renders server-side: the nurse practitioner category returned 86 jobs over 9 pages on a test fetch on 2026-10-19. City filter pattern is /jobs/nurse-practitioner/us-nj-<city>/ and job detail pages are /job/<id>/<slug>/. Applicant accounts sit on pm.healthcaresource.com (HealthcareSource), so treat as custom. NP roles are usually titled Advanced Practice Nurse and are often posted under Barnabas Health Medical Group or Rutgers University Medical Group rather than the hospital name. Physician and some APP roles also appear at rwjbh.org/careers/physician-careers/career-opportunities/. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.rwjbarnabashealthcareers.org/jobs/; search_url -> HTTP 200, mentions NP: True, job links: 137",
       "ats_config": {
         "host": "www.rwjbarnabashealthcareers.org",
-        "applicant_host": "pm.healthcaresource.com"
+        "applicant_host": "pm.healthcaresource.com",
+        "flagship": true
       },
       "nearest_airport": "EWR Newark Liberty International (about 20 mi straight-line)",
       "beds": 105,
@@ -22025,7 +22493,8 @@
       "careers_notes": "CHOP career site is a Phenom People front end (paths like careers.chop.edu/us/en/how-we-hire, job ids shaped PDN-<guid>). A test fetch of the search URL was blocked in this session, so rendering is unconfirmed; Phenom search pages are usually JS-rendered, so the scraper may need the Phenom widgets API. NP postings name the campus (Main Hospital, King of Prussia, Virtua Voorhees NICU, etc.).",
       "ats_config": {
         "host": "careers.chop.edu",
-        "locale_path": "/us/en"
+        "locale_path": "/us/en",
+        "flagship": true
       },
       "nearest_airport": "PHL Philadelphia International (about 6 mi straight-line)",
       "beds": 535,
@@ -22737,7 +23206,9 @@
       "careers_platform": "unknown",
       "careers_search_url": null,
       "careers_notes": "Careers page not reached this session (search budget exhausted and fetches rate limited). NP openings (PICU, NICU, CT surgery, Center for the Urban Child) are syndicated to NAPNAP and AAP career centers. Verify whether St. Chris posts through Tower Health's applicant system or its own.",
-      "ats_config": {},
+      "ats_config": {
+        "flagship": true
+      },
       "nearest_airport": "PHL Philadelphia International (about 11 mi straight-line)",
       "beds": 189,
       "peds_beds": 189,
@@ -24138,7 +24609,8 @@
       "careers_search_url": null,
       "careers_notes": "Careers site could not be verified this session: the web search budget ran out and direct fetches of Penn State Health pages were blocked. careers_url is the main website as a placeholder; locate the real job search page and platform before scraping. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.pennstatehealth.org/childrens",
       "ats_config": {
-        "host": "www.pennstatehealth.org"
+        "host": "www.pennstatehealth.org",
+        "flagship": true
       },
       "nearest_airport": "MDT Harrisburg International (about 7 mi straight-line); BWI Baltimore/Washington International about 75 mi",
       "beds": 134,
@@ -24609,12 +25081,13 @@
       "region": "Pennsylvania (other)",
       "hotspot": false,
       "website": "https://www.chp.edu/",
-      "careers_url": "https://www.chp.edu/",
-      "careers_platform": "unknown",
+      "careers_url": "https://careers.upmc.com/",
+      "careers_platform": "custom",
       "careers_search_url": null,
-      "careers_notes": "Careers site could not be verified this session: the web search budget ran out and direct fetches of UPMC pages were blocked. careers_url is the main website as a placeholder; locate the real job search page and platform before scraping. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.chp.edu/",
+      "careers_notes": "Careers site could not be verified this session: the web search budget ran out and direct fetches of UPMC pages were blocked. careers_url is the main website as a placeholder; locate the real job search page and platform before scraping. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.chp.edu/ [fix 2026-10-20] all UPMC jobs post on careers.upmc.com; host set so the shared-board attribution includes this hospital.",
       "ats_config": {
-        "host": "www.chp.edu"
+        "host": "careers.upmc.com",
+        "flagship": true
       },
       "nearest_airport": "PIT Pittsburgh International (about 15 mi straight-line)",
       "beds": 317,
@@ -24828,12 +25301,12 @@
       "region": "Pennsylvania (other)",
       "hotspot": false,
       "website": "https://www.upmc.com/",
-      "careers_url": "https://www.upmc.com/",
-      "careers_platform": "unknown",
+      "careers_url": "https://careers.upmc.com/",
+      "careers_platform": "custom",
       "careers_search_url": null,
-      "careers_notes": "Careers site could not be verified this session: the web search budget ran out and direct fetches of UPMC pages were blocked. careers_url is the main website as a placeholder; locate the real job search page and platform before scraping. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.upmc.com/",
+      "careers_notes": "Careers site could not be verified this session: the web search budget ran out and direct fetches of UPMC pages were blocked. careers_url is the main website as a placeholder; locate the real job search page and platform before scraping. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.upmc.com/ [fix 2026-10-20] all UPMC jobs post on careers.upmc.com; host set so the shared-board attribution includes this hospital.",
       "ats_config": {
-        "host": "www.upmc.com"
+        "host": "careers.upmc.com"
       },
       "nearest_airport": "PIT Pittsburgh International (about 15 mi straight-line)",
       "beds": 335,
@@ -25860,7 +26333,8 @@
         "location_aliases": [
           "Johns Hopkins Hospital",
           "Johns Hopkins Children's Center"
-        ]
+        ],
+        "flagship": true
       },
       "nearest_airport": "BWI (about 15 mi)",
       "beds": 1166,
@@ -26380,7 +26854,8 @@
           "University of Maryland Medical Center",
           "UMMC",
           "Children's Hospital"
-        ]
+        ],
+        "flagship": true
       },
       "nearest_airport": "BWI (about 10 mi)",
       "beds": 760,
@@ -26604,7 +27079,8 @@
       "ats_config": {
         "host": "childrensnational.wd108.myworkdayjobs.com",
         "tenant": "childrensnational",
-        "site": "CN_Careers"
+        "site": "CN_Careers",
+        "flagship": true
       },
       "nearest_airport": "DCA Reagan National (about 6 mi)",
       "beds": null,
@@ -27739,7 +28215,8 @@
           "Fairfax",
           "Falls Church",
           "Inova Fairfax"
-        ]
+        ],
+        "flagship": true
       },
       "nearest_airport": "DCA Reagan National (about 12 mi); IAD Dulles (about 17 mi)",
       "beds": null,
@@ -27882,9 +28359,9 @@
       "city": "Reston",
       "state": "VA",
       "address": "1850 Town Center Pkwy, Reston, VA 20190",
-      "lat": 38.8575,
-      "lng": -77.2278,
-      "coord_source": "Wikipedia article coordinates (API)",
+      "lat": 38.9545,
+      "lng": -77.3495,
+      "coord_source": "Manual from street address (approximate, verify); Wikipedia match was a different hospital",
       "region": "DC / Northern Virginia",
       "hotspot": false,
       "website": "https://www.hcavirginia.com/locations/reston-hospital-center",
@@ -27918,16 +28395,8 @@
         "Kids-only emergency room (Reston Now 2015)",
         "Near Reston Town Center and the Silver Line"
       ],
-      "photos": [
-        {
-          "url": "https://upload.wikimedia.org/wikipedia/commons/c/c2/Inova_Fairfax_Hospital_logo.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original",
-          "caption": "Inova Fairfax Hospital",
-          "credit": "Inova fairfax hospital",
-          "license": "Public domain",
-          "source_page": "https://commons.wikimedia.org/wiki/File:Inova_Fairfax_Hospital_logo.jpg"
-        }
-      ],
-      "wikipedia_title": "Reston Hospital Center",
+      "photos": [],
+      "wikipedia_title": null,
       "sources": [
         "https://neonatologysolutions.com/?p=18112",
         "https://childrensnational.org/departments/neonatology/regional-nicus",
@@ -27938,11 +28407,7 @@
       "confidence": "low",
       "active": true,
       "_enrich": {
-        "wikipedia": {
-          "title": "Inova Fairfax Hospital",
-          "url": "https://en.wikipedia.org/wiki/Inova_Fairfax_Hospital",
-          "extract": "Inova Fairfax Hospital is a hospital in Fairfax County, Virginia and the flagship facility of the Inova Health System. Located just outside the limits of Falls Church, Virginia, it is the largest hospital campus in Northern Virginia as well as one of the largest employers in the county. Inova Fairfax Hospital contains Northern Virginia's only adult Level I Trauma Center, as well as a neonatal intensive care unit, pediatric intensive care unit, oncology unit, adolescent medicine unit, and centers for cardiac surgery and pediatric surgery.\nThe Inova Fairfax Hospital can be more accurately described as a campus encompassing three hospitals: the Inova Fairfax Hospital proper, which includes the original building; the Inova Children's Hospital; and the Inova Heart and Vascular Institute."
-        }
+        "wikipedia": {}
       }
     },
     {
@@ -28158,9 +28623,9 @@
       "city": "Haymarket",
       "state": "VA",
       "address": "15225 Heathcote Blvd, Haymarket, VA 20169",
-      "lat": 38.03231,
-      "lng": -78.49861,
-      "coord_source": "Wikipedia article coordinates (API)",
+      "lat": 38.8203,
+      "lng": -77.626,
+      "coord_source": "Manual from street address (approximate, verify); Wikipedia match was a different hospital",
       "region": "DC / Northern Virginia",
       "hotspot": false,
       "website": "https://uvahealth.com/locations/profile/uva-health-haymarket-medical-center",
@@ -28196,16 +28661,8 @@
         "Serves the Haymarket and Gainesville growth corridor",
         "Sister hospital to UVA Health Prince William"
       ],
-      "photos": [
-        {
-          "url": "https://upload.wikimedia.org/wikipedia/commons/2/20/Uvahospital-aerial.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original",
-          "caption": "University of Virginia Health System",
-          "credit": "UVA Health System Image Library",
-          "license": "CC BY-SA 3.0",
-          "source_page": "https://commons.wikimedia.org/wiki/File:Uvahospital-aerial.jpg"
-        }
-      ],
-      "wikipedia_title": "University of Virginia Health System",
+      "photos": [],
+      "wikipedia_title": null,
       "sources": [
         "https://neonatologysolutions.com/?p=19552",
         "model knowledge (to verify); enrichment pending"
@@ -28214,11 +28671,7 @@
       "confidence": "low",
       "active": true,
       "_enrich": {
-        "wikipedia": {
-          "title": "University of Virginia Health System",
-          "url": "https://en.wikipedia.org/wiki/University_of_Virginia_Health_System",
-          "extract": "The University of Virginia (UVA) Health System is an academic health care center associated with the University of Virginia in Charlottesville. The health system includes a medical center (with main hospital, children's hospital, and clinic network), school of medicine, school of nursing, and health sciences library. The health system provides inpatient and outpatient care and patient education and conducts medical research and education.\nBased in Charlottesville, the Health System also operates satellite locations throughout Virginia, in Albemarle, Amherst, Augusta, Campbell, Fluvanna, Louisa, Nelson, and Orange counties.\nThe first medical degrees granted by UVA were awarded in 1828. The University of Virginia Hospital, designed by architect Paul J. Pelz, opened in 1901.\nThe UVA Health System's patient care, research and medical education are frequently ranked highly by several ranking systems. In 2016 and 2017, U.S. News & World Report ranked UVAHS as the number one hospital in Virginia."
-        }
+        "wikipedia": {}
       }
     },
     {
@@ -28230,9 +28683,9 @@
       "city": "Manassas",
       "state": "VA",
       "address": "8700 Sudley Rd, Manassas, VA 20110",
-      "lat": 38.03231,
-      "lng": -78.49861,
-      "coord_source": "Wikipedia article coordinates (API)",
+      "lat": 38.7686,
+      "lng": -77.4535,
+      "coord_source": "Manual from street address (approximate, verify); Wikipedia match was a different hospital",
       "region": "DC / Northern Virginia",
       "hotspot": false,
       "website": "https://uvahealth.com/locations/profile/uva-health-prince-william-medical-center",
@@ -28268,16 +28721,8 @@
         "Main hospital for Manassas and western Prince William County",
         "Sister hospital to UVA Health Haymarket"
       ],
-      "photos": [
-        {
-          "url": "https://upload.wikimedia.org/wikipedia/commons/2/20/Uvahospital-aerial.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original",
-          "caption": "University of Virginia Health System",
-          "credit": "UVA Health System Image Library",
-          "license": "CC BY-SA 3.0",
-          "source_page": "https://commons.wikimedia.org/wiki/File:Uvahospital-aerial.jpg"
-        }
-      ],
-      "wikipedia_title": "University of Virginia Health System",
+      "photos": [],
+      "wikipedia_title": null,
       "sources": [
         "https://neonatologysolutions.com/?p=19552",
         "model knowledge (to verify); enrichment pending"
@@ -28286,11 +28731,7 @@
       "confidence": "low",
       "active": true,
       "_enrich": {
-        "wikipedia": {
-          "title": "University of Virginia Health System",
-          "url": "https://en.wikipedia.org/wiki/University_of_Virginia_Health_System",
-          "extract": "The University of Virginia (UVA) Health System is an academic health care center associated with the University of Virginia in Charlottesville. The health system includes a medical center (with main hospital, children's hospital, and clinic network), school of medicine, school of nursing, and health sciences library. The health system provides inpatient and outpatient care and patient education and conducts medical research and education.\nBased in Charlottesville, the Health System also operates satellite locations throughout Virginia, in Albemarle, Amherst, Augusta, Campbell, Fluvanna, Louisa, Nelson, and Orange counties.\nThe first medical degrees granted by UVA were awarded in 1828. The University of Virginia Hospital, designed by architect Paul J. Pelz, opened in 1901.\nThe UVA Health System's patient care, research and medical education are frequently ranked highly by several ranking systems. In 2016 and 2017, U.S. News & World Report ranked UVAHS as the number one hospital in Virginia."
-        }
+        "wikipedia": {}
       }
     },
     {
@@ -28972,7 +29413,7 @@
       "hotspot": false,
       "website": "https://www.umms.org/uch",
       "careers_url": "https://www.umms.org/careers",
-      "careers_platform": "unknown",
+      "careers_platform": "phenom",
       "careers_search_url": null,
       "careers_notes": "University of Maryland Medical System careers landing page; underlying ATS not confirmed in this pass. Member hospitals post on the UMMS board. [enrich 2026-10-20] careers_url -> HTTP None at None",
       "ats_config": {
@@ -29324,7 +29765,8 @@
       "careers_search_url": "https://careers.vcuhealth.org/us/en/search-results?keywords=nurse%20practitioner",
       "careers_notes": "VCU Health career site on Phenom (assets from cdn.phenompeople.com, CareerConnectResources/VHSVHSUS, /us/en/ paths). Fetched https://careers.vcuhealth.org/us/en/search-results and the CHoR landing page on 2026-10-19: page shell only, listings are JS-rendered and none appeared in the fetch. CHoR category page: https://careers.vcuhealth.org/us/en/chor-jobs ; job detail pattern /us/en/job/R<number>/<title-slug> (e.g. R38048 Nurse Clinician Acute Care Pediatrics). Keyword param ?keywords= is the usual Phenom pattern but was not confirmed to filter in a fetch. [enrich 2026-10-20] careers_url -> HTTP 200 at https://careers.vcuhealth.org/us/en/chor-jobs; ATS link seen: https://vcuhealth.wd1.myworkdayjobs.com/VCUHealth_careers/job/Richmond-VA/Behavioral-Health-Security-Specialist---Various-shifts--Day-Eve-Night-_R42450/apply; search_url -> HTTP 200, mentions NP: True, job links: 0",
       "ats_config": {
-        "host": "careers.vcuhealth.org"
+        "host": "careers.vcuhealth.org",
+        "flagship": true
       },
       "nearest_airport": "RIC Richmond International (about 10 mi)",
       "beds": null,
@@ -29780,7 +30222,8 @@
       "careers_notes": "CHKD job board at chkdcareers.org (linked from chkd.org/careers). Path-segment facets: /search/advanced-practice/jobs (APP jobs), /search/physician-assistant-nurse-practitioner-specialty/jobs, /search/inpatient-nursing-outpatient-nursing/jobs; job detail /jobs/<id>-<slug> (e.g. 2216011 Office Nurse Practitioner (Contract), Newport News). This URL layout matches the TalentBrew/Talemetry style boards other agents saw. Every WebFetch of chkdcareers.org on 2026-10-19 failed (client error or permission timeout), so rendering and ATS were not confirmed. Subspecialty APPs are often employed by Children's Specialty Group, PLLC, with a separate board at https://csgdocs.com/careers/. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.chkdcareers.org/jobs/search; search_url -> HTTP 200, mentions NP: True, job links: 25",
       "ats_config": {
         "host": "www.chkdcareers.org",
-        "csg_careers": "https://csgdocs.com/careers/"
+        "csg_careers": "https://csgdocs.com/careers/",
+        "flagship": true
       },
       "nearest_airport": "ORF Norfolk International (about 6 mi)",
       "beds": 266,
@@ -30900,7 +31343,8 @@
       "ats_config": {
         "host": "uva.wd1.myworkdayjobs.com",
         "tenant": "uva",
-        "site": "UVAJobs"
+        "site": "UVAJobs",
+        "flagship": true
       },
       "nearest_airport": "CHO Charlottesville-Albemarle (about 9 mi)",
       "beds": 679,
@@ -31045,7 +31489,8 @@
         "host": "aah.wd5.myworkdayjobs.com",
         "tenant": "aah",
         "site": "External",
-        "front_end_host": "careers.advocatehealth.org"
+        "front_end_host": "careers.advocatehealth.org",
+        "flagship": true
       },
       "nearest_airport": "GSO Piedmont Triad International (about 25 min)",
       "beds": 850,
@@ -31733,7 +32178,8 @@
       "careers_search_url": null,
       "careers_notes": "Mission Health is an HCA Healthcare division. Mission APP postings syndicate on hcahealthcare.dejobs.org; the HCA careers platform was not confirmed this session. Filter to Asheville, NC. [enrich 2026-10-20] careers_url -> HTTP 403 at https://careers.hcahealthcare.com/",
       "ats_config": {
-        "host": "careers.hcahealthcare.com"
+        "host": "careers.hcahealthcare.com",
+        "flagship": true
       },
       "nearest_airport": "AVL Asheville Regional (about 20 min)",
       "beds": 733,
@@ -32317,7 +32763,8 @@
       "careers_search_url": "https://musc.career-pages.com/",
       "careers_notes": "muschealth.org/careers returns a 302 redirect to musc.career-pages.com. The fetch of that host was blocked this session, so the underlying ATS was not identified and the search URL is the untested base page. MUSC NP and APP postings are also syndicated to CareerBuilder under MUSCP / MUSC Community Physicians; faculty and physician roles route through providerrecruitment@musc.edu. [enrich 2026-10-20] careers_url -> HTTP 200 at https://musc.career-pages.com/; ATS link seen: https://musc.wd1.myworkdayjobs.com/MUSC/login; search_url -> HTTP 200, mentions NP: False, job links: 9",
       "ats_config": {
-        "host": "musc.career-pages.com"
+        "host": "musc.career-pages.com",
+        "flagship": true
       },
       "nearest_airport": "CHS Charleston International Airport",
       "beds": 250,
@@ -32626,7 +33073,7 @@
       "nearest_airport": "MYR Myrtle Beach International Airport (about 25 min)",
       "beds": 210,
       "peds_beds": null,
-      "peds_inpatient": false,
+      "peds_inpatient": true,
       "picu": false,
       "picu_beds": null,
       "nicu_level": null,
@@ -32652,7 +33099,7 @@
         "https://en.wikipedia.org/wiki/List_of_hospitals_in_South_Carolina",
         "model knowledge (to verify); enrichment pending"
       ],
-      "notes": "Search results (not opened) show practicematch and doccafe pediatric openings at Conway Medical Center and a physicianjob.com 'Nurse Practitioner - Pediatrics' listing in the area. Nursery level and any pediatric unit not confirmed.",
+      "notes": "Search results (not opened) show practicematch and doccafe pediatric openings at Conway Medical Center and a physicianjob.com 'Nurse Practitioner - Pediatrics' listing in the area. Nursery level and any pediatric unit not confirmed. Hospital site describes an inpatient pediatric unit with hospitalists (verifier 2026-10-20).",
       "confidence": "low",
       "active": true,
       "_enrich": {}
@@ -33956,7 +34403,8 @@
       "careers_search_url": "https://careers.prismahealth.org/us/en/search-results?keywords=nurse%20practitioner",
       "careers_notes": "Careers link taken from the prismahealth.org hospital page footer. The /us/en/search-results layout matches Phenom (same structure as careers.rsfh.com, which serves cdn.phenompeople.com assets). Fetch of careers.prismahealth.org was blocked this session, so rendering was not tested; expect JS-rendered listings like other Phenom boards. [enrich 2026-10-20] careers_url -> HTTP 200 at https://careers.prismahealth.org/; search_url -> HTTP 200, mentions NP: False, job links: 15",
       "ats_config": {
-        "host": "careers.prismahealth.org"
+        "host": "careers.prismahealth.org",
+        "flagship": true
       },
       "nearest_airport": "CAE Columbia Metropolitan Airport",
       "beds": 641,
@@ -34038,7 +34486,8 @@
       "careers_search_url": "https://careers.prismahealth.org/us/en/search-results?keywords=nurse%20practitioner",
       "careers_notes": "Careers link taken from the prismahealth.org hospital page footer. The /us/en/search-results layout matches Phenom (same structure as careers.rsfh.com, which serves cdn.phenompeople.com assets). Fetch of careers.prismahealth.org was blocked this session, so rendering was not tested; expect JS-rendered listings like other Phenom boards. [enrich 2026-10-20] careers_url -> HTTP 200 at https://careers.prismahealth.org/; search_url -> HTTP 200, mentions NP: False, job links: 15",
       "ats_config": {
-        "host": "careers.prismahealth.org"
+        "host": "careers.prismahealth.org",
+        "flagship": true
       },
       "nearest_airport": "GSP Greenville-Spartanburg International Airport",
       "beds": 814,

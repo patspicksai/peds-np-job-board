@@ -24,7 +24,8 @@
         "host": "jobs.ynhhs.org",
         "vendor": "Jibe",
         "talent_network_host": "ynhhs.jibeapply.com",
-        "app_category": "ADVANCED PRACTICE"
+        "app_category": "ADVANCED PRACTICE",
+        "flagship": true
       },
       "nearest_airport": "HVN Tweed-New Haven (about 4 mi straight-line); BDL Bradley International about 46 mi; HPN Westchester County about 43 mi",
       "beds": 208,
@@ -118,7 +119,8 @@
       "careers_notes": "Connecticut Children's uses Oracle Cloud HCM Candidate Experience; the nursing careers page links Search Jobs to the connecticutchildrenscareers site and individual postings follow /job/<id> (for example job 2767). Oracle Candidate Experience pages are JS-rendered; use the REST endpoint /hcmRestApi/resources/latest/recruitingCEJobRequisitions with siteNumber=connecticutchildrenscareers and a keyword finder. The keyword search URL follows the standard Oracle pattern and was not fetched this session. APRN roles are posted here, including NICU roles staffed at Hartford Hospital and UConn Health. [enrich 2026-10-20] careers_url -> HTTP 200 at https://fa-evav-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/connecticutchildrenscareers; ATS link seen: https://fa-evav-saasfaprod1.fa.ocs.oraclecloud.com:443; search_url -> HTTP 200, mentions NP: False, job links: 0",
       "ats_config": {
         "host": "fa-evav-saasfaprod1.fa.ocs.oraclecloud.com",
-        "site_number": "connecticutchildrenscareers"
+        "site_number": "connecticutchildrenscareers",
+        "flagship": true
       },
       "nearest_airport": "BDL Bradley International (about 13 mi straight-line); HVN Tweed-New Haven about 35 mi",
       "beds": 187,

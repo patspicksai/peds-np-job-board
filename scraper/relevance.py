@@ -144,6 +144,7 @@ PEDS_POPULATION_RE = re.compile(
 ADULT_TITLE_RE = re.compile(
     r"family\s+medicine|family\s+practice|internal\s+medicine|\bOB\s*/?\s*GYN\b|obstetric|gyn(?:ecolog)?\w*|"
     r"women'?s\s+(?:health|care)|menopause|geriatric|gerontolog|\badult\b|\bAGACNP\b|\bAGPCNP\b|urogyn|"
+    r"\bACHD\b|adults?\s+(?:with\s+)?congenital|adult\s+congenital|maternal[\s-]+fetal|fetal\s+(?:medicine|care|center)|"
     r"breast|prostate|hospice|long[\s-]+term\s+care|post[\s-]+acute|skilled\s+nursing|memory\s+care", _I)
 
 
@@ -246,8 +247,17 @@ def classify(title: str, text: str = "", hospital: dict | None = None, location:
     childrens = hospital.get("hospital_type") in CHILDRENS_TYPES
     hotspot = bool(hospital.get("hotspot"))
     sig, sig_note = peds_signal(title, text, location, department)
-    pediatric = sig >= 2 or childrens
-    explicit = pediatric
+    head = " ".join([title or "", department or ""])
+    head_peds = bool(PEDS_STRONG_RE.search(head) or PEDS_WEAK_RE.search(head))
+    adult_title = bool(ADULT_TITLE_RE.search(title or ""))
+    # An adult-specialty title stays adult even at a children's hospital or with pediatric words in the body.
+    pediatric = (sig >= 2 or childrens) and not adult_title
+    # Relevance 3 needs the pediatric evidence in the title or unit name; description-only evidence caps at 2.
+    explicit = head_peds and not adult_title
+    nnp_only = bool(re.search(r"\bNNPs?\b|neonatal\s+nurse\s+practitioner", f"{title} {text}", _I)) and not re.search(
+        r"\bC?PNPs?\b|pediatric\s+nurse\s+practitioner|PNP-?AC|CPNP-?AC|acute\s+care\s+pediatric|\bAPP\b|advanced\s+practice\s+provider|NP\s*(?:or|/)\s*PA", f"{title} {text}", _I)
+    if nnp_only:
+        tags = sorted(set(tags + ["NNP required"]))
     acute_words = bool(re.search(r"acute\s+care|inpatient|hospitalist|critical\s+care|intensive", f"{title} {department}", _I))
 
     if pediatric:
@@ -256,10 +266,12 @@ def classify(title: str, text: str = "", hospital: dict | None = None, location:
         acute = setting in ACUTE_SETTINGS or (setting == "mixed" and re.search(
             r"inpatient|ICU|intensive|critical|emergency|hospitalist|neonat|NICU|PICU", f"{title} {department} {text[:2000]}", _I))
         why = sig_note or "posting at a children's hospital"
+        if explicit and acute and nnp_only:
+            return Verdict(True, 2, setting, f"NICU role that asks for a neonatal nurse practitioner (NNP) credential; {why}.", tags, True, True)
         if explicit and acute:
             return Verdict(True, 3, setting, f"Pediatric acute care APP role ({SETTING_LABELS.get(setting, setting)}); {why}.", tags, True, True)
         if acute:
-            return Verdict(True, 2, setting, f"Acute care APP role with pediatric mention only in the description; {why}.", tags, True, True)
+            return Verdict(True, 2, setting, f"Acute care APP role with pediatric evidence only in the description or from the hospital; {why}.", tags, True, True)
         return Verdict(True, 2, setting, f"Pediatric APP role, {SETTING_LABELS.get(setting, setting)}; {why}.", tags, True, True)
 
     if hotspot:

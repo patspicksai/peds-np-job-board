@@ -24,7 +24,13 @@
         "host": "www.careersatmainehealth.org",
         "provider_host": "providers.careersatmainehealth.org",
         "apply_host": "apply.app.jobvite.com",
-        "jobvite_company": "mainehealth"
+        "jobvite_company": "mainehealth",
+        "flagship": true,
+        "location_aliases": [
+          "BBCH",
+          "Barbara Bush",
+          "Barbara Bush Children's Hospital"
+        ]
       },
       "nearest_airport": "PWM Portland International Jetport (about 2 mi straight-line)",
       "beds": 929,
@@ -427,7 +433,8 @@
         "host": "careers.dartmouth-health.org",
         "frontend": "Liquid Compass",
         "icims_provider_host": "providers-dartmouth-hitchcock.icims.com",
-        "icims_staff_host": "careers-dartmouth-hitchcock.icims.com"
+        "icims_staff_host": "careers-dartmouth-hitchcock.icims.com",
+        "flagship": true
       },
       "nearest_airport": "LEB Lebanon Municipal Airport (about 4 mi straight-line); MHT Manchester-Boston Regional about 80 mi",
       "beds": 531,
@@ -513,7 +520,8 @@
       "ats_config": {
         "host": "www.uvmhealthcareers.org",
         "category_path": "/jobs/nurse-practitioner-physician-assistant/",
-        "detail_pattern": "/job/<id>/<slug>/"
+        "detail_pattern": "/job/<id>/<slug>/",
+        "flagship": true
       },
       "nearest_airport": "BTV Burlington International Airport (about 2 mi straight-line)",
       "beds": 562,
@@ -1995,6 +2003,65 @@
       "_enrich": {
         "wikipedia": {}
       }
+    },
+    {
+      "slug": "maine-medical-center-portland",
+      "name": "Maine Medical Center",
+      "parent_hospital": null,
+      "health_system": "MaineHealth",
+      "hospital_type": "academic_medical_center",
+      "city": "Portland",
+      "state": "ME",
+      "address": "22 Bramhall St, Portland, ME 04102",
+      "lat": 43.65313,
+      "lng": -70.27615,
+      "coord_source": "Google Places (agrees with Wikipedia infobox 43.653, -70.276)",
+      "region": "Portland ME",
+      "hotspot": true,
+      "website": "https://mainehealth.org/barbara-bush-childrens-hospital/about",
+      "careers_url": "https://www.careersatmainehealth.org/search/jobs",
+      "careers_platform": "jobvite",
+      "careers_search_url": "https://providers.careersatmainehealth.org/search/advanced-practice-provider-barbara-bush-childrens-hospital/jobs",
+      "careers_notes": "MaineHealth career site (careersatmainehealth.org) with Jobvite as the apply ATS (apply.app.jobvite.com, applyCompany 'mainehealth'). Separate provider board providers.careersatmainehealth.org renders listings server-side (fetched 2026-10-19: 88 APP results, 25 per page, ?page=N). Filters are path segments: /search/advanced-practice-provider-<specialty or facility slug>/jobs, e.g. -pediatric, -nicu, -barbara-bush-childrens-hospital; keyword query parameter not confirmed. Job detail URLs look like /jobs/<id>-<slug>. Internal applicants use Infor (hcm-mh-prd.inforcloudsuite.com). Facility facet for this hospital fetched 2026-10-19 and rendered 1 posting (NICU Advanced Practice Provider, part-time, req 95667). The -pediatric facet showed 'NNP, PNP-AC or PA - NICU' (req 85151), which is a direct PNP-AC opening. [enrich 2026-10-20] careers_url -> HTTP 403 at https://www.careersatmainehealth.org/search/jobs; search_url -> HTTP 403, mentions NP: False, job links: 0",
+      "ats_config": {
+        "host": "www.careersatmainehealth.org",
+        "provider_host": "providers.careersatmainehealth.org",
+        "apply_host": "apply.app.jobvite.com",
+        "jobvite_company": "mainehealth",
+        "location_aliases": [
+          "Maine Medical Center",
+          "MMC",
+          "Bramhall",
+          "Maine Medical Center Portland"
+        ]
+      },
+      "nearest_airport": "PWM Portland International Jetport (about 2 mi straight-line)",
+      "beds": 929,
+      "peds_beds": null,
+      "peds_inpatient": false,
+      "picu": false,
+      "picu_beds": null,
+      "nicu_level": null,
+      "peds_ed": false,
+      "peds_trauma_level": null,
+      "magnet": true,
+      "teaching": true,
+      "affiliated_university": "Tufts University School of Medicine (Maine Track)",
+      "peds_services": [],
+      "description": "Maine Medical Center is the state's largest hospital and MaineHealth's flagship academic medical center on Bramhall Street in Portland, home to the Barbara Bush Children's Hospital (listed separately). This record exists so system-wide postings that name Maine Medical Center are attributed here rather than to the children's hospital record.",
+      "highlights": [
+        "Flagship campus of MaineHealth",
+        "Pediatric services are recorded on the children's hospital record for this campus"
+      ],
+      "photos": [],
+      "wikipedia_title": null,
+      "sources": [
+        "derived from the children's hospital record on the same campus"
+      ],
+      "notes": "Adult flagship record added so system-board postings naming this hospital are attributed correctly. Pediatric units live on the sibling children's record.",
+      "confidence": "medium",
+      "active": true,
+      "_enrich": {}
     }
   ]
 }

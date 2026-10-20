@@ -23,7 +23,8 @@
       "ats_config": {
         "host": "childrensnational.wd108.myworkdayjobs.com",
         "tenant": "childrensnational",
-        "site": "CN_Careers"
+        "site": "CN_Careers",
+        "flagship": true
       },
       "nearest_airport": "DCA Reagan National (about 6 mi)",
       "beds": null,
@@ -592,7 +593,8 @@
           "Fairfax",
           "Falls Church",
           "Inova Fairfax"
-        ]
+        ],
+        "flagship": true
       },
       "nearest_airport": "DCA Reagan National (about 12 mi); IAD Dulles (about 17 mi)",
       "beds": null,
@@ -941,9 +943,9 @@
       "city": "Reston",
       "state": "VA",
       "address": "1850 Town Center Pkwy, Reston, VA 20190",
-      "lat": 38.8575,
-      "lng": -77.2278,
-      "coord_source": "Wikipedia article coordinates (API)",
+      "lat": 38.9545,
+      "lng": -77.3495,
+      "coord_source": "Manual from street address (approximate, verify); Wikipedia match was a different hospital",
       "region": "DC / Northern Virginia",
       "hotspot": false,
       "website": "https://www.hcavirginia.com/locations/reston-hospital-center",
@@ -977,16 +979,8 @@
         "Kids-only emergency room (Reston Now 2015)",
         "Near Reston Town Center and the Silver Line"
       ],
-      "photos": [
-        {
-          "url": "https://upload.wikimedia.org/wikipedia/commons/c/c2/Inova_Fairfax_Hospital_logo.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original",
-          "caption": "Inova Fairfax Hospital",
-          "credit": "Inova fairfax hospital",
-          "license": "Public domain",
-          "source_page": "https://commons.wikimedia.org/wiki/File:Inova_Fairfax_Hospital_logo.jpg"
-        }
-      ],
-      "wikipedia_title": "Reston Hospital Center",
+      "photos": [],
+      "wikipedia_title": null,
       "sources": [
         "https://neonatologysolutions.com/?p=18112",
         "https://childrensnational.org/departments/neonatology/regional-nicus",
@@ -997,11 +991,7 @@
       "confidence": "low",
       "active": true,
       "_enrich": {
-        "wikipedia": {
-          "title": "Inova Fairfax Hospital",
-          "url": "https://en.wikipedia.org/wiki/Inova_Fairfax_Hospital",
-          "extract": "Inova Fairfax Hospital is a hospital in Fairfax County, Virginia and the flagship facility of the Inova Health System. Located just outside the limits of Falls Church, Virginia, it is the largest hospital campus in Northern Virginia as well as one of the largest employers in the county. Inova Fairfax Hospital contains Northern Virginia's only adult Level I Trauma Center, as well as a neonatal intensive care unit, pediatric intensive care unit, oncology unit, adolescent medicine unit, and centers for cardiac surgery and pediatric surgery.\nThe Inova Fairfax Hospital can be more accurately described as a campus encompassing three hospitals: the Inova Fairfax Hospital proper, which includes the original building; the Inova Children's Hospital; and the Inova Heart and Vascular Institute."
-        }
+        "wikipedia": {}
       }
     },
     {
@@ -1144,9 +1134,9 @@
       "city": "Manassas",
       "state": "VA",
       "address": "8700 Sudley Rd, Manassas, VA 20110",
-      "lat": 38.03231,
-      "lng": -78.49861,
-      "coord_source": "Wikipedia article coordinates (API)",
+      "lat": 38.7686,
+      "lng": -77.4535,
+      "coord_source": "Manual from street address (approximate, verify); Wikipedia match was a different hospital",
       "region": "DC / Northern Virginia",
       "hotspot": false,
       "website": "https://uvahealth.com/locations/profile/uva-health-prince-william-medical-center",
@@ -1182,16 +1172,8 @@
         "Main hospital for Manassas and western Prince William County",
         "Sister hospital to UVA Health Haymarket"
       ],
-      "photos": [
-        {
-          "url": "https://upload.wikimedia.org/wikipedia/commons/2/20/Uvahospital-aerial.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original",
-          "caption": "University of Virginia Health System",
-          "credit": "UVA Health System Image Library",
-          "license": "CC BY-SA 3.0",
-          "source_page": "https://commons.wikimedia.org/wiki/File:Uvahospital-aerial.jpg"
-        }
-      ],
-      "wikipedia_title": "University of Virginia Health System",
+      "photos": [],
+      "wikipedia_title": null,
       "sources": [
         "https://neonatologysolutions.com/?p=19552",
         "model knowledge (to verify); enrichment pending"
@@ -1200,11 +1182,7 @@
       "confidence": "low",
       "active": true,
       "_enrich": {
-        "wikipedia": {
-          "title": "University of Virginia Health System",
-          "url": "https://en.wikipedia.org/wiki/University_of_Virginia_Health_System",
-          "extract": "The University of Virginia (UVA) Health System is an academic health care center associated with the University of Virginia in Charlottesville. The health system includes a medical center (with main hospital, children's hospital, and clinic network), school of medicine, school of nursing, and health sciences library. The health system provides inpatient and outpatient care and patient education and conducts medical research and education.\nBased in Charlottesville, the Health System also operates satellite locations throughout Virginia, in Albemarle, Amherst, Augusta, Campbell, Fluvanna, Louisa, Nelson, and Orange counties.\nThe first medical degrees granted by UVA were awarded in 1828. The University of Virginia Hospital, designed by architect Paul J. Pelz, opened in 1901.\nThe UVA Health System's patient care, research and medical education are frequently ranked highly by several ranking systems. In 2016 and 2017, U.S. News & World Report ranked UVAHS as the number one hospital in Virginia."
-        }
+        "wikipedia": {}
       }
     },
     {
@@ -1216,9 +1194,9 @@
       "city": "Haymarket",
       "state": "VA",
       "address": "15225 Heathcote Blvd, Haymarket, VA 20169",
-      "lat": 38.03231,
-      "lng": -78.49861,
-      "coord_source": "Wikipedia article coordinates (API)",
+      "lat": 38.8203,
+      "lng": -77.626,
+      "coord_source": "Manual from street address (approximate, verify); Wikipedia match was a different hospital",
       "region": "DC / Northern Virginia",
       "hotspot": false,
       "website": "https://uvahealth.com/locations/profile/uva-health-haymarket-medical-center",
@@ -1254,16 +1232,8 @@
         "Serves the Haymarket and Gainesville growth corridor",
         "Sister hospital to UVA Health Prince William"
       ],
-      "photos": [
-        {
-          "url": "https://upload.wikimedia.org/wikipedia/commons/2/20/Uvahospital-aerial.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original",
-          "caption": "University of Virginia Health System",
-          "credit": "UVA Health System Image Library",
-          "license": "CC BY-SA 3.0",
-          "source_page": "https://commons.wikimedia.org/wiki/File:Uvahospital-aerial.jpg"
-        }
-      ],
-      "wikipedia_title": "University of Virginia Health System",
+      "photos": [],
+      "wikipedia_title": null,
       "sources": [
         "https://neonatologysolutions.com/?p=19552",
         "model knowledge (to verify); enrichment pending"
@@ -1272,11 +1242,7 @@
       "confidence": "low",
       "active": true,
       "_enrich": {
-        "wikipedia": {
-          "title": "University of Virginia Health System",
-          "url": "https://en.wikipedia.org/wiki/University_of_Virginia_Health_System",
-          "extract": "The University of Virginia (UVA) Health System is an academic health care center associated with the University of Virginia in Charlottesville. The health system includes a medical center (with main hospital, children's hospital, and clinic network), school of medicine, school of nursing, and health sciences library. The health system provides inpatient and outpatient care and patient education and conducts medical research and education.\nBased in Charlottesville, the Health System also operates satellite locations throughout Virginia, in Albemarle, Amherst, Augusta, Campbell, Fluvanna, Louisa, Nelson, and Orange counties.\nThe first medical degrees granted by UVA were awarded in 1828. The University of Virginia Hospital, designed by architect Paul J. Pelz, opened in 1901.\nThe UVA Health System's patient care, research and medical education are frequently ranked highly by several ranking systems. In 2016 and 2017, U.S. News & World Report ranked UVAHS as the number one hospital in Virginia."
-        }
+        "wikipedia": {}
       }
     },
     {
@@ -1717,7 +1683,8 @@
         "location_aliases": [
           "Johns Hopkins Hospital",
           "Johns Hopkins Children's Center"
-        ]
+        ],
+        "flagship": true
       },
       "nearest_airport": "BWI (about 15 mi)",
       "beds": 1166,
@@ -1803,7 +1770,8 @@
           "University of Maryland Medical Center",
           "UMMC",
           "Children's Hospital"
-        ]
+        ],
+        "flagship": true
       },
       "nearest_airport": "BWI (about 10 mi)",
       "beds": 760,
@@ -3075,7 +3043,7 @@
       "hotspot": false,
       "website": "https://www.umms.org/uch",
       "careers_url": "https://www.umms.org/careers",
-      "careers_platform": "unknown",
+      "careers_platform": "phenom",
       "careers_search_url": null,
       "careers_notes": "University of Maryland Medical System careers landing page; underlying ATS not confirmed in this pass. Member hospitals post on the UMMS board. [enrich 2026-10-20] careers_url -> HTTP None at None",
       "ats_config": {

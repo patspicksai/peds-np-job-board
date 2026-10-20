@@ -21,7 +21,8 @@
       "careers_search_url": "https://musc.career-pages.com/",
       "careers_notes": "muschealth.org/careers returns a 302 redirect to musc.career-pages.com. The fetch of that host was blocked this session, so the underlying ATS was not identified and the search URL is the untested base page. MUSC NP and APP postings are also syndicated to CareerBuilder under MUSCP / MUSC Community Physicians; faculty and physician roles route through providerrecruitment@musc.edu. [enrich 2026-10-20] careers_url -> HTTP 200 at https://musc.career-pages.com/; ATS link seen: https://musc.wd1.myworkdayjobs.com/MUSC/login; search_url -> HTTP 200, mentions NP: False, job links: 9",
       "ats_config": {
-        "host": "musc.career-pages.com"
+        "host": "musc.career-pages.com",
+        "flagship": true
       },
       "nearest_airport": "CHS Charleston International Airport",
       "beds": 250,
@@ -116,7 +117,8 @@
       "careers_search_url": "https://careers.prismahealth.org/us/en/search-results?keywords=nurse%20practitioner",
       "careers_notes": "Careers link taken from the prismahealth.org hospital page footer. The /us/en/search-results layout matches Phenom (same structure as careers.rsfh.com, which serves cdn.phenompeople.com assets). Fetch of careers.prismahealth.org was blocked this session, so rendering was not tested; expect JS-rendered listings like other Phenom boards. [enrich 2026-10-20] careers_url -> HTTP 200 at https://careers.prismahealth.org/; search_url -> HTTP 200, mentions NP: False, job links: 15",
       "ats_config": {
-        "host": "careers.prismahealth.org"
+        "host": "careers.prismahealth.org",
+        "flagship": true
       },
       "nearest_airport": "CAE Columbia Metropolitan Airport",
       "beds": 641,
@@ -198,7 +200,8 @@
       "careers_search_url": "https://careers.prismahealth.org/us/en/search-results?keywords=nurse%20practitioner",
       "careers_notes": "Careers link taken from the prismahealth.org hospital page footer. The /us/en/search-results layout matches Phenom (same structure as careers.rsfh.com, which serves cdn.phenompeople.com assets). Fetch of careers.prismahealth.org was blocked this session, so rendering was not tested; expect JS-rendered listings like other Phenom boards. [enrich 2026-10-20] careers_url -> HTTP 200 at https://careers.prismahealth.org/; search_url -> HTTP 200, mentions NP: False, job links: 15",
       "ats_config": {
-        "host": "careers.prismahealth.org"
+        "host": "careers.prismahealth.org",
+        "flagship": true
       },
       "nearest_airport": "GSP Greenville-Spartanburg International Airport",
       "beds": 814,
@@ -1858,7 +1861,7 @@
       "nearest_airport": "MYR Myrtle Beach International Airport (about 25 min)",
       "beds": 210,
       "peds_beds": null,
-      "peds_inpatient": false,
+      "peds_inpatient": true,
       "picu": false,
       "picu_beds": null,
       "nicu_level": null,
@@ -1884,7 +1887,7 @@
         "https://en.wikipedia.org/wiki/List_of_hospitals_in_South_Carolina",
         "model knowledge (to verify); enrichment pending"
       ],
-      "notes": "Search results (not opened) show practicematch and doccafe pediatric openings at Conway Medical Center and a physicianjob.com 'Nurse Practitioner - Pediatrics' listing in the area. Nursery level and any pediatric unit not confirmed.",
+      "notes": "Search results (not opened) show practicematch and doccafe pediatric openings at Conway Medical Center and a physicianjob.com 'Nurse Practitioner - Pediatrics' listing in the area. Nursery level and any pediatric unit not confirmed. Hospital site describes an inpatient pediatric unit with hospitalists (verifier 2026-10-20).",
       "confidence": "low",
       "active": true,
       "_enrich": {}

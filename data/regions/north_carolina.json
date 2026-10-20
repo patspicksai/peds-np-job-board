@@ -22,7 +22,13 @@
       "careers_notes": "UNC Health systemwide board: Talemetry (TTC portals) front end with Infor Cloud Suite HCM behind it. Server-rendered: the Advanced Practice Provider category page listed 155 APP jobs on 2026-10-19. The ?q= keyword parameter did not filter results when fetched, so use the category path and then the Facility/Division facet (UNC Medical Center). Job detail URLs look like /jobs/<id>-<slug>. [enrich 2026-10-20] careers_url -> HTTP 403 at https://jobs.unchealthcare.org/jobs/search; search_url -> HTTP 403, mentions NP: False, job links: 0",
       "ats_config": {
         "host": "jobs.unchealthcare.org",
-        "category_path": "/search/advanced-practice-provider/jobs"
+        "category_path": "/search/advanced-practice-provider/jobs",
+        "flagship": true,
+        "location_aliases": [
+          "NC Children's",
+          "North Carolina Children's Hospital",
+          "UNC Children's"
+        ]
       },
       "nearest_airport": "RDU Raleigh-Durham International",
       "beds": 932,
@@ -30,7 +36,7 @@
       "peds_inpatient": true,
       "picu": true,
       "picu_beds": 20,
-      "nicu_level": null,
+      "nicu_level": 4,
       "peds_ed": true,
       "peds_trauma_level": "Level I pediatric trauma center",
       "magnet": null,
@@ -78,7 +84,7 @@
         "https://jobs.unchealthcare.org/jobs/search",
         "https://jobs.unchealthcare.org/search/advanced-practice-provider/jobs?q=nurse+practitioner"
       ],
-      "notes": "Jobs post under facility 'UNC Medical Center' on the UNC Health board; many APP roles are employed by UNC Faculty Physicians or UNC Health Medical Group, so check those divisions too. NICU level was not stated on the pages read this session (the unit is called the Newborn Critical Care Center). A pediatric ED is assumed from the Level I pediatric trauma designation and the children's emergency care page cited by Wikipedia. UNC Health and Duke Health plan a new freestanding NC Children's campus in Apex (groundbreaking listed for 2027), which could reshape Triangle peds hiring.",
+      "notes": "Jobs post under facility 'UNC Medical Center' on the UNC Health board; many APP roles are employed by UNC Faculty Physicians or UNC Health Medical Group, so check those divisions too. NICU level was not stated on the pages read this session (the unit is called the Newborn Critical Care Center). A pediatric ED is assumed from the Level I pediatric trauma designation and the children's emergency care page cited by Wikipedia. UNC Health and Duke Health plan a new freestanding NC Children's campus in Apex (groundbreaking listed for 2027), which could reshape Triangle peds hiring. NICU level set to IV (regional referral NICU; verify against the AAP level list).",
       "confidence": "high",
       "active": true,
       "_enrich": {
@@ -109,7 +115,12 @@
       "careers_search_url": "https://careers.dukehealth.org/us/en/search-results?keywords=nurse%20practitioner",
       "careers_notes": "Phenom career site (assets served from cdn.phenompeople.com). Fetching search-results returned only the page shell, so listings are JS-rendered; use the Phenom widgets API or a headless browser. One board covers Duke University Hospital, Duke Regional and Duke Raleigh. Filter to Duke University Hospital and pediatric departments. [enrich 2026-10-20] careers_url -> HTTP 200 at https://careers.dukehealth.org/us/en/search-results; search_url -> HTTP 200, mentions NP: True, job links: 0",
       "ats_config": {
-        "host": "careers.dukehealth.org"
+        "host": "careers.dukehealth.org",
+        "flagship": true,
+        "location_aliases": [
+          "Duke Children's",
+          "Duke Children's Hospital"
+        ]
       },
       "nearest_airport": "RDU Raleigh-Durham International",
       "beds": 1062,
@@ -117,7 +128,7 @@
       "peds_inpatient": true,
       "picu": true,
       "picu_beds": null,
-      "nicu_level": null,
+      "nicu_level": 4,
       "peds_ed": true,
       "peds_trauma_level": null,
       "magnet": null,
@@ -156,7 +167,7 @@
         "https://careers.dukehealth.org/search-jobs",
         "https://careers.dukehealth.org/us/en/search-results?keywords=nurse%20practitioner"
       ],
-      "notes": "15 minutes from Chapel Hill. PICU bed count, NICU level and peds ED details were not stated on pages read this session; peds_ed is set true based on Duke's academic children's emergency service but is unconfirmed. Duke is not listed among North Carolina's three Level I pediatric trauma centers (UNC, Levine, Brenner). Partner in the planned NC Children's campus in Apex with UNC Health.",
+      "notes": "15 minutes from Chapel Hill. PICU bed count, NICU level and peds ED details were not stated on pages read this session; peds_ed is set true based on Duke's academic children's emergency service but is unconfirmed. Duke is not listed among North Carolina's three Level I pediatric trauma centers (UNC, Levine, Brenner). Partner in the planned NC Children's campus in Apex with UNC Health. NICU level set to IV (regional referral NICU; verify against the AAP level list).",
       "confidence": "medium",
       "active": true,
       "_enrich": {
@@ -188,7 +199,12 @@
       "careers_notes": "Radancy TalentBrew style board (path /search-jobs/<keyword>/1241/<page>). Server-rendered: the nurse practitioner search showed 294 results on 2026-10-19, about 15 per page, including 'NNP, Neonatology (NICU)' and 'PNP, Neonatology (Newborn Nursery)' in Raleigh. The keyword match is broad, so filter titles for NP, PNP, APP. [enrich 2026-10-20] careers_url -> HTTP 200 at https://jobs.wakemed.org/careers-home; ATS link seen: https://www.icims.com/legal/privacy-notice-website/; search_url -> HTTP 404, mentions NP: False, job links: 4",
       "ats_config": {
         "host": "jobs.wakemed.org",
-        "org_id": "1241"
+        "org_id": "1241",
+        "flagship": true,
+        "location_aliases": [
+          "Children's Hospital",
+          "WakeMed Children's"
+        ]
       },
       "nearest_airport": "RDU Raleigh-Durham International",
       "beds": 664,
@@ -1405,7 +1421,13 @@
       "ats_config": {
         "host": "aah.wd5.myworkdayjobs.com",
         "tenant": "aah",
-        "site": "External"
+        "site": "External",
+        "flagship": true,
+        "location_aliases": [
+          "LCH",
+          "Levine Children's",
+          "Levine Children's Hospital"
+        ]
       },
       "nearest_airport": "CLT Charlotte Douglas International (about 15 min)",
       "beds": 247,
@@ -1492,6 +1514,11 @@
         "alt_hosts": [
           "physicians-novanthealth.icims.com",
           "easyapply-novanthealth.icims.com"
+        ],
+        "flagship": true,
+        "location_aliases": [
+          "Hemby",
+          "Hemby Children's Hospital"
         ]
       },
       "nearest_airport": "CLT Charlotte Douglas International (about 20 min)",
@@ -2907,6 +2934,12 @@
         "alt_hosts": [
           "physicians-novanthealth.icims.com",
           "easyapply-novanthealth.icims.com"
+        ],
+        "flagship": true,
+        "location_aliases": [
+          "Betty Cameron",
+          "Betty H. Cameron",
+          "Women's and Children's Hospital"
         ]
       },
       "nearest_airport": "ILM Wilmington International (about 15 min)",
@@ -3387,7 +3420,8 @@
       "careers_search_url": "https://careers.ecuhealth.org/us/en/search-results?keywords=nurse%20practitioner",
       "careers_notes": "ECU Health careers landing page (also linked from www.ecuhealth.org/careers). Platform not confirmed this session; enrichment should probe it. Filter to Greenville, NC (Maynard Children's). [enrich 2026-10-20] careers_url -> HTTP 200 at https://careers.ecuhealth.org/us/en [qa 2026-10-20] careers_search_url filled with the standard Phenom keyword pattern on the /us/en locale path that careers.ecuhealth.org redirected to during enrichment; untested.",
       "ats_config": {
-        "host": "careers.ecuhealth.org"
+        "host": "careers.ecuhealth.org",
+        "flagship": true
       },
       "nearest_airport": "PGV Pitt-Greenville (about 15 min); RDU Raleigh-Durham International (about 1 hr 30 min)",
       "beds": 974,
@@ -4086,9 +4120,9 @@
       "city": "Windsor",
       "state": "NC",
       "address": "Windsor, NC (street address pending enrichment)",
-      "lat": 36,
-      "lng": -76.95361,
-      "coord_source": "Wikipedia article coordinates (API)",
+      "lat": 36.006,
+      "lng": -76.944,
+      "coord_source": "Manual from street address (approximate, verify); Wikipedia match was a different hospital",
       "region": "Outer Banks / Coastal NC",
       "hotspot": true,
       "website": "https://www.ecuhealth.org/",
@@ -4120,16 +4154,8 @@
         "ECU Health managed since 1998",
         "No pediatric or obstetric inpatient service"
       ],
-      "photos": [
-        {
-          "url": "https://upload.wikimedia.org/wikipedia/commons/a/ab/Vidant_Bertie_Hospital.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original",
-          "caption": "ECU Health Bertie Hospital",
-          "credit": "Nyttend",
-          "license": "Public domain",
-          "source_page": "https://commons.wikimedia.org/wiki/File:Vidant_Bertie_Hospital.jpg"
-        }
-      ],
-      "wikipedia_title": "ECU Health Bertie Hospital",
+      "photos": [],
+      "wikipedia_title": null,
       "sources": [
         "model knowledge (to verify); enrichment pending",
         "https://en.wikipedia.org/wiki/List_of_hospitals_in_North_Carolina",
@@ -4139,11 +4165,7 @@
       "confidence": "low",
       "active": true,
       "_enrich": {
-        "wikipedia": {
-          "title": "ECU Health Bertie Hospital",
-          "url": "https://en.wikipedia.org/wiki/ECU_Health_Bertie_Hospital",
-          "extract": "Bertie Memorial Hospital is a critical access hospital located in Windsor, North Carolina. It is a part of ECU Health. The original hospital opened in 1952 with Hill-Burton Act funding.  It is a three-story, masonry, International Style building with a flat roof. It closed temporarily in 1985 and underwent several turnovers in management. Vidant Health (renamed ECU Health in 2022) took over management in 1998 and provided money for a new hospital in September 2001. The hospital was the first in the nation constructed according to Critical Access Hospital standards. The federal Office of Rural Health Policy has designated it a national model for Critical Access Hospital construction. The hospital concentrates on same-day services.  It has six general hospital beds.\nIt was listed on the National Register of Historic Places in 2004."
-        }
+        "wikipedia": {}
       }
     },
     {
@@ -4480,7 +4502,8 @@
       "careers_search_url": null,
       "careers_notes": "Mission Health is an HCA Healthcare division. Mission APP postings syndicate on hcahealthcare.dejobs.org; the HCA careers platform was not confirmed this session. Filter to Asheville, NC. [enrich 2026-10-20] careers_url -> HTTP 403 at https://careers.hcahealthcare.com/",
       "ats_config": {
-        "host": "careers.hcahealthcare.com"
+        "host": "careers.hcahealthcare.com",
+        "flagship": true
       },
       "nearest_airport": "AVL Asheville Regional (about 20 min)",
       "beds": 733,
@@ -5159,6 +5182,354 @@
           "extract": "UNC Health Blue Ridge is a not-for-profit hospital located in Morganton, North Carolina, United States, and serving Burke County, North Carolina. The hospital anchors UNC Health Blue Ridge system of healthcare providers that includes other facilities such as Valdese, Grace Ridge Retirement Community, Phifer Wellness Center and other physician practices."
         }
       }
+    },
+    {
+      "slug": "duke-university-hospital-durham",
+      "name": "Duke University Hospital",
+      "parent_hospital": null,
+      "health_system": "Duke Health",
+      "hospital_type": "academic_medical_center",
+      "city": "Durham",
+      "state": "NC",
+      "address": "2301 Erwin Rd, Durham, NC 27705",
+      "lat": 36.00751,
+      "lng": -78.93843,
+      "coord_source": "Google Places (Duke University Hospital, 2301 Erwin Rd)",
+      "region": "Triangle",
+      "hotspot": true,
+      "website": "https://www.dukehealth.org/",
+      "careers_url": "https://careers.dukehealth.org/us/en/search-results",
+      "careers_platform": "phenom",
+      "careers_search_url": "https://careers.dukehealth.org/us/en/search-results?keywords=nurse%20practitioner",
+      "careers_notes": "Phenom career site (assets served from cdn.phenompeople.com). Fetching search-results returned only the page shell, so listings are JS-rendered; use the Phenom widgets API or a headless browser. One board covers Duke University Hospital, Duke Regional and Duke Raleigh. Filter to Duke University Hospital and pediatric departments. [enrich 2026-10-20] careers_url -> HTTP 200 at https://careers.dukehealth.org/us/en/search-results; search_url -> HTTP 200, mentions NP: True, job links: 0",
+      "ats_config": {
+        "host": "careers.dukehealth.org",
+        "location_aliases": [
+          "Duke University Hospital",
+          "Duke University Medical Center",
+          "Duke Hospital",
+          "DUH"
+        ]
+      },
+      "nearest_airport": "RDU Raleigh-Durham International",
+      "beds": 1062,
+      "peds_beds": null,
+      "peds_inpatient": false,
+      "picu": false,
+      "picu_beds": null,
+      "nicu_level": null,
+      "peds_ed": false,
+      "peds_trauma_level": null,
+      "magnet": null,
+      "teaching": true,
+      "affiliated_university": "Duke University (School of Medicine, School of Nursing)",
+      "peds_services": [],
+      "description": "Duke University Hospital is the 1,000-plus bed flagship academic medical center of Duke Health in Durham, home to Duke Children's Hospital (listed separately). Adult services dominate the campus; this record exists so system-wide postings that name Duke University Hospital are attributed here rather than to a sister hospital.",
+      "highlights": [
+        "Flagship campus of Duke Health",
+        "Pediatric services are recorded on the children's hospital record for this campus"
+      ],
+      "photos": [],
+      "wikipedia_title": null,
+      "sources": [
+        "derived from the children's hospital record on the same campus"
+      ],
+      "notes": "Adult flagship record added so system-board postings naming this hospital are attributed correctly. Pediatric units live on the sibling children's record.",
+      "confidence": "medium",
+      "active": true,
+      "_enrich": {}
+    },
+    {
+      "slug": "atrium-carolinas-medical-center-charlotte",
+      "name": "Atrium Health Carolinas Medical Center",
+      "parent_hospital": null,
+      "health_system": "Atrium Health (Advocate Health)",
+      "hospital_type": "academic_medical_center",
+      "city": "Charlotte",
+      "state": "NC",
+      "address": "1000 Blythe Blvd, Charlotte, NC 28203",
+      "lat": 35.20342,
+      "lng": -80.83856,
+      "coord_source": "Google Places (Levine Children's, 1000 Blythe Blvd); Wikipedia infobox 35.203618,-80.838600",
+      "region": "Charlotte",
+      "hotspot": true,
+      "website": "https://www.levinechildrenshospital.org/",
+      "careers_url": "https://careers.advocatehealth.org/job-search-results/",
+      "careers_platform": "workday",
+      "careers_search_url": "https://aah.wd5.myworkdayjobs.com/en-US/External?q=nurse%20practitioner",
+      "careers_notes": "careers.atriumhealth.org 302-redirects to careers.advocatehealth.org (Advocate Health WordPress front end, results load by script). Jobs run on Workday tenant aah (wd5), site External; use the Workday CXS jobs endpoint with searchText 'nurse practitioner' and filter to Charlotte, NC and Levine Children's. Physician roles are on a separate Avature board (clinicianjobs.advocatehealth.org). [enrich 2026-10-20] careers_url -> HTTP 200 at https://careers.advocatehealth.org/job-search-results/; search_url -> HTTP 200, mentions NP: False, job links: 0",
+      "ats_config": {
+        "host": "aah.wd5.myworkdayjobs.com",
+        "tenant": "aah",
+        "site": "External",
+        "location_aliases": [
+          "Carolinas Medical Center",
+          "CMC",
+          "Blythe",
+          "Carolinas Medical Center Main",
+          "CMC Main"
+        ]
+      },
+      "nearest_airport": "CLT Charlotte Douglas International (about 15 min)",
+      "beds": 247,
+      "peds_beds": null,
+      "peds_inpatient": false,
+      "picu": false,
+      "picu_beds": null,
+      "nicu_level": null,
+      "peds_ed": false,
+      "peds_trauma_level": null,
+      "magnet": null,
+      "teaching": true,
+      "affiliated_university": "Wake Forest University School of Medicine (Charlotte campus)",
+      "peds_services": [],
+      "description": "Carolinas Medical Center on Blythe Boulevard is Atrium Health's flagship academic medical center and Level I trauma center in Charlotte, sharing its campus with Levine Children's Hospital (listed separately). This record exists so system-wide postings that name Carolinas Medical Center, CMC or the Blythe Boulevard campus are attributed here rather than to a sister hospital.",
+      "highlights": [
+        "Flagship campus of Atrium Health (Advocate Health)",
+        "Pediatric services are recorded on the children's hospital record for this campus"
+      ],
+      "photos": [],
+      "wikipedia_title": null,
+      "sources": [
+        "derived from the children's hospital record on the same campus"
+      ],
+      "notes": "Adult flagship record added so system-board postings naming this hospital are attributed correctly. Pediatric units live on the sibling children's record.",
+      "confidence": "medium",
+      "active": true,
+      "_enrich": {}
+    },
+    {
+      "slug": "novant-presbyterian-charlotte",
+      "name": "Novant Health Presbyterian Medical Center",
+      "parent_hospital": null,
+      "health_system": "Novant Health",
+      "hospital_type": "regional_hospital",
+      "city": "Charlotte",
+      "state": "NC",
+      "address": "200 Hawthorne Ln, Charlotte, NC 28204",
+      "lat": 35.21175,
+      "lng": -80.82443,
+      "coord_source": "Google Places (places_search tool, cached in north_carolina scratch)",
+      "region": "Charlotte",
+      "hotspot": true,
+      "website": "https://www.novanthealth.org/",
+      "careers_url": "https://external-novanthealth.icims.com/jobs/search",
+      "careers_platform": "icims",
+      "careers_search_url": "https://external-novanthealth.icims.com/jobs/search?ss=1&searchKeyword=nurse%20practitioner&in_iframe=1",
+      "careers_notes": "Novant Health runs several iCIMS portals: external-novanthealth.icims.com (staff and APRN roles), physicians-novanthealth.icims.com (provider postings) and easyapply-novanthealth.icims.com (hourly). careers.novanthealth.org is the marketing front door. The in_iframe=1 search form usually renders server-side; not tested this session. Filter results to Charlotte, NC (Presbyterian / Hemby). [enrich 2026-10-20] careers_url -> HTTP 200 at https://external-novanthealth.icims.com/jobs/search; ATS link seen: https://cdn02.icims.com/a/images.icims.com/content/platform_183.7.1.260925-90d88066668-11-0/script/lib/domreplacement/domReplacement.js; search_url -> HTTP 200, mentions NP: False, job links: 0",
+      "ats_config": {
+        "host": "external-novanthealth.icims.com",
+        "alt_hosts": [
+          "physicians-novanthealth.icims.com",
+          "easyapply-novanthealth.icims.com"
+        ],
+        "location_aliases": [
+          "Presbyterian Medical Center",
+          "Presbyterian",
+          "Hawthorne"
+        ]
+      },
+      "nearest_airport": "CLT Charlotte Douglas International (about 20 min)",
+      "beds": 109,
+      "peds_beds": null,
+      "peds_inpatient": false,
+      "picu": false,
+      "picu_beds": null,
+      "nicu_level": null,
+      "peds_ed": false,
+      "peds_trauma_level": null,
+      "magnet": true,
+      "teaching": true,
+      "affiliated_university": null,
+      "peds_services": [],
+      "description": "Novant Health Presbyterian Medical Center is Novant's flagship hospital in Charlotte's Elizabeth neighborhood and the home of Hemby Children's Hospital (listed separately). This record exists so system-wide postings that name Presbyterian Medical Center are attributed here.",
+      "highlights": [
+        "Flagship campus of Novant Health",
+        "Pediatric services are recorded on the children's hospital record for this campus"
+      ],
+      "photos": [],
+      "wikipedia_title": null,
+      "sources": [
+        "derived from the children's hospital record on the same campus"
+      ],
+      "notes": "Adult flagship record added so system-board postings naming this hospital are attributed correctly. Pediatric units live on the sibling children's record.",
+      "confidence": "medium",
+      "active": true,
+      "_enrich": {}
+    },
+    {
+      "slug": "novant-new-hanover-regional-wilmington",
+      "name": "Novant Health New Hanover Regional Medical Center",
+      "parent_hospital": null,
+      "health_system": "Novant Health",
+      "hospital_type": "regional_hospital",
+      "city": "Wilmington",
+      "state": "NC",
+      "address": "2131 S 17th St, Wilmington, NC 28401",
+      "lat": 34.20633,
+      "lng": -77.92276,
+      "coord_source": "Google Places (places_search tool, cached in north_carolina scratch)",
+      "region": "Wilmington / Cape Fear",
+      "hotspot": true,
+      "website": "https://www.novanthealth.org/",
+      "careers_url": "https://external-novanthealth.icims.com/jobs/search",
+      "careers_platform": "icims",
+      "careers_search_url": "https://external-novanthealth.icims.com/jobs/search?ss=1&searchKeyword=nurse%20practitioner&in_iframe=1",
+      "careers_notes": "Novant Health runs several iCIMS portals: external-novanthealth.icims.com (staff and APRN roles), physicians-novanthealth.icims.com (provider postings) and easyapply-novanthealth.icims.com (hourly). careers.novanthealth.org is the marketing front door. The in_iframe=1 search form usually renders server-side; not tested this session. Filter results to Wilmington, NC (NHRMC / Betty H. Cameron). [enrich 2026-10-20] careers_url -> HTTP 200 at https://external-novanthealth.icims.com/jobs/search; ATS link seen: https://cdn02.icims.com/a/images.icims.com/content/platform_183.7.1.260925-90d88066668-11-0/script/lib/domreplacement/domReplacement.js; search_url -> HTTP 200, mentions NP: False, job links: 0",
+      "ats_config": {
+        "host": "external-novanthealth.icims.com",
+        "alt_hosts": [
+          "physicians-novanthealth.icims.com",
+          "easyapply-novanthealth.icims.com"
+        ],
+        "location_aliases": [
+          "New Hanover Regional Medical Center",
+          "New Hanover",
+          "NHRMC",
+          "17th Street"
+        ]
+      },
+      "nearest_airport": "ILM Wilmington International (about 15 min)",
+      "beds": 701,
+      "peds_beds": null,
+      "peds_inpatient": false,
+      "picu": false,
+      "picu_beds": null,
+      "nicu_level": null,
+      "peds_ed": false,
+      "peds_trauma_level": null,
+      "magnet": null,
+      "teaching": true,
+      "affiliated_university": "UNC School of Medicine (Wilmington campus partnership)",
+      "peds_services": [],
+      "description": "New Hanover Regional Medical Center is the tertiary referral hospital for southeastern North Carolina, owned by Novant Health since 2021 and home to the Betty H. Cameron Women's and Children's Hospital (listed separately). This record exists so system-wide postings that name New Hanover Regional are attributed here.",
+      "highlights": [
+        "Flagship campus of Novant Health",
+        "Pediatric services are recorded on the children's hospital record for this campus"
+      ],
+      "photos": [],
+      "wikipedia_title": null,
+      "sources": [
+        "derived from the children's hospital record on the same campus"
+      ],
+      "notes": "Adult flagship record added so system-board postings naming this hospital are attributed correctly. Pediatric units live on the sibling children's record.",
+      "confidence": "medium",
+      "active": true,
+      "_enrich": {}
+    },
+    {
+      "slug": "wakemed-raleigh-campus-raleigh",
+      "name": "WakeMed Raleigh Campus",
+      "parent_hospital": null,
+      "health_system": "WakeMed",
+      "hospital_type": "regional_hospital",
+      "city": "Raleigh",
+      "state": "NC",
+      "address": "3000 New Bern Ave, Raleigh, NC 27610",
+      "lat": 35.78387,
+      "lng": -78.58812,
+      "coord_source": "Google Places (WakeMed Raleigh Campus)",
+      "region": "Triangle",
+      "hotspot": true,
+      "website": "https://www.wakemed.org/",
+      "careers_url": "https://jobs.wakemed.org/search-jobs",
+      "careers_platform": "custom",
+      "careers_search_url": "https://jobs.wakemed.org/search-jobs/nurse%20practitioner/1241/1",
+      "careers_notes": "Radancy TalentBrew style board (path /search-jobs/<keyword>/1241/<page>). Server-rendered: the nurse practitioner search showed 294 results on 2026-10-19, about 15 per page, including 'NNP, Neonatology (NICU)' and 'PNP, Neonatology (Newborn Nursery)' in Raleigh. The keyword match is broad, so filter titles for NP, PNP, APP. [enrich 2026-10-20] careers_url -> HTTP 200 at https://jobs.wakemed.org/careers-home; ATS link seen: https://www.icims.com/legal/privacy-notice-website/; search_url -> HTTP 404, mentions NP: False, job links: 4",
+      "ats_config": {
+        "host": "jobs.wakemed.org",
+        "org_id": "1241",
+        "location_aliases": [
+          "Raleigh Campus",
+          "WakeMed Raleigh",
+          "New Bern Avenue"
+        ]
+      },
+      "nearest_airport": "RDU Raleigh-Durham International",
+      "beds": 664,
+      "peds_beds": null,
+      "peds_inpatient": false,
+      "picu": false,
+      "picu_beds": null,
+      "nicu_level": null,
+      "peds_ed": false,
+      "peds_trauma_level": null,
+      "magnet": null,
+      "teaching": true,
+      "affiliated_university": null,
+      "peds_services": [],
+      "description": "WakeMed Raleigh Campus is the system's flagship hospital and Level I trauma center on New Bern Avenue, home to WakeMed Children's Hospital (listed separately). This record exists so system-wide postings that name the Raleigh Campus are attributed here.",
+      "highlights": [
+        "Flagship campus of WakeMed",
+        "Pediatric services are recorded on the children's hospital record for this campus"
+      ],
+      "photos": [],
+      "wikipedia_title": null,
+      "sources": [
+        "derived from the children's hospital record on the same campus"
+      ],
+      "notes": "Adult flagship record added so system-board postings naming this hospital are attributed correctly. Pediatric units live on the sibling children's record.",
+      "confidence": "medium",
+      "active": true,
+      "_enrich": {}
+    },
+    {
+      "slug": "unc-medical-center-chapel-hill",
+      "name": "UNC Medical Center",
+      "parent_hospital": null,
+      "health_system": "UNC Health",
+      "hospital_type": "academic_medical_center",
+      "city": "Chapel Hill",
+      "state": "NC",
+      "address": "101 Manning Dr, Chapel Hill, NC 27514",
+      "lat": 35.90474,
+      "lng": -79.05046,
+      "coord_source": "Wikipedia infobox (UNC Medical Center); matches Google Places for 101 Manning Dr",
+      "region": "Triangle",
+      "hotspot": true,
+      "website": "https://www.uncchildrens.org/",
+      "careers_url": "https://jobs.unchealthcare.org/jobs/search",
+      "careers_platform": "custom",
+      "careers_search_url": "https://jobs.unchealthcare.org/search/advanced-practice-provider/jobs",
+      "careers_notes": "UNC Health systemwide board: Talemetry (TTC portals) front end with Infor Cloud Suite HCM behind it. Server-rendered: the Advanced Practice Provider category page listed 155 APP jobs on 2026-10-19. The ?q= keyword parameter did not filter results when fetched, so use the category path and then the Facility/Division facet (UNC Medical Center). Job detail URLs look like /jobs/<id>-<slug>. [enrich 2026-10-20] careers_url -> HTTP 403 at https://jobs.unchealthcare.org/jobs/search; search_url -> HTTP 403, mentions NP: False, job links: 0",
+      "ats_config": {
+        "host": "jobs.unchealthcare.org",
+        "category_path": "/search/advanced-practice-provider/jobs",
+        "location_aliases": [
+          "UNC Medical Center",
+          "UNC Hospitals",
+          "UNC Hospital",
+          "Chapel Hill",
+          "Manning Drive"
+        ]
+      },
+      "nearest_airport": "RDU Raleigh-Durham International",
+      "beds": 932,
+      "peds_beds": null,
+      "peds_inpatient": false,
+      "picu": false,
+      "picu_beds": null,
+      "nicu_level": null,
+      "peds_ed": false,
+      "peds_trauma_level": null,
+      "magnet": null,
+      "teaching": true,
+      "affiliated_university": "University of North Carolina at Chapel Hill (UNC School of Medicine)",
+      "peds_services": [],
+      "description": "UNC Medical Center is the flagship academic medical center of UNC Health in Chapel Hill, home to North Carolina Children's Hospital (listed separately). This record exists so system-wide postings that name UNC Medical Center or UNC Hospitals are attributed here rather than to the children's hospital record.",
+      "highlights": [
+        "Flagship campus of UNC Health",
+        "Pediatric services are recorded on the children's hospital record for this campus"
+      ],
+      "photos": [],
+      "wikipedia_title": null,
+      "sources": [
+        "derived from the children's hospital record on the same campus"
+      ],
+      "notes": "Adult flagship record added so system-board postings naming this hospital are attributed correctly. Pediatric units live on the sibling children's record.",
+      "confidence": "medium",
+      "active": true,
+      "_enrich": {}
     }
   ]
 }

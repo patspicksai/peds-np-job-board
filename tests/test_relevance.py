@@ -10,9 +10,20 @@ def test_picu_np_is_3():
     assert keep and rel == 3 and setting == "picu"
 
 
-def test_nicu_nnp_is_3():
+def test_nicu_nnp_only_is_2_with_tag():
+    # An NNP-credential NICU role is a likely match (an acute care PNP usually cannot take it), not a strong one.
     v = r.classify("Neonatal Nurse Practitioner (NNP) - Peds Neonatology", "", AMC)
+    assert v.keep and v.relevance == 2 and v.setting == "nicu" and "NNP required" in v.tags
+
+
+def test_nicu_pnp_or_nnp_is_3():
+    v = r.classify("NNP, PNP-AC or PA - NICU", "", AMC)
     assert v.keep and v.relevance == 3 and v.setting == "nicu"
+
+
+def test_adult_congenital_at_childrens_is_not_3():
+    v = r.classify("Nurse Practitioner - Adult Congenital Heart Disease", "cares for adults with congenital heart disease", {"hospital_type": "childrens_hospital", "hotspot": True})
+    assert v.relevance <= 1
 
 
 def test_peds_hospitalist_is_3():

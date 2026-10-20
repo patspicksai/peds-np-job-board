@@ -26,7 +26,8 @@
         "keyword_param": "keyword",
         "brassring_host": "sjobs.brassring.com",
         "brassring_partnerid": "368",
-        "brassring_siteid": "5205"
+        "brassring_siteid": "5205",
+        "flagship": true
       },
       "nearest_airport": "BOS Logan International (20 to 30 min)",
       "beds": 485,
@@ -112,7 +113,8 @@
       "careers_search_url": null,
       "careers_notes": "Mass General Brigham posts all jobs on jobs.massgeneralbrigham.org; the fetch was blocked this session so the platform and query parameter are unconfirmed. Filter for Mass General for Children or MGH pediatric units. [enrich 2026-10-20] careers_url -> HTTP None at None",
       "ats_config": {
-        "host": "jobs.massgeneralbrigham.org"
+        "host": "jobs.massgeneralbrigham.org",
+        "flagship": true
       },
       "nearest_airport": "BOS Logan International (15 to 25 min)",
       "beds": 999,
@@ -1716,7 +1718,8 @@
       "careers_search_url": null,
       "careers_notes": "UMass Memorial Health careers landing page; fetch blocked this session and later rate limited (HTTP 429), so the job board host and platform are unconfirmed. Verify before scraping. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.ummhealth.org/careers; ATS link seen: https://ummh.wd1.myworkdayjobs.com/Careers",
       "ats_config": {
-        "host": "www.ummhealth.org"
+        "host": "www.ummhealth.org",
+        "flagship": true
       },
       "nearest_airport": "ORH Worcester Regional (15 min); BOS Logan International (60 min)",
       "beds": 818,
@@ -1797,7 +1800,8 @@
       "careers_notes": "Baystate Health job board baystatehealthjobs.com (linked as the Talent Acquisition site from baystatehealth.org and choosebaystatehealth.org). Fetch blocked this session; platform unconfirmed. choosebaystatehealth.org is a WordPress provider-recruiting site with inquiry forms (APP roles such as newborn hospitalist NP/PA are listed there). [enrich 2026-10-20] careers_url -> HTTP 200 at https://baystatehealthjobs.com/; ATS link seen: https://baystatehealth.wd12.myworkdayjobs.com/External_Careers/login",
       "ats_config": {
         "host": "www.baystatehealthjobs.com",
-        "provider_recruiting_host": "choosebaystatehealth.org"
+        "provider_recruiting_host": "choosebaystatehealth.org",
+        "flagship": true
       },
       "nearest_airport": "BDL Bradley International (25 min)",
       "beds": 716,
@@ -2411,7 +2415,8 @@
       "careers_notes": "Brown University Health (formerly Lifespan) system job board; host jobs.brownhealth.org given by the coordinator, with lifespan.org/careers as the legacy landing page. Neither was fetched this session, so platform and query parameters are unconfirmed; enrichment will probe. Covers Rhode Island Hospital, Hasbro Children's, Bradley, Miriam, Newport and Morton.",
       "ats_config": {
         "host": "jobs.brownhealth.org",
-        "legacy_host": "www.lifespan.org"
+        "legacy_host": "www.lifespan.org",
+        "flagship": true
       },
       "nearest_airport": "PVD T. F. Green (about 6 mi straight-line, 15 min)",
       "beds": null,
