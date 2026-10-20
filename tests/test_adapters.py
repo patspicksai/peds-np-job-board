@@ -257,3 +257,14 @@ def test_careersite_detail_without_jsonld():
     assert d["external_id"] == "85151" and d["posted_at"] == "2026-10-12" and d["employment_type"] == "Full time"
     assert d["description"].startswith("Maine's only Level IV NICU is recruiting.")
     assert "What We Offer:\n\nSign on bonus" in d["description"] and "Scam" not in d["description"]
+
+
+def test_locate_fallback():
+    from scraper.pipeline import locate_fallback
+    cn = {"slug": "cn", "name": "Children's National Hospital", "city": "Washington", "state": "DC"}
+    assert locate_fallback("Tech Hill", "12211 Plum Orchard Drive\nSilver Spring, MD 20904\n\nKids", cn, [cn], "none", None) == ("Silver Spring", "MD")
+    assert locate_fallback("NJ, United States", "text", cn, [cn], "none", None) == (None, "NJ")
+    assert locate_fallback("Children's National Hospital (Main Campus)", "Kids", cn, [cn], "name", None) == (None, "DC")
+    assert locate_fallback("CNPA Upper Marlboro", "Kids", cn, [cn], "none", None) == (None, None)
+    musc = {"slug": "m", "city": "Charleston", "state": "SC"}
+    assert locate_fallback("Charleston", "", musc, [musc], "city", None) == ("Charleston", "SC")

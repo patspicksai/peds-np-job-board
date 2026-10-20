@@ -279,6 +279,33 @@ def run_board(key: str, platform: str, group: list[dict], known: dict[str, dict]
     return res
 
 
+ADDR_RE = re.compile(r"([A-Z][A-Za-z .'-]{1,40}),\s*([A-Z]{2})\s+\d{5}(?:-\d{4})?\b")
+
+
+def locate_fallback(location: str, desc: str, hosp: dict, group: list[dict], level: str,
+                    city: str | None) -> tuple[str | None, str | None]:
+    """City/state when the posting's location field has no state (Workday facility names, "Tech Hill").
+
+    Order: a street address near the top of the description ("Silver Spring, MD 20904"); a bare state code
+    ("NJ, United States"); a location equal to a ledger hospital's city; the attributed hospital's own state
+    when the posting's location names that hospital or its city (never a guess from the board alone).
+    """
+    m = ADDR_RE.search((desc or "")[:600])
+    if m and m.group(2) in textutil.ABBRS:
+        return m.group(1).strip(), m.group(2)
+    first = re.split(r"[,|]", location or "")[0].strip()
+    if first.upper() in textutil.ABBRS and len(first) == 2:
+        return city, first.upper()
+    loc_n = re.sub(r"[^a-z ]", "", (location or "").strip().lower())
+    for h in [hosp] + [g for g in group if g is not hosp]:
+        hc = re.sub(r"[^a-z ]", "", (h.get("city") or "").strip().lower())
+        if hc and loc_n == hc:
+            return h.get("city"), h.get("state")
+    if level in ("name", "city"):
+        return city or None, hosp.get("state")
+    return city, None
+
+
 def build_job(li: Listing, d: dict, group: list[dict], hosp: dict, level: str, adapter: Adapter, method: str) -> Job | None:
     desc = d.get("description") or textutil.clean_text(li.snippet or "")
     location = d.get("location_text") or li.location_text or ""
@@ -293,12 +320,7 @@ def build_job(li: Listing, d: dict, group: list[dict], hosp: dict, level: str, a
         c2, s2 = textutil.split_location(location)
         city, st = city or c2, st or s2
     if not st:
-        # bare city names (Workday "Charleston") or a location equal to the attributed hospital's city
-        for h in [hosp] + [g for g in group if g is not hosp]:
-            hc = (h.get("city") or "").strip().lower()
-            if hc and re.sub(r"[^a-z ]", "", location.strip().lower()) == re.sub(r"[^a-z ]", "", hc):
-                city, st = h.get("city"), h.get("state")
-                break
+        city, st = locate_fallback(location, desc, hosp, group, level, city)
     if st and st not in attribution.FOOTPRINT:
         return None
     ctx = relevance_context(hosp, level, group)
