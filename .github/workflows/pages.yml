@@ -28,6 +28,7 @@ jobs:
           # live data overrides the fixtures when it exists
           [ -f data/hospitals.json ] && cp data/hospitals.json /tmp/site/data/hospitals.json
           [ -f data/jobs.json ] && cp data/jobs.json /tmp/site/data/jobs.json
+          [ -f data/coverage.json ] && cp data/coverage.json /tmp/site/data/coverage.json
           touch /tmp/site/.nojekyll
           echo "$(date -u +%FT%TZ) $GITHUB_SHA" > /tmp/site/build.txt
           ls -la /tmp/site /tmp/site/data

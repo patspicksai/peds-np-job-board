@@ -112,6 +112,7 @@ jobs:
           echo "rc=$rc" >> "$GITHUB_OUTPUT"
           NEW=$(python -c "import json;print(json.load(open('$RUNNER_TEMP/out/merge_stats.json')).get('new',0))" 2>/dev/null || echo 0)
           echo "new=$NEW" >> "$GITHUB_OUTPUT"
+          python scripts/build_coverage.py "${{ steps.scrape.outputs.run_file }}" || echo "coverage build failed (non-fatal)"
           if [ "$rc" = "0" ]; then
             RF="${{ steps.scrape.outputs.run_file }}"
             python -m scraper.notify --merge-stats "$RUNNER_TEMP/out/merge_stats.json" --ledger "${{ steps.ledger.outputs.path }}" \
@@ -124,6 +125,7 @@ jobs:
         run: |
           git config user.name "peds-np-scraper"; git config user.email "actions@users.noreply.github.com"
           git add data/runs
+          [ -f data/coverage.json ] && git add data/coverage.json
           [ "${{ steps.merge.outputs.rc }}" = "0" ] && git add data/jobs.json
           if git diff --cached --quiet; then echo "nothing to commit"; exit 0; fi
           if [ "${{ steps.merge.outputs.rc }}" = "0" ]; then
