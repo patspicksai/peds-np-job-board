@@ -59,8 +59,26 @@ class IcimsAdapter(Adapter):
     def _delegate(self):
         return getattr(self, "_sub", None)
 
+    def portal_hosts(self) -> list[str]:
+        """Every *.icims.com portal named in ats_config (host, alt_hosts, provider/staff hosts) or the URLs.
+        Systems often split providers and staff into separate portals (Dartmouth: providers-dartmouth-hitchcock)."""
+        hosts: list[str] = []
+        vals: list = [self.cfg.get("host")]
+        for k, v in self.cfg.items():
+            if k != "host" and ("host" in k or k in ("alt_hosts",)):
+                vals.extend(v if isinstance(v, list) else [v])
+        vals += [urlsplit(self.hospital.get(k) or "").netloc for k in ("careers_search_url", "careers_url")]
+        for v in vals:
+            if isinstance(v, str) and v.endswith("icims.com") and v not in hosts and \
+                    not re.match(r"^(?:internal|employees|easyapply)-", v):
+                hosts.append(v)
+        # provider portals first: that is where NP postings live
+        hosts.sort(key=lambda h: 0 if re.match(r"^(?:providers?|physicians?)-", h) else 1)
+        return hosts
+
     def search(self, keywords):
         host = self.cfg.get("host") or urlsplit(self.search_url).netloc
+        portals = self.portal_hosts()
         if host and not host.endswith("icims.com"):
             # careers_search_url points at a branded front end: sniff it
             sub = self._sniff_front_end(f"https://{host}/")
@@ -69,6 +87,34 @@ class IcimsAdapter(Adapter):
                 res = sub.search(keywords)
                 self.method, self.notes = f"{sub.platform}:{sub.method}", self.notes + sub.notes
                 return res
+            if not portals:
+                raise AdapterError(f"icims: {host} is not an iCIMS portal and its front end was not recognized")
+        if not portals:
+            portals = [host]
+        out: dict[str, Listing] = {}
+        for ph in portals:
+            if self.out_of_time():
+                break
+            rows = self._search_portal(ph, keywords)
+            if rows is None:  # handed off to a branded front end (Jibe / TalentBrew) that covers the system
+                for li in self._sub_results:
+                    out.setdefault(li.norm, li)
+                return list(out.values())
+            for li in rows:
+                out.setdefault(li.norm, li)
+        if len(portals) > 1:
+            self.note(f"searched iCIMS portals: {', '.join(portals)}")
+        if not out and self._portal_errors == len(portals):
+            raise AdapterError("; ".join(self.notes[-3:]))
+        return list(out.values())
+
+    def __init__(self, hospital, deadline=None):
+        super().__init__(hospital, deadline)
+        self._sub_results: list[Listing] = []
+        self._portal_errors = 0
+
+    def _search_portal(self, host: str, keywords) -> list[Listing] | None:
+        """Listings from one classic portal; None when the portal handed off to a branded front end."""
         out: dict[str, Listing] = {}
         errors = 0
         for kw in keywords:
@@ -92,7 +138,8 @@ class IcimsAdapter(Adapter):
                     self._sub = sub
                     res = sub.search(keywords)
                     self.method, self.notes = f"{sub.platform}:{sub.method}", self.notes + sub.notes
-                    return res
+                    self._sub_results = res
+                    return None
                 rows = parse_icims_search(r.text, host)
                 self.method = "requests"
                 for li in rows:
@@ -100,7 +147,7 @@ class IcimsAdapter(Adapter):
                 if len(rows) < 10:
                     break
         if errors == len(keywords):
-            raise AdapterError("; ".join(self.notes[-3:]))
+            self._portal_errors += 1
         return list(out.values())
 
     def _sniff_front_end(self, url: str):

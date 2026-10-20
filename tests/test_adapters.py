@@ -281,3 +281,23 @@ def test_workday_shared_host_and_sniff():
     assert a.platform == "workday" and a.cfg["tenant"] == "prismahealth" and a.cfg["host"] == "wd5.myworkdaysite.com"
     a._conf()
     assert a._prefix == "/recruiting/prismahealth"
+
+
+def test_icims_portal_hosts():
+    from scraper.adapters.icims import IcimsAdapter
+    h = {"slug": "d", "careers_url": "https://careers.dartmouth-health.org/results?paged=1",
+         "ats_config": {"host": "careers.dartmouth-health.org", "icims_provider_host": "providers-dartmouth-hitchcock.icims.com",
+                        "icims_staff_host": "careers-dartmouth-hitchcock.icims.com"}}
+    assert IcimsAdapter(h).portal_hosts() == ["providers-dartmouth-hitchcock.icims.com", "careers-dartmouth-hitchcock.icims.com"]
+    h2 = {"slug": "n", "careers_search_url": "https://external-novanthealth.icims.com/jobs/search",
+          "ats_config": {"host": "external-novanthealth.icims.com", "alt_hosts": ["physicians-novanthealth.icims.com", "easyapply-novanthealth.icims.com"]}}
+    assert IcimsAdapter(h2).portal_hosts() == ["physicians-novanthealth.icims.com", "external-novanthealth.icims.com"]
+
+
+def test_generic_next_page():
+    from scraper.adapters.generic import next_page_url
+    html = '<div class="pagination"><span class="current page">1</span><a href="?page_jobs=2" class="page">2</a><a href="?page_jobs=2" class="next">next &rsaquo;&rsaquo;</a></div>'
+    assert next_page_url(html, "https://www.rwjbarnabashealthcareers.org/jobs/nurse-practitioner/") == \
+        "https://www.rwjbarnabashealthcareers.org/jobs/nurse-practitioner/?page_jobs=2"
+    assert next_page_url('<a href="/x">About</a>', "https://a.org/") is None
+    assert next_page_url('<a href="/jobs?page=3">Next</a>', "https://a.org/jobs?page=2") == "https://a.org/jobs?page=3"

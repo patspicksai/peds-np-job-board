@@ -16,6 +16,7 @@ from urllib.parse import quote_plus, urljoin, urlsplit, urlunsplit, parse_qsl, u
 from bs4 import BeautifulSoup
 
 from .. import browser, http, relevance
+from ..textutil import ABBRS as _ABBRS
 from ..models import Listing, normalize_url
 from .base import Adapter, AdapterError, parse_detail_html
 
@@ -47,9 +48,28 @@ def extract_job_links(html: str, base_url: str) -> list[Listing]:
             continue
         if re.search(r"indeed\.com|linkedin\.com|glassdoor|ziprecruiter|facebook|twitter|x\.com/", host):
             continue
-        li = Listing(title=re.sub(r"\s+", " ", text), url=url)
+        li = Listing(title=re.sub(r"\s+", " ", text), url=url, location_text=_nearby_location(a))
         out.setdefault(li.norm, li)
     return list(out.values())
+
+
+_LOC_RE = re.compile(r"(?:\b\d+\s+[A-Za-z0-9 .'-]+,\s*)?([A-Za-z][A-Za-z .'-]{1,40}),\s*([A-Z]{2})\b(?:\s+\d{5})?")
+
+
+def _nearby_location(a) -> str:
+    """'201 LYONS AVE, NEWARK, NJ 07112' from the listing row around a job link (helps attribution / footprint)."""
+    node = a
+    for _ in range(4):
+        node = node.parent
+        if node is None:
+            return ""
+        text = node.get_text(" ", strip=True)
+        if len(text) > 700:
+            return ""
+        for m in _LOC_RE.finditer(text):
+            if m.group(2) in _ABBRS:
+                return m.group(0).strip()
+    return ""
 
 
 def mine_json_for_jobs(text: str, base_url: str) -> list[Listing]:
@@ -77,6 +97,26 @@ def mine_json_for_jobs(text: str, base_url: str) -> list[Listing]:
     return list(found.values())
 
 
+NEXT_TEXT = re.compile(r"^(?:next|next page|more|›|»|>|next\s*[›»>]+|[›»>]+)$", re.I)
+
+
+def next_page_url(html: str, base_url: str) -> str | None:
+    """The pagination "next" link of a server-rendered results page, if any."""
+    soup = BeautifulSoup(html or "", "lxml")
+    cands = soup.select("a[rel~=next][href], a.next[href], li.next a[href], a[aria-label*='next' i][href], "
+                        "a.pagination-next[href], a[class*='next'][href]")
+    if not cands:
+        cands = [a for a in soup.find_all("a", href=True) if NEXT_TEXT.match(a.get_text(" ", strip=True) or "")]
+    for a in cands:
+        href = a.get("href", "").strip()
+        if not href or href.startswith(("#", "javascript:")):
+            continue
+        u = urljoin(base_url, href)
+        if normalize_url(u) != normalize_url(base_url):
+            return u
+    return None
+
+
 def with_query(url: str, key: str, value: str) -> str:
     p = urlsplit(url)
     q = [(k, v) for k, v in parse_qsl(p.query, keep_blank_values=True) if k != key] + [(key, value)]
@@ -86,6 +126,7 @@ def with_query(url: str, key: str, value: str) -> str:
 class GenericAdapter(Adapter):
     platform = "generic"
     MAX_PAGES = 4
+    MAX_FOLLOW = 12
 
     def __init__(self, hospital, deadline=None, start_urls: list[str] | None = None, reason: str = ""):
         super().__init__(hospital, deadline)
@@ -129,8 +170,26 @@ class GenericAdapter(Adapter):
                 r = self.get(u)
                 statuses.append(f"{r.status_code} {u}")
                 self.method = "requests"
-                for li in extract_job_links(r.text, r.url):
+                found = extract_job_links(r.text, r.url)
+                for li in found:
                     out.setdefault(li.norm, li)
+                # server-rendered result lists: follow "next" pages (RWJBarnabas ?page_jobs=N, UVM, Covenant)
+                html, cur, pages = r.text, r.url, 1
+                while found and pages < self.MAX_FOLLOW and not self.out_of_time():
+                    nxt = next_page_url(html, cur)
+                    if not nxt:
+                        break
+                    try:
+                        r2 = self.get(nxt)
+                    except http.FetchError as e:
+                        statuses.append(f"{e.status} {nxt}")
+                        break
+                    html, cur, pages = r2.text, r2.url, pages + 1
+                    found = [li for li in extract_job_links(html, cur) if li.norm not in out]
+                    for li in found:
+                        out.setdefault(li.norm, li)
+                if pages > 1:
+                    self.note(f"generic: followed {pages} result pages from {u}")
             except http.FetchError as e:
                 statuses.append(f"{e.status} {u}")
                 if http.is_bot_block(e):
