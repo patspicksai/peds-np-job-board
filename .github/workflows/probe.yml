@@ -10,6 +10,9 @@ on:
       browser:
         description: "also render with Playwright"
         default: "true"
+      capture:
+        description: "regex of document URLs whose bodies to save"
+        default: ""
 permissions:
   contents: write
 concurrency:
@@ -35,7 +38,7 @@ jobs:
           set +e
           mkdir -p "$RUNNER_TEMP/probe"
           FLAG=""; [ "${{ inputs.browser }}" = "true" ] || FLAG="--no-browser"
-          python -m scraper.tools.probe "${{ inputs.urls }}" "$RUNNER_TEMP/probe" $FLAG > "$RUNNER_TEMP/probe/run.log" 2>&1
+          PROBE_CAPTURE="${{ inputs.capture }}" python -m scraper.tools.probe "${{ inputs.urls }}" "$RUNNER_TEMP/probe" $FLAG > "$RUNNER_TEMP/probe/run.log" 2>&1
           echo "exit=$?" >> "$RUNNER_TEMP/probe/run.log"
           tail -50 "$RUNNER_TEMP/probe/run.log"
       - name: Publish to ci-logs

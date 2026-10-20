@@ -14,6 +14,7 @@ and writes summary.txt (status, final url, size, ATS signatures).
 from __future__ import annotations
 
 import json
+import os
 import re
 import sys
 import time
@@ -112,9 +113,14 @@ def main() -> int:
         try:
             from playwright.sync_api import sync_playwright
             with sync_playwright() as p:
-                browser = p.chromium.launch(headless=True)
+                try:
+                    browser = p.chromium.launch(headless=True, channel="chromium",
+                                                args=["--disable-blink-features=AutomationControlled"])
+                except Exception:  # noqa: BLE001
+                    browser = p.chromium.launch(headless=True)
                 ctx = browser.new_context(user_agent=UA, viewport={"width": 1366, "height": 900},
                                           locale="en-US")
+                ctx.add_init_script("Object.defineProperty(navigator, 'webdriver', {get: () => undefined});")
                 for parts in entries:
                     name, url = parts[0], parts[1]
                     if len(parts) > 2 and parts[2].startswith("POST:"):
@@ -133,6 +139,11 @@ def main() -> int:
                                     pd = resp.request.post_data or ""
                                     line += f"\n    POSTDATA: {pd[:1500]}"
                                 net.append(line)
+                            cap = os.environ.get("PROBE_CAPTURE")
+                            if cap and re.search(cap, resp.url, re.I) and rt not in ("xhr", "fetch"):
+                                net.append(f"{resp.status} {resp.request.method} {rt} {resp.url}")
+                                bodies.append((resp.url, resp))
+                            if rt in ("xhr", "fetch", "document"):
                                 ct = (resp.headers or {}).get("content-type", "")
                                 if rt in ("xhr", "fetch") and ("json" in ct or "javascript" in ct) and \
                                         re.search(r"job|search|requisition|widgets|cxs", resp.url, re.I) and \
@@ -145,6 +156,11 @@ def main() -> int:
                     t0 = time.time()
                     try:
                         resp = page.goto(url, wait_until="domcontentloaded", timeout=45000)
+                        for _ in range(12):
+                            if "just a moment" in (page.title() or "").lower():
+                                page.wait_for_timeout(4000)
+                            else:
+                                break
                         try:
                             page.wait_for_load_state("networkidle", timeout=20000)
                         except Exception:  # noqa: BLE001
@@ -157,7 +173,7 @@ def main() -> int:
                         summary.append(f"      sigs={json.dumps(sigs(html))[:1500]}")
                     except Exception as e:  # noqa: BLE001
                         summary.append(f"[pw]  {name} EXC {type(e).__name__}: {str(e)[:300]}")
-                    for bi, (burl, bresp) in enumerate(bodies[:8]):
+                    for bi, (burl, bresp) in enumerate(bodies[:12]):
                         try:
                             btxt = bresp.text()
                             (out_dir / f"{name}.xhr{bi}.txt").write_text(burl + "\n\n" + btxt[:400_000])
