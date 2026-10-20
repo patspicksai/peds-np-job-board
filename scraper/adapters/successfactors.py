@@ -109,7 +109,9 @@ class SuccessFactorsAdapter(Adapter):
         for kw in keywords:
             start = 0
             while not self.out_of_time():
-                url = f"{base}/search/?q={quote_plus(kw)}&sortColumn=referencedate&sortOrder=desc&startrow={start}"
+                # multi-word queries are OR'ed by RMK unless quoted (Duke: 670 hits unquoted vs 70 quoted)
+                q = f'"{kw}"' if " " in kw.strip() else kw
+                url = f"{base}/search/?q={quote_plus(q)}&sortColumn=referencedate&sortOrder=desc&startrow={start}"
                 html = None
                 if not blocked:
                     try:
