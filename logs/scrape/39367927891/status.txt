@@ -1,0 +1,21 @@
+run 2026-10-20 wall=217.3s ledger=tests/fixtures/hospitals_sample.json browser=chrome-headed
+
+hospital                                 platform               method           board  list  cand  new   secs  status / error
+-------------------------------------------------------------------------------------------------------------------------------------------
+barbara-bush-childrens-portland          careersite             playwright-fetch   170   170    23   23  119.1  ok
+boston-childrens-boston                  generic->symphony      api                 39    39    13   13   12.0  ok
+childrens-national-washington            workday                api                317   317    27   27   56.4  ok
+chop-philadelphia                        phenom                 requests+api       252   252    32   32   55.1  ok
+duke-childrens-durham                    successfactors         requests            85    85    49   49   58.2  ok
+goryeb-childrens-morristown              oracle_cloud           api                280   280    15   15   54.3  ok
+hemby-childrens-charlotte                jibe                   api                467   467    12   12   55.4  ok
+inova-lj-murphy-childrens-falls-church   oracle_cloud           api                317   317    11   11   47.2  ok
+johns-hopkins-childrens-baltimore        hopkins                requests            58    34     1    1   50.3  ok
+k-hovnanian-childrens-neptune            icims                  talentbrew:api     824   671    23   23   75.1  ok
+levine-childrens-charlotte               workday                api                586   586    60   60  114.0  ok
+musc-shawn-jenkins-childrens-charleston  workday                api                424   423     6    6   76.9  ok
+sanzari-childrens-hackensack             icims                  talentbrew:api     824   153     4    4   75.1  ok
+unc-childrens-chapel-hill                careersite             playwright-fetch   371   371    56   56  217.1  ok
+wakemed-childrens-raleigh                icims                  jibe:api           129   129    16   16   38.5  ok
+-------------------------------------------------------------------------------------------------------------------------------------------
+hospitals=15 ok=15 not_ok=0 board_listings=4319 candidates=348 new_candidates=348
