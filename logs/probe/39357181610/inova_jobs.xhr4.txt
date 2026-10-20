@@ -1,0 +1,133 @@
+https://elar.fa.us2.oraclecloud.com/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requisitionList.secondaryLocations&finder=findReqs;siteNumber=CX_1,facetsList=NONE,limit=24,keyword=%22%5C%22679529%5C%22%22
+
+{
+  "items" : [ {
+    "SearchId" : 1,
+    "Keyword" : "\"679529\"",
+    "CorrectedKeyword" : null,
+    "UseExactKeywordFlag" : false,
+    "SuggestedKeyword" : null,
+    "ExecuteSpellCheckFlag" : true,
+    "Location" : null,
+    "LocationId" : null,
+    "Radius" : 0,
+    "RadiusUnit" : "MI",
+    "SelectedTitlesFacet" : null,
+    "SelectedCategoriesFacet" : null,
+    "SelectedPostingDatesFacet" : null,
+    "SelectedLocationsFacet" : null,
+    "LastSelectedFacet" : null,
+    "Facets" : "NONE",
+    "Offset" : 0,
+    "Limit" : 24,
+    "SortBy" : "RELEVANCY",
+    "TotalJobsCount" : 1,
+    "Latitude" : null,
+    "Longitude" : null,
+    "SiteNumber" : "CX_1",
+    "JobFamilyId" : null,
+    "PostingStartDate" : null,
+    "PostingEndDate" : null,
+    "SelectedWorkLocationsFacet" : null,
+    "RequisitionId" : null,
+    "CandidateNumber" : null,
+    "WorkLocationZipCode" : null,
+    "WorkLocationCountryCode" : null,
+    "SelectedFlexFieldsFacets" : null,
+    "OrganizationId" : null,
+    "SelectedOrganizationsFacet" : null,
+    "UserTargetFacetName" : null,
+    "UserTargetFacetInputTerm" : null,
+    "HotJobFlag" : null,
+    "WorkplaceType" : null,
+    "SelectedWorkplaceTypesFacet" : null,
+    "BotQRShortCode" : null,
+    "requisitionList" : [ {
+      "Id" : "679529",
+      "Title" : "Inova Anytime Advanced Practice Provider (NP/PA) PRN",
+      "PostedDate" : "2026-10-19",
+      "PostingEndDate" : null,
+      "Language" : "US",
+      "PrimaryLocationCountry" : "US",
+      "GeographyId" : 100000000370317,
+      "HotJobFlag" : false,
+      "WorkplaceTypeCode" : null,
+      "JobFamily" : null,
+      "JobFunction" : null,
+      "WorkerType" : null,
+      "ContractType" : null,
+      "ManagerLevel" : null,
+      "JobSchedule" : null,
+      "JobShift" : null,
+      "JobType" : null,
+      "StudyLevel" : null,
+      "DomesticTravelRequired" : null,
+      "InternationalTravelRequired" : null,
+      "WorkDurationYears" : null,
+      "WorkDurationMonths" : null,
+      "WorkHours" : null,
+      "WorkDays" : null,
+      "LegalEmployer" : null,
+      "BusinessUnit" : null,
+      "Department" : null,
+      "Organization" : null,
+      "BusinessUnitId" : 300000007046085,
+      "LegalEmployerId" : 300000001919253,
+      "OrganizationId" : 1,
+      "MediaThumbURL" : null,
+      "ShortDescriptionStr" : "Inova Anytime Primary Care is looking for enthusiastic, experienced, and dedicated Advanced Practice Providers to join our new after hours program. ",
+      "PrimaryLocation" : "Fairfax, VA, United States",
+      "Distance" : 33.051052,
+      "TrendingFlag" : false,
+      "BeFirstToApplyFlag" : true,
+      "Relevancy" : 33.05105209350586,
+      "WorkplaceType" : "",
+      "ExternalQualificationsStr" : null,
+      "ExternalResponsibilitiesStr" : null,
+      "secondaryLocations" : [ ]
+    } ],
+    "categoriesFacet" : [ ],
+    "locationsFacet" : [ ],
+    "postingDatesFacet" : [ ],
+    "titlesFacet" : [ ],
+    "workLocationsFacet" : [ ],
+    "flexFieldsFacet" : [ {
+      "Name" : "AttributeChar1",
+      "Label" : "Schedule"
+    }, {
+      "Name" : "AttributeChar2",
+      "Label" : "Job Shift"
+    }, {
+      "Name" : "AttributeChar3",
+      "Label" : "FTE Working Hours"
+    }, {
+      "Name" : "AttributeChar4",
+      "Label" : "Is this a PRN Position?"
+    }, {
+      "Name" : "AttributeChar5",
+      "Label" : "Remote"
+    } ],
+    "organizationsFacet" : [ ],
+    "workplaceTypesFacet" : [ ]
+  } ],
+  "count" : 1,
+  "hasMore" : false,
+  "limit" : 200,
+  "offset" : 0,
+  "links" : [ {
+    "rel" : "self",
+    "href" : "https://elar.fa.us2.oraclecloud.com:443/hcmRestApi/resources/11.13.18.05/recruitingCEJobRequisitions",
+    "name" : "recruitingCEJobRequisitions",
+    "kind" : "collection"
+  }, {
+    "rel" : "action",
+    "href" : "https://elar.fa.us2.oraclecloud.com:443/hcmRestApi/resources/11.13.18.05/recruitingCEJobRequisitions/action/getRequisitionsLocationCoordinates",
+    "name" : "getRequisitionsLocationCoordinates",
+    "kind" : "other"
+  }, {
+    "rel" : "action",
+    "href" : "https://elar.fa.us2.oraclecloud.com:443/hcmRestApi/resources/11.13.18.05/recruitingCEJobRequisitions/action/getRequisitionDetailsForMap",
+    "name" : "getRequisitionDetailsForMap",
+    "kind" : "other"
+  } ]
+}
