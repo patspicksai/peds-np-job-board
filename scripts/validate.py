@@ -49,6 +49,9 @@ def haversine_m(a, b):
     return 2 * r * math.asin(math.sqrt(h))
 
 
+SEED_MODE = False
+
+
 def check(path):
     errors, warnings = [], []
     try:
@@ -85,10 +88,13 @@ def check(path):
         elif h.get("hotspot") != REGIONS[region]:
             errors.append(f"{tag}: hotspot must be {REGIONS[region]} for region {region!r}")
         lat, lng = h.get("lat"), h.get("lng")
-        if not (isinstance(lat, (int, float)) and 24 <= lat <= 48):
-            errors.append(f"{tag}: lat out of range: {lat!r}")
-        if not (isinstance(lng, (int, float)) and -83 <= lng <= -66):
-            errors.append(f"{tag}: lng out of range: {lng!r}")
+        if SEED_MODE and lat is None and lng is None:
+            warnings.append(f"{tag}: coordinates pending enrichment")
+        else:
+            if not (isinstance(lat, (int, float)) and 24 <= lat <= 48):
+                errors.append(f"{tag}: lat out of range: {lat!r}")
+            if not (isinstance(lng, (int, float)) and -83 <= lng <= -66):
+                errors.append(f"{tag}: lng out of range: {lng!r}")
         for k in ("website", "careers_url"):
             v = h.get(k)
             if not (isinstance(v, str) and v.startswith("http")):
@@ -141,6 +147,10 @@ def check(path):
 
 
 def main(argv):
+    global SEED_MODE
+    if "--seed" in argv:
+        SEED_MODE = True
+        argv = [a for a in argv if a != "--seed"]
     if len(argv) < 2:
         print(__doc__)
         return 2

@@ -19,7 +19,7 @@
       "careers_url": "https://www.careersatmainehealth.org/search/jobs",
       "careers_platform": "jobvite",
       "careers_search_url": "https://providers.careersatmainehealth.org/search/advanced-practice-provider-barbara-bush-childrens-hospital/jobs",
-      "careers_notes": "MaineHealth career site (careersatmainehealth.org) with Jobvite as the apply ATS (apply.app.jobvite.com, applyCompany 'mainehealth'). Separate provider board providers.careersatmainehealth.org renders listings server-side (fetched 2026-10-19: 88 APP results, 25 per page, ?page=N). Filters are path segments: /search/advanced-practice-provider-<specialty or facility slug>/jobs, e.g. -pediatric, -nicu, -barbara-bush-childrens-hospital; keyword query parameter not confirmed. Job detail URLs look like /jobs/<id>-<slug>. Internal applicants use Infor (hcm-mh-prd.inforcloudsuite.com). Facility facet for this hospital fetched 2026-10-19 and rendered 1 posting (NICU Advanced Practice Provider, part-time, req 95667). The -pediatric facet showed 'NNP, PNP-AC or PA - NICU' (req 85151), which is a direct PNP-AC opening.",
+      "careers_notes": "MaineHealth career site (careersatmainehealth.org) with Jobvite as the apply ATS (apply.app.jobvite.com, applyCompany 'mainehealth'). Separate provider board providers.careersatmainehealth.org renders listings server-side (fetched 2026-10-19: 88 APP results, 25 per page, ?page=N). Filters are path segments: /search/advanced-practice-provider-<specialty or facility slug>/jobs, e.g. -pediatric, -nicu, -barbara-bush-childrens-hospital; keyword query parameter not confirmed. Job detail URLs look like /jobs/<id>-<slug>. Internal applicants use Infor (hcm-mh-prd.inforcloudsuite.com). Facility facet for this hospital fetched 2026-10-19 and rendered 1 posting (NICU Advanced Practice Provider, part-time, req 95667). The -pediatric facet showed 'NNP, PNP-AC or PA - NICU' (req 85151), which is a direct PNP-AC opening. [enrich 2026-10-20] careers_url -> HTTP 403 at https://www.careersatmainehealth.org/search/jobs; search_url -> HTTP 403, mentions NP: False, job links: 0",
       "ats_config": {
         "host": "www.careersatmainehealth.org",
         "provider_host": "providers.careersatmainehealth.org",
@@ -91,7 +91,14 @@
       ],
       "notes": "Top target for Kaitlyn: the only PICU, peds ED and tertiary NICU in Maine, all on one Portland campus. NICU level: the MaineHealth About page still says Level III with 31 beds, while the 2025 MaineHealth news story says 51 Level IV beds and the Maine CDC levels list (read in the earlier attempt) shows newborn Level 4; recorded as 4. No separate ACS pediatric trauma verification was found; the parent campus is an adult Level I trauma center and the peds ED treats pediatric trauma and burns. Beds field is the whole Maine Medical Center license (929); peds_beds is the 116 licensed pediatric beds (NICU 31, continuing care nursery 20, PICU 8, rest general inpatient). A live PNP-AC eligible NICU posting was seen on the provider board on 2026-10-19.",
       "confidence": "high",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "Maine Medical Center",
+          "url": "https://en.wikipedia.org/wiki/Maine_Medical_Center",
+          "extract": "MaineHealth Maine Medical Center Portland (MMCP), commonly contracted to Maine Med, is a 929-licensed-bed teaching hospital in Portland, Maine, United States. Affiliated with Tufts University School of Medicine, it is located in the Western Promenade neighborhood. It has a staff of over 6,000. The facility is one of only three Level I Trauma Centers in Northern New England. Founded in 1874, it is the largest hospital in northern New England with 28,000 inpatient visits, about 500,000 outpatient visits, 88,000 emergency visits, and over 27,000 surgeries performed annually.  MMCP is structured as a non-profit, private corporation governed by volunteer trustees. Maine Medical Center Portland is wholly owned by, and serves as the flagship hospital for MaineHealth, a non-profit healthcare network servicing Maine and New Hampshire."
+        }
+      }
     },
     {
       "slug": "northern-light-mercy-portland",
@@ -111,7 +118,7 @@
       "careers_url": "https://css-emh-prd.inforcloudsuite.com/hcm/Jobs/page/JobsHomePage?csk.showusingxi=true&csk.JobBoard=EXTERNAL&csk.HROrganization=10",
       "careers_platform": "custom",
       "careers_search_url": "https://css-emh-prd.inforcloudsuite.com/hcm/Jobs/page/JobsHomePage?csk.showusingxi=true&csk.JobBoard=EXTERNAL&csk.HROrganization=10",
-      "careers_notes": "Northern Light Health posts all member-hospital jobs on one Infor CloudSuite HCM external job board (URL taken from northernlighthealth.org/Careers/FAQ, which also points applicants to careers.northernlighthealth.org). The board could not be fetched in this session (fetch blocked), so rendering is untested; Infor boards are usually JS-heavy, so plan on the web-search fallback. Provider roles are also recruited by email at ProviderCareers@northernlight.org and syndicated to dejobs.org and AANP JobCenter.",
+      "careers_notes": "Northern Light Health posts all member-hospital jobs on one Infor CloudSuite HCM external job board (URL taken from northernlighthealth.org/Careers/FAQ, which also points applicants to careers.northernlighthealth.org). The board could not be fetched in this session (fetch blocked), so rendering is untested; Infor boards are usually JS-heavy, so plan on the web-search fallback. Provider roles are also recruited by email at ProviderCareers@northernlight.org and syndicated to dejobs.org and AANP JobCenter. [enrich 2026-10-20] careers_url -> HTTP 200 at https://css-emh-prd.inforcloudsuite.com:443/hcm/Jobs/page/JobsHomePage?csk.showusingxi=true&csk.JobBoard=EXTERNAL&csk.HROrganization=10; search_url -> HTTP 200, mentions NP: False, job links: 0",
       "ats_config": {
         "host": "css-emh-prd.inforcloudsuite.com",
         "vendor": "Infor CloudSuite HCM",
@@ -142,7 +149,15 @@
         "Part of Northern Light Health",
         "Founded in 1918 by the Sisters of Mercy as Queen's Hospital"
       ],
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/2/2e/Nl_mh_v_p_clr_rgb_181022.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original",
+          "caption": "Northern Light Mercy Hospital",
+          "credit": "5hane8perry",
+          "license": "CC BY-SA 4.0",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Nl_mh_v_p_clr_rgb_181022.jpg"
+        }
+      ],
       "wikipedia_title": "Northern Light Mercy Hospital",
       "sources": [
         "https://en.wikipedia.org/wiki/Northern_Light_Mercy_Hospital",
@@ -154,7 +169,14 @@
       ],
       "notes": "Bed count (230) comes from a third-party directory (datalilyai.com) and is likely the license figure; not confirmed on the hospital site. No inpatient pediatrics, PICU or peds ED. Possible fits for a PNP: nursery/NICU coverage is contracted to Maine Neonatology Associates rather than Mercy employees, so ask whether APP roles exist there. About 1 km from Maine Medical Center, so it is in the same commute zone.",
       "confidence": "medium",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "Northern Light Mercy Hospital",
+          "url": "https://en.wikipedia.org/wiki/Northern_Light_Mercy_Hospital",
+          "extract": "Northern Light Mercy Hospital is a not-for-profit community hospital in Portland, Maine. It was founded in 1918 by the Roman Catholic Diocese of Portland and the Sisters of Mercy to provide excellent healthcare, especially to the poor and disadvantaged. Mercy is located on a 42-acre campus overlooking the Fore River."
+        }
+      }
     },
     {
       "slug": "maine-medical-center-biddeford",
@@ -174,7 +196,7 @@
       "careers_url": "https://www.careersatmainehealth.org/search/jobs",
       "careers_platform": "jobvite",
       "careers_search_url": "https://providers.careersatmainehealth.org/search/advanced-practice-provider/jobs",
-      "careers_notes": "MaineHealth career site (careersatmainehealth.org) with Jobvite as the apply ATS (apply.app.jobvite.com, applyCompany 'mainehealth'). Separate provider board providers.careersatmainehealth.org renders listings server-side (fetched 2026-10-19: 88 APP results, 25 per page, ?page=N). Filters are path segments: /search/advanced-practice-provider-<specialty or facility slug>/jobs, e.g. -pediatric, -nicu, -barbara-bush-childrens-hospital; keyword query parameter not confirmed. Job detail URLs look like /jobs/<id>-<slug>. Internal applicants use Infor (hcm-mh-prd.inforcloudsuite.com).",
+      "careers_notes": "MaineHealth career site (careersatmainehealth.org) with Jobvite as the apply ATS (apply.app.jobvite.com, applyCompany 'mainehealth'). Separate provider board providers.careersatmainehealth.org renders listings server-side (fetched 2026-10-19: 88 APP results, 25 per page, ?page=N). Filters are path segments: /search/advanced-practice-provider-<specialty or facility slug>/jobs, e.g. -pediatric, -nicu, -barbara-bush-childrens-hospital; keyword query parameter not confirmed. Job detail URLs look like /jobs/<id>-<slug>. Internal applicants use Infor (hcm-mh-prd.inforcloudsuite.com). [enrich 2026-10-20] careers_url -> HTTP 403 at https://www.careersatmainehealth.org/search/jobs; search_url -> HTTP 403, mentions NP: False, job links: 0",
       "ats_config": {
         "host": "www.careersatmainehealth.org",
         "provider_host": "providers.careersatmainehealth.org",
@@ -212,7 +234,7 @@
           "source_page": "https://www.mainehealth.org/locations/mainehealth-hospital-medicine-biddeford"
         }
       ],
-      "wikipedia_title": null,
+      "wikipedia_title": "Covenant Health Systems",
       "sources": [
         "https://mainehealth.org/maine-medical-center/mainehealth-maine-medical-center-locations/mainehealth-biddeford-campus",
         "https://www.mainehealth.org/locations/mainehealth-hospital-medicine-biddeford",
@@ -223,7 +245,14 @@
       ],
       "notes": "Bed count not published on the pages read. Hotspot record included under the every-acute-hospital rule; no inpatient peds unit found. Maine CDC levels list (read in the earlier attempt) showed it as a Level I newborn nursery with Level II maternal care, so nicu_level is null. MaineHealth Maine Medical Center Sanford is now an emergency department without inpatient beds and is not listed separately.",
       "confidence": "medium",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "Covenant Health Systems",
+          "url": "https://en.wikipedia.org/wiki/Covenant_Health_Systems",
+          "extract": "Covenant Health Systems is a non-profit Catholic regional health care system sponsoring hospitals, nursing homes, assisted living residences and other health and elder services throughout New England.\nThe company was established in 1983 by the Sisters of Charity of Montreal, known as the Grey Nuns, to direct, support and conduct their health care, elder care and social service systems throughout the United States. Today, Covenant Health Systems serves as sponsor, governance organization and manager of multiple health and elder care related organizations throughout New England. Covenant Health Systems is a Catholic health organization committed to advancing the healing ministry of Jesus."
+        }
+      }
     },
     {
       "slug": "mid-coast-hospital-brunswick",
@@ -243,7 +272,7 @@
       "careers_url": "https://www.careersatmainehealth.org/search/jobs",
       "careers_platform": "jobvite",
       "careers_search_url": "https://providers.careersatmainehealth.org/search/advanced-practice-provider/jobs",
-      "careers_notes": "MaineHealth career site (careersatmainehealth.org) with Jobvite as the apply ATS (apply.app.jobvite.com, applyCompany 'mainehealth'). Separate provider board providers.careersatmainehealth.org renders listings server-side (fetched 2026-10-19: 88 APP results, 25 per page, ?page=N). Filters are path segments: /search/advanced-practice-provider-<specialty or facility slug>/jobs, e.g. -pediatric, -nicu, -barbara-bush-childrens-hospital; keyword query parameter not confirmed. Job detail URLs look like /jobs/<id>-<slug>. Internal applicants use Infor (hcm-mh-prd.inforcloudsuite.com).",
+      "careers_notes": "MaineHealth career site (careersatmainehealth.org) with Jobvite as the apply ATS (apply.app.jobvite.com, applyCompany 'mainehealth'). Separate provider board providers.careersatmainehealth.org renders listings server-side (fetched 2026-10-19: 88 APP results, 25 per page, ?page=N). Filters are path segments: /search/advanced-practice-provider-<specialty or facility slug>/jobs, e.g. -pediatric, -nicu, -barbara-bush-childrens-hospital; keyword query parameter not confirmed. Job detail URLs look like /jobs/<id>-<slug>. Internal applicants use Infor (hcm-mh-prd.inforcloudsuite.com). [enrich 2026-10-20] careers_url -> HTTP 403 at https://www.careersatmainehealth.org/search/jobs; search_url -> HTTP 403, mentions NP: False, job links: 0",
       "ats_config": {
         "host": "www.careersatmainehealth.org",
         "provider_host": "providers.careersatmainehealth.org",
@@ -291,7 +320,14 @@
       ],
       "notes": "Hotspot record under the every-acute-hospital rule. No inpatient pediatric unit confirmed; the visitor policy mentions pediatrics but no peds beds are described. Maine CDC levels list (read in the earlier attempt) showed Level I newborn care, so nicu_level is null. Birth volume should rise after the Lincoln L&D move.",
       "confidence": "medium",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "List of university hospitals",
+          "url": "https://en.wikipedia.org/wiki/List_of_university_hospitals",
+          "extract": "A university hospital is an institution which combines the services of a hospital with the education of medical students and medical research. These hospitals are typically affiliated with a medical school or university. The following is a list of such hospitals. See also Category:Teaching hospitals by country"
+        }
+      }
     },
     {
       "slug": "spring-harbor-westbrook",
@@ -311,7 +347,7 @@
       "careers_url": "https://www.careersatmainehealth.org/search/jobs",
       "careers_platform": "jobvite",
       "careers_search_url": "https://providers.careersatmainehealth.org/search/advanced-practice-provider/jobs",
-      "careers_notes": "MaineHealth career site (careersatmainehealth.org) with Jobvite as the apply ATS (apply.app.jobvite.com, applyCompany 'mainehealth'). Separate provider board providers.careersatmainehealth.org renders listings server-side (fetched 2026-10-19: 88 APP results, 25 per page, ?page=N). Filters are path segments: /search/advanced-practice-provider-<specialty or facility slug>/jobs, e.g. -pediatric, -nicu, -barbara-bush-childrens-hospital; keyword query parameter not confirmed. Job detail URLs look like /jobs/<id>-<slug>. Internal applicants use Infor (hcm-mh-prd.inforcloudsuite.com).",
+      "careers_notes": "MaineHealth career site (careersatmainehealth.org) with Jobvite as the apply ATS (apply.app.jobvite.com, applyCompany 'mainehealth'). Separate provider board providers.careersatmainehealth.org renders listings server-side (fetched 2026-10-19: 88 APP results, 25 per page, ?page=N). Filters are path segments: /search/advanced-practice-provider-<specialty or facility slug>/jobs, e.g. -pediatric, -nicu, -barbara-bush-childrens-hospital; keyword query parameter not confirmed. Job detail URLs look like /jobs/<id>-<slug>. Internal applicants use Infor (hcm-mh-prd.inforcloudsuite.com). [enrich 2026-10-20] careers_url -> HTTP 403 at https://www.careersatmainehealth.org/search/jobs; search_url -> HTTP 403, mentions NP: False, job links: 0",
       "ats_config": {
         "host": "www.careersatmainehealth.org",
         "provider_host": "providers.careersatmainehealth.org",
@@ -363,7 +399,14 @@
       ],
       "notes": "Psychiatric specialty hospital; peds_inpatient is false because these are psychiatric units, not a general pediatric floor. Included because the brief asked for Spring Harbor as a Portland-area pediatric specialty site. An acute care PNP would most likely fit a medical consult or psych-NP-adjacent role here, so relevance is lower than the acute hospitals.",
       "confidence": "medium",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "Spring Harbor Hospital",
+          "url": "https://en.wikipedia.org/wiki/Spring_Harbor_Hospital",
+          "extract": "Behavioral Health at Spring Harbor, formerly known as \"Spring Harbor Hospital\", is a 100-bed free-standing nonprofit psychiatric hospital located in Westbrook, Maine. It is one of two free standing psychiatric hospitals in the state of Maine and offers services for both children and adults."
+        }
+      }
     },
     {
       "slug": "dartmouth-health-childrens-lebanon",
@@ -383,7 +426,7 @@
       "careers_url": "https://careers.dartmouth-health.org/dartmouth-health/results",
       "careers_platform": "icims",
       "careers_search_url": "https://careers.dartmouth-health.org/results?paged=1&cp_dh_area=Associate%20Provider",
-      "careers_notes": "Dartmouth Health public job site careers.dartmouth-health.org is a Liquid Compass front end (Next.js) over iCIMS; provider postings live on providers-dartmouth-hitchcock.icims.com and staff postings on careers-dartmouth-hitchcock.icims.com. The Advanced Practice Provider filter (cp_dh_area=Associate Provider) was fetched 2026-10-19 and returned only unrendered template placeholders, so listings are JS-rendered: use the web-search fallback or the iCIMS provider host. Location filters use posting_location=<facility name>. Keyword parameter not identified. Children's careers page (childrens.dartmouth-health.org/health-care-professionals/careers) links to the same results board.",
+      "careers_notes": "Dartmouth Health public job site careers.dartmouth-health.org is a Liquid Compass front end (Next.js) over iCIMS; provider postings live on providers-dartmouth-hitchcock.icims.com and staff postings on careers-dartmouth-hitchcock.icims.com. The Advanced Practice Provider filter (cp_dh_area=Associate Provider) was fetched 2026-10-19 and returned only unrendered template placeholders, so listings are JS-rendered: use the web-search fallback or the iCIMS provider host. Location filters use posting_location=<facility name>. Keyword parameter not identified. Children's careers page (childrens.dartmouth-health.org/health-care-professionals/careers) links to the same results board. [enrich 2026-10-20] careers_url -> HTTP 200 at https://careers.dartmouth-health.org/dartmouth-health/results; ATS link seen: https://careers-dartmouth-hitchcock.icims.com/jobs/login?loginOnly=1&redirect=&in_iframe=1&hashed=-435679131; search_url -> HTTP 200, mentions NP: False, job links: 3",
       "ats_config": {
         "host": "careers.dartmouth-health.org",
         "frontend": "Liquid Compass",
@@ -421,7 +464,15 @@
         "Six-bed adolescent psychiatry unit opened April 2025",
         "Now branded Golisano Children's Hospital"
       ],
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/6/63/Aerial_view_of_Dartmouth_Hitchcock_Medical_Center_in_Lebanon_New_Hampshire_on_2015-07-06.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original",
+          "caption": "Dartmouth–Hitchcock Medical Center",
+          "credit": "Jared C. Benedict",
+          "license": "CC BY-SA 4.0",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Aerial_view_of_Dartmouth_Hitchcock_Medical_Center_in_Lebanon_New_Hampshire_on_2015-07-06.jpg"
+        }
+      ],
       "wikipedia_title": "Dartmouth Hitchcock Medical Center",
       "sources": [
         "https://childrens.dartmouth-health.org/departments-services/childrens-hospital",
@@ -435,7 +486,14 @@
       ],
       "notes": "Older facilities page lists a combined 21-bed pediatric/adolescent inpatient unit and PICU and a 3-room pediatric ED; the current children's hospital page says the PICU alone has 10 beds, so peds_beds left null. Golisano naming seen on the current page ('Dartmouth Health's Golisano Children's Hospital'); the official full name was not confirmed, so the record name combines both. Search results showed a Dartmouth Health neonatology advanced practice provider posting and pediatric critical care RN postings in Lebanon. Beds field is the whole DHMC (531).",
       "confidence": "high",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "Dartmouth–Hitchcock Medical Center",
+          "url": "https://en.wikipedia.org/wiki/Dartmouth%E2%80%93Hitchcock_Medical_Center",
+          "extract": "Dartmouth Hitchcock Medical Center (DHMC), the flagship campus of the Dartmouth Health system, is the U.S. state of New Hampshire's only academic medical center. DHMC is a 531-inpatient bed hospital and serves as a major tertiary-care referral site for patients throughout northern New England. As an academic medical center, DHMC offers primary, specialty and subspecialty care as well as education and research in partnership with the Geisel School of Medicine at Dartmouth, one of America's oldest medical schools, as well as the Thayer School of Engineering at Dartmouth and The Dartmouth Institute for Health Policy & Clinical Practice.\nIt is headquartered in Lebanon, New Hampshire on a 225-acre (91 ha) campus in the heart of the Upper Connecticut River Valley and employs more than 8,000 employees. DHMC is New Hampshire's only Level I Trauma Center, one of only three in northern New England, and it includes New Hampshire's only air ambulance service.\nDHMC is one of 20 members of the New England Alliance for Health, a regional network of hospitals and other health care organizations in New Hampshire, Vermont and Massachusetts."
+        }
+      }
     },
     {
       "slug": "golisano-childrens-uvm-burlington",
@@ -455,7 +513,7 @@
       "careers_url": "https://www.uvmhealthcareers.org/jobs/nurse-practitioner-physician-assistant/",
       "careers_platform": "custom",
       "careers_search_url": "https://www.uvmhealthcareers.org/jobs/nurse-practitioner-physician-assistant/",
-      "careers_notes": "UVM Health network job site uvmhealthcareers.org renders server-side (fetched 2026-10-19: 11 NP/PA listings across the network, including Pediatric Hematology/Oncology NP at UVMMC). Category path /jobs/nurse-practitioner-physician-assistant/ with optional location segment (e.g. /us-vt/) and ?entity= filter; detail pages /job/<id>/<slug>/. No keyword parameter found, so filter by title text. Vendor not identified.",
+      "careers_notes": "UVM Health network job site uvmhealthcareers.org renders server-side (fetched 2026-10-19: 11 NP/PA listings across the network, including Pediatric Hematology/Oncology NP at UVMMC). Category path /jobs/nurse-practitioner-physician-assistant/ with optional location segment (e.g. /us-vt/) and ?entity= filter; detail pages /job/<id>/<slug>/. No keyword parameter found, so filter by title text. Vendor not identified. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.uvmhealthcareers.org/jobs/nurse-practitioner-physician-assistant/; search_url -> HTTP 200, mentions NP: True, job links: 120",
       "ats_config": {
         "host": "www.uvmhealthcareers.org",
         "category_path": "/jobs/nurse-practitioner-physician-assistant/",
@@ -528,7 +586,14 @@
       ],
       "notes": "Formerly UVM Children's Hospital. PICU bed count not found. No dedicated pediatric ED found on pages read (ED is the main UVMMC ED), so peds_ed is false pending confirmation. Beds: Wikipedia text gives 562 licensed beds (infobox says 620). Pediatric trauma level conflicts between Wikipedia infobox and text. Live posting seen 2026-10-19: Pediatric Hematology/Oncology NP at UVMMC.",
       "confidence": "medium",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "University of Vermont Medical Center",
+          "url": "https://en.wikipedia.org/wiki/University_of_Vermont_Medical_Center",
+          "extract": "The University of Vermont Medical Center (UVMMC) is a five-campus academic medical facility under the corporate umbrella of the University of Vermont Health Network that is anchored by a 562-bed hospital in Burlington, Vermont. UVMMC is based in Burlington and serves as both a regional referral center (providing advanced care to approximately one million people in Vermont and northern New York) and a community hospital (for approximately 160,000 residents in the Chittenden and Grand Isle Vermont counties). The hospital was formerly known as the Medical Center Hospital of Vermont and later as Fletcher Allen Health Care until getting its current name. It is affiliated with the University of Vermont's Robert Larner College of Medicine and its College of Nursing and Health Sciences."
+        }
+      }
     },
     {
       "slug": "northern-light-emmc-bangor",
@@ -548,7 +613,7 @@
       "careers_url": "https://css-emh-prd.inforcloudsuite.com/hcm/Jobs/page/JobsHomePage?csk.showusingxi=true&csk.JobBoard=EXTERNAL&csk.HROrganization=10",
       "careers_platform": "custom",
       "careers_search_url": "https://css-emh-prd.inforcloudsuite.com/hcm/Jobs/page/JobsHomePage?csk.showusingxi=true&csk.JobBoard=EXTERNAL&csk.HROrganization=10",
-      "careers_notes": "Northern Light Health posts all member-hospital jobs on one Infor CloudSuite HCM external job board (URL taken from northernlighthealth.org/Careers/FAQ, which also points applicants to careers.northernlighthealth.org). The board could not be fetched in this session (fetch blocked), so rendering is untested; Infor boards are usually JS-heavy, so plan on the web-search fallback. Provider roles are also recruited by email at ProviderCareers@northernlight.org and syndicated to dejobs.org and AANP JobCenter.",
+      "careers_notes": "Northern Light Health posts all member-hospital jobs on one Infor CloudSuite HCM external job board (URL taken from northernlighthealth.org/Careers/FAQ, which also points applicants to careers.northernlighthealth.org). The board could not be fetched in this session (fetch blocked), so rendering is untested; Infor boards are usually JS-heavy, so plan on the web-search fallback. Provider roles are also recruited by email at ProviderCareers@northernlight.org and syndicated to dejobs.org and AANP JobCenter. [enrich 2026-10-20] careers_url -> HTTP 200 at https://css-emh-prd.inforcloudsuite.com:443/hcm/Jobs/page/JobsHomePage?csk.showusingxi=true&csk.JobBoard=EXTERNAL&csk.HROrganization=10; search_url -> HTTP 200, mentions NP: False, job links: 0",
       "ats_config": {
         "host": "css-emh-prd.inforcloudsuite.com",
         "vendor": "Infor CloudSuite HCM",
@@ -603,7 +668,8 @@
       ],
       "notes": "Second-best PICU option in Maine after Barbara Bush. The 24-bed count includes the PICU; separate PICU bed count not published. No dedicated pediatric ED found. Far from Portland, so not a Portland commute.",
       "confidence": "high",
-      "active": true
+      "active": true,
+      "_enrich": {}
     },
     {
       "slug": "elliot-hospital-manchester",
@@ -623,7 +689,7 @@
       "careers_url": "https://careers.elliot-hs.org/search-jobs/",
       "careers_platform": "custom",
       "careers_search_url": "https://careers.elliot-hs.org/category/physicians-and-other-providers-jobs/47438/8852768/1/",
-      "careers_notes": "SolutionHealth (Elliot Health System and Southern New Hampshire Health) uses a Radancy TalentBrew career site (tbcdn.talentbrew.com assets, Radancy search analytics, account id 47438), reachable at careers.elliot-hs.org and careers.solutionhealth.org. Job URLs look like /job/<city>/<title-slug>/47438/<id>. The search URL here is the Physician/Provider category linked from elliothospital.org/careers; not fetched (blocked), so rendering is untested. Several SolutionHealth NP postings were visible in search results (hospitalist, med-surg, psychiatry, primary care) in Manchester.",
+      "careers_notes": "SolutionHealth (Elliot Health System and Southern New Hampshire Health) uses a Radancy TalentBrew career site (tbcdn.talentbrew.com assets, Radancy search analytics, account id 47438), reachable at careers.elliot-hs.org and careers.solutionhealth.org. Job URLs look like /job/<city>/<title-slug>/47438/<id>. The search URL here is the Physician/Provider category linked from elliothospital.org/careers; not fetched (blocked), so rendering is untested. Several SolutionHealth NP postings were visible in search results (hospitalist, med-surg, psychiatry, primary care) in Manchester. [enrich 2026-10-20] careers_url -> HTTP 200 at https://careers.elliot-hs.org/search-jobs/; search_url -> HTTP 200, mentions NP: True, job links: 15",
       "ats_config": {
         "host": "careers.elliot-hs.org",
         "alt_host": "careers.solutionhealth.org",
@@ -678,7 +744,14 @@
       ],
       "notes": "Note the conflict: Elliot calls its peds ED the only dedicated one in NH, while Dartmouth Health Children's says the same about its Lebanon ED. Search results showed a pediatric hospitalist physician posting and a developmental-behavioral pediatrician posting for Elliot with Dartmouth Health Children's in Manchester, which signals the peds service is active. Peds bed count not published. Photo is the first JPG on the NICU page and its subject was not verified.",
       "confidence": "medium",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "Elliot Hospital",
+          "url": "https://en.wikipedia.org/wiki/Elliot_Hospital",
+          "extract": "Elliot Hospital is an acute care hospital in Manchester, New Hampshire, United States. The Elliot was established as a charitable trust in 1880, was legally incorporated as a not-for-profit organization by an act of the New Hampshire Legislature in 1881, and opened its doors as the first community general hospital in New Hampshire on April 17, 1890. Today the hospital has 296 beds and is a regional trauma center (American College of Surgeons Level II) for the city and the surrounding region. The Elliot has the only Level III neonatal intensive care unit (NICU) in southern New Hampshire.\nThe Elliot at River's Edge opened in 2010, providing urgent care, an ambulatory surgery center and various clinics and physicians' offices, located on Queen City Avenue in Manchester. Elliot has major ambulatory care centers in Londonderry, Bedford and Hooksett, with numerous offices throughout Manchester and the surrounding communities, including in Goffstown, Hooksett, Bedford, Suncook, Raymond, Amherst and Windham.\nElliot Health System includes the Elliot Medical Group, the Visiting Nurse Association of Manchester and Southern New Hampshire, the Mary and John Elliot Foundation, Elliot 1-Day Surgery Center, the Elliot Regional Cancer Center, and the Elliot Senior Center.\nElliot Health System, which includes Elliot Hospital, is located in northern New England.  Manchester is located in southern New Hampshire, 20 miles (32 km) from the Massachusetts border and 58 miles (93 km) from Boston.\nIn 2018, Elliot joined with Southern New Hampshire Health System based in Nashua, New Hampshire, in a combination relationship, creating a new regional health system known as SolutioNHealth."
+        }
+      }
     },
     {
       "slug": "southern-nh-medical-center-nashua",
@@ -698,7 +771,7 @@
       "careers_url": "https://careers.elliot-hs.org/search-jobs/",
       "careers_platform": "custom",
       "careers_search_url": "https://careers.elliot-hs.org/category/physicians-and-other-providers-jobs/47438/8852768/1/",
-      "careers_notes": "SolutionHealth (Elliot Health System and Southern New Hampshire Health) uses a Radancy TalentBrew career site (tbcdn.talentbrew.com assets, Radancy search analytics, account id 47438), reachable at careers.elliot-hs.org and careers.solutionhealth.org. Job URLs look like /job/<city>/<title-slug>/47438/<id>. The search URL here is the Physician/Provider category linked from elliothospital.org/careers; not fetched (blocked), so rendering is untested. Several SolutionHealth NP postings were visible in search results (hospitalist, med-surg, psychiatry, primary care) in Manchester.",
+      "careers_notes": "SolutionHealth (Elliot Health System and Southern New Hampshire Health) uses a Radancy TalentBrew career site (tbcdn.talentbrew.com assets, Radancy search analytics, account id 47438), reachable at careers.elliot-hs.org and careers.solutionhealth.org. Job URLs look like /job/<city>/<title-slug>/47438/<id>. The search URL here is the Physician/Provider category linked from elliothospital.org/careers; not fetched (blocked), so rendering is untested. Several SolutionHealth NP postings were visible in search results (hospitalist, med-surg, psychiatry, primary care) in Manchester. [enrich 2026-10-20] careers_url -> HTTP 200 at https://careers.elliot-hs.org/search-jobs/; search_url -> HTTP 200, mentions NP: True, job links: 15",
       "ats_config": {
         "host": "careers.elliot-hs.org",
         "alt_host": "careers.solutionhealth.org",
@@ -729,7 +802,15 @@
         "Clinical affiliate of Massachusetts General Hospital",
         "188 beds, part of SolutionHealth"
       ],
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/3/36/Southern_New_Hampshire_Medical_Center%2C_Nashua_NH.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original",
+          "caption": "Southern New Hampshire Health System",
+          "credit": "John Phelan",
+          "license": "CC BY-SA 3.0",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Southern_New_Hampshire_Medical_Center,_Nashua_NH.jpg"
+        }
+      ],
       "wikipedia_title": "Southern New Hampshire Medical Center",
       "sources": [
         "https://www.snhhealth.org/pediatrics/inpatient-pediatrics",
@@ -740,7 +821,14 @@
       ],
       "notes": "NICU level: hospital page says Level II special care nursery; a third-party neonatology list says Level III with 15 beds, and SolutionHealth says Elliot has the only Level III in southern NH, so recorded as 2. Pediatric hospitalists here may be MGH-affiliated rather than SNHMC-employed.",
       "confidence": "medium",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "Southern New Hampshire Health System",
+          "url": "https://en.wikipedia.org/wiki/Southern_New_Hampshire_Health_System",
+          "extract": "Southern New Hampshire Health is a system of hospitals and medical centers throughout the southern part of the state of New Hampshire in the United States. It is anchored by the Southern New Hampshire Medical Center (SNHMC), located in Nashua. The hospital was founded in 1893 as Nashua Memorial Hospital and is now a 188-bed regional medical facility that serves an estimated 100,000 patients a year in the southern New Hampshire region. SNHMC has over 500 primary and specialty care providers. SNHMC offers a full suite of health services, including a trauma center, newborn intensive care unit and distinguished programs in endoscopy, orthopedic surgery, gastroenterology, cardiology and neurosurgery."
+        }
+      }
     },
     {
       "slug": "central-maine-medical-center-lewiston",
@@ -760,7 +848,7 @@
       "careers_url": "https://careers-primehealthcare.icims.com/jobs/search?ss=1",
       "careers_platform": "icims",
       "careers_search_url": "https://careers-primehealthcare.icims.com/jobs/search?ss=1&searchKeyword=nurse%20practitioner",
-      "careers_notes": "Central Maine Healthcare jobs post on Prime Healthcare's iCIMS board (individual CMMC postings at careers-primehealthcare.icims.com/jobs/<id>/<slug>/job fetched and rendered server-side; location shown as US-ME-LEWISTON or US-ME-AUBURN). The search URL uses the standard iCIMS searchKeyword parameter and was not fetched this session; filter results to Maine locations. cmhc.org/careers is the marketing landing page.",
+      "careers_notes": "Central Maine Healthcare jobs post on Prime Healthcare's iCIMS board (individual CMMC postings at careers-primehealthcare.icims.com/jobs/<id>/<slug>/job fetched and rendered server-side; location shown as US-ME-LEWISTON or US-ME-AUBURN). The search URL uses the standard iCIMS searchKeyword parameter and was not fetched this session; filter results to Maine locations. cmhc.org/careers is the marketing landing page. [enrich 2026-10-20] careers_url -> HTTP 200 at https://careers-primehealthcare.icims.com/jobs/search?ss=1; ATS link seen: https://c-9940-20260303-www-primehealthcare-com.i.icims.com; search_url -> HTTP 200, mentions NP: False, job links: 0",
       "ats_config": {
         "host": "careers-primehealthcare.icims.com"
       },
@@ -789,7 +877,15 @@
         "Teaching affiliate of Boston University and UNE College of Osteopathic Medicine",
         "North of Portland on the Maine Turnpike"
       ],
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Central_Maine_Medical_Center.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original",
+          "caption": "Central Maine Medical Center",
+          "credit": "Marketingcmhc",
+          "license": "CC0",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Central_Maine_Medical_Center.jpg"
+        }
+      ],
       "wikipedia_title": "Central Maine Medical Center",
       "sources": [
         "https://en.wikipedia.org/wiki/Central_Maine_Medical_Center",
@@ -804,7 +900,14 @@
       ],
       "notes": "Trauma level conflicts: cmhc.org says Level III, Wikipedia says Level II, so peds_trauma_level is null. Pediatric unit status confirmed reopened as of June 2022; current staffing not confirmed. Prime Healthcare ownership inferred from Prime's iCIMS board carrying CMMC jobs and the Prime Healthcare Foundation membership logo; confirm. Within commuting range of Portland's northern suburbs (Freeport, Yarmouth).",
       "confidence": "medium",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "Central Maine Medical Center",
+          "url": "https://en.wikipedia.org/wiki/Central_Maine_Medical_Center",
+          "extract": "The Central Maine Medical Center, formerly Central Maine General Hospital, is a hospital located at 300 Main Street in the city of Lewiston, Maine. It serves most of Androscoggin County, including Lewiston and Auburn, Maine and various small and medium-sized communities. It is designated as a trauma center. The hospital was established in the 1860s and officially incorporated in 1888 by Dr. Edward H. Hill, an alumnus of nearby Bates College and also Harvard Medical School. The hospital is currently a teaching affiliate of Boston University School of Medicine and University of New England College of Osteopathic Medicine."
+        }
+      }
     },
     {
       "slug": "mainegeneral-medical-center-augusta",
@@ -824,8 +927,10 @@
       "careers_url": "https://www.mainegeneral.org/",
       "careers_platform": "workday",
       "careers_search_url": null,
-      "careers_notes": "A MaineGeneral Health recruiter posting (via simplify.jobs) names Workday as the system's ATS, but the Workday tenant URL was not found and mainegeneral.org could not be fetched this session. Find the myworkdayjobs.com tenant (likely under MaineGeneral) before scraping; use web search as fallback.",
-      "ats_config": {},
+      "careers_notes": "A MaineGeneral Health recruiter posting (via simplify.jobs) names Workday as the system's ATS, but the Workday tenant URL was not found and mainegeneral.org could not be fetched this session. Find the myworkdayjobs.com tenant (likely under MaineGeneral) before scraping; use web search as fallback. [enrich 2026-10-20] careers_url -> HTTP 403 at https://www.mainegeneral.org/",
+      "ats_config": {
+        "host": "www.mainegeneral.org"
+      },
       "nearest_airport": "AUG Augusta State Airport (about 3 mi straight-line); PWM Portland Jetport about 55 mi",
       "beds": 287,
       "peds_beds": null,
@@ -860,7 +965,8 @@
       ],
       "notes": "Inpatient pediatric unit not confirmed; federal data lists pediatrics as a service. Level II nursery per Maine CDC levels list (read in attempt 1) and a neonatology list. Website not fetched (blocked); domain is the system's standard site.",
       "confidence": "low",
-      "active": true
+      "active": true,
+      "_enrich": {}
     },
     {
       "slug": "catholic-medical-center-manchester",
@@ -880,7 +986,7 @@
       "careers_url": "https://careers.hcahealthcare.com/",
       "careers_platform": "unknown",
       "careers_search_url": null,
-      "careers_notes": "HCA Healthcare corporate career site. URL not verified this session (fetch blocked and search budget exhausted); confirm the board and its platform before scraping, and filter to New Hampshire.",
+      "careers_notes": "HCA Healthcare corporate career site. URL not verified this session (fetch blocked and search budget exhausted); confirm the board and its platform before scraping, and filter to New Hampshire. [enrich 2026-10-20] careers_url -> HTTP 403 at https://careers.hcahealthcare.com/",
       "ats_config": {
         "host": "careers.hcahealthcare.com"
       },
@@ -906,7 +1012,15 @@
         "Level III trauma center, 330 licensed beds",
         "Sold to HCA Healthcare (announced January 2025)"
       ],
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/9/91/Catholic_Medical_Center_%28CMC%29%2C_Manchester%2C_New_Hampshire.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original",
+          "caption": "Catholic Medical Center",
+          "credit": "Kenneth C. Zirkel",
+          "license": "CC BY-SA 4.0",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Catholic_Medical_Center_(CMC),_Manchester,_New_Hampshire.jpg"
+        }
+      ],
       "wikipedia_title": "Catholic Medical Center",
       "sources": [
         "https://en.wikipedia.org/wiki/Catholic_Medical_Center",
@@ -915,7 +1029,14 @@
       ],
       "notes": "No inpatient pediatric unit found. Closing date of the HCA sale not confirmed; careers likely moved to HCA's board. Elliot, across town, has the Level III NICU and peds ED, so CMC is a secondary option in Manchester.",
       "confidence": "medium",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "Catholic Medical Center",
+          "url": "https://en.wikipedia.org/wiki/Catholic_Medical_Center",
+          "extract": "Catholic Medical Center (CMC) is a 330-licensed bed (with 258 beds staffed) not-for-profit full-service acute care hospital located in the West Side area of Manchester, New Hampshire, United States. CMC offers medical-surgical care with more than 26 subspecialties, inpatient and outpatient services, diagnostic imaging and a 30-bed 24-hour emergency department. Norris Cotton Cancer Center at CMC offers medical oncology and infusion services. In September 2022, the hospital was the subject of a highly damaging two-part exposé reported by The Boston Globe's Spotlight investigative journalism team surrounding the alleged coverup of frequent surgical malpractice by a former surgeon."
+        }
+      }
     },
     {
       "slug": "concord-hospital-concord",
@@ -935,8 +1056,10 @@
       "careers_url": "http://www.concordhospital.org",
       "careers_platform": "unknown",
       "careers_search_url": null,
-      "careers_notes": "Careers board not located: concordhospital.org could not be fetched this session and web search was exhausted. Find the job board from the site's Careers link before scraping.",
-      "ats_config": {},
+      "careers_notes": "Careers board not located: concordhospital.org could not be fetched this session and web search was exhausted. Find the job board from the site's Careers link before scraping. [enrich 2026-10-20] careers_url -> HTTP 403 at https://www.concordhospital.org/",
+      "ats_config": {
+        "host": "www.concordhospital.org"
+      },
       "nearest_airport": "MHT Manchester-Boston Regional Airport (about 20 mi straight-line)",
       "beds": 295,
       "peds_beds": null,
@@ -961,7 +1084,15 @@
         "Recognized among America's Best Maternity Hospitals (2024)",
         "System includes Concord Hospital Laconia and Franklin"
       ],
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Concord_Hospital%2C_Concord_NH.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original",
+          "caption": "Concord Hospital (New Hampshire)",
+          "credit": "John Phelan",
+          "license": "CC BY-SA 3.0",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Concord_Hospital,_Concord_NH.jpg"
+        }
+      ],
       "wikipedia_title": "Concord Hospital (New Hampshire)",
       "sources": [
         "https://en.wikipedia.org/wiki/Concord_Hospital_(New_Hampshire)",
@@ -970,7 +1101,14 @@
       ],
       "notes": "Inpatient pediatric unit not confirmed. NICU level from one neonatology listing (Level II, 3 beds). Laconia and Franklin campuses not listed separately (no peds evidence).",
       "confidence": "low",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "Concord Hospital (New Hampshire)",
+          "url": "https://en.wikipedia.org/wiki/Concord_Hospital_(New_Hampshire)",
+          "extract": "Concord Hospital is a non-profit hospital located in the West End of Concord, New Hampshire. It is the principal location of the Concord Hospital Health System, and is a teaching hospital affiliated with Dartmouth Geisel School of Medicine, New Hampshire's only medical school.\nIt is home to the Payson Center for Cancer Care, an American College of Surgeons comprehensive cancer program, serving as a regional referral resource for New Hampshire. It has the busiest emergency department in the state of New Hampshire, having treated roughly 75,000 patients in the emergency room during 2024. It is also an ACS-verified level II Trauma Center, designating that the hospital has the resources to provide initial definitive trauma care for a wide range of injuries and injury severity, as well as serve as a regional leader in trauma education and disaster management. The Concord Hospital Medical Group, the administrating organization of Concord Hospital and affiliated institutions, is the largest private employer in the city and consists of nearly 3,400 staff members and over 475 clinical providers across three inpatient hospitals and over 80 primary care and specialty locations."
+        }
+      }
     },
     {
       "slug": "wentworth-douglass-dover",
@@ -990,8 +1128,10 @@
       "careers_url": "https://wdhospital.org",
       "careers_platform": "unknown",
       "careers_search_url": null,
-      "careers_notes": "Careers board not located (wdhospital.org fetch blocked, search exhausted). As a Mass General Brigham member, postings may be on the MGB board; confirm before scraping.",
-      "ats_config": {},
+      "careers_notes": "Careers board not located (wdhospital.org fetch blocked, search exhausted). As a Mass General Brigham member, postings may be on the MGB board; confirm before scraping. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.massgeneralbrigham.org/en/about/wentworth-douglass-hospital",
+      "ats_config": {
+        "host": "www.massgeneralbrigham.org"
+      },
       "nearest_airport": "PSM Portsmouth International Airport at Pease (about 9 mi straight-line); PWM Portland Jetport about 45 mi",
       "beds": 178,
       "peds_beds": null,
@@ -1017,7 +1157,15 @@
         "Magnet hospital since 2016",
         "Member of Mass General Brigham"
       ],
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/8/86/WDH_Exteriors_Central_Ave..jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original",
+          "caption": "Wentworth-Douglass Hospital",
+          "credit": "Hospital1234",
+          "license": "CC BY-SA 4.0",
+          "source_page": "https://commons.wikimedia.org/wiki/File:WDH_Exteriors_Central_Ave..jpg"
+        }
+      ],
       "wikipedia_title": "Wentworth-Douglass Hospital",
       "sources": [
         "https://en.wikipedia.org/wiki/Wentworth-Douglass_Hospital",
@@ -1026,7 +1174,14 @@
       ],
       "notes": "Inpatient pediatric unit not confirmed. Commutable from the far southern Maine coast (Kittery, York, Berwick), so worth watching if Kaitlyn lives south of Portland.",
       "confidence": "medium",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "Wentworth-Douglass Hospital",
+          "url": "https://en.wikipedia.org/wiki/Wentworth-Douglass_Hospital",
+          "extract": "Wentworth-Douglass Hospital (known colloquially as WDH) is a not-for-profit, acute care hospital, and 501(c)(3) charitable health care organization located in Dover, New Hampshire."
+        }
+      }
     },
     {
       "slug": "portsmouth-regional-portsmouth",
@@ -1046,7 +1201,7 @@
       "careers_url": "https://careers.hcahealthcare.com/",
       "careers_platform": "unknown",
       "careers_search_url": null,
-      "careers_notes": "HCA Healthcare corporate career site. URL not verified this session (fetch blocked and search budget exhausted); confirm the board and its platform before scraping, and filter to New Hampshire.",
+      "careers_notes": "HCA Healthcare corporate career site. URL not verified this session (fetch blocked and search budget exhausted); confirm the board and its platform before scraping, and filter to New Hampshire. [enrich 2026-10-20] careers_url -> HTTP 403 at https://careers.hcahealthcare.com/",
       "ats_config": {
         "host": "careers.hcahealthcare.com"
       },
@@ -1077,7 +1232,8 @@
       ],
       "notes": "Included as a regional referral center (Level II trauma) only; no pediatric unit, NICU or bed count verified. Hospital website not verified this session, so website holds a Google Maps place link; replace with the official site. HCA ownership from the earlier attempt's reading of Wikipedia's NH hospital list.",
       "confidence": "low",
-      "active": true
+      "active": true,
+      "_enrich": {}
     },
     {
       "slug": "rutland-regional-rutland",
@@ -1093,7 +1249,7 @@
       "coord_source": "Google Places",
       "region": "Vermont",
       "hotspot": false,
-      "website": "https://www.google.com/maps/place/?q=place_id:ChIJiTi0ofkk4IkRaf3TCvL9olU",
+      "website": "http://www.rrmc.org/",
       "careers_url": "https://www.google.com/maps/place/?q=place_id:ChIJiTi0ofkk4IkRaf3TCvL9olU",
       "careers_platform": "unknown",
       "careers_search_url": null,
@@ -1120,7 +1276,15 @@
         "Regional hospital for Rutland County",
         "About 300 births a year (FY2018)"
       ],
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/5/5f/Img-locations-RRMC-Allen-Street-2_300x220.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original",
+          "caption": "Rutland Regional Medical Center",
+          "credit": "MichelleAbt",
+          "license": "CC BY-SA 3.0",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Img-locations-RRMC-Allen-Street-2_300x220.jpg"
+        }
+      ],
       "wikipedia_title": "Rutland Regional Medical Center",
       "sources": [
         "https://en.wikipedia.org/wiki/Rutland_Regional_Medical_Center",
@@ -1129,7 +1293,14 @@
       ],
       "notes": "Included as a regional referral hospital; no pediatric unit or NICU verified, so expect few or no pediatric NP postings. Official website not verified this session (website and careers_url hold a Google Maps link to replace).",
       "confidence": "low",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "Rutland Regional Medical Center",
+          "url": "https://en.wikipedia.org/wiki/Rutland_Regional_Medical_Center",
+          "extract": "Rutland Regional Medical Center is the second largest hospital and the largest community hospital in Vermont. Located in Rutland, Vermont, it opened in 1896.\nRutland Hospital officially opened on September 6, 1896, with four physicians and ten beds. The hospital moved to its current building in 1956 and completed a major addition in 1989. The hospital's name was officially changed to Rutland Regional Medical Center in 1982.  The hospital now has a main campus with 144 beds, as well as several other facilities throughout the Rutland region.  In fiscal year 2018, Rutland Regional had over 33,000 emergency department visits, 7.000 inpatient admissions, and 300 births."
+        }
+      }
     },
     {
       "slug": "st-marys-regional-lewiston",
@@ -1149,7 +1320,7 @@
       "careers_url": "https://careers.covenanthealth.net/",
       "careers_platform": "unknown",
       "careers_search_url": null,
-      "careers_notes": "Covenant Health posts jobs at careers.covenanthealth.net/job/<id>/<slug> (seen for St. Joseph Hospital Nashua, St. Joseph Bangor and St. Mary's Lewiston). Underlying platform not identifiable from the fetched posting. Provider (APP) roles name a provider recruiter and ask for a CV by email.",
+      "careers_notes": "Covenant Health posts jobs at careers.covenanthealth.net/job/<id>/<slug> (seen for St. Joseph Hospital Nashua, St. Joseph Bangor and St. Mary's Lewiston). Underlying platform not identifiable from the fetched posting. Provider (APP) roles name a provider recruiter and ask for a CV by email. [enrich 2026-10-20] careers_url -> HTTP 403 at https://careers.covenanthealth.net/",
       "ats_config": {
         "host": "careers.covenanthealth.net"
       },
@@ -1175,7 +1346,7 @@
         "Lewiston, north of Portland on the Maine Turnpike"
       ],
       "photos": [],
-      "wikipedia_title": null,
+      "wikipedia_title": "St. Mary's Regional Medical Center",
       "sources": [
         "https://www.datalilyai.com/hospitals/me/st-mary-s-regional-medical-center-lewiston-6584",
         "https://www.datalilyai.com/hospitals/me",
@@ -1184,7 +1355,14 @@
       ],
       "notes": "Included for size (large regional hospital) and Portland commute range; peds_inpatient false because no pediatric unit was verified. Non-birthing per the Maine CDC levels list read in attempt 1. Official website not verified this session, so website holds a Google Maps link to replace.",
       "confidence": "low",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "St. Mary's Regional Medical Center",
+          "url": "https://en.wikipedia.org/wiki/St._Mary%27s_Regional_Medical_Center",
+          "extract": "St. Mary's Regional Medical Center may refer to:"
+        }
+      }
     },
     {
       "slug": "st-joseph-hospital-nashua",
@@ -1200,11 +1378,11 @@
       "coord_source": "Google Places (agrees with Wikipedia 42.74972, -71.48139)",
       "region": "New Hampshire",
       "hotspot": false,
-      "website": "https://www.google.com/maps/place/?q=place_id:ChIJ06NAbzS344kR1HGBkdeGDCI",
+      "website": "http://www.stjosephhospital.com/",
       "careers_url": "https://careers.covenanthealth.net/",
       "careers_platform": "unknown",
       "careers_search_url": null,
-      "careers_notes": "Covenant Health posts jobs at careers.covenanthealth.net/job/<id>/<slug> (seen for St. Joseph Hospital Nashua, St. Joseph Bangor and St. Mary's Lewiston). Underlying platform not identifiable from the fetched posting. Provider (APP) roles name a provider recruiter and ask for a CV by email.",
+      "careers_notes": "Covenant Health posts jobs at careers.covenanthealth.net/job/<id>/<slug> (seen for St. Joseph Hospital Nashua, St. Joseph Bangor and St. Mary's Lewiston). Underlying platform not identifiable from the fetched posting. Provider (APP) roles name a provider recruiter and ask for a CV by email. [enrich 2026-10-20] careers_url -> HTTP 403 at https://careers.covenanthealth.net/",
       "ats_config": {
         "host": "careers.covenanthealth.net"
       },
@@ -1227,7 +1405,15 @@
         "Satellite sites in Hudson, Merrimack and Milford",
         "On-site nursing school"
       ],
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/9/9d/080421_St_Joseph%27s.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original",
+          "caption": "St. Joseph Hospital (Nashua, New Hampshire)",
+          "credit": "Dan4th Nicholas",
+          "license": "CC BY 2.0",
+          "source_page": "https://commons.wikimedia.org/wiki/File:080421_St_Joseph%27s.jpg"
+        }
+      ],
       "wikipedia_title": "St. Joseph Hospital (Nashua, New Hampshire)",
       "sources": [
         "https://en.wikipedia.org/wiki/St._Joseph_Hospital_(Nashua,_New_Hampshire)",
@@ -1236,7 +1422,14 @@
       ],
       "notes": "Included for size; peds unit and NICU not verified. Official website not verified (website holds a Google Maps link to replace). Covenant provider roles are recruited by email (cpaparello@covh.org on a 2026 APP posting).",
       "confidence": "low",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "St. Joseph Hospital (Nashua, New Hampshire)",
+          "url": "https://en.wikipedia.org/wiki/St._Joseph_Hospital_(Nashua,_New_Hampshire)",
+          "extract": "St. Joseph Healthcare is a network of hospitals and health care facilities in the greater Nashua area, southern New Hampshire and northern Massachusetts.\nThe main facility is the 208-bed St. Joseph Hospital, with satellite centers in Milford and Merrimack. The service is now part of Covenant Health Systems."
+        }
+      }
     },
     {
       "slug": "cheshire-medical-center-keene",
@@ -1256,7 +1449,7 @@
       "careers_url": "https://careers.dartmouth-health.org/dartmouth-health/results",
       "careers_platform": "icims",
       "careers_search_url": "https://careers.dartmouth-health.org/results?paged=1&cp_dh_area=Associate%20Provider",
-      "careers_notes": "Dartmouth Health public job site careers.dartmouth-health.org is a Liquid Compass front end (Next.js) over iCIMS; provider postings live on providers-dartmouth-hitchcock.icims.com and staff postings on careers-dartmouth-hitchcock.icims.com. The Advanced Practice Provider filter (cp_dh_area=Associate Provider) was fetched 2026-10-19 and returned only unrendered template placeholders, so listings are JS-rendered: use the web-search fallback or the iCIMS provider host. Location filters use posting_location=<facility name>. Keyword parameter not identified. Filter the board with posting_location=Cheshire Medical Center (location listed on careers.dartmouth-health.org).",
+      "careers_notes": "Dartmouth Health public job site careers.dartmouth-health.org is a Liquid Compass front end (Next.js) over iCIMS; provider postings live on providers-dartmouth-hitchcock.icims.com and staff postings on careers-dartmouth-hitchcock.icims.com. The Advanced Practice Provider filter (cp_dh_area=Associate Provider) was fetched 2026-10-19 and returned only unrendered template placeholders, so listings are JS-rendered: use the web-search fallback or the iCIMS provider host. Location filters use posting_location=<facility name>. Keyword parameter not identified. Filter the board with posting_location=Cheshire Medical Center (location listed on careers.dartmouth-health.org). [enrich 2026-10-20] careers_url -> HTTP 200 at https://careers.dartmouth-health.org/dartmouth-health/results; ATS link seen: https://careers-dartmouth-hitchcock.icims.com/jobs/login?loginOnly=1&redirect=&in_iframe=1&hashed=-435679131; search_url -> HTTP 200, mentions NP: False, job links: 3",
       "ats_config": {
         "host": "careers.dartmouth-health.org",
         "frontend": "Liquid Compass",
@@ -1282,7 +1475,15 @@
         "Dartmouth Health member, same job board as DHMC",
         "Keene is a college town near VT and MA"
       ],
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/0/00/KeeneCampus.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original",
+          "caption": "Cheshire Medical Center",
+          "credit": "Wikimedia Commons",
+          "license": "see source page",
+          "source_page": "https://en.wikipedia.org/wiki/Cheshire_Medical_Center"
+        }
+      ],
       "wikipedia_title": "Cheshire Medical Center",
       "sources": [
         "https://en.wikipedia.org/wiki/Cheshire_Medical_Center",
@@ -1290,7 +1491,14 @@
       ],
       "notes": "Included as a regional referral hospital; pediatric unit not verified. Shares the Dartmouth Health board, so scraping cost is low.",
       "confidence": "low",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "Cheshire Medical Center",
+          "url": "https://en.wikipedia.org/wiki/Cheshire_Medical_Center",
+          "extract": "Cheshire Medical Center is the only hospital in Cheshire County, New Hampshire, United States. The 115-bed hospital is located in the city of Keene, the Cheshire County seat. It is part of the Dartmouth–Hitchcock health care network.\nIt was built in 1973 and replaced the Elliot Community Hospital on Main Street which had served as the city's hospital since 1892.\nCheshire Medical Center is listed as one of several rural hospitals at risk of closure due to recent budget cuts under the Trump Administration"
+        }
+      }
     },
     {
       "slug": "central-vermont-medical-center-berlin",
@@ -1310,7 +1518,7 @@
       "careers_url": "https://www.uvmhealthcareers.org/jobs/nurse-practitioner-physician-assistant/",
       "careers_platform": "custom",
       "careers_search_url": "https://www.uvmhealthcareers.org/jobs/nurse-practitioner-physician-assistant/",
-      "careers_notes": "UVM Health network job site uvmhealthcareers.org renders server-side (fetched 2026-10-19: 11 NP/PA listings across the network, including Pediatric Hematology/Oncology NP at UVMMC). Category path /jobs/nurse-practitioner-physician-assistant/ with optional location segment (e.g. /us-vt/) and ?entity= filter; detail pages /job/<id>/<slug>/. No keyword parameter found, so filter by title text. Vendor not identified.",
+      "careers_notes": "UVM Health network job site uvmhealthcareers.org renders server-side (fetched 2026-10-19: 11 NP/PA listings across the network, including Pediatric Hematology/Oncology NP at UVMMC). Category path /jobs/nurse-practitioner-physician-assistant/ with optional location segment (e.g. /us-vt/) and ?entity= filter; detail pages /job/<id>/<slug>/. No keyword parameter found, so filter by title text. Vendor not identified. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.uvmhealthcareers.org/jobs/nurse-practitioner-physician-assistant/; search_url -> HTTP 200, mentions NP: True, job links: 120",
       "ats_config": {
         "host": "www.uvmhealthcareers.org",
         "category_path": "/jobs/nurse-practitioner-physician-assistant/",
@@ -1344,7 +1552,8 @@
       ],
       "notes": "Included as a regional hospital on the UVM Health board (low scrape cost); peds unit not verified. Website field is the UVM network hospitals page because the CVMC page could not be fetched.",
       "confidence": "low",
-      "active": true
+      "active": true,
+      "_enrich": {}
     },
     {
       "slug": "southwestern-vermont-medical-center-bennington",
@@ -1360,11 +1569,11 @@
       "coord_source": "Google Places",
       "region": "Vermont",
       "hotspot": false,
-      "website": "https://www.google.com/maps/place/?q=place_id:ChIJwXK2PUKW4IkRG1CseYmXVyk",
+      "website": "http://svhealthcare.org/",
       "careers_url": "https://careers.dartmouth-health.org/dartmouth-health/results",
       "careers_platform": "icims",
       "careers_search_url": "https://careers.dartmouth-health.org/results?paged=1&cp_dh_area=Associate%20Provider",
-      "careers_notes": "Dartmouth Health public job site careers.dartmouth-health.org is a Liquid Compass front end (Next.js) over iCIMS; provider postings live on providers-dartmouth-hitchcock.icims.com and staff postings on careers-dartmouth-hitchcock.icims.com. The Advanced Practice Provider filter (cp_dh_area=Associate Provider) was fetched 2026-10-19 and returned only unrendered template placeholders, so listings are JS-rendered: use the web-search fallback or the iCIMS provider host. Location filters use posting_location=<facility name>. Keyword parameter not identified. Southwestern Vermont Medical Center is listed as a Dartmouth Health member location on careers.dartmouth-health.org.",
+      "careers_notes": "Dartmouth Health public job site careers.dartmouth-health.org is a Liquid Compass front end (Next.js) over iCIMS; provider postings live on providers-dartmouth-hitchcock.icims.com and staff postings on careers-dartmouth-hitchcock.icims.com. The Advanced Practice Provider filter (cp_dh_area=Associate Provider) was fetched 2026-10-19 and returned only unrendered template placeholders, so listings are JS-rendered: use the web-search fallback or the iCIMS provider host. Location filters use posting_location=<facility name>. Keyword parameter not identified. Southwestern Vermont Medical Center is listed as a Dartmouth Health member location on careers.dartmouth-health.org. [enrich 2026-10-20] careers_url -> HTTP 200 at https://careers.dartmouth-health.org/dartmouth-health/results; ATS link seen: https://careers-dartmouth-hitchcock.icims.com/jobs/login?loginOnly=1&redirect=&in_iframe=1&hashed=-435679131; search_url -> HTTP 200, mentions NP: False, job links: 3",
       "ats_config": {
         "host": "careers.dartmouth-health.org",
         "frontend": "Liquid Compass",
@@ -1400,7 +1609,14 @@
       ],
       "notes": "Borderline inclusion: no peds unit verified, kept because it is on the Dartmouth Health board and has obstetrics. Official website not verified (website holds a Google Maps link to replace).",
       "confidence": "low",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "Southwestern Vermont Medical Center",
+          "url": "https://en.wikipedia.org/wiki/Southwestern_Vermont_Medical_Center",
+          "extract": "Southwestern Vermont Medical Center (SVMC) is a general medical surgical hospital located in Bennington, Vermont. It is licensed for 99-beds. Founded in the early 20th century by donations from Henry W. Putnam and his son, SVMC is the only hospital in Bennington County, Vermont. It also serves portions of western Windham County, Vermont, eastern Rensselaer County, New York, and eastern Washington County, New York."
+        }
+      }
     },
     {
       "slug": "pen-bay-hospital-rockport",
@@ -1420,7 +1636,7 @@
       "careers_url": "https://www.careersatmainehealth.org/search/jobs",
       "careers_platform": "jobvite",
       "careers_search_url": "https://providers.careersatmainehealth.org/search/advanced-practice-provider/jobs",
-      "careers_notes": "MaineHealth career site (careersatmainehealth.org) with Jobvite as the apply ATS (apply.app.jobvite.com, applyCompany 'mainehealth'). Separate provider board providers.careersatmainehealth.org renders listings server-side (fetched 2026-10-19: 88 APP results, 25 per page, ?page=N). Filters are path segments: /search/advanced-practice-provider-<specialty or facility slug>/jobs, e.g. -pediatric, -nicu, -barbara-bush-childrens-hospital; keyword query parameter not confirmed. Job detail URLs look like /jobs/<id>-<slug>. Internal applicants use Infor (hcm-mh-prd.inforcloudsuite.com).",
+      "careers_notes": "MaineHealth career site (careersatmainehealth.org) with Jobvite as the apply ATS (apply.app.jobvite.com, applyCompany 'mainehealth'). Separate provider board providers.careersatmainehealth.org renders listings server-side (fetched 2026-10-19: 88 APP results, 25 per page, ?page=N). Filters are path segments: /search/advanced-practice-provider-<specialty or facility slug>/jobs, e.g. -pediatric, -nicu, -barbara-bush-childrens-hospital; keyword query parameter not confirmed. Job detail URLs look like /jobs/<id>-<slug>. Internal applicants use Infor (hcm-mh-prd.inforcloudsuite.com). [enrich 2026-10-20] careers_url -> HTTP 403 at https://www.careersatmainehealth.org/search/jobs; search_url -> HTTP 403, mentions NP: False, job links: 0",
       "ats_config": {
         "host": "www.careersatmainehealth.org",
         "provider_host": "providers.careersatmainehealth.org",
@@ -1458,7 +1674,8 @@
       ],
       "notes": "Borderline: no inpatient peds unit verified and nursery is Level I (Maine CDC list, attempt 1). Kept because federal data lists pediatrics and it shares the MaineHealth board.",
       "confidence": "low",
-      "active": true
+      "active": true,
+      "_enrich": {}
     },
     {
       "slug": "northern-light-ar-gould-presque-isle",
@@ -1478,7 +1695,7 @@
       "careers_url": "https://css-emh-prd.inforcloudsuite.com/hcm/Jobs/page/JobsHomePage?csk.showusingxi=true&csk.JobBoard=EXTERNAL&csk.HROrganization=10",
       "careers_platform": "custom",
       "careers_search_url": "https://css-emh-prd.inforcloudsuite.com/hcm/Jobs/page/JobsHomePage?csk.showusingxi=true&csk.JobBoard=EXTERNAL&csk.HROrganization=10",
-      "careers_notes": "Northern Light Health posts all member-hospital jobs on one Infor CloudSuite HCM external job board (URL taken from northernlighthealth.org/Careers/FAQ, which also points applicants to careers.northernlighthealth.org). The board could not be fetched in this session (fetch blocked), so rendering is untested; Infor boards are usually JS-heavy, so plan on the web-search fallback. Provider roles are also recruited by email at ProviderCareers@northernlight.org and syndicated to dejobs.org and AANP JobCenter.",
+      "careers_notes": "Northern Light Health posts all member-hospital jobs on one Infor CloudSuite HCM external job board (URL taken from northernlighthealth.org/Careers/FAQ, which also points applicants to careers.northernlighthealth.org). The board could not be fetched in this session (fetch blocked), so rendering is untested; Infor boards are usually JS-heavy, so plan on the web-search fallback. Provider roles are also recruited by email at ProviderCareers@northernlight.org and syndicated to dejobs.org and AANP JobCenter. [enrich 2026-10-20] careers_url -> HTTP 200 at https://css-emh-prd.inforcloudsuite.com:443/hcm/Jobs/page/JobsHomePage?csk.showusingxi=true&csk.JobBoard=EXTERNAL&csk.HROrganization=10; search_url -> HTTP 200, mentions NP: False, job links: 0",
       "ats_config": {
         "host": "css-emh-prd.inforcloudsuite.com",
         "vendor": "Infor CloudSuite HCM",
@@ -1508,7 +1725,7 @@
         "Northern Light Health member"
       ],
       "photos": [],
-      "wikipedia_title": null,
+      "wikipedia_title": "Northern Light A.R. Gould Hospital",
       "sources": [
         "https://www.datalilyai.com/hospitals/me/northern-light-a-r-gould-hospital-presque-isle-8999",
         "https://www.datalilyai.com/hospitals/me",
@@ -1516,7 +1733,14 @@
       ],
       "notes": "Borderline remote inclusion; peds unit not verified. Website field is the Northern Light Health home page (hospital page not fetched).",
       "confidence": "low",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "Northern Light A.R. Gould Hospital",
+          "url": "https://en.wikipedia.org/wiki/Northern_Light_A.R._Gould_Hospital",
+          "extract": "Northern Light A.R. Gould Hospital (frequently shortened to ARG), formerly known as The Aroostook Medical Center (TAMC), is a hospital located in Presque Isle, Maine that is governed by a local volunteer board of trustees. It is named for former U.S. Senator and businessman Arthur R. Gould.\nA.R. Gould has more than 60 physicians on their active medical staff and more than 1,000 employees. A.R. Gould Hospital offers a variety of services including advanced cancer care, cardiology, dialysis, sleep medicine, imaging, emergency response, orthopedic services, primary care, pediatric primary care, OBGYN services, as well as mental and behavioral health services."
+        }
+      }
     },
     {
       "slug": "northern-light-acadia-bangor",
@@ -1536,7 +1760,7 @@
       "careers_url": "https://css-emh-prd.inforcloudsuite.com/hcm/Jobs/page/JobsHomePage?csk.showusingxi=true&csk.JobBoard=EXTERNAL&csk.HROrganization=10",
       "careers_platform": "custom",
       "careers_search_url": "https://css-emh-prd.inforcloudsuite.com/hcm/Jobs/page/JobsHomePage?csk.showusingxi=true&csk.JobBoard=EXTERNAL&csk.HROrganization=10",
-      "careers_notes": "Northern Light Health posts all member-hospital jobs on one Infor CloudSuite HCM external job board (URL taken from northernlighthealth.org/Careers/FAQ, which also points applicants to careers.northernlighthealth.org). The board could not be fetched in this session (fetch blocked), so rendering is untested; Infor boards are usually JS-heavy, so plan on the web-search fallback. Provider roles are also recruited by email at ProviderCareers@northernlight.org and syndicated to dejobs.org and AANP JobCenter.",
+      "careers_notes": "Northern Light Health posts all member-hospital jobs on one Infor CloudSuite HCM external job board (URL taken from northernlighthealth.org/Careers/FAQ, which also points applicants to careers.northernlighthealth.org). The board could not be fetched in this session (fetch blocked), so rendering is untested; Infor boards are usually JS-heavy, so plan on the web-search fallback. Provider roles are also recruited by email at ProviderCareers@northernlight.org and syndicated to dejobs.org and AANP JobCenter. [enrich 2026-10-20] careers_url -> HTTP 200 at https://css-emh-prd.inforcloudsuite.com:443/hcm/Jobs/page/JobsHomePage?csk.showusingxi=true&csk.JobBoard=EXTERNAL&csk.HROrganization=10; search_url -> HTTP 200, mentions NP: False, job links: 0",
       "ats_config": {
         "host": "css-emh-prd.inforcloudsuite.com",
         "vendor": "Infor CloudSuite HCM",
@@ -1573,7 +1797,8 @@
       ],
       "notes": "Psychiatric specialty site (like Spring Harbor); child and adolescent unit sizes not verified. Lower relevance for an acute care PNP. Acadia's apply page links to the same Infor board.",
       "confidence": "low",
-      "active": true
+      "active": true,
+      "_enrich": {}
     },
     {
       "slug": "brattleboro-retreat-brattleboro",
@@ -1593,8 +1818,10 @@
       "careers_url": "http://www.brattlebororetreat.org",
       "careers_platform": "unknown",
       "careers_search_url": null,
-      "careers_notes": "Careers board not located (site fetch blocked, search exhausted). Find the job board from the site's careers link.",
-      "ats_config": {},
+      "careers_notes": "Careers board not located (site fetch blocked, search exhausted). Find the job board from the site's careers link. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.brattlebororetreat.org/",
+      "ats_config": {
+        "host": "www.brattlebororetreat.org"
+      },
       "nearest_airport": "MHT Manchester-Boston Regional Airport (about 57 mi straight-line); BDL Bradley International is closer (not verified)",
       "beds": 113,
       "peds_beds": null,
@@ -1616,7 +1843,15 @@
         "Inpatient child and adolescent programs",
         "Independent, not part of a large system"
       ],
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/f/f1/Brattleboro_Retreat_1.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original",
+          "caption": "Brattleboro Retreat",
+          "credit": "Beyond My Ken",
+          "license": "CC BY-SA 4.0",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Brattleboro_Retreat_1.jpg"
+        }
+      ],
       "wikipedia_title": "Brattleboro Retreat",
       "sources": [
         "https://en.wikipedia.org/wiki/Brattleboro_Retreat",
@@ -1624,7 +1859,14 @@
       ],
       "notes": "Psychiatric specialty site; lower relevance for an acute care PNP.; bed count from Wikipedia's Vermont list.",
       "confidence": "low",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "Brattleboro Retreat",
+          "url": "https://en.wikipedia.org/wiki/Brattleboro_Retreat",
+          "extract": "The Brattleboro Retreat is a private not-for-profit mental health hospital that provides comprehensive inpatient, partial hospitalization, and outpatient treatment services for children, adolescents, and adults.\nLocated just north of downtown Brattleboro, Vermont, United States, the Retreat is situated on approximately 300 acres of land along the Retreat Meadows inlet of the West River. Founded in 1834, the retreat was \"the first facility for the care of the mentally ill in Vermont, and one of the first ten private psychiatric hospitals in the United States\". It is considered a pioneer in the field of mental health care in the United States.\nThe retreat is a member of the Ivy League Hospitals. More than 600 acres of the campus, including most of its buildings, were listed on the National Register of Historic Places in 1984."
+        }
+      }
     },
     {
       "slug": "york-hospital-york",
@@ -1644,7 +1886,7 @@
       "careers_url": "https://www.careersatmainehealth.org/search/jobs",
       "careers_platform": "jobvite",
       "careers_search_url": "https://providers.careersatmainehealth.org/search/advanced-practice-provider/jobs",
-      "careers_notes": "MaineHealth career site (careersatmainehealth.org) with Jobvite as the apply ATS (apply.app.jobvite.com, applyCompany 'mainehealth'). Separate provider board providers.careersatmainehealth.org renders listings server-side (fetched 2026-10-19: 88 APP results, 25 per page, ?page=N). Filters are path segments: /search/advanced-practice-provider-<specialty or facility slug>/jobs, e.g. -pediatric, -nicu, -barbara-bush-childrens-hospital; keyword query parameter not confirmed. Job detail URLs look like /jobs/<id>-<slug>. Internal applicants use Infor (hcm-mh-prd.inforcloudsuite.com). York Hospital joined MaineHealth in 2026 (approval Aug 10 2026, closing expected Oct 1 2026); its postings may still be on a legacy York Hospital board during transition, so check yorkhospital.com too.",
+      "careers_notes": "MaineHealth career site (careersatmainehealth.org) with Jobvite as the apply ATS (apply.app.jobvite.com, applyCompany 'mainehealth'). Separate provider board providers.careersatmainehealth.org renders listings server-side (fetched 2026-10-19: 88 APP results, 25 per page, ?page=N). Filters are path segments: /search/advanced-practice-provider-<specialty or facility slug>/jobs, e.g. -pediatric, -nicu, -barbara-bush-childrens-hospital; keyword query parameter not confirmed. Job detail URLs look like /jobs/<id>-<slug>. Internal applicants use Infor (hcm-mh-prd.inforcloudsuite.com). York Hospital joined MaineHealth in 2026 (approval Aug 10 2026, closing expected Oct 1 2026); its postings may still be on a legacy York Hospital board during transition, so check yorkhospital.com too. [enrich 2026-10-20] careers_url -> HTTP 403 at https://www.careersatmainehealth.org/search/jobs; search_url -> HTTP 403, mentions NP: False, job links: 0",
       "ats_config": {
         "host": "www.careersatmainehealth.org",
         "provider_host": "providers.careersatmainehealth.org",
@@ -1670,8 +1912,16 @@
         "Joined MaineHealth in 2026",
         "Next door to Portsmouth, NH"
       ],
-      "photos": [],
-      "wikipedia_title": null,
+      "photos": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/6/67/York_Hospital_Front_entrance.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original",
+          "caption": "York Hospital",
+          "credit": "Davies10",
+          "license": "CC BY-SA 3.0",
+          "source_page": "https://commons.wikimedia.org/wiki/File:York_Hospital_Front_entrance.jpg"
+        }
+      ],
+      "wikipedia_title": "York Hospital",
       "sources": [
         "https://www.mainehealth.org/locations",
         "https://www.datalilyai.com/hospitals/me",
@@ -1679,7 +1929,14 @@
       ],
       "notes": "Borderline inclusion (no peds unit, non-birthing per Maine CDC list read in attempt 1); region is Maine (other) because York is outside the Portland ME town list. Address: MaineHealth lists 3 Loving Kindness Way, Google lists 1 Loving Kindness Way. MaineHealth affiliation dates from mainehealth.org news read in attempt 1.",
       "confidence": "low",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "York Hospital",
+          "url": "https://en.wikipedia.org/wiki/York_Hospital",
+          "extract": "York Hospital is a teaching hospital in York, England. It is  managed by York and Scarborough Teaching Hospitals NHS Foundation Trust, an NHS Foundation Trust which also runs several other hospitals in North Yorkshire and the East Riding of Yorkshire, including Scarborough Hospital, Bridlington Hospital and Malton Community Hospital."
+        }
+      }
     },
     {
       "slug": "hampstead-hospital-hampstead",
@@ -1723,14 +1980,21 @@
         "No emergency department"
       ],
       "photos": [],
-      "wikipedia_title": null,
+      "wikipedia_title": "List of hospitals in New Hampshire",
       "sources": [
         "https://en.wikipedia.org/wiki/List_of_hospitals_in_New_Hampshire",
         "https://vnews.com/2025/04/02/dhmc-opens-new-youth-psychiatry-unit-60363457/"
       ],
       "notes": "Psychiatric specialty site, low relevance for an acute care PNP. Bed count and operator not verified (a patient review mentions Dartmouth Health taking over; unconfirmed). Website and careers_url hold a Google Maps link to replace with the official site.",
       "confidence": "low",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "List of hospitals in New Hampshire",
+          "url": "https://en.wikipedia.org/wiki/List_of_hospitals_in_New_Hampshire",
+          "extract": "This is a list of hospitals in the U.S. state of New Hampshire, sorted alphabetically by hospital name by default. Hospitals are designated as trauma centers as verified by the American College of Surgeons."
+        }
+      }
     }
   ]
 }
