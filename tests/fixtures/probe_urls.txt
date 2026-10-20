@@ -1,30 +1,6 @@
-# name url [POST:json]   (development probe list; see .github/workflows/probe.yml)
-mh_org https://www.mainehealth.org/careers
-mh_jobs https://jobs.mainehealth.org/
-mh_wd_a https://mainehealth.wd1.myworkdayjobs.com/MaineHealth
-mh_wd_b https://mainehealth.wd1.myworkdayjobs.com/MaineHealth_Careers
-mh_wd_c https://mainehealth.wd1.myworkdayjobs.com/External
-mh_wd_d https://mainehealth.wd1.myworkdayjobs.com/MaineHealthCareers
-mh_wd_e https://mainehealth.wd1.myworkdayjobs.com/mainehealth
-atrium_wd_api https://aah.wd5.myworkdayjobs.com/wday/cxs/aah/External/jobs POST:{"appliedFacets":{},"limit":5,"offset":0,"searchText":"pediatric nurse practitioner"}
-musc_wd_api https://musc.wd1.myworkdayjobs.com/wday/cxs/musc/MUSC/jobs POST:{"appliedFacets":{},"limit":5,"offset":0,"searchText":"pediatric nurse practitioner"}
-cnh_wd_detail https://childrensnational.wd108.myworkdayjobs.com/wday/cxs/childrensnational/CN_Careers/job/Childrens-National-Hospital-Main-Campus/Advanced-Practice-Nurse-Practitioner--ED---I-P-Psychiatry_2500036J-3
-inova_oc_api https://elar.fa.us2.oraclecloud.com/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requisitionList.secondaryLocations,flexFieldsFacet.values,requisitionList.requisitionFlexFields&finder=findReqs;siteNumber=CX_1,facetsList=LOCATIONS%3BWORK_LOCATIONS%3BWORKPLACE_TYPES%3BTITLES%3BCATEGORIES%3BORGANIZATIONS%3BPOSTING_DATES%3BFLEX_FIELDS,limit=5,keyword=%22nurse%20practitioner%22,sortBy=POSTING_DATES_DESC
-inova_oc_detail https://elar.fa.us2.oraclecloud.com/hcmRestApi/resources/latest/recruitingCEJobRequisitionDetails?expand=all&onlyData=true&finder=ById;Id=%22662990%22,siteNumber=CX_1
-inova_oc_page https://elar.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/requisitions?keyword=nurse+practitioner
-wakemed_home https://jobs.wakemed.org/
-wakemed_api https://jobs.wakemed.org/api/jobs?keywords=nurse%20practitioner&page=1&limit=10&sortBy=relevance&descending=false&internal=false
-wakemed_jobs https://jobs.wakemed.org/jobs?keywords=nurse%20practitioner&page=1
-novant_api https://jobs.novanthealth.org/api/jobs?keywords=pediatric%20nurse%20practitioner&page=1&limit=10&sortBy=relevance&descending=false&internal=false
-hmh_detail https://jobs.hackensackmeridianhealth.org/job/hackensack/np-adult-or-gerontology-acute-care-fellowship/19511/99815700752
-hmh_results https://jobs.hackensackmeridianhealth.org/search-jobs/results?ActiveFacetID=0&CurrentPage=2&RecordsPerPage=50&Distance=50&RadiusUnitType=0&Keywords=pediatric+nurse+practitioner&Location=&ShowRadius=False&IsPagination=True&CustomFacetName=&FacetTerm=&FacetType=0&SearchResultsModuleName=Search+Results&SearchFiltersModuleName=Search+Filters&SortCriteria=0&SortDirection=0&SearchType=5&PostalCode=&fc=&fl=&fcf=&afc=&afl=&afcf=
-jhm_apps https://jobs.hopkinsmedicine.org/jobs/advanced-practice-providers/
-jhm_np https://jobs.hopkinsmedicine.org/jobs/nurse-practitioner/
-jhm_q https://jobs.hopkinsmedicine.org/jobs/?q=nurse+practitioner
-jhm_job2 https://jobs.hopkinsmedicine.org/job/63437/acute-care-np-pnp-nnp-pa-pa-1st-assist-various-specialties-1-advanced-practice-providers-us-md-baltimore-johns-hop-620449-69955/
-unc_json https://jobs.unchealthcare.org/search/jobs.json?q=nurse+practitioner
-unc_search2 https://jobs.unchealthcare.org/search/jobs?q=pediatric+nurse+practitioner
-bch_js https://jobs.bostonchildrens.org/wp-content/cache/minify/2135/65fea.js
-bch_search2 https://jobs.bostonchildrens.org/search/jobs/?keyword=nurse%20practitioner
-bch_np https://jobs.bostonchildrens.org/search/jobs/in?q=nurse+practitioner
-duke_p2 https://careers.duke.edu/search/?q=pediatric+nurse+practitioner&sortColumn=referencedate&sortOrder=desc&startrow=25
+# name url [POST:json]   (development probe list with Playwright; see .github/workflows/probe.yml)
+bch_results https://jobs.bostonchildrens.org/job-search-results/?keyword=nurse%20practitioner
+bch_nursing https://jobs.bostonchildrens.org/job-search-results/?category=Nursing
+unc_q https://jobs.unchealthcare.org/search/jobs?q=pediatric+nurse+practitioner
+mhmaine https://www.careersatmainehealth.org/search/jobs?q=nurse+practitioner
+inova_jobs https://elar.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/679529
