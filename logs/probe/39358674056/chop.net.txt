@@ -1,0 +1,97 @@
+200 GET document https://careers.chop.edu/us/en/search-results?keywords=nurse%20practitioner
+200 POST fetch https://careers.chop.edu/widgets
+    POSTDATA: {"lang":"en_us","deviceType":"desktop","country":"us","pageName":"search-results","pageId":"page11-ds","data":[{"widgetTag":"ph-cookie-popup-v2","view":"default","instanceId":"Sfr4BI"},{"widgetTag":"ph-global-search-v1","view":"view3","instanceId":"Y6hQvI"},{"widgetTag":"ph-page-state-data-v1","view":"default","instanceId":"r7iov4"},{"widgetTag":"ph-category-overview-v3","view":"view8","instanceId":"zdessz"},{"widgetTag":"ph-skills-v1","view":"default","instanceId":"w9gb8n"},{"widgetTag":"ph-facets-v1","view":"view3","instanceId":"x25c65"},{"widgetTag":"ph-create-job-alert-v1","view":"default","instanceId":"oiyn2y"},{"widgetTag":"ph-search-results-v2","view":"view5","instanceId":"zcduui"}],"ddoKey":"canvasGetWidgetTranslations"}
+200 POST xhr https://careers.chop.edu/widgets
+    POSTDATA: {"refNum":"CHOPUS","lang":"en_us","deviceType":"desktop","pageName":"search-results","siteType":"external","pageId":"page11-ds","country":"us","ddoKey":"validateJwtToken"}
+200 GET fetch https://content-us.phenompeople.com/api/ddo/getWidgetVersions?refNum=CHOPUS&locale=en_us&siteType=external&deviceType=desktop
+200 POST fetch https://careers.chop.edu/widgets
+    POSTDATA: {"eagerLoadParamsFromUI":{"keywords":"nurse%20practitioner"},"lang":"en_us","deviceType":"desktop","country":"us","pageName":"search-results","refNum":"CHOPUS","siteType":"external","pageId":"page11-ds","ddoKey":"canvasPxPageWidgetConfig"}
+200 POST xhr https://careers.chop.edu/widgets
+    POSTDATA: {"widgetIds":["KZFVv6","gbobHe","fmAme4","q1abxJ","hl5Fa2","ph-cookie-popup-v2-default","ph-employees-testimonial-cc-slider-view5-option2-theme1","ph-hero-block-cc-view7-option2-theme1","ph-global-search-v1-view3","default-default","ph-category-overview-v3-view8","ph-skills-v1-default","ph-facets-v1-view3","ph-media-cc-view1-option17-theme1","ph-media-img-left-heading-cc-view1-option2-theme1","ph-create-job-alert-v1-default","ph-search-results-v2-view5","ph-content-cc-view4-option5-theme1","BgxJYk","0tOMrd","m5IDBJ","fikHDs"],"refNum":"CHOPUS","lang":"en_us","deviceType":"desktop","pageName":"search-results","siteType":"external","pageId":"page11-ds","country":"us","ddoKey":"getCanvasGlobalWdgtInfo"}
+200 POST xhr https://careers.chop.edu/widgets
+    POSTDATA: {"data":{"hf-standard-header":"KZFVv6","hf-standard-header$$z4HDz3vS":"gbobHe","hf-standard-header$$4HDz3vS":"fmAme4","hf-standard-header$$Aq1abxJ":"q1abxJ","hf-standard-header$$Ahl5Fa2":"hl5Fa2","Sfr4BI":"ph-cookie-popup-v2-default","Ck1Wfs":"ph-employees-testimonial-cc-slider-view5-option2-theme1","0zFD9C":"ph-hero-block-cc-view7-option2-theme1","":"ph-global-search-v1-view3","Y6hQvI":"ph-global-search-v1-view3","r7iov4":"default-default","zdessz":"ph-category-overview-v3-view8","w9gb8n":"ph-skills-v1-default","x25c65":"ph-facets-v1-view3","uq9rKR":"ph-media-cc-view1-option17-theme1","s35Ykf":"ph-media-img-left-heading-cc-view1-option2-theme1","oiyn2y":"ph-create-job-alert-v1-default","w9gb8q":"ph-skills-v1-default","zcduui":"ph-search-results-v2-view5","gteh0w":"ph-create-job-alert-v1-default","yZ62C1":"ph-content-cc-view4-option5-theme1","izzhQ5":"ph-content-cc-view4-option5-theme1","rCcF3w":"ph-media-cc-view1-option17-theme1","rjGfGg":"ph-content-cc-view4-option5-theme1","XpSWJT":"ph-employees-testimonial-cc-slider-view5-option2-theme1","hf-standard-footer":"BgxJYk","hf-standard-footer$$menliv1d":"0tOMrd","hf-standard-footer$$piuhsd78":"m5IDBJ","Kgmg5O":"fikHDs"},"refNum":"CHOPUS","lang":"en_us","deviceType":"desktop","pageName":"search-results","siteType":"external","pageId":"page11-ds","country":"us","ddoKey":"canvasGetWidgetContent"}
+200 GET fetch https://content-us.phenompeople.com/api/CHOPUS/jobwidgetsettings?locale=en_us&siteType=external&deviceType=desktop&payload=%7B%22eagerLoadParamsFromUI%22%3A%7B%22keywords%22%3A%22nurse%2520practitioner%22%7D%2C%22ddoKey%22%3A%22jobwidgetsettings%22%7D
+200 POST xhr https://careers.chop.edu/widgets
+    POSTDATA: {"data":{"vP2Utb0":"vP2Utb","vP2Utb1":"vP2Utb","vP2Utb2":"vP2Utb","PTpGtt3":"PTpGtt"},"refNum":"CHOPUS","lang":"en_us","deviceType":"desktop","pageName":"search-results","siteType":"external","pageId":"page11-ds","country":"us","ddoKey":"canvasGetWidgetContent"}
+200 GET fetch https://content-us.phenompeople.com/api/CHOPUS/npsConfig?locale=en_us&siteType=external&deviceType=desktop&payload=%7B%22ddoKey%22%3A%22npsConfig%22%7D
+200 GET fetch https://content-us.phenompeople.com/api/CHOPUS/getPiiConsentConfig?locale=en_us&siteType=external&deviceType=desktop&payload=%7B%22ddoKey%22%3A%22getPiiConsentConfig%22%7D
+200 POST xhr https://careers.chop.edu/widgets
+    POSTDATA: {"widgetIds":["vP2Utb","PTpGtt"],"refNum":"CHOPUS","lang":"en_us","deviceType":"desktop","pageName":"search-results","siteType":"external","pageId":"page11-ds","country":"us","ddoKey":"getCanvasGlobalWdgtInfo"}
+200 GET fetch https://content-us.phenompeople.com/api/CHOPUS/getRegionLocales?locale=en_us&siteType=external&deviceType=desktop&payload=%7B%22ddoKey%22%3A%22getRegionLocales%22%7D
+200 GET fetch https://cdn.phenompeople.com/CareerConnectResources/CANVUS/canvas/icons/system-icons-1786706014912.svg
+200 GET fetch https://content-us.phenompeople.com/api/CHOPUS/jobwidgetsettings?locale=en_us&siteType=external&deviceType=desktop&payload=%7B%22ddoKey%22%3A%22jobwidgetsettings%22%7D
+200 POST fetch https://careers.chop.edu/widgets
+    POSTDATA: {"lang":"en_us","deviceType":"desktop","country":"us","pageName":"search-results","refNum":"CHOPUS","siteType":"external","pageId":"page11-ds","pageStateData":{},"ddoKey":"getPrivacyConsentsConfig"}
+200 POST fetch https://careers.chop.edu/widgets
+    POSTDATA: {"lang":"en_us","deviceType":"desktop","country":"us","pageName":"search-results","refNum":"CHOPUS","siteType":"external","pageId":"page11-ds","pageStateData":{},"ddoKey":"validateJwtToken"}
+200 POST fetch https://careers.chop.edu/widgets
+    POSTDATA: {"deviceType":"desktop","locale":"en_us","pageId":"page11-ds","refNum":"CHOPUS","siteVariant":"external","ddoKey":"dynaData"}
+200 GET fetch https://content-us.phenompeople.com/api/CHOPUS/jobwidgetsettings?locale=en_us&siteType=external&deviceType=desktop&payload=%7B%22ddoKey%22%3A%22jobwidgetsettings%22%7D
+200 GET fetch https://content-us.phenompeople.com/api/CHOPUS/jobwidgetsettings?locale=en_us&siteType=external&deviceType=desktop&payload=%7B%22ddoKey%22%3A%22jobwidgetsettings%22%7D
+200 POST fetch https://careers.chop.edu/widgets
+    POSTDATA: {"lang":"en_us","deviceType":"desktop","country":"us","pageName":"search-results","ddoKey":"getChatbotConfigurations","currentUrlPath":"https://careers.chop.edu/us/en/search-results?keywords=nurse%20practitioner"}
+200 POST xhr https://careers.chop.edu/widgets
+    POSTDATA: {"refNum":"CHOPUS","lang":"en_us","deviceType":"desktop","pageName":"search-results","siteType":"external","pageId":"page11-ds","country":"us","ddoKey":"getTriggerConfig"}
+200 POST fetch https://careers.chop.edu/widgets
+    POSTDATA: {"isEagerLoad":true,"lang":"en_us","deviceType":"desktop","country":"us","pageName":"search-results","refNum":"CHOPUS","siteType":"external","pageId":"page11-ds","pageStateData":{},"ddoKey":"canvasAudiencePxWidgetConfig"}
+200 POST fetch https://careers.chop.edu/widgets
+    POSTDATA: {"lang":"en_us","deviceType":"desktop","country":"us","pageName":"search-results","pageId":"page11-ds","data":{"Sfr4BI":"ph-cookie-popup-v2-default","Y6hQvI":"ph-global-search-v1-view3","r7iov4":"ph-page-state-data-v1-","zdessz":"ph-category-overview-v3-view8","w9gb8n":"ph-skills-v1-default","x25c65":"ph-facets-v1-view3","oiyn2y":"ph-create-job-alert-v1-default","zcduui":"ph-search-results-v2-view5"},"ddoKey":"canvasGetWidgetContent"}
+200 POST fetch https://careers.chop.edu/widgets
+    POSTDATA: {"lang":"en_us","deviceType":"desktop","country":"us","pageName":"search-results","refNum":"CHOPUS","siteType":"external","pageId":"page11-ds","pageStateData":{},"ddoKey":"getCandidateLoginConfig"}
+200 GET fetch https://content-us.phenompeople.com/api/CHOPUS/jobwidgetsettings?locale=en_us&siteType=external&deviceType=desktop&
+200 POST fetch https://careers.chop.edu/widgets
+    POSTDATA: {"isEagerLoad":true,"lang":"en_us","deviceType":"desktop","country":"us","pageName":"search-results","refNum":"CHOPUS","siteType":"external","pageId":"page11-ds","pageStateData":{},"ddoKey":"leastAppliedJobs"}
+200 POST fetch https://careers.chop.edu/widgets
+    POSTDATA: {"isEagerLoad":true,"lang":"en_us","deviceType":"desktop","country":"us","pageName":"search-results","refNum":"CHOPUS","siteType":"external","pageId":"page11-ds","pageStateData":{},"ddoKey":"validateJwtToken"}
+200 POST xhr https://careers.chop.edu/widgets
+    POSTDATA: {"data":{"EXsloK":"GD0IoK"},"refNum":"CHOPUS","lang":"en_us","deviceType":"desktop","pageName":"search-results","siteType":"external","pageId":"page11-ds","country":"us","ddoKey":"canvasGetWidgetContent"}
+200 POST xhr https://careers.chop.edu/widgets
+    POSTDATA: {"widgetIds":["GD0IoK"],"refNum":"CHOPUS","lang":"en_us","deviceType":"desktop","pageName":"search-results","siteType":"external","pageId":"page11-ds","country":"us","ddoKey":"getCanvasGlobalWdgtInfo"}
+200 POST fetch https://careers.chop.edu/widgets
+    POSTDATA: {"isEagerLoad":true,"lang":"en_us","deviceType":"desktop","country":"us","pageName":"search-results","refNum":"CHOPUS","siteType":"external","pageId":"page11-ds","pageStateData":{},"ddoKey":"latestJobs"}
+200 POST xhr https://careers.chop.edu/widgets
+    POSTDATA: {"widgetIds":["hnXl5e"],"refNum":"CHOPUS","lang":"en_us","deviceType":"desktop","pageName":"search-results","siteType":"external","pageId":"page11-ds","country":"us","ddoKey":"getCanvasGlobalWdgtInfo"}
+200 POST fetch https://careers.chop.edu/widgets
+    POSTDATA: {"lang":"en_us","deviceType":"desktop","country":"us","pageName":"search-results","ddoKey":"validateJwtToken"}
+200 POST xhr https://careers.chop.edu/widgets
+    POSTDATA: {"data":{"hnXssl5e":"hnXl5e"},"refNum":"CHOPUS","lang":"en_us","deviceType":"desktop","pageName":"search-results","siteType":"external","pageId":"page11-ds","country":"us","ddoKey":"canvasGetWidgetContent"}
+200 POST fetch https://careers.chop.edu/widgets
+    POSTDATA: {"lang":"en_us","deviceType":"desktop","country":"us","pageName":"search-results","ddoKey":"eagerLoadRefineSearchSession","sortBy":"","subsearch":"","from":0,"irs":false,"jobs":true,"counts":true,"all_fields":["category","state","city","type","phLocSlider"],"size":10,"clearAll":false,"jdsource":"facets","isSliderEnable":true,"pageId":"page11-ds","siteType":"external","keywords":"nurse practitioner","global":true,"selected_fields":{},"locationData":{"sliderRadius":50,"aboveMaxRadius":false,"LocationUnit":"miles"}}
+200 POST fetch https://careers.chop.edu/widgets
+    POSTDATA: {"lang":"en_us","deviceType":"desktop","country":"us","pageName":"search-results","refNum":"CHOPUS","siteType":"external","pageId":"page11-ds","pageStateData":{},"ddoKey":"jobCartCountV2"}
+200 POST fetch https://careers.chop.edu/widgets
+    POSTDATA: {"keywords":null,"categories":null,"jobsViewed":null,"jobsApplied":null,"locations":null,"types":[],"userProfile":null,"landingPages":null,"department":"","recoSize":18,"lang":"en_us","deviceType":"desktop","country":"us","pageName":"search-results","refNum":"CHOPUS","siteType":"external","pageId":"page11-ds","pageStateData":{},"ddoKey":"recommendationJobsBrowsingHistory"}
+200 GET fetch https://content-us.phenompeople.com/api/CHOPUS/jobwidgetsettings?locale=en_us&siteType=external&deviceType=desktop&payload=%7B%22ddoKey%22%3A%22jobwidgetsettings%22%7D
+200 POST fetch https://careers.chop.edu/widgets
+    POSTDATA: {"avoidWidgetHideOnFail":true,"lang":"en_us","deviceType":"desktop","country":"us","pageName":"search-results","refNum":"CHOPUS","siteType":"external","pageId":"page11-ds","pageStateData":{},"ddoKey":"getSiteGlobalLabels"}
+200 POST fetch https://careers.chop.edu/widgets
+    POSTDATA: {"lang":"en_us","deviceType":"desktop","country":"us","pageName":"search-results","refNum":"CHOPUS","siteType":"external","pageId":"page11-ds","pageStateData":{},"ddoKey":"validateJwtToken"}
+200 POST fetch https://careers.chop.edu/widgets
+    POSTDATA: {"lang":"en_us","deviceType":"desktop","country":"us","pageName":"search-results","refNum":"CHOPUS","siteType":"external","pageId":"page11-ds","pageStateData":{},"ddoKey":"mergedProfileV2"}
+200 POST fetch https://careers.chop.edu/widgets
+    POSTDATA: {"jobSeqNos":["CHOPUS1028167EXTERNALENUS","CHOPUS1027816EXTERNALENUS","CHOPUS1027491EXTERNALENUS","CHOPUS1028427EXTERNALENUS","CHOPUS1026230EXTERNALENUS"],"lang":"en_us","deviceType":"desktop","country":"us","pageName":"search-results","refNum":"CHOPUS","siteType":"external","pageId":"page11-ds","pageStateData":{},"ddoKey":"getJobStatusListV2"}
+200 POST fetch https://careers.chop.edu/widgets
+    POSTDATA: {"lang":"en_us","deviceType":"desktop","country":"us","pageName":"search-results","refNum":"CHOPUS","siteType":"external","pageId":"page11-ds","pageStateData":{},"ddoKey":"getPrivacyConsentsConfig"}
+200 POST fetch https://careers.chop.edu/widgets
+    POSTDATA: {"lang":"en_us","deviceType":"desktop","country":"us","pageName":"search-results","refNum":"CHOPUS","siteType":"external","pageId":"page11-ds","pageStateData":{},"ddoKey":"getExitIntentConfig"}
+200 GET fetch https://content-us.phenompeople.com/api/CHOPUS/masterFrequencyV1?locale=en_us&siteType=external&deviceType=desktop&payload=%7B%22ddoKey%22%3A%22masterFrequencyV1%22%7D
+200 POST fetch https://careers.chop.edu/widgets
+    POSTDATA: {"lang":"en_us","deviceType":"desktop","country":"us","pageName":"search-results","ddoKey":"getLocationDetails"}
+200 POST fetch https://careers.chop.edu/widgets
+    POSTDATA: {"lang":"en_us","deviceType":"desktop","country":"us","pageName":"search-results","refNum":"CHOPUS","siteType":"external","pageId":"page11-ds","pageStateData":{},"ddoKey":"validateJwtToken"}
+200 POST fetch https://careers.chop.edu/widgets
+    POSTDATA: {"lang":"en_us","deviceType":"desktop","country":"us","pageName":"search-results","ddoKey":"chatbotLoadTC","botObj":{"sender":"1a1572266a61b3d-12c258-3a52-1a1572266a71339","message":"/bot_load","type":"CHATBOT_LOAD","data":{"messageType":"CHATBOT_LOAD","message":"/bot_load","userMessage":"","botMessageId":"","app":"career-site","baseUrl":"https://careers.chop.edu/us/en/","deviceType":"desktop","pageName":"search-results","pageType":"search-results","current_url":"https://careers.chop.edu/us/en/search-results?keywords=nurse%20practitioner","uas":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36","referrer":"","source":"career-bot","timestamp":"2026-10-20T02:27:15.916Z","tzId":"UTC","refNum":"CHOPUS","locale":"en_us","siteType":"external","pxSegmentState":null,"notificationCloseState":null,"chatbotWindowCloseState":null,"botMessagesToAppend":[],"category":null,"sidepanel":{"enabled":false,"isOpen":false,"information":{}},"chatWindow":{"isOpen":false},"pageInfo":{"pageUrl":"https://careers.chop.edu/us/en/search-results?keywords=nurse%20practitioner","pageName":"search-results","pageType":"search-results","pageId":"page11-ds","jobInfo":{}},"otherPageUrls":{"jointalentcommunity":""},"user_text":"","facetDisplayNames":{"category":"Category","state":"State / Province","city":"City","type":"Hiring Type","phLocSlider":"Location"},"enabledFacets":["category","state","city","type","phLocSlider"]}},"common":{"referer":"","ini
+200 POST fetch https://careers.chop.edu/widgets
+    POSTDATA: {"lang":"en_us","deviceType":"desktop","country":"us","pageName":"search-results","refNum":"CHOPUS","siteType":"external","pageId":"page11-ds","pageStateData":{},"ddoKey":"validateJwtToken"}
+200 POST fetch https://careers.chop.edu/widgets
+    POSTDATA: {"lang":"en_us","deviceType":"desktop","country":"us","pageName":"search-results","refNum":"CHOPUS","siteType":"external","pageId":"page11-ds","pageStateData":{},"ddoKey":"mergedProfileV2"}
+200 GET fetch https://cdn-bot.phenompeople.com/chatbot-builds/icons/chatbot-icons.json?v=v0.6.60
+200 POST fetch https://careers.chop.edu/widgets
+    POSTDATA: {"sendEmailValidationStatus":true,"lang":"en_us","deviceType":"desktop","country":"us","pageName":"search-results","refNum":"CHOPUS","siteType":"external","pageId":"page11-ds","pageStateData":{},"ddoKey":"mergedProfile"}
+200 POST fetch https://careers.chop.edu/widgets
+    POSTDATA: {"lang":"en_us","deviceType":"desktop","country":"us","pageName":"search-results","refNum":"CHOPUS","siteType":"external","pageId":"page11-ds","pageStateData":{},"ddoKey":"userAlertSettings"}
+200 GET fetch https://cdn-bot.phenompeople.com/chatbot-builds/icons/chatbot-tc-icons.json?v=v0.6.60
+200 POST fetch https://careers.chop.edu/widgets
+    POSTDATA: {"lang":"en_us","deviceType":"desktop","country":"us","pageName":"search-results","refNum":"CHOPUS","siteType":"external","pageId":"page11-ds","pageStateData":{},"ddoKey":"getPrivacyConsentsConfig"}
+200 POST fetch https://careers.chop.edu/widgets
+    POSTDATA: {"lang":"en_us","deviceType":"desktop","country":"us","pageName":"search-results","ddoKey":"getUrl","reqPageName":"jointalentcommunity","captchaAction":"chatbot_action"}
