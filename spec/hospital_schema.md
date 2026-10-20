@@ -54,7 +54,7 @@ Every field is present on every record. Use `null` when truly unknown, never omi
 | `photos` | object[] | each `{ "url": "...", "caption": "...", "credit": "...", "license": "...", "source_page": "..." }`. Prefer Wikimedia Commons: find the file on the hospital's Wikipedia article and use `https://commons.wikimedia.org/wiki/Special:FilePath/<File name with spaces>?width=1200` (URL-encode spaces as %20). Second choice: an image URL from the hospital's own newsroom / media page (check it is a direct image URL ending in .jpg/.png/.webp). Aim for 1 to 4 photos. Empty array if none found. |
 | `wikipedia_title` | string or null | exact article title, e.g. `"Maine Medical Center"`. The page fetches the article summary and lead image live from this. |
 | `sources` | string[] | every URL you read for this record |
-| `notes` | string or null | anything else relevant to Kaitlyn's search: commute realities, nearby towns, hiring patterns, union, known NP roles |
+| `notes` | string or null | anything else relevant to the job search: commute realities, nearby towns, hiring patterns, union, known NP roles |
 | `confidence` | enum | `high`, `medium`, `low` for the record overall |
 | `active` | boolean | always `true` on creation |
 
@@ -64,7 +64,7 @@ Include every hospital in your states that meets ANY of:
 1. Freestanding children's hospital or children's hospital within a hospital.
 2. Any hospital with an inpatient pediatric unit, PICU, pediatric ED, or NICU (level II or higher).
 3. Academic medical centers and large regional referral centers (they almost always have pediatrics).
-4. In hotspot regions (see regions.md): every acute care hospital, even without a dedicated peds unit (mark `peds_inpatient: false`). Kaitlyn may consider peds ED, NICU or mixed roles there, and Pat wants the full local picture.
+4. In hotspot regions (see regions.md): every acute care hospital, even without a dedicated peds unit (mark `peds_inpatient: false`). The user may consider peds ED, NICU or mixed roles there and wants the full local picture.
 5. Pediatric specialty hospitals (rehab, psych) where an acute care PNP could work.
 
 Exclude: VA hospitals, military hospitals (note them in your report instead), surgical centers, standalone urgent cares, nursing facilities.

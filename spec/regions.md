@@ -1,6 +1,6 @@
 # Regions (controlled vocabulary)
 
-Every hospital gets exactly one `region` from this list. Spelling must match exactly. `hotspot: true` marks areas Pat and Kaitlyn are actively considering; it is set automatically from the region.
+Every hospital gets exactly one `region` from this list. Spelling must match exactly. `hotspot: true` marks areas the owner is actively considering; it is set automatically from the region.
 
 | region | states | hotspot | notes |
 |---|---|---|---|
