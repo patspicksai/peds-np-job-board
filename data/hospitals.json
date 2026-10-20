@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-20T05:57:56Z",
+  "generated_at": "2026-10-20T06:12:27Z",
   "count": 502,
   "hospitals": [
     {
@@ -1400,7 +1400,15 @@
         "Duke Cancer Center Raleigh on campus",
         "Newborn care reportedly covered by Duke Children's physicians"
       ],
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://www.dukehealth.org/sites/default/files/location_DRAH_1584x430.jpg",
+          "caption": "Duke Raleigh Hospital",
+          "credit": "Duke Health (hospital website)",
+          "license": "Hospital website image, all rights reserved; linked from the hospital's own site",
+          "source_page": "https://www.dukehealth.org/hospitals/duke-raleigh-hospital"
+        }
+      ],
       "wikipedia_title": "Duke Raleigh Hospital",
       "sources": [
         "model knowledge (to verify); enrichment pending",
@@ -2064,7 +2072,7 @@
         "About 30 minutes north of Durham"
       ],
       "photos": [],
-      "wikipedia_title": null,
+      "wikipedia_title": "UNC Medical Center",
       "sources": [
         "model knowledge (to verify); enrichment pending",
         "https://en.wikipedia.org/wiki/List_of_hospitals_in_North_Carolina"
@@ -2072,7 +2080,13 @@
       "notes": "Specialty pediatric (psych) site. Fit for an acute care PNP is limited (psych NP roles more likely), but medical NP coverage roles may exist. [qa 2026-10-20] Search headlines (not opened): Becker's Behavioral Health 'U of North Carolina opens 54-bed youth behavioral health hospital'; UNC Health News 'UNC Health dedicates youth behavioral health hospital' (news.unchealthcare.org/2023/11); WRAL 'Amid mental health tsunami, new Butner hospital opens to treat youth'; Axios Raleigh (2023-11-07). beds left null until a page is read. DATA PROBLEMS: lat/lng (35.90474, -79.05046) and wikipedia_title (UNC Medical Center) point to the Chapel Hill campus, not Butner, and the photo is N.C. Memorial Hospital in Chapel Hill; street address is still missing. peds_inpatient true conflicts with the schema meaning (general peds floor) and with how other psych hospitals in the ledger are coded.",
       "confidence": "low",
       "active": true,
-      "_enrich": {}
+      "_enrich": {
+        "wikipedia": {
+          "title": "UNC Medical Center",
+          "url": "https://en.wikipedia.org/wiki/UNC_Medical_Center",
+          "extract": "UNC Medical Center (UNCMC) is a 932-bed non-profit, nationally ranked, public, research and academic medical center located in Chapel Hill, North Carolina, providing tertiary care for the Research Triangle, surrounding areas and North Carolina. The medical center is the flagship campus of the UNC Health Care Health System and is made up of four hospitals that include the North Carolina Memorial Hospital, North Carolina Children's Hospital, North Carolina Neurosciences Hospital, North Carolina Women's Hospital, and the North Carolina Cancer Hospital. UNCMC is affiliated with the University of North Carolina School of Medicine. UNCMC features an ACS designated adult and pediatric Level 1 Trauma Center and has a helipad to handle medevac patients."
+        }
+      }
     },
     {
       "slug": "unc-rex-holly-springs",
@@ -2811,7 +2825,15 @@
         "Hub of the Levine Children's network, including Brenner Children's",
         "Pediatric heart program reportedly ranked in the U.S. News top ten"
       ],
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://cdn.atriumhealth.org/medical-services/childrens-services/-/media/chs/images/homepage/levine-children_s-mobile.jpg?rev=3a4df2adb8734073a4a8ebe4eb3049ac&amp;hash=C14A43D9861B6873578DE5FDB233294F",
+          "caption": "Atrium Health Levine Children's Hospital",
+          "credit": "Atrium Health (Advocate Health) (hospital website)",
+          "license": "Hospital website image, all rights reserved; linked from the hospital's own site",
+          "source_page": "https://atriumhealth.org/medical-services/childrens-services"
+        }
+      ],
       "wikipedia_title": "Levine Children's Hospital",
       "sources": [
         "model knowledge (to verify); enrichment pending",
@@ -3571,7 +3593,15 @@
         "Reported birthing center; no pediatric unit",
         "Far side of the metro from Lake Norman"
       ],
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://www.novanthealth.org/siteassets/social-media-image/novant-health-root-image.webp",
+          "caption": "Novant Health Ballantyne Medical Center",
+          "credit": "Novant Health (hospital website)",
+          "license": "Hospital website image, all rights reserved; linked from the hospital's own site",
+          "source_page": "https://www.novanthealth.org/"
+        }
+      ],
       "wikipedia_title": null,
       "sources": [
         "model knowledge (to verify); enrichment pending",
@@ -3640,7 +3670,15 @@
         "Parent hospital reportedly Magnet and a Level II trauma center",
         "About a mile east of uptown Charlotte"
       ],
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://www.novanthealth.org/siteassets/social-media-image/novant-health-root-image.webp",
+          "caption": "Novant Health Hemby Children's Hospital",
+          "credit": "Novant Health (hospital website)",
+          "license": "Hospital website image, all rights reserved; linked from the hospital's own site",
+          "source_page": "https://www.novanthealth.org/"
+        }
+      ],
       "wikipedia_title": "Novant Health Presbyterian Medical Center",
       "sources": [
         "model knowledge (to verify); enrichment pending",
@@ -3708,7 +3746,15 @@
         "In Huntersville near I-77, at the center of the Lake Norman search area",
         "No pediatric inpatient unit; peds admissions go to Hemby Children's"
       ],
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://www.novanthealth.org/siteassets/social-media-image/novant-health-root-image.webp",
+          "caption": "Novant Health Huntersville Medical Center",
+          "credit": "Novant Health (hospital website)",
+          "license": "Hospital website image, all rights reserved; linked from the hospital's own site",
+          "source_page": "https://www.novanthealth.org/locations/medical-centers/huntersville-medical-center/"
+        }
+      ],
       "wikipedia_title": null,
       "sources": [
         "model knowledge (to verify); enrichment pending",
@@ -3769,7 +3815,15 @@
         "Serves southeast Charlotte suburbs and western Union County",
         "Long commute from Lake Norman (opposite side of the metro)"
       ],
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://www.novanthealth.org/siteassets/social-media-image/novant-health-root-image.webp",
+          "caption": "Novant Health Matthews Medical Center",
+          "credit": "Novant Health (hospital website)",
+          "license": "Hospital website image, all rights reserved; linked from the hospital's own site",
+          "source_page": "https://www.novanthealth.org/locations/medical-centers/matthews-medical-center/"
+        }
+      ],
       "wikipedia_title": "Novant Health",
       "sources": [
         "model knowledge (to verify); enrichment pending",
@@ -3832,7 +3886,15 @@
         "No pediatric or obstetric service",
         "30 to 40 minutes from Huntersville via I-485"
       ],
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://www.novanthealth.org/siteassets/social-media-image/novant-health-root-image.webp",
+          "caption": "Novant Health Mint Hill Medical Center",
+          "credit": "Novant Health (hospital website)",
+          "license": "Hospital website image, all rights reserved; linked from the hospital's own site",
+          "source_page": "https://www.novanthealth.org/"
+        }
+      ],
       "wikipedia_title": null,
       "sources": [
         "model knowledge (to verify); enrichment pending",
@@ -3892,7 +3954,15 @@
         "Maternity services; no confirmed pediatric unit",
         "40 to 50 minutes from the Lake Norman towns"
       ],
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://www.novanthealth.org/siteassets/social-media-image/novant-health-root-image.webp",
+          "caption": "Novant Health Rowan Medical Center",
+          "credit": "Novant Health (hospital website)",
+          "license": "Hospital website image, all rights reserved; linked from the hospital's own site",
+          "source_page": "https://www.novanthealth.org/locations/medical-centers/rowan-medical-center/"
+        }
+      ],
       "wikipedia_title": "Novant Health",
       "sources": [
         "model knowledge (to verify); enrichment pending",
@@ -4032,7 +4102,7 @@
         "wikipedia": {
           "title": "Dosher Memorial Hospital",
           "url": "https://en.wikipedia.org/wiki/Dosher_Memorial_Hospital",
-          "extract": "Dosher Memorial Hospital is a not-for-profit, public, community hospital in Southport, North Carolina. The hospital serves Smithville Township: Southport, Bald Head Island, Caswell Beach, Oak Island, and the eastern portion of St. James, and surrounding communities of Brunswick County, North Carolina. Opened on June 2, 1930 as Brunswick County Hospital, the hospital changed its name in 1939 to J. Arthur Dosher Memorial Hospital in memory of founding physician and first general surgeon, Julius Arthur Dosher, MD.\nEstablished as a critical access hospital under Article 2 of the NC General Statue § 131-4, Dosher Memorial Hospital is overseen by a publicly elected Board of Trustees. It is the only independent critical access hospital in North Carolina. Dosher is licensed for 25 acute care beds, and focuses on outpatient surgeries and procedures. The hospital is accredited by DNV-GL Healthcare. It also owns and operates nine primary care, women's health and urgent care clinics across southern Brunswick County."
+          "extract": "Dosher Memorial Hospital is a not-for-profit, public, community hospital in Southport, North Carolina. The hospital serves Smithville Township—Southport, Bald Head Island, Caswell Beach, Oak Island, and the eastern portion of St. James—and surrounding communities of Brunswick County, North Carolina. Opened on June 2, 1930 as Brunswick County Hospital, the hospital changed its name in 1939 to J. Arthur Dosher Memorial Hospital in memory of founding physician and first general surgeon, Julius Arthur Dosher, MD.\nEstablished as a critical access hospital under Article 2 of the NC General Statue § 131-4, Dosher Memorial Hospital is overseen by a publicly elected Board of Trustees. It is the only independent critical access hospital in North Carolina. Dosher is licensed for 25 acute care beds, and focuses on outpatient surgeries and procedures. The hospital is accredited by DNV-GL Healthcare. It also owns and operates nine primary care, women's health and urgent care clinics across southern Brunswick County."
         }
       }
     },
@@ -4094,7 +4164,15 @@
         "UNC pediatric specialty partnership in Wilmington",
         "Top Wilmington target for an acute care PNP"
       ],
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://www.novanthealth.org/siteassets/social-media-image/novant-health-root-image.webp",
+          "caption": "Novant Health Betty H. Cameron Women's & Children's Hospital",
+          "credit": "Novant Health (hospital website)",
+          "license": "Hospital website image, all rights reserved; linked from the hospital's own site",
+          "source_page": "https://www.novanthealth.org/"
+        }
+      ],
       "wikipedia_title": "New Hanover Regional Medical Center",
       "sources": [
         "model knowledge (to verify); enrichment pending",
@@ -4157,7 +4235,15 @@
         "Reportedly offers labor and delivery",
         "About 30 minutes from Wilmington and the Brunswick beaches"
       ],
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://www.novanthealth.org/siteassets/social-media-image/novant-health-root-image.webp",
+          "caption": "Novant Health Brunswick Medical Center",
+          "credit": "Novant Health (hospital website)",
+          "license": "Hospital website image, all rights reserved; linked from the hospital's own site",
+          "source_page": "https://www.novanthealth.org/"
+        }
+      ],
       "wikipedia_title": "Novant Health",
       "sources": [
         "model knowledge (to verify); enrichment pending",
@@ -4220,7 +4306,15 @@
         "Rural training site for the NHRMC family medicine residency",
         "About 30 minutes north of Wilmington"
       ],
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://www.novanthealth.org/siteassets/social-media-image/novant-health-root-image.webp",
+          "caption": "Novant Health Pender Medical Center",
+          "credit": "Novant Health (hospital website)",
+          "license": "Hospital website image, all rights reserved; linked from the hospital's own site",
+          "source_page": "https://www.novanthealth.org/"
+        }
+      ],
       "wikipedia_title": null,
       "sources": [
         "model knowledge (to verify); enrichment pending",
@@ -4279,7 +4373,15 @@
         "Believed to be surgically focused; ED status unconfirmed",
         "Serves north Wilmington and Hampstead"
       ],
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://www.novanthealth.org/siteassets/social-media-image/novant-health-root-image.webp",
+          "caption": "Novant Health Scotts Hill Medical Center",
+          "credit": "Novant Health (hospital website)",
+          "license": "Hospital website image, all rights reserved; linked from the hospital's own site",
+          "source_page": "https://www.novanthealth.org/"
+        }
+      ],
       "wikipedia_title": null,
       "sources": [
         "model knowledge (to verify); enrichment pending",
@@ -4341,7 +4443,15 @@
         "Part of the UNC Health network; jobs on the UNC Health board under Onslow",
         "Serves Camp Lejeune area families"
       ],
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://d17k4s9qki18rb.cloudfront.net/media/defaults/_1200x630_crop_center-center_82_none/OSC_exterior.jpg?mtime=1640632628",
+          "caption": "Onslow Memorial Hospital",
+          "credit": "UNC Health (hospital website)",
+          "license": "Hospital website image, all rights reserved; linked from the hospital's own site",
+          "source_page": "https://www.onslow.org/"
+        }
+      ],
       "wikipedia_title": null,
       "sources": [
         "model knowledge (to verify); enrichment pending",
@@ -4400,7 +4510,15 @@
         "Serves Cherry Point military families",
         "About an hour from Maynard Children's"
       ],
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://res.cloudinary.com/dpmykpsih/image/upload/f_jpg,c_lfill,w_1200,h_630,g_auto/carolinaeast-site-282/media/1002/hospital-at-night.jpg",
+          "caption": "CarolinaEast Medical Center",
+          "credit": "CarolinaEast Health System (independent) (hospital website)",
+          "license": "Hospital website image, all rights reserved; linked from the hospital's own site",
+          "source_page": "https://www.carolinaeasthealth.com/"
+        }
+      ],
       "wikipedia_title": "CarolinaEast Medical Center",
       "sources": [
         "model knowledge (to verify); enrichment pending",
@@ -4954,7 +5072,15 @@
         "About 750 employees and 100-plus physicians",
         "Referral link to CHKD in Norfolk"
       ],
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://shc-p-001.sitecorecontenthub.cloud/api/public/content/4d57a7e017df4c0cb74d0511ec40b109?v=472b2074",
+          "caption": "Sentara Albemarle Medical Center",
+          "credit": "Sentara Health (hospital website)",
+          "license": "Hospital website image, all rights reserved; linked from the hospital's own site",
+          "source_page": "https://www.sentara.com/en/"
+        }
+      ],
       "wikipedia_title": "Sentara Albemarle Medical Center",
       "sources": [
         "model knowledge (to verify); enrichment pending",
@@ -11074,7 +11200,15 @@
         "Level I adult trauma center",
         "Part of One Brooklyn Health"
       ],
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://onebrooklynhealth.org/media/o0pcncwf/slider-1.jpg",
+          "caption": "Brookdale Hospital Medical Center",
+          "credit": "One Brooklyn Health (hospital website)",
+          "license": "Hospital website image, all rights reserved; linked from the hospital's own site",
+          "source_page": "https://onebrooklynhealth.org/"
+        }
+      ],
       "wikipedia_title": "Brookdale University Hospital and Medical Center",
       "sources": [
         "https://profiles.health.ny.gov/hospital/bed_type/Pediatric+Beds",
@@ -11210,7 +11344,15 @@
         "Part of MediSys Health Network",
         "Serves a large Asian American community in Flushing"
       ],
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://flushinghospital.org/wp-content/uploads/2025/08/Flushing-Hospital-Medical-Center-Services-fill-a-void-for-the-people-in-our-comminity.png",
+          "caption": "Flushing Hospital Medical Center",
+          "credit": "MediSys Health Network (hospital website)",
+          "license": "Hospital website image, all rights reserved; linked from the hospital's own site",
+          "source_page": "https://flushinghospital.org/"
+        }
+      ],
       "wikipedia_title": "Flushing Hospital Medical Center",
       "sources": [
         "https://profiles.health.ny.gov/hospital/bed_type/Pediatric+Beds",
@@ -11412,7 +11554,15 @@
         "Part of One Brooklyn Health",
         "Safety-net hospital for Bed-Stuy and Crown Heights"
       ],
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://onebrooklynhealth.org/media/o0pcncwf/slider-1.jpg",
+          "caption": "Interfaith Medical Center",
+          "credit": "One Brooklyn Health (hospital website)",
+          "license": "Hospital website image, all rights reserved; linked from the hospital's own site",
+          "source_page": "https://onebrooklynhealth.org/"
+        }
+      ],
       "wikipedia_title": "Interfaith Medical Center",
       "sources": [
         "https://profiles.health.ny.gov/hospital/bed_type/Pediatric+Beds",
@@ -11882,7 +12032,15 @@
         "Adjacent to Albert Einstein College of Medicine",
         "Montefiore's main high-risk obstetric site"
       ],
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://assets.montefioreeinstein.org/prod/2024-06/Montefiore_Einstein_Shared_Global_Asset_Homepage_B_FINAL_MASTER_050924.jpg",
+          "caption": "Montefiore Einstein Hospital (Jack D. Weiler Campus)",
+          "credit": "Montefiore Health System (hospital website)",
+          "license": "Hospital website image, all rights reserved; linked from the hospital's own site",
+          "source_page": "https://montefioreeinstein.org/"
+        }
+      ],
       "wikipedia_title": "Montefiore Medical Center",
       "sources": [
         "model knowledge (to verify); enrichment pending"
@@ -13585,7 +13743,15 @@
         "Level I adult trauma center",
         "One of two acute care hospitals on Staten Island"
       ],
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://rumcsi.org/wp-content/uploads/2020/12/RUMC-Building-1-1024x768.jpg",
+          "caption": "Richmond University Medical Center",
+          "credit": "Richmond University Medical Center (hospital website)",
+          "license": "Hospital website image, all rights reserved; linked from the hospital's own site",
+          "source_page": "https://rumcsi.org/"
+        }
+      ],
       "wikipedia_title": "Richmond University Medical Center",
       "sources": [
         "https://profiles.health.ny.gov/hospital/bed_type/Pediatric+Beds",
@@ -13852,7 +14018,15 @@
         "Large pediatric home care program across NYC and Long Island",
         "Waterfront campus in Bayside, Queens"
       ],
-      "photos": [],
+      "photos": [
+        {
+          "url": "http://www.stmaryskids.org/wp-content/uploads/2023/04/SMK_SocialFallback.jpg",
+          "caption": "St. Mary's Hospital for Children",
+          "credit": "St. Mary's Healthcare System for Children (hospital website)",
+          "license": "Hospital website image, all rights reserved; linked from the hospital's own site",
+          "source_page": "https://www.stmaryskids.org/"
+        }
+      ],
       "wikipedia_title": "St. Mary's Children's Hospital",
       "sources": [
         "model knowledge (to verify); enrichment pending"
@@ -15363,7 +15537,15 @@
         "86 beds (Wikipedia list per R3 scratch)",
         "On-campus public school district for patients"
       ],
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://www.blythedale.org/sites/default/files/2023-10/DSC01946%20%281%29.jpg",
+          "caption": "Blythedale Children's Hospital",
+          "credit": "Blythedale Children's Hospital (hospital website)",
+          "license": "Hospital website image, all rights reserved; linked from the hospital's own site",
+          "source_page": "https://www.blythedale.org/"
+        }
+      ],
       "wikipedia_title": "Blythedale Children's Hospital",
       "sources": [
         "model knowledge (to verify); enrichment pending"
@@ -15814,7 +15996,15 @@
         "Part of Montefiore Health System (Montefiore Einstein)",
         "Formerly Sound Shore Medical Center"
       ],
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://assets.montefioreeinstein.org/prod/2024-06/Montefiore_Einstein_Shared_Global_Asset_Homepage_B_FINAL_MASTER_050924.jpg",
+          "caption": "Montefiore New Rochelle Hospital",
+          "credit": "Montefiore Health System (hospital website)",
+          "license": "Hospital website image, all rights reserved; linked from the hospital's own site",
+          "source_page": "https://montefioreeinstein.org/"
+        }
+      ],
       "wikipedia_title": "Montefiore New Rochelle Hospital",
       "sources": [
         "https://profiles.health.ny.gov/hospital/bed_type/Pediatric+Beds",
@@ -16388,7 +16578,15 @@
         "Catholic community hospital in Yonkers",
         "Sisters of Charity sponsorship"
       ],
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://saintjosephs.org/wp-content/uploads/2025/02/home-locations.jpg",
+          "caption": "St. Joseph's Medical Center",
+          "credit": "St. Joseph's Medical Center (hospital website)",
+          "license": "Hospital website image, all rights reserved; linked from the hospital's own site",
+          "source_page": "https://saintjosephs.org/"
+        }
+      ],
       "wikipedia_title": "St. Joseph's Hospital",
       "sources": [
         "https://profiles.health.ny.gov/hospital/bed_type/Pediatric+Beds",
@@ -16646,7 +16844,15 @@
         "Part of Centralus Health (Arnot and Cayuga merger)",
         "Regional referral center for the Twin Tiers"
       ],
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://www.arnothealth.org/uploads/og_images/742636_arnot-health-og-imagery-01.png",
+          "caption": "Arnot Ogden Medical Center",
+          "credit": "Centralus Health (hospital website)",
+          "license": "Hospital website image, all rights reserved; linked from the hospital's own site",
+          "source_page": "https://www.arnothealth.org/"
+        }
+      ],
       "wikipedia_title": "Arnot Ogden Medical Center",
       "sources": [
         "https://profiles.health.ny.gov/hospital/bed_type/Pediatric+Beds",
@@ -17514,7 +17720,15 @@
         "Pediatric beds listed by NYS DOH",
         "Orleans Community Health"
       ],
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://orleanscommunityhealth.org/wp-content/uploads/2022/05/IMG_0855-scaled.jpg",
+          "caption": "Medina Memorial Hospital",
+          "credit": "Orleans Community Health (hospital website)",
+          "license": "Hospital website image, all rights reserved; linked from the hospital's own site",
+          "source_page": "https://orleanscommunityhealth.org/"
+        }
+      ],
       "wikipedia_title": null,
       "sources": [
         "https://profiles.health.ny.gov/hospital/bed_type/Pediatric+Beds",
@@ -17570,7 +17784,15 @@
         "NYS Level 2 perinatal center (NICU)",
         "Catholic Health Buffalo's largest hospital"
       ],
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://www.chsbuffalo.org/wp-content/uploads/2025/04/ch-meta-2.jpg",
+          "caption": "Mercy Hospital of Buffalo",
+          "credit": "Catholic Health (Buffalo) (hospital website)",
+          "license": "Hospital website image, all rights reserved; linked from the hospital's own site",
+          "source_page": "https://www.chsbuffalo.org/"
+        }
+      ],
       "wikipedia_title": "Mercy Hospital of Buffalo",
       "sources": [
         "https://profiles.health.ny.gov/hospital/bed_type/Pediatric+Beds",
@@ -17751,7 +17973,15 @@
         "Independent community hospital",
         "Unionized workforce (1199SEIU)"
       ],
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://irp.cdn-website.com/b4d1f16c/dms3rep/multi/opt/Untitled+design+-+2026-06-21T201656.162-1920w.png",
+          "caption": "Niagara Falls Memorial Medical Center",
+          "credit": "Niagara Falls Memorial Medical Center (hospital website)",
+          "license": "Hospital website image, all rights reserved; linked from the hospital's own site",
+          "source_page": "https://www.nfmmc.org/"
+        }
+      ],
       "wikipedia_title": "Niagara Falls Memorial Medical Center",
       "sources": [
         "https://profiles.health.ny.gov/hospital/bed_type/Pediatric+Beds",
@@ -18205,7 +18435,15 @@
         "Main civilian hospital for Fort Drum families",
         "Regional hospital for the North Country"
       ],
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://samaritanhealth.com/wp-content/uploads/2026/09/63224-SMC-Brand-Campaign-WEBSITE-Static-Banner-72dpi.jpg",
+          "caption": "Samaritan Medical Center",
+          "credit": "Samaritan Health (hospital website)",
+          "license": "Hospital website image, all rights reserved; linked from the hospital's own site",
+          "source_page": "https://samaritanhealth.com/"
+        }
+      ],
       "wikipedia_title": "Samaritan Medical Center",
       "sources": [
         "https://profiles.health.ny.gov/hospital/bed_type/Pediatric+Beds",
@@ -18268,7 +18506,15 @@
         "Member of Albany Med Health System",
         "Serves fast-growing Saratoga County"
       ],
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://www.albanymed.org/wp-content/uploads/sites/2/2026/04/Yoast_Social_Media_Default_Image__AMHS_secondaryKO_1264x675.png",
+          "caption": "Saratoga Hospital",
+          "credit": "Albany Med Health System (hospital website)",
+          "license": "Hospital website image, all rights reserved; linked from the hospital's own site",
+          "source_page": "https://www.albanymed.org/saratoga/"
+        }
+      ],
       "wikipedia_title": "Saratoga Hospital",
       "sources": [
         "https://profiles.health.ny.gov/hospital/bed_type/Pediatric+Beds",
@@ -18321,7 +18567,15 @@
         "NYS Level 3 perinatal center (NICU)",
         "Catholic Health Buffalo women's and newborn hub"
       ],
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://www.chsbuffalo.org/wp-content/uploads/2025/04/ch-meta-2.jpg",
+          "caption": "Sisters of Charity Hospital",
+          "credit": "Catholic Health (Buffalo) (hospital website)",
+          "license": "Hospital website image, all rights reserved; linked from the hospital's own site",
+          "source_page": "https://www.chsbuffalo.org/"
+        }
+      ],
       "wikipedia_title": "Sisters of Charity Hospital",
       "sources": [
         "model knowledge (to verify); enrichment pending"
@@ -18919,7 +19173,15 @@
         "Part of Rochester Regional Health",
         "Serves Rochester's western suburbs"
       ],
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://edge.sitecorecloud.io/rochesterred189-rrh4822-prodb67b-4284/media/project/rrh/rrh/images/thumbnails/rrhthumbnail.png",
+          "caption": "Unity Hospital",
+          "credit": "Rochester Regional Health (hospital website)",
+          "license": "Hospital website image, all rights reserved; linked from the hospital's own site",
+          "source_page": "https://www.rochesterregional.org/locations/hospitals/greece"
+        }
+      ],
       "wikipedia_title": null,
       "sources": [
         "model knowledge (to verify); enrichment pending"
@@ -25855,7 +26117,15 @@
         "One of Baltimore County's largest hospitals",
         "MedStar teaching hospital near White Marsh"
       ],
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://medstarhealth-delivery.sitecorecontenthub.cloud/api/public/content/MFSMC_hero?v=3cef9dc9",
+          "caption": "MedStar Franklin Square Medical Center",
+          "credit": "MedStar Health (hospital website)",
+          "license": "Hospital website image, all rights reserved; linked from the hospital's own site",
+          "source_page": "https://www.medstarhealth.org/locations/medstar-franklin-square-medical-center"
+        }
+      ],
       "wikipedia_title": "MedStar Franklin Square Medical Center",
       "sources": [
         "https://mhcc.maryland.gov/mhcc/pages/hcfs/hcfs_hospital/documents/acute_care/chcf_acute_care_fy26_licensedbeds.pdf",
@@ -26221,7 +26491,15 @@
         "Catholic hospital in the UMMS system since 2012",
         "Regional cardiac and orthopedic referral center (reportedly)"
       ],
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://www.umms.org/sjmc/-/media/e468b10a537948eeb3a0a3a9c64328ee.jpg",
+          "caption": "University of Maryland St. Joseph Medical Center",
+          "credit": "University of Maryland Medical System (hospital website)",
+          "license": "Hospital website image, all rights reserved; linked from the hospital's own site",
+          "source_page": "https://www.umms.org/sjmc"
+        }
+      ],
       "wikipedia_title": "University of Maryland St. Joseph Medical Center",
       "sources": [
         "https://mhcc.maryland.gov/mhcc/pages/hcfs/hcfs_hospital/documents/acute_care/chcf_acute_care_fy26_licensedbeds.pdf",
@@ -26284,7 +26562,15 @@
         "NICU staffed by Children's National neonatology",
         "Children's National physicians cover pediatric emergency patients"
       ],
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://assets.childrensnational.org/childrensnationalhospital-cm4i6knf/media/cnhs-site/images/0-facilities/cedar-hill-regional-medical-center.jpg?h=600&amp;iar=0&amp;w=900&amp;rev=9b42b6b6c58d4626ad925e8c02b50902",
+          "caption": "Cedar Hill Regional Medical Center GW Health",
+          "credit": "Universal Health Services (with George Washington University) (hospital website)",
+          "license": "Hospital website image, all rights reserved; linked from the hospital's own site",
+          "source_page": "https://www.childrensnational.org/get-care/locations/cedar-hill"
+        }
+      ],
       "wikipedia_title": null,
       "sources": [
         "https://childrensnational.org/departments/neonatology/regional-nicus",
@@ -26644,7 +26930,15 @@
         "Regional adult trauma, cardiac and burn center (reportedly)",
         "Base of the MedSTAR transport service"
       ],
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://medstarhealth-delivery.sitecorecontenthub.cloud/api/public/content/110_irving_street_thumb?v=2990b015",
+          "caption": "MedStar Washington Hospital Center",
+          "credit": "MedStar Health (hospital website)",
+          "license": "Hospital website image, all rights reserved; linked from the hospital's own site",
+          "source_page": "https://www.medstarhealth.org/locations/medstar-washington-hospital-center"
+        }
+      ],
       "wikipedia_title": "MedStar Washington Hospital Center",
       "sources": [
         "model knowledge (to verify); enrichment pending"
@@ -27046,7 +27340,15 @@
         "2 licensed pediatric beds and 5 obstetric beds (MHCC FY2026)",
         "Serves Olney and upper Montgomery County"
       ],
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://medstarhealth-delivery.sitecorecontenthub.cloud/api/public/content/MMMC_hero?v=df2ab882",
+          "caption": "MedStar Montgomery Medical Center",
+          "credit": "MedStar Health (hospital website)",
+          "license": "Hospital website image, all rights reserved; linked from the hospital's own site",
+          "source_page": "https://www.medstarhealth.org/locations/medstar-montgomery-medical-center"
+        }
+      ],
       "wikipedia_title": "MedStar Montgomery Medical Center",
       "sources": [
         "https://mhcc.maryland.gov/mhcc/pages/hcfs/hcfs_hospital/documents/acute_care/chcf_acute_care_fy26_licensedbeds.pdf",
@@ -27109,7 +27411,15 @@
         "Near Joint Base Andrews",
         "About 30 minutes from Arlington"
       ],
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://medstarhealth-delivery.sitecorecontenthub.cloud/api/public/content/MSMHC_hero_1500?v=c3386e8c",
+          "caption": "MedStar Southern Maryland Hospital Center",
+          "credit": "MedStar Health (hospital website)",
+          "license": "Hospital website image, all rights reserved; linked from the hospital's own site",
+          "source_page": "https://www.medstarhealth.org/locations/medstar-southern-maryland-hospital-center"
+        }
+      ],
       "wikipedia_title": "MedStar Health",
       "sources": [
         "https://mhcc.maryland.gov/mhcc/pages/hcfs/hcfs_hospital/documents/acute_care/chcf_acute_care_fy26_licensedbeds.pdf",
@@ -27235,7 +27545,15 @@
         "Affiliated with the University of Maryland School of Medicine",
         "On the Largo Metro station (Blue and Silver lines)"
       ],
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://www.umms.org/capital/-/media/e468b10a537948eeb3a0a3a9c64328ee.jpg",
+          "caption": "University of Maryland Capital Region Medical Center",
+          "credit": "University of Maryland Medical System (hospital website)",
+          "license": "Hospital website image, all rights reserved; linked from the hospital's own site",
+          "source_page": "https://www.umms.org/capital"
+        }
+      ],
       "wikipedia_title": "University of Maryland Capital Region Medical Center",
       "sources": [
         "https://mhcc.maryland.gov/mhcc/pages/hcfs/hcfs_hospital/documents/acute_care/chcf_acute_care_fy26_licensedbeds.pdf",
@@ -27374,7 +27692,15 @@
         "Busy maternity hospital in western Fairfax County",
         "Transfers to Inova L.J. Murphy Children's for admission and ICU care"
       ],
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://www.inova.org/themes/custom/inova_public/img/inova-opengraph.jpg",
+          "caption": "Inova Fair Oaks Hospital",
+          "credit": "Inova (hospital website)",
+          "license": "Hospital website image, all rights reserved; linked from the hospital's own site",
+          "source_page": "https://www.inova.org/locations/inova-fair-oaks-hospital"
+        }
+      ],
       "wikipedia_title": "Inova Fair Oaks Hospital",
       "sources": [
         "https://neonatologysolutions.com/?p=19552",
@@ -27524,7 +27850,15 @@
         "Children's emergency department (Inova page)",
         "Part of the Inova system with L.J. Murphy Children's as referral center"
       ],
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://www.inova.org/themes/custom/inova_public/img/inova-opengraph.jpg",
+          "caption": "Inova Loudoun Hospital",
+          "credit": "Inova (hospital website)",
+          "license": "Hospital website image, all rights reserved; linked from the hospital's own site",
+          "source_page": "https://www.inova.org/locations/inova-loudoun-hospital"
+        }
+      ],
       "wikipedia_title": "Inova Loudoun Hospital",
       "sources": [
         "https://neonatologysolutions.com/?p=19552",
@@ -28255,7 +28589,15 @@
         "Serves the Naval Air Station Patuxent River community",
         "MedStar Health member"
       ],
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://medstarhealth-delivery.sitecorecontenthub.cloud/api/public/content/MSMH_exterior_1500?v=0aa3a084",
+          "caption": "MedStar St. Mary's Hospital",
+          "credit": "MedStar Health (hospital website)",
+          "license": "Hospital website image, all rights reserved; linked from the hospital's own site",
+          "source_page": "https://www.medstarhealth.org/locations/medstar-st-marys-hospital"
+        }
+      ],
       "wikipedia_title": "MedStar Health",
       "sources": [
         "https://mhcc.maryland.gov/mhcc/pages/hcfs/hcfs_hospital/documents/acute_care/chcf_acute_care_fy26_licensedbeds.pdf",
@@ -28376,7 +28718,15 @@
         "Regional trauma center for the Lower Eastern Shore (reportedly)",
         "About 30 minutes from Ocean City"
       ],
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://www.tidalhealth.org/sites/default/files/site_media/2026-01/iStock-1388254153-1.jpg",
+          "caption": "TidalHealth Peninsula Regional",
+          "credit": "TidalHealth (hospital website)",
+          "license": "Hospital website image, all rights reserved; linked from the hospital's own site",
+          "source_page": "https://www.tidalhealth.org/"
+        }
+      ],
       "wikipedia_title": "TidalHealth Peninsula Regional",
       "sources": [
         "https://mhcc.maryland.gov/mhcc/pages/hcfs/hcfs_hospital/documents/acute_care/chcf_acute_care_fy26_licensedbeds.pdf",
@@ -28513,7 +28863,15 @@
         "Part of the University of Maryland Medical System",
         "Serves the Waldorf and La Plata DC commuter belt"
       ],
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://www.umms.org/charles/-/media/e468b10a537948eeb3a0a3a9c64328ee.jpg",
+          "caption": "University of Maryland Charles Regional Medical Center",
+          "credit": "University of Maryland Medical System (hospital website)",
+          "license": "Hospital website image, all rights reserved; linked from the hospital's own site",
+          "source_page": "https://www.umms.org/charles"
+        }
+      ],
       "wikipedia_title": "University of Maryland Charles Regional Medical Center",
       "sources": [
         "https://mhcc.maryland.gov/mhcc/pages/hcfs/hcfs_hospital/documents/acute_care/chcf_acute_care_fy26_licensedbeds.pdf",
@@ -28579,7 +28937,15 @@
         "Replacement regional medical center planned near Easton (reportedly)",
         "Chesapeake Bay small-town setting"
       ],
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://www.umms.org/shore/-/media/e468b10a537948eeb3a0a3a9c64328ee.jpg",
+          "caption": "University of Maryland Shore Medical Center at Easton",
+          "credit": "University of Maryland Medical System (UM Shore Regional Health) (hospital website)",
+          "license": "Hospital website image, all rights reserved; linked from the hospital's own site",
+          "source_page": "https://www.umms.org/shore"
+        }
+      ],
       "wikipedia_title": null,
       "sources": [
         "https://mhcc.maryland.gov/mhcc/pages/hcfs/hcfs_hospital/documents/acute_care/chcf_acute_care_fy26_licensedbeds.pdf",
@@ -31208,7 +31574,15 @@
         "Careers on Oracle Cloud (site CX_1)",
         "About an hour from Charlotte"
       ],
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://www.catawbavalleyhealth.org/wp-content/uploads/2025/01/1200x630.jpg",
+          "caption": "Catawba Valley Medical Center",
+          "credit": "Catawba Valley Health System (independent) (hospital website)",
+          "license": "Hospital website image, all rights reserved; linked from the hospital's own site",
+          "source_page": "https://www.catawbavalleyhealth.org/"
+        }
+      ],
       "wikipedia_title": null,
       "sources": [
         "model knowledge (to verify); enrichment pending",

@@ -617,7 +617,15 @@
         "Duke Cancer Center Raleigh on campus",
         "Newborn care reportedly covered by Duke Children's physicians"
       ],
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://www.dukehealth.org/sites/default/files/location_DRAH_1584x430.jpg",
+          "caption": "Duke Raleigh Hospital",
+          "credit": "Duke Health (hospital website)",
+          "license": "Hospital website image, all rights reserved; linked from the hospital's own site",
+          "source_page": "https://www.dukehealth.org/hospitals/duke-raleigh-hospital"
+        }
+      ],
       "wikipedia_title": "Duke Raleigh Hospital",
       "sources": [
         "model knowledge (to verify); enrichment pending",
@@ -1359,7 +1367,7 @@
         "About 30 minutes north of Durham"
       ],
       "photos": [],
-      "wikipedia_title": null,
+      "wikipedia_title": "UNC Medical Center",
       "sources": [
         "model knowledge (to verify); enrichment pending",
         "https://en.wikipedia.org/wiki/List_of_hospitals_in_North_Carolina"
@@ -1367,7 +1375,13 @@
       "notes": "Specialty pediatric (psych) site. Fit for an acute care PNP is limited (psych NP roles more likely), but medical NP coverage roles may exist. [qa 2026-10-20] Search headlines (not opened): Becker's Behavioral Health 'U of North Carolina opens 54-bed youth behavioral health hospital'; UNC Health News 'UNC Health dedicates youth behavioral health hospital' (news.unchealthcare.org/2023/11); WRAL 'Amid mental health tsunami, new Butner hospital opens to treat youth'; Axios Raleigh (2023-11-07). beds left null until a page is read. DATA PROBLEMS: lat/lng (35.90474, -79.05046) and wikipedia_title (UNC Medical Center) point to the Chapel Hill campus, not Butner, and the photo is N.C. Memorial Hospital in Chapel Hill; street address is still missing. peds_inpatient true conflicts with the schema meaning (general peds floor) and with how other psych hospitals in the ledger are coded.",
       "confidence": "low",
       "active": true,
-      "_enrich": {}
+      "_enrich": {
+        "wikipedia": {
+          "title": "UNC Medical Center",
+          "url": "https://en.wikipedia.org/wiki/UNC_Medical_Center",
+          "extract": "UNC Medical Center (UNCMC) is a 932-bed non-profit, nationally ranked, public, research and academic medical center located in Chapel Hill, North Carolina, providing tertiary care for the Research Triangle, surrounding areas and North Carolina. The medical center is the flagship campus of the UNC Health Care Health System and is made up of four hospitals that include the North Carolina Memorial Hospital, North Carolina Children's Hospital, North Carolina Neurosciences Hospital, North Carolina Women's Hospital, and the North Carolina Cancer Hospital. UNCMC is affiliated with the University of North Carolina School of Medicine. UNCMC features an ACS designated adult and pediatric Level 1 Trauma Center and has a helipad to handle medevac patients."
+        }
+      }
     },
     {
       "slug": "levine-childrens-charlotte",
@@ -1429,7 +1443,15 @@
         "Hub of the Levine Children's network, including Brenner Children's",
         "Pediatric heart program reportedly ranked in the U.S. News top ten"
       ],
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://cdn.atriumhealth.org/medical-services/childrens-services/-/media/chs/images/homepage/levine-children_s-mobile.jpg?rev=3a4df2adb8734073a4a8ebe4eb3049ac&amp;hash=C14A43D9861B6873578DE5FDB233294F",
+          "caption": "Atrium Health Levine Children's Hospital",
+          "credit": "Atrium Health (Advocate Health) (hospital website)",
+          "license": "Hospital website image, all rights reserved; linked from the hospital's own site",
+          "source_page": "https://atriumhealth.org/medical-services/childrens-services"
+        }
+      ],
       "wikipedia_title": "Levine Children's Hospital",
       "sources": [
         "model knowledge (to verify); enrichment pending",
@@ -1502,7 +1524,15 @@
         "Parent hospital reportedly Magnet and a Level II trauma center",
         "About a mile east of uptown Charlotte"
       ],
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://www.novanthealth.org/siteassets/social-media-image/novant-health-root-image.webp",
+          "caption": "Novant Health Hemby Children's Hospital",
+          "credit": "Novant Health (hospital website)",
+          "license": "Hospital website image, all rights reserved; linked from the hospital's own site",
+          "source_page": "https://www.novanthealth.org/"
+        }
+      ],
       "wikipedia_title": "Novant Health Presbyterian Medical Center",
       "sources": [
         "model knowledge (to verify); enrichment pending",
@@ -1642,7 +1672,15 @@
         "In Huntersville near I-77, at the center of the Lake Norman search area",
         "No pediatric inpatient unit; peds admissions go to Hemby Children's"
       ],
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://www.novanthealth.org/siteassets/social-media-image/novant-health-root-image.webp",
+          "caption": "Novant Health Huntersville Medical Center",
+          "credit": "Novant Health (hospital website)",
+          "license": "Hospital website image, all rights reserved; linked from the hospital's own site",
+          "source_page": "https://www.novanthealth.org/locations/medical-centers/huntersville-medical-center/"
+        }
+      ],
       "wikipedia_title": null,
       "sources": [
         "model knowledge (to verify); enrichment pending",
@@ -1703,7 +1741,15 @@
         "Serves southeast Charlotte suburbs and western Union County",
         "Long commute from Lake Norman (opposite side of the metro)"
       ],
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://www.novanthealth.org/siteassets/social-media-image/novant-health-root-image.webp",
+          "caption": "Novant Health Matthews Medical Center",
+          "credit": "Novant Health (hospital website)",
+          "license": "Hospital website image, all rights reserved; linked from the hospital's own site",
+          "source_page": "https://www.novanthealth.org/locations/medical-centers/matthews-medical-center/"
+        }
+      ],
       "wikipedia_title": "Novant Health",
       "sources": [
         "model knowledge (to verify); enrichment pending",
@@ -2394,7 +2440,15 @@
         "Maternity services; no confirmed pediatric unit",
         "40 to 50 minutes from the Lake Norman towns"
       ],
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://www.novanthealth.org/siteassets/social-media-image/novant-health-root-image.webp",
+          "caption": "Novant Health Rowan Medical Center",
+          "credit": "Novant Health (hospital website)",
+          "license": "Hospital website image, all rights reserved; linked from the hospital's own site",
+          "source_page": "https://www.novanthealth.org/locations/medical-centers/rowan-medical-center/"
+        }
+      ],
       "wikipedia_title": "Novant Health",
       "sources": [
         "model knowledge (to verify); enrichment pending",
@@ -2674,7 +2728,15 @@
         "Reported birthing center; no pediatric unit",
         "Far side of the metro from Lake Norman"
       ],
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://www.novanthealth.org/siteassets/social-media-image/novant-health-root-image.webp",
+          "caption": "Novant Health Ballantyne Medical Center",
+          "credit": "Novant Health (hospital website)",
+          "license": "Hospital website image, all rights reserved; linked from the hospital's own site",
+          "source_page": "https://www.novanthealth.org/"
+        }
+      ],
       "wikipedia_title": null,
       "sources": [
         "model knowledge (to verify); enrichment pending",
@@ -2733,7 +2795,15 @@
         "No pediatric or obstetric service",
         "30 to 40 minutes from Huntersville via I-485"
       ],
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://www.novanthealth.org/siteassets/social-media-image/novant-health-root-image.webp",
+          "caption": "Novant Health Mint Hill Medical Center",
+          "credit": "Novant Health (hospital website)",
+          "license": "Hospital website image, all rights reserved; linked from the hospital's own site",
+          "source_page": "https://www.novanthealth.org/"
+        }
+      ],
       "wikipedia_title": null,
       "sources": [
         "model knowledge (to verify); enrichment pending",
@@ -2871,7 +2941,15 @@
         "UNC pediatric specialty partnership in Wilmington",
         "Top Wilmington target for an acute care PNP"
       ],
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://www.novanthealth.org/siteassets/social-media-image/novant-health-root-image.webp",
+          "caption": "Novant Health Betty H. Cameron Women's & Children's Hospital",
+          "credit": "Novant Health (hospital website)",
+          "license": "Hospital website image, all rights reserved; linked from the hospital's own site",
+          "source_page": "https://www.novanthealth.org/"
+        }
+      ],
       "wikipedia_title": "New Hanover Regional Medical Center",
       "sources": [
         "model knowledge (to verify); enrichment pending",
@@ -2934,7 +3012,15 @@
         "Reportedly offers labor and delivery",
         "About 30 minutes from Wilmington and the Brunswick beaches"
       ],
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://www.novanthealth.org/siteassets/social-media-image/novant-health-root-image.webp",
+          "caption": "Novant Health Brunswick Medical Center",
+          "credit": "Novant Health (hospital website)",
+          "license": "Hospital website image, all rights reserved; linked from the hospital's own site",
+          "source_page": "https://www.novanthealth.org/"
+        }
+      ],
       "wikipedia_title": "Novant Health",
       "sources": [
         "model knowledge (to verify); enrichment pending",
@@ -3016,7 +3102,7 @@
         "wikipedia": {
           "title": "Dosher Memorial Hospital",
           "url": "https://en.wikipedia.org/wiki/Dosher_Memorial_Hospital",
-          "extract": "Dosher Memorial Hospital is a not-for-profit, public, community hospital in Southport, North Carolina. The hospital serves Smithville Township: Southport, Bald Head Island, Caswell Beach, Oak Island, and the eastern portion of St. James, and surrounding communities of Brunswick County, North Carolina. Opened on June 2, 1930 as Brunswick County Hospital, the hospital changed its name in 1939 to J. Arthur Dosher Memorial Hospital in memory of founding physician and first general surgeon, Julius Arthur Dosher, MD.\nEstablished as a critical access hospital under Article 2 of the NC General Statue § 131-4, Dosher Memorial Hospital is overseen by a publicly elected Board of Trustees. It is the only independent critical access hospital in North Carolina. Dosher is licensed for 25 acute care beds, and focuses on outpatient surgeries and procedures. The hospital is accredited by DNV-GL Healthcare. It also owns and operates nine primary care, women's health and urgent care clinics across southern Brunswick County."
+          "extract": "Dosher Memorial Hospital is a not-for-profit, public, community hospital in Southport, North Carolina. The hospital serves Smithville Township—Southport, Bald Head Island, Caswell Beach, Oak Island, and the eastern portion of St. James—and surrounding communities of Brunswick County, North Carolina. Opened on June 2, 1930 as Brunswick County Hospital, the hospital changed its name in 1939 to J. Arthur Dosher Memorial Hospital in memory of founding physician and first general surgeon, Julius Arthur Dosher, MD.\nEstablished as a critical access hospital under Article 2 of the NC General Statue § 131-4, Dosher Memorial Hospital is overseen by a publicly elected Board of Trustees. It is the only independent critical access hospital in North Carolina. Dosher is licensed for 25 acute care beds, and focuses on outpatient surgeries and procedures. The hospital is accredited by DNV-GL Healthcare. It also owns and operates nine primary care, women's health and urgent care clinics across southern Brunswick County."
         }
       }
     },
@@ -3069,7 +3155,15 @@
         "Part of the UNC Health network; jobs on the UNC Health board under Onslow",
         "Serves Camp Lejeune area families"
       ],
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://d17k4s9qki18rb.cloudfront.net/media/defaults/_1200x630_crop_center-center_82_none/OSC_exterior.jpg?mtime=1640632628",
+          "caption": "Onslow Memorial Hospital",
+          "credit": "UNC Health (hospital website)",
+          "license": "Hospital website image, all rights reserved; linked from the hospital's own site",
+          "source_page": "https://www.onslow.org/"
+        }
+      ],
       "wikipedia_title": null,
       "sources": [
         "model knowledge (to verify); enrichment pending",
@@ -3127,7 +3221,15 @@
         "Rural training site for the NHRMC family medicine residency",
         "About 30 minutes north of Wilmington"
       ],
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://www.novanthealth.org/siteassets/social-media-image/novant-health-root-image.webp",
+          "caption": "Novant Health Pender Medical Center",
+          "credit": "Novant Health (hospital website)",
+          "license": "Hospital website image, all rights reserved; linked from the hospital's own site",
+          "source_page": "https://www.novanthealth.org/"
+        }
+      ],
       "wikipedia_title": null,
       "sources": [
         "model knowledge (to verify); enrichment pending",
@@ -3244,7 +3346,15 @@
         "Believed to be surgically focused; ED status unconfirmed",
         "Serves north Wilmington and Hampstead"
       ],
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://www.novanthealth.org/siteassets/social-media-image/novant-health-root-image.webp",
+          "caption": "Novant Health Scotts Hill Medical Center",
+          "credit": "Novant Health (hospital website)",
+          "license": "Hospital website image, all rights reserved; linked from the hospital's own site",
+          "source_page": "https://www.novanthealth.org/"
+        }
+      ],
       "wikipedia_title": null,
       "sources": [
         "model knowledge (to verify); enrichment pending",
@@ -3441,7 +3551,15 @@
         "About 750 employees and 100-plus physicians",
         "Referral link to CHKD in Norfolk"
       ],
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://shc-p-001.sitecorecontenthub.cloud/api/public/content/4d57a7e017df4c0cb74d0511ec40b109?v=472b2074",
+          "caption": "Sentara Albemarle Medical Center",
+          "credit": "Sentara Health (hospital website)",
+          "license": "Hospital website image, all rights reserved; linked from the hospital's own site",
+          "source_page": "https://www.sentara.com/en/"
+        }
+      ],
       "wikipedia_title": "Sentara Albemarle Medical Center",
       "sources": [
         "model knowledge (to verify); enrichment pending",
@@ -3506,7 +3624,15 @@
         "Serves Cherry Point military families",
         "About an hour from Maynard Children's"
       ],
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://res.cloudinary.com/dpmykpsih/image/upload/f_jpg,c_lfill,w_1200,h_630,g_auto/carolinaeast-site-282/media/1002/hospital-at-night.jpg",
+          "caption": "CarolinaEast Medical Center",
+          "credit": "CarolinaEast Health System (independent) (hospital website)",
+          "license": "Hospital website image, all rights reserved; linked from the hospital's own site",
+          "source_page": "https://www.carolinaeasthealth.com/"
+        }
+      ],
       "wikipedia_title": "CarolinaEast Medical Center",
       "sources": [
         "model knowledge (to verify); enrichment pending",
@@ -4891,7 +5017,15 @@
         "Careers on Oracle Cloud (site CX_1)",
         "About an hour from Charlotte"
       ],
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://www.catawbavalleyhealth.org/wp-content/uploads/2025/01/1200x630.jpg",
+          "caption": "Catawba Valley Medical Center",
+          "credit": "Catawba Valley Health System (independent) (hospital website)",
+          "license": "Hospital website image, all rights reserved; linked from the hospital's own site",
+          "source_page": "https://www.catawbavalleyhealth.org/"
+        }
+      ],
       "wikipedia_title": null,
       "sources": [
         "model knowledge (to verify); enrichment pending",
