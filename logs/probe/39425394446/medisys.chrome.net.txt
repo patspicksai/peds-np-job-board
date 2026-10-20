@@ -1,0 +1,5 @@
+200 GET document https://medisyscareers.org/job-category/nursing/
+200 POST xhr https://medisyscareers.org/jm-ajax/get_listings/
+    POSTDATA: lang=&search_keywords=&search_location=&search_company=&search_active=&search_categories%5B%5D=183&filter_job_type%5B%5D=full-time&filter_job_type%5B%5D=internship&filter_job_type%5B%5D=other&filter_job_type%5B%5D=part-time&filter_job_type%5B%5D=per-diem&filter_job_type%5B%5D=temporary&filter_job_type%5B%5D=&per_page=10&orderby=post_title&order=ASC&page=1&remote_position=&show_pagination=false&form_data=search_keywords%3D%26search_categories%255B%255D%3D183%26search_company%3D%26search_salary_min%3D%26search_salary_max%3D%26filter_job_type%255B%255D%3Dfull-time%26filter_job_type%255B%255D%3Dinternship%26filter_job_type%255B%255D%3Dother%26filter_job_type%255B%255D%3Dpart-time%26filter_job_type%255B%255D%3Dper-diem%26filter_job_type%255B%255D%3Dtemporary%26filter_job_type%255B%255D%3D&job_layout=_list&job_version=1
+200 POST xhr https://medisyscareers.org/?wc-ajax=get_refreshed_fragments
+    POSTDATA: time=1792500945654

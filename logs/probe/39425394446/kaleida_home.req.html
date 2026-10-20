@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html class="CHROME BROWSER">
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width" />
+  <meta name="robots" content="noindex" />
+
+  <title>Candidate Experience</title>
+    <style>
+      /* used to mask flash of content on theme change and initial load in Portal */
+      #lm-page-overlay {
+          display: block;
+          position: fixed;
+          width: 100%;
+          height: 100%;
+          top: 0;
+          left: 0;
+          z-index: -1;
+      }
+
+      html.theme-new-dark #lm-page-overlay {
+          background-color: #000;
+      }
+
+      html.theme-new-contrast #lm-page-overlay,
+      html.theme-new-light #lm-page-overlay {
+          background-color: #FFF;
+      }
+  </style>
+
+  <link rel="icon" type="image/x-icon" href="https://css-y9x4ku9mqsygapwx-prd.inforcloudsuite.com/hcm/static/cli/dist/favicon.ico">
+
+  <!--  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600&amp;display=swap" rel="stylesheet">-->
+  <!--  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600" rel="stylesheet">-->
+
+    <link rel="stylesheet" id="fonts" href="https://css-y9x4ku9mqsygapwx-prd.inforcloudsuite.com/hcm/static/cli/dist/assets/fonts/font-face.css" type="text/css">
+
+    <!--DO NOT REMOVE - Required for the themes to work. -->
+    <!-- Busy Indicator -->
+    <!-- Needs to load first so styles are overridden by other themes -->
+    <link rel="stylesheet" id="stylesheet-landmark-busy-indicator" href="https://css-y9x4ku9mqsygapwx-prd.inforcloudsuite.com/hcm/static/cli/dist/assets/themes/landmark-busy-indicator_2026_10_05__473.css" type="text/css">
+    <link rel="stylesheet" id="stylesheet-landmark-theme-new-light" href="https://css-y9x4ku9mqsygapwx-prd.inforcloudsuite.com/hcm/static/cli/dist/assets/themes/landmark-new-light_2026_10_05__473.css" disabled type="text/css">
+    <link rel="stylesheet" id="stylesheet-landmark-theme-new-dark" href="https://css-y9x4ku9mqsygapwx-prd.inforcloudsuite.com/hcm/static/cli/dist/assets/themes/landmark-new-dark_2026_10_05__473.css" disabled type="text/css">
+    <link rel="stylesheet" id="stylesheet-landmark-theme-new-contrast" href="https://css-y9x4ku9mqsygapwx-prd.inforcloudsuite.com/hcm/static/cli/dist/assets/themes/landmark-new-contrast_2026_10_05__473.css" disabled type="text/css">
+
+
+    <link href="https://css-y9x4ku9mqsygapwx-prd.inforcloudsuite.com/hcm/static/cli/dist/styles_2026_10_05__473.css" rel="stylesheet" />
+
+    <script>
+      window['__Zone_disable_IE_check'] = true;
+    </script>
+
+    <script>
+      // Server-injected globals used to bootstrap the Angular client. LandmarkContext
+      // holds the context object built server-side in HtmlDocument.buildContextObject().
+      var LandmarkContext = {
+        "enableMaintainingSelectedRows": true,
+        "uiExternalMenuVersion": "v3",
+        "showusingxi": true,
+        "hideDeliveredReports": false,
+        "configuredFeatures": [
+                "ConfigurableFeatures",
+                "ExportToCSV",
+                "ExportToPDF",
+                "CreateReport",
+                "CreateFolder",
+                "Personalization",
+                "AsOfDate",
+                "ShowAllScheduleActions",
+                "UseAllActorGroups",
+                "SpreadSheetDesigner",
+                "SpreadSheetDesignerUpdate"
+        ],
+        "uiPagingRequestWaitTime": 15,
+        "useNewSpecUrls": true,
+        "lazyConditionsOnNestedDashBoardCompositeFormPanels": true,
+        "simplifyOptionsMenu": true,
+        "disableReportMenuSearch": true,
+        "defaultStartingPage": "EmployeeSelfService",
+        "usingWFM": true,
+        "baseStaticContentUrl": "https://css-y9x4ku9mqsygapwx-prd.inforcloudsuite.com/hcm/static",
+        "userDefinedStatePageSizeAndFilter": true,
+        "enableUserPageHit": true,
+        "disableUserPageHit": "none",
+        "uiExternalAppFilterBarMode": "casual",
+        "roamingUIProfile": {},
+        "actorId": "Anonymous",
+        "simplifyRightClickMenu": true,
+        "disableDST": false,
+        "uiAppFilterBarMode": "casual",
+        "lazyConditionsOnNestedDashBoardDetailSections": true,
+        "webAppShowUsing": "SoHo_Xi",
+        "pagespec_refactor": true,
+        "frameworkEnableArchiving": false,
+        "enableMultipleSearchTerms": true,
+        "configStamp": 1792499720848,
+        "enableListAuditCompare": false,
+        "uiLoadingIndicatorTimeout": 0,
+        "uiMenuVersion": "v3",
+        "hasConfigurationAccess": false,
+        "timezone": "UTC",
+        "financeEnterpriseGroup": "1000",
+        "disallowNavigations": true,
+        "useSingleSelectList": true,
+        "dataArea": "y9x4ku9mqsygapwx_prd_hcm",
+        "enableSavedSearch": false,
+        "useNewReportBuilder": false,
+        "isWFMStandaloneWebapp": false,
+        "insideInforMobileHub": false,
+        "suiteTitle": "{0}",
+        "insideInforGo": false,
+        "urlPdlOrDa": "hcm",
+        "uiHarness": "",
+        "contextSessionKeys": {
+                "csk.showusingxi": "true",
+                "csk.JobBoard": "KH-EXTERNAL",
+                "csk.HROrganization": "1000"
+        },
+        "webApp": "Jobs",
+        "allowAnonymousAccess": true,
+        "isUnifiedWebapp": false,
+        "inforOSPortalVersion": "",
+        "testVersion": 1,
+        "enableColumnarAdhocReport": false,
+        "uiVersion": "V4",
+        "isAnonymousUser": true,
+        "inMingleWidget": false,
+        "enableMaintainingSelectedValues": true,
+        "isGuestUser": false,
+        "showBreadcrumbs": true,
+        "homePageTitle": "Home",
+        "uiType": "BROWSER",
+        "enableReportCatalog": true,
+        "userDefinedStateDefaultPageSize": 100,
+        "actorUniqueId": "0d01679f-fe80-4000-0000-038d624c4333",
+        "inMingleOverlay": false,
+        "developer": false,
+        "webAppTitle": "Candidate Experience",
+        "hidePageLevelActions": false
+};
+      var bannerSpecUrl = "https://css-y9x4ku9mqsygapwx-prd.inforcloudsuite.com/{urlPdlOrDa}/{webApp}/banner/home?output=spec&csk.showusingxi=true&csk.JobBoard=KH-EXTERNAL&csk.HROrganization=1000";
+      var accessibleWebAppsUrl = "https://css-y9x4ku9mqsygapwx-prd.inforcloudsuite.com/{urlPdlOrDa}/{webApp}/apps?output=spec&csk.showusingxi=true&csk.JobBoard=KH-EXTERNAL&csk.HROrganization=1000";
+      var CulturesPath = "https://css-y9x4ku9mqsygapwx-prd.inforcloudsuite.com/hcm/static/cli/dist/assets/soho/js/cultures/";
+      var WCLocaleDataPath  = "https://css-y9x4ku9mqsygapwx-prd.inforcloudsuite.com/hcm/static/cli/dist/locale-data/";
+      var BuildVersion = "2026_10_05__473";
+
+      // WORK AROUND for the ( and ) in a url  issue https://github.com/angular/angular/issues/10280
+      origEncodeURIComponent = encodeURIComponent;
+      encodeURIComponent = function encodeURIComponent(str) {
+        return origEncodeURIComponent(str).replace(/[!'()*]/g, function (c) {
+          return '%' + c.charCodeAt(0).toString(16);
+        });
+      };
+    </script>
+
+
+</head>
+<body>
+    <lm-app role="main"></lm-app>
+
+    <!-- used to mask flash of content on theme change and initial load in Portal -->
+    <div id="lm-page-overlay" style="z-index: -1; display: none;">
+        <!-- Note: using soho busy html without initializer  -->
+        <style>
+            /* LMCLIENT-13005 - loading indicator displays for slow page loads  */
+            @-webkit-keyframes landmarkFadeIn { 0% {opacity:0;} 30% {opacity:0;} 45% {opacity:1;} 100% {opacity:1;} }
+            @-moz-keyframes landmarkFadeIn { 0% {opacity:0;} 30% {opacity:0;} 45% {opacity:1;} 100% {opacity:1;} }
+            @keyframes landmarkFadeIn { 0% {opacity:0;} 30% {opacity:0;} 45% {opacity:1;} 100% {opacity:1;} }
+            .landmarkLoading {
+                height:100%;
+                opacity:0;									/* start invisible */
+                -webkit-animation:landmarkFadeIn ease-in 1;	/* slow start; repeat once */
+                -moz-animation:landmarkFadeIn ease-in 1;
+                animation:landmarkFadeIn ease-in 1;
+
+                -webkit-animation-fill-mode:forwards;		/* remain at last keyframe value (opacity: 1) */
+                -moz-animation-fill-mode:forwards;
+                animation-fill-mode:forwards;
+
+                -webkit-animation-duration:1s;
+                -moz-animation-duration:1s;
+                animation-duration:1s;
+
+                -webkit-animation-delay:1ms;
+                -moz-animation-delay:1ms;
+                animation-delay:1ms;
+            }
+        </style>
+        <div class="landmarkLoading busy">
+            <div class="busy-indicator-container blocked-ui" aria-live="polite" role="status">
+                <div class="busy-indicator">
+                    <div class="bar one">
+                    </div>
+                    <div class="bar two">
+                    </div>
+                    <div class="bar three">
+                    </div>
+                    <div class="bar four">
+                    </div>
+                    <div class="bar five">
+                    </div>
+                </div>
+                <span>Loading...</span>
+            </div>
+        </div>
+    </div>
+
+      <script src="https://css-y9x4ku9mqsygapwx-prd.inforcloudsuite.com/hcm/static/cli/dist/runtime_2026_10_05__473.js" type="module"  ></script>
+      <script src="https://css-y9x4ku9mqsygapwx-prd.inforcloudsuite.com/hcm/static/cli/dist/polyfills_2026_10_05__473.js" type="module"  ></script>
+      <script src="https://css-y9x4ku9mqsygapwx-prd.inforcloudsuite.com/hcm/static/cli/dist/scripts_2026_10_05__473.js" type=""  ></script>
+      <script src="https://css-y9x4ku9mqsygapwx-prd.inforcloudsuite.com/hcm/static/lib/infor/lib/jquery.json-2.2.js" type=""  ></script>
+      <script src="https://css-y9x4ku9mqsygapwx-prd.inforcloudsuite.com/hcm/static/lib/infor/lib/infor-companyon-client.js" type=""  ></script>
+      <script src="https://css-y9x4ku9mqsygapwx-prd.inforcloudsuite.com/hcm/static/cli/dist/main_2026_10_05__473.js" type="module"  ></script>
+
+
+  <!-- hack to prevent 5.0 component from trying to automatically load stylesheets -->
+  <ids-theme-switcher self-managed style="display: none;"></ids-theme-switcher>
+</body>
+</html>
+
+

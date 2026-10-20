@@ -1,0 +1,3177 @@
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <!--  <!DOCTYPE HTML PUBLIC "-//W3C//DTD W3 HTML//EN">-->
+    <meta http-equiv="CACHE-CONTROL" content="Private">
+    <meta http-equiv="Expires" content="Tue, 20 Oct 2026 12:51:23 UTC">
+    <meta name="COPYRIGHT" content="Copyright &copy; 1998-2010, Greentree Systems, Inc., All Rights Reserved.">
+    <meta name="GENERATOR" content="iGreentree AWD Generator(8.4.3), Date Created: 07/27/2010 10:50:56 AM">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/styles.asp" rel="stylesheet">
+
+    <base href="HTTPS://jobs.uchc.edu/CSS_External/">
+    <title>UConn Health Candidate Self-Service
+</title>
+
+    
+
+
+    <script type="text/javascript" language="JavaScript">
+
+
+        // SYS Script - Client Side Session Timeout Processing
+
+        var giTOMins=0;
+        var giTOSec=0;
+        var gsTOURL='';
+        var gsTOMsgURL='';
+        var gtmrTO=null;
+        var giScrollX = 0;
+        var giScrollY = 0;
+
+        // Returns information about browser window and scroll positions.
+
+        function getBrowserWindowInfoClientWidth() {
+            return getBrowserWindowInfoFilterResults (
+                window.innerWidth ? window.innerWidth : 0,
+                document.documentElement ? document.documentElement.clientWidth : 0,
+                document.body ? document.body.clientWidth : 0
+            );
+        }
+        function getBrowserWindowInfoClientHeight() {
+            return getBrowserWindowInfoFilterResults (
+                window.innerHeight ? window.innerHeight : 0,
+                document.documentElement ? document.documentElement.clientHeight : 0,
+                document.body ? document.body.clientHeight : 0
+            );
+        }
+        function getBrowserWindowInfoScrollLeft() {
+            return getBrowserWindowInfoFilterResults (
+                window.pageXOffset ? window.pageXOffset : 0,
+                document.documentElement ? document.documentElement.scrollLeft : 0,
+                document.body ? document.body.scrollLeft : 0
+            );
+        }
+        function getBrowserWindowInfoScrollTop() {
+            return getBrowserWindowInfoFilterResults (
+                window.pageYOffset ? window.pageYOffset : 0,
+                document.documentElement ? document.documentElement.scrollTop : 0,
+                document.body ? document.body.scrollTop : 0
+            );
+        }
+        function getBrowserWindowInfoFilterResults(n_win, n_docel, n_body) {
+            var n_result = n_win ? n_win : 0;
+            if (n_docel && (!n_result || (n_result > n_docel)))
+                n_result = n_docel;
+            return n_body && (!n_result || (n_result > n_body)) ? n_body : n_result;
+        }
+
+        // Timeout processing
+
+        function sysInitClientSideSessionTimeoutProcessing(piTimoutMins, psTimeoutURL, psTimeoutMsgURL, pfClearHolder) {
+            sysInitClientSideSessionTimeoutProcessingClear();
+            giTOMins=(piTimoutMins==null)?30:piTimoutMins;
+            gsTOURL=(psTimeoutURL==null)?gsTOURL:psTimeoutURL;
+            gsTOMsgURL=(psTimeoutMsgURL==null)?gsTOMsgURL:psTimeoutMsgURL;
+            pfClearHolder=(pfClearHolder==null)?true:pfClearHolder;
+            giTOSec=0;
+            if (pfClearHolder) {
+                var fResetScroll=true;
+                try
+                {
+                    var objIFMTmr = document.getElementById('ifrmTimeoutPage');
+                    var divTmr1 = document.getElementById('divTimeoutPageHolderO');
+                    var divTmr2 = document.getElementById('divTimeoutPageHolder');
+                    fResetScroll=(divTmr1.style.display=='');
+                    objIFMTmr.src = 'HTTPS://jobs.uchc.edu/CSS_External/Blank.htm';
+                    divTmr2.style.display='none';
+                    divTmr1.style.display='none';
+
+                    if (fResetScroll) {
+                        window.setTimeout('window.scrollTo('+giScrollX+','+giScrollY+');', 25);
+                    }
+
+                } catch(e) { /*Ignore*/ }
+            }
+
+            sysInitClientSideSessionTimeoutProcessingDown();
+        }
+        function sysInitClientSideSessionTimeoutProcessingDown() {
+            var sCandidateKey='';
+            giTOSec--;
+            if (giTOSec == -1) {
+                giTOSec = 59;
+                giTOMins--;
+            }
+            if (giTOMins <= 1) {
+                window.status = 'Session Time Remaining: ' + giTOMins + ' minute(s) and '+giTOSec+' second(s).';
+                //} else {
+                //	window.status = 'Time remaining: ' + giTOMins + ' minutes.';
+            }
+            if ((giTOMins==0)&&(giTOSec<=1)) {
+                gtmrTO=null;
+                if (gsTOURL!=null) {
+                    if(sCandidateKey.length>0){
+                        $('#msgModal').modal('hide');
+                        window.location.href = gsTOURL;
+                    }
+                }
+
+            } else {
+                if ((giTOMins==5)&&(giTOSec==0)) {
+                    if ((gsTOMsgURL!=null)&&(sCandidateKey.length>0)) {
+                        try
+                        {
+                            $('#msgModal').modal('show');
+                        }
+                        catch(e)
+                        {
+                            //window.focus();
+                            //window.open(gsTOMsgURL,'tmrmsg','top=0,left=0,height=200,width=300,toolbar=no,location=no,status=no,menubar=no,scrollbars=no,resizable=no');
+                            $('#msgModal').modal('show');
+                        }
+                    }
+                }
+                else if(giTOMins<=4){
+                    if(giTOSec<10){
+                        $('#msgModal > div > div > .modal-body > div > label').html(giTOMins + " : " + "0" + giTOSec);
+                    }
+                    else{
+                        $('#msgModal > div > div > .modal-body > div > label').html(giTOMins + " : " + giTOSec);
+                    }
+                }
+                gtmrTO = setTimeout('sysInitClientSideSessionTimeoutProcessingDown();', 1000);
+            }
+
+        }
+        function sysInitClientSideSessionTimeoutProcessingClear() {
+            if (gtmrTO!=null) {
+                clearTimeout(gtmrTO);
+            }
+            gtmrTO=null;
+        }
+
+
+        // SYS Script - CSS Search Keyword Validation
+
+        var NoiseWords = new Array(0);
+        var fNoiseWordsLoaded = false;
+
+        function loadNoiseWords(){
+
+            if(fNoiseWordsLoaded==true){
+                return;
+            }
+
+            NoiseWords[0] = 'about';
+            NoiseWords[1] = '1';
+            NoiseWords[2] = 'after';
+            NoiseWords[3] = '2';
+            NoiseWords[4] = 'all';
+            NoiseWords[5] = 'also';
+            NoiseWords[6] = '3';
+            NoiseWords[7] = 'an';
+            NoiseWords[8] = '4';
+            NoiseWords[9] = 'and';
+            NoiseWords[10] = '5';
+            NoiseWords[11] = 'another';
+            NoiseWords[12] = '6';
+            NoiseWords[13] = 'any';
+            NoiseWords[14] = '7';
+            NoiseWords[15] = 'are';
+            NoiseWords[16] = '8';
+            NoiseWords[17] = 'as';
+            NoiseWords[18] = '9';
+            NoiseWords[19] = 'at';
+            NoiseWords[20] = '0';
+            NoiseWords[21] = 'be';
+            NoiseWords[22] = '$';
+            NoiseWords[23] = 'because';
+            NoiseWords[24] = 'been';
+            NoiseWords[25] = 'before';
+            NoiseWords[26] = 'being';
+            NoiseWords[27] = 'between';
+            NoiseWords[28] = 'both';
+            NoiseWords[29] = 'but';
+            NoiseWords[30] = 'by';
+            NoiseWords[31] = 'came';
+            NoiseWords[32] = 'can';
+            NoiseWords[33] = 'come';
+            NoiseWords[34] = 'could';
+            NoiseWords[35] = 'did';
+            NoiseWords[36] = 'do';
+            NoiseWords[37] = 'each';
+            NoiseWords[38] = 'for';
+            NoiseWords[39] = 'from';
+            NoiseWords[40] = 'get';
+            NoiseWords[41] = 'got';
+            NoiseWords[42] = 'has';
+            NoiseWords[43] = 'had';
+            NoiseWords[44] = 'he';
+            NoiseWords[45] = 'have';
+            NoiseWords[46] = 'her';
+            NoiseWords[47] = 'here';
+            NoiseWords[48] = 'him';
+            NoiseWords[49] = 'himself';
+            NoiseWords[50] = 'his';
+            NoiseWords[51] = 'how';
+            NoiseWords[52] = 'if';
+            NoiseWords[53] = 'in';
+            NoiseWords[54] = 'into';
+            NoiseWords[55] = 'is';
+            NoiseWords[56] = 'it';
+            NoiseWords[57] = 'like';
+            NoiseWords[58] = 'make';
+            NoiseWords[59] = 'many';
+            NoiseWords[60] = 'me';
+            NoiseWords[61] = 'might';
+            NoiseWords[62] = 'more';
+            NoiseWords[63] = 'most';
+            NoiseWords[64] = 'much';
+            NoiseWords[65] = 'must';
+            NoiseWords[66] = 'my';
+            NoiseWords[67] = 'never';
+            NoiseWords[68] = 'now';
+            NoiseWords[69] = 'of';
+            NoiseWords[70] = 'on';
+            NoiseWords[71] = 'only';
+            NoiseWords[72] = 'or';
+            NoiseWords[73] = 'other';
+            NoiseWords[74] = 'our';
+            NoiseWords[75] = 'out';
+            NoiseWords[76] = 'over';
+            NoiseWords[77] = 'said';
+            NoiseWords[78] = 'same';
+            NoiseWords[79] = 'see';
+            NoiseWords[80] = 'should';
+            NoiseWords[81] = 'since';
+            NoiseWords[82] = 'some';
+            NoiseWords[83] = 'still';
+            NoiseWords[84] = 'such';
+            NoiseWords[85] = 'take';
+            NoiseWords[86] = 'than';
+            NoiseWords[87] = 'that';
+            NoiseWords[88] = 'the';
+            NoiseWords[89] = 'their';
+            NoiseWords[90] = 'them';
+            NoiseWords[91] = 'then';
+            NoiseWords[92] = 'there';
+            NoiseWords[93] = 'these';
+            NoiseWords[94] = 'they';
+            NoiseWords[95] = 'this';
+            NoiseWords[96] = 'those';
+            NoiseWords[97] = 'through';
+            NoiseWords[98] = 'to';
+            NoiseWords[99] = 'too';
+            NoiseWords[100] = 'under';
+            NoiseWords[101] = 'up';
+            NoiseWords[102] = 'very';
+            NoiseWords[103] = 'was';
+            NoiseWords[104] = 'way';
+            NoiseWords[105] = 'we';
+            NoiseWords[106] = 'well';
+            NoiseWords[107] = 'were';
+            NoiseWords[108] = 'what';
+            NoiseWords[109] = 'where';
+            NoiseWords[110] = 'which';
+            NoiseWords[111] = 'while';
+            NoiseWords[112] = 'who';
+            NoiseWords[113] = 'with';
+            NoiseWords[114] = 'would';
+            NoiseWords[115] = 'you';
+            NoiseWords[116] = 'your';
+            NoiseWords[117] = 'a b c d e f g h i j k l m n o p q r s t u v w x y z';
+
+            fNoiseWordsLoaded = true;
+            return;
+
+        }
+        function isMoreThanOneWord(strCandidate){
+            var arrWordList = new Array(0);
+            var intWordCount = 0;
+            strCandidate = strCandidate.replace('*','');
+            strCandidate = strCandidate.replace(',',' ');
+            strCandidate = strCandidate.replace(';',' ');
+            strCandidate = strCandidate.replace(':',' ');
+            arrWordList = strCandidate.split(' ');
+            for(var intCounter = 0;intCounter < arrWordList.length;intCounter++){
+                if(arrWordList[intCounter].length>0){
+                    intWordCount++;
+                }
+            }
+            if(intWordCount>1){
+                return true;
+            }
+            return false;
+        }
+
+        //returns true if the word matches one of the words
+        //in the noise word array
+        //
+        //Also returns true if just one letter is passed
+        //
+        function isANoiseWord(strCandidateWord){
+            for(var intReplaceCount = 0;intReplaceCount<100;intReplaceCount++){
+                strCandidateWord = strCandidateWord.replace(' ','');
+                strCandidateWord = strCandidateWord.replace('*','');
+            }
+            if(strCandidateWord.length==1){
+                return true;
+            }
+            for(var intNWCounter = 0;intNWCounter < NoiseWords.length;intNWCounter++){
+                if(strCandidateWord.toUpperCase()==NoiseWords[intNWCounter].toUpperCase()){
+                    return true;
+                }
+            }
+            return false;
+        }
+
+
+
+        // sysButtonMakeCool(this);
+
+        function sysButtonMakeCool(pObj) {
+            pObj.style.color = '#A9EFFF';
+            pObj.style.backgroundColor = '';
+        }
+
+
+
+        // sysButtonMakeNormal(this);
+
+        function sysButtonMakeNormal(pObj) {
+            pObj.style.color = '#fff';
+            pObj.style.backgroundColor = '';
+        }
+
+
+
+        // SCRIPT: sysfnfCheckEnter
+
+        var geleDefault=null;
+
+        function sysSetDefault(psEleID) {
+            geleDefault=null;
+            geleDefault=document.getElementById(psEleID);
+        }
+
+        function sysfnfCheckEnter(pEvt) {
+            if ((pEvt!=null)&&(pEvt!='undefined')) {
+                switch (pEvt.keyCode) {
+                    case 13 : {
+                        if (geleDefault!=null) {geleDefault.click();}
+                    }
+                }
+            }
+        }
+
+
+
+        // sysSubmitForm
+
+        function sysSubmitForm(psFormElementName, pEleName, pEleValue, psOverrideAction, psOverrideTarget) {
+            var iFrmIndex = -1;
+            var iFrmChildIndex = -1;
+            var fFound=false;
+            var retVal=false;
+            psFormElementName=(psFormElementName==null)?'':psFormElementName.toUpperCase();
+            for (var i=0;i<document.forms.length;i++) {
+                if (document.forms[i].name.toUpperCase()==psFormElementName) {
+                    iFrmIndex=i;
+                    fFound=true;
+                    i=document.forms.length;
+                } else {
+                    if (document.forms[i].forms!=null) {
+                        if (document.forms[i].forms.length > 0) {
+                            for (var ii=0;i<document.forms[i].forms.length;ii++) {
+                                if (document.forms[i].forms[ii].name.toUpperCase()==psFormElementName) {
+                                    iFrmIndex=i;
+                                    iFrmChildIndex=ii;
+                                    fFound=true;
+                                    i=document.forms.length;
+                                    ii=document.forms[i].forms.length;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            if (fFound) {
+                if ((pEleName!=null)&&(pEleValue!=null)) {
+                    var objFrm=null;
+                    if (iFrmChildIndex==-1) {
+                        var objFrm = document.forms[iFrmIndex];
+                    } else {
+                        var objFrm = document.forms[iFrmIndex].forms[iFrmChildIndex];
+                    }
+                    if (objFrm!=null) {
+                        objFrm.elements[pEleName].value=pEleValue;
+                    }
+                }
+                if (iFrmChildIndex==-1) {
+                    retVal=true;
+                    if (psOverrideAction != null) {
+                        document.forms[iFrmIndex].action=psOverrideAction;
+                    }
+                    if (psOverrideTarget != null) {
+                        document.forms[iFrmIndex].target=psOverrideTarget;
+                    }
+                    document.forms[iFrmIndex].submit();
+                } else {
+                    retVal=true;
+                    if (psOverrideAction != null) {
+                        document.forms[iFrmIndex].forms[iFrmChildIndex].action=psOverrideAction;
+                    }
+                    if (psOverrideTarget != null) {
+                        document.forms[iFrmIndex].forms[iFrmChildIndex].target=psOverrideTarget;
+                    }
+                    document.forms[iFrmIndex].forms[iFrmChildIndex].submit();
+                }
+            } else {
+                window.alert('Error: Cannot find FORM [' + psFormElementName + ']');
+            }
+            return (retVal);
+        }
+
+
+
+    </script>
+
+    
+
+    <script language="JavaScript" type="text/javascript">
+
+        // String Object Prototypes (CLIENT SIDE)
+
+        function trimLeft(pstr) {
+            var newstr = null;
+            var fFlag=false;
+            if (pstr!=null) {
+                newstr='';
+                for (var i=0;i<pstr.length;i++) {
+                    if (pstr.charAt(i)!=' ') {
+                        fFlag=true;
+                        newstr +=  pstr.charAt(i);
+                    } else {
+                        if (fFlag) {
+                            newstr += pstr.charAt(i);
+                        }
+                    }
+
+                }
+                //newstr = pstr.replace(/[ ]*/, "");
+            }
+            return (newstr);
+        }
+
+        function trimRight(pstr) {
+            var newstr = null;
+            var fFlag=false;
+            if (pstr!=null) {
+                newstr='';
+                for (var i=pstr.length-1;i>-1;i--) {
+                    if (pstr.charAt(i)!=' ') {
+                        fFlag=true;
+                        newstr = pstr.charAt(i) + newstr;
+                    } else {
+                        if (fFlag) {
+                            newstr = pstr.charAt(i) + newstr;
+                        }
+                    }
+
+                }
+                //newstr = pstr.replace(/[ ]*$/, "");
+            }
+            return (newstr);
+        }
+
+        function trim(pstr) {
+            var newstr = null;
+            if (pstr!=null) {
+                newstr=trimRight(trimLeft(pstr));
+                //newstr = pstr.replace(/[ ]*/, "").replace(/[ ]*$/, "");
+            }
+            return (newstr);
+        }
+
+</script>
+
+
+    <script language="javascript" type="text/javascript">
+
+        // SYS Script - Validate Search Criteria
+
+        var garrValObjs = new Array();
+        var arrNoiseWords=null;
+        function sysInitNoiseWords() {
+            if (arrNoiseWords==null) {
+                arrNoiseWords = new Array;
+                arrNoiseWords[arrNoiseWords.length]='about';
+                arrNoiseWords[arrNoiseWords.length]='after';
+                arrNoiseWords[arrNoiseWords.length]='all';
+                arrNoiseWords[arrNoiseWords.length]='also';
+                arrNoiseWords[arrNoiseWords.length]='an';
+                arrNoiseWords[arrNoiseWords.length]='and';
+                arrNoiseWords[arrNoiseWords.length]='another';
+                arrNoiseWords[arrNoiseWords.length]='any';
+                arrNoiseWords[arrNoiseWords.length]='are';
+                arrNoiseWords[arrNoiseWords.length]='as';
+                arrNoiseWords[arrNoiseWords.length]='at';
+                arrNoiseWords[arrNoiseWords.length]='be';
+                arrNoiseWords[arrNoiseWords.length]='because';
+                arrNoiseWords[arrNoiseWords.length]='been';
+                arrNoiseWords[arrNoiseWords.length]='before';
+                arrNoiseWords[arrNoiseWords.length]='being';
+                arrNoiseWords[arrNoiseWords.length]='between';
+                arrNoiseWords[arrNoiseWords.length]='both';
+                arrNoiseWords[arrNoiseWords.length]='but';
+                arrNoiseWords[arrNoiseWords.length]='by';
+                arrNoiseWords[arrNoiseWords.length]='came';
+                arrNoiseWords[arrNoiseWords.length]='can';
+                arrNoiseWords[arrNoiseWords.length]='come';
+                arrNoiseWords[arrNoiseWords.length]='could';
+                arrNoiseWords[arrNoiseWords.length]='did';
+                arrNoiseWords[arrNoiseWords.length]='do';
+                arrNoiseWords[arrNoiseWords.length]='does';
+                arrNoiseWords[arrNoiseWords.length]='each';
+                arrNoiseWords[arrNoiseWords.length]='else';
+                arrNoiseWords[arrNoiseWords.length]='for';
+                arrNoiseWords[arrNoiseWords.length]='from';
+                arrNoiseWords[arrNoiseWords.length]='get';
+                arrNoiseWords[arrNoiseWords.length]='got';
+                arrNoiseWords[arrNoiseWords.length]='has';
+                arrNoiseWords[arrNoiseWords.length]='had';
+                arrNoiseWords[arrNoiseWords.length]='he';
+                arrNoiseWords[arrNoiseWords.length]='have';
+                arrNoiseWords[arrNoiseWords.length]='her';
+                arrNoiseWords[arrNoiseWords.length]='here';
+                arrNoiseWords[arrNoiseWords.length]='him';
+                arrNoiseWords[arrNoiseWords.length]='himself';
+                arrNoiseWords[arrNoiseWords.length]='his';
+                arrNoiseWords[arrNoiseWords.length]='how';
+                arrNoiseWords[arrNoiseWords.length]='if';
+                arrNoiseWords[arrNoiseWords.length]='in';
+                arrNoiseWords[arrNoiseWords.length]='into';
+                arrNoiseWords[arrNoiseWords.length]='is';
+                arrNoiseWords[arrNoiseWords.length]='it';
+                arrNoiseWords[arrNoiseWords.length]='its';
+                arrNoiseWords[arrNoiseWords.length]='just';
+                arrNoiseWords[arrNoiseWords.length]='like';
+                arrNoiseWords[arrNoiseWords.length]='make';
+                arrNoiseWords[arrNoiseWords.length]='many';
+                arrNoiseWords[arrNoiseWords.length]='me';
+                arrNoiseWords[arrNoiseWords.length]='might';
+                arrNoiseWords[arrNoiseWords.length]='more';
+                arrNoiseWords[arrNoiseWords.length]='most';
+                arrNoiseWords[arrNoiseWords.length]='much';
+                arrNoiseWords[arrNoiseWords.length]='must';
+                arrNoiseWords[arrNoiseWords.length]='my';
+                arrNoiseWords[arrNoiseWords.length]='never';
+                arrNoiseWords[arrNoiseWords.length]='now';
+                arrNoiseWords[arrNoiseWords.length]='of';
+                arrNoiseWords[arrNoiseWords.length]='on';
+                arrNoiseWords[arrNoiseWords.length]='only';
+                arrNoiseWords[arrNoiseWords.length]='or';
+                arrNoiseWords[arrNoiseWords.length]='other';
+                arrNoiseWords[arrNoiseWords.length]='our';
+                arrNoiseWords[arrNoiseWords.length]='out';
+                arrNoiseWords[arrNoiseWords.length]='over';
+                arrNoiseWords[arrNoiseWords.length]='re';
+                arrNoiseWords[arrNoiseWords.length]='said';
+                arrNoiseWords[arrNoiseWords.length]='same';
+                arrNoiseWords[arrNoiseWords.length]='see';
+                arrNoiseWords[arrNoiseWords.length]='should';
+                arrNoiseWords[arrNoiseWords.length]='since';
+                arrNoiseWords[arrNoiseWords.length]='so';
+                arrNoiseWords[arrNoiseWords.length]='some';
+                arrNoiseWords[arrNoiseWords.length]='still';
+                arrNoiseWords[arrNoiseWords.length]='such';
+                arrNoiseWords[arrNoiseWords.length]='take';
+                arrNoiseWords[arrNoiseWords.length]='than';
+                arrNoiseWords[arrNoiseWords.length]='that';
+                arrNoiseWords[arrNoiseWords.length]='the';
+                arrNoiseWords[arrNoiseWords.length]='their';
+                arrNoiseWords[arrNoiseWords.length]='them';
+                arrNoiseWords[arrNoiseWords.length]='then';
+                arrNoiseWords[arrNoiseWords.length]='there';
+                arrNoiseWords[arrNoiseWords.length]='these';
+                arrNoiseWords[arrNoiseWords.length]='they';
+                arrNoiseWords[arrNoiseWords.length]='this';
+                arrNoiseWords[arrNoiseWords.length]='those';
+                arrNoiseWords[arrNoiseWords.length]='through';
+                arrNoiseWords[arrNoiseWords.length]='to';
+                arrNoiseWords[arrNoiseWords.length]='too';
+                arrNoiseWords[arrNoiseWords.length]='under';
+                arrNoiseWords[arrNoiseWords.length]='up';
+                arrNoiseWords[arrNoiseWords.length]='use';
+                arrNoiseWords[arrNoiseWords.length]='very';
+                arrNoiseWords[arrNoiseWords.length]='want';
+                arrNoiseWords[arrNoiseWords.length]='was';
+                arrNoiseWords[arrNoiseWords.length]='way';
+                arrNoiseWords[arrNoiseWords.length]='we';
+                arrNoiseWords[arrNoiseWords.length]='well';
+                arrNoiseWords[arrNoiseWords.length]='were';
+                arrNoiseWords[arrNoiseWords.length]='what';
+                arrNoiseWords[arrNoiseWords.length]='when';
+                arrNoiseWords[arrNoiseWords.length]='where';
+                arrNoiseWords[arrNoiseWords.length]='which';
+                arrNoiseWords[arrNoiseWords.length]='while';
+                arrNoiseWords[arrNoiseWords.length]='who';
+                arrNoiseWords[arrNoiseWords.length]='will';
+                arrNoiseWords[arrNoiseWords.length]='with';
+                arrNoiseWords[arrNoiseWords.length]='would';
+                arrNoiseWords[arrNoiseWords.length]='you';
+                arrNoiseWords[arrNoiseWords.length]='your';
+                arrNoiseWords[arrNoiseWords.length]='1';
+                arrNoiseWords[arrNoiseWords.length]='2';
+                arrNoiseWords[arrNoiseWords.length]='3';
+                arrNoiseWords[arrNoiseWords.length]='4';
+                arrNoiseWords[arrNoiseWords.length]='5';
+                arrNoiseWords[arrNoiseWords.length]='6';
+                arrNoiseWords[arrNoiseWords.length]='7';
+                arrNoiseWords[arrNoiseWords.length]='8';
+                arrNoiseWords[arrNoiseWords.length]='9';
+                arrNoiseWords[arrNoiseWords.length]='0';
+                arrNoiseWords[arrNoiseWords.length]='$';
+                arrNoiseWords[arrNoiseWords.length]='a';
+                arrNoiseWords[arrNoiseWords.length]='b';
+                arrNoiseWords[arrNoiseWords.length]='c';
+                arrNoiseWords[arrNoiseWords.length]='d';
+                arrNoiseWords[arrNoiseWords.length]='e';
+                arrNoiseWords[arrNoiseWords.length]='f';
+                arrNoiseWords[arrNoiseWords.length]='g';
+                arrNoiseWords[arrNoiseWords.length]='h';
+                arrNoiseWords[arrNoiseWords.length]='i';
+                arrNoiseWords[arrNoiseWords.length]='j';
+                arrNoiseWords[arrNoiseWords.length]='k';
+                arrNoiseWords[arrNoiseWords.length]='l';
+                arrNoiseWords[arrNoiseWords.length]='m';
+                arrNoiseWords[arrNoiseWords.length]='n';
+                arrNoiseWords[arrNoiseWords.length]='o';
+                arrNoiseWords[arrNoiseWords.length]='p';
+                arrNoiseWords[arrNoiseWords.length]='q';
+                arrNoiseWords[arrNoiseWords.length]='r';
+                arrNoiseWords[arrNoiseWords.length]='s';
+                arrNoiseWords[arrNoiseWords.length]='t';
+                arrNoiseWords[arrNoiseWords.length]='u';
+                arrNoiseWords[arrNoiseWords.length]='v';
+                arrNoiseWords[arrNoiseWords.length]='w';
+                arrNoiseWords[arrNoiseWords.length]='x';
+                arrNoiseWords[arrNoiseWords.length]='y';
+                arrNoiseWords[arrNoiseWords.length]='z';
+                arrNoiseWords[arrNoiseWords.length]=' ';
+            }
+        }
+
+        function sysValidateSQLNoiseWords(psText) {
+            psText=(psText==null)?'':psText;
+            var retVal=true;
+            if (psText.length>0) {
+                retVal=false;
+                sysInitNoiseWords();
+                var arr=psText.split(' ');
+                for (var i=0;i<arr.length;i++) {
+                    var fFound=false;
+                    for (var ii=0;ii<arrNoiseWords.length;ii++) {
+                        if (arr[i].toLowerCase()==arrNoiseWords[ii]) {
+                            fFound=true;
+                            ii=arrNoiseWords.length;
+                        }
+                    }
+                    if (!fFound) {
+                        retVal=true;
+                        i=arr.length;
+                    }
+                }
+            }
+            return (retVal);
+        }
+
+        function valObj(pObj, psLabel, plngMax) {
+            this.object = pObj;
+            this.label = psLabel;
+            this.max = plngMax;
+        }
+        function setValObj(pObj, psLabel, plngMax) {
+            var fFound=false;
+            for (var MyEle in garrValObjs) {
+                if (!fFound) {
+                    if (pObj.name==garrValObjs[MyEle].object.name) {
+                        fFound=true;
+                    }
+                }
+            }
+            if (!fFound) {
+                var obj = new valObj(pObj, psLabel, plngMax);
+                garrValObjs[garrValObjs.length] = obj;
+            }
+
+        }
+        function valMaxSelForm() {
+            var retVal=true;
+            var objKeyWord=null;
+            if(!validateObject())
+            {
+                retVal = false;
+            }
+            for (var MyEle in garrValObjs) {
+                if (retVal) {
+                    if (!valMaxSelOK(garrValObjs[MyEle].object, garrValObjs[MyEle].label, garrValObjs[MyEle].max)) {
+                        retVal=false;
+                    }
+                }
+                if (garrValObjs[MyEle].object.id=='keyword') {
+                    objKeyWord=garrValObjs[MyEle].object;
+                    objKeyWord.setAttribute('DISPLABEL', garrValObjs[MyEle].label);
+                }
+            }
+            if (retVal) {
+                if (objKeyWord==null) {
+                    objKeyWord=document.getElementById('keyword');
+                    if (!((objKeyWord==null)||(objKeyWord=='undefined'))) {
+                        objKeyWord.setAttribute('DISPLABEL', 'Key Word Search');
+                    }
+                }
+                if (!((objKeyWord==null)||(objKeyWord=='undefined'))) {
+                    sysInitNoiseWords();
+                    var r1 = new RegExp("[^ .0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ]","g");	//can only have these chars
+                    objKeyWord.value = objKeyWord.value.replace(r1,""); // all other chars are emptied out
+                    // loop through noise words and remove
+                    var s = ' ' + objKeyWord.value + ' ';
+                    for (var ii=0;ii<(arrNoiseWords.length - 1);ii++) {
+                        var r1 = null;
+                        r1 = eval('/ ' + arrNoiseWords[ii] + ' /gi');
+                        s = s.replace(r1," ");
+                    }
+                    objKeyWord.value = trim(s);
+                    //var r1 = null;
+                    //r1 = eval('/ /gi');
+                    //objKeyWord.value = objKeyWord.value.replace(r1," OR ");
+                    var r1 = null;
+                    // validate only noise words
+                    //retVal=sysValidateSQLNoiseWords(objKeyWord.value);
+                    //if (!retVal) {
+                    //	window.alert('Sorry,\n[' + objKeyWord.getAttribute('DISPLABEL') + '] contains only noise words.\n\nPlease correct and try again.');
+                    //	objKeyWord.focus();
+                    //}
+                }
+            }
+            return (retVal);
+        }
+        function valMaxSelOK(pObj, psLabel, plngMax) {
+            var retVal=true;
+            plngMax=(plngMax==null)?0:plngMax;
+            if ((pObj!=null) && (plngMax>0)) {
+                if (pObj.tagName=='SELECT') {
+                    alert(pObj.value);
+                    var lngCurIndex = pObj.selectedIndex;
+                    var lngSelCnt = 0
+                    for (var i=0;i<pObj.options.length;i++) {
+                        if (pObj.options[i].selected) {
+                            lngSelCnt++;
+                        }
+                    }
+                    if (lngSelCnt>plngMax) {
+                        retVal=false;
+                        window.alert('Sorry,\n[' + psLabel + '] exceedes the maximum selectable limit of (' + plngMax + ').');
+                    }
+                    pObj.focus();
+                }
+            }
+            return (retVal);
+        }
+
+
+</script>
+
+    <script type="text/javascript">
+        function validateObject()
+        {
+            var IsValidated = true;
+
+            $(".list-group-item > div > ul").each(function () {
+                var size = 0 ;
+                size = $(this).attr("size");
+
+                var name = $(this).attr("id");
+                var count = 0;
+
+
+                $(this).find("li").each(function () {
+
+                    var input = $(this).find("label > input");
+
+                    if ($(input).attr("type").toLowerCase() == "checkbox") {
+                        //if ($(input).attr("checked")) {
+                        //    count = parseInt(count) + parseInt(1);
+                        //}
+                        if ($(input).is(":checked"))
+                        {
+                            count = parseInt(count) + parseInt(1);
+                        }
+                    }
+                });
+
+                if(count > size)
+                {
+                    IsValidated = false;
+                    alert("Sorry, "+ name + " exceedes the maximum selectable limit of " + size);
+                    return false;
+                }
+
+            });
+
+            return IsValidated;
+        }
+    </script>
+
+    <!-- SYSAPPIGNORESTART -->
+<STYLE type="text/css">
+		A:active.MenuTop			{ font-weight:normal; cursor:hand; text-decoration:none; color:#fff; background-color:#000066;}
+		A:active.Page			{ font-family:Verdana, Arial; font-weight:normal; font-size:9pt; cursor:hand; text-decoration:underline; color:#337ab7; background-color:transparent; }
+		A:active.ProfSecHdr			{ font-family:Verdana, Arial; font-weight:normal; font-size:9pt; cursor:hand; text-decoration:underline; color:; ;}
+		A:active.TblHdr			{ font-family:Verdana, Arial; font-weight:bold; font-size:10pt; cursor:hand; text-decoration:none; color:#ffffff; }
+		A:hover.MenuTop			{ cursor:hand; text-decoration:underline; padding-bottom:1px; padding-top:1px; color:; background-color:#000066;}
+		A:hover.Page			{ font-family:Verdana, Arial; font-weight:normal; font-size:9pt; cursor:hand; text-decoration:underline; color:#23527c; ; }
+		A:hover.ProfSecHdr			{ font-family:Verdana, Arial; font-weight:normal; font-size:9pt; cursor:hand; text-decoration:underline; color:; ;}
+		A:hover.TblHdr			{ font-family:Verdana, Arial; font-weight:bold; font-size:10pt; cursor:hand; text-decoration:none; color:#ffffff; }
+		TD.TblColFld	SPAN { font-family:Verdana, Arial !important; font-weight:normal; font-size:10pt !important; padding:0px; }
+</STYLE>
+<style type="text/css">
+	DIV.UnsupportedBrowser {
+		display:none;
+		margin:20px 40px;
+		border: 1px solid darkred;
+		text-align: center;
+		color: darkred;
+		padding-top:20px;
+		padding-bottom: 20px;
+		box-sizing: border-box;
+		font-size: 1.5em;
+		font-weight: normal;
+	}
+	DIV.UnsupportedBrowser SPAN {
+		font-weight:bold;
+		color: darkred;
+	}
+</style>
+
+<!--[if lt IE 9]>
+	<Style>
+	DIV.UnsupportedBrowser {display:block}
+	</Style>
+<![endif]-->
+
+<!-- SYSAPPIGNOREEND -->
+</head>
+    <body
+    onload="sysSetDefault('cmdCSSSearch');sysInitClientSideSessionTimeoutProcessing(30, 'HTTPS://jobs.uchc.edu/CSS_External/CSSResp_TimeoutMessage.ASP?T=20261020085123&', 'HTTPS://jobs.uchc.edu/CSS_External/CSSPage_TimoutMessage.ASP?T=20261020085123&');"
+    onunload="sysInitClientSideSessionTimeoutProcessingClear();">
+
+    <!--<FORM AUTOCOMPLETE=OFF ID=frmPrimary NAME=frmPrimary METHOD=POST ACTION="HTTPS://jobs.uchc.edu/CSS_External/Dummy.ASP?T=20261020085123&">-->
+    <!--
+
+** NOTE **
+
+YOU MUST LINK THE Global Script "SYS - Application Path Information" INTO YOUR PAGE
+IN ORDER FOR MENU ITEMS TO WORK CORRECTLY
+
+**********
+
+-->
+    <!-- SYSAPPIGNORESTART -->
+
+    <!-- SYSAPPIGNOREEND -->
+    <div ID = "W1" class="container">
+        <!-- SYSAPPIGNORESTART -->
+<script type="text/javascript" language="javascript">
+
+    function requestClose() {
+        sysInitClientSideSessionTimeoutProcessing();
+        $('#msgModal').modal('hide');
+    }
+
+</script>
+<DIV id=not-supported-browser class=UnsupportedBrowser >
+<SPAN>BROWSER NOT SUPPORTED</SPAN> - You are using an unsupported browser. Some features may not work correctly.
+</DIV>
+<div class="header-area">
+    <a href="https://www.uconnhealth.org" class="navbar-brand logo">
+        <img src="images/logo_uconnhealth_greentree.png" class="masthead-logo" alt="Career Opportunities at UConn Health"></a>
+    <!--<h1 class="pull-right">Welcome to </h1>-->
+
+    <h1 class="pull-right masthead-text">Career Opportunities at UConn Health</h1>
+    <div class="modal fade" id="msgModal" data-backdrop="static" data-keyboard="false" >
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button data-dismiss="modal" class="close"><span class="glyphicon glyphicon-remove-circle"></span></button>
+                    <h2 class="heading2">Session Timeout</h2>
+                </div>
+                <!-- end modal-header -->
+
+                    <div class="modal-body">
+                        <!-- <div class="sign-in well-sm">-->
+                        <div class="alert alert-danger alert-block fade in">
+                            <h4>UConn Health Employment Center</h4><br >
+                            Your session will time out in <label>5</label> minutes.If you would like more time, please press the <b>OK</b> button.
+                            <br >
+                            <br >
+                            <input type="BUTTON" id="cmdOkay" name="cmdOkay"
+                                onclick="javascript: requestClose();"
+                                value="OK"
+                                title="Press to continue session"
+                                alt="Press to continue session"
+                                class="btn-green btn btn-block">
+                        </div>
+                    </div>
+                    <!-- end modal body -->
+                    <!-- end modal footer -->
+
+                <!-- end modal content -->
+            </div>
+            <!-- end modal dialog -->
+        </div>
+    </div>
+</div>
+<!-- SYSAPPIGNOREEND -->
+
+<!---------------------------------------Cloud Links-------------------------------------------------->
+    <script type="text/javascript" src="https://www.dropbox.com/static/api/2/dropins.js" id="dropboxjs" data-app-key="wvyzp3qq52an1x1"></script>
+    <script type="text/javascript" src="https://js.live.net/v5.0/OneDrive.js" id="onedrive-js" client-id="00000000481C0C75"></script>
+    
+    <script type="text/javascript" src="https://apis.google.com/js/client.js" id="googledrive-js" gapi_processed="true" 
+        data-app-client-id="891398077459-vo747avhsdnjr9b55cgb5rbc6g7hhuo7.apps.googleusercontent.com" 
+        data-app-developer-key="891398077459" 
+        data-app-appId="891398077459"></script>
+   <script type="text/javascript" src="https://apis.google.com/js/api.js"></script>
+
+<!---------------------------------------Cloud Links-------------------------------------------------->
+<!-- SYSAPPIGNORESTART -->
+<!------navigation---------------->
+
+<nav class="navbar">
+    <div class="container-fluid">
+        <div>
+            <!--Brand and toggle get grouped for better mobile display-->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-navigation">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="main-navigation">
+                
+<ul class="nav navbar-nav">
+    <li id="1"><a href="HTTPS://jobs.uchc.edu/CSS_External/CSSPage_Welcome.ASP?T=20261020085123&" onmouseover="window.status='Find&nbsp;Jobs';return true;" onmouseout="window.status='';return true;">Find&nbsp;Jobs</a></li>
+
+    
+    <li id="2"><a href="HTTPS://jobs.uchc.edu/CSS_External/CSSPage_UpdateProfileStatus.ASP?T=20261020085123&" onmouseover="window.status='Application&nbsp;Status';return true;" onmouseout="window.status='';return true;">Application&nbsp;Status</a></li>
+    
+    <li id="3"><a href="HTTPS://jobs.uchc.edu/CSS_External/CSSPage_UpdateProfileAlerts.ASP?T=20261020085123&" onmouseover="window.status='Job&nbsp;Alerts';return true;" onmouseout="window.status='';return true;">Job&nbsp;Alerts</a></li>
+    
+    <li id="4"><a href="HTTPS://jobs.uchc.edu/CSS_External/CSSPage_UpdateProfile.ASP?T=20261020085123&" onmouseover="window.status='My&nbsp;Profile';return true;" onmouseout="window.status='';return true;">My&nbsp;Profile</a></li>
+     
+
+   <!--  
+    -->
+</ul>
+
+<!--<ul class="nav navbar-nav navbar-right">-->
+    <!--<li></li>-->
+   <!-- <li></li>-->
+<!--</ul>-->
+
+
+                <!-- /.navbar-collapse -->
+            </div>
+        </div>
+        <div class="pull-right">
+            
+        </div>
+        <!-- /.container-fluid -->
+    </div>
+</nav>
+<div class="modal fade" id="myModal" >
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button data-dismiss="modal" class="close" onclick="RedirectToWelcome('HTTPS://jobs.uchc.edu/CSS_External/CSSPage_Welcome.ASP?T=20261020085123&');"><span class="glyphicon glyphicon-remove-circle" title="Close popup"></span></button>
+                <h2 class="heading2">Sign in</h2>
+                 <div class="display-message">                 
+                </div>              
+            </div>
+            <!-- end modal-header -->
+            <div class="modal-body">
+                <div class="sign-in well-sm">
+                
+
+                    <form autocomplete="off" id="frmLogin" name="frmLogin" method="post" action="HTTPS://jobs.uchc.edu/CSS_External/CSSResp_Login.ASP?T=20261020085123&">
+                        <input type="hidden" id="RetURL" name="RetURL" value="HTTPS://jobs.uchc.edu/CSS_External/CSSPage_Welcome.asp">
+                        
+
+                        <span class="glyphicon glyphicon-chevron-left pull-right icon-large close2" title="Go back"></span>
+
+                        <div class="col-sm-12">
+                            
+                        </div>
+
+                        <h5>Email Address</h5>
+                        <input type="text" class="form-control" id="Login" name="Login" value="" title="Enter the Email Address you entered during registration.">
+                        <br>
+                        <h5>Password</h5>
+                        <input type="password" class="form-control" id="LoginPWD" name="LoginPWD" value="" title="Enter either the Email Address or the User ID you entered during registration.">
+                        <br>
+                        <br>
+                        <input type="submit" class="btn-green btn btn-block" style="display: none;" id="loginForm" onclick="sysSubmitForm('frmLogin');" value="Sign In">
+                        <!--<a class="underline" id="forgot-password" href="#">Forgot password?</a><br>-->
+                        <br>
+                        <!--<input type="submit" id="cmdLogin" name="cmdLogin" class="Button" value="Login" onclick="sysSubmitForm('frmLogin');" onmouseover="sysButtonMakeCool(this);" onmouseout="sysButtonMakeNormal(this);">-->
+                        <input type="button" id="forgot-password" class="btn-forgot btn btn-block" value="Forgot Password?">
+                        <br>
+                    </form>
+                </div>
+
+                <a class="btn-green btn btn-block" id="loginBtn">Sign In</a>
+
+                
+
+                <div class="sign-in well-sm">
+                    <div class="hidden-message">
+                        <p></p>
+                    </div>   
+                    <span class="glyphicon glyphicon-chevron-left pull-right icon-large close2" title="Go back"></span>
+                    <!--<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">-->
+
+
+<!--<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" >
+    <!DOCTYPE HTML PUBLIC "-//W3C//DTD W3 HTML//EN">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" >
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css' >
+    <link href="css/bootstrap.min.css" rel="stylesheet" >
+    <link href="css/styles.asp" rel="stylesheet" >
+    <meta http-equiv="CACHE-CONTROL" content="Private" >
+    <meta http-equiv="Expires" content="Tue, 20 Oct 2026 12:51:23 UTC" >
+    <meta name="COPYRIGHT" content="Copyright &copy; 1998-2010, Greentree Systems, Inc., All Rights Reserved." >
+    <meta name="GENERATOR" content="iGreentree AWD Generator(8.4.3), Date Created: 07/27/2010 10:51:07 AM" >
+
+    <base href="HTTPS://jobs.uchc.edu/CSS_External/">
+    <title>UConn Health Candidate Self-Service
+</title>-->
+    
+
+
+    <script type="text/javascript" language="JavaScript">
+
+
+        // SYS Script - Client Side Session Timeout Processing
+
+        var giTOMins=0;
+        var giTOSec=0;
+        var gsTOURL='';
+        var gsTOMsgURL='';
+        var gtmrTO=null;
+        var giScrollX = 0;
+        var giScrollY = 0;
+
+        // Returns information about browser window and scroll positions.
+
+        function getBrowserWindowInfoClientWidth() {
+            return getBrowserWindowInfoFilterResults (
+                window.innerWidth ? window.innerWidth : 0,
+                document.documentElement ? document.documentElement.clientWidth : 0,
+                document.body ? document.body.clientWidth : 0
+            );
+        }
+        function getBrowserWindowInfoClientHeight() {
+            return getBrowserWindowInfoFilterResults (
+                window.innerHeight ? window.innerHeight : 0,
+                document.documentElement ? document.documentElement.clientHeight : 0,
+                document.body ? document.body.clientHeight : 0
+            );
+        }
+        function getBrowserWindowInfoScrollLeft() {
+            return getBrowserWindowInfoFilterResults (
+                window.pageXOffset ? window.pageXOffset : 0,
+                document.documentElement ? document.documentElement.scrollLeft : 0,
+                document.body ? document.body.scrollLeft : 0
+            );
+        }
+        function getBrowserWindowInfoScrollTop() {
+            return getBrowserWindowInfoFilterResults (
+                window.pageYOffset ? window.pageYOffset : 0,
+                document.documentElement ? document.documentElement.scrollTop : 0,
+                document.body ? document.body.scrollTop : 0
+            );
+        }
+        function getBrowserWindowInfoFilterResults(n_win, n_docel, n_body) {
+            var n_result = n_win ? n_win : 0;
+            if (n_docel && (!n_result || (n_result > n_docel)))
+                n_result = n_docel;
+            return n_body && (!n_result || (n_result > n_body)) ? n_body : n_result;
+        }
+
+        // Timeout processing
+
+        function sysInitClientSideSessionTimeoutProcessing(piTimoutMins, psTimeoutURL, psTimeoutMsgURL, pfClearHolder) {
+            sysInitClientSideSessionTimeoutProcessingClear();
+            giTOMins=(piTimoutMins==null)?30:piTimoutMins;
+            gsTOURL=(psTimeoutURL==null)?gsTOURL:psTimeoutURL;
+            gsTOMsgURL=(psTimeoutMsgURL==null)?gsTOMsgURL:psTimeoutMsgURL;
+            pfClearHolder=(pfClearHolder==null)?true:pfClearHolder;
+            giTOSec=0;
+            if (pfClearHolder) {
+                var fResetScroll=true;
+                try
+                {
+                    var objIFMTmr = document.getElementById('ifrmTimeoutPage');
+                    var divTmr1 = document.getElementById('divTimeoutPageHolderO');
+                    var divTmr2 = document.getElementById('divTimeoutPageHolder');
+                    fResetScroll=(divTmr1.style.display=='');
+                    objIFMTmr.src = 'HTTPS://jobs.uchc.edu/CSS_External/Blank.htm';
+                    divTmr2.style.display='none';
+                    divTmr1.style.display='none';
+
+                    if (fResetScroll) {
+                        window.setTimeout('window.scrollTo('+giScrollX+','+giScrollY+');', 25);
+                    }
+
+                } catch(e) { /*Ignore*/ }
+            }
+
+            sysInitClientSideSessionTimeoutProcessingDown();
+        }
+        function sysInitClientSideSessionTimeoutProcessingDown() {
+            var sCandidateKey='';
+            giTOSec--;
+            if (giTOSec == -1) {
+                giTOSec = 59;
+                giTOMins--;
+            }
+            if (giTOMins <= 1) {
+                window.status = 'Session Time Remaining: ' + giTOMins + ' minute(s) and '+giTOSec+' second(s).';
+                //} else {
+                //	window.status = 'Time remaining: ' + giTOMins + ' minutes.';
+            }
+            if ((giTOMins==0)&&(giTOSec<=1)) {
+                gtmrTO=null;
+                if (gsTOURL!=null) {
+                    //window.location.href = gsTOURL;
+                    //$('#msgModal').modal('show');
+                }
+
+            } else {
+                if ((giTOMins==5)&&(giTOSec==0)) {
+                    if ((gsTOMsgURL!=null)&&(sCandidateKey.length>0)) {
+                        try
+                        {
+                            if (document.all) {
+                                giScrollX = getBrowserWindowInfoScrollLeft();
+                                giScrollY = getBrowserWindowInfoScrollTop();
+                            } else  {
+                                giScrollX = window.pageXOffset;
+                                giScrollY = window.pageYOffset;
+                            }
+                            var objIFMTmr = document.getElementById('ifrmTimeoutPage');
+                            var divTmr1 = document.getElementById('divTimeoutPageHolderO');
+                            var divTmr2 = document.getElementById('divTimeoutPageHolder');
+                            divTmr2.style.display='';
+                            divTmr1.style.display='';
+                            objIFMTmr.src = gsTOMsgURL;
+                        }
+                        catch(e)
+                        {
+                            //window.focus();
+                            //window.open(gsTOMsgURL,'tmrmsg','top=0,left=0,height=200,width=300,toolbar=no,location=no,status=no,menubar=no,scrollbars=no,resizable=no');
+                            $('#msgModal').modal('show');
+                        }
+                    }
+                }
+                gtmrTO = setTimeout('sysInitClientSideSessionTimeoutProcessingDown();', 1000);
+            }
+
+        }
+        function sysInitClientSideSessionTimeoutProcessingClear() {
+            if (gtmrTO!=null) {
+                clearTimeout(gtmrTO);
+            }
+            gtmrTO=null;
+        }
+
+
+        // SYS Script - Validate Add New Candidate
+
+        var sysfSubmittingNewCandidate=false;
+
+        function sysfnGetNamedEleValue(psFormElementName, psNameElementName) {
+            var retVal=null;
+            var objFrm=null;
+            var objEle=null;
+            var sH = '';
+
+            objFrm = sysfnobjGetFormElement(psFormElementName);
+            if (objFrm!=null) {
+                objEle = objFrm.elements[psNameElementName];
+                if (objEle!=null) {
+                    retVal=objEle.value;
+                }
+            }
+            return (retVal);
+        }
+
+        function sysfnfValidateName(psFormElementName, psNameElementName, psLabel, pfRequired) {
+            var retVal=false;
+            var objFrm=null;
+            var objEle=null;
+            var sH = '';
+
+            pfRequired=(pfRequired==null)?true:pfRequired;
+            objFrm = sysfnobjGetFormElement(psFormElementName);
+
+            if (objFrm!=null) {
+                objEle = objFrm.elements[psNameElementName];
+                if (objEle!=null) {
+                    if (objEle.value.length>0) {
+                        if (psNameElementName.toLowerCase() != 'email') {
+                            sH = objEle.value.charAt(0).toUpperCase();
+                            if (objEle.value.length>1) {
+                                sH = sH + objEle.value.substring(1, objEle.value.length);
+                            }
+                            objEle.value = sH;
+                        } else {
+                            sH = objEle.value;
+                        }
+                        if (psNameElementName.toLowerCase()=='email') {
+                            if (sysfnfValidateEmail(sH)) {
+                                retVal=true;
+                            } else {
+                                window.alert('Sorry, the ' + psLabel + ' ['+sH+'] is invalid.\n\nPlease correct and try again.');
+                                objEle.focus();
+                            }
+                        } else {
+                            retVal=true;
+                        }
+                    } else if (pfRequired) {
+                        window.alert('Sorry,\n' + psLabel + ' requires an entry.\n\nPlease correct and try again.');
+                        objEle.focus();
+                    } else {
+                        retVal=true;
+                    }
+                }
+            }
+            return (retVal);
+        }
+
+        // Used to Add a new candidate
+        function sysfnfValidateAddNewCandidate(pObj) {
+            var retVal=false;
+            	var fEmailRequired = false;
+
+        if (!sysfSubmittingNewCandidate) {
+            sysfSubmittingNewCandidate=true;
+            //if (sysfnfValidateUserIDAndPassword('frmNewCandidate', 'CSSLogin', 'CSSPassword', 'CSSPassword2')) {
+                if (sysfnfValidateName('frmNewCandidate', 'NameFirst', 'First Name')) {
+                    if (sysfnfValidateName('frmNewCandidate', 'NameLast', 'Last Name')) {
+                        if ((fEmailRequired)||(sysfnGetNamedEleValue('frmNewCandidate', 'Email').length>0)) {
+                            if (sysfnfValidateName('frmNewCandidate', 'Email', 'Email', fEmailRequired)) {
+								if (sysfnfValidateUserPassword('frmNewCandidate', 'CSSPassword', 'CSSPassword2')) {
+									retVal=true;
+								}
+                            }
+                        } else {
+                            retVal=true;
+                        }
+                    }
+                }
+            //}
+            if (!retVal) {
+                sysfSubmittingNewCandidate=false;
+            } else {
+                pObj.value='Submitting...'
+            }
+        }
+            return (retVal);
+        }
+
+        // Used to Update the UserID/PWD or UserPWD
+        function sysfnfValidateUpdateLogin(pObj, psFormElementName, pfUpdatePasswordOnly) {
+            var retVal=false;
+            if (!sysfSubmittingNewCandidate) {
+                sysfSubmittingNewCandidate=true;
+                if (!pfUpdatePasswordOnly) {
+                    if (sysfnfValidateUserIDAndPassword(psFormElementName, 'CSSLogin1', 'CSSPassword1A', 'CSSPassword1B')) {
+                        retVal=true;
+                    }
+                } else {
+                    if (sysfnfValidateUserPassword(psFormElementName, 'CSSPassword2A', 'CSSPassword2B')) {
+                        retVal=true;
+                    }
+                }
+                if (!retVal) {
+                    sysfSubmittingNewCandidate=false;
+                } else {
+                    pObj.value='Submitting...'
+                }
+            }
+            return (retVal);
+        }
+
+
+        // SYS Script - Validate Email Address Format
+
+        function sysfnfValidateEmail(psAddressString) {
+            var sInvalidChars = '!#$%^&*()=+{}[]|\\;:\"/?>,< ';
+            var sHost = '';
+            var iPos = -1;
+            var iCnt = 0;
+
+            if ((psAddressString==null)||(psAddressString=='undefined')) {
+                psAddressString='';
+            }
+
+            if (psAddressString.length==0) {
+                //window.alert('psAddressString.length='+psAddressString.length);
+
+                return (false);
+            }
+            for (var iPos=0; iPos < psAddressString.length; iPos++) {
+                if (sInvalidChars.indexOf(psAddressString.charAt(iPos))>-1) {
+                    //window.alert('charAt='+psAddressString.charAt(iPos));
+
+                    iPos = psAddressString.length;
+                    return (false);
+                }
+                if (psAddressString.charAt(iPos)=='@') {
+                    iCnt++;
+                    if (iCnt>1) {
+                        //window.alert('Too Many @='+iCnt);
+
+                        iPos = psAddressString.length;
+                        return (false);
+                    }
+                }
+            }
+            iPos=psAddressString.indexOf('@');
+            if ((iPos==0)||(iPos==1)||(iPos==(psAddressString.length-1))) {
+                //window.alert('@ cannot find or invalid position='+iPos);
+
+                return (false);
+            }
+            sHost = psAddressString.substring(iPos + 1);
+
+            return sysfnfIsValidIPHost(sHost.toUpperCase());
+        }
+
+        function sysfnfIsValidIPHost(psHostString) {
+            var sHost='';
+            var bDottedQuad=false;
+            var arrSplit;
+            var ictr=0;
+            var bAns=false;
+
+            if ((psHostString==null)||(psHostString=='undefined')) {
+                psHostString='';
+            }
+
+            if (psHostString.length==0) {
+                // length = 0
+                return (false);
+            }
+
+            sHost = psHostString;
+
+            if (sHost.indexOf('.')==-1) {
+                // no "."
+
+                return (false);
+            }
+            arrSplit = sHost.split('.');
+            if  (arrSplit.length==4) {
+                bDottedQuad = true;
+                for (var i=0;i<arrSplit.length;i++) {
+                    if (isNaN(arrSplit[i])) {
+                        i=arrSplit.length;
+                        bDottedQuad = false;
+                    }
+                }
+                if (bDottedQuad) {
+                    bAns = true;
+                    for (var i=0;i<arrSplit.length;i++) {
+                        if (i==0) {
+                            if (parseFloat(arrSplit[i]) > 239 ) {
+                                bAns = false;
+                                i=arrSplit.length;
+                            }
+                        } else {
+                            if (parseFloat(arrSplit[i]) > 255 ) {
+                                bAns = false;
+                                i=arrSplit.length;
+                            }
+                        }
+                    }
+                    return (bAns);
+                }
+            }
+
+            return (sysfnfIsTopLevelDomain(arrSplit[arrSplit.length-1]));
+        }
+
+        function sysfnfIsTopLevelDomain(psDomainString) {
+            if ((psDomainString==null)||(psDomainString=='undefined')) {
+                psDomainString='';
+            }
+            if (psDomainString.length==0) {
+                // length = 0
+
+                return (false);
+            }
+            psDomainString=psDomainString.toUpperCase();
+            var arrTopLevels = new Array();
+
+            //Obtained from www.IANA.com.  Can and will change
+
+            // infrastructure domains
+            arrTopLevels[arrTopLevels.length] = 'ARPA';
+            // generic domains
+            arrTopLevels[arrTopLevels.length] = 'AERO';
+            arrTopLevels[arrTopLevels.length] = 'BIZ';
+            arrTopLevels[arrTopLevels.length] = 'COM';
+            arrTopLevels[arrTopLevels.length] = 'COOP';
+            arrTopLevels[arrTopLevels.length] = 'EDU';
+            arrTopLevels[arrTopLevels.length] = 'GOV';
+            arrTopLevels[arrTopLevels.length] = 'INFO';
+            arrTopLevels[arrTopLevels.length] = 'INT';
+            arrTopLevels[arrTopLevels.length] = 'MIL';
+            arrTopLevels[arrTopLevels.length] = 'MUSEUM';
+            arrTopLevels[arrTopLevels.length] = 'NAME';
+            arrTopLevels[arrTopLevels.length] = 'NET';
+            arrTopLevels[arrTopLevels.length] = 'ORG';
+            arrTopLevels[arrTopLevels.length] = 'PRO';
+            // country code domains
+            arrTopLevels[arrTopLevels.length] = 'AC';
+            arrTopLevels[arrTopLevels.length] = 'AD';
+            arrTopLevels[arrTopLevels.length] = 'AE';
+            arrTopLevels[arrTopLevels.length] = 'AF';
+            arrTopLevels[arrTopLevels.length] = 'AG';
+            arrTopLevels[arrTopLevels.length] = 'AI';
+            arrTopLevels[arrTopLevels.length] = 'AL';
+            arrTopLevels[arrTopLevels.length] = 'AM';
+            arrTopLevels[arrTopLevels.length] = 'AN';
+            arrTopLevels[arrTopLevels.length] = 'AO';
+            arrTopLevels[arrTopLevels.length] = 'AQ';
+            arrTopLevels[arrTopLevels.length] = 'AR';
+            arrTopLevels[arrTopLevels.length] = 'AS';
+            arrTopLevels[arrTopLevels.length] = 'AT';
+            arrTopLevels[arrTopLevels.length] = 'AU';
+            arrTopLevels[arrTopLevels.length] = 'AW';
+            arrTopLevels[arrTopLevels.length] = 'AZ';
+            arrTopLevels[arrTopLevels.length] = 'AX';
+            arrTopLevels[arrTopLevels.length] = 'BA';
+            arrTopLevels[arrTopLevels.length] = 'BB';
+            arrTopLevels[arrTopLevels.length] = 'BD';
+            arrTopLevels[arrTopLevels.length] = 'BE';
+            arrTopLevels[arrTopLevels.length] = 'BF';
+            arrTopLevels[arrTopLevels.length] = 'BG';
+            arrTopLevels[arrTopLevels.length] = 'BH';
+            arrTopLevels[arrTopLevels.length] = 'BI';
+            arrTopLevels[arrTopLevels.length] = 'BJ';
+            arrTopLevels[arrTopLevels.length] = 'BM';
+            arrTopLevels[arrTopLevels.length] = 'BN';
+            arrTopLevels[arrTopLevels.length] = 'BO';
+            arrTopLevels[arrTopLevels.length] = 'BR';
+            arrTopLevels[arrTopLevels.length] = 'BS';
+            arrTopLevels[arrTopLevels.length] = 'BT';
+            arrTopLevels[arrTopLevels.length] = 'BV';
+            arrTopLevels[arrTopLevels.length] = 'BW';
+            arrTopLevels[arrTopLevels.length] = 'BY';
+            arrTopLevels[arrTopLevels.length] = 'BZ';
+            arrTopLevels[arrTopLevels.length] = 'CA';
+            arrTopLevels[arrTopLevels.length] = 'CC';
+            arrTopLevels[arrTopLevels.length] = 'CD';
+            arrTopLevels[arrTopLevels.length] = 'CF';
+            arrTopLevels[arrTopLevels.length] = 'CG';
+            arrTopLevels[arrTopLevels.length] = 'CH';
+            arrTopLevels[arrTopLevels.length] = 'CI';
+            arrTopLevels[arrTopLevels.length] = 'CK';
+            arrTopLevels[arrTopLevels.length] = 'CL';
+            arrTopLevels[arrTopLevels.length] = 'CM';
+            arrTopLevels[arrTopLevels.length] = 'CN';
+            arrTopLevels[arrTopLevels.length] = 'CO';
+            arrTopLevels[arrTopLevels.length] = 'CR';
+            arrTopLevels[arrTopLevels.length] = 'CS';
+            arrTopLevels[arrTopLevels.length] = 'CU';
+            arrTopLevels[arrTopLevels.length] = 'CV';
+            arrTopLevels[arrTopLevels.length] = 'CX';
+            arrTopLevels[arrTopLevels.length] = 'CY';
+            arrTopLevels[arrTopLevels.length] = 'CZ';
+            arrTopLevels[arrTopLevels.length] = 'DE';
+            arrTopLevels[arrTopLevels.length] = 'DJ';
+            arrTopLevels[arrTopLevels.length] = 'DK';
+            arrTopLevels[arrTopLevels.length] = 'DM';
+            arrTopLevels[arrTopLevels.length] = 'DO';
+            arrTopLevels[arrTopLevels.length] = 'DZ';
+            arrTopLevels[arrTopLevels.length] = 'EC';
+            arrTopLevels[arrTopLevels.length] = 'EE';
+            arrTopLevels[arrTopLevels.length] = 'EG';
+            arrTopLevels[arrTopLevels.length] = 'EH';
+            arrTopLevels[arrTopLevels.length] = 'ER';
+            arrTopLevels[arrTopLevels.length] = 'ES';
+            arrTopLevels[arrTopLevels.length] = 'ET';
+            arrTopLevels[arrTopLevels.length] = 'EU';
+            arrTopLevels[arrTopLevels.length] = 'FI';
+            arrTopLevels[arrTopLevels.length] = 'FJ';
+            arrTopLevels[arrTopLevels.length] = 'FK';
+            arrTopLevels[arrTopLevels.length] = 'FM';
+            arrTopLevels[arrTopLevels.length] = 'FO';
+            arrTopLevels[arrTopLevels.length] = 'FR';
+            arrTopLevels[arrTopLevels.length] = 'GA';
+            arrTopLevels[arrTopLevels.length] = 'GB';
+            arrTopLevels[arrTopLevels.length] = 'GD';
+            arrTopLevels[arrTopLevels.length] = 'GE';
+            arrTopLevels[arrTopLevels.length] = 'GF';
+            arrTopLevels[arrTopLevels.length] = 'GG';
+            arrTopLevels[arrTopLevels.length] = 'GH';
+            arrTopLevels[arrTopLevels.length] = 'GI';
+            arrTopLevels[arrTopLevels.length] = 'GL';
+            arrTopLevels[arrTopLevels.length] = 'GM';
+            arrTopLevels[arrTopLevels.length] = 'GN';
+            arrTopLevels[arrTopLevels.length] = 'GP';
+            arrTopLevels[arrTopLevels.length] = 'GQ';
+            arrTopLevels[arrTopLevels.length] = 'GR';
+            arrTopLevels[arrTopLevels.length] = 'GS';
+            arrTopLevels[arrTopLevels.length] = 'GT';
+            arrTopLevels[arrTopLevels.length] = 'GU';
+            arrTopLevels[arrTopLevels.length] = 'GW';
+            arrTopLevels[arrTopLevels.length] = 'GY';
+            arrTopLevels[arrTopLevels.length] = 'HK';
+            arrTopLevels[arrTopLevels.length] = 'HM';
+            arrTopLevels[arrTopLevels.length] = 'HN';
+            arrTopLevels[arrTopLevels.length] = 'HR';
+            arrTopLevels[arrTopLevels.length] = 'HT';
+            arrTopLevels[arrTopLevels.length] = 'HU';
+            arrTopLevels[arrTopLevels.length] = 'ID';
+            arrTopLevels[arrTopLevels.length] = 'IE';
+            arrTopLevels[arrTopLevels.length] = 'IL';
+            arrTopLevels[arrTopLevels.length] = 'IM';
+            arrTopLevels[arrTopLevels.length] = 'IN';
+            arrTopLevels[arrTopLevels.length] = 'IO';
+            arrTopLevels[arrTopLevels.length] = 'IQ';
+            arrTopLevels[arrTopLevels.length] = 'IR';
+            arrTopLevels[arrTopLevels.length] = 'IS';
+            arrTopLevels[arrTopLevels.length] = 'IT';
+            arrTopLevels[arrTopLevels.length] = 'JE';
+            arrTopLevels[arrTopLevels.length] = 'JM';
+            arrTopLevels[arrTopLevels.length] = 'JO';
+            arrTopLevels[arrTopLevels.length] = 'JP';
+            arrTopLevels[arrTopLevels.length] = 'KE';
+            arrTopLevels[arrTopLevels.length] = 'KG';
+            arrTopLevels[arrTopLevels.length] = 'KH';
+            arrTopLevels[arrTopLevels.length] = 'KI';
+            arrTopLevels[arrTopLevels.length] = 'KM';
+            arrTopLevels[arrTopLevels.length] = 'KN';
+            arrTopLevels[arrTopLevels.length] = 'KP';
+            arrTopLevels[arrTopLevels.length] = 'KR';
+            arrTopLevels[arrTopLevels.length] = 'KW';
+            arrTopLevels[arrTopLevels.length] = 'KY';
+            arrTopLevels[arrTopLevels.length] = 'KZ';
+            arrTopLevels[arrTopLevels.length] = 'LA';
+            arrTopLevels[arrTopLevels.length] = 'LB';
+            arrTopLevels[arrTopLevels.length] = 'LC';
+            arrTopLevels[arrTopLevels.length] = 'LI';
+            arrTopLevels[arrTopLevels.length] = 'LK';
+            arrTopLevels[arrTopLevels.length] = 'LR';
+            arrTopLevels[arrTopLevels.length] = 'LS';
+            arrTopLevels[arrTopLevels.length] = 'LT';
+            arrTopLevels[arrTopLevels.length] = 'LU';
+            arrTopLevels[arrTopLevels.length] = 'LV';
+            arrTopLevels[arrTopLevels.length] = 'LY';
+            arrTopLevels[arrTopLevels.length] = 'MA';
+            arrTopLevels[arrTopLevels.length] = 'MC';
+            arrTopLevels[arrTopLevels.length] = 'MD';
+            arrTopLevels[arrTopLevels.length] = 'MG';
+            arrTopLevels[arrTopLevels.length] = 'MH';
+            arrTopLevels[arrTopLevels.length] = 'MK';
+            arrTopLevels[arrTopLevels.length] = 'ML';
+            arrTopLevels[arrTopLevels.length] = 'MM';
+            arrTopLevels[arrTopLevels.length] = 'MN';
+            arrTopLevels[arrTopLevels.length] = 'MO';
+            arrTopLevels[arrTopLevels.length] = 'MP';
+            arrTopLevels[arrTopLevels.length] = 'MQ';
+            arrTopLevels[arrTopLevels.length] = 'MR';
+            arrTopLevels[arrTopLevels.length] = 'MS';
+            arrTopLevels[arrTopLevels.length] = 'MT';
+            arrTopLevels[arrTopLevels.length] = 'MU';
+            arrTopLevels[arrTopLevels.length] = 'MV';
+            arrTopLevels[arrTopLevels.length] = 'MW';
+            arrTopLevels[arrTopLevels.length] = 'MX';
+            arrTopLevels[arrTopLevels.length] = 'MY';
+            arrTopLevels[arrTopLevels.length] = 'MZ';
+            arrTopLevels[arrTopLevels.length] = 'NA';
+            arrTopLevels[arrTopLevels.length] = 'NC';
+            arrTopLevels[arrTopLevels.length] = 'NE';
+            arrTopLevels[arrTopLevels.length] = 'NF';
+            arrTopLevels[arrTopLevels.length] = 'NG';
+            arrTopLevels[arrTopLevels.length] = 'NI';
+            arrTopLevels[arrTopLevels.length] = 'NL';
+            arrTopLevels[arrTopLevels.length] = 'NO';
+            arrTopLevels[arrTopLevels.length] = 'NP';
+            arrTopLevels[arrTopLevels.length] = 'NR';
+            arrTopLevels[arrTopLevels.length] = 'NU';
+            arrTopLevels[arrTopLevels.length] = 'NZ';
+            arrTopLevels[arrTopLevels.length] = 'OM';
+            arrTopLevels[arrTopLevels.length] = 'PA';
+            arrTopLevels[arrTopLevels.length] = 'PE';
+            arrTopLevels[arrTopLevels.length] = 'PF';
+            arrTopLevels[arrTopLevels.length] = 'PG';
+            arrTopLevels[arrTopLevels.length] = 'PH';
+            arrTopLevels[arrTopLevels.length] = 'PK';
+            arrTopLevels[arrTopLevels.length] = 'PL';
+            arrTopLevels[arrTopLevels.length] = 'PM';
+            arrTopLevels[arrTopLevels.length] = 'PN';
+            arrTopLevels[arrTopLevels.length] = 'PR';
+            arrTopLevels[arrTopLevels.length] = 'PS';
+            arrTopLevels[arrTopLevels.length] = 'PT';
+            arrTopLevels[arrTopLevels.length] = 'PW';
+            arrTopLevels[arrTopLevels.length] = 'PY';
+            arrTopLevels[arrTopLevels.length] = 'QA';
+            arrTopLevels[arrTopLevels.length] = 'RE';
+            arrTopLevels[arrTopLevels.length] = 'RO';
+            arrTopLevels[arrTopLevels.length] = 'RU';
+            arrTopLevels[arrTopLevels.length] = 'RW';
+            arrTopLevels[arrTopLevels.length] = 'SA';
+            arrTopLevels[arrTopLevels.length] = 'SB';
+            arrTopLevels[arrTopLevels.length] = 'SC';
+            arrTopLevels[arrTopLevels.length] = 'SD';
+            arrTopLevels[arrTopLevels.length] = 'SE';
+            arrTopLevels[arrTopLevels.length] = 'SG';
+            arrTopLevels[arrTopLevels.length] = 'SH';
+            arrTopLevels[arrTopLevels.length] = 'SI';
+            arrTopLevels[arrTopLevels.length] = 'SJ';
+            arrTopLevels[arrTopLevels.length] = 'SK';
+            arrTopLevels[arrTopLevels.length] = 'SL';
+            arrTopLevels[arrTopLevels.length] = 'SM';
+            arrTopLevels[arrTopLevels.length] = 'SN';
+            arrTopLevels[arrTopLevels.length] = 'SO';
+            arrTopLevels[arrTopLevels.length] = 'SR';
+            arrTopLevels[arrTopLevels.length] = 'ST';
+            arrTopLevels[arrTopLevels.length] = 'SV';
+            arrTopLevels[arrTopLevels.length] = 'SY';
+            arrTopLevels[arrTopLevels.length] = 'SZ';
+            arrTopLevels[arrTopLevels.length] = 'TC';
+            arrTopLevels[arrTopLevels.length] = 'TD';
+            arrTopLevels[arrTopLevels.length] = 'TF';
+            arrTopLevels[arrTopLevels.length] = 'TG';
+            arrTopLevels[arrTopLevels.length] = 'TH';
+            arrTopLevels[arrTopLevels.length] = 'TJ';
+            arrTopLevels[arrTopLevels.length] = 'TK';
+            arrTopLevels[arrTopLevels.length] = 'TL';
+            arrTopLevels[arrTopLevels.length] = 'TM';
+            arrTopLevels[arrTopLevels.length] = 'TN';
+            arrTopLevels[arrTopLevels.length] = 'TO';
+            arrTopLevels[arrTopLevels.length] = 'TP';
+            arrTopLevels[arrTopLevels.length] = 'TR';
+            arrTopLevels[arrTopLevels.length] = 'TT';
+            arrTopLevels[arrTopLevels.length] = 'TV';
+            arrTopLevels[arrTopLevels.length] = 'TW';
+            arrTopLevels[arrTopLevels.length] = 'TZ';
+            arrTopLevels[arrTopLevels.length] = 'UA';
+            arrTopLevels[arrTopLevels.length] = 'UG';
+            arrTopLevels[arrTopLevels.length] = 'UK';
+            arrTopLevels[arrTopLevels.length] = 'UM';
+            arrTopLevels[arrTopLevels.length] = 'US';
+            arrTopLevels[arrTopLevels.length] = 'UY';
+            arrTopLevels[arrTopLevels.length] = 'UZ';
+            arrTopLevels[arrTopLevels.length] = 'VA';
+            arrTopLevels[arrTopLevels.length] = 'VC';
+            arrTopLevels[arrTopLevels.length] = 'VE';
+            arrTopLevels[arrTopLevels.length] = 'VG';
+            arrTopLevels[arrTopLevels.length] = 'VI';
+            arrTopLevels[arrTopLevels.length] = 'VN';
+            arrTopLevels[arrTopLevels.length] = 'VU';
+            arrTopLevels[arrTopLevels.length] = 'WF';
+            arrTopLevels[arrTopLevels.length] = 'WS';
+            arrTopLevels[arrTopLevels.length] = 'YE';
+            arrTopLevels[arrTopLevels.length] = 'YT';
+            arrTopLevels[arrTopLevels.length] = 'YU';
+            arrTopLevels[arrTopLevels.length] = 'ZA';
+            arrTopLevels[arrTopLevels.length] = 'ZM';
+            arrTopLevels[arrTopLevels.length] = 'ZW';
+
+            for (var i=0; i<arrTopLevels.length; i++) {
+                if (arrTopLevels[i]==psDomainString) {
+                    i=arrTopLevels.length;
+                    return (true);
+                }
+            }
+            return (false);
+        }
+
+
+
+        // sysAssignValueToFormItem
+
+        function sysAssignValueToFormItem(psFormElementName, pEleName, pEleValue) {
+            var iFrmIndex = -1;
+            var iFrmChildIndex = -1;
+            var fFound=false;
+            var retVal=false;
+            psFormElementName=(psFormElementName==null)?'':psFormElementName.toUpperCase();
+            for (var i=0;i<document.forms.length;i++) {
+                if (document.forms[i].name.toUpperCase()==psFormElementName) {
+                    iFrmIndex=i;
+                    fFound=true;
+                    i=document.forms.length;
+                } else {
+                    if (document.forms[i].forms!=null) {
+                        if (document.forms[i].forms.length > 0) {
+                            for (var ii=0;i<document.forms[i].forms.length;ii++) {
+                                if (document.forms[i].forms[ii].name.toUpperCase()==psFormElementName) {
+                                    iFrmIndex=i;
+                                    iFrmChildIndex=ii;
+                                    fFound=true;
+                                    i=document.forms.length;
+                                    ii=document.forms[i].forms.length;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            if (fFound) {
+                if ((pEleName!=null)&&(pEleValue!=null)) {
+                    var objFrm=null;
+                    if (iFrmChildIndex==-1) {
+                        var objFrm = document.forms[iFrmIndex];
+                    } else {
+                        var objFrm = document.forms[iFrmIndex].forms[iFrmChildIndex];
+                    }
+                    if (objFrm!=null) {
+                        objFrm.elements[pEleName].value=pEleValue;
+                        retVal=true;
+                    } else {
+                        window.alert('Sorry, Could not find ['+pEleName+']');
+                    }
+                }
+            } else {
+                window.alert('Error: Cannot find FORM [' + psFormElementName + ']');
+            }
+            return (retVal);
+        }
+
+
+
+        // sysButtonMakeCool(this);
+
+        function sysButtonMakeCool(pObj) {
+            pObj.style.color = '#A9EFFF';
+            pObj.style.backgroundColor = '';
+        }
+
+
+
+        // sysButtonMakeNormal(this);
+
+        function sysButtonMakeNormal(pObj) {
+            pObj.style.color = '#fff';
+            pObj.style.backgroundColor = '';
+        }
+
+
+
+
+        // sysfnfValidateUserIDAndPassword
+
+        function sysfnfValidateUserIDAndPassword(psFormElementName, psLoginElementName, psOrigPWDElementName, psConfPWDElementName) {
+            var retVal = false;
+            var objFrm = null;
+            var objLogin = null;
+            var objOrigPWD = null;
+            var objConfPWD = null;
+            var fLoginPassed=true;
+            var fPWDPassed=true;
+            var sValidEntries='0123456789abcdefghijklmnopqrstuvwxyz!@#$%^&*.';
+            var iLoginUserIDMinimumLength = 7;
+            var iLoginPasswordMinimumLength = 8;
+			/*HM add new vars*/
+			var iLoginPasswordMinimumCriteria = 3;
+			var iLoginPasswordMinimumCriteriaCnt = 0
+			var slcasemarker = '  ';
+			var sucasemarker = '  ';
+			var snummarker = '  ';
+			var sspeccharmarker = '  ';
+			/*HM end*/
+            objFrm = sysfnobjGetFormElement(psFormElementName);
+            if (objFrm!=null) {
+                objLogin = objFrm.elements[psLoginElementName];
+                objOrigPWD = objFrm.elements[psOrigPWDElementName];
+                objConfPWD = objFrm.elements[psConfPWDElementName];
+                if ((objLogin!=null)&&(objOrigPWD!=null)&&(objConfPWD!=null)) {
+                    // VALIDATE UserID
+                    if (objLogin.value.indexOf(' ')==-1) {
+                        if (objLogin.value.length>=iLoginUserIDMinimumLength) {
+                            for (var i=0;i<objLogin.value.length;i++) {
+                                if (sValidEntries.indexOf(objLogin.value.charAt(i).toLowerCase())==-1) {
+                                    fLoginPassed=false;
+                                    i=objLogin.value.length;
+                                    window.alert('Sorry, Only characters a through z, A through Z, or 0 through 9 are allowed.\n\nPlease retry.');
+                                    objLogin.focus();
+                                }
+                            }
+                        } else {
+                            fLoginPassed=false;
+                            window.alert('Sorry, UserID must be at least ' + iLoginUserIDMinimumLength + ' characters in length.\n\nPlease retry.');
+                            objLogin.focus();
+                        }
+                    } else {
+                        fLoginPassed=false;
+                        window.alert('Sorry, UserID cannot have any spaces.\n\nPlease retry.');
+                        objLogin.focus();
+                    }
+                    if (fLoginPassed) {
+                        // VALIDATE Original Password
+                        if (objOrigPWD.value.indexOf(' ')==-1) {
+                            if (objOrigPWD.value.length>=iLoginPasswordMinimumLength) {
+                                if (objOrigPWD.value.toLowerCase()!=objLogin.value.toLowerCase()) {
+                                    if (objOrigPWD.value.toLowerCase()!='password') {
+										/*HM 10/23/2017 append this block with a new validation block */
+                                        for (var i=0;i<objOrigPWD.value.length;i++) {
+                                            if (sValidEntries.indexOf(objOrigPWD.value.charAt(i).toLowerCase())==-1) {
+                                                fPWDPassed=false;
+                                                i=objOrigPWD.value.length;
+                                                window.alert('Sorry, Only characters a through z, A through Z, 0 through 9 or !@#$%^&*. are allowed.\n\nPlease retry.');
+                                                objOrigPWD.focus();
+                                            }
+                                        }
+     									/*begin new block*/
+     									var p = objOrigPWDNoCaseChange.value;
+										if (p.search(/[a-z]/) > -1) {
+											slcasemarker = '* ';
+											iLoginPasswordMinimumCriteriaCnt++
+										}
+										if (p.search(/[A-Z]/) > -1) {
+											iLoginPasswordMinimumCriteriaCnt++
+											sucasemarker = '* ';
+										}
+										if (p.search(/[0-9]/) > -1) {
+											iLoginPasswordMinimumCriteriaCnt++
+											snummarker = '* ';
+										}
+										if (p.search(/[!@#$%^&*]/) > -1) {
+											iLoginPasswordMinimumCriteriaCnt++
+											sspeccharmarker = '* '
+										}
+                                        if (iLoginPasswordMinimumCriteriaCnt < iLoginPasswordMinimumCriteria) {
+                                        //check that specified criteria were filled.
+                                       		objOrigPWD.focus();
+                                       		alert('Sorry, Password must have at least ' + iLoginPasswordMinimumCriteria + ' of these 4 criteria.\nYou have only used '+ iLoginPasswordMinimumCriteriaCnt + ' out of the '+iLoginPasswordMinimumCriteria+'. Ones you have used are marked with a *\n\n' + sucasemarker + 'Upper Case Letter\n' + slcasemarker + 'Lower Case Letter\n' + snummarker + 'Number (0-9)\n' + sspeccharmarker + 'Special Character !@#$%^&*.\n\nPlease retry.');
+                                       		fPWDPassed=false;
+                                        }
+                                        /*end new block*/
+                                    } else {
+
+                                        window.alert('Sorry, Password cannot be any case variation of the word \"password\".\n\nPlease retry.');
+                                        objOrigPWD.focus();
+                                    }
+                                } else {
+                                    fPWDPassed=false;
+                                    window.alert('Sorry, Password cannot be the same as your UserID.\n\nPlease retry.');
+                                    objOrigPWD.focus();
+                                }
+                            } else {
+                                fPWDPassed=false;
+                                window.alert('Sorry, Password must be at least ' + iLoginPasswordMinimumLength + ' characters in length.\n\nPlease retry.');
+                                objOrigPWD.focus();
+                            }
+                        } else {
+                            fPWDPassed=false;
+                            window.alert('Sorry, Password cannot have any spaces.\n\nPlease retry.');
+                            objOrigPWD.focus();
+                        }
+                    }
+                    if ((fLoginPassed)&&(fPWDPassed)) {
+                        // CHECK TO SEE IF PASSWORDS MATCH
+                        if (objOrigPWD.value!=objConfPWD.value) {
+                            window.alert('Sorry, Your Confirmation Password entry does not match your Password entry.\n\nPlease retry.');
+                            objConfPWD.focus();
+                        } else {
+                            retVal=true;
+                        }
+                    }
+                }
+            }
+            return (retVal);
+        }
+
+
+        // sysfnfValidateUserPassword
+
+        function sysfnfValidateUserPassword(psFormElementName, psOrigPWDElementName, psConfPWDElementName) {
+            var retVal = false;
+            var objFrm = null;
+            var objOrigPWD = null;
+            var objOrigPWDNoCaseChange = null;
+            var objConfPWD = null;
+            var fLoginPassed=true;
+            var fPWDPassed=true;
+            var sValidEntries='0123456789abcdefghijklmnopqrstuvwxyz!@#$%^&*.';
+            var sLogin='';
+            var iLoginUserIDMinimumLength = 7;
+            var iLoginPasswordMinimumLength = 8;
+			/*HM add new vars*/
+			var iLoginPasswordMinimumCriteria = 3;
+			var iLoginPasswordMinimumCriteriaCnt = 0
+			var slcasemarker = '  ';
+			var sucasemarker = '  ';
+			var snummarker = '  ';
+			var sspeccharmarker = '  ';
+			/*HM end*/
+            objFrm = sysfnobjGetFormElement(psFormElementName);
+            if (objFrm!=null) {
+                objOrigPWD = objFrm.elements[psOrigPWDElementName];
+                objOrigPWDNoCaseChange = objFrm.elements[psOrigPWDElementName];
+                objConfPWD = objFrm.elements[psConfPWDElementName];
+                if ((objOrigPWD!=null)&&(objConfPWD!=null)) {
+                    // VALIDATE Original Password
+                    if (objOrigPWD.value.indexOf(' ')==-1) {
+                        if (objOrigPWD.value.length>=iLoginPasswordMinimumLength) {
+ 						//if (objOrigPWD.value.length>=8) {
+                            if (objOrigPWD.value.toLowerCase()!=sLogin.toLowerCase()) {
+                                if (objOrigPWD.value.toLowerCase()!='password') {
+										/*HM 10/23/2017 append this block with a new validation block */
+                                        for (var i=0;i<objOrigPWD.value.length;i++) {
+                                            if (sValidEntries.indexOf(objOrigPWD.value.charAt(i).toLowerCase())==-1) {
+                                                fPWDPassed=false;
+                                                i=objOrigPWD.value.length;
+                                                window.alert('Sorry, Only characters a through z, A through Z, 0 through 9 or !@#$%^&*. are allowed.\n\nPlease retry.');
+                                                objOrigPWD.focus();
+                                            }
+                                        }
+     									/*begin new block*/
+     									var p = objOrigPWDNoCaseChange.value;
+										if (p.search(/[a-z]/) > -1) {
+											slcasemarker = '* ';
+											iLoginPasswordMinimumCriteriaCnt++
+										}
+										if (p.search(/[A-Z]/) > -1) {
+											iLoginPasswordMinimumCriteriaCnt++
+											sucasemarker = '* ';
+										}
+										if (p.search(/[0-9]/) > -1) {
+											iLoginPasswordMinimumCriteriaCnt++
+											snummarker = '* ';
+										}
+										if (p.search(/[!@#$%^&*.]/) > -1) {
+											iLoginPasswordMinimumCriteriaCnt++
+											sspeccharmarker = '* '
+										}
+                                        if (iLoginPasswordMinimumCriteriaCnt < iLoginPasswordMinimumCriteria) {
+                                        //check that specified criteria were filled.
+                                       		objOrigPWD.focus();
+                                       		alert('Sorry, Password must have at least ' + iLoginPasswordMinimumCriteria + ' of these 4 criteria.\nYou have only used '+ iLoginPasswordMinimumCriteriaCnt + ' out of the '+iLoginPasswordMinimumCriteria+'. Criteria you have used are marked with a *\n\n' + sucasemarker + 'Upper Case Letter\n' + slcasemarker + 'Lower Case Letter\n' + snummarker + 'Number (0-9)\n' + sspeccharmarker + 'Special Character !@#$%^&*.\n\nPlease retry.');
+                                       		fPWDPassed=false;
+                                        }
+                                        /*end new block*/
+                                } else {
+                                    fPWDPassed=false;
+                                    window.alert('Sorry, Password cannot be any case variation of the word \"password\".\n\nPlease retry.');
+                                    objOrigPWD.focus();
+                                }
+                            } else {
+                                fPWDPassed=false;
+                                window.alert('Sorry, Password cannot be the same as your UserID.\n\nPlease retry.');
+                                objOrigPWD.focus();
+                            }
+                        } else {
+                            fPWDPassed=false;
+                            window.alert('Sorry, Password must be at least '+ iLoginPasswordMinimumLength +' characters in length.\n\nPlease retry.');
+                            objOrigPWD.focus();
+                        }
+                    } else {
+                        fPWDPassed=false;
+                        window.alert('Sorry, Password cannot have any spaces.\n\nPlease retry.');
+                        objOrigPWD.focus();
+                    }
+                    if ((fLoginPassed)&&(fPWDPassed)) {
+                        // CHECK TO SEE IF PASSWORDS MATCH
+                        if (objOrigPWD.value!=objConfPWD.value) {
+                            window.alert('Sorry, Your Confirmation Password entry does not match your Password entry.\n\nPlease retry.');
+                            objConfPWD.focus();
+                        } else {
+                            retVal=true;
+                        }
+                    }
+                }
+            } else {
+                window.alert('Cannot find Form ['+psFormElementName+']');
+            }
+            return (retVal);
+        }
+
+
+
+
+
+        // sysfnobjGetFormElement
+
+        function sysfnobjGetFormElement(psFormElementName) {
+            var iFrmIndex = -1;
+            var iFrmChildIndex = -1;
+            var fFound=false;
+            var retVal=null;
+            psFormElementName=(psFormElementName==null)?'':psFormElementName.toUpperCase();
+            for (var i=0;i<document.forms.length;i++) {
+                if (document.forms[i].name.toUpperCase()==psFormElementName) {
+                    iFrmIndex=i;
+                    fFound=true;
+                    i=document.forms.length;
+                } else {
+                    if (document.forms[i].forms!=null) {
+                        if (document.forms[i].forms.length > 0) {
+                            for (var ii=0;i<document.forms[i].forms.length;ii++) {
+                                if (document.forms[i].forms[ii].name.toUpperCase()==psFormElementName) {
+                                    iFrmIndex=i;
+                                    iFrmChildIndex=ii;
+                                    fFound=true;
+                                    i=document.forms.length;
+                                    ii=document.forms[i].forms.length;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            if (fFound) {
+                if (iFrmChildIndex==-1) {
+                    retVal = document.forms[iFrmIndex];
+                } else {
+                    retVal = document.forms[iFrmIndex].forms[iFrmChildIndex];
+                }
+            }
+            return (retVal);
+        }
+
+
+
+        // sysSubmitForm
+
+        function sysSubmitForm(psFormElementName, pEleName, pEleValue, psOverrideAction, psOverrideTarget) {
+            var iFrmIndex = -1;
+            var iFrmChildIndex = -1;
+            var fFound=false;
+            var retVal=false;
+            psFormElementName=(psFormElementName==null)?'':psFormElementName.toUpperCase();
+            for (var i=0;i<document.forms.length;i++) {
+                if (document.forms[i].name.toUpperCase()==psFormElementName) {
+                    iFrmIndex=i;
+                    fFound=true;
+                    i=document.forms.length;
+                } else {
+                    if (document.forms[i].forms!=null) {
+                        if (document.forms[i].forms.length > 0) {
+                            for (var ii=0;i<document.forms[i].forms.length;ii++) {
+                                if (document.forms[i].forms[ii].name.toUpperCase()==psFormElementName) {
+                                    iFrmIndex=i;
+                                    iFrmChildIndex=ii;
+                                    fFound=true;
+                                    i=document.forms.length;
+                                    ii=document.forms[i].forms.length;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            if (fFound) {
+                if ((pEleName!=null)&&(pEleValue!=null)) {
+                    var objFrm=null;
+                    if (iFrmChildIndex==-1) {
+                        var objFrm = document.forms[iFrmIndex];
+                    } else {
+                        var objFrm = document.forms[iFrmIndex].forms[iFrmChildIndex];
+                    }
+                    if (objFrm!=null) {
+                        objFrm.elements[pEleName].value=pEleValue;
+                    }
+                }
+                if (iFrmChildIndex==-1) {
+                    retVal=true;
+                    if (psOverrideAction != null) {
+                        document.forms[iFrmIndex].action=psOverrideAction;
+                    }
+                    if (psOverrideTarget != null) {
+                        document.forms[iFrmIndex].target=psOverrideTarget;
+                    }
+                    document.forms[iFrmIndex].submit();
+                } else {
+                    retVal=true;
+                    if (psOverrideAction != null) {
+                        document.forms[iFrmIndex].forms[iFrmChildIndex].action=psOverrideAction;
+                    }
+                    if (psOverrideTarget != null) {
+                        document.forms[iFrmIndex].forms[iFrmChildIndex].target=psOverrideTarget;
+                    }
+                    document.forms[iFrmIndex].forms[iFrmChildIndex].submit();
+                }
+            } else {
+                window.alert('Error: Cannot find FORM [' + psFormElementName + ']');
+            }
+            return (retVal);
+        }
+
+
+
+    </script>
+
+    <!---->
+
+        
+
+<!--</head>-->
+
+<script language="javascript" type="text/javascript">
+      function fnAgreeToConsent() {
+          var eleDiv=null;
+          eleDiv=document.getElementById('divNewCandidateForm');
+          if (!((eleDiv==null)||(eleDiv=='undefined'))) {
+              eleDiv.style.display='';
+          }
+          var eleDiv=null;
+          eleDiv=document.getElementById('divConsentForm');
+          if (!((eleDiv==null)||(eleDiv=='undefined'))) {
+              eleDiv.style.display='none';
+          }
+      }
+</script>
+<!--<body
+    onload="sysInitClientSideSessionTimeoutProcessing(30, 'HTTPS://jobs.uchc.edu/CSS_External/CSSResp_TimeoutMessage.ASP?T=20261020085123&', 'HTTPS://jobs.uchc.edu/CSS_External/CSSPage_TimoutMessage.ASP?T=20261020085123&');"
+    onunload="sysInitClientSideSessionTimeoutProcessingClear();">-->
+    <div>
+        <!--<div class="TitleTop" align="left"><span class="TitleTop">Create&nbsp;New&nbsp;User&nbsp;ID&nbsp;and&nbsp;Password</span></div>-->
+        <div class="row">
+            <div class="col-sm-12">
+            </div>
+            <div class="WorkArea" id="divConsentForm" style="padding: 15px; padding-top: 25px; display:none;">
+                <P>Do you consent</P><input type="BUTTON"
+                    id="cmdSignConsent" name="cmdSignConsent"
+                    class="btn btn-default"
+                    value="I Agree"
+                    title="Click to agree to our consent decree"
+                    onclick="fnAgreeToConsent();">
+            </div>
+            <div class="WorkArea" id="divNewCandidateForm" style="padding: 0px; padding-top: 10px; ">
+                <form id="frmNewCandidate" name="frmNewCandidate" method="POST" action="HTTPS://jobs.uchc.edu/CSS_External/CSSResp_AddNewCandidate.ASP?T=20261020085123&">
+                    <INPUT TYPE=HIDDEN NAME=LastURL VALUE=""><INPUT TYPE=HIDDEN NAME=RetURL VALUE="CSSPage_Welcome.asp"><INPUT TYPE=HIDDEN NAME=SuccessURL VALUE="CSSPage_Welcome.asp"><INPUT TYPE=HIDDEN NAME=ADDOVERRIDE VALUE="FALSE"><INPUT TYPE=HIDDEN ID=AgreeToConsentDecree NAME=AgreeToConsentDecree VALUE="TRUE">
+                    <!--Create New UserId and Password Box-->
+                    <div class="clearfix"></div>
+                    <div class="col-lg-12 col-md-12 col-sm-12 updateProfile">
+                        <ul class="list-group">
+							<!--
+                            <li class="list-group-item">
+                                <h6><SPAN STYLE="font-size:8pt;font-weight:normal;color:#ff0000;">*</SPAN>&nbsp;Enter a User ID:&nbsp;<br />
+                                    <BR><SPAN STYLE="font-weight:normal;font-size:8pt;">(At least 7 characters, no spaces.)</SPAN>
+                                </h6>
+                                <input type="TEXT"
+                                    id="CSSLogin" name="CSSLogin"
+                                    class="form-control"
+                                    value=""
+                                    alt="Enter a User ID"
+                                    title="Enter a User ID"
+                                    maxlength="20" size="20">
+                            </li>
+							-->
+                            <li class="list-group-item">
+                                <h6><SPAN STYLE="font-size:8pt;font-weight:normal;color:#ff0000;">*</SPAN>&nbsp;First Name:&nbsp;<br >
+                                    
+                                </h6>
+                                <input type="TEXT"
+                                    id="NameFirst" name="NameFirst"
+                                    class="form-control"
+                                    value=""
+                                    title="Enter your First Name"
+                                    maxlength="50" size="30">
+                            </li>
+                            <li class="list-group-item">
+                                <h6><SPAN STYLE="font-size:8pt;font-weight:normal;color:#ff0000;">*</SPAN>&nbsp;Last Name:&nbsp;<br >
+                                    
+                                </h6>
+                                <input type="TEXT"
+                                    id="NameLast" name="NameLast"
+                                    class="form-control"
+                                    value=""
+                                    title="Enter your Last Name"
+                                    maxlength="50" size="30">
+                            </li>
+                            <li class="list-group-item">
+                                <h6>Enter your Email Address:&nbsp;<br >
+                                    </h6>
+                                <input type="TEXT"
+                                    id="Email" name="Email"
+                                    class="form-control"
+                                    value=""
+                                    title="Enter your email address"
+                                    maxlength="100" size="30">
+                            </li>
+                            <li class="list-group-item">
+                                <h6><SPAN STYLE="font-size:8pt;font-weight:normal;color:#ff0000;">*</SPAN>&nbsp;Enter a Password:&nbsp;<br >
+                                    <BR><SPAN STYLE="font-weight:normal;font-size:8pt;">(At least 8 characters, no spaces, including one upper case letter, one special character and alphanumeric character.)</SPAN>
+                                </h6>
+                                <input type="PASSWORD" id="CSSPassword" name="CSSPassword"
+                                    class="form-control" value=""
+                                    title="Enter a Password:"
+                                    maxlength="20" size="20">
+                            </li>
+                            <li class="list-group-item">
+                                <h6><SPAN STYLE="font-size:8pt;font-weight:normal;color:#ff0000;">*</SPAN>&nbsp;Retype Password to Confirm:&nbsp;<br >
+                                    
+                                </h6>
+                                <input type="PASSWORD"
+                                    id="CSSPassword2" name="CSSPassword2"
+                                    class="form-control"
+                                    value=""
+                                    title="Retype Password to Confirm"
+                                    maxlength="20" size="20">
+                            </li>
+                        </ul>
+
+
+                    </div>
+                    <!--box ends-->
+                </form>
+            <div class="col-md-12">
+                
+
+                <!--<input type="BUTTON" id="cmdSignIn" name="cmdSignIn" class="btn-green btn-red btn btn-block" value="Create user account" alt="Click to create user account"
+                    title="Click to create user account" onclick="if (sysfnfValidateAddNewCandidate(this)) { sysSubmitForm('frmNewCandidate'); }" />-->
+               <input type="BUTTON" id="cmdSignIn" name="cmdSignIn" class="btn-green btn-red btn btn-block" value="CREATE NEW USER ACCOUNT" alt="Click to create user account"
+                    title="Click to create user account" onclick="if (sysfnfValidateAddNewCandidate(this)) { sysSubmitForm('frmNewCandidate'); }" >
+                
+             </div>
+           </div>
+        </div>
+    </div>
+<!--</body>-->
+<!--</html>-->
+
+                </div>
+
+                <a class="btn-green btn btn-block btn-red" id="register">CREATE AN ACCOUNT</a>
+                <!--<a href="HTTPS://jobs.uchc.edu/CSS_External/CSSPage_NewCandidate.ASP?T=20261020085123&" class="btn-green btn btn-block btn-red" id="register">Create New account</a>-->
+
+                
+
+                <div class="sign-in well-sm">
+                    <div class="hidden-message">
+                        <p><SPAN STYLE="color:#ff0000;">To apply for this position, choose from any of the following locations to browse and upload your resume.</SPAN></p>
+                    </div>                    
+                    <form autocomplete="off" id="frmRegisterUsingResume" name="frmRegisterUsingResume" method="post"
+                        enctype="multipart/form-data" action="HTTPS://jobs.uchc.edu/CSS_External/CSSResp_ResumeParsing.ASP?T=20261020085123&">
+                        <input type="hidden" name="RetURL" value="CSSPage_Welcome.ASP">
+                        <input type="hidden" name="SuccessURL" value="HTTPS://jobs.uchc.edu/CSS_External/CSSPage_Welcome.asp">
+                        <span class="glyphicon glyphicon-chevron-left pull-right icon-large close2" title="Go back"></span>
+                        <h6 class="col-sm-12">Choose file location</h6>
+                        <div class="col-sm-12">
+                            <a class="btn btn-mycomputer" id="mydeviceRegister">
+                                <span class="glyphicon">
+                                    <img src="images/mycomputer.png"></span> My Device</a>
+
+                            <a class="btn btn-mycomputer" id="mycomputerRegister">
+                                <span class="glyphicon">
+                                    <img src="images/mycomputer.png"></span> My Computer</a>
+
+                     
+                            <a  id="dropboxRegister" class="btn btn-dropbox hide">
+                                <span class="glyphicon">
+                                    <img src="images/dropbox.png"></span> DropBox</a>
+
+                            <a  id="onedriveRegister" class="btn btn-onedrive hide">
+                                <span class="glyphicon">
+                                    <img src="images/onedrive.png"></span> OneDrive</a>
+
+                            <a  id="googledriveRegister" class="btn btn-googledrive hide">
+                                <span class="glyphicon">
+                                    <img src="images/googledrive.png"/></span> GoogleDrive</a>
+                            <!-- <input type="hidden" class="hiddenClass" value="">-->
+                        </div>
+
+                        <h6 class="col-sm-12">Select Resume:&nbsp;&nbsp;</h6>
+
+                        <input type="HIDDEN" name="DocUploadValidationExtensionsRegister" id="DocUploadValidationExtensionsRegister" value=',.DOC,.TXT,.HTM,.HTML,.PDF,.BMP,.GIF,.TIF,.RTF,.DOCX,.MSG,'>
+                        <input type="HIDDEN" name="FileExtRegister" value=',.DOC,.TXT,.HTM,.HTML,.PDF,.BMP,.GIF,.TIF,.RTF,.DOCX,.MSG,'>
+                        <input type="HIDDEN" name="DocTypeDescRegister" value="Resume">
+                        <input type="HIDDEN" name="SelectedResumeOption" id="SelectedResumeOption" value="mycomputer">
+                        <input type="HIDDEN" name="ResumeParsingFor" value="RegisterUsingResume">
+                        <input type="HIDDEN" name="GoogleDriveFileMIMETypes" value='application/vnd.google-apps.document,application/vnd.google-apps.file,application/pdf,text/plain,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document'>
+                        
+                        <div class="col-sm-12">
+                            <div>
+                                <input type="file" class="File FileUploader" id="resumeFile" name="resumeFile" onchange="javascript:FileValidation(this)" style="padding: 5px; padding-left: 12px; padding-right: 0px; margin-bottom: 12px;">
+                            </div>
+                            <div id="Dropbox-Container-Register" class="CloudFileContainer" style="display: none;">
+                                <input type="HIDDEN" name="FileDropBoxFileURLRegister">
+                                <input type="text" name="FileDropBoxFileNameRegister" class="DriveTextBox" readonly="true">&nbsp;&nbsp;
+                                <input type="HIDDEN" name="CurrentDropBoxContainerRegister" id="CurrentDropBoxContainerRegister">
+                            </div>
+                            <div id="Onedrive-Container-Register" class="CloudFileContainer" style="display: block;">
+                                <input type="HIDDEN" name="FileOneDriveFileURLRegister">
+                                <input type="text" name="FileOneDriveFileNameRegister" class="DriveTextBox" readonly="true">&nbsp;&nbsp;
+                                <input type="HIDDEN" name="CurrentOneDriveContainerRegister" id="CurrentOneDriveContainerRegister">
+                            </div>
+                            <div id="GoogleDrive-Container-Register" class="CloudFileContainer" style="display: none;">                                
+                                <a href="#" class="google-drive-btn google-drive-dropin-btn google-drive-dropin-default" title="Choose from GoogleDrive"><span class="google-drive-btn-status"></span>Browse....</a>
+                                <input type="HIDDEN" name="FileGoogleDriveFileURLRegister">
+                                <input type="text" name="FileGoogleDriveFileNameRegister" class="DriveTextBox" readonly="true">&nbsp;&nbsp;
+                                <input type="HIDDEN" name="CurrentGoogleDriveContainerRegister" id="CurrentGoogleDriveContainerRegister">
+                            </div>
+
+                        </div>
+
+                        <input type="submit" class="btn-green btn btn-block btn-red" id="registerUsingResumeForm"
+                            onclick="javascript: return RegisterUsingResumeForm(this); sysSubmitForm('frmRegisterUsingResume');" value="Upload">
+                    </form>
+                </div>
+                <!--<a class="btn-green btn btn-block btn-red btn-longtext" id="registerUsingResume">USE RESUME TO CREATE AN ACCOUNT</a>-->
+                <a class="btn-green btn btn-block btn-pink" id="registerUsingResume">USE RESUME TO CREATE AN ACCOUNT</a>
+
+                
+            </div>
+            <!-- end modal-body -->
+
+            <!--forgot password expands here-->
+            <div class="forgotPass">
+                <span class="glyphicon glyphicon-remove-circle pull-right icon-large close2" data-dismiss="modal" onclick="RedirectToWelcome('HTTPS://jobs.uchc.edu/CSS_External/CSSPage_Welcome.ASP?T=20261020085123&');"></span>
+                <!--<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">-->
+
+
+<!--<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/styles.asp" rel="stylesheet">
+    <base href="HTTPS://jobs.uchc.edu/CSS_External/">
+    <title>UConn Health Candidate Self-Service
+    </title>-->
+    
+
+
+    <script type="text/javascript" language="JavaScript">
+
+
+        // SYS Script - Client Side Session Timeout Processing
+
+        var giTOMins=0;
+        var giTOSec=0;
+        var gsTOURL='';
+        var gsTOMsgURL='';
+        var gtmrTO=null;
+        var giScrollX = 0;
+        var giScrollY = 0;
+
+        // Returns information about browser window and scroll positions.
+
+        function getBrowserWindowInfoClientWidth() {
+            return getBrowserWindowInfoFilterResults (
+                window.innerWidth ? window.innerWidth : 0,
+                document.documentElement ? document.documentElement.clientWidth : 0,
+                document.body ? document.body.clientWidth : 0
+            );
+        }
+        function getBrowserWindowInfoClientHeight() {
+            return getBrowserWindowInfoFilterResults (
+                window.innerHeight ? window.innerHeight : 0,
+                document.documentElement ? document.documentElement.clientHeight : 0,
+                document.body ? document.body.clientHeight : 0
+            );
+        }
+        function getBrowserWindowInfoScrollLeft() {
+            return getBrowserWindowInfoFilterResults (
+                window.pageXOffset ? window.pageXOffset : 0,
+                document.documentElement ? document.documentElement.scrollLeft : 0,
+                document.body ? document.body.scrollLeft : 0
+            );
+        }
+        function getBrowserWindowInfoScrollTop() {
+            return getBrowserWindowInfoFilterResults (
+                window.pageYOffset ? window.pageYOffset : 0,
+                document.documentElement ? document.documentElement.scrollTop : 0,
+                document.body ? document.body.scrollTop : 0
+            );
+        }
+        function getBrowserWindowInfoFilterResults(n_win, n_docel, n_body) {
+            var n_result = n_win ? n_win : 0;
+            if (n_docel && (!n_result || (n_result > n_docel)))
+                n_result = n_docel;
+            return n_body && (!n_result || (n_result > n_body)) ? n_body : n_result;
+        }
+
+        // Timeout processing
+
+        function sysInitClientSideSessionTimeoutProcessing(piTimoutMins, psTimeoutURL, psTimeoutMsgURL, pfClearHolder) {
+            sysInitClientSideSessionTimeoutProcessingClear();
+            giTOMins=(piTimoutMins==null)?30:piTimoutMins;
+            gsTOURL=(psTimeoutURL==null)?gsTOURL:psTimeoutURL;
+            gsTOMsgURL=(psTimeoutMsgURL==null)?gsTOMsgURL:psTimeoutMsgURL;
+            pfClearHolder=(pfClearHolder==null)?true:pfClearHolder;
+            giTOSec=0;
+            if (pfClearHolder) {
+                var fResetScroll=true;
+                try
+                {
+                    var objIFMTmr = document.getElementById('ifrmTimeoutPage');
+                    var divTmr1 = document.getElementById('divTimeoutPageHolderO');
+                    var divTmr2 = document.getElementById('divTimeoutPageHolder');
+                    fResetScroll=(divTmr1.style.display=='');
+                    objIFMTmr.src = 'HTTPS://jobs.uchc.edu/CSS_External/Blank.htm';
+                    divTmr2.style.display='none';
+                    divTmr1.style.display='none';
+
+                    if (fResetScroll) {
+                        window.setTimeout('window.scrollTo('+giScrollX+','+giScrollY+');', 25);
+                    }
+
+                } catch(e) { /*Ignore*/ }
+            }
+
+            sysInitClientSideSessionTimeoutProcessingDown();
+        }
+        function sysInitClientSideSessionTimeoutProcessingDown() {
+            var sCandidateKey='';
+            giTOSec--;
+            if (giTOSec == -1) {
+                giTOSec = 59;
+                giTOMins--;
+            }
+            if (giTOMins <= 1) {
+                window.status = 'Session Time Remaining: ' + giTOMins + ' minute(s) and '+giTOSec+' second(s).';
+                //} else {
+                //	window.status = 'Time remaining: ' + giTOMins + ' minutes.';
+            }
+            if ((giTOMins==0)&&(giTOSec<=1)) {
+                gtmrTO=null;
+                if (gsTOURL!=null) {
+                    //window.location.href = gsTOURL;
+                }
+
+            } else {
+                if ((giTOMins==5)&&(giTOSec==0)) {
+                    if ((gsTOMsgURL!=null)&&(sCandidateKey.length>0)) {
+                        try
+                        {
+                            if (document.all) {
+                                giScrollX = getBrowserWindowInfoScrollLeft();
+                                giScrollY = getBrowserWindowInfoScrollTop();
+                            } else  {
+                                giScrollX = window.pageXOffset;
+                                giScrollY = window.pageYOffset;
+                            }
+                            var objIFMTmr = document.getElementById('ifrmTimeoutPage');
+                            var divTmr1 = document.getElementById('divTimeoutPageHolderO');
+                            var divTmr2 = document.getElementById('divTimeoutPageHolder');
+                            divTmr2.style.display='';
+                            divTmr1.style.display='';
+                            objIFMTmr.src = gsTOMsgURL;
+                        }
+                        catch(e)
+                        {
+                            //window.focus();
+                            //window.open(gsTOMsgURL,'tmrmsg','top=0,left=0,height=200,width=300,toolbar=no,location=no,status=no,menubar=no,scrollbars=no,resizable=no');
+                            //$('#msgModal').modal('show');
+                        }
+                    }
+                }
+                gtmrTO = setTimeout('sysInitClientSideSessionTimeoutProcessingDown();', 1000);
+            }
+
+        }
+        function sysInitClientSideSessionTimeoutProcessingClear() {
+            if (gtmrTO!=null) {
+                clearTimeout(gtmrTO);
+            }
+            gtmrTO=null;
+        }
+
+
+        // sysButtonMakeCool(this);
+
+        function sysButtonMakeCool(pObj) {
+            pObj.style.color = '#A9EFFF';
+            pObj.style.backgroundColor = '';
+        }
+
+
+
+        // sysButtonMakeNormal(this);
+
+        function sysButtonMakeNormal(pObj) {
+            pObj.style.color = '#fff';
+            pObj.style.backgroundColor = '';
+        }
+
+
+
+
+        // sysSubmitForm
+
+        function sysSubmitForm(psFormElementName, pEleName, pEleValue, psOverrideAction, psOverrideTarget) {
+            var iFrmIndex = -1;
+            var iFrmChildIndex = -1;
+            var fFound=false;
+            var retVal=false;
+            psFormElementName=(psFormElementName==null)?'':psFormElementName.toUpperCase();
+            for (var i=0;i<document.forms.length;i++) {
+                if (document.forms[i].name.toUpperCase()==psFormElementName) {
+                    iFrmIndex=i;
+                    fFound=true;
+                    i=document.forms.length;
+                } else {
+                    if (document.forms[i].forms!=null) {
+                        if (document.forms[i].forms.length > 0) {
+                            for (var ii=0;i<document.forms[i].forms.length;ii++) {
+                                if (document.forms[i].forms[ii].name.toUpperCase()==psFormElementName) {
+                                    iFrmIndex=i;
+                                    iFrmChildIndex=ii;
+                                    fFound=true;
+                                    i=document.forms.length;
+                                    ii=document.forms[i].forms.length;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            if (fFound) {
+                if ((pEleName!=null)&&(pEleValue!=null)) {
+                    var objFrm=null;
+                    if (iFrmChildIndex==-1) {
+                        var objFrm = document.forms[iFrmIndex];
+                    } else {
+                        var objFrm = document.forms[iFrmIndex].forms[iFrmChildIndex];
+                    }
+                    if (objFrm!=null) {
+                        objFrm.elements[pEleName].value=pEleValue;
+                    }
+                }
+                if (iFrmChildIndex==-1) {
+                    retVal=true;
+                    if (psOverrideAction != null) {
+                        document.forms[iFrmIndex].action=psOverrideAction;
+                    }
+                    if (psOverrideTarget != null) {
+                        document.forms[iFrmIndex].target=psOverrideTarget;
+                    }
+                    document.forms[iFrmIndex].submit();
+                } else {
+                    retVal=true;
+                    if (psOverrideAction != null) {
+                        document.forms[iFrmIndex].forms[iFrmChildIndex].action=psOverrideAction;
+                    }
+                    if (psOverrideTarget != null) {
+                        document.forms[iFrmIndex].forms[iFrmChildIndex].target=psOverrideTarget;
+                    }
+                    document.forms[iFrmIndex].forms[iFrmChildIndex].submit();
+                }
+            } else {
+                window.alert('Error: Cannot find FORM [' + psFormElementName + ']');
+            }
+            $('#forgot').modal('show');
+            return (retVal);
+        }
+
+
+
+    </script>
+
+    
+
+<!--</head>-->
+
+
+<!--<body
+    onload="sysInitClientSideSessionTimeoutProcessing(30, 'HTTPS://jobs.uchc.edu/CSS_External/CSSResp_TimeoutMessage.ASP?T=20261020085123&', 'HTTPS://jobs.uchc.edu/CSS_External/CSSPage_TimoutMessage.ASP?T=20261020085123&');"
+    onunload="sysInitClientSideSessionTimeoutProcessingClear();">-->
+
+    <div class="panel-default col-sm-12 well">
+         <div class="col-sm-12">
+        
+    </div>
+        <form id="frmSendPwd" name="frmSendPwd" method="POST" action="HTTPS://jobs.uchc.edu/CSS_External/CSSResp_Login.ASP?T=20261020085123&">
+            <h5>Please enter your email address:&nbsp;</h5>
+            <br>
+            <input type="HIDDEN" id="Action" name="Action" value="SendPassword"><input type="HIDDEN" id="RetURL" name="RetURL" value="CSSPage_Welcome.asp">
+            <input type="TEXT" size="40" id="Login" name="Login" value="" title="Enter the Email Address you entered during registration." class="form-control">
+            <br>
+            <input type="BUTTON" id="cmdSendPwd" name="cmdSendPwd" class="btn-green btn btn-block" value="Send Reset Email" onclick="sysSubmitForm('frmSendPwd');">
+        </form>
+    </div>
+<!--</body>-->
+<!--</html>-->
+
+            </div>
+            <!--forgot password ends here-->
+
+            <!-- end modal footer -->
+
+            <!-- end modal content -->
+        </div>
+        <!-- end modal dialog -->
+    </div>
+</div>
+<!--navigations ends-->
+<script type="text/javascript">
+    function RedirectToWelcome(link)
+    {
+        location.href = link;
+    }
+</script>
+<!-- SYSAPPIGNOREEND -->
+        <!--------------------------slider-------------------------->
+		<div id="myCarousal" class="carousel slide web" data-ride="carousel"><div class="carousel-inner"><div id="slide1" class="item active"><img class="first-slide" src="images/uconn_carousel1.jpg" alt="First Slide"><div class="carousel-caption"><div class="well text-left"><h3>Career opportunities</h3><p>Explore Job Listings at UConn Health</p></div></div></div><div id="slide2" class="item"><img class="first-slide" src="images/uconn_carousel2.jpg" alt="Second Slide"><div class="carousel-caption"><div class="well text-left"><h3>Career opportunities</h3><p>Explore Job Listings at UConn Health</p></div></div></div><div id="slide3" class="item"><img class="first-slide" src="images/uconn_carousel3.jpg" alt="Third Slide"><div class="carousel-caption"><div class="well text-left"><h3>Career opportunities</h3><p>Explore Job Listings at UConn Health</p></div></div></div></div><a data-slide="prev" class="carousel-control left" href="#myCarousal" title="Previous"><span class="icon-prev"></span></a><a data-slide="next" class="carousel-control right" href="#myCarousal" title="Next"><span class="icon-next"></span></a></div>
+        <!--slider ends here-->
+
+        <div ID = "W2" class="category row web">
+            <div ID = "W3" class="col-sm-12">
+                <h2 class="heading2">About UConn Health</h2>
+                <p class="text-center">
+                    <IMG SRC="images/Newsweek_WBH2022_Siegel_Basic_148x210.png" align="right"><P align="left">At UConn Health, we offer our employees opportunities within a dynamic, intellectually stimulating environment of education, research, and patient care.<BR><BR>UConn Health is comprised of the nationally recognized Schools of Medicine and Dental Medicine, UConn John Dempsey Hospital, and UConn Medical Group.  As UConn Health continues to grow, employment opportunities are available in multiple locations throughout the state.<BR><BR>UConn Health is an affirmative action employer, in addition to an EEO and M/F/V/PWD/PV employer.<BR><BR><B>Accommodations for Applicants with Disabilities</B><BR><BR>Applicants with disabilities may request reasonable accommodations under the Americans with Disabilities Act (ADA). We can explore accommodations to help applicants with the application process, during the interview as well as the hiring process itself. UConn Health engages in an interactive process with each person making a request for accommodations and reviews the requests on an individualized, case-by-case basis. Please contact 860-679-2426 to request an accommodation.<BR><BR><b>Non-Discrimination Policy</b><BR><BR>Commitment to Diversity, Inclusion, and a Respectful Workplace<br><br>UConn is committed to providing equal employment opportunities to all its employees and applicants for employment. All applicants will receive consideration for employment without regard to race, color, ethnicity, religious creed, age, sex (including pregnancy and sexual harassment), marital status, national origin, ancestry, sexual orientation, genetic information, physical or mental disabilities (including learning disabilities, intellectual disabilities, past/present history of a mental disorder), prior conviction of a crime (or similar characteristic),  veteran status, status as a victim of domestic violence, workplace hazards to reproductive systems, gender identity or expression, or other factors which cannot lawfully be the basis for employment actions, unless there is a bona fide occupational qualification.
+                </p>
+            </div>
+        </div>
+
+
+<div class="panel-body" style = "padding-top:0px;padding-bottom:0px;">
+			<p class="text-center">
+						<A
+						CLASS="Page"
+						TARGET="_Blank"
+						HREF="http://jobs.uconn.edu"
+						TITLE="Career Opportunities - UConn Storrs & Regional Campuses"
+						STYLE="font-weight:bold;">Career Opportunities at UConn Storrs and Regional Campuses</A>
+
+			</p>
+			</div>
+        <!--</div>-->
+
+        <form id="frmCSSSearch" name="frmCSSSearch" method="POST" action="HTTPS://jobs.uchc.edu/CSS_External/CSSPage_SearchResults.ASP">
+            <input type="HIDDEN" id="Type" name="Type" value="CSS" ><input type="HIDDEN" id="SRCH" name="SRCH" value="Search&nbsp;Jobs" ><input type="HIDDEN" id="InitURL" name="InitURL" value="CSSPage_Welcome.asp" >
+            <input type="HIDDEN" id="RetColsQS" name="RetColsQS" value="Requisition.Key¤Requisition.JobTitle¤Requisition.fk_Code_Dept¤[Requisition.fk_Code_Dept]OLD.Description(sysfk_Code_DeptDesc)¤Requisition.fk_Code_Location¤[Requisition.fk_Code_Location]OLD.Description(sysfk_Code_LocationDesc)¤Requisition.FTE¤Requisition.Shift¤Requisition.Req¤Requisition.DateDead¤" ><input type="HIDDEN" id="RetColsGR" name="RetColsGR" value="Requisition.Key¤Requisition.JobTitle¤Requisition.fk_Code_Dept¤[Requisition.fk_Code_Dept]OLD.Description(sysfk_Code_DeptDesc)¤Requisition.fk_Code_Location¤[Requisition.fk_Code_Location]OLD.Description(sysfk_Code_LocationDesc)¤Requisition.FTE¤Requisition.Shift¤Requisition.Req¤Requisition.DateDead¤"><input type="HIDDEN" id="ResultSort" name="ResultSort" value="" >
+            <div ID = "W4" class="category row">
+                <!--job search box-->
+                <div ID = "W5" class="clearfix"></div>
+				  <div ID = "W6" class="col-sm-6 browse-jobs mobileForm">
+					<div ID = "W6A" class="panel panel-default fixed-height expand">
+
+						<div ID = "W6B" class="panel-heading not-active">
+						<h4>Search Our Jobs</h4><span class="glyphicon glyphicon-chevron-down glyphicon-chevron-up exp-toggle mobile"></span>
+						</div><!--close W6B-->
+
+
+					<div ID = "W7" class="panel-body">
+
+
+                                <ul class="list-group">
+                                    <li class="list-group-item"><h5><b>Job&nbsp;Description&nbsp;Keyword:&nbsp;</b></h5><INPUT TYPE="TEXT" ID="keyword" NAME="keyword" placeholder = "Enter keyword(s)" class="form-control" STYLE = "border: 1px solid #555;height:42px;background-image:url(images/search-icon.jpg);background-repeat:no-repeat;background-position:10px center;text-indent:40px;" title="Enter Keyword or Phrase" onfocus="setValObj(this, 'Job Description Keyword', 1);"   onkeypress="sysfnfCheckEnter(event);" ><INPUT TYPE="HIDDEN" ID="na_keyword" NAME="na_keyword" SIZE="0" MAXLENGTH="10" READONLY DISABLED STYLE="width:0px;"></li><li class="list-group-item"><h5><b>Location:&nbsp;<BR></b></h5><input style="height:42px;" type="text" value="Select Location" title="Select Location" class="form-control multi-sel" readonly="readonly"><div ID = "W11" class="multi-sel-modal"><ul class="list-group" SIZE="3" ID="Location">
+<li class="list-group-item"><label><input type="checkbox" ID="fk_Code_Location" NAME="fk_Code_Location" onclick="setValObj(this, 'Location', 3);"   value="*">&nbsp; -- &nbsp;Any Location&nbsp; -- &nbsp;</label></li>
+<li class="list-group-item" ><label><input type="checkbox" ID="fk_Code_Location" NAME="fk_Code_Location" onclick="setValObj(this, 'Location', 3);"   value="{C8FF0CFC-3E69-4A06-8119-51B71F18BA70}">&nbsp;Canton </label></li>
+<li class="list-group-item" ><label><input type="checkbox" ID="fk_Code_Location" NAME="fk_Code_Location" onclick="setValObj(this, 'Location', 3);"   value="{E50687E4-92D2-46CB-9D1C-B83F65F5C5BF}">&nbsp;Farmington </label></li>
+<li class="list-group-item" ><label><input type="checkbox" ID="fk_Code_Location" NAME="fk_Code_Location" onclick="setValObj(this, 'Location', 3);"   value="{FFDF5CF9-E4E3-479E-9C2F-25F663474350}">&nbsp;Simsbury </label></li>
+<li class="list-group-item" ><label><input type="checkbox" ID="fk_Code_Location" NAME="fk_Code_Location" onclick="setValObj(this, 'Location', 3);"   value="{D84B2758-7B8B-48D8-9569-AFD0D0A1D95E}">&nbsp;Southington </label></li>
+<li class="list-group-item" ><label><input type="checkbox" ID="fk_Code_Location" NAME="fk_Code_Location" onclick="setValObj(this, 'Location', 3);"   value="{0269F669-04EC-4402-8350-839A42E9EF37}">&nbsp;Storrs </label></li>
+<li class="list-group-item" ><label><input type="checkbox" ID="fk_Code_Location" NAME="fk_Code_Location" onclick="setValObj(this, 'Location', 3);"   value="{0F25CA0A-06B2-4D6D-ACFD-89EE4FBC0A50}">&nbsp;Torrington </label></li>
+</ul><div ID = "W12" class="well-sm"><input type="button" class="green-bg btn btn-default cancel" value="OK" ><input type="button" class="btn btn-default cancel" value="Cancel" ></div></li><li class="list-group-item"><h5><b>Department:&nbsp;<BR></b></h5><input style="height:42px;" type="text" value="Select Department" title="Select Department" class="form-control multi-sel" readonly="readonly"><div ID = "W11" class="multi-sel-modal"><ul class="list-group" SIZE="3" ID="Department">
+<li class="list-group-item"><label><input type="checkbox" ID="fk_Code_Dept" NAME="fk_Code_Dept" onclick="setValObj(this, 'Department', 3);"   value="*">&nbsp; -- &nbsp;Any Department&nbsp; -- &nbsp;</label></li>
+<li class="list-group-item" ><label><input type="checkbox" ID="fk_Code_Dept" NAME="fk_Code_Dept" onclick="setValObj(this, 'Department', 3);"   value="{214A7BB0-15A3-4B58-9593-79736D279FE4}">&nbsp;10000-Dean's Office - Med </label></li>
+<li class="list-group-item" ><label><input type="checkbox" ID="fk_Code_Dept" NAME="fk_Code_Dept" onclick="setValObj(this, 'Department', 3);"   value="{C1CDADD5-7BC6-4B44-BD38-B094BE4DD9D4}">&nbsp;10120-Pathology & Laboratory Medicine </label></li>
+<li class="list-group-item" ><label><input type="checkbox" ID="fk_Code_Dept" NAME="fk_Code_Dept" onclick="setValObj(this, 'Department', 3);"   value="{D6D1956E-5679-4ED5-8473-C7E61A2D2F1C}">&nbsp;10145-Endocrinology </label></li>
+<li class="list-group-item" ><label><input type="checkbox" ID="fk_Code_Dept" NAME="fk_Code_Dept" onclick="setValObj(this, 'Department', 3);"   value="{EB29666C-6017-48A5-B9ED-FF6A8F63E371}">&nbsp;10146-Gastroenterology </label></li>
+<li class="list-group-item" ><label><input type="checkbox" ID="fk_Code_Dept" NAME="fk_Code_Dept" onclick="setValObj(this, 'Department', 3);"   value="{1BABA757-F6EB-4893-BD78-841BC4961D3A}">&nbsp;10147-General Medicine </label></li>
+<li class="list-group-item" ><label><input type="checkbox" ID="fk_Code_Dept" NAME="fk_Code_Dept" onclick="setValObj(this, 'Department', 3);"   value="{ACEDFA8E-CECE-4C1A-95AF-566AF5162418}">&nbsp;10150-Internal Medicine Assoc </label></li>
+<li class="list-group-item" ><label><input type="checkbox" ID="fk_Code_Dept" NAME="fk_Code_Dept" onclick="setValObj(this, 'Department', 3);"   value="{799FC287-DA45-4059-91A5-63C14FF34AA8}">&nbsp;10151-Nephrology </label></li>
+<li class="list-group-item" ><label><input type="checkbox" ID="fk_Code_Dept" NAME="fk_Code_Dept" onclick="setValObj(this, 'Department', 3);"   value="{7EB0BC63-47E4-428F-BBEE-A49647235478}">&nbsp;10153-Pulmonary </label></li>
+<li class="list-group-item" ><label><input type="checkbox" ID="fk_Code_Dept" NAME="fk_Code_Dept" onclick="setValObj(this, 'Department', 3);"   value="{7EAE375E-BFF1-49CB-95F1-09D3F47F7889}">&nbsp;10154-Rheumatology </label></li>
+<li class="list-group-item" ><label><input type="checkbox" ID="fk_Code_Dept" NAME="fk_Code_Dept" onclick="setValObj(this, 'Department', 3);"   value="{FBC17C91-52A1-402C-BA30-D19CD3CB4973}">&nbsp;10180-Pediatrics </label></li>
+<li class="list-group-item" ><label><input type="checkbox" ID="fk_Code_Dept" NAME="fk_Code_Dept" onclick="setValObj(this, 'Department', 3);"   value="{8642CAEC-F434-435B-87C1-DC7844622471}">&nbsp;10200-Psychiatry </label></li>
+<li class="list-group-item" ><label><input type="checkbox" ID="fk_Code_Dept" NAME="fk_Code_Dept" onclick="setValObj(this, 'Department', 3);"   value="{1CF2473E-3E98-4885-A522-E8993F0A7D35}">&nbsp;10221-Cardio Surgery </label></li>
+<li class="list-group-item" ><label><input type="checkbox" ID="fk_Code_Dept" NAME="fk_Code_Dept" onclick="setValObj(this, 'Department', 3);"   value="{B3CB4E1E-E277-46E0-8175-E960AA94CC38}">&nbsp;10223-General Surgery </label></li>
+<li class="list-group-item" ><label><input type="checkbox" ID="fk_Code_Dept" NAME="fk_Code_Dept" onclick="setValObj(this, 'Department', 3);"   value="{2B66878D-F0BA-4675-A894-725DA9F09652}">&nbsp;10225-Neurosurgery </label></li>
+<li class="list-group-item" ><label><input type="checkbox" ID="fk_Code_Dept" NAME="fk_Code_Dept" onclick="setValObj(this, 'Department', 3);"   value="{CFFE0504-C2C9-47DD-94C2-31B4D47EB33A}">&nbsp;10227-Urology </label></li>
+<li class="list-group-item" ><label><input type="checkbox" ID="fk_Code_Dept" NAME="fk_Code_Dept" onclick="setValObj(this, 'Department', 3);"   value="{104F7C63-67C2-4593-A2F1-70EB65DF575F}">&nbsp;10229-Surgery-Basic Sciences </label></li>
+<li class="list-group-item" ><label><input type="checkbox" ID="fk_Code_Dept" NAME="fk_Code_Dept" onclick="setValObj(this, 'Department', 3);"   value="{DC4FAD15-7562-48A9-8537-ADEB25994438}">&nbsp;10260-Obstetrics and Gynecology </label></li>
+<li class="list-group-item" ><label><input type="checkbox" ID="fk_Code_Dept" NAME="fk_Code_Dept" onclick="setValObj(this, 'Department', 3);"   value="{79F29C60-DD02-4D98-968F-8ABD6C2822E7}">&nbsp;10320-Family Medicine </label></li>
+<li class="list-group-item" ><label><input type="checkbox" ID="fk_Code_Dept" NAME="fk_Code_Dept" onclick="setValObj(this, 'Department', 3);"   value="{7B06D489-ADDB-40FB-AE5C-FE2908221414}">&nbsp;10360-Emergency Medicine </label></li>
+<li class="list-group-item" ><label><input type="checkbox" ID="fk_Code_Dept" NAME="fk_Code_Dept" onclick="setValObj(this, 'Department', 3);"   value="{708B49CC-78CB-4706-B4A5-92C323741437}">&nbsp;10380-Dermatology </label></li>
+<li class="list-group-item" ><label><input type="checkbox" ID="fk_Code_Dept" NAME="fk_Code_Dept" onclick="setValObj(this, 'Department', 3);"   value="{186DD800-594F-4B89-8ABD-B87D193A96CD}">&nbsp;10440-Neurology </label></li>
+<li class="list-group-item" ><label><input type="checkbox" ID="fk_Code_Dept" NAME="fk_Code_Dept" onclick="setValObj(this, 'Department', 3);"   value="{E7E6BCF1-FDF0-4EA9-A24D-9F4C2AF85B17}">&nbsp;10500-Univ Of Conn Center On Aging </label></li>
+<li class="list-group-item" ><label><input type="checkbox" ID="fk_Code_Dept" NAME="fk_Code_Dept" onclick="setValObj(this, 'Department', 3);"   value="{A9DDA2EF-8C98-4668-8036-C02D77D5E61B}">&nbsp;10520-Neag Cancer Center (SOM) </label></li>
+<li class="list-group-item" ><label><input type="checkbox" ID="fk_Code_Dept" NAME="fk_Code_Dept" onclick="setValObj(this, 'Department', 3);"   value="{66FBA2C0-C98B-44AF-96FA-913C09C8537D}">&nbsp;10560-Diagnostic Imaging & Therapeutics </label></li>
+<li class="list-group-item" ><label><input type="checkbox" ID="fk_Code_Dept" NAME="fk_Code_Dept" onclick="setValObj(this, 'Department', 3);"   value="{56FCF70D-778F-48FA-851C-1EE1F68F4B8C}">&nbsp;10600-Genetics & Genome Sciences </label></li>
+<li class="list-group-item" ><label><input type="checkbox" ID="fk_Code_Dept" NAME="fk_Code_Dept" onclick="setValObj(this, 'Department', 3);"   value="{DE4B4451-0EF9-4501-A4ED-C04743C4BAD1}">&nbsp;10663-Immunology </label></li>
+<li class="list-group-item" ><label><input type="checkbox" ID="fk_Code_Dept" NAME="fk_Code_Dept" onclick="setValObj(this, 'Department', 3);"   value="{C0419887-76A6-45CF-BD45-56F4C68752A1}">&nbsp;10760-Calhoun Cardiology Center - CCC </label></li>
+<li class="list-group-item" ><label><input type="checkbox" ID="fk_Code_Dept" NAME="fk_Code_Dept" onclick="setValObj(this, 'Department', 3);"   value="{CB654A8F-2C79-4DEC-BE32-A9C920B3AFD0}">&nbsp;10820-Musculoskeletal Signature Program </label></li>
+<li class="list-group-item" ><label><input type="checkbox" ID="fk_Code_Dept" NAME="fk_Code_Dept" onclick="setValObj(this, 'Department', 3);"   value="{07E0774B-BBB1-40A3-BC1B-6188F9CB8E6B}">&nbsp;20000-Dean's Office - Dental </label></li>
+<li class="list-group-item" ><label><input type="checkbox" ID="fk_Code_Dept" NAME="fk_Code_Dept" onclick="setValObj(this, 'Department', 3);"   value="{9234401F-32C0-47BE-BEAE-437972CC475F}">&nbsp;20080-Educational Clinics Admin </label></li>
+<li class="list-group-item" ><label><input type="checkbox" ID="fk_Code_Dept" NAME="fk_Code_Dept" onclick="setValObj(this, 'Department', 3);"   value="{DC7AEA9F-99FB-43D7-9F31-CD410F06176A}">&nbsp;20181-OMFS </label></li>
+<li class="list-group-item" ><label><input type="checkbox" ID="fk_Code_Dept" NAME="fk_Code_Dept" onclick="setValObj(this, 'Department', 3);"   value="{56511543-1C86-402D-9651-726CC9FB4A26}">&nbsp;20182-Orthodontics </label></li>
+<li class="list-group-item" ><label><input type="checkbox" ID="fk_Code_Dept" NAME="fk_Code_Dept" onclick="setValObj(this, 'Department', 3);"   value="{8DBB2824-4CFB-4CEB-BF58-25904D12F967}">&nbsp;60000-Office of Health Affairs </label></li>
+<li class="list-group-item" ><label><input type="checkbox" ID="fk_Code_Dept" NAME="fk_Code_Dept" onclick="setValObj(this, 'Department', 3);"   value="{B5FC1814-FAF3-40B5-AA3C-C4FF2583A08B}">&nbsp;60002-UConn Health Pharmacy Services Inc. </label></li>
+<li class="list-group-item" ><label><input type="checkbox" ID="fk_Code_Dept" NAME="fk_Code_Dept" onclick="setValObj(this, 'Department', 3);"   value="{BE27E9D8-DC89-4715-BBAE-C662CF803B7D}">&nbsp;60080-Strategy and Business Development </label></li>
+<li class="list-group-item" ><label><input type="checkbox" ID="fk_Code_Dept" NAME="fk_Code_Dept" onclick="setValObj(this, 'Department', 3);"   value="{8CDE41E5-199E-4594-AD6D-57B38B17238C}">&nbsp;60161-Creative Child Care </label></li>
+<li class="list-group-item" ><label><input type="checkbox" ID="fk_Code_Dept" NAME="fk_Code_Dept" onclick="setValObj(this, 'Department', 3);"   value="{C8F71623-1CD2-4E21-A6FE-EA853D7D71CE}">&nbsp;60180-Office of Patient Experience </label></li>
+<li class="list-group-item" ><label><input type="checkbox" ID="fk_Code_Dept" NAME="fk_Code_Dept" onclick="setValObj(this, 'Department', 3);"   value="{80904814-B731-4B93-B6ED-5790286C8F70}">&nbsp;61020-Facilities Management Admin </label></li>
+<li class="list-group-item" ><label><input type="checkbox" ID="fk_Code_Dept" NAME="fk_Code_Dept" onclick="setValObj(this, 'Department', 3);"   value="{2D6A8948-4AA8-4228-8DD5-06D8C037DEC4}">&nbsp;61033-Campus Planning </label></li>
+<li class="list-group-item" ><label><input type="checkbox" ID="fk_Code_Dept" NAME="fk_Code_Dept" onclick="setValObj(this, 'Department', 3);"   value="{43898BE0-F003-4EA7-94D5-B7D1E97CC6AB}">&nbsp;62045-Pro Coding & Revenue Integrity </label></li>
+<li class="list-group-item" ><label><input type="checkbox" ID="fk_Code_Dept" NAME="fk_Code_Dept" onclick="setValObj(this, 'Department', 3);"   value="{C41E5DF5-B359-4033-8F88-301374CCF0FB}">&nbsp;70020-UMG-Administration </label></li>
+<li class="list-group-item" ><label><input type="checkbox" ID="fk_Code_Dept" NAME="fk_Code_Dept" onclick="setValObj(this, 'Department', 3);"   value="{26C6BA18-663E-472B-9AC3-5E657FA67981}">&nbsp;70022-UMG-Health Information Mgmt </label></li>
+<li class="list-group-item" ><label><input type="checkbox" ID="fk_Code_Dept" NAME="fk_Code_Dept" onclick="setValObj(this, 'Department', 3);"   value="{09997965-BF91-414F-8229-FA02D1060B62}">&nbsp;70040-UMG-Internal Medicine </label></li>
+<li class="list-group-item" ><label><input type="checkbox" ID="fk_Code_Dept" NAME="fk_Code_Dept" onclick="setValObj(this, 'Department', 3);"   value="{1BCB7621-757D-447F-AC99-91CFE2E82957}">&nbsp;70050-UMG-Hospitalist </label></li>
+<li class="list-group-item" ><label><input type="checkbox" ID="fk_Code_Dept" NAME="fk_Code_Dept" onclick="setValObj(this, 'Department', 3);"   value="{F97F1746-2BC1-45D4-9264-44AF28D13171}">&nbsp;70061-UMG-Maternal/Fetal Medicine </label></li>
+<li class="list-group-item" ><label><input type="checkbox" ID="fk_Code_Dept" NAME="fk_Code_Dept" onclick="setValObj(this, 'Department', 3);"   value="{363EBD8B-FD42-424F-9BA8-DDAB2092F705}">&nbsp;70081-UMG-Ears Nose And Throat </label></li>
+<li class="list-group-item" ><label><input type="checkbox" ID="fk_Code_Dept" NAME="fk_Code_Dept" onclick="setValObj(this, 'Department', 3);"   value="{A1FE83A6-322D-46B8-AB24-F318E0C1772B}">&nbsp;70083-UMG-Surgery - Ophthalmology </label></li>
+<li class="list-group-item" ><label><input type="checkbox" ID="fk_Code_Dept" NAME="fk_Code_Dept" onclick="setValObj(this, 'Department', 3);"   value="{C9FEF99F-0BE4-49E4-9234-6C047C2ED01D}">&nbsp;70100-UMG-Orthopedics </label></li>
+<li class="list-group-item" ><label><input type="checkbox" ID="fk_Code_Dept" NAME="fk_Code_Dept" onclick="setValObj(this, 'Department', 3);"   value="{BFF44B8A-19C9-4080-8BF6-0FE754C8A089}">&nbsp;70112-Institute for Sports Med - Storrs </label></li>
+<li class="list-group-item" ><label><input type="checkbox" ID="fk_Code_Dept" NAME="fk_Code_Dept" onclick="setValObj(this, 'Department', 3);"   value="{2299AD4A-B464-460C-8637-87577A7B3B01}">&nbsp;70161-UMG-Munson Neurology </label></li>
+<li class="list-group-item" ><label><input type="checkbox" ID="fk_Code_Dept" NAME="fk_Code_Dept" onclick="setValObj(this, 'Department', 3);"   value="{53D32BB1-2857-4932-ACF7-FD3965F10AD0}">&nbsp;80100-Health Information Management </label></li>
+<li class="list-group-item" ><label><input type="checkbox" ID="fk_Code_Dept" NAME="fk_Code_Dept" onclick="setValObj(this, 'Department', 3);"   value="{6B0E8762-7D28-4D44-AE37-92D37CC0B29C}">&nbsp;80740-Dermatology Clinic </label></li>
+<li class="list-group-item" ><label><input type="checkbox" ID="fk_Code_Dept" NAME="fk_Code_Dept" onclick="setValObj(this, 'Department', 3);"   value="{8460D78F-BB92-4A7A-96A3-4CC82DB0E4D4}">&nbsp;80810-Endocrinology </label></li>
+<li class="list-group-item" ><label><input type="checkbox" ID="fk_Code_Dept" NAME="fk_Code_Dept" onclick="setValObj(this, 'Department', 3);"   value="{5EAA553D-333F-4AB3-B94E-EF9D902421F8}">&nbsp;81003-Critical Care RN Float Pool </label></li>
+<li class="list-group-item" ><label><input type="checkbox" ID="fk_Code_Dept" NAME="fk_Code_Dept" onclick="setValObj(this, 'Department', 3);"   value="{4E542AC5-5222-4CF9-A1C9-033E982A80B2}">&nbsp;81005-Float Pool </label></li>
+<li class="list-group-item" ><label><input type="checkbox" ID="fk_Code_Dept" NAME="fk_Code_Dept" onclick="setValObj(this, 'Department', 3);"   value="{A3B8E025-D48D-4997-9896-30C7C1F03725}">&nbsp;81007-Medicine 3 Unit </label></li>
+<li class="list-group-item" ><label><input type="checkbox" ID="fk_Code_Dept" NAME="fk_Code_Dept" onclick="setValObj(this, 'Department', 3);"   value="{F59C42A4-63B0-4253-8476-AE975725CDED}">&nbsp;81008-Surgery/Orthopedics Unit </label></li>
+<li class="list-group-item" ><label><input type="checkbox" ID="fk_Code_Dept" NAME="fk_Code_Dept" onclick="setValObj(this, 'Department', 3);"   value="{D6C8BBD5-C947-446F-B370-A338FEEDAE41}">&nbsp;81010-OB/GYN </label></li>
+<li class="list-group-item" ><label><input type="checkbox" ID="fk_Code_Dept" NAME="fk_Code_Dept" onclick="setValObj(this, 'Department', 3);"   value="{6B06242F-D515-4731-820B-34E470F3DF32}">&nbsp;81012-N.N.I.C.U. Unit </label></li>
+<li class="list-group-item" ><label><input type="checkbox" ID="fk_Code_Dept" NAME="fk_Code_Dept" onclick="setValObj(this, 'Department', 3);"   value="{EA43248D-5E24-4CF1-906C-884882856BB9}">&nbsp;81013-Intensive Care Unit </label></li>
+<li class="list-group-item" ><label><input type="checkbox" ID="fk_Code_Dept" NAME="fk_Code_Dept" onclick="setValObj(this, 'Department', 3);"   value="{21C5F0C7-A1F8-4125-9EF8-DF506FCD233F}">&nbsp;81017-Postoperative Services Unit </label></li>
+<li class="list-group-item" ><label><input type="checkbox" ID="fk_Code_Dept" NAME="fk_Code_Dept" onclick="setValObj(this, 'Department', 3);"   value="{F328DBCC-588D-4FAE-8CDA-5A03D099E7D4}">&nbsp;81018-Neag Cancer Center JDH </label></li>
+<li class="list-group-item" ><label><input type="checkbox" ID="fk_Code_Dept" NAME="fk_Code_Dept" onclick="setValObj(this, 'Department', 3);"   value="{70464066-3EB0-4CF0-973B-71E85126919D}">&nbsp;81019-Medical/Surgical/Oncology Unit </label></li>
+<li class="list-group-item" ><label><input type="checkbox" ID="fk_Code_Dept" NAME="fk_Code_Dept" onclick="setValObj(this, 'Department', 3);"   value="{F92132E3-B621-4125-BED4-C1007B448CD5}">&nbsp;81021-Emergency Room Unit </label></li>
+<li class="list-group-item" ><label><input type="checkbox" ID="fk_Code_Dept" NAME="fk_Code_Dept" onclick="setValObj(this, 'Department', 3);"   value="{6A52BC8A-BAD4-48F0-8870-8FD7645FBB79}">&nbsp;81022-Operating Room Unit </label></li>
+<li class="list-group-item" ><label><input type="checkbox" ID="fk_Code_Dept" NAME="fk_Code_Dept" onclick="setValObj(this, 'Department', 3);"   value="{6013B1F9-15A5-441A-ABCD-032F567EB72C}">&nbsp;81029-Bone Marrow Transplant Unit </label></li>
+<li class="list-group-item" ><label><input type="checkbox" ID="fk_Code_Dept" NAME="fk_Code_Dept" onclick="setValObj(this, 'Department', 3);"   value="{EE0960EB-70A5-4558-BCFE-26D930C1A0C3}">&nbsp;81031-Central Monitoring Room </label></li>
+<li class="list-group-item" ><label><input type="checkbox" ID="fk_Code_Dept" NAME="fk_Code_Dept" onclick="setValObj(this, 'Department', 3);"   value="{487539B9-69C3-4D46-87E9-84203E9FD7EF}">&nbsp;81032-Adult Ambulatory Care Unit </label></li>
+<li class="list-group-item" ><label><input type="checkbox" ID="fk_Code_Dept" NAME="fk_Code_Dept" onclick="setValObj(this, 'Department', 3);"   value="{A0734875-AAFD-48C3-A896-F7BAF8520554}">&nbsp;81037-Adult Sickle Cell Unit </label></li>
+<li class="list-group-item" ><label><input type="checkbox" ID="fk_Code_Dept" NAME="fk_Code_Dept" onclick="setValObj(this, 'Department', 3);"   value="{B1493268-F5F6-400B-9539-91EFAE90AC6F}">&nbsp;81038-CT7 Med Overflow </label></li>
+<li class="list-group-item" ><label><input type="checkbox" ID="fk_Code_Dept" NAME="fk_Code_Dept" onclick="setValObj(this, 'Department', 3);"   value="{9155BC8D-E14B-40F2-9241-3FAF27EBDA2F}">&nbsp;81039-OR-Anesthesia </label></li>
+<li class="list-group-item" ><label><input type="checkbox" ID="fk_Code_Dept" NAME="fk_Code_Dept" onclick="setValObj(this, 'Department', 3);"   value="{553CB132-04CD-4AB3-93CE-C27F015F518B}">&nbsp;81160-Case Management </label></li>
+<li class="list-group-item" ><label><input type="checkbox" ID="fk_Code_Dept" NAME="fk_Code_Dept" onclick="setValObj(this, 'Department', 3);"   value="{C4853EA1-B989-42FD-AC14-807F481950AE}">&nbsp;81801-Solnit South </label></li>
+<li class="list-group-item" ><label><input type="checkbox" ID="fk_Code_Dept" NAME="fk_Code_Dept" onclick="setValObj(this, 'Department', 3);"   value="{6806B3E3-9CB8-42DD-82B0-ABF3502DAFE6}">&nbsp;83007-Blood Bank-Lab Medicine </label></li>
+<li class="list-group-item" ><label><input type="checkbox" ID="fk_Code_Dept" NAME="fk_Code_Dept" onclick="setValObj(this, 'Department', 3);"   value="{74876E58-B1C1-40AC-AE8F-9E9B4576A26A}">&nbsp;83008-Cardiac Cath. Lab </label></li>
+<li class="list-group-item" ><label><input type="checkbox" ID="fk_Code_Dept" NAME="fk_Code_Dept" onclick="setValObj(this, 'Department', 3);"   value="{4A081DA2-0D9E-4F20-B55B-7441126401CF}">&nbsp;83063-Radiology-Ct </label></li>
+<li class="list-group-item" ><label><input type="checkbox" ID="fk_Code_Dept" NAME="fk_Code_Dept" onclick="setValObj(this, 'Department', 3);"   value="{D2CD0A08-0D40-4891-89D7-86DADEF80183}">&nbsp;83064-Interventional Radiology </label></li>
+<li class="list-group-item" ><label><input type="checkbox" ID="fk_Code_Dept" NAME="fk_Code_Dept" onclick="setValObj(this, 'Department', 3);"   value="{328FEC48-FCD8-4575-B507-1C834800AEC1}">&nbsp;83065-Radiology-MRI </label></li>
+<li class="list-group-item" ><label><input type="checkbox" ID="fk_Code_Dept" NAME="fk_Code_Dept" onclick="setValObj(this, 'Department', 3);"   value="{9CC77F82-C27A-45E8-B823-B28642051E73}">&nbsp;83069-Radiology </label></li>
+<li class="list-group-item" ><label><input type="checkbox" ID="fk_Code_Dept" NAME="fk_Code_Dept" onclick="setValObj(this, 'Department', 3);"   value="{F1C570EB-BA0F-45B2-BDC5-D2266449DCC6}">&nbsp;83080-Rehab Services - Outpatient </label></li>
+<li class="list-group-item" ><label><input type="checkbox" ID="fk_Code_Dept" NAME="fk_Code_Dept" onclick="setValObj(this, 'Department', 3);"   value="{A6D1E169-6FD5-4E5C-9855-CCA85F14A42A}">&nbsp;83140-Spiritual Services </label></li>
+</ul><div ID = "W12" class="well-sm"><input type="button" class="green-bg btn btn-default cancel" value="OK" ><input type="button" class="btn btn-default cancel" value="Cancel" ></div></li><li class="list-group-item"><h5><b>Category:&nbsp;<BR></b></h5><input style="height:42px;" type="text" value="Select Category" title="Select Category" class="form-control multi-sel" readonly="readonly"><div ID = "W11" class="multi-sel-modal"><ul class="list-group" SIZE="3" ID="Category">
+<li class="list-group-item"><label><input type="checkbox" ID="fk_Code_PostingCategory" NAME="fk_Code_PostingCategory" onclick="setValObj(this, 'Category', 3);"   value="*">&nbsp; -- &nbsp;Any Category&nbsp; -- &nbsp;</label></li>
+<li class="list-group-item" ><label><input type="checkbox" ID="fk_Code_PostingCategory" NAME="fk_Code_PostingCategory" onclick="setValObj(this, 'Category', 3);"   value="{D72FBF19-0F3D-4039-905E-51FF2CEDEF74}">&nbsp;Administrative </label></li>
+<li class="list-group-item" ><label><input type="checkbox" ID="fk_Code_PostingCategory" NAME="fk_Code_PostingCategory" onclick="setValObj(this, 'Category', 3);"   value="{38708EFC-F14B-44D3-AE14-02D62806C69B}">&nbsp;Allied Health </label></li>
+<li class="list-group-item" ><label><input type="checkbox" ID="fk_Code_PostingCategory" NAME="fk_Code_PostingCategory" onclick="setValObj(this, 'Category', 3);"   value="{2D431BBE-D2E0-44C4-8092-C351C41BD632}">&nbsp;Child Care Center </label></li>
+<li class="list-group-item" ><label><input type="checkbox" ID="fk_Code_PostingCategory" NAME="fk_Code_PostingCategory" onclick="setValObj(this, 'Category', 3);"   value="{AD63F3E5-8906-4735-B6E3-F3AB297227C8}">&nbsp;Faculty </label></li>
+<li class="list-group-item" ><label><input type="checkbox" ID="fk_Code_PostingCategory" NAME="fk_Code_PostingCategory" onclick="setValObj(this, 'Category', 3);"   value="{D8F30064-DD61-430E-A70A-ECFF647218F8}">&nbsp;Health Care </label></li>
+<li class="list-group-item" ><label><input type="checkbox" ID="fk_Code_PostingCategory" NAME="fk_Code_PostingCategory" onclick="setValObj(this, 'Category', 3);"   value="{78DC10B3-BCAA-4186-A9F2-535FFE57B76A}">&nbsp;Hot Jobs </label></li>
+<li class="list-group-item" ><label><input type="checkbox" ID="fk_Code_PostingCategory" NAME="fk_Code_PostingCategory" onclick="setValObj(this, 'Category', 3);"   value="{AA1E753D-EF6C-481F-9C6D-9EBD9C10496A}">&nbsp;Management </label></li>
+<li class="list-group-item" ><label><input type="checkbox" ID="fk_Code_PostingCategory" NAME="fk_Code_PostingCategory" onclick="setValObj(this, 'Category', 3);"   value="{4F41BA2C-953D-4440-A3CA-1429AAACE73E}">&nbsp;Nursing </label></li>
+<li class="list-group-item" ><label><input type="checkbox" ID="fk_Code_PostingCategory" NAME="fk_Code_PostingCategory" onclick="setValObj(this, 'Category', 3);"   value="{59FD0015-CDC5-43D4-8F90-C953FE141BF2}">&nbsp;Research </label></li>
+<li class="list-group-item" ><label><input type="checkbox" ID="fk_Code_PostingCategory" NAME="fk_Code_PostingCategory" onclick="setValObj(this, 'Category', 3);"   value="{AE9D39D8-FE93-4DEE-8AC3-96A0720048AB}">&nbsp;Temporary </label></li>
+</ul><div ID = "W12" class="well-sm"><input type="button" class="green-bg btn btn-default cancel" value="OK" ><input type="button" class="btn btn-default cancel" value="Cancel" ></div></li>
+                                </ul>
+                                <input type="button" id="cmdCSSSearch" class="btn-green btn btn-block" value="Find Jobs" title="Find Jobs" onclick="javascript:if (valMaxSelForm()) {sysSubmitForm('frmCSSSearch');}" >
+
+
+                    </div><!--closeW7-->
+                   </DIV><!--close W6A-->
+                 </div><!--closeW6-->
+        </form>
+			
+<!--<div ID="BJ1" class="row">-->
+    <!--<div ID="BJ2" class="col-sm-12"></div>-->
+
+    
+    <!-- <table border="0" cellpadding="0" cellspacing="2">-->
+     <div ID = "BJ8" class="col-sm-6 browse-jobs mobileForm"><div ID = "BJ9" class="panel panel-default fixed-height expand"><div ID = "BJ10" class="panel-heading not-active"><h4>Jobs By Category<small class="pull-right">( 153 Jobs found )</small></h4><span class="glyphicon glyphicon-chevron-down glyphicon-chevron-up exp-toggle mobile"></span></div><div ID = "BJ11" class="panel-body"><ul class="list-group" style="min-height:302px;"><li class="list-group-item" style="display:none;"><FORM ID=frmSR1 NAME=frmSR1 METHOD=POST ACTION="HTTPS://jobs.uchc.edu/CSS_External/CSSPage_SearchResults.ASP?T=20261020085123&">	<INPUT TYPE=HIDDEN ID=Type Name=Type VALUE="CAT">
+	<INPUT TYPE=HIDDEN ID=InitPage Name=InitPage VALUE="1">
+	<INPUT TYPE=HIDDEN ID=InitURL Name=InitURL VALUE="CSSPage_Welcome.asp">
+	<INPUT TYPE=HIDDEN ID=SRCH Name=SRCH VALUE="All Positions">
+	<INPUT TYPE=HIDDEN ID=Key Name=Key VALUE="{F4D8A502-D709-436C-BE1B-FF14A8866F6A}">
+	<INPUT TYPE=HIDDEN ID=ResultSort NAME=ResultSort VALUE="">
+	<INPUT TYPE=HIDDEN ID=SearchOriginator NAME=SearchOriginator VALUE="Browse">
+</FORM>
+<li class="list-group-item"><FORM ID=frmSR2 NAME=frmSR2 METHOD=POST ACTION="HTTPS://jobs.uchc.edu/CSS_External/CSSPage_SearchResults.ASP?T=20261020085123&">	<INPUT TYPE=HIDDEN ID=Type Name=Type VALUE="CAT">
+	<INPUT TYPE=HIDDEN ID=InitPage Name=InitPage VALUE="1">
+	<INPUT TYPE=HIDDEN ID=InitURL Name=InitURL VALUE="CSSPage_Welcome.asp">
+	<INPUT TYPE=HIDDEN ID=SRCH Name=SRCH VALUE="Hot jobs">
+	<INPUT TYPE=HIDDEN ID=Key Name=Key VALUE="{4F1A4CA7-4464-4715-9B49-F2542985AA9F}">
+	<INPUT TYPE=HIDDEN ID=ResultSort NAME=ResultSort VALUE="">
+	<INPUT TYPE=HIDDEN ID=SearchOriginator NAME=SearchOriginator VALUE="Browse">
+</FORM>
+<h5><a href="javascript:sysSubmitForm('frmSR2');" title="Click to view these current openings...">Hot jobs</a></h5><h6>
+5 Jobs found
+</h6></li>
+<li class="list-group-item"><FORM ID=frmSR3 NAME=frmSR3 METHOD=POST ACTION="HTTPS://jobs.uchc.edu/CSS_External/CSSPage_SearchResults.ASP?T=20261020085123&">	<INPUT TYPE=HIDDEN ID=Type Name=Type VALUE="CAT">
+	<INPUT TYPE=HIDDEN ID=InitPage Name=InitPage VALUE="1">
+	<INPUT TYPE=HIDDEN ID=InitURL Name=InitURL VALUE="CSSPage_Welcome.asp">
+	<INPUT TYPE=HIDDEN ID=SRCH Name=SRCH VALUE="Administrative">
+	<INPUT TYPE=HIDDEN ID=Key Name=Key VALUE="{B79DE70F-0574-42A2-B542-5992D6914196}">
+	<INPUT TYPE=HIDDEN ID=ResultSort NAME=ResultSort VALUE="">
+	<INPUT TYPE=HIDDEN ID=SearchOriginator NAME=SearchOriginator VALUE="Browse">
+</FORM>
+<h5><a href="javascript:sysSubmitForm('frmSR3');" title="Click to view these current openings...">Administrative</a></h5><h6>
+9 Jobs found
+</h6></li>
+<li class="list-group-item"><FORM ID=frmSR4 NAME=frmSR4 METHOD=POST ACTION="HTTPS://jobs.uchc.edu/CSS_External/CSSPage_SearchResults.ASP?T=20261020085123&">	<INPUT TYPE=HIDDEN ID=Type Name=Type VALUE="CAT">
+	<INPUT TYPE=HIDDEN ID=InitPage Name=InitPage VALUE="1">
+	<INPUT TYPE=HIDDEN ID=InitURL Name=InitURL VALUE="CSSPage_Welcome.asp">
+	<INPUT TYPE=HIDDEN ID=SRCH Name=SRCH VALUE="Allied Health">
+	<INPUT TYPE=HIDDEN ID=Key Name=Key VALUE="{4C317070-B488-4E04-B11B-88CCEBBC6E22}">
+	<INPUT TYPE=HIDDEN ID=ResultSort NAME=ResultSort VALUE="">
+	<INPUT TYPE=HIDDEN ID=SearchOriginator NAME=SearchOriginator VALUE="Browse">
+</FORM>
+<h5><a href="javascript:sysSubmitForm('frmSR4');" title="Click to view these current openings...">Allied Health</a></h5><h6>
+15 Jobs found
+</h6></li>
+<li class="list-group-item"><FORM ID=frmSR5 NAME=frmSR5 METHOD=POST ACTION="HTTPS://jobs.uchc.edu/CSS_External/CSSPage_SearchResults.ASP?T=20261020085124&">	<INPUT TYPE=HIDDEN ID=Type Name=Type VALUE="CAT">
+	<INPUT TYPE=HIDDEN ID=InitPage Name=InitPage VALUE="1">
+	<INPUT TYPE=HIDDEN ID=InitURL Name=InitURL VALUE="CSSPage_Welcome.asp">
+	<INPUT TYPE=HIDDEN ID=SRCH Name=SRCH VALUE="Child Care Center">
+	<INPUT TYPE=HIDDEN ID=Key Name=Key VALUE="{A5E9A16A-F4CA-47DC-8065-D069B5371DA6}">
+	<INPUT TYPE=HIDDEN ID=ResultSort NAME=ResultSort VALUE="">
+	<INPUT TYPE=HIDDEN ID=SearchOriginator NAME=SearchOriginator VALUE="Browse">
+</FORM>
+<h5><a href="javascript:sysSubmitForm('frmSR5');" title="Click to view these current openings...">Child Care Center</a></h5><h6>
+1 Jobs found
+</h6></li>
+<li class="list-group-item"><FORM ID=frmSR6 NAME=frmSR6 METHOD=POST ACTION="HTTPS://jobs.uchc.edu/CSS_External/CSSPage_SearchResults.ASP?T=20261020085124&">	<INPUT TYPE=HIDDEN ID=Type Name=Type VALUE="CAT">
+	<INPUT TYPE=HIDDEN ID=InitPage Name=InitPage VALUE="1">
+	<INPUT TYPE=HIDDEN ID=InitURL Name=InitURL VALUE="CSSPage_Welcome.asp">
+	<INPUT TYPE=HIDDEN ID=SRCH Name=SRCH VALUE="Faculty">
+	<INPUT TYPE=HIDDEN ID=Key Name=Key VALUE="{BA0E2FFE-D3B3-445E-AF54-03F87138E272}">
+	<INPUT TYPE=HIDDEN ID=ResultSort NAME=ResultSort VALUE="">
+	<INPUT TYPE=HIDDEN ID=SearchOriginator NAME=SearchOriginator VALUE="Browse">
+</FORM>
+<h5><a href="javascript:sysSubmitForm('frmSR6');" title="Click to view these current openings...">Faculty</a></h5><h6>
+62 Jobs found
+</h6></li>
+<li class="list-group-item"><FORM ID=frmSR7 NAME=frmSR7 METHOD=POST ACTION="HTTPS://jobs.uchc.edu/CSS_External/CSSPage_SearchResults.ASP?T=20261020085124&">	<INPUT TYPE=HIDDEN ID=Type Name=Type VALUE="CAT">
+	<INPUT TYPE=HIDDEN ID=InitPage Name=InitPage VALUE="1">
+	<INPUT TYPE=HIDDEN ID=InitURL Name=InitURL VALUE="CSSPage_Welcome.asp">
+	<INPUT TYPE=HIDDEN ID=SRCH Name=SRCH VALUE="Health Care">
+	<INPUT TYPE=HIDDEN ID=Key Name=Key VALUE="{D159C587-F7E5-4677-902A-8D793FBC17CF}">
+	<INPUT TYPE=HIDDEN ID=ResultSort NAME=ResultSort VALUE="">
+	<INPUT TYPE=HIDDEN ID=SearchOriginator NAME=SearchOriginator VALUE="Browse">
+</FORM>
+<h5><a href="javascript:sysSubmitForm('frmSR7');" title="Click to view these current openings...">Health Care</a></h5><h6>
+23 Jobs found
+</h6></li>
+<li class="list-group-item"><FORM ID=frmSR8 NAME=frmSR8 METHOD=POST ACTION="HTTPS://jobs.uchc.edu/CSS_External/CSSPage_SearchResults.ASP?T=20261020085124&">	<INPUT TYPE=HIDDEN ID=Type Name=Type VALUE="CAT">
+	<INPUT TYPE=HIDDEN ID=InitPage Name=InitPage VALUE="1">
+	<INPUT TYPE=HIDDEN ID=InitURL Name=InitURL VALUE="CSSPage_Welcome.asp">
+	<INPUT TYPE=HIDDEN ID=SRCH Name=SRCH VALUE="IT">
+	<INPUT TYPE=HIDDEN ID=Key Name=Key VALUE="{FFA55BCE-6D04-4D12-98E2-91C0F0363364}">
+	<INPUT TYPE=HIDDEN ID=ResultSort NAME=ResultSort VALUE="">
+	<INPUT TYPE=HIDDEN ID=SearchOriginator NAME=SearchOriginator VALUE="Browse">
+</FORM>
+<h5><a href="javascript:sysSubmitForm('frmSR8');" title="Click to view these current openings...">IT</a></h5><h6>
+No Jobs found
+</h6></li>
+<li class="list-group-item"><FORM ID=frmSR9 NAME=frmSR9 METHOD=POST ACTION="HTTPS://jobs.uchc.edu/CSS_External/CSSPage_SearchResults.ASP?T=20261020085124&">	<INPUT TYPE=HIDDEN ID=Type Name=Type VALUE="CAT">
+	<INPUT TYPE=HIDDEN ID=InitPage Name=InitPage VALUE="1">
+	<INPUT TYPE=HIDDEN ID=InitURL Name=InitURL VALUE="CSSPage_Welcome.asp">
+	<INPUT TYPE=HIDDEN ID=SRCH Name=SRCH VALUE="Maintenance & Services">
+	<INPUT TYPE=HIDDEN ID=Key Name=Key VALUE="{5932537B-48E6-4B8A-8ADE-A5C30DF0C902}">
+	<INPUT TYPE=HIDDEN ID=ResultSort NAME=ResultSort VALUE="">
+	<INPUT TYPE=HIDDEN ID=SearchOriginator NAME=SearchOriginator VALUE="Browse">
+</FORM>
+<h5><a href="javascript:sysSubmitForm('frmSR9');" title="Click to view these current openings...">Maintenance & Services</a></h5><h6>
+No Jobs found
+</h6></li>
+<li class="list-group-item"><FORM ID=frmSR10 NAME=frmSR10 METHOD=POST ACTION="HTTPS://jobs.uchc.edu/CSS_External/CSSPage_SearchResults.ASP?T=20261020085124&">	<INPUT TYPE=HIDDEN ID=Type Name=Type VALUE="CAT">
+	<INPUT TYPE=HIDDEN ID=InitPage Name=InitPage VALUE="1">
+	<INPUT TYPE=HIDDEN ID=InitURL Name=InitURL VALUE="CSSPage_Welcome.asp">
+	<INPUT TYPE=HIDDEN ID=SRCH Name=SRCH VALUE="Management">
+	<INPUT TYPE=HIDDEN ID=Key Name=Key VALUE="{D80BC034-0337-4347-A887-1177CF360B80}">
+	<INPUT TYPE=HIDDEN ID=ResultSort NAME=ResultSort VALUE="">
+	<INPUT TYPE=HIDDEN ID=SearchOriginator NAME=SearchOriginator VALUE="Browse">
+</FORM>
+<h5><a href="javascript:sysSubmitForm('frmSR10');" title="Click to view these current openings...">Management</a></h5><h6>
+6 Jobs found
+</h6></li>
+<li class="list-group-item"><FORM ID=frmSR11 NAME=frmSR11 METHOD=POST ACTION="HTTPS://jobs.uchc.edu/CSS_External/CSSPage_SearchResults.ASP?T=20261020085124&">	<INPUT TYPE=HIDDEN ID=Type Name=Type VALUE="CAT">
+	<INPUT TYPE=HIDDEN ID=InitPage Name=InitPage VALUE="1">
+	<INPUT TYPE=HIDDEN ID=InitURL Name=InitURL VALUE="CSSPage_Welcome.asp">
+	<INPUT TYPE=HIDDEN ID=SRCH Name=SRCH VALUE="Nursing">
+	<INPUT TYPE=HIDDEN ID=Key Name=Key VALUE="{E3737796-B075-4750-84AD-146063D57F0B}">
+	<INPUT TYPE=HIDDEN ID=ResultSort NAME=ResultSort VALUE="">
+	<INPUT TYPE=HIDDEN ID=SearchOriginator NAME=SearchOriginator VALUE="Browse">
+</FORM>
+<h5><a href="javascript:sysSubmitForm('frmSR11');" title="Click to view these current openings...">Nursing</a></h5><h6>
+31 Jobs found
+</h6></li>
+<li class="list-group-item"><FORM ID=frmSR12 NAME=frmSR12 METHOD=POST ACTION="HTTPS://jobs.uchc.edu/CSS_External/CSSPage_SearchResults.ASP?T=20261020085124&">	<INPUT TYPE=HIDDEN ID=Type Name=Type VALUE="CAT">
+	<INPUT TYPE=HIDDEN ID=InitPage Name=InitPage VALUE="1">
+	<INPUT TYPE=HIDDEN ID=InitURL Name=InitURL VALUE="CSSPage_Welcome.asp">
+	<INPUT TYPE=HIDDEN ID=SRCH Name=SRCH VALUE="Public Safety">
+	<INPUT TYPE=HIDDEN ID=Key Name=Key VALUE="{1EAFB3FA-E507-4F0F-A5A5-C8C121CEA828}">
+	<INPUT TYPE=HIDDEN ID=ResultSort NAME=ResultSort VALUE="">
+	<INPUT TYPE=HIDDEN ID=SearchOriginator NAME=SearchOriginator VALUE="Browse">
+</FORM>
+<h5><a href="javascript:sysSubmitForm('frmSR12');" title="Click to view these current openings...">Public Safety</a></h5><h6>
+No Jobs found
+</h6></li>
+<li class="list-group-item"><FORM ID=frmSR13 NAME=frmSR13 METHOD=POST ACTION="HTTPS://jobs.uchc.edu/CSS_External/CSSPage_SearchResults.ASP?T=20261020085124&">	<INPUT TYPE=HIDDEN ID=Type Name=Type VALUE="CAT">
+	<INPUT TYPE=HIDDEN ID=InitPage Name=InitPage VALUE="1">
+	<INPUT TYPE=HIDDEN ID=InitURL Name=InitURL VALUE="CSSPage_Welcome.asp">
+	<INPUT TYPE=HIDDEN ID=SRCH Name=SRCH VALUE="Research">
+	<INPUT TYPE=HIDDEN ID=Key Name=Key VALUE="{BCE3A548-A0B7-4507-864B-DA20E36D1F3B}">
+	<INPUT TYPE=HIDDEN ID=ResultSort NAME=ResultSort VALUE="">
+	<INPUT TYPE=HIDDEN ID=SearchOriginator NAME=SearchOriginator VALUE="Browse">
+</FORM>
+<h5><a href="javascript:sysSubmitForm('frmSR13');" title="Click to view these current openings...">Research</a></h5><h6>
+2 Jobs found
+</h6></li>
+<li class="list-group-item"><FORM ID=frmSR14 NAME=frmSR14 METHOD=POST ACTION="HTTPS://jobs.uchc.edu/CSS_External/CSSPage_SearchResults.ASP?T=20261020085124&">	<INPUT TYPE=HIDDEN ID=Type Name=Type VALUE="CAT">
+	<INPUT TYPE=HIDDEN ID=InitPage Name=InitPage VALUE="1">
+	<INPUT TYPE=HIDDEN ID=InitURL Name=InitURL VALUE="CSSPage_Welcome.asp">
+	<INPUT TYPE=HIDDEN ID=SRCH Name=SRCH VALUE="Student Employment">
+	<INPUT TYPE=HIDDEN ID=Key Name=Key VALUE="{04F9310E-2C7E-43B7-876F-52D31DC56B2B}">
+	<INPUT TYPE=HIDDEN ID=ResultSort NAME=ResultSort VALUE="">
+	<INPUT TYPE=HIDDEN ID=SearchOriginator NAME=SearchOriginator VALUE="Browse">
+</FORM>
+<h5><a href="javascript:sysSubmitForm('frmSR14');" title="Click to view these current openings...">Student Employment</a></h5><h6>
+No Jobs found
+</h6></li>
+<li class="list-group-item"><FORM ID=frmSR15 NAME=frmSR15 METHOD=POST ACTION="HTTPS://jobs.uchc.edu/CSS_External/CSSPage_SearchResults.ASP?T=20261020085124&">	<INPUT TYPE=HIDDEN ID=Type Name=Type VALUE="CAT">
+	<INPUT TYPE=HIDDEN ID=InitPage Name=InitPage VALUE="1">
+	<INPUT TYPE=HIDDEN ID=InitURL Name=InitURL VALUE="CSSPage_Welcome.asp">
+	<INPUT TYPE=HIDDEN ID=SRCH Name=SRCH VALUE="Summer Employment">
+	<INPUT TYPE=HIDDEN ID=Key Name=Key VALUE="{10E6C98A-B168-4398-B18E-8B35E90CEB86}">
+	<INPUT TYPE=HIDDEN ID=ResultSort NAME=ResultSort VALUE="">
+	<INPUT TYPE=HIDDEN ID=SearchOriginator NAME=SearchOriginator VALUE="Browse">
+</FORM>
+<h5><a href="javascript:sysSubmitForm('frmSR15');" title="Click to view these current openings...">Summer Employment</a></h5><h6>
+No Jobs found
+</h6></li>
+<li class="list-group-item"><FORM ID=frmSR16 NAME=frmSR16 METHOD=POST ACTION="HTTPS://jobs.uchc.edu/CSS_External/CSSPage_SearchResults.ASP?T=20261020085125&">	<INPUT TYPE=HIDDEN ID=Type Name=Type VALUE="CAT">
+	<INPUT TYPE=HIDDEN ID=InitPage Name=InitPage VALUE="1">
+	<INPUT TYPE=HIDDEN ID=InitURL Name=InitURL VALUE="CSSPage_Welcome.asp">
+	<INPUT TYPE=HIDDEN ID=SRCH Name=SRCH VALUE="Temporary">
+	<INPUT TYPE=HIDDEN ID=Key Name=Key VALUE="{EB3D446C-7CC9-401D-BBAB-3248642DEE03}">
+	<INPUT TYPE=HIDDEN ID=ResultSort NAME=ResultSort VALUE="">
+	<INPUT TYPE=HIDDEN ID=SearchOriginator NAME=SearchOriginator VALUE="Browse">
+</FORM>
+<h5><a href="javascript:sysSubmitForm('frmSR16');" title="Click to view these current openings...">Temporary</a></h5><h6>
+2 Jobs found
+</h6></li>
+<li class="list-group-item"><FORM ID=frmSR17 NAME=frmSR17 METHOD=POST ACTION="HTTPS://jobs.uchc.edu/CSS_External/CSSPage_SearchResults.ASP?T=20261020085125&">	<INPUT TYPE=HIDDEN ID=Type Name=Type VALUE="CAT">
+	<INPUT TYPE=HIDDEN ID=InitPage Name=InitPage VALUE="1">
+	<INPUT TYPE=HIDDEN ID=InitURL Name=InitURL VALUE="CSSPage_Welcome.asp">
+	<INPUT TYPE=HIDDEN ID=SRCH Name=SRCH VALUE="UConn Health/JAXGM">
+	<INPUT TYPE=HIDDEN ID=Key Name=Key VALUE="{B0A3F8BB-70BF-4881-98BA-227F40368E57}">
+	<INPUT TYPE=HIDDEN ID=ResultSort NAME=ResultSort VALUE="">
+	<INPUT TYPE=HIDDEN ID=SearchOriginator NAME=SearchOriginator VALUE="Browse">
+</FORM>
+<h5><a href="javascript:sysSubmitForm('frmSR17');" title="Click to view these current openings...">UConn Health/JAXGM</a></h5><h6>
+No Jobs found
+</h6></li>
+<li class="list-group-item"><FORM ID=frmSR18 NAME=frmSR18 METHOD=POST ACTION="HTTPS://jobs.uchc.edu/CSS_External/CSSPage_SearchResults.ASP?T=20261020085125&">	<INPUT TYPE=HIDDEN ID=Type Name=Type VALUE="CAT">
+	<INPUT TYPE=HIDDEN ID=InitPage Name=InitPage VALUE="1">
+	<INPUT TYPE=HIDDEN ID=InitURL Name=InitURL VALUE="CSSPage_Welcome.asp">
+	<INPUT TYPE=HIDDEN ID=SRCH Name=SRCH VALUE="UConn Health Employees Only">
+	<INPUT TYPE=HIDDEN ID=Key Name=Key VALUE="{B581E967-B2DB-4B6B-BEA8-8724ECCA2A66}">
+	<INPUT TYPE=HIDDEN ID=ResultSort NAME=ResultSort VALUE="">
+	<INPUT TYPE=HIDDEN ID=SearchOriginator NAME=SearchOriginator VALUE="Browse">
+</FORM>
+<h5><a href="javascript:sysSubmitForm('frmSR18');" title="Click to view these current openings...">UConn Health Employees Only</a></h5><h6>
+31 Jobs found
+</h6></li>
+</ul><a class="btn-green btn btn-block" href=javascript:sysSubmitForm('frmSR1'); title="Click to view these current openings...">View All Jobs</a></div></div>
+    <!--</table>-->
+    
+</div>
+
+			</div><!--closeW4-->
+
+
+<!--HM add search by req section-->
+        <div class="row">
+            <div class="col-md-12">
+                <div class="search-area">
+                    <!--<form class="navbar-form" autocomplete="OFF" id="frmFindReqByID" name="frmFindReqByID" method="POST" action="HTTPS://jobs.uchc.edu/CSS_External/CSSPage_SearchResults.ASP">-->
+                    <form class="navbar-form" id="frmFindReqByID" name="frmFindReqByID" method="POST" action="HTTPS://jobs.uchc.edu/CSS_External/CSSPage_SearchResults.ASP">
+                        
+                        <input type="text" placeholder="job number" class="form-control" id="Req" name="Req" value="" title="      Search by Job Number:">
+                        <input type="HIDDEN" id="Type" name="Type" value="CSS"><input type="HIDDEN" id="RetColsQS" name="RetColsQS" value="Requisition.Key¤Requisition.JobTitle¤Requisition.fk_Code_Dept¤[Requisition.fk_Code_Dept]OLD.Description(sysfk_Code_DeptDesc)¤Requisition.fk_Code_Location¤[Requisition.fk_Code_Location]OLD.Description(sysfk_Code_LocationDesc)¤Requisition.FTE¤Requisition.Shift¤Requisition.Req¤Requisition.DateDead¤">
+                        <input type="HIDDEN" id="RetColsGR" name="RetColsGR" value="Requisition.Key¤Requisition.JobTitle¤Requisition.fk_Code_Dept¤[Requisition.fk_Code_Dept]OLD.Description(sysfk_Code_DeptDesc)¤Requisition.fk_Code_Location¤[Requisition.fk_Code_Location]OLD.Description(sysfk_Code_LocationDesc)¤Requisition.FTE¤Requisition.Shift¤Requisition.Req¤Requisition.DateDead¤"><input type="HIDDEN" id="SRCH" name="SRCH" value="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Search&nbsp;by&nbsp;Job&nbsp;Number:">
+                        <input type="HIDDEN" id="InitURL" name="InitURL" value="CSSPage_Welcome.asp"><input type="HIDDEN" id="InitPage" name="InitPage" value="1">
+                        <input type="HIDDEN" id="ResultSort" name="ResultSort" value="">
+                        <button type="submit"
+                            id="cmdReqNoSearch"
+                            class="btn btn-default search"
+                            title="Click to Find Job"
+                            onclick="sysSubmitForm('frmFindReqByID');" style="margin-bottom:0px;">
+                            Search</button>
+                        <!--<button class="btn btn-default search" type="submit">Search</button>-->
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+<!--HM end search by req section -->
+
+    <!-- SYSAPPIGNORESTART --><footer>
+    <div class="well">
+        <div class="row">
+            <div class="col-m-8"><h6 class="pull-left" style="padding-left:10px; padding-top:25px;">© 2026 Greentree Systems, Inc</h6></div>
+            <div class="col-m-4"><h6 class="pull-right" style="padding-right:10px;"><a href="http://www.greentreesystems.com" target="_blank"><img src="images/powered-by-igreentree.png" alt="Powered by iGreentree"></a></h6></div>
+        </div>
+    </div>
+</footer><!-- SYSAPPIGNOREEND -->
+
+
+
+
+    </div><!--HM6-->
+    <div ID = "W13" class="modal-backdrop fade in"></div>
+    <div ID = "W14" class="shade"></div>
+    <!-------------------container ends here-------------------------->
+
+   <!---------------------------------------START : Cloud Links-------------------------------------------------->
+    <!---------------------------------------END : Cloud Links-------------------------------------------------->
+
+    <!---------------------------------------jquery-------------------------------------------------->
+    <script src="//code.jquery.com/jquery-1.11.0.min.js" type="text/javascript"></script>
+    <!-- If no online access, fallback to our hardcoded version of jQuery -->
+    <script>window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')</script>
+    <script src="js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="js/custom.js" type="text/javascript"></script>
+    <script src="js/custom.list.js" type="text/javascript"></script>
+    <script src="js/jquery-ui.min.js" type="text/javascript"></script>
+    <script type="text/javascript" language="javascript">
+        $(document).ready(function () {
+            $('#myCarousel').carousel({
+                interval: 1000,
+                cycle: true
+            });
+
+            // Need to change here for fill resume default fields.
+            var IsUsingResumeParsing = '';
+            var res_NameFirst = '';
+            var res_NameLast = '';
+            var res_Email = '';
+
+            var addUserError = '';
+
+            if (IsUsingResumeParsing == "1") {
+                $('#myModal').modal('show');
+                $("#register").css("display", "none");
+
+                $("#NameFirst").val(toTitleCase(res_NameFirst));
+                $("#NameLast").val(toTitleCase(res_NameLast));
+                $("#Email").val(res_Email);
+
+                $("#register").prev(".sign-in").slideDown();
+                $(".modal-body .btn-green").not(this).css("display", "none");
+                $("#cmdSignIn").css("display", "block");
+            }
+            else
+            {
+                 if (addUserError.length > 0) {
+                    $('#myModal').modal('show');
+                    $("#register").css("display", "none");
+                    $("#register").prev(".sign-in").slideDown();
+                    $(".modal-body .btn-green").not(this).css("display", "none");
+                    $("#cmdSignIn").css("display", "block");
+                }
+            }
+            var sessionError = '';
+            if (sessionError.length > 0) {
+                $('#myModal').modal('show');
+                $("#loginBtn").css("display", "none");
+                $("#loginBtn").prev(".sign-in").slideDown();
+                $(".modal-body .btn-green").not(this).css("display", "none");
+                $("#loginForm").css("display", "block");
+            }
+
+            var sendPasswordError = '';
+            if (sendPasswordError.length > 0) {
+                $('#myModal').modal('show');
+                $("#forgot-password").click();
+            }
+
+            $(".navbar-nav > li").removeClass("active");
+            $(".navbar-nav > li#1").addClass("active");
+
+            $(".green-bg.cancel").click(function(){
+                if(!validateObjectJs($(this)))
+                {
+                    $(this).parent(".well-sm").parent(".multi-sel-modal").addClass("modal-disp", 200, "swing");
+                }
+            })
+        })
+        function toTitleCase(str) {
+            if(str != null && str != undefined)
+            {
+                return str.replace(/\w\S*/g, function(txt) { return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase(); });
+            }
+            else
+            {
+                return "";
+            }
+        }
+        function ListAll()
+        {
+            $(".web").css("display","none");
+            $(".expand").find("li").each(function(){
+                $(this).removeClass("sign-in");
+            })
+        }
+        function validateObjectJs(okButton)
+        {
+            var ul=$(okButton).parent(".well-sm").parent(".multi-sel-modal").find("ul");
+            var size = 0 ;
+            size = $(ul).attr("size");
+
+            var name = $(ul).attr("id");
+            var count = 0;
+
+
+            $(ul).find("li").each(function () {
+
+                var input = $(this).find("label > input");
+
+                if ($(input).attr("type").toLowerCase() == "checkbox") {
+                    //if ($(input).attr("checked")) {
+                    //    count = parseInt(count) + parseInt(1);
+                    //}
+                    if ($(input).is(":checked"))
+                    {
+                        count = parseInt(count) + parseInt(1);
+                    }
+                }
+            });
+
+            if(count > size)
+            {
+                alert("Sorry, "+ name + " exceedes the maximum selectable limit of " + size);
+            }
+
+            return (count <= size);
+        }
+
+    </script>
+
+</body>
+</html>

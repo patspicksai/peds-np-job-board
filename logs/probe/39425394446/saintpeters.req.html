@@ -1,0 +1,1380 @@
+
+
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:og="http://ogp.me/ns#"
+      xmlns:fb="https://www.facebook.com/2008/fbml">
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="google-site-verification" content="oH4M8OgCKWFHTeOcyp1hZy-WqWuUspBuZxCjg619J6I" />
+    <meta name="detectify-verification" content="fb7af99f2d22eaeb07b95e0853cb4780" />
+    
+    
+
+    <link rel="preconnect" href="https://activatecdn.blob.core.windows.net" />
+    <link rel="preconnect" href="https://activatecdn.azureedge.net" />
+    <link rel="preconnect" href="https://www.google-analytics.com" />
+
+    <script>
+(function() {
+  'use strict';
+
+  // ── DataLayer + gtag helper ──
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+
+  // ── EU/EEA + UK + CH region codes (GDPR jurisdictions) ──
+  var EU = [
+    'AT','BE','BG','HR','CY','CZ','DK','EE','FI','FR','DE','GR','HU','IE',
+    'IT','LV','LT','LU','MT','NL','PL','PT','RO','SK','SI','ES','SE',
+    'IS','LI','NO','GB','CH'
+  ];
+
+  // ── Configuration (overridden by configure()) ──
+  var config = {
+    cmpType: null,              // 'usercentrics' | 'onetrust' | null
+    googleConsent: 'cmp',       // 'cmp' (CMP pushes GCM signals) | 'none' (no GCM, CMP uses Autoblocker)
+    defaults: 'ccpa',           // 'ccpa' (EU denied, rest granted) | 'gdpr' (all denied globally)
+    signalCategories: null      // OT-only: per-client { gcmSignal: [otCategoryIds] } override (merged with defaults)
+  };
+
+  // ── Reusable consent state objects ──
+  var ALL_DENIED = {
+    'ad_storage': 'denied', 'analytics_storage': 'denied',
+    'ad_user_data': 'denied', 'ad_personalization': 'denied'
+  };
+  var ALL_GRANTED = {
+    'ad_storage': 'granted', 'analytics_storage': 'granted',
+    'ad_user_data': 'granted', 'ad_personalization': 'granted'
+  };
+
+  // ── GCM v2 Defaults ──
+  // CCPA posture set immediately for backward compatibility: clients without
+  // a configure() call still get GDPR-safe defaults for EU visitors.
+  // configure() can override to GDPR-global or disable GCM entirely.
+  var denied = {}; for (var p in ALL_DENIED) denied[p] = ALL_DENIED[p];
+  denied['wait_for_update'] = 500; denied['region'] = EU;
+  gtag('consent', 'default', denied);
+
+  var granted = {}; for (var q in ALL_GRANTED) granted[q] = ALL_GRANTED[q];
+  granted['wait_for_update'] = 500;
+  gtag('consent', 'default', granted);
+
+  // ── Configure ──
+  // Called from _CustomAnalyticsHead.cshtml to set up consent for this client.
+  // Must be called BEFORE CMP and GTM script tags in the same partial.
+  // Only the first call takes effect (subsequent calls are ignored).
+  var _configured = false;
+  function configure(options) {
+    if (_configured) return;
+    _configured = true;
+
+    for (var k in options) {
+      if (config.hasOwnProperty(k)) config[k] = options[k];
+    }
+    config._configured = true; // expose for test assertions
+
+    // ── GCM overrides ──
+    if (config.googleConsent === 'none') {
+      // No GCM: override initial defaults with all-granted so Google tags fire
+      // freely if they load. The CMP manages them via Autoblocker (script blocking).
+      gtag('consent', 'update', ALL_GRANTED);
+    } else if (config.defaults === 'gdpr') {
+      // GDPR-global + GCM: push an additional global-denied default that overrides
+      // the CCPA global-granted fallback. All regions denied until CMP grants.
+      var globalDenied = {}; for (var r in ALL_DENIED) globalDenied[r] = ALL_DENIED[r];
+      globalDenied['wait_for_update'] = 500;
+      gtag('consent', 'default', globalDenied);
+    }
+
+    _setupConsentListeners();
+
+    // For OT+GCM returning visitors: read the saved consent cookie and push the correct
+    // GCM state now, before GTM loads. Without this, tags fire against the CCPA-granted
+    // default before OptanonWrapper runs, regardless of what the user previously chose.
+    if (config.cmpType === 'onetrust' && config.googleConsent === 'cmp') {
+      try {
+        var _m = document.cookie.match(/OptanonConsent=([^;]*)/);
+        if (_m) {
+          var _g = decodeURIComponent(_m[1]).match(/groups=([^&]*)/);
+          if (_g) {
+            // Build a string of the categories the user previously consented to (value=1),
+            // then derive GCM state from it via the same signal→category map.
+            var _granted = '';
+            _g[1].split(',').forEach(function(pair) {
+              var p = pair.split(':');
+              if (p[1] === '1') _granted += ',' + p[0] + ',';
+            });
+            gtag('consent', 'update', _gcmFromActiveGroups(_granted));
+          }
+        }
+      } catch(e) {}
+    }
+  }
+
+  // ── GCM signal vocabulary ──
+  // Callers express consent needs as GCM signal names (analytics_storage, ad_storage, …) —
+  // the standard, CMP-agnostic vocabulary. For UC, the engine reads the signal directly from
+  // _gcmState. For OT, it maps the signal to the OT category IDs that grant it and checks
+  // OptanonActiveGroups. OT category IDs are account-specific, so the map is overridable per
+  // client via configure({ signalCategories: { analytics_storage: ['C0003'] } }).
+  var GCM_TO_OT_CATEGORIES = {
+    'analytics_storage':  ['C0002'],           // Performance
+    'ad_storage':         ['C0004', 'C0005'],  // Targeting + Social Media
+    'ad_user_data':       ['C0004'],
+    'ad_personalization': ['C0004']
+  };
+
+  // Default OT map merged with any per-client signalCategories override.
+  function _signalMap() {
+    var map = {};
+    for (var s in GCM_TO_OT_CATEGORIES) map[s] = GCM_TO_OT_CATEGORIES[s];
+    if (config.signalCategories) {
+      for (var o in config.signalCategories) map[o] = config.signalCategories[o];
+    }
+    return map;
+  }
+
+  // Derive a GCM consent-state object from a string of granted OT category IDs.
+  // A signal is granted if ANY of its mapped categories appears in the string.
+  function _gcmFromActiveGroups(activeGroups) {
+    var map = _signalMap(), state = {};
+    for (var signal in map) {
+      var cats = map[signal], granted = false;
+      for (var i = 0; i < cats.length; i++) {
+        if (activeGroups.indexOf(cats[i]) !== -1) { granted = true; break; }
+      }
+      state[signal] = granted ? 'granted' : 'denied';
+    }
+    return state;
+  }
+
+  // Tracked GCM state for UC branch — mirrors what the CMP has pushed via gtag('consent','update',...)
+  var _gcmState = {
+    'ad_storage': 'denied', 'analytics_storage': 'denied',
+    'ad_user_data': 'denied', 'ad_personalization': 'denied'
+  };
+
+  // ── Consent callback queue ──
+  // Each entry is { cb, signals, defer }. A callback fires when ANY of its GCM signals
+  // is granted (and, when defer is set, the idle trigger has also fired).
+  // Entries are removed on first fire (one-shot per page).
+  var _queue = [];
+
+  // ── Idle/gesture deferral primitive ── (rationale in file header)
+  // Fires on the first user gesture or a 3s timeout, whichever comes first.
+  var _idleFired = false;
+  var _idleQueue = [];
+  var IDLE_EVENTS = ['scroll', 'mousemove', 'keydown', 'touchstart', 'click'];
+
+  function _fireIdle() {
+    if (_idleFired) return;
+    _idleFired = true;
+    var pending = _idleQueue;
+    _idleQueue = [];
+    for (var n = 0; n < pending.length; n++) {
+      try { pending[n](); } catch (e) { /* swallow — one bad callback shouldn't block others */ }
+    }
+    _tryFlush(); // release consent-queue entries that were waiting on the idle gate
+  }
+
+  for (var ev = 0; ev < IDLE_EVENTS.length; ev++) {
+    document.addEventListener(IDLE_EVENTS[ev], _fireIdle, { once: true, passive: true });
+  }
+  setTimeout(_fireIdle, 3000);
+
+  // Run fn when the idle trigger has fired (immediately if it already has).
+  function _onIdle(fn) {
+    if (_idleFired) { fn(); return; }
+    _idleQueue.push(fn);
+  }
+
+  function _isGranted(signal) {
+    if (config.cmpType === 'usercentrics') {
+      return _gcmState[signal] === 'granted';
+    }
+    if (config.cmpType === 'onetrust') {
+      var active = window.OptanonActiveGroups || '';
+      var cats = _signalMap()[signal] || [];
+      for (var i = 0; i < cats.length; i++) {
+        if (active.indexOf(cats[i]) !== -1) return true;
+      }
+      return false;
+    }
+    return false;
+  }
+
+  // Synchronous check for event-handler code that can't use the onConsent queue.
+  // No CMP configured → true (legacy behavior, mirrors onConsent's immediate-fire branch).
+  function isGranted(signal) {
+    if (!config._configured) return true;
+    return _isGranted(signal);
+  }
+
+  // Re-entrancy-safe. A fired callback may itself call onConsent() — e.g. the MiQ pixel's
+  // callback calls core.common.getTrackingPixel(), which wraps onConsent() — pushing to
+  // _queue and re-entering _tryFlush() mid-iteration (the idle gate's _fireIdle() also
+  // re-enters here). Snapshot and clear the queue up front so nested calls mutate the live
+  // array freely; deferred-but-not-yet-idle and not-yet-granted entries are requeued.
+  // (Previously the loop cached its index and spliced _queue in place, so a nested flush
+  // that drained the queue left the outer loop reading an undefined entry.)
+  function _tryFlush() {
+    var pending = _queue.slice();
+    _queue.length = 0;
+    for (var i = 0; i < pending.length; i++) {
+      var entry = pending[i];
+      if (entry.defer && !_idleFired) { _queue.push(entry); continue; } // still waiting on idle gate
+      var matched = false;
+      for (var j = 0; j < entry.signals.length; j++) {
+        if (_isGranted(entry.signals[j])) { matched = true; break; }
+      }
+      if (matched) {
+        try { entry.cb(); } catch (e) { /* swallow — one bad callback shouldn't block others */ }
+      } else {
+        _queue.push(entry);
+      }
+    }
+  }
+
+  function _ingestGcmUpdate(entry) {
+    if (entry && entry[0] === 'consent' && entry[1] === 'update' && entry[2]) {
+      for (var k in entry[2]) {
+        if (_gcmState.hasOwnProperty(k)) _gcmState[k] = entry[2][k];
+      }
+    }
+  }
+
+  // No CMP configured → fire immediately (preserves pre-CMP client behavior).
+  //   With options.defer: wait for the gesture/3s idle trigger instead.
+  // CMP configured → queue with required GCM signals (default ad_storage = marketing/targeting).
+  //   With options.defer: fires only when BOTH a signal is granted AND the
+  //   idle trigger has fired (in either order).
+  function onConsent(callback, options) {
+    var defer = !!(options && options.defer);
+    if (!config._configured) {
+      if (defer) { _onIdle(callback); } else { callback(); }
+      return;
+    }
+    var signals = (options && options.signals) || ['ad_storage'];
+    _queue.push({ cb: callback, signals: signals, defer: defer });
+    _tryFlush();
+  }
+
+  function _setupConsentListeners() {
+    if (config.cmpType === 'usercentrics') {
+      // UC pushes GCM consent updates to dataLayer. Capture existing entries first
+      // (UC may have already pushed before this runs), then intercept future pushes.
+      for (var i = 0; i < dataLayer.length; i++) _ingestGcmUpdate(dataLayer[i]);
+      var _origPush = dataLayer.push;
+      dataLayer.push = function() {
+        var result = _origPush.apply(dataLayer, arguments);
+        for (var j = 0; j < arguments.length; j++) _ingestGcmUpdate(arguments[j]);
+        _tryFlush();
+        return result;
+      };
+    }
+
+    if (config.cmpType === 'onetrust') {
+      // OneTrust calls window.OptanonWrapper() on SDK init and on every consent change.
+      // The engine owns this function — OT client templates should NOT define it.
+      // For googleConsent:'cmp', push GCM signals to the dataLayer so GTM tags re-evaluate
+      // consent state on every change, using the same signal→category map as everything else.
+      // This makes site code fully responsible for OT GCM management.
+      window.OptanonWrapper = function() {
+        if (config.googleConsent === 'cmp') {
+          gtag('consent', 'update', _gcmFromActiveGroups(window.OptanonActiveGroups || ''));
+          // Emit a named, triggerable event AFTER the consent update so GTM tags gated
+          // on it evaluate against the already-updated consent state (avoids ordering race).
+          // Reuses the same 'consent_status' name UC pushes natively, so one GTM trigger
+          // works across UC and OneTrust clients.
+          dataLayer.push({ event: 'consent_status' });
+        }
+        _tryFlush();
+      };
+    }
+  }
+
+  // ── Helpers ──
+  function loadScript(src) {
+    var s = document.createElement('script');
+    s.src = src; s.async = true;
+    document.head.appendChild(s);
+    return s;
+  }
+
+  // ── GTM loader (deferred) ──
+  // Loads a GTM container after the first user gesture or 3s — same trigger as
+  // deferred onConsent entries. Consent is intentionally NOT checked here: GTM
+  // gates its own tags via GCM (googleConsent: 'cmp' clients).
+  // Do NOT use for OneTrust Autoblocker clients (googleConsent: 'none') — they
+  // need a static <script src> tag that Autoblocker can detect and gate.
+  // Dedupes per container id. opts: { dataLayerName: 'dataLayer', defer: true }.
+  var _gtmLoaded = {};
+  function loadGtm(containerId, opts) {
+    if (!containerId || _gtmLoaded[containerId]) return;
+    _gtmLoaded[containerId] = true;
+    var dlName = (opts && opts.dataLayerName) || 'dataLayer';
+    function inject() {
+      window[dlName] = window[dlName] || [];
+      window[dlName].push({ 'gtm.start': new Date().getTime(), 'event': 'gtm.js' });
+      var dl = dlName !== 'dataLayer' ? '&l=' + dlName : '';
+      loadScript('https://www.googletagmanager.com/gtm.js?id=' + containerId + dl);
+    }
+    if (opts && opts.defer === false) { inject(); return; }
+    _onIdle(inject);
+  }
+
+  function firePixel(src) {
+    var img = document.createElement('img');
+    img.src = src; img.alt = '';
+    img.style.cssText = 'position:absolute;overflow:hidden;width:1px;height:1px;';
+    document.body.appendChild(img);
+    return img;
+  }
+
+  // ── Expose API ──
+  window.__consent = {
+    config: config,
+    configure: configure,
+    onConsent: onConsent,
+    isGranted: isGranted,
+    onIdle: _onIdle,
+    loadScript: loadScript,
+    loadGtm: loadGtm,
+    firePixel: firePixel
+  };
+})();
+</script>
+
+
+    
+    <link rel="canonical" href="https://careers.saintpetershcs.com/" />
+
+    <link rel="preconnect" href="https://c.tile.openstreetmap.org/"/>
+    <link async rel="shortcut icon" type="image/x-icon" href="https://activatecdn.azureedge.net/activatedata/35Content/SaintPeterHealthcareSystem/favicon.ico" />
+    <link async rel="icon" type="image/x-icon" href="https://activatecdn.azureedge.net/activatedata/35Content/SaintPeterHealthcareSystem/favicon.ico" />
+
+    <link id="async-css" rel="stylesheet" type="text/css" href="/content/cssbundle.min.css" media="print" />
+    <script>
+        // Initiate the cssbundle with media type of print, then switch to all during onload to avoid render blocking.
+        document.getElementById('async-css').onload = function () {
+          this.media = 'all';
+        };
+    </script>
+
+                <link rel="preload" as="style" href="https://activatecdn.azureedge.net/activatedata/35Content/Themes/activate-site.b1eb6efaeb6a.min.css" integrity="sha384-Zyh7DRPn7cwt5oklkE4H2Q/WGifFNieuw7d6RhlwGUi&#x2B;I6e8flu3ZYzYfR4XyxCF" crossorigin="anonymous" />
+                <link rel="stylesheet" type="text/css" href="https://activatecdn.azureedge.net/activatedata/35Content/Themes/activate-site.b1eb6efaeb6a.min.css" integrity="sha384-Zyh7DRPn7cwt5oklkE4H2Q/WGifFNieuw7d6RhlwGUi&#x2B;I6e8flu3ZYzYfR4XyxCF" crossorigin="anonymous" />
+
+    <link rel="preload" as="style" href="/content/SaintPeterHealthcareSystem/Styles/_Components.min.css?v=0FbEfGxXTwxWby9ACLwMELHZQjhrYJzhUKXsV6leYq0" />
+    <link rel="stylesheet" type="text/css" href="/content/SaintPeterHealthcareSystem/Styles/_Components.min.css?v=0FbEfGxXTwxWby9ACLwMELHZQjhrYJzhUKXsV6leYq0" />
+
+    
+
+    
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5BZM4C52');</script>
+<!-- End Google Tag Manager -->
+
+<!-- User Centrics -->
+<script id="usercentrics-cmp" src="https://app.usercentrics.eu/browser-ui/latest/loader.js" data-settings-id="mSYsYCC_mOebXH" async></script>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-16851757096"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+	  dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+    gtag('config', 'AW-16851757096');
+</script>
+
+<!-- Event snippet for Saint Peter&#39;s Apply conversion page In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
+    
+    <meta property="og:image" content="https://activatecdn.azureedge.net/activatedata/35Content/SaintPeterHealthcareSystem/Images/Home/Hero/hero.webp" /><meta name="twitter:card" content="summary" /><meta property="og:url" content="https://careers.saintpetershcs.com/" /><meta property="og:type" content="website" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta name="description" content="Home | Saint Peter's Healthcare System" />
+    
+<!--Fonts: both stylesheets used to be render-blocking <link>s (Google ~820 ms, Typekit kit ~810 ms + its chained p.css ~820 ms) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://use.typekit.net" crossorigin>
+<link rel="stylesheet" media="print" onload="this.onload=null;this.media='all'"
+	href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"></noscript>
+<script>
+    (function () {
+        var KIT = 'https://use.typekit.net/bxy8jel.css';
+        function linkFallback() {
+            // No crossorigin ON PURPOSE: this runs when fetch() failed (likely a missing CORS header).
+            var l = document.createElement('link');
+            l.rel = 'stylesheet';
+            l.href = KIT;
+            document.head.appendChild(l);
+        }
+        try {
+            fetch(KIT).then(function (r) { return r.ok ? r.text() : Promise.reject(); })
+                .then(function (css) {
+                    var s = document.createElement('style');
+                    s.textContent = css.replace(/font-display\s*:\s*auto/gi, 'font-display:swap');
+                    document.head.appendChild(s);
+                })
+                .catch(linkFallback);
+        } catch (e) { linkFallback(); }
+    })();
+</script>
+<noscript><link rel="stylesheet" href="https://use.typekit.net/bxy8jel.css"></noscript>
+ 
+    
+
+    
+    <link rel="preload" href="/content/Shared/FontAwesome/fontawesome-free-6.5.2-web/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/content/Shared/FontAwesome/fontawesome-free-6.5.2-web/webfonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/content/Shared/FontAwesome/fontawesome-free-6.5.2-web/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
+    <style>
+        @font-face{font-family:"Font Awesome 6 Free";font-style:normal;font-weight:900;font-display:optional;src:url("/content/Shared/FontAwesome/fontawesome-free-6.5.2-web/webfonts/fa-solid-900.woff2") format("woff2")}
+        @font-face{font-family:"Font Awesome 6 Free";font-style:normal;font-weight:400;font-display:optional;src:url("/content/Shared/FontAwesome/fontawesome-free-6.5.2-web/webfonts/fa-regular-400.woff2") format("woff2")}
+        @font-face{font-family:"Font Awesome 6 Brands";font-style:normal;font-weight:400;font-display:optional;src:url("/content/Shared/FontAwesome/fontawesome-free-6.5.2-web/webfonts/fa-brands-400.woff2") format("woff2")}
+    </style>
+    <link rel="preload" href="/content/Shared/FontAwesome/fontawesome-free-6.5.2-web/css/all.min.css" as="style"
+          onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="/content/Shared/FontAwesome/fontawesome-free-6.5.2-web/css/v4-shims.min.css" as="style"
+          onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="/content/Shared/FontAwesome/fontawesome-free-6.5.2-web/css/all.min.css">
+        <link rel="stylesheet" href="/content/Shared/FontAwesome/fontawesome-free-6.5.2-web/css/v4-shims.min.css">
+    </noscript>
+
+
+    <title>Home | Saint Peter&#x27;s Healthcare System</title>
+</head>
+
+<body class=" has-banner">
+    <script>
+    (function (w) {
+        var activateCore = {};
+        Object.defineProperty(w, 'core', {
+            configurable: true,
+            enumerable: true,
+            get: function () { return activateCore; },
+            set: function () { }
+        });
+    })(window);
+</script>
+
+    <script>
+        // Editor traffic, for client scripts that fire third-party tags. They cannot use the server
+        // gate, and they cannot rely on __consent: suppressing _CustomAnalyticsHead removes
+        // __consent.configure(), and an unconfigured engine runs every onConsent callback.
+        window.__editorTraffic = false;
+    </script>
+
+        <script src="/dist/Clients/SaintPeterHealthcareSystem/ClientDependencies.min.js?v=Bpx6tFiahIRScBmUfUQT0rmtsSG1I1Gyv-CPmDiN65g"></script>
+
+    <script defer src="/dist/Shared/Bundles/jQueryUi.min.js?v=IrNcXVNpLeMoV157Jbx_so_uj1o4rJ12I0jZ7Exuafk"></script>
+
+    <script defer src="/dist/Shared/common.min.js?v=UuMI1Aq7xAaVfIvUyuotn9c-pshIW_8q3GQVsOIOJ8A"></script>
+
+    
+        <script>
+            __consent.onConsent(function() {
+                __consent.loadScript('https://analytics.talentegy.com/e38980eb-b935-43e7-8f4b-2b0c87f7e4d4.js');
+            }, { signals: ['analytics_storage'], defer: true });
+        </script>
+
+    <script type="text/javascript">
+        function processActionFail(data) { 
+            core.common.processActionFail(data); 
+        }; 
+        $('body').addClass(''); $('body').addClass('Index index ');
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            core.common.initSemanticInputs();
+core.common.getTrackingPixel(1);        });
+    </script>
+    <script type="text/javascript">
+        __consent.onConsent(function () {
+            try {
+                if (sessionStorage.getItem('entry_referrer') === null) {
+                    sessionStorage.setItem('entry_referrer', document.referrer || '');
+                }
+                if (sessionStorage.getItem('entry_attribution') === null) {
+                    var params = new URLSearchParams(window.location.search);
+                    var utmKeys = Array.from(params.keys()).filter(function(k) {
+                        return k.indexOf('utm_') === 0 || k === 'gclid' || k === 'fbclid' || k === 'msclkid' || k === 'source';
+                    });
+                    if (utmKeys.length > 0) {
+                        var attribution = {};
+                        utmKeys.forEach(function(k) { attribution[k] = params.get(k); });
+                        sessionStorage.setItem('entry_attribution', JSON.stringify(attribution));
+                    }
+                }
+            } catch (_) {
+                // sessionStorage unavailable (private mode, restricted iframe)
+            }
+        }, { signals: ['analytics_storage'] });
+    </script>
+    <script type="text/javascript">
+        function logEvent(path, data) {
+            try {
+                const url = `/log/${path}`;
+                if (typeof navigator !== 'undefined' && typeof navigator.sendBeacon === 'function') {
+                    let payload;
+                    if (data !== undefined) {
+                        payload = new Blob([JSON.stringify(data)], { type: 'application/json' });
+                    }
+                    return navigator.sendBeacon(url, payload);
+                }
+                return fetch(url, {
+                    method: 'POST',
+                    body: data !== undefined ? JSON.stringify(data) : null,
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    keepalive: true
+                }).then(
+                    () => true, // queued
+                    () => false // network error
+                );
+            } catch (e) {
+                console.error(e);
+                return false;
+            }
+        }
+    </script>
+    <script defer src="/content/SaintPeterHealthcareSystem/Scripts/_clientScript.min.js?v=EZId9ZaXruDD-Lac4qV7QYXXdnAORCEqxj3tsHj0Zwk"></script>
+    <script defer src="/content/Shared/Scripts/bootstrap5.js?v=lWI92ngf1cKsoM4R1LWT0uCG7if2he9cISpsRkV-ECs"></script>
+    
+
+    <input aria-hidden="true" id="ReportSuite" name="ReportSuite" type="hidden" value="nasrSaintPeterHealthcareSystem" />
+    
+
+
+        <script type="text/javascript">
+            window.dataLayer = window.dataLayer || [];
+            dataLayer.push(
+            {
+                pageData:
+                {
+                    pageName:
+                        'Home | Saint Peter&#x27;s Healthcare System',
+                    pageUrl: 'https://careers.saintpetershcs.com/',
+                    referringURL: '',
+                    sysEnvironment: 'desktop'
+                }
+            });
+        </script>
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5BZM4C52"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+<div id="header" role="banner" class="main-header">
+    
+    
+    
+<ul class="visually-hidden">
+  <li><a href="#navigation">Skip to navigation</a></li>
+  <li><a href="#content">Skip to content</a></li>
+</ul>
+
+<div class="navbar-container">
+  <nav class="sphs-container--lg d-xl-flex flex-xl-row navbar navbar-expand-xl navbar-light">
+    <a class="navbar-brand" href="https://www.saintpetershcs.com/" target="_blank" rel="noopener external noreferrer">
+      <span class="visually-hidden">Go to Saint Peter's Healthcare System website, this link opens in a new tab</span>
+      <svg data-src="https://activatecdn.azureedge.net/activatedata/35Content/SaintPeterHealthcareSystem/Images/logo-color.svg" />
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+            aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-xl-end" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto w-100">
+        <li class="nav-item">
+          <div class="visually-hidden">Search All Jobs at Saint Peter's Health Care System</div>
+          <a class="nav-link" href="/">Careers Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/culture">Culture</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" >What We
+            Offer</a>
+          <div class="dropdown-menu" id="offerSubmenu">
+            <a class="dropdown-item" href="/what-we-offer/benefits">Benefits</a>
+            <a class="dropdown-item" href="/what-we-offer/learning-and-development">Learning and Development</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Career
+            Areas</a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="/career-areas/physicians">Physicians and Mid-Level Providers</a>
+            <a class="dropdown-item" href="/career-areas/nursing">Nursing</a>
+            <a class="dropdown-item" href="/career-areas/nursing-support">Nursing Support</a>
+            <a class="dropdown-item" href="/career-areas/allied-health">Allied Health</a>
+            <a class="dropdown-item" href="/career-areas/non-clinical">Non-Clinical</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/events/events" aria-label="Events">Hiring Events</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/locations/locations" aria-label="Events">Search by Location</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/search/searchjobs" aria-label="Search Careers">Search All Jobs</a>
+        </li>
+        <li class="nav-item nav-item--highlighted">
+          <a class="nav-link" href="/talentnetwork/talentnetwork" aria-label="Events">Get Job Alerts</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</div>
+
+
+<div id="floatSearch" class="float-search">
+  
+
+<link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" type="text/css" href="/ReusableComponents/JobSearchForm/JobSearchForm.min.css?v=O9Nc8B48S1DL-KJ90FQv0XMPtJghBnT3n61efI28U00" />
+<noscript><link rel="stylesheet" type="text/css" href="/ReusableComponents/JobSearchForm/JobSearchForm.min.css?v=O9Nc8B48S1DL-KJ90FQv0XMPtJghBnT3n61efI28U00" /></noscript>
+<script type="text/javascript">
+    var isLoaded = false; 
+    var isScriptLoaded = false; 
+    window.expectedInputs = JSON.parse('["keyword","citystate"]');
+</script>
+        <script defer src="/ReusableComponents/JobSearchForm/JobSearchScripts.js?v=biiskoMvhmv-9saZf14qRhOmjZXENwgppIRsRb8iF7o"></script>
+
+
+    <form class="float-search-form ui form" role="form" aria-label="Jobs search form" autocomplete="off" onsubmit="submitFloatForm(event, 'float')">
+        
+
+
+        <script defer src="/dist/Shared/Bundles/jQueryUiDialog.min.js?v=EZgL2BbbFjbGsvnaP6tLJrM2nQ4W8uuVaCcw-LOyQLc"></script>
+        <script defer src="/dist/Shared/jquery.jtable.min.js?v=AvtAUMDr8xe_yw16Geut9DRygod5NfX-7J4twg8xaDo"></script>
+
+
+<div class="fields">
+        <div class="field keyword">
+                        <label for="Keyword">Keyword</label>
+<input aria-label="Keyword" autocomplete="new-password" id="Keyword" name="Keyword" placeholder="Keyword" tabindex="0" type="text" value="" />                            <script>
+                                keywordElement = document.querySelector('.field.keyword');
+                                keywordElement.addEventListener('focusin', () => {
+                                    announce('Enter a keyword to search for jobs.', true);
+                                });
+                                keywordElement.addEventListener('input', () => {
+                                    announce('Enter a keyword to search for jobs.', true);
+                                });
+                            </script>
+
+        </div>
+        <div class="field citystate">
+                    <label for="CityState">City, State</label>
+<select aria-label="City, State" class="ui search dropdown" data-dropdownsearch="true" data-fieldClassName="citystate" data-optionName="city state" data-placeholder="City, State" data-val="true" data-val-required="The CityState field is required." id="CityState" name="CityState"><option value="">City, State</option>
+<option value="East Brunswick, NJ">East Brunswick, NJ</option>
+<option value="Hoboken, NJ">Hoboken, NJ</option>
+<option value="Jamesburg, NJ">Jamesburg, NJ</option>
+<option value="Jersey City, NJ">Jersey City, NJ</option>
+<option value="Lakewood, NJ">Lakewood, NJ</option>
+<option value="Milltown, NJ">Milltown, NJ</option>
+<option value="Monroe, NJ">Monroe, NJ</option>
+<option value="Monroe Twnshp, NJ">Monroe Twnshp, NJ</option>
+<option value="New Brunswick, NJ">New Brunswick, NJ</option>
+<option value="North Brunswick, NJ">North Brunswick, NJ</option>
+<option value="Piscataway, NJ">Piscataway, NJ</option>
+<option value="Somerset, NJ">Somerset, NJ</option>
+</select>
+        </div>
+
+    <div class="field actionbutton">
+            <button type="submit" id="Search" class="ui button floatsearch" data-results-type="table">
+                Search Jobs
+            </button>
+        <input data-val="true" data-val-required="The ClientID field is required." id="ClientID" name="ClientID" type="hidden" value="1141ee6b-f657-4e4c-8daa-e8533757aa7e" />
+    </div>
+</div>
+
+    <script src="/dist/Shared/form-dropdown.min.js?v=OH7CBvw40MPEIgThHs1v_-UAv7ZGnTWZqsNRaIHLlT0"></script>
+
+
+
+
+
+
+
+
+
+
+
+        <div class="form-data all">
+            <a class="Action" href="/search/searchjobs">&lt;span&gt;See all jobs&lt;/span&gt;</a>
+        </div>
+    </form>
+
+
+<script type="text/javascript" id="element-to-hide">
+    window.addEventListener('DOMContentLoaded', function () {
+        (function ($) {
+            const $keywordInput = $('#Keyword');
+            if ($keywordInput.length) {
+                setTimeout(function () {
+                    $keywordInput.autocomplete({
+                    minLength: 3,
+                    appendTo: '.field.keyword',
+                    source: function (request, response) {
+                        $.ajax({
+                            url: '/Search/AutocompleteSuggestions',
+                            dataType: 'json',
+                            data: {
+                                keyword: request.term.replace('<', '')
+                            },
+                            success: function (data) {
+                                $keywordInput.val($keywordInput.val().replace('<', ''));
+                                response(data);
+                            }
+                        });
+                    }
+                });
+                }, 50);
+            }
+
+            $(".float-search-form.ui.form").submit(function (event) {
+                $keywordInput.val($keywordInput.val().replace('<', ''));
+            });
+        })(jQuery);
+    });
+</script>
+
+        <script defer src="/js/form-tracking.js?v=WFXUl4NH0I582nVdRDarsOARlVmiAER1YOyp46c6Aq8"></script>
+
+  <div class="float-search__toggler d-flex d-xl-none justify-content-center align-items-center">
+    <div class="float-search__toggler__text justify-content-center align-items-center">Search Jobs</div>
+    <i class="float-search__toggler__close fa fa-close"></i>
+  </div>
+</div>
+
+<script>
+    const DESKTOP_BREAKPOINT = 1366;
+
+    function verifyIsMobile() {
+      const isMobile = !window.matchMedia(`(min-width: ${DESKTOP_BREAKPOINT}px)`).matches;
+
+      $('.navbar').toggleClass('navbar-expand-xl', !isMobile)
+
+      if (isMobile) {
+            $('#floatSearch form').slideUp();
+            $('.float-search__toggler__text').show();
+            $('.float-search__toggler__close').hide();
+
+        } else {
+            $('#floatSearch form').slideDown();
+        }
+    }
+
+    $('#header').removeClass('main-header');
+
+    $(document).ready(function () {
+        verifyIsMobile();
+
+        $('#content').before($('#floatSearch'))
+
+        $('.float-search__toggler').click(function () {
+            $('#floatSearch form').slideToggle();
+            $('.float-search__toggler__text').toggle();
+            $('.float-search__toggler__close').toggle();
+        });
+
+      $('.nav-link').on('click', function() {
+        const isOpen = $(this).hasClass('open');
+        $(this).attr('aria-expanded', !isOpen);
+      });
+    });
+
+    $(window).on('resize', function () {
+        verifyIsMobile();
+    });
+</script>
+<script src="/content/Shared/Scripts/svg-loader.min.js"></script>
+<script src="/content/Shared/Scripts/slick/slick.min.js"></script>
+
+    
+</div>
+
+
+<div id="content" class="main-content" role="main">
+    
+    
+
+
+
+
+
+<section class="hero" aria-labelledby="hero-heading">
+  <h1 class="sr-only" id="hero-heading">Careers homepage</h1>
+  <picture class="hero__media">
+    <source media="(min-width: 1024px)" srcset="https://activatecdn.azureedge.net/activatedata/35Content/SaintPeterHealthcareSystem/Images/Home/Hero/hero.webp" type="image/webp" width="1152" height="615">
+    <source media="(min-width: 394px)" srcset="https://activatecdn.azureedge.net/activatedata/35Content/SaintPeterHealthcareSystem/Images/Home/Hero/hero--md.webp" type="image/webp" width="1024" height="443">
+    <source media="(max-width: 393px)" srcset="https://activatecdn.azureedge.net/activatedata/35Content/SaintPeterHealthcareSystem/Images/Home/Hero/hero--xs.webp" type="image/webp" width="393" height="166">
+    <img src="https://activatecdn.azureedge.net/activatedata/35Content/SaintPeterHealthcareSystem/Images/Home/Hero/hero--xs.webp" alt="Group of healthcare professionals smiling in a hospital setting." width="393" height="166" fetchpriority="high">
+  </picture>
+  <p class="hero__title">Provide care that<br class="desktop-only"> is second to none.</p>
+  <p class="hero__accent">Your <span>Devotion</span><br>Makes The Difference.</p>
+</section>
+
+<section class="home-intro sphs-container">
+  <p>
+    At Saint Peter's Healthcare System, we are deeply committed to providing humble service, compassionate care and medical
+    excellence to our communities every day. The dedication of our talented team and the warm, welcoming culture we offer will
+    inspire you to share your greatest talents and flourish. Through the mission you help us deliver and the meaningful connections
+    you'll make, Saint Peter's will become the home you choose for your career.
+  </p>
+</section>
+<section class="sphs-container--lg">
+  <div class="home-awards">
+      <div  class="home-awards__item">
+        <img src="https://activatecdn.azureedge.net/activatedata/35Content/SaintPeterHealthcareSystem/Images/Home/award1.webp" alt="" loading="lazy" class="home-awards__item__media" width="124" height="124"/>
+        <h4 class="text-center home-awards__item__title">Saint Peter's Healthcare System has been serving the community for 117 years.</h4>
+      </div>
+      <div  class="home-awards__item">
+        <img src="https://activatecdn.azureedge.net/activatedata/35Content/SaintPeterHealthcareSystem/Images/Home/award2.webp" alt="" loading="lazy" class="home-awards__item__media" width="124" height="124"/>
+        <h4 class="text-center home-awards__item__title">Our dedicated team consists of more than 1,000 physicians and 3,600 employees.</h4>
+      </div>
+      <div  class="home-awards__item">
+        <img src="https://activatecdn.azureedge.net/activatedata/35Content/SaintPeterHealthcareSystem/Images/Home/award3.avif" alt="Magnet Recognition Program badge with green background and gold accents, reading &quot;Magnet with Distinction &#x2013; American Nurses Credentialing Center.&quot;" loading="lazy" class="home-awards__item__media" width="136" height="136"/>
+        <h4 class="text-center home-awards__item__title">We are the fifth hospital in the world to earn a 7th consecutive Magnet® designation and proud to receive our first Magnet with Distinction® designation</h4>
+      </div>
+      <div  class="home-awards__item">
+        <img src="https://activatecdn.azureedge.net/activatedata/35Content/SaintPeterHealthcareSystem/Images/Home/awardWCA.webp" alt="Best Hospitals - Women&#x27;s Choice Awards 2025 badge" loading="lazy" class="home-awards__item__media" width="70" height="132"/>
+        <h4 class="text-center home-awards__item__title">We’re recognized as a Best Hospital by Women’s Choice Award</h4>
+      </div>
+      <div  class="home-awards__item">
+        <img src="https://activatecdn.azureedge.net/activatedata/35Content/SaintPeterHealthcareSystem/Images/Home/award5.avif" alt="Emergency Nurses Association 2025-2028 Lantern Award" loading="lazy" class="home-awards__item__media" width="128" height="133"/>
+        <h4 class="text-center home-awards__item__title">Our Pediatric Emergency department was the first in NJ to receive the Lantern Award, and has once again earned this prestigious recognition.</h4>
+      </div>
+      <div  class="home-awards__item">
+        <img src="https://activatecdn.azureedge.net/activatedata/35Content/SaintPeterHealthcareSystem/Images/Home/award6.webp" alt="" loading="lazy" class="home-awards__item__media" width="124" height="124"/>
+        <h4 class="text-center home-awards__item__title">Our CARES Surgicenter helps over 10,000 children and adults requiring same-day surgery each year.</h4>
+      </div>
+    </div>
+  <div class="home-awards__cta">
+    <a class="button-primary button--has-arrow w-100-mobile-only"
+       href="https://www.saintpetershcs.com/about-us/saint-peter-s-award-winning-health-care"
+       target="_blank"
+       aria-label="See All Our Awards in Saint Peter's Healthcare System website">See All Our Awards</a>
+  </div>
+</section>
+
+<section class="sphs-container" aria-labelledby="section-title">
+  <h1 class="section-title" id="section-title">Where will you make a difference?</h1>
+  <div class="home-difference desktop-only">
+    <ul class="home-difference__buttons" role="tablist">
+        <li role="tab" id="difference0" data-index="0" aria-controls="panel0"
+            aria-selected="true" tabindex="0">Physicians and APPs
+        </li>
+        <li role="tab" id="difference1" data-index="1" aria-controls="panel1"
+            aria-selected="true" tabindex="0">Nursing
+        </li>
+        <li role="tab" id="difference2" data-index="2" aria-controls="panel2"
+            aria-selected="true" tabindex="0">Nursing Support
+        </li>
+        <li role="tab" id="difference3" data-index="3" aria-controls="panel3"
+            aria-selected="true" tabindex="0">Allied Health
+        </li>
+        <li role="tab" id="difference4" data-index="4" aria-controls="panel4"
+            aria-selected="true" tabindex="0">Non-Clinical
+        </li>
+    </ul>
+    <div class="flex-grow-1 flex-shrink-1 position-relative">
+      <div class="home-difference__content" id="panel0" role="tabpanel"
+           aria-labelledby="difference0">
+          <img class="home-difference__content__media" src="https://activatecdn.azureedge.net/activatedata/35Content/SaintPeterHealthcareSystem/Images/Home/Difference/physicians.webp"
+               alt="">
+        <div class="home-difference__content__text">
+          <h2>Discover the perfect balance of career satisfaction, community service and growth as one of our respected providers.</h2>
+          <a class="button--has-arrow button-primary"
+            href="/career-areas/physicians"
+             target="_self"
+             aria-label="Visit Physicians and APPs page to learn more">Learn More</a>
+        </div>
+      </div>
+      <div class="home-difference__content" id="panel1" role="tabpanel"
+           aria-labelledby="difference1">
+          <img class="home-difference__content__media" src="https://activatecdn.azureedge.net/activatedata/35Content/SaintPeterHealthcareSystem/Images/Home/Difference/nursing.webp"
+               alt="">
+        <div class="home-difference__content__text">
+          <h2>Provide compassionate care at a seven-time Magnet-recognized hospital with a dedicated team that feels like family.</h2>
+          <a class="button--has-arrow button-primary"
+            href="/career-areas/nursing"
+             target="_self"
+             aria-label="Visit Nursing page to learn more">Learn More</a>
+        </div>
+      </div>
+      <div class="home-difference__content" id="panel2" role="tabpanel"
+           aria-labelledby="difference2">
+          <img class="home-difference__content__media" src="https://activatecdn.azureedge.net/activatedata/35Content/SaintPeterHealthcareSystem/Images/Home/Difference/nursingSupport.webp"
+               alt="">
+        <div class="home-difference__content__text">
+          <h2>Join a warm, collaborative environment where you can grow your career and feel supported while assisting our Nurses and clinical staff.</h2>
+          <a class="button--has-arrow button-primary"
+            href="/career-areas/nursing-support"
+             target="_self"
+             aria-label="Visit Nursing Support page to learn more">Learn More</a>
+        </div>
+      </div>
+      <div class="home-difference__content" id="panel3" role="tabpanel"
+           aria-labelledby="difference3">
+          <img class="home-difference__content__media" src="https://activatecdn.azureedge.net/activatedata/35Content/SaintPeterHealthcareSystem/Images/Home/Difference/allied.webp"
+               alt="">
+        <div class="home-difference__content__text">
+          <h2>Collaborate across the healthcare system and use the latest technology to improve patient outcomes, solve unique challenges and ensure the highest quality care. </h2>
+          <a class="button--has-arrow button-primary"
+            href="/career-areas/allied-health"
+             target="_self"
+             aria-label="Visit Allied Health page to learn more">Learn More</a>
+        </div>
+      </div>
+      <div class="home-difference__content" id="panel4" role="tabpanel"
+           aria-labelledby="difference4">
+          <img class="home-difference__content__media" src="https://activatecdn.azureedge.net/activatedata/35Content/SaintPeterHealthcareSystem/Images/Home/Difference/nonClinical-v3.webp"
+               alt="">
+        <div class="home-difference__content__text">
+          <h2>Build a rewarding career by providing vital and valued services for our staff, patients and visitors.</h2>
+          <a class="button--has-arrow button-primary"
+            href="/career-areas/non-clinical"
+             target="_self"
+             aria-label="Visit Non-Clinical page to learn more">Learn More</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="home-difference-accordion accordion mobile-only" id="home-difference-accordion">
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="heading0">
+        <button class="accordion-button " type="button" data-bs-toggle="collapse"
+          data-bs-target="#collapse0"
+                  aria-expanded="false" aria-controls="collapse0">
+            Physicians and APPs
+          </button>
+        </h2>
+        <div id="collapse0" class="accordion-collapse collapse  show" aria-labelledby="heading0" data-parent="#home-difference-accordion">
+          <div class="accordion-body">
+            <picture>
+              <source media="(min-width: 576px)" srcset="https://activatecdn.azureedge.net/activatedata/35Content/SaintPeterHealthcareSystem/Images/Home/Difference/physicians.webp" type="image/webp">
+              <source media="(max-width: 575px)" srcset="https://activatecdn.azureedge.net/activatedata/35Content/SaintPeterHealthcareSystem/Images/Home/Difference/physicians--xs.webp" type="image/webp">
+              <img class="home-difference__content__media" src="https://activatecdn.azureedge.net/activatedata/35Content/SaintPeterHealthcareSystem/Images/Home/Difference/physicians--xs.webp"
+                   alt="">
+            </picture>
+            <div class="home-difference-accordion__text">
+              <h2>Discover the perfect balance of career satisfaction, community service and growth as one of our respected providers.</h2>
+              <a class="button--has-arrow button-primary"
+                 href="/career-areas/physicians"
+                 target="_self"
+                 aria-label="Visit Physicians and APPs page to learn more">Learn More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="heading1">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+          data-bs-target="#collapse1"
+                  aria-expanded="false" aria-controls="collapse1">
+            Nursing
+          </button>
+        </h2>
+        <div id="collapse1" class="accordion-collapse collapse  " aria-labelledby="heading1" data-parent="#home-difference-accordion">
+          <div class="accordion-body">
+            <picture>
+              <source media="(min-width: 576px)" srcset="https://activatecdn.azureedge.net/activatedata/35Content/SaintPeterHealthcareSystem/Images/Home/Difference/nursing.webp" type="image/webp">
+              <source media="(max-width: 575px)" srcset="https://activatecdn.azureedge.net/activatedata/35Content/SaintPeterHealthcareSystem/Images/Home/Difference/nursing--xs.webp" type="image/webp">
+              <img class="home-difference__content__media" src="https://activatecdn.azureedge.net/activatedata/35Content/SaintPeterHealthcareSystem/Images/Home/Difference/nursing--xs.webp"
+                   alt="">
+            </picture>
+            <div class="home-difference-accordion__text">
+              <h2>Provide compassionate care at a seven-time Magnet-recognized hospital with a dedicated team that feels like family.</h2>
+              <a class="button--has-arrow button-primary"
+                 href="/career-areas/nursing"
+                 target="_self"
+                 aria-label="Visit Nursing page to learn more">Learn More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="heading2">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+          data-bs-target="#collapse2"
+                  aria-expanded="false" aria-controls="collapse2">
+            Nursing Support
+          </button>
+        </h2>
+        <div id="collapse2" class="accordion-collapse collapse  " aria-labelledby="heading2" data-parent="#home-difference-accordion">
+          <div class="accordion-body">
+            <picture>
+              <source media="(min-width: 576px)" srcset="https://activatecdn.azureedge.net/activatedata/35Content/SaintPeterHealthcareSystem/Images/Home/Difference/nursingSupport.webp" type="image/webp">
+              <source media="(max-width: 575px)" srcset="https://activatecdn.azureedge.net/activatedata/35Content/SaintPeterHealthcareSystem/Images/Home/Difference/nursingSupport--xs.webp" type="image/webp">
+              <img class="home-difference__content__media" src="https://activatecdn.azureedge.net/activatedata/35Content/SaintPeterHealthcareSystem/Images/Home/Difference/nursingSupport--xs.webp"
+                   alt="">
+            </picture>
+            <div class="home-difference-accordion__text">
+              <h2>Join a warm, collaborative environment where you can grow your career and feel supported while assisting our Nurses and clinical staff.</h2>
+              <a class="button--has-arrow button-primary"
+                 href="/career-areas/nursing-support"
+                 target="_self"
+                 aria-label="Visit Nursing Support page to learn more">Learn More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="heading3">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+          data-bs-target="#collapse3"
+                  aria-expanded="false" aria-controls="collapse3">
+            Allied Health
+          </button>
+        </h2>
+        <div id="collapse3" class="accordion-collapse collapse  " aria-labelledby="heading3" data-parent="#home-difference-accordion">
+          <div class="accordion-body">
+            <picture>
+              <source media="(min-width: 576px)" srcset="https://activatecdn.azureedge.net/activatedata/35Content/SaintPeterHealthcareSystem/Images/Home/Difference/allied.webp" type="image/webp">
+              <source media="(max-width: 575px)" srcset="https://activatecdn.azureedge.net/activatedata/35Content/SaintPeterHealthcareSystem/Images/Home/Difference/allied--xs.webp" type="image/webp">
+              <img class="home-difference__content__media" src="https://activatecdn.azureedge.net/activatedata/35Content/SaintPeterHealthcareSystem/Images/Home/Difference/allied--xs.webp"
+                   alt="">
+            </picture>
+            <div class="home-difference-accordion__text">
+              <h2>Collaborate across the healthcare system and use the latest technology to improve patient outcomes, solve unique challenges and ensure the highest quality care. </h2>
+              <a class="button--has-arrow button-primary"
+                 href="/career-areas/allied-health"
+                 target="_self"
+                 aria-label="Visit Allied Health page to learn more">Learn More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="heading4">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+          data-bs-target="#collapse4"
+                  aria-expanded="false" aria-controls="collapse4">
+            Non-Clinical
+          </button>
+        </h2>
+        <div id="collapse4" class="accordion-collapse collapse  " aria-labelledby="heading4" data-parent="#home-difference-accordion">
+          <div class="accordion-body">
+            <picture>
+              <source media="(min-width: 576px)" srcset="https://activatecdn.azureedge.net/activatedata/35Content/SaintPeterHealthcareSystem/Images/Home/Difference/nonClinical-v3.webp" type="image/webp">
+              <source media="(max-width: 575px)" srcset="https://activatecdn.azureedge.net/activatedata/35Content/SaintPeterHealthcareSystem/Images/Home/Difference/nonClinical--xs.webp" type="image/webp">
+              <img class="home-difference__content__media" src="https://activatecdn.azureedge.net/activatedata/35Content/SaintPeterHealthcareSystem/Images/Home/Difference/nonClinical--xs.webp"
+                   alt="">
+            </picture>
+            <div class="home-difference-accordion__text">
+              <h2>Build a rewarding career by providing vital and valued services for our staff, patients and visitors.</h2>
+              <a class="button--has-arrow button-primary"
+                 href="/career-areas/non-clinical"
+                 target="_self"
+                 aria-label="Visit Non-Clinical page to learn more">Learn More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+</section>
+<section class="home-cta position-relative">
+  <picture>
+    <source media="(min-width: 1024px)" srcset="https://activatecdn.azureedge.net/activatedata/35Content/SaintPeterHealthcareSystem/Images/Home/cta.webp" type="image/webp" width="1800" height="266">
+    <source media="(min-width: 576px)" srcset="https://activatecdn.azureedge.net/activatedata/35Content/SaintPeterHealthcareSystem/Images/Home/cta-v2--md.webp" type="image/webp" width="1024" height="266">
+    <source media="(max-width: 575px)" srcset="https://activatecdn.azureedge.net/activatedata/35Content/SaintPeterHealthcareSystem/Images/Home/cta--xs.webp" type="image/webp" width="393" height="266">
+    <img class="home-cta__media position-absolute" src="https://activatecdn.azureedge.net/activatedata/35Content/SaintPeterHealthcareSystem/Images/Home/cta--xs.webp" width="393" height="266">
+  </picture>
+  <div class="align-items-center d-flex flex-column home-cta__content justify-content-center sphs-container">
+    <h1 class="text-center">Get Job Alerts and Join Our Talent Network</h1>
+    <a class="button-primary button--has-arrow" href="/talentnetwork/talentnetwork" aria-label="Sign Up now">Sign Up now</a>
+  </div>
+</section>
+
+
+<script>
+    $(document).ready(function () {
+        const $window = $(window);
+
+        $window.on('resize', function () {
+            initializeSlider();
+        });
+
+        const $slick_slider = $('.home-awards');
+        const settings = {
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            variableWidth: false,
+            variableHeight: true,
+            autoplay: true,
+            autoplaySpeed: 3000,
+            arrows: false,
+            dots: true,
+            infinite: true,
+            speed: 1000,
+        };
+
+        function initializeSlider() {
+            if (window.innerWidth > 1024) {
+                if ($slick_slider.hasClass('slick-initialized')) {
+                    $slick_slider.slick('unslick');
+                }
+            } else {
+                if (!$slick_slider.hasClass('slick-initialized')) {
+                    $slick_slider.slick(settings);
+                }
+            }
+        }
+
+        initializeSlider();
+        initDifferenceTabs();
+    });
+
+    function initDifferenceTabs() {
+        let differenceContent = $('.home-difference__content');
+        let differenceButtons = $('.home-difference__buttons li');
+
+        differenceContent.removeClass('active');
+        differenceContent.first().addClass('active').attr('aria-hidden', 'false');
+        differenceButtons.first().addClass('active').attr('aria-selected', 'true').attr('tabindex', '0');
+
+        animateDifferenceTabs($('.home-difference__buttons li.active'));
+
+        $('.home-difference__buttons li').click(function () {
+            const index = $(this).data('index');
+
+           animateDifferenceTabs($(this));
+
+            $('.home-difference__buttons li.active').removeClass('active').attr('aria-selected', 'false')
+            $(this).attr('aria-selected', 'true').attr('tabindex', '0').addClass('active');
+
+            $('.home-difference__content.active').removeClass('active').attr('aria-hidden',
+                'true');
+            $('.home-difference__content').eq(index).addClass('active').attr('aria-hidden', 'false');
+
+
+        });
+
+        // Navigate with arrows
+        differenceButtons.on('keydown', function(e) {
+            const current = $(this);
+            const prev = current.prev();
+            const next = current.next();
+
+            switch (e.keyCode) {
+                case 37: // left arrow
+                case 38: // up arrow
+                    prev.length && prev.focus().click();
+                    break;
+                case 39: // right arrow
+                case 40: // down arrow
+                    next.length && next.focus().click();
+                    break;
+            }
+        });
+    }
+
+    function animateDifferenceTabs(currentTab) {
+        const buttonRect = currentTab[0].getBoundingClientRect();
+        const containerRect = $('.home-difference__buttons')[0].getBoundingClientRect();
+
+        const top = buttonRect.top - containerRect.top + 'px';
+
+        document.documentElement.style.setProperty('--bg-top', top);
+        document.documentElement.style.setProperty('--bg-height', currentTab[0].offsetHeight + 'px');
+    }
+
+</script>
+    
+    
+</div>
+
+
+<div id="footer" class="main-footer" role="contentinfo">
+    
+    <section class="align-items-md-center align-items-start d-flex flex-md-row flex-column footer">
+    <div class="footer__left">
+        <a class="footer__left__logo" href="https://www.saintpetershcs.com/">
+            <picture>
+                <source media="(min-width: 1024px)" srcset="https://activatecdn.azureedge.net/activatedata/35Content/SaintPeterHealthcareSystem/Images/logo--white.webp" type="image/webp" width="300"
+                        height="55">
+                <source media="(max-width: 1023px)" srcset="https://activatecdn.azureedge.net/activatedata/35Content/SaintPeterHealthcareSystem/Images/logo--white--xs.webp" type="image/webp" width="239"
+                        height="44">
+                <img src="https://activatecdn.azureedge.net/activatedata/35Content/SaintPeterHealthcareSystem/Images/logo--white--xs.webp"/>
+            </picture>
+
+        </a>
+        <p class="mt-3">
+            254 Easton Avenue<br>
+            New Brunswick, NJ 08901<br>
+            <a class="footer__link" href="tel:732-745-8600"> 732-745-8600</a>
+        </p>
+    </div>
+    <div class="footer__right">
+        <ul class="footer_social">
+            <li>
+                <a href="https://www.facebook.com/SaintPetersUniversityHospital" rel="noopener noreferer" target="_blank"
+                   aria-label="Saint Peter Healthcare System on facebook">
+                    <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" viewBox="0 0 800 800">
+                        <path d="M647.5 400.5c0-137-111-248-248-248s-248 111-248 248c0 123.8 90.7 226.4 209.2 245V472.2h-63v-71.7h63v-54.6c0-62.1 37-96.5 93.7-96.5 27.1 0 55.5 4.8 55.5 4.8v61h-31.3c-30.8 0-40.4 19.1-40.4 38.7v46.5H507l-11 71.7h-57.8v173.3c118.6-18.5 209.3-121.1 209.3-244.9z"/>
+                    </svg>
+                </a>
+            </li>
+            <li>
+                <a href="https://x.com/sphcs_news" rel="noopener noreferer" target="_blank"
+                   aria-label="Saint Peter Healthcare System on twitter.">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800">
+                        <path d="M540.34 196h73.82L452.92 380.25 642.61 631H494.12L377.74 478.96 244.73 631H170.8l172.43-197.11L161.39 196h152.25l105.09 138.97L540.34 196Zm-25.93 390.87h40.89L291.37 237.83h-43.92l266.96 349.05Z"/>
+                    </svg>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.youtube.com/user/SPHealthcareSystem" rel="noopener noreferer" target="_blank"
+                   aria-label="Saint Peter Healthcare System on youtube.">
+                    <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" viewBox="0 0 800 800">
+                        <path d="M661.2 267.1c-6.3-23.7-24.8-42.3-48.3-48.6C570.3 207 399.5 207 399.5 207s-170.8 0-213.4 11.5c-23.5 6.3-42 24.9-48.3 48.6-11.4 42.9-11.4 132.3-11.4 132.3s0 89.4 11.4 132.3c6.3 23.7 24.8 41.5 48.3 47.8C228.7 591 399.5 591 399.5 591s170.8 0 213.4-11.5c23.5-6.3 42-24.2 48.3-47.8 11.4-42.9 11.4-132.3 11.4-132.3s0-89.4-11.4-132.3zM343.6 480.6V318.2l142.7 81.2-142.7 81.2z"/>
+                    </svg>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.linkedin.com/company/saint-peter-s-healthcare-system/" rel="noopener noreferer"
+                   target="_blank" aria-label="Saint Peter Healthcare System on LinkedIn.">
+                    <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" viewBox="0 0 800 800">
+                        <path d="M592 176H207.9c-17.6 0-31.9 14.5-31.9 32.3v383.4c0 17.8 14.3 32.3 31.9 32.3H592c17.6 0 32-14.5 32-32.3V208.3c0-17.8-14.4-32.3-32-32.3zM311.4 560H245V346.2h66.5V560h-.1zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5s17.2-38.5 38.5-38.5c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V456c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V560h-66.4V346.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V560z"/>
+                    </svg>
+
+                </a>
+            </li>
+        </ul>
+        <p>
+            Saint Peter&#39;s Healthcare System is sponsored by the Roman Catholic Diocese of Metuchen. Saint Peter&#39;s is a state-designated children&#39;s hospital and a regional perinatal center, and is a major clinical affiliate of Rutgers Biomedical and Health Sciences and an affiliate of The Children&#39;s Hospital of Philadelphia.
+        </p>
+        <p class="footer__right__copy">
+            &copy; 2026 Saint Peter&#39;s Healthcare System
+        </p>
+    </div>
+</section>
+
+<script src="/content/Shared/Scripts/lazyload.js"></script>
+<script src="/content/Shared/Scripts/a11y.js"></script>
+<script src="/content/SaintPeterHealthcareSystem/Scripts/_activate.js"></script>
+
+<script>
+    $(function () { // Dropdown toggle
+        $('.dropdown-toggle').click(function () {
+            // Slide up all dropdown menus
+            $('.dropdown-menu').slideUp();
+            // Remove 'open' class from all dropdown toggles
+            $('.dropdown-toggle').removeClass('open');
+
+            // Check if the clicked dropdown is already open
+            if ($(this).next('.dropdown-menu').is(':visible')) {
+                // If open, close it
+                $(this).next('.dropdown-menu').slideUp();
+            } else {
+                // If closed, open it
+                $(this).addClass('open');
+                $(this).next('.dropdown-menu').slideDown().css('display', 'flex'); // Apply 'display: flex' only to the clicked dropdown menu
+            }
+        });
+
+        // Close dropdown when clicking outside
+        $(document).on('click', function (e) {
+            if (!$(e.target).closest('.dropdown-toggle').length && !$(e.target).closest('.dropdown-menu').length) {
+                $('.dropdown-menu').slideUp();
+                $('.dropdown-toggle').removeClass('open');
+            }
+        });
+    });
+</script>
+
+    <i id="BackToTop" class="fa fa-arrow-up" aria-hidden="true"></i>
+    <div class="attribution-container">
+        
+<a href="https://www.nasrecruitment.com/solutions/recruitment-marketing-platform/activate-platform" target="_blank" rel="noopener">
+    <img src="https://activatecdn.azureedge.net/activatedata/35Content/Shared/Images/default-attribution_white.svg" alt="Powered by Activate®" />
+</a>
+
+        <a href="https://www.nasrecruitment.com/terms-of-use-privacy-policy/"
+           target="_blank" 
+           style="float: right; clear: both; font-size: .8rem; margin-bottom: 5px; margin-right: 5px;">
+            Terms of Use and Privacy Policy
+        </a>
+    </div>
+    
+</div>
+
+
+<script type="text/javascript">
+    var systemVariations = JSON.parse('null');
+    if (window.variations) {
+        for (var key in systemVariations) {
+            window.variations[key] = systemVariations[key];
+        }
+    } else {
+        window.variations = systemVariations;
+    }
+
+
+    if (window.variations) {
+        var ev = { event: 'ab_variations_loaded', variations: window.variations };
+        window.dataLayer = window.dataLayer || [];
+        Object.keys(window).forEach(function (key) {
+            if (key.toLowerCase().indexOf('datalayer') === 0
+                && window[key]
+                && typeof window[key].push === 'function') {
+                window[key].push(ev);
+            }
+        });
+    }
+        </script>
+
+
+
+
+
+
+    <div id="global-announcer-container" aria-live="polite"></div>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const container = document.getElementById('global-announcer-container');
+        window.announce = function(message, assertive = false, timeout = 5000) {
+            if (!container) {
+                console.error('Cannot announce message. Global announcer container not found.');
+                return;
+            }
+            container.textContent = '';
+            container.setAttribute('aria-live', assertive ? 'assertive' : 'polite');
+            container.textContent = message;
+
+            setTimeout(() => {
+                container.setAttribute('aria-live', 'polite');
+                container.textContent = '';
+            }, timeout);
+        };
+    });
+</script>
+<style>
+    #global-announcer-container {
+        border: 0;
+        clip: rect(0 0 0 0);
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute !important;
+        width: 1px;
+    }
+</style>
+</body>
+</html>
