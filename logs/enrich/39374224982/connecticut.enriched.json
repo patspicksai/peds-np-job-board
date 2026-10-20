@@ -1,0 +1,1499 @@
+{
+  "region_group": "R2b Connecticut",
+  "hospitals": [
+    {
+      "slug": "ynhch-new-haven",
+      "name": "Yale New Haven Children's Hospital",
+      "parent_hospital": "Yale New Haven Hospital",
+      "health_system": "Yale New Haven Health",
+      "hospital_type": "childrens_hospital_within_hospital",
+      "city": "New Haven",
+      "state": "CT",
+      "address": "1 Park Street, New Haven, CT 06511",
+      "lat": 41.30435,
+      "lng": -72.93665,
+      "coord_source": "Wikipedia infobox (41.304354, -72.936647); Google Places pin for the children's hospital at 35 Park St is about 70 m away on the same building",
+      "region": "Connecticut",
+      "hotspot": false,
+      "website": "https://www.ynhh.org/childrens-hospital",
+      "careers_url": "https://jobs.ynhhs.org/",
+      "careers_platform": "custom",
+      "careers_search_url": "https://jobs.ynhhs.org/jobs?keywords=nurse%20practitioner&sortBy=relevance&page=1",
+      "careers_notes": "Yale New Haven Health posts all hospitals (YNHH and YNHCH, Bridgeport, Greenwich, Lawrence + Memorial, Westerly) on one Jibe career site at jobs.ynhhs.org (assets on cms.jibecdn.com; talent network at ynhhs.jibeapply.com). The pediatric nursing category page /jobs/categories/NURSING-STAFF+-+PEDIATRICS was fetched 2026-10-19 and returned only page chrome, so listings are JS-rendered. The careers page links a pre-filtered search of the form /jobs?sortBy=relevance&page=1&categories=ADVANCED%20PRACTICE&tags2=..., so categories=ADVANCED%20PRACTICE is the APP filter. The keyword search URL uses the standard Jibe keywords parameter; a test fetch was blocked in this session, so it is unverified. Jibe sites usually expose a JSON endpoint at /api/jobs with the same parameters. [enrich 2026-10-20] careers_url -> HTTP 200 at https://jobs.ynhhs.org/jobs; ATS link seen: https://internal-ynhhs.icims.com/jobs/login?loginOnly=1&redirect=&in_iframe=1&sso_connection=hs-5071-adfs\\; search_url -> HTTP 200, mentions NP: True, job links: 5",
+      "ats_config": {
+        "host": "jobs.ynhhs.org",
+        "vendor": "Jibe",
+        "talent_network_host": "ynhhs.jibeapply.com",
+        "app_category": "ADVANCED PRACTICE"
+      },
+      "nearest_airport": "HVN Tweed-New Haven (about 4 mi straight-line); BDL Bradley International about 46 mi; HPN Westchester County about 43 mi",
+      "beds": 208,
+      "peds_beds": null,
+      "peds_inpatient": true,
+      "picu": true,
+      "picu_beds": 21,
+      "nicu_level": 4,
+      "peds_ed": true,
+      "peds_trauma_level": "Level I pediatric trauma center (one of two in Connecticut)",
+      "magnet": true,
+      "teaching": true,
+      "affiliated_university": "Yale School of Medicine",
+      "peds_services": [
+        "pediatric critical care",
+        "pediatric cardiac critical care",
+        "neonatology",
+        "hospitalist",
+        "pediatric emergency medicine",
+        "transport team",
+        "pediatric surgery",
+        "urology",
+        "endocrinology",
+        "gastroenterology",
+        "nephrology",
+        "pulmonology",
+        "neurology",
+        "neurosurgery",
+        "child and adolescent psychiatry",
+        "well newborn nursery"
+      ],
+      "description": "Yale New Haven Children's Hospital is the pediatric arm of Yale New Haven Hospital and the main academic children's hospital for southern Connecticut, taught by Yale School of Medicine faculty. Its New Haven building sits on Park Street at the edge of the York Street medical campus, a short walk from Yale's downtown and the Hill neighborhood. The hospital runs a 21 bed PICU that includes the state's only dedicated six bed pediatric cardiac ICU, two NICU floors rated Level IV, inpatient child and adolescent psychiatry, and a 24 hour Level I pediatric trauma emergency department. It also operates a second inpatient campus inside Bridgeport Hospital and supplies pediatric hospitalist and emergency coverage to Greenwich Hospital and other Yale New Haven Health sites, so its APP teams reach well beyond New Haven. A 24/7 critical care transport team with ground and air options brings infants and children in from across the region.",
+      "highlights": [
+        "Ranked #1 children's hospital in Connecticut and #2 in New England by U.S. News 2025-26",
+        "208 licensed beds across New Haven and the Bridgeport campus",
+        "21 bed PICU including the only dedicated pediatric cardiac ICU in Connecticut (6 beds)",
+        "Level IV NICU (AAP, 2018) on two floors of the children's hospital",
+        "Level I pediatric trauma center with 24 hour pediatric emergency department",
+        "Yale pediatric hospitalists also staff Bridgeport, Greenwich and Griffin newborn and inpatient services",
+        "Yale New Haven Hospital campuses are ANCC Magnet designated"
+      ],
+      "photos": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/7/70/Aerial_closeup_YNHH_2010.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original",
+          "caption": "Yale New Haven Children's Hospital",
+          "credit": "YNHHEditor",
+          "license": "CC BY-SA 3.0",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Aerial_closeup_YNHH_2010.jpg"
+        }
+      ],
+      "wikipedia_title": "Yale New Haven Children's Hospital",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Yale_New_Haven_Children%27s_Hospital",
+        "https://www.ynhh.org/childrens-hospital/services/critical-care",
+        "https://www.ynhhs.org/news/ynhch-ranked-number-1-in-ct-by-usnwr-25-26",
+        "https://medicine.yale.edu/pediatrics/sections/hospitalist/phm-clinicalocations",
+        "https://www.ynhhs.org/about/corporate-overview/delivery-networks",
+        "https://ynhhs.org/careers",
+        "https://jobs.ynhhs.org/jobs/categories/NURSING-STAFF+-+PEDIATRICS",
+        "https://en.wikipedia.org/wiki/List_of_hospitals_in_Connecticut"
+      ],
+      "notes": "Bed counts differ: Wikipedia lists 202 beds and a 19 bed PICU; the 2025 YNHHS ranking release says 208 licensed beds and the YNHH critical care page says 21 PICU beds (including the 6 bed PCICU). The 208 likely includes the 42 beds licensed to YNHCH at Bridgeport Hospital, which has its own record. Postings for both campuses appear on jobs.ynhhs.org under Yale New Haven Hospital or Bridgeport Hospital. New Haven is about 2 hours from Boston and 1.5 to 2 hours from New York City by train (Metro-North and Amtrak at Union Station).",
+      "confidence": "high",
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "Yale New Haven Children's Hospital",
+          "url": "https://en.wikipedia.org/wiki/Yale_New_Haven_Children%27s_Hospital",
+          "extract": "Yale New Haven Children's Hospital (YNHCH) is a 202-bed pediatric acute care children's hospital located in New Haven, Connecticut. The hospital is affiliated with the Yale School of Medicine. The hospital provides comprehensive pediatric care to infants, children, teens, and young adults aged 0 to 21 in Connecticut and throughout New England. Yale New Haven Children's Hospital also features a Level I Pediatric Trauma Center, one of two in the state.\nAs of 2026, U.S. News & World Report ranks YNHCH in seven pediatric specialties: diabetes and endocrinology (#19); neonatology (#37); nephrology (#46); gastroenterology and GI surgery (#26); pulmonology and lung surgery (#50); orthopedics (#34); pediatric & adolescent behavioral health (top 50). The hospital is also the top-ranked children's hospital in Connecticut and the second-ranked children's hospital in New England."
+        }
+      }
+    },
+    {
+      "slug": "connecticut-childrens-hartford",
+      "name": "Connecticut Children's",
+      "parent_hospital": null,
+      "health_system": "Connecticut Children's",
+      "hospital_type": "childrens_hospital",
+      "city": "Hartford",
+      "state": "CT",
+      "address": "282 Washington Street, Hartford, CT 06106",
+      "lat": 41.75368,
+      "lng": -72.68168,
+      "coord_source": "Wikipedia infobox (41.753679, -72.681676); matches Google Places pin for 282 Washington St",
+      "region": "Connecticut",
+      "hotspot": false,
+      "website": "https://www.connecticutchildrens.org/",
+      "careers_url": "https://fa-evav-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/connecticutchildrenscareers",
+      "careers_platform": "oracle_cloud",
+      "careers_search_url": "https://fa-evav-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/connecticutchildrenscareers/jobs?keyword=nurse%20practitioner",
+      "careers_notes": "Connecticut Children's uses Oracle Cloud HCM Candidate Experience; the nursing careers page links Search Jobs to the connecticutchildrenscareers site and individual postings follow /job/<id> (for example job 2767). Oracle Candidate Experience pages are JS-rendered; use the REST endpoint /hcmRestApi/resources/latest/recruitingCEJobRequisitions with siteNumber=connecticutchildrenscareers and a keyword finder. The keyword search URL follows the standard Oracle pattern and was not fetched this session. APRN roles are posted here, including NICU roles staffed at Hartford Hospital and UConn Health. [enrich 2026-10-20] careers_url -> HTTP 200 at https://fa-evav-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/connecticutchildrenscareers; ATS link seen: https://fa-evav-saasfaprod1.fa.ocs.oraclecloud.com:443; search_url -> HTTP 200, mentions NP: False, job links: 0",
+      "ats_config": {
+        "host": "fa-evav-saasfaprod1.fa.ocs.oraclecloud.com",
+        "site_number": "connecticutchildrenscareers"
+      },
+      "nearest_airport": "BDL Bradley International (about 13 mi straight-line); HVN Tweed-New Haven about 35 mi",
+      "beds": 187,
+      "peds_beds": 187,
+      "peds_inpatient": true,
+      "picu": true,
+      "picu_beds": 18,
+      "nicu_level": 4,
+      "peds_ed": true,
+      "peds_trauma_level": "Level I pediatric trauma center (ACS verified; one of two in Connecticut)",
+      "magnet": true,
+      "teaching": true,
+      "affiliated_university": "UConn School of Medicine; Frank H. Netter MD School of Medicine at Quinnipiac University",
+      "peds_services": [
+        "pediatric critical care",
+        "neonatology",
+        "hospitalist",
+        "pediatric emergency medicine",
+        "transport team",
+        "pediatric surgery",
+        "endocrinology",
+        "sedation",
+        "behavioral health crisis care",
+        "trauma"
+      ],
+      "description": "Connecticut Children's is the state's only freestanding children's hospital, an eight story building on Washington Street in Hartford that opened in 1996 next to the Hartford Hospital campus. It grew out of the Newington Children's Hospital, which began in 1898, and today serves as the primary pediatric teaching hospital for UConn and Quinnipiac medical schools. The main campus holds an 18 bed PICU, a Level I pediatric trauma center and emergency department, and a 24/7 neonatal and pediatric critical care transport team. Its neonatology program runs the Level IV NICU inside Hartford Hospital and the Level III NICU at UConn Health in Farmington, and its physicians cover nurseries and pediatric units at a ring of affiliate hospitals, so many APRN roles are posted under Connecticut Children's even when the work is on another campus. Hartford is a mid sized capital city with easy access to the suburbs of the Farmington Valley and West Hartford.",
+      "highlights": [
+        "Only freestanding children's hospital in Connecticut",
+        "ACS verified Level I pediatric trauma center",
+        "Runs a 32 bed Level IV NICU at Hartford Hospital and a Level III NICU at UConn Health",
+        "230 licensed NICU and nursery beds across 16 units statewide",
+        "18 bed PICU and 24/7 neonatal and pediatric critical care transport",
+        "ANCC Magnet recognized",
+        "Primary pediatric teaching affiliate of UConn and Quinnipiac medical schools"
+      ],
+      "photos": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/3/3d/Hartford_Hospital_main_entrance.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original",
+          "caption": "Hartford Hospital",
+          "credit": "Elipongo",
+          "license": "Public domain",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Hartford_Hospital_main_entrance.JPG"
+        }
+      ],
+      "wikipedia_title": "Connecticut Children's Medical Center",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Connecticut_Children%27s_Medical_Center",
+        "https://www.connecticutchildrens.org/search-specialties/critical-care/",
+        "https://connecticutchildrens.org/specialties-conditions/neonatology",
+        "https://www.connecticutchildrens.org/neonatology/nicu-levels-newborn-hospital-care-explained/",
+        "https://connecticutchildrens.org/careers/nursing-careers",
+        "https://hartfordhospital.org/services/pediatrics",
+        "https://pedsccm.org/?p=398",
+        "https://www.marithealth.com/jobs/032a919a-8795-4aff-9705-c2c858e09ed5",
+        "https://www.nbcconnecticut.com/news/local/ct-childrens-inpatient-unit-looking-leave-st-marys-hospital-waterbury/3663335/",
+        "https://portal.ct.gov/ohs/con-public-hearings/july-30-2026",
+        "https://cthosp.org/?p=23056"
+      ],
+      "notes": "Bed counts vary by source: Wikipedia infobox 185 and body text 230, a Hartford Hospital page says 188 acute care beds including the 32 bed NICU, and recruiting text says a 187 bed system; 187 is used here. The 12 bed Connecticut Children's satellite inpatient unit at Saint Mary's Hospital in Waterbury (open since 2008) is proposed for closure with beds moving to Hartford (CON docket 26-32825-CON, DPH hearing July 30, 2026; outcome not confirmed). Wikipedia also mentions contracted services at hospitals in Waterbury, Farmington, Glastonbury and Shelton. The NICU at Hartford Hospital and the NICU at UConn Health have their own records here because they sit in those hospitals.",
+      "confidence": "high",
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "Hartford Hospital",
+          "url": "https://en.wikipedia.org/wiki/Hartford_Hospital",
+          "extract": "Hartford Hospital is an 867-bed acute care teaching hospital located in the South End of Hartford, Connecticut. Hartford Hospital was established in 1854. The hospital campus is located on Seymour Street in Hartford and is directly adjacent to the main campus of the Connecticut Children's Medical Center. Hartford Hospital was ranked #2 in Connecticut by  U.S. News Best Hospitals and ranked #1 in the Hartford, Connecticut metro region by the same source. The hospital is a major tertiary care facility for the statewide region and is state designated as a Level I Trauma Center, able to care for the most critically injured of patients.  It has 45 operating rooms and one of the largest surgical caseloads in the United States. The emergency room receives over 100,000 visits per year."
+        }
+      }
+    },
+    {
+      "slug": "hartford-hospital-hartford",
+      "name": "Hartford Hospital",
+      "parent_hospital": null,
+      "health_system": "Hartford HealthCare",
+      "hospital_type": "academic_medical_center",
+      "city": "Hartford",
+      "state": "CT",
+      "address": "80 Seymour Street, Hartford, CT 06102",
+      "lat": 41.75409,
+      "lng": -72.67986,
+      "coord_source": "Google Places pin for Hartford Hospital, 80 Seymour St (on campus)",
+      "region": "Connecticut",
+      "hotspot": false,
+      "website": "https://hartfordhospital.org/",
+      "careers_url": "https://www.hhccareers.org/us/search-results",
+      "careers_platform": "phenom",
+      "careers_search_url": "https://www.hhccareers.org/us/en/search-results?keywords=nurse%20practitioner",
+      "careers_notes": "Hartford HealthCare's official career site is www.hhccareers.org, a Phenom site (images on cdn.phenompeople.com, /us/en/ locale paths, /us/search-results). The search-results page was fetched 2026-10-19 and showed no listings in the static HTML, so results are JS-rendered; use the Phenom widgets API or a search fallback. Job detail URLs look like /jobs/<id>-<slug> (for example /jobs/8362259-patient-service-coordinator-cardiology). The keywords parameter is the standard Phenom pattern and was not tested. HHC jobs are also syndicated to dejobs.org with requisition IDs. hartfordhealthcare.org/careers could not be fetched. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.hhccareers.org/us/en; search_url -> HTTP 200, mentions NP: True, job links: 0",
+      "ats_config": {
+        "host": "www.hhccareers.org",
+        "locale_path": "/us/en",
+        "job_detail_pattern": "/jobs/<id>-<slug>"
+      },
+      "nearest_airport": "BDL Bradley International (about 13 mi straight-line); HVN Tweed-New Haven about 36 mi",
+      "beds": 867,
+      "peds_beds": null,
+      "peds_inpatient": false,
+      "picu": false,
+      "picu_beds": null,
+      "nicu_level": 4,
+      "peds_ed": false,
+      "peds_trauma_level": null,
+      "magnet": null,
+      "teaching": true,
+      "affiliated_university": "UConn School of Medicine (UConn Health)",
+      "peds_services": [
+        "neonatology (Connecticut Children's NICU)",
+        "labor and delivery"
+      ],
+      "description": "Hartford Hospital is the flagship of Hartford HealthCare and the largest hospital in the Hartford area, an 867 bed teaching hospital affiliated with UConn that traces its charter to 1854. It is a Level I trauma center, home of the LIFE STAR air ambulance, and a busy referral center for adult care across central Connecticut. Pediatric inpatient care has largely moved to Connecticut Children's, which sits across the street, but the 32 bed Level IV NICU that Connecticut Children's runs is located inside Hartford Hospital next to its labor and delivery unit. For a pediatric NP the relevant roles here are mostly neonatal ones employed by Connecticut Children's, plus Hartford HealthCare positions that touch newborn and pediatric care.",
+      "highlights": [
+        "867 beds, Level I trauma center, LIFE STAR air ambulance base",
+        "Hosts Connecticut Children's 32 bed Level IV NICU beside its labor and delivery unit",
+        "Ranked #2 in Connecticut by U.S. News (per Wikipedia)",
+        "ACGME residency and fellowship programs, UConn affiliate",
+        "Flagship of Hartford HealthCare, Connecticut's largest health system"
+      ],
+      "photos": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/3/3d/Hartford_Hospital_main_entrance.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original",
+          "caption": "Hartford Hospital",
+          "credit": "Elipongo",
+          "license": "Public domain",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Hartford_Hospital_main_entrance.JPG"
+        }
+      ],
+      "wikipedia_title": "Hartford Hospital",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Hartford_Hospital",
+        "https://hartfordhospital.org/services/pediatrics",
+        "https://connecticutchildrens.org/specialties-conditions/neonatology",
+        "https://www.connecticutchildrens.org/neonatology/nicu-levels-newborn-hospital-care-explained/",
+        "https://www.hhccareers.org/jobs/8362259-patient-service-coordinator-cardiology",
+        "https://www.hhccareers.org/us/search-results"
+      ],
+      "notes": "NICU nurse practitioner and neonatal roles at this site are posted by Connecticut Children's (Oracle board), not Hartford HealthCare. Hartford Hospital's pediatrics page says most pediatric services are now at Connecticut Children's on the Hartford Hospital campus; no separate pediatric unit or pediatric ED was confirmed. Magnet status not confirmed this session.",
+      "confidence": "medium",
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "Hartford Hospital",
+          "url": "https://en.wikipedia.org/wiki/Hartford_Hospital",
+          "extract": "Hartford Hospital is an 867-bed acute care teaching hospital located in the South End of Hartford, Connecticut. Hartford Hospital was established in 1854. The hospital campus is located on Seymour Street in Hartford and is directly adjacent to the main campus of the Connecticut Children's Medical Center. Hartford Hospital was ranked #2 in Connecticut by  U.S. News Best Hospitals and ranked #1 in the Hartford, Connecticut metro region by the same source. The hospital is a major tertiary care facility for the statewide region and is state designated as a Level I Trauma Center, able to care for the most critically injured of patients.  It has 45 operating rooms and one of the largest surgical caseloads in the United States. The emergency room receives over 100,000 visits per year."
+        }
+      }
+    },
+    {
+      "slug": "uconn-john-dempsey-farmington",
+      "name": "UConn John Dempsey Hospital",
+      "parent_hospital": null,
+      "health_system": "UConn Health",
+      "hospital_type": "academic_medical_center",
+      "city": "Farmington",
+      "state": "CT",
+      "address": "263 Farmington Avenue, Farmington, CT 06030",
+      "lat": 41.73137,
+      "lng": -72.7927,
+      "coord_source": "Google Places pin for UConn John Dempsey Hospital (100 Hospital Dr entrance on the UConn Health campus)",
+      "region": "Connecticut",
+      "hotspot": false,
+      "website": "https://www.uconnhealth.org/",
+      "careers_url": "https://www.uconnhealth.org/about-us/careers",
+      "careers_platform": "unknown",
+      "careers_search_url": null,
+      "careers_notes": "UConn Health's own careers landing page is www.uconnhealth.org/about-us/careers (health.uconn.edu/jobs redirects to the nursing careers page). The underlying job board platform could not be confirmed (fetch blocked this session). NICU APRN roles at this hospital are employed by Connecticut Children's and post on its Oracle board: fa-evav-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/connecticutchildrenscareers. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.uconnhealth.org/about-us/careers",
+      "ats_config": {
+        "host": "www.uconnhealth.org",
+        "nicu_employer_ats": {
+          "platform": "oracle_cloud",
+          "host": "fa-evav-saasfaprod1.fa.ocs.oraclecloud.com",
+          "site_number": "connecticutchildrenscareers"
+        }
+      },
+      "nearest_airport": "BDL Bradley International (about 15 mi straight-line); HVN Tweed-New Haven about 33 mi",
+      "beds": null,
+      "peds_beds": null,
+      "peds_inpatient": false,
+      "picu": false,
+      "picu_beds": null,
+      "nicu_level": 3,
+      "peds_ed": false,
+      "peds_trauma_level": null,
+      "magnet": null,
+      "teaching": true,
+      "affiliated_university": "University of Connecticut (UConn School of Medicine)",
+      "peds_services": [
+        "neonatology (Connecticut Children's NICU)",
+        "labor and delivery",
+        "maternal fetal medicine"
+      ],
+      "description": "UConn John Dempsey Hospital is the University of Connecticut's own teaching hospital on the UConn Health campus in Farmington, a hilltop academic complex just west of Hartford. It serves as the main inpatient site for UConn School of Medicine alongside its research buildings and outpatient pavilion. Connecticut Children's runs the Level III NICU here, so neonatal nurse practitioner and pediatric APRN jobs on this campus are usually Connecticut Children's positions. Farmington and nearby West Hartford are popular suburbs with good schools and quick highway access to Hartford.",
+      "highlights": [
+        "University of Connecticut's academic hospital in Farmington",
+        "Level III NICU operated by Connecticut Children's",
+        "Teaching site for UConn School of Medicine",
+        "Suburban campus about 10 miles west of downtown Hartford"
+      ],
+      "photos": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/0/08/UConn_Health_Center.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original",
+          "caption": "UConn Health",
+          "credit": "Ragesoss",
+          "license": "CC BY-SA 4.0",
+          "source_page": "https://commons.wikimedia.org/wiki/File:UConn_Health_Center.jpg"
+        }
+      ],
+      "wikipedia_title": "UConn Health",
+      "sources": [
+        "https://www.connecticutchildrens.org/neonatology/nicu-levels-newborn-hospital-care-explained/",
+        "https://connecticutchildrens.org/specialties-conditions/neonatology",
+        "https://www.uconnhealth.org/about-us/careers/nursing-careers",
+        "https://en.wikipedia.org/wiki/List_of_hospitals_in_Connecticut"
+      ],
+      "notes": "Bed count, Magnet status and any pediatric inpatient service were not confirmed this session (UConn Health pages were partly blocked). An older AAP District I roster lists the UConn NICU at 30 beds, which is unverified. UConn Health also now operates Waterbury Hospital (separate record).",
+      "confidence": "medium",
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "UConn Health",
+          "url": "https://en.wikipedia.org/wiki/UConn_Health",
+          "extract": "UConn Health is a healthcare system and hospital, and branch of the University of Connecticut that oversees clinical care, advanced biomedical research, and academic education in medicine. The system is funded directly by the State of Connecticut and the University’s financial endowment. Its primary location, UConn John Dempsey Hospital, is a teaching hospital located in Farmington, Connecticut, in the US. In total, UConn Health comprises the hospital, the UConn School of Medicine, School of Dental Medicine, and Graduate School. Additional community satellite locations are located in Avon, Canton, East Hartford, Putnam, Simsbury, Southington, Storrs, Torrington, West Hartford, and Willimantic, including two urgent cares in both Storrs and Canton. UConn Health also owns and operates many smaller clinics around the state that contain UConn Medical Group, UConn Health Partners, University Dentists and research facilities. Andrew Agwunobi stepped down as the CEO of UConn Health in February 2022 after serving since 2014 for a private-sector job. Bruce Liang was UConn Heath's interim CEO for 2022–2024 and remains dean of the UConn School of Medicine. Andrew Agwunobi returned to UConn Health as Executive Vice President of Health Affairs and CEO beginning May 31, 2024.\nUConn Health has about 5,000 employees, and is closely linked with the University of Connecticut's main campus in Storrs through several cross-campus academic projects. Personnel are at the same time both University and Connecticut state employees. UConn Health is part of a plan introduced by Connecticut Governor Dannel P. Malloy, called \"Bioscience Connecticut,\" and approved by the Connecticut General Assembly in 2011, to stimulate the economy in the state of Connecticut."
+        }
+      }
+    },
+    {
+      "slug": "saint-francis-hartford",
+      "name": "Saint Francis Hospital and Medical Center",
+      "parent_hospital": null,
+      "health_system": "Trinity Health Of New England",
+      "hospital_type": "regional_hospital",
+      "city": "Hartford",
+      "state": "CT",
+      "address": "114 Woodland Street, Hartford, CT 06105",
+      "lat": 41.77402,
+      "lng": -72.69856,
+      "coord_source": "Google Places pin for the Saint Francis campus at 114 Woodland St (listed under Trinity Health Of New England)",
+      "region": "Connecticut",
+      "hotspot": false,
+      "website": "https://www.trinityhealthofne.org/location/saint-francis-hospital",
+      "careers_url": "https://trinityhealth.wd1.myworkdayjobs.com/Jobs",
+      "careers_platform": "workday",
+      "careers_search_url": "https://trinityhealth.wd1.myworkdayjobs.com/Jobs?q=nurse%20practitioner",
+      "careers_notes": "Trinity Health (national) Workday tenant. A Saint Francis posting resolves to trinityhealth.wd1.myworkdayjobs.com/Jobs/job/Saint-Francis-Hospital---Hartford-CT/<title>_<req>, so Connecticut facilities are encoded in the location segment of the job path. Marketing front end is jobs.trinity-health.org. Workday listings are JS-rendered; use the Workday CXS JSON endpoint (/wday/cxs/trinityhealth/Jobs/jobs) and filter to Connecticut locations. Search URL not fetched this session. Medical group APP roles post as Trinity Health Of New England Medical Group. [enrich 2026-10-20] careers_url -> HTTP 200 at https://trinityhealth.wd1.myworkdayjobs.com/Jobs; ATS link seen: https://trinityhealth.wd1.myworkdayjobs.com/Jobs; search_url -> HTTP 200, mentions NP: False, job links: 0",
+      "ats_config": {
+        "host": "trinityhealth.wd1.myworkdayjobs.com",
+        "tenant": "trinityhealth",
+        "site": "Jobs",
+        "front_end_host": "jobs.trinity-health.org"
+      },
+      "nearest_airport": "BDL Bradley International (about 11 mi straight-line); HVN Tweed-New Haven about 37 mi",
+      "beds": 617,
+      "peds_beds": null,
+      "peds_inpatient": false,
+      "picu": false,
+      "picu_beds": null,
+      "nicu_level": 3,
+      "peds_ed": false,
+      "peds_trauma_level": null,
+      "magnet": null,
+      "teaching": true,
+      "affiliated_university": "UConn School of Medicine; Frank H. Netter MD School of Medicine at Quinnipiac University (medical student teaching)",
+      "peds_services": [
+        "neonatology",
+        "newborn nursery hospitalist",
+        "high risk delivery coverage"
+      ],
+      "description": "Saint Francis Hospital and Medical Center is a 617 bed Catholic teaching hospital in Hartford's Asylum Hill neighborhood, founded in 1897 by the Sisters of Saint Joseph of Chambery and now the flagship of Trinity Health Of New England. It is an ACS verified Level I trauma center and one of the two big adult referral hospitals in the capital city, with the John T. O'Connell Tower added in 2011. Its 28 bed Level III NICU is run by Trinity Health Of New England Medical Group neonatologists working with physician assistants and APRNs, and the team also covers the newborn nursery, complicated deliveries and satellite Level I and II nurseries in the region. That makes Saint Francis one of the larger neonatal APP employers in Connecticut outside the Yale and Connecticut Children's systems.",
+      "highlights": [
+        "617 beds plus 65 bassinets",
+        "28 bed Level III NICU with APRN and PA team; neonatology also covers satellite Level I and II nurseries",
+        "ACS verified Level I trauma center (2018)",
+        "Teaching site for UConn and Quinnipiac medical students",
+        "Flagship of Trinity Health Of New England (Catholic)"
+      ],
+      "photos": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/8/8e/St._Francis_Hospital%2C_114_Woodland_Street_in_Hartford%2C_Connecticut%2C_2009-09-02.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original",
+          "caption": "Saint Francis Hospital & Medical Center",
+          "credit": "Wikimedia Commons",
+          "license": "see source page",
+          "source_page": "https://en.wikipedia.org/wiki/Saint_Francis_Hospital_%26_Medical_Center"
+        }
+      ],
+      "wikipedia_title": "Saint Francis Hospital and Medical Center",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Saint_Francis_Hospital_and_Medical_Center",
+        "https://careers.saem.org/job/neonatology/85502728/",
+        "https://www.talentify.io/medical-secretary-hartford-connecticut-us-trinity-health",
+        "https://jobs.ctbar.org/job/nurse-practitioner-or-physician-assistant-wound-care/85887067/",
+        "https://en.wikipedia.org/wiki/List_of_hospitals_in_Connecticut"
+      ],
+      "notes": "A general pediatric inpatient unit or pediatric ED was not confirmed this session (a Saint Francis Children's Center page exists but could not be fetched), so peds_inpatient is false pending verification. Hospital website URL is the Trinity Health Of New England location page pattern and was not fetched. NICU APRN roles post on the Trinity Health Workday tenant under Saint Francis Hospital - Hartford CT or Trinity Health Of New England Medical Group.",
+      "confidence": "medium",
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "Saint Francis Hospital & Medical Center",
+          "url": "https://en.wikipedia.org/wiki/Saint_Francis_Hospital_%26_Medical_Center",
+          "extract": "Saint Francis Hospital & Medical Center is a 617-bed acute care hospital located on Woodland Street in Hartford, Connecticut. The hospital was established in 1897 by the Sisters of Saint Joseph of Chambéry. With 617 beds and 65 bassinets, it is the largest Catholic hospital in New England."
+        }
+      }
+    },
+    {
+      "slug": "ynhch-bridgeport",
+      "name": "Yale New Haven Children's Hospital at Bridgeport Hospital",
+      "parent_hospital": "Bridgeport Hospital",
+      "health_system": "Yale New Haven Health",
+      "hospital_type": "childrens_hospital_within_hospital",
+      "city": "Bridgeport",
+      "state": "CT",
+      "address": "267 Grant Street, Bridgeport, CT 06610",
+      "lat": 41.18927,
+      "lng": -73.16631,
+      "coord_source": "Google Places pin for Bridgeport Hospital, 267 Grant St; Wikipedia gives 41.1888, -73.1664 for the same campus",
+      "region": "Connecticut",
+      "hotspot": false,
+      "website": "https://www.bridgeporthospital.org/services/childrens-pediatrics",
+      "careers_url": "https://jobs.ynhhs.org/",
+      "careers_platform": "custom",
+      "careers_search_url": "https://jobs.ynhhs.org/jobs?keywords=nurse%20practitioner&sortBy=relevance&page=1",
+      "careers_notes": "Yale New Haven Health posts all hospitals (YNHH and YNHCH, Bridgeport, Greenwich, Lawrence + Memorial, Westerly) on one Jibe career site at jobs.ynhhs.org (assets on cms.jibecdn.com; talent network at ynhhs.jibeapply.com). The pediatric nursing category page /jobs/categories/NURSING-STAFF+-+PEDIATRICS was fetched 2026-10-19 and returned only page chrome, so listings are JS-rendered. The careers page links a pre-filtered search of the form /jobs?sortBy=relevance&page=1&categories=ADVANCED%20PRACTICE&tags2=..., so categories=ADVANCED%20PRACTICE is the APP filter. The keyword search URL uses the standard Jibe keywords parameter; a test fetch was blocked in this session, so it is unverified. Jibe sites usually expose a JSON endpoint at /api/jobs with the same parameters. [enrich 2026-10-20] careers_url -> HTTP 200 at https://jobs.ynhhs.org/jobs; ATS link seen: https://internal-ynhhs.icims.com/jobs/login?loginOnly=1&redirect=&in_iframe=1&sso_connection=hs-5071-adfs\\; search_url -> HTTP 200, mentions NP: True, job links: 5",
+      "ats_config": {
+        "host": "jobs.ynhhs.org",
+        "vendor": "Jibe",
+        "talent_network_host": "ynhhs.jibeapply.com",
+        "app_category": "ADVANCED PRACTICE"
+      },
+      "nearest_airport": "HVN Tweed-New Haven (about 15 mi straight-line); HPN Westchester County about 29 mi; LGA LaGuardia about 47 mi",
+      "beds": 501,
+      "peds_beds": 42,
+      "peds_inpatient": true,
+      "picu": false,
+      "picu_beds": null,
+      "nicu_level": 3,
+      "peds_ed": true,
+      "peds_trauma_level": null,
+      "magnet": null,
+      "teaching": true,
+      "affiliated_university": "Yale School of Medicine",
+      "peds_services": [
+        "hospitalist",
+        "neonatology",
+        "pediatric emergency medicine",
+        "newborn nursery",
+        "pediatric surgery",
+        "sleep medicine",
+        "pediatric rehabilitation",
+        "child life"
+      ],
+      "description": "Bridgeport Hospital, founded in 1878 with P.T. Barnum as its first board president, is a 501 bed Yale affiliated teaching hospital and Level II trauma center that also houses the second inpatient campus of Yale New Haven Children's Hospital. The pediatric program here includes a 20 bed single room inpatient pediatric unit run by Yale pediatric hospitalists, the Allison Family Level III NICU, a newborn nursery and the Children's Emergency Center, which bills itself as the only one in the area. Hospitalists cover all medical and surgical children on the unit and consult in the emergency department, so the unit functions as a community children's hospital for Fairfield County and the lower Naugatuck Valley. Bridgeport is Connecticut's largest city and sits on Long Island Sound with Metro-North service to New Haven and New York.",
+      "highlights": [
+        "Second inpatient campus of Yale New Haven Children's Hospital (42 beds licensed to YNHCH)",
+        "20 bed inpatient pediatric unit, all single rooms, Yale pediatric hospitalists",
+        "Allison Family Level III NICU",
+        "Children's Emergency Center for the greater Bridgeport area",
+        "Level II trauma center; host of the state's burn center",
+        "Pediatric specialty center in nearby Trumbull with over 35 specialties"
+      ],
+      "photos": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/4/4b/BridgeportHospitalEntrance.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original",
+          "caption": "Bridgeport Hospital",
+          "credit": "John Cappiello",
+          "license": "CC BY 3.0",
+          "source_page": "https://commons.wikimedia.org/wiki/File:BridgeportHospitalEntrance.jpg"
+        }
+      ],
+      "wikipedia_title": "Bridgeport Hospital",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Bridgeport_Hospital",
+        "https://www.bridgeporthospital.org/services/childrens-pediatrics",
+        "https://medicine.yale.edu/pediatrics/sections/hospitalist/phm-clinicalocations",
+        "https://www.ynhhs.org/about/corporate-overview/delivery-networks",
+        "https://www.ynhh.org/childrens-hospital/services/critical-care",
+        "https://ynhhs.org/careers"
+      ],
+      "notes": "beds is the whole Bridgeport Hospital (501 on two campuses including the Milford campus); peds_beds is the 42 beds licensed to YNHCH here, which likely combine the 20 bed pediatric unit and NICU beds. No PICU on site; critically ill children transfer to YNHCH New Haven. Postings appear on jobs.ynhhs.org under Bridgeport Hospital or Yale New Haven Children's Hospital. The Milford campus (former Milford Hospital) has no confirmed pediatric unit and is not listed separately.",
+      "confidence": "high",
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "Bridgeport Hospital",
+          "url": "https://en.wikipedia.org/wiki/Bridgeport_Hospital",
+          "extract": "Bridgeport Hospital is a not-for-profit general medical and surgical hospital in Bridgeport, Connecticut.  It is a member of Yale New Haven Health System and affiliated with Yale School of Medicine."
+        }
+      }
+    },
+    {
+      "slug": "greenwich-hospital-greenwich",
+      "name": "Greenwich Hospital",
+      "parent_hospital": null,
+      "health_system": "Yale New Haven Health",
+      "hospital_type": "community_hospital",
+      "city": "Greenwich",
+      "state": "CT",
+      "address": "5 Perryridge Road, Greenwich, CT 06830",
+      "lat": 41.03452,
+      "lng": -73.62986,
+      "coord_source": "Google Places pin for 5 Perryridge Rd; Wikipedia (Greenwich Hospital (Connecticut)) gives 41.035, -73.6307",
+      "region": "Connecticut",
+      "hotspot": false,
+      "website": "https://www.greenwichhospital.org/",
+      "careers_url": "https://jobs.ynhhs.org/",
+      "careers_platform": "custom",
+      "careers_search_url": "https://jobs.ynhhs.org/jobs?keywords=nurse%20practitioner&sortBy=relevance&page=1",
+      "careers_notes": "Yale New Haven Health posts all hospitals (YNHH and YNHCH, Bridgeport, Greenwich, Lawrence + Memorial, Westerly) on one Jibe career site at jobs.ynhhs.org (assets on cms.jibecdn.com; talent network at ynhhs.jibeapply.com). The pediatric nursing category page /jobs/categories/NURSING-STAFF+-+PEDIATRICS was fetched 2026-10-19 and returned only page chrome, so listings are JS-rendered. The careers page links a pre-filtered search of the form /jobs?sortBy=relevance&page=1&categories=ADVANCED%20PRACTICE&tags2=..., so categories=ADVANCED%20PRACTICE is the APP filter. The keyword search URL uses the standard Jibe keywords parameter; a test fetch was blocked in this session, so it is unverified. Jibe sites usually expose a JSON endpoint at /api/jobs with the same parameters. [enrich 2026-10-20] careers_url -> HTTP 200 at https://jobs.ynhhs.org/jobs; ATS link seen: https://internal-ynhhs.icims.com/jobs/login?loginOnly=1&redirect=&in_iframe=1&sso_connection=hs-5071-adfs\\; search_url -> HTTP 200, mentions NP: True, job links: 5",
+      "ats_config": {
+        "host": "jobs.ynhhs.org",
+        "vendor": "Jibe",
+        "talent_network_host": "ynhhs.jibeapply.com",
+        "app_category": "ADVANCED PRACTICE"
+      },
+      "nearest_airport": "HPN Westchester County (about 5 mi straight-line); LGA LaGuardia about 22 mi; JFK about 28 mi",
+      "beds": 206,
+      "peds_beds": null,
+      "peds_inpatient": true,
+      "picu": false,
+      "picu_beds": null,
+      "nicu_level": 3,
+      "peds_ed": true,
+      "peds_trauma_level": null,
+      "magnet": null,
+      "teaching": true,
+      "affiliated_university": "Yale School of Medicine (major academic affiliate); New York Medical College",
+      "peds_services": [
+        "hospitalist",
+        "pediatric emergency medicine",
+        "neonatology",
+        "pediatric specialty center"
+      ],
+      "description": "Greenwich Hospital is a 206 bed community teaching hospital on Perryridge Road, just northwest of downtown Greenwich, and a member of Yale New Haven Health since 1998. Its pediatric program leans heavily on Yale New Haven Children's Hospital: YNHCH emergency physicians staff a 24/7 pediatric emergency area with its own fast track rooms, and a Yale pediatric hospital medicine group started in 2021 provides around the clock inpatient coverage. The hospital also has a Level III NICU staffed by neonatologists and nurse practitioners and a YNHCH pediatric specialty center on West Putnam Avenue. Greenwich is an affluent commuter town on the New York border with Metro-North service into Manhattan in under an hour.",
+      "highlights": [
+        "206 bed Yale New Haven Health community teaching hospital",
+        "24/7 pediatric emergency department staffed by YNHCH emergency medicine",
+        "Inpatient pediatrics with Yale pediatric hospitalists since 2021",
+        "Level III NICU with neonatologists and NPs",
+        "YNHCH pediatric specialty center opened in Greenwich in 2019",
+        "Level III trauma center; about 5 miles from Westchester County Airport"
+      ],
+      "photos": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/a/a9/Greenwich_Hospital_%28Connecticut%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original",
+          "caption": "Greenwich Hospital (Connecticut)",
+          "credit": "ajay_suresh",
+          "license": "CC BY 2.0",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Greenwich_Hospital_(Connecticut).jpg"
+        }
+      ],
+      "wikipedia_title": "Greenwich Hospital (Connecticut)",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Greenwich_Hospital_(Connecticut)",
+        "https://www.greenwichhospital.org/about_pediatric_services",
+        "https://medicine.yale.edu/pediatrics/sections/hospitalist/phm-clinicalocations",
+        "https://en.wikipedia.org/wiki/Yale_New_Haven_Children%27s_Hospital",
+        "https://www.ynhhs.org/about/corporate-overview/delivery-networks",
+        "https://ynhhs.org/careers"
+      ],
+      "notes": "Pediatric bed count not stated. Postings appear on jobs.ynhhs.org under Greenwich Hospital or YNHCH. Older roster lists the Greenwich NICU at 10 beds (unverified). Close to the New York state line, so Westchester and NYC employers are within commuting range.",
+      "confidence": "high",
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "Greenwich Hospital (Connecticut)",
+          "url": "https://en.wikipedia.org/wiki/Greenwich_Hospital_(Connecticut)",
+          "extract": "Greenwich Hospital is a teaching hospital in Greenwich, Connecticut, serving people in lower Fairfield County and lower Westchester County, New York.\nA member of Yale New Haven Health System, Greenwich Hospital is a teaching institution. It has an internal medicine residency program and is a major academic affiliate of Yale School of Medicine. The hospital is also affiliated with New York Medical College School of Medicine, Columbia University School of Social Work, Fairfield University School of Nursing and Graduate School of Education, Norwalk Community College, Pace University, and Westchester Community College Respiratory Therapy, among others.\nIn its 2020 fiscal year, the hospital reported 12,737 inpatient and 253,779 outpatient discharges. During the same period, the hospital emergency department had 32,534 visits.\nGreenwich Hospital has sub-specialties that include geriatrics, oncology, orthopedics, obstetrics, pediatrics, ophthalmology and home care.\nThe hospital is located on a campus on Perryridge Road, northwest of downtown Greenwich.\nThe main campus encompasses the Helmsley Medical Building and the Thomas and Olive C. Watson Pavilion. Located across the street from the hospital at 77 Lafayette Place, the Sherman and Gloria H. Cohen Pavilion houses the Smilow Cancer Hospital Greenwich Hospital Campus, home to the Bendheim Cancer Center and the Breast Center. Greenwich Hospital also has an Endoscopy Center at 500 W. Putnam Avenue, the Greenwich Fertility Center, Helmsley Ambulatory Surgery Center, and the Weight Loss & Diabetes Center at 55 Holly Hill Lane, a facility for diagnostic imaging and physical therapy at 2015 W. Main Street in Stamford, Conn., as well as multiple satellite blood draw stations.\nGreenwich Hospital is licensed as an acute care facility by the Connecticut Department of Public Health & Addiction Services. In 2017, it opened the Steven and Betsy Coman Palliative Care Center.\nThe hospital has 777 medical staff and 1,790 employees overall. Robert Blenderman is president of Greenwich Hospital."
+        }
+      }
+    },
+    {
+      "slug": "st-vincents-bridgeport",
+      "name": "St. Vincent's Medical Center",
+      "parent_hospital": null,
+      "health_system": "Hartford HealthCare",
+      "hospital_type": "community_hospital",
+      "city": "Bridgeport",
+      "state": "CT",
+      "address": "2800 Main Street, Bridgeport, CT 06606",
+      "lat": 41.20131,
+      "lng": -73.20111,
+      "coord_source": "Google Places pin for St. Vincent's Medical Center, 2800 Main St",
+      "region": "Connecticut",
+      "hotspot": false,
+      "website": "https://stvincents.org/",
+      "careers_url": "https://www.hhccareers.org/us/search-results",
+      "careers_platform": "phenom",
+      "careers_search_url": "https://www.hhccareers.org/us/en/search-results?keywords=nurse%20practitioner",
+      "careers_notes": "Hartford HealthCare's official career site is www.hhccareers.org, a Phenom site (images on cdn.phenompeople.com, /us/en/ locale paths, /us/search-results). The search-results page was fetched 2026-10-19 and showed no listings in the static HTML, so results are JS-rendered; use the Phenom widgets API or a search fallback. Job detail URLs look like /jobs/<id>-<slug> (for example /jobs/8362259-patient-service-coordinator-cardiology). The keywords parameter is the standard Phenom pattern and was not tested. HHC jobs are also syndicated to dejobs.org with requisition IDs. hartfordhealthcare.org/careers could not be fetched. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.hhccareers.org/us/en; search_url -> HTTP 200, mentions NP: True, job links: 0",
+      "ats_config": {
+        "host": "www.hhccareers.org",
+        "locale_path": "/us/en",
+        "job_detail_pattern": "/jobs/<id>-<slug>"
+      },
+      "nearest_airport": "HVN Tweed-New Haven (about 17 mi straight-line); HPN Westchester County about 28 mi",
+      "beds": null,
+      "peds_beds": null,
+      "peds_inpatient": true,
+      "picu": false,
+      "picu_beds": null,
+      "nicu_level": 3,
+      "peds_ed": false,
+      "peds_trauma_level": null,
+      "magnet": null,
+      "teaching": false,
+      "affiliated_university": null,
+      "peds_services": [
+        "hospitalist",
+        "newborn nursery",
+        "neonatology",
+        "pediatric ED consults"
+      ],
+      "description": "St. Vincent's Medical Center is a Catholic heritage community hospital in Bridgeport's North End that joined Hartford HealthCare as its Fairfield County hub. Its pediatric side is built around the birthing center: Hartford HealthCare Medical Group runs a pediatric hospitalist and newborn nursery service that is fully inpatient, attends C-sections, manages phototherapy, consults on children in the ED and on the floors, and stabilizes newborns for transfer with 24/7 neonatology backup. The NICU is listed as Level III on an AAP district roster. For a pediatric NP this is one of the few Hartford HealthCare sites in southwestern Connecticut with a dedicated inpatient pediatric APP role.",
+      "highlights": [
+        "Hartford HealthCare's Fairfield County hospital",
+        "Pediatric hospitalist and newborn nursery APP service, 100% inpatient, 24 hour shifts",
+        "24/7 neonatology support; NICU listed as Level III on an AAP District I roster",
+        "Connecticut Children's affiliate hospital"
+      ],
+      "photos": [],
+      "wikipedia_title": "St. Vincent's HealthCare",
+      "sources": [
+        "https://www.practicematch.com/advanced-practitioners/job-details.cfm/1145498",
+        "https://careerconnection.napnap.org/job/pediatric-hospitalistnewborn-nursery-nurse-practitioner-or-physician-assistant/ba5122c0-dafcd606907261966bdaff957590b791/",
+        "https://connecticutchildrens.org/specialties-conditions/neonatology",
+        "https://neonatologysolutions.com/?p=24807",
+        "https://en.wikipedia.org/wiki/List_of_hospitals_in_Connecticut"
+      ],
+      "notes": "A 2026 posting for a Pediatric Hospitalist/Newborn Nursery NP or PA lists St. Vincent's Medical Center but also says New Britain, so the role may split with The Hospital of Central Connecticut. Whether St. Vincent's still runs a staffed general pediatric ward (versus nursery plus consults) was not confirmed; NICU level comes from an older AAP District I roster. Bed count and website not verified this session.",
+      "confidence": "low",
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "St. Vincent's HealthCare",
+          "url": "https://en.wikipedia.org/wiki/St._Vincent%27s_HealthCare",
+          "extract": "St. Vincent's HealthCare, based in Jacksonville, Florida, is a network of three acute-care hospitals, a long-term skilled nursing facility, 30+ primary care centers, nearly a dozen medical laboratories, transportation and prescription services, and a health outreach ministry. It is part of  Ascension, the largest Catholic hospital system in the United States."
+        }
+      }
+    },
+    {
+      "slug": "danbury-hospital-danbury",
+      "name": "Northwell Danbury Hospital",
+      "parent_hospital": null,
+      "health_system": "Northwell Health",
+      "hospital_type": "regional_hospital",
+      "city": "Danbury",
+      "state": "CT",
+      "address": "24 Hospital Avenue, Danbury, CT 06810",
+      "lat": 41.40536,
+      "lng": -73.44531,
+      "coord_source": "Google Places (places_search tool) via R2/R2b scratch, address matched",
+      "region": "Connecticut",
+      "hotspot": false,
+      "website": "https://www.nuvancehealth.org",
+      "careers_url": "https://jobs.jobvite.com/nuvance/jobs",
+      "careers_platform": "jobvite",
+      "careers_search_url": "https://jobs.jobvite.com/nuvance/jobs",
+      "careers_notes": "The former Nuvance Health hospitals (Danbury, Norwalk, New Milford, Sharon, plus Vassar, Putnam and Northern Dutchess in NY) still post on the Jobvite board jobs.jobvite.com/nuvance, now titled Northwell Health Careers. Fetched 2026-10-19: listings render server-side (about 176 visible across 12 categories, with Show More links), titles carry the hospital and town. Category search is /nuvance/search?c=<Category>&p=<page>; no keyword parameter seen, so filter by title text (APRN, NP). Northwell's own site jobs.northwell.edu may take over these postings; check both. [enrich 2026-10-20] careers_url -> HTTP 200 at https://jobs.jobvite.com/nuvance/jobs; search_url -> HTTP 200, mentions NP: True, job links: 176",
+      "ats_config": {
+        "host": "jobs.jobvite.com",
+        "company": "nuvance",
+        "search_pattern": "/nuvance/search?c=<Category>&p=<page>",
+        "alt_host": "jobs.northwell.edu"
+      },
+      "nearest_airport": "HPN Westchester County (about 27 mi straight-line); HVN Tweed-New Haven about 31 mi",
+      "beds": null,
+      "peds_beds": null,
+      "peds_inpatient": true,
+      "picu": false,
+      "picu_beds": null,
+      "nicu_level": 3,
+      "peds_ed": false,
+      "peds_trauma_level": null,
+      "magnet": null,
+      "teaching": true,
+      "affiliated_university": "University of Vermont Larner College of Medicine (Nuvance-era clinical campus, verify)",
+      "peds_services": [
+        "pediatric inpatient unit (Connecticut Children's alliance)",
+        "NICU and newborn nursery",
+        "pediatric emergency medicine consultation"
+      ],
+      "description": "Danbury Hospital is the main acute care hospital for greater Danbury in western Fairfield County, and was the flagship of Nuvance Health before that system joined Northwell Health in 2025. It serves Danbury, Bethel, Brookfield, Newtown and Ridgefield plus nearby New York border towns. Under a care alliance with Connecticut Children's, it runs a pediatric inpatient unit, a NICU and newborn nursery, and pediatric emergency medicine consultation. An AAP District I roster lists the NICU as Level III with about 21 beds. The area is a mix of small city and wooded suburbs about an hour from Hartford, New Haven and White Plains.",
+      "highlights": [
+        "Connecticut Children's care alliance site with a pediatric inpatient unit",
+        "NICU listed as Level III (about 21 beds) on an AAP District I roster",
+        "Pediatric emergency medicine consultation from Connecticut Children's",
+        "Former Nuvance Health flagship, now part of Northwell Health"
+      ],
+      "photos": [],
+      "wikipedia_title": "Danbury Hospital",
+      "sources": [
+        "https://www.connecticutchildrens.org/about-us/impact/care-alliances/connecticut-childrens-alliance-northwell-health",
+        "https://neonatologysolutions.com/?p=24807",
+        "https://en.wikipedia.org/wiki/List_of_hospitals_in_Connecticut",
+        "model knowledge (to verify); enrichment pending"
+      ],
+      "notes": "Connecticut Children's alliance page (read 2026-10-20) lists a pediatric inpatient unit, NICU and nursery, and pediatric emergency medicine consultation at Northwell Danbury Hospital. Bed count not confirmed (reportedly about 450). Pediatric hospitalist and NICU APP roles may be employed by Connecticut Children's (Oracle board) rather than Northwell. Website is the legacy Nuvance domain; Northwell may have moved hospital pages to northwell.edu.",
+      "confidence": "medium",
+      "active": true,
+      "_enrich": {}
+    },
+    {
+      "slug": "norwalk-hospital-norwalk",
+      "name": "Northwell Norwalk Hospital",
+      "parent_hospital": null,
+      "health_system": "Northwell Health",
+      "hospital_type": "community_hospital",
+      "city": "Norwalk",
+      "state": "CT",
+      "address": "34 Maple Street, Norwalk, CT 06856",
+      "lat": 41.11161,
+      "lng": -73.42185,
+      "coord_source": "Google Places (places_search tool) via R2/R2b scratch, address matched",
+      "region": "Connecticut",
+      "hotspot": false,
+      "website": "https://www.nuvancehealth.org",
+      "careers_url": "https://jobs.jobvite.com/nuvance/jobs",
+      "careers_platform": "jobvite",
+      "careers_search_url": "https://jobs.jobvite.com/nuvance/jobs",
+      "careers_notes": "The former Nuvance Health hospitals (Danbury, Norwalk, New Milford, Sharon, plus Vassar, Putnam and Northern Dutchess in NY) still post on the Jobvite board jobs.jobvite.com/nuvance, now titled Northwell Health Careers. Fetched 2026-10-19: listings render server-side (about 176 visible across 12 categories, with Show More links), titles carry the hospital and town. Category search is /nuvance/search?c=<Category>&p=<page>; no keyword parameter seen, so filter by title text (APRN, NP). Northwell's own site jobs.northwell.edu may take over these postings; check both. [enrich 2026-10-20] careers_url -> HTTP 200 at https://jobs.jobvite.com/nuvance/jobs; search_url -> HTTP 200, mentions NP: True, job links: 176",
+      "ats_config": {
+        "host": "jobs.jobvite.com",
+        "company": "nuvance",
+        "search_pattern": "/nuvance/search?c=<Category>&p=<page>",
+        "alt_host": "jobs.northwell.edu"
+      },
+      "nearest_airport": "HPN Westchester County (about 15 mi straight-line); LGA LaGuardia about 33 mi",
+      "beds": null,
+      "peds_beds": null,
+      "peds_inpatient": false,
+      "picu": false,
+      "picu_beds": null,
+      "nicu_level": 3,
+      "peds_ed": true,
+      "peds_trauma_level": null,
+      "magnet": null,
+      "teaching": true,
+      "affiliated_university": "Yale School of Medicine (historical residency affiliate, verify)",
+      "peds_services": [
+        "pediatric emergency center (Connecticut Children's staffed)",
+        "NICU",
+        "well newborn nursery"
+      ],
+      "description": "Norwalk Hospital is a community teaching hospital in central Norwalk on the Fairfield County shoreline, part of Northwell Health since the 2025 Nuvance merger. It serves Norwalk, Westport, Wilton, Darien and New Canaan. Its pediatric program centers on a pediatric emergency center staffed by Connecticut Children's clinicians, plus a NICU and well newborn nursery. An AAP District I roster lists the NICU as Level III with about 16 beds. Norwalk sits on the Metro-North New Haven Line, roughly an hour from Manhattan.",
+      "highlights": [
+        "Pediatric emergency center staffed by Connecticut Children's",
+        "NICU listed as Level III (about 16 beds) on an AAP District I roster",
+        "Shoreline Fairfield County location on Metro-North",
+        "Part of Northwell Health (former Nuvance Health)"
+      ],
+      "photos": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/5/52/NorwalkCTNorwalkHospital09052007.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original",
+          "caption": "Norwalk Hospital",
+          "credit": "User:Noroton",
+          "license": "Public domain",
+          "source_page": "https://commons.wikimedia.org/wiki/File:NorwalkCTNorwalkHospital09052007.JPG"
+        }
+      ],
+      "wikipedia_title": "Norwalk Hospital",
+      "sources": [
+        "https://www.connecticutchildrens.org/about-us/impact/care-alliances/connecticut-childrens-alliance-northwell-health",
+        "https://neonatologysolutions.com/?p=24807",
+        "https://en.wikipedia.org/wiki/List_of_hospitals_in_Connecticut",
+        "model knowledge (to verify); enrichment pending"
+      ],
+      "notes": "The Connecticut Children's alliance page (read 2026-10-20) lists a pediatric emergency center, NICU and wellborn nursery but no inpatient pediatric unit, so peds_inpatient is false; verify. Peds ED NP roles may be Connecticut Children's employees. Bed count not confirmed (reportedly about 360).",
+      "confidence": "medium",
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "Norwalk Hospital",
+          "url": "https://en.wikipedia.org/wiki/Norwalk_Hospital",
+          "extract": "Norwalk Hospital is a not-for-profit, acute care community teaching hospital in the Hospital Hill section of Norwalk, Connecticut. The hospital serves a population of 250,000 in lower Fairfield County, Connecticut. The 366-bed hospital has more than 500 physicians on its active medical staff, and 2,000 health professionals and support personnel. The hospital was part of the Western Connecticut Health Network, which included two other hospitals - Danbury Hospital and New Milford Hospital - up until April 2019, when WCHN merged with Health Quest to form Nuvance Health."
+        }
+      }
+    },
+    {
+      "slug": "stamford-hospital-stamford",
+      "name": "Stamford Hospital",
+      "parent_hospital": null,
+      "health_system": "Stamford Health",
+      "hospital_type": "community_hospital",
+      "city": "Stamford",
+      "state": "CT",
+      "address": "One Hospital Plaza, Stamford, CT 06902",
+      "lat": 41.05551,
+      "lng": -73.55242,
+      "coord_source": "Google Places (places_search tool) via R2/R2b scratch, address matched",
+      "region": "Connecticut",
+      "hotspot": false,
+      "website": "https://www.stamfordhealth.org",
+      "careers_url": "https://fa-ewfb-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/Careers",
+      "careers_platform": "oracle_cloud",
+      "careers_search_url": "https://fa-ewfb-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/ProviderCareers/jobs?keyword=nurse%20practitioner",
+      "careers_notes": "Stamford Health uses Oracle Cloud HCM Candidate Experience on fa-ewfb-saasfaprod1.fa.ocs.oraclecloud.com with three sites: Careers (general), MedicalGroupCareers and ProviderCareers (physician and APP). NP roles most likely post under ProviderCareers; check Careers too. Oracle pages are JS-rendered; use /hcmRestApi/resources/latest/recruitingCEJobRequisitions with the siteNumber. Site names come from R2b scratch (2026-10-19); the keyword URL follows the standard Oracle pattern and was not fetched. [enrich 2026-10-20] careers_url -> HTTP 200 at https://fa-ewfb-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/Careers; ATS link seen: https://fa-ewfb-saasfaprod1.fa.ocs.oraclecloud.com:443; search_url -> HTTP 200, mentions NP: False, job links: 0",
+      "ats_config": {
+        "host": "fa-ewfb-saasfaprod1.fa.ocs.oraclecloud.com",
+        "site_number": "ProviderCareers",
+        "other_sites": [
+          "Careers",
+          "MedicalGroupCareers"
+        ]
+      },
+      "nearest_airport": "HPN Westchester County (about 8 mi straight-line); LGA LaGuardia about 26 mi",
+      "beds": null,
+      "peds_beds": null,
+      "peds_inpatient": true,
+      "picu": false,
+      "picu_beds": null,
+      "nicu_level": 3,
+      "peds_ed": true,
+      "peds_trauma_level": null,
+      "magnet": true,
+      "teaching": true,
+      "affiliated_university": "Columbia University Vagelos College of Physicians and Surgeons (reported affiliate, verify)",
+      "peds_services": [
+        "pediatric inpatient unit",
+        "pediatric emergency department",
+        "NICU",
+        "pediatric emergency APPs"
+      ],
+      "description": "Stamford Hospital is the hub of independent Stamford Health and the main hospital for Stamford, Darien and the southern Fairfield County shoreline. Its pediatric program reportedly includes an inpatient pediatric unit opened in 2017 in partnership with Northwell's Cohen Children's Medical Center, a pediatric emergency area that has posted pediatric emergency APP roles, and a NICU listed as Level III with about 16 beds on an AAP District I roster. The hospital is a teaching site with residency programs and holds ANCC Magnet designation. Stamford is a corporate city on the Metro-North New Haven Line about 45 minutes from Grand Central.",
+      "highlights": [
+        "ANCC Magnet designation (2026 per careers site)",
+        "Inpatient pediatric unit reportedly opened 2017 with Cohen Children's Medical Center",
+        "Pediatric emergency APP roles posted",
+        "NICU listed as Level III (about 16 beds) on an AAP District I roster",
+        "Independent system with its own Oracle provider careers site"
+      ],
+      "photos": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/6/6d/Stamford_Hospital.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original",
+          "caption": "Stamford Hospital",
+          "credit": "Wiki4833",
+          "license": "CC BY-SA 4.0",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Stamford_Hospital.jpg"
+        }
+      ],
+      "wikipedia_title": "Stamford Hospital",
+      "sources": [
+        "https://neonatologysolutions.com/?p=24807",
+        "https://en.wikipedia.org/wiki/List_of_hospitals_in_Connecticut",
+        "model knowledge (to verify); enrichment pending"
+      ],
+      "notes": "Pediatric facts come from R2b scratch (newsroom headlines about a 2017 Cohen Children's inpatient unit, a NICU gift, a pediatric ER expansion, and a pediatric emergency APP posting), not from pages read in full. Verify whether the Cohen Children's partnership is still active after Northwell absorbed Danbury and Norwalk. Bed count not confirmed (reportedly about 300).",
+      "confidence": "medium",
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "Stamford Hospital",
+          "url": "https://en.wikipedia.org/wiki/Stamford_Hospital",
+          "extract": "Stamford Hospital, residing on the Bennett Medical Center campus, is a 305-bed, not-for-profit hospital and the central facility for Stamford Health. The hospital is the regional healthcare facility for Fairfield and Westchester counties, and is the only hospital in the city of Stamford, Connecticut.\nStamford Hospital is the largest teaching affiliate of the Columbia University Vagelos College of Physicians & Surgeons outside of NewYork-Presbyterian/Columbia University Irving Medical Center (NYP/CUIMC). The faculty at Stamford hospital have academic appointments from the university, as well as Columbia-affiliated physician residency training programs. Columbia medical students rotate through several departments at Stamford Hospital, including Primary Care, Family Medicine, Surgery, and Obstetrics & Gynecology.\nAs of 2005, Stamford Hospital had a total of 2,254 employees, making it one of the city's largest employers. A large segment are represented by the New England Health Care Employees Union, District 1199, affiliated with the Service Employees International Union."
+        }
+      }
+    },
+    {
+      "slug": "lawrence-memorial-new-london",
+      "name": "Lawrence + Memorial Hospital",
+      "parent_hospital": null,
+      "health_system": "Yale New Haven Health",
+      "hospital_type": "regional_hospital",
+      "city": "New London",
+      "state": "CT",
+      "address": "365 Montauk Avenue, New London, CT 06320",
+      "lat": 41.33638,
+      "lng": -72.10562,
+      "coord_source": "Google Places (places_search tool) via R2/R2b scratch, address matched; Wikipedia gives 41.3369, -72.1054",
+      "region": "Connecticut",
+      "hotspot": false,
+      "website": "https://www.lmhospital.org",
+      "careers_url": "https://jobs.ynhhs.org/",
+      "careers_platform": "custom",
+      "careers_search_url": "https://jobs.ynhhs.org/jobs?keywords=nurse%20practitioner&sortBy=relevance&page=1",
+      "careers_notes": "Yale New Haven Health posts all hospitals (YNHH and YNHCH, Bridgeport, Greenwich, Lawrence + Memorial, Westerly) on one Jibe career site at jobs.ynhhs.org (assets on cms.jibecdn.com; talent network at ynhhs.jibeapply.com). The pediatric nursing category page /jobs/categories/NURSING-STAFF+-+PEDIATRICS was fetched 2026-10-19 and returned only page chrome, so listings are JS-rendered. The careers page links a pre-filtered search of the form /jobs?sortBy=relevance&page=1&categories=ADVANCED%20PRACTICE&tags2=..., so categories=ADVANCED%20PRACTICE is the APP filter. The keyword search URL uses the standard Jibe keywords parameter; a test fetch was blocked in this session, so it is unverified. Jibe sites usually expose a JSON endpoint at /api/jobs with the same parameters. [enrich 2026-10-20] careers_url -> HTTP 200 at https://jobs.ynhhs.org/jobs; ATS link seen: https://internal-ynhhs.icims.com/jobs/login?loginOnly=1&redirect=&in_iframe=1&sso_connection=hs-5071-adfs\\; search_url -> HTTP 200, mentions NP: True, job links: 5",
+      "ats_config": {
+        "host": "jobs.ynhhs.org",
+        "vendor": "Jibe",
+        "talent_network_host": "ynhhs.jibeapply.com",
+        "app_category": "ADVANCED PRACTICE"
+      },
+      "nearest_airport": "GON Groton-New London (about 3 mi straight-line); PVD T. F. Green about 44 mi; BDL Bradley about 50 mi",
+      "beds": 280,
+      "peds_beds": null,
+      "peds_inpatient": true,
+      "picu": false,
+      "picu_beds": null,
+      "nicu_level": 3,
+      "peds_ed": false,
+      "peds_trauma_level": null,
+      "magnet": null,
+      "teaching": false,
+      "affiliated_university": null,
+      "peds_services": [
+        "pediatric inpatient unit",
+        "NICU",
+        "newborn nursery"
+      ],
+      "description": "Lawrence + Memorial Hospital is the regional referral hospital for southeastern Connecticut and has been part of Yale New Haven Health since 2016. It serves New London, Groton, Waterford, Norwich-area towns and the Navy and Electric Boat communities along the Thames River. It has the only NICU in southeastern Connecticut, listed as Level III with about 14 beds on an AAP District I roster, and a pediatric inpatient unit that was reportedly refurbished so children can be treated closer to home. New London is a small coastal city with ferry service to Long Island and Block Island and Amtrak on the Northeast Corridor.",
+      "highlights": [
+        "Only NICU in southeastern Connecticut (YNHHS)",
+        "Revitalized pediatric inpatient unit (The Day headline)",
+        "About 280 beds; Yale New Haven Health member since 2016",
+        "Amtrak Northeast Corridor station in New London"
+      ],
+      "photos": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/c/c8/Lawrence_and_Memorial_Hospital%2C_December_2023.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original",
+          "caption": "Lawrence + Memorial Hospital",
+          "credit": "Pi.1415926535",
+          "license": "CC BY-SA 4.0",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Lawrence_and_Memorial_Hospital,_December_2023.jpg"
+        }
+      ],
+      "wikipedia_title": "Lawrence + Memorial Hospital",
+      "sources": [
+        "https://www.ynhhs.org/about/corporate-overview/delivery-networks",
+        "https://neonatologysolutions.com/?p=24807",
+        "https://en.wikipedia.org/wiki/List_of_hospitals_in_Connecticut",
+        "model knowledge (to verify); enrichment pending"
+      ],
+      "notes": "YNHHS lists 280 beds; Wikipedia says 308 licensed (250 staffed). Pediatric unit size and staffing model (Yale PHM or community pediatricians) not confirmed. Westerly Hospital (RI) is the sister YNHHS hospital 15 miles east and does not meet inclusion on its own.",
+      "confidence": "medium",
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "Lawrence + Memorial Hospital",
+          "url": "https://en.wikipedia.org/wiki/Lawrence_%2B_Memorial_Hospital",
+          "extract": "Lawrence + Memorial Hospital is a private, not-for-profit hospital located in New London, Connecticut. It is affiliated with Yale New Haven Health System. The hospital has been serving its region since 1912, and joined the Yale New Haven Health System on September 8, 2016. Its primary regions include 10 towns along the Connecticut shoreline between Rhode Island and the Connecticut River and as far inland as Montville. The hospital is also a health care provider for Fishers Island, New York, Rhode Island, and other parts of eastern Connecticut.\nAffiliates include the John Diabetes Center affiliate at Lawrence + Memorial – New London and Mystic, Center for Hospice Care, Community Partnerships for a healthy community, Visiting Nurses Association of Southeastern Connecticut, Lawrence + Memorial Medical Group and Occupational Rehabilitation.\nDuring a fiscal year ending September 30, 2020, the hospital reported 12,609 inpatient discharges and 284,718 outpatient encounters. It employed 709 medical staff and 2,307 overall. During the fiscal year 2024, inpatient discharges went up to 13,175. Medical staff increased to 889, and total staff increased to 2,382."
+        }
+      }
+    },
+    {
+      "slug": "waterbury-hospital-waterbury",
+      "name": "Waterbury Hospital",
+      "parent_hospital": null,
+      "health_system": "UConn Health",
+      "hospital_type": "community_hospital",
+      "city": "Waterbury",
+      "state": "CT",
+      "address": "64 Robbins Street, Waterbury, CT 06708",
+      "lat": 41.55945,
+      "lng": -73.0593,
+      "coord_source": "Google Places (places_search tool) via R2/R2b scratch, address matched (listed as UConn Health Waterbury Hospital)",
+      "region": "Connecticut",
+      "hotspot": false,
+      "website": "https://www.waterburyhospital.org",
+      "careers_url": "https://www.uconnhealth.org/about-us/careers",
+      "careers_platform": "unknown",
+      "careers_search_url": null,
+      "careers_notes": "UConn Health careers landing page (same board as UConn John Dempsey Hospital); platform unconfirmed. Waterbury Hospital legacy postings may still appear on its own site during the ownership transition. Neonatal roles may be Connecticut Children's employees on its Oracle board. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.uconnhealth.org/about-us/careers",
+      "ats_config": {
+        "host": "www.uconnhealth.org"
+      },
+      "nearest_airport": "HVN Tweed-New Haven (about 22 mi straight-line); BDL Bradley about 33 mi",
+      "beds": null,
+      "peds_beds": null,
+      "peds_inpatient": false,
+      "picu": false,
+      "picu_beds": null,
+      "nicu_level": 3,
+      "peds_ed": false,
+      "peds_trauma_level": null,
+      "magnet": null,
+      "teaching": true,
+      "affiliated_university": "UConn School of Medicine (reportedly, after the UConn Health acquisition)",
+      "peds_services": [
+        "NICU",
+        "newborn nursery",
+        "labor and delivery"
+      ],
+      "description": "Waterbury Hospital is a community teaching hospital on the west side of Waterbury, and Google lists it as UConn Health Waterbury Hospital following its reported move from Prospect Medical Holdings to UConn Health. It serves Waterbury and the Naugatuck Valley towns of western New Haven County. An older AAP District I roster lists a Level III NICU with about 14 beds; no general pediatric inpatient unit is known, since Waterbury pediatric admissions have gone to the Connecticut Children's unit at nearby Saint Mary's Hospital. Waterbury is a former brass manufacturing city about 30 minutes from both New Haven and Hartford.",
+      "highlights": [
+        "NICU listed as Level III (about 14 beds) on an AAP District I roster",
+        "Reportedly acquired by UConn Health from Prospect Medical",
+        "Community teaching hospital serving the Naugatuck Valley"
+      ],
+      "photos": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/4/4b/Waterbury_State_Office_Complex_01.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original",
+          "caption": "Vermont State Hospital",
+          "credit": "Ɱ",
+          "license": "CC BY-SA 4.0",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Waterbury_State_Office_Complex_01.jpg"
+        }
+      ],
+      "wikipedia_title": "Waterbury Hospital",
+      "sources": [
+        "https://neonatologysolutions.com/?p=24807",
+        "https://en.wikipedia.org/wiki/List_of_hospitals_in_Connecticut",
+        "model knowledge (to verify); enrichment pending"
+      ],
+      "notes": "Inclusion rests on the NICU level from a dated roster; verify the current NICU level and whether the UConn Health transaction is complete. Bed count unknown. If the Saint Mary's pediatric unit closes, check whether any pediatric beds move here.",
+      "confidence": "low",
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "Vermont State Hospital",
+          "url": "https://en.wikipedia.org/wiki/Vermont_State_Hospital",
+          "extract": "Vermont State Hospital, alternately known as the Vermont State Asylum for the Insane and the Waterbury Asylum, was a mental institution built in 1890 in Waterbury, Vermont to help relieve overcrowding at the privately run Vermont Asylum for the Insane in Brattleboro, Vermont, now known as the Brattleboro Retreat. Originally intended to treat the criminally insane, the hospital eventually took in patients with a wide variety of problems, including mild to severe mental disabilities, epilepsy, depression, alcoholism and senility. The hospital campus, much of which now houses other state offices as the Waterbury State Office Complex, was listed on the National Register of Historic Places in 2016. Partly as a replacement for this facility, the state currently operates the 25 bed Vermont Psychiatric Care Hospital in Berlin, Vermont."
+        }
+      }
+    },
+    {
+      "slug": "saint-marys-waterbury",
+      "name": "Saint Mary's Hospital",
+      "parent_hospital": null,
+      "health_system": "Trinity Health Of New England",
+      "hospital_type": "regional_hospital",
+      "city": "Waterbury",
+      "state": "CT",
+      "address": "56 Franklin Street, Waterbury, CT 06706",
+      "lat": 41.55269,
+      "lng": -73.03657,
+      "coord_source": "Google Places (places_search tool) via R2/R2b scratch, address matched",
+      "region": "Connecticut",
+      "hotspot": false,
+      "website": "https://www.trinityhealthofne.org/location/saint-marys-hospital",
+      "careers_url": "https://trinityhealth.wd1.myworkdayjobs.com/Jobs",
+      "careers_platform": "workday",
+      "careers_search_url": "https://trinityhealth.wd1.myworkdayjobs.com/Jobs?q=nurse%20practitioner",
+      "careers_notes": "Trinity Health (national) Workday tenant. A Saint Francis posting resolves to trinityhealth.wd1.myworkdayjobs.com/Jobs/job/Saint-Francis-Hospital---Hartford-CT/<title>_<req>, so Connecticut facilities are encoded in the location segment of the job path. Marketing front end is jobs.trinity-health.org. Workday listings are JS-rendered; use the Workday CXS JSON endpoint (/wday/cxs/trinityhealth/Jobs/jobs) and filter to Connecticut locations. Search URL not fetched this session. Medical group APP roles post as Trinity Health Of New England Medical Group. [enrich 2026-10-20] careers_url -> HTTP 200 at https://trinityhealth.wd1.myworkdayjobs.com/Jobs; ATS link seen: https://trinityhealth.wd1.myworkdayjobs.com/Jobs; search_url -> HTTP 200, mentions NP: False, job links: 0",
+      "ats_config": {
+        "host": "trinityhealth.wd1.myworkdayjobs.com",
+        "tenant": "trinityhealth",
+        "site": "Jobs",
+        "front_end_host": "jobs.trinity-health.org"
+      },
+      "nearest_airport": "HVN Tweed-New Haven (about 21 mi straight-line); BDL Bradley about 32 mi",
+      "beds": null,
+      "peds_beds": 12,
+      "peds_inpatient": true,
+      "picu": false,
+      "picu_beds": null,
+      "nicu_level": 2,
+      "peds_ed": false,
+      "peds_trauma_level": null,
+      "magnet": null,
+      "teaching": true,
+      "affiliated_university": "Frank H. Netter MD School of Medicine at Quinnipiac (reported teaching affiliate, verify)",
+      "peds_services": [
+        "Connecticut Children's 12-bed inpatient pediatric unit (closure proposed)",
+        "special care nursery",
+        "labor and delivery"
+      ],
+      "description": "Saint Mary's Hospital is a Catholic regional hospital in downtown Waterbury and part of Trinity Health Of New England. Since 2007 it has housed a 12-bed Connecticut Children's inpatient pediatric unit, the only general pediatric floor in the Waterbury area. Connecticut Children's has filed a certificate of need to close that unit and consolidate care in Hartford, citing an average of fewer than three patients a day, and the state hearing was held around July 30, 2026. An older AAP roster lists a Level II nursery with about 9 beds. Waterbury is a mid-sized city in the Naugatuck Valley, roughly half an hour from New Haven and Hartford.",
+      "highlights": [
+        "Hosts a 12-bed Connecticut Children's inpatient pediatric unit (open since 2007)",
+        "Connecticut Children's certificate of need to close the unit pending (hearing July 2026)",
+        "Level II nursery (about 9 beds) per an AAP District I roster",
+        "Trinity Health Of New England Catholic hospital"
+      ],
+      "photos": [],
+      "wikipedia_title": "Saint Mary's Hospital (Waterbury, Connecticut)",
+      "sources": [
+        "https://cthosp.org/?p=23164",
+        "https://www.nbcconnecticut.com/news/local/ct-childrens-inpatient-unit-looking-leave-st-marys-hospital-waterbury/3663335/",
+        "https://neonatologysolutions.com/?p=24807",
+        "https://en.wikipedia.org/wiki/List_of_hospitals_in_Connecticut"
+      ],
+      "notes": "Watch the Office of Health Strategy decision on the Connecticut Children's CON: if approved, peds_inpatient should flip to false and peds_beds to null. Unit staff are Connecticut Children's employees (Oracle board), not Trinity. Bed count for the whole hospital not confirmed.",
+      "confidence": "medium",
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "Saint Mary's Hospital",
+          "url": "https://en.wikipedia.org/wiki/Saint_Mary%27s_Hospital",
+          "extract": "Saint Mary's Hospital may refer to:"
+        },
+        "website_og_image": {
+          "url": "https://www.trinityhealthofne.org/sites/default/files/hg_features/hg_location/2853b3198c88f4625a3cc4482803aa6c.jpg",
+          "page": "https://www.trinityhealthofne.org/location/saint-marys-hospital",
+          "content_type": "image/jpeg"
+        }
+      }
+    },
+    {
+      "slug": "hospital-of-central-connecticut-new-britain",
+      "name": "The Hospital of Central Connecticut",
+      "parent_hospital": null,
+      "health_system": "Hartford HealthCare",
+      "hospital_type": "community_hospital",
+      "city": "New Britain",
+      "state": "CT",
+      "address": "100 Grand Street, New Britain, CT 06052",
+      "lat": 41.66144,
+      "lng": -72.78678,
+      "coord_source": "Google Places (places_search tool) via R2/R2b scratch, address matched",
+      "region": "Connecticut",
+      "hotspot": false,
+      "website": "https://thocc.org",
+      "careers_url": "https://www.hhccareers.org/us/search-results",
+      "careers_platform": "phenom",
+      "careers_search_url": "https://www.hhccareers.org/us/en/search-results?keywords=nurse%20practitioner",
+      "careers_notes": "Hartford HealthCare's official career site is www.hhccareers.org, a Phenom site (images on cdn.phenompeople.com, /us/en/ locale paths, /us/search-results). The search-results page was fetched 2026-10-19 and showed no listings in the static HTML, so results are JS-rendered; use the Phenom widgets API or a search fallback. Job detail URLs look like /jobs/<id>-<slug> (for example /jobs/8362259-patient-service-coordinator-cardiology). The keywords parameter is the standard Phenom pattern and was not tested. HHC jobs are also syndicated to dejobs.org with requisition IDs. hartfordhealthcare.org/careers could not be fetched. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.hhccareers.org/us/en; search_url -> HTTP 200, mentions NP: True, job links: 0",
+      "ats_config": {
+        "host": "www.hhccareers.org",
+        "locale_path": "/us/en",
+        "job_detail_pattern": "/jobs/<id>-<slug>"
+      },
+      "nearest_airport": "BDL Bradley International (about 20 mi straight-line); HVN Tweed-New Haven about 28 mi",
+      "beds": null,
+      "peds_beds": null,
+      "peds_inpatient": false,
+      "picu": false,
+      "picu_beds": null,
+      "nicu_level": 3,
+      "peds_ed": false,
+      "peds_trauma_level": null,
+      "magnet": null,
+      "teaching": true,
+      "affiliated_university": "UConn School of Medicine (reported affiliate, verify)",
+      "peds_services": [
+        "NICU (Connecticut Children's neonatology and APPs)",
+        "Ferdinand Sauer Birthplace",
+        "pediatricians and pediatric PAs",
+        "newborn hospitalist"
+      ],
+      "description": "The Hospital of Central Connecticut is Hartford HealthCare's hospital for New Britain and Southington, with its main New Britain General campus on Grand Street and a smaller Bradley Memorial campus in Southington. Its Ferdinand Sauer Birthplace includes a neonatal intensive care unit where Connecticut Children's neonatologists and advanced practice providers deliver care, and the hospital lists board-certified pediatricians, neonatologists and pediatric PAs on its pediatric team. An AAP District I roster lists the NICU as Level III with about 16 beds. New Britain is a working city about 15 minutes southwest of Hartford.",
+      "highlights": [
+        "NICU run with Connecticut Children's neonatologists and APPs",
+        "NICU listed as Level III (about 16 beds) on an AAP District I roster",
+        "Two campuses: New Britain General and Bradley Memorial (Southington)",
+        "Hartford HealthCare member"
+      ],
+      "photos": [],
+      "wikipedia_title": "The Hospital of Central Connecticut",
+      "sources": [
+        "https://thocc.org/services/pediatrics",
+        "https://www.connecticutchildrens.org/about-us/locations/hospital-central-connecticut/",
+        "https://neonatologysolutions.com/?p=24807",
+        "https://en.wikipedia.org/wiki/List_of_hospitals_in_Connecticut"
+      ],
+      "notes": "No general pediatric inpatient unit or pediatric ED was named on the pages read (2026-10-20), so peds_inpatient is false; verify. A 2026 HHC pediatric hospitalist and newborn nursery NP posting mentions New Britain and St. Vincent's. NICU APPs are Connecticut Children's employees.",
+      "confidence": "medium",
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "List of hospitals in Connecticut",
+          "url": "https://en.wikipedia.org/wiki/List_of_hospitals_in_Connecticut",
+          "extract": "This is a list of hospitals in Connecticut, sorted by hospital name.  The American Hospital Directory listed 51 hospitals in Connecticut in 2020."
+        }
+      }
+    },
+    {
+      "slug": "middlesex-hospital-middletown",
+      "name": "Middlesex Hospital",
+      "parent_hospital": null,
+      "health_system": "Middlesex Health",
+      "hospital_type": "community_hospital",
+      "city": "Middletown",
+      "state": "CT",
+      "address": "28 Crescent Street, Middletown, CT 06457",
+      "lat": 41.55431,
+      "lng": -72.64727,
+      "coord_source": "Google Places (places_search tool) via R2/R2b scratch, address matched; Wikipedia gives 41.55447, -72.64706",
+      "region": "Connecticut",
+      "hotspot": false,
+      "website": "https://middlesexhealth.org",
+      "careers_url": "https://middlesexhealth.org",
+      "careers_platform": "unknown",
+      "careers_search_url": null,
+      "careers_notes": "Independent system; careers board not identified this session (careers_url is the system home page). Enrichment should locate the job board. [enrich 2026-10-20] careers_url -> HTTP 202 at https://middlesexhealth.org/",
+      "ats_config": {
+        "host": "middlesexhealth.org"
+      },
+      "nearest_airport": "HVN Tweed-New Haven (about 24 mi straight-line); BDL Bradley about 27 mi",
+      "beds": 297,
+      "peds_beds": null,
+      "peds_inpatient": false,
+      "picu": false,
+      "picu_beds": null,
+      "nicu_level": 2,
+      "peds_ed": false,
+      "peds_trauma_level": null,
+      "magnet": true,
+      "teaching": true,
+      "affiliated_university": null,
+      "peds_services": [
+        "special care nursery",
+        "Pregnancy and Birth Center (Baby-Friendly)",
+        "newborn care"
+      ],
+      "description": "Middlesex Hospital is the independent, nonprofit hospital for Middletown and the lower Connecticut River Valley, with 297 licensed beds plus 33 bassinets. It became Connecticut's first ANCC Magnet hospital in 2001 and has kept the designation since. Its pediatric role is mainly newborn care through a Baby-Friendly Pregnancy and Birth Center; an AAP District I roster lists a Level II nursery. The hospital runs a family medicine residency. Middletown is a river city and home of Wesleyan University, about 25 minutes from Hartford and New Haven.",
+      "highlights": [
+        "Connecticut's first Magnet hospital (2001) and still designated",
+        "297 licensed beds plus 33 bassinets",
+        "Level II nursery per an AAP District I roster",
+        "Independent system with a family medicine residency"
+      ],
+      "photos": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/d/d9/Middlesex_Hospital_main_entrance.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original",
+          "caption": "Middlesex Hospital (Connecticut)",
+          "credit": "Middlesex Hospital Marketing",
+          "license": "CC BY-SA 4.0",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Middlesex_Hospital_main_entrance.jpg"
+        }
+      ],
+      "wikipedia_title": "Middlesex Hospital (Connecticut)",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Middlesex_Hospital_(Connecticut)",
+        "https://neonatologysolutions.com/?p=24807",
+        "https://en.wikipedia.org/wiki/List_of_hospitals_in_Connecticut"
+      ],
+      "notes": "Inclusion rests on the Level II nursery listing from a dated roster; Wikipedia does not mention a pediatric unit or NICU. Verify nursery level and whether any inpatient pediatric beds remain. teaching set true for the family medicine residency.",
+      "confidence": "low",
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "Middlesex Hospital (Connecticut)",
+          "url": "https://en.wikipedia.org/wiki/Middlesex_Hospital_(Connecticut)",
+          "extract": "Middlesex Hospital is a non-profit, acute care community hospital in Middletown, Connecticut. It is a subsidiary of Middlesex Health System, Inc.\nIts service area includes Middlesex County, Connecticut, and the lower Connecticut River Valley region. In 2015 Middlesex became the first hospital in Connecticut to join the Mayo Clinic Care Network."
+        }
+      }
+    },
+    {
+      "slug": "backus-hospital-norwich",
+      "name": "William W. Backus Hospital",
+      "parent_hospital": null,
+      "health_system": "Hartford HealthCare",
+      "hospital_type": "community_hospital",
+      "city": "Norwich",
+      "state": "CT",
+      "address": "326 Washington Street, Norwich, CT 06360",
+      "lat": 41.54244,
+      "lng": -72.08785,
+      "coord_source": "Google Places (places_search tool) via R2/R2b scratch, address matched",
+      "region": "Connecticut",
+      "hotspot": false,
+      "website": "https://backushospital.org",
+      "careers_url": "https://www.hhccareers.org/us/search-results",
+      "careers_platform": "phenom",
+      "careers_search_url": "https://www.hhccareers.org/us/en/search-results?keywords=nurse%20practitioner",
+      "careers_notes": "Hartford HealthCare's official career site is www.hhccareers.org, a Phenom site (images on cdn.phenompeople.com, /us/en/ locale paths, /us/search-results). The search-results page was fetched 2026-10-19 and showed no listings in the static HTML, so results are JS-rendered; use the Phenom widgets API or a search fallback. Job detail URLs look like /jobs/<id>-<slug> (for example /jobs/8362259-patient-service-coordinator-cardiology). The keywords parameter is the standard Phenom pattern and was not tested. HHC jobs are also syndicated to dejobs.org with requisition IDs. hartfordhealthcare.org/careers could not be fetched. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.hhccareers.org/us/en; search_url -> HTTP 200, mentions NP: True, job links: 0",
+      "ats_config": {
+        "host": "www.hhccareers.org",
+        "locale_path": "/us/en",
+        "job_detail_pattern": "/jobs/<id>-<slug>"
+      },
+      "nearest_airport": "GON Groton-New London (about 15 mi straight-line); PVD T. F. Green about 36 mi; BDL Bradley about 41 mi",
+      "beds": null,
+      "peds_beds": null,
+      "peds_inpatient": false,
+      "picu": false,
+      "picu_beds": null,
+      "nicu_level": 2,
+      "peds_ed": false,
+      "peds_trauma_level": null,
+      "magnet": null,
+      "teaching": false,
+      "affiliated_university": null,
+      "peds_services": [
+        "special care nursery",
+        "newborn care",
+        "Connecticut Children's affiliate"
+      ],
+      "description": "Backus Hospital is Hartford HealthCare's community hospital for Norwich and the eastern Connecticut towns between Hartford and the Rhode Island line. It reportedly anchors HHC's East Region with nearby Windham Hospital. Its pediatric side is newborn care: an older AAP District I roster lists a Level II nursery, and Backus is named among Connecticut Children's affiliate hospitals. Norwich is a small historic city near the Mohegan Sun and Foxwoods casino region, about 20 minutes north of New London.",
+      "highlights": [
+        "Hartford HealthCare East Region hospital",
+        "Level II nursery per an AAP District I roster",
+        "Connecticut Children's affiliate hospital"
+      ],
+      "photos": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/a/a8/Backus_Hospital_main_entrance.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original",
+          "caption": "Backus Hospital",
+          "credit": "Staraction",
+          "license": "CC BY-SA 4.0",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Backus_Hospital_main_entrance.jpg"
+        }
+      ],
+      "wikipedia_title": "William W. Backus Hospital",
+      "sources": [
+        "https://neonatologysolutions.com/?p=24807",
+        "https://connecticutchildrens.org/specialties-conditions/neonatology",
+        "https://en.wikipedia.org/wiki/List_of_hospitals_in_Connecticut"
+      ],
+      "notes": "Inclusion rests on a dated roster listing a Level II nursery. Verify current nursery level, pediatric unit status and bed count (reportedly about 200).",
+      "confidence": "low",
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "Backus Hospital",
+          "url": "https://en.wikipedia.org/wiki/Backus_Hospital",
+          "extract": "The William W. Backus Hospital is a 213-bed, not-for-profit, acute care community hospital in Norwich, Connecticut. Backus Hospital provides inpatient care for approximately 11,000 patients each year, and has more than 400,000 outpatient visits. The hospital operates outpatient centers in Colchester, Montville, Ledyard, and Plainfield; and the Backus Outpatient Care Center in Norwich."
+        }
+      }
+    },
+    {
+      "slug": "manchester-memorial-manchester",
+      "name": "Manchester Memorial Hospital",
+      "parent_hospital": null,
+      "health_system": "Hartford HealthCare",
+      "hospital_type": "community_hospital",
+      "city": "Manchester",
+      "state": "CT",
+      "address": "71 Haynes Street, Manchester, CT 06040",
+      "lat": 41.78185,
+      "lng": -72.52591,
+      "coord_source": "Google Places (places_search tool) via R2/R2b scratch, address matched",
+      "region": "Connecticut",
+      "hotspot": false,
+      "website": "https://hartfordhealthcare.org",
+      "careers_url": "https://www.hhccareers.org/us/search-results",
+      "careers_platform": "phenom",
+      "careers_search_url": "https://www.hhccareers.org/us/en/search-results?keywords=nurse%20practitioner",
+      "careers_notes": "Hartford HealthCare's official career site is www.hhccareers.org, a Phenom site (images on cdn.phenompeople.com, /us/en/ locale paths, /us/search-results). The search-results page was fetched 2026-10-19 and showed no listings in the static HTML, so results are JS-rendered; use the Phenom widgets API or a search fallback. Job detail URLs look like /jobs/<id>-<slug> (for example /jobs/8362259-patient-service-coordinator-cardiology). The keywords parameter is the standard Phenom pattern and was not tested. HHC jobs are also syndicated to dejobs.org with requisition IDs. hartfordhealthcare.org/careers could not be fetched. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.hhccareers.org/us/en; search_url -> HTTP 200, mentions NP: True, job links: 0",
+      "ats_config": {
+        "host": "www.hhccareers.org",
+        "locale_path": "/us/en",
+        "job_detail_pattern": "/jobs/<id>-<slug>"
+      },
+      "nearest_airport": "BDL Bradley International (about 14 mi straight-line); HVN Tweed-New Haven about 40 mi",
+      "beds": null,
+      "peds_beds": null,
+      "peds_inpatient": false,
+      "picu": false,
+      "picu_beds": null,
+      "nicu_level": 2,
+      "peds_ed": false,
+      "peds_trauma_level": null,
+      "magnet": null,
+      "teaching": false,
+      "affiliated_university": null,
+      "peds_services": [
+        "special care nursery",
+        "newborn care",
+        "Connecticut Children's affiliate"
+      ],
+      "description": "Manchester Memorial Hospital is the main hospital of the former Eastern Connecticut Health Network, which Prospect Medical sold to Hartford HealthCare. It serves Manchester, Vernon, Glastonbury and the eastern suburbs of Hartford, alongside its smaller sister Rockville General Hospital. Its pediatric role is newborn care: an older AAP District I roster lists a Level II nursery for both ECHN and Manchester, and the hospital is named among Connecticut Children's affiliates. Manchester is a large suburb about 10 miles east of downtown Hartford.",
+      "highlights": [
+        "Former ECHN flagship, now Hartford HealthCare",
+        "Level II nursery per an AAP District I roster",
+        "Connecticut Children's affiliate hospital",
+        "About 15 minutes from downtown Hartford"
+      ],
+      "photos": [],
+      "wikipedia_title": "Manchester Memorial Hospital",
+      "sources": [
+        "https://neonatologysolutions.com/?p=24807",
+        "https://connecticutchildrens.org/specialties-conditions/neonatology",
+        "https://en.wikipedia.org/wiki/List_of_hospitals_in_Connecticut"
+      ],
+      "notes": "Inclusion rests on a dated roster listing a Level II nursery. Verify that the birthing center and nursery are still open after the ownership change, and the bed count (reportedly about 250). Website set to the Hartford HealthCare system site; enrichment should find the hospital page.",
+      "confidence": "low",
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "Manchester Memorial Hospital",
+          "url": "https://en.wikipedia.org/wiki/Manchester_Memorial_Hospital",
+          "extract": "Manchester Memorial Hospital is a 249-bed community hospital located in central Manchester, Connecticut, an eastern Connecticut community about 10 minutes east of Hartford. The hospital opened in 1920, and was dedicated as a memorial to all Manchester residents who died during the First World War. In 1970, the hospital was rededicated as a memorial to veterans of all wars. The hospital operates a family medicine residency training program for newly graduated osteopathic physicians.\nOn January 12, 2025, Prospect Medical filed for Chapter 11 bankruptcy protection, listing assets and liabilities between $1 billion and $10 billion. The company struggled with rising interest costs and high debt. In January 2026, Hartford Healthcare completed their purchase of Manchester Memorial from Prospect."
+        }
+      }
+    },
+    {
+      "slug": "midstate-medical-center-meriden",
+      "name": "MidState Medical Center",
+      "parent_hospital": null,
+      "health_system": "Hartford HealthCare",
+      "hospital_type": "community_hospital",
+      "city": "Meriden",
+      "state": "CT",
+      "address": "435 Lewis Avenue, Meriden, CT 06451",
+      "lat": 41.54935,
+      "lng": -72.80077,
+      "coord_source": "Google Places (places_search tool) via R2/R2b scratch, address matched",
+      "region": "Connecticut",
+      "hotspot": false,
+      "website": "https://midstatemedical.org",
+      "careers_url": "https://www.hhccareers.org/us/search-results",
+      "careers_platform": "phenom",
+      "careers_search_url": "https://www.hhccareers.org/us/en/search-results?keywords=nurse%20practitioner",
+      "careers_notes": "Hartford HealthCare's official career site is www.hhccareers.org, a Phenom site (images on cdn.phenompeople.com, /us/en/ locale paths, /us/search-results). The search-results page was fetched 2026-10-19 and showed no listings in the static HTML, so results are JS-rendered; use the Phenom widgets API or a search fallback. Job detail URLs look like /jobs/<id>-<slug> (for example /jobs/8362259-patient-service-coordinator-cardiology). The keywords parameter is the standard Phenom pattern and was not tested. HHC jobs are also syndicated to dejobs.org with requisition IDs. hartfordhealthcare.org/careers could not be fetched. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.hhccareers.org/us/en; search_url -> HTTP 200, mentions NP: True, job links: 0",
+      "ats_config": {
+        "host": "www.hhccareers.org",
+        "locale_path": "/us/en",
+        "job_detail_pattern": "/jobs/<id>-<slug>"
+      },
+      "nearest_airport": "HVN Tweed-New Haven (about 20 mi straight-line); BDL Bradley about 28 mi",
+      "beds": null,
+      "peds_beds": null,
+      "peds_inpatient": false,
+      "picu": false,
+      "picu_beds": null,
+      "nicu_level": null,
+      "peds_ed": false,
+      "peds_trauma_level": null,
+      "magnet": null,
+      "teaching": false,
+      "affiliated_university": null,
+      "peds_services": [
+        "nursery for newborns with special needs",
+        "24/7 neonatal nurse practitioners",
+        "Connecticut Children's neonatology",
+        "family birthing center"
+      ],
+      "description": "MidState Medical Center is Hartford HealthCare's hospital for Meriden, Wallingford and Cheshire, roughly midway between Hartford and New Haven. Its family birthing center has a nursery equipped for newborns with special needs, and neonatal nurse practitioners are available to every newborn 24 hours a day in consultation with the chief of pediatrics. Connecticut Children's lists MidState as one of its neonatology locations, with babies needing intensive care transferred to Connecticut's NICUs. Meriden is a small city on the I-91 corridor with Hartford Line commuter rail.",
+      "highlights": [
+        "Neonatal nurse practitioners on site 24/7",
+        "Connecticut Children's neonatology location",
+        "Special needs newborn nursery in the family birthing center",
+        "Hartford HealthCare member on the I-91 corridor"
+      ],
+      "photos": [],
+      "wikipedia_title": "MidState Medical Center",
+      "sources": [
+        "https://midstatemedical.org/services/maternity/departments-services/family-birthing",
+        "https://www.connecticutchildrens.org/about-us/locations/midstate-medical-center",
+        "https://en.wikipedia.org/wiki/List_of_hospitals_in_Connecticut"
+      ],
+      "notes": "Included as a neonatal NP employer site; nursery level was not stated on the pages read (2026-10-20), so nicu_level is null (likely Level II; verify). No pediatric inpatient unit or pediatric ED found. NNPs may be Connecticut Children's employees (Oracle board) rather than HHC.",
+      "confidence": "low",
+      "active": true,
+      "_enrich": {}
+    },
+    {
+      "slug": "hospital-for-special-care-new-britain",
+      "name": "Hospital for Special Care",
+      "parent_hospital": null,
+      "health_system": "Hospital for Special Care",
+      "hospital_type": "specialty_pediatric",
+      "city": "New Britain",
+      "state": "CT",
+      "address": "2150 Corbin Avenue, New Britain, CT 06053",
+      "lat": 41.69019,
+      "lng": -72.80225,
+      "coord_source": "Google Places (places_search tool) via R2/R2b scratch, address matched",
+      "region": "Connecticut",
+      "hotspot": false,
+      "website": "https://www.hfsc.org",
+      "careers_url": "https://www.hfsc.org",
+      "careers_platform": "unknown",
+      "careers_search_url": null,
+      "careers_notes": "Independent nonprofit; careers board not identified this session (careers_url is the hospital home page). Enrichment should locate the job board. [enrich 2026-10-20] careers_url -> HTTP None at None",
+      "ats_config": {
+        "host": "www.hfsc.org"
+      },
+      "nearest_airport": "BDL Bradley International (about 18 mi straight-line); HVN Tweed-New Haven about 30 mi",
+      "beds": null,
+      "peds_beds": null,
+      "peds_inpatient": false,
+      "picu": false,
+      "picu_beds": null,
+      "nicu_level": null,
+      "peds_ed": false,
+      "peds_trauma_level": null,
+      "magnet": null,
+      "teaching": true,
+      "affiliated_university": "UConn School of Medicine (reported affiliate, verify)",
+      "peds_services": [
+        "inpatient autism unit for children and adolescents",
+        "pediatric rehabilitation",
+        "medically complex and ventilator care (reportedly)"
+      ],
+      "description": "Hospital for Special Care is an independent long-term acute care and rehabilitation hospital on the New Britain and Farmington line. It treats mostly adults with ventilator dependence, spinal cord and brain injury, and neuromuscular disease, but it also runs pediatric programs, including an inpatient unit for children and adolescents with autism and reportedly pediatric rehabilitation and medically complex care. For a pediatric NP it is a niche employer outside the acute hospital model. It sits about 15 minutes southwest of Hartford, close to UConn Health in Farmington.",
+      "highlights": [
+        "Inpatient autism unit for children and adolescents",
+        "Long-term acute care and rehabilitation hospital with pediatric programs",
+        "Near UConn Health in Farmington"
+      ],
+      "photos": [],
+      "wikipedia_title": "Hospital for Special Care",
+      "sources": [
+        "https://en.wikipedia.org/wiki/List_of_hospitals_in_Connecticut",
+        "model knowledge (to verify); enrichment pending"
+      ],
+      "notes": "Mixed adult and pediatric specialty hospital; typed specialty_pediatric because the pediatric programs are why it is listed. peds_inpatient is false because there is no general pediatric floor; verify pediatric bed counts and whether NP roles exist in the pediatric programs.",
+      "confidence": "low",
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "British Columbia Children's Hospital",
+          "url": "https://en.wikipedia.org/wiki/British_Columbia_Children%27s_Hospital",
+          "extract": "British Columbia Children's Hospital is a medical facility located in Vancouver, British Columbia, and is an agency of the Provincial Health Services Authority. It specializes in health care for patients from birth to 16 years of age (possibly longer if followed by a specialist team). It is also a teaching and research facility for children's medicine. The hospital includes the Sunny Hill Health Centre, which provides specialized services to children and youth with developmental disabilities aged birth to 16 years.\nThe hospital employs more than 650 doctors.\nThe hospital is adjacent to the B.C. Women's Hospital & Health Centre. Previously, the two were officially a single organization and were known as the Children's & Women's Health Centre of British Columbia.\nWorking with the hospital and the community, the BC Children's Hospital Foundation raises funds to support and enhance the delivery of pediatric care in British Columbia. The Foundation provides funding to B.C. Children's Hospital, as well as its sister facilities, the BC Children's Hospital Research Institute, to support research into childhood diseases, the purchase of medical equipment, and a range of child health education and training programs."
+        }
+      }
+    }
+  ]
+}
