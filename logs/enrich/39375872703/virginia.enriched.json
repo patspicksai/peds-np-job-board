@@ -1,0 +1,1996 @@
+{
+  "region_group": "R5b Virginia",
+  "hospitals": [
+    {
+      "slug": "chor-vcu-richmond",
+      "name": "Children's Hospital of Richmond at VCU",
+      "parent_hospital": "VCU Medical Center",
+      "health_system": "VCU Health",
+      "hospital_type": "childrens_hospital_within_hospital",
+      "city": "Richmond",
+      "state": "VA",
+      "address": "1001 E Marshall St, Richmond, VA 23298 (Children's Tower)",
+      "lat": 37.54062,
+      "lng": -77.43195,
+      "coord_source": "Google Places (Children's Tower emergency entrance; agrees with Wikipedia infobox 37.540464, -77.432053)",
+      "region": "Richmond",
+      "hotspot": false,
+      "website": "https://www.chrichmond.org/",
+      "careers_url": "https://careers.vcuhealth.org/us/en/chor-jobs",
+      "careers_platform": "phenom",
+      "careers_search_url": "https://careers.vcuhealth.org/us/en/search-results?keywords=nurse%20practitioner",
+      "careers_notes": "VCU Health career site on Phenom (assets from cdn.phenompeople.com, CareerConnectResources/VHSVHSUS, /us/en/ paths). Fetched https://careers.vcuhealth.org/us/en/search-results and the CHoR landing page on 2026-10-19: page shell only, listings are JS-rendered and none appeared in the fetch. CHoR category page: https://careers.vcuhealth.org/us/en/chor-jobs ; job detail pattern /us/en/job/R<number>/<title-slug> (e.g. R38048 Nurse Clinician Acute Care Pediatrics). Keyword param ?keywords= is the usual Phenom pattern but was not confirmed to filter in a fetch. [enrich 2026-10-20] careers_url -> HTTP 200 at https://careers.vcuhealth.org/us/en/chor-jobs; ATS link seen: https://vcuhealth.wd1.myworkdayjobs.com/VCUHealth_careers/job/Richmond-VA/Behavioral-Health-Security-Specialist---Various-shifts--Day-Eve-Night-_R42450/apply; search_url -> HTTP 200, mentions NP: True, job links: 0",
+      "ats_config": {
+        "host": "careers.vcuhealth.org"
+      },
+      "nearest_airport": "RIC Richmond International (about 10 mi)",
+      "beds": null,
+      "peds_beds": 144,
+      "peds_inpatient": true,
+      "picu": true,
+      "picu_beds": null,
+      "nicu_level": 4,
+      "peds_ed": true,
+      "peds_trauma_level": "Level I pediatric trauma center (and burn center)",
+      "magnet": true,
+      "teaching": true,
+      "affiliated_university": "Virginia Commonwealth University School of Medicine",
+      "peds_services": [
+        "neonatology",
+        "pediatric critical care",
+        "pediatric emergency medicine",
+        "trauma and burn",
+        "hospitalist",
+        "hematology/oncology",
+        "nephrology",
+        "pulmonology",
+        "urology",
+        "surgery",
+        "transport team"
+      ],
+      "description": "Children's Hospital of Richmond at VCU is the pediatric arm of VCU Health and the academic children's hospital for central Virginia, run inside the VCU Medical Center campus in downtown Richmond. Its 16-story Children's Tower, opened in April 2023, holds the pediatric inpatient floors, the children's emergency department and the region's only Level I pediatric trauma center. Neonatal care is a long-standing strength: the program opened the first NICU in Virginia in 1973 and now runs a Level IV unit that serves as a regional referral center, with a new 20-bed NICU moving into the Tower in early 2026. The campus sits just off I-95 near the Capitol and the Church Hill and Shockoe neighborhoods.",
+      "highlights": [
+        "Level I pediatric trauma and burn center, the only one in central Virginia",
+        "Level IV NICU; 20-bed NICU opening in the Children's Tower in January 2026 alongside existing NICU beds in VCU Medical Center",
+        "Children's Tower opened April 30, 2023: 16 stories, about $420 million, 72 private acute and intensive care rooms",
+        "24 more acute care beds under construction on Tower Level 11, due late 2026",
+        "PICU holds an AACN Beacon Award (silver)",
+        "Magnet designation (2011, 2016, 2020 per Wikipedia)",
+        "Academic home of the VCU School of Medicine pediatrics program"
+      ],
+      "photos": [
+        {
+          "url": "https://www.vcuhealth.org/media/vcuhealth/media/media/featurednewsimages/Ribboncutting3.jpg",
+          "caption": "VCU Health ribbon cutting image from the 2025 year-in-review story",
+          "credit": "VCU Health",
+          "license": "Hospital newsroom image, all rights reserved",
+          "source_page": "https://www.vcuhealth.org/news/reflecting-on-a-year-of-growth-and-a-look-ahead-to-2026/"
+        }
+      ],
+      "wikipedia_title": "Children's Hospital of Richmond at VCU",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Children%27s_Hospital_of_Richmond_at_VCU",
+        "https://www.chrichmond.org/services/picu",
+        "https://www.vcuhealth.org/news/reflecting-on-a-year-of-growth-and-a-look-ahead-to-2026/",
+        "https://www.vcuhealth.org/news/richmonds-new-home-for-pediatric-inpatient-emergency-and-trauma-care-officially-opens/",
+        "https://careers.vcuhealth.org/us/en/children-s-hospital-of-richmond",
+        "https://careers.vcuhealth.org/us/en/search-results",
+        "https://neonatologysolutions.com/?p=19552",
+        "https://en.wikipedia.org/wiki/List_of_hospitals_in_Virginia"
+      ],
+      "notes": "Top Richmond target: the only PICU, Level I peds trauma and Level IV NICU in the Richmond market. peds_beds is the 144 pediatric beds in the Wikipedia infobox (the Wikipedia hospital list gives 208 counting 40 beds inside VCU Medical Center); PICU bed count not published on pages read. VCU Medical Center (865 beds, adult Level I trauma) is the parent and is not listed separately. Wikipedia claims the only Level I pediatric trauma center in the state, but CHKD and UVA also hold pediatric trauma designations, so the CHoR page wording (central Virginia) is used. Peds NP roles post on careers.vcuhealth.org under VCU Health System.",
+      "confidence": "high",
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "Children's Hospital of Richmond at VCU",
+          "url": "https://en.wikipedia.org/wiki/Children%27s_Hospital_of_Richmond_at_VCU",
+          "extract": "Children's Hospital of Richmond at VCU (CHoR) is a nationally ranked pediatric acute care children's hospital located within VCU Medical Center in Richmond, Virginia, United States. The hospital has 144 pediatric beds. It is affiliated with The Virginia Commonwealth University School of Medicine, and is a member of VCU Health. The hospital provides comprehensive pediatric specialties and subspecialties to infants, children, teens, and young adults aged 0–17 throughout eastern Virginia. CHOR also has a helipad to transport critically ill pediatric patients. Children's Hospital of Richmond features the only pediatric Level 1 Trauma Center in the region and the state.\nThe hospital is rated as the second best children's hospital in Virginia on the 2020-21 U.S. News & World Report."
+        }
+      }
+    },
+    {
+      "slug": "chkd-norfolk",
+      "name": "Children's Hospital of The King's Daughters",
+      "parent_hospital": null,
+      "health_system": "CHKD Health System",
+      "hospital_type": "childrens_hospital",
+      "city": "Norfolk",
+      "state": "VA",
+      "address": "601 Children's Lane, Norfolk, VA 23507",
+      "lat": 36.86262,
+      "lng": -76.30179,
+      "coord_source": "Google Places (agrees with Wikipedia infobox 36.862278, -76.302028)",
+      "region": "Hampton Roads",
+      "hotspot": false,
+      "website": "https://www.chkd.org/",
+      "careers_url": "https://www.chkdcareers.org/jobs/search",
+      "careers_platform": "custom",
+      "careers_search_url": "https://www.chkdcareers.org/search/advanced-practice/jobs",
+      "careers_notes": "CHKD job board at chkdcareers.org (linked from chkd.org/careers). Path-segment facets: /search/advanced-practice/jobs (APP jobs), /search/physician-assistant-nurse-practitioner-specialty/jobs, /search/inpatient-nursing-outpatient-nursing/jobs; job detail /jobs/<id>-<slug> (e.g. 2216011 Office Nurse Practitioner (Contract), Newport News). This URL layout matches the TalentBrew/Talemetry style boards other agents saw. Every WebFetch of chkdcareers.org on 2026-10-19 failed (client error or permission timeout), so rendering and ATS were not confirmed. Subspecialty APPs are often employed by Children's Specialty Group, PLLC, with a separate board at https://csgdocs.com/careers/. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.chkdcareers.org/jobs/search; search_url -> HTTP 200, mentions NP: True, job links: 25",
+      "ats_config": {
+        "host": "www.chkdcareers.org",
+        "csg_careers": "https://csgdocs.com/careers/"
+      },
+      "nearest_airport": "ORF Norfolk International (about 6 mi)",
+      "beds": 266,
+      "peds_beds": 266,
+      "peds_inpatient": true,
+      "picu": true,
+      "picu_beds": 32,
+      "nicu_level": 4,
+      "peds_ed": true,
+      "peds_trauma_level": "Level I pediatric trauma center",
+      "magnet": null,
+      "teaching": true,
+      "affiliated_university": "Eastern Virginia Medical School",
+      "peds_services": [
+        "neonatology",
+        "pediatric critical care",
+        "pediatric emergency medicine",
+        "cardiology",
+        "cardiac surgery",
+        "neurosurgery",
+        "orthopedics",
+        "general pediatric surgery",
+        "plastic and oral maxillofacial surgery",
+        "urology",
+        "hematology/oncology",
+        "neuroscience",
+        "rehabilitation",
+        "inpatient mental health",
+        "hospitalist",
+        "transport team"
+      ],
+      "description": "CHKD is the only freestanding children's hospital in Virginia, a 266-bed teaching hospital on the Eastern Virginia Medical School campus in Norfolk's Ghent area. It serves all of Hampton Roads and northeastern North Carolina, running a 32-bed PICU, a Level IV NICU and a pediatric emergency department that sees about 60,000 visits a year as the region's Level I pediatric trauma center. Since 2022 the campus has also included the 14-story Children's Pavilion with 60 private inpatient psychiatric rooms. A large network of CHKD primary care practices, health centers, urgent cares and surgery centers stretches from Williamsburg to Virginia Beach and Chesapeake.",
+      "highlights": [
+        "Virginia's only freestanding children's hospital, 266 beds",
+        "32-bed PICU, the largest pediatric critical care unit in the region (about 1,500 admissions a year)",
+        "Level IV NICU with 60 private rooms plus 10 double rooms",
+        "Level I pediatric trauma center; ED sees about 60,000 visits a year",
+        "ACS-verified Level 1 Children's Surgery Center",
+        "Children's Pavilion mental health hospital (2022), 60 private inpatient rooms",
+        "Birthplace of the Nuss procedure for pectus excavatum; runs Virginia's only donor human milk bank"
+      ],
+      "photos": [
+        {
+          "url": "https://www.chkd.org/media/q30iqx1q/inpatient-care-units.jpg",
+          "caption": "CHKD inpatient care units",
+          "credit": "Children's Hospital of The King's Daughters",
+          "license": "Hospital website image, all rights reserved",
+          "source_page": "https://www.chkd.org/our-care/main-hospital-care/inpatient-care-units/"
+        },
+        {
+          "url": "https://www.chkd.org/media/vold3qqj/8th-floor-hallway-inpatient-units-banner-chkd.jpg",
+          "caption": "8th floor inpatient unit hallway at CHKD",
+          "credit": "Children's Hospital of The King's Daughters",
+          "license": "Hospital website image, all rights reserved",
+          "source_page": "https://www.chkd.org/our-care/main-hospital-care/inpatient-care-units/"
+        }
+      ],
+      "wikipedia_title": "Children's Hospital of The King's Daughters",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Children%27s_Hospital_of_The_King%27s_Daughters",
+        "https://www.chkd.org/about-us/who-we-are/chkd-facts/",
+        "https://www.chkd.org/our-care/main-hospital-care/inpatient-care-units/",
+        "https://www.chkd.org/careers/",
+        "https://neonatologysolutions.com/?p=19552"
+      ],
+      "notes": "Top Hampton Roads target and the only pediatric ICU in southeastern Virginia. Hospital-employed APPs post on chkdcareers.org; many subspecialty and hospitalist APPs are employed through Children's Specialty Group (CSG), so check csgdocs.com/careers too. Magnet status not stated on pages read. CHKD also staffs pediatric units inside Sentara hospitals in some markets (not verified this session).",
+      "confidence": "high",
+      "active": true,
+      "_enrich": {}
+    },
+    {
+      "slug": "uva-childrens-charlottesville",
+      "name": "UVA Health Children's",
+      "parent_hospital": "UVA Health University Medical Center",
+      "health_system": "UVA Health",
+      "hospital_type": "childrens_hospital_within_hospital",
+      "city": "Charlottesville",
+      "state": "VA",
+      "address": "1215 Lee St, Charlottesville, VA 22908",
+      "lat": 38.03115,
+      "lng": -78.49887,
+      "coord_source": "Google Places (UVA Health University Medical Center)",
+      "region": "Virginia (other)",
+      "hotspot": false,
+      "website": "https://childrens.uvahealth.com/",
+      "careers_url": "https://uva.wd1.myworkdayjobs.com/UVAJobs",
+      "careers_platform": "workday",
+      "careers_search_url": "https://uva.wd1.myworkdayjobs.com/en-US/UVAJobs?q=nurse%20practitioner",
+      "careers_notes": "UVA Health (medical center and UVA Physicians Group) posts on the University of Virginia Workday tenant, site UVAJobs (job detail pattern /UVAJobs/job/<location>/<title>_R00xxxxx, e.g. R0043427 UVA Pediatrics Harrisonburg Nurse Practitioner seen in search results 2026-10-19). Workday search pages are JS-rendered; the direct fetch of the UVAJobs search page was blocked (permission timeout), so rendering not tested. Scraper should use the Workday CXS JSON endpoint (POST /wday/cxs/uva/UVAJobs/jobs with searchText). Same tenant also hosts UVAStudentJobs; ignore that site. [enrich 2026-10-20] careers_url -> HTTP 200 at https://uva.wd1.myworkdayjobs.com/UVAJobs; ATS link seen: https://uva.wd1.myworkdayjobs.com/UVAJobs; search_url -> HTTP 200, mentions NP: False, job links: 0",
+      "ats_config": {
+        "host": "uva.wd1.myworkdayjobs.com",
+        "tenant": "uva",
+        "site": "UVAJobs"
+      },
+      "nearest_airport": "CHO Charlottesville-Albemarle (about 9 mi)",
+      "beds": 679,
+      "peds_beds": 111,
+      "peds_inpatient": true,
+      "picu": true,
+      "picu_beds": 25,
+      "nicu_level": 4,
+      "peds_ed": true,
+      "peds_trauma_level": "Level I trauma center (adult and pediatric per UVA Health Children's about page)",
+      "magnet": null,
+      "teaching": true,
+      "affiliated_university": "University of Virginia School of Medicine",
+      "peds_services": [
+        "neonatology",
+        "pediatric critical care",
+        "pediatric cardiology and cardiac surgery",
+        "hematology/oncology",
+        "pediatric emergency medicine",
+        "surgery",
+        "primary care",
+        "complex care",
+        "transport"
+      ],
+      "description": "UVA Health Children's is the pediatric hospital inside the University of Virginia's academic medical center in Charlottesville and the top-ranked children's hospital in Virginia by U.S. News. It runs a Level IV NICU billed as the region's most advanced, a 25-bed PICU with about 1,000 admissions a year that also serves as a referral center for pediatric heart patients, and pediatric emergency and trauma care on the main hospital campus. Patients come from across central Virginia, the Shenandoah Valley and Southside, and UVA also partners with CHKD in Norfolk. The hospital sits next to the UVA Grounds, a short walk from downtown Charlottesville and the Blue Ridge foothills.",
+      "highlights": [
+        "Ranked No. 1 children's hospital in Virginia by U.S. News & World Report",
+        "Level IV NICU, the highest neonatal level",
+        "25-bed PICU (24 private rooms), about 1,000 admissions a year, pediatric cardiac referral center",
+        "Inside a Level I trauma center; University Medical Center has 679 beds and about 77,000 ED visits (FY2025)",
+        "Cancer care within Virginia's first NCI-designated comprehensive cancer center",
+        "Academic home of UVA School of Medicine pediatrics"
+      ],
+      "photos": [
+        {
+          "url": "https://cdn-assets-dynamic.frontify.com/8000198/eyJhc3NldF9pZCI6MzIzODEsInNjb3BlIjoiYXNzZXQ6dmlldyJ9:uva-health:kYXWPaQTfQD6ZRAL_ngsYwaUNJposkynFAiS7k67mSs",
+          "caption": "Infant care station in the UVA Health Children's NICU",
+          "credit": "UVA Health",
+          "license": "Hospital website image, all rights reserved",
+          "source_page": "https://childrens.uvahealth.com/services/neonatology/nicu-services"
+        }
+      ],
+      "wikipedia_title": "UVA Children's Hospital",
+      "sources": [
+        "https://childrens.uvahealth.com/about/childrens",
+        "https://childrens.uvahealth.com/specialties/pediatric-critical-care",
+        "https://childrens.uvahealth.com/services/neonatology/nicu-services",
+        "https://www.uvahealth.com/about/facts-stats",
+        "https://en.wikipedia.org/wiki/List_of_hospitals_in_Virginia",
+        "https://neonatologysolutions.com/?p=19552"
+      ],
+      "notes": "Strong academic option. peds_beds is the 111 from the Wikipedia hospital list (not confirmed on a UVA page); beds is the University Medical Center count (679, FY2025). NICU had 51 beds per a third-party NICU directory; UVA's 2025 Vision and Voice story describes a NICU expansion (not read). Pediatric ED presence inferred from UVA pediatric emergency department RN postings seen in search results and the main ED serving children; a dedicated peds ED footprint was not confirmed on a page read. Magnet status not stated on pages read.",
+      "confidence": "medium",
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "UVA Children's Hospital",
+          "url": "https://en.wikipedia.org/wiki/UVA_Children%27s_Hospital",
+          "extract": "UVA Children's Hospital is a nationally ranked, acute care children's hospital in Charlottesville, Virginia. It is affiliated with the University of Virginia School of Medicine. The hospital features 112 pediatric beds. The hospital provides comprehensive pediatric specialties and subspecialties to infants, children, teens, and young adults aged 0–21 throughout the region. The hospital also sometimes treats adults that require pediatric care. The hospital has a rooftop helipad to transport critical pediatric cases. The hospital features a regional pediatric intensive-care unit and a level IV neonatal intensive care unit."
+        }
+      }
+    },
+    {
+      "slug": "carilion-childrens-roanoke",
+      "name": "Carilion Children's Hospital",
+      "parent_hospital": "Carilion Roanoke Memorial Hospital",
+      "health_system": "Carilion Clinic",
+      "hospital_type": "childrens_hospital_within_hospital",
+      "city": "Roanoke",
+      "state": "VA",
+      "address": "1906 Belleview Ave SE, Roanoke, VA 24014",
+      "lat": 37.25135,
+      "lng": -79.9417,
+      "coord_source": "Google Places (Carilion Roanoke Memorial Hospital)",
+      "region": "Virginia (other)",
+      "hotspot": false,
+      "website": "https://www.carilionclinic.org/specialties/carilion-childrens-hospital",
+      "careers_url": "https://carilionclinic.wd12.myworkdayjobs.com/External_Careers",
+      "careers_platform": "workday",
+      "careers_search_url": "https://carilionclinic.wd12.myworkdayjobs.com/External_Careers?q=nurse%20practitioner",
+      "careers_notes": "Carilion Clinic has two job front ends: jobs.carilionclinic.org (job detail pattern /job/<City>-<Title>-VA-<zip>/<id>/ and /content/...?locale=en_US pages, the SAP SuccessFactors Recruiting Marketing layout, plus a /us/en/home landing page) and a Workday tenant carilionclinic.wd12.myworkdayjobs.com/External_Careers (surfaced in search 2026-10-19). Fetch of the Workday site returned only metadata (JS-rendered, no listings); fetch of jobs.carilionclinic.org was rate limited. Which board is current was not confirmed; the Workday tenant on wd12 looks like the newer system. Pediatric postings seen in search: RN PICU Nights (Roanoke 24014), Clinical Nurse Specialist Pediatrics, RN Neonatal/Pediatric Transport. [enrich 2026-10-20] careers_url -> HTTP 200 at https://carilionclinic.wd12.myworkdayjobs.com/External_Careers; ATS link seen: https://carilionclinic.wd12.myworkdayjobs.com/External_Careers; search_url -> HTTP 200, mentions NP: False, job links: 0",
+      "ats_config": {
+        "host": "carilionclinic.wd12.myworkdayjobs.com",
+        "tenant": "carilionclinic",
+        "site": "External_Careers",
+        "legacy_host": "jobs.carilionclinic.org"
+      },
+      "nearest_airport": "ROA Roanoke-Blacksburg Regional (about 6 mi)",
+      "beds": 703,
+      "peds_beds": 92,
+      "peds_inpatient": true,
+      "picu": true,
+      "picu_beds": 8,
+      "nicu_level": 3,
+      "peds_ed": true,
+      "peds_trauma_level": "Level I pediatric trauma center",
+      "magnet": null,
+      "teaching": true,
+      "affiliated_university": "Virginia Tech Carilion School of Medicine",
+      "peds_services": [
+        "neonatology",
+        "pediatric critical care",
+        "pediatric emergency medicine",
+        "hospitalist",
+        "transport team",
+        "pediatric surgery",
+        "subspecialty clinics"
+      ],
+      "description": "Carilion Children's is the pediatric program of Carilion Clinic, based inside Carilion Roanoke Memorial Hospital, the Level I trauma and teaching hospital for southwest Virginia. Its fact sheet lists a 24-bed inpatient unit, an 8-bed PICU that is the only one in the region, and a 60-bed Level IIIB NICU described as the largest in western Virginia. The hospital houses a dedicated pediatric emergency department and is western Virginia's only Level I pediatric trauma center, backed by a neonatal and pediatric transport team that brings in children from a wide rural catchment. Roanoke sits in the Blue Ridge with quick access to the Parkway, the Roanoke River greenways and Smith Mountain Lake.",
+      "highlights": [
+        "Western Virginia's only Level I pediatric trauma center",
+        "8-bed PICU, the only PICU in the region",
+        "60-bed Level IIIB NICU, the region's largest",
+        "Dedicated pediatric emergency department at Carilion Roanoke Memorial",
+        "Neonatal and pediatric transport team",
+        "Pediatrics department includes 14 advanced care practitioners (2024 fact sheet)",
+        "Teaching site for Virginia Tech Carilion School of Medicine"
+      ],
+      "photos": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/1/1b/Carilion_Roanoke_Memorial_Hospital.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original",
+          "caption": "Carilion Roanoke Memorial Hospital",
+          "credit": "Patriarca12",
+          "license": "CC BY-SA 3.0",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Carilion_Roanoke_Memorial_Hospital.jpg"
+        }
+      ],
+      "wikipedia_title": "Carilion Roanoke Memorial Hospital",
+      "sources": [
+        "https://www.carilionclinic.org/Childrens-Fact-Sheet-6-20-24.pdf",
+        "https://www.carilionclinic.org/specialties/carilion-childrens-hospital",
+        "https://en.wikipedia.org/wiki/Carilion_Roanoke_Memorial_Hospital",
+        "https://carilionclinic.wd12.myworkdayjobs.com/External_Careers",
+        "https://neonatologysolutions.com/?p=19552"
+      ],
+      "notes": "Main pediatric acute care employer in western Virginia. peds_beds 92 is the sum of the fact sheet's 24 inpatient, 8 PICU and 60 NICU beds. beds is the Wikipedia infobox figure for Carilion Roanoke Memorial (703; the article text says 825). NICU recorded as level 3 (fact sheet says Level IIIB). Carilion Roanoke Memorial has Magnet status per the Wikipedia hospital list note, but that note is for Roanoke Community and Memorial together, so magnet left null.",
+      "confidence": "high",
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "Carilion Roanoke Memorial Hospital",
+          "url": "https://en.wikipedia.org/wiki/Carilion_Roanoke_Memorial_Hospital",
+          "extract": "Carilion Roanoke Memorial Hospital (CRMH) is a private teaching hospital in Roanoke, Virginia, United States. With 825 beds, Carilion Roanoke Memorial Hospital is one of the largest hospitals in the state. It is part of Carilion Clinic.\nThe region's only level I trauma center, the hospital operates three medical helicopters (LifeGuard 10, 11, and 12) to provide air ambulance transport, including one in Moneta, one in Christiansburg, and one in Lexington."
+        }
+      }
+    },
+    {
+      "slug": "bon-secours-st-marys-richmond",
+      "name": "Bon Secours St. Mary's Hospital",
+      "parent_hospital": null,
+      "health_system": "Bon Secours Mercy Health",
+      "hospital_type": "regional_hospital",
+      "city": "Richmond",
+      "state": "VA",
+      "address": "5801 Bremo Rd, Richmond, VA 23226",
+      "lat": 37.58341,
+      "lng": -77.51239,
+      "coord_source": "Google Places",
+      "region": "Richmond",
+      "hotspot": false,
+      "website": "https://www.bonsecours.com/locations/hospitals-medical-centers/richmond",
+      "careers_url": "https://careers.bsmhealth.org/us/en/search-results",
+      "careers_platform": "phenom",
+      "careers_search_url": "https://careers.bsmhealth.org/us/en/search-results?keywords=nurse%20practitioner",
+      "careers_notes": "Bon Secours Mercy Health career site careers.bsmhealth.org (also careers.bonsecours.com) uses Phenom-style /us/en/ paths, regional landing pages /us/en/jobs-in-richmond and /us/en/jobs-in-hampton-roads, and job detail /us/en/job/R<number>/<title> (e.g. R272073 RN NICU St. Francis). NP and PA roles are mostly on the separate provider board physiciancareers.bsmhealth.org (job detail /search/jobdetails/<slug>/<guid>; seen 2026-10-19 with Richmond and Suffolk NP postings). Neither board was fetched (permission/rate limits), so rendering not tested. [enrich 2026-10-20] careers_url -> HTTP 200 at https://careers.bsmhealth.org/us/en/search-results; search_url -> HTTP 200, mentions NP: True, job links: 0",
+      "ats_config": {
+        "host": "careers.bsmhealth.org",
+        "provider_host": "physiciancareers.bsmhealth.org",
+        "alt_host": "careers.bonsecours.com"
+      },
+      "nearest_airport": "RIC Richmond International (about 12 mi straight-line)",
+      "beds": 391,
+      "peds_beds": null,
+      "peds_inpatient": true,
+      "picu": false,
+      "picu_beds": null,
+      "nicu_level": 3,
+      "peds_ed": true,
+      "peds_trauma_level": null,
+      "magnet": null,
+      "teaching": false,
+      "affiliated_university": null,
+      "peds_services": [
+        "pediatric emergency medicine",
+        "neonatology",
+        "pediatric surgery",
+        "pediatric endocrinology",
+        "pediatric neurology",
+        "hospitalist"
+      ],
+      "description": "Bon Secours St. Mary's is the flagship Bon Secours hospital in Richmond, a 391-bed Catholic hospital in the near West End off Bremo Road. It runs the Bon Secours pediatric program for the Richmond market, including a 24-hour pediatric emergency department and a Level III NICU that a national neonatal directory lists at 21 beds, plus a group of hospital-based pediatric subspecialists in surgery, endocrinology and neurology. It is the main private-system alternative to VCU's children's hospital for families in Henrico, Goochland and the western suburbs. The campus sits between the Libbie and Grove shopping district and the I-64 corridor.",
+      "highlights": [
+        "391-bed Bon Secours flagship in Richmond's West End",
+        "Dedicated 24-hour pediatric emergency department",
+        "Level III NICU (21 beds per neonatologysolutions directory)",
+        "Hospital-based pediatric surgery, endocrinology and neurology practices actively recruiting",
+        "Bon Secours publishes a Richmond pediatric impact report for its children's services"
+      ],
+      "photos": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/d/db/New_York_Counties.svg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original",
+          "caption": "List of hospitals in New York (state)",
+          "credit": "André Koehne",
+          "license": "CC BY-SA 3.0",
+          "source_page": "https://commons.wikimedia.org/wiki/File:New_York_Counties.svg"
+        }
+      ],
+      "wikipedia_title": null,
+      "sources": [
+        "https://en.wikipedia.org/wiki/List_of_hospitals_in_Virginia",
+        "https://neonatologysolutions.com/?p=19552",
+        "https://www.bonsecours.com/locations/specialty-locations/pediatrics/bon-secours-st-marys-pediatric-emergency-department",
+        "https://bonsecours.com/richmond/our-services/pediatric-care",
+        "https://www.bonsecours.com/locations/specialty-locations/pediatrics/bon-secours-st-marys-pediatric-neurology",
+        "https://physiciancareers.bsmhealth.org/search/jobdetails/pediatric-surgeon-needed-with-bon-secours-in-richmond-virginia/e0a8c760-914c-4f85-9f0c-d8644342aaf5",
+        "https://careers.bsmhealth.org/us/en/jobs-in-richmond"
+      ],
+      "notes": "Pediatric ED (open 24 hours) and NICU confirmed from Bon Secours page titles and NICU RN postings seen in search results; the pages themselves could not be fetched (rate limits). peds_inpatient set true because the seed brief and Bon Secours pediatric surgery and subspecialty recruiting point to an inpatient pediatric unit, but no page read stated bed counts; PICU not confirmed (set false). Verify before relying on it. Good second Richmond target after CHoR for PNP-AC ED or hospitalist roles.",
+      "confidence": "low",
+      "active": true,
+      "_enrich": {
+        "wikipedia": {}
+      }
+    },
+    {
+      "slug": "chippenham-richmond",
+      "name": "Chippenham Hospital",
+      "parent_hospital": "CJW Medical Center",
+      "health_system": "HCA Healthcare (HCA Virginia)",
+      "hospital_type": "regional_hospital",
+      "city": "Richmond",
+      "state": "VA",
+      "address": "7101 Jahnke Rd, Richmond, VA 23225",
+      "lat": 37.51354,
+      "lng": -77.52615,
+      "coord_source": "Google Places",
+      "region": "Richmond",
+      "hotspot": false,
+      "website": "https://www.hcavirginia.com/locations/chippenham-hospital",
+      "careers_url": "https://careers.hcahealthcare.com/search/jobs/in/va-virginia",
+      "careers_platform": "custom",
+      "careers_search_url": "https://careers.hcahealthcare.com/search/nurse-practitioner/jobs/in/va-virginia",
+      "careers_notes": "HCA Healthcare central job board careers.hcahealthcare.com (TalentBrew-style paths: /search/jobs/in/va-virginia, /search/<keyword>/jobs, facility pages /pages/<facility-slug>, job detail /jobs/<id>-<title-slug>). WebFetch was refused by robots.txt (2026-10-19), so rendering was not tested. Underlying ATS not confirmed from a page read, so platform is recorded as custom. The Richmond keyword search URL combines the two observed path patterns (/search/<keyword>/jobs and /jobs/in/<place>) and is untested. Richmond facility jobs post under CJW Medical Center (Chippenham and Johnston-Willis share one license). [enrich 2026-10-20] careers_url -> HTTP 403 at https://careers.hcahealthcare.com/search/jobs/in/va-virginia; search_url -> HTTP 403, mentions NP: False, job links: 0",
+      "ats_config": {
+        "host": "careers.hcahealthcare.com"
+      },
+      "nearest_airport": "RIC Richmond International (about 11 mi straight-line)",
+      "beds": 667,
+      "peds_beds": null,
+      "peds_inpatient": true,
+      "picu": false,
+      "picu_beds": null,
+      "nicu_level": null,
+      "peds_ed": true,
+      "peds_trauma_level": null,
+      "magnet": null,
+      "teaching": true,
+      "affiliated_university": null,
+      "peds_services": [
+        "pediatric emergency medicine",
+        "pediatric inpatient",
+        "hospitalist",
+        "trauma"
+      ],
+      "description": "Chippenham Hospital is the south Richmond campus of HCA's CJW Medical Center, a combined 667-bed license with Johnston-Willis that Wikipedia lists as a Level I trauma center. Chippenham runs a dedicated children's emergency room, which HCA promotes as a separate kids' ER, and HCA concentrated its Richmond pediatric inpatient care here after closing the pediatric units at Henrico Doctors' Hospital in 2022. Its NICU was folded into the Johnston-Willis NICU in August 2022, so newborn intensive care for CJW now sits on the Midlothian Turnpike campus. The hospital is off Jahnke Road near the Chippenham Parkway, serving Chesterfield County and the city's Southside.",
+      "highlights": [
+        "Dedicated pediatric emergency room (HCA Virginia kids' ER)",
+        "HCA's Richmond pediatric inpatient hub after Henrico Doctors' pediatric units closed in 2022 (verify)",
+        "Part of CJW Medical Center, a Level I trauma center (adult) with 667 beds across two campuses",
+        "NICU consolidated into Johnston-Willis in August 2022"
+      ],
+      "photos": [],
+      "wikipedia_title": "Chippenham Hospital (Richmond, Virginia)",
+      "sources": [
+        "https://en.wikipedia.org/wiki/List_of_hospitals_in_Virginia",
+        "https://www.hcavirginia.com/locations/chippenham-pediatric-er",
+        "https://hcavirginia.com/locations/chippenham-hospital/specialties/pediatrics",
+        "https://www.wtvr.com/2019/10/16/chippenham-hospital-pediatric-er",
+        "https://wtvr.com/news/local-news/chippenham-hospital-nicu-closing-consolidating-with-johnston-willis-hospital-ausut-29-2022",
+        "https://www.beckershospitalreview.com/care-coordination/2-hca-hospitals-will-combine-nicus.html",
+        "https://www.12onyourside.com/2022/01/18/pediatric-units-henrico-doctors-hospital-close-permanently-april-1/"
+      ],
+      "notes": "Facts from page titles and search listings only; every fetch of hcavirginia.com, WTVR and 12onyourside was rate limited (HTTP 429) on 2026-10-19. Pediatric ER confirmed by HCA's own kids' ER location page title. peds_inpatient true per the seed brief (pediatric ER and peds inpatient) and HCA's pediatrics specialty page; bed count unknown. beds is the combined CJW license from the Wikipedia list. teaching true because CJW hosts HCA GME programs (FREIDA lists CJW institutions), not verified in detail.",
+      "confidence": "low",
+      "active": true,
+      "_enrich": {
+        "wikipedia": {}
+      }
+    },
+    {
+      "slug": "johnston-willis-richmond",
+      "name": "Johnston-Willis Hospital",
+      "parent_hospital": "CJW Medical Center",
+      "health_system": "HCA Healthcare (HCA Virginia)",
+      "hospital_type": "regional_hospital",
+      "city": "Richmond",
+      "state": "VA",
+      "address": "1401 Johnston Willis Dr, Richmond, VA 23235",
+      "lat": 37.51061,
+      "lng": -77.59466,
+      "coord_source": "Google Places",
+      "region": "Richmond",
+      "hotspot": false,
+      "website": "https://www.hcavirginia.com/locations/johnston-willis-hospital",
+      "careers_url": "https://careers.hcahealthcare.com/search/jobs/in/va-virginia",
+      "careers_platform": "custom",
+      "careers_search_url": "https://careers.hcahealthcare.com/search/nurse-practitioner/jobs/in/va-virginia",
+      "careers_notes": "HCA Healthcare central job board careers.hcahealthcare.com (TalentBrew-style paths: /search/jobs/in/va-virginia, /search/<keyword>/jobs, facility pages /pages/<facility-slug>, job detail /jobs/<id>-<title-slug>). WebFetch was refused by robots.txt (2026-10-19), so rendering was not tested. Underlying ATS not confirmed from a page read, so platform is recorded as custom. The Richmond keyword search URL combines the two observed path patterns (/search/<keyword>/jobs and /jobs/in/<place>) and is untested. Jobs post under CJW Medical Center. [enrich 2026-10-20] careers_url -> HTTP 403 at https://careers.hcahealthcare.com/search/jobs/in/va-virginia; search_url -> HTTP 403, mentions NP: False, job links: 0",
+      "ats_config": {
+        "host": "careers.hcahealthcare.com"
+      },
+      "nearest_airport": "RIC Richmond International (about 15 mi straight-line)",
+      "beds": null,
+      "peds_beds": null,
+      "peds_inpatient": false,
+      "picu": false,
+      "picu_beds": null,
+      "nicu_level": 3,
+      "peds_ed": false,
+      "peds_trauma_level": null,
+      "magnet": null,
+      "teaching": true,
+      "affiliated_university": null,
+      "peds_services": [
+        "neonatology",
+        "maternal-fetal medicine"
+      ],
+      "description": "Johnston-Willis is the Midlothian Turnpike campus of HCA's CJW Medical Center in Chesterfield County, a busy obstetric hospital that became CJW's single NICU site when Chippenham's NICU merged into it in August 2022. A national neonatal directory lists the Johnston-Willis NICU as Level III with about 20 beds, and HCA lists NICU and labor and delivery as core services here. There is no separate pediatric inpatient unit or pediatric ER on this campus; children go to the Chippenham kids' ER a few miles east. The hospital sits in the fast-growing western Chesterfield suburbs near Bon Air and Midlothian.",
+      "highlights": [
+        "CJW Medical Center's NICU site since the August 2022 consolidation",
+        "Level III NICU (about 20 beds per neonatologysolutions directory, before consolidation)",
+        "High-volume birthing center in western Chesterfield County",
+        "Shares the CJW license and Level I trauma designation with Chippenham"
+      ],
+      "photos": [],
+      "wikipedia_title": null,
+      "sources": [
+        "https://neonatologysolutions.com/?p=19552",
+        "https://www.hcavirginia.com/locations/johnston-willis-hospital/specialties/NICU",
+        "https://www.hcavirginia.com/locations/johnston-willis-hospital",
+        "https://wtvr.com/news/local-news/chippenham-hospital-nicu-closing-consolidating-with-johnston-willis-hospital-ausut-29-2022",
+        "https://www.beckershospitalreview.com/care-coordination/2-hca-hospitals-will-combine-nicus.html"
+      ],
+      "notes": "Listed for NICU NP and neonatal roles (neonatal NPs are often employed by Pediatrix or another neonatology group rather than HCA). NICU bed count may have grown after the 2022 consolidation; not confirmed. beds left null because Wikipedia gives only the combined CJW figure (667), recorded on the Chippenham record.",
+      "confidence": "medium",
+      "active": true,
+      "_enrich": {
+        "wikipedia": {}
+      }
+    },
+    {
+      "slug": "henrico-doctors-richmond",
+      "name": "Henrico Doctors' Hospital",
+      "parent_hospital": null,
+      "health_system": "HCA Healthcare (HCA Virginia)",
+      "hospital_type": "regional_hospital",
+      "city": "Richmond",
+      "state": "VA",
+      "address": "1602 Skipwith Rd, Richmond, VA 23229",
+      "lat": 37.60404,
+      "lng": -77.54006,
+      "coord_source": "Google Places (from R5b scratch, 2026-10-19)",
+      "region": "Richmond",
+      "hotspot": false,
+      "website": "https://www.hcavirginia.com/locations/henrico-doctors-hospital",
+      "careers_url": "https://careers.hcahealthcare.com/search/jobs/in/va-virginia",
+      "careers_platform": "custom",
+      "careers_search_url": "https://careers.hcahealthcare.com/search/nurse-practitioner/jobs/in/va-virginia",
+      "careers_notes": "HCA Healthcare central job board (TalentBrew-style paths); robots.txt refused WebFetch on 2026-10-19 so rendering untested. Keyword plus place path combines two observed patterns and is untested. Filter by facility name. Facility filter: Henrico Doctors' Hospital (HCA Virginia). [enrich 2026-10-20] careers_url -> HTTP 403 at https://careers.hcahealthcare.com/search/jobs/in/va-virginia; search_url -> HTTP 403, mentions NP: False, job links: 0",
+      "ats_config": {
+        "host": "careers.hcahealthcare.com"
+      },
+      "nearest_airport": "RIC Richmond International (about 13 mi)",
+      "beds": null,
+      "peds_beds": null,
+      "peds_inpatient": false,
+      "picu": false,
+      "picu_beds": null,
+      "nicu_level": 3,
+      "peds_ed": true,
+      "peds_trauma_level": null,
+      "magnet": null,
+      "teaching": false,
+      "affiliated_university": null,
+      "peds_services": [
+        "neonatology",
+        "pediatric emergency medicine",
+        "obstetrics"
+      ],
+      "description": "Henrico Doctors' Hospital is HCA Virginia's large hospital in Richmond's West End, with its main Forest campus off Skipwith Road and satellite campuses at Parham and Retreat. Its pediatric work is now neonatal and emergency: a Level III NICU that a neonatal directory lists at 40 beds, one of the largest in central Virginia, and a pediatric ER that HCA has promoted as autism and sensory friendly. HCA closed the hospital's inpatient pediatric units in April 2022, so children who need admission are moved to Chippenham or to CHoR at VCU. The campus serves Henrico, Goochland and the western suburbs.",
+      "highlights": [
+        "Level III NICU (40 beds per neonatologysolutions directory)",
+        "Autism- and sensory-friendly pediatric ER (Becker's headline)",
+        "Inpatient pediatric units closed April 2022",
+        "HCA Virginia, Forest campus in Richmond's West End"
+      ],
+      "photos": [],
+      "wikipedia_title": null,
+      "sources": [
+        "https://neonatologysolutions.com/?p=19552",
+        "https://en.wikipedia.org/wiki/List_of_hospitals_in_Virginia",
+        "https://www.12onyourside.com/2022/01/18/pediatric-units-henrico-doctors-hospital-close-permanently-april-1/",
+        "model knowledge (to verify); enrichment pending"
+      ],
+      "notes": "Pediatric unit closure (April 2022), pediatric ER and NICU from search result headlines and the HCA NICU page title recorded in the R5b scratch; the pages were not opened. Coordinates from the R5b scratch (Google Places, Forest campus). NICU NP roles likely.",
+      "confidence": "low",
+      "active": true,
+      "_enrich": {
+        "wikipedia": {}
+      }
+    },
+    {
+      "slug": "bon-secours-st-francis-midlothian",
+      "name": "Bon Secours St. Francis Medical Center",
+      "parent_hospital": null,
+      "health_system": "Bon Secours Mercy Health",
+      "hospital_type": "community_hospital",
+      "city": "Midlothian",
+      "state": "VA",
+      "address": "13710 St Francis Blvd, Midlothian, VA 23114",
+      "lat": 37.46678,
+      "lng": -77.65918,
+      "coord_source": "Google Places (from R5b scratch, 2026-10-19)",
+      "region": "Richmond",
+      "hotspot": false,
+      "website": "https://www.bonsecours.com/locations/hospitals-medical-centers/richmond/st-francis-medical-center",
+      "careers_url": "https://careers.bsmhealth.org/us/en/search-results",
+      "careers_platform": "phenom",
+      "careers_search_url": "https://careers.bsmhealth.org/us/en/search-results?keywords=nurse%20practitioner",
+      "careers_notes": "Bon Secours Mercy Health Phenom-style board (also careers.bonsecours.com); NP and PA roles are mostly on the provider board physiciancareers.bsmhealth.org. Rendering not tested. [enrich 2026-10-20] careers_url -> HTTP 200 at https://careers.bsmhealth.org/us/en/search-results; search_url -> HTTP 200, mentions NP: True, job links: 0",
+      "ats_config": {
+        "host": "careers.bsmhealth.org",
+        "provider_host": "physiciancareers.bsmhealth.org",
+        "alt_host": "careers.bonsecours.com"
+      },
+      "nearest_airport": "RIC Richmond International (about 25 mi)",
+      "beds": null,
+      "peds_beds": null,
+      "peds_inpatient": false,
+      "picu": false,
+      "picu_beds": null,
+      "nicu_level": 3,
+      "peds_ed": false,
+      "peds_trauma_level": null,
+      "magnet": null,
+      "teaching": false,
+      "affiliated_university": null,
+      "peds_services": [
+        "neonatology",
+        "obstetrics"
+      ],
+      "description": "Bon Secours St. Francis Medical Center is a Catholic community hospital in Midlothian in western Chesterfield County, serving the Brandermill, Woodlake and Swift Creek suburbs southwest of Richmond. It runs a maternity service and a small Level III NICU that a neonatal directory lists at 6 beds, with Bon Secours NICU nursing postings confirming the unit. Children who need admission go to St. Mary's or CHoR. The campus is in a fast-growing suburban corridor along Route 288.",
+      "highlights": [
+        "Level III NICU (6 beds per neonatologysolutions directory)",
+        "Catholic community hospital in western Chesterfield County",
+        "Part of Bon Secours Richmond with St. Mary's and Memorial Regional"
+      ],
+      "photos": [],
+      "wikipedia_title": null,
+      "sources": [
+        "https://neonatologysolutions.com/?p=19552",
+        "https://en.wikipedia.org/wiki/List_of_hospitals_in_Virginia",
+        "https://careers.bonsecours.com/us/en/job/R272073",
+        "model knowledge (to verify); enrichment pending"
+      ],
+      "notes": "NICU confirmed by directory and an RN NICU posting (R272073) seen in search results. No inpatient pediatric unit known. Coordinates from the R5b scratch (Google Places).",
+      "confidence": "low",
+      "active": true,
+      "_enrich": {}
+    },
+    {
+      "slug": "bon-secours-memorial-regional-mechanicsville",
+      "name": "Bon Secours Memorial Regional Medical Center",
+      "parent_hospital": null,
+      "health_system": "Bon Secours Mercy Health",
+      "hospital_type": "community_hospital",
+      "city": "Mechanicsville",
+      "state": "VA",
+      "address": "8260 Atlee Rd, Mechanicsville, VA 23116",
+      "lat": 37.62874,
+      "lng": -77.38589,
+      "coord_source": "Google Places (from R5b scratch, 2026-10-19)",
+      "region": "Richmond",
+      "hotspot": false,
+      "website": "https://www.bonsecours.com/locations/hospitals-medical-centers/richmond/memorial-regional-medical-center",
+      "careers_url": "https://careers.bsmhealth.org/us/en/search-results",
+      "careers_platform": "phenom",
+      "careers_search_url": "https://careers.bsmhealth.org/us/en/search-results?keywords=nurse%20practitioner",
+      "careers_notes": "Bon Secours Mercy Health Phenom-style board (also careers.bonsecours.com); NP and PA roles are mostly on the provider board physiciancareers.bsmhealth.org. Rendering not tested. [enrich 2026-10-20] careers_url -> HTTP 200 at https://careers.bsmhealth.org/us/en/search-results; search_url -> HTTP 200, mentions NP: True, job links: 0",
+      "ats_config": {
+        "host": "careers.bsmhealth.org",
+        "provider_host": "physiciancareers.bsmhealth.org",
+        "alt_host": "careers.bonsecours.com"
+      },
+      "nearest_airport": "RIC Richmond International (about 12 mi)",
+      "beds": null,
+      "peds_beds": null,
+      "peds_inpatient": false,
+      "picu": false,
+      "picu_beds": null,
+      "nicu_level": 3,
+      "peds_ed": false,
+      "peds_trauma_level": null,
+      "magnet": null,
+      "teaching": false,
+      "affiliated_university": null,
+      "peds_services": [
+        "neonatology",
+        "obstetrics"
+      ],
+      "description": "Bon Secours Memorial Regional Medical Center is a Catholic community hospital in Mechanicsville in Hanover County, north and east of Richmond along I-295. It runs a maternity service and a Level III NICU that a neonatal directory lists at 9 beds. It serves Hanover, eastern Henrico and the rural counties toward the Northern Neck. The area mixes suburban subdivisions with farmland, and downtown Richmond is about 20 minutes away.",
+      "highlights": [
+        "Level III NICU (9 beds per neonatologysolutions directory)",
+        "Bon Secours community hospital in Hanover County",
+        "About 20 minutes from downtown Richmond"
+      ],
+      "photos": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/5/56/Bon_Secours_Memorial_Regional_Medical_Center.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original",
+          "caption": "Bon Secours Memorial Regional Medical Center",
+          "credit": "Packer1028",
+          "license": "CC0",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Bon_Secours_Memorial_Regional_Medical_Center.jpg"
+        }
+      ],
+      "wikipedia_title": "Bon Secours Memorial Regional Medical Center",
+      "sources": [
+        "https://neonatologysolutions.com/?p=19552",
+        "https://en.wikipedia.org/wiki/List_of_hospitals_in_Virginia",
+        "model knowledge (to verify); enrichment pending"
+      ],
+      "notes": "NICU from the directory and an RN NICU posting seen in search results. No inpatient pediatric unit known. Coordinates from the R5b scratch (Google Places).",
+      "confidence": "low",
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "Bon Secours Memorial Regional Medical Center",
+          "url": "https://en.wikipedia.org/wiki/Bon_Secours_Memorial_Regional_Medical_Center",
+          "extract": "Bon Secours Memorial Regional Medical Center is located in Mechanicsville, Virginia and operated by Bon Secours, part of Bon Secours Mercy Health."
+        }
+      }
+    },
+    {
+      "slug": "bon-secours-southside-petersburg",
+      "name": "Bon Secours Southside Medical Center",
+      "parent_hospital": null,
+      "health_system": "Bon Secours Mercy Health",
+      "hospital_type": "regional_hospital",
+      "city": "Petersburg",
+      "state": "VA",
+      "address": "200 Medical Park Blvd, Petersburg, VA 23805",
+      "lat": 37.18243,
+      "lng": -77.35905,
+      "coord_source": "Google Places (from R5b scratch, 2026-10-19)",
+      "region": "Richmond",
+      "hotspot": false,
+      "website": "https://www.bonsecours.com/locations/hospitals-medical-centers/richmond/southside-medical-center",
+      "careers_url": "https://careers.bsmhealth.org/us/en/search-results",
+      "careers_platform": "phenom",
+      "careers_search_url": "https://careers.bsmhealth.org/us/en/search-results?keywords=nurse%20practitioner",
+      "careers_notes": "Bon Secours Mercy Health Phenom-style board (also careers.bonsecours.com); NP and PA roles are mostly on the provider board physiciancareers.bsmhealth.org. Rendering not tested. [enrich 2026-10-20] careers_url -> HTTP 200 at https://careers.bsmhealth.org/us/en/search-results; search_url -> HTTP 200, mentions NP: True, job links: 0",
+      "ats_config": {
+        "host": "careers.bsmhealth.org",
+        "provider_host": "physiciancareers.bsmhealth.org",
+        "alt_host": "careers.bonsecours.com"
+      },
+      "nearest_airport": "RIC Richmond International (about 25 mi)",
+      "beds": null,
+      "peds_beds": null,
+      "peds_inpatient": false,
+      "picu": false,
+      "picu_beds": null,
+      "nicu_level": 2,
+      "peds_ed": false,
+      "peds_trauma_level": null,
+      "magnet": null,
+      "teaching": false,
+      "affiliated_university": null,
+      "peds_services": [
+        "neonatology",
+        "obstetrics"
+      ],
+      "description": "Bon Secours Southside Medical Center, formerly Southside Regional Medical Center, is the regional hospital for Petersburg and the Tri-Cities area south of Richmond. It joined Bon Secours from Community Health Systems in the early 2020s. A neonatal directory lists a Level II NICU, given as 7 beds in one entry and 14 in another. It serves Petersburg, Colonial Heights, Dinwiddie and the communities around Fort Gregg-Adams, about 30 minutes south of downtown Richmond.",
+      "highlights": [
+        "Regional hospital for Petersburg and the Tri-Cities",
+        "Level II NICU (neonatologysolutions directory)",
+        "Formerly Southside Regional Medical Center (CHS), now Bon Secours"
+      ],
+      "photos": [],
+      "wikipedia_title": "Southside Regional Medical Center",
+      "sources": [
+        "https://neonatologysolutions.com/?p=19552",
+        "https://en.wikipedia.org/wiki/List_of_hospitals_in_Virginia",
+        "model knowledge (to verify); enrichment pending"
+      ],
+      "notes": "Directory bed count conflicts (7 vs 14). Inpatient pediatric unit status unknown. Coordinates from the R5b scratch (Google Places).",
+      "confidence": "low",
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "Bon Secours - Southside Medical Center",
+          "url": "https://en.wikipedia.org/wiki/Bon_Secours_-_Southside_Medical_Center",
+          "extract": "Bon Secours - Southside Medical Center is a 300-bed  hospital near the Petersburg, VA tri-cities, VA area."
+        }
+      }
+    },
+    {
+      "slug": "sentara-norfolk-general-norfolk",
+      "name": "Sentara Norfolk General Hospital",
+      "parent_hospital": null,
+      "health_system": "Sentara Health",
+      "hospital_type": "academic_medical_center",
+      "city": "Norfolk",
+      "state": "VA",
+      "address": "600 Gresham Dr, Norfolk, VA 23507",
+      "lat": 36.8623,
+      "lng": -76.30323,
+      "coord_source": "Google Places (from R5b scratch, 2026-10-19)",
+      "region": "Hampton Roads",
+      "hotspot": false,
+      "website": "https://www.sentara.com/hospitalslocations/locations/sentara-norfolk-general-hospital",
+      "careers_url": "https://sentara.wd1.myworkdayjobs.com/SCS",
+      "careers_platform": "workday",
+      "careers_search_url": "https://sentara.wd1.myworkdayjobs.com/SCS?q=nurse%20practitioner",
+      "careers_notes": "Sentara Health Workday (tenant sentara, site SCS) seen in search results 2026-10-19; JS-rendered, use the CXS JSON endpoint. careers.sentara.com is the marketing front door. Facility filter: Sentara Norfolk General Hospital. [enrich 2026-10-20] careers_url -> HTTP None at None; search_url -> HTTP 200, mentions NP: False, job links: 0",
+      "ats_config": {
+        "host": "sentara.wd1.myworkdayjobs.com",
+        "tenant": "sentara",
+        "site": "SCS"
+      },
+      "nearest_airport": "ORF Norfolk International (about 6 mi)",
+      "beds": null,
+      "peds_beds": null,
+      "peds_inpatient": false,
+      "picu": false,
+      "picu_beds": null,
+      "nicu_level": null,
+      "peds_ed": false,
+      "peds_trauma_level": null,
+      "magnet": null,
+      "teaching": true,
+      "affiliated_university": "Eastern Virginia Medical School (now part of Old Dominion University, Macon and Joan Brock Virginia Health Sciences)",
+      "peds_services": [
+        "neonatology",
+        "high-risk obstetrics",
+        "trauma"
+      ],
+      "description": "Sentara Norfolk General Hospital is Sentara's flagship and the main academic teaching hospital for Hampton Roads, on the Eastern Virginia Medical Center campus in Norfolk's Ghent area. It is the region's Level I trauma center and the teaching hospital for EVMS, now part of Old Dominion University. Sentara lists Norfolk General among its hospitals with a NICU, run in partnership with Children's Hospital of The King's Daughters, which sits on the same medical campus and handles most pediatric care. Ghent is a walkable historic neighborhood with restaurants and the Elizabeth River waterfront close by.",
+      "highlights": [
+        "Sentara Health's flagship and Hampton Roads' academic medical center",
+        "Level I trauma center (reportedly)",
+        "NICU in partnership with CHKD (Sentara NICU page)",
+        "Shares the Eastern Virginia Medical Center campus with CHKD"
+      ],
+      "photos": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/1/10/Sentara_Norfolk_General.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original",
+          "caption": "Sentara Norfolk General Hospital",
+          "credit": "Sichensliu",
+          "license": "CC BY-SA 4.0",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Sentara_Norfolk_General.jpg"
+        }
+      ],
+      "wikipedia_title": "Sentara Norfolk General Hospital",
+      "sources": [
+        "https://www.sentara.com/medicalservices/nicu-special-care-nurseries",
+        "https://en.wikipedia.org/wiki/List_of_hospitals_in_Virginia",
+        "model knowledge (to verify); enrichment pending"
+      ],
+      "notes": "Included as an academic medical center. NICU level not stated on the Sentara page (nicu_level null); neonatal care is shared with CHKD next door. No separate pediatric inpatient unit (CHKD covers pediatrics). Coordinates from the R5b scratch (Google Places).",
+      "confidence": "medium",
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "Sentara Norfolk General Hospital",
+          "url": "https://en.wikipedia.org/wiki/Sentara_Norfolk_General_Hospital",
+          "extract": "Sentara Norfolk General Hospital (SNGH) is a large academic hospital, which serves as the primary teaching institution for the adjacent Eastern Virginia Medical School.  Located in Norfolk, Virginia, in the Ghent neighborhood and adjacent to Downtown, the hospital serves as the Hampton Roads region's only Level I trauma center.  The hospital is interconnected to the Sentara Heart Hospital; however, it is considered a separate institution. Together with the  adjacent Children's Hospital of the King's Daughters, Eastern Virginia Medical School and the Norfolk Department of Health, the Eastern Virginia Medical Center is the largest conglomerate center for health in Hampton Roads. For a time, the U.S. News & World Report rated it the best in Virginia. In 2016, SNGH is tied with VCU Medical Center ranked as #2 while University of Virginia Health System ranked first."
+        }
+      }
+    },
+    {
+      "slug": "sentara-princess-anne-virginia-beach",
+      "name": "Sentara Princess Anne Hospital",
+      "parent_hospital": null,
+      "health_system": "Sentara Health",
+      "hospital_type": "community_hospital",
+      "city": "Virginia Beach",
+      "state": "VA",
+      "address": "2025 Glenn Mitchell Dr, Virginia Beach, VA 23456",
+      "lat": 36.77564,
+      "lng": -76.098,
+      "coord_source": "Google Places (from R5b scratch, 2026-10-19)",
+      "region": "Hampton Roads",
+      "hotspot": false,
+      "website": "https://www.sentara.com/hospitalslocations/locations/sentara-princess-anne-hospital",
+      "careers_url": "https://sentara.wd1.myworkdayjobs.com/SCS",
+      "careers_platform": "workday",
+      "careers_search_url": "https://sentara.wd1.myworkdayjobs.com/SCS?q=nurse%20practitioner",
+      "careers_notes": "Sentara Health Workday (tenant sentara, site SCS) seen in search results 2026-10-19; JS-rendered, use the CXS JSON endpoint. careers.sentara.com is the marketing front door. Facility filter: Sentara Princess Anne Hospital. [enrich 2026-10-20] careers_url -> HTTP 200 at https://sentara.wd1.myworkdayjobs.com/SCS; ATS link seen: https://sentara.wd1.myworkdayjobs.com/SCS; search_url -> HTTP 200, mentions NP: False, job links: 0",
+      "ats_config": {
+        "host": "sentara.wd1.myworkdayjobs.com",
+        "tenant": "sentara",
+        "site": "SCS"
+      },
+      "nearest_airport": "ORF Norfolk International (about 15 mi)",
+      "beds": null,
+      "peds_beds": null,
+      "peds_inpatient": false,
+      "picu": false,
+      "picu_beds": null,
+      "nicu_level": null,
+      "peds_ed": false,
+      "peds_trauma_level": null,
+      "magnet": null,
+      "teaching": false,
+      "affiliated_university": null,
+      "peds_services": [
+        "neonatology",
+        "obstetrics"
+      ],
+      "description": "Sentara Princess Anne Hospital is a newer Sentara hospital opened in 2011 in the Princess Anne area of southern Virginia Beach, near the Virginia Beach Amphitheater and Municipal Center. It is Sentara's main maternity hospital for Virginia Beach, and Sentara lists it among the three hospitals in the system with a full NICU rather than a special care nursery. The surrounding area is suburban Virginia Beach, with the Oceanfront and Sandbridge beaches about 20 minutes away.",
+      "highlights": [
+        "Opened 2011 in southern Virginia Beach (reportedly)",
+        "One of three Sentara hospitals with a full NICU (Sentara page)",
+        "Main Sentara maternity hospital for Virginia Beach",
+        "About 20 minutes from the Oceanfront"
+      ],
+      "photos": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/0/0c/Sentara_VB_General_Hospital.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original",
+          "caption": "Sentara Health",
+          "credit": "Wikimedia Commons",
+          "license": "see source page",
+          "source_page": "https://en.wikipedia.org/wiki/Sentara_Health"
+        }
+      ],
+      "wikipedia_title": "Sentara Health",
+      "sources": [
+        "https://www.sentara.com/medicalservices/nicu-special-care-nurseries",
+        "https://en.wikipedia.org/wiki/List_of_hospitals_in_Virginia",
+        "model knowledge (to verify); enrichment pending"
+      ],
+      "notes": "NICU listed by Sentara without a level; reportedly Level III, verify (nicu_level null). No inpatient pediatric unit known. Coordinates from the R5b scratch (Google Places).",
+      "confidence": "low",
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "Sentara Health",
+          "url": "https://en.wikipedia.org/wiki/Sentara_Health",
+          "extract": "Sentara Health is a not-for-profit healthcare organization serving Virginia, northeastern North Carolina and Florida. It is based in Norfolk, Virginia, has services in 12 acute care hospitals, and has 1.2 million health plan members in three states. It also operates four medical groups."
+        }
+      }
+    },
+    {
+      "slug": "sentara-leigh-norfolk",
+      "name": "Sentara Leigh Hospital",
+      "parent_hospital": null,
+      "health_system": "Sentara Health",
+      "hospital_type": "community_hospital",
+      "city": "Norfolk",
+      "state": "VA",
+      "address": "830 Kempsville Rd, Norfolk, VA 23502",
+      "lat": 36.8511,
+      "lng": -76.19009,
+      "coord_source": "Google Places (from R5b scratch, 2026-10-19)",
+      "region": "Hampton Roads",
+      "hotspot": false,
+      "website": "https://www.sentara.com/hospitalslocations/locations/sentara-leigh-hospital",
+      "careers_url": "https://sentara.wd1.myworkdayjobs.com/SCS",
+      "careers_platform": "workday",
+      "careers_search_url": "https://sentara.wd1.myworkdayjobs.com/SCS?q=nurse%20practitioner",
+      "careers_notes": "Sentara Health Workday (tenant sentara, site SCS) seen in search results 2026-10-19; JS-rendered, use the CXS JSON endpoint. careers.sentara.com is the marketing front door. Facility filter: Sentara Leigh Hospital. [enrich 2026-10-20] careers_url -> HTTP 200 at https://sentara.wd1.myworkdayjobs.com/SCS; ATS link seen: https://sentara.wd1.myworkdayjobs.com/SCS; search_url -> HTTP 200, mentions NP: False, job links: 0",
+      "ats_config": {
+        "host": "sentara.wd1.myworkdayjobs.com",
+        "tenant": "sentara",
+        "site": "SCS"
+      },
+      "nearest_airport": "ORF Norfolk International (about 5 mi)",
+      "beds": null,
+      "peds_beds": null,
+      "peds_inpatient": false,
+      "picu": false,
+      "picu_beds": null,
+      "nicu_level": 2,
+      "peds_ed": false,
+      "peds_trauma_level": null,
+      "magnet": null,
+      "teaching": false,
+      "affiliated_university": null,
+      "peds_services": [
+        "special care nursery",
+        "obstetrics"
+      ],
+      "description": "Sentara Leigh Hospital is a Sentara community hospital in eastern Norfolk on the Virginia Beach line, near Military Highway and the Kempsville corridor. It has a maternity service with a special care nursery, which Sentara lists separately from its full NICUs, for newborns who need more than routine care. It serves eastern Norfolk, western Virginia Beach and the Naval Station Norfolk community. The location is central in South Hampton Roads, about 15 minutes from Ghent and the CHKD campus.",
+      "highlights": [
+        "Special care nursery (Sentara page)",
+        "Maternity hospital for eastern Norfolk and western Virginia Beach",
+        "Near Norfolk International Airport"
+      ],
+      "photos": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/1/10/Sentara_Norfolk_General.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original",
+          "caption": "Sentara Norfolk General Hospital",
+          "credit": "Sichensliu",
+          "license": "CC BY-SA 4.0",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Sentara_Norfolk_General.jpg"
+        }
+      ],
+      "wikipedia_title": "Sentara Norfolk General Hospital",
+      "sources": [
+        "https://www.sentara.com/medicalservices/nicu-special-care-nurseries",
+        "https://en.wikipedia.org/wiki/List_of_hospitals_in_Virginia",
+        "model knowledge (to verify); enrichment pending"
+      ],
+      "notes": "nicu_level 2 inferred from Sentara listing a special care nursery (AAP Level II); verify. Coordinates from the R5b scratch (Google Places).",
+      "confidence": "low",
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "Sentara Norfolk General Hospital",
+          "url": "https://en.wikipedia.org/wiki/Sentara_Norfolk_General_Hospital",
+          "extract": "Sentara Norfolk General Hospital (SNGH) is a large academic hospital, which serves as the primary teaching institution for the adjacent Eastern Virginia Medical School.  Located in Norfolk, Virginia, in the Ghent neighborhood and adjacent to Downtown, the hospital serves as the Hampton Roads region's only Level I trauma center.  The hospital is interconnected to the Sentara Heart Hospital; however, it is considered a separate institution. Together with the  adjacent Children's Hospital of the King's Daughters, Eastern Virginia Medical School and the Norfolk Department of Health, the Eastern Virginia Medical Center is the largest conglomerate center for health in Hampton Roads. For a time, the U.S. News & World Report rated it the best in Virginia. In 2016, SNGH is tied with VCU Medical Center ranked as #2 while University of Virginia Health System ranked first."
+        }
+      }
+    },
+    {
+      "slug": "sentara-careplex-hampton",
+      "name": "Sentara CarePlex Hospital",
+      "parent_hospital": null,
+      "health_system": "Sentara Health",
+      "hospital_type": "community_hospital",
+      "city": "Hampton",
+      "state": "VA",
+      "address": "3000 Coliseum Dr, Hampton, VA 23666",
+      "lat": 37.05684,
+      "lng": -76.39017,
+      "coord_source": "Google Places (from R5b scratch, 2026-10-19)",
+      "region": "Hampton Roads",
+      "hotspot": false,
+      "website": "https://www.sentara.com/hospitalslocations/locations/sentara-careplex-hospital",
+      "careers_url": "https://sentara.wd1.myworkdayjobs.com/SCS",
+      "careers_platform": "workday",
+      "careers_search_url": "https://sentara.wd1.myworkdayjobs.com/SCS?q=nurse%20practitioner",
+      "careers_notes": "Sentara Health Workday (tenant sentara, site SCS) seen in search results 2026-10-19; JS-rendered, use the CXS JSON endpoint. careers.sentara.com is the marketing front door. Facility filter: Sentara CarePlex Hospital. [enrich 2026-10-20] careers_url -> HTTP 200 at https://sentara.wd1.myworkdayjobs.com/SCS; ATS link seen: https://sentara.wd1.myworkdayjobs.com/SCS; search_url -> HTTP 200, mentions NP: False, job links: 0",
+      "ats_config": {
+        "host": "sentara.wd1.myworkdayjobs.com",
+        "tenant": "sentara",
+        "site": "SCS"
+      },
+      "nearest_airport": "PHF Newport News/Williamsburg International (about 8 mi)",
+      "beds": null,
+      "peds_beds": null,
+      "peds_inpatient": false,
+      "picu": false,
+      "picu_beds": null,
+      "nicu_level": 2,
+      "peds_ed": false,
+      "peds_trauma_level": null,
+      "magnet": null,
+      "teaching": false,
+      "affiliated_university": null,
+      "peds_services": [
+        "special care nursery",
+        "obstetrics"
+      ],
+      "description": "Sentara CarePlex Hospital is Sentara's hospital on the Virginia Peninsula, near the Hampton Coliseum and the I-64 corridor. It has a maternity service with a special care nursery, which Sentara lists separately from its full NICUs. It serves Hampton, Poquoson and the Langley Air Force Base community. Newport News and the Riverside Regional campus are about 15 minutes away.",
+      "highlights": [
+        "Special care nursery (Sentara page)",
+        "Sentara's Virginia Peninsula hospital in Hampton",
+        "Serves the Joint Base Langley-Eustis community"
+      ],
+      "photos": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/0/0c/Sentara_VB_General_Hospital.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original",
+          "caption": "Sentara Health",
+          "credit": "Wikipediasaurus",
+          "license": "CC BY-SA 4.0",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Sentara_VB_General_Hospital.jpg"
+        }
+      ],
+      "wikipedia_title": "Sentara Health",
+      "sources": [
+        "https://www.sentara.com/medicalservices/nicu-special-care-nurseries",
+        "https://en.wikipedia.org/wiki/List_of_hospitals_in_Virginia",
+        "model knowledge (to verify); enrichment pending"
+      ],
+      "notes": "nicu_level 2 inferred from the special care nursery listing; verify. Coordinates from the R5b scratch (Google Places).",
+      "confidence": "low",
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "Sentara Health",
+          "url": "https://en.wikipedia.org/wiki/Sentara_Health",
+          "extract": "Sentara Health is a not-for-profit healthcare organization serving Virginia, northeastern North Carolina and Florida. It is based in Norfolk, Virginia, has services in 12 acute care hospitals, and has 1.2 million health plan members in three states. It also operates four medical groups."
+        }
+      }
+    },
+    {
+      "slug": "riverside-regional-newport-news",
+      "name": "Riverside Regional Medical Center",
+      "parent_hospital": null,
+      "health_system": "Riverside Health",
+      "hospital_type": "regional_hospital",
+      "city": "Newport News",
+      "state": "VA",
+      "address": "500 J Clyde Morris Blvd, Newport News, VA 23601",
+      "lat": 37.06334,
+      "lng": -76.48343,
+      "coord_source": "Google Places (from R5b scratch, 2026-10-19)",
+      "region": "Hampton Roads",
+      "hotspot": false,
+      "website": "https://www.riversideonline.com/locations/riverside-regional-medical-center",
+      "careers_url": "https://rivhs.wd1.myworkdayjobs.com/ProviderRHS",
+      "careers_platform": "workday",
+      "careers_search_url": "https://rivhs.wd1.myworkdayjobs.com/ProviderRHS?q=nurse%20practitioner",
+      "careers_notes": "Riverside Health System Workday (tenant rivhs); provider roles (NP, PA, MD) on site ProviderRHS, other roles on Non-ProviderRHS. Seen in search results 2026-10-19; not fetched. Facility filter: Riverside Regional Medical Center. [enrich 2026-10-20] careers_url -> HTTP 200 at https://rivhs.wd1.myworkdayjobs.com/ProviderRHS; ATS link seen: https://rivhs.wd1.myworkdayjobs.com/ProviderRHS; search_url -> HTTP 200, mentions NP: False, job links: 0",
+      "ats_config": {
+        "host": "rivhs.wd1.myworkdayjobs.com",
+        "tenant": "rivhs",
+        "site": "ProviderRHS",
+        "alt_site": "Non-ProviderRHS"
+      },
+      "nearest_airport": "PHF Newport News/Williamsburg International (about 6 mi)",
+      "beds": null,
+      "peds_beds": null,
+      "peds_inpatient": false,
+      "picu": false,
+      "picu_beds": null,
+      "nicu_level": 3,
+      "peds_ed": false,
+      "peds_trauma_level": null,
+      "magnet": null,
+      "teaching": true,
+      "affiliated_university": null,
+      "peds_services": [
+        "neonatology",
+        "obstetrics",
+        "trauma"
+      ],
+      "description": "Riverside Regional Medical Center is the flagship of Riverside Health and the main referral hospital for the Virginia Peninsula and Middle Peninsula, in central Newport News. It runs a Level III NICU that a neonatal directory lists at 21 beds, along with a large maternity service, and it is the Peninsula's trauma center. Riverside runs residency programs, reportedly including family medicine. The area includes Newport News, Hampton, Yorktown and Williamsburg, with the Mariners' Museum park nearby.",
+      "highlights": [
+        "Riverside Health flagship on the Virginia Peninsula",
+        "Level III NICU (21 beds per neonatologysolutions directory)",
+        "Peninsula trauma center (reportedly Level II)",
+        "Teaching hospital with residency programs"
+      ],
+      "photos": [],
+      "wikipedia_title": "Riverside Regional Medical Center",
+      "sources": [
+        "https://neonatologysolutions.com/?p=19552",
+        "https://en.wikipedia.org/wiki/List_of_hospitals_in_Virginia",
+        "model knowledge (to verify); enrichment pending"
+      ],
+      "notes": "No inpatient pediatric unit confirmed (CHKD runs outpatient pediatric centers on the Peninsula). Riverside provider jobs post on the ProviderRHS Workday site. Coordinates from the R5b scratch (Google Places).",
+      "confidence": "medium",
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "Riverside Regional Medical Center",
+          "url": "https://en.wikipedia.org/wiki/Riverside_Regional_Medical_Center",
+          "extract": "Riverside Regional Medical Center may refer to:\n\nRiverside University Health System Medical Center, a county-run hospital in Moreno Valley, California\nRiverside Regional Medical Center, part of Riverside Health in Newport News, Virginia"
+        }
+      }
+    },
+    {
+      "slug": "chesapeake-regional-chesapeake",
+      "name": "Chesapeake Regional Medical Center",
+      "parent_hospital": null,
+      "health_system": "Chesapeake Regional Healthcare",
+      "hospital_type": "regional_hospital",
+      "city": "Chesapeake",
+      "state": "VA",
+      "address": "736 Battlefield Blvd N, Chesapeake, VA 23320",
+      "lat": 36.74571,
+      "lng": -76.24628,
+      "coord_source": "Google Places (from R5b scratch, 2026-10-19)",
+      "region": "Hampton Roads",
+      "hotspot": false,
+      "website": "https://www.chesapeakeregional.com/",
+      "careers_url": "https://www.chesapeakeregional.com/careers",
+      "careers_platform": "ultipro",
+      "careers_search_url": null,
+      "careers_notes": "Chesapeake Regional Healthcare careers page (path unverified); ATS not confirmed. [enrich 2026-10-20] careers_url -> HTTP 200 at https://chesapeakeregional.com/careers",
+      "ats_config": {
+        "host": "www.chesapeakeregional.com"
+      },
+      "nearest_airport": "ORF Norfolk International (about 15 mi)",
+      "beds": null,
+      "peds_beds": null,
+      "peds_inpatient": false,
+      "picu": false,
+      "picu_beds": null,
+      "nicu_level": null,
+      "peds_ed": false,
+      "peds_trauma_level": null,
+      "magnet": null,
+      "teaching": false,
+      "affiliated_university": null,
+      "peds_services": [
+        "obstetrics",
+        "newborn care"
+      ],
+      "description": "Chesapeake Regional Medical Center is an independent public hospital owned by the Chesapeake Hospital Authority, on Battlefield Boulevard in the Great Bridge area of Chesapeake. It is the main hospital for Chesapeake and the communities toward the North Carolina line, including Currituck County. It runs a maternity service that recently renovated its mother and baby unit, and it serves as an EVMS clinical training site. Chesapeake is a large suburban city with access to both Norfolk and the Outer Banks, which is about 90 minutes south.",
+      "highlights": [
+        "Independent public hospital (Chesapeake Hospital Authority)",
+        "Renovated mother and baby unit (WAVY report)",
+        "EVMS clinical training site",
+        "Gateway hospital between Norfolk and northeastern North Carolina"
+      ],
+      "photos": [],
+      "wikipedia_title": "Chesapeake Regional Medical Center",
+      "sources": [
+        "https://en.wikipedia.org/wiki/List_of_hospitals_in_Virginia",
+        "https://www.wavy.com/news/health/chesapeake-regional-renovates-mother-baby-unit-creating-more-space-for-growing-families/amp",
+        "model knowledge (to verify); enrichment pending"
+      ],
+      "notes": "Inclusion is borderline: maternity service confirmed, but a NICU of Level II or higher is only reportedly present (nicu_level null). Kept because it is a large independent regional hospital near the Outer Banks hotspot; verify NICU level or drop. Coordinates from the R5b scratch (Google Places).",
+      "confidence": "low",
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "Chesapeake Regional Healthcare",
+          "url": "https://en.wikipedia.org/wiki/Chesapeake_Regional_Healthcare",
+          "extract": "Chesapeake Regional Medical Center (CRMC) is a hospital accredited by the Joint Commission with an advanced certification as a primary stroke center."
+        }
+      }
+    },
+    {
+      "slug": "bon-secours-mary-immaculate-newport-news",
+      "name": "Bon Secours Mary Immaculate Hospital",
+      "parent_hospital": null,
+      "health_system": "Bon Secours Mercy Health",
+      "hospital_type": "community_hospital",
+      "city": "Newport News",
+      "state": "VA",
+      "address": "2 Bernardine Dr, Newport News, VA 23602",
+      "lat": 37.14423,
+      "lng": -76.51176,
+      "coord_source": "Google Places (from R5b scratch, 2026-10-19)",
+      "region": "Hampton Roads",
+      "hotspot": false,
+      "website": "https://www.bonsecours.com/locations/hospitals-medical-centers/hampton-roads/mary-immaculate-hospital",
+      "careers_url": "https://careers.bsmhealth.org/us/en/search-results",
+      "careers_platform": "phenom",
+      "careers_search_url": "https://careers.bsmhealth.org/us/en/search-results?keywords=nurse%20practitioner",
+      "careers_notes": "Bon Secours Mercy Health Phenom-style board (also careers.bonsecours.com); NP and PA roles are mostly on the provider board physiciancareers.bsmhealth.org. Rendering not tested. [enrich 2026-10-20] careers_url -> HTTP 200 at https://careers.bsmhealth.org/us/en/search-results; search_url -> HTTP 200, mentions NP: True, job links: 0",
+      "ats_config": {
+        "host": "careers.bsmhealth.org",
+        "provider_host": "physiciancareers.bsmhealth.org",
+        "alt_host": "careers.bonsecours.com"
+      },
+      "nearest_airport": "PHF Newport News/Williamsburg International (about 3 mi)",
+      "beds": null,
+      "peds_beds": null,
+      "peds_inpatient": false,
+      "picu": false,
+      "picu_beds": null,
+      "nicu_level": 3,
+      "peds_ed": false,
+      "peds_trauma_level": null,
+      "magnet": null,
+      "teaching": false,
+      "affiliated_university": null,
+      "peds_services": [
+        "neonatology",
+        "obstetrics"
+      ],
+      "description": "Bon Secours Mary Immaculate Hospital is a Catholic community hospital in the Denbigh area of northern Newport News, close to the Newport News/Williamsburg airport. It runs a maternity service and a Level III NICU that a neonatal directory lists at 8 beds. It serves upper Newport News, Yorktown, Williamsburg and the Fort Eustis community. It is Bon Secours' Peninsula alternative to Riverside Regional.",
+      "highlights": [
+        "Level III NICU (8 beds per neonatologysolutions directory)",
+        "Bon Secours Hampton Roads hospital on the Peninsula",
+        "Near the Newport News/Williamsburg airport"
+      ],
+      "photos": [],
+      "wikipedia_title": null,
+      "sources": [
+        "https://neonatologysolutions.com/?p=19552",
+        "https://en.wikipedia.org/wiki/List_of_hospitals_in_Virginia",
+        "model knowledge (to verify); enrichment pending"
+      ],
+      "notes": "Not in the original prompt list; added because the directory lists a Level III NICU. Coordinates from the R5b scratch (Google Places).",
+      "confidence": "low",
+      "active": true,
+      "_enrich": {}
+    },
+    {
+      "slug": "cumberland-hospital-new-kent",
+      "name": "Cumberland Hospital for Children and Adolescents",
+      "parent_hospital": null,
+      "health_system": "Universal Health Services (reportedly)",
+      "hospital_type": "specialty_pediatric",
+      "city": "New Kent",
+      "state": "VA",
+      "address": "9407 Cumberland Rd, New Kent, VA 23124",
+      "lat": 37.54609,
+      "lng": -76.97842,
+      "coord_source": "Google Places (from R5b scratch, 2026-10-19)",
+      "region": "Richmond",
+      "hotspot": false,
+      "website": "https://www.cumberlandhospital.com/",
+      "careers_url": "https://www.cumberlandhospital.com/careers",
+      "careers_platform": "unknown",
+      "careers_search_url": null,
+      "careers_notes": "Cumberland Hospital careers page (path unverified); the hospital is reportedly owned by Universal Health Services, so jobs may also post on the UHS board. [enrich 2026-10-20] careers_url -> HTTP 403 at https://www.cumberlandhospital.com/careers",
+      "ats_config": {
+        "host": "www.cumberlandhospital.com"
+      },
+      "nearest_airport": "RIC Richmond International (about 20 mi)",
+      "beds": null,
+      "peds_beds": null,
+      "peds_inpatient": true,
+      "picu": false,
+      "picu_beds": null,
+      "nicu_level": null,
+      "peds_ed": false,
+      "peds_trauma_level": null,
+      "magnet": null,
+      "teaching": false,
+      "affiliated_university": null,
+      "peds_services": [
+        "pediatric medical rehabilitation",
+        "brain injury",
+        "feeding and eating disorders",
+        "behavioral health",
+        "residential treatment"
+      ],
+      "description": "Cumberland Hospital is a pediatric specialty hospital in rural New Kent County, about 30 minutes east of Richmond. It treats children and adolescents with medical and behavioral needs that are too complex for outpatient care, reportedly including brain injury rehabilitation, feeding and eating disorders and psychiatric residential treatment. Most patients come from across Virginia and neighboring states on referral from children's hospitals. It is a quieter, campus-style setting rather than an acute care environment.",
+      "highlights": [
+        "Pediatric specialty hospital east of Richmond",
+        "Medical rehabilitation, feeding and behavioral programs (reportedly)",
+        "Serves children referred from across Virginia"
+      ],
+      "photos": [],
+      "wikipedia_title": null,
+      "sources": [
+        "model knowledge (to verify); enrichment pending"
+      ],
+      "notes": "Included as a pediatric specialty hospital (rule 5) on thin evidence: Google Places reviews in the R5b scratch point to youth residential and eating disorder care. Verify whether medical (non-psych) inpatient programs and NP roles exist; drop if it is purely behavioral. Coordinates from the R5b scratch (Google Places).",
+      "confidence": "low",
+      "active": true,
+      "_enrich": {
+        "wikipedia": {}
+      }
+    },
+    {
+      "slug": "mary-washington-fredericksburg",
+      "name": "Mary Washington Hospital",
+      "parent_hospital": null,
+      "health_system": "Mary Washington Healthcare",
+      "hospital_type": "regional_hospital",
+      "city": "Fredericksburg",
+      "state": "VA",
+      "address": "1001 Sam Perry Blvd, Fredericksburg, VA 22401",
+      "lat": 38.31098,
+      "lng": -77.48309,
+      "coord_source": "Google Places (from R5b scratch, 2026-10-19)",
+      "region": "Virginia (other)",
+      "hotspot": false,
+      "website": "https://www.marywashingtonhealthcare.com/locations/mary-washington-hospital/",
+      "careers_url": "https://www.marywashingtonhealthcare.com/careers/",
+      "careers_platform": "unknown",
+      "careers_search_url": null,
+      "careers_notes": "Mary Washington Healthcare careers page (also reachable from mwhc.com); platform not confirmed. Facility filter: Mary Washington Hospital. Children's National provides specialty pediatric care at MWH, so some pediatric provider roles may post under Children's National. [enrich 2026-10-20] careers_url -> HTTP 403 at https://www.marywashingtonhealthcare.com/careers/",
+      "ats_config": {
+        "host": "www.marywashingtonhealthcare.com"
+      },
+      "nearest_airport": "DCA Reagan National (about 50 mi); RIC Richmond International (about 60 mi)",
+      "beds": null,
+      "peds_beds": null,
+      "peds_inpatient": true,
+      "picu": false,
+      "picu_beds": null,
+      "nicu_level": 3,
+      "peds_ed": false,
+      "peds_trauma_level": null,
+      "magnet": null,
+      "teaching": false,
+      "affiliated_university": null,
+      "peds_services": [
+        "neonatology",
+        "general pediatrics",
+        "pediatric hospitalist",
+        "obstetrics",
+        "trauma"
+      ],
+      "description": "Mary Washington Hospital is the flagship of Mary Washington Healthcare and the regional referral center for Fredericksburg and the surrounding counties along I-95 between DC and Richmond. Its Level III NICU, listed at 17 beds in neonatal directories and run with Children's National neonatology, was reported to be expanding in late 2024. Children's National also provides specialty pediatric care on site, and the hospital is the region's trauma center. Fredericksburg is a historic small city on the Rappahannock with a commuter rail link (VRE) to Northern Virginia and DC.",
+      "highlights": [
+        "Regional referral and trauma center for the Fredericksburg area",
+        "Level III NICU (17 beds) with Children's National, expanding (Dec 2024 news)",
+        "Children's National specialty pediatric care on site",
+        "VRE commuter rail to Northern Virginia and DC"
+      ],
+      "photos": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/f/f6/Mary_Washington_Hospital_Fredericksburg_VA.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original",
+          "caption": "Mary Washington Hospital",
+          "credit": "Mojo Hand",
+          "license": "CC BY-SA 4.0",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Mary_Washington_Hospital_Fredericksburg_VA.jpg"
+        }
+      ],
+      "wikipedia_title": "Mary Washington Hospital",
+      "sources": [
+        "https://neonatologysolutions.com/?p=18112",
+        "https://childrensnational.org/departments/neonatology/regional-nicus",
+        "https://neonatologysolutions.com/?p=19552",
+        "model knowledge (to verify); enrichment pending"
+      ],
+      "notes": "peds_inpatient set true on the strength of a reportedly present pediatric unit with Children's National hospitalists; verify. Sister hospital Stafford is in md_dc_va.json. Coordinates from the R5b scratch (Google Places).",
+      "confidence": "low",
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "Mary Washington Hospital",
+          "url": "https://en.wikipedia.org/wiki/Mary_Washington_Hospital",
+          "extract": "Mary Washington Hospital is a 451-bed, full-service hospital in Fredericksburg, Virginia. It is one of seven level II trauma centers in Virginia and is ranked as the 9th best in the state by U.S. News and World Report"
+        }
+      }
+    },
+    {
+      "slug": "spotsylvania-regional-fredericksburg",
+      "name": "Spotsylvania Regional Medical Center",
+      "parent_hospital": null,
+      "health_system": "HCA Healthcare (HCA Virginia)",
+      "hospital_type": "community_hospital",
+      "city": "Fredericksburg",
+      "state": "VA",
+      "address": "4600 Spotsylvania County Pkwy, Fredericksburg, VA 22408",
+      "lat": 38.21739,
+      "lng": -77.4959,
+      "coord_source": "Google Places (from R5b scratch, 2026-10-19)",
+      "region": "Virginia (other)",
+      "hotspot": false,
+      "website": "https://www.hcavirginia.com/locations/spotsylvania-regional-medical-center",
+      "careers_url": "https://careers.hcahealthcare.com/search/jobs/in/va-virginia",
+      "careers_platform": "custom",
+      "careers_search_url": "https://careers.hcahealthcare.com/search/nurse-practitioner/jobs/in/va-virginia",
+      "careers_notes": "HCA Healthcare central job board (TalentBrew-style paths); robots.txt refused WebFetch on 2026-10-19 so rendering untested. Keyword plus place path combines two observed patterns and is untested. Filter by facility name. Facility filter: Spotsylvania Regional Medical Center (HCA Virginia). [enrich 2026-10-20] careers_url -> HTTP 403 at https://careers.hcahealthcare.com/search/jobs/in/va-virginia; search_url -> HTTP 403, mentions NP: False, job links: 0",
+      "ats_config": {
+        "host": "careers.hcahealthcare.com"
+      },
+      "nearest_airport": "RIC Richmond International (about 55 mi); DCA Reagan National (about 55 mi)",
+      "beds": null,
+      "peds_beds": null,
+      "peds_inpatient": false,
+      "picu": false,
+      "picu_beds": null,
+      "nicu_level": 3,
+      "peds_ed": false,
+      "peds_trauma_level": null,
+      "magnet": null,
+      "teaching": false,
+      "affiliated_university": null,
+      "peds_services": [
+        "neonatology",
+        "obstetrics"
+      ],
+      "description": "Spotsylvania Regional Medical Center is an HCA Virginia community hospital opened in 2010 in southern Spotsylvania County, just south of Fredericksburg along US 1 and I-95. It runs a maternity service and a Level III NICU that a neonatal directory lists at 8 beds. It serves Spotsylvania, Caroline and Louisa counties and is the HCA alternative to Mary Washington in the Fredericksburg market. The area is growing exurban territory between the DC and Richmond metros.",
+      "highlights": [
+        "Level III NICU (8 beds per neonatologysolutions directory)",
+        "HCA Virginia hospital opened 2010 (reportedly)",
+        "Serves the fast-growing Spotsylvania County corridor"
+      ],
+      "photos": [],
+      "wikipedia_title": "Spotsylvania Regional Medical Center",
+      "sources": [
+        "https://neonatologysolutions.com/?p=19552",
+        "https://en.wikipedia.org/wiki/List_of_hospitals_in_Virginia",
+        "model knowledge (to verify); enrichment pending"
+      ],
+      "notes": "No inpatient pediatric unit known. Coordinates from the R5b scratch (Google Places).",
+      "confidence": "low",
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "Spotsylvania Regional Medical Center",
+          "url": "https://en.wikipedia.org/wiki/Spotsylvania_Regional_Medical_Center",
+          "extract": "Spotsylvania Regional Medical Center (SRMC) is a hospital in Spotsylvania County, Virginia. The hospital is a subsidiary of Hospital Corporation of America."
+        }
+      }
+    },
+    {
+      "slug": "winchester-medical-center-winchester",
+      "name": "Winchester Medical Center",
+      "parent_hospital": null,
+      "health_system": "Valley Health",
+      "hospital_type": "regional_hospital",
+      "city": "Winchester",
+      "state": "VA",
+      "address": "1840 Amherst St, Winchester, VA 22601",
+      "lat": 39.19427,
+      "lng": -78.19359,
+      "coord_source": "Google Places (from R5b scratch, 2026-10-19)",
+      "region": "Virginia (other)",
+      "hotspot": false,
+      "website": "https://www.valleyhealthlink.com/locations/winchester-medical-center/",
+      "careers_url": "https://www.valleyhealthlink.com/careers/career-paths/physicians-advanced-practice-providers/opportunities/",
+      "careers_platform": "unknown",
+      "careers_search_url": null,
+      "careers_notes": "Valley Health provider and APP opportunities page (seen in search results 2026-10-19); underlying ATS not confirmed. [enrich 2026-10-20] careers_url -> HTTP 403 at https://www.valleyhealthlink.com/careers/career-paths/physicians-advanced-practice-providers/opportunities/",
+      "ats_config": {
+        "host": "www.valleyhealthlink.com"
+      },
+      "nearest_airport": "IAD Dulles (about 50 mi)",
+      "beds": null,
+      "peds_beds": null,
+      "peds_inpatient": true,
+      "picu": false,
+      "picu_beds": null,
+      "nicu_level": 3,
+      "peds_ed": false,
+      "peds_trauma_level": null,
+      "magnet": null,
+      "teaching": true,
+      "affiliated_university": null,
+      "peds_services": [
+        "neonatology",
+        "general pediatrics",
+        "obstetrics",
+        "trauma"
+      ],
+      "description": "Winchester Medical Center is the flagship of Valley Health and the regional referral center for the northern Shenandoah Valley, eastern West Virginia and western Maryland. It runs the largest community NICU in the region, a Level III unit that a neonatal directory lists at 30 beds, and Valley Health publishes pediatric and NICU service pages for the campus. It is the area's Level II trauma center (reportedly) and a clinical teaching site. Winchester is a historic apple-country city about 75 minutes west of Arlington via I-66 and Route 7.",
+      "highlights": [
+        "Valley Health flagship and regional referral center",
+        "Level III NICU (30 beds per neonatologysolutions directory)",
+        "Pediatric and NICU service lines (Valley Health pages)",
+        "Serves the northern Shenandoah Valley and eastern panhandle"
+      ],
+      "photos": [],
+      "wikipedia_title": "Winchester Medical Center",
+      "sources": [
+        "https://neonatologysolutions.com/?p=19552",
+        "https://en.wikipedia.org/wiki/List_of_hospitals_in_Virginia",
+        "model knowledge (to verify); enrichment pending"
+      ],
+      "notes": "peds_inpatient true on a reportedly present pediatric unit (Valley Health pediatrics page title); verify unit size. Coordinates from the R5b scratch (Google Places).",
+      "confidence": "medium",
+      "active": true,
+      "_enrich": {}
+    },
+    {
+      "slug": "sentara-rmh-harrisonburg",
+      "name": "Sentara RMH Medical Center",
+      "parent_hospital": null,
+      "health_system": "Sentara Health",
+      "hospital_type": "regional_hospital",
+      "city": "Harrisonburg",
+      "state": "VA",
+      "address": "2010 Health Campus Dr, Harrisonburg, VA 22801",
+      "lat": 38.40499,
+      "lng": -78.85595,
+      "coord_source": "Google Places (from R5b scratch, 2026-10-19)",
+      "region": "Virginia (other)",
+      "hotspot": false,
+      "website": "https://www.sentara.com/hospitalslocations/locations/sentara-rmh-medical-center",
+      "careers_url": "https://sentara.wd1.myworkdayjobs.com/SCS",
+      "careers_platform": "workday",
+      "careers_search_url": "https://sentara.wd1.myworkdayjobs.com/SCS?q=nurse%20practitioner",
+      "careers_notes": "Sentara Health Workday (tenant sentara, site SCS) seen in search results 2026-10-19; JS-rendered, use the CXS JSON endpoint. careers.sentara.com is the marketing front door. Facility filter: Sentara RMH Medical Center (Harrisonburg). [enrich 2026-10-20] careers_url -> HTTP 200 at https://sentara.wd1.myworkdayjobs.com/SCS; ATS link seen: https://sentara.wd1.myworkdayjobs.com/SCS; search_url -> HTTP 200, mentions NP: False, job links: 0",
+      "ats_config": {
+        "host": "sentara.wd1.myworkdayjobs.com",
+        "tenant": "sentara",
+        "site": "SCS"
+      },
+      "nearest_airport": "SHD Shenandoah Valley Regional (about 20 mi); CHO Charlottesville (about 55 mi)",
+      "beds": null,
+      "peds_beds": null,
+      "peds_inpatient": true,
+      "picu": false,
+      "picu_beds": null,
+      "nicu_level": 2,
+      "peds_ed": false,
+      "peds_trauma_level": null,
+      "magnet": null,
+      "teaching": false,
+      "affiliated_university": null,
+      "peds_services": [
+        "special care nursery",
+        "pediatric hospitalist",
+        "general pediatrics",
+        "obstetrics"
+      ],
+      "description": "Sentara RMH Medical Center, formerly Rockingham Memorial Hospital, is the regional hospital for Harrisonburg and Rockingham County in the central Shenandoah Valley. It has a Level II nursery that a neonatal directory lists at 6 beds and Sentara lists as a special care nursery, and it has a pediatric hospitalist service. Sentara has reportedly expanded its obstetric and newborn care here. Harrisonburg is home to James Madison University and sits between the Blue Ridge and the Allegheny Mountains.",
+      "highlights": [
+        "Regional hospital for the central Shenandoah Valley",
+        "Level II special care nursery (6 beds per neonatologysolutions directory)",
+        "Pediatric hospitalist service (Sentara page)",
+        "Next to James Madison University's Harrisonburg"
+      ],
+      "photos": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/0/0c/Sentara_VB_General_Hospital.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original",
+          "caption": "Sentara Health",
+          "credit": "Wikipediasaurus",
+          "license": "CC BY-SA 4.0",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Sentara_VB_General_Hospital.jpg"
+        }
+      ],
+      "wikipedia_title": "Sentara Health",
+      "sources": [
+        "https://neonatologysolutions.com/?p=19552",
+        "https://www.sentara.com/medicalservices/nicu-special-care-nurseries",
+        "https://en.wikipedia.org/wiki/List_of_hospitals_in_Virginia",
+        "model knowledge (to verify); enrichment pending"
+      ],
+      "notes": "peds_inpatient true inferred from the pediatric hospitalist practice page title; verify. Coordinates from the R5b scratch (Google Places).",
+      "confidence": "low",
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "Sentara Health",
+          "url": "https://en.wikipedia.org/wiki/Sentara_Health",
+          "extract": "Sentara Health is a not-for-profit healthcare organization serving Virginia, northeastern North Carolina and Florida. It is based in Norfolk, Virginia, has services in 12 acute care hospitals, and has 1.2 million health plan members in three states. It also operates four medical groups."
+        }
+      }
+    },
+    {
+      "slug": "augusta-health-fishersville",
+      "name": "Augusta Health",
+      "parent_hospital": null,
+      "health_system": "Augusta Health (independent)",
+      "hospital_type": "regional_hospital",
+      "city": "Fishersville",
+      "state": "VA",
+      "address": "78 Medical Center Dr, Fishersville, VA 22939",
+      "lat": 38.09436,
+      "lng": -78.98659,
+      "coord_source": "Google Places (from R5b scratch, 2026-10-19)",
+      "region": "Virginia (other)",
+      "hotspot": false,
+      "website": "https://www.augustahealth.com/",
+      "careers_url": "https://www.augustahealth.com/careers/physicians-advanced-practice-providers/",
+      "careers_platform": "unknown",
+      "careers_search_url": null,
+      "careers_notes": "Augusta Health physician and APP careers page; provider jobs are reportedly listed through PracticeMatch (R5b scratch). ATS not confirmed. [enrich 2026-10-20] careers_url -> HTTP 200 at https://employer.practicematch.com/employer/augusta-health-physician-jobs/",
+      "ats_config": {
+        "host": "www.augustahealth.com"
+      },
+      "nearest_airport": "SHD Shenandoah Valley Regional (about 15 mi); CHO Charlottesville (about 35 mi)",
+      "beds": null,
+      "peds_beds": null,
+      "peds_inpatient": false,
+      "picu": false,
+      "picu_beds": null,
+      "nicu_level": null,
+      "peds_ed": false,
+      "peds_trauma_level": null,
+      "magnet": null,
+      "teaching": false,
+      "affiliated_university": null,
+      "peds_services": [
+        "pediatric hospitalist",
+        "newborn care",
+        "obstetrics"
+      ],
+      "description": "Augusta Health is an independent community-owned hospital in Fishersville, between Staunton and Waynesboro in Augusta County. It is the regional hospital for the southern Shenandoah Valley, with a maternity service and an Augusta Health pediatric hospitalist group that covers newborn care. Children who need intensive care are generally transferred to UVA in Charlottesville, about 35 minutes east. The area is rural valley country near the Blue Ridge Parkway and Shenandoah National Park.",
+      "highlights": [
+        "Independent, community-owned regional hospital",
+        "Pediatric hospitalist group for newborn and inpatient care",
+        "Serves Staunton, Waynesboro and Augusta County",
+        "About 35 minutes from UVA"
+      ],
+      "photos": [],
+      "wikipedia_title": "Augusta Health",
+      "sources": [
+        "https://en.wikipedia.org/wiki/List_of_hospitals_in_Virginia",
+        "model knowledge (to verify); enrichment pending"
+      ],
+      "notes": "Inclusion is borderline (rule 3, regional referral center): a pediatric hospitalist group ('Newborn Care Providers') is confirmed by a page title, but no NICU level or inpatient pediatric unit was confirmed. Verify, or drop. Coordinates from the R5b scratch (Google Places).",
+      "confidence": "low",
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "Augusta Health",
+          "url": "https://en.wikipedia.org/wiki/Augusta_Health",
+          "extract": "Augusta Health, formerly Augusta Medical Center, is a hospital in Fishersville, Virginia.  It serves Augusta County, Virginia, as well as the cities of Staunton and Waynesboro.  It is located near I-64.  Augusta Medical Center was formed in 1994 as a consolidation of Kings Daughters Hospital in Staunton, and Waynesboro Community Hospital in Waynesboro.  Augusta Medical Center changed its name to Augusta Health in June 2009.The campus went tobacco-free in 2009. Augusta Health has a member only gym. It provides cardio, weight lifting, inside and outside tennis courts, basketball, track, pool, and spa for its members. Many classes are offered including wellness and fitness programs. In March 2013 it opened a new $32 million cardiovascular center which is a 67,000-square-foot facility offering nuclear stress-testing machines and two heart catheterization labs. The hospital completed an expansion of its emergency department in November 2019, with major donations of around $2.13 million."
+        }
+      }
+    },
+    {
+      "slug": "centra-virginia-baptist-lynchburg",
+      "name": "Centra Virginia Baptist Hospital",
+      "parent_hospital": null,
+      "health_system": "Centra Health",
+      "hospital_type": "regional_hospital",
+      "city": "Lynchburg",
+      "state": "VA",
+      "address": "3300 Rivermont Ave, Lynchburg, VA 24503",
+      "lat": 37.43796,
+      "lng": -79.18799,
+      "coord_source": "Google Places (from R5b scratch, 2026-10-19)",
+      "region": "Virginia (other)",
+      "hotspot": false,
+      "website": "https://www.centrahealth.com/locations/centra-virginia-baptist-hospital",
+      "careers_url": "https://ejid.fa.us6.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/jobs",
+      "careers_platform": "oracle_cloud",
+      "careers_search_url": "https://ejid.fa.us6.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/jobs?keyword=nurse+practitioner",
+      "careers_notes": "Centra Health on Oracle Cloud HCM (site CX_1001), seen in search results 2026-10-19; keyword URL untested. Facility filter: Virginia Baptist Hospital. [enrich 2026-10-20] careers_url -> HTTP 200 at https://ejid.fa.us6.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/jobs; ATS link seen: https://ejid.fa.us6.oraclecloud.com:443; search_url -> HTTP 200, mentions NP: False, job links: 0",
+      "ats_config": {
+        "host": "ejid.fa.us6.oraclecloud.com",
+        "site_number": "CX_1001"
+      },
+      "nearest_airport": "LYH Lynchburg Regional (about 10 mi)",
+      "beds": null,
+      "peds_beds": null,
+      "peds_inpatient": true,
+      "picu": false,
+      "picu_beds": null,
+      "nicu_level": 3,
+      "peds_ed": false,
+      "peds_trauma_level": null,
+      "magnet": null,
+      "teaching": false,
+      "affiliated_university": null,
+      "peds_services": [
+        "neonatology",
+        "pediatric hospitalist",
+        "general pediatrics",
+        "obstetrics",
+        "neurodevelopmental follow-up"
+      ],
+      "description": "Centra Virginia Baptist Hospital is Centra Health's women's and children's hospital in Lynchburg, on Rivermont Avenue near the University of Lynchburg. It runs a Level III NICU, listed at 13 beds in a neonatal directory and staffed through Pediatrix neonatology, plus a NICU neurodevelopmental follow-up clinic. Centra has a pediatric hospital medicine group, and pediatric inpatient care is reportedly based here. Lynchburg is a mid-sized city on the James River at the foot of the Blue Ridge, with Liberty University across town.",
+      "highlights": [
+        "Centra's women's and children's hospital",
+        "Level III NICU (13 beds per neonatologysolutions directory)",
+        "Pediatrix neonatology and a NICU follow-up clinic",
+        "Centra pediatric hospital medicine group"
+      ],
+      "photos": [],
+      "wikipedia_title": null,
+      "sources": [
+        "https://neonatologysolutions.com/?p=19552",
+        "https://en.wikipedia.org/wiki/List_of_hospitals_in_Virginia",
+        "https://www.pediatrix.com/find-care/practices/neolynchburg/facilities/centra-virginia-baptist-hospital",
+        "model knowledge (to verify); enrichment pending"
+      ],
+      "notes": "Chose Virginia Baptist rather than Lynchburg General as the Centra pediatric site because the NICU is here; confirm where the inpatient pediatric unit sits (Virginia Baptist vs Lynchburg General). Coordinates from the R5b scratch (Google Places).",
+      "confidence": "low",
+      "active": true,
+      "_enrich": {
+        "wikipedia": {}
+      }
+    },
+    {
+      "slug": "lewisgale-medical-center-salem",
+      "name": "LewisGale Medical Center",
+      "parent_hospital": null,
+      "health_system": "HCA Healthcare (HCA Virginia)",
+      "hospital_type": "regional_hospital",
+      "city": "Salem",
+      "state": "VA",
+      "address": "1900 Electric Rd, Salem, VA 24153",
+      "lat": 37.26394,
+      "lng": -80.0323,
+      "coord_source": "Google Places (from R5b scratch, 2026-10-19)",
+      "region": "Virginia (other)",
+      "hotspot": false,
+      "website": "https://www.hcavirginia.com/locations/lewisgale-medical-center",
+      "careers_url": "https://careers.hcahealthcare.com/search/jobs/in/va-virginia",
+      "careers_platform": "custom",
+      "careers_search_url": "https://careers.hcahealthcare.com/search/nurse-practitioner/jobs/in/va-virginia",
+      "careers_notes": "HCA Healthcare central job board (TalentBrew-style paths); robots.txt refused WebFetch on 2026-10-19 so rendering untested. Keyword plus place path combines two observed patterns and is untested. Filter by facility name. Facility filter: LewisGale Medical Center (HCA Virginia, Salem). [enrich 2026-10-20] careers_url -> HTTP 403 at https://careers.hcahealthcare.com/search/jobs/in/va-virginia; search_url -> HTTP 403, mentions NP: False, job links: 0",
+      "ats_config": {
+        "host": "careers.hcahealthcare.com"
+      },
+      "nearest_airport": "ROA Roanoke-Blacksburg Regional (about 8 mi)",
+      "beds": null,
+      "peds_beds": null,
+      "peds_inpatient": false,
+      "picu": false,
+      "picu_beds": null,
+      "nicu_level": 2,
+      "peds_ed": false,
+      "peds_trauma_level": null,
+      "magnet": null,
+      "teaching": true,
+      "affiliated_university": null,
+      "peds_services": [
+        "neonatology",
+        "obstetrics"
+      ],
+      "description": "LewisGale Medical Center is HCA Virginia's flagship in the Roanoke Valley, on Electric Road in Salem just west of Roanoke. It opened a Level II NICU around early 2024, giving the valley a second neonatal unit alongside Carilion's. It is a teaching hospital with residency programs and reportedly a regional trauma center. The Roanoke Valley offers Blue Ridge Parkway and Appalachian Trail access and a lower cost of living than the DC area.",
+      "highlights": [
+        "HCA Virginia flagship in the Roanoke Valley",
+        "Level II NICU opened about 2024 (HCA Virginia newsroom headline)",
+        "Teaching hospital with residency programs (reportedly)",
+        "Roanoke Valley setting near the Blue Ridge Parkway"
+      ],
+      "photos": [],
+      "wikipedia_title": null,
+      "sources": [
+        "https://en.wikipedia.org/wiki/List_of_hospitals_in_Virginia",
+        "model knowledge (to verify); enrichment pending"
+      ],
+      "notes": "NICU opening from an HCA Virginia newsroom headline noted in the R5b scratch (not opened). No inpatient pediatric unit known (Carilion Children's is the valley's pediatric center). Coordinates from the R5b scratch (Google Places).",
+      "confidence": "low",
+      "active": true,
+      "_enrich": {
+        "wikipedia": {}
+      }
+    },
+    {
+      "slug": "sentara-martha-jefferson-charlottesville",
+      "name": "Sentara Martha Jefferson Hospital",
+      "parent_hospital": null,
+      "health_system": "Sentara Health",
+      "hospital_type": "community_hospital",
+      "city": "Charlottesville",
+      "state": "VA",
+      "address": "500 Martha Jefferson Dr, Charlottesville, VA 22911",
+      "lat": 38.02208,
+      "lng": -78.4438,
+      "coord_source": "Google Places (from R5b scratch, 2026-10-19)",
+      "region": "Virginia (other)",
+      "hotspot": false,
+      "website": "https://www.sentara.com/hospitalslocations/locations/sentara-martha-jefferson-hospital",
+      "careers_url": "https://sentara.wd1.myworkdayjobs.com/SCS",
+      "careers_platform": "workday",
+      "careers_search_url": "https://sentara.wd1.myworkdayjobs.com/SCS?q=nurse%20practitioner",
+      "careers_notes": "Sentara Health Workday (tenant sentara, site SCS) seen in search results 2026-10-19; JS-rendered, use the CXS JSON endpoint. careers.sentara.com is the marketing front door. Facility filter: Sentara Martha Jefferson Hospital (Charlottesville). [enrich 2026-10-20] careers_url -> HTTP 200 at https://sentara.wd1.myworkdayjobs.com/SCS; ATS link seen: https://sentara.wd1.myworkdayjobs.com/SCS; search_url -> HTTP 200, mentions NP: False, job links: 0",
+      "ats_config": {
+        "host": "sentara.wd1.myworkdayjobs.com",
+        "tenant": "sentara",
+        "site": "SCS"
+      },
+      "nearest_airport": "CHO Charlottesville-Albemarle (about 8 mi)",
+      "beds": null,
+      "peds_beds": null,
+      "peds_inpatient": false,
+      "picu": false,
+      "picu_beds": null,
+      "nicu_level": 2,
+      "peds_ed": false,
+      "peds_trauma_level": null,
+      "magnet": null,
+      "teaching": false,
+      "affiliated_university": null,
+      "peds_services": [
+        "special care nursery",
+        "obstetrics"
+      ],
+      "description": "Sentara Martha Jefferson Hospital is Sentara's community hospital in Charlottesville, on Pantops Mountain east of downtown. It is a popular birthing hospital for Charlottesville and Albemarle County, and Sentara lists a special care nursery here for newborns who need more than routine care. Children needing admission or intensive care go to UVA Health Children's across town. Charlottesville is a university town with wineries and the Blue Ridge close by.",
+      "highlights": [
+        "Special care nursery (Sentara page)",
+        "Sentara's Charlottesville hospital on Pantops",
+        "Popular birthing hospital for the Charlottesville area",
+        "About 10 minutes from UVA Health"
+      ],
+      "photos": [],
+      "wikipedia_title": null,
+      "sources": [
+        "https://www.sentara.com/medicalservices/nicu-special-care-nurseries",
+        "https://en.wikipedia.org/wiki/List_of_hospitals_in_Virginia",
+        "model knowledge (to verify); enrichment pending"
+      ],
+      "notes": "Not in the original prompt list; added because Sentara lists a special care nursery (nicu_level 2 inferred; verify). Coordinates from the R5b scratch (Google Places).",
+      "confidence": "low",
+      "active": true,
+      "_enrich": {}
+    },
+    {
+      "slug": "sovah-danville-danville",
+      "name": "Sovah Health Danville",
+      "parent_hospital": null,
+      "health_system": "Sovah Health (Lifepoint Health)",
+      "hospital_type": "regional_hospital",
+      "city": "Danville",
+      "state": "VA",
+      "address": "142 S Main St, Danville, VA 24541",
+      "lat": 36.57767,
+      "lng": -79.4055,
+      "coord_source": "Google Places (from R5b scratch, 2026-10-19)",
+      "region": "Virginia (other)",
+      "hotspot": false,
+      "website": "https://www.sovahhealth.com/",
+      "careers_url": "https://www.lifepointhealth.net/careers",
+      "careers_platform": "unknown",
+      "careers_search_url": null,
+      "careers_notes": "Sovah Health is a Lifepoint Health system; jobs post on the Lifepoint careers board (a 'Registered Nurse RN Pediatrics Danville VA' posting was seen in search results 2026-10-19). ATS not confirmed. [enrich 2026-10-20] careers_url -> HTTP 404 at https://www.lifepointhealth.net/careers",
+      "ats_config": {
+        "host": "www.lifepointhealth.net"
+      },
+      "nearest_airport": "GSO Piedmont Triad International (about 50 mi)",
+      "beds": null,
+      "peds_beds": null,
+      "peds_inpatient": true,
+      "picu": false,
+      "picu_beds": null,
+      "nicu_level": null,
+      "peds_ed": false,
+      "peds_trauma_level": null,
+      "magnet": null,
+      "teaching": false,
+      "affiliated_university": null,
+      "peds_services": [
+        "general pediatrics",
+        "obstetrics"
+      ],
+      "description": "Sovah Health Danville, formerly Danville Regional Medical Center, is the regional hospital for Danville and Pittsylvania County in Southside Virginia, on the North Carolina line. It is part of Lifepoint Health's Sovah system with a sister hospital in Martinsville. A Lifepoint posting for a pediatrics registered nurse in Danville suggests it still runs an inpatient pediatric unit. Danville is a former tobacco and textile city on the Dan River, about an hour from Greensboro and the North Carolina Triad.",
+      "highlights": [
+        "Regional hospital for Danville and Pittsylvania County",
+        "Lifepoint Health (Sovah Health) system",
+        "Pediatric RN postings suggest an inpatient pediatric unit",
+        "About an hour from Greensboro, NC"
+      ],
+      "photos": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/0/0c/Sentara_VB_General_Hospital.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original",
+          "caption": "Sentara Health",
+          "credit": "Wikipediasaurus",
+          "license": "CC BY-SA 4.0",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Sentara_VB_General_Hospital.jpg"
+        }
+      ],
+      "wikipedia_title": "Sentara Health",
+      "sources": [
+        "https://en.wikipedia.org/wiki/List_of_hospitals_in_Virginia",
+        "model knowledge (to verify); enrichment pending"
+      ],
+      "notes": "peds_inpatient rests on a single 'Registered Nurse RN Pediatrics Danville VA' job title seen in search results (R5b scratch); verify. NICU level unknown. Coordinates from the R5b scratch (Google Places).",
+      "confidence": "low",
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "Sentara Health",
+          "url": "https://en.wikipedia.org/wiki/Sentara_Health",
+          "extract": "Sentara Health is a not-for-profit healthcare organization serving Virginia, northeastern North Carolina and Florida. It is based in Norfolk, Virginia, has services in 12 acute care hospitals, and has 1.2 million health plan members in three states. It also operates four medical groups."
+        }
+      }
+    },
+    {
+      "slug": "centra-lynchburg-general-lynchburg",
+      "name": "Centra Lynchburg General Hospital",
+      "parent_hospital": null,
+      "health_system": "Centra Health",
+      "hospital_type": "regional_hospital",
+      "city": "Lynchburg",
+      "state": "VA",
+      "address": "1901 Tate Springs Rd, Lynchburg, VA 24501",
+      "lat": 37.41663,
+      "lng": -79.17189,
+      "coord_source": "Google Places (from R5b scratch, 2026-10-19)",
+      "region": "Virginia (other)",
+      "hotspot": false,
+      "website": "https://www.centrahealth.com/locations/centra-lynchburg-general-hospital",
+      "careers_url": "https://ejid.fa.us6.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/jobs",
+      "careers_platform": "oracle_cloud",
+      "careers_search_url": "https://ejid.fa.us6.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/jobs?keyword=nurse+practitioner",
+      "careers_notes": "Centra Health on Oracle Cloud HCM (site CX_1001), seen in search results 2026-10-19; keyword URL untested. Facility filter: Lynchburg General Hospital. [enrich 2026-10-20] careers_url -> HTTP 200 at https://ejid.fa.us6.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/jobs; ATS link seen: https://ejid.fa.us6.oraclecloud.com:443; search_url -> HTTP 200, mentions NP: False, job links: 0",
+      "ats_config": {
+        "host": "ejid.fa.us6.oraclecloud.com",
+        "site_number": "CX_1001"
+      },
+      "nearest_airport": "LYH Lynchburg Regional (about 8 mi)",
+      "beds": null,
+      "peds_beds": null,
+      "peds_inpatient": false,
+      "picu": false,
+      "picu_beds": null,
+      "nicu_level": null,
+      "peds_ed": false,
+      "peds_trauma_level": null,
+      "magnet": null,
+      "teaching": true,
+      "affiliated_university": null,
+      "peds_services": [
+        "emergency care",
+        "trauma"
+      ],
+      "description": "Centra Lynchburg General Hospital is Centra Health's flagship and the regional referral hospital for central Virginia, serving Lynchburg and a wide rural area from Bedford to Farmville. It is the region's trauma center and hosts Centra's tertiary adult services, while women's, newborn and NICU care are based at sister hospital Virginia Baptist across town. Pediatric emergency patients from the region are seen here before admission or transfer to UVA or Carilion. Lynchburg sits on the James River below the Blue Ridge, about three hours from Arlington.",
+      "highlights": [
+        "Centra Health flagship and central Virginia referral center",
+        "Regional trauma center (reportedly Level II)",
+        "Sister campus to Centra Virginia Baptist (NICU and women's services)"
+      ],
+      "photos": [],
+      "wikipedia_title": null,
+      "sources": [
+        "https://en.wikipedia.org/wiki/List_of_hospitals_in_Virginia",
+        "model knowledge (to verify); enrichment pending"
+      ],
+      "notes": "Included as a large regional referral center (rule 3) because the assignment named it; no dedicated pediatric unit is confirmed here. Confirm whether Centra's inpatient pediatric unit is at Lynchburg General or Virginia Baptist and update flags. Coordinates from the R5b scratch (Google Places).",
+      "confidence": "low",
+      "active": true,
+      "_enrich": {
+        "wikipedia": {}
+      }
+    }
+  ]
+}
