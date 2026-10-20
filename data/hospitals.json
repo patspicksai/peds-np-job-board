@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-20T05:37:06Z",
+  "generated_at": "2026-10-20T05:57:56Z",
   "count": 502,
   "hospitals": [
     {
@@ -1121,11 +1121,13 @@
       "hotspot": true,
       "website": "https://www.capefearvalley.com/",
       "careers_url": "https://www.capefearvalley.com/careers/",
-      "careers_platform": "paycom",
-      "careers_search_url": null,
-      "careers_notes": "Cape Fear Valley Health careers page; platform not confirmed this session. Filter to Dunn, NC. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.capefearvalley.com/careers; ATS link seen: https://capefearvalley.wd1.myworkdayjobs.com/CFV",
+      "careers_platform": "workday",
+      "careers_search_url": "https://capefearvalley.wd1.myworkdayjobs.com/CFV?q=nurse%20practitioner",
+      "careers_notes": "Cape Fear Valley Health careers page; platform not confirmed this session. Filter to Dunn, NC. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.capefearvalley.com/careers; ATS link seen: https://capefearvalley.wd1.myworkdayjobs.com/CFV [qa 2026-10-20] careers_platform changed from paycom to workday, and ats_config and careers_search_url set from the Workday link the enrichment found on the careers page (capefearvalley.wd1.myworkdayjobs.com/CFV). Search URL is pattern-built and untested.",
       "ats_config": {
-        "host": "www.capefearvalley.com"
+        "host": "capefearvalley.wd1.myworkdayjobs.com",
+        "tenant": "capefearvalley",
+        "site": "CFV"
       },
       "nearest_airport": "RDU Raleigh-Durham International (about 50 min); FAY Fayetteville Regional (about 40 min)",
       "beds": 131,
@@ -1143,11 +1145,12 @@
         "maternity",
         "newborn nursery"
       ],
-      "description": "Betsy Johnson Hospital is a 131-bed Cape Fear Valley Health community hospital in Dunn, in Harnett County along I-95 between Raleigh and Fayetteville. It joined Cape Fear Valley in the late 2010s as part of Harnett Health and provides emergency, surgical, intensive care and, reportedly, labor and delivery services. There is no dedicated pediatric unit; children who need admission are usually sent to Cape Fear Valley Medical Center's children's services in Fayetteville or to Triangle hospitals. Dunn is a small town about 45 minutes from Raleigh.",
+      "description": "Betsy Johnson Hospital is a 131-bed community hospital on Tilghman Drive in Dunn, run by Cape Fear Valley Health since Harnett Health joined that Fayetteville-based system in the late 2010s. It sits in eastern Harnett County along I-95, between Raleigh and Fayetteville. It provides emergency, surgical, intensive care and, reportedly, labor and delivery services, and has no dedicated pediatric unit, so children who need admission usually go to Cape Fear Valley Medical Center's children's services in Fayetteville or to Triangle hospitals. Pediatric NP fit here is mostly ED or newborn coverage. Dunn is a small, affordable railroad and farm town about 45 minutes from Raleigh, at the outer edge of the Triangle commute shed and roughly an hour and 10 minutes from Chapel Hill.",
       "highlights": [
         "131 beds",
         "Part of Cape Fear Valley Health (Harnett Health)",
-        "Between Raleigh and Fayetteville on I-95"
+        "On I-95 between Raleigh and Fayetteville",
+        "No dedicated pediatric unit; obstetrics reportedly offered"
       ],
       "photos": [],
       "wikipedia_title": null,
@@ -1156,7 +1159,7 @@
         "https://en.wikipedia.org/wiki/List_of_hospitals_in_North_Carolina"
       ],
       "notes": "Placed in Triangle (Harnett County, Raleigh commute shed) per the earlier plan. Peds flags false; verify obstetrics.",
-      "confidence": "low",
+      "confidence": "medium",
       "active": true,
       "_enrich": {
         "wikipedia": {}
@@ -1178,11 +1181,13 @@
       "hotspot": true,
       "website": "https://www.capefearvalley.com/",
       "careers_url": "https://www.capefearvalley.com/careers/",
-      "careers_platform": "paycom",
-      "careers_search_url": null,
-      "careers_notes": "Cape Fear Valley Health careers page; platform not confirmed this session. Filter to Lillington, NC. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.capefearvalley.com/careers; ATS link seen: https://capefearvalley.wd1.myworkdayjobs.com/CFV",
+      "careers_platform": "workday",
+      "careers_search_url": "https://capefearvalley.wd1.myworkdayjobs.com/CFV?q=nurse%20practitioner",
+      "careers_notes": "Cape Fear Valley Health careers page; platform not confirmed this session. Filter to Lillington, NC. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.capefearvalley.com/careers; ATS link seen: https://capefearvalley.wd1.myworkdayjobs.com/CFV [qa 2026-10-20] careers_platform changed from paycom to workday, and ats_config and careers_search_url set from the Workday link the enrichment found on the careers page (capefearvalley.wd1.myworkdayjobs.com/CFV). Search URL is pattern-built and untested.",
       "ats_config": {
-        "host": "www.capefearvalley.com"
+        "host": "capefearvalley.wd1.myworkdayjobs.com",
+        "tenant": "capefearvalley",
+        "site": "CFV"
       },
       "nearest_airport": "RDU Raleigh-Durham International (about 45 min)",
       "beds": 50,
@@ -1197,10 +1202,11 @@
       "teaching": false,
       "affiliated_university": null,
       "peds_services": [],
-      "description": "Central Harnett Hospital is a 50-bed Cape Fear Valley Health hospital that opened in 2013 in Lillington, the Harnett County seat. It provides emergency, inpatient medical and surgical care for central Harnett County, an area growing with commuters to Raleigh, Fuquay-Varina and Fort Bragg. It has no pediatric or obstetric inpatient service. Lillington is about 35 minutes from Raleigh's southern suburbs.",
+      "description": "Central Harnett Hospital is a 50-bed Cape Fear Valley Health hospital on Brightwater Drive in Lillington, the Harnett County seat, which opened in 2013. It provides emergency, inpatient medical and surgical care for central Harnett County, an area filling in with commuters to Raleigh, Fuquay-Varina and Fort Bragg. It has no pediatric or obstetric inpatient service, so admitted children are transferred to Fayetteville or the Triangle. Pediatric NP fit is limited to ED work. Lillington sits on the Cape Fear River near Raven Rock State Park, about 35 minutes from Raleigh's southern suburbs and roughly an hour from Chapel Hill.",
       "highlights": [
         "50 beds, opened 2013",
         "Cape Fear Valley Health (Harnett Health)",
+        "No pediatric or obstetric inpatient service",
         "Serves the Raleigh to Fort Bragg growth corridor"
       ],
       "photos": [],
@@ -1210,7 +1216,7 @@
         "https://en.wikipedia.org/wiki/List_of_hospitals_in_North_Carolina"
       ],
       "notes": "Placed in Triangle per the earlier plan; included per rule 4. No pediatric services known.",
-      "confidence": "low",
+      "confidence": "medium",
       "active": true,
       "_enrich": {}
     },
@@ -1252,11 +1258,12 @@
         "maternity",
         "newborn nursery"
       ],
-      "description": "Central Carolina Hospital is a 127-bed community hospital in Sanford, the seat of Lee County, about 45 minutes southwest of Chapel Hill and Raleigh. It is owned by Lifepoint Health and is part of the Duke LifePoint joint venture, which gives it clinical ties to Duke Health. It offers emergency, surgical, intensive care and women's services, and reportedly operates a birthing center. There is no dedicated pediatric unit, so admitted children are transferred to Triangle children's hospitals.",
+      "description": "Central Carolina Hospital is a 127-bed community hospital on Carthage Street in Sanford, the seat of Lee County, about 45 minutes southwest of both Chapel Hill and Raleigh via US 1 or US 421. It is owned by Lifepoint Health through the Duke LifePoint partnership, which gives it clinical ties to Duke Health. It offers emergency, surgical, intensive care and women's services and reportedly runs a birthing center with a newborn nursery. There is no dedicated pediatric unit, so admitted children are transferred to Triangle children's hospitals. Sanford is an affordable small city with a revived downtown and a growing biotech and manufacturing base, at the far southwest edge of the Triangle commute shed.",
       "highlights": [
         "127 beds",
-        "Duke LifePoint hospital with Duke clinical affiliation",
-        "Serves Lee County and surrounding rural areas"
+        "Duke LifePoint hospital with Duke clinical ties",
+        "Reportedly has a birthing center and newborn nursery",
+        "About 45 minutes from Chapel Hill and Raleigh"
       ],
       "photos": [],
       "wikipedia_title": null,
@@ -1294,7 +1301,7 @@
         "host": "careers.dukehealth.org"
       },
       "nearest_airport": "RDU Raleigh-Durham International",
-      "beds": 151,
+      "beds": 1062,
       "peds_beds": 151,
       "peds_inpatient": true,
       "picu": true,
@@ -1311,13 +1318,14 @@
         "pediatric subspecialties",
         "hospital school"
       ],
-      "description": "Duke's children's hospital occupies part of the Duke University Hospital campus on Erwin Road in Durham, next to the university's West Campus and the Duke medical and nursing schools. It has about 151 beds and includes both a pediatric ICU and a neonatal ICU, serving as a quaternary referral center for children from across the Southeast. The parent hospital opened in 1930, is a Level I trauma center with more than 1,000 beds, and was named the best hospital in North Carolina by U.S. News in 2024. Durham is a mid-sized, fast-growing city about 15 minutes from Chapel Hill and 25 minutes from Raleigh.",
+      "description": "Duke Children's Hospital & Health Center is the pediatric arm of Duke University Hospital, the 1,062-bed flagship of the private, not-for-profit Duke University Health System on Erwin Road in Durham. It has about 151 pediatric beds with both a pediatric ICU and a neonatal ICU, and it takes quaternary referrals from across North Carolina and the Southeast. The parent hospital opened in 1930, is one of three Level I referral centers for the Research Triangle alongside UNC and WakeMed Raleigh, and is the main teaching hospital for the Duke School of Medicine and School of Nursing. A dedicated pediatric emergency service is assumed but not confirmed, and Duke is not one of the state's three Level I pediatric trauma centers. The campus sits beside Duke's West Campus and Duke Gardens, roughly 15 minutes from Chapel Hill and 25 minutes from Raleigh, in a fast-growing city whose downtown has been rebuilt around its old tobacco warehouses.",
       "highlights": [
         "About 151 pediatric beds with PICU and NICU",
-        "Inside Duke University Hospital, a 1,062-bed Level I trauma center opened in 1930",
+        "Inside 1,062-bed Duke University Hospital, opened 1930",
+        "One of three Level I referral centers in the Research Triangle",
         "Duke University Hospital ranked best hospital in North Carolina by U.S. News (2024)",
-        "Hospital school since 1959, run with Durham Public Schools",
-        "Academic home of Duke School of Medicine and School of Nursing"
+        "Hospital school run with Durham Public Schools since 1959",
+        "Partner with UNC Health on the planned NC Children's campus in Apex"
       ],
       "photos": [
         {
@@ -1385,12 +1393,12 @@
       "peds_services": [
         "newborn care (Duke Children's physicians)"
       ],
-      "description": "Duke Raleigh is a 204-bed Duke Health hospital on Wake Forest Road in north-central Raleigh. It began in 1914 as Mary Elizabeth Hospital, moved to its current site in 1978, and joined Duke in 1998. It is known for cancer, orthopedic and surgical care; newborn care on site is reportedly provided by Duke Children's physicians. It has no dedicated pediatric unit, so admitted children go to Duke Children's or WakeMed.",
+      "description": "Duke Raleigh Hospital is a 204-bed hospital on Wake Forest Road in north-central Raleigh, owned by the private, not-for-profit Duke University Health System. It began in 1914 as Mary Elizabeth Hospital, moved to its current site in 1978 and joined Duke in 1998. It is best known for cancer, orthopedic and surgical care, and the Duke Cancer Center Raleigh is on the campus; newborn care on site is reportedly covered by Duke Children's physicians. There is no pediatric unit, so admitted children go to Duke Children's in Durham or to WakeMed. The hospital sits inside the Beltline near North Hills, one of Raleigh's busiest shopping and apartment districts, about 35 minutes from Chapel Hill.",
       "highlights": [
         "204 beds",
-        "Founded 1914 as Mary Elizabeth Hospital",
+        "Founded 1914 as Mary Elizabeth Hospital; Duke since 1998",
         "Duke Cancer Center Raleigh on campus",
-        "Newborn care covered by Duke Children's physicians"
+        "Newborn care reportedly covered by Duke Children's physicians"
       ],
       "photos": [],
       "wikipedia_title": "Duke Raleigh Hospital",
@@ -1448,11 +1456,12 @@
         "maternity",
         "newborn nursery"
       ],
-      "description": "Duke Regional is Duke Health's community hospital in north Durham, opened in 1976 as Durham County General Hospital. It is listed at 316 beds on the state list (Wikipedia cites 388 licensed) and offers emergency, surgical, behavioral health and maternity services. Its birthing center is backed by a Level II intensive care nursery, with sicker newborns transferred to Duke Children's about 15 minutes away. North Durham is a mix of older neighborhoods and new suburbs, about 20 minutes from Chapel Hill.",
+      "description": "Duke Regional Hospital is Duke Health's community hospital in north Durham, opened in 1976 as Durham County General Hospital and now part of the private, not-for-profit Duke University Health System. It is listed at 316 beds on the state hospital list, with a higher licensed count of 388 cited elsewhere on Wikipedia, and it offers emergency, surgical, behavioral health and maternity care. Its birthing center is backed by a Level II intensive care nursery, with sicker newborns sent to Duke Children's about 15 minutes away; there is no general pediatric inpatient unit. That makes neonatal or newborn APP work the most likely pediatric fit here. North Durham mixes older neighborhoods and new subdivisions along the Roxboro Road corridor, about 20 minutes from Chapel Hill.",
       "highlights": [
-        "316 to 388 beds",
-        "Level II intensive care nursery",
-        "Opened 1976 as Durham County General",
+        "316 beds (state list; 388 licensed per Wikipedia)",
+        "Level II intensive care nursery and birthing center",
+        "Opened 1976 as Durham County General Hospital",
+        "About 15 minutes from Duke Children's",
         "Same Duke Health job board as Duke Children's"
       ],
       "photos": [
@@ -1513,11 +1522,12 @@
       "teaching": false,
       "affiliated_university": null,
       "peds_services": [],
-      "description": "Granville Medical Center is a 62-bed county-affiliated community hospital in Oxford, about 40 minutes north of Durham. It provides emergency care, inpatient medical and surgical care, and outpatient services to Granville County and nearby rural areas. It reportedly closed its labor and delivery service in recent years, and it has no pediatric unit. Oxford is a small town on I-85 within commuting range of Durham and the Research Triangle Park.",
+      "description": "Granville Medical Center is the 62-bed community hospital of Granville Health System, an independent, county-affiliated system on College Street in Oxford, the Granville County seat about 40 minutes north of Durham on I-85. It provides emergency care, inpatient medical and surgical beds and outpatient services for Granville County and nearby rural areas. It reportedly closed its labor and delivery service in recent years, and it has no pediatric unit, so children who need admission go to Durham or Chapel Hill. Pediatric NP fit here is limited to ED or clinic roles. Oxford is a small Piedmont town with a historic downtown and lower housing costs, within commuting range of Durham, Research Triangle Park and Butner, roughly 50 minutes from Chapel Hill.",
       "highlights": [
-        "62 beds",
-        "Independent county-affiliated hospital",
-        "About 40 minutes from Durham"
+        "62 beds (state hospital list)",
+        "Independent, county-affiliated hospital",
+        "No pediatric unit; obstetrics reportedly closed",
+        "About 40 minutes from Durham on I-85"
       ],
       "photos": [],
       "wikipedia_title": null,
@@ -1526,7 +1536,7 @@
         "https://en.wikipedia.org/wiki/List_of_hospitals_in_North_Carolina"
       ],
       "notes": "Hotspot-region community hospital, included per rule 4. Independent; careers URL from model knowledge. Status of obstetrics unverified.",
-      "confidence": "low",
+      "confidence": "medium",
       "active": true,
       "_enrich": {
         "wikipedia": {}
@@ -1570,11 +1580,12 @@
         "maternity",
         "newborn nursery"
       ],
-      "description": "Maria Parham Health is a 161-bed community hospital in Henderson, the seat of Vance County, roughly 45 minutes north of Durham along I-85. It joined the Duke LifePoint partnership in 2011 and now also operates the former Franklin County hospital site as a satellite campus. Services include emergency care, surgery, intensive care, behavioral health and, reportedly, labor and delivery. It has no pediatric unit, and the area is rural with lower housing costs than the Triangle core.",
+      "description": "Maria Parham Health is a 161-bed community hospital on Ruin Creek Road in Henderson, the seat of Vance County, about 45 minutes north of Durham along I-85. It joined the Duke LifePoint partnership in 2011 and reportedly also runs a satellite campus in Louisburg at the former Franklin County hospital. Services include emergency care, surgery, intensive care, behavioral health and, reportedly, labor and delivery. There is no pediatric unit, so children who need admission go to Durham, Chapel Hill or Raleigh. Henderson is a small, affordable town near Kerr Lake, but the commute to Chapel Hill is about an hour each way.",
       "highlights": [
         "161 beds",
         "Duke LifePoint hospital since 2011",
-        "Serves Vance, Warren and Franklin counties"
+        "Serves Vance, Warren and Franklin counties",
+        "Near Kerr Lake, about an hour from Chapel Hill"
       ],
       "photos": [],
       "wikipedia_title": null,
@@ -1583,7 +1594,7 @@
         "https://en.wikipedia.org/wiki/List_of_hospitals_in_North_Carolina"
       ],
       "notes": "Hotspot-region community hospital at the far north edge of the Triangle; long commute from Chapel Hill (about 1 hour). Peds flags false. The Franklin satellite detail is from model knowledge; verify.",
-      "confidence": "low",
+      "confidence": "medium",
       "active": true,
       "_enrich": {}
     },
@@ -1611,7 +1622,7 @@
         "category_path": "/search/advanced-practice-provider/jobs"
       },
       "nearest_airport": "RDU Raleigh-Durham International",
-      "beds": 158,
+      "beds": 932,
       "peds_beds": 158,
       "peds_inpatient": true,
       "picu": true,
@@ -1630,13 +1641,14 @@
         "pediatric surgery",
         "pediatric subspecialty clinics"
       ],
-      "description": "The state's public academic children's hospital sits inside UNC Medical Center on the UNC-Chapel Hill campus, sharing a building complex with the N.C. Women's, N.C. Cancer and neurosciences hospitals. It cares for patients from birth to age 21 from every corner of North Carolina, with 158 beds that include a 20-bed PICU and a 58-bed Newborn Critical Care Center. It is one of only three Level I pediatric trauma centers in the state, so the acuity mix is high and transfers arrive from community hospitals across central and eastern NC. The campus is a short drive from Durham and about 30 minutes from Raleigh, in a college town with strong schools and a walkable downtown.",
+      "description": "North Carolina Children's Hospital is the pediatric hospital inside UNC Medical Center, the state-owned, 932-bed academic flagship of UNC Health on the UNC-Chapel Hill campus, where it shares a connected complex with the N.C. Memorial, Women's, Cancer and Neurosciences hospitals. The children's hospital has 158 beds, including a 20-bed PICU and a 58-bed Newborn Critical Care Center, and treats patients from birth to 21 who arrive from every part of the state. UNC Medical Center is an ACS-verified Level I trauma center for both adults and children, one of three pediatric Level I centers in North Carolina, and it is the teaching hospital of the UNC School of Medicine. That means high acuity, a steady stream of transfers from community hospitals across central and eastern NC, and APP roles spread across the hospital, the faculty practice and the medical group. Chapel Hill is a leafy college town with a walkable Franklin Street downtown and strong schools, about 15 minutes from Durham and 30 minutes from Raleigh, and it is where the family already lives.",
       "highlights": [
-        "158 pediatric beds; 20-bed PICU; 58-bed Newborn Critical Care Center",
-        "Level I pediatric trauma center, one of three in North Carolina",
+        "158 pediatric beds, including a 20-bed PICU and a 58-bed Newborn Critical Care Center",
+        "Adult and pediatric Level I trauma center, one of three pediatric Level I centers in NC",
+        "Part of 932-bed UNC Medical Center, flagship of state-owned UNC Health",
         "Teaching hospital of the UNC School of Medicine",
-        "Parent UNC Medical Center has roughly 916 to 932 beds and is a Level I adult trauma center",
-        "Closest major children's hospital to family in Chapel Hill"
+        "UNC and Duke plan a freestanding NC Children's campus in Apex",
+        "In Chapel Hill, minutes from family"
       ],
       "photos": [
         {
@@ -1709,10 +1721,11 @@
       "teaching": false,
       "affiliated_university": null,
       "peds_services": [],
-      "description": "Person Memorial is a small Duke LifePoint hospital in Roxboro, about 40 minutes north of Durham. It offers emergency care, inpatient medical care, a skilled nursing unit and outpatient services for Person County. There is no obstetric or pediatric inpatient service, so children are transferred to Durham or Chapel Hill. Roxboro is a rural town near the Virginia line.",
+      "description": "Person Memorial Hospital is a small Duke LifePoint hospital on Ridge Road in Roxboro, owned by Lifepoint Health with clinical ties to Duke Health, and listed at 38 acute beds. It provides emergency care, inpatient medical beds, a skilled nursing unit and outpatient services for Person County. There is no obstetric or pediatric inpatient service, so children who need admission are transferred to Durham or Chapel Hill. Pediatric NP fit here is limited to ED or clinic work. Roxboro is a rural town near the Virginia line with Hyco and Mayo lakes close by, about 40 minutes north of Durham and roughly 50 minutes from Chapel Hill.",
       "highlights": [
-        "38 acute beds",
+        "38 acute beds plus a skilled nursing unit",
         "Duke LifePoint hospital",
+        "No obstetric or pediatric inpatient service",
         "About 40 minutes from Durham"
       ],
       "photos": [],
@@ -1722,7 +1735,7 @@
         "https://en.wikipedia.org/wiki/List_of_hospitals_in_North_Carolina"
       ],
       "notes": "Hotspot-region community hospital, included per rule 4. No pediatric services.",
-      "confidence": "low",
+      "confidence": "medium",
       "active": true,
       "_enrich": {
         "wikipedia": {}
@@ -1764,11 +1777,12 @@
       "teaching": false,
       "affiliated_university": null,
       "peds_services": [],
-      "description": "UNC Health Chatham is a 25-bed critical access hospital in Siler City serving rural western Chatham County. It provides emergency care, inpatient medical care, surgery and outpatient services, and has been part of UNC Health since the late 2000s. There is no pediatric inpatient unit; sick children are stabilized and sent to UNC Children's, about 35 minutes east in Chapel Hill. Chatham County includes the fast-growing Pittsboro and Chatham Park area closer to the Triangle.",
+      "description": "UNC Health Chatham is a 25-bed critical access hospital on Progress Boulevard in Siler City, serving rural western Chatham County as part of state-owned UNC Health. It provides emergency care, inpatient medical beds, surgery and outpatient services, and has been part of UNC Health since the late 2000s. There is no pediatric inpatient unit; sick children are stabilized and sent to UNC Children's, about 35 to 40 minutes east in Chapel Hill. Pediatric NP fit is limited to ED or primary care style work. Siler City is a small manufacturing and farming town, while the eastern end of the county around Pittsboro and the new Chatham Park development is filling in quickly as a Chapel Hill bedroom community.",
       "highlights": [
         "25-bed critical access hospital",
         "UNC Health member since the late 2000s",
-        "About 35 minutes from Chapel Hill"
+        "About 35 to 40 minutes from UNC Children's",
+        "Serves rural western Chatham County"
       ],
       "photos": [
         {
@@ -1831,11 +1845,12 @@
       "teaching": false,
       "affiliated_university": null,
       "peds_services": [],
-      "description": "The Clayton campus of UNC Health Johnston is a 50-bed hospital on the western edge of Johnston County, close to the Wake County line and the Garner and Raleigh suburbs. It opened in the 2010s with an emergency department and outpatient services and later added inpatient beds as the area boomed. It has no pediatric unit; children needing admission are transferred to Raleigh or Chapel Hill. Clayton is a fast-growing commuter town about 25 minutes from downtown Raleigh.",
+      "description": "The Clayton campus of UNC Health Johnston is a 50-bed hospital on Veterans Parkway at the western edge of Johnston County, close to the Wake County line and the Garner and southeast Raleigh suburbs. It is part of state-owned UNC Health and opened in the 2010s with an emergency department and outpatient services, later adding inpatient beds as the area grew. It has no pediatric unit; children needing admission are transferred to Raleigh or Chapel Hill. Pediatric NP fit here is limited to ED or urgent care style roles. Clayton is one of the Triangle's fastest-growing commuter towns, with new subdivisions and a small historic downtown about 25 minutes from downtown Raleigh and roughly 50 minutes from Chapel Hill.",
       "highlights": [
         "50 beds",
-        "Emergency department serving the Clayton and Garner growth corridor",
-        "Part of UNC Health Johnston"
+        "Emergency department for the Clayton and Garner growth corridor",
+        "Part of UNC Health Johnston",
+        "About 25 minutes from downtown Raleigh"
       ],
       "photos": [
         {
@@ -1901,12 +1916,13 @@
         "maternity",
         "newborn nursery"
       ],
-      "description": "UNC Health Johnston's main hospital in Smithfield serves Johnston County, one of the fastest-growing counties in North Carolina, about 35 minutes southeast of Raleigh along I-95 and US 70. The 179-bed hospital provides emergency, surgical, intensive care and women's services, and reportedly runs the county's labor and delivery unit. It has been part of UNC Health since the mid-2010s, and children who need admission or intensive care are generally sent to WakeMed, UNC Rex or UNC Children's. Smithfield is a small county seat with lower housing costs than Wake County.",
+      "description": "UNC Health Johnston's Smithfield hospital is the main acute care site for Johnston County, one of the fastest-growing counties in North Carolina, about 35 minutes southeast of Raleigh where I-95 crosses US 70. It is a 179-bed member of UNC Health, the not-for-profit system owned by the State of North Carolina, and it provides emergency, surgical, intensive care and women's services, reportedly including the county's main labor and delivery unit. There is no pediatric inpatient unit, so children who need admission or intensive care are sent to WakeMed or UNC Children's. A special care nursery has not been confirmed, so pediatric NP work here would most likely be newborn or ED coverage. Smithfield is a small county seat on the Neuse River, home of the Ava Gardner Museum and a large outlet mall, with housing well below Wake County prices.",
       "highlights": [
-        "179 beds",
-        "Main hospital for fast-growing Johnston County",
-        "UNC Health member; jobs on the UNC Health board under Johnston",
-        "Sister campus in Clayton"
+        "179 beds; main hospital for fast-growing Johnston County",
+        "Emergency, surgical, intensive care and women's services",
+        "UNC Health member; sister campus in Clayton",
+        "About 35 minutes from Raleigh, about an hour from Chapel Hill",
+        "Jobs on the UNC Health board under Johnston"
       ],
       "photos": [
         {
@@ -1930,70 +1946,6 @@
           "title": "UNC Health",
           "url": "https://en.wikipedia.org/wiki/UNC_Health",
           "extract": "UNC Health is a not-for-profit medical system owned by the State of North Carolina and based in Chapel Hill, North Carolina at the University of North Carolina at Chapel Hill. It provides services throughout the Research Triangle and North Carolina.  UNC Health was created in 1998, when the North Carolina General Assembly passed legislation that established the UNC Health Care System, bringing under one entity UNC Hospitals and the clinical programs of the UNC School of Medicine.  In 2024, the system reported over 87,000 discharges and over 250,000 emergency department visits."
-        }
-      }
-    },
-    {
-      "slug": "unc-wayne-goldsboro",
-      "name": "UNC Health Wayne",
-      "parent_hospital": null,
-      "health_system": "UNC Health",
-      "hospital_type": "regional_hospital",
-      "city": "Goldsboro",
-      "state": "NC",
-      "address": "2700 Wayne Memorial Dr, Goldsboro, NC 27534",
-      "lat": 35.39853,
-      "lng": -77.95236,
-      "coord_source": "Google Places (places_search tool, cached in north_carolina scratch)",
-      "region": "Triangle",
-      "hotspot": true,
-      "website": "https://www.waynehealth.org/",
-      "careers_url": "https://jobs.unchealthcare.org/jobs/search",
-      "careers_platform": "custom",
-      "careers_search_url": "https://jobs.unchealthcare.org/search/advanced-practice-provider/jobs",
-      "careers_notes": "UNC Health systemwide board: Talemetry (TTC portals) front end with Infor Cloud Suite HCM behind it. Server-rendered: the Advanced Practice Provider category page listed 155 APP jobs on 2026-10-19. The ?q= keyword parameter did not filter results, so use the category path and then the Facility/Division facet (UNC Health Wayne). [enrich 2026-10-20] careers_url -> HTTP 403 at https://jobs.unchealthcare.org/jobs/search; search_url -> HTTP 403, mentions NP: False, job links: 0",
-      "ats_config": {
-        "host": "jobs.unchealthcare.org",
-        "category_path": "/search/advanced-practice-provider/jobs"
-      },
-      "nearest_airport": "RDU Raleigh-Durham International (about 1 hr 10 min)",
-      "beds": 255,
-      "peds_beds": null,
-      "peds_inpatient": true,
-      "picu": false,
-      "picu_beds": null,
-      "nicu_level": null,
-      "peds_ed": false,
-      "peds_trauma_level": null,
-      "magnet": null,
-      "teaching": false,
-      "affiliated_university": null,
-      "peds_services": [
-        "inpatient pediatrics",
-        "special care nursery",
-        "maternity"
-      ],
-      "description": "UNC Health Wayne is a 255-bed regional hospital in Goldsboro, about an hour southeast of Raleigh on US 70, serving Wayne County and families from nearby Seymour Johnson Air Force Base. It provides emergency, surgical, cardiac, behavioral health and women's services, and reportedly maintains a small inpatient pediatric unit and a special care nursery. Children who need intensive care are transferred to ECU Health's Maynard Children's in Greenville or to UNC Children's. Goldsboro is an affordable small city with a strong military presence.",
-      "highlights": [
-        "255 beds",
-        "Serves Wayne County and Seymour Johnson AFB families",
-        "UNC Health member; jobs on the UNC Health board under Wayne",
-        "Reportedly has inpatient pediatrics and a special care nursery"
-      ],
-      "photos": [],
-      "wikipedia_title": "UNC Health Wayne",
-      "sources": [
-        "model knowledge (to verify); enrichment pending",
-        "https://en.wikipedia.org/wiki/List_of_hospitals_in_North_Carolina"
-      ],
-      "notes": "Placed in Triangle per the assignment, though Goldsboro is about an hour from Raleigh and could also be read as eastern NC. peds_inpatient is set true from model knowledge of a pediatric unit; nursery level unknown. Verify both.",
-      "confidence": "low",
-      "active": true,
-      "_enrich": {
-        "wikipedia": {
-          "title": "UNC Health Wayne",
-          "url": "https://en.wikipedia.org/wiki/UNC_Health_Wayne",
-          "extract": "UNC Health Wayne is a nonprofit hospital affiliate of UNC Health, a health care system in North Carolina and the largest private employer in Wayne County. Its name changed from Wayne Memorial Hospital when it entered into a management agreement with UNC Health in 2015  and in 2022, the hospital changed its name from Wayne UNC Health Care to UNC Health Wayne.\nWith the retirement of J. William \"Bill\" Paugh, FACHE, Robert A. “Bob” Enders Jr., FACHE, served as interim President & CEO in 2016, Janie Jaberg, RN, FACHE, served as President & CEO from 2016 to 2020, and Jessie L. Tucker III, Ph.D., FACHE, became the corporation and hospital President & CEO in 2020.\nIn September 2021, Moody's revised the hospital's outlook from negative to stable.\nThe hospital was recognized as a best maternity care hospital in 2022  and in 2023, UNC Health Wayne earned its highest patient safety and quality ratings in history with a Leapfrog Hospital Safety Grade of \"A\" and a CMS Star quality rating of 4 out of 5. The hospital also earned first ever certifications and accreditations in stroke, total hip and knee replacement, chest pain as well as platinum chest pain/MI care awards and high performance ratings for heart failure, kidney failure, stroke and COPD in 2022 and 2023.\nUNC Health Wayne became a Vizient/AACN Nurse Residency Program site in 2023 and was recognized as a top 12% and largest hospital in Eastern North Carolina with the highest consistent quality and patient safety ratings (4-stars and 6 consecutive A grades)."
         }
       }
     },
@@ -2033,11 +1985,12 @@
       "teaching": true,
       "affiliated_university": "University of North Carolina at Chapel Hill",
       "peds_services": [],
-      "description": "UNC's Hillsborough campus is an 83-bed hospital operating under the UNC Medical Center license in northern Orange County, about 15 minutes from Chapel Hill. It opened in the mid-2010s to take adult medical, surgical and intensive care volume off the crowded main campus and runs its own emergency department. It has no pediatric inpatient unit; children are transferred to N.C. Children's in Chapel Hill. Hillsborough is a small historic town with a growing commuter population.",
+      "description": "UNC Hospitals Hillsborough Campus is an 83-bed hospital in northern Orange County that operates under the license of UNC Medical Center, the 932-bed academic flagship of state-owned UNC Health. It opened in the 2010s to take adult medical, surgical and intensive care volume off the crowded Chapel Hill campus and runs its own emergency department. It has no pediatric inpatient unit; children seen in the ED are transferred to N.C. Children's Hospital about 15 minutes away. Because it shares the UNC Medical Center license, staff may rotate with the main campus. Hillsborough is a small historic town on the Eno River with a lively main street and quick access to I-40 and I-85, popular with commuters to Chapel Hill and Durham.",
       "highlights": [
         "83 beds on the UNC Medical Center license",
-        "Emergency department and adult inpatient care",
-        "15 minutes from Chapel Hill"
+        "Emergency department and adult inpatient and intensive care",
+        "About 15 minutes from N.C. Children's Hospital",
+        "Historic Eno River town between Chapel Hill and Durham"
       ],
       "photos": [
         {
@@ -2073,9 +2026,9 @@
       "city": "Butner",
       "state": "NC",
       "address": "Butner, NC (street address pending enrichment)",
-      "lat": 35.90474,
-      "lng": -79.05046,
-      "coord_source": "Wikipedia article coordinates (API)",
+      "lat": 36.1314,
+      "lng": -78.7561,
+      "coord_source": "Manual: Central Regional Hospital campus, Butner NC (approximate, verify)",
       "region": "Triangle",
       "hotspot": true,
       "website": "https://www.unchealth.org/",
@@ -2090,7 +2043,7 @@
       "nearest_airport": "RDU Raleigh-Durham International (about 30 min)",
       "beds": null,
       "peds_beds": null,
-      "peds_inpatient": true,
+      "peds_inpatient": false,
       "picu": false,
       "picu_beds": null,
       "nicu_level": null,
@@ -2102,36 +2055,24 @@
       "peds_services": [
         "child and adolescent inpatient psychiatry"
       ],
-      "description": "UNC Hospitals Youth Behavioral Health is a pediatric psychiatric hospital in Butner, in southern Granville County, that UNC Health opened in 2023 in a former state hospital building. It treats children and adolescents who need inpatient mental health care, a service in short supply across North Carolina. It operates under UNC Hospitals and is staffed with UNC psychiatry faculty. Butner is about 30 minutes north of Durham.",
+      "description": "UNC Hospitals Youth Behavioral Health is a child and adolescent psychiatric hospital in Butner, in southern Granville County, opened and dedicated by UNC Health in late 2023 and run under UNC Hospitals with UNC psychiatry faculty. News headlines from the opening describe it as a 54-bed hospital built in partnership with the state to ease North Carolina's shortage of inpatient mental health beds for young people; the bed count has not been confirmed from a page read for this record, and the building is reportedly a renovated former state facility. It treats children and teens who need inpatient psychiatric care rather than general medical or surgical pediatrics. For an acute care PNP the fit is narrow, though medical coverage or consult NP roles could exist alongside psychiatric NP positions. Butner is a small former state-institution town just off I-85, about 30 minutes north of Durham and roughly 40 minutes from Chapel Hill.",
       "highlights": [
-        "Pediatric psychiatric hospital opened 2023",
-        "Operated by UNC Hospitals",
-        "Addresses statewide shortage of youth inpatient psychiatric beds"
+        "Child and adolescent psychiatric hospital opened in 2023",
+        "Operated by UNC Hospitals with UNC psychiatry faculty",
+        "Reported at 54 beds in opening coverage (unconfirmed)",
+        "Built with the state to address the youth inpatient psychiatric bed shortage",
+        "About 30 minutes north of Durham"
       ],
-      "photos": [
-        {
-          "url": "https://upload.wikimedia.org/wikipedia/commons/b/b0/North_Carolina_Memorial_Hospital.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original",
-          "caption": "UNC Medical Center",
-          "credit": "DP08 at en.wikipedia.",
-          "license": "Public domain",
-          "source_page": "https://commons.wikimedia.org/wiki/File:North_Carolina_Memorial_Hospital.jpg"
-        }
-      ],
-      "wikipedia_title": "UNC Medical Center",
+      "photos": [],
+      "wikipedia_title": null,
       "sources": [
         "model knowledge (to verify); enrichment pending",
         "https://en.wikipedia.org/wiki/List_of_hospitals_in_North_Carolina"
       ],
-      "notes": "Specialty pediatric (psych) site. Fit for an acute care PNP is limited (psych NP roles more likely), but medical NP coverage roles may exist. Bed count and street address unverified; listed in the NC scratch enumeration as opened 2023.",
+      "notes": "Specialty pediatric (psych) site. Fit for an acute care PNP is limited (psych NP roles more likely), but medical NP coverage roles may exist. [qa 2026-10-20] Search headlines (not opened): Becker's Behavioral Health 'U of North Carolina opens 54-bed youth behavioral health hospital'; UNC Health News 'UNC Health dedicates youth behavioral health hospital' (news.unchealthcare.org/2023/11); WRAL 'Amid mental health tsunami, new Butner hospital opens to treat youth'; Axios Raleigh (2023-11-07). beds left null until a page is read. DATA PROBLEMS: lat/lng (35.90474, -79.05046) and wikipedia_title (UNC Medical Center) point to the Chapel Hill campus, not Butner, and the photo is N.C. Memorial Hospital in Chapel Hill; street address is still missing. peds_inpatient true conflicts with the schema meaning (general peds floor) and with how other psych hospitals in the ledger are coded.",
       "confidence": "low",
       "active": true,
-      "_enrich": {
-        "wikipedia": {
-          "title": "UNC Medical Center",
-          "url": "https://en.wikipedia.org/wiki/UNC_Medical_Center",
-          "extract": "UNC Medical Center (UNCMC) is a 932-bed non-profit, nationally ranked, public, research and academic medical center located in Chapel Hill, North Carolina, providing tertiary care for the Research Triangle, surrounding areas and North Carolina. The medical center is the flagship campus of the UNC Health Care Health System and is made up of four hospitals that include the North Carolina Memorial Hospital, North Carolina Children's Hospital, North Carolina Neurosciences Hospital, North Carolina Women's Hospital, and the North Carolina Cancer Hospital. UNCMC is affiliated with the University of North Carolina School of Medicine. UNCMC features an ACS designated adult and pediatric Level 1 Trauma Center and has a helipad to handle medevac patients."
-        }
-      }
+      "_enrich": {}
     },
     {
       "slug": "unc-rex-holly-springs",
@@ -2169,11 +2110,13 @@
       "teaching": false,
       "affiliated_university": null,
       "peds_services": [],
-      "description": "A 50-bed UNC Health hospital that opened in 2021 to serve Holly Springs, Fuquay-Varina and the fast-growing southwest corner of Wake County. It provides emergency, surgical and inpatient medical care, and reportedly offers labor and delivery. Children who need admission are generally sent to UNC Rex in Raleigh or to UNC Children's in Chapel Hill. The area is suburban and family-oriented, about 35 minutes from Chapel Hill.",
+      "description": "UNC Rex Holly Springs Hospital is a 50-bed UNC Health hospital that opened in 2021 on South Main Street to serve Holly Springs, Fuquay-Varina and the fast-growing southwest corner of Wake County. It is part of the UNC Rex family and provides emergency, surgical and inpatient medical care, and it reportedly offers labor and delivery. There is no pediatric unit, so children who need admission are generally sent to Raleigh or to UNC Children's in Chapel Hill, and since Rex closed its own pediatric unit in 2022, most go to Chapel Hill or WakeMed. Any NP opening here is likely to be ED, newborn or adult focused. Holly Springs is a young, family-heavy suburb of new subdivisions, about 35 minutes from Chapel Hill and close to the planned NC Children's campus in Apex.",
       "highlights": [
         "50 beds, opened 2021",
-        "Serves southwest Wake County suburbs",
-        "Part of the UNC Rex family on the UNC Health job board"
+        "Serves the southwest Wake County suburbs",
+        "Reportedly offers labor and delivery",
+        "Near the planned NC Children's campus in Apex",
+        "Jobs on the UNC Health board under UNC Rex Holly Springs"
       ],
       "photos": [
         {
@@ -2226,7 +2169,7 @@
       "nearest_airport": "RDU Raleigh-Durham International (about 15 min)",
       "beds": 489,
       "peds_beds": null,
-      "peds_inpatient": true,
+      "peds_inpatient": false,
       "picu": false,
       "picu_beds": null,
       "nicu_level": 4,
@@ -2237,17 +2180,17 @@
       "affiliated_university": null,
       "peds_services": [
         "Level IV NICU (Rex Women's Center)",
-        "inpatient pediatrics with UNC Children's",
         "newborn nursery",
-        "maternity"
+        "maternity",
+        "UNC Children's outpatient office across the street"
       ],
-      "description": "UNC Rex is the oldest hospital in Raleigh and the largest community hospital in the Triangle, a campus of roughly 489 beds on Lake Boone Trail between downtown, Cary and RDU airport. Its Rex Women's Center is one of the busiest birthing services in North Carolina, and the NICU there received a Level IV state designation in 2015. Inpatient pediatric care, run in partnership with UNC Children's, reportedly returned to the hospital in the late 2010s after years of sending children to Chapel Hill or WakeMed. Rex was the first Magnet-designated hospital in the Triangle and is owned by UNC Health.",
+      "description": "UNC Rex Hospital is Raleigh's oldest hospital, founded through a bequest from local tanner John T. Rex and now located at Blue Ridge Road and Lake Boone Trail in west Raleigh as part of state-owned UNC Health. At roughly 489 beds it is one of the largest hospitals in the Triangle, with oncology, heart and vascular, surgical, rehab, emergency and women's services, and it is the official healthcare provider of the Carolina Hurricanes and NC State. The Rex Women's Center is one of the busiest birthing services in the state, and its NICU reportedly received a Level IV state designation in 2015. Inpatient pediatrics returned to Rex around 2018 in partnership with UNC Children's, but the hospital closed its 10-bed pediatric unit on August 31, 2022 to free beds for adults, keeping pediatric care through the ED and a UNC Children's office across the street. For a PNP that makes Rex mainly a neonatal and newborn target; the campus is about 30 minutes from Chapel Hill, near NC State, the Lenovo Center and quick I-440 access to Cary and RDU.",
       "highlights": [
-        "About 489 beds; oldest hospital in Raleigh",
-        "Level IV NICU designation (2015)",
-        "Inpatient pediatric unit staffed with UNC Children's (reportedly reopened late 2010s)",
-        "First Magnet hospital in the Triangle",
-        "More than 5,000 births a year in the 2010s"
+        "About 489 beds; oldest hospital in Raleigh, owned by UNC Health",
+        "Level IV NICU designation reported (2015) at Rex Women's Center",
+        "10-bed inpatient pediatric unit closed August 31, 2022",
+        "First Magnet-designated hospital in the Triangle",
+        "Official healthcare provider of the Carolina Hurricanes and NC State"
       ],
       "photos": [
         {
@@ -2261,9 +2204,11 @@
       "wikipedia_title": "UNC Rex Hospital",
       "sources": [
         "model knowledge (to verify); enrichment pending",
-        "https://en.wikipedia.org/wiki/List_of_hospitals_in_North_Carolina"
+        "https://en.wikipedia.org/wiki/List_of_hospitals_in_North_Carolina",
+        "https://beckershospitalreview.com/care-coordination/unc-health-rex-to-close-inpatient-pediatric-unit.html",
+        "https://en.wikipedia.org/wiki/UNC_Health_Rex"
       ],
-      "notes": "Strong Triangle target for PNP and NNP roles. A 2026-10-20 search surfaced the titles 'Rex Women's Center Neonatal Intensive Care Unit Receives Level IV Designation' (rexhealth.com, 2015) and 'More care for kids: Inpatient pediatric care returns to UNC Rex Hospital this month' (wral.com/story/18889245); pages not opened. Verify current peds unit size and whether a pediatric ED area exists. Jobs post under the UNC Rex facility on the UNC Health board.",
+      "notes": "Strong Triangle target for NNP or newborn APP roles; general pediatric inpatient roles are no longer here. [qa 2026-10-20] Becker's Hospital Review (Aug 26, 2022) reports UNC Health Rex closed its 10-bed inpatient pediatric unit on Aug 31, 2022 and converted the beds to adult use, so peds_inpatient is now false; the ED and the UNC Children's office across the street continue pediatric care. No later reopening found. The Level IV NICU designation comes from a 2015 rexhealth.com headline that was not opened. Jobs post under the UNC Rex facility on the UNC Health board.",
       "confidence": "medium",
       "active": true,
       "_enrich": {
@@ -2310,11 +2255,12 @@
       "teaching": false,
       "affiliated_university": null,
       "peds_services": [],
-      "description": "WakeMed's second full-service hospital serves Cary, Apex and the fast-growing western side of Wake County from a campus on Kildaire Farm Road. It opened in 1991 as Western Wake Medical Center and is listed at about 208 licensed beds, with a Level III trauma designation. It offers emergency, surgical and women's services for a largely suburban population and transfers higher-acuity children to the Raleigh campus. Cary is about 25 minutes from Chapel Hill, which makes this one of the closest suburban hospitals to the family.",
+      "description": "WakeMed Cary Hospital is the system's second full-service hospital, opened in 1991 as Western Wake Medical Center on Kildaire Farm Road to serve Cary, Apex and the rest of western Wake County. Wikipedia's state hospital list gives it about 208 licensed beds and a Level III trauma designation, though the WakeMed article cites a smaller figure of 156. It offers emergency and surgical care and reportedly women's services for a mostly suburban population, and children who need admission or intensive care are typically moved to the WakeMed Children's units in Raleigh. No inpatient pediatric unit or NICU has been confirmed here, so NP openings are more likely to be in the ED, newborn coverage or adult services. Cary is a large, planned suburb known for its parks, greenways and schools, about 25 minutes from Chapel Hill and close to the planned NC Children's site in Apex.",
       "highlights": [
-        "About 208 licensed beds (Wikipedia list; the WakeMed article cites 156)",
+        "About 208 licensed beds (state list; WakeMed article cites 156)",
         "Level III trauma center",
         "Opened 1991 as Western Wake Medical Center",
+        "About 25 minutes from Chapel Hill",
         "Same WakeMed job board as the Raleigh children's hospital"
       ],
       "photos": [],
@@ -2359,7 +2305,7 @@
         "org_id": "1241"
       },
       "nearest_airport": "RDU Raleigh-Durham International",
-      "beds": null,
+      "beds": 664,
       "peds_beds": null,
       "peds_inpatient": true,
       "picu": true,
@@ -2379,13 +2325,13 @@
         "children's asthma program",
         "neonatology"
       ],
-      "description": "WakeMed's children's hospital is part of the system's flagship Raleigh campus on New Bern Avenue, east of downtown Raleigh. The campus runs two separate 24-hour emergency departments, one of them only for children, plus a children's intensive care unit and a Level IV neonatal ICU with a 48-bed nursery. The Raleigh campus is a Level I trauma center and the busiest acute care site in Wake County, so pediatric volume is large and growing with the county. WakeMed is a private not-for-profit system that started as Memorial Hospital of Wake County in 1961.",
+      "description": "WakeMed Children's Hospital is the pediatric program on WakeMed's flagship Raleigh campus on New Bern Avenue, east of downtown, run by the private not-for-profit WakeMed system, which has grown to about 1,003 beds across the Raleigh metro since it opened in 1961 as Memorial Hospital of Wake County. The campus runs a separate 24-hour children's emergency department, a children's intensive care unit and a Level IV neonatal ICU with a 48-bed nursery, so it handles a large share of Wake County's sick children. The Raleigh campus is a Level I trauma center for adults, but WakeMed is not one of North Carolina's three Level I pediatric trauma centers, and the children's hospital's own bed count has not been confirmed. WakeMed's job board has shown pediatric and neonatal NP postings in Raleigh, including PNP and NNP roles. Raleigh is the state capital and the largest city in the Triangle, and the campus is about 35 minutes from Chapel Hill via I-40.",
       "highlights": [
         "Dedicated 24-hour children's emergency department",
-        "Level IV NICU (48-bed nursery) and children's ICU",
-        "Raleigh campus is a Level I trauma center",
-        "WakeMed is one of seven Harvard developmental training sites",
-        "Current WakeMed postings include NNP and PNP neonatology roles in Raleigh"
+        "Children's ICU and Level IV NICU with a 48-bed nursery",
+        "Raleigh campus is a Level I (adult) trauma center, about 664 beds per the state hospital list",
+        "One of seven Harvard developmental training sites",
+        "WakeMed board has listed PNP and NNP neonatology roles in Raleigh"
       ],
       "photos": [],
       "wikipedia_title": "WakeMed",
@@ -2394,7 +2340,7 @@
         "https://en.wikipedia.org/wiki/List_of_hospitals_in_North_Carolina",
         "https://jobs.wakemed.org/search-jobs/nurse%20practitioner/1241/1"
       ],
-      "notes": "About 35 minutes from Chapel Hill. The children's hospital bed count and PICU size were not stated on pages read this session. The Level I designation is the campus (adult) trauma center; WakeMed is not among the three Level I pediatric trauma centers named on Wikipedia. WakeMed's job board is server-rendered and showed 294 NP-keyword results, including PNP and NNP neonatology roles, on 2026-10-19.",
+      "notes": "About 35 minutes from Chapel Hill. The children's hospital bed count and PICU size were not stated on pages read this session. The Level I designation is the campus (adult) trauma center; WakeMed is not among the three Level I pediatric trauma centers named on Wikipedia. WakeMed's job board is server-rendered and showed 294 NP-keyword results, including PNP and NNP neonatology roles, on 2026-10-19. [qa 2026-10-20] beds set to 664 for the Raleigh campus from the Wikipedia state hospital list (already in sources); the WakeMed article's 1,003 is the whole system.",
       "confidence": "medium",
       "active": true,
       "_enrich": {
@@ -2441,10 +2387,11 @@
       "teaching": false,
       "affiliated_university": null,
       "peds_services": [],
-      "description": "A 61-bed WakeMed hospital in north Raleigh on Falls of Neuse Road, serving North Raleigh, Wake Forest and the northern suburbs. It grew out of the WakeMed North Healthplex, built on land that was once part of the Pullen plantation. The hospital provides emergency care, surgery and maternity services and relies on the Raleigh campus for pediatric admissions and intensive care. The area is suburban, about 40 minutes from Chapel Hill.",
+      "description": "WakeMed North Hospital is a 61-bed WakeMed campus on Falls of Neuse Road in north Raleigh, serving North Raleigh, Wake Forest and the northern Wake County suburbs. It grew out of the WakeMed North Healthplex and sits on land that was once part of the Pullen plantation. The hospital provides emergency care, surgery and, reportedly, labor and delivery, while pediatric admissions and intensive care go to the WakeMed Children's units on the Raleigh campus. There is no confirmed pediatric unit or NICU, so any NP role here would likely be ED, newborn or adult focused. The area mixes established subdivisions with newer development toward Falls Lake, about 40 minutes from Chapel Hill.",
       "highlights": [
         "61 beds",
-        "Emergency, surgery and labor and delivery services",
+        "Emergency, surgery and reportedly labor and delivery",
+        "Serves North Raleigh and Wake Forest",
         "Part of the WakeMed system and job board"
       ],
       "photos": [],
@@ -4000,10 +3947,11 @@
         "maternity",
         "newborn nursery"
       ],
-      "description": "Columbus Regional is a roughly 154-bed community hospital in Whiteville, the seat of rural Columbus County, about an hour west of Wilmington. It provides emergency, surgical, intensive care and, reportedly, women's and birthing services. There is no known dedicated pediatric unit; children who need admission go to Wilmington, Fayetteville or Lumberton. Whiteville is a small farm-country town with very low housing costs.",
+      "description": "Columbus Regional Healthcare System runs a roughly 154-bed community hospital on Jefferson Street in Whiteville, the seat of rural Columbus County, about an hour west of Wilmington on US 74/76. Its current system affiliation is unclear: the state hospital list on Wikipedia groups it with Atrium Health, but recent employer listings look independent. It provides emergency, surgical, intensive care and, reportedly, women's and birthing services. There is no known dedicated pediatric unit, so children who need admission go to Wilmington, Fayetteville or Lumberton, and pediatric NP fit is mostly ED or newborn coverage. Whiteville is a small farm-country town near Lake Waccamaw with very low housing costs, about 50 minutes from the Brunswick County beaches.",
       "highlights": [
         "About 154 licensed beds",
-        "Main hospital for Columbus County",
+        "Main hospital for rural Columbus County",
+        "System affiliation unclear (Atrium per state list; verify)",
         "About an hour from Wilmington"
       ],
       "photos": [],
@@ -4054,10 +4002,12 @@
       "teaching": false,
       "affiliated_university": null,
       "peds_services": [],
-      "description": "Dosher Memorial is a 25-bed independent critical access hospital in Southport, at the mouth of the Cape Fear River. Run by a local hospital district, it provides emergency care, inpatient medical beds, surgery and outpatient services for Southport, Oak Island and Bald Head Island. It has no pediatric or obstetric inpatient service. Southport is a small, picturesque coastal town about 45 minutes from Wilmington.",
+      "description": "Dosher Memorial Hospital is a not-for-profit public hospital in Southport that opened on June 2, 1930 as Brunswick County Hospital and was renamed in 1939 for its founding surgeon, Dr. J. Arthur Dosher. It is a critical access hospital licensed for 25 acute beds, overseen by a publicly elected board of trustees, and it is the only independent critical access hospital in North Carolina. Its focus is outpatient surgery and procedures, and it also runs nine primary care, women's health and urgent care clinics across southern Brunswick County. There is no pediatric or obstetric inpatient service, so pediatric NP fit is limited to ED, urgent care or clinic roles. Southport is a small, picturesque harbor town at the mouth of the Cape Fear River, with ferry service to Fort Fisher and Bald Head Island and Oak Island next door, about 45 minutes from Wilmington.",
       "highlights": [
-        "25-bed critical access hospital",
-        "Independent, district-owned",
+        "25-bed critical access hospital, opened 1930",
+        "Only independent critical access hospital in North Carolina",
+        "Public hospital with an elected board of trustees",
+        "Runs nine primary care, women's health and urgent care clinics",
         "Serves Southport, Oak Island and Bald Head Island"
       ],
       "photos": [
@@ -4072,7 +4022,8 @@
       "wikipedia_title": "Dosher Memorial Hospital",
       "sources": [
         "model knowledge (to verify); enrichment pending",
-        "https://en.wikipedia.org/wiki/List_of_hospitals_in_North_Carolina"
+        "https://en.wikipedia.org/wiki/List_of_hospitals_in_North_Carolina",
+        "https://en.wikipedia.org/wiki/Dosher_Memorial_Hospital"
       ],
       "notes": "Hotspot critical access hospital, included per rule 4. No pediatric services.",
       "confidence": "medium",
@@ -4081,7 +4032,7 @@
         "wikipedia": {
           "title": "Dosher Memorial Hospital",
           "url": "https://en.wikipedia.org/wiki/Dosher_Memorial_Hospital",
-          "extract": "Dosher Memorial Hospital is a not-for-profit, public, community hospital in Southport, North Carolina. The hospital serves Smithville Township—Southport, Bald Head Island, Caswell Beach, Oak Island, and the eastern portion of St. James—and surrounding communities of Brunswick County, North Carolina. Opened on June 2, 1930 as Brunswick County Hospital, the hospital changed its name in 1939 to J. Arthur Dosher Memorial Hospital in memory of founding physician and first general surgeon, Julius Arthur Dosher, MD.\nEstablished as a critical access hospital under Article 2 of the NC General Statue § 131-4, Dosher Memorial Hospital is overseen by a publicly elected Board of Trustees. It is the only independent critical access hospital in North Carolina. Dosher is licensed for 25 acute care beds, and focuses on outpatient surgeries and procedures. The hospital is accredited by DNV-GL Healthcare. It also owns and operates nine primary care, women's health and urgent care clinics across southern Brunswick County."
+          "extract": "Dosher Memorial Hospital is a not-for-profit, public, community hospital in Southport, North Carolina. The hospital serves Smithville Township: Southport, Bald Head Island, Caswell Beach, Oak Island, and the eastern portion of St. James, and surrounding communities of Brunswick County, North Carolina. Opened on June 2, 1930 as Brunswick County Hospital, the hospital changed its name in 1939 to J. Arthur Dosher Memorial Hospital in memory of founding physician and first general surgeon, Julius Arthur Dosher, MD.\nEstablished as a critical access hospital under Article 2 of the NC General Statue § 131-4, Dosher Memorial Hospital is overseen by a publicly elected Board of Trustees. It is the only independent critical access hospital in North Carolina. Dosher is licensed for 25 acute care beds, and focuses on outpatient surgeries and procedures. The hospital is accredited by DNV-GL Healthcare. It also owns and operates nine primary care, women's health and urgent care clinics across southern Brunswick County."
         }
       }
     },
@@ -4134,13 +4085,14 @@
         "child life",
         "UNC pediatric specialty partnership"
       ],
-      "description": "Betty H. Cameron Women's & Children's Hospital is the women's and children's tower on the Novant Health New Hanover Regional Medical Center campus in Wilmington, open for nearly 20 years. It holds southeastern North Carolina's pediatric inpatient and pediatric intensive care units and a Level III NICU, and Novant lists it as one of its two PICU sites alongside Hemby in Charlotte. Pediatric surgery covers general and thoracic, maxillofacial, cleft and craniofacial and urology, and specialty access is growing through a partnership with UNC. NHRMC ranked fourth of 98 pediatric hospitals in the 2025 Vizient quality study. Wilmington is a coastal city with beaches, a historic riverfront and a growing young-family population.",
+      "description": "Betty H. Cameron Women's & Children's Hospital is the women's and children's tower on the campus of Novant Health New Hanover Regional Medical Center, the roughly 700-bed Level II trauma center on South 17th Street that Novant took over in 2021 and that anchors health care for southeastern North Carolina. It holds the region's inpatient pediatric unit, a pediatric ICU that Novant lists as one of its two PICUs (the other is Hemby in Charlotte) and a Level III NICU. Pediatric surgery covers general and thoracic, cleft and craniofacial, maxillofacial and urology cases, and subspecialty access is growing through a partnership with UNC that has also produced UNC pediatric hospitalist and neonatology postings in Wilmington. NHRMC ranked fourth of 98 pediatric hospitals in Vizient's 2025 quality study; a dedicated pediatric ED and the PICU bed count have not been confirmed. Wilmington is a growing coastal city with a historic riverfront downtown, UNC Wilmington, and Wrightsville, Carolina and Kure beaches within about 20 minutes, roughly two and a half hours from Chapel Hill on I-40.",
       "highlights": [
-        "Pediatric inpatient and intensive care units (one of two Novant PICUs)",
+        "Inpatient pediatrics and a PICU, one of two Novant PICUs",
         "Level III NICU",
         "Ranked No. 4 of 98 pediatric hospitals, Vizient 2025 Quality and Accountability Study",
-        "Parent NHRMC is about 700 beds and a Level II trauma center",
-        "Pediatric specialty partnership with UNC; Nunnelee Pediatric Multispecialty Care in Wilmington"
+        "On the roughly 700-bed NHRMC campus, a Level II trauma center",
+        "UNC pediatric specialty partnership in Wilmington",
+        "Top Wilmington target for an acute care PNP"
       ],
       "photos": [],
       "wikipedia_title": "New Hanover Regional Medical Center",
@@ -4197,11 +4149,13 @@
         "maternity",
         "newborn nursery"
       ],
-      "description": "Novant Health Brunswick Medical Center is a 74-bed hospital near Bolivia and Supply, serving Brunswick County between Wilmington and the South Carolina line. It provides emergency, surgical, intensive care and, reportedly, labor and delivery services for one of the fastest-growing retirement and family areas in the state. There is no dedicated pediatric unit; children who need admission go to Betty H. Cameron in Wilmington. The surrounding area includes Leland, Southport and the Brunswick County beaches.",
+      "description": "Novant Health Brunswick Medical Center is a 74-bed hospital on Hospital Drive near Bolivia and Supply, run by Novant Health, the Winston-Salem based nonprofit network of 21 medical centers across four states. It serves Brunswick County, which stretches from the Wilmington suburbs to the South Carolina line and is one of the fastest-growing counties in the state for both retirees and young families. It provides emergency, surgical, intensive care and, reportedly, labor and delivery services. There is no dedicated pediatric unit, so children who need admission go to Betty H. Cameron in Wilmington, about 30 minutes north; pediatric NP fit here is mostly ED or newborn coverage. The hospital is central to Leland, Southport and the Brunswick beaches such as Oak Island, Holden Beach and Ocean Isle.",
       "highlights": [
         "74 beds",
+        "Novant Health community hospital",
         "Serves fast-growing Brunswick County",
-        "About 30 minutes from Wilmington"
+        "Reportedly offers labor and delivery",
+        "About 30 minutes from Wilmington and the Brunswick beaches"
       ],
       "photos": [],
       "wikipedia_title": "Novant Health",
@@ -4259,11 +4213,12 @@
       "teaching": false,
       "affiliated_university": null,
       "peds_services": [],
-      "description": "Novant Health Pender Medical Center is a small critical access hospital in Burgaw, the Pender County seat, about 30 minutes north of Wilmington. It came to Novant with New Hanover Regional in 2021 and provides emergency care, inpatient beds and a skilled nursing unit. There is no pediatric or obstetric inpatient service. The area is rural, with Hampstead and Topsail beaches to the east.",
+      "description": "Novant Health Pender Medical Center is a critical access hospital on East Fremont Street in Burgaw, the Pender County seat, about 30 minutes north of Wilmington. It came to Novant Health, the Winston-Salem based nonprofit network, along with New Hanover Regional in 2021, and it is licensed for 43 beds including a skilled nursing unit. It provides emergency care and inpatient beds and serves as a rural training site for the NHRMC family medicine residency. There is no pediatric or obstetric inpatient service, so children who need admission go to Betty H. Cameron in Wilmington, and pediatric NP fit is limited to ED work. Burgaw is a quiet farm-country town known for its blueberry festival, with Hampstead and the Topsail Island beaches about 30 minutes east.",
       "highlights": [
-        "Critical access hospital (43 licensed beds incl. skilled nursing)",
+        "Critical access hospital, 43 licensed beds including skilled nursing",
         "Part of Novant Health since 2021",
-        "Rural training site for the NHRMC family medicine residency"
+        "Rural training site for the NHRMC family medicine residency",
+        "About 30 minutes north of Wilmington"
       ],
       "photos": [],
       "wikipedia_title": null,
@@ -4317,10 +4272,11 @@
       "teaching": false,
       "affiliated_university": null,
       "peds_services": [],
-      "description": "Novant Health Scotts Hill Medical Center is a 66-bed hospital in north Wilmington near the Pender County line, part of the NHRMC network. It focuses on surgical, orthopedic and adult inpatient care and reportedly runs an emergency department for the Ogden, Porters Neck and Hampstead area. It has no pediatric or obstetric inpatient service. North Wilmington is suburban and close to Wrightsville Beach and Figure Eight Island.",
+      "description": "Novant Health Scotts Hill Medical Center is a 66-bed hospital in north Wilmington near the Pender County line, part of the Novant Health network that absorbed New Hanover Regional in 2021. Its service mix has not been confirmed: it is believed to focus on surgical, orthopedic and adult inpatient care and reportedly has an emergency department serving Ogden, Porters Neck and Hampstead. It has no pediatric or obstetric inpatient service, and children are cared for at Betty H. Cameron on the main Wilmington campus about 20 minutes south. If it proves to be mainly a surgical and orthopedic hospital, its value for a pediatric NP search is small. North Wilmington is suburban and close to Wrightsville Beach, Figure Eight Island and the Intracoastal Waterway.",
       "highlights": [
         "66 beds",
         "Part of the Novant NHRMC network",
+        "Believed to be surgically focused; ED status unconfirmed",
         "Serves north Wilmington and Hampstead"
       ],
       "photos": [],
@@ -4365,32 +4321,35 @@
       "peds_inpatient": true,
       "picu": false,
       "picu_beds": null,
-      "nicu_level": null,
+      "nicu_level": 2,
       "peds_ed": false,
       "peds_trauma_level": null,
       "magnet": null,
       "teaching": false,
       "affiliated_university": null,
       "peds_services": [
-        "inpatient pediatrics",
-        "special care nursery",
+        "pediatrics (infancy to age 17, parents may stay overnight)",
+        "Level II nursery",
+        "neonatal nurse practitioners",
         "maternity"
       ],
-      "description": "Onslow Memorial is a 162-bed county hospital in Jacksonville, managed by UNC Health, serving Onslow County and the large military community around Marine Corps Base Camp Lejeune. It has a busy maternity service, a special care nursery that reportedly reopened after a pause, and a small inpatient pediatric unit. Sicker infants and children are transferred to Wilmington or Greenville. Jacksonville is a young, military-oriented city about an hour from Wilmington and close to Topsail Island beaches.",
+      "description": "Onslow Memorial Hospital is a 162-bed county hospital on Western Boulevard in Jacksonville, operating as part of the UNC Health network, that serves Onslow County and the large military community around Marine Corps Base Camp Lejeune. Its Pediatrics and Neonatology service cares for patients from infancy to age 17 and lets parents stay overnight, which points to inpatient pediatric beds, though the hospital's page does not give a unit size. The hospital also runs a Level II nursery for premature newborns and babies with jaundice, breathing or feeding problems, staffed in part by neonatal nurse practitioners, and local news reported that the special care nursery reopened after a pause. Sicker infants and children are transferred to Wilmington or Greenville. Jacksonville is a young, military-oriented city on the New River, about an hour from Wilmington and 30 to 40 minutes from Topsail Island and Emerald Isle beaches.",
       "highlights": [
         "162 beds",
-        "UNC Health managed county hospital",
-        "Special care nursery (PQCNC listing 'Onslow Memorial Hospital Nursery and NICU')",
+        "Pediatrics service for infancy to age 17 with overnight parent stays",
+        "Level II nursery with neonatal nurse practitioners",
+        "Part of the UNC Health network; jobs on the UNC Health board under Onslow",
         "Serves Camp Lejeune area families"
       ],
       "photos": [],
       "wikipedia_title": null,
       "sources": [
         "model knowledge (to verify); enrichment pending",
-        "https://en.wikipedia.org/wiki/List_of_hospitals_in_North_Carolina"
+        "https://en.wikipedia.org/wiki/List_of_hospitals_in_North_Carolina",
+        "https://www.onslow.org/services/pediatrics-and-neonatology"
       ],
-      "notes": "A 2026-10-20 search surfaced 'Onslow Memorial Hospital Nursery and NICU' (PQCNC) and 'Onslow Memorial special care nursery reopens' (WNCT); pages not opened, so nicu_level is null. peds_inpatient true is from model knowledge of a small pediatric unit; verify. Military: Naval Medical Center Camp Lejeune is nearby (excluded). Unread search leads to verify: https://www.pqcnc.org/node/13422; https://digital-release.wnct.com/local-news/jacksonville/onslow-memorial-special-care-nursery-reopens/.",
-      "confidence": "low",
+      "notes": "[qa 2026-10-20] The hospital's Pediatrics and Neonatology page (read) describes pediatric care from infancy to 17 with overnight parent stays, a 'Level II nursery' and neonatal nurse practitioners; it does not state an inpatient bed count, a pediatric ED or pediatric hospitalists. nicu_level set to 2 from that page; NC state nursery levels may differ from AAP levels. A WNCT headline reported the special care nursery reopening (not opened). Good fit for NNP or newborn APP roles; verify whether a general pediatric floor still operates. Military: Naval Medical Center Camp Lejeune is nearby (excluded).",
+      "confidence": "medium",
       "active": true,
       "_enrich": {}
     },
@@ -4433,12 +4392,13 @@
         "special care nursery",
         "maternity"
       ],
-      "description": "CarolinaEast Medical Center is a 307-bed independent regional hospital in New Bern, the historic river city where the Neuse and Trent rivers meet. It serves Craven, Pamlico, Jones and nearby counties, including families from Marine Corps Air Station Cherry Point in Havelock. Services include emergency, cardiac, cancer, surgical and maternity care, and job postings reference a pediatrics unit within its inpatient medicine department. Higher-acuity children are transferred to Maynard Children's in Greenville, about an hour away.",
+      "description": "CarolinaEast Medical Center is a 307-bed independent, not-for-profit regional hospital on Neuse Boulevard in New Bern, the colonial-era river city where the Neuse and Trent rivers meet. It is the main referral hospital for Craven, Pamlico, Jones and nearby counties, including families from Marine Corps Air Station Cherry Point in Havelock, and provides emergency, cardiac, cancer, surgical and maternity care. Job postings titled 'RN, CIM Pediatrics' point to a pediatric unit inside its inpatient medicine department, but its size and scope have not been confirmed, and nursery level is unknown. Higher-acuity children go to Maynard Children's in Greenville, about an hour away. New Bern is a walkable historic town known for Tryon Palace and as the birthplace of Pepsi, with Atlantic Beach and the Crystal Coast roughly 45 minutes southeast.",
       "highlights": [
-        "307 beds",
-        "Independent not-for-profit system",
-        "Pediatrics RN postings ('RN, CIM Pediatrics') indicate an inpatient pediatric unit",
-        "Serves Cherry Point military families"
+        "307 beds; independent not-for-profit system",
+        "Main referral hospital for Craven, Pamlico and Jones counties",
+        "'RN, CIM Pediatrics' postings suggest an inpatient pediatric unit (unconfirmed)",
+        "Serves Cherry Point military families",
+        "About an hour from Maynard Children's"
       ],
       "photos": [],
       "wikipedia_title": "CarolinaEast Medical Center",
@@ -4491,11 +4451,12 @@
         "maternity",
         "newborn nursery"
       ],
-      "description": "Carteret Health Care is a 135-bed county-affiliated hospital in Morehead City on the Crystal Coast, serving Carteret County, Beaufort, Emerald Isle and Atlantic Beach. It provides emergency, surgical, cancer, intensive care and women's services and has a clinical affiliation with UNC Health. There is no known dedicated pediatric unit; children who need admission go to Greenville or Wilmington. The area is a beach and fishing community popular with retirees and families.",
+      "description": "Carteret Health Care is a 135-bed county-affiliated hospital on Arendell Street in Morehead City, the main hospital for Carteret County and the Crystal Coast. It provides emergency, surgical, cancer, intensive care and women's services, and it is reportedly affiliated with UNC Health. There is no known dedicated pediatric unit, so children who need admission go to Greenville or Wilmington, and newborn or ED coverage is the most likely pediatric NP fit. The hospital serves a beach and fishing community that includes Atlantic Beach, Emerald Isle and the historic waterfront town of Beaufort, with ferries out to Cape Lookout. Morehead City is about 45 minutes from New Bern, roughly two hours from Wilmington and about three hours from Chapel Hill.",
       "highlights": [
         "135 beds",
-        "Crystal Coast community hospital",
-        "UNC Health affiliate"
+        "Main hospital for the Crystal Coast",
+        "Reportedly affiliated with UNC Health",
+        "Serves Atlantic Beach, Emerald Isle and Beaufort"
       ],
       "photos": [],
       "wikipedia_title": null,
@@ -4525,8 +4486,8 @@
       "website": "https://www.ecuhealth.org/",
       "careers_url": "https://careers.ecuhealth.org/",
       "careers_platform": "phenom",
-      "careers_search_url": null,
-      "careers_notes": "ECU Health careers landing page (also linked from www.ecuhealth.org/careers). Platform not confirmed this session; enrichment should probe it. Filter to Washington, NC. [enrich 2026-10-20] careers_url -> HTTP 200 at https://careers.ecuhealth.org/us/en",
+      "careers_search_url": "https://careers.ecuhealth.org/us/en/search-results?keywords=nurse%20practitioner",
+      "careers_notes": "ECU Health careers landing page (also linked from www.ecuhealth.org/careers). Platform not confirmed this session; enrichment should probe it. Filter to Washington, NC. [enrich 2026-10-20] careers_url -> HTTP 200 at https://careers.ecuhealth.org/us/en [qa 2026-10-20] careers_search_url filled with the standard Phenom keyword pattern on the /us/en locale path that careers.ecuhealth.org redirected to during enrichment; untested.",
       "ats_config": {
         "host": "careers.ecuhealth.org"
       },
@@ -4546,11 +4507,12 @@
         "maternity",
         "newborn nursery"
       ],
-      "description": "ECU Health Beaufort is a community hospital in Washington, on the Pamlico River about 30 minutes east of Greenville. Formerly Beaufort Regional and then Vidant Beaufort, it serves Beaufort County with emergency, surgical, inpatient and, reportedly, maternity services. There is no dedicated pediatric unit; children are transferred to Maynard Children's in Greenville. Washington is a small waterfront town known as Little Washington.",
+      "description": "ECU Health Beaufort Hospital is a roughly 120-bed community hospital on East 12th Street in Washington, part of ECU Health, the 1,447-bed not-for-profit system (formerly Vidant Health) that serves 29 eastern North Carolina counties from its Greenville flagship. Formerly Beaufort Regional and then Vidant Beaufort, it serves Beaufort County with emergency, surgical, inpatient and, reportedly, maternity services. There is no dedicated pediatric unit, and ECU Health has a history of consolidating services from its community hospitals into Greenville, so children are transferred to Maynard Children's about 30 minutes west. Pediatric NP fit here is limited to ED or newborn coverage. Washington, often called Little Washington, is a small waterfront town on the Pamlico River with a riverfront promenade and boating culture, about 30 minutes from Greenville.",
       "highlights": [
         "About 120 licensed beds",
-        "ECU Health community hospital",
-        "30 minutes from Maynard Children's"
+        "ECU Health community hospital (formerly Vidant Beaufort)",
+        "Reportedly offers maternity services",
+        "About 30 minutes from Maynard Children's"
       ],
       "photos": [],
       "wikipedia_title": "ECU Health",
@@ -4586,8 +4548,8 @@
       "website": "https://www.ecuhealth.org/",
       "careers_url": "https://careers.ecuhealth.org/",
       "careers_platform": "phenom",
-      "careers_search_url": null,
-      "careers_notes": "ECU Health careers landing page (also linked from www.ecuhealth.org/careers). Platform not confirmed this session; enrichment should probe it. Filter to Windsor, NC. [enrich 2026-10-20] careers_url -> HTTP 200 at https://careers.ecuhealth.org/us/en",
+      "careers_search_url": "https://careers.ecuhealth.org/us/en/search-results?keywords=nurse%20practitioner",
+      "careers_notes": "ECU Health careers landing page (also linked from www.ecuhealth.org/careers). Platform not confirmed this session; enrichment should probe it. Filter to Windsor, NC. [enrich 2026-10-20] careers_url -> HTTP 200 at https://careers.ecuhealth.org/us/en [qa 2026-10-20] careers_search_url filled with the standard Phenom keyword pattern on the /us/en locale path that careers.ecuhealth.org redirected to during enrichment; untested.",
       "ats_config": {
         "host": "careers.ecuhealth.org"
       },
@@ -4604,11 +4566,13 @@
       "teaching": false,
       "affiliated_university": null,
       "peds_services": [],
-      "description": "ECU Health Bertie is a very small critical access hospital in Windsor, the seat of rural Bertie County in northeastern North Carolina. It provides emergency care, a handful of inpatient beds and outpatient services. There is no pediatric or obstetric inpatient service. Windsor is a small river town about an hour from Greenville.",
+      "description": "ECU Health Bertie Hospital, historically Bertie Memorial Hospital, is a six-bed critical access hospital in Windsor, the seat of rural Bertie County. The original hospital opened in 1952 with Hill-Burton funding and was listed on the National Register of Historic Places in 2004; after closures and management changes, the system now called ECU Health took over in 1998 and funded a new building that opened in 2001, the first in the nation built to critical access hospital standards and a federal model for the type. The hospital concentrates on same-day services, with emergency care and a handful of inpatient beds. There is no pediatric or obstetric inpatient service, so pediatric NP fit is limited to ED work. Windsor is a small town on the Cashie River, about an hour from Greenville and roughly 90 minutes from Norfolk.",
       "highlights": [
-        "6-bed critical access hospital",
-        "ECU Health member",
-        "Serves Bertie County"
+        "Six-bed critical access hospital",
+        "First US hospital built to critical access standards (2001)",
+        "Original 1952 building on the National Register of Historic Places",
+        "ECU Health managed since 1998",
+        "No pediatric or obstetric inpatient service"
       ],
       "photos": [
         {
@@ -4622,9 +4586,10 @@
       "wikipedia_title": "ECU Health Bertie Hospital",
       "sources": [
         "model knowledge (to verify); enrichment pending",
-        "https://en.wikipedia.org/wiki/List_of_hospitals_in_North_Carolina"
+        "https://en.wikipedia.org/wiki/List_of_hospitals_in_North_Carolina",
+        "https://en.wikipedia.org/wiki/ECU_Health_Bertie_Hospital"
       ],
-      "notes": "Hotspot critical access hospital, included per rule 4 only. No pediatric services. Coordinates pending enrichment.",
+      "notes": "Hotspot critical access hospital, included per rule 4 only. No pediatric services. [qa 2026-10-20] Street address is still pending, and the coordinates (lat exactly 36.0) came from the Wikipedia article, which is about the NRHP-listed 1952 building; they may not mark the 2001 hospital. Verify both.",
       "confidence": "low",
       "active": true,
       "_enrich": {
@@ -4652,8 +4617,8 @@
       "website": "https://www.ecuhealth.org/",
       "careers_url": "https://careers.ecuhealth.org/",
       "careers_platform": "phenom",
-      "careers_search_url": null,
-      "careers_notes": "ECU Health careers landing page (also linked from www.ecuhealth.org/careers). Platform not confirmed this session; enrichment should probe it. Filter to Edenton, NC. [enrich 2026-10-20] careers_url -> HTTP 200 at https://careers.ecuhealth.org/us/en",
+      "careers_search_url": "https://careers.ecuhealth.org/us/en/search-results?keywords=nurse%20practitioner",
+      "careers_notes": "ECU Health careers landing page (also linked from www.ecuhealth.org/careers). Platform not confirmed this session; enrichment should probe it. Filter to Edenton, NC. [enrich 2026-10-20] careers_url -> HTTP 200 at https://careers.ecuhealth.org/us/en [qa 2026-10-20] careers_search_url filled with the standard Phenom keyword pattern on the /us/en locale path that careers.ecuhealth.org redirected to during enrichment; untested.",
       "ats_config": {
         "host": "careers.ecuhealth.org"
       },
@@ -4673,10 +4638,11 @@
         "birthing center",
         "newborn nursery"
       ],
-      "description": "ECU Health Chowan is a critical access hospital in Edenton, the colonial-era town on Albemarle Sound. It provides emergency, inpatient medical and surgical care and, reportedly, a small birthing center for Chowan and nearby counties. There is no pediatric inpatient unit. Edenton is a quiet waterfront town about an hour from Elizabeth City's neighbors and the Outer Banks.",
+      "description": "ECU Health Chowan Hospital is a critical access hospital on Virginia Road in Edenton, part of the Greenville-based ECU Health system, listed at 49 licensed beds on the state hospital list. It provides emergency care, inpatient medical and surgical care and, reportedly, a small birthing center for Chowan and nearby counties. There is no pediatric inpatient unit, so sick children are sent to Greenville or Norfolk, and newborn or ED coverage is the likeliest pediatric NP fit. Edenton is one of the oldest towns in North Carolina, a quiet colonial-era waterfront town on Albemarle Sound with a historic district and harbor. It is about 40 minutes from Elizabeth City, roughly 75 minutes from Greenville and about an hour and a half from the Outer Banks beaches.",
       "highlights": [
-        "Critical access hospital (49 licensed beds)",
+        "Critical access hospital (49 licensed beds on the state list)",
         "ECU Health member",
+        "Small birthing center reported",
         "Historic Albemarle Sound town"
       ],
       "photos": [],
@@ -4685,8 +4651,8 @@
         "model knowledge (to verify); enrichment pending",
         "https://en.wikipedia.org/wiki/List_of_hospitals_in_North_Carolina"
       ],
-      "notes": "Hotspot critical access hospital, included per rule 4. No pediatric unit.",
-      "confidence": "low",
+      "notes": "Hotspot critical access hospital, included per rule 4. No pediatric unit. [qa 2026-10-20] Critical access hospitals are capped at 25 acute beds, so the 49 on the state list likely includes swing or other beds; verify.",
+      "confidence": "medium",
       "active": true,
       "_enrich": {}
     },
@@ -4707,8 +4673,8 @@
       "website": "https://www.ecuhealth.org/",
       "careers_url": "https://careers.ecuhealth.org/",
       "careers_platform": "phenom",
-      "careers_search_url": null,
-      "careers_notes": "ECU Health careers landing page (also linked from www.ecuhealth.org/careers). Platform not confirmed this session; enrichment should probe it. Filter to Kenansville, NC. [enrich 2026-10-20] careers_url -> HTTP 200 at https://careers.ecuhealth.org/us/en",
+      "careers_search_url": "https://careers.ecuhealth.org/us/en/search-results?keywords=nurse%20practitioner",
+      "careers_notes": "ECU Health careers landing page (also linked from www.ecuhealth.org/careers). Platform not confirmed this session; enrichment should probe it. Filter to Kenansville, NC. [enrich 2026-10-20] careers_url -> HTTP 200 at https://careers.ecuhealth.org/us/en [qa 2026-10-20] careers_search_url filled with the standard Phenom keyword pattern on the /us/en locale path that careers.ecuhealth.org redirected to during enrichment; untested.",
       "ats_config": {
         "host": "careers.ecuhealth.org"
       },
@@ -4728,10 +4694,11 @@
         "maternity",
         "newborn nursery"
       ],
-      "description": "ECU Health Duplin is a small community hospital in Kenansville, serving rural Duplin County between Goldsboro, Jacksonville and Wilmington. It offers emergency, inpatient, behavioral health and, reportedly, maternity services. There is no pediatric unit; children are transferred to Greenville or Wilmington. The area is agricultural with small towns and very low housing costs.",
+      "description": "ECU Health Duplin Hospital is a small community hospital on North Main Street in Kenansville, the Duplin County seat, affiliated with ECU Health Medical Center and the ECU Health system in Greenville and listed at about 56 licensed beds. It offers emergency, inpatient, behavioral health and, reportedly, maternity services for a rural county that sits between Goldsboro, Jacksonville and Wilmington. There is no pediatric unit, so children are transferred to Greenville or Wilmington, and pediatric NP fit is mostly ED or newborn coverage. Duplin County is hog, poultry and tobacco country with small towns and very low housing costs. Kenansville is about 45 minutes from Jacksonville and Goldsboro and roughly an hour from Wilmington.",
       "highlights": [
         "About 56 licensed beds",
         "ECU Health member",
+        "Maternity and behavioral health reportedly offered",
         "Serves rural Duplin County"
       ],
       "photos": [],
@@ -4741,7 +4708,7 @@
         "https://en.wikipedia.org/wiki/List_of_hospitals_in_North_Carolina"
       ],
       "notes": "Hotspot-region hospital (assigned to coastal NC per the brief); included per rule 4. Peds flags false.",
-      "confidence": "low",
+      "confidence": "medium",
       "active": true,
       "_enrich": {
         "wikipedia": {
@@ -4768,8 +4735,8 @@
       "website": "https://www.ecuhealth.org/",
       "careers_url": "https://careers.ecuhealth.org/",
       "careers_platform": "phenom",
-      "careers_search_url": null,
-      "careers_notes": "ECU Health careers landing page (also linked from www.ecuhealth.org/careers). Platform not confirmed this session; enrichment should probe it. Filter to Tarboro, NC. [enrich 2026-10-20] careers_url -> HTTP 200 at https://careers.ecuhealth.org/us/en",
+      "careers_search_url": "https://careers.ecuhealth.org/us/en/search-results?keywords=nurse%20practitioner",
+      "careers_notes": "ECU Health careers landing page (also linked from www.ecuhealth.org/careers). Platform not confirmed this session; enrichment should probe it. Filter to Tarboro, NC. [enrich 2026-10-20] careers_url -> HTTP 200 at https://careers.ecuhealth.org/us/en [qa 2026-10-20] careers_search_url filled with the standard Phenom keyword pattern on the /us/en locale path that careers.ecuhealth.org redirected to during enrichment; untested.",
       "ats_config": {
         "host": "careers.ecuhealth.org"
       },
@@ -4786,17 +4753,19 @@
       "teaching": false,
       "affiliated_university": null,
       "peds_services": [],
-      "description": "ECU Health Edgecombe is a 101-bed community hospital in Tarboro, serving Edgecombe County between Rocky Mount and Greenville. It provides emergency care, inpatient medical and surgical beds and outpatient services. There is no pediatric unit and, reportedly, no labor and delivery service. Tarboro is a historic small town in rural eastern North Carolina.",
+      "description": "ECU Health Edgecombe Hospital is a community hospital on Hospital Drive in Tarboro with 101 general beds and 16 rehabilitation beds, part of the ECU Health system based in Greenville. Its roots go back to a county-owned hospital that opened in 1916; HCA bought it in 1982 and opened the current building in 1985 as Heritage Hospital, and the system now called ECU Health acquired it in 1998. It provides emergency care, inpatient medical and surgical beds, inpatient rehab and outpatient services. Labor and delivery is reportedly no longer offered, though the state license still lists one C-section operating room, and there is no pediatric unit, so children are transferred to Maynard Children's about 35 minutes away. Tarboro is a historic Tar River town in rural Edgecombe County, about 20 minutes from Rocky Mount and roughly 75 minutes from Raleigh.",
       "highlights": [
-        "101 beds",
-        "ECU Health community hospital",
-        "Between Rocky Mount and Greenville"
+        "101 general and 16 rehabilitation beds",
+        "Opened 1985 as HCA's Heritage Hospital; ECU Health since 1998",
+        "No pediatric unit; obstetrics reportedly discontinued",
+        "About 35 minutes from Maynard Children's"
       ],
       "photos": [],
       "wikipedia_title": "ECU Health Edgecombe Hospital",
       "sources": [
         "model knowledge (to verify); enrichment pending",
-        "https://en.wikipedia.org/wiki/List_of_hospitals_in_North_Carolina"
+        "https://en.wikipedia.org/wiki/List_of_hospitals_in_North_Carolina",
+        "https://en.wikipedia.org/wiki/ECU_Health_Edgecombe_Hospital"
       ],
       "notes": "Hotspot community hospital (assigned to coastal NC per the brief), included per rule 4. No pediatric services known.",
       "confidence": "medium",
@@ -4826,13 +4795,13 @@
       "website": "https://www.ecuhealth.org/",
       "careers_url": "https://careers.ecuhealth.org/",
       "careers_platform": "phenom",
-      "careers_search_url": null,
-      "careers_notes": "ECU Health careers landing page (also linked from www.ecuhealth.org/careers). Platform not confirmed this session; enrichment should probe it. Filter to Greenville, NC (Maynard Children's). [enrich 2026-10-20] careers_url -> HTTP 200 at https://careers.ecuhealth.org/us/en",
+      "careers_search_url": "https://careers.ecuhealth.org/us/en/search-results?keywords=nurse%20practitioner",
+      "careers_notes": "ECU Health careers landing page (also linked from www.ecuhealth.org/careers). Platform not confirmed this session; enrichment should probe it. Filter to Greenville, NC (Maynard Children's). [enrich 2026-10-20] careers_url -> HTTP 200 at https://careers.ecuhealth.org/us/en [qa 2026-10-20] careers_search_url filled with the standard Phenom keyword pattern on the /us/en locale path that careers.ecuhealth.org redirected to during enrichment; untested.",
       "ats_config": {
         "host": "careers.ecuhealth.org"
       },
       "nearest_airport": "PGV Pitt-Greenville (about 15 min); RDU Raleigh-Durham International (about 1 hr 30 min)",
-      "beds": 122,
+      "beds": 974,
       "peds_beds": 122,
       "peds_inpatient": true,
       "picu": true,
@@ -4853,13 +4822,14 @@
         "pediatric subspecialties",
         "transport team"
       ],
-      "description": "Maynard Children's Hospital is the only children's hospital in eastern North Carolina, located inside ECU Health Medical Center in Greenville, the teaching hospital of ECU's Brody School of Medicine. Its 122 beds include a 50-bed Level III NICU, 32 general pediatric beds and a 12-bed PICU, plus a 16-room pediatric emergency department. It serves about 29 counties, so acuity is high and transport volume is heavy. The parent medical center has about 974 licensed beds and is the only Level I trauma center east of Raleigh. Greenville is an affordable college town about 90 minutes from Raleigh and the coast.",
+      "description": "ECU Health Maynard Children's Hospital is the only children's hospital in eastern North Carolina, located inside ECU Health Medical Center in Greenville, the flagship of the not-for-profit ECU Health system (formerly Vidant Health) and the teaching hospital of East Carolina University's Brody School of Medicine. The children's hospital has 122 beds, including a 50-bed Level III NICU, 32 general pediatric beds and a 12-bed PICU, plus a 16-room pediatric emergency department. It draws children from ECU Health's 29-county service area, so acuity is high and the transport team stays busy. The parent medical center has about 974 licensed beds and is the only Level I trauma center east of Raleigh. Greenville is an affordable college town built around ECU, about 90 minutes from Raleigh, roughly two hours from Chapel Hill, and under two hours from both the Crystal Coast and the Outer Banks.",
       "highlights": [
         "Only children's hospital in eastern North Carolina",
         "122 beds: 50 NICU, 32 pediatric, 12 PICU",
         "16-room pediatric emergency department",
         "Parent ECU Health Medical Center is the only Level I trauma center east of Raleigh",
-        "Brody School of Medicine pediatrics residency"
+        "Brody School of Medicine pediatrics teaching program",
+        "Primary eastern NC target for an acute care PNP"
       ],
       "photos": [],
       "wikipedia_title": "ECU Health Medical Center",
@@ -4867,7 +4837,7 @@
         "model knowledge (to verify); enrichment pending",
         "https://en.wikipedia.org/wiki/List_of_hospitals_in_North_Carolina"
       ],
-      "notes": "Primary eastern NC target for an acute care PNP. Unit counts are from the Wikipedia article summarized in the NC scratch file; NC state level labels may differ from AAP (verify whether the NICU is AAP Level IV). One record covers ECU Health Medical Center; no separate parent record. ECU Health careers platform unconfirmed.",
+      "notes": "Primary eastern NC target for an acute care PNP. Unit counts are from the Wikipedia article summarized in the NC scratch file; NC state level labels may differ from AAP (verify whether the NICU is AAP Level IV). One record covers ECU Health Medical Center; no separate parent record. ECU Health careers platform unconfirmed. [qa 2026-10-20] beds changed from 122 (the children's hospital count, already in peds_beds) to 974 for the whole ECU Health Medical Center, per the Wikipedia article figure in the NC scratch file (the state list gives 847), to match the whole-hospital convention used for other children's hospitals within hospitals.",
       "confidence": "medium",
       "active": true,
       "_enrich": {}
@@ -4889,8 +4859,8 @@
       "website": "https://www.ecuhealth.org/",
       "careers_url": "https://careers.ecuhealth.org/",
       "careers_platform": "phenom",
-      "careers_search_url": null,
-      "careers_notes": "ECU Health careers landing page (also linked from www.ecuhealth.org/careers). Platform not confirmed this session; enrichment should probe it. Filter to Ahoskie, NC. [enrich 2026-10-20] careers_url -> HTTP 200 at https://careers.ecuhealth.org/us/en",
+      "careers_search_url": "https://careers.ecuhealth.org/us/en/search-results?keywords=nurse%20practitioner",
+      "careers_notes": "ECU Health careers landing page (also linked from www.ecuhealth.org/careers). Platform not confirmed this session; enrichment should probe it. Filter to Ahoskie, NC. [enrich 2026-10-20] careers_url -> HTTP 200 at https://careers.ecuhealth.org/us/en [qa 2026-10-20] careers_search_url filled with the standard Phenom keyword pattern on the /us/en locale path that careers.ecuhealth.org redirected to during enrichment; untested.",
       "ats_config": {
         "host": "careers.ecuhealth.org"
       },
@@ -4910,20 +4880,23 @@
         "maternity",
         "newborn nursery"
       ],
-      "description": "ECU Health Roanoke-Chowan is an 86-bed community hospital in Ahoskie, in Hertford County in rural northeastern North Carolina. It provides emergency, surgical, inpatient and, reportedly, maternity services for Hertford, Bertie, Gates and Northampton counties. There is no dedicated pediatric unit; children are transferred to Greenville or Norfolk. The area is rural and agricultural, about 75 minutes from Norfolk.",
+      "description": "ECU Health Roanoke-Chowan Hospital is a community hospital on South Academy Street in Ahoskie with 86 general and 28 psychiatric beds, managed by ECU Health since 1997. Built on land donated by the local Early family, it was the first hospital to use federal Hill-Burton construction funding when it was built in 1948. It provides emergency, surgical and inpatient care for Hertford, Bertie, Gates and Northampton counties, and its single C-section operating room supports a reported maternity service. There is no dedicated pediatric unit, so children are transferred to Greenville or Norfolk, and newborn or ED coverage is the likeliest pediatric NP fit. Ahoskie is a small farm town in the rural northeast corner of the state, about 75 minutes from Norfolk and a bit over an hour from Greenville.",
       "highlights": [
-        "86 beds",
-        "ECU Health community hospital",
+        "86 general and 28 psychiatric beds",
+        "ECU Health managed since 1997",
+        "First hospital built with Hill-Burton funding (1948)",
+        "Has a C-section operating room; maternity reportedly offered",
         "Serves four rural northeastern counties"
       ],
       "photos": [],
       "wikipedia_title": "ECU Health Roanoke-Chowan Hospital",
       "sources": [
         "model knowledge (to verify); enrichment pending",
-        "https://en.wikipedia.org/wiki/List_of_hospitals_in_North_Carolina"
+        "https://en.wikipedia.org/wiki/List_of_hospitals_in_North_Carolina",
+        "https://en.wikipedia.org/wiki/ECU_Health_Roanoke-Chowan_Hospital"
       ],
       "notes": "Hotspot-region community hospital, included per rule 4. Peds flags false; verify obstetrics.",
-      "confidence": "low",
+      "confidence": "medium",
       "active": true,
       "_enrich": {
         "wikipedia": {
@@ -4948,12 +4921,14 @@
       "region": "Outer Banks / Coastal NC",
       "hotspot": true,
       "website": "https://www.sentara.com/",
-      "careers_url": "https://careers.sentara.com/",
-      "careers_platform": "unknown",
-      "careers_search_url": null,
-      "careers_notes": "Sentara Health systemwide careers site; platform not confirmed this session. Filter to Elizabeth City, NC. [enrich 2026-10-20] careers_url -> HTTP None at None",
+      "careers_url": "https://sentara.wd1.myworkdayjobs.com/SCS",
+      "careers_platform": "workday",
+      "careers_search_url": "https://sentara.wd1.myworkdayjobs.com/SCS?q=nurse%20practitioner",
+      "careers_notes": "Sentara Health systemwide careers site; platform not confirmed this session. Filter to Elizabeth City, NC. [enrich 2026-10-20] careers_url -> HTTP None at None [qa 2026-10-20] Switched to the Sentara Workday board (tenant sentara, site SCS) used by every other Sentara record in the ledger (virginia.json, md_dc_va.json); careers.sentara.com did not resolve during enrichment. Filter to Elizabeth City, NC.",
       "ats_config": {
-        "host": "careers.sentara.com"
+        "host": "sentara.wd1.myworkdayjobs.com",
+        "tenant": "sentara",
+        "site": "SCS"
       },
       "nearest_airport": "ORF Norfolk International (about 1 hr)",
       "beds": 90,
@@ -4971,19 +4946,22 @@
         "maternity",
         "newborn nursery"
       ],
-      "description": "Sentara Albemarle Medical Center is a community hospital in Elizabeth City serving the Albemarle region of northeastern North Carolina, near the Virginia line. Sentara Health, based in Norfolk, operates it, which links it to Hampton Roads referral centers including Children's Hospital of The King's Daughters. It provides emergency, surgical, intensive care and, reportedly, maternity services. There is no dedicated pediatric unit; Elizabeth City is a small river town about an hour from Norfolk and the Outer Banks.",
+      "description": "Sentara Albemarle Medical Center is a 90-bed full-service hospital in Elizabeth City, run by Norfolk-based Sentara Health and serving the Albemarle region of northeastern North Carolina. It traces back to 1914, moved to North Road Street in 1960, and opened its new Halstead Boulevard campus in August 2025. Services include inpatient and critical care, surgery, imaging, cardiology, cancer care, rehabilitation and comprehensive women's care, with two C-section operating rooms, a medical staff of more than 100 physicians across 25-plus specialties and about 750 employees. There is no dedicated pediatric unit; sick children are typically referred into Sentara's Hampton Roads network and Children's Hospital of The King's Daughters in Norfolk, so newborn or ED coverage is the likeliest pediatric NP fit. Elizabeth City is a small river town on the Pasquotank with a university and a large Coast Guard presence, about an hour from both Norfolk and the Outer Banks beaches.",
       "highlights": [
-        "About 90 staffed beds (Wikipedia list)",
-        "Sentara Health hospital",
+        "90 licensed beds; new Halstead Boulevard campus opened August 2025",
+        "Sentara Health hospital, founded 1914",
+        "Comprehensive women's care with two C-section operating rooms",
+        "About 750 employees and 100-plus physicians",
         "Referral link to CHKD in Norfolk"
       ],
       "photos": [],
       "wikipedia_title": "Sentara Albemarle Medical Center",
       "sources": [
         "model knowledge (to verify); enrichment pending",
-        "https://en.wikipedia.org/wiki/List_of_hospitals_in_North_Carolina"
+        "https://en.wikipedia.org/wiki/List_of_hospitals_in_North_Carolina",
+        "https://en.wikipedia.org/wiki/Sentara_Albemarle_Medical_Center"
       ],
-      "notes": "Hotspot community hospital, included per rule 4. Peds flags false; verify obstetrics.",
+      "notes": "Hotspot community hospital, included per rule 4. Peds flags false. [qa 2026-10-20] Wikipedia extract confirms 90 licensed beds, comprehensive women's care and two C-section ORs, so maternity is supported; no pediatric unit is mentioned.",
       "confidence": "medium",
       "active": true,
       "_enrich": {
@@ -5011,8 +4989,8 @@
       "website": "https://www.theouterbankshospital.com/",
       "careers_url": "https://careers.ecuhealth.org/",
       "careers_platform": "phenom",
-      "careers_search_url": null,
-      "careers_notes": "ECU Health careers landing page (also linked from www.ecuhealth.org/careers). Platform not confirmed this session; enrichment should probe it. Filter to Nags Head, NC (The Outer Banks Hospital). [enrich 2026-10-20] careers_url -> HTTP 200 at https://careers.ecuhealth.org/us/en",
+      "careers_search_url": "https://careers.ecuhealth.org/us/en/search-results?keywords=nurse%20practitioner",
+      "careers_notes": "ECU Health careers landing page (also linked from www.ecuhealth.org/careers). Platform not confirmed this session; enrichment should probe it. Filter to Nags Head, NC (The Outer Banks Hospital). [enrich 2026-10-20] careers_url -> HTTP 200 at https://careers.ecuhealth.org/us/en [qa 2026-10-20] careers_search_url filled with the standard Phenom keyword pattern on the /us/en locale path that careers.ecuhealth.org redirected to during enrichment; untested.",
       "ats_config": {
         "host": "careers.ecuhealth.org"
       },
@@ -5032,12 +5010,13 @@
         "birthing center",
         "newborn nursery"
       ],
-      "description": "The Outer Banks Hospital is a 21-bed critical access hospital in Nags Head that opened in March 2002 as a joint venture of ECU Health (60 percent) and Chesapeake Regional Healthcare (40 percent). It is the only hospital on the Outer Banks and provides emergency care, surgery, inpatient medical beds and, reportedly, a small birthing center. Summer tourist season multiplies the population it serves, while critically ill patients are flown or driven to Greenville or Norfolk. The area is a beach community with a small year-round population.",
+      "description": "The Outer Banks Hospital is a critical access hospital in Nags Head, Dare County, owned 60/40 by ECU Health and Chesapeake Regional Healthcare of Chesapeake, Virginia. It opened in March 2002 and is the first and only major hospital on the Outer Banks, with 21 general beds, three shared surgical suites, an endoscopy room and a dedicated C-section operating room. The C-section room fits the small birthing center reported for the hospital, but there is no pediatric inpatient unit; critically ill children and newborns are flown or driven to Greenville or Norfolk. Summer tourism multiplies the population it serves, so ED volume swings with the season. Nags Head sits between Kill Devil Hills and Roanoke Island on a long barrier-island beach strip with a small year-round community, about 90 minutes from Norfolk's airport and roughly three and a half to four hours from Chapel Hill.",
       "highlights": [
-        "21-bed critical access hospital, opened 2002",
+        "21-bed critical access hospital, opened March 2002",
         "Only hospital on the Outer Banks",
-        "Joint venture of ECU Health and Chesapeake Regional",
-        "Seasonal volume surges"
+        "Joint venture of ECU Health (60%) and Chesapeake Regional (40%)",
+        "Has a C-section operating room supporting a small birthing center",
+        "Seasonal tourist surges drive ED volume"
       ],
       "photos": [
         {
@@ -5051,7 +5030,8 @@
       "wikipedia_title": "The Outer Banks Hospital",
       "sources": [
         "model knowledge (to verify); enrichment pending",
-        "https://en.wikipedia.org/wiki/List_of_hospitals_in_North_Carolina"
+        "https://en.wikipedia.org/wiki/List_of_hospitals_in_North_Carolina",
+        "https://en.wikipedia.org/wiki/The_Outer_Banks_Hospital"
       ],
       "notes": "Hotspot critical access hospital, included per rule 4. Birthing center from model knowledge. Jobs may post on ECU Health or a separate Outer Banks Hospital board; verify.",
       "confidence": "medium",
@@ -5088,7 +5068,7 @@
         "category_path": "/search/advanced-practice-provider/jobs"
       },
       "nearest_airport": "PGV Pitt-Greenville (about 40 min)",
-      "beds": 182,
+      "beds": 199,
       "peds_beds": null,
       "peds_inpatient": false,
       "picu": false,
@@ -5103,11 +5083,12 @@
         "maternity",
         "newborn nursery"
       ],
-      "description": "UNC Health Lenoir is a 182-bed community hospital in Kinston, serving Lenoir County and surrounding rural eastern North Carolina. It provides emergency, surgical, cardiac, intensive care and, reportedly, maternity services. There is no known dedicated pediatric unit; children who need admission are usually sent to Maynard Children's in Greenville. Kinston is a small city about 40 minutes south of Greenville with very affordable housing.",
+      "description": "UNC Health Lenoir is a not-for-profit hospital on Airport Road in Kinston, licensed for 199 beds and part of the UNC Health network, serving Lenoir, Greene, Jones and surrounding counties. It has a medical staff of more than 100 physicians and offers general medical, surgical and obstetric care along with cardiology, pulmonology, oncology, orthopedics, urology and vascular and bariatric surgery. There is no known dedicated pediatric unit, so children who need admission usually go to Maynard Children's in Greenville, and newborn or ED coverage is the most likely pediatric NP fit. The current campus opened in 1973, replacing the outgrown original Lenoir Memorial Hospital. Kinston is a small Neuse River city with a revived food scene and very affordable housing, about 40 minutes from Greenville and New Bern and roughly 90 minutes from Raleigh.",
       "highlights": [
-        "182 beds",
+        "Licensed for 199 beds",
+        "Offers obstetrics and a broad set of adult specialties",
         "UNC Health member; jobs on the UNC Health board under Lenoir",
-        "Serves Lenoir County"
+        "About 40 minutes from Maynard Children's"
       ],
       "photos": [
         {
@@ -5121,9 +5102,10 @@
       "wikipedia_title": "UNC Health Lenoir",
       "sources": [
         "model knowledge (to verify); enrichment pending",
-        "https://en.wikipedia.org/wiki/List_of_hospitals_in_North_Carolina"
+        "https://en.wikipedia.org/wiki/List_of_hospitals_in_North_Carolina",
+        "https://en.wikipedia.org/wiki/UNC_Health_Lenoir"
       ],
-      "notes": "Hotspot community hospital, included per rule 4. Peds flags false.",
+      "notes": "Hotspot community hospital, included per rule 4. Peds flags false. [qa 2026-10-20] beds changed from 182 (state list) to 199 per the Wikipedia article extract; the extract confirms obstetrical care.",
       "confidence": "medium",
       "active": true,
       "_enrich": {
@@ -5131,6 +5113,71 @@
           "title": "UNC Health Lenoir",
           "url": "https://en.wikipedia.org/wiki/UNC_Health_Lenoir",
           "extract": "UNC Health Lenoir is a not-for-profit hospital located in Kinston, North Carolina. The hospital is licensed for 199 beds and serves the residents of Lenoir, Greene and Jones and other surrounding counties. The hospital is staffed with over 100 physicians. The hospital offers inpatient, outpatient and preventive healthcare services. In addition, the hospital offers free educational health programs, seminars, and screenings. General services include general medical, surgical, obstetrical and gynecological care. Specialized services include cardiology, pulmonology, oncology, radiology, urology, orthopedics and orthopedic sports medicine, bariatric surgery and vascular surgery\nIn 1986, the Lenoir Memorial Foundation was established.\nIn 1965, the old Lenoir Memorial Hospital was outdated and too small to serve the growing community of Kinston and Lenoir County, and expansion or renovation was deemed unsatisfactory. In June 1973, a new $11 million, 435-bed facility opened."
+        }
+      }
+    },
+    {
+      "slug": "unc-wayne-goldsboro",
+      "name": "UNC Health Wayne",
+      "parent_hospital": null,
+      "health_system": "UNC Health",
+      "hospital_type": "regional_hospital",
+      "city": "Goldsboro",
+      "state": "NC",
+      "address": "2700 Wayne Memorial Dr, Goldsboro, NC 27534",
+      "lat": 35.39853,
+      "lng": -77.95236,
+      "coord_source": "Google Places (places_search tool, cached in north_carolina scratch)",
+      "region": "Outer Banks / Coastal NC",
+      "hotspot": true,
+      "website": "https://www.waynehealth.org/",
+      "careers_url": "https://jobs.unchealthcare.org/jobs/search",
+      "careers_platform": "custom",
+      "careers_search_url": "https://jobs.unchealthcare.org/search/advanced-practice-provider/jobs",
+      "careers_notes": "UNC Health systemwide board: Talemetry (TTC portals) front end with Infor Cloud Suite HCM behind it. Server-rendered: the Advanced Practice Provider category page listed 155 APP jobs on 2026-10-19. The ?q= keyword parameter did not filter results, so use the category path and then the Facility/Division facet (UNC Health Wayne). [enrich 2026-10-20] careers_url -> HTTP 403 at https://jobs.unchealthcare.org/jobs/search; search_url -> HTTP 403, mentions NP: False, job links: 0",
+      "ats_config": {
+        "host": "jobs.unchealthcare.org",
+        "category_path": "/search/advanced-practice-provider/jobs"
+      },
+      "nearest_airport": "RDU Raleigh-Durham International (about 1 hr 10 min)",
+      "beds": 255,
+      "peds_beds": null,
+      "peds_inpatient": true,
+      "picu": false,
+      "picu_beds": null,
+      "nicu_level": null,
+      "peds_ed": false,
+      "peds_trauma_level": null,
+      "magnet": null,
+      "teaching": false,
+      "affiliated_university": null,
+      "peds_services": [
+        "inpatient pediatrics",
+        "special care nursery",
+        "maternity"
+      ],
+      "description": "UNC Health Wayne is a 255-bed nonprofit hospital in Goldsboro that has been affiliated with UNC Health since a 2015 management agreement; it was long known as Wayne Memorial Hospital and took its current name in 2022. It is the largest private employer in Wayne County and serves the county along with families from nearby Seymour Johnson Air Force Base. Services include emergency, surgical, cardiac, behavioral health and women's care, and the hospital was named a best maternity care hospital in 2022, earned a Leapfrog A and a four-star CMS rating in 2023, and became a Vizient/AACN nurse residency site the same year. A small inpatient pediatric unit and special care nursery are reported but not confirmed, and recent per diem neonatology postings tied to UNC Wayne suggest an on-site newborn service; children needing intensive care go to Maynard Children's in Greenville or UNC Children's. Goldsboro is an affordable small city with a strong Air Force presence, about an hour southeast of Raleigh and roughly 75 minutes from Chapel Hill.",
+      "highlights": [
+        "255 beds; largest private employer in Wayne County",
+        "UNC Health affiliate since 2015 (formerly Wayne Memorial Hospital)",
+        "Best maternity care hospital recognition (2022); Leapfrog A and CMS four stars (2023)",
+        "Reportedly has inpatient pediatrics and a special care nursery (unconfirmed)",
+        "Serves Seymour Johnson Air Force Base families"
+      ],
+      "photos": [],
+      "wikipedia_title": "UNC Health Wayne",
+      "sources": [
+        "model knowledge (to verify); enrichment pending",
+        "https://en.wikipedia.org/wiki/List_of_hospitals_in_North_Carolina"
+      ],
+      "notes": "Placed in Triangle per the assignment, though Goldsboro is about an hour from Raleigh and fits eastern NC (Outer Banks / Coastal NC, also a hotspot) at least as well. peds_inpatient true still rests on model knowledge of a pediatric unit; verify. [qa 2026-10-20] Search results showed per diem 'Pediatrics Physician (MD/DO) - UNC Wayne Neonatology' and 'Critical Care Advanced Practice Provider (NP/PA) - UNC Wayne' postings (titles only, pages not opened), which suggest a neonatology service and active APP hiring; nursery level still unknown.",
+      "confidence": "low",
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "UNC Health Wayne",
+          "url": "https://en.wikipedia.org/wiki/UNC_Health_Wayne",
+          "extract": "UNC Health Wayne is a nonprofit hospital affiliate of UNC Health, a health care system in North Carolina and the largest private employer in Wayne County. Its name changed from Wayne Memorial Hospital when it entered into a management agreement with UNC Health in 2015  and in 2022, the hospital changed its name from Wayne UNC Health Care to UNC Health Wayne.\nWith the retirement of J. William \"Bill\" Paugh, FACHE, Robert A. “Bob” Enders Jr., FACHE, served as interim President & CEO in 2016, Janie Jaberg, RN, FACHE, served as President & CEO from 2016 to 2020, and Jessie L. Tucker III, Ph.D., FACHE, became the corporation and hospital President & CEO in 2020.\nIn September 2021, Moody's revised the hospital's outlook from negative to stable.\nThe hospital was recognized as a best maternity care hospital in 2022  and in 2023, UNC Health Wayne earned its highest patient safety and quality ratings in history with a Leapfrog Hospital Safety Grade of \"A\" and a CMS Star quality rating of 4 out of 5. The hospital also earned first ever certifications and accreditations in stroke, total hip and knee replacement, chest pain as well as platinum chest pain/MI care awards and high performance ratings for heart failure, kidney failure, stroke and COPD in 2022 and 2023.\nUNC Health Wayne became a Vizient/AACN Nurse Residency Program site in 2023 and was recognized as a top 12% and largest hospital in Eastern North Carolina with the highest consistent quality and patient safety ratings (4-stars and 6 consecutive A grades)."
         }
       }
     },
@@ -5167,11 +5214,12 @@
       "teaching": false,
       "affiliated_university": null,
       "peds_services": [],
-      "description": "Washington Regional Medical Center is a 25-bed critical access hospital in Plymouth, Washington County, on the Roanoke River near Albemarle Sound. It provides emergency care, inpatient beds and outpatient services for a small rural population. There is no pediatric or obstetric inpatient service. Its ownership has changed hands in recent years and should be checked.",
+      "description": "Washington Regional Medical Center is a 25-bed critical access hospital in Plymouth, the seat of rural Washington County on the Roanoke River near Albemarle Sound. It provides emergency care, inpatient beds and outpatient services for a small rural population, and it has no pediatric or obstetric inpatient service. News headlines from recent years describe a bankruptcy and a court-approved sale to new owners, and its current owner and operating status have not been confirmed, so it should be checked before anyone relies on it. Pediatric NP fit is limited to ED work at most. Plymouth is a small river town about an hour from Greenville and roughly 90 minutes from the Outer Banks.",
       "highlights": [
         "25-bed critical access hospital",
         "Rural Washington County, NC",
-        "Ownership changed in recent years (verify)"
+        "Went through bankruptcy and a sale (per news headlines); owner unverified",
+        "No pediatric or obstetric inpatient service"
       ],
       "photos": [],
       "wikipedia_title": null,
@@ -5179,7 +5227,7 @@
         "model knowledge (to verify); enrichment pending",
         "https://en.wikipedia.org/wiki/List_of_hospitals_in_North_Carolina"
       ],
-      "notes": "Hotspot critical access hospital, included per rule 4 only. Website domain and current owner from model knowledge; verify the hospital is still operating as an inpatient facility.",
+      "notes": "Hotspot critical access hospital, included per rule 4 only. [qa 2026-10-20] A search surfaced WITN headlines 'Sale of Washington Regional Medical Center completed' and a bankruptcy court hearing for the Plymouth hospital, plus a WCTI headline 'Washington Regional Medical Center under new ownership' (pages not opened). Current owner, operating status as an inpatient facility, website domain and careers URL are all unverified; careers_url and website have never resolved in enrichment. Do not confuse with Washington Regional in Fayetteville, Arkansas (wregional.com).",
       "confidence": "low",
       "active": true,
       "_enrich": {
