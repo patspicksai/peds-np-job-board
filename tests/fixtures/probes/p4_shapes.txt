@@ -1,0 +1,34 @@
+# name url [POST:json] [ACT:json] [MODES:a,b]   response shapes for new adapters + syndication fallbacks
+hcs_search https://pm.healthcaresource.com/JobseekerSearchAPI/lawrence/api/Search?size=3 POST:{"query":{"bool":{"must":{"match_all":{}}}}}
+hcs_search_q https://pm.healthcaresource.com/JobseekerSearchAPI/caromont/api/Search?size=3 POST:{"query":{"bool":{"must":{"multi_match":{"query":"nurse practitioner","fields":["title","description"]}}}}}
+hcs_results https://pm.healthcaresource.com/cs/cmcsc#/results?sort=titleAlphaAsc MODES:chrome
+ukgr_mwph https://secure4.entertimeonline.com/ta/rest/ui/recruitment/companies/%7C6108366/job-requisitions?offset=1&size=50&sort=desc&ein_id=&lang=en-US
+ukgr_stm https://prd01-hcm01.prd.mykronos.com/ta/rest/ui/recruitment/companies/%7C6156032/job-requisitions?offset=1&size=50&sort=desc&ein_id=&lang=en-US
+ukgr_mwph_job https://secure4.entertimeonline.com/ta/6108366.careers?ShowJob=1057235843 MODES:req,chrome
+paylocity_job https://recruiting.paylocity.com/Recruiting/Jobs/Details/4496378
+infor_detail https://css-emh-prd.inforcloudsuite.com/hcm/Jobs/form/JobPosting%5BJobPostingSet%5D%2810%2C95914%2C2%29.JobPostingDisplay?pageop=load&pagesize=1&navigation=JobPosting%5BJobPostingSet%5D(10%2C95914%2C2).JobPostingDisplayNav&fromlist=JobPosting.SearchForJobsResults&csk.JobBoard=EXTERNAL&csk.HROrganization=10
+infor_joblist https://css-emh-prd.inforcloudsuite.com/hcm/Jobs/list/JobPosting.JobSearchList?sortOrderName=JobPosting.ByPostDateBeginSet&pageop=load&pagesize=100&dependentList=true&relation=JobBoard%2810%2CEXTERNAL%29.Postings&isAscending=false&csk.JobBoard=EXTERNAL&csk.HROrganization=10
+infor_kh_joblist https://css-y9x4ku9mqsygapwx-prd.inforcloudsuite.com/hcm/Jobs/list/JobPosting.JobSearchList?sortOrderName=JobPosting.ByPostDateBeginSet&pageop=load&pagesize=100&dependentList=true&relation=JobBoard%281000%2CKH-EXTERNAL%29.Postings&isAscending=false&csk.JobBoard=KH-EXTERNAL&csk.HROrganization=1000
+sf_englewood https://careers.englewoodhealth.org/services/recruiting/v1/jobs POST:{"locale":"en_US","pageNumber":0,"sortBy":"","keywords":"nurse practitioner","location":"","facetFilters":{},"brand":"","skills":[],"categoryId":0,"alertId":"","rcmCandidateId":""}
+sf_englewood_job https://careers.englewoodhealth.org/job/Nurse-Practitioner-%28APRN%29-or-Physician-Assistant-%28PA%29-UroGYN-FT/64971-en_US
+upstate_search https://careers.upstate.edu/jobs/search?query=nurse+practitioner
+upstate_app https://careers.upstate.edu/app
+spuh_search https://careers.saintpetershcs.com/search/searchjobs?Keyword=nurse+practitioner
+maimo_jobs https://careers.maimo.org/jobs?keywords=nurse+practitioner
+medisys_rss https://medisyscareers.org/?feed=job_feed&search_keywords=nurse+practitioner
+medisys_ajax https://medisyscareers.org/jm-ajax/get_listings/?search_keywords=nurse+practitioner&per_page=50
+wellspan_search https://www.joinwellspan.org/Search?keyword=nurse%20practitioner MODES:req,chrome
+uchc_all https://jobs.uchc.edu/CSS_External/CSSPage_Welcome.asp ACT:[{"click": "text=View All Jobs"}, {"wait": 3000}] MODES:chrome
+appone_browse https://recruiting.myapps.paychex.com/appone/Branding/ReqTemplate/BrowseAllJobsbyCategory.asp?Type=REQ&FromID=1&ClientID=12555&B_ID=91&JobCode=0&CountryID=3&LanguageID=2&servervar=beaufortmemorialhospital.appone.com
+silkroad_q https://jobs.silkroad.com/templehealth/Careers?SearchString=nurse+practitioner
+chsb_careers https://www.chsbuffalo.org/careers/
+chsb_home https://www.chsbuffalo.org/
+nyu_home https://jobs.nyulangone.org/
+de_hca https://dejobs.org/nurse-practitioner/jobs-in/hca-healthcare/careers
+de_hca2 https://hcahealthcare.dejobs.org/
+de_hca_sc https://dejobs.org/south-carolina/usa/jobs/hca-healthcare/careers
+de_penn https://dejobs.org/nurse-practitioner/jobs-in/penn-medicine/careers
+de_lb https://dejobs.org/nurse-practitioner/jobs-in/lifebridge-health/careers
+de_kaleida https://enableamerica.dejobs.org/new-york/usa/jobs/kaleida-health/careers
+de_feed https://dejobs.org/jobs/feed/rss?q=nurse+practitioner+hca
+de_job https://atlantichealth.dejobs.org/buffalo-ny/neonatal-nurse-practitioner-nnppnp-flex
