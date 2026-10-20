@@ -82,6 +82,10 @@ def merge(existing: dict, runs: list[dict], now: datetime | None = None, stale_d
         checked.update(run.get("checked") or [])
         unreachable.update(run.get("unreachable") or [])
         ts = now_s
+        if run.get("compacted"):
+            # compacted run files (scripts/merge_jobs.py --compact) carry only a job index: never insert stubs
+            run = dict(run, seen_again=list(run.get("seen_again") or []) + [j.get("url") for j in run.get("jobs") or [] if j.get("url")],
+                       jobs=[])
         for rj in run.get("jobs") or []:
             url = rj.get("url")
             if not url:

@@ -103,7 +103,7 @@ jobs:
         if: steps.guard.outputs.skip != 'true' && steps.scrape.outputs.run_file != ''
         run: |
           set +e
-          python scripts/merge_jobs.py "${{ steps.scrape.outputs.run_file }}" --stats-out "$RUNNER_TEMP/out/merge_stats.json" 2>&1 | tee "$RUNNER_TEMP/out/merge.txt"
+          python scripts/merge_jobs.py "${{ steps.scrape.outputs.run_file }}" --compact --stats-out "$RUNNER_TEMP/out/merge_stats.json" 2>&1 | tee "$RUNNER_TEMP/out/merge.txt"
           rc=${PIPESTATUS[0]}
           echo "rc=$rc" >> "$GITHUB_OUTPUT"
           NEW=$(python -c "import json;print(json.load(open('$RUNNER_TEMP/out/merge_stats.json')).get('new',0))" 2>/dev/null || echo 0)

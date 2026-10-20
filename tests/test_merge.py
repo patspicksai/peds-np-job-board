@@ -150,3 +150,25 @@ def test_merge_cli_safety_stop_keeps_file_and_notify_digest(tmp_path, monkeypatc
     assert "NTFY_TOPIC not set" in n.stdout
     md = digest.read_text()
     assert "NP - NICU" in md and "1 new" in md
+
+
+def test_merge_cli_compact(tmp_path):
+    import json
+    import subprocess
+    import sys
+    from pathlib import Path
+    root = Path(__file__).resolve().parent.parent
+    runf = tmp_path / "r.json"
+    runf.write_text(json.dumps({**run([job("https://x.org/j/1", description="long text " * 200)]),
+                                "hospitals": [{"slug": "duke-childrens-durham", "status": "ok"}]}))
+    jobs = tmp_path / "jobs.json"
+    out = subprocess.run([sys.executable, str(root / "scripts" / "merge_jobs.py"), str(runf), "--jobs", str(jobs), "--compact"],
+                         capture_output=True, text=True)
+    assert out.returncode == 0, out.stderr
+    r = json.loads(runf.read_text())
+    assert r["compacted"] and "description" not in r["jobs"][0] and r["jobs"][0]["url"] == "https://x.org/j/1"
+    assert r["hospitals"][0]["status"] == "ok"
+    assert json.loads(jobs.read_text())["jobs"][0]["description"].startswith("long text")
+    # re-merging a compacted file only bumps last_seen (no blanking of the full record)
+    subprocess.run([sys.executable, str(root / "scripts" / "merge_jobs.py"), str(runf), "--jobs", str(jobs)], check=True)
+    assert json.loads(jobs.read_text())["jobs"][0]["description"].startswith("long text")

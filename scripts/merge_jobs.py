@@ -5,7 +5,8 @@ Usage:
   python3 scripts/merge_jobs.py                       # merge today's data/runs/<date>*.json
   python3 scripts/merge_jobs.py data/runs/2026-10-20.json [more run files...]
   python3 scripts/merge_jobs.py --all                 # every data/runs/*.json and data/jobs_runs/*.json (idempotent)
-Options: --jobs PATH (default data/jobs.json), --dry-run, --stats-out PATH (JSON: counts + new jobs, for notify)
+Options: --jobs PATH (default data/jobs.json), --dry-run, --stats-out PATH (JSON: counts + new jobs, for notify),
+         --compact (after writing, reduce each merged run file's jobs to an index; full records stay in jobs.json)
 
 Rules (spec/jobs_schema.md): insert new normalized URLs with first_seen_at; bump last_seen_at for known ones;
 mark stale after 7 days unseen while the hospital was reachable; closed when the run reports it.
@@ -33,6 +34,7 @@ def main(argv=None) -> int:
     ap.add_argument("--all", action="store_true")
     ap.add_argument("--dry-run", action="store_true")
     ap.add_argument("--stats-out", default="")
+    ap.add_argument("--compact", action="store_true", help="after a successful write, shrink the merged run files")
     a = ap.parse_args(argv)
 
     if a.runs:
@@ -80,7 +82,26 @@ def main(argv=None) -> int:
         return 0
     m.write_jobs(jobs_path, doc)
     print(f"merge: wrote {jobs_path} ({len(doc['jobs'])} jobs)")
+    if a.compact:
+        for f in files:
+            compact_run_file(f)
     return 0
+
+
+def compact_run_file(path: Path) -> None:
+    """After a successful merge the full job records live in jobs.json; keep the committed run file small
+    (per-hospital status plus a job index), so data/runs/ does not grow by megabytes a day."""
+    try:
+        r = json.loads(path.read_text())
+    except Exception:  # noqa: BLE001
+        return
+    if not isinstance(r, dict) or r.get("compacted"):
+        return
+    r["jobs"] = [{k: j.get(k) for k in ("id", "hospital_slug", "title", "url", "relevance", "setting", "posted_at")}
+                 for j in r.get("jobs") or []]
+    r["compacted"] = True
+    path.write_text(json.dumps(r, indent=1, ensure_ascii=False) + "\n")
+    print(f"merge: compacted {path}")
 
 
 if __name__ == "__main__":
