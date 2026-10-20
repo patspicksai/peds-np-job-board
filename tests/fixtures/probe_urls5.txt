@@ -1,0 +1,20 @@
+# name url [POST:json]   (coverage follow-ups from live_test 39367605148)
+uva_wd https://uva.wd1.myworkdayjobs.com/wday/cxs/uva/UVAJobs/jobs POST:{"appliedFacets":{},"limit":5,"offset":0,"searchText":"nurse practitioner"}
+albany_wd https://albanymed.wd5.myworkdayjobs.com/wday/cxs/albanymed/Albany_Med_System_Career_Site/jobs POST:{"appliedFacets":{},"limit":5,"offset":0,"searchText":"nurse practitioner"}
+rochester_wd https://rochester.wd5.myworkdayjobs.com/wday/cxs/rochester/UR_Staff/jobs POST:{"appliedFacets":{},"limit":5,"offset":0,"searchText":"nurse practitioner"}
+uva_page https://uva.wd1.myworkdayjobs.com/en-US/UVAJobs?q=nurse%20practitioner
+albany_page https://albanymed.wd5.myworkdayjobs.com/Albany_Med_System_Career_Site?q=nurse%20practitioner
+nyu_job_facetarr https://jobsapi-internal.m-cloud.io/api/job?callback=CWS.jobs.jobCallback&Organization=1637&SearchText=nurse%20practitioner&Limit=5&offset=1&facet%5B%5D=ats_portalid%3ASilkroad~Silkroad_Winthrop
+nyu_job_facet https://jobsapi-internal.m-cloud.io/api/job?callback=CWS.jobs.jobCallback&Organization=1637&SearchText=nurse%20practitioner&Limit=5&offset=1&facet=ats_portalid%3ASilkroad~Silkroad_Winthrop
+nyu_job_nofacet https://jobsapi-internal.m-cloud.io/api/job?Organization=1637&SearchText=nurse%20practitioner&Limit=5&offset=1
+northwell_or https://jobsapi-google.m-cloud.io/api/job/search?callback=x&pageSize=5&offset=0&companyName=companies%2F12c4c7c9-29cb-4cff-a16c-4ae0d974c00a&query=nurse%20practitioner&customAttributeFilter=%28brand%3D%22Northwell%20Health%22%20OR%20brand%3D%22Northwell%22%20OR%20brand%3D%22Flexstaff%22%29
+northwell_nofilter https://jobsapi-google.m-cloud.io/api/job/search?callback=x&pageSize=5&offset=0&companyName=companies%2F12c4c7c9-29cb-4cff-a16c-4ae0d974c00a&query=nurse%20practitioner
+nyu_page https://jobs.nyulangone.org/job-search-results/?keyword=nurse%20practitioner
+northwell_page https://jobs.northwell.edu/job-search-results/?keyword=nurse%20practitioner
+prisma_page https://careers.prismahealth.org/us/en/search-results?keywords=nurse%20practitioner
+dartmouth_prov https://providers-dartmouth-hitchcock.icims.com/jobs/search?ss=1&searchKeyword=nurse+practitioner&in_iframe=1
+dartmouth_staff https://careers-dartmouth-hitchcock.icims.com/jobs/search?ss=1&searchKeyword=nurse+practitioner&in_iframe=1
+centrastate https://careers-centrastate.icims.com/jobs/search?ss=1&searchKeyword=nurse+practitioner&in_iframe=1
+mgb https://jobs.massgeneralbrigham.org/
+rwjbh https://www.rwjbarnabashealthcareers.org/jobs/nurse-practitioner/
+nlh https://css-emh-prd.inforcloudsuite.com/hcm/Jobs/page/JobsHomePage?csk.showusingxi=true&csk.JobBoard=EXTERNAL&csk.HROrganization=10
