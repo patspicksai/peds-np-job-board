@@ -5,7 +5,7 @@ on:
   workflow_dispatch:
     inputs:
       ledger:
-        description: "ledger JSON path"
+        description: "ledger JSON path, or 'regions' (one hospital per board from data/regions/*.json, minus the fixture)"
         default: "tests/fixtures/hospitals_sample.json"
       limit:
         description: "max hospitals (0 = all)"
@@ -48,7 +48,14 @@ jobs:
       - name: Scrape (dry run)
         run: |
           set +e
-          ARGS="--dry-run --ledger ${{ inputs.ledger }} --report-dir $RUNNER_TEMP/out"
+          LEDGER="${{ inputs.ledger }}"
+          if [ "$LEDGER" = "regions" ]; then
+            python -m scraper.tools.snapshot_ledger data/regions/*.json -o "$RUNNER_TEMP/regions_ledger.json" --one-per-board \
+              --exclude tests/fixtures/hospitals_sample.json ${{ inputs.platform != '' && format('--platform {0}', inputs.platform) || '' }} | tee "$RUNNER_TEMP/out/snapshot.txt"
+            cp "$RUNNER_TEMP/regions_ledger.json" "$RUNNER_TEMP/out/ledger.json"
+            LEDGER="$RUNNER_TEMP/regions_ledger.json"
+          fi
+          ARGS="--dry-run --ledger $LEDGER --report-dir $RUNNER_TEMP/out"
           [ "${{ inputs.limit }}" != "0" ] && [ -n "${{ inputs.limit }}" ] && ARGS="$ARGS --limit ${{ inputs.limit }}"
           [ -n "${{ inputs.only }}" ] && ARGS="$ARGS --only ${{ inputs.only }}"
           [ -n "${{ inputs.platform }}" ] && ARGS="$ARGS --platform ${{ inputs.platform }}"
