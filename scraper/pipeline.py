@@ -213,6 +213,7 @@ def run_board(key: str, platform: str, group: list[dict], known: dict[str, dict]
     # known jobs: seen only. Unknown (or known with empty description): details
     triaged.sort(key=lambda x: -x[0])
     budget_left = opts.max_details
+    todo: list[tuple[int, Listing, dict, str, dict | None]] = []
     for pr, li, hosp, level in triaged:
         k = known.get(li.norm)
         if k and (k.get("description") or opts.no_details) and k.get("status") != "closed":
@@ -224,15 +225,26 @@ def run_board(key: str, platform: str, group: list[dict], known: dict[str, dict]
                 ph["samples"].append({"title": k.get("title"), "url": k.get("url"), "posted_at": k.get("posted_at"),
                                       "relevance": k.get("relevance"), "setting": k.get("setting"), "known": True})
             continue
-        if pr < 2 and not opts.no_details and budget_left <= opts.max_details // 3:
-            res.details_deferred += 1
-            continue
-        detail: dict = {}
         if not opts.no_details:
-            if budget_left <= 0 or time.time() > deadline:
+            if pr < 2 and budget_left <= opts.max_details // 3:
+                res.details_deferred += 1
+                continue
+            if budget_left <= 0:
                 res.details_deferred += 1
                 continue
             budget_left -= 1
+        todo.append((pr, li, hosp, level, k))
+    if todo and not opts.no_details and time.time() < deadline:
+        try:
+            adapter.prefetch([t[1] for t in todo])
+        except Exception as e:  # noqa: BLE001
+            res.notes.append(f"prefetch failed: {type(e).__name__}: {str(e)[:160]}")
+    for pr, li, hosp, level, k in todo:
+        detail: dict = {}
+        if not opts.no_details:
+            if time.time() > deadline:
+                res.details_deferred += 1
+                continue
             try:
                 detail = adapter.details(li) or {}
                 res.details_fetched += 1
@@ -280,6 +292,13 @@ def build_job(li: Listing, d: dict, group: list[dict], hosp: dict, level: str, a
     if not (city and st):
         c2, s2 = textutil.split_location(location)
         city, st = city or c2, st or s2
+    if not st:
+        # bare city names (Workday "Charleston") or a location equal to the attributed hospital's city
+        for h in [hosp] + [g for g in group if g is not hosp]:
+            hc = (h.get("city") or "").strip().lower()
+            if hc and re.sub(r"[^a-z ]", "", location.strip().lower()) == re.sub(r"[^a-z ]", "", hc):
+                city, st = h.get("city"), h.get("state")
+                break
     if st and st not in attribution.FOOTPRINT:
         return None
     ctx = relevance_context(hosp, level, group)
@@ -356,11 +375,14 @@ def run(hospitals: list[dict], known: dict[str, dict], opts) -> dict:
                     br.per_hospital[h["slug"]] = {"listings": 0, "candidates": 0, "new": 0, "known": 0, "samples": []}
                 results.append(br)
     ex.shutdown(wait=False, cancel_futures=True)
+    bkind = browser.kind()
     try:
         browser.shutdown()
     except Exception:  # noqa: BLE001
         pass
-    return assemble(results, started, opts)
+    out = assemble(results, started, opts)
+    out["browser"] = bkind or "not used"
+    return out
 
 
 def assemble(results: list[BoardResult], started: str, opts) -> dict:

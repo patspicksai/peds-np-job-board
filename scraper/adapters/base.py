@@ -7,6 +7,7 @@ Adapters record per-keyword problems in self.notes so the run report can explain
 """
 from __future__ import annotations
 
+import re
 import time
 from typing import Any
 from urllib.parse import urljoin, urlsplit
@@ -68,6 +69,10 @@ class Adapter:
     def search(self, keywords: list[str]) -> list[Listing]:
         raise NotImplementedError
 
+    def prefetch(self, listings: list[Listing]) -> None:
+        """Optional hook: fetch many detail pages at once (browser-bound adapters). Default: nothing."""
+        return None
+
     def details(self, listing: Listing) -> dict:
         """Default: fetch the posting page; JSON-LD first, then main text."""
         r = self.get(listing.url, ok=(200,))
@@ -80,12 +85,13 @@ def parse_detail_html(html: str, url: str) -> dict:
     if jp:
         out.update(textutil.jobposting_fields(jp))
     jd = out.get("description") or ""
-    if len(jd) < 200:
-        # JSON-LD description missing or very short: use the page's main text if it is clearly richer
+    if len(jd) < 3000:
+        # JSON-LD description missing, short, or a teaser (TalentBrew puts only the overview there): use the
+        # page's main text when it is clearly richer AND contains the JSON-LD text (same posting, not nav).
         main = textutil.page_main_text(html)
-        if len(main) > max(2 * len(jd), 200):
-            out["description"] = main
-        elif not jd:
+        head = re.sub(r"\s+", " ", jd[:120]).strip().lower()
+        same = not head or head[:60] in re.sub(r"\s+", " ", main).lower()
+        if (len(main) > max(2 * len(jd), 200) and same) or not jd:
             out["description"] = main
     low = (html or "")[:200000].lower()
     if any(p in low for p in ("no longer available", "no longer accepting", "position has been filled",

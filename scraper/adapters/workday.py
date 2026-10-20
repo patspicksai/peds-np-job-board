@@ -77,12 +77,52 @@ class WorkdayAdapter(Adapter):
                 continue
         raise AdapterError(f"workday: site name unknown for tenant {tenant} (tried {', '.join(guesses)})")
 
+    def _state_facet(self, host: str) -> dict:
+        """appliedFacets restricting a multi-state board to the ME..SC footprint, from its state facet.
+
+        Workday location strings are often facility names without a state ("Advocate Children's Hospital -
+        4440 W 95th St"), so the footprint filter cannot drop out-of-area postings later. Boards that expose a
+        facet whose values are US state names (Atrium: locationRegionStateProvince under locationMainGroup) are
+        filtered at the source. Boards without such a facet are left unfiltered.
+        """
+        from ..attribution import FOOTPRINT
+        try:
+            data = self.post_json(f"{self._base}/jobs", {"appliedFacets": {}, "limit": 1, "offset": 0, "searchText": ""},
+                                  headers={"Origin": f"https://{host}", "Referer": self._referer})
+        except Exception as e:  # noqa: BLE001
+            self.note(f"facet discovery failed: {type(e).__name__}: {str(e)[:120]}")
+            return {}
+        stack = list(data.get("facets") or [])
+        while stack:
+            f = stack.pop()
+            vals = [v for v in (f.get("values") or []) if isinstance(v, dict)]
+            stack.extend(v for v in vals if v.get("facetParameter") and v.get("values"))
+            leaf = [v for v in vals if v.get("id") and v.get("descriptor")]
+            if not leaf or not f.get("facetParameter"):
+                continue
+            states = {v["id"]: textutil.STATES.get(str(v["descriptor"]).strip().lower()) for v in leaf}
+            if sum(1 for s in states.values() if s) < max(2, 0.6 * len(leaf)):
+                continue
+            inside = [i for i, s in states.items() if s in FOOTPRINT]
+            outside = [s for s in states.values() if s and s not in FOOTPRINT]
+            if not outside:
+                return {}
+            if not inside:
+                self.note(f"board lists only states outside the footprint ({', '.join(sorted(set(outside)))})")
+                return {"__none__": True}
+            self.note(f"filtered to footprint states via facet {f['facetParameter']} (excluded {', '.join(sorted(set(outside)))})")
+            return {f["facetParameter"]: inside}
+        return {}
+
     def search(self, keywords):
         host, tenant, site = self._conf()
         self.method = "api"
         self._base = f"https://{host}/wday/cxs/{tenant}/{site}"
         self._public = f"https://{host}/{site}"
         self._referer = f"https://{host}/{site}"
+        facets = self._state_facet(host) if self.cfg.get("state_filter", True) else {}
+        if facets.get("__none__"):
+            return []
         out: dict[str, Listing] = {}
         errors = 0
         for kw in keywords:
@@ -90,7 +130,7 @@ class WorkdayAdapter(Adapter):
             while not self.out_of_time():
                 try:
                     data = self.post_json(f"{self._base}/jobs",
-                                          {"appliedFacets": {}, "limit": self.PAGE, "offset": offset, "searchText": kw},
+                                          {"appliedFacets": facets, "limit": self.PAGE, "offset": offset, "searchText": kw},
                                           headers={"Origin": f"https://{host}", "Referer": self._referer})
                 except http.FetchError as e:
                     errors += 1
@@ -112,8 +152,8 @@ class WorkdayAdapter(Adapter):
                                  extra={"path": path})
                     out.setdefault(li.norm, li)
                 offset += self.PAGE
-                # Workday caps deep paging; 10 pages x 20 = 200 per keyword is plenty for NP searches
-                if not posts or offset >= min(total or 0, 200):
+                # Workday returns `total` on the first page only; cap deep paging at 300 per keyword
+                if not posts or offset >= min(total or 0, 300):
                     break
         if errors == len(keywords):
             raise AdapterError("; ".join(self.notes[-3:]))

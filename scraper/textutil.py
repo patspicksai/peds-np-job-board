@@ -19,7 +19,14 @@ BOILER_RE = re.compile(
     r"^(?:apply(?: now)?|share(?: this job)?|save(?: job)?|back to (?:search|results)|print|email|tweet|"
     r"skip to (?:main )?content|sign in|log ?in|create (?:an )?account|cookie|accept|view all jobs|"
     r"similar jobs|recently viewed|job alerts?|search jobs|returning (?:user|candidate)|"
-    r"share on (?:facebook|twitter|linkedin|x)|follow us.*|read more|show more|show less| )$", re.I)
+    r"share on (?:facebook|twitter|linkedin|x)\w*(?: ?share to \w+)?|share to (?:facebook|twitter|linkedin)|share with email|share:?|"
+    r"follow us.*|read more|show more|show less|internal apply|saved|save job|loading job|loading\.\.\.|"
+    r"join our talent network|liquid error: internal|apply now\s*>?|mail|\u00a0)$", re.I)
+# Paragraphs that start a tail of non-job boilerplate (only cut when they appear in the second half)
+TAIL_MARKERS = re.compile(
+    r"^(?:hiring scam alert|notice regarding maine employer surveillance|keywords:|"
+    r"similar jobs|recently viewed jobs|job alerts|sign up for job alerts|connect with us|"
+    r"need help finding the right job\?|explore (?:nearby|similar) jobs)", re.I)
 STATES = {
     "alabama": "AL", "alaska": "AK", "arizona": "AZ", "arkansas": "AR", "california": "CA", "colorado": "CO",
     "connecticut": "CT", "delaware": "DE", "district of columbia": "DC", "florida": "FL", "georgia": "GA",
@@ -113,6 +120,20 @@ def clean_text(text: str, max_chars: int | None = config.DESCRIPTION_MAX) -> str
     return text
 
 
+def trim_boilerplate_tail(text: str) -> str:
+    """Cut a trailing block of site boilerplate (scam alerts, SEO keyword lists, similar jobs)."""
+    if not text:
+        return text
+    paras = text.split("\n\n")
+    total = len(text)
+    pos = 0
+    for i, p in enumerate(paras):
+        if i > 0 and pos > total * 0.5 and TAIL_MARKERS.match(p.strip()):
+            return "\n\n".join(paras[:i]).rstrip()
+        pos += len(p) + 2
+    return text
+
+
 def page_main_text(html: str, max_chars: int | None = config.DESCRIPTION_MAX) -> str:
     """Best-effort job description from a full HTML page when there is no JSON-LD."""
     soup = BeautifulSoup(html or "", "lxml")
@@ -181,7 +202,10 @@ def jobposting_fields(jp: dict) -> dict:
     out["title"] = clean_text(str(jp.get("title") or ""), None) or None
     desc = jp.get("description") or ""
     if isinstance(desc, str) and desc:
-        out["description"] = html_to_text(desc)
+        text = html_to_text(desc)
+        # drop a bare leading "Description" / "Job Description" heading
+        text = re.sub(r"^(?:job\s+)?description:?\s*\n+", "", text, flags=re.I).strip()
+        out["description"] = trim_boilerplate_tail(text)
     out["posted_at"] = parse_date(jp.get("datePosted"))
     ident = jp.get("identifier")
     if isinstance(ident, dict):

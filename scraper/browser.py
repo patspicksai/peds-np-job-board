@@ -1,12 +1,23 @@
-"""Shared headless Chromium (Playwright) for adapters that need a rendered DOM.
+"""Shared browser (Playwright) for adapters that need a rendered DOM or have to pass a bot wall.
 
 Playwright's sync API is bound to the thread that started it, so browser work runs on a small pool of
-dedicated threads (config.BROWSER_WORKERS, each with its own Chromium) and adapter threads submit jobs
+dedicated threads (config.BROWSER_WORKERS, each with its own browser) and adapter threads submit jobs
 to it. This keeps memory bounded on the Actions runner.
+
+Browser choice (SCRAPER_BROWSER=auto|chrome|chromium, default auto):
+  auto     installed Google Chrome, headed, when `google-chrome` exists and a display is available
+           (the workflows run the scraper under `xvfb-run`); otherwise Playwright's bundled Chromium headless.
+  chrome   installed Google Chrome (headed if a display exists, else headless).
+  chromium bundled Chromium, headless.
+Verified on GitHub Actions (cfprobe run 39364436106): Cloudflare-fronted CareerSite tenants
+(jobs.unchealthcare.org, careersatmainehealth.org) serve /search/jobs.json, the HTML search page and
+/jobs/{id}.json to headed Chrome, while headless Chromium is flaky on the search pages.
 """
 from __future__ import annotations
 
+import os
 import queue
+import shutil
 import threading
 import time
 from concurrent.futures import Future
@@ -21,6 +32,29 @@ Object.defineProperty(navigator, 'languages', {get: () => ['en-US', 'en']});
 Object.defineProperty(navigator, 'plugins', {get: () => [1, 2, 3, 4, 5]});
 window.chrome = window.chrome || {runtime: {}};
 """
+_WEBDRIVER_JS = "Object.defineProperty(navigator, 'webdriver', {get: () => undefined});"
+
+
+def _launch(pw):
+    """-> (browser, context, kind). Real Chrome first when configured, bundled Chromium as the fallback."""
+    mode = os.environ.get("SCRAPER_BROWSER", "auto").lower()
+    has_display = bool(os.environ.get("DISPLAY"))
+    errors = []
+    if mode in ("auto", "chrome") and shutil.which("google-chrome") and (has_display or mode == "chrome"):
+        try:
+            br = pw.chromium.launch(channel="chrome", headless=not has_display,
+                                    args=["--disable-blink-features=AutomationControlled"])
+            ctx = br.new_context(locale="en-US", timezone_id="America/New_York", viewport={"width": 1366, "height": 900})
+            ctx.add_init_script(_WEBDRIVER_JS)
+            return br, ctx, f"chrome-{'headed' if has_display else 'headless'}"
+        except Exception as e:  # noqa: BLE001
+            errors.append(f"chrome: {type(e).__name__}: {str(e)[:160]}")
+    br = pw.chromium.launch(headless=True, args=["--disable-blink-features=AutomationControlled",
+                                                 "--no-sandbox", "--disable-dev-shm-usage"])
+    ctx = br.new_context(user_agent=config.USER_AGENT, locale="en-US", timezone_id="America/New_York",
+                         viewport={"width": 1366, "height": 900})
+    ctx.add_init_script(_STEALTH_JS)
+    return br, ctx, "chromium-headless" + (f" ({'; '.join(errors)})" if errors else "")
 
 
 class BrowserUnavailable(Exception):
@@ -37,6 +71,7 @@ class _BrowserPool:
         self._lock = threading.Lock()
         self.failed: str | None = None
         self.renders = 0
+        self.kind: str = ""
 
     def _ensure_threads(self) -> None:
         with self._lock:
@@ -52,11 +87,8 @@ class _BrowserPool:
         try:
             from playwright.sync_api import sync_playwright
             pw = sync_playwright().start()
-            br = pw.chromium.launch(headless=True, args=["--disable-blink-features=AutomationControlled",
-                                                         "--no-sandbox", "--disable-dev-shm-usage"])
-            ctx = br.new_context(user_agent=config.USER_AGENT, locale="en-US", timezone_id="America/New_York",
-                                 viewport={"width": 1366, "height": 900})
-            ctx.add_init_script(_STEALTH_JS)
+            br, ctx, kind = _launch(pw)
+            self.kind = self.kind or kind
         except Exception as e:  # noqa: BLE001
             err = f"{type(e).__name__}: {e}"
             self.failed = err
@@ -127,14 +159,22 @@ def render(url: str, *, wait_selector: str | None = None, click_more: bool = Fal
         try:
             resp = page.goto(url, wait_until="domcontentloaded", timeout=timeout_ms)
             status = resp.status if resp else None
-            # Cloudflare / bot interstitials: give them time to clear
-            for _ in range(6):
+            # Cloudflare / bot interstitials: a real browser either passes at once or after one auto-solve;
+            # pages that stay on the challenge never clear (cfprobe), so give up after ~12 s.
+            challenged = False
+            for _ in range(4):
                 title = (page.title() or "").lower()
                 if "just a moment" in title or "attention required" in title or "checking your browser" in title:
-                    page.wait_for_timeout(4000)
-                    status = 200
+                    challenged = True
+                    page.wait_for_timeout(3000)
                 else:
+                    if challenged:
+                        status = 200
+                    challenged = False
                     break
+            if challenged:
+                return {"url": page.url, "status": 403, "html": page.content(), "title": page.title() or "",
+                        "json": [], "blocked": True}
             try:
                 page.wait_for_load_state("networkidle", timeout=15000)
             except Exception:  # noqa: BLE001
@@ -191,10 +231,10 @@ def fetch_in_page(origin_url: str, api_urls: list[str], method: str = "GET", bod
         page = ctx.new_page()
         try:
             page.goto(origin_url, wait_until="domcontentloaded", timeout=timeout_ms)
-            for _ in range(6):
+            for _ in range(4):
                 title = (page.title() or "").lower()
                 if "just a moment" in title or "checking your browser" in title:
-                    page.wait_for_timeout(4000)
+                    page.wait_for_timeout(3000)
                 else:
                     break
             try:
@@ -220,3 +260,8 @@ def fetch_in_page(origin_url: str, api_urls: list[str], method: str = "GET", bod
 
 def shutdown() -> None:
     WORKER.shutdown()
+
+
+def kind() -> str:
+    """Which browser the pool launched ('' if no render happened yet)."""
+    return WORKER.kind

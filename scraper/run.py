@@ -125,7 +125,7 @@ def main(argv=None) -> int:
     if a.report_dir:
         d = Path(a.report_dir)
         d.mkdir(parents=True, exist_ok=True)
-        (d / "status.txt").write_text(f"run {run_id} wall={run['wall_seconds']}s ledger={a.ledger}\n\n{table}\n")
+        (d / "status.txt").write_text(f"run {run_id} wall={run['wall_seconds']}s ledger={a.ledger} browser={run.get('browser')}\n\n{table}\n")
         (d / "samples.txt").write_text(samples_report(run))
         (d / "run.json").write_text(json.dumps(run, indent=1, ensure_ascii=False))
     if not a.dry_run:

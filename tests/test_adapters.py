@@ -217,3 +217,43 @@ def test_symphony_cws_api_config_and_jsonp():
     assert d["salary_text"] == "$112,320-$180,236 Annual" and d["employment_type"] == "Part time"
     assert d["schedule"] == "36 hours/week" and d["state"] == "MA" and d["department"] == "Pediatrics-Dept of Pediatrics"
     assert "Position Summary\nFront-line care.\n\nSchedule:" in d["description"]
+
+
+def test_workday_state_facet_filters_out_of_footprint():
+    from scraper.adapters.workday import WorkdayAdapter
+    hosp = {"slug": "lv", "careers_url": "https://aah.wd5.myworkdayjobs.com/en-US/External", "ats_config": {}}
+    a = WorkdayAdapter(hosp)
+    a._base, a._referer = "https://aah.wd5.myworkdayjobs.com/wday/cxs/aah/External", "x"
+    facets = {"total": 437, "jobPostings": [], "facets": [
+        {"facetParameter": "timeType", "values": [{"descriptor": "Full time", "id": "ft", "count": 3}]},
+        {"facetParameter": "locationMainGroup", "values": [
+            {"facetParameter": "locationRegionStateProvince", "descriptor": "State", "values": [
+                {"descriptor": "Georgia", "id": "ga", "count": 28}, {"descriptor": "Illinois", "id": "il", "count": 35},
+                {"descriptor": "North Carolina", "id": "nc", "count": 243}, {"descriptor": "South Carolina", "id": "sc", "count": 1},
+                {"descriptor": "Wisconsin", "id": "wi", "count": 69}]},
+            {"facetParameter": "locations", "descriptor": "Location", "values": [
+                {"descriptor": "Advocate Children's Hospital - 4440 W 95th St", "id": "x1", "count": 2}]}]}]}
+    a.post_json = lambda url, payload, **kw: facets
+    assert a._state_facet("aah.wd5.myworkdayjobs.com") == {"locationRegionStateProvince": ["nc", "sc"]}
+    only_out = {"facets": [{"facetParameter": "state", "values": [{"descriptor": "Illinois", "id": "il"}, {"descriptor": "Wisconsin", "id": "wi"}]}]}
+    a.post_json = lambda url, payload, **kw: only_out
+    assert a._state_facet("h") == {"__none__": True}
+    a.post_json = lambda url, payload, **kw: {"facets": [{"facetParameter": "timeType", "values": [{"descriptor": "Full time", "id": "ft"}]}]}
+    assert a._state_facet("h") == {}
+
+
+def test_careersite_detail_without_jsonld():
+    from scraper.adapters.careersite import parse_careersite_detail
+    html = """<html><body><div id="job-details"><div class="job-details-inner-js">
+      <div class="job-details__main"><section>
+        <div class="row"><div class="columns"><h1>NNP, PNP-AC or PA - NICU Portland, ME</h1></div>
+          <div class="columns">Location: Portland, ME<br>Schedule: Full Time<br>Req #: 85151<br>Date Posted: Oct 12, 2026</div>
+          <div class="columns"><a>Apply Now</a> Internal Apply Saved</div></div>
+        <div class="padded-v-medium space-medium"><p>Description</p><p>Maine's only Level IV NICU is recruiting.</p>
+          <p>What We Offer:</p><p>Sign on bonus; relocation assistance.</p>
+          <p>Hiring Scam Alert</p><p>MaineHealth will never request financial information.</p></div>
+      </section></div></div></div></body></html>"""
+    d = parse_careersite_detail(html, "https://www.careersatmainehealth.org/jobs/18195347-nnp")
+    assert d["external_id"] == "85151" and d["posted_at"] == "2026-10-12" and d["employment_type"] == "Full time"
+    assert d["description"].startswith("Maine's only Level IV NICU is recruiting.")
+    assert "What We Offer:\n\nSign on bonus" in d["description"] and "Scam" not in d["description"]

@@ -26,7 +26,7 @@ concurrency:
   cancel-in-progress: false
 jobs:
   live:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 50
     steps:
       - uses: actions/checkout@v4
@@ -37,7 +37,9 @@ jobs:
           cache-dependency-path: scraper/requirements.txt
       - run: pip install -r scraper/requirements.txt
       - name: Install Chromium
-        run: python -m playwright install --with-deps chromium
+        run: |
+          python -m playwright install --with-deps chromium
+          google-chrome --version || echo "no google-chrome; bundled Chromium only"
       - name: Unit tests
         run: |
           mkdir -p "$RUNNER_TEMP/out"
@@ -52,7 +54,7 @@ jobs:
           [ -n "${{ inputs.platform }}" ] && ARGS="$ARGS --platform ${{ inputs.platform }}"
           [ "${{ inputs.no_details }}" = "true" ] && ARGS="$ARGS --no-details"
           echo "args: $ARGS" > "$RUNNER_TEMP/out/args.txt"
-          timeout 45m python -m scraper.run $ARGS > "$RUNNER_TEMP/out/run.log" 2>&1
+          timeout --kill-after=30s 45m xvfb-run -a python -m scraper.run $ARGS > "$RUNNER_TEMP/out/run.log" 2>&1
           echo "scraper exit=$?" >> "$RUNNER_TEMP/out/run.log"
           tail -c 200000 "$RUNNER_TEMP/out/run.log" > "$RUNNER_TEMP/out/run_tail.log"
           rm -f "$RUNNER_TEMP/out/run.log"
