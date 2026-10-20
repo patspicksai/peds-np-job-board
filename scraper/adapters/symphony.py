@@ -34,12 +34,28 @@ DETAIL_PATH_RE = re.compile(r"jobdetail_path\s*:\s*[\"']([^\"']+)[\"']")
 JSONP_RE = re.compile(r"^\s*[\w.$]+\((.*)\)\s*;?\s*$", re.S)
 
 
+CWS_OPTS_RE = re.compile(r"var\s+cws_opts\s*=\s*(\{.*?\})\s*;\s*(?:\n|var |</script>)", re.S)
+
+
 def parse_cws_config(html: str) -> dict:
-    """API base, org id and sitewide filters from a CWS page's inline set_api / set_options calls."""
+    """API base, org id and sitewide filters from a CWS page's inline set_api / set_options calls, or (every
+    page of the site, including the home page) the `var cws_opts = {"org": ..., "api": ...}` JSON blob."""
     out: dict = {}
     m = SET_API_RE.search(html or "")
     if m:
         out["api"] = m.group(1).strip()
+    m = CWS_OPTS_RE.search(html or "")
+    if m:
+        try:
+            opts = json.loads(m.group(1))
+        except ValueError:
+            opts = {}
+        if opts.get("api") and not out.get("api"):
+            out["api"] = str(opts["api"]).strip()
+        if opts.get("org"):
+            out.setdefault("org_id", str(opts["org"]))
+        if opts.get("job_detail_path"):
+            out.setdefault("detail_path", opts["job_detail_path"])
     # set_options block (the jobs widget, not the map: CWS.map.set_options uses JSON with escaped slashes)
     i = (html or "").find("CWS.jobs.set_options")
     block = html[i:i + 3000] if i >= 0 else ""
@@ -135,11 +151,15 @@ class SymphonyAdapter(Adapter):
         return f"https://{host}"
 
     def _config(self, base: str) -> dict:
+        """ats_config {api, org_id, filters} when the ledger has them (no page fetch: the career site itself is
+        often behind a WAF that 403s datacenter IPs while the m-cloud API is not); else read the site's pages.
+        The results page carries the widget's sitewide filters; any page carries cws_opts (api + org)."""
         cfg = {k: self.cfg[k] for k in ("api", "org_id", "filters", "detail_path") if self.cfg.get(k)}
         if cfg.get("api") and cfg.get("org_id"):
             return cfg
         path = self.cfg.get("results_path", "/job-search-results/")
-        for url in (self.search_url, f"{base}{path}"):
+        best: dict = {}
+        for url in (f"{base}{path}", self.search_url, f"{base}/"):
             if not url:
                 continue
             try:
@@ -149,7 +169,12 @@ class SymphonyAdapter(Adapter):
                 continue
             if found.get("api") and found.get("org_id"):
                 found.update(cfg)
-                return found
+                if found.get("filters"):
+                    return found
+                best = best or found
+        if best:
+            self.note("CWS config from cws_opts (no sitewide filters found)")
+            return best
         return cfg
 
     def _api_search(self, cfg: dict, keywords: list[str], base: str) -> list[Listing]:

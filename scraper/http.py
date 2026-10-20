@@ -11,6 +11,11 @@ from urllib3.util.retry import Retry
 
 from . import config
 
+try:  # Chrome TLS / HTTP2 fingerprint (passes some bot walls that block python-requests); optional
+    from curl_cffi import requests as _creq
+except Exception:  # noqa: BLE001
+    _creq = None
+
 BROWSER_HEADERS = {
     "User-Agent": config.USER_AGENT,
     "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
@@ -82,7 +87,50 @@ def session() -> requests.Session:
     return s
 
 
-def request(method: str, url: str, *, json_api: bool = False, ok=(200,), **kw) -> requests.Response:
+# Hosts where python-requests met a bot wall and curl_cffi (Chrome impersonation) got through: later requests to
+# them go straight to curl_cffi. Hosts where both failed are remembered so the second attempt is not repeated.
+IMPERSONATE_HOSTS: set[str] = set()
+IMPERSONATE_FAILED: set[str] = set()
+_imp_lock = threading.Lock()
+BLOCK_STATUSES = (401, 403, 406, 429, 503)
+
+
+def cffi_available() -> bool:
+    return _creq is not None
+
+
+def cffi_session():
+    s = getattr(_local, "cffi", None)
+    if s is None and _creq is not None:
+        s = _creq.Session(impersonate="chrome")
+        _local.cffi = s
+    return s
+
+
+def _cffi_request(method: str, url: str, headers: dict, kw: dict):
+    """One request through curl_cffi with Chrome's own default headers (our UA / sec-ch-ua would contradict the
+    impersonated fingerprint); caller headers (Accept, Referer, X-Requested-With, Content-Type) are kept."""
+    s = cffi_session()
+    hdrs = {k: v for k, v in headers.items() if k.lower() not in ("user-agent", "sec-ch-ua", "sec-ch-ua-mobile",
+                                                                   "sec-ch-ua-platform", "accept-encoding")}
+    kw2 = {k: v for k, v in kw.items() if k in ("params", "data", "json", "timeout", "allow_redirects", "cookies")}
+    t = kw2.get("timeout")
+    if isinstance(t, tuple):
+        kw2["timeout"] = float(sum(t))
+    last = None
+    for attempt in range(1 + config.RETRIES):
+        try:
+            return s.request(method, url, headers=hdrs, **kw2)
+        except Exception as e:  # noqa: BLE001  (curl_cffi raises its own RequestsError family)
+            last = e
+            time.sleep(1.5 * (attempt + 1))
+    raise FetchError(url, None, f"curl_cffi {type(last).__name__}: {str(last)[:200]}")
+
+
+def request(method: str, url: str, *, json_api: bool = False, ok=(200,), impersonate: bool | None = None,
+            **kw) -> requests.Response:
+    """GET/POST with browser-like headers. impersonate: True = curl_cffi only, False = requests only,
+    None (default) = requests, retried once with curl_cffi when the answer is a bot-wall status."""
     THROTTLE.wait(url)
     headers = dict(kw.pop("headers", {}) or {})
     if json_api:
@@ -90,14 +138,36 @@ def request(method: str, url: str, *, json_api: bool = False, ok=(200,), **kw) -
         merged.update(headers)
         headers = merged
     kw.setdefault("timeout", (config.CONNECT_TIMEOUT, config.READ_TIMEOUT))
-    try:
-        r = session().request(method, url, headers=headers, **kw)
-    except requests.RequestException as e:
-        # normalize network failures so adapters handle one exception type
-        raise FetchError(url, None, f"{type(e).__name__}: {str(e)[:200]}") from e
+    host = urlsplit(url).netloc.lower()
+    use_cffi = _creq is not None and (impersonate is True or (impersonate is None and host in IMPERSONATE_HOSTS))
+    if use_cffi:
+        r = _cffi_request(method, url, {**BROWSER_HEADERS, **headers}, kw)
+    else:
+        try:
+            r = session().request(method, url, headers=headers, **kw)
+        except requests.RequestException as e:
+            # normalize network failures so adapters handle one exception type
+            raise FetchError(url, None, f"{type(e).__name__}: {str(e)[:200]}") from e
+        if (r.status_code in BLOCK_STATUSES and impersonate is None and _creq is not None
+                and host not in IMPERSONATE_FAILED):
+            try:
+                r2 = _cffi_request(method, url, {**BROWSER_HEADERS, **headers}, kw)
+            except FetchError:
+                r2 = None
+            with _imp_lock:
+                if r2 is not None and r2.status_code not in BLOCK_STATUSES:
+                    IMPERSONATE_HOSTS.add(host)
+                    r = r2
+                else:
+                    IMPERSONATE_FAILED.add(host)
     if ok and r.status_code not in ok:
         raise FetchError(url, r.status_code, _short_reason(r))
     return r
+
+
+def via(url: str) -> str:
+    """'curl_cffi' when requests to this URL's host now go through Chrome impersonation, else 'requests'."""
+    return "curl_cffi" if urlsplit(url).netloc.lower() in IMPERSONATE_HOSTS else "requests"
 
 
 def get(url: str, **kw) -> requests.Response:
@@ -120,8 +190,11 @@ def post_json(url: str, payload, **kw):
     return r.json()
 
 
-def _short_reason(r: requests.Response) -> str:
-    txt = (r.text or "")[:400]
+def _short_reason(r) -> str:
+    try:
+        txt = (r.text or "")[:400]
+    except Exception:  # noqa: BLE001
+        txt = ""
     if "Just a moment" in txt or "cf-chl" in txt or "challenge-platform" in txt:
         return "bot challenge (Cloudflare)"
     if r.status_code == 403:

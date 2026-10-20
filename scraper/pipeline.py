@@ -337,7 +337,7 @@ def run_board(key: str, platform: str, group: list[dict], known: dict[str, dict]
             dropped_out_of_area += 1
             continue
         ped_title = relevance.peds_signal(li.title, "", li.location_text)[0] >= 2
-        hosp, level = attribution.attribute(group, li.location_text, li.extra.get("facility", ""), ped_title)
+        hosp, level = attribution.attribute(group, li.location_text, (li.extra.get("facility") or ""), ped_title)
         ctx = relevance_context(hosp, level, group)
         pr = relevance.listing_priority(li.title, li.location_text, ctx)
         res.per_hospital[hosp["slug"]]["listings"] += 1
@@ -451,7 +451,7 @@ def build_job(li: Listing, d: dict, group: list[dict], hosp: dict, level: str, a
     # re-attribute with the richer detail location when available
     if len(group) > 1 and d.get("location_text"):
         ped_title = relevance.peds_signal(li.title, "", location)[0] >= 2
-        h2, l2 = attribution.attribute(group, f"{location} {li.location_text}", li.extra.get("facility", "") + " " + (d.get("department") or ""), ped_title)
+        h2, l2 = attribution.attribute(group, f"{location} {li.location_text}", (li.extra.get("facility") or "") + " " + (d.get("department") or ""), ped_title)
         if l2 != "none":
             hosp, level = h2, l2
     city, st = d.get("city"), d.get("state")
