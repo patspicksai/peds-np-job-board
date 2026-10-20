@@ -30,6 +30,9 @@ Phase 3, write the output file (`/home/claude/npjobs/data/regions/<your_file>.js
 - Careers platforms seen (counts) and any board where the search URL did not render listings.
 Do not paste the JSON into the report; it is in the file.
 
+## Incremental saving (mandatory)
+The environment can restart without warning and background work is lost. So: write your output JSON file EARLY and keep it valid at all times. Create it with `{"region_group": "...", "hospitals": []}` before enrichment starts, then append each finished hospital record to the file as you complete it (read, append, write; or keep a Python helper that loads/appends/dumps). Never hold records only in memory. Helper: write each finished record (or a small batch) to a temp file and run `python3 -I /home/claude/npjobs/scripts/append_hospital.py /home/claude/npjobs/data/regions/<file>.json "<region_group>" /path/to/record.json`; it creates the file if needed, replaces records with the same slug, and writes atomically. Do not run git. Update the scratch file's status line with what you have finished so a restarted agent can resume. If your scratch file already contains an enumeration from an earlier attempt, reuse it instead of redoing phase 1.
+
 ## Rules
 - Facts only from pages you read this session. Null beats a guess.
 - One hospital per record. A children's hospital inside a parent hospital gets its own record (type `childrens_hospital_within_hospital`, with `parent_hospital` set). Do NOT also create a record for the parent unless the parent independently has a reason to be listed (it usually does not; the children's record covers it). Exception: list the parent when the children's "hospital" is really just a named pediatric floor and the posting would be under the parent's name; in that case make one record for the parent with `peds_inpatient: true` and mention the pediatric unit name in `notes`.
