@@ -1,0 +1,8 @@
+200 GET document https://careers-hackensackmeridianhealth.icims.com/jobs/search?ss=1&searchKeyword=nurse+practitioner&in_iframe=1
+200 GET document https://jobs.hackensackmeridianhealth.org/search-jobs
+200 POST xhr https://jobs.hackensackmeridianhealth.org/tracking/getlocationcookiebehavior
+    POSTDATA: 
+200 POST xhr https://jobs.hackensackmeridianhealth.org/search-jobs/SetSearchRequestGeoLocation?lat=null&lon=null&IsUsingGeolocation=true&hasHtml5GeoError=false&geoType=ipambientonly
+    POSTDATA: 
+200 POST xhr https://jobs.hackensackmeridianhealth.org/module/postmodule
+    POSTDATA: name=Saved+Jobs+Counter&type=RecentlyViewedJobList

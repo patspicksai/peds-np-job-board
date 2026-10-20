@@ -1,0 +1,110 @@
+[req] mainehealth_home EXC ConnectionError: HTTPSConnectionPool(host='careers.mainehealth.org', port=443): Max retries exceeded with url: / (Caused by NameResolutionError("HTTPSConnection(host='careers.mainehealth.org', port=443): Failed to resolve 'careers.mainehealth.org' ([Errno -2] Name or service not known)"))
+[req] mainehealth_wd 406 () final=https://mainehealth.wd1.myworkdayjobs.com/ bytes=0 ct=None t=0.1s
+      sigs={}
+[req] bch_search 200 () final=https://jobs.bostonchildrens.org/search/jobs?q=nurse+practitioner bytes=1569435 ct=text/html; charset=UTF-8 t=2.1s
+      sigs={"brassring": ["brassring.com/TGnewUI/Search/Home/Home?partnerid=368&amp;siteid=5205"]}
+[req] bch_job 404 (301 -> 301) final=https://jobs.bostonchildrens.org/job-not-found/?jobid=22201063 bytes=1543545 ct=text/html; charset=UTF-8 t=1.5s
+      sigs={"brassring": ["brassring.com/TGnewUI/Search/Home/Home?partnerid=368&amp;siteid=5205"]}
+[req] cnh_wd 200 () final=https://childrensnational.wd108.myworkdayjobs.com/CN_Careers bytes=7841 ct=text/html t=0.3s
+      sigs={"workday": ["myworkdayjobs.com/CN_Careers", "myworkdayjobs.com/CN_Careers/assets/logo"]}
+[req] cnh_wd_api 200 () final=https://childrensnational.wd108.myworkdayjobs.com/wday/cxs/childrensnational/CN_Careers/jobs bytes=7896 ct=application/json t=0.4s
+      sigs={}
+[req] jhm_search 404 (302) final=https://jobs.hopkinsmedicine.org/search-jobs/nurse%20practitioner/ bytes=839 ct=text/html; charset=utf-8 t=0.3s
+      sigs={}
+[req] jhm_job 410 (302) final=https://jobs.hopkinsmedicine.org/job/93303/nurse-practitioner-or-pa-pediatric-oncology-advanced-practice-providers-us-md-baltimore-johns-hopkins-hospital/ bytes=16430 ct=text/html; charset=utf-8 t=0.1s
+      sigs={"successfactors": ["successfactors.com/career?career_company=SFHUP&lang=en_US&company=SFHUP&site=&loginFlowRequired=true&_s.crb=PBkbNuTlx+rkAmVRbF1Npp58jkU="]}
+[req] jhu_search 403 () final=https://jobs.jhu.edu/search/?q=nurse+practitioner bytes=6109 ct=text/html; charset=UTF-8 t=0.1s
+      sigs={}
+[req] inova_home EXC ConnectTimeout: HTTPSConnectionPool(host='careers.inova.org', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='careers.inova.org', port=443) at 0x7fc52526e4b0>, 'Connection to careers.inova.org timed out. (connect timeout=30)'))
+[req] inova_jobs EXC ConnectTimeout: HTTPSConnectionPool(host='careers.inova.org', port=443): Max retries exceeded with url: /jobs (Caused by ConnectTimeoutError(<HTTPSConnection(host='careers.inova.org', port=443) at 0x7fc52526f470>, 'Connection to careers.inova.org timed out. (connect timeout=30)'))
+[req] unc_home 403 () final=https://jobs.unchealthcare.org/ bytes=5978 ct=text/html; charset=UTF-8 t=0.2s
+      sigs={}
+[req] unc_search 403 () final=https://jobs.unchealthcare.org/jobs?keywords=nurse+practitioner bytes=6132 ct=text/html; charset=UTF-8 t=0.1s
+      sigs={}
+[req] unc_job 403 () final=https://jobs.unchealthcare.org/jobs/7717206-unc-internal-medicine-at-heritage-full-time-np-slash-pa bytes=6245 ct=text/html; charset=UTF-8 t=0.0s
+      sigs={}
+[req] duke_search 200 () final=https://careers.duke.edu/search/?q=nurse+practitioner&sortColumn=referencedate&sortOrder=desc bytes=107443 ct=text/html;charset=UTF-8 t=0.2s
+      sigs={"successfactors": ["successfactors.com/verp/vmod_v1/ui/extlib/jquery_3.5.1/jquery.js", "successfactors.com/verp/vmod_v1/ui/extlib/jquery_3.5.1/jquery-migrate.js", "rmkcdn.successfactors", "successfactors.com/sf/careers?company=dukeuniverP1", "successfactors.com"]}
+[req] duke_job 200 () final=https://careers.duke.edu/job/Durham-Nurse-Practitioner-or-Physician-Assistant-Pediatric-Critical-Care-NC-27710/1413761500/ bytes=63360 ct=text/html;charset=UTF-8 t=0.1s
+      sigs={"successfactors": ["successfactors.com/verp/vmod_v1/ui/extlib/jquery_3.5.1/jquery.js", "successfactors.com/verp/vmod_v1/ui/extlib/jquery_3.5.1/jquery-migrate.js", "rmkcdn.successfactors", "successfactors.com/sf/careers?company=dukeuniverP1", "successfactors.com"]}
+[req] wakemed_search 404 () final=https://jobs.wakemed.org/search-jobs/nurse%20practitioner bytes=338881 ct=text/html; charset=utf-8 t=0.4s
+      sigs={"icims": ["www.icims.com/legal/privacy-notice-website/", "www.icims.com/legal/privacy-notice-website\\", "www.icims.com/legal/privacy-notice-website/\\", "careers-wakemed.icims.com/jobs/login?loginOnly=1\\", "employees-wakemed.icims.com/jobs/login?loginOnly=1&redirect=search&in_iframe=1&hashed=-625889630\\", "careers-wakemed.icims.com/jobs/login?loginOnly=1"], "jibe": ["jibeapply", "jibecdn.com", "JibeApply"]}
+[req] wakemed_job 404 () final=https://jobs.wakemed.org/job/raleigh/nnp-neonatology-nicu/1241/70919557904 bytes=338932 ct=text/html; charset=utf-8 t=0.1s
+      sigs={"icims": ["www.icims.com/legal/privacy-notice-website/", "www.icims.com/legal/privacy-notice-website\\", "www.icims.com/legal/privacy-notice-website/\\", "careers-wakemed.icims.com/jobs/login?loginOnly=1\\", "employees-wakemed.icims.com/jobs/login?loginOnly=1&redirect=search&in_iframe=1&hashed=-625889630\\", "careers-wakemed.icims.com/jobs/login?loginOnly=1"], "jibe": ["jibeapply", "jibecdn.com", "JibeApply"]}
+[req] atrium_home 200 () final=https://careers.advocatehealth.org/ bytes=1738579 ct=text/html; charset=UTF-8 t=0.3s
+      sigs={"workday": ["myworkdayjobs.com/en-US/External/login"]}
+[req] atrium_clin 403 (302) final=https://clinicianjobs.advocatehealth.org/careers/Error bytes=24583 ct=text/html;charset=UTF-8 t=0.6s
+      sigs={}
+[req] atrium_jobs EXC ConnectionError: HTTPSConnectionPool(host='jobs.atriumhealth.org', port=443): Max retries exceeded with url: / (Caused by NameResolutionError("HTTPSConnection(host='jobs.atriumhealth.org', port=443): Failed to resolve 'jobs.atriumhealth.org' ([Errno -2] Name or service not known)"))
+[req] novant_icims 200 () final=https://external-novanthealth.icims.com/jobs/search?ss=1&searchKeyword=nurse+practitioner&in_iframe=1 bytes=160 ct=text/html;charset=UTF-8 t=1.0s
+      sigs={}
+[req] novant_home 200 (301) final=https://jobs.novanthealth.org:443/careers-home bytes=443459 ct=text/html; charset=utf-8 t=1.1s
+      sigs={"icims": ["internal-novanthealth.icims.com/jobs/referral\\", "www.icims.com/legal/privacy-notice-website/", "www.icims.com/legal/privacy-notice-website\\", "www.icims.com/legal/privacy-notice-website/\\", "novanthealth.icims.com/icims2/servlet/icims2?module=AppInert&action=download&id=598596&hashed=-2126180654", "external-novanthealth.icims.com/jobs/intro?hashed=-435596363\\"], "jibe": ["jibecdn.com", "jibeapply"]}
+[req] hmh_search 200 () final=https://jobs.hackensackmeridianhealth.org/search-jobs/nurse%20practitioner bytes=147181 ct=text/html; charset=utf-8 t=0.4s
+      sigs={"icims": ["internal-hackensackmeridianhealth.icims.com/jobs/login?loginOnly=1&amp;redirect=&amp;hashed=-435623455", "careers-hackensackmeridianhealth.icims.com/connect?back=intro&hashed=-435623455&mobile=false&width=1110&height=500&bga=true&needsRedirect=false&jan1offset=-360&jun1offset=-300", "careers-hackensackmeridianhealth.icims.com/connect?back=intro&amp;hashed=-435623455&amp;mobile=false&amp;width=1110&amp;height=500&amp;bga=true&amp;needsRedirect=false&amp;jan1offset=-300&amp;jun1offset=-240"], "talentbrew": ["tbcdn.talentbrew.com", "radancy"]}
+[req] hmh_icims 200 () final=https://careers-hackensackmeridianhealth.icims.com/jobs/search?ss=1&searchKeyword=nurse+practitioner&in_iframe=1 bytes=165 ct=text/html;charset=UTF-8 t=0.2s
+      sigs={}
+[req] musc_home 200 (301) final=https://musc.career-pages.com bytes=115007 ct=text/html; charset=utf-8 t=0.5s
+      sigs={"workday": ["myworkdayjobs.com/MUSC/login"]}
+[req] musc_web 200 (301) final=https://www.musc.edu/ bytes=45445 ct=text/html; charset=utf-8 t=0.4s
+      sigs={}
+[pw]  mainehealth_home EXC Error: Page.goto: net::ERR_NAME_NOT_RESOLVED at https://careers.mainehealth.org/
+Call log:
+  - navigating to "https://careers.mainehealth.org/", waiting until "domcontentloaded"
+
+[pw]  mainehealth_wd 406 final=https://mainehealth.wd1.myworkdayjobs.com/ bytes=39 title='' t=3.1s
+      sigs={}
+[pw]  bch_search 200 final=https://jobs.bostonchildrens.org/search/jobs bytes=1578825 title='You searched for jobs - Boston Children' t=5.1s
+      sigs={"brassring": ["brassring.com/TGnewUI/Search/Home/Home?partnerid=368&amp;siteid=5205"]}
+[pw]  bch_job 404 final=https://jobs.bostonchildrens.org/job-expired/ bytes=1578889 title='Job-expired - Boston Children' t=7.2s
+      sigs={"brassring": ["brassring.com/TGnewUI/Search/Home/Home?partnerid=368&amp;siteid=5205", "brassring.com/TGnewUI/Search/home/HomeWithPreLoad?PageType=JobDetails&amp;partnerid=368&amp;siteid=5205&amp;jobid=3645997", "brassring.com/TGnewUI/Search/home/HomeWithPreLoad?PageType=JobDetails&amp;partnerid=368&amp;siteid=5205&amp;jobid=3721320", "brassring.com/TGnewUI/Search/home/HomeWithPreLoad?PageType=JobDetails&amp;partnerid=368&amp;siteid=5205&amp;jobid=3709514"]}
+[pw]  cnh_wd 200 final=https://childrensnational.wd108.myworkdayjobs.com/CN_Careers bytes=185409 title='Search for Jobs' t=4.9s
+      sigs={"workday": ["myworkdayjobs.com/CN_Careers", "myworkdayjobs.com/CN_Careers/assets/logo", "myworkdayjobs.com/CN_Careers/page/926542ad5c30100106057785b8db0000", "myworkdayjobs.com/CN_Careers/page/926542ad5c30100106056fb324d00000", "myworkdayjobs.com/CN_Careers/page/926542ad5c30100106056576f08d0000"]}
+[pw]  jhm_search 404 final=https://jobs.hopkinsmedicine.org/search-jobs/nurse%20practitioner/ bytes=837 title='Page not found | 404 Error' t=3.1s
+      sigs={}
+[pw]  jhm_job 410 final=https://jobs.hopkinsmedicine.org/job/93303/nurse-practitioner-or-pa-pediatric-oncology-advanced-practice-providers-us-md-baltimore-johns-hopkins-hospital/ bytes=84871 title='Hospital and Nursing Jobs | Johns Hopkins Medicine' t=4.4s
+      sigs={"successfactors": ["successfactors.com/career?career_company=SFHUP&amp;lang=en_US&amp;company=SFHUP&amp;site=&amp;loginFlowRequired=true&amp;_s.crb=PBkbNuTlx+rkAmVRbF1Npp58jkU="]}
+[pw]  jhu_search 403 final=https://jobs.jhu.edu/search/?q=nurse+practitioner bytes=28849 title='Just a moment...' t=22.6s
+      sigs={}
+[pw]  inova_home EXC TimeoutError: Page.goto: Timeout 45000ms exceeded.
+Call log:
+  - navigating to "https://careers.inova.org/", waiting until "domcontentloaded"
+
+[pw]  inova_jobs EXC TimeoutError: Page.goto: Timeout 45000ms exceeded.
+Call log:
+  - navigating to "https://careers.inova.org/jobs", waiting until "domcontentloaded"
+
+[pw]  unc_home 403 final=https://jobs.unchealthcare.org/ bytes=28726 title='Just a moment...' t=22.7s
+      sigs={}
+[pw]  unc_search 200 final=https://jobs.unchealthcare.org/jobs/search bytes=352257 title='UNC Health Jobs | RN, CNA, Clinical /Non Clinical Support Jobs' t=6.5s
+      sigs={"jobvite": ["jobvite.com/assets/app/apply.js", "jobvite.com", "jobvite.com/assets/direct_apply.js?verison=2.7"]}
+[pw]  unc_job 403 final=https://jobs.unchealthcare.org/jobs/7717206-unc-internal-medicine-at-heritage-full-time-np-slash-pa bytes=28994 title='Just a moment...' t=22.6s
+      sigs={}
+[pw]  duke_search 200 final=https://careers.duke.edu/search/?q=nurse+practitioner&sortColumn=referencedate&sortOrder=desc bytes=107813 title='Nurse Practitioner - Duke Careers Jobs' t=3.6s
+      sigs={"successfactors": ["successfactors.com/verp/vmod_v1/ui/extlib/jquery_3.5.1/jquery.js", "successfactors.com/verp/vmod_v1/ui/extlib/jquery_3.5.1/jquery-migrate.js", "rmkcdn.successfactors", "successfactors.com/sf/careers?company=dukeuniverP1", "successfactors.com"]}
+[pw]  duke_job 200 final=https://careers.duke.edu/job/Durham-Nurse-Practitioner-or-Physician-Assistant-Pediatric-Critical-Care-NC-27710/1413761500/ bytes=63945 title='Nurse Practitioner or Physician Assistant - Pediatric Critical Care Job Details ' t=3.4s
+      sigs={"successfactors": ["successfactors.com/verp/vmod_v1/ui/extlib/jquery_3.5.1/jquery.js", "successfactors.com/verp/vmod_v1/ui/extlib/jquery_3.5.1/jquery-migrate.js", "rmkcdn.successfactors", "successfactors.com/sf/careers?company=dukeuniverP1", "successfactors.com"]}
+[pw]  wakemed_search 404 final=https://jobs.wakemed.org/search-jobs/nurse%20practitioner bytes=341266 title='WakeMed Careers' t=4.0s
+      sigs={"icims": ["www.icims.com/legal/privacy-notice-website/", "www.icims.com/legal/privacy-notice-website\\", "www.icims.com/legal/privacy-notice-website/\\", "careers-wakemed.icims.com/jobs/login?loginOnly=1\\", "employees-wakemed.icims.com/jobs/login?loginOnly=1&redirect=search&in_iframe=1&hashed=-625889630\\", "careers-wakemed.icims.com/jobs/login?loginOnly=1"], "jibe": ["jibeapply", "jibecdn.com", "JibeApply"]}
+[pw]  wakemed_job 404 final=https://jobs.wakemed.org/job/raleigh/nnp-neonatology-nicu/1241/70919557904 bytes=341317 title='WakeMed Careers' t=3.6s
+      sigs={"icims": ["www.icims.com/legal/privacy-notice-website/", "www.icims.com/legal/privacy-notice-website\\", "www.icims.com/legal/privacy-notice-website/\\", "careers-wakemed.icims.com/jobs/login?loginOnly=1\\", "employees-wakemed.icims.com/jobs/login?loginOnly=1&redirect=search&in_iframe=1&hashed=-625889630\\", "careers-wakemed.icims.com/jobs/login?loginOnly=1"], "jibe": ["jibeapply", "jibecdn.com", "JibeApply"]}
+[pw]  atrium_home 200 final=https://careers.advocatehealth.org/ bytes=1741937 title='Advocate Health Careers' t=4.3s
+      sigs={"workday": ["myworkdayjobs.com/en-US/External/login"]}
+[pw]  atrium_clin 403 final=https://clinicianjobs.advocatehealth.org/careers/Error bytes=24807 title='Error | Advocate Health' t=3.8s
+      sigs={}
+[pw]  atrium_jobs EXC Error: Page.goto: net::ERR_NAME_NOT_RESOLVED at https://jobs.atriumhealth.org/
+Call log:
+  - navigating to "https://jobs.atriumhealth.org/", waiting until "domcontentloaded"
+
+[pw]  novant_icims 200 final=https://jobs.novanthealth.org/careers-home/jobs bytes=751181 title='Healthcare Jobs at Novant Health | Novant Health' t=4.8s
+      sigs={"icims": ["internal-novanthealth.icims.com/jobs/referral\\", "www.icims.com/legal/privacy-notice-website/", "www.icims.com/legal/privacy-notice-website\\", "www.icims.com/legal/privacy-notice-website/\\", "novanthealth.icims.com/icims2/servlet/icims2?module=AppInert&action=download&id=598596&hashed=-2126180654", "external-novanthealth.icims.com/jobs/intro?hashed=-435596363\\"], "jibe": ["jibecdn.com", "jibeapply"]}
+[pw]  novant_home 200 final=https://jobs.novanthealth.org/careers-home bytes=511020 title='Healthcare Jobs at Novant Health | Novant Health' t=4.2s
+      sigs={"icims": ["internal-novanthealth.icims.com/jobs/referral\\", "www.icims.com/legal/privacy-notice-website/", "www.icims.com/legal/privacy-notice-website\\", "www.icims.com/legal/privacy-notice-website/\\", "novanthealth.icims.com/icims2/servlet/icims2?module=AppInert&action=download&id=598596&hashed=-2126180654", "external-novanthealth.icims.com/jobs/intro?hashed=-435596363\\"], "jibe": ["jibecdn.com", "jibeapply"]}
+[pw]  hmh_search 200 final=https://jobs.hackensackmeridianhealth.org/search-jobs/nurse%20practitioner bytes=146482 title='Search Health Care Jobs and Careers at Hackensack Meridian Health' t=5.9s
+      sigs={"icims": ["internal-hackensackmeridianhealth.icims.com/jobs/login?loginOnly=1&amp;redirect=&amp;hashed=-435623455", "careers-hackensackmeridianhealth.icims.com/connect?back=intro&amp;hashed=-435623455&amp;mobile=false&amp;width=1110&amp;height=500&amp;bga=true&amp;needsRedirect=false&amp;jan1offset=-360&amp;jun1offset=-300", "careers-hackensackmeridianhealth.icims.com/connect?back=intro&amp;hashed=-435623455&amp;mobile=false&amp;width=1110&amp;height=500&amp;bga=true&amp;needsRedirect=false&amp;jan1offset=-300&amp;jun1offset=-240"], "talentbrew": ["tbcdn.talentbrew.com", "radancy"]}
+[pw]  hmh_icims 200 final=https://jobs.hackensackmeridianhealth.org/search-jobs bytes=242961 title='Search our Job Opportunities at Hackensack Meridian Health' t=5.7s
+      sigs={"icims": ["careers-hackensackmeridianhealth.icims.com/", "internal-hackensackmeridianhealth.icims.com/jobs/login?loginOnly=1&amp;redirect=&amp;hashed=-435623455", "careers-hackensackmeridianhealth.icims.com/connect?back=intro&amp;hashed=-435623455&amp;mobile=false&amp;width=1110&amp;height=500&amp;bga=true&amp;needsRedirect=false&amp;jan1offset=-360&amp;jun1offset=-300", "careers-hackensackmeridianhealth.icims.com/connect?back=intro&amp;hashed=-435623455&amp;mobile=false&amp;width=1110&amp;height=500&amp;bga=true&amp;needsRedirect=false&amp;jan1offset=-300&amp;jun1offset=-240"], "talentbrew": ["tbcdn.talentbrew.com", "radancy"]}
+[pw]  musc_home 200 final=https://musc.career-pages.com/ bytes=197385 title='MUSC Careers' t=5.4s
+      sigs={"workday": ["myworkdayjobs.com/MUSC/login"]}
+[pw]  musc_web 200 final=https://www.musc.edu/ bytes=73684 title='MUSC | The Medical University of South Carolina' t=4.5s
+      sigs={}
