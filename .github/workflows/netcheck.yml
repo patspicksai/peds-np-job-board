@@ -1,22 +1,43 @@
 name: netcheck
 on:
   workflow_dispatch:
+permissions:
+  contents: write
 jobs:
   probe:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v4
       - name: Probe job boards from GitHub's network
         run: |
           set +e
+          mkdir -p /tmp/out
+          {
           echo "== Workday JSON API (MaineHealth)"
           curl -sS -m 20 -X POST "https://mainehealth.wd1.myworkdayjobs.com/wday/cxs/mainehealth/MaineHealth/jobs" \
             -H 'Content-Type: application/json' -H 'Accept: application/json' \
-            -d '{"appliedFacets":{},"limit":5,"offset":0,"searchText":"nurse practitioner"}' | head -c 600; echo
+            -d '{"appliedFacets":{},"limit":5,"offset":0,"searchText":"nurse practitioner"}' | head -c 1200; echo
           echo "== iCIMS style page"
           curl -sS -m 20 -o /dev/null -w "icims status %{http_code}\n" -A "Mozilla/5.0" "https://careers-childrensnational.icims.com/jobs/search?ss=1&searchKeyword=nurse+practitioner"
           echo "== UNC Health careers"
-          curl -sS -m 20 -o /dev/null -w "unc status %{http_code}\n" -A "Mozilla/5.0" "https://jobs.unchealthcare.org/"
+          curl -sS -m 20 -o /dev/null -w "unc status %{http_code} final %{url_effective}\n" -L -A "Mozilla/5.0" "https://jobs.unchealthcare.org/"
+          echo "== Duke careers"
+          curl -sS -m 20 -o /dev/null -w "duke status %{http_code} final %{url_effective}\n" -L -A "Mozilla/5.0" "https://careers.duke.edu/"
           echo "== Wikipedia API"
           curl -sS -m 20 "https://en.wikipedia.org/api/rest_v1/page/summary/Maine_Medical_Center" | head -c 300; echo
+          echo "== Nominatim"
+          curl -sS -m 20 -A "peds-np-job-board/0.1" "https://nominatim.openstreetmap.org/search?q=Maine+Medical+Center+Portland+ME&format=json&limit=1" | head -c 300; echo
           echo "== ntfy"
           curl -sS -m 20 -o /dev/null -w "ntfy status %{http_code}\n" https://ntfy.sh/
+          echo "== playwright availability"
+          python3 -c "import sys; print(sys.version)"
+          } > /tmp/out/netcheck.txt 2>&1
+          cat /tmp/out/netcheck.txt
+      - name: Publish results to ci-logs branch
+        run: |
+          git config user.name "ci"; git config user.email "ci@users.noreply.github.com"
+          git fetch origin ci-logs:ci-logs 2>/dev/null || git checkout --orphan ci-logs
+          git checkout ci-logs 2>/dev/null || true
+          git rm -rfq --cached . 2>/dev/null || true
+          mkdir -p logs && cp /tmp/out/netcheck.txt logs/netcheck-$(date -u +%Y%m%dT%H%M%SZ).txt
+          git add logs && git commit -qm "netcheck $(date -u +%FT%TZ)" && git push origin ci-logs
