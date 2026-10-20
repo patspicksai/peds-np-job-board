@@ -1,0 +1,46 @@
+run 2026-10-20 wall=399.2s ledger=tests/fixtures/regions_snapshot.json browser=chrome-headed
+
+hospital                                        platform               method           board  list  cand  new   secs  status / error
+--------------------------------------------------------------------------------------------------------------------------------------------------
+beth-israel-deaconess-boston                    workday                api                541   541    11   11   80.9  ok
+bon-secours-st-marys-richmond                   phenom                 requests+api       590   249     0    0   25.6  ok
+brenner-childrens-winston-salem                 workday                api                586   586    32   32   91.5  ok
+cape-cod-hospital-hyannis                       taleo                  api                 18    18     0    0   52.8  ok
+carilion-childrens-roanoke                      workday                api                 83    83     6    6   36.8  ok
+central-maine-medical-center-lewiston           icims                  requests           133    50     0    0   34.2  ok
+centrastate-medical-center-freehold             icims                  requests            22    22     0    0    6.1  ok
+childrens-hospital-montefiore-bronx             generic->workday       api                161   161     2    2   24.2  ok
+chor-vcu-richmond                               phenom                 requests+api       339   339     0    0   32.2  ok
+cohen-childrens-new-hyde-park                   generic->symphony      api                210   209     5    5   11.4  ok
+connecticut-childrens-hartford                  oracle_cloud           api                192   192    16   16   33.3  ok
+cooper-university-hospital-camden               generic->talentbrew    api                652   652     2    2  106.2  ok
+dartmouth-health-childrens-lebanon              icims                  requests           178   178    14   14   56.8  ok
+duke-regional-durham                            phenom                 requests+api       493   493    48   48   78.3  ok
+golisano-childrens-buffalo                      generic                playwright           0     0     0    0   78.9  ok
+golisano-childrens-rochester                    workday                api                393   393     0    0   24.8  ok
+hartford-hospital-hartford                      phenom                 requests+api       231   231     2    2   56.6  ok
+hassenfeld-childrens-nyu-manhattan              generic->symphony      api-legacy         796   761    12   12   19.6  ok
+kravis-childrens-mount-sinai-manhattan          generic->jibe          api                521   520    16   16   55.1  ok
+maine-medical-center-biddeford                  careersite             playwright-fetch   170   170     7    7  169.1  ok
+maria-fareri-childrens-valhalla                 generic                playwright           0     0     0    0   64.5  ok
+novant-forsyth-winston-salem                    icims                  jibe:api           467   467     4    4   52.8  ok
+nyp-morgan-stanley-childrens-manhattan          phenom                 requests+api       148   148     4    4   51.2  ok
+oishei-childrens-buffalo                        generic                playwright           0     0     0    0   47.7  ok
+overlook-medical-center-summit                  oracle_cloud           api                280   280    15   15   50.3  ok
+prisma-childrens-midlands-columbia              phenom->workday        api                449   440    10   10   81.0  ok
+riverview-medical-center-red-bank               icims                  talentbrew:api     825   825    20   20   73.6  ok
+saint-francis-hartford                          workday                api                496   496     0    0   38.8  ok
+saint-peters-university-hospital-new-brunswick  generic                playwright           0     0     0    0   64.8  ok
+sturdy-memorial-attleboro                       workday                api                 60    60     5    5   16.9  ok
+tufts-medical-center-boston                     phenom                 requests+api       337   337     1    1   40.8  ok
+uconn-john-dempsey-farmington                   generic                playwright           0     0     0    0   40.9  ok
+unterberg-childrens-long-branch                 generic                requests            26    26     9    9   89.8  ok
+uva-childrens-charlottesville                   workday->phenom        requests+api       478   478    14   14   76.2  ok
+virtua-voorhees-hospital-voorhees               generic->workday       api                359   359    18   18   57.1  ok
+ynhch-new-haven                                 generic->jibe          api                367   367    11   11   52.1  ok
+duker-childrens-albany                          workday                api                  0     0     0    0   31.0  zero_results: board reachable but returned 0 listings for every keyword (check search URL / adapter)
+mainegeneral-medical-center-augusta             workday                                     0     0     0    0  135.4  error: AdapterError: workday: cannot derive host/tenant from ats_config or careers URLs
+stony-brook-childrens-stony-brook               generic                                     0     0     0    0   72.9  error: AdapterError: generic: no page reachable: None https://careers.stonybrookmedicine.edu/?search=nurse+practitioner; playwright Error: Page.goto: net::ER
+upstate-golisano-childrens-syracuse             generic                                     0     0     0    0  120.3  error: AdapterError: generic: no page reachable: 403 https://www.upstate.edu/hospital/?q=nurse+practitioner; playwright 403 https://www.upstate.edu/hospital/
+--------------------------------------------------------------------------------------------------------------------------------------------------
+hospitals=40 ok=36 not_ok=4 board_listings=10601 candidates=284 new_candidates=284
