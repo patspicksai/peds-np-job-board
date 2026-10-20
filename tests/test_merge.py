@@ -112,3 +112,41 @@ def test_merge_cli_roundtrip(tmp_path):
     jobs.write_text("{not json")
     bad = subprocess.run([sys.executable, str(root / "scripts" / "merge_jobs.py"), str(runf), "--jobs", str(jobs)])
     assert bad.returncode == 4
+
+
+def test_merge_cli_safety_stop_keeps_file_and_notify_digest(tmp_path, monkeypatch):
+    """The scrape workflow's path: safety stop exits 3 and leaves jobs.json untouched; digest + no-op push."""
+    import json
+    import subprocess
+    import sys
+    from pathlib import Path
+    root = Path(__file__).resolve().parent.parent
+    old_ts = "2026-09-01T10:15:00Z"
+    jobs = tmp_path / "jobs.json"
+    prev = {"generated_at": old_ts, "last_run": None,
+            "jobs": [dict(job(f"https://x.org/j/{i}"), id=job_id(f"https://x.org/j/{i}"), first_seen_at=old_ts,
+                          last_seen_at=old_ts, status="active") for i in range(10)]}
+    jobs.write_text(json.dumps(prev))
+    before = jobs.read_text()
+    runf = tmp_path / "2026-10-20.json"
+    runf.write_text(json.dumps(run()))  # board reachable, saw nothing -> all 10 would go stale
+    stats = tmp_path / "stats.json"
+    out = subprocess.run([sys.executable, str(root / "scripts" / "merge_jobs.py"), str(runf), "--jobs", str(jobs),
+                          "--stats-out", str(stats)], capture_output=True, text=True)
+    assert out.returncode == 3 and "SAFETY STOP" in out.stderr
+    assert jobs.read_text() == before
+    # a good run: 1 new job, digest written, push is a silent no-op without NTFY_TOPIC
+    runf.write_text(json.dumps(run([job("https://x.org/j/new", title="NP - NICU")], seen=[f"https://x.org/j/{i}" for i in range(10)])))
+    out = subprocess.run([sys.executable, str(root / "scripts" / "merge_jobs.py"), str(runf), "--jobs", str(jobs),
+                          "--stats-out", str(stats)], capture_output=True, text=True)
+    assert out.returncode == 0, out.stderr
+    st = json.loads(stats.read_text())
+    assert st["new"] == 1 and st["active"] == 11 and st["new_jobs"][0]["url"] == "https://x.org/j/new"
+    env = {k: v for k, v in __import__("os").environ.items() if k != "NTFY_TOPIC"}
+    digest = tmp_path / "2026-10-20.md"
+    n = subprocess.run([sys.executable, "-m", "scraper.notify", "--merge-stats", str(stats), "--ledger", str(tmp_path / "none.json"),
+                        "--run", str(runf), "--digest", str(digest)], capture_output=True, text=True, cwd=root, env=env)
+    assert n.returncode == 0, n.stderr
+    assert "NTFY_TOPIC not set" in n.stdout
+    md = digest.read_text()
+    assert "NP - NICU" in md and "1 new" in md
