@@ -1,0 +1,5 @@
+200 GET document https://jobs.uchc.edu/CSS_External/CSSPage_Welcome.asp
+200 POST document https://jobs.uchc.edu/CSS_External/CSSPage_SearchResults.ASP?T=20261020091724&
+    POSTDATA: Type=CAT&InitPage=1&InitURL=CSSPage_Welcome.asp&SRCH=All+Positions&Key=%7BF4D8A502-D709-436C-BE1B-FF14A8866F6A%7D&ResultSort=&SearchOriginator=Browse
+ACTION {"click": "text=View All Jobs"} -> https://jobs.uchc.edu/CSS_External/CSSPage_SearchResults.ASP?T=20261020091724&
+ACTION {"wait": 3000} -> https://jobs.uchc.edu/CSS_External/CSSPage_SearchResults.ASP?T=20261020091724&

@@ -1,0 +1,1205 @@
+<!DOCTYPE html><html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:og="http://ogp.me/ns#" xmlns:fb="https://www.facebook.com/2008/fbml"><head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="google-site-verification" content="oH4M8OgCKWFHTeOcyp1hZy-WqWuUspBuZxCjg619J6I">
+    <meta name="detectify-verification" content="fb7af99f2d22eaeb07b95e0853cb4780">
+    
+    
+
+    <link rel="preconnect" href="https://activatecdn.blob.core.windows.net">
+    <link rel="preconnect" href="https://activatecdn.azureedge.net">
+    <link rel="preconnect" href="https://www.google-analytics.com">
+
+    <script type="text/javascript" async="" defer="" src="https://powerview6.talentegy.com/talentegy.js" id="tgt"></script><script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/js?id=AW-16851757096&amp;cx=c&amp;gtm=4e6ag1"></script><script async="" src="https://tags.srv.stackadapt.com/events.js"></script><script async="" src="https://www.googletagmanager.com/gtm.js?id=GTM-5BZM4C52"></script><script>
+(function() {
+  'use strict';
+
+  // ── DataLayer + gtag helper ──
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+
+  // ── EU/EEA + UK + CH region codes (GDPR jurisdictions) ──
+  var EU = [
+    'AT','BE','BG','HR','CY','CZ','DK','EE','FI','FR','DE','GR','HU','IE',
+    'IT','LV','LT','LU','MT','NL','PL','PT','RO','SK','SI','ES','SE',
+    'IS','LI','NO','GB','CH'
+  ];
+
+  // ── Configuration (overridden by configure()) ──
+  var config = {
+    cmpType: null,              // 'usercentrics' | 'onetrust' | null
+    googleConsent: 'cmp',       // 'cmp' (CMP pushes GCM signals) | 'none' (no GCM, CMP uses Autoblocker)
+    defaults: 'ccpa',           // 'ccpa' (EU denied, rest granted) | 'gdpr' (all denied globally)
+    signalCategories: null      // OT-only: per-client { gcmSignal: [otCategoryIds] } override (merged with defaults)
+  };
+
+  // ── Reusable consent state objects ──
+  var ALL_DENIED = {
+    'ad_storage': 'denied', 'analytics_storage': 'denied',
+    'ad_user_data': 'denied', 'ad_personalization': 'denied'
+  };
+  var ALL_GRANTED = {
+    'ad_storage': 'granted', 'analytics_storage': 'granted',
+    'ad_user_data': 'granted', 'ad_personalization': 'granted'
+  };
+
+  // ── GCM v2 Defaults ──
+  // CCPA posture set immediately for backward compatibility: clients without
+  // a configure() call still get GDPR-safe defaults for EU visitors.
+  // configure() can override to GDPR-global or disable GCM entirely.
+  var denied = {}; for (var p in ALL_DENIED) denied[p] = ALL_DENIED[p];
+  denied['wait_for_update'] = 500; denied['region'] = EU;
+  gtag('consent', 'default', denied);
+
+  var granted = {}; for (var q in ALL_GRANTED) granted[q] = ALL_GRANTED[q];
+  granted['wait_for_update'] = 500;
+  gtag('consent', 'default', granted);
+
+  // ── Configure ──
+  // Called from _CustomAnalyticsHead.cshtml to set up consent for this client.
+  // Must be called BEFORE CMP and GTM script tags in the same partial.
+  // Only the first call takes effect (subsequent calls are ignored).
+  var _configured = false;
+  function configure(options) {
+    if (_configured) return;
+    _configured = true;
+
+    for (var k in options) {
+      if (config.hasOwnProperty(k)) config[k] = options[k];
+    }
+    config._configured = true; // expose for test assertions
+
+    // ── GCM overrides ──
+    if (config.googleConsent === 'none') {
+      // No GCM: override initial defaults with all-granted so Google tags fire
+      // freely if they load. The CMP manages them via Autoblocker (script blocking).
+      gtag('consent', 'update', ALL_GRANTED);
+    } else if (config.defaults === 'gdpr') {
+      // GDPR-global + GCM: push an additional global-denied default that overrides
+      // the CCPA global-granted fallback. All regions denied until CMP grants.
+      var globalDenied = {}; for (var r in ALL_DENIED) globalDenied[r] = ALL_DENIED[r];
+      globalDenied['wait_for_update'] = 500;
+      gtag('consent', 'default', globalDenied);
+    }
+
+    _setupConsentListeners();
+
+    // For OT+GCM returning visitors: read the saved consent cookie and push the correct
+    // GCM state now, before GTM loads. Without this, tags fire against the CCPA-granted
+    // default before OptanonWrapper runs, regardless of what the user previously chose.
+    if (config.cmpType === 'onetrust' && config.googleConsent === 'cmp') {
+      try {
+        var _m = document.cookie.match(/OptanonConsent=([^;]*)/);
+        if (_m) {
+          var _g = decodeURIComponent(_m[1]).match(/groups=([^&]*)/);
+          if (_g) {
+            // Build a string of the categories the user previously consented to (value=1),
+            // then derive GCM state from it via the same signal→category map.
+            var _granted = '';
+            _g[1].split(',').forEach(function(pair) {
+              var p = pair.split(':');
+              if (p[1] === '1') _granted += ',' + p[0] + ',';
+            });
+            gtag('consent', 'update', _gcmFromActiveGroups(_granted));
+          }
+        }
+      } catch(e) {}
+    }
+  }
+
+  // ── GCM signal vocabulary ──
+  // Callers express consent needs as GCM signal names (analytics_storage, ad_storage, …) —
+  // the standard, CMP-agnostic vocabulary. For UC, the engine reads the signal directly from
+  // _gcmState. For OT, it maps the signal to the OT category IDs that grant it and checks
+  // OptanonActiveGroups. OT category IDs are account-specific, so the map is overridable per
+  // client via configure({ signalCategories: { analytics_storage: ['C0003'] } }).
+  var GCM_TO_OT_CATEGORIES = {
+    'analytics_storage':  ['C0002'],           // Performance
+    'ad_storage':         ['C0004', 'C0005'],  // Targeting + Social Media
+    'ad_user_data':       ['C0004'],
+    'ad_personalization': ['C0004']
+  };
+
+  // Default OT map merged with any per-client signalCategories override.
+  function _signalMap() {
+    var map = {};
+    for (var s in GCM_TO_OT_CATEGORIES) map[s] = GCM_TO_OT_CATEGORIES[s];
+    if (config.signalCategories) {
+      for (var o in config.signalCategories) map[o] = config.signalCategories[o];
+    }
+    return map;
+  }
+
+  // Derive a GCM consent-state object from a string of granted OT category IDs.
+  // A signal is granted if ANY of its mapped categories appears in the string.
+  function _gcmFromActiveGroups(activeGroups) {
+    var map = _signalMap(), state = {};
+    for (var signal in map) {
+      var cats = map[signal], granted = false;
+      for (var i = 0; i < cats.length; i++) {
+        if (activeGroups.indexOf(cats[i]) !== -1) { granted = true; break; }
+      }
+      state[signal] = granted ? 'granted' : 'denied';
+    }
+    return state;
+  }
+
+  // Tracked GCM state for UC branch — mirrors what the CMP has pushed via gtag('consent','update',...)
+  var _gcmState = {
+    'ad_storage': 'denied', 'analytics_storage': 'denied',
+    'ad_user_data': 'denied', 'ad_personalization': 'denied'
+  };
+
+  // ── Consent callback queue ──
+  // Each entry is { cb, signals, defer }. A callback fires when ANY of its GCM signals
+  // is granted (and, when defer is set, the idle trigger has also fired).
+  // Entries are removed on first fire (one-shot per page).
+  var _queue = [];
+
+  // ── Idle/gesture deferral primitive ── (rationale in file header)
+  // Fires on the first user gesture or a 3s timeout, whichever comes first.
+  var _idleFired = false;
+  var _idleQueue = [];
+  var IDLE_EVENTS = ['scroll', 'mousemove', 'keydown', 'touchstart', 'click'];
+
+  function _fireIdle() {
+    if (_idleFired) return;
+    _idleFired = true;
+    var pending = _idleQueue;
+    _idleQueue = [];
+    for (var n = 0; n < pending.length; n++) {
+      try { pending[n](); } catch (e) { /* swallow — one bad callback shouldn't block others */ }
+    }
+    _tryFlush(); // release consent-queue entries that were waiting on the idle gate
+  }
+
+  for (var ev = 0; ev < IDLE_EVENTS.length; ev++) {
+    document.addEventListener(IDLE_EVENTS[ev], _fireIdle, { once: true, passive: true });
+  }
+  setTimeout(_fireIdle, 3000);
+
+  // Run fn when the idle trigger has fired (immediately if it already has).
+  function _onIdle(fn) {
+    if (_idleFired) { fn(); return; }
+    _idleQueue.push(fn);
+  }
+
+  function _isGranted(signal) {
+    if (config.cmpType === 'usercentrics') {
+      return _gcmState[signal] === 'granted';
+    }
+    if (config.cmpType === 'onetrust') {
+      var active = window.OptanonActiveGroups || '';
+      var cats = _signalMap()[signal] || [];
+      for (var i = 0; i < cats.length; i++) {
+        if (active.indexOf(cats[i]) !== -1) return true;
+      }
+      return false;
+    }
+    return false;
+  }
+
+  // Synchronous check for event-handler code that can't use the onConsent queue.
+  // No CMP configured → true (legacy behavior, mirrors onConsent's immediate-fire branch).
+  function isGranted(signal) {
+    if (!config._configured) return true;
+    return _isGranted(signal);
+  }
+
+  // Re-entrancy-safe. A fired callback may itself call onConsent() — e.g. the MiQ pixel's
+  // callback calls core.common.getTrackingPixel(), which wraps onConsent() — pushing to
+  // _queue and re-entering _tryFlush() mid-iteration (the idle gate's _fireIdle() also
+  // re-enters here). Snapshot and clear the queue up front so nested calls mutate the live
+  // array freely; deferred-but-not-yet-idle and not-yet-granted entries are requeued.
+  // (Previously the loop cached its index and spliced _queue in place, so a nested flush
+  // that drained the queue left the outer loop reading an undefined entry.)
+  function _tryFlush() {
+    var pending = _queue.slice();
+    _queue.length = 0;
+    for (var i = 0; i < pending.length; i++) {
+      var entry = pending[i];
+      if (entry.defer && !_idleFired) { _queue.push(entry); continue; } // still waiting on idle gate
+      var matched = false;
+      for (var j = 0; j < entry.signals.length; j++) {
+        if (_isGranted(entry.signals[j])) { matched = true; break; }
+      }
+      if (matched) {
+        try { entry.cb(); } catch (e) { /* swallow — one bad callback shouldn't block others */ }
+      } else {
+        _queue.push(entry);
+      }
+    }
+  }
+
+  function _ingestGcmUpdate(entry) {
+    if (entry && entry[0] === 'consent' && entry[1] === 'update' && entry[2]) {
+      for (var k in entry[2]) {
+        if (_gcmState.hasOwnProperty(k)) _gcmState[k] = entry[2][k];
+      }
+    }
+  }
+
+  // No CMP configured → fire immediately (preserves pre-CMP client behavior).
+  //   With options.defer: wait for the gesture/3s idle trigger instead.
+  // CMP configured → queue with required GCM signals (default ad_storage = marketing/targeting).
+  //   With options.defer: fires only when BOTH a signal is granted AND the
+  //   idle trigger has fired (in either order).
+  function onConsent(callback, options) {
+    var defer = !!(options && options.defer);
+    if (!config._configured) {
+      if (defer) { _onIdle(callback); } else { callback(); }
+      return;
+    }
+    var signals = (options && options.signals) || ['ad_storage'];
+    _queue.push({ cb: callback, signals: signals, defer: defer });
+    _tryFlush();
+  }
+
+  function _setupConsentListeners() {
+    if (config.cmpType === 'usercentrics') {
+      // UC pushes GCM consent updates to dataLayer. Capture existing entries first
+      // (UC may have already pushed before this runs), then intercept future pushes.
+      for (var i = 0; i < dataLayer.length; i++) _ingestGcmUpdate(dataLayer[i]);
+      var _origPush = dataLayer.push;
+      dataLayer.push = function() {
+        var result = _origPush.apply(dataLayer, arguments);
+        for (var j = 0; j < arguments.length; j++) _ingestGcmUpdate(arguments[j]);
+        _tryFlush();
+        return result;
+      };
+    }
+
+    if (config.cmpType === 'onetrust') {
+      // OneTrust calls window.OptanonWrapper() on SDK init and on every consent change.
+      // The engine owns this function — OT client templates should NOT define it.
+      // For googleConsent:'cmp', push GCM signals to the dataLayer so GTM tags re-evaluate
+      // consent state on every change, using the same signal→category map as everything else.
+      // This makes site code fully responsible for OT GCM management.
+      window.OptanonWrapper = function() {
+        if (config.googleConsent === 'cmp') {
+          gtag('consent', 'update', _gcmFromActiveGroups(window.OptanonActiveGroups || ''));
+          // Emit a named, triggerable event AFTER the consent update so GTM tags gated
+          // on it evaluate against the already-updated consent state (avoids ordering race).
+          // Reuses the same 'consent_status' name UC pushes natively, so one GTM trigger
+          // works across UC and OneTrust clients.
+          dataLayer.push({ event: 'consent_status' });
+        }
+        _tryFlush();
+      };
+    }
+  }
+
+  // ── Helpers ──
+  function loadScript(src) {
+    var s = document.createElement('script');
+    s.src = src; s.async = true;
+    document.head.appendChild(s);
+    return s;
+  }
+
+  // ── GTM loader (deferred) ──
+  // Loads a GTM container after the first user gesture or 3s — same trigger as
+  // deferred onConsent entries. Consent is intentionally NOT checked here: GTM
+  // gates its own tags via GCM (googleConsent: 'cmp' clients).
+  // Do NOT use for OneTrust Autoblocker clients (googleConsent: 'none') — they
+  // need a static <script src> tag that Autoblocker can detect and gate.
+  // Dedupes per container id. opts: { dataLayerName: 'dataLayer', defer: true }.
+  var _gtmLoaded = {};
+  function loadGtm(containerId, opts) {
+    if (!containerId || _gtmLoaded[containerId]) return;
+    _gtmLoaded[containerId] = true;
+    var dlName = (opts && opts.dataLayerName) || 'dataLayer';
+    function inject() {
+      window[dlName] = window[dlName] || [];
+      window[dlName].push({ 'gtm.start': new Date().getTime(), 'event': 'gtm.js' });
+      var dl = dlName !== 'dataLayer' ? '&l=' + dlName : '';
+      loadScript('https://www.googletagmanager.com/gtm.js?id=' + containerId + dl);
+    }
+    if (opts && opts.defer === false) { inject(); return; }
+    _onIdle(inject);
+  }
+
+  function firePixel(src) {
+    var img = document.createElement('img');
+    img.src = src; img.alt = '';
+    img.style.cssText = 'position:absolute;overflow:hidden;width:1px;height:1px;';
+    document.body.appendChild(img);
+    return img;
+  }
+
+  // ── Expose API ──
+  window.__consent = {
+    config: config,
+    configure: configure,
+    onConsent: onConsent,
+    isGranted: isGranted,
+    onIdle: _onIdle,
+    loadScript: loadScript,
+    loadGtm: loadGtm,
+    firePixel: firePixel
+  };
+})();
+</script>
+
+
+    
+    <link rel="canonical" href="https://careers.saintpetershcs.com/search/searchjobs">
+
+    <link rel="preconnect" href="https://c.tile.openstreetmap.org/">
+    <link async="" rel="shortcut icon" type="image/x-icon" href="https://activatecdn.azureedge.net/activatedata/35Content/SaintPeterHealthcareSystem/favicon.ico">
+    <link async="" rel="icon" type="image/x-icon" href="https://activatecdn.azureedge.net/activatedata/35Content/SaintPeterHealthcareSystem/favicon.ico">
+
+    <link id="async-css" rel="stylesheet" type="text/css" href="/content/cssbundle.min.css" media="all">
+    <script>
+        // Initiate the cssbundle with media type of print, then switch to all during onload to avoid render blocking.
+        document.getElementById('async-css').onload = function () {
+          this.media = 'all';
+        };
+    </script>
+
+                <link rel="preload" as="style" href="https://activatecdn.azureedge.net/activatedata/35Content/Themes/activate-site.b1eb6efaeb6a.min.css" integrity="sha384-Zyh7DRPn7cwt5oklkE4H2Q/WGifFNieuw7d6RhlwGUi+I6e8flu3ZYzYfR4XyxCF" crossorigin="anonymous">
+                <link rel="stylesheet" type="text/css" href="https://activatecdn.azureedge.net/activatedata/35Content/Themes/activate-site.b1eb6efaeb6a.min.css" integrity="sha384-Zyh7DRPn7cwt5oklkE4H2Q/WGifFNieuw7d6RhlwGUi+I6e8flu3ZYzYfR4XyxCF" crossorigin="anonymous">
+
+    <link rel="preload" as="style" href="/content/SaintPeterHealthcareSystem/Styles/_Components.min.css?v=0FbEfGxXTwxWby9ACLwMELHZQjhrYJzhUKXsV6leYq0">
+    <link rel="stylesheet" type="text/css" href="/content/SaintPeterHealthcareSystem/Styles/_Components.min.css?v=0FbEfGxXTwxWby9ACLwMELHZQjhrYJzhUKXsV6leYq0">
+
+    
+
+    
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5BZM4C52');</script>
+<!-- End Google Tag Manager -->
+
+<!-- User Centrics -->
+<script id="usercentrics-cmp" src="https://app.usercentrics.eu/browser-ui/latest/loader.js" data-settings-id="mSYsYCC_mOebXH" async="" data-avoid-prefetch-services=""></script>
+
+<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=AW-16851757096"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+	  dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+    gtag('config', 'AW-16851757096');
+</script>
+
+<!-- Event snippet for Saint Peter&#39;s Apply conversion page In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
+    
+    <meta name="description" content="Search job openings at Saint Peter's Healthcare System"><meta name="viewport" content="width=device-width, initial-scale=1">
+    
+<!--Fonts: both stylesheets used to be render-blocking <link>s (Google ~820 ms, Typekit kit ~810 ms + its chained p.css ~820 ms) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="preconnect" href="https://use.typekit.net" crossorigin="">
+<link rel="stylesheet" media="all" onload="this.onload=null;this.media='all'" href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&amp;display=swap">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"></noscript>
+<script>
+    (function () {
+        var KIT = 'https://use.typekit.net/bxy8jel.css';
+        function linkFallback() {
+            // No crossorigin ON PURPOSE: this runs when fetch() failed (likely a missing CORS header).
+            var l = document.createElement('link');
+            l.rel = 'stylesheet';
+            l.href = KIT;
+            document.head.appendChild(l);
+        }
+        try {
+            fetch(KIT).then(function (r) { return r.ok ? r.text() : Promise.reject(); })
+                .then(function (css) {
+                    var s = document.createElement('style');
+                    s.textContent = css.replace(/font-display\s*:\s*auto/gi, 'font-display:swap');
+                    document.head.appendChild(s);
+                })
+                .catch(linkFallback);
+        } catch (e) { linkFallback(); }
+    })();
+</script>
+<noscript><link rel="stylesheet" href="https://use.typekit.net/bxy8jel.css"></noscript>
+ 
+    
+
+    
+    <link rel="preload" href="/content/Shared/FontAwesome/fontawesome-free-6.5.2-web/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin="">
+    <link rel="preload" href="/content/Shared/FontAwesome/fontawesome-free-6.5.2-web/webfonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin="">
+    <link rel="preload" href="/content/Shared/FontAwesome/fontawesome-free-6.5.2-web/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin="">
+    <style>
+        @font-face{font-family:"Font Awesome 6 Free";font-style:normal;font-weight:900;font-display:optional;src:url("/content/Shared/FontAwesome/fontawesome-free-6.5.2-web/webfonts/fa-solid-900.woff2") format("woff2")}
+        @font-face{font-family:"Font Awesome 6 Free";font-style:normal;font-weight:400;font-display:optional;src:url("/content/Shared/FontAwesome/fontawesome-free-6.5.2-web/webfonts/fa-regular-400.woff2") format("woff2")}
+        @font-face{font-family:"Font Awesome 6 Brands";font-style:normal;font-weight:400;font-display:optional;src:url("/content/Shared/FontAwesome/fontawesome-free-6.5.2-web/webfonts/fa-brands-400.woff2") format("woff2")}
+    </style>
+    <link rel="stylesheet" href="/content/Shared/FontAwesome/fontawesome-free-6.5.2-web/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="stylesheet" href="/content/Shared/FontAwesome/fontawesome-free-6.5.2-web/css/v4-shims.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="/content/Shared/FontAwesome/fontawesome-free-6.5.2-web/css/all.min.css">
+        <link rel="stylesheet" href="/content/Shared/FontAwesome/fontawesome-free-6.5.2-web/css/v4-shims.min.css">
+    </noscript>
+
+
+    <title>Search Jobs | Saint Peter's Healthcare System</title>
+<script type="module" src="https://app.usercentrics.eu/browser-ui/3.110.0/index.module.js"></script><style>/*
+ * The Typekit service used to deliver this font or fonts for use on websites
+ * is provided by Adobe and is subject to these Terms of Use
+ * http://www.adobe.com/products/eulas/tou_typekit. For font license
+ * information, see the list below.
+ *
+ * azo-sans-web:
+ *   - http://typekit.com/eulas/0000000000000000774e925c
+ *   - http://typekit.com/eulas/0000000000000000774e9257
+ *   - http://typekit.com/eulas/0000000000000000774e9258
+ *   - http://typekit.com/eulas/0000000000000000774e925a
+ *   - http://typekit.com/eulas/0000000000000000774e925f
+ *   - http://typekit.com/eulas/0000000000000000774e9259
+ *   - http://typekit.com/eulas/0000000000000000774e9261
+ *   - http://typekit.com/eulas/0000000000000000774e9260
+ *
+ * © 2009-2026 Adobe Systems Incorporated. All Rights Reserved.
+ */
+/*{"last_published":"2024-06-07 23:57:22 UTC"}*/
+
+@import url("https://p.typekit.net/p.css?s=1&k=bxy8jel&ht=tk&f=18436.18437.18438.18439.18440.18443.18444.18445&a=176501896&app=typekit&e=css");
+
+@font-face {
+font-family:"azo-sans-web";
+src:url("https://use.typekit.net/af/c05e89/0000000000000000774e925c/30/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n9&v=3") format("woff2"),url("https://use.typekit.net/af/c05e89/0000000000000000774e925c/30/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n9&v=3") format("woff"),url("https://use.typekit.net/af/c05e89/0000000000000000774e925c/30/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n9&v=3") format("opentype");
+font-display:swap;font-style:normal;font-weight:900;font-stretch:normal;
+}
+
+@font-face {
+font-family:"azo-sans-web";
+src:url("https://use.typekit.net/af/4ab76e/0000000000000000774e9257/30/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i9&v=3") format("woff2"),url("https://use.typekit.net/af/4ab76e/0000000000000000774e9257/30/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i9&v=3") format("woff"),url("https://use.typekit.net/af/4ab76e/0000000000000000774e9257/30/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i9&v=3") format("opentype");
+font-display:swap;font-style:italic;font-weight:900;font-stretch:normal;
+}
+
+@font-face {
+font-family:"azo-sans-web";
+src:url("https://use.typekit.net/af/12b127/0000000000000000774e9258/30/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3") format("woff2"),url("https://use.typekit.net/af/12b127/0000000000000000774e9258/30/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3") format("woff"),url("https://use.typekit.net/af/12b127/0000000000000000774e9258/30/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3") format("opentype");
+font-display:swap;font-style:normal;font-weight:700;font-stretch:normal;
+}
+
+@font-face {
+font-family:"azo-sans-web";
+src:url("https://use.typekit.net/af/d80d66/0000000000000000774e925a/30/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i7&v=3") format("woff2"),url("https://use.typekit.net/af/d80d66/0000000000000000774e925a/30/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i7&v=3") format("woff"),url("https://use.typekit.net/af/d80d66/0000000000000000774e925a/30/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i7&v=3") format("opentype");
+font-display:swap;font-style:italic;font-weight:700;font-stretch:normal;
+}
+
+@font-face {
+font-family:"azo-sans-web";
+src:url("https://use.typekit.net/af/9dc034/0000000000000000774e925f/30/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i4&v=3") format("woff2"),url("https://use.typekit.net/af/9dc034/0000000000000000774e925f/30/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i4&v=3") format("woff"),url("https://use.typekit.net/af/9dc034/0000000000000000774e925f/30/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i4&v=3") format("opentype");
+font-display:swap;font-style:italic;font-weight:400;font-stretch:normal;
+}
+
+@font-face {
+font-family:"azo-sans-web";
+src:url("https://use.typekit.net/af/f2ad1f/0000000000000000774e9259/30/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n5&v=3") format("woff2"),url("https://use.typekit.net/af/f2ad1f/0000000000000000774e9259/30/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n5&v=3") format("woff"),url("https://use.typekit.net/af/f2ad1f/0000000000000000774e9259/30/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n5&v=3") format("opentype");
+font-display:swap;font-style:normal;font-weight:500;font-stretch:normal;
+}
+
+@font-face {
+font-family:"azo-sans-web";
+src:url("https://use.typekit.net/af/525f87/0000000000000000774e9261/30/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i5&v=3") format("woff2"),url("https://use.typekit.net/af/525f87/0000000000000000774e9261/30/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i5&v=3") format("woff"),url("https://use.typekit.net/af/525f87/0000000000000000774e9261/30/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i5&v=3") format("opentype");
+font-display:swap;font-style:italic;font-weight:500;font-stretch:normal;
+}
+
+@font-face {
+font-family:"azo-sans-web";
+src:url("https://use.typekit.net/af/3c175e/0000000000000000774e9260/30/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("woff2"),url("https://use.typekit.net/af/3c175e/0000000000000000774e9260/30/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("woff"),url("https://use.typekit.net/af/3c175e/0000000000000000774e9260/30/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("opentype");
+font-display:swap;font-style:normal;font-weight:400;font-stretch:normal;
+}
+
+.tk-azo-sans-web { font-family: "azo-sans-web",sans-serif; }
+</style><link id="sa-css" rel="stylesheet" type="text/css" href="https://tags.srv.stackadapt.com/sa.css" media="all"><script type="text/javascript" async="" src="https://googleads.g.doubleclick.net/pagead/viewthroughconversion/16851757096/?random=1792502204943&amp;cv=11&amp;fst=1792502204943&amp;bg=ffffff&amp;guid=ON&amp;async=1&amp;en=gtag.config&amp;gtm=45be6ag1v9210627314za208zb9259141258zd9259141258xecxf1&amp;gcd=13t3t3t3t5l1&amp;dma=0&amp;tag_exp=115938465~115938469~118897920~118897930~120213116~120385422~120469145~120469153~121246026~121246034&amp;u_w=1366&amp;u_h=900&amp;url=https%3A%2F%2Fcareers.saintpetershcs.com%2Fsearch%2Fsearchjobs%3Fkeyword%3Dnurse%2Bpractitioner&amp;rcb=4&amp;frm=0&amp;tiba=Search%20Jobs%20%7C%20Saint%20Peter's%20Healthcare%20System&amp;hn=www.googleadservices.com&amp;npa=0&amp;pscdl=noapi&amp;auid=969292896.1792502205&amp;uaa=x86&amp;uab=64&amp;uafvl=Google%2520Chrome%3B155.0.8059.39%7CChromium%3B155.0.8059.39%7CNot(A%253ABrand%3B24.0.0.0&amp;uamb=0&amp;uam=&amp;uap=Linux&amp;uapv=&amp;uaw=0&amp;data=event%3Dgtag.config&amp;ept=9&amp;rfmt=3&amp;fmt=4"></script><script src="https://analytics.talentegy.com/e38980eb-b935-43e7-8f4b-2b0c87f7e4d4.js" async=""></script></head>
+
+<body class="search-searchjobs has-banner SearchJobs searchjobs Searchjobs overflowHidden">
+    <script>
+    (function (w) {
+        var activateCore = {};
+        Object.defineProperty(w, 'core', {
+            configurable: true,
+            enumerable: true,
+            get: function () { return activateCore; },
+            set: function () { }
+        });
+    })(window);
+</script>
+
+    <script>
+        // Editor traffic, for client scripts that fire third-party tags. They cannot use the server
+        // gate, and they cannot rely on __consent: suppressing _CustomAnalyticsHead removes
+        // __consent.configure(), and an unconfigured engine runs every onConsent callback.
+        window.__editorTraffic = false;
+    </script>
+
+        <script src="/dist/Clients/SaintPeterHealthcareSystem/ClientDependencies.min.js?v=Bpx6tFiahIRScBmUfUQT0rmtsSG1I1Gyv-CPmDiN65g"></script>
+
+    <script defer="" src="/dist/Shared/Bundles/jQueryUi.min.js?v=IrNcXVNpLeMoV157Jbx_so_uj1o4rJ12I0jZ7Exuafk"></script>
+
+    <script defer="" src="/dist/Shared/common.min.js?v=UuMI1Aq7xAaVfIvUyuotn9c-pshIW_8q3GQVsOIOJ8A"></script>
+
+    
+        <script>
+            __consent.onConsent(function() {
+                __consent.loadScript('https://analytics.talentegy.com/e38980eb-b935-43e7-8f4b-2b0c87f7e4d4.js');
+            }, { signals: ['analytics_storage'], defer: true });
+        </script>
+
+    <script type="text/javascript">
+        function processActionFail(data) { 
+            core.common.processActionFail(data); 
+        }; 
+        $('body').addClass('search-searchjobs'); $('body').addClass('SearchJobs searchjobs Searchjobs');
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            core.common.initSemanticInputs();
+core.common.getTrackingPixel(1);        });
+    </script>
+    <script type="text/javascript">
+        __consent.onConsent(function () {
+            try {
+                if (sessionStorage.getItem('entry_referrer') === null) {
+                    sessionStorage.setItem('entry_referrer', document.referrer || '');
+                }
+                if (sessionStorage.getItem('entry_attribution') === null) {
+                    var params = new URLSearchParams(window.location.search);
+                    var utmKeys = Array.from(params.keys()).filter(function(k) {
+                        return k.indexOf('utm_') === 0 || k === 'gclid' || k === 'fbclid' || k === 'msclkid' || k === 'source';
+                    });
+                    if (utmKeys.length > 0) {
+                        var attribution = {};
+                        utmKeys.forEach(function(k) { attribution[k] = params.get(k); });
+                        sessionStorage.setItem('entry_attribution', JSON.stringify(attribution));
+                    }
+                }
+            } catch (_) {
+                // sessionStorage unavailable (private mode, restricted iframe)
+            }
+        }, { signals: ['analytics_storage'] });
+    </script>
+    <script type="text/javascript">
+        function logEvent(path, data) {
+            try {
+                const url = `/log/${path}`;
+                if (typeof navigator !== 'undefined' && typeof navigator.sendBeacon === 'function') {
+                    let payload;
+                    if (data !== undefined) {
+                        payload = new Blob([JSON.stringify(data)], { type: 'application/json' });
+                    }
+                    return navigator.sendBeacon(url, payload);
+                }
+                return fetch(url, {
+                    method: 'POST',
+                    body: data !== undefined ? JSON.stringify(data) : null,
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    keepalive: true
+                }).then(
+                    () => true, // queued
+                    () => false // network error
+                );
+            } catch (e) {
+                console.error(e);
+                return false;
+            }
+        }
+    </script>
+    <script defer="" src="/content/SaintPeterHealthcareSystem/Scripts/_clientScript.min.js?v=EZId9ZaXruDD-Lac4qV7QYXXdnAORCEqxj3tsHj0Zwk"></script>
+    <script defer="" src="/content/Shared/Scripts/bootstrap5.js?v=lWI92ngf1cKsoM4R1LWT0uCG7if2he9cISpsRkV-ECs"></script>
+    
+
+    <input aria-hidden="true" id="ReportSuite" name="ReportSuite" type="hidden" value="nasrSaintPeterHealthcareSystem">
+    
+
+
+        <script type="text/javascript">
+            window.dataLayer = window.dataLayer || [];
+            dataLayer.push(
+            {
+                pageData:
+                {
+                    pageName:
+                        'Search Jobs | Saint Peter&#x27;s Healthcare System',
+                    pageUrl: 'https://careers.saintpetershcs.com/search/searchjobs?Keyword=nurse&#x2B;practitioner',
+                    referringURL: '',
+                    sysEnvironment: 'desktop'
+                }
+            });
+        </script>
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5BZM4C52"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+<div id="header" role="banner" class="">
+    
+    
+    
+<ul class="visually-hidden">
+  <li><a href="#navigation">Skip to navigation</a></li>
+  <li><a href="#content">Skip to content</a></li>
+</ul>
+
+<div class="navbar-container">
+  <nav class="sphs-container--lg d-xl-flex flex-xl-row navbar navbar-expand-xl navbar-light">
+    <a class="navbar-brand" href="https://www.saintpetershcs.com/" target="_blank" rel="noopener external noreferrer">
+      <span class="visually-hidden">Go to Saint Peter's Healthcare System website, this link opens in a new tab</span>
+      <svg data-src="https://activatecdn.azureedge.net/activatedata/35Content/SaintPeterHealthcareSystem/Images/logo-color.svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="340" height="60" viewBox="0 0 340 60" data-id="svg-loader_1">
+  <image id="Imagen_27_2" data-name="Imagen 27" width="340" height="60" xlink:href="data:image/png;base64,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"></image>
+</svg>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-xl-end" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto w-100">
+        <li class="nav-item">
+          <div class="visually-hidden">Search All Jobs at Saint Peter's Health Care System</div>
+          <a class="nav-link" href="/">Careers Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/culture">Culture</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">What We
+            Offer</a>
+          <div class="dropdown-menu" id="offerSubmenu">
+            <a class="dropdown-item" href="/what-we-offer/benefits">Benefits</a>
+            <a class="dropdown-item" href="/what-we-offer/learning-and-development">Learning and Development</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Career
+            Areas</a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="/career-areas/physicians">Physicians and Mid-Level Providers</a>
+            <a class="dropdown-item" href="/career-areas/nursing">Nursing</a>
+            <a class="dropdown-item" href="/career-areas/nursing-support">Nursing Support</a>
+            <a class="dropdown-item" href="/career-areas/allied-health">Allied Health</a>
+            <a class="dropdown-item" href="/career-areas/non-clinical">Non-Clinical</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/events/events" aria-label="Events">Hiring Events</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/locations/locations" aria-label="Events">Search by Location</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/search/searchjobs" aria-label="Search Careers">Search All Jobs</a>
+        </li>
+        <li class="nav-item nav-item--highlighted">
+          <a class="nav-link" href="/talentnetwork/talentnetwork" aria-label="Events">Get Job Alerts</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</div>
+
+
+
+<script>
+    const DESKTOP_BREAKPOINT = 1366;
+
+    function verifyIsMobile() {
+      const isMobile = !window.matchMedia(`(min-width: ${DESKTOP_BREAKPOINT}px)`).matches;
+
+      $('.navbar').toggleClass('navbar-expand-xl', !isMobile)
+
+      if (isMobile) {
+            $('#floatSearch form').slideUp();
+            $('.float-search__toggler__text').show();
+            $('.float-search__toggler__close').hide();
+
+        } else {
+            $('#floatSearch form').slideDown();
+        }
+    }
+
+    $('#header').removeClass('main-header');
+
+    $(document).ready(function () {
+        verifyIsMobile();
+
+        $('#content').before($('#floatSearch'))
+
+        $('.float-search__toggler').click(function () {
+            $('#floatSearch form').slideToggle();
+            $('.float-search__toggler__text').toggle();
+            $('.float-search__toggler__close').toggle();
+        });
+
+      $('.nav-link').on('click', function() {
+        const isOpen = $(this).hasClass('open');
+        $(this).attr('aria-expanded', !isOpen);
+      });
+    });
+
+    $(window).on('resize', function () {
+        verifyIsMobile();
+    });
+</script>
+<script src="/content/Shared/Scripts/svg-loader.min.js"></script>
+<script src="/content/Shared/Scripts/slick/slick.min.js"></script>
+
+    
+</div>
+
+
+<div id="content" class="main-content" role="main">
+    
+    
+
+
+
+<div style="display: none;">
+    <input type="text" id="jtIndex" value="-1" aria-hidden="true">
+</div>
+
+
+<div class="Band Title Activate SearchJobs">
+    <div class="Center">
+        <div class="Pad">
+            <h1>
+                Search Jobs
+            </h1>
+            <div class="breadcrumbs-container">
+                <ol class="breadcrumb"><li><a href="/">Careers</a></li><li><a href="/search/searchjobs">Search Jobs</a></li></ol>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<link rel="stylesheet" as="style" onload="this.onload=null;this.rel='stylesheet'" type="text/css" href="/ReusableComponents/JobSearchForm/JobSearchForm.min.css?v=O9Nc8B48S1DL-KJ90FQv0XMPtJghBnT3n61efI28U00">
+<noscript><link rel="stylesheet" type="text/css" href="/ReusableComponents/JobSearchForm/JobSearchForm.min.css?v=O9Nc8B48S1DL-KJ90FQv0XMPtJghBnT3n61efI28U00" /></noscript>
+<script type="text/javascript">
+    var isLoaded = false; 
+    var isScriptLoaded = false; 
+    window.expectedInputs = JSON.parse('["keyword","categoryid","adtypeid","citystate","mediumradiuscollection"]');
+</script>
+        <script defer="" src="/ReusableComponents/JobSearchForm/JobSearchScripts.js?v=biiskoMvhmv-9saZf14qRhOmjZXENwgppIRsRb8iF7o"></script>
+
+
+    <div class="static-search-form-container">
+        
+        <form class="static-search-form ui form" role="form" aria-label="Jobs search form" autocomplete="off">
+            
+
+
+        <script defer="" src="/dist/Shared/Bundles/jQueryUiDialog.min.js?v=EZgL2BbbFjbGsvnaP6tLJrM2nQ4W8uuVaCcw-LOyQLc"></script>
+        <script defer="" src="/dist/Shared/jquery.jtable.min.js?v=AvtAUMDr8xe_yw16Geut9DRygod5NfX-7J4twg8xaDo"></script>
+
+
+<div class="fields">
+        <div class="field keyword">
+                        <label for="Keyword">Keyword</label>
+<input aria-label="Keyword" autocomplete="off" id="Keyword" name="Keyword" placeholder="Keyword" tabindex="0" type="text" value="nurse practitioner" class="ui-autocomplete-input">                            <script>
+                                keywordElement = document.querySelector('.field.keyword');
+                                keywordElement.addEventListener('focusin', () => {
+                                    announce('Enter a keyword to search for jobs.', true);
+                                });
+                                keywordElement.addEventListener('input', () => {
+                                    announce('Enter a keyword to search for jobs.', true);
+                                });
+                            </script>
+
+        <ul id="ui-id-3" tabindex="0" class="ui-menu ui-widget ui-widget-content ui-autocomplete ui-front" style="display: none;"></ul></div>
+        <div class="field categoryid">
+                        <label for="CategoryID">Category</label>
+<div class="ui search dropdown selection"><select aria-label="Category" data-dropdownsearch="true" data-fieldclassname="categoryid" data-optionname="category" data-placeholder="Category" data-val="true" data-val-required="The CategoryID field is required." id="CategoryID" name="CategoryID"><option value="">Category</option>
+<option value="0f1d9e2d-8c51-4d65-a504-5b5208860531">Admin/Clerical/Customer Servc</option>
+<option value="238fff96-f6ca-43ff-92da-0e26895fec51">Adv Practice Clinician</option>
+<option value="4fa7253a-fa69-4ab4-b0e9-5be30d23d9a0">BH/Social Work/Spiritual Care</option>
+<option value="f0df8f70-e36b-4940-a143-68d5ca5dd39a">Const./Maint./Skilled Workers</option>
+<option value="39c8c171-36c8-465c-a1b1-83a8393827ae">Education/Training</option>
+<option value="b1a896d7-9b0f-411e-b525-0033eaf50fec">EVS/Patient Transport</option>
+<option value="4f34def0-d6b3-483f-841f-cab25389054a">Executive Management</option>
+<option value="07672ba1-c465-480f-9872-a6169a5624b3">Finance/Accounting/Billing/PFS</option>
+<option value="812bcf19-393e-4165-b802-e7d8440caeb8">Food Service/Dietary/Nutrition</option>
+<option value="4e038bc7-c861-464d-b92f-0fc5f17fb3bb">Human Resources</option>
+<option value="e4e75b8a-72d5-483c-b030-fa16783e109a">Imaging/Tech</option>
+<option value="8212c6bb-6b93-465a-b450-2031abc8d7a0">Information Technology (IT)</option>
+<option value="2f350d4e-d4ee-4fef-ab21-85e4f1a2f5cd">Laboratory Services</option>
+<option value="3d0b2122-9835-4f03-b988-076dc5beb6b0">Legal/Compliance</option>
+<option value="cb725614-2af2-4cdb-8bf4-d37c4aa912cf">Marketing and Communications</option>
+<option value="54e611f0-4646-4f8b-8df5-174c835efecd">Nursing</option>
+<option value="017bfdd9-3835-451e-b7d8-e6d93b2e17d8">Nursing Support</option>
+<option value="fddd4e3f-248e-4c41-9c75-5f7e0ae59f1a">Pharmacy</option>
+<option value="fe6a0022-ca1f-4306-8761-2dff37d2a0cb">Phy.Relations and PracticeMgmt</option>
+<option value="2ffb7fec-22f6-40a3-92b6-06211ce32c8f">Physician</option>
+<option value="0d0e3293-a276-4152-9e4b-87b0d5589cd9">Qual/Patient Safety&amp;Inf Prev</option>
+<option value="e015ecea-d0d1-44d7-8f13-cd36d69e9c89">Research</option>
+<option value="10864387-d20f-42b4-a738-4e7821cf50c2">Strategic Plan/Business Dev</option>
+<option value="b1336e3c-8ab9-44c6-9779-f6abb1f681bd">Supply Chain</option>
+<option value="cc0cadcc-abdd-471e-867c-439515d02944">Therapy/Rehab</option>
+</select><i class="dropdown icon"></i><input class="search" autocomplete="off" aria-label="search within dropdown" tabindex="0" aria-activedescendant="categoryid-menu"><div class="default text">Category</div><i class="remove icon" aria-label="Clear category dropdown selection button" role="button" tabindex="-1"></i><div class="menu" tabindex="-1" id="categoryid-menu" role="listbox" aria-label="Select category" aria-expanded="false"><div class="item" data-value="0f1d9e2d-8c51-4d65-a504-5b5208860531" role="option" aria-selected="false">Admin/Clerical/Customer Servc</div><div class="item" data-value="238fff96-f6ca-43ff-92da-0e26895fec51" role="option" aria-selected="false">Adv Practice Clinician</div><div class="item" data-value="4fa7253a-fa69-4ab4-b0e9-5be30d23d9a0" role="option" aria-selected="false">BH/Social Work/Spiritual Care</div><div class="item" data-value="f0df8f70-e36b-4940-a143-68d5ca5dd39a" role="option" aria-selected="false">Const./Maint./Skilled Workers</div><div class="item" data-value="39c8c171-36c8-465c-a1b1-83a8393827ae" role="option" aria-selected="false">Education/Training</div><div class="item" data-value="b1a896d7-9b0f-411e-b525-0033eaf50fec" role="option" aria-selected="false">EVS/Patient Transport</div><div class="item" data-value="4f34def0-d6b3-483f-841f-cab25389054a" role="option" aria-selected="false">Executive Management</div><div class="item" data-value="07672ba1-c465-480f-9872-a6169a5624b3" role="option" aria-selected="false">Finance/Accounting/Billing/PFS</div><div class="item" data-value="812bcf19-393e-4165-b802-e7d8440caeb8" role="option" aria-selected="false">Food Service/Dietary/Nutrition</div><div class="item" data-value="4e038bc7-c861-464d-b92f-0fc5f17fb3bb" role="option" aria-selected="false">Human Resources</div><div class="item" data-value="e4e75b8a-72d5-483c-b030-fa16783e109a" role="option" aria-selected="false">Imaging/Tech</div><div class="item" data-value="8212c6bb-6b93-465a-b450-2031abc8d7a0" role="option" aria-selected="false">Information Technology (IT)</div><div class="item" data-value="2f350d4e-d4ee-4fef-ab21-85e4f1a2f5cd" role="option" aria-selected="false">Laboratory Services</div><div class="item" data-value="3d0b2122-9835-4f03-b988-076dc5beb6b0" role="option" aria-selected="false">Legal/Compliance</div><div class="item" data-value="cb725614-2af2-4cdb-8bf4-d37c4aa912cf" role="option" aria-selected="false">Marketing and Communications</div><div class="item" data-value="54e611f0-4646-4f8b-8df5-174c835efecd" role="option" aria-selected="false">Nursing</div><div class="item" data-value="017bfdd9-3835-451e-b7d8-e6d93b2e17d8" role="option" aria-selected="false">Nursing Support</div><div class="item" data-value="fddd4e3f-248e-4c41-9c75-5f7e0ae59f1a" role="option" aria-selected="false">Pharmacy</div><div class="item" data-value="fe6a0022-ca1f-4306-8761-2dff37d2a0cb" role="option" aria-selected="false">Phy.Relations and PracticeMgmt</div><div class="item" data-value="2ffb7fec-22f6-40a3-92b6-06211ce32c8f" role="option" aria-selected="false">Physician</div><div class="item" data-value="0d0e3293-a276-4152-9e4b-87b0d5589cd9" role="option" aria-selected="false">Qual/Patient Safety&amp;Inf Prev</div><div class="item" data-value="e015ecea-d0d1-44d7-8f13-cd36d69e9c89" role="option" aria-selected="false">Research</div><div class="item" data-value="10864387-d20f-42b4-a738-4e7821cf50c2" role="option" aria-selected="false">Strategic Plan/Business Dev</div><div class="item" data-value="b1336e3c-8ab9-44c6-9779-f6abb1f681bd" role="option" aria-selected="false">Supply Chain</div><div class="item" data-value="cc0cadcc-abdd-471e-867c-439515d02944" role="option" aria-selected="false">Therapy/Rehab</div></div></div>
+        </div>
+        <div class="field adtypeid">
+                    <label for="AdTypeID">Job Type</label>
+<div class="ui search dropdown selection"><select aria-label="Job Type" data-dropdownsearch="true" data-fieldclassname="adtypeid" data-optionname="type" data-placeholder="Job Type" id="AdTypeID" name="AdTypeID"><option value="">Job Type</option>
+<option value="54b69b61-6c1b-4901-8185-bb09e375c635">Full-Time</option>
+<option value="2cda50c8-dbf2-4ebd-82d3-ff21a8b9da3a">Hybrid</option>
+<option value="8bce1343-493f-4618-ae76-bb584c99f419">On-Site</option>
+<option value="d3149aa8-2788-4b72-8e70-04b75534ac39">Part-Time</option>
+<option value="c68b10a8-5c1c-4f88-aaf2-11a25debb87c">Per Diem</option>
+<option value="23524a44-68aa-45aa-805d-604e690dba33">Temporary</option>
+</select><i class="dropdown icon"></i><input class="search" autocomplete="off" aria-label="search within dropdown" tabindex="0" aria-activedescendant="adtypeid-menu"><div class="default text">Job Type</div><i class="remove icon" aria-label="Clear type dropdown selection button" role="button" tabindex="-1"></i><div class="menu" tabindex="-1" id="adtypeid-menu" role="listbox" aria-label="Select type" aria-expanded="false"><div class="item" data-value="54b69b61-6c1b-4901-8185-bb09e375c635" role="option" aria-selected="false">Full-Time</div><div class="item" data-value="2cda50c8-dbf2-4ebd-82d3-ff21a8b9da3a" role="option" aria-selected="false">Hybrid</div><div class="item" data-value="8bce1343-493f-4618-ae76-bb584c99f419" role="option" aria-selected="false">On-Site</div><div class="item" data-value="d3149aa8-2788-4b72-8e70-04b75534ac39" role="option" aria-selected="false">Part-Time</div><div class="item" data-value="c68b10a8-5c1c-4f88-aaf2-11a25debb87c" role="option" aria-selected="false">Per Diem</div><div class="item" data-value="23524a44-68aa-45aa-805d-604e690dba33" role="option" aria-selected="false">Temporary</div></div></div>
+        </div>
+        <div class="field citystate">
+                    <label for="CityState">City, State</label>
+<div class="ui search dropdown input-validation-error selection"><select aria-label="City, State" data-dropdownsearch="true" data-fieldclassname="citystate" data-optionname="city state" data-placeholder="City, State" data-val="true" data-val-required="The CityState field is required." id="CityState" name="CityState"><option value="">City, State</option>
+<option value="East Brunswick, NJ">East Brunswick, NJ</option>
+<option value="Hoboken, NJ">Hoboken, NJ</option>
+<option value="Jamesburg, NJ">Jamesburg, NJ</option>
+<option value="Jersey City, NJ">Jersey City, NJ</option>
+<option value="Lakewood, NJ">Lakewood, NJ</option>
+<option value="Milltown, NJ">Milltown, NJ</option>
+<option value="Monroe, NJ">Monroe, NJ</option>
+<option value="Monroe Twnshp, NJ">Monroe Twnshp, NJ</option>
+<option value="New Brunswick, NJ">New Brunswick, NJ</option>
+<option value="North Brunswick, NJ">North Brunswick, NJ</option>
+<option value="Piscataway, NJ">Piscataway, NJ</option>
+<option value="Somerset, NJ">Somerset, NJ</option>
+</select><i class="dropdown icon"></i><input class="search" autocomplete="off" aria-label="search within dropdown" tabindex="0" aria-activedescendant="citystate-menu"><div class="default text">City, State</div><i class="remove icon" aria-label="Clear city state dropdown selection button" role="button" tabindex="-1"></i><div class="menu" tabindex="-1" id="citystate-menu" role="listbox" aria-label="Select city state" aria-expanded="false"><div class="item" data-value="East Brunswick, NJ" role="option" aria-selected="false">East Brunswick, NJ</div><div class="item" data-value="Hoboken, NJ" role="option" aria-selected="false">Hoboken, NJ</div><div class="item" data-value="Jamesburg, NJ" role="option" aria-selected="false">Jamesburg, NJ</div><div class="item" data-value="Jersey City, NJ" role="option" aria-selected="false">Jersey City, NJ</div><div class="item" data-value="Lakewood, NJ" role="option" aria-selected="false">Lakewood, NJ</div><div class="item" data-value="Milltown, NJ" role="option" aria-selected="false">Milltown, NJ</div><div class="item" data-value="Monroe, NJ" role="option" aria-selected="false">Monroe, NJ</div><div class="item" data-value="Monroe Twnshp, NJ" role="option" aria-selected="false">Monroe Twnshp, NJ</div><div class="item" data-value="New Brunswick, NJ" role="option" aria-selected="false">New Brunswick, NJ</div><div class="item" data-value="North Brunswick, NJ" role="option" aria-selected="false">North Brunswick, NJ</div><div class="item" data-value="Piscataway, NJ" role="option" aria-selected="false">Piscataway, NJ</div><div class="item" data-value="Somerset, NJ" role="option" aria-selected="false">Somerset, NJ</div></div></div>
+        </div>
+        <div class="field mediumradiuscollection">
+
+                <label for="Radius">Radius</label>
+<div class="ui search dropdown selection"><select aria-label="Radius" data-dropdownsearch="true" data-fieldclassname="mediumradiuscollection" data-optionname="radius" data-placeholder="Radius" id="Radius" name="Radius" role="combobox"><option value="">Radius</option>
+<option value="1">1 Mile</option>
+<option value="5">5 Miles</option>
+<option value="10">10 Miles</option>
+<option value="15">15 Miles</option>
+<option value="25">25 Miles</option>
+<option value="50">50 Miles</option>
+</select><i class="dropdown icon"></i><input class="search" autocomplete="off" aria-label="search within dropdown" tabindex="0" aria-activedescendant="mediumradiuscollection-menu"><div class="default text">Radius</div><i class="remove icon" aria-label="Clear radius dropdown selection button" role="button" tabindex="-1"></i><div class="menu" tabindex="-1" id="mediumradiuscollection-menu" role="listbox" aria-label="Select radius" aria-expanded="false"><div class="item" data-value="1" role="option" aria-selected="false">1 Mile</div><div class="item" data-value="5" role="option" aria-selected="false">5 Miles</div><div class="item" data-value="10" role="option" aria-selected="false">10 Miles</div><div class="item" data-value="15" role="option" aria-selected="false">15 Miles</div><div class="item" data-value="25" role="option" aria-selected="false">25 Miles</div><div class="item" data-value="50" role="option" aria-selected="false">50 Miles</div></div></div>        </div>
+
+    <div class="field actionbutton">
+            <button aria-label="Filter Jobs" type="submit" id="Search" class="ui button jTableLoad staticsearch" data-jtable-container="data" data-results-type="table" onclick="trackFormSubmission('static'); window.history.replaceState(null, null, window.location.pathname);" onkeydown="javascript: if (event.keyCode == 13) { trackFormSubmission('static'); window.history.replaceState(null, null, window.location.pathname) };" style="">Filter Results</button>
+            
+        <input data-val="true" data-val-required="The ClientID field is required." id="ClientID" name="ClientID" type="hidden" value="1141ee6b-f657-4e4c-8daa-e8533757aa7e">
+    </div>
+</div>
+
+    <script src="/dist/Shared/form-dropdown.min.js?v=OH7CBvw40MPEIgThHs1v_-UAv7ZGnTWZqsNRaIHLlT0"></script>
+
+
+
+
+
+
+
+
+
+
+
+        </form>
+        
+    <div class="container-tn">
+        <a id="display-talent-network" class="Action Button TNDialog">
+            Join Our Talent Network
+        </a>
+    </div>
+
+<div id="tn-data" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Talent Network</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div id="talent-network-content"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script type="text/javascript">
+    $(function () {
+        $('#display-talent-network').on('click', function () {
+            $('#tn-data').modal({
+                backdrop: 'static', keyboard: false, show: true});
+                $.ajax({
+                    url: '/TalentNetwork/GetTalentNetworkModalData',
+                    type: 'GET',
+                    success: function (data) {
+                        $('#tn-data .modal-body').html(data);
+                    }
+                });
+        });
+    });
+</script>
+        
+    </div>
+
+
+<script type="text/javascript" id="element-to-hide">
+    window.addEventListener('DOMContentLoaded', function () {
+        (function ($) {
+            const $keywordInput = $('#Keyword');
+            if ($keywordInput.length) {
+                setTimeout(function () {
+                    $keywordInput.autocomplete({
+                    minLength: 3,
+                    appendTo: '.field.keyword',
+                    source: function (request, response) {
+                        $.ajax({
+                            url: '/Search/AutocompleteSuggestions',
+                            dataType: 'json',
+                            data: {
+                                keyword: request.term.replace('<', '')
+                            },
+                            success: function (data) {
+                                $keywordInput.val($keywordInput.val().replace('<', ''));
+                                response(data);
+                            }
+                        });
+                    }
+                });
+                }, 50);
+            }
+
+            $(".float-search-form.ui.form").submit(function (event) {
+                $keywordInput.val($keywordInput.val().replace('<', ''));
+            });
+        })(jQuery);
+    });
+</script>
+
+        <script defer="" src="/js/form-tracking.js?v=WFXUl4NH0I582nVdRDarsOARlVmiAER1YOyp46c6Aq8"></script>
+
+
+    
+
+
+
+<div class="job-results job-table" aria-live="assertive">
+    
+    <div id="data"><div class="jtable-main-container ui-widget"><div class="jtable-busy-panel-background" style="width: 839px; height: 303px; display: none;"></div><div class="jtable-busy-message ui-widget-header" style="display: none;"></div><div class="jtable-top-panel jtable-bottom-panel ui-state-default"><div class="jtable-right-area"><span class="jtable-page-info">Showing 12 out of 77</span></div></div><table class="jtable ui-widget-content" role="none"><thead><tr><th class="jtable-column-header title-column ui-state-default" style="width: 10%;"><div class="jtable-column-header-container"><span class="jtable-column-header-text">Title</span></div></th><th class="jtable-column-header department-column ui-state-default" style="width: 10%;"><div class="jtable-column-header-container"><span class="jtable-column-header-text">Department</span></div></th><th class="jtable-column-header city-state-column ui-state-default" style="width: 10%;"><div class="jtable-column-header-container"><span class="jtable-column-header-text">City, State</span></div></th></tr></thead><tbody><tr class="jtable-data-row jtable-row-even" data-record-key="3228715f-cdd3-416f-baa2-847c41972ede" onclick="window.location.href = '/search/jobdetails/endocrinology-nurse-practitioner-bilingual/3228715f-cdd3-416f-baa2-847c41972ede'" data-href="https://careers.saintpetershcs.com/search/jobdetails/endocrinology-nurse-practitioner-bilingual/3228715f-cdd3-416f-baa2-847c41972ede" onkeydown="javascript:if(event.keyCode==13) window.location.href = '/search/jobdetails/endocrinology-nurse-practitioner-bilingual/3228715f-cdd3-416f-baa2-847c41972ede'" role="link" aria-label="Endocrinology Nurse Practitioner, Bilingual" tabindex="0"><td class="title-column"><span>Endocrinology Nurse Practitioner, Bilingual</span></td><td class="department-column"></td><td class="city-state-column"><span>New Brunswick, NJ</span></td></tr><tr class="jtable-data-row" data-record-key="da8623f1-99e8-4fa9-972e-e5595ac84eb3" onclick="window.location.href = '/search/jobdetails/neonatal-nurse-practitionerphysician-assistant/da8623f1-99e8-4fa9-972e-e5595ac84eb3'" data-href="https://careers.saintpetershcs.com/search/jobdetails/neonatal-nurse-practitionerphysician-assistant/da8623f1-99e8-4fa9-972e-e5595ac84eb3" onkeydown="javascript:if(event.keyCode==13) window.location.href = '/search/jobdetails/neonatal-nurse-practitionerphysician-assistant/da8623f1-99e8-4fa9-972e-e5595ac84eb3'" role="link" aria-label="Neonatal Nurse Practitioner/Physician Assistant" tabindex="0"><td class="title-column"><span>Neonatal Nurse Practitioner/Physician Assistant</span></td><td class="department-column"><span>Neonatology</span></td><td class="city-state-column"><span>New Brunswick, NJ</span></td></tr><tr class="jtable-data-row jtable-row-even" data-record-key="41ef6c10-2ce2-4f3f-8afa-fab4e25a9802" onclick="window.location.href = '/search/jobdetails/peds-ed-advanced-nurse-practitioner-per-diem/41ef6c10-2ce2-4f3f-8afa-fab4e25a9802'" data-href="https://careers.saintpetershcs.com/search/jobdetails/peds-ed-advanced-nurse-practitioner-per-diem/41ef6c10-2ce2-4f3f-8afa-fab4e25a9802" onkeydown="javascript:if(event.keyCode==13) window.location.href = '/search/jobdetails/peds-ed-advanced-nurse-practitioner-per-diem/41ef6c10-2ce2-4f3f-8afa-fab4e25a9802'" role="link" aria-label="Peds ED Advanced Nurse Practitioner, Per Diem" tabindex="0"><td class="title-column"><span>Peds ED Advanced Nurse Practitioner, Per Diem</span></td><td class="department-column"><span>Emergency Providers-Pediatric</span></td><td class="city-state-column"><span>New Brunswick, NJ</span></td></tr><tr class="jtable-data-row" data-record-key="20780b62-b7b7-4d20-91af-170b92ec8401" onclick="window.location.href = '/search/jobdetails/icu-nurse-manager/20780b62-b7b7-4d20-91af-170b92ec8401'" data-href="https://careers.saintpetershcs.com/search/jobdetails/icu-nurse-manager/20780b62-b7b7-4d20-91af-170b92ec8401" onkeydown="javascript:if(event.keyCode==13) window.location.href = '/search/jobdetails/icu-nurse-manager/20780b62-b7b7-4d20-91af-170b92ec8401'" role="link" aria-label="ICU Nurse Manager" tabindex="0"><td class="title-column"><span>ICU Nurse Manager</span></td><td class="department-column"><span>Intensive Care Unit</span></td><td class="city-state-column"><span>New Brunswick, NJ</span></td></tr><tr class="jtable-data-row jtable-row-even" data-record-key="c2d272e9-4ebe-4052-9a4f-9ea13ce881af" onclick="window.location.href = '/search/jobdetails/respiratory-care-practitioner/c2d272e9-4ebe-4052-9a4f-9ea13ce881af'" data-href="https://careers.saintpetershcs.com/search/jobdetails/respiratory-care-practitioner/c2d272e9-4ebe-4052-9a4f-9ea13ce881af" onkeydown="javascript:if(event.keyCode==13) window.location.href = '/search/jobdetails/respiratory-care-practitioner/c2d272e9-4ebe-4052-9a4f-9ea13ce881af'" role="link" aria-label="Respiratory Care Practitioner" tabindex="0"><td class="title-column"><span>Respiratory Care Practitioner</span></td><td class="department-column"><span>Respiratory Therapy</span></td><td class="city-state-column"><span>New Brunswick, NJ</span></td></tr><tr class="jtable-data-row" data-record-key="83405fa7-27e2-4dc8-b134-4eff77389c16" onclick="window.location.href = '/search/jobdetails/certified-respiratory-care-practitioner/83405fa7-27e2-4dc8-b134-4eff77389c16'" data-href="https://careers.saintpetershcs.com/search/jobdetails/certified-respiratory-care-practitioner/83405fa7-27e2-4dc8-b134-4eff77389c16" onkeydown="javascript:if(event.keyCode==13) window.location.href = '/search/jobdetails/certified-respiratory-care-practitioner/83405fa7-27e2-4dc8-b134-4eff77389c16'" role="link" aria-label="Certified Respiratory Care Practitioner" tabindex="0"><td class="title-column"><span>Certified Respiratory Care Practitioner</span></td><td class="department-column"><span>Respiratory Therapy</span></td><td class="city-state-column"><span>New Brunswick, NJ</span></td></tr><tr class="jtable-data-row jtable-row-even" data-record-key="83ced4f6-83ef-4ae0-8581-543cbb828e94" onclick="window.location.href = '/search/jobdetails/registered-respiratory-care-practitioner/83ced4f6-83ef-4ae0-8581-543cbb828e94'" data-href="https://careers.saintpetershcs.com/search/jobdetails/registered-respiratory-care-practitioner/83ced4f6-83ef-4ae0-8581-543cbb828e94" onkeydown="javascript:if(event.keyCode==13) window.location.href = '/search/jobdetails/registered-respiratory-care-practitioner/83ced4f6-83ef-4ae0-8581-543cbb828e94'" role="link" aria-label="Registered Respiratory Care Practitioner" tabindex="0"><td class="title-column"><span>Registered Respiratory Care Practitioner</span></td><td class="department-column"><span>Saint Peters</span></td><td class="city-state-column"><span>New Brunswick, NJ</span></td></tr><tr class="jtable-data-row" data-record-key="139f28af-e7e0-4a55-861c-a769aed74947" onclick="window.location.href = '/search/jobdetails/certified-nurse-midwife-per-diem/139f28af-e7e0-4a55-861c-a769aed74947'" data-href="https://careers.saintpetershcs.com/search/jobdetails/certified-nurse-midwife-per-diem/139f28af-e7e0-4a55-861c-a769aed74947" onkeydown="javascript:if(event.keyCode==13) window.location.href = '/search/jobdetails/certified-nurse-midwife-per-diem/139f28af-e7e0-4a55-861c-a769aed74947'" role="link" aria-label="Certified Nurse Midwife, Per Diem" tabindex="0"><td class="title-column"><span>Certified Nurse Midwife, Per Diem</span></td><td class="department-column"><span>Birthing Center</span></td><td class="city-state-column"><span>Lakewood, NJ</span></td></tr><tr class="jtable-data-row jtable-row-even" data-record-key="9194a4ea-fa5f-48ea-921d-aa1d61682bd5" onclick="window.location.href = '/search/jobdetails/developmental-pediatrics-advanced-practice-nurse/9194a4ea-fa5f-48ea-921d-aa1d61682bd5'" data-href="https://careers.saintpetershcs.com/search/jobdetails/developmental-pediatrics-advanced-practice-nurse/9194a4ea-fa5f-48ea-921d-aa1d61682bd5" onkeydown="javascript:if(event.keyCode==13) window.location.href = '/search/jobdetails/developmental-pediatrics-advanced-practice-nurse/9194a4ea-fa5f-48ea-921d-aa1d61682bd5'" role="link" aria-label="Developmental Pediatrics Advanced Practice Nurse" tabindex="0"><td class="title-column"><span>Developmental Pediatrics Advanced Practice Nurse</span></td><td class="department-column"><span>Pediatric Neurodevelop Medicin</span></td><td class="city-state-column"><span>New Brunswick, NJ</span></td></tr><tr class="jtable-data-row" data-record-key="b2b3a24b-b4f0-47da-bae9-c2b5525e55bb" onclick="window.location.href = '/search/jobdetails/nursing-unit-secretary-part-time/b2b3a24b-b4f0-47da-bae9-c2b5525e55bb'" data-href="https://careers.saintpetershcs.com/search/jobdetails/nursing-unit-secretary-part-time/b2b3a24b-b4f0-47da-bae9-c2b5525e55bb" onkeydown="javascript:if(event.keyCode==13) window.location.href = '/search/jobdetails/nursing-unit-secretary-part-time/b2b3a24b-b4f0-47da-bae9-c2b5525e55bb'" role="link" aria-label="Nursing Unit Secretary Part Time" tabindex="0"><td class="title-column"><span>Nursing Unit Secretary Part Time</span></td><td class="department-column"><span>Metabolic Unit 1G</span></td><td class="city-state-column"><span>New Brunswick, NJ</span></td></tr><tr class="jtable-data-row jtable-row-even" data-record-key="a4a261ae-f127-4096-8031-1d2ab17f1bd1" onclick="window.location.href = '/search/jobdetails/respiratory-care-practitioner-per-diem/a4a261ae-f127-4096-8031-1d2ab17f1bd1'" data-href="https://careers.saintpetershcs.com/search/jobdetails/respiratory-care-practitioner-per-diem/a4a261ae-f127-4096-8031-1d2ab17f1bd1" onkeydown="javascript:if(event.keyCode==13) window.location.href = '/search/jobdetails/respiratory-care-practitioner-per-diem/a4a261ae-f127-4096-8031-1d2ab17f1bd1'" role="link" aria-label="Respiratory Care Practitioner Per Diem" tabindex="0"><td class="title-column"><span>Respiratory Care Practitioner Per Diem</span></td><td class="department-column"><span>Respiratory Therapy</span></td><td class="city-state-column"><span>New Brunswick, NJ</span></td></tr><tr class="jtable-data-row" data-record-key="13fd15b6-3961-4932-b4ee-0cf28d209bb6" onclick="window.location.href = '/search/jobdetails/adult-emergency-room-assistant-nurse-manager-nights/13fd15b6-3961-4932-b4ee-0cf28d209bb6'" data-href="https://careers.saintpetershcs.com/search/jobdetails/adult-emergency-room-assistant-nurse-manager-nights/13fd15b6-3961-4932-b4ee-0cf28d209bb6" onkeydown="javascript:if(event.keyCode==13) window.location.href = '/search/jobdetails/adult-emergency-room-assistant-nurse-manager-nights/13fd15b6-3961-4932-b4ee-0cf28d209bb6'" role="link" aria-label="Adult Emergency Room Assistant Nurse Manager Nights" tabindex="0"><td class="title-column"><span>Adult Emergency Room Assistant Nurse Manager Nights</span></td><td class="department-column"><span>Adult Emergency Room</span></td><td class="city-state-column"><span>New Brunswick, NJ</span></td></tr></tbody></table><div class="jtable-bottom-panel ui-state-default"><div class="jtable-left-area"><span class="jtable-page-list"><span class="jtable-page-number-next ui-button ui-state-default" tabindex="0" role="button" aria-label="Load more jobs">Load more jobs</span><span class="jtable-page-number-next-mobile ui-button ui-state-default" tabindex="0" role="button" aria-label="Load more jobs">Load more jobs</span></span></div><div class="jtable-right-area"><span class="jtable-page-info">Showing 12 out of 77</span></div></div><div class="jtable-column-resize-bar" style="display: none;"></div><div class="jtable-column-selection-container"></div></div></div>
+    <div id="seo-data" style="display: none;"></div>
+    <input id="is-dirty" name="is-dirty" type="hidden" value="1">
+    
+</div>
+
+<div style="clear: both;"></div>
+
+<script src="/js/Shared/contextMenu.js?v=oOJwTyLMaK8CuuhShBpnSJSEzWaeTADgy14Gxl5lJp8"></script>
+<link href="/content/Shared/Styles/contextMenu.css" rel="stylesheet" type="text/css">
+
+<script>
+    // Capture landing URL params immediately, before any script modifies the URL
+    window._landingParams = window._landingParams || new URLSearchParams(window.location.search);
+</script>
+<script src="/ReusableComponents/JobSearchResultsTable/JobSearchResultsTable.js?v=DI-QZFxuq0KVhZ29xXGrviTqtwO4-EfSvFO6sW7sgGI"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        var modelData = {"MapSearchValue":null,"MapSearchType":null,"FloatSearchBtnText":null,"DefaultRadiusValue":0,"RequestedInputs":["keyword","categoryid","adtypeid","citystate","mediumradiuscollection"],"IsLocationsPageSearch":false,"InputDataCollection":null,"Geolocation":{"Key":0,"Value":0},"IndustryCollection":{},"FamilyCollection":{},"CategoryCollection":{},"AdTypeCollection":{},"AdShiftCollection":{},"AdDepartmentCollection":{},"AdScheduleCollection":{},"AdSalaryCollection":{},"FacilityCollection":{},"FacilityNameCollection":{},"CityStateCollection":{},"StateCollection":{},"RadiusCollection":{},"LocationBasedAdTypeCollection":{},"AdBrandCollection":{},"PostedDateRangeCollection":{},"Keyword":"nurse practitioner","ClientID":"00000000-0000-0000-0000-000000000000","IndustryID":[],"FamilyID":[],"CategoryID":[],"AdTypeID":null,"AdShiftID":null,"AdScheduleID":null,"AdSalaryID":null,"AdDepartmentID":null,"FacilityID":null,"FeaturedGID":null,"FacilityIDs":null,"Radius":null,"CityState":null,"GeolocationString":null,"RegionalState":null,"RegionalCountry":null,"BrandName":null,"FacilityName":null,"AdLocationTypeID":null,"PostedDate":null,"IsInternational":false,"FeaturedOnly":false,"UseLocation":false,"RemoteJobs":false,"CountryCodesCollection":null,"StateCountry":null,"CountryOnly":null,"IsExternalRequest":false,"TableConfiguration":"{\u0022ID\u0022:{\u0022key\u0022:true,\u0022list\u0022:false,\u0022title\u0022:null,\u0022sorting\u0022:false,\u0022listClass\u0022:null},\u0022Title\u0022:{\u0022key\u0022:false,\u0022list\u0022:true,\u0022title\u0022:\u0022Title\u0022,\u0022sorting\u0022:false,\u0022listClass\u0022:\u0022title-column\u0022},\u0022DepartmentName\u0022:{\u0022key\u0022:false,\u0022list\u0022:true,\u0022title\u0022:\u0022Department\u0022,\u0022sorting\u0022:false,\u0022listClass\u0022:\u0022department-column\u0022},\u0022CityStateDataAbbrev\u0022:{\u0022key\u0022:false,\u0022list\u0022:true,\u0022title\u0022:\u0022City, State\u0022,\u0022sorting\u0022:false,\u0022listClass\u0022:\u0022city-state-column\u0022}}","HereDotComAppID":null,"HereDotComAppCode":null,"UseGooglePlaces":false,"GooglePlacesKey":null,"UseBingAutoSuggest":false,"BingAutoSuggestKey":null,"SearchButtonText":null};
+
+        // Identify external params by comparing landing URL against known search params
+        if (!window._externalParams) {
+            const queryParams = getSearchParams(modelData);
+            const excluded = new Set(excludedSearchParams.map(k => k.toLowerCase()));
+            window._externalParams = new URLSearchParams();
+            for (const [key, value] of window._landingParams) {
+                const lk = key.toLowerCase();
+                if (!queryParams.has(lk) && !excluded.has(lk)) {
+                    window._externalParams.append(lk, value);
+                }
+            }
+        }
+
+        var isLocationsSearch = false;
+        initiateResultsTable(modelData, isLocationsSearch);
+    });
+</script>
+
+    
+    
+</div>
+
+
+<div id="footer" class="main-footer" role="contentinfo">
+    
+    <section class="align-items-md-center align-items-start d-flex flex-md-row flex-column footer">
+    <div class="footer__left">
+        <a class="footer__left__logo" href="https://www.saintpetershcs.com/">
+            <picture>
+                <source media="(min-width: 1024px)" srcset="https://activatecdn.azureedge.net/activatedata/35Content/SaintPeterHealthcareSystem/Images/logo--white.webp" type="image/webp" width="300" height="55">
+                <source media="(max-width: 1023px)" srcset="https://activatecdn.azureedge.net/activatedata/35Content/SaintPeterHealthcareSystem/Images/logo--white--xs.webp" type="image/webp" width="239" height="44">
+                <img src="https://activatecdn.azureedge.net/activatedata/35Content/SaintPeterHealthcareSystem/Images/logo--white--xs.webp">
+            </picture>
+
+        </a>
+        <p class="mt-3">
+            254 Easton Avenue<br>
+            New Brunswick, NJ 08901<br>
+            <a class="footer__link" href="tel:732-745-8600"> 732-745-8600</a>
+        </p>
+    </div>
+    <div class="footer__right">
+        <ul class="footer_social">
+            <li>
+                <a href="https://www.facebook.com/SaintPetersUniversityHospital" rel="noopener noreferer" target="_blank" aria-label="Saint Peter Healthcare System on facebook">
+                    <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" viewBox="0 0 800 800">
+                        <path d="M647.5 400.5c0-137-111-248-248-248s-248 111-248 248c0 123.8 90.7 226.4 209.2 245V472.2h-63v-71.7h63v-54.6c0-62.1 37-96.5 93.7-96.5 27.1 0 55.5 4.8 55.5 4.8v61h-31.3c-30.8 0-40.4 19.1-40.4 38.7v46.5H507l-11 71.7h-57.8v173.3c118.6-18.5 209.3-121.1 209.3-244.9z"></path>
+                    </svg>
+                </a>
+            </li>
+            <li>
+                <a href="https://x.com/sphcs_news" rel="noopener noreferer" target="_blank" aria-label="Saint Peter Healthcare System on twitter.">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800">
+                        <path d="M540.34 196h73.82L452.92 380.25 642.61 631H494.12L377.74 478.96 244.73 631H170.8l172.43-197.11L161.39 196h152.25l105.09 138.97L540.34 196Zm-25.93 390.87h40.89L291.37 237.83h-43.92l266.96 349.05Z"></path>
+                    </svg>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.youtube.com/user/SPHealthcareSystem" rel="noopener noreferer" target="_blank" aria-label="Saint Peter Healthcare System on youtube.">
+                    <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" viewBox="0 0 800 800">
+                        <path d="M661.2 267.1c-6.3-23.7-24.8-42.3-48.3-48.6C570.3 207 399.5 207 399.5 207s-170.8 0-213.4 11.5c-23.5 6.3-42 24.9-48.3 48.6-11.4 42.9-11.4 132.3-11.4 132.3s0 89.4 11.4 132.3c6.3 23.7 24.8 41.5 48.3 47.8C228.7 591 399.5 591 399.5 591s170.8 0 213.4-11.5c23.5-6.3 42-24.2 48.3-47.8 11.4-42.9 11.4-132.3 11.4-132.3s0-89.4-11.4-132.3zM343.6 480.6V318.2l142.7 81.2-142.7 81.2z"></path>
+                    </svg>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.linkedin.com/company/saint-peter-s-healthcare-system/" rel="noopener noreferer" target="_blank" aria-label="Saint Peter Healthcare System on LinkedIn.">
+                    <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" viewBox="0 0 800 800">
+                        <path d="M592 176H207.9c-17.6 0-31.9 14.5-31.9 32.3v383.4c0 17.8 14.3 32.3 31.9 32.3H592c17.6 0 32-14.5 32-32.3V208.3c0-17.8-14.4-32.3-32-32.3zM311.4 560H245V346.2h66.5V560h-.1zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5s17.2-38.5 38.5-38.5c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V456c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V560h-66.4V346.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V560z"></path>
+                    </svg>
+
+                </a>
+            </li>
+        </ul>
+        <p>
+            Saint Peter's Healthcare System is sponsored by the Roman Catholic Diocese of Metuchen. Saint Peter's is a state-designated children's hospital and a regional perinatal center, and is a major clinical affiliate of Rutgers Biomedical and Health Sciences and an affiliate of The Children's Hospital of Philadelphia.
+        </p>
+        <p class="footer__right__copy">
+            © 2026 Saint Peter's Healthcare System
+        </p>
+    </div>
+</section>
+
+<script src="/content/Shared/Scripts/lazyload.js"></script>
+<script src="/content/Shared/Scripts/a11y.js"></script>
+<script src="/content/SaintPeterHealthcareSystem/Scripts/_activate.js"></script>
+
+<script>
+    $(function () { // Dropdown toggle
+        $('.dropdown-toggle').click(function () {
+            // Slide up all dropdown menus
+            $('.dropdown-menu').slideUp();
+            // Remove 'open' class from all dropdown toggles
+            $('.dropdown-toggle').removeClass('open');
+
+            // Check if the clicked dropdown is already open
+            if ($(this).next('.dropdown-menu').is(':visible')) {
+                // If open, close it
+                $(this).next('.dropdown-menu').slideUp();
+            } else {
+                // If closed, open it
+                $(this).addClass('open');
+                $(this).next('.dropdown-menu').slideDown().css('display', 'flex'); // Apply 'display: flex' only to the clicked dropdown menu
+            }
+        });
+
+        // Close dropdown when clicking outside
+        $(document).on('click', function (e) {
+            if (!$(e.target).closest('.dropdown-toggle').length && !$(e.target).closest('.dropdown-menu').length) {
+                $('.dropdown-menu').slideUp();
+                $('.dropdown-toggle').removeClass('open');
+            }
+        });
+    });
+</script>
+
+    <i id="BackToTop" class="fa fa-arrow-up" aria-hidden="true" style="display: none;"></i>
+    
+    
+<div class="attribution-container">
+        
+<a href="https://www.nasrecruitment.com/solutions/recruitment-marketing-platform/activate-platform" target="_blank" rel="noopener">
+    <img src="https://activatecdn.azureedge.net/activatedata/35Content/Shared/Images/default-attribution_white.svg" alt="Powered by Activate®">
+</a>
+
+        <a href="https://www.nasrecruitment.com/terms-of-use-privacy-policy/" target="_blank" style="float: right; clear: both; font-size: .8rem; margin-bottom: 5px; margin-right: 5px;">
+            Terms of Use and Privacy Policy
+        </a>
+    </div></div>
+
+
+<script type="text/javascript">
+    var systemVariations = JSON.parse('null');
+    if (window.variations) {
+        for (var key in systemVariations) {
+            window.variations[key] = systemVariations[key];
+        }
+    } else {
+        window.variations = systemVariations;
+    }
+
+
+    if (window.variations) {
+        var ev = { event: 'ab_variations_loaded', variations: window.variations };
+        window.dataLayer = window.dataLayer || [];
+        Object.keys(window).forEach(function (key) {
+            if (key.toLowerCase().indexOf('datalayer') === 0
+                && window[key]
+                && typeof window[key].push === 'function') {
+                window[key].push(ev);
+            }
+        });
+    }
+        </script>
+
+
+
+
+
+
+    <div id="global-announcer-container" aria-live="polite"></div>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const container = document.getElementById('global-announcer-container');
+        window.announce = function(message, assertive = false, timeout = 5000) {
+            if (!container) {
+                console.error('Cannot announce message. Global announcer container not found.');
+                return;
+            }
+            container.textContent = '';
+            container.setAttribute('aria-live', assertive ? 'assertive' : 'polite');
+            container.textContent = message;
+
+            setTimeout(() => {
+                container.setAttribute('aria-live', 'polite');
+                container.textContent = '';
+            }, timeout);
+        };
+    });
+</script>
+<style>
+    #global-announcer-container {
+        border: 0;
+        clip: rect(0 0 0 0);
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute !important;
+        width: 1px;
+    }
+</style>
+
+
+<div id="usercentrics-root" data-created-at="1792502204767" style=""></div><ul class="context-menu-list context-menu-root" style="display: none;"><li class="context-menu-item"><span>Open job in new tab</span></li></ul><div tabindex="-1" role="dialog" aria-modal="true" class="ui-dialog ui-corner-all ui-widget ui-widget-content ui-front ui-dialog-buttons ui-draggable ui-resizable" aria-describedby="ui-id-1" aria-labelledby="ui-id-2" style="display: none; position: relative;"><div class="ui-dialog-titlebar ui-corner-all ui-widget-header ui-helper-clearfix ui-draggable-handle"><span id="ui-id-2" class="ui-dialog-title">Error</span><button type="button" class="ui-button ui-corner-all ui-widget ui-button-icon-only ui-dialog-titlebar-close" title="Close"><span class="ui-button-icon ui-icon ui-icon-closethick"></span><span class="ui-button-icon-space"> </span>Close</button></div><div id="ui-id-1" class="ui-dialog-content ui-widget-content"></div><div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix"><div class="ui-dialog-buttonset"><button type="button" class="ui-button ui-corner-all ui-widget">Close</button></div></div><div class="ui-resizable-handle ui-resizable-n" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-w" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-sw" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-ne" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-nw" style="z-index: 90;"></div></div><div role="status" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div><script type="text/javascript" id="" charset="">!function(b,e,f,g,a,c,d){b.saq||(a=b.saq=function(){a.callMethod?a.callMethod.apply(a,arguments):a.queue.push(arguments)},b._saq||(b._saq=a),a.push=a,a.loaded=!0,a.version="1.0",a.queue=[],c=e.createElement(f),c.async=!0,c.src=g,d=e.getElementsByTagName(f)[0],d.parentNode.insertBefore(c,d))}(window,document,"script","https://tags.srv.stackadapt.com/events.js");saq("ts","UZ598m5tLl6vf0z2I1jHoQ");</script><iframe name="__uspapiLocator" style="display: none;"></iframe><style id="uc-overflow-style">.overflowHidden {overflow: hidden !important;}</style></body></html>
