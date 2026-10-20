@@ -79,7 +79,7 @@ scripts/
 
 ## Known gaps (as of 2026-10-20)
 
-- About a third of the boards did not return listings on the first automated pass (bot blocks such as HCA and Penn Medicine, Lifepoint and Kaleida redirects, Workday tenants not yet identified, boards with no recognizable listing page). The morning task covers these and the ledger's `careers_notes` records what was tried.
+- On the second automated pass (2026-10-20, after the board repairs) 393 of 509 boards returned listings and 116 did not: Infor CloudSuite boards (Northern Light, Kaleida) have no adapter yet, a few sites still bot-block headless Chrome, and some community hospitals have no recognizable listing page. The morning Claude task covers these, and each ledger record's `careers_notes` says what was tried.
 - Many smaller hospitals have no Wikipedia article, so some photos are website share images and some descriptions are shorter.
 - `summary` on jobs is currently derived from the title; the morning task can enrich it.
 - Browser push notifications from the page itself (service worker) are not wired yet; ntfy and the Claude digest cover notifications.
