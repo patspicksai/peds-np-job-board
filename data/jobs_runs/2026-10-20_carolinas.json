@@ -1,0 +1,151 @@
+{
+ "run_id": "2026-10-20",
+ "region_group": "carolinas",
+ "checked": [
+  "anmed-medical-center-anderson",
+  "beaufort-memorial-beaufort",
+  "caromont-belmont",
+  "caromont-regional-gastonia",
+  "carteret-health-care-morehead-city",
+  "colleton-medical-center-walterboro",
+  "columbus-regional-whiteville",
+  "conway-medical-center-conway",
+  "dosher-southport",
+  "grand-strand-medical-center-myrtle-beach",
+  "iredell-memorial-statesville",
+  "mission-childrens-asheville",
+  "summerville-medical-center-summerville",
+  "trident-medical-center-north-charleston"
+ ],
+ "unreachable": [
+  "granville-medical-center-oxford",
+  "washington-regional-plymouth"
+ ],
+ "seen_again": [],
+ "closed": [
+  "https://hireaniner.charlotte.edu/jobs/f353eb0454817c8b5af7dde44ff5e48c",
+  "https://recruiting.paylocity.com/Recruiting/Jobs/Details/3334869"
+ ],
+ "jobs": [
+  {
+   "id": null,
+   "hospital_slug": "caromont-regional-gastonia",
+   "title": "Neonatal Nurse Practitioner",
+   "url": "https://clinical-pediatrix.icims.com/jobs/47929/neonatal-nurse-practitioner/job",
+   "relevance": 3,
+   "setting": "nicu",
+   "posted_at": null
+  },
+  {
+   "id": null,
+   "hospital_slug": "carteret-health-care-morehead-city",
+   "title": "NP/PA Newborn/Pediatric Hospitalist",
+   "url": "https://www.practicematch.com/physicians/job-details.cfm/984544",
+   "relevance": 3,
+   "setting": "peds_inpatient",
+   "posted_at": null
+  },
+  {
+   "id": null,
+   "hospital_slug": "mission-childrens-asheville",
+   "title": "Newborn Advanced Practice Provider (Part-Time)",
+   "url": "https://practicematch.com/advanced-practitioners/job-details.cfm/1043770",
+   "relevance": 3,
+   "setting": "peds_inpatient",
+   "posted_at": null
+  },
+  {
+   "id": null,
+   "hospital_slug": "mission-childrens-asheville",
+   "title": "Pediatric Hematology Oncology Advanced Practice Provider",
+   "url": "https://www.practicematch.com/advanced-practitioners/job-details.cfm/1042992",
+   "relevance": 2,
+   "setting": "peds_specialty_outpatient",
+   "posted_at": null
+  },
+  {
+   "id": null,
+   "hospital_slug": "mission-childrens-asheville",
+   "title": "Neonatal Perinatal Nurse Practitioner",
+   "url": "https://careers.hcahealthcare.com/jobs/12867831-neonatal-perinatal-nurse-practitioner",
+   "relevance": 3,
+   "setting": "nicu",
+   "posted_at": null
+  },
+  {
+   "id": null,
+   "hospital_slug": "columbus-regional-whiteville",
+   "title": "Emergency Medicine NP/PA",
+   "url": "https://www.practicematch.com/physicians/job-details.cfm/943413",
+   "relevance": 1,
+   "setting": "unspecified",
+   "posted_at": null
+  },
+  {
+   "id": null,
+   "hospital_slug": "carteret-health-care-morehead-city",
+   "title": "PA NP CMG FT",
+   "url": "https://jobs.recruiter.com/jobs/4255600207-pa-np-cmg-ft",
+   "relevance": 1,
+   "setting": "unspecified",
+   "posted_at": null
+  },
+  {
+   "id": null,
+   "hospital_slug": "dosher-southport",
+   "title": "Advanced Practice Provider (Nurse Practitioner or Physician Assistant) for Primary Care",
+   "url": "https://www.dosher.org/getpage.php?name=physician_opportunities&sub=Careers",
+   "relevance": 1,
+   "setting": "unspecified",
+   "posted_at": null
+  },
+  {
+   "id": null,
+   "hospital_slug": "carteret-health-care-morehead-city",
+   "title": "NP/PA Pediatric/Newborn Hospitalist Opportunity in Greenville/Morehead City, NC",
+   "url": "https://www.practicematch.com/advanced-practitioners/job-details.cfm/1152717",
+   "relevance": 3,
+   "setting": "peds_inpatient",
+   "posted_at": null
+  }
+ ],
+ "notes": "Carolinas gap group: 14 of 16 hospitals checked, 2 unreachable (Granville and Washington Regional sites block fetchers and searches found no employer postings). 9 jobs: 5 relevance-3 (Pediatrix NNP at CaroMont Gastonia, two ECU Health pediatric/newborn hospitalist NP/PA roles at Carteret, Mission NNP and newborn APP), 1 relevance-2 (Mission peds heme/onc APP), 3 relevance-1 hotspot generic NP/PA roles. Fetch tool returned paraphrased rather than verbatim descriptions for most postings. HCA SC hospitals (Summerville, Trident, Grand Strand, Colleton) were covered only by domain-restricted searches of careers.hcahealthcare.com, which surfaced no NP pediatric roles (only a Colleton pediatric hospitalist physician and a Pediatrix PICU intensivist physician at Grand Strand). 36 of 40 web calls used.",
+ "url_fixes": [
+  {
+   "slug": "iredell-memorial-statesville",
+   "proposed_careers_search_url": "https://recruiting.paylocity.com/Recruiting/Jobs/All/e48fa797-ce91-4d50-b81e-d93ea7e1a2e0/Iredell-Memorial-Hospital-Incorporated",
+   "why": "Iredell careers page links to Paylocity (company 1321); the list page is JS-rendered so the engine needs a browser/paylocity adapter. Posting detail pages look like recruiting.paylocity.com/Recruiting/Jobs/Details/<id>."
+  },
+  {
+   "slug": "caromont-regional-gastonia",
+   "proposed_careers_search_url": "https://pm.healthcaresource.com/cs/caromont#/search",
+   "why": "CaroMont careers page links to a HealthcareSource Position Manager board (JS-rendered). Provider category filter: Job Category=Physician/Non-Physician Providers. NICU NNP roles are posted by Pediatrix on clinical-pediatrix.icims.com instead."
+  },
+  {
+   "slug": "caromont-belmont",
+   "proposed_careers_search_url": "https://pm.healthcaresource.com/cs/caromont#/search",
+   "why": "Same CaroMont HealthcareSource board as Gastonia."
+  },
+  {
+   "slug": "conway-medical-center-conway",
+   "proposed_careers_search_url": "https://pm.healthcaresource.com/cs/cmcsc#/results?whereControl=radius&radiusDistance=25&radiusUnit=mi&sort=titleAlphaAsc",
+   "why": "Conway careers page links to a HealthcareSource Position Manager board (JS-rendered)."
+  },
+  {
+   "slug": "dosher-southport",
+   "proposed_careers_search_url": "https://www.dosher.org/getpage.php?name=physician_opportunities&sub=Careers",
+   "why": "/careers/ is 404; the site uses getpage.php. Employment page is getpage.php?name=employment&sub=Careers and provider (physician/PA/NP) openings are listed as plain text on the physician_opportunities page."
+  },
+  {
+   "slug": "beaufort-memorial-beaufort",
+   "proposed_careers_search_url": "https://www.bmhsc.org/careers/career-search",
+   "why": "Careers landing page links to an on-site career search page; APP category page is /careers/career-areas/advanced-practice-providers."
+  },
+  {
+   "slug": "beaufort-memorial-beaufort",
+   "proposed_careers_search_url": "https://www2.appone.com/Search/Search.aspx?servervar=beaufortmemorialhospital.appone.com",
+   "why": "The bmhsc.org career-search page embeds an AppOne (Paycor) applicant board; that is the real listing source."
+  }
+ ],
+ "compacted": true
+}

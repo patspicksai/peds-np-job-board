@@ -1,0 +1,119 @@
+{
+ "run_id": "2026-10-20",
+ "region_group": "mid_atlantic",
+ "checked": [
+  "carroll-hospital-westminster",
+  "sinai-samuelson-childrens-baltimore",
+  "kennedy-krieger-baltimore",
+  "reston-hospital-center-reston",
+  "stonesprings-hospital-dulles",
+  "chippenham-richmond",
+  "henrico-doctors-richmond",
+  "johnston-willis-richmond",
+  "lewisgale-medical-center-salem",
+  "spotsylvania-regional-fredericksburg",
+  "christianacare-union-elkton",
+  "cumberland-hospital-new-kent",
+  "augusta-health-fishersville"
+ ],
+ "unreachable": [
+  "mt-washington-pediatric-baltimore",
+  "howard-university-hospital-washington",
+  "hsc-pediatric-center-washington",
+  "frederick-health-hospital-frederick",
+  "meritus-medical-center-hagerstown",
+  "chesapeake-regional-chesapeake"
+ ],
+ "seen_again": [],
+ "closed": [
+  "https://careers.christianacare.org/posting/JR76729/",
+  "https://careers.pncb.org/jobs/21743053/np-pediatric-hospitalist-elkton-md"
+ ],
+ "jobs": [
+  {
+   "id": null,
+   "hospital_slug": "kennedy-krieger-baltimore",
+   "title": "Pediatric Nurse Practitioner (Neurorehabilitation)",
+   "url": "https://jobs-kennedykrieger.icims.com/jobs/23055/pediatric-nurse-practitioner-%28neurorehabilitation%29/job",
+   "relevance": 3,
+   "setting": "peds_specialty_inpatient",
+   "posted_at": null
+  },
+  {
+   "id": null,
+   "hospital_slug": "kennedy-krieger-baltimore",
+   "title": "Pediatric Nurse Practitioner (Neurorehabilitation)",
+   "url": "https://jobs-kennedykrieger.icims.com/jobs/22821/pediatric-nurse-practitioner-%28neurorehabilitation%29/job",
+   "relevance": 3,
+   "setting": "peds_specialty_inpatient",
+   "posted_at": null
+  },
+  {
+   "id": null,
+   "hospital_slug": "kennedy-krieger-baltimore",
+   "title": "Pediatric Nurse Practitioner for The Center for Autism Services, Science and Innovation (CASSI): Greenspring Location",
+   "url": "https://jobs-kennedykrieger.icims.com/jobs/22735/pediatric-nurse-practitioner--for-the-center-for-autism-services%2c-science-and-innovation-%28cassi%29-%3a-greenspring-location/job",
+   "relevance": 2,
+   "setting": "peds_specialty_outpatient",
+   "posted_at": null
+  },
+  {
+   "id": null,
+   "hospital_slug": "cumberland-hospital-new-kent",
+   "title": "Nurse Practitioner Opening, New Kent, VA",
+   "url": "https://careers-universalhealthservices.icims.com/jobs/5562/nurse-practitioner-opening%2c-new-kent%2c-va/job",
+   "relevance": 2,
+   "setting": "peds_specialty_inpatient",
+   "posted_at": null
+  }
+ ],
+ "notes": "Mid-Atlantic gap pass, 38 of 40 web calls. LifeBridge's Talemetry board rendered (22 NP/APP results, none pediatric); Kennedy Krieger's iCIMS board is JS-rendered but posting pages fetch fine and carry 3+ open PNP roles; the ChristianaCare 'NP, Pediatric Hospitalist, Elkton MD' (JR76729) is closed on the employer and aggregator copies; HCA Virginia's careers.hcahealthcare.com was searched on-domain for all 7 facilities with no NP/APP postings found (only RN roles); six boards (MWPH Entertime, Howard, HSC now on Children's National Workday, Frederick UKG, Meritus UKG, Chesapeake UKG) could not be read by any pass.",
+ "url_fixes": [
+  {
+   "slug": "kennedy-krieger-baltimore",
+   "proposed_careers_search_url": "https://jobs-kennedykrieger.icims.com/jobs/search?ss=1&searchKeyword=nurse+practitioner",
+   "why": "Kennedy Krieger uses iCIMS (jobs-kennedykrieger.icims.com). The search page is JS-rendered for WebFetch but the engine's icims adapter should read it; posting pages /jobs/<id>/<slug>/job render server side."
+  },
+  {
+   "slug": "mt-washington-pediatric-baltimore",
+   "proposed_careers_search_url": "https://secure4.entertimeonline.com/ta/6108366.jobs?JobsSearch=1",
+   "why": "mwph.org/jobs links 'View our current job openings' to this Entertime Online (Kronos/UKG Ready) applicant portal; robots.txt refuses WebFetch so the engine needs a browser-based read."
+  },
+  {
+   "slug": "hsc-pediatric-center-washington",
+   "proposed_careers_search_url": "https://childrensnational.wd108.myworkdayjobs.com/CN_Careers",
+   "why": "hschealth.org/careers/job-openings now 302-redirects to childrensnational.org/get-care/departments/rehabilitation-specialized-care; its careers page links all openings to the Children's National Workday board (CN_Careers). HSC jobs post there; filter by location/department 'HSC Pediatric Center' or 'Rehabilitation & Specialized Care'. Engine: workday adapter."
+  },
+  {
+   "slug": "frederick-health-hospital-frederick",
+   "proposed_careers_search_url": "https://recruiting.ultipro.com/FRE1010FRHS/JobBoard/776a147e-2e0b-43d0-844e-bbd49deeb24d/?q=nurse+practitioner&o=postedDateDesc",
+   "why": "frederickhealth.org/about/careers/ (HTTP 200, while /careers is 403) links current openings to this UKG/UltiPro job board; set careers_platform=ultipro with board_path /FRE1010FRHS/JobBoard/776a147e-2e0b-43d0-844e-bbd49deeb24d."
+  },
+  {
+   "slug": "meritus-medical-center-hagerstown",
+   "proposed_careers_search_url": "https://recruiting.ultipro.com/MER1012MERH/JobBoard/23a054d5-dd9d-4a01-ba62-0bc75b4673d6/?q=nurse+practitioner&o=postedDateDesc",
+   "why": "The ultipro adapter needs board_path /MER1012MERH/JobBoard/23a054d5-dd9d-4a01-ba62-0bc75b4673d6 (already seen in careers_notes). WebFetch of the board returns the 'unsupported browser' shell, so it needs the engine's browser read."
+  },
+  {
+   "slug": "chesapeake-regional-chesapeake",
+   "proposed_careers_search_url": "https://crhukg.rec.pro.ukg.net/CHE1503CHPE/JobBoard/09584b08-b32f-4882-8c7b-223bbd8e3851/?q=nurse+practitioner&o=postedDateDesc",
+   "why": "chesapeakeregional.com/careers/job-board embeds a UKG Pro Recruiting board (company code CHE1503CHPE, JobBoard GUID 09584b08-b32f-4882-8c7b-223bbd8e3851) on the rec.pro.ukg.net host rather than recruiting.ultipro.com; the ultipro adapter needs that board_path and host."
+  },
+  {
+   "slug": "christianacare-union-elkton",
+   "proposed_careers_search_url": "https://christianacare.wd5.myworkdayjobs.com/CCHS?q=nurse+practitioner",
+   "why": "ChristianaCare jobs live on Workday tenant christianacare.wd5 (site CCHS); careers.christianacare.org/posting/<JR id>/ is a front-end that returned a client error on fetch. Engine: workday adapter, filter location Elkton / Union Hospital."
+  },
+  {
+   "slug": "howard-university-hospital-washington",
+   "proposed_careers_search_url": "http://healthsciences.howard.edu/about-huhs/careers",
+   "why": "huhealthcare.com/careers is 403; search points to healthsciences.howard.edu/about-huhs/careers as the hospital careers page, but it is robots-disallowed for WebFetch, so the ATS behind it is still unknown. Needs a browser probe."
+  },
+  {
+   "slug": "cumberland-hospital-new-kent",
+   "proposed_careers_search_url": "https://careers-universalhealthservices.icims.com/jobs/search?ss=1&searchKeyword=New+Kent",
+   "why": "cumberlandhospital.com/careers is 403; the hospital's provider postings are on the UHS iCIMS board (careers-universalhealthservices.icims.com), where posting pages render server side. Engine: icims adapter, keyword 'New Kent' or 'Cumberland'."
+  }
+ ],
+ "compacted": true
+}
