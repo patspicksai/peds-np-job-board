@@ -186,3 +186,34 @@ def test_split_location():
     assert textutil.split_location("Raleigh, North Carolina") == ("Raleigh", "NC")
     assert textutil.split_location("US-MD-Baltimore") == ("Baltimore", "MD")
     assert textutil.split_location("Johns Hopkins Hospital, Baltimore, MD 21287") == ("Baltimore", "MD")
+
+
+def test_symphony_cws_api_config_and_jsonp():
+    from scraper.adapters.symphony import SymphonyAdapter, cws_filter_param, cws_listing, parse_cws_config, parse_cws_jsonp
+    page = """<script> jQuery(document).ready(function(){ if(CWS && CWS.jobs){
+                CWS.jobs.set_api("https://jobsapi-google.m-cloud.io/api/");
+                CWS.jobs.set_options({
+                    org_id: "companies/8fb8d45a-cbb2-48b9-b438-d16a91fb3bef",
+                    jobdetail_path: "/job",
+                    filters: ["ats_portalid:Kenexa"]
+                }); } });</script>"""
+    cfg = parse_cws_config(page)
+    assert cfg == {"api": "https://jobsapi-google.m-cloud.io/api/", "org_id": "companies/8fb8d45a-cbb2-48b9-b438-d16a91fb3bef",
+                   "filters": ["ats_portalid:Kenexa"], "detail_path": "/job"}
+    assert cws_filter_param(cfg["filters"]) == 'ats_portalid="Kenexa"'
+    body = ('CWS.jobs.jobCallback({"totalHits":23,"searchResults":[{"job":{"id":23891411,"ref":"86798BR",'
+            '"title":"Nurse Practitioner or Physician Assistant, Inpatient Medicine","primary_city":"Boston",'
+            '"primary_state":"MA","google_locations":[{"address":"300 Longwood Ave, Boston, MA 02115, USA"}],'
+            '"open_date":"2026-09-18T16:09:18","salary":"$112,320-$180,236 Annual","employment_type":"Part-Time",'
+            '"schedule":"36","sub_category":"Pediatrics-Dept of Pediatrics",'
+            '"url":"https://jobs.bostonchildrens.org/job/23891411/nurse-practitioner-or-physician-assistant-inpatient-medicine-boston-ma/",'
+            '"description":"<div><strong>Position Summary</strong><br>Front-line care.<br><br><strong>Schedule:</strong><br>• 36 hours</div>"}}]})')
+    data = parse_cws_jsonp(body)
+    assert data["totalHits"] == 23
+    li = cws_listing(data["searchResults"][0]["job"], "https://jobs.bostonchildrens.org")
+    assert li.url.startswith("https://jobs.bostonchildrens.org/job/23891411/") and li.posted_at == "2026-09-18"
+    assert li.location_text == "300 Longwood Ave, Boston, MA 02115" and li.external_id == "86798BR"
+    d = SymphonyAdapter._from_api(li.extra["job"], li)
+    assert d["salary_text"] == "$112,320-$180,236 Annual" and d["employment_type"] == "Part time"
+    assert d["schedule"] == "36 hours/week" and d["state"] == "MA" and d["department"] == "Pediatrics-Dept of Pediatrics"
+    assert "Position Summary\nFront-line care.\n\nSchedule:" in d["description"]

@@ -1,12 +1,19 @@
 name: pages
 # Deploy site/ (with data/hospitals.json and data/jobs.json copied into site/data/) to GitHub Pages.
 # configure-pages with enablement: true creates the Pages site on first run (build type: GitHub Actions).
+# Creating the site needs an admin-scoped token: GITHUB_TOKEN gets "Resource not accessible by integration".
+# Either enable Pages once by hand (Settings > Pages > Source: GitHub Actions) or store a fine-grained PAT with
+# Pages + Administration write as the PAGES_TOKEN secret. After that GITHUB_TOKEN deploys fine.
+# Pushes made by the scrape workflow (GITHUB_TOKEN) do not fire `push`, hence the workflow_run trigger.
 on:
   push:
     branches: [main]
     paths:
       - "site/**"
       - "data/**"
+  workflow_run:
+    workflows: [scrape]
+    types: [completed]
   workflow_dispatch:
 permissions:
   pages: write
@@ -23,6 +30,8 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: main
       - name: Assemble site
         run: |
           mkdir -p _site
@@ -47,6 +56,7 @@ jobs:
       - uses: actions/configure-pages@v5
         with:
           enablement: true
+          token: ${{ secrets.PAGES_TOKEN || github.token }}
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site

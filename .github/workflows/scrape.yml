@@ -1,7 +1,14 @@
 name: scrape
 # Daily automated scrape: ledger -> data/runs/<date>.json -> data/jobs.json -> commit -> ntfy push.
-# Two crons cover 06:15 America/New_York in both EDT (10:15 UTC) and EST (11:15 UTC); the guard step
-# skips the second one when a scheduled scrape already committed today.
+# Two crons cover 06:15 America/New_York in both EDT (10:15 UTC) and EST (11:15 UTC). The guard step skips
+# the 11:15 run when a scrape already committed today ("scrape <date>: ..." on main), so normally exactly
+# one scheduled run does work per day. Manual runs (workflow_dispatch) always run.
+#
+# Safety: scripts/merge_jobs.py never deletes jobs and refuses to write data/jobs.json (exit 3) if the active
+# job count would drop below 50% of the previous count, or (exit 4) if the existing file does not parse.
+# The run file is still committed in that case and the workflow fails so the problem is visible.
+# Hard budget: the scrape step has a 40 minute timeout; the scraper's own soft budget (SCRAPER_BUDGET,
+# default 34 min + 3 min grace) finishes earlier and always writes its run file.
 on:
   schedule:
     - cron: "15 10 * * *"
@@ -20,6 +27,9 @@ on:
       ledger:
         description: "ledger path"
         default: "data/hospitals.json"
+      notify:
+        description: "send the ntfy push (true/false)"
+        default: "true"
 permissions:
   contents: write
 concurrency:
@@ -27,20 +37,21 @@ concurrency:
   cancel-in-progress: false
 jobs:
   scrape:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 55
     env:
       NTFY_TOPIC: ${{ secrets.NTFY_TOPIC || vars.NTFY_TOPIC }}
       SITE_URL: ${{ vars.SITE_URL || 'https://patspicksai.github.io/peds-np-job-board/' }}
+      SCRAPER_BUDGET: "2040"
     steps:
       - uses: actions/checkout@v4
         with:
-          fetch-depth: 50
-      - name: Skip if today's scheduled scrape already ran
+          fetch-depth: 0
+      - name: Skip if today's scrape already ran
         id: guard
         run: |
           TODAY=$(date -u +%F)
-          if [ "${{ github.event_name }}" = "schedule" ] && git log --since="$TODAY 00:00:00 +0000" --format=%s origin/main | grep -q "^scrape $TODAY"; then
+          if [ "${{ github.event_name }}" = "schedule" ] && git log origin/main --since="36 hours ago" --format=%s | grep -q "^scrape $TODAY:"; then
             echo "skip=true" >> "$GITHUB_OUTPUT"; echo "Scrape for $TODAY already committed; skipping."
           else
             echo "skip=false" >> "$GITHUB_OUTPUT"
@@ -50,7 +61,11 @@ jobs:
         if: steps.guard.outputs.skip != 'true'
         run: |
           L="${{ inputs.ledger || 'data/hospitals.json' }}"
-          if [ -f "$L" ]; then echo "path=$L" >> "$GITHUB_OUTPUT"; else echo "::warning::ledger $L not found; nothing to scrape"; echo "path=" >> "$GITHUB_OUTPUT"; fi
+          if [ -f "$L" ] && python -c "import json,sys; d=json.load(open('$L')); sys.exit(0 if d.get('hospitals') else 1)"; then
+            echo "path=$L" >> "$GITHUB_OUTPUT"
+          else
+            echo "::warning::ledger $L missing or empty; nothing to scrape"; echo "path=" >> "$GITHUB_OUTPUT"
+          fi
       - uses: actions/setup-python@v5
         if: steps.guard.outputs.skip != 'true' && steps.ledger.outputs.path != ''
         with:
@@ -65,6 +80,7 @@ jobs:
       - name: Scrape
         id: scrape
         if: steps.guard.outputs.skip != 'true' && steps.ledger.outputs.path != ''
+        timeout-minutes: 40
         run: |
           set +e
           mkdir -p "$RUNNER_TEMP/out"
@@ -72,40 +88,63 @@ jobs:
           [ -n "${{ inputs.limit }}" ] && [ "${{ inputs.limit }}" != "0" ] && ARGS="$ARGS --limit ${{ inputs.limit }}"
           [ -n "${{ inputs.only }}" ] && ARGS="$ARGS --only ${{ inputs.only }}"
           [ -n "${{ inputs.platform }}" ] && ARGS="$ARGS --platform ${{ inputs.platform }}"
-          timeout 44m python -m scraper.run $ARGS > "$RUNNER_TEMP/out/run.log" 2>&1
-          echo "exit=$?" | tee -a "$RUNNER_TEMP/out/run.log"
+          echo "args: $ARGS" > "$RUNNER_TEMP/out/args.txt"
+          timeout --kill-after=30s 39m xvfb-run -a python -m scraper.run $ARGS > "$RUNNER_TEMP/out/run.log" 2>&1
+          rc=$?
+          echo "exit=$rc" | tee -a "$RUNNER_TEMP/out/run.log"
           tail -c 200000 "$RUNNER_TEMP/out/run.log" > "$RUNNER_TEMP/out/run_tail.log"; rm -f "$RUNNER_TEMP/out/run.log"
           cat "$RUNNER_TEMP/out/status.txt" 2>/dev/null | head -400
+          RUNFILE=$(cat "$RUNNER_TEMP/out/run_path.txt" 2>/dev/null)
+          echo "run_file=$RUNFILE" >> "$GITHUB_OUTPUT"
+          [ -n "$RUNFILE" ] || echo "::error::scraper produced no run file (exit $rc)"
+          exit 0
       - name: Merge into data/jobs.json
         id: merge
-        if: steps.guard.outputs.skip != 'true' && steps.ledger.outputs.path != ''
+        if: steps.guard.outputs.skip != 'true' && steps.scrape.outputs.run_file != ''
         run: |
           set +e
-          python scripts/merge_jobs.py --stats-out "$RUNNER_TEMP/out/merge_stats.json" 2>&1 | tee "$RUNNER_TEMP/out/merge.txt"
+          python scripts/merge_jobs.py "${{ steps.scrape.outputs.run_file }}" --stats-out "$RUNNER_TEMP/out/merge_stats.json" 2>&1 | tee "$RUNNER_TEMP/out/merge.txt"
           rc=${PIPESTATUS[0]}
           echo "rc=$rc" >> "$GITHUB_OUTPUT"
           NEW=$(python -c "import json;print(json.load(open('$RUNNER_TEMP/out/merge_stats.json')).get('new',0))" 2>/dev/null || echo 0)
           echo "new=$NEW" >> "$GITHUB_OUTPUT"
+          if [ "$rc" = "0" ]; then
+            RF="${{ steps.scrape.outputs.run_file }}"
+            python -m scraper.notify --merge-stats "$RUNNER_TEMP/out/merge_stats.json" --ledger "${{ steps.ledger.outputs.path }}" \
+              --run "$RF" --digest "${RF%.json}.md" --no-send
+          fi
           exit 0
       - name: Commit and push
-        if: steps.guard.outputs.skip != 'true' && steps.ledger.outputs.path != ''
+        id: commit
+        if: steps.guard.outputs.skip != 'true' && steps.scrape.outputs.run_file != ''
         run: |
           git config user.name "peds-np-scraper"; git config user.email "actions@users.noreply.github.com"
           git add data/runs
           [ "${{ steps.merge.outputs.rc }}" = "0" ] && git add data/jobs.json
           if git diff --cached --quiet; then echo "nothing to commit"; exit 0; fi
-          git commit -qm "scrape $(date -u +%F): ${{ steps.merge.outputs.new }} new jobs"
-          for i in 1 2 3; do git pull -q --rebase origin main && git push -q origin HEAD:main && break; sleep 5; done
+          if [ "${{ steps.merge.outputs.rc }}" = "0" ]; then
+            MSG="scrape $(date -u +%F): ${{ steps.merge.outputs.new }} new jobs"
+          else
+            MSG="scrape run $(date -u +%F): merge refused (rc=${{ steps.merge.outputs.rc }}), jobs.json unchanged"
+          fi
+          git commit -qm "$MSG"
+          for i in 1 2 3 4 5; do
+            if git pull -q --rebase origin main && git push -q origin HEAD:main; then echo "pushed: $MSG"; exit 0; fi
+            sleep $((i * 5))
+          done
+          echo "::error::push failed after 5 attempts"; exit 1
       - name: Notify (ntfy)
-        if: steps.guard.outputs.skip != 'true' && steps.ledger.outputs.path != '' && steps.merge.outputs.rc == '0'
-        run: python -m scraper.notify --merge-stats "$RUNNER_TEMP/out/merge_stats.json" --ledger "${{ steps.ledger.outputs.path }}"
+        if: steps.guard.outputs.skip != 'true' && steps.merge.outputs.rc == '0' && inputs.notify != 'false'
+        run: |
+          RF="${{ steps.scrape.outputs.run_file }}"
+          python -m scraper.notify --merge-stats "$RUNNER_TEMP/out/merge_stats.json" --ledger "${{ steps.ledger.outputs.path }}" --run "$RF"
       - name: Publish run summary to ci-logs
         if: always() && steps.guard.outputs.skip != 'true'
         run: |
           mkdir -p "$RUNNER_TEMP/out"; rm -f "$RUNNER_TEMP/out/run.json"
           bash scraper/tools/ci_publish.sh "$RUNNER_TEMP/out" "scrape/${{ github.run_id }}" "scrape ${{ github.run_id }}"
-      - name: Fail on safety stop
-        if: steps.merge.outputs.rc == '3' || steps.merge.outputs.rc == '4'
+      - name: Fail on safety stop or missing run file
+        if: steps.guard.outputs.skip != 'true' && steps.ledger.outputs.path != '' && (steps.scrape.outputs.run_file == '' || steps.merge.outputs.rc == '3' || steps.merge.outputs.rc == '4')
         run: |
-          echo "::error::merge refused to write data/jobs.json (safety stop rc=${{ steps.merge.outputs.rc }}); run file kept in data/runs/"
+          echo "::error::scrape did not complete a merge (run_file='${{ steps.scrape.outputs.run_file }}' merge rc='${{ steps.merge.outputs.rc }}'); data/jobs.json left unchanged"
           exit 1

@@ -10,6 +10,7 @@ from __future__ import annotations
 import argparse
 import json
 import logging
+import os
 import sys
 import time
 from datetime import datetime, timezone
@@ -135,8 +136,15 @@ def main(argv=None) -> int:
             out = out.with_name(f"{run_id}_{datetime.now(timezone.utc).strftime('%H%M')}.json")
         out.write_text(json.dumps(run, indent=1, ensure_ascii=False) + "\n")
         print(f"wrote {out}")
+        if a.report_dir:
+            (Path(a.report_dir) / "run_path.txt").write_text(str(out) + "\n")
     return 0
 
 
 if __name__ == "__main__":
-    sys.exit(main())
+    code = main()
+    sys.stdout.flush()
+    sys.stderr.flush()
+    # Boards abandoned at the hard budget may still hold worker threads; the interpreter would wait for them
+    # at exit (ThreadPoolExecutor threads are joined by an atexit hook). The run file is already written.
+    os._exit(code)

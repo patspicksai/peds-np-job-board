@@ -83,11 +83,27 @@ def send_email(subject: str, body: str) -> bool:
         return False
 
 
+def run_status_line(run: dict | None) -> str:
+    if not run:
+        return ""
+    t = run.get("totals") or {}
+    bad = [e for e in run.get("hospitals") or [] if e.get("status") != "ok"]
+    line = f"Boards: {t.get('checked', 0)} of {t.get('hospitals', 0)} hospitals checked OK"
+    if bad:
+        line += "; not OK: " + ", ".join(f"{e['slug']} ({e.get('status')})" for e in bad[:12])
+        if len(bad) > 12:
+            line += f" and {len(bad) - 12} more"
+    return line + "."
+
+
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--merge-stats", default=None, help="JSON written by scripts/merge_jobs.py --stats-out")
     ap.add_argument("--ledger", default=str(config.LEDGER))
+    ap.add_argument("--run", default=None, help="run file (data/runs/<date>.json) for the status line")
+    ap.add_argument("--digest", default=None, help="also write the markdown digest here (data/runs/<date>.md)")
     ap.add_argument("--always", action="store_true", help="push even when there are 0 new jobs")
+    ap.add_argument("--no-send", action="store_true", help="only write the digest; do not push or email")
     a = ap.parse_args(argv)
     if not a.merge_stats or not Path(a.merge_stats).exists():
         print("notify: no merge stats; nothing to send")
@@ -98,12 +114,29 @@ def main(argv=None) -> int:
         hospitals = {h["slug"]: h.get("name", h["slug"]) for h in json.loads(Path(a.ledger).read_text()).get("hospitals", [])}
     except Exception:  # noqa: BLE001
         hospitals = {}
+    run = None
+    if a.run and Path(a.run).exists():
+        try:
+            run = json.loads(Path(a.run).read_text())
+        except Exception:  # noqa: BLE001
+            run = None
+    status = run_status_line(run)
+    if a.digest:
+        summary = (f"{len(new_jobs)} new, {st.get('updated', 0)} seen again, {st.get('stale', 0)} stale, "
+                   f"{st.get('closed', 0)} closed; active {st.get('prev_active', 0)} -> {st.get('active', 0)}. {status}")
+        rid = (run or {}).get("run_id") or Path(a.digest).stem
+        write_digest_md(Path(a.digest), rid, new_jobs, hospitals, summary.strip())
+        print(f"notify: wrote digest {a.digest}")
+    if a.no_send:
+        return 0
     if not new_jobs and not a.always:
         print("notify: 0 new jobs; no push")
         return 0
     top = [j for j in new_jobs if int(j.get("relevance") or 0) >= 2]
     title = f"Peds NP jobs: {len(new_jobs)} new" + (f" ({len(top)} peds)" if top else "")
     body = "\n\n".join(digest_lines(new_jobs, hospitals)) or "No new postings today."
+    if status:
+        body += "\n\n" + status
     send_ntfy(title, body[:3900])
     send_email(title, body)
     return 0
