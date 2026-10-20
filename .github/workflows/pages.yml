@@ -1,73 +1,45 @@
 name: pages
-# Deploy site/ (with data/hospitals.json and data/jobs.json copied into site/data/) to GitHub Pages.
-# configure-pages with enablement: true creates the Pages site on first run (build type: GitHub Actions).
-# Creating the site needs an admin-scoped token: GITHUB_TOKEN gets "Resource not accessible by integration".
-# Either enable Pages once by hand (Settings > Pages > Source: GitHub Actions) or store a fine-grained PAT with
-# Pages + Administration write as the PAGES_TOKEN secret. After that GITHUB_TOKEN deploys fine.
-# Pushes made by the scrape workflow (GITHUB_TOKEN) do not fire `push`, hence the workflow_run trigger.
+# Deploys site/ (plus the live data files) to the gh-pages branch. GitHub serves that branch at
+# https://patspicksai.github.io/peds-np-job-board/ (Pages was auto-enabled when the branch first appeared).
 on:
   push:
     branches: [main]
-    paths:
-      - "site/**"
-      - "data/**"
+    paths: ["site/**", "data/hospitals.json", "data/jobs.json", ".github/workflows/pages.yml"]
   workflow_run:
     workflows: [scrape]
     types: [completed]
   workflow_dispatch:
 permissions:
-  pages: write
-  id-token: write
-  contents: read
+  contents: write
 concurrency:
   group: pages
   cancel-in-progress: true
 jobs:
   deploy:
-    runs-on: ubuntu-24.04
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-        with:
-          ref: main
       - name: Assemble site
         run: |
-          mkdir -p _site
-          if [ -d site ]; then cp -r site/. _site/; fi
-          mkdir -p _site/data
-          [ -f data/hospitals.json ] && cp data/hospitals.json _site/data/hospitals.json
-          [ -f data/jobs.json ] && cp data/jobs.json _site/data/jobs.json
-          if [ ! -f _site/index.html ]; then
-            cat > _site/index.html <<'HTML'
-          <!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-          <title>Peds NP Job Board</title>
-          <style>:root{color-scheme:light dark}body{margin:0;font:16px/1.5 system-ui,sans-serif;background:#f7f7f5;color:#222;display:grid;place-items:center;min-height:100vh;padding:16px}
-          @media (prefers-color-scheme:dark){body{background:#151515;color:#eee}}main{max-width:520px;text-align:center}</style></head>
-          <body><main><h1>Peds NP Job Board</h1><p>Coming soon.</p><p id="c"></p></main>
-          <script>fetch('data/jobs.json').then(r=>r.json()).then(d=>{document.getElementById('c').textContent=(d.jobs||[]).length+' jobs tracked'}).catch(()=>{})</script>
-          </body></html>
-          HTML
-            echo "placeholder index.html deployed (site/index.html not present)"
-          fi
-          touch _site/.nojekyll
-          ls -la _site _site/data
-      - id: configure
-        uses: actions/configure-pages@v5
-        continue-on-error: true
-        with:
-          enablement: true
-          token: ${{ secrets.PAGES_TOKEN || github.token }}
-      - name: Pages not enabled
-        if: steps.configure.outcome != 'success'
+          set -e
+          rm -rf /tmp/site && mkdir -p /tmp/site/data
+          cp -r site/. /tmp/site/
+          rm -f /tmp/site/smoke_test.mjs
+          # live data overrides the fixtures when it exists
+          [ -f data/hospitals.json ] && cp data/hospitals.json /tmp/site/data/hospitals.json
+          [ -f data/jobs.json ] && cp data/jobs.json /tmp/site/data/jobs.json
+          touch /tmp/site/.nojekyll
+          echo "$(date -u +%FT%TZ) $GITHUB_SHA" > /tmp/site/build.txt
+          ls -la /tmp/site /tmp/site/data
+      - name: Push to gh-pages
         run: |
-          MSG="GitHub Pages is not enabled for this repo and GITHUB_TOKEN cannot enable it. Enable it once: Settings > Pages > Build and deployment > Source: GitHub Actions (or add a PAGES_TOKEN secret with Pages+Administration write). The site artifact was built but not deployed."
-          echo "::warning::$MSG"; echo "$MSG" >> "$GITHUB_STEP_SUMMARY"
-      - uses: actions/upload-pages-artifact@v3
-        if: steps.configure.outcome == 'success'
-        with:
-          path: _site
-      - id: deployment
-        if: steps.configure.outcome == 'success'
-        uses: actions/deploy-pages@v4
+          set -e
+          cd /tmp/site
+          git init -q
+          git checkout -q -b gh-pages
+          git config user.name "ci"
+          git config user.email "ci@users.noreply.github.com"
+          git add -A
+          git commit -qm "deploy $(date -u +%FT%TZ) from $GITHUB_SHA"
+          git push -q -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" gh-pages
+          echo "deployed to https://patspicksai.github.io/peds-np-job-board/"
