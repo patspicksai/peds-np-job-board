@@ -4808,6 +4808,110 @@
       "notes": "Inclusion rests on the DOH pediatric bed list; unit size unknown. Bed count from Wikipedia list per R3 scratch. NYS DOH profiles lists pediatric beds at this hospital (bed counts not shown).",
       "confidence": "low",
       "active": true
+    },
+    {
+      "slug": "mount-sinai-brooklyn-brooklyn",
+      "name": "Mount Sinai Brooklyn",
+      "parent_hospital": null,
+      "health_system": "Mount Sinai Health System",
+      "hospital_type": "community_hospital",
+      "city": "Brooklyn",
+      "state": "NY",
+      "address": "3201 Kings Highway, Brooklyn, NY 11234",
+      "lat": null,
+      "lng": null,
+      "coord_source": "pending enrichment",
+      "region": "NYC metro",
+      "hotspot": false,
+      "website": "https://www.mountsinai.org/locations/brooklyn",
+      "careers_url": "https://careers.mountsinai.org/",
+      "careers_platform": "unknown",
+      "careers_search_url": null,
+      "careers_notes": "Mount Sinai system board; platform not confirmed this pass.",
+      "ats_config": {
+        "host": "careers.mountsinai.org"
+      },
+      "nearest_airport": "JFK John F. Kennedy International",
+      "beds": null,
+      "peds_beds": null,
+      "peds_inpatient": false,
+      "picu": false,
+      "picu_beds": null,
+      "nicu_level": null,
+      "peds_ed": false,
+      "peds_trauma_level": null,
+      "magnet": null,
+      "teaching": true,
+      "affiliated_university": "Icahn School of Medicine at Mount Sinai",
+      "peds_services": [],
+      "description": "Mount Sinai Brooklyn is a small Mount Sinai community hospital on Kings Highway in the Midwood section of Brooklyn, formerly Kings Highway Hospital. It focuses on adult medicine, surgery and emergency care for southern Brooklyn's large Orthodox Jewish, Russian-speaking and Caribbean communities. It does not appear on the NYS DOH pediatric bed or perinatal designation lists, so pediatric work would be limited to emergency care, with admissions going to Kravis or other Brooklyn pediatric units. It is reachable by the B and Q trains.",
+      "highlights": [
+        "Mount Sinai Health System community hospital",
+        "Serves Midwood and southern Brooklyn",
+        "Icahn School of Medicine at Mount Sinai affiliate"
+      ],
+      "photos": [],
+      "wikipedia_title": null,
+      "sources": [
+        "model knowledge (to verify); enrichment pending"
+      ],
+      "notes": "Included at the caller's request; not on the DOH pediatric bed or NICU lists. Verify any pediatric services.",
+      "confidence": "low",
+      "active": true
+    },
+    {
+      "slug": "long-island-jewish-medical-center-new-hyde-park",
+      "name": "Long Island Jewish Medical Center",
+      "parent_hospital": null,
+      "health_system": "Northwell Health",
+      "hospital_type": "academic_medical_center",
+      "city": "New Hyde Park",
+      "state": "NY",
+      "address": "270-05 76th Avenue, New Hyde Park, NY 11040",
+      "lat": null,
+      "lng": null,
+      "coord_source": "pending enrichment",
+      "region": "NYC metro",
+      "hotspot": false,
+      "website": "https://lij.northwell.edu/",
+      "careers_url": "https://jobs.northwell.edu/",
+      "careers_platform": "unknown",
+      "careers_search_url": null,
+      "careers_notes": "Northwell system job board; platform not confirmed this pass.",
+      "ats_config": {
+        "host": "jobs.northwell.edu"
+      },
+      "nearest_airport": "LGA LaGuardia Airport",
+      "beds": null,
+      "peds_beds": null,
+      "peds_inpatient": false,
+      "picu": false,
+      "picu_beds": null,
+      "nicu_level": 4,
+      "peds_ed": false,
+      "peds_trauma_level": null,
+      "magnet": null,
+      "teaching": true,
+      "affiliated_university": "Donald and Barbara Zucker School of Medicine at Hofstra/Northwell",
+      "peds_services": [
+        "neonatology",
+        "maternal-fetal medicine"
+      ],
+      "description": "Long Island Jewish Medical Center is Northwell Health's academic medical center on the Queens and Nassau line in New Hyde Park, and the campus that houses Cohen Children's Medical Center. It holds a NYS Regional Perinatal Center designation, with the Katz Women's Hospital and a high-level NICU run with Cohen's neonatology service. NYS DOH lists the pediatric and pediatric ICU beds under the LIJ license; those are described in the Cohen Children's record. This record is for adult, women's and newborn roles that post under LIJ rather than Cohen. The campus is suburban, off the Grand Central Parkway and Long Island Expressway.",
+      "highlights": [
+        "NYS Regional Perinatal Center",
+        "Campus of Cohen Children's Medical Center",
+        "Zucker School of Medicine at Hofstra/Northwell teaching hospital",
+        "Katz Women's Hospital on campus (reportedly)"
+      ],
+      "photos": [],
+      "wikipedia_title": "Long Island Jewish Medical Center",
+      "sources": [
+        "model knowledge (to verify); enrichment pending"
+      ],
+      "notes": "Parent campus of cohen-childrens-new-hyde-park; peds_inpatient left false so pediatric beds are not double counted. Region set to NYC metro to match the Cohen record (the campus is in Queens County); the S1 assignment listed LIJ under Long Island, so this may need a final call. nicu_level mapped from the NYS DOH perinatal designation lists recorded in the R3 scratch (Regional Perinatal Center treated as AAP level IV, Level 3 as III, Level 2 as II).",
+      "confidence": "medium",
+      "active": true
     }
   ]
 }
