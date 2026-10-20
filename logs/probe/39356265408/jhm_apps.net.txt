@@ -1,0 +1,14 @@
+200 GET document https://jobs.hopkinsmedicine.org/jobs/advanced-practice-providers/
+200 GET document https://johnshopkins-career-gpt.sonicjobs.com/6a14e336065fc20359dd185e/widget?parentOrigin=https%3A%2F%2Fjobs.hopkinsmedicine.org&intro=1&hostPath=%2Fjobs%2Fadvanced-practice-providers%2F
+200 POST xhr https://jobs.hopkinsmedicine.org/pingback/
+    POSTDATA: 
+200 GET xhr https://jobs.hopkinsmedicine.org/ajax/search-facets/
+200 GET fetch https://johnshopkins-career-gpt.sonicjobs.com/api/conversations?clientId=6a14e336065fc20359dd185e&visitorId=b23f3fd0-5276-4983-bfda-21646a80070b
+204 POST fetch https://johnshopkins-career-gpt.sonicjobs.com/api/event
+    POSTDATA: {"clientId":"6a14e336065fc20359dd185e","event":"WIDGET_IMPRESSION","browserSessionId":"6dffb637-b2b7-469f-87bb-b2604a8696e6","visitorId":"b23f3fd0-5276-4983-bfda-21646a80070b","host":"jobs.hopkinsmedicine.org","hostPath":"/jobs/advanced-practice-providers/","deviceType":"desktop","userAgent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"}
+200 GET fetch https://johnshopkins-career-gpt.sonicjobs.com/api/client/6a14e336065fc20359dd185e
+200 GET fetch https://www.juicer.io/api/feeds/hopkinsmedicine.html?origin=embed-code&v=af46e1abb41c0b0fe81a17edd048ecc1d30de9c1
+200 POST fetch https://www.juicer.io/api/page_views
+    POSTDATA: {"feed_id":"359492"}
+200 POST fetch https://api.thumbmarkjs.com/thumbmark
+    POSTDATA: {"components":{"audio":{"sampleHash":1168.9068228197468,"maxChannels":1,"channelCountMode":"max"},"canvas":{"commonPixelsHash":"4f802f3a4a918d7f6909bf9d22099590"},"fonts":{"Courier":432.0703125,"Courier New":432.0703125,"Lato":465.26416015625},"hardware":{"videocard":{"vendor":"WebKit","renderer":"WebKit WebGL","version":"WebGL 1.0 (OpenGL ES 2.0 Chromium)","shadingLanguageVersion":"WebGL GLSL ES 1.0 (OpenGL ES GLSL ES 1.0 Chromium)"},"architecture":255,"deviceMemory":"8","jsHeapSizeLimit":3760000000},"locales":{"languages":"en-US","timezone":"UTC"},"math":{"acos":1.0471975511965979,"asin":-9.614302481290016e-17,"cos":-4.854249971455313e-16,"largeCos":0.7639704044417283,"largeSin":-0.6452512852657808,"largeTan":-0.8446024630198843,"sin":-1.9461946644816207e-16,"tan":6.980860926542689e-14},"plugins":{"plugins":[]},"screen":{"is_touchscreen":false,"maxTouchPoints":0,"colorDepth":24,"mediaMatches":["prefers-contrast: no-preference","any-hover: hover","any-pointer: fine","pointer: fine","hover: hover","update: fast","prefers-reduced-motion: no-preference","prefers-reduced-transparency: no-preference","scripting: enabled","forced-colors: none"]},"system":{"platform":"Linux x86_64","productSub":"20030107","product":"Gecko","useragent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36","hardwareConcurrency":4,"browser":{"name":"Chrome","version":"141.0.0.0"},"mobile":false,"applePayVersion":0,"cookieEnabled":true},"webgl

@@ -1,0 +1,114 @@
+[req] mh_org 200 (301) final=https://www.mainehealth.org/careers-and-job-opportunities bytes=219669 ct=text/html; charset=utf-8 t=1.0s
+      sigs={}
+[req] mh_jobs EXC ConnectionError: HTTPSConnectionPool(host='jobs.mainehealth.org', port=443): Max retries exceeded with url: / (Caused by NameResolutionError("HTTPSConnection(host='jobs.mainehealth.org', port=443): Failed to resolve 'jobs.mainehealth.org' ([Errno -2] Name or service not known)"))
+[req] mh_wd_a 500 () final=https://mainehealth.wd1.myworkdayjobs.com/MaineHealth bytes=238 ct=text/html; charset=utf-8 t=0.3s
+      sigs={}
+[req] mh_wd_b 500 () final=https://mainehealth.wd1.myworkdayjobs.com/MaineHealth_Careers bytes=238 ct=text/html; charset=utf-8 t=0.1s
+      sigs={}
+[req] mh_wd_c 500 () final=https://mainehealth.wd1.myworkdayjobs.com/External bytes=238 ct=text/html; charset=utf-8 t=0.1s
+      sigs={}
+[req] mh_wd_d 500 () final=https://mainehealth.wd1.myworkdayjobs.com/MaineHealthCareers bytes=238 ct=text/html; charset=utf-8 t=0.1s
+      sigs={}
+[req] mh_wd_e 500 () final=https://mainehealth.wd1.myworkdayjobs.com/mainehealth bytes=238 ct=text/html; charset=utf-8 t=0.1s
+      sigs={}
+[req] atrium_wd_api 200 () final=https://aah.wd5.myworkdayjobs.com/wday/cxs/aah/External/jobs bytes=23386 ct=application/json t=0.8s
+      sigs={}
+[req] musc_wd_api 200 () final=https://musc.wd1.myworkdayjobs.com/wday/cxs/musc/MUSC/jobs bytes=4402 ct=application/json t=0.8s
+      sigs={}
+[req] cnh_wd_detail 200 () final=https://childrensnational.wd108.myworkdayjobs.com/wday/cxs/childrensnational/CN_Careers/job/Childrens-National-Hospital-Main-Campus/Advanced-Practice-Nurse-Practitioner--ED---I-P-Psychiatry_2500036J-3 bytes=12210 ct=application/json t=0.3s
+      sigs={"workday": ["myworkdayjobs.com/CN_Careers/job/Childrens-National-Hospital-Main-Campus/Advanced-Practice-Nurse-Practitioner--ED---I-P-Psychiatry_2500036J-3"]}
+[req] inova_oc_api 200 () final=https://elar.fa.us2.oraclecloud.com/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requisitionList.secondaryLocations,flexFieldsFacet.values,requisitionList.requisitionFlexFields&finder=findReqs;siteNumber=CX_1,facetsList=LOCATIONS%3BWORK_LOCATIONS%3BWORKPLACE_TYPES%3BTITLES%3BCATEGORIES%3BORGANIZATIONS%3BPOSTING_DATES%3BFLEX_FIELDS,limit=5,keyword=%22nurse%20practitioner%22,sortBy=POSTING_DATES_DESC bytes=16108 ct=application/vnd.oracle.adf.resourcecollection+json t=0.7s
+      sigs={"oracle": ["elar.fa.us2.oraclecloud.com:443/hcmRestApi/resources/11.13.18.05/recruitingCEJobRequisitions", "elar.fa.us2.oraclecloud.com:443/hcmRestApi/resources/11.13.18.05/recruitingCEJobRequisitions/action/getRequisitionsLocationCoordinates", "elar.fa.us2.oraclecloud.com:443/hcmRestApi/resources/11.13.18.05/recruitingCEJobRequisitions/action/getRequisitionDetailsForMap"]}
+[req] inova_oc_detail 200 () final=https://elar.fa.us2.oraclecloud.com/hcmRestApi/resources/latest/recruitingCEJobRequisitionDetails?expand=all&onlyData=true&finder=ById;Id=%22662990%22,siteNumber=CX_1 bytes=330 ct=application/vnd.oracle.adf.resourcecollection+json t=0.1s
+      sigs={"oracle": ["elar.fa.us2.oraclecloud.com:443/hcmRestApi/resources/11.13.18.05/recruitingCEJobRequisitionDetails"]}
+[req] inova_oc_page 200 (302) final=https://elar.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/jobs?keyword=nurse+practitioner bytes=87950 ct=text/html; charset=UTF-8 t=0.5s
+      sigs={"oracle": ["elar.fa.us2.oraclecloud.com:443/hcmUI/CandidateExperience/images?imageId=6C94F931-EAD5-4BFF-9852-C50AA95B8FF6", "elar.fa.us2.oraclecloud.com:443", "elar.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/", "elar.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/requisitions?lastSelectedFacet=TITLES&selectedTitlesFacet=PHYSICIANS&utm_source=vanity&utm_medium=collateral&utm_campaign=system&utm_content=par_vanity"]}
+[req] wakemed_home 200 (302) final=https://jobs.wakemed.org/careers-home bytes=548406 ct=text/html; charset=utf-8 t=1.3s
+      sigs={"icims": ["www.icims.com/legal/privacy-notice-website/", "www.icims.com/legal/privacy-notice-website\\", "www.icims.com/legal/privacy-notice-website/\\", "careers-wakemed.icims.com/jobs/login?loginOnly=1\\", "employees-wakemed.icims.com/jobs/login?loginOnly=1&redirect=search&in_iframe=1&hashed=-625889630\\", "careers-wakemed.icims.com/jobs/login?loginOnly=1"], "jibe": ["jibeapply", "jibecdn.com", "JibeApply"]}
+[req] wakemed_api 200 () final=https://jobs.wakemed.org/api/jobs?keywords=nurse%20practitioner&page=1&limit=10&sortBy=relevance&descending=false&internal=false bytes=116789 ct=application/json; charset=utf-8 t=0.4s
+      sigs={"icims": ["wakemed.icims.com/icims2/servlet/icims2?module=AppInert&action=download&id=58&hashed=1303811466", "careers-wakemed.icims.com/jobs/33239/login", "careers-wakemed.icims.com/jobs/31335/login", "careers-wakemed.icims.com/jobs/32472/login", "careers-wakemed.icims.com/jobs/31703/login", "careers-wakemed.icims.com/jobs/31393/login"], "talentbrew": ["radancy"]}
+[req] wakemed_jobs 200 (302) final=https://jobs.wakemed.org/careers-home/jobs?keywords=nurse%20practitioner&page=1 bytes=348121 ct=text/html; charset=utf-8 t=0.5s
+      sigs={"icims": ["www.icims.com/legal/privacy-notice-website/", "www.icims.com/legal/privacy-notice-website\\", "www.icims.com/legal/privacy-notice-website/\\", "careers-wakemed.icims.com/jobs/login?loginOnly=1\\", "employees-wakemed.icims.com/jobs/login?loginOnly=1&redirect=search&in_iframe=1&hashed=-625889630\\", "careers-wakemed.icims.com/jobs/login?loginOnly=1"], "jibe": ["jibecdn.com", "JibeApply", "jibeapply"]}
+[req] novant_api 200 () final=https://jobs.novanthealth.org/api/jobs?keywords=pediatric%20nurse%20practitioner&page=1&limit=10&sortBy=relevance&descending=false&internal=false bytes=112335 ct=application/json; charset=utf-8 t=1.0s
+      sigs={"icims": ["novanthealth.icims.com/icims2/servlet/icims2?module=AppInert&action=download&id=152987&hashe", "external-novanthealth.icims.com/jobs/248390/login", "external-novanthealth.icims.com/jobs/247760/login", "external-novanthealth.icims.com/jobs/244436/login", "external-novanthealth.icims.com/jobs/242641/login", "external-novanthealth.icims.com/jobs/233892/login"]}
+[req] hmh_detail 200 () final=https://jobs.hackensackmeridianhealth.org/job/hackensack/np-adult-or-gerontology-acute-care-fellowship/19511/99815700752 bytes=60449 ct=text/html; charset=utf-8 t=0.3s
+      sigs={"icims": ["careers-hackensackmeridianhealth.icims.com/jobs/185699/login", "internal-hackensackmeridianhealth.icims.com/jobs/login?loginOnly=1&amp;redirect=&amp;hashed=-435623455", "careers-hackensackmeridianhealth.icims.com/connect?back=intro&hashed=-435623455&mobile=false&width=1110&height=500&bga=true&needsRedirect=false&jan1offset=-360&jun1offset=-300", "careers-hackensackmeridianhealth.icims.com/connect?back=intro&amp;hashed=-435623455&amp;mobile=false&amp;width=1110&amp;height=500&amp;bga=true&amp;needsRedirect=false&amp;jan1offset=-300&amp;jun1offset=-240"], "talentbrew": ["tbcdn.talentbrew.com", "radancy"], "jsonld_jobposting": ["\"@type\":\"JobPosting\""]}
+[req] hmh_results 200 () final=https://jobs.hackensackmeridianhealth.org/search-jobs/results?ActiveFacetID=0&CurrentPage=2&RecordsPerPage=50&Distance=50&RadiusUnitType=0&Keywords=pediatric+nurse+practitioner&Location=&ShowRadius=False&IsPagination=True&CustomFacetName=&FacetTerm=&FacetType=0&SearchResultsModuleName=Search+Results&SearchFiltersModuleName=Search+Filters&SortCriteria=0&SortDirection=0&SearchType=5&PostalCode=&fc=&fl=&fcf=&afc=&afl=&afcf= bytes=169465 ct=application/json; charset=utf-8 t=0.6s
+      sigs={}
+[req] jhm_apps 200 () final=https://jobs.hopkinsmedicine.org/jobs/advanced-practice-providers/ bytes=67233 ct=text/html; charset=utf-8 t=0.4s
+      sigs={"successfactors": ["successfactors.com/career?career_company=SFHUP&lang=en_US&company=SFHUP&site=&loginFlowRequired=true&_s.crb=PBkbNuTlx+rkAmVRbF1Npp58jkU="]}
+[req] jhm_np 200 () final=https://jobs.hopkinsmedicine.org/jobs/nurse-practitioner/ bytes=66446 ct=text/html; charset=utf-8 t=0.3s
+      sigs={"successfactors": ["successfactors.com/career?career_company=SFHUP&lang=en_US&company=SFHUP&site=&loginFlowRequired=true&_s.crb=PBkbNuTlx+rkAmVRbF1Npp58jkU="]}
+[req] jhm_q 200 () final=https://jobs.hopkinsmedicine.org/jobs/?q=nurse+practitioner bytes=64907 ct=text/html; charset=utf-8 t=0.3s
+      sigs={"successfactors": ["successfactors.com/career?career_company=SFHUP&lang=en_US&company=SFHUP&site=&loginFlowRequired=true&_s.crb=PBkbNuTlx+rkAmVRbF1Npp58jkU="]}
+[req] jhm_job2 410 () final=https://jobs.hopkinsmedicine.org/job/63437/acute-care-np-pnp-nnp-pa-pa-1st-assist-various-specialties-1-advanced-practice-providers-us-md-baltimore-johns-hop-620449-69955/ bytes=16498 ct=text/html; charset=utf-8 t=0.3s
+      sigs={"successfactors": ["successfactors.com/career?career_company=SFHUP&lang=en_US&company=SFHUP&site=&loginFlowRequired=true&_s.crb=PBkbNuTlx+rkAmVRbF1Npp58jkU="]}
+[req] unc_json 403 () final=https://jobs.unchealthcare.org/search/jobs.json?q=nurse+practitioner bytes=6125 ct=text/html; charset=UTF-8 t=0.4s
+      sigs={}
+[req] unc_search2 403 () final=https://jobs.unchealthcare.org/search/jobs?q=pediatric+nurse+practitioner bytes=6140 ct=text/html; charset=UTF-8 t=0.0s
+      sigs={}
+[req] bch_js 200 () final=https://jobs.bostonchildrens.org/wp-content/cache/minify/2135/65fea.js bytes=10266 ct=application/x-javascript; charset=utf-8 t=0.4s
+      sigs={}
+[req] bch_search2 200 () final=https://jobs.bostonchildrens.org/search/jobs/?keyword=nurse%20practitioner bytes=1569471 ct=text/html; charset=UTF-8 t=2.3s
+      sigs={"brassring": ["brassring.com/TGnewUI/Search/Home/Home?partnerid=368&amp;siteid=5205"]}
+[req] bch_np 200 () final=https://jobs.bostonchildrens.org/search/jobs/in?q=nurse+practitioner bytes=1551375 ct=text/html; charset=UTF-8 t=2.4s
+      sigs={"brassring": ["brassring.com/TGnewUI/Search/Home/Home?partnerid=368&amp;siteid=5205"]}
+[req] duke_p2 200 () final=https://careers.duke.edu/search/?q=pediatric+nurse+practitioner&sortColumn=referencedate&sortOrder=desc&startrow=25 bytes=107928 ct=text/html;charset=UTF-8 t=0.8s
+      sigs={"successfactors": ["successfactors.com/verp/vmod_v1/ui/extlib/jquery_3.5.1/jquery.js", "successfactors.com/verp/vmod_v1/ui/extlib/jquery_3.5.1/jquery-migrate.js", "rmkcdn.successfactors", "successfactors.com/sf/careers?company=dukeuniverP1", "successfactors.com"]}
+[pw]  mh_org 200 final=https://www.mainehealth.org/careers-and-job-opportunities bytes=384723 title='Careers and Job Opportunities' t=5.3s
+      sigs={}
+[pw]  mh_jobs EXC Error: Page.goto: net::ERR_NAME_NOT_RESOLVED at https://jobs.mainehealth.org/
+Call log:
+  - navigating to "https://jobs.mainehealth.org/", waiting until "domcontentloaded"
+
+[pw]  mh_wd_a 500 final=https://community.workday.com/maintenance-page bytes=49804 title='Workday is currently unavailable.' t=4.0s
+      sigs={}
+[pw]  mh_wd_b 500 final=https://community.workday.com/maintenance-page bytes=49804 title='Workday is currently unavailable.' t=3.8s
+      sigs={}
+[pw]  mh_wd_c 500 final=https://community.workday.com/maintenance-page bytes=49804 title='Workday is currently unavailable.' t=3.8s
+      sigs={}
+[pw]  mh_wd_d 500 final=https://community.workday.com/maintenance-page bytes=49804 title='Workday is currently unavailable.' t=3.8s
+      sigs={}
+[pw]  mh_wd_e 500 final=https://community.workday.com/maintenance-page bytes=49804 title='Workday is currently unavailable.' t=3.8s
+      sigs={}
+[pw]  cnh_wd_detail 200 final=https://childrensnational.wd108.myworkdayjobs.com/wday/cxs/childrensnational/CN_Careers/job/Childrens-National-Hospital-Main-Campus/Advanced-Practice-Nurse-Practitioner--ED---I-P-Psychiatry_2500036J-3 bytes=14020 title='' t=3.3s
+      sigs={"workday": ["myworkdayjobs.com/CN_Careers/job/Childrens-National-Hospital-Main-Campus/Advanced-Practice-Nurse-Practitioner--ED---I-P-Psychiatry_2500036J-3"]}
+[pw]  inova_oc_api 200 final=https://elar.fa.us2.oraclecloud.com/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requisitionList.secondaryLocations,flexFieldsFacet.values,requisitionList.requisitionFlexFields&finder=findReqs;siteNumber=CX_1,facetsList=LOCATIONS%3BWORK_LOCATIONS%3BWORKPLACE_TYPES%3BTITLES%3BCATEGORIES%3BORGANIZATIONS%3BPOSTING_DATES%3BFLEX_FIELDS,limit=5,keyword=%22nurse%20practitioner%22,sortBy=POSTING_DATES_DESC bytes=16273 title='' t=3.4s
+      sigs={"oracle": ["elar.fa.us2.oraclecloud.com:443/hcmRestApi/resources/11.13.18.05/recruitingCEJobRequisitions", "elar.fa.us2.oraclecloud.com:443/hcmRestApi/resources/11.13.18.05/recruitingCEJobRequisitions/action/getRequisitionsLocationCoordinates", "elar.fa.us2.oraclecloud.com:443/hcmRestApi/resources/11.13.18.05/recruitingCEJobRequisitions/action/getRequisitionDetailsForMap"]}
+[pw]  inova_oc_detail 200 final=https://elar.fa.us2.oraclecloud.com/hcmRestApi/resources/latest/recruitingCEJobRequisitionDetails?expand=all&onlyData=true&finder=ById;Id=%22662990%22,siteNumber=CX_1 bytes=493 title='' t=3.1s
+      sigs={"oracle": ["elar.fa.us2.oraclecloud.com:443/hcmRestApi/resources/11.13.18.05/recruitingCEJobRequisitionDetails"]}
+[pw]  inova_oc_page 200 final=https://elar.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/jobs?keyword=nurse+practitioner bytes=588448 title='Search Jobs - Inova Careers' t=5.9s
+      sigs={"oracle": ["elar.fa.us2.oraclecloud.com:443/hcmUI/CandidateExperience/images?imageId=6C94F931-EAD5-4BFF-9852-C50AA95B8FF6", "elar.fa.us2.oraclecloud.com:443", "elar.fa.us2.oraclecloud.com:443/hcmUI/CandidateExperience/en/sites/CX_1", "elar.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/pages/27002/?keyword=nurse+practitioner", "elar.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/pages/61002/?keyword=nurse+practitioner", "elar.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/pages/27004/?keyword=nurse+practitioner"]}
+[pw]  wakemed_home 200 final=https://jobs.wakemed.org/careers-home bytes=777113 title='Careers Home' t=7.8s
+      sigs={"icims": ["www.icims.com/legal/privacy-notice-website/", "www.icims.com/legal/privacy-notice-website\\", "www.icims.com/legal/privacy-notice-website/\\", "careers-wakemed.icims.com/jobs/login?loginOnly=1\\", "employees-wakemed.icims.com/jobs/login?loginOnly=1&redirect=search&in_iframe=1&hashed=-625889630\\", "careers-wakemed.icims.com/jobs/login?loginOnly=1"], "jibe": ["jibeapply", "jibecdn.com", "JibeApply"]}
+[pw]  wakemed_api 200 final=https://jobs.wakemed.org/api/jobs?keywords=nurse%20practitioner&page=1&limit=10&sortBy=relevance&descending=false&internal=false bytes=117730 title='' t=3.7s
+      sigs={"icims": ["wakemed.icims.com/icims2/servlet/icims2?module=AppInert&amp;action=download&amp;id=58&amp;hashed=1303811466", "careers-wakemed.icims.com/jobs/33239/login", "careers-wakemed.icims.com/jobs/31335/login", "careers-wakemed.icims.com/jobs/32472/login", "careers-wakemed.icims.com/jobs/31703/login", "careers-wakemed.icims.com/jobs/31393/login"], "talentbrew": ["radancy"]}
+[pw]  wakemed_jobs 200 final=https://jobs.wakemed.org/careers-home/jobs?keywords=nurse%20practitioner&page=1 bytes=699130 title='WakeMed Careers' t=5.2s
+      sigs={"icims": ["www.icims.com/legal/privacy-notice-website/", "www.icims.com/legal/privacy-notice-website\\", "www.icims.com/legal/privacy-notice-website/\\", "careers-wakemed.icims.com/jobs/login?loginOnly=1\\", "employees-wakemed.icims.com/jobs/login?loginOnly=1&redirect=search&in_iframe=1&hashed=-625889630\\", "careers-wakemed.icims.com/jobs/login?loginOnly=1"], "jibe": ["jibecdn.com", "JibeApply", "jibeapply"]}
+[pw]  novant_api 200 final=https://jobs.novanthealth.org/api/jobs?keywords=pediatric%20nurse%20practitioner&page=1&limit=10&sortBy=relevance&descending=false&internal=false bytes=112994 title='' t=3.6s
+      sigs={"icims": ["novanthealth.icims.com/icims2/servlet/icims2?module=AppInert&amp;action=download&amp;id=152987&amp;hashe", "external-novanthealth.icims.com/jobs/248390/login", "external-novanthealth.icims.com/jobs/247760/login", "external-novanthealth.icims.com/jobs/244436/login", "external-novanthealth.icims.com/jobs/242641/login", "external-novanthealth.icims.com/jobs/233892/login"]}
+[pw]  hmh_detail 200 final=https://jobs.hackensackmeridianhealth.org/job/hackensack/np-adult-or-gerontology-acute-care-fellowship/19511/99815700752 bytes=92751 title='NP - Adult or Gerontology Acute Care Fellowship Jobs in Hackensack at Hackensack' t=6.2s
+      sigs={"icims": ["careers-hackensackmeridianhealth.icims.com/jobs/185699/login", "internal-hackensackmeridianhealth.icims.com/jobs/login?loginOnly=1&amp;redirect=&amp;hashed=-435623455", "careers-hackensackmeridianhealth.icims.com/connect?back=intro&amp;hashed=-435623455&amp;mobile=false&amp;width=1110&amp;height=500&amp;bga=true&amp;needsRedirect=false&amp;jan1offset=-360&amp;jun1offset=-300", "careers-hackensackmeridianhealth.icims.com/connect?back=intro&amp;hashed=-435623455&amp;mobile=false&amp;width=1110&amp;height=500&amp;bga=true&amp;needsRedirect=false&amp;jan1offset=-300&amp;jun1offset=-240"], "talentbrew": ["tbcdn.talentbrew.com", "radancy", "talentbrew"], "jsonld_jobposting": ["\"@type\":\"JobPosting\""]}
+[pw]  hmh_results 200 final=https://jobs.hackensackmeridianhealth.org/search-jobs/results?ActiveFacetID=0&CurrentPage=2&RecordsPerPage=50&Distance=50&RadiusUnitType=0&Keywords=pediatric+nurse+practitioner&Location=&ShowRadius=False&IsPagination=True&CustomFacetName=&FacetTerm=&FacetType=0&SearchResultsModuleName=Search+Results&SearchFiltersModuleName=Search+Filters&SortCriteria=0&SortDirection=0&SearchType=5&PostalCode=&fc=&fl=&fcf=&afc=&afl=&afcf= bytes=185490 title='' t=3.0s
+      sigs={}
+[pw]  jhm_apps 200 final=https://jobs.hopkinsmedicine.org/jobs/advanced-practice-providers/ bytes=141096 title='Nurse Practitioner and Physician Assistant Jobs | Johns Hopkins Medicine Careers' t=4.6s
+      sigs={"successfactors": ["successfactors.com/career?career_company=SFHUP&amp;lang=en_US&amp;company=SFHUP&amp;site=&amp;loginFlowRequired=true&amp;_s.crb=PBkbNuTlx+rkAmVRbF1Npp58jkU="]}
+[pw]  jhm_np 200 final=https://jobs.hopkinsmedicine.org/jobs/nurse-practitioner/ bytes=139900 title='Nurse Practitioner Jobs | Johns Hopkins Medicine Careers' t=4.1s
+      sigs={"successfactors": ["successfactors.com/career?career_company=SFHUP&amp;lang=en_US&amp;company=SFHUP&amp;site=&amp;loginFlowRequired=true&amp;_s.crb=PBkbNuTlx+rkAmVRbF1Npp58jkU="]}
+[pw]  jhm_q 200 final=https://jobs.hopkinsmedicine.org/jobs/?q=nurse+practitioner bytes=138928 title='Jobs | Johns Hopkins Medicine Careers' t=4.6s
+      sigs={"successfactors": ["successfactors.com/career?career_company=SFHUP&amp;lang=en_US&amp;company=SFHUP&amp;site=&amp;loginFlowRequired=true&amp;_s.crb=PBkbNuTlx+rkAmVRbF1Npp58jkU="]}
+[pw]  jhm_job2 410 final=https://jobs.hopkinsmedicine.org/job/63437/acute-care-np-pnp-nnp-pa-pa-1st-assist-various-specialties-1-advanced-practice-providers-us-md-baltimore-johns-hop-620449-69955/ bytes=84782 title='Hospital and Nursing Jobs | Johns Hopkins Medicine' t=4.2s
+      sigs={"successfactors": ["successfactors.com/career?career_company=SFHUP&amp;lang=en_US&amp;company=SFHUP&amp;site=&amp;loginFlowRequired=true&amp;_s.crb=PBkbNuTlx+rkAmVRbF1Npp58jkU="]}
+[pw]  unc_json 403 final=https://jobs.unchealthcare.org/search/jobs.json?q=nurse+practitioner bytes=28894 title='Just a moment...' t=22.6s
+      sigs={}
+[pw]  unc_search2 200 final=https://jobs.unchealthcare.org/search/jobs?q=pediatric+nurse+practitioner bytes=330129 title='UNC Health Jobs | RN, CNA, Clinical /Non Clinical Support Jobs' t=7.4s
+      sigs={"jobvite": ["jobvite.com/assets/app/apply.js", "jobvite.com", "jobvite.com/assets/direct_apply.js?verison=2.7"]}
+[pw]  bch_js 200 final=https://jobs.bostonchildrens.org/wp-content/cache/minify/2135/65fea.js bytes=10640 title='' t=3.0s
+      sigs={}
+[pw]  bch_search2 200 final=https://jobs.bostonchildrens.org/search/jobs/ bytes=1578734 title='You searched for jobs - Boston Children' t=6.6s
+      sigs={"brassring": ["brassring.com/TGnewUI/Search/Home/Home?partnerid=368&amp;siteid=5205"]}
+[pw]  bch_np 200 final=https://jobs.bostonchildrens.org/search/jobs/in bytes=1557902 title='You searched for jobs/in - Boston Children' t=4.7s
+      sigs={"brassring": ["brassring.com/TGnewUI/Search/Home/Home?partnerid=368&amp;siteid=5205"]}
+[pw]  duke_p2 200 final=https://careers.duke.edu/search/?q=pediatric+nurse+practitioner&sortColumn=referencedate&sortOrder=desc&startrow=25 bytes=108294 title='Pediatric Nurse Practitioner - Duke Careers Jobs' t=4.7s
+      sigs={"successfactors": ["successfactors.com/verp/vmod_v1/ui/extlib/jquery_3.5.1/jquery.js", "successfactors.com/verp/vmod_v1/ui/extlib/jquery_3.5.1/jquery-migrate.js", "rmkcdn.successfactors", "successfactors.com/sf/careers?company=dukeuniverP1", "successfactors.com"]}
+exit=0
