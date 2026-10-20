@@ -7,8 +7,9 @@ name: scrape
 # Safety: scripts/merge_jobs.py never deletes jobs and refuses to write data/jobs.json (exit 3) if the active
 # job count would drop below 50% of the previous count, or (exit 4) if the existing file does not parse.
 # The run file is still committed in that case and the workflow fails so the problem is visible.
-# Hard budget: the scrape step has a 40 minute timeout; the scraper's own soft budget (SCRAPER_BUDGET,
-# default 34 min + 3 min grace) finishes earlier and always writes its run file.
+# Hard budget: the scrape step has a 100 minute timeout; the scraper's own soft budget (SCRAPER_BUDGET,
+# default 90 min + grace) finishes earlier and always writes its run file. The ledger has ~500 hospitals
+# on ~200 boards, so a full pass needs well over the original 40 minutes.
 on:
   schedule:
     - cron: "15 10 * * *"
@@ -41,11 +42,11 @@ concurrency:
 jobs:
   scrape:
     runs-on: ubuntu-24.04
-    timeout-minutes: 55
+    timeout-minutes: 125
     env:
       NTFY_TOPIC: ${{ secrets.NTFY_TOPIC || vars.NTFY_TOPIC }}
       SITE_URL: ${{ vars.SITE_URL || 'https://patspicksai.github.io/peds-np-job-board/' }}
-      SCRAPER_BUDGET: "2040"
+      SCRAPER_BUDGET: "5400"
     steps:
       - uses: actions/checkout@v4
         with:
@@ -83,7 +84,7 @@ jobs:
       - name: Scrape
         id: scrape
         if: steps.guard.outputs.skip != 'true' && steps.ledger.outputs.path != ''
-        timeout-minutes: 40
+        timeout-minutes: 100
         run: |
           set +e
           mkdir -p "$RUNNER_TEMP/out"
@@ -92,7 +93,7 @@ jobs:
           [ -n "${{ inputs.only }}" ] && ARGS="$ARGS --only ${{ inputs.only }}"
           [ -n "${{ inputs.platform }}" ] && ARGS="$ARGS --platform ${{ inputs.platform }}"
           echo "args: $ARGS" > "$RUNNER_TEMP/out/args.txt"
-          timeout --kill-after=30s 39m xvfb-run -a python -m scraper.run $ARGS > "$RUNNER_TEMP/out/run.log" 2>&1
+          timeout --kill-after=30s 98m xvfb-run -a python -m scraper.run $ARGS > "$RUNNER_TEMP/out/run.log" 2>&1
           rc=$?
           echo "exit=$rc" | tee -a "$RUNNER_TEMP/out/run.log"
           tail -c 200000 "$RUNNER_TEMP/out/run.log" > "$RUNNER_TEMP/out/run_tail.log"; rm -f "$RUNNER_TEMP/out/run.log"

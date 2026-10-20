@@ -10,17 +10,19 @@
       "city": "Lewes",
       "state": "DE",
       "address": "424 Savannah Road, Lewes, DE 19958",
-      "lat": null,
-      "lng": null,
-      "coord_source": "pending enrichment",
+      "lat": 38.7717,
+      "lng": -75.1428,
+      "coord_source": "Wikipedia article coordinates (API)",
       "region": "Delaware",
       "hotspot": false,
       "website": "https://www.beebehealthcare.org/",
       "careers_url": "https://www.beebehealthcare.org/careers",
       "careers_platform": "unknown",
       "careers_search_url": null,
-      "careers_notes": "Beebe careers page from the caller's list, not fetched. Pediatric hospitalists here are Nemours employees, so pediatric NP or hospitalist roles at Beebe would most likely post on careers.nemours.org rather than Beebe's own site.",
-      "ats_config": {},
+      "careers_notes": "Beebe careers page from the caller's list, not fetched. Pediatric hospitalists here are Nemours employees, so pediatric NP or hospitalist roles at Beebe would most likely post on careers.nemours.org rather than Beebe's own site. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.beebecareers.org/careers-home/; ATS link seen: https://www.icims.com/legal/privacy-notice-website/",
+      "ats_config": {
+        "host": "www.beebecareers.org"
+      },
       "nearest_airport": "SBY Salisbury-Ocean City Wicomico Regional (about 40 mi); PHL Philadelphia International about 105 mi",
       "beds": null,
       "peds_beds": null,
@@ -55,7 +57,14 @@
       ],
       "notes": "Pediatric suite size (bed count) and nursery level not stated on the Nemours page. Delaware beaches location is a lifestyle draw; nearest large pediatric hub is Nemours Wilmington. Address and bed count not verified this pass.",
       "confidence": "medium",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "Beebe Healthcare",
+          "url": "https://en.wikipedia.org/wiki/Beebe_Healthcare",
+          "extract": "Beebe Healthcare is a healthcare system serving Sussex County in southern Delaware in the United States. Its primary facility is Beebe Medical Center, a hospital in Lewes."
+        }
+      }
     },
     {
       "slug": "tidalhealth-nanticoke-seaford",
@@ -66,17 +75,19 @@
       "city": "Seaford",
       "state": "DE",
       "address": "801 Middleford Road, Seaford, DE 19973",
-      "lat": null,
-      "lng": null,
-      "coord_source": "pending enrichment",
+      "lat": 38.64164,
+      "lng": -75.60439,
+      "coord_source": "OpenStreetMap Nominatim (hospital) for 'TidalHealth Nanticoke, Seaford, DE'",
       "region": "Delaware",
       "hotspot": false,
       "website": "https://www.tidalhealth.org/our-locations/tidalhealth-nanticoke",
       "careers_url": "https://www.tidalhealth.org/careers",
       "careers_platform": "unknown",
       "careers_search_url": null,
-      "careers_notes": "TidalHealth careers page from the caller's list, not fetched. Pediatric hospitalists are Nemours employees, so peds roles here would likely post on careers.nemours.org.",
-      "ats_config": {},
+      "careers_notes": "TidalHealth careers page from the caller's list, not fetched. Pediatric hospitalists are Nemours employees, so peds roles here would likely post on careers.nemours.org. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.tidalhealthcareers.org",
+      "ats_config": {
+        "host": "www.tidalhealthcareers.org"
+      },
       "nearest_airport": "SBY Salisbury-Ocean City Wicomico Regional (about 25 mi)",
       "beds": null,
       "peds_beds": null,
@@ -111,7 +122,8 @@
       ],
       "notes": "Pediatric suite bed count and nursery level not stated. Small hospital; NP hiring for pediatrics likely runs through Nemours. Address and bed count not verified this pass.",
       "confidence": "medium",
-      "active": true
+      "active": true,
+      "_enrich": {}
     },
     {
       "slug": "moses-taylor-hospital-scranton",
@@ -131,8 +143,10 @@
       "careers_url": "https://www.commonwealthhealth.net/",
       "careers_platform": "unknown",
       "careers_search_url": null,
-      "careers_notes": "Ownership moved from Commonwealth Health (CHS) to Tenor Health in early 2026, so the old Commonwealth Health careers site may be retired. careers_url is a placeholder; find Tenor Health's job board. Penn State Health has supplied pediatric physicians here, so some peds roles may post on careers.pennstatehealth.org.",
-      "ats_config": {},
+      "careers_notes": "Ownership moved from Commonwealth Health (CHS) to Tenor Health in early 2026, so the old Commonwealth Health careers site may be retired. careers_url is a placeholder; find Tenor Health's job board. Penn State Health has supplied pediatric physicians here, so some peds roles may post on careers.pennstatehealth.org. [enrich 2026-10-20] careers_url -> HTTP 200 at https://commonwealthhealth.net/",
+      "ats_config": {
+        "host": "commonwealthhealth.net"
+      },
       "nearest_airport": "AVP Wilkes-Barre/Scranton International (about 10 mi)",
       "beds": 213,
       "peds_beds": null,
@@ -157,7 +171,15 @@
         "Pediatric physician partnership with Penn State Health",
         "New owner Tenor Health as of January 2026"
       ],
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/d/d4/UPMC_Presbyterian_Hospital_from_Schenley_Park%2C_2015-10-01%2C_01.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original",
+          "caption": "List of hospitals in Pennsylvania",
+          "credit": "Cbaile19",
+          "license": "CC0",
+          "source_page": "https://commons.wikimedia.org/wiki/File:UPMC_Presbyterian_Hospital_from_Schenley_Park,_2015-10-01,_01.jpg"
+        }
+      ],
       "wikipedia_title": "Moses Taylor Hospital",
       "sources": [
         "https://bresnahan.house.gov/media/press-releases/bresnahan-announces-finalized-deal-keeping-hospitals-open",
@@ -167,7 +189,14 @@
       ],
       "notes": "Ownership change in 2026 means services could shift; confirm the pediatric unit is still open under Tenor Health and whether Penn State Health still staffs it. NICU level and size come from an older statewide list (neonatologysolutions.com) recorded in the R4b scratch; confirm the current level. Geisinger Community Medical Center is about 1 km away and also has pediatric hospitalists.",
       "confidence": "low",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "List of hospitals in Pennsylvania",
+          "url": "https://en.wikipedia.org/wiki/List_of_hospitals_in_Pennsylvania",
+          "extract": "This is a list of hospitals in Pennsylvania, a U.S. state. The list includes only hospitals that are currently licensed by the Pennsylvania Department of Health or operated by the Veterans Health Administration, according to data collected by the Hospital and Healthsystem Association of Pennsylvania (HAP) and the Pennsylvania Department of Health.\nAs of July 2018, there were 249 state licensed hospitals and VA hospital facilities in Pennsylvania. 148 of these facilities were nonprofit, 86 were for-profit or \"investor-owned\", and 15 were public hospitals owned by the Federal government, state government, or in one case, the city of Philadelphia. There were 42,817 total licensed beds and 1,880 total operating rooms. 156 were general acute hospitals (with 10 more classified as general acute specialty hospitals), 29 were psychiatric hospitals, 22 were long-term acute care hospitals, 21 were rehabilitation hospitals, and 7 were VA hospitals. The largest hospital by both beds and operating rooms was UPMC Presbyterian-Shadyside in Pittsburgh. The University of Pittsburgh Medical Center (UPMC) was also the largest health system network in the state by number of hospitals (28), beds (7,022), and operating rooms (379)."
+        }
+      }
     },
     {
       "slug": "geisinger-community-medical-center-scranton",
@@ -187,7 +216,7 @@
       "careers_url": "https://jobs.geisinger.org/",
       "careers_platform": "unknown",
       "careers_search_url": "https://jobs.geisinger.org/search-jobs/nurse%20practitioner",
-      "careers_notes": "jobs.geisinger.org job URLs look like /job/scranton/pediatric-hospitalist/12064/<id> (seen in search results), a Radancy TalentBrew front end with org id 12064; underlying ATS not identified. Search URL uses the TalentBrew /search-jobs/<keyword> pattern and was not test-fetched.",
+      "careers_notes": "jobs.geisinger.org job URLs look like /job/scranton/pediatric-hospitalist/12064/<id> (seen in search results), a Radancy TalentBrew front end with org id 12064; underlying ATS not identified. Search URL uses the TalentBrew /search-jobs/<keyword> pattern and was not test-fetched. [enrich 2026-10-20] careers_url -> HTTP 200 at https://jobs.geisinger.org/; ATS link seen: https://geisinger.wd5.myworkdayjobs.com/en-US/GeisingerExternal/login; search_url -> HTTP 200, mentions NP: True, job links: 15",
       "ats_config": {
         "host": "jobs.geisinger.org",
         "talentbrew_org_id": "12064"
@@ -216,7 +245,15 @@
         "Teaching site for Geisinger Commonwealth School of Medicine",
         "Backed by Geisinger Janet Weis Children's Hospital in Danville"
       ],
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/7/7c/Geisinger_logo.svg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original",
+          "caption": "Geisinger Health System",
+          "credit": "Geisinger Health System",
+          "license": "Public domain",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Geisinger_logo.svg"
+        }
+      ],
       "wikipedia_title": "Geisinger Community Medical Center",
       "sources": [
         "https://jobs.geisinger.org/job/scranton/pediatric-hospitalist/12064/95083368816",
@@ -225,7 +262,14 @@
       ],
       "notes": "Inclusion rests on search-result titles (a Geisinger pediatric hospitalist posting in Scranton and a chamber article on expanding pediatric services); unit size and whether peds stays are on a dedicated floor are unverified. Advanced practitioner pediatrics postings for GCMC have also appeared on PracticeMatch.",
       "confidence": "low",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "Geisinger Health System",
+          "url": "https://en.wikipedia.org/wiki/Geisinger_Health_System",
+          "extract": "Geisinger Health System is a regional health care provider to central, south-central and northeastern Pennsylvania. Headquartered in Danville, Pennsylvania, Geisinger services over 3 million patients in 45 counties. Geisinger operates ten hospitals, a medical school, and Life Flight, an air ambulance service.\nOn March 31, 2024, Geisinger was acquired by Risant Health, with Geisinger continuing to operate under its own name."
+        }
+      }
     },
     {
       "slug": "temple-university-hospital-philadelphia",
@@ -245,8 +289,10 @@
       "careers_url": "https://careers.templehealth.org/",
       "careers_platform": "unknown",
       "careers_search_url": null,
-      "careers_notes": "Careers URL is the system careers site from model knowledge or the caller's list; not fetched this pass. Enrichment job should probe it and detect the platform.",
-      "ats_config": {},
+      "careers_notes": "Careers URL is the system careers site from model knowledge or the caller's list; not fetched this pass. Enrichment job should probe it and detect the platform. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.templehealth.org/careers",
+      "ats_config": {
+        "host": "www.templehealth.org"
+      },
       "nearest_airport": "PHL Philadelphia International (about 12 mi)",
       "beds": 733,
       "peds_beds": null,
@@ -269,7 +315,15 @@
         "NICU listed at Level III (about 26 beds) on an older statewide list",
         "Neighbor and supporter of St. Christopher's Hospital for Children"
       ],
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/c/c3/Temple_University_Hospital_%2853564373238%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original",
+          "caption": "Temple University Hospital",
+          "credit": "ajay_suresh",
+          "license": "CC BY 2.0",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Temple_University_Hospital_(53564373238).jpg"
+        }
+      ],
       "wikipedia_title": "Temple University Hospital",
       "sources": [
         "R4b scratch (https://en.wikipedia.org/wiki/List_of_hospitals_in_Pennsylvania; https://neonatologysolutions.com/?p=24291)",
@@ -277,7 +331,14 @@
       ],
       "notes": "Included as an academic medical center. NICU level and size come from an older statewide list (neonatologysolutions.com) recorded in the R4b scratch; confirm the current level. Verify whether the NICU stayed at the Broad Street campus or moved to Temple Women and Families Hospital. No dedicated general pediatric floor confirmed. Shriners Children's Philadelphia is across the street.",
       "confidence": "low",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "Temple University Hospital",
+          "url": "https://en.wikipedia.org/wiki/Temple_University_Hospital",
+          "extract": "Temple University Hospital (TUH) in Philadelphia, Pennsylvania is an academic medical center in the United States which is a part of the healthcare network Temple Health. It is the chief clinical training site for the Temple University School of Medicine. The hospital currently has a 722-bed capacity that offers comprehensive inpatient and outpatient services to the surrounding community, and highly specialized tertiary services in the Philadelphia metropolitan area.\nIn 2015, Temple University Hospital had more than 84,000 emergency department and 200,000 outpatient visits.\nIn August 2011, Becker's Hospital Review listed Temple University Hospital as number 10 on the 100 Top Grossing Hospitals in America with $5.9 billion in gross revenue."
+        }
+      }
     },
     {
       "slug": "thomas-jefferson-university-hospital-philadelphia",
@@ -295,10 +356,12 @@
       "hotspot": false,
       "website": "https://www.jeffersonhealth.org/",
       "careers_url": "https://careers.jefferson.edu/",
-      "careers_platform": "unknown",
+      "careers_platform": "workday",
       "careers_search_url": null,
-      "careers_notes": "careers.jefferson.edu job paths (/job/...) were seen in earlier search results. The caller suggested a Workday tenant at jefferson.wd1.myworkdayjobs.com; not verified this pass, so platform is unknown.",
-      "ats_config": {},
+      "careers_notes": "careers.jefferson.edu job paths (/job/...) were seen in earlier search results. The caller suggested a Workday tenant at jefferson.wd1.myworkdayjobs.com; not verified this pass, so platform is unknown. [enrich 2026-10-20] careers_url -> HTTP 200 at https://jeffersonhealth.wd5.myworkdayjobs.com/ThomasJeffersonExternal; ATS link seen: https://jeffersonhealth.wd5.myworkdayjobs.com/ThomasJeffersonExternal",
+      "ats_config": {
+        "host": "jeffersonhealth.wd5.myworkdayjobs.com"
+      },
       "nearest_airport": "PHL Philadelphia International (about 8 mi)",
       "beds": 937,
       "peds_beds": null,
@@ -323,7 +386,15 @@
         "Nemours Children's Health collaborating hospital",
         "Center City location near Jefferson Station"
       ],
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/1/13/Thomas_Jefferson_University_Hospital_in_Philadelphia.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original",
+          "caption": "Thomas Jefferson University Hospital",
+          "credit": "Tom Crane",
+          "license": "CC BY 3.0",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Thomas_Jefferson_University_Hospital_in_Philadelphia.jpg"
+        }
+      ],
       "wikipedia_title": "Thomas Jefferson University Hospital",
       "sources": [
         "https://www.nemours.org/locations/collaborating-hospitals.html",
@@ -332,7 +403,14 @@
       ],
       "notes": "Bed count from the Wikipedia PA list and may include Jefferson's other Center City buildings. Nemours involvement here (newborn, NICU or pediatric unit) was confirmed only as a listing; pediatric roles may post on careers.nemours.org. Verify whether TJUH still has a pediatric inpatient unit.",
       "confidence": "medium",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "Thomas Jefferson University Hospital",
+          "url": "https://en.wikipedia.org/wiki/Thomas_Jefferson_University_Hospital",
+          "extract": "Thomas Jefferson University Hospital is a level 1 trauma center and teaching hospital located in Center City, Philadelphia, Pennsylvania. is the flagship hospital of Jefferson Health, a multi-state non-profit health system based in Philadelphia. The hospital serves as the teaching hospital for Thomas Jefferson University. With 937 licensed beds and 63 operating rooms, it is the second-largest hospital in Pennsylvania as of 2018."
+        }
+      }
     },
     {
       "slug": "hospital-of-the-university-of-pennsylvania-philadelphia",
@@ -352,8 +430,10 @@
       "careers_url": "https://careers.pennmedicine.org/",
       "careers_platform": "unknown",
       "careers_search_url": null,
-      "careers_notes": "careers.pennmedicine.org (earlier search results showed /search/jobs/in/... paths and a 'Join our Talent Network' page). Platform not confirmed. CHOP neonatal and pediatric clinicians placed at Penn hospitals post on careers.chop.edu instead.",
-      "ats_config": {},
+      "careers_notes": "careers.pennmedicine.org (earlier search results showed /search/jobs/in/... paths and a 'Join our Talent Network' page). Platform not confirmed. CHOP neonatal and pediatric clinicians placed at Penn hospitals post on careers.chop.edu instead. [enrich 2026-10-20] careers_url -> HTTP 403 at https://careers.pennmedicine.org/",
+      "ats_config": {
+        "host": "careers.pennmedicine.org"
+      },
       "nearest_airport": "PHL Philadelphia International (about 6 mi)",
       "beds": 790,
       "peds_beds": null,
@@ -385,7 +465,8 @@
       ],
       "notes": "Neonatal NP roles here are usually CHOP employees posting on careers.chop.edu. NICU level and size come from an older statewide list (neonatologysolutions.com) recorded in the R4b scratch; confirm the current level. Penn Presbyterian Medical Center shares the campus but has no pediatric services and was not added.",
       "confidence": "medium",
-      "active": true
+      "active": true,
+      "_enrich": {}
     },
     {
       "slug": "jefferson-abington-hospital-abington",
@@ -403,10 +484,12 @@
       "hotspot": false,
       "website": "https://www.jeffersonhealth.org/",
       "careers_url": "https://careers.jefferson.edu/",
-      "careers_platform": "unknown",
+      "careers_platform": "workday",
       "careers_search_url": null,
-      "careers_notes": "careers.jefferson.edu job paths (/job/...) were seen in earlier search results. The caller suggested a Workday tenant at jefferson.wd1.myworkdayjobs.com; not verified this pass, so platform is unknown.",
-      "ats_config": {},
+      "careers_notes": "careers.jefferson.edu job paths (/job/...) were seen in earlier search results. The caller suggested a Workday tenant at jefferson.wd1.myworkdayjobs.com; not verified this pass, so platform is unknown. [enrich 2026-10-20] careers_url -> HTTP 200 at https://jeffersonhealth.wd5.myworkdayjobs.com/ThomasJeffersonExternal; ATS link seen: https://jeffersonhealth.wd5.myworkdayjobs.com/ThomasJeffersonExternal",
+      "ats_config": {
+        "host": "jeffersonhealth.wd5.myworkdayjobs.com"
+      },
       "nearest_airport": "PHL Philadelphia International (about 20 mi)",
       "beds": 655,
       "peds_beds": null,
@@ -429,7 +512,15 @@
         "Teaching hospital with residency programs",
         "Inner-ring suburb with regional rail to Center City"
       ],
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/3/33/Abington_Hospital_emergency_room_entrance.jpeg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original",
+          "caption": "Jefferson Abington Hospital",
+          "credit": "Dough4872",
+          "license": "CC BY-SA 4.0",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Abington_Hospital_emergency_room_entrance.jpeg"
+        }
+      ],
       "wikipedia_title": "Abington Hospital",
       "sources": [
         "R4b scratch (https://en.wikipedia.org/wiki/List_of_hospitals_in_Pennsylvania; https://neonatologysolutions.com/?p=24291)",
@@ -437,7 +528,14 @@
       ],
       "notes": "Included as a large regional referral hospital with a Level III NICU. Verify whether Abington still has a general pediatric inpatient unit and who staffs it (CHOP and Nemours both partner with Jefferson hospitals).",
       "confidence": "low",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "Jefferson Abington Hospital",
+          "url": "https://en.wikipedia.org/wiki/Jefferson_Abington_Hospital",
+          "extract": "Jefferson Abington Hospital, part of Jefferson Health is located in Abington Township, Montgomery County, Pennsylvania, in the northern suburbs of Philadelphia.\nThe hospital was formerly known as Abington Hospital–Jefferson Health (circa 2015 to 2020), and before that it was long known, throughout its first century, as Abington Memorial Hospital (AMH)."
+        }
+      }
     },
     {
       "slug": "wellspan-york-hospital-york",
@@ -457,7 +555,7 @@
       "careers_url": "https://careers.wellspan.org/",
       "careers_platform": "unknown",
       "careers_search_url": null,
-      "careers_notes": "Careers URL is the system careers site from model knowledge or the caller's list; not fetched this pass. Enrichment job should probe it and detect the platform.",
+      "careers_notes": "Careers URL is the system careers site from model knowledge or the caller's list; not fetched this pass. Enrichment job should probe it and detect the platform. [enrich 2026-10-20] careers_url -> HTTP None at None",
       "ats_config": {},
       "nearest_airport": "MDT Harrisburg International (about 22 mi); BWI Baltimore/Washington about 50 mi",
       "beds": 580,
@@ -484,7 +582,15 @@
         "Inpatient pediatric unit with pediatric hospitalists",
         "About an hour from Baltimore"
       ],
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/8/8f/Wellspan_Health_logo.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original",
+          "caption": "WellSpan Health",
+          "credit": "Wellspanmarketing",
+          "license": "CC BY-SA 3.0",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Wellspan_Health_logo.jpg"
+        }
+      ],
       "wikipedia_title": "York Hospital (Pennsylvania)",
       "sources": [
         "R4b scratch (https://en.wikipedia.org/wiki/List_of_hospitals_in_Pennsylvania; https://neonatologysolutions.com/?p=24291)",
@@ -492,7 +598,14 @@
       ],
       "notes": "Pediatric unit and hospitalist service from model knowledge; confirm unit size and whether there is a dedicated pediatric ED area. WellSpan is a large employer of APPs across York, Adams, Franklin, Lebanon and Lancaster counties.",
       "confidence": "medium",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "WellSpan Health",
+          "url": "https://en.wikipedia.org/wiki/WellSpan_Health",
+          "extract": "WellSpan Health is an American integrated health system located in South-Central Pennsylvania and parts of northern Maryland.  Headquartered in York, Pennsylvania and employing about 23,000 people, WellSpan Health operates nine hospitals (including a surgical hospital and a behavioral health hospital): WellSpan York Hospital, WellSpan Gettysburg Hospital, WellSpan Ephrata Community Hospital, WellSpan Good Samaritan Hospital, WellSpan Chambersburg Hospital, WellSpan Waynesboro Hospital, Wellspan Evangelical Community Hospital, WellSpan Philhaven, and WellSpan Surgery and Rehabilitation Hospital. WellSpan operates over 220 patient care locations which offer services such as diagnostic imaging, laboratory services, rehabilitation facilities, primary care facilities, urgent care facilities, specialty centers (such as cardiac centers, oncology centers, and neuroscience services), medical equipment retail, and retail pharmacies."
+        }
+      }
     },
     {
       "slug": "upmc-hamot-erie",
@@ -512,8 +625,10 @@
       "careers_url": "https://careers.upmc.com/",
       "careers_platform": "unknown",
       "careers_search_url": null,
-      "careers_notes": "careers.upmc.com job URLs look like /job/<number> (seen in search results); platform not identified. UPMC Children's Hospital of Pittsburgh staff at regional UPMC hospitals post here too.",
-      "ats_config": {},
+      "careers_notes": "careers.upmc.com job URLs look like /job/<number> (seen in search results); platform not identified. UPMC Children's Hospital of Pittsburgh staff at regional UPMC hospitals post here too. [enrich 2026-10-20] careers_url -> HTTP 200 at https://careers.upmc.com/",
+      "ats_config": {
+        "host": "careers.upmc.com"
+      },
       "nearest_airport": "ERI Erie International (about 5 mi)",
       "beds": 423,
       "peds_beds": null,
@@ -545,7 +660,14 @@
       ],
       "notes": "Verify whether Hamot has a general pediatric inpatient unit or PICU (unconfirmed this pass) and the current NICU level. AHN Saint Vincent is about 2.5 km away in Erie.",
       "confidence": "low",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "UPMC Hamot",
+          "url": "https://en.wikipedia.org/wiki/UPMC_Hamot",
+          "extract": "UPMC Hamot, formerly known as Hamot Medical Center, is a 446-bed hospital and a tertiary-care medical facility located in Erie, Pennsylvania. It is one of the largest employers in the Erie region. The complex features several large buildings, including a heart institute. It was founded in 1881."
+        }
+      }
     },
     {
       "slug": "ahn-saint-vincent-erie",
@@ -565,7 +687,7 @@
       "careers_url": "https://careers.ahn.org/",
       "careers_platform": "unknown",
       "careers_search_url": null,
-      "careers_notes": "Careers URL is the system careers site from model knowledge or the caller's list; not fetched this pass. Enrichment job should probe it and detect the platform.",
+      "careers_notes": "Careers URL is the system careers site from model knowledge or the caller's list; not fetched this pass. Enrichment job should probe it and detect the platform. [enrich 2026-10-20] careers_url -> HTTP None at None",
       "ats_config": {},
       "nearest_airport": "ERI Erie International (about 5 mi)",
       "beds": 371,
@@ -597,7 +719,8 @@
       ],
       "notes": "NICU level and size come from an older statewide list (neonatologysolutions.com) recorded in the R4b scratch; confirm the current level. Pediatric inpatient unit not confirmed.",
       "confidence": "low",
-      "active": true
+      "active": true,
+      "_enrich": {}
     },
     {
       "slug": "mount-nittany-medical-center-state-college",
@@ -617,8 +740,10 @@
       "careers_url": "https://www.mountnittany.org/",
       "careers_platform": "unknown",
       "careers_search_url": null,
-      "careers_notes": "Careers page not fetched; careers_url is the main site as a placeholder.",
-      "ats_config": {},
+      "careers_notes": "Careers page not fetched; careers_url is the main site as a placeholder. [enrich 2026-10-20] careers_url -> HTTP 200 at https://mountnittany.org/",
+      "ats_config": {
+        "host": "mountnittany.org"
+      },
       "nearest_airport": "SCE State College University Park (about 5 mi)",
       "beds": 260,
       "peds_beds": null,
@@ -642,7 +767,15 @@
         "Independent, not-for-profit system",
         "College town setting next to Penn State"
       ],
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/9/9a/MNMC_2026.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original",
+          "caption": "Mount Nittany Medical Center",
+          "credit": "Alpacaaviator",
+          "license": "CC BY-SA 4.0",
+          "source_page": "https://commons.wikimedia.org/wiki/File:MNMC_2026.jpg"
+        }
+      ],
       "wikipedia_title": "Mount Nittany Medical Center",
       "sources": [
         "https://mountnittany.org/investing-in-excellence/newly-expanded-enhanced-women-childrens-services-unit/",
@@ -651,7 +784,14 @@
       ],
       "notes": "Inclusion rests on regional referral status plus a Women's and Children's Services unit named in a search result title; whether that unit admits general pediatric patients and the nursery level are unverified. Address is the Google Places listing; the hospital has long used 1800 East Park Avenue.",
       "confidence": "low",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "Mount Nittany Medical Center",
+          "url": "https://en.wikipedia.org/wiki/Mount_Nittany_Medical_Center",
+          "extract": "Mount Nittany Medical Center (MNMC), formerly Centre Community Hospital, is a hospital in College Township, Pennsylvania near State College.  It is an acute-care facility offering emergency, medical, surgical, diagnostic and community services.  The hospital is located adjacent to the Pennsylvania State University main campus near Beaver Stadium. MNMC employs around 2,400 healthcare professionals and support staff, with 60 specialties and subspecialties.\nMount Nittany Health is the operating organization and has ranked as Centre County's second-largest employer."
+        }
+      }
     },
     {
       "slug": "upmc-altoona-altoona",
@@ -671,8 +811,10 @@
       "careers_url": "https://careers.upmc.com/",
       "careers_platform": "unknown",
       "careers_search_url": null,
-      "careers_notes": "careers.upmc.com job URLs look like /job/<number> (seen in search results); platform not identified. UPMC Children's Hospital of Pittsburgh staff at regional UPMC hospitals post here too.",
-      "ats_config": {},
+      "careers_notes": "careers.upmc.com job URLs look like /job/<number> (seen in search results); platform not identified. UPMC Children's Hospital of Pittsburgh staff at regional UPMC hospitals post here too. [enrich 2026-10-20] careers_url -> HTTP 200 at https://careers.upmc.com/",
+      "ats_config": {
+        "host": "careers.upmc.com"
+      },
       "nearest_airport": "AOO Altoona-Blair County (about 15 mi); PIT Pittsburgh International about 100 mi",
       "beds": 361,
       "peds_beds": null,
@@ -697,7 +839,15 @@
         "Neonatal NP or PA roles posted for UPMC Altoona",
         "UPMC Children's pediatric outreach in the region"
       ],
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/8/87/UPMCAltoona2014.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original",
+          "caption": "UPMC Altoona",
+          "credit": "Crazypaco",
+          "license": "CC BY-SA 4.0",
+          "source_page": "https://commons.wikimedia.org/wiki/File:UPMCAltoona2014.jpg"
+        }
+      ],
       "wikipedia_title": "UPMC Altoona",
       "sources": [
         "https://www.upmc.com/media/news/091216-lemieux-opens-playroom-altoona",
@@ -706,7 +856,14 @@
       ],
       "notes": "Pediatric unit inferred from the playroom announcement title and a neonatal NP/PA posting seen in search results; unit size and NICU level not confirmed.",
       "confidence": "low",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "UPMC Altoona",
+          "url": "https://en.wikipedia.org/wiki/UPMC_Altoona",
+          "extract": "UPMC Altoona, located in downtown Altoona, Pennsylvania, is a 380-bed, non-profit, private community hospital system that contains more than 20 affiliated health care companies and functions as the regional referral center and tertiary hub of the University of Pittsburgh Medical Center (UPMC).  Founded in 1883 as to serve the needs of the area and the Pennsylvania Railroad, the hospital was known for most of its history simply as Altoona Hospital (a name still used by locals in informal discussion).  It became part of the Altoona Regional Health System which was created in 2004 by the merger of Altoona Hospital with Bon Secours-Holy Family Hospital, previously Mercy Hospital of Altoona. As part of UPMC since 2013 and a level II trauma center until 2024, it is a level III trauma center and is served by 300 physicians and 4,000 care givers that help it to provide a variety of medical services and specialties.\nUPMC Altoona is the tallest building in Altoona."
+        }
+      }
     },
     {
       "slug": "conemaugh-memorial-medical-center-johnstown",
@@ -726,8 +883,10 @@
       "careers_url": "https://www.conemaugh.org/",
       "careers_platform": "unknown",
       "careers_search_url": null,
-      "careers_notes": "Careers page not fetched; LifePoint hospitals usually post through a LifePoint-wide job board. careers_url is the main site as a placeholder.",
-      "ats_config": {},
+      "careers_notes": "Careers page not fetched; LifePoint hospitals usually post through a LifePoint-wide job board. careers_url is the main site as a placeholder. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.conemaugh.org/",
+      "ats_config": {
+        "host": "www.conemaugh.org"
+      },
       "nearest_airport": "JST John Murtha Johnstown-Cambria County (about 5 mi); PIT Pittsburgh International about 75 mi",
       "beds": 470,
       "peds_beds": null,
@@ -758,7 +917,14 @@
       ],
       "notes": "NICU level and size come from an older statewide list (neonatologysolutions.com) recorded in the R4b scratch; confirm the current level. Verify whether a pediatric inpatient unit and pediatric ICU still operate.",
       "confidence": "low",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "Conemaugh Health System",
+          "url": "https://en.wikipedia.org/wiki/Conemaugh_Health_System",
+          "extract": "Conemaugh Health System, a member of Duke LifePoint Healthcare, is the largest health care provider in west central Pennsylvania, with multiple hospitals, physician offices, and outpatient centers in eleven counties. Conemaugh Health System is located in Johnstown, Pennsylvania.\nCHS offers a continuum of care, from highly specialized services such as a Level 1 Regional Resource Trauma Center and Level 3 Neonatal Intensive Care Unit. Conemaugh Health System is also home to the Conemaugh School of Nursing and Allied Health, as well as Graduate Medical Education for residents in Emergency Medicine, Family Medicine, Internal Medicine, Surgery, Pharmacy, and Health Psychology. Conemaugh Health System was created in the wake of the Johnstown Flood of 1889 which gained national attention and caused the outpouring resource to help the local community. Among those who originally established the hospital system was Clara Barton, the founder of the American Red Cross.\nConemaugh serves as the largest medical provider for Cambria County, Somerset County, Blair County, Huntingdon County, Westmoreland County. Fulton, County, Indiana County, Clearfield County, Jefferson County, and Bedford County."
+        }
+      }
     },
     {
       "slug": "guthrie-robert-packer-hospital-sayre",
@@ -776,9 +942,9 @@
       "hotspot": false,
       "website": "https://www.guthrie.org/",
       "careers_url": "https://www.guthrie.org/jobs",
-      "careers_platform": "unknown",
+      "careers_platform": "oracle_cloud",
       "careers_search_url": null,
-      "careers_notes": "Guthrie posts jobs on its own site with paths like guthrie.org/jobs/pediatrics/pediatrics-hospitalist-nppa-sayre-pa (seen in search results); underlying ATS not identified.",
+      "careers_notes": "Guthrie posts jobs on its own site with paths like guthrie.org/jobs/pediatrics/pediatrics-hospitalist-nppa-sayre-pa (seen in search results); underlying ATS not identified. [enrich 2026-10-20] careers_url -> HTTP 404 at https://www.guthrie.org/jobs; ATS link seen: https://elfw.fa.us2.oraclecloud.com/fscmUI/faces/FuseOverview",
       "ats_config": {
         "host": "www.guthrie.org"
       },
@@ -816,7 +982,14 @@
       ],
       "notes": "A direct example of a pediatric hospitalist NP posting (guthrie.org/jobs/pediatrics/pediatrics-hospitalist-nppa-sayre-pa) seen in search results. NICU level not confirmed.",
       "confidence": "medium",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "Guthrie Robert Packer Hospital",
+          "url": "https://en.wikipedia.org/wiki/Guthrie_Robert_Packer_Hospital",
+          "extract": "Guthrie Robert Packer Hospital is a rural teaching hospital in Sayre, Pennsylvania. It was founded as Robert Packer Hospital in 1885, making it the oldest hospital in the Twin Tiers of Pennsylvania and New York. The hospital is a primary stroke center and level I trauma center. It has received numerous awards, including being named one of the Truven Top 50 Cardiovascular Hospitals 10 times since 2001, \"America’s 100 Best Hospitals for Coronary Intervention\" by HealthGrades in 2017, 2018, and 2019 and receiving a Bariatric Surgery Excellence Award in 2019. It has also received a Center of Distinction Award for wound care and hyperbarics in 2018."
+        }
+      }
     },
     {
       "slug": "lehigh-valley-hospital-hazleton",
@@ -827,16 +1000,16 @@
       "city": "Hazleton",
       "state": "PA",
       "address": "700 East Broad Street, Hazleton, PA 18201",
-      "lat": null,
-      "lng": null,
-      "coord_source": "pending enrichment",
+      "lat": 40.94959,
+      "lng": -75.9641,
+      "coord_source": "OpenStreetMap Nominatim (hospital) for 'Lehigh Valley Hospital - Hazleton, Hazleton, PA'",
       "region": "Pennsylvania (other)",
       "hotspot": false,
       "website": "https://www.lvhn.org/",
       "careers_url": "https://careers-lvhn.icims.com/jobs/search",
       "careers_platform": "icims",
       "careers_search_url": "https://careers-lvhn.icims.com/jobs/search?ss=1&searchKeyword=nurse%20practitioner",
-      "careers_notes": "iCIMS host careers-lvhn.icims.com confirmed from job URLs in search results (e.g. /jobs/2129/us-pa-hazleton/job); jobs.lvhn.org is the branded front end. Search URL follows the standard iCIMS pattern and was not test-fetched. LVHN combined with Jefferson Health in 2024, so postings may migrate to Jefferson's system.",
+      "careers_notes": "iCIMS host careers-lvhn.icims.com confirmed from job URLs in search results (e.g. /jobs/2129/us-pa-hazleton/job); jobs.lvhn.org is the branded front end. Search URL follows the standard iCIMS pattern and was not test-fetched. LVHN combined with Jefferson Health in 2024, so postings may migrate to Jefferson's system. [enrich 2026-10-20] careers_url -> HTTP 404 at https://careers-lvhn.icims.com/jobs/search; ATS link seen: https://cdn13.icims.com/icims-branding/0.6.0/assets/favicon.ico; search_url -> HTTP 404, mentions NP: False, job links: 0",
       "ats_config": {
         "host": "careers-lvhn.icims.com"
       },
@@ -863,8 +1036,16 @@
         "Part of Jefferson Health since the 2024 LVHN combination",
         "Interstate 81 and 80 access"
       ],
-      "photos": [],
-      "wikipedia_title": null,
+      "photos": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/d/d4/UPMC_Presbyterian_Hospital_from_Schenley_Park%2C_2015-10-01%2C_01.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original",
+          "caption": "List of hospitals in Pennsylvania",
+          "credit": "Cbaile19",
+          "license": "CC0",
+          "source_page": "https://commons.wikimedia.org/wiki/File:UPMC_Presbyterian_Hospital_from_Schenley_Park,_2015-10-01,_01.jpg"
+        }
+      ],
+      "wikipedia_title": "List of hospitals in Pennsylvania",
       "sources": [
         "https://careers-lvhn.icims.com/jobs/2129/us-pa-hazleton/job",
         "https://www.practicematch.com/physicians/job-details.cfm/1118621",
@@ -872,7 +1053,14 @@
       ],
       "notes": "Inclusion rests on search-result titles for Pediatric Hospital Medicine roles in Hazleton; whether there is a staffed pediatric unit (versus newborn and ED coverage only) is unverified. Address and coordinates pending.",
       "confidence": "low",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "List of hospitals in Pennsylvania",
+          "url": "https://en.wikipedia.org/wiki/List_of_hospitals_in_Pennsylvania",
+          "extract": "This is a list of hospitals in Pennsylvania, a U.S. state. The list includes only hospitals that are currently licensed by the Pennsylvania Department of Health or operated by the Veterans Health Administration, according to data collected by the Hospital and Healthsystem Association of Pennsylvania (HAP) and the Pennsylvania Department of Health.\nAs of July 2018, there were 249 state licensed hospitals and VA hospital facilities in Pennsylvania. 148 of these facilities were nonprofit, 86 were for-profit or \"investor-owned\", and 15 were public hospitals owned by the Federal government, state government, or in one case, the city of Philadelphia. There were 42,817 total licensed beds and 1,880 total operating rooms. 156 were general acute hospitals (with 10 more classified as general acute specialty hospitals), 29 were psychiatric hospitals, 22 were long-term acute care hospitals, 21 were rehabilitation hospitals, and 7 were VA hospitals. The largest hospital by both beds and operating rooms was UPMC Presbyterian-Shadyside in Pittsburgh. The University of Pittsburgh Medical Center (UPMC) was also the largest health system network in the state by number of hospitals (28), beds (7,022), and operating rooms (379)."
+        }
+      }
     },
     {
       "slug": "lehigh-valley-hospital-pocono-east-stroudsburg",
@@ -892,7 +1080,7 @@
       "careers_url": "https://careers-lvhn.icims.com/jobs/search",
       "careers_platform": "icims",
       "careers_search_url": "https://careers-lvhn.icims.com/jobs/search?ss=1&searchKeyword=nurse%20practitioner",
-      "careers_notes": "iCIMS host careers-lvhn.icims.com confirmed from job URLs in search results (e.g. /jobs/2129/us-pa-hazleton/job); jobs.lvhn.org is the branded front end. Search URL follows the standard iCIMS pattern and was not test-fetched. LVHN combined with Jefferson Health in 2024, so postings may migrate to Jefferson's system.",
+      "careers_notes": "iCIMS host careers-lvhn.icims.com confirmed from job URLs in search results (e.g. /jobs/2129/us-pa-hazleton/job); jobs.lvhn.org is the branded front end. Search URL follows the standard iCIMS pattern and was not test-fetched. LVHN combined with Jefferson Health in 2024, so postings may migrate to Jefferson's system. [enrich 2026-10-20] careers_url -> HTTP 404 at https://careers-lvhn.icims.com/jobs/search; ATS link seen: https://cdn13.icims.com/icims-branding/0.6.0/assets/favicon.ico; search_url -> HTTP 404, mentions NP: False, job links: 0",
       "ats_config": {
         "host": "careers-lvhn.icims.com"
       },
@@ -919,15 +1107,30 @@
         "Backed by Lehigh Valley Reilly Children's Hospital",
         "Interstate 80 corridor near the Delaware Water Gap"
       ],
-      "photos": [],
-      "wikipedia_title": null,
+      "photos": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/d/d4/UPMC_Presbyterian_Hospital_from_Schenley_Park%2C_2015-10-01%2C_01.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original",
+          "caption": "List of hospitals in Pennsylvania",
+          "credit": "Cbaile19",
+          "license": "CC0",
+          "source_page": "https://commons.wikimedia.org/wiki/File:UPMC_Presbyterian_Hospital_from_Schenley_Park,_2015-10-01,_01.jpg"
+        }
+      ],
+      "wikipedia_title": "List of hospitals in Pennsylvania",
       "sources": [
         "R4b scratch (https://en.wikipedia.org/wiki/List_of_hospitals_in_Pennsylvania; https://neonatologysolutions.com/?p=24291)",
         "model knowledge (to verify); enrichment pending"
       ],
       "notes": "NICU level and size come from an older statewide list (neonatologysolutions.com) recorded in the R4b scratch; confirm the current level. Pediatric inpatient unit not confirmed. St. Luke's Monroe Campus is a few miles away in Stroud Township.",
       "confidence": "low",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "List of hospitals in Pennsylvania",
+          "url": "https://en.wikipedia.org/wiki/List_of_hospitals_in_Pennsylvania",
+          "extract": "This is a list of hospitals in Pennsylvania, a U.S. state. The list includes only hospitals that are currently licensed by the Pennsylvania Department of Health or operated by the Veterans Health Administration, according to data collected by the Hospital and Healthsystem Association of Pennsylvania (HAP) and the Pennsylvania Department of Health.\nAs of July 2018, there were 249 state licensed hospitals and VA hospital facilities in Pennsylvania. 148 of these facilities were nonprofit, 86 were for-profit or \"investor-owned\", and 15 were public hospitals owned by the Federal government, state government, or in one case, the city of Philadelphia. There were 42,817 total licensed beds and 1,880 total operating rooms. 156 were general acute hospitals (with 10 more classified as general acute specialty hospitals), 29 were psychiatric hospitals, 22 were long-term acute care hospitals, 21 were rehabilitation hospitals, and 7 were VA hospitals. The largest hospital by both beds and operating rooms was UPMC Presbyterian-Shadyside in Pittsburgh. The University of Pittsburgh Medical Center (UPMC) was also the largest health system network in the state by number of hospitals (28), beds (7,022), and operating rooms (379)."
+        }
+      }
     },
     {
       "slug": "st-lukes-anderson-campus-easton",
@@ -947,7 +1150,7 @@
       "careers_url": "https://careers.slhn.org/",
       "careers_platform": "unknown",
       "careers_search_url": null,
-      "careers_notes": "Careers URL is the system careers site from model knowledge or the caller's list; not fetched this pass. Enrichment job should probe it and detect the platform.",
+      "careers_notes": "Careers URL is the system careers site from model knowledge or the caller's list; not fetched this pass. Enrichment job should probe it and detect the platform. [enrich 2026-10-20] careers_url -> HTTP None at None",
       "ats_config": {},
       "nearest_airport": "ABE Lehigh Valley International (about 8 mi)",
       "beds": null,
@@ -972,15 +1175,30 @@
         "Opened 2011 and expanded since",
         "Near Easton and the New Jersey border"
       ],
-      "photos": [],
-      "wikipedia_title": null,
+      "photos": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/d/d4/UPMC_Presbyterian_Hospital_from_Schenley_Park%2C_2015-10-01%2C_01.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original",
+          "caption": "List of hospitals in Pennsylvania",
+          "credit": "Cbaile19",
+          "license": "CC0",
+          "source_page": "https://commons.wikimedia.org/wiki/File:UPMC_Presbyterian_Hospital_from_Schenley_Park,_2015-10-01,_01.jpg"
+        }
+      ],
+      "wikipedia_title": "List of hospitals in Pennsylvania",
       "sources": [
         "R4b scratch (https://en.wikipedia.org/wiki/List_of_hospitals_in_Pennsylvania; https://neonatologysolutions.com/?p=24291)",
         "model knowledge (to verify); enrichment pending"
       ],
       "notes": "NICU level and size come from an older statewide list (neonatologysolutions.com) recorded in the R4b scratch; confirm the current level. Bed count not recorded. St. Luke's University Health Network careers at careers.slhn.org (caller's list).",
       "confidence": "low",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "List of hospitals in Pennsylvania",
+          "url": "https://en.wikipedia.org/wiki/List_of_hospitals_in_Pennsylvania",
+          "extract": "This is a list of hospitals in Pennsylvania, a U.S. state. The list includes only hospitals that are currently licensed by the Pennsylvania Department of Health or operated by the Veterans Health Administration, according to data collected by the Hospital and Healthsystem Association of Pennsylvania (HAP) and the Pennsylvania Department of Health.\nAs of July 2018, there were 249 state licensed hospitals and VA hospital facilities in Pennsylvania. 148 of these facilities were nonprofit, 86 were for-profit or \"investor-owned\", and 15 were public hospitals owned by the Federal government, state government, or in one case, the city of Philadelphia. There were 42,817 total licensed beds and 1,880 total operating rooms. 156 were general acute hospitals (with 10 more classified as general acute specialty hospitals), 29 were psychiatric hospitals, 22 were long-term acute care hospitals, 21 were rehabilitation hospitals, and 7 were VA hospitals. The largest hospital by both beds and operating rooms was UPMC Presbyterian-Shadyside in Pittsburgh. The University of Pittsburgh Medical Center (UPMC) was also the largest health system network in the state by number of hospitals (28), beds (7,022), and operating rooms (379)."
+        }
+      }
     },
     {
       "slug": "st-lukes-grand-view-sellersville",
@@ -1000,7 +1218,7 @@
       "careers_url": "https://careers.slhn.org/",
       "careers_platform": "unknown",
       "careers_search_url": null,
-      "careers_notes": "Careers URL is the system careers site from model knowledge or the caller's list; not fetched this pass. Enrichment job should probe it and detect the platform.",
+      "careers_notes": "Careers URL is the system careers site from model knowledge or the caller's list; not fetched this pass. Enrichment job should probe it and detect the platform. [enrich 2026-10-20] careers_url -> HTTP None at None",
       "ats_config": {},
       "nearest_airport": "PHL Philadelphia International (about 40 mi); ABE Lehigh Valley International about 25 mi",
       "beds": 194,
@@ -1024,7 +1242,7 @@
         "Community hospital for upper Bucks County"
       ],
       "photos": [],
-      "wikipedia_title": null,
+      "wikipedia_title": "St. Luke's University Health Network",
       "sources": [
         "https://www.wfmz.com/business/grand-view-health-officially-joins-st-luke-s-university-health-network/article_9810f06c-7eb2-406f-b71f-c424dc50f81c.html",
         "https://slhn.org/blog/2025/grand-view-and-sluhn-sign-a-definitive-agreement-to-partner",
@@ -1032,7 +1250,14 @@
       ],
       "notes": "Merger confirmed from search-result titles (WFMZ: Grand View Health officially joins St. Luke's). Postings should move to careers.slhn.org. Nursery level from older list; verify.",
       "confidence": "low",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "St. Luke's University Health Network",
+          "url": "https://en.wikipedia.org/wiki/St._Luke%27s_University_Health_Network",
+          "extract": "St. Luke's University Health Network (SLUHN) is a non-profit health system based in Bethlehem, Pennsylvania. It includes 16 campuses and 350+ outpatient sites across Pennsylvania and New Jersey, employing more than 23,000 people as of 2025.\nThe network offers primary, secondary, and tertiary care and serves as a teaching and research institution through its affiliations with Temple University School of Medicine and other educational partners."
+        }
+      }
     },
     {
       "slug": "shriners-childrens-philadelphia",
@@ -1050,10 +1275,12 @@
       "hotspot": false,
       "website": "https://www.shrinerschildrens.org/en/locations/philadelphia",
       "careers_url": "https://www.shrinerschildrens.org/en/careers",
-      "careers_platform": "unknown",
+      "careers_platform": "workday",
       "careers_search_url": null,
-      "careers_notes": "Shriners Children's posts all locations on one national career site; URL from model knowledge, not fetched. Filter by Philadelphia.",
-      "ats_config": {},
+      "careers_notes": "Shriners Children's posts all locations on one national career site; URL from model knowledge, not fetched. Filter by Philadelphia. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.shrinerschildrens.org/en/careers; ATS link seen: https://shrinerschildrens.wd12.myworkdayjobs.com/Shriners",
+      "ats_config": {
+        "host": "www.shrinerschildrens.org"
+      },
       "nearest_airport": "PHL Philadelphia International (about 12 mi)",
       "beds": 53,
       "peds_beds": 53,
@@ -1088,7 +1315,8 @@
       ],
       "notes": "Specialty fit: orthopedic and rehab NP roles rather than acute care. Bed count from Wikipedia PA list via scratch.",
       "confidence": "medium",
-      "active": true
+      "active": true,
+      "_enrich": {}
     },
     {
       "slug": "kidspeace-orefield",
@@ -1099,17 +1327,19 @@
       "city": "Orefield",
       "state": "PA",
       "address": "5300 KidsPeace Drive, Orefield, PA 18069",
-      "lat": null,
-      "lng": null,
-      "coord_source": "pending enrichment",
+      "lat": 40.64878,
+      "lng": -75.61347,
+      "coord_source": "OpenStreetMap Nominatim (hospital) for '5300 KidsPeace Drive, Orefield, PA 18069, Orefield, PA'",
       "region": "Pennsylvania (other)",
       "hotspot": false,
       "website": "https://www.kidspeace.org/",
-      "careers_url": "https://www.kidspeace.org/",
+      "careers_url": "https://www.kidspeace.org/careers/",
       "careers_platform": "unknown",
       "careers_search_url": null,
-      "careers_notes": "Careers page not fetched; careers_url is the main site as a placeholder.",
-      "ats_config": {},
+      "careers_notes": "Careers page not fetched; careers_url is the main site as a placeholder. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.kidspeace.org/careers/",
+      "ats_config": {
+        "host": "www.kidspeace.org"
+      },
       "nearest_airport": "ABE Lehigh Valley International (about 12 mi)",
       "beds": 120,
       "peds_beds": 120,
@@ -1141,7 +1371,14 @@
       ],
       "notes": "Specialty fit is behavioral health; acute care PNP roles uncommon. Bed count from Wikipedia PA list via scratch. Address from model knowledge; verify.",
       "confidence": "low",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "KidsPeace",
+          "url": "https://en.wikipedia.org/wiki/KidsPeace",
+          "extract": "KidsPeace is an American private charity that provides behavioral and mental health services for children, families, and communities. Founded in 1882, it operates a psychiatric hospital, residential treatment programs, educational services, foster care offices, and community-based treatment programs.\nKidsPeace offers services in Georgia, Indiana, Maine, Maryland, New York, North Carolina, Pennsylvania, and Virginia.\nKidsPeace was founded by William Thurston, president of the predecessor to Bethlehem Steel Corporation, in response to a smallpox epidemic that resulted in a number of orphaned and homeless children in southern Bethlehem, Pennsylvania. In 1895, Captain James Wiley donated a Salisbury Township (PA) home and 6 acres (24,000 m2) of surrounding land to the charity. The organization was later renamed 'Wiley House,' a name it retained for many years before officially becoming 'KidsPeace' in January 1992."
+        }
+      }
     },
     {
       "slug": "saint-francis-hospital-wilmington",
@@ -1152,16 +1389,16 @@
       "city": "Wilmington",
       "state": "DE",
       "address": "701 North Clayton Street, Wilmington, DE 19805",
-      "lat": null,
-      "lng": null,
-      "coord_source": "pending enrichment",
+      "lat": 39.74982,
+      "lng": -75.56779,
+      "coord_source": "OpenStreetMap Nominatim (hospital) for 'Saint Francis Hospital, Wilmington, DE'",
       "region": "Delaware",
       "hotspot": false,
       "website": "https://www.trinityhealthma.org/",
       "careers_url": "https://trinityhealth.wd1.myworkdayjobs.com/Jobs",
       "careers_platform": "workday",
       "careers_search_url": "https://trinityhealth.wd1.myworkdayjobs.com/Jobs?q=nurse%20practitioner",
-      "careers_notes": "Trinity Health national Workday tenant (same config as the Connecticut Trinity records, confirmed there from a posting URL). Mid-Atlantic facilities are encoded in the job location segment; filter to the hospital name. Workday is JS-rendered; use the CXS JSON endpoint /wday/cxs/trinityhealth/Jobs/jobs. Not fetched this pass.",
+      "careers_notes": "Trinity Health national Workday tenant (same config as the Connecticut Trinity records, confirmed there from a posting URL). Mid-Atlantic facilities are encoded in the job location segment; filter to the hospital name. Workday is JS-rendered; use the CXS JSON endpoint /wday/cxs/trinityhealth/Jobs/jobs. Not fetched this pass. [enrich 2026-10-20] careers_url -> HTTP 200 at https://trinityhealth.wd1.myworkdayjobs.com/Jobs; ATS link seen: https://trinityhealth.wd1.myworkdayjobs.com/Jobs; search_url -> HTTP 200, mentions NP: False, job links: 0",
       "ats_config": {
         "host": "trinityhealth.wd1.myworkdayjobs.com",
         "tenant": "trinityhealth",
@@ -1190,14 +1427,21 @@
         "Part of Trinity Health Mid-Atlantic"
       ],
       "photos": [],
-      "wikipedia_title": null,
+      "wikipedia_title": "St. Francis Hospital",
       "sources": [
         "https://www.nemours.org/locations/collaborating-hospitals.html",
         "model knowledge (to verify); enrichment pending"
       ],
       "notes": "Inclusion rests on the Nemours collaborating-hospital listing; the scope of pediatric services at Saint Francis was not read. Address and teaching status from model knowledge; verify.",
       "confidence": "low",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "St. Francis Hospital",
+          "url": "https://en.wikipedia.org/wiki/St._Francis_Hospital",
+          "extract": "St. Francis Hospital may refer to:"
+        }
+      }
     },
     {
       "slug": "geisinger-wyoming-valley-wilkes-barre",
@@ -1217,7 +1461,7 @@
       "careers_url": "https://jobs.geisinger.org/",
       "careers_platform": "unknown",
       "careers_search_url": "https://jobs.geisinger.org/search-jobs/nurse%20practitioner",
-      "careers_notes": "jobs.geisinger.org job URLs look like /job/scranton/pediatric-hospitalist/12064/<id> (seen in search results), a Radancy TalentBrew front end with org id 12064; underlying ATS not identified. Search URL uses the TalentBrew /search-jobs/<keyword> pattern and was not test-fetched.",
+      "careers_notes": "jobs.geisinger.org job URLs look like /job/scranton/pediatric-hospitalist/12064/<id> (seen in search results), a Radancy TalentBrew front end with org id 12064; underlying ATS not identified. Search URL uses the TalentBrew /search-jobs/<keyword> pattern and was not test-fetched. [enrich 2026-10-20] careers_url -> HTTP 200 at https://jobs.geisinger.org/; ATS link seen: https://geisinger.wd5.myworkdayjobs.com/en-US/GeisingerExternal/login; search_url -> HTTP 200, mentions NP: True, job links: 15",
       "ats_config": {
         "host": "jobs.geisinger.org",
         "talentbrew_org_id": "12064"
@@ -1245,15 +1489,30 @@
         "Teaching site for Geisinger Commonwealth School of Medicine",
         "Backed by Janet Weis Children's Hospital"
       ],
-      "photos": [],
-      "wikipedia_title": null,
+      "photos": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/7/7c/Geisinger_logo.svg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original",
+          "caption": "Geisinger Health System",
+          "credit": "Geisinger Health System",
+          "license": "Public domain",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Geisinger_logo.svg"
+        }
+      ],
+      "wikipedia_title": "Geisinger Health System",
       "sources": [
         "R4b scratch (https://en.wikipedia.org/wiki/List_of_hospitals_in_Pennsylvania; https://neonatologysolutions.com/?p=24291)",
         "model knowledge (to verify); enrichment pending"
       ],
       "notes": "Pediatric unit mentioned only in a patient review recorded in scratch; confirm. NICU level and size come from an older statewide list (neonatologysolutions.com) recorded in the R4b scratch; confirm the current level.",
       "confidence": "low",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "Geisinger Health System",
+          "url": "https://en.wikipedia.org/wiki/Geisinger_Health_System",
+          "extract": "Geisinger Health System is a regional health care provider to central, south-central and northeastern Pennsylvania. Headquartered in Danville, Pennsylvania, Geisinger services over 3 million patients in 45 counties. Geisinger operates ten hospitals, a medical school, and Life Flight, an air ambulance service.\nOn March 31, 2024, Geisinger was acquired by Risant Health, with Geisinger continuing to operate under its own name."
+        }
+      }
     },
     {
       "slug": "penn-state-health-holy-spirit-camp-hill",
@@ -1273,8 +1532,10 @@
       "careers_url": "https://careers.pennstatehealth.org/",
       "careers_platform": "unknown",
       "careers_search_url": null,
-      "careers_notes": "Careers URL is the system careers site from model knowledge or the caller's list; not fetched this pass. Enrichment job should probe it and detect the platform.",
-      "ats_config": {},
+      "careers_notes": "Careers URL is the system careers site from model knowledge or the caller's list; not fetched this pass. Enrichment job should probe it and detect the platform. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.pennstatehealth.org/careers",
+      "ats_config": {
+        "host": "www.pennstatehealth.org"
+      },
       "nearest_airport": "MDT Harrisburg International (about 12 mi)",
       "beds": 307,
       "peds_beds": null,
@@ -1306,7 +1567,14 @@
       ],
       "notes": "Older NICU list showed Holy Spirit with about 5 beds and an uncertain level; confirm level and whether a pediatric inpatient unit operates.",
       "confidence": "low",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "Holy Spirit Hospital",
+          "url": "https://en.wikipedia.org/wiki/Holy_Spirit_Hospital",
+          "extract": "Holy Spirit Hospital may refer to:\n\nHospital of the Holy Spirit, Rome, Italy\nHoly Spirit Hospital, Berlin, Germany\nHoly Spirit Hospital, Makeni, Sierra Leone\nHoly Spirit Hospital, Mumbai, India\nPenn State Holy Spirit, Camp Hill, Pennsylvania, United States\nSanto Spirito Hospital, Rabat, Malta\nHospital of the Holy Spirit, Warsaw, Poland\nHoly Spirit Hospital, Nuremberg, Germany\nHoly Spirit Hospital, Frombork, Poland"
+        }
+      }
     },
     {
       "slug": "chester-county-hospital-west-chester",
@@ -1326,8 +1594,10 @@
       "careers_url": "https://careers.pennmedicine.org/",
       "careers_platform": "unknown",
       "careers_search_url": null,
-      "careers_notes": "careers.pennmedicine.org (earlier search results showed /search/jobs/in/... paths and a 'Join our Talent Network' page). Platform not confirmed. CHOP neonatal and pediatric clinicians placed at Penn hospitals post on careers.chop.edu instead.",
-      "ats_config": {},
+      "careers_notes": "careers.pennmedicine.org (earlier search results showed /search/jobs/in/... paths and a 'Join our Talent Network' page). Platform not confirmed. CHOP neonatal and pediatric clinicians placed at Penn hospitals post on careers.chop.edu instead. [enrich 2026-10-20] careers_url -> HTTP 403 at https://careers.pennmedicine.org/",
+      "ats_config": {
+        "host": "careers.pennmedicine.org"
+      },
       "nearest_airport": "PHL Philadelphia International (about 22 mi)",
       "beds": 329,
       "peds_beds": null,
@@ -1360,7 +1630,8 @@
       ],
       "notes": "Verify whether CHOP still runs an inpatient pediatric unit here (reported, not confirmed this pass; if so set peds_inpatient true). CHOP-employed clinicians post on careers.chop.edu. NICU level and size come from an older statewide list (neonatologysolutions.com) recorded in the R4b scratch; confirm the current level.",
       "confidence": "low",
-      "active": true
+      "active": true,
+      "_enrich": {}
     },
     {
       "slug": "paoli-hospital-paoli",
@@ -1378,10 +1649,12 @@
       "hotspot": false,
       "website": "https://www.mainlinehealth.org/",
       "careers_url": "https://careers.mainlinehealth.org/",
-      "careers_platform": "unknown",
+      "careers_platform": "taleo",
       "careers_search_url": null,
-      "careers_notes": "Careers URL is the system careers site from model knowledge or the caller's list; not fetched this pass. Enrichment job should probe it and detect the platform.",
-      "ats_config": {},
+      "careers_notes": "Careers URL is the system careers site from model knowledge or the caller's list; not fetched this pass. Enrichment job should probe it and detect the platform. [enrich 2026-10-20] careers_url -> HTTP 200 at https://careers.mainlinehealth.org/; ATS link seen: https://mainline.taleo.net/careersection/2/mysubmissions.ftl?lang=en",
+      "ats_config": {
+        "host": "careers.mainlinehealth.org"
+      },
       "nearest_airport": "PHL Philadelphia International (about 22 mi)",
       "beds": 231,
       "peds_beds": null,
@@ -1405,14 +1678,21 @@
         "Regional rail access to Philadelphia"
       ],
       "photos": [],
-      "wikipedia_title": null,
+      "wikipedia_title": "Paoli Hospital",
       "sources": [
         "R4b scratch (https://en.wikipedia.org/wiki/List_of_hospitals_in_Pennsylvania; https://neonatologysolutions.com/?p=24291)",
         "model knowledge (to verify); enrichment pending"
       ],
       "notes": "Inclusion rests on the Level II nursery from an older list; confirm level and whether pediatric inpatients are admitted. Main Line Health careers site from the caller's list.",
       "confidence": "low",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "Paoli Hospital",
+          "url": "https://en.wikipedia.org/wiki/Paoli_Hospital",
+          "extract": "Paoli Hospital (formerly known as Paoli Memorial Hospital), is a 231-bed, not-for-profit, acute care hospital in Paoli, Pennsylvania. Founded in 1913, the hospital is part of the Main Line Health system. In 2014, the hospital was re-accredited as a Level II Trauma Center, the only one in Chester County.\nPaoli Hospital and its outpatient centers in King of Prussia, Exton and Collegeville offer a range of services and programs, including orthopaedic, maternity, heart and stroke care; a cancer center; The Holloway Breast Center; emergency services and level II trauma center; primary care services and outpatient services."
+        }
+      }
     },
     {
       "slug": "riddle-hospital-media",
@@ -1430,10 +1710,12 @@
       "hotspot": false,
       "website": "https://www.mainlinehealth.org/",
       "careers_url": "https://careers.mainlinehealth.org/",
-      "careers_platform": "unknown",
+      "careers_platform": "taleo",
       "careers_search_url": null,
-      "careers_notes": "Careers URL is the system careers site from model knowledge or the caller's list; not fetched this pass. Enrichment job should probe it and detect the platform.",
-      "ats_config": {},
+      "careers_notes": "Careers URL is the system careers site from model knowledge or the caller's list; not fetched this pass. Enrichment job should probe it and detect the platform. [enrich 2026-10-20] careers_url -> HTTP 200 at https://careers.mainlinehealth.org/; ATS link seen: https://mainline.taleo.net/careersection/2/mysubmissions.ftl?lang=en",
+      "ats_config": {
+        "host": "careers.mainlinehealth.org"
+      },
       "nearest_airport": "PHL Philadelphia International (about 12 mi)",
       "beds": 204,
       "peds_beds": null,
@@ -1455,15 +1737,30 @@
         "Level II special care nursery (about 8 beds) on an older statewide list",
         "Picking up volume after Crozer-Chester's 2025 closure"
       ],
-      "photos": [],
-      "wikipedia_title": null,
+      "photos": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/d/d4/UPMC_Presbyterian_Hospital_from_Schenley_Park%2C_2015-10-01%2C_01.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original",
+          "caption": "List of hospitals in Pennsylvania",
+          "credit": "Cbaile19",
+          "license": "CC0",
+          "source_page": "https://commons.wikimedia.org/wiki/File:UPMC_Presbyterian_Hospital_from_Schenley_Park,_2015-10-01,_01.jpg"
+        }
+      ],
+      "wikipedia_title": "List of hospitals in Pennsylvania",
       "sources": [
         "R4b scratch (https://en.wikipedia.org/wiki/List_of_hospitals_in_Pennsylvania; https://neonatologysolutions.com/?p=24291)",
         "model knowledge (to verify); enrichment pending"
       ],
       "notes": "Inclusion rests on the Level II nursery from an older list; confirm. Crozer-Chester Medical Center (Upland) closed in May 2025 per the R4b scratch and is excluded.",
       "confidence": "low",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "List of hospitals in Pennsylvania",
+          "url": "https://en.wikipedia.org/wiki/List_of_hospitals_in_Pennsylvania",
+          "extract": "This is a list of hospitals in Pennsylvania, a U.S. state. The list includes only hospitals that are currently licensed by the Pennsylvania Department of Health or operated by the Veterans Health Administration, according to data collected by the Hospital and Healthsystem Association of Pennsylvania (HAP) and the Pennsylvania Department of Health.\nAs of July 2018, there were 249 state licensed hospitals and VA hospital facilities in Pennsylvania. 148 of these facilities were nonprofit, 86 were for-profit or \"investor-owned\", and 15 were public hospitals owned by the Federal government, state government, or in one case, the city of Philadelphia. There were 42,817 total licensed beds and 1,880 total operating rooms. 156 were general acute hospitals (with 10 more classified as general acute specialty hospitals), 29 were psychiatric hospitals, 22 were long-term acute care hospitals, 21 were rehabilitation hospitals, and 7 were VA hospitals. The largest hospital by both beds and operating rooms was UPMC Presbyterian-Shadyside in Pittsburgh. The University of Pittsburgh Medical Center (UPMC) was also the largest health system network in the state by number of hospitals (28), beds (7,022), and operating rooms (379)."
+        }
+      }
     },
     {
       "slug": "st-mary-medical-center-langhorne",
@@ -1483,7 +1780,7 @@
       "careers_url": "https://trinityhealth.wd1.myworkdayjobs.com/Jobs",
       "careers_platform": "workday",
       "careers_search_url": "https://trinityhealth.wd1.myworkdayjobs.com/Jobs?q=nurse%20practitioner",
-      "careers_notes": "Trinity Health national Workday tenant (same config as the Connecticut Trinity records, confirmed there from a posting URL). Mid-Atlantic facilities are encoded in the job location segment; filter to the hospital name. Workday is JS-rendered; use the CXS JSON endpoint /wday/cxs/trinityhealth/Jobs/jobs. Not fetched this pass.",
+      "careers_notes": "Trinity Health national Workday tenant (same config as the Connecticut Trinity records, confirmed there from a posting URL). Mid-Atlantic facilities are encoded in the job location segment; filter to the hospital name. Workday is JS-rendered; use the CXS JSON endpoint /wday/cxs/trinityhealth/Jobs/jobs. Not fetched this pass. [enrich 2026-10-20] careers_url -> HTTP 200 at https://trinityhealth.wd1.myworkdayjobs.com/Jobs; ATS link seen: https://trinityhealth.wd1.myworkdayjobs.com/Jobs; search_url -> HTTP 200, mentions NP: False, job links: 0",
       "ats_config": {
         "host": "trinityhealth.wd1.myworkdayjobs.com",
         "tenant": "trinityhealth",
@@ -1520,7 +1817,14 @@
       ],
       "notes": "Verify pediatric inpatient services and current nursery level. Careers via Trinity Health Workday (filter location St. Mary Medical Center Langhorne).",
       "confidence": "low",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "St. Mary Medical Center",
+          "url": "https://en.wikipedia.org/wiki/St._Mary_Medical_Center",
+          "extract": "St. Mary Medical Center may refer to:\n\nSt. Mary Medical Center (Long Beach), Long Beach, California\nSt. Mary's Medical Center (San Francisco), San Francisco\nSt. Mary Medical Center (Hobart), Hobart, Indiana\nSt. Mary Medical Center (Langhorne), Langhorne, Pennsylvania\nProvidence St. Mary Medical Center (Walla Walla), Walla Walla, Washington\nOSF St. Mary Medical Center, Galesburg, Illinois"
+        }
+      }
     },
     {
       "slug": "holy-redeemer-hospital-meadowbrook",
@@ -1537,11 +1841,13 @@
       "region": "Philadelphia metro",
       "hotspot": false,
       "website": "https://www.holyredeemer.com/",
-      "careers_url": "https://www.holyredeemer.com/",
+      "careers_url": "https://careers.redeemerhealth.org/jobs",
       "careers_platform": "unknown",
       "careers_search_url": null,
-      "careers_notes": "Careers page not fetched; careers_url is the main site as a placeholder.",
-      "ats_config": {},
+      "careers_notes": "Careers page not fetched; careers_url is the main site as a placeholder. [enrich 2026-10-20] careers_url -> HTTP 200 at https://careers.redeemerhealth.org/jobs; ATS link seen: https://careers-redeemerhealth.icims.com/jobs/login?loginOnly=1\\",
+      "ats_config": {
+        "host": "careers.redeemerhealth.org"
+      },
       "nearest_airport": "PHL Philadelphia International (about 22 mi)",
       "beds": 242,
       "peds_beds": null,
@@ -1571,7 +1877,8 @@
       ],
       "notes": "NICU level and size come from an older statewide list (neonatologysolutions.com) recorded in the R4b scratch; confirm the current level. Careers page not fetched; careers_url is the main site placeholder.",
       "confidence": "low",
-      "active": true
+      "active": true,
+      "_enrich": {}
     },
     {
       "slug": "jefferson-einstein-montgomery-east-norriton",
@@ -1589,10 +1896,12 @@
       "hotspot": false,
       "website": "https://www.jeffersonhealth.org/",
       "careers_url": "https://careers.jefferson.edu/",
-      "careers_platform": "unknown",
+      "careers_platform": "workday",
       "careers_search_url": null,
-      "careers_notes": "careers.jefferson.edu job paths (/job/...) were seen in earlier search results. The caller suggested a Workday tenant at jefferson.wd1.myworkdayjobs.com; not verified this pass, so platform is unknown.",
-      "ats_config": {},
+      "careers_notes": "careers.jefferson.edu job paths (/job/...) were seen in earlier search results. The caller suggested a Workday tenant at jefferson.wd1.myworkdayjobs.com; not verified this pass, so platform is unknown. [enrich 2026-10-20] careers_url -> HTTP 200 at https://jeffersonhealth.wd5.myworkdayjobs.com/ThomasJeffersonExternal; ATS link seen: https://jeffersonhealth.wd5.myworkdayjobs.com/ThomasJeffersonExternal",
+      "ats_config": {
+        "host": "jeffersonhealth.wd5.myworkdayjobs.com"
+      },
       "nearest_airport": "PHL Philadelphia International (about 25 mi)",
       "beds": 171,
       "peds_beds": null,
@@ -1615,15 +1924,30 @@
         "Part of Jefferson Health",
         "Close to King of Prussia and Plymouth Meeting"
       ],
-      "photos": [],
-      "wikipedia_title": null,
+      "photos": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/d/d4/UPMC_Presbyterian_Hospital_from_Schenley_Park%2C_2015-10-01%2C_01.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original",
+          "caption": "List of hospitals in Pennsylvania",
+          "credit": "Cbaile19",
+          "license": "CC0",
+          "source_page": "https://commons.wikimedia.org/wiki/File:UPMC_Presbyterian_Hospital_from_Schenley_Park,_2015-10-01,_01.jpg"
+        }
+      ],
+      "wikipedia_title": "List of hospitals in Pennsylvania",
       "sources": [
         "R4b scratch (https://en.wikipedia.org/wiki/List_of_hospitals_in_Pennsylvania; https://neonatologysolutions.com/?p=24291)",
         "model knowledge (to verify); enrichment pending"
       ],
       "notes": "NICU level and size come from an older statewide list (neonatologysolutions.com) recorded in the R4b scratch; confirm the current level. Small NICU; verify level.",
       "confidence": "low",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "List of hospitals in Pennsylvania",
+          "url": "https://en.wikipedia.org/wiki/List_of_hospitals_in_Pennsylvania",
+          "extract": "This is a list of hospitals in Pennsylvania, a U.S. state. The list includes only hospitals that are currently licensed by the Pennsylvania Department of Health or operated by the Veterans Health Administration, according to data collected by the Hospital and Healthsystem Association of Pennsylvania (HAP) and the Pennsylvania Department of Health.\nAs of July 2018, there were 249 state licensed hospitals and VA hospital facilities in Pennsylvania. 148 of these facilities were nonprofit, 86 were for-profit or \"investor-owned\", and 15 were public hospitals owned by the Federal government, state government, or in one case, the city of Philadelphia. There were 42,817 total licensed beds and 1,880 total operating rooms. 156 were general acute hospitals (with 10 more classified as general acute specialty hospitals), 29 were psychiatric hospitals, 22 were long-term acute care hospitals, 21 were rehabilitation hospitals, and 7 were VA hospitals. The largest hospital by both beds and operating rooms was UPMC Presbyterian-Shadyside in Pittsburgh. The University of Pittsburgh Medical Center (UPMC) was also the largest health system network in the state by number of hospitals (28), beds (7,022), and operating rooms (379)."
+        }
+      }
     },
     {
       "slug": "upmc-harrisburg-harrisburg",
@@ -1643,8 +1967,10 @@
       "careers_url": "https://careers.upmc.com/",
       "careers_platform": "unknown",
       "careers_search_url": null,
-      "careers_notes": "careers.upmc.com job URLs look like /job/<number> (seen in search results); platform not identified. UPMC Children's Hospital of Pittsburgh staff at regional UPMC hospitals post here too.",
-      "ats_config": {},
+      "careers_notes": "careers.upmc.com job URLs look like /job/<number> (seen in search results); platform not identified. UPMC Children's Hospital of Pittsburgh staff at regional UPMC hospitals post here too. [enrich 2026-10-20] careers_url -> HTTP 200 at https://careers.upmc.com/",
+      "ats_config": {
+        "host": "careers.upmc.com"
+      },
       "nearest_airport": "MDT Harrisburg International (about 10 mi)",
       "beds": 627,
       "peds_beds": null,
@@ -1668,7 +1994,15 @@
         "Teaching hospital and trauma center",
         "Downtown Harrisburg riverfront campus"
       ],
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/e/e1/HBG_Hospital_2010.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original",
+          "caption": "UPMC Harrisburg",
+          "credit": "dfirecop",
+          "license": "CC BY-SA 2.0",
+          "source_page": "https://commons.wikimedia.org/wiki/File:HBG_Hospital_2010.jpg"
+        }
+      ],
       "wikipedia_title": "UPMC Harrisburg",
       "sources": [
         "R4b scratch (https://en.wikipedia.org/wiki/List_of_hospitals_in_Pennsylvania; https://neonatologysolutions.com/?p=24291)",
@@ -1677,7 +2011,14 @@
       ],
       "notes": "UPMC has a central PA hospital pediatrics page (upmc.com/CPAHospitalPediatrics seen in search results) that likely covers this hospital; confirm whether there is a pediatric inpatient unit. NICU level and size come from an older statewide list (neonatologysolutions.com) recorded in the R4b scratch; confirm the current level.",
       "confidence": "low",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "UPMC Harrisburg",
+          "url": "https://en.wikipedia.org/wiki/UPMC_Harrisburg",
+          "extract": "UPMC Harrisburg is a 409-bed urban hospital in Harrisburg, Pennsylvania and part of the University of Pittsburgh Medical Center (UPMC) system. The hospital serves as the hub for the UPMC network, providing care to the residents throughout southcentral Pennsylvania.\nUPMC Harrisburg is a teaching facility providing inpatient and outpatient services. Specialties include women's health, cardiovascular care and orthopedic, stroke, and rehabilitative services. Physician residency programs exist on-site for family practice, internal medicine, emergency medicine, obstetrics and gynecology, orthopedic surgery, and general surgery.\nIn November 2020 UPMC announced the opening of the new pediatric unit at UPMC Harrisburg. The new unit was opened in partnership with the UPMC Children's Hospital of Pittsburgh and consist of 26-pediatric-beds. The unit treats infants, children, teens, and young adults age 0-21. The unit is named \"UPMC Children’s Harrisburg\" and features telemedicine connections to the main hospital in Pittsburgh.\nIn May 2021 UPMC announced the renaming of UPMC Pinnacle Harrisburg to UPMC Harrisburg, effective May 24."
+        }
+      }
     },
     {
       "slug": "upmc-williamsport-williamsport",
@@ -1697,8 +2038,10 @@
       "careers_url": "https://careers.upmc.com/",
       "careers_platform": "unknown",
       "careers_search_url": null,
-      "careers_notes": "careers.upmc.com job URLs look like /job/<number> (seen in search results); platform not identified. UPMC Children's Hospital of Pittsburgh staff at regional UPMC hospitals post here too.",
-      "ats_config": {},
+      "careers_notes": "careers.upmc.com job URLs look like /job/<number> (seen in search results); platform not identified. UPMC Children's Hospital of Pittsburgh staff at regional UPMC hospitals post here too. [enrich 2026-10-20] careers_url -> HTTP 200 at https://careers.upmc.com/",
+      "ats_config": {
+        "host": "careers.upmc.com"
+      },
       "nearest_airport": "IPT Williamsport Regional (about 5 mi)",
       "beds": 224,
       "peds_beds": null,
@@ -1722,7 +2065,15 @@
         "Neonatal NP and pediatric hospitalist roles advertised in the region",
         "Home of the Little League World Series"
       ],
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/7/73/UPMC_Williamsport.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original",
+          "caption": "UPMC Williamsport",
+          "credit": "Alpacaaviator",
+          "license": "CC BY-SA 4.0",
+          "source_page": "https://commons.wikimedia.org/wiki/File:UPMC_Williamsport.jpg"
+        }
+      ],
       "wikipedia_title": "UPMC Williamsport",
       "sources": [
         "R4b scratch (https://en.wikipedia.org/wiki/List_of_hospitals_in_Pennsylvania; https://neonatologysolutions.com/?p=24291)",
@@ -1732,7 +2083,14 @@
       ],
       "notes": "Inclusion rests on regional referral status and search results showing neonatal NP and pediatric hospitalist ads near this hospital; NICU level and pediatric unit not confirmed. Search results did not tie those ads clearly to Williamsport.",
       "confidence": "low",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "UPMC Williamsport",
+          "url": "https://en.wikipedia.org/wiki/UPMC_Williamsport",
+          "extract": "UPMC Williamsport, formerly UPMC Susquehanna Williamsport and Williamsport Regional Medical Center, is a hospital of University of Pittsburgh Medical Center (UPMC) located in Williamsport, Pennsylvania. Originally established in 1873 as the Williamsport Hospital, it currently operates at least 224 beds and is a level II trauma center."
+        }
+      }
     },
     {
       "slug": "penn-state-health-st-joseph-reading",
@@ -1752,8 +2110,10 @@
       "careers_url": "https://careers.pennstatehealth.org/",
       "careers_platform": "unknown",
       "careers_search_url": null,
-      "careers_notes": "Careers URL is the system careers site from model knowledge or the caller's list; not fetched this pass. Enrichment job should probe it and detect the platform.",
-      "ats_config": {},
+      "careers_notes": "Careers URL is the system careers site from model knowledge or the caller's list; not fetched this pass. Enrichment job should probe it and detect the platform. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.pennstatehealth.org/careers",
+      "ats_config": {
+        "host": "www.pennstatehealth.org"
+      },
       "nearest_airport": "PHL Philadelphia International (about 60 mi); ABE Lehigh Valley about 35 mi",
       "beds": null,
       "peds_beds": null,
@@ -1775,7 +2135,15 @@
         "Level II special care nursery (about 6 beds) on an older statewide list",
         "Backed by Penn State Health Children's Hospital"
       ],
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/6/63/Hershey_Medical_Center_PA1.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original",
+          "caption": "Penn State Milton S. Hershey Medical Center",
+          "credit": "Wikimedia Commons",
+          "license": "see source page",
+          "source_page": "https://en.wikipedia.org/wiki/Penn_State_Milton_S._Hershey_Medical_Center"
+        }
+      ],
       "wikipedia_title": "St. Joseph Medical Center (Reading, Pennsylvania)",
       "sources": [
         "R4b scratch (https://en.wikipedia.org/wiki/List_of_hospitals_in_Pennsylvania; https://neonatologysolutions.com/?p=24291)",
@@ -1783,7 +2151,14 @@
       ],
       "notes": "Inclusion rests on the older Level II listing; confirm the nursery is still open.",
       "confidence": "low",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "Penn State Milton S. Hershey Medical Center",
+          "url": "https://en.wikipedia.org/wiki/Penn_State_Milton_S._Hershey_Medical_Center",
+          "extract": "Penn State Health Milton S. Hershey Medical Center (MSHMC) is a 619-bed non-profit, tertiary, research and academic medical center headquartered in Hershey, Pennsylvania and serving central Pennsylvania. The hospital is owned by the Penn State Health System and is its largest hospital. MSHMC is affiliated with the Penn State University College of Medicine.\nThe medical center is an American College of Surgeons-designated level I adult and pediatric trauma center and has a helipad to handle medevac patients. Attached to the medical center is the 122 bed Penn State Children's Hospital, which treats infants, children, adolescents, and young adults up to the age of 21."
+        }
+      }
     },
     {
       "slug": "penn-highlands-dubois-dubois",
@@ -1800,11 +2175,13 @@
       "region": "Pennsylvania (other)",
       "hotspot": false,
       "website": "https://www.phhealthcare.org/",
-      "careers_url": "https://www.phhealthcare.org/",
+      "careers_url": "https://www.phhealthcare.org/phh-careers/explore-penn-highlands-career-opportunities",
       "careers_platform": "unknown",
       "careers_search_url": null,
-      "careers_notes": "Careers page not fetched; careers_url is the main system site placeholder (domain from model knowledge).",
-      "ats_config": {},
+      "careers_notes": "Careers page not fetched; careers_url is the main system site placeholder (domain from model knowledge). [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.phhealthcare.org/phh-careers/explore-penn-highlands-career-opportunities",
+      "ats_config": {
+        "host": "www.phhealthcare.org"
+      },
       "nearest_airport": "DUJ DuBois Regional (about 10 mi); PIT Pittsburgh International about 110 mi",
       "beds": 219,
       "peds_beds": null,
@@ -1835,7 +2212,8 @@
       ],
       "notes": "NICU level and size come from an older statewide list (neonatologysolutions.com) recorded in the R4b scratch; confirm the current level. Penn Highlands has had financial strain in recent years; confirm services.",
       "confidence": "low",
-      "active": true
+      "active": true,
+      "_enrich": {}
     }
   ]
 }
