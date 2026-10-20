@@ -18,6 +18,8 @@ from ..models import Listing
 from .base import Adapter, AdapterError
 
 WD_HOST_RE = re.compile(r"^([a-z0-9-]+)\.(wd\d+)\.(myworkdayjobs|myworkdaysite)\.com$", re.I)
+# shared host form: https://wd5.myworkdaysite.com/en-US/recruiting/{tenant}/{site}
+WD_SHARED_RE = re.compile(r"^(wd\d+)\.(myworkdayjobs|myworkdaysite)\.com$", re.I)
 LOCALE_RE = re.compile(r"^[a-z]{2}-[A-Z]{2}$")
 
 
@@ -27,16 +29,23 @@ def parse_workday_url(url: str) -> dict:
         return {}
     p = urlsplit(url)
     m = WD_HOST_RE.match(p.netloc)
-    if not m:
-        return {}
     segs = [s for s in p.path.split("/") if s]
+    if not m:
+        if WD_SHARED_RE.match(p.netloc):
+            if segs and LOCALE_RE.match(segs[0]):
+                segs = segs[1:]
+            if len(segs) >= 3 and segs[0] == "recruiting":
+                return {"host": p.netloc, "tenant": segs[1], "site": segs[2], "public_prefix": f"/recruiting/{segs[1]}"}
+            if len(segs) >= 4 and segs[0] == "wday" and segs[1] == "cxs":
+                return {"host": p.netloc, "tenant": segs[2], "site": segs[3], "public_prefix": f"/recruiting/{segs[2]}"}
+        return {}
     if segs and segs[0] == "wday" and len(segs) >= 4 and segs[1] == "cxs":
         return {"host": p.netloc, "tenant": segs[2], "site": segs[3]}
     if segs and LOCALE_RE.match(segs[0]):
         segs = segs[1:]
     # myworkdaysite.com uses /recruiting/{tenant}/{site}
     if segs and segs[0] == "recruiting" and len(segs) >= 3:
-        return {"host": p.netloc, "tenant": segs[1], "site": segs[2]}
+        return {"host": p.netloc, "tenant": segs[1], "site": segs[2], "public_prefix": f"/recruiting/{segs[1]}"}
     site = segs[0] if segs and segs[0] not in ("job", "details", "login") else None
     return {k: v for k, v in {"host": p.netloc, "tenant": m.group(1), "site": site}.items() if v}
 
@@ -59,6 +68,7 @@ class WorkdayAdapter(Adapter):
             raise AdapterError("workday: cannot derive host/tenant from ats_config or careers URLs")
         if not site:
             site = self._discover_site(host, tenant)
+        self._prefix = cfg.get("public_prefix") or ""
         return host, tenant, site
 
     def _discover_site(self, host: str, tenant: str) -> str:
@@ -118,8 +128,9 @@ class WorkdayAdapter(Adapter):
         host, tenant, site = self._conf()
         self.method = "api"
         self._base = f"https://{host}/wday/cxs/{tenant}/{site}"
-        self._public = f"https://{host}/{site}"
-        self._referer = f"https://{host}/{site}"
+        prefix = getattr(self, "_prefix", "")
+        self._public = f"https://{host}{prefix}/{site}"
+        self._referer = f"https://{host}{prefix}/{site}"
         facets = self._state_facet(host) if self.cfg.get("state_filter", True) else {}
         if facets.get("__none__"):
             return []
@@ -157,7 +168,20 @@ class WorkdayAdapter(Adapter):
                     break
         if errors == len(keywords):
             raise AdapterError("; ".join(self.notes[-3:]))
+        if not out and not facets:
+            self._check_empty_site(host, site)
         return list(out.values())
+
+    def _check_empty_site(self, host: str, site: str) -> None:
+        """A site with 0 postings in total is almost always the wrong site name in the ledger."""
+        try:
+            data = self.post_json(f"{self._base}/jobs", {"appliedFacets": {}, "limit": 1, "offset": 0, "searchText": ""},
+                                  headers={"Origin": f"https://{host}", "Referer": self._referer})
+        except Exception:  # noqa: BLE001
+            return
+        if int(data.get("total") or 0) == 0 and not data.get("facets"):
+            raise AdapterError(f"workday site '{site}' on {host} lists 0 jobs in total (empty search): "
+                               f"the ledger's site name is probably wrong or the site is unused")
 
     def details(self, listing):
         path = listing.extra.get("path") or urlsplit(listing.url).path.split(f"/{self._public.rsplit('/', 1)[-1]}", 1)[-1]

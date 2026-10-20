@@ -269,3 +269,15 @@ def test_locate_fallback():
     assert locate_fallback("CNPA Upper Marlboro", "Kids", cn, [cn], "none", None) == (None, None)
     musc = {"slug": "m", "city": "Charleston", "state": "SC"}
     assert locate_fallback("Charleston", "", musc, [musc], "city", None) == ("Charleston", "SC")
+
+
+def test_workday_shared_host_and_sniff():
+    from scraper.adapters.workday import parse_workday_url
+    from scraper import pipeline
+    u = "https://wd5.myworkdaysite.com/en-US/recruiting/prismahealth/PrismaHealthCorporate/login"
+    assert parse_workday_url(u) == {"host": "wd5.myworkdaysite.com", "tenant": "prismahealth",
+                                    "site": "PrismaHealthCorporate", "public_prefix": "/recruiting/prismahealth"}
+    a = pipeline.recognize(f'<a href="{u}">Sign in</a>', "https://careers.prismahealth.org/jobs/", {"slug": "p"}, 1e12, [])
+    assert a.platform == "workday" and a.cfg["tenant"] == "prismahealth" and a.cfg["host"] == "wd5.myworkdaysite.com"
+    a._conf()
+    assert a._prefix == "/recruiting/prismahealth"

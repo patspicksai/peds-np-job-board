@@ -85,8 +85,10 @@ def cws_listing(job: dict, base: str, detail_path: str = "/job") -> Listing | No
     title = (job.get("title") or "").strip()
     if not jid or not title:
         return None
-    url = job.get("url") or ""
-    if not url or urlsplit(url).netloc != urlsplit(base).netloc:
+    # the API's url is the employer's canonical posting page (sometimes a sister brand site, e.g. Northwell's
+    # flexstaff.org); only build one when it is missing
+    url = (job.get("url") or "").replace("http://", "https://", 1)
+    if not url.startswith("https://"):
         slug = re.sub(r"-{2,}", "-", re.sub(r"[^a-z0-9]", "-", f"{title} {job.get('primary_city') or ''} "
                                                                  f"{job.get('primary_state') or ''}".strip().lower()))
         url = f"{base.rstrip('/')}{detail_path}/{jid}/{slug.strip('-')}/"
@@ -156,6 +158,8 @@ class SymphonyAdapter(Adapter):
             api = "https:" + api
         if not api.endswith("/"):
             api += "/"
+        if "jobsapi-google" not in api:
+            return self._legacy_search(api, cfg, keywords, base)
         flt = cws_filter_param(cfg.get("filters") or [])
         out: dict[str, Listing] = {}
         errors = 0
@@ -188,6 +192,41 @@ class SymphonyAdapter(Adapter):
         if errors == len(keywords):
             raise AdapterError("; ".join(self.notes[-3:]))
         self.method = "api"
+        return list(out.values())
+
+    def _legacy_search(self, api: str, cfg: dict, keywords: list[str], base: str) -> list[Listing]:
+        """Older CWS jobs API (jobsapi-internal.m-cloud.io, e.g. jobs.nyulangone.org): verified live (probe 39368701951)
+        GET {api}job?Organization={org}&SearchText={kw}&Limit=N&offset={1-based}&facet={filter}
+        -> {"totalHits": N, "queryResult": [{id, title, url, description, open_date, primary_city, ...}]}"""
+        out: dict[str, Listing] = {}
+        errors = 0
+        filters = cfg.get("filters") or []
+        for kw in keywords:
+            offset = 1
+            while not self.out_of_time():
+                params = [("Organization", cfg["org_id"]), ("SearchText", kw), ("Limit", self.PAGE), ("offset", offset),
+                          ("sortfield", "open_date"), ("sortorder", "descending")]
+                params += [("facet", f) for f in filters]
+                url = f"{api}job?" + urlencode(params, quote_via=quote)
+                try:
+                    r = self.get(url, headers={"Accept": "application/json, */*", "Referer": f"{base}/"})
+                    data = parse_cws_jsonp(r.text)
+                except (http.FetchError, ValueError) as e:
+                    errors += 1
+                    self.note(f"legacy api search '{kw}': {type(e).__name__}: {str(e)[:200]}")
+                    break
+                results = data.get("queryResult") or []
+                total = int(data.get("totalHits") or 0)
+                for job in results:
+                    li = cws_listing(job, base, cfg.get("detail_path") or "/job")
+                    if li:
+                        out.setdefault(li.norm, li)
+                offset += len(results)
+                if not results or offset - 1 >= min(total, 500):
+                    break
+        if errors == len(keywords):
+            raise AdapterError("; ".join(self.notes[-3:]))
+        self.method = "api-legacy"
         return list(out.values())
 
     def search(self, keywords):

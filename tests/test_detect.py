@@ -60,7 +60,10 @@ def test_parse_workday_url():
         {"host": "childrensnational.wd108.myworkdayjobs.com", "tenant": "childrensnational", "site": "CN_Careers"}
     assert parse_workday_url("https://aah.wd5.myworkdayjobs.com/en-US/External/details/x") == \
         {"host": "aah.wd5.myworkdayjobs.com", "tenant": "aah", "site": "External"}
-    assert parse_workday_url("https://wd1.myworkdaysite.com/en-US/recruiting/prismahealth/PrismaHealthCorporate") == {}
+    assert parse_workday_url("https://wd1.myworkdaysite.com/en-US/recruiting/prismahealth/PrismaHealthCorporate") == \
+        {"host": "wd1.myworkdaysite.com", "tenant": "prismahealth", "site": "PrismaHealthCorporate",
+         "public_prefix": "/recruiting/prismahealth"}
+    assert parse_workday_url("https://www.example.org/careers") == {}
     assert parse_workday_url("https://example.org/") == {}
 
 

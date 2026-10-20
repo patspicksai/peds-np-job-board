@@ -55,6 +55,7 @@ SNIFF_RULES = [
     ("successfactors", re.compile(r"rmkcdn\.successfactors\.com|jobTitle-link")),
 ]
 WD_LINK = re.compile(r"https?://([a-z0-9-]+)\.(wd\d+)\.myworkdayjobs\.com/(?:[a-z]{2}-[A-Z]{2}/)?([A-Za-z0-9_-]+)")
+WD_SITE_LINK = re.compile(r"https?://(wd\d+\.myworkdaysite\.com)/(?:[a-z]{2}-[A-Z]{2}/)?recruiting/([A-Za-z0-9_-]+)/([A-Za-z0-9_-]+)")
 OC_LINK = re.compile(r"https?://([a-z0-9-]+\.fa\.[a-z0-9]+\.oraclecloud\.com)(?::443)?/hcmUI/CandidateExperience/[a-z]{2}/sites/([A-Za-z0-9_]+)")
 
 
@@ -102,6 +103,12 @@ def recognize(html: str, final: str, hospital: dict, deadline: float, notes: lis
         h2 = dict(hospital, ats_config={**(hospital.get("ats_config") or {}),
                                         "host": f"{m.group(1)}.{m.group(2)}.myworkdayjobs.com",
                                         "tenant": m.group(1), "site": m.group(3)})
+        return get_adapter("workday")(h2, deadline)
+    m = WD_SITE_LINK.search(html)
+    if m:
+        notes.append(f"sniff: page links to Workday {m.group(1)} tenant {m.group(2)} site {m.group(3)}")
+        h2 = dict(hospital, ats_config={**(hospital.get("ats_config") or {}), "host": m.group(1), "tenant": m.group(2),
+                                        "site": m.group(3), "public_prefix": f"/recruiting/{m.group(2)}"})
         return get_adapter("workday")(h2, deadline)
     m = ICIMS_LINK.search(html)
     if m:
