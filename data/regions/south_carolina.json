@@ -17,9 +17,9 @@
       "hotspot": false,
       "website": "https://musckids.org",
       "careers_url": "https://musc.career-pages.com/",
-      "careers_platform": "unknown",
+      "careers_platform": "workday",
       "careers_search_url": "https://musc.career-pages.com/",
-      "careers_notes": "muschealth.org/careers returns a 302 redirect to musc.career-pages.com. The fetch of that host was blocked this session, so the underlying ATS was not identified and the search URL is the untested base page. MUSC NP and APP postings are also syndicated to CareerBuilder under MUSCP / MUSC Community Physicians; faculty and physician roles route through providerrecruitment@musc.edu.",
+      "careers_notes": "muschealth.org/careers returns a 302 redirect to musc.career-pages.com. The fetch of that host was blocked this session, so the underlying ATS was not identified and the search URL is the untested base page. MUSC NP and APP postings are also syndicated to CareerBuilder under MUSCP / MUSC Community Physicians; faculty and physician roles route through providerrecruitment@musc.edu. [enrich 2026-10-20] careers_url -> HTTP 200 at https://musc.career-pages.com/; ATS link seen: https://musc.wd1.myworkdayjobs.com/MUSC/login; search_url -> HTTP 200, mentions NP: False, job links: 9",
       "ats_config": {
         "host": "musc.career-pages.com"
       },
@@ -65,7 +65,15 @@
         "250 licensed beds, all private rooms, opened February 2020",
         "ANCC Magnet (MUSC)"
       ],
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/8/80/MUSC_Shawn_Jenkins_Children%27s_Hospital.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original",
+          "caption": "MUSC Shawn Jenkins Children's Hospital",
+          "credit": "LittleT889",
+          "license": "CC BY-SA 4.0",
+          "source_page": "https://commons.wikimedia.org/wiki/File:MUSC_Shawn_Jenkins_Children%27s_Hospital.jpg"
+        }
+      ],
       "wikipedia_title": "MUSC Shawn Jenkins Children's Hospital",
       "sources": [
         "https://en.wikipedia.org/wiki/MUSC_Shawn_Jenkins_Children%27s_Hospital",
@@ -79,7 +87,14 @@
       ],
       "notes": "Shares the downtown MUSC campus with MUSC Health University Medical Center (171 Ashley Ave, 865 licensed beds, Magnet), which holds the adult Level I trauma designation; no separate adult record was created. Bed and unit counts vary by source: MUSC critical care page says 28 PICU beds, a 2026 MUSC faculty posting says 25 PICU and 89 NICU beds, the 2019 MUSC review says the NICU grew from 66 to 82 beds. The MUSC Division of Pediatric Child Abuse alone lists seven APPs. Downtown peninsula parking and traffic are real commute factors; many staff live in Mount Pleasant, West Ashley, James Island or Summerville.",
       "confidence": "high",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "MUSC Shawn Jenkins Children's Hospital",
+          "url": "https://en.wikipedia.org/wiki/MUSC_Shawn_Jenkins_Children%27s_Hospital",
+          "extract": "MUSC Shawn Jenkins Children's Hospital is a nationally ranked, freestanding acute care women's and children's hospital in Charleston, South Carolina. It is affiliated with the Medical University of South Carolina. The hospital features all private rooms that consist of 250 pediatric beds and 29 beds for women. The hospital provides comprehensive pediatric specialties and subspecialties to infants, children, teens, and young adults aged 0–21 throughout the Carolinas. The hospital also sometimes treats adults that require pediatric care. The hospital has a rooftop helipad and is an ACS verified level I pediatric trauma center, the only one in South Carolina. The hospital features a regional pediatric intensive-care unit and an American Academy of Pediatrics verified level IV neonatal intensive care unit.\nAlong with the main hospital in Charleston, MUSC Children's operates the ambulatory R. Keith Summey Medical Pavilion with 4 operating rooms and 2 procedure rooms."
+        }
+      }
     },
     {
       "slug": "prisma-childrens-midlands-columbia",
@@ -99,7 +114,7 @@
       "careers_url": "https://careers.prismahealth.org/us/en",
       "careers_platform": "phenom",
       "careers_search_url": "https://careers.prismahealth.org/us/en/search-results?keywords=nurse%20practitioner",
-      "careers_notes": "Careers link taken from the prismahealth.org hospital page footer. The /us/en/search-results layout matches Phenom (same structure as careers.rsfh.com, which serves cdn.phenompeople.com assets). Fetch of careers.prismahealth.org was blocked this session, so rendering was not tested; expect JS-rendered listings like other Phenom boards.",
+      "careers_notes": "Careers link taken from the prismahealth.org hospital page footer. The /us/en/search-results layout matches Phenom (same structure as careers.rsfh.com, which serves cdn.phenompeople.com assets). Fetch of careers.prismahealth.org was blocked this session, so rendering was not tested; expect JS-rendered listings like other Phenom boards. [enrich 2026-10-20] careers_url -> HTTP 200 at https://careers.prismahealth.org/; search_url -> HTTP 200, mentions NP: False, job links: 15",
       "ats_config": {
         "host": "careers.prismahealth.org"
       },
@@ -134,7 +149,15 @@
         "Dedicated children's emergency room on the Richland campus",
         "Primary pediatric teaching site for University of South Carolina School of Medicine"
       ],
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/d/d9/Richland_Memorial_Hospital%2C_Columbia%2C_South_Carolina.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original",
+          "caption": "Prisma Health Richland Hospital",
+          "credit": "Runner1928",
+          "license": "CC BY-SA 3.0",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Richland_Memorial_Hospital,_Columbia,_South_Carolina.JPG"
+        }
+      ],
       "wikipedia_title": "Prisma Health Richland Hospital",
       "sources": [
         "https://prismahealth.org/locations/hospitals/richland-hospital",
@@ -146,7 +169,14 @@
       ],
       "notes": "beds is the parent Richland Hospital count (641 per Prisma, 649 licensed per Wikipedia); the children's hospital's own bed count was not found. nicu_level 3 reflects the SC DPH Regional Perinatal Center Level III designation; AAP level not confirmed. wikipedia_title points to the parent Richland article because the children's hospital has no article. Children's ER is listed at 5 Richland Medical Park Dr. Columbia commuters often live in Lexington, Irmo, Blythewood or Forest Acres.",
       "confidence": "medium",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "Prisma Health Richland Hospital",
+          "url": "https://en.wikipedia.org/wiki/Prisma_Health_Richland_Hospital",
+          "extract": "Prisma Health Richland Hospital is a tertiary referral hospital and academic center located at 5 Richland Park Medical Dr, Columbia, South Carolina. It serves as the sole regional referral center for the Midlands area.\nPrisma Health Richland Hospital was originally established in 1892 as Columbia Hospital and was one of the first hospitals in the city. Over the years, with the growth of Columbia and the arrival of Fort Jackson, the hospital expanded. It outgrew its original location on Harden St. by the 1960s. Later renamed Richland Memorial Hospital, it moved in 1972 to its present location near the intersection of Bull St. and Harden St. Extension.\nToday, Prisma Health Richland Hospital is one of the largest hospitals in the state, with 641 beds, a Level I Trauma Center, Comprehensive Stroke Center and over 20 specialties. It is affiliated with the University of South Carolina, training future doctors, nurses and pharmacists. It is the regional referral center for the Midlands of South Carolina and is the site of the Carolinas' first Gamma Knife Center. The hospital also has a total joint center for hip and knee replacements, an associated cardiovascular care hospital and a freestanding children's hospital."
+        }
+      }
     },
     {
       "slug": "prisma-childrens-upstate-greenville",
@@ -166,7 +196,7 @@
       "careers_url": "https://careers.prismahealth.org/us/en",
       "careers_platform": "phenom",
       "careers_search_url": "https://careers.prismahealth.org/us/en/search-results?keywords=nurse%20practitioner",
-      "careers_notes": "Careers link taken from the prismahealth.org hospital page footer. The /us/en/search-results layout matches Phenom (same structure as careers.rsfh.com, which serves cdn.phenompeople.com assets). Fetch of careers.prismahealth.org was blocked this session, so rendering was not tested; expect JS-rendered listings like other Phenom boards.",
+      "careers_notes": "Careers link taken from the prismahealth.org hospital page footer. The /us/en/search-results layout matches Phenom (same structure as careers.rsfh.com, which serves cdn.phenompeople.com assets). Fetch of careers.prismahealth.org was blocked this session, so rendering was not tested; expect JS-rendered listings like other Phenom boards. [enrich 2026-10-20] careers_url -> HTTP 200 at https://careers.prismahealth.org/; search_url -> HTTP 200, mentions NP: False, job links: 15",
       "ats_config": {
         "host": "careers.prismahealth.org"
       },
@@ -199,7 +229,15 @@
         "USC School of Medicine Greenville located on campus",
         "Prisma Health Upstate mother/baby unit pioneered the MAiN newborn care model"
       ],
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/e/ed/GreenvilleMemorialH.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original",
+          "caption": "Greenville Memorial Hospital",
+          "credit": "Excel23",
+          "license": "CC BY-SA 4.0",
+          "source_page": "https://commons.wikimedia.org/wiki/File:GreenvilleMemorialH.JPG"
+        }
+      ],
       "wikipedia_title": "Prisma Health Greenville Memorial Hospital",
       "sources": [
         "https://en.wikipedia.org/wiki/Prisma_Health_Greenville_Memorial_Hospital",
@@ -210,7 +248,14 @@
       ],
       "notes": "beds is the parent Greenville Memorial count (814 per Wikipedia; the Wikipedia hospital list says 864). Children's bed count, PICU bed count, NICU AAP level and pediatric trauma level were not confirmed because prismahealth.org and prismahealthchildrens.org were blocked this session; nicu_level 3 is based on the regional perinatal center role. Google Places lists Inpatient Pediatrics on Floor 5 and a Children's Hospital-Upstate Emergency Room at the same address. Shriners Children's Greenville is next door on W Faris Rd. Commuter towns include Simpsonville, Mauldin, Greer, Travelers Rest and Easley.",
       "confidence": "medium",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "Greenville Memorial Hospital",
+          "url": "https://en.wikipedia.org/wiki/Greenville_Memorial_Hospital",
+          "extract": "Greenville Memorial Hospital is an 814-bed tertiary referral hospital and academic center located at 701 Grove Road, Greenville, South Carolina. It serves as the regional referral center for the upstate area.\nIt was formerly the flagship hospital for the Greenville Health System, which is now part of Prisma Health, a not-for-profit academic health organization engaged in medical research and education. The Greenville Memorial campus also hosts the University of South Carolina School of Medicine's Greenville Campus, as well as the Marshall I. Pickens Psychiatric Hospital. The facility also houses Prisma's headquarters.\nThe Greenville Health Authority (GHA) owns the hospital, and leases it to Prisma. The GHA is the portion of the Greenville Health System that still existed after the hospital transitioned into being operated by Prisma."
+        }
+      }
     },
     {
       "slug": "mcleod-childrens-florence",
@@ -230,7 +275,7 @@
       "careers_url": "https://jobs.mcleodhealth.org/",
       "careers_platform": "unknown",
       "careers_search_url": "https://jobs.mcleodhealth.org/",
-      "careers_notes": "Careers URL taken from a mcleodhealth.org page. Fetch of jobs.mcleodhealth.org was blocked this session, so the platform and query format were not confirmed; search URL is the base page.",
+      "careers_notes": "Careers URL taken from a mcleodhealth.org page. Fetch of jobs.mcleodhealth.org was blocked this session, so the platform and query format were not confirmed; search URL is the base page. [enrich 2026-10-20] careers_url -> HTTP 403 at https://jobs.mcleodhealth.org/; search_url -> HTTP 403, mentions NP: False, job links: 0",
       "ats_config": {
         "host": "jobs.mcleodhealth.org"
       },
@@ -271,7 +316,8 @@
       ],
       "notes": "beds is the parent McLeod Regional Medical Center (461 licensed per Wikipedia McLeod Health article; the Wikipedia hospital list says 517). teaching is set because the SC Children's Hospital Collaborative describes all four children's hospitals as primary training sites for public medical schools; the specific school was not confirmed. Google Places lists a McLeod Regional Medical Center Pediatric Intensive Care Unit at the same address. Florence is about 70 miles from Myrtle Beach and 80 miles from Columbia. MUSC Health Florence Medical Center is a competitor across town.",
       "confidence": "medium",
-      "active": true
+      "active": true,
+      "_enrich": {}
     },
     {
       "slug": "grand-strand-medical-center-myrtle-beach",
@@ -291,7 +337,7 @@
       "careers_url": "https://careers.hcahealthcare.com/",
       "careers_platform": "unknown",
       "careers_search_url": "https://careers.hcahealthcare.com/",
-      "careers_notes": "HCA Healthcare system careers site; fetch was blocked this session so platform and query format were not confirmed. HCA South Carolina listings do render server-side on the DirectEmployers syndication page https://dejobs.org/south-carolina/usa/jobs/hca-healthcare/careers (employer shown only as HCA Healthcare plus city: Charleston, North Charleston, Summerville, Moncks Corner, Walterboro, Myrtle Beach, North Myrtle Beach, Little River, Greenville).",
+      "careers_notes": "HCA Healthcare system careers site; fetch was blocked this session so platform and query format were not confirmed. HCA South Carolina listings do render server-side on the DirectEmployers syndication page https://dejobs.org/south-carolina/usa/jobs/hca-healthcare/careers (employer shown only as HCA Healthcare plus city: Charleston, North Charleston, Summerville, Moncks Corner, Walterboro, Myrtle Beach, North Myrtle Beach, Little River, Greenville). [enrich 2026-10-20] careers_url -> HTTP 403 at https://careers.hcahealthcare.com/; search_url -> HTTP 403, mentions NP: False, job links: 0",
       "ats_config": {
         "host": "careers.hcahealthcare.com"
       },
@@ -331,7 +377,14 @@
       ],
       "notes": "peds_ed is based on a Google Places patient review that names the Grand Strand Pediatric Emergency Department; confirm on the hospital site (mygrandstrandhealth.com was blocked this session). NICU presence and level not confirmed. Bed count 403 per Wikipedia infobox; the Wikipedia hospital list says 369. Commuter towns: Myrtle Beach, Conway, Surfside Beach, North Myrtle Beach, Little River.",
       "confidence": "medium",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "Grand Strand Medical Center",
+          "url": "https://en.wikipedia.org/wiki/Grand_Strand_Medical_Center",
+          "extract": "Grand Strand Medical Center (formerly Grand Strand Regional Medical Center) is a for-profit, 403-bed hospital in Myrtle Beach, South Carolina owned and operated by HCA Healthcare."
+        }
+      }
     },
     {
       "slug": "summerville-medical-center-summerville",
@@ -351,7 +404,7 @@
       "careers_url": "https://careers.hcahealthcare.com/",
       "careers_platform": "unknown",
       "careers_search_url": "https://careers.hcahealthcare.com/",
-      "careers_notes": "HCA Healthcare system careers site; fetch was blocked this session so platform and query format were not confirmed. HCA South Carolina listings do render server-side on the DirectEmployers syndication page https://dejobs.org/south-carolina/usa/jobs/hca-healthcare/careers (employer shown only as HCA Healthcare plus city: Charleston, North Charleston, Summerville, Moncks Corner, Walterboro, Myrtle Beach, North Myrtle Beach, Little River, Greenville).",
+      "careers_notes": "HCA Healthcare system careers site; fetch was blocked this session so platform and query format were not confirmed. HCA South Carolina listings do render server-side on the DirectEmployers syndication page https://dejobs.org/south-carolina/usa/jobs/hca-healthcare/careers (employer shown only as HCA Healthcare plus city: Charleston, North Charleston, Summerville, Moncks Corner, Walterboro, Myrtle Beach, North Myrtle Beach, Little River, Greenville). [enrich 2026-10-20] careers_url -> HTTP 403 at https://careers.hcahealthcare.com/; search_url -> HTTP 403, mentions NP: False, job links: 0",
       "ats_config": {
         "host": "careers.hcahealthcare.com"
       },
@@ -383,8 +436,16 @@
         "Pediatric surgery and pediatric GI surgery onsite; remote pediatric cardiology",
         "Pediatric intensivist coverage by Pediatrix Medical Group"
       ],
-      "photos": [],
-      "wikipedia_title": null,
+      "photos": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/5/57/EAMC_Marketing_Logo.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original",
+          "caption": "Dwight D. Eisenhower Army Medical Center",
+          "credit": "w:Eisenhower Army Medical Center",
+          "license": "Public domain",
+          "source_page": "https://commons.wikimedia.org/wiki/File:EAMC_Marketing_Logo.png"
+        }
+      ],
+      "wikipedia_title": "Dwight D. Eisenhower Army Medical Center",
       "sources": [
         "https://social.icims.com/job/Pediatric-Intensivist-Job-US-SC-Summerville-46437050.html",
         "https://doccafe.com/job/physician/pediatrics/19272052/pediatric-icu-physician",
@@ -394,7 +455,14 @@
       ],
       "notes": "Google Places now lists it as HCA Healthcare Summerville Hospital, A part of Trident Hospital, which suggests a 2025-26 HCA rebrand; confirm the official name. Pediatric physician roles are employed by Pediatrix (Mednax), so some pediatric APP roles may post on Pediatrix careers rather than HCA. Beds 124 per the Wikipedia hospital list. Website shown is the Trident Health system site from Wikipedia. Trident Health pediatrics page lists a dedicated pediatric ER at Summerville; nursery level stated as II in one place and III in another.",
       "confidence": "medium",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "Dwight D. Eisenhower Army Medical Center",
+          "url": "https://en.wikipedia.org/wiki/Dwight_D._Eisenhower_Army_Medical_Center",
+          "extract": "The Dwight D. Eisenhower Army Medical Center (EAMC) is a 93-bed medical treatment facility located on Fort Gordon, located \n\nnear Augusta, Georgia that previously served as the headquarters of the Army's Southeast Regional Medical Command (SERMC). SERMC oversaw the Army's hospitals and clinics within the southeastern United States and Puerto Rico. SERMC was renamed Southern Regional Medical Command (SRMC) and was relocated to San Antonio in 2009."
+        }
+      }
     },
     {
       "slug": "musc-university-medical-center-charleston",
@@ -412,9 +480,9 @@
       "hotspot": false,
       "website": "https://muschealth.org",
       "careers_url": "https://musc.career-pages.com/",
-      "careers_platform": "unknown",
+      "careers_platform": "workday",
       "careers_search_url": "https://musc.career-pages.com/",
-      "careers_notes": "muschealth.org/careers redirected to musc.career-pages.com in an earlier session; underlying ATS not identified, so the search URL is the base page. careers.musc.edu and web.musc.edu/careers are other MUSC entry points for enrichment to probe. Regional MUSC Health hospitals post under the same MUSC Health board.",
+      "careers_notes": "muschealth.org/careers redirected to musc.career-pages.com in an earlier session; underlying ATS not identified, so the search URL is the base page. careers.musc.edu and web.musc.edu/careers are other MUSC entry points for enrichment to probe. Regional MUSC Health hospitals post under the same MUSC Health board. [enrich 2026-10-20] careers_url -> HTTP 200 at https://musc.career-pages.com/; ATS link seen: https://musc.wd1.myworkdayjobs.com/MUSC/login; search_url -> HTTP 200, mentions NP: False, job links: 9",
       "ats_config": {
         "host": "musc.career-pages.com"
       },
@@ -447,7 +515,14 @@
       ],
       "notes": "Pediatric services are recorded under musc-shawn-jenkins-childrens-charleston; pediatric flags here are false on purpose to avoid double counting. Beds: Wikipedia infobox 865 licensed, Wikipedia list 728 (the larger figure may include the children's hospital). Roper Hospital is about 200 m away on Calhoun St. Downtown peninsula parking and traffic are real commute factors.",
       "confidence": "medium",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "MUSC Health University Medical Center",
+          "url": "https://en.wikipedia.org/wiki/MUSC_Health_University_Medical_Center",
+          "extract": "MUSC Health University Medical Center is a university hospital associated with the Medical University of South Carolina, based in Charleston, South Carolina with additional sites located throughout the state.\nFounded in 1824 in Charleston, MUSC and MUSC Health make up the state’s only comprehensive academic health system. As the health care system of MUSC, patient care is provided at 16 hospitals (includes owned and affiliated), with approximately 2,700 beds and four additional hospital locations in development; more than 350 telehealth sites and connectivity to patients’ homes; and nearly 750 care locations situated in all regions of South Carolina. In 2023, for the ninth consecutive year, U.S. News & World Report named MUSC Health University Medical Center in Charleston the No. 1 hospital in South Carolina.\nMUSC has a total enterprise annual operating budget of $5.9 billion. The nearly 26,000 MUSC workers include faculty, physicians, specialty providers, scientists, students, affiliates and care team members who deliver education, research and patient care.\nThe MUSC Health Transplant Center is one of the top ten kidney transplantation centers in the nation. The MUSC Health Transplant Center is supported by the only HLA Laboratory in South Carolina. MUSC Health University Medical Center is the regional referral center for the Lowcountry of South Carolina.\nPlans were announced in 2017 for a new 126,000-square-foot outpatient facility to be constructed in the former JCPenney building at Citadel Mall in West Ashley. The two-story complex will be completely renovated with the lower level used for surgery and procedures, radiology and therapy; a second floor will hold physician offices and examination rooms.\nThe Phase I Replacement Hospital with 156 beds was completed in 2008 and a new Bee Street Parking Garage opened for employee and rehab patient parking. The Pediatric Trauma Center/Emergency Room was re-built, opening in first quarter 2009. The long-term plan includes 4 more phases of construction which will provide an updated trauma center, adult rooms and expanded Children's Hospital."
+        }
+      }
     },
     {
       "slug": "roper-hospital-charleston",
@@ -467,7 +542,7 @@
       "careers_url": "https://careers.rsfh.com/us/en/search-results",
       "careers_platform": "phenom",
       "careers_search_url": "https://careers.rsfh.com/us/en/search-results?keywords=nurse%20practitioner",
-      "careers_notes": "Roper St. Francis Healthcare Phenom board (cdn.phenompeople.com assets confirmed in an earlier session); listings are JS-rendered. rsfh.com/careers is the marketing entry point. Filter by facility.",
+      "careers_notes": "Roper St. Francis Healthcare Phenom board (cdn.phenompeople.com assets confirmed in an earlier session); listings are JS-rendered. rsfh.com/careers is the marketing entry point. Filter by facility. [enrich 2026-10-20] careers_url -> HTTP 200 at https://careers.rsfh.com/us/en/search-results; search_url -> HTTP 200, mentions NP: True, job links: 0",
       "ats_config": {
         "host": "careers.rsfh.com"
       },
@@ -499,7 +574,8 @@
       ],
       "notes": "Included as a large regional referral center (inclusion rule 3) and because the caller listed it; no inpatient pediatric unit, PICU, NICU or pediatric ED is known here. SC birth outcome data shows a Charleston labor and delivery closure in 2019, presumed to be Roper. Beds 334 per the Wikipedia list. Drop or keep after verification; useful mainly for adult or ED APP roles.",
       "confidence": "low",
-      "active": true
+      "active": true,
+      "_enrich": {}
     },
     {
       "slug": "bon-secours-st-francis-charleston",
@@ -519,7 +595,7 @@
       "careers_url": "https://careers.rsfh.com/us/en/search-results",
       "careers_platform": "phenom",
       "careers_search_url": "https://careers.rsfh.com/us/en/search-results?keywords=nurse%20practitioner",
-      "careers_notes": "Roper St. Francis Healthcare Phenom board (cdn.phenompeople.com assets confirmed in an earlier session); listings are JS-rendered. rsfh.com/careers is the marketing entry point. Filter by facility.",
+      "careers_notes": "Roper St. Francis Healthcare Phenom board (cdn.phenompeople.com assets confirmed in an earlier session); listings are JS-rendered. rsfh.com/careers is the marketing entry point. Filter by facility. [enrich 2026-10-20] careers_url -> HTTP 200 at https://careers.rsfh.com/us/en/search-results; search_url -> HTTP 200, mentions NP: True, job links: 0",
       "ats_config": {
         "host": "careers.rsfh.com"
       },
@@ -551,13 +627,20 @@
         "One of four Roper St. Francis flagship hospitals"
       ],
       "photos": [],
-      "wikipedia_title": null,
+      "wikipedia_title": "Bon Secours Mercy Health",
       "sources": [
         "https://www.musc.edu/content-hub/News/2025/10/21/musc-childrens-health-and-roper-st-francis-healthcare-launch-pediatric-partnership"
       ],
       "notes": "The Children's Unit was scheduled to open early 2026; confirm it opened and whether pediatric APP roles are MUSC employed (the hospitalists are MUSC) or RSFH employed, since postings could appear on either board. NICU presence and level not confirmed; the hospital has labor and delivery. Beds 200 per the Wikipedia list. West Ashley is a short drive from downtown, James Island and Summerville.",
       "confidence": "medium",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "Bon Secours Mercy Health",
+          "url": "https://en.wikipedia.org/wiki/Bon_Secours_Mercy_Health",
+          "extract": "Bon Secours Mercy Health is an international non-profit health care company with facilities and services in the United States, Ireland, the Philippines, Haiti, Peru and South Sudan. Headquartered in Cincinnati, Ohio, United States, it is the fifth largest Catholic health system in the United States and one of the country's 20 largest health systems. Bon Secours Mercy Health includes 51 hospitals and more than 1,200 sites of care. It is the largest private health care provider in Ireland."
+        }
+      }
     },
     {
       "slug": "trident-medical-center-north-charleston",
@@ -577,7 +660,7 @@
       "careers_url": "https://careers.hcahealthcare.com/",
       "careers_platform": "custom",
       "careers_search_url": "https://careers.hcahealthcare.com/search/nurse-practitioner/jobs/in/sc-south-carolina",
-      "careers_notes": "HCA Healthcare system board. The search URL copies the pattern used in the Virginia record chippenham-richmond (/search/nurse-practitioner/jobs/in/va-virginia) with the SC state slug; not tested. SC listings also syndicate server-side to https://dejobs.org/south-carolina/usa/jobs/hca-healthcare/careers with only the city shown.",
+      "careers_notes": "HCA Healthcare system board. The search URL copies the pattern used in the Virginia record chippenham-richmond (/search/nurse-practitioner/jobs/in/va-virginia) with the SC state slug; not tested. SC listings also syndicate server-side to https://dejobs.org/south-carolina/usa/jobs/hca-healthcare/careers with only the city shown. [enrich 2026-10-20] careers_url -> HTTP 403 at https://careers.hcahealthcare.com/; search_url -> HTTP 403, mentions NP: False, job links: 0",
       "ats_config": {
         "host": "careers.hcahealthcare.com"
       },
@@ -604,7 +687,15 @@
         "Family medicine residency (reportedly with MUSC)",
         "Trident Health market has a 6-bed PICU and dedicated pediatric ER at the Summerville campus"
       ],
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/8/8f/Trident_Regional_Medical_Center%2C_City_of_North_Charleston.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original",
+          "caption": "Trident Medical Center",
+          "credit": "Mydogtryed",
+          "license": "CC BY-SA 3.0",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Trident_Regional_Medical_Center,_City_of_North_Charleston.jpg"
+        }
+      ],
       "wikipedia_title": "Trident Medical Center",
       "sources": [
         "https://Tridenthealthsystem.com/specialties/pediatrics",
@@ -612,7 +703,14 @@
       ],
       "notes": "Included as a large regional referral center. The Trident Health pediatrics page read this pass describes pediatric services only at the Summerville campus; Trident's own NICU level and any pediatric unit were not confirmed (nicu_level left null; reportedly Level III). Google Places now uses HCA Healthcare branding for the Summerville campus, so Trident may also be mid-rebrand; confirm the official name. Pediatric physician roles in the market are Pediatrix employed, so some peds APP roles may post on Pediatrix careers.",
       "confidence": "low",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "Trident Medical Center",
+          "url": "https://en.wikipedia.org/wiki/Trident_Medical_Center",
+          "extract": "Trident Medical Center is a for-profit, 321-bed hospital in North Charleston, South Carolina owned and operated by HCA Healthcare through its subsidiary Trident Health System."
+        }
+      }
     },
     {
       "slug": "east-cooper-medical-center-mount-pleasant",
@@ -623,16 +721,16 @@
       "city": "Mount Pleasant",
       "state": "SC",
       "address": "2000 Hospital Dr, Mount Pleasant, SC 29464",
-      "lat": null,
-      "lng": null,
-      "coord_source": "pending enrichment",
+      "lat": 32.82051,
+      "lng": -79.8512,
+      "coord_source": "OpenStreetMap Nominatim (hospital) for 'East Cooper Medical Center, Mount Pleasant, SC'",
       "region": "Charleston SC",
       "hotspot": false,
       "website": "https://www.novanthealth.org/locations/medical-centers/east-cooper-medical-center",
       "careers_url": "https://external-novanthealth.icims.com/jobs/search?ss=1",
       "careers_platform": "icims",
       "careers_search_url": "https://external-novanthealth.icims.com/jobs/search?ss=1&searchKeyword=nurse%20practitioner",
-      "careers_notes": "Novant Health iCIMS board, same as the NC Novant records. Novant took this hospital over from Tenet (2024), so Tenet careers links are stale. Filter by South Carolina location.",
+      "careers_notes": "Novant Health iCIMS board, same as the NC Novant records. Novant took this hospital over from Tenet (2024), so Tenet careers links are stale. Filter by South Carolina location. [enrich 2026-10-20] careers_url -> HTTP 200 at https://external-novanthealth.icims.com/jobs/search?ss=1; ATS link seen: https://cdn02.icims.com/a/images.icims.com/content/platform_183.7.1.260925-90d88066668-11-0/script/lib/domreplacement/domReplacement.js; search_url -> HTTP 200, mentions NP: False, job links: 0",
       "ats_config": {
         "host": "external-novanthealth.icims.com"
       },
@@ -666,7 +764,8 @@
       ],
       "notes": "Search results seen but not opened: theladders.com and credenzahealth.com postings titled 'MUSC Health Advanced Practice Provider (APP) NP Neonatal or Pediatric Nurse Practitioner (NNP/PNP) MUSC Health East Cooper'. This is a directly relevant PNP role and is probably MUSC employed, so also watch the MUSC board. NICU level reportedly III; inpatient pediatric unit not confirmed. Name may now carry Novant Health branding. Beds 130 per the Wikipedia list.",
       "confidence": "low",
-      "active": true
+      "active": true,
+      "_enrich": {}
     },
     {
       "slug": "prisma-richland-columbia",
@@ -686,7 +785,7 @@
       "careers_url": "https://careers.prismahealth.org/us/en",
       "careers_platform": "phenom",
       "careers_search_url": "https://careers.prismahealth.org/us/en/search-results?keywords=nurse%20practitioner",
-      "careers_notes": "Prisma Health system board, same Phenom layout as the Prisma children's hospital records. Listings are expected to be JS-rendered; filter results by facility name. Not fetched this pass.",
+      "careers_notes": "Prisma Health system board, same Phenom layout as the Prisma children's hospital records. Listings are expected to be JS-rendered; filter results by facility name. Not fetched this pass. [enrich 2026-10-20] careers_url -> HTTP 200 at https://careers.prismahealth.org/; search_url -> HTTP 200, mentions NP: False, job links: 15",
       "ats_config": {
         "host": "careers.prismahealth.org"
       },
@@ -711,7 +810,15 @@
         "Main teaching hospital for USC School of Medicine",
         "Home of Prisma Health Children's Hospital-Midlands"
       ],
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/d/d9/Richland_Memorial_Hospital%2C_Columbia%2C_South_Carolina.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original",
+          "caption": "Prisma Health Richland Hospital",
+          "credit": "Runner1928",
+          "license": "CC BY-SA 3.0",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Richland_Memorial_Hospital,_Columbia,_South_Carolina.JPG"
+        }
+      ],
       "wikipedia_title": "Prisma Health Richland Hospital",
       "sources": [
         "https://neonatologysolutions.com/?p=17873",
@@ -719,7 +826,14 @@
       ],
       "notes": "Pediatric services are recorded under prisma-childrens-midlands-columbia; pediatric flags here are false on purpose to avoid double counting. NICU 69 beds, Level III per neonatologysolutions.com (read 2026-10-20). This record catches APP postings filed under Richland itself.",
       "confidence": "medium",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "Prisma Health Richland Hospital",
+          "url": "https://en.wikipedia.org/wiki/Prisma_Health_Richland_Hospital",
+          "extract": "Prisma Health Richland Hospital is a tertiary referral hospital and academic center located at 5 Richland Park Medical Dr, Columbia, South Carolina. It serves as the sole regional referral center for the Midlands area.\nPrisma Health Richland Hospital was originally established in 1892 as Columbia Hospital and was one of the first hospitals in the city. Over the years, with the growth of Columbia and the arrival of Fort Jackson, the hospital expanded. It outgrew its original location on Harden St. by the 1960s. Later renamed Richland Memorial Hospital, it moved in 1972 to its present location near the intersection of Bull St. and Harden St. Extension.\nToday, Prisma Health Richland Hospital is one of the largest hospitals in the state, with 641 beds, a Level I Trauma Center, Comprehensive Stroke Center and over 20 specialties. It is affiliated with the University of South Carolina, training future doctors, nurses and pharmacists. It is the regional referral center for the Midlands of South Carolina and is the site of the Carolinas' first Gamma Knife Center. The hospital also has a total joint center for hip and knee replacements, an associated cardiovascular care hospital and a freestanding children's hospital."
+        }
+      }
     },
     {
       "slug": "prisma-baptist-columbia",
@@ -739,7 +853,7 @@
       "careers_url": "https://careers.prismahealth.org/us/en",
       "careers_platform": "phenom",
       "careers_search_url": "https://careers.prismahealth.org/us/en/search-results?keywords=nurse%20practitioner",
-      "careers_notes": "Prisma Health system board, same Phenom layout as the Prisma children's hospital records. Listings are expected to be JS-rendered; filter results by facility name. Not fetched this pass.",
+      "careers_notes": "Prisma Health system board, same Phenom layout as the Prisma children's hospital records. Listings are expected to be JS-rendered; filter results by facility name. Not fetched this pass. [enrich 2026-10-20] careers_url -> HTTP 200 at https://careers.prismahealth.org/; search_url -> HTTP 200, mentions NP: False, job links: 15",
       "ats_config": {
         "host": "careers.prismahealth.org"
       },
@@ -774,7 +888,8 @@
       ],
       "notes": "No inpatient pediatric unit known; pediatrics for Prisma Midlands is at Richland. NICU level from neonatologysolutions.com (read 2026-10-20); AAP level not confirmed by the state. Neonatal NP roles are the likely fit here.",
       "confidence": "medium",
-      "active": true
+      "active": true,
+      "_enrich": {}
     },
     {
       "slug": "lexington-medical-center-west-columbia",
@@ -792,10 +907,12 @@
       "hotspot": false,
       "website": "https://www.lexmed.com",
       "careers_url": "https://www.lexmed.com/careers",
-      "careers_platform": "unknown",
+      "careers_platform": "successfactors",
       "careers_search_url": null,
-      "careers_notes": "Caller supplied lexmed.com/careers; Wikipedia lists lexhealth.com after the Lexington Health rebrand, so the careers page may have moved. Platform not identified.",
-      "ats_config": {},
+      "careers_notes": "Caller supplied lexmed.com/careers; Wikipedia lists lexhealth.com after the Lexington Health rebrand, so the careers page may have moved. Platform not identified. [enrich 2026-10-20] careers_url -> HTTP 200 at https://careers.lexhealth.com/",
+      "ats_config": {
+        "host": "careers.lexhealth.com"
+      },
       "nearest_airport": "CAE Columbia Metropolitan Airport (about 10 min)",
       "beds": 557,
       "peds_beds": null,
@@ -820,7 +937,15 @@
         "Duke Health heart affiliation",
         "Independent not-for-profit system (Lexington Health)"
       ],
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/c/c2/Lexington_Medical_Center%2C_SC.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original",
+          "caption": "Lexington Medical Center",
+          "credit": "Dr. Blazer",
+          "license": "CC BY-SA 4.0",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Lexington_Medical_Center,_SC.jpg"
+        }
+      ],
       "wikipedia_title": "Lexington Medical Center",
       "sources": [
         "https://neonatologysolutions.com/?p=17873",
@@ -828,7 +953,14 @@
       ],
       "notes": "Inpatient pediatric unit not confirmed; set false. Beds 557 per Wikipedia infobox, 508 per the Wikipedia list. Website may now be lexhealth.com or lexhealth.org; enrichment should confirm. Lexington, Irmo and Chapin are nearby commuter towns.",
       "confidence": "medium",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "Lexington Medical Center",
+          "url": "https://en.wikipedia.org/wiki/Lexington_Medical_Center",
+          "extract": "Lexington Medical Center is a medical complex in West Columbia, South Carolina. Lexington Medical Center is owned by Lexington County Health Service District, Inc., a private company. The network includes six community medical centers, an occupational health facility, the largest nursing home in the Carolinas, an Alzheimer's disease care center, and seventy physician practices in a variety of services."
+        }
+      }
     },
     {
       "slug": "musc-columbia-northeast-columbia",
@@ -839,16 +971,16 @@
       "city": "Columbia",
       "state": "SC",
       "address": "120 Gateway Corporate Blvd, Columbia, SC 29203",
-      "lat": null,
-      "lng": null,
-      "coord_source": "pending enrichment",
+      "lat": 34.10456,
+      "lng": -80.95867,
+      "coord_source": "OpenStreetMap Nominatim (hospital) for '120 Gateway Corporate Blvd, Columbia, SC 29203, Columbia, SC'",
       "region": "South Carolina (other)",
       "hotspot": false,
       "website": "https://muschealth.org",
       "careers_url": "https://musc.career-pages.com/",
-      "careers_platform": "unknown",
+      "careers_platform": "workday",
       "careers_search_url": "https://musc.career-pages.com/",
-      "careers_notes": "muschealth.org/careers redirected to musc.career-pages.com in an earlier session; underlying ATS not identified, so the search URL is the base page. careers.musc.edu and web.musc.edu/careers are other MUSC entry points for enrichment to probe. Regional MUSC Health hospitals post under the same MUSC Health board.",
+      "careers_notes": "muschealth.org/careers redirected to musc.career-pages.com in an earlier session; underlying ATS not identified, so the search URL is the base page. careers.musc.edu and web.musc.edu/careers are other MUSC entry points for enrichment to probe. Regional MUSC Health hospitals post under the same MUSC Health board. [enrich 2026-10-20] careers_url -> HTTP 200 at https://musc.career-pages.com/; ATS link seen: https://musc.wd1.myworkdayjobs.com/MUSC/login; search_url -> HTTP 200, mentions NP: False, job links: 9",
       "ats_config": {
         "host": "musc.career-pages.com"
       },
@@ -881,7 +1013,8 @@
       ],
       "notes": "Inclusion rests on one MUSC NNP posting seen in an earlier session (Level I/II nursery, ADC 1 to 2), so this is a low volume nursery. No pediatric unit known. Sister MUSC Health Columbia Medical Center Downtown (former Providence Hospital, about 258 beds, cardiac focus) has no known pediatric services and was excluded.",
       "confidence": "low",
-      "active": true
+      "active": true,
+      "_enrich": {}
     },
     {
       "slug": "prisma-tuomey-sumter",
@@ -892,16 +1025,16 @@
       "city": "Sumter",
       "state": "SC",
       "address": "129 N Washington St, Sumter, SC 29150",
-      "lat": null,
-      "lng": null,
-      "coord_source": "pending enrichment",
+      "lat": 33.92336,
+      "lng": -80.3429,
+      "coord_source": "OpenStreetMap Nominatim (hospital) for 'Prisma Health Tuomey Hospital, Sumter, SC'",
       "region": "South Carolina (other)",
       "hotspot": false,
       "website": "https://prismahealth.org",
       "careers_url": "https://careers.prismahealth.org/us/en",
       "careers_platform": "phenom",
       "careers_search_url": "https://careers.prismahealth.org/us/en/search-results?keywords=nurse%20practitioner",
-      "careers_notes": "Prisma Health system board, same Phenom layout as the Prisma children's hospital records. Listings are expected to be JS-rendered; filter results by facility name. Not fetched this pass.",
+      "careers_notes": "Prisma Health system board, same Phenom layout as the Prisma children's hospital records. Listings are expected to be JS-rendered; filter results by facility name. Not fetched this pass. [enrich 2026-10-20] careers_url -> HTTP 200 at https://careers.prismahealth.org/; search_url -> HTTP 200, mentions NP: False, job links: 15",
       "ats_config": {
         "host": "careers.prismahealth.org"
       },
@@ -928,15 +1061,30 @@
         "Family medicine residency (reportedly)",
         "Prisma Health Midlands transfer network"
       ],
-      "photos": [],
-      "wikipedia_title": null,
+      "photos": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/e/ed/GreenvilleMemorialH.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original",
+          "caption": "Prisma Health",
+          "credit": "Excel23",
+          "license": "CC BY-SA 4.0",
+          "source_page": "https://commons.wikimedia.org/wiki/File:GreenvilleMemorialH.JPG"
+        }
+      ],
+      "wikipedia_title": "Prisma Health",
       "sources": [
         "https://en.wikipedia.org/wiki/List_of_hospitals_in_South_Carolina",
         "model knowledge (to verify); enrichment pending"
       ],
       "notes": "Not on the caller's list; added under inclusion rule 3 (large regional referral center). Special care nursery level and any pediatric unit not confirmed; verify or drop.",
       "confidence": "low",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "Prisma Health",
+          "url": "https://en.wikipedia.org/wiki/Prisma_Health",
+          "extract": "Prisma Health is a not-for-profit health organization in South Carolina and Tennessee, formed by the merging of Palmetto Health and the Greenville Health System in November 2017. Its headquarters are in Greenville, South Carolina.\nIn 2024, Prisma Health announced a merger with Tennessee-based Blount Memorial Hospital, marking the first time Prisma Health has extended access to its services outside of South Carolina."
+        }
+      }
     },
     {
       "slug": "musc-kershaw-camden",
@@ -947,16 +1095,16 @@
       "city": "Camden",
       "state": "SC",
       "address": "1315 Roberts St, Camden, SC 29020",
-      "lat": null,
-      "lng": null,
-      "coord_source": "pending enrichment",
+      "lat": 34.25327,
+      "lng": -80.59088,
+      "coord_source": "OpenStreetMap Nominatim (hospital) for 'MUSC Health Kershaw Medical Center, Camden, SC'",
       "region": "South Carolina (other)",
       "hotspot": false,
       "website": "https://muschealth.org",
       "careers_url": "https://musc.career-pages.com/",
       "careers_platform": "unknown",
       "careers_search_url": "https://musc.career-pages.com/",
-      "careers_notes": "muschealth.org/careers redirected to musc.career-pages.com in an earlier session; underlying ATS not identified, so the search URL is the base page. careers.musc.edu and web.musc.edu/careers are other MUSC entry points for enrichment to probe. Regional MUSC Health hospitals post under the same MUSC Health board.",
+      "careers_notes": "muschealth.org/careers redirected to musc.career-pages.com in an earlier session; underlying ATS not identified, so the search URL is the base page. careers.musc.edu and web.musc.edu/careers are other MUSC entry points for enrichment to probe. Regional MUSC Health hospitals post under the same MUSC Health board. [enrich 2026-10-20] careers_url -> HTTP 202 at https://musc.career-pages.com/; search_url -> HTTP 202, mentions NP: False, job links: 0",
       "ats_config": {
         "host": "musc.career-pages.com"
       },
@@ -989,7 +1137,8 @@
       ],
       "notes": "Included only because the caller listed it; no qualifying pediatric service was confirmed. Verify whether it has a Level II nursery or pediatric beds, otherwise deactivate.",
       "confidence": "low",
-      "active": true
+      "active": true,
+      "_enrich": {}
     },
     {
       "slug": "musc-orangeburg-orangeburg",
@@ -1000,16 +1149,16 @@
       "city": "Orangeburg",
       "state": "SC",
       "address": "3000 St Matthews Rd, Orangeburg, SC 29118",
-      "lat": null,
-      "lng": null,
-      "coord_source": "pending enrichment",
+      "lat": 33.54012,
+      "lng": -80.83047,
+      "coord_source": "OpenStreetMap Nominatim (hospital) for '3000 St Matthews Rd, Orangeburg, SC 29118, Orangeburg, SC'",
       "region": "South Carolina (other)",
       "hotspot": false,
       "website": "https://muschealth.org",
       "careers_url": "https://musc.career-pages.com/",
       "careers_platform": "unknown",
       "careers_search_url": "https://musc.career-pages.com/",
-      "careers_notes": "muschealth.org/careers redirected to musc.career-pages.com in an earlier session; underlying ATS not identified, so the search URL is the base page. careers.musc.edu and web.musc.edu/careers are other MUSC entry points for enrichment to probe. Regional MUSC Health hospitals post under the same MUSC Health board.",
+      "careers_notes": "muschealth.org/careers redirected to musc.career-pages.com in an earlier session; underlying ATS not identified, so the search URL is the base page. careers.musc.edu and web.musc.edu/careers are other MUSC entry points for enrichment to probe. Regional MUSC Health hospitals post under the same MUSC Health board. [enrich 2026-10-20] careers_url -> HTTP 202 at https://musc.career-pages.com/; search_url -> HTTP 202, mentions NP: False, job links: 0",
       "ats_config": {
         "host": "musc.career-pages.com"
       },
@@ -1044,7 +1193,8 @@
       ],
       "notes": "Included as a regional referral center and on the caller's list. Nursery level and pediatric unit not confirmed. Name may appear as The Regional Medical Center or RMC on older postings.",
       "confidence": "low",
-      "active": true
+      "active": true,
+      "_enrich": {}
     },
     {
       "slug": "prisma-greenville-memorial-greenville",
@@ -1064,7 +1214,7 @@
       "careers_url": "https://careers.prismahealth.org/us/en",
       "careers_platform": "phenom",
       "careers_search_url": "https://careers.prismahealth.org/us/en/search-results?keywords=nurse%20practitioner",
-      "careers_notes": "Prisma Health system board, same Phenom layout as the Prisma children's hospital records. Listings are expected to be JS-rendered; filter results by facility name. Not fetched this pass.",
+      "careers_notes": "Prisma Health system board, same Phenom layout as the Prisma children's hospital records. Listings are expected to be JS-rendered; filter results by facility name. Not fetched this pass. [enrich 2026-10-20] careers_url -> HTTP 200 at https://careers.prismahealth.org/; search_url -> HTTP 200, mentions NP: False, job links: 15",
       "ats_config": {
         "host": "careers.prismahealth.org"
       },
@@ -1088,7 +1238,15 @@
         "USC School of Medicine Greenville on campus",
         "Home of Prisma Health Children's Hospital-Upstate"
       ],
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/e/ed/GreenvilleMemorialH.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original",
+          "caption": "Greenville Memorial Hospital",
+          "credit": "Excel23",
+          "license": "CC BY-SA 4.0",
+          "source_page": "https://commons.wikimedia.org/wiki/File:GreenvilleMemorialH.JPG"
+        }
+      ],
       "wikipedia_title": "Prisma Health Greenville Memorial Hospital",
       "sources": [
         "https://en.wikipedia.org/wiki/Prisma_Health_Greenville_Memorial_Hospital",
@@ -1096,7 +1254,14 @@
       ],
       "notes": "Pediatric services are recorded under prisma-childrens-upstate-greenville; pediatric flags here are false on purpose to avoid double counting. This record catches APP postings filed under Greenville Memorial itself.",
       "confidence": "medium",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "Greenville Memorial Hospital",
+          "url": "https://en.wikipedia.org/wiki/Greenville_Memorial_Hospital",
+          "extract": "Greenville Memorial Hospital is an 814-bed tertiary referral hospital and academic center located at 701 Grove Road, Greenville, South Carolina. It serves as the regional referral center for the upstate area.\nIt was formerly the flagship hospital for the Greenville Health System, which is now part of Prisma Health, a not-for-profit academic health organization engaged in medical research and education. The Greenville Memorial campus also hosts the University of South Carolina School of Medicine's Greenville Campus, as well as the Marshall I. Pickens Psychiatric Hospital. The facility also houses Prisma's headquarters.\nThe Greenville Health Authority (GHA) owns the hospital, and leases it to Prisma. The GHA is the portion of the Greenville Health System that still existed after the hospital transitioned into being operated by Prisma."
+        }
+      }
     },
     {
       "slug": "spartanburg-medical-center-spartanburg",
@@ -1116,8 +1281,10 @@
       "careers_url": "https://www.spartanburgregional.com/careers",
       "careers_platform": "unknown",
       "careers_search_url": null,
-      "careers_notes": "Spartanburg Regional careers landing page (caller supplied); job board platform not identified.",
-      "ats_config": {},
+      "careers_notes": "Spartanburg Regional careers landing page (caller supplied); job board platform not identified. [enrich 2026-10-20] careers_url -> HTTP 403 at https://www.spartanburgregional.com/careers",
+      "ats_config": {
+        "host": "www.spartanburgregional.com"
+      },
       "nearest_airport": "GSP Greenville-Spartanburg International Airport (about 20 min)",
       "beds": 540,
       "peds_beds": 12,
@@ -1152,7 +1319,14 @@
       ],
       "notes": "Beds 540 per the Wikipedia list; the system article cites a larger system total. Peds unit and PICU sizes come from the Wikipedia system article read in an earlier session; confirm current staffing and whether a peds ED area exists. Teaching set for the system's residency programs; academic partner not confirmed.",
       "confidence": "medium",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "Spartanburg Regional Healthcare System",
+          "url": "https://en.wikipedia.org/wiki/Spartanburg_Regional_Healthcare_System",
+          "extract": "Spartanburg Regional Healthcare System (SRHS) is an integrated healthcare delivery system that provides care from one's birth through the senior years at one of South Carolina's largest healthcare systems. The system has six hospital campuses, five emergency centers including a Level 1 Trauma Center, neonatal intensive care unit, Gibbs Cancer Center and services that include primary, secondary and tertiary acute care, post-acute care and a broad range of outpatient care and diagnostic services. The system draws patients primarily from Spartanburg, Cherokee, Union and Greenville counties."
+        }
+      }
     },
     {
       "slug": "bon-secours-st-francis-eastside-greenville",
@@ -1172,7 +1346,7 @@
       "careers_url": "https://careers.bsmhealth.org/us/en/search-results",
       "careers_platform": "phenom",
       "careers_search_url": "https://careers.bsmhealth.org/us/en/search-results?keywords=nurse%20practitioner",
-      "careers_notes": "Bon Secours Mercy Health Phenom board, same as the Virginia Bon Secours records; careers.bonsecours.com is an alias. Filter for Greenville, SC.",
+      "careers_notes": "Bon Secours Mercy Health Phenom board, same as the Virginia Bon Secours records; careers.bonsecours.com is an alias. Filter for Greenville, SC. [enrich 2026-10-20] careers_url -> HTTP 200 at https://careers.bsmhealth.org/us/en/search-results; search_url -> HTTP 200, mentions NP: True, job links: 0",
       "ats_config": {
         "host": "careers.bsmhealth.org",
         "alt_host": "careers.bonsecours.com"
@@ -1201,14 +1375,21 @@
         "Part of Bon Secours Mercy Health"
       ],
       "photos": [],
-      "wikipedia_title": null,
+      "wikipedia_title": "Bon Secours Mercy Health",
       "sources": [
         "https://en.wikipedia.org/wiki/List_of_hospitals_in_South_Carolina",
         "model knowledge (to verify); enrichment pending"
       ],
       "notes": "Google Places lists a Neonatal Care Unit (NCU) at St. Francis Eastside; level unknown, so nicu_level null. Bon Secours St. Francis Downtown (245 beds) has no known pediatric service and was excluded. The Wikipedia list wrongly attributes St. Francis to Roper St. Francis; it is Bon Secours.",
       "confidence": "low",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "Bon Secours Mercy Health",
+          "url": "https://en.wikipedia.org/wiki/Bon_Secours_Mercy_Health",
+          "extract": "Bon Secours Mercy Health is an international non-profit health care company with facilities and services in the United States, Ireland, the Philippines, Haiti, Peru and South Sudan. Headquartered in Cincinnati, Ohio, United States, it is the fifth largest Catholic health system in the United States and one of the country's 20 largest health systems. Bon Secours Mercy Health includes 51 hospitals and more than 1,200 sites of care. It is the largest private health care provider in Ireland."
+        }
+      }
     },
     {
       "slug": "anmed-medical-center-anderson",
@@ -1219,17 +1400,19 @@
       "city": "Anderson",
       "state": "SC",
       "address": "800 N Fant St, Anderson, SC 29621",
-      "lat": null,
-      "lng": null,
-      "coord_source": "pending enrichment",
+      "lat": 34.511,
+      "lng": -82.646,
+      "coord_source": "Wikipedia article coordinates (API)",
       "region": "South Carolina (other)",
       "hotspot": false,
       "website": "https://anmed.org",
       "careers_url": "https://anmed.org/careers",
       "careers_platform": "unknown",
       "careers_search_url": null,
-      "careers_notes": "AnMed careers landing page (caller supplied); platform not identified. Neonatal and pediatric hospitalist APPs may be employed by Onsite Neonatal Partners and post on onsiteneonatal.com instead.",
-      "ats_config": {},
+      "careers_notes": "AnMed careers landing page (caller supplied); platform not identified. Neonatal and pediatric hospitalist APPs may be employed by Onsite Neonatal Partners and post on onsiteneonatal.com instead. [enrich 2026-10-20] careers_url -> HTTP 403 at https://anmed.org/careers",
+      "ats_config": {
+        "host": "anmed.org"
+      },
       "nearest_airport": "GSP Greenville-Spartanburg International Airport (about 45 min)",
       "beds": 461,
       "peds_beds": null,
@@ -1263,7 +1446,14 @@
       ],
       "notes": "Search results seen but not opened: anmed.org/locations/anmed-inpatient-pediatrics, anmed.org news 'AnMed partners provide 24/7 neonatal pediatric care', onsiteneonatal.com hospital partner page for AnMed. NICU level (reportedly III) and PICU status not confirmed. AnMed North Campus (72 beds, former Women's and Children's) is not listed separately.",
       "confidence": "medium",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "AnMed Medical Center",
+          "url": "https://en.wikipedia.org/wiki/AnMed_Medical_Center",
+          "extract": "AnMed Medical Center is a 461-bed acute care hospital at 800 N. Fant St. in Anderson, South Carolina. The Medical Center is the anchor facility for AnMed, South Carolina's largest independent, not-for-profit health system.\nServices provided at the Medical Center include open heart surgery, vascular surgery, general surgery, bariatric surgery, emergency/trauma medicine, a stroke/neurological center, and diagnostic MRI, CT and laboratory medicine. Other facilities located at AnMed's medical center campus include Pediatric Therapy Works, a speech, occupational and physical therapy program for children; and CareConnect, a walk-in facility that treats non life-threatening ailments such as influenza, broken bones and minor nosebleeds."
+        }
+      }
     },
     {
       "slug": "self-regional-greenwood",
@@ -1281,10 +1471,12 @@
       "hotspot": false,
       "website": "https://www.selfregional.org",
       "careers_url": "https://www.selfregional.org/careers",
-      "careers_platform": "unknown",
+      "careers_platform": "ultipro",
       "careers_search_url": null,
-      "careers_notes": "Self Regional careers landing page (caller supplied); platform not identified.",
-      "ats_config": {},
+      "careers_notes": "Self Regional careers landing page (caller supplied); platform not identified. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.selfregional.org/careers/; ATS link seen: https://recruiting.ultipro.com/GRE1050GNHP/JobBoard/2b67ecb4-00fb-4863-931a-7bf0ebcb493a/?q=&amp;o=postedDateDesc&amp;w=&amp;wc=&amp;we=&amp;wpst=",
+      "ats_config": {
+        "host": "www.selfregional.org"
+      },
       "nearest_airport": "CAE Columbia Metropolitan Airport (about 1 hr 15 min) or GSP (about 1 hr 15 min)",
       "beds": 358,
       "peds_beds": null,
@@ -1316,7 +1508,8 @@
       ],
       "notes": "Included as a regional referral center. A search for its NICU returned selfregional.org Women's Center pages and a neonatologysolutions.com page (not opened), so a NICU likely exists; level not confirmed. Hospital proper may be named Self Medical Center; confirm.",
       "confidence": "low",
-      "active": true
+      "active": true,
+      "_enrich": {}
     },
     {
       "slug": "shriners-childrens-greenville",
@@ -1334,10 +1527,12 @@
       "hotspot": false,
       "website": "https://www.shrinerschildrens.org/en/locations/greenville",
       "careers_url": "https://www.shrinerschildrens.org/en/careers",
-      "careers_platform": "unknown",
+      "careers_platform": "workday",
       "careers_search_url": null,
-      "careers_notes": "Shriners Children's system careers page, same as the Boston Shriners record; platform not identified.",
-      "ats_config": {},
+      "careers_notes": "Shriners Children's system careers page, same as the Boston Shriners record; platform not identified. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.shrinerschildrens.org/en/careers; ATS link seen: https://shrinerschildrens.wd12.myworkdayjobs.com/Shriners",
+      "ats_config": {
+        "host": "www.shrinerschildrens.org"
+      },
       "nearest_airport": "GSP Greenville-Spartanburg International Airport (about 25 min)",
       "beds": 50,
       "peds_beds": null,
@@ -1365,7 +1560,15 @@
         "About 50 licensed beds",
         "Next door to Prisma Health Children's Hospital-Upstate"
       ],
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/8/80/MUSC_Shawn_Jenkins_Children%27s_Hospital.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original",
+          "caption": "MUSC Shawn Jenkins Children's Hospital",
+          "credit": "LittleT889",
+          "license": "CC BY-SA 4.0",
+          "source_page": "https://commons.wikimedia.org/wiki/File:MUSC_Shawn_Jenkins_Children%27s_Hospital.jpg"
+        }
+      ],
       "wikipedia_title": "Shriners Children's",
       "sources": [
         "https://en.wikipedia.org/wiki/List_of_hospitals_in_South_Carolina",
@@ -1373,7 +1576,14 @@
       ],
       "notes": "Included as a pediatric specialty hospital (inclusion rule 5). peds_inpatient true reflects its post-surgical inpatient beds; confirm current inpatient census. About 160 m from Greenville Memorial; not a duplicate.",
       "confidence": "medium",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "MUSC Shawn Jenkins Children's Hospital",
+          "url": "https://en.wikipedia.org/wiki/MUSC_Shawn_Jenkins_Children%27s_Hospital",
+          "extract": "MUSC Shawn Jenkins Children's Hospital is a nationally ranked, freestanding acute care women's and children's hospital in Charleston, South Carolina. It is affiliated with the Medical University of South Carolina. The hospital features all private rooms that consist of 250 pediatric beds and 29 beds for women. The hospital provides comprehensive pediatric specialties and subspecialties to infants, children, teens, and young adults aged 0–21 throughout the Carolinas. The hospital also sometimes treats adults that require pediatric care. The hospital has a rooftop helipad and is an ACS verified level I pediatric trauma center, the only one in South Carolina. The hospital features a regional pediatric intensive-care unit and an American Academy of Pediatrics verified level IV neonatal intensive care unit.\nAlong with the main hospital in Charleston, MUSC Children's operates the ambulatory R. Keith Summey Medical Pavilion with 4 operating rooms and 2 procedure rooms."
+        }
+      }
     },
     {
       "slug": "mcleod-regional-florence",
@@ -1384,16 +1594,16 @@
       "city": "Florence",
       "state": "SC",
       "address": "555 E Cheves St, Florence, SC 29506",
-      "lat": null,
-      "lng": null,
-      "coord_source": "pending enrichment",
+      "lat": 34.19698,
+      "lng": -79.75813,
+      "coord_source": "OpenStreetMap Nominatim (hospital) for 'McLeod Regional Medical Center, Florence, SC'",
       "region": "South Carolina (other)",
       "hotspot": false,
       "website": "https://www.mcleodhealth.org",
       "careers_url": "https://jobs.mcleodhealth.org/",
       "careers_platform": "unknown",
       "careers_search_url": "https://jobs.mcleodhealth.org/",
-      "careers_notes": "Careers URL taken from mcleodhealth.org in an earlier session; platform and query format not confirmed, so the search URL is the base page.",
+      "careers_notes": "Careers URL taken from mcleodhealth.org in an earlier session; platform and query format not confirmed, so the search URL is the base page. [enrich 2026-10-20] careers_url -> HTTP 403 at https://jobs.mcleodhealth.org/; search_url -> HTTP 403, mentions NP: False, job links: 0",
       "ats_config": {
         "host": "jobs.mcleodhealth.org"
       },
@@ -1417,7 +1627,15 @@
         "Home of McLeod Children's Hospital",
         "Family medicine residency"
       ],
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/2/2f/McLeod9404.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original",
+          "caption": "McLeod Health",
+          "credit": "Pollinator",
+          "license": "CC BY-SA 3.0",
+          "source_page": "https://commons.wikimedia.org/wiki/File:McLeod9404.JPG"
+        }
+      ],
       "wikipedia_title": "McLeod Health",
       "sources": [
         "https://en.wikipedia.org/wiki/McLeod_Health",
@@ -1425,7 +1643,14 @@
       ],
       "notes": "Pediatric services are recorded under mcleod-childrens-florence; pediatric flags here are false on purpose to avoid double counting. Coordinates left for enrichment (same building as the children's record).",
       "confidence": "medium",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "McLeod Health",
+          "url": "https://en.wikipedia.org/wiki/McLeod_Health",
+          "extract": "McLeod Health is a hospital network serving the twelve counties of northeastern South Carolina. McLeod Health was founded in 1906. It is a locally owned, not-for-profit institution. In addition to seven acute care facilities, McLeod Health operates a home health agency, a cancer center, two urgent care facilities, a hospice service, and approximately 85 medical practices.\nIn July 2010, McLeod Regional Medical Center was honored with the American Hospital Association-McKesson Quest for Quality Prize, awarded annually to a hospital in the United States."
+        }
+      }
     },
     {
       "slug": "musc-florence-florence",
@@ -1436,16 +1661,16 @@
       "city": "Florence",
       "state": "SC",
       "address": "805 Pamplico Hwy, Florence, SC 29505",
-      "lat": null,
-      "lng": null,
-      "coord_source": "pending enrichment",
+      "lat": 34.15964,
+      "lng": -79.75252,
+      "coord_source": "OpenStreetMap Nominatim (hospital) for '805 Pamplico Hwy, Florence, SC 29505, Florence, SC'",
       "region": "South Carolina (other)",
       "hotspot": false,
       "website": "https://muschealth.org",
       "careers_url": "https://musc.career-pages.com/",
       "careers_platform": "unknown",
       "careers_search_url": "https://musc.career-pages.com/",
-      "careers_notes": "muschealth.org/careers redirected to musc.career-pages.com in an earlier session; underlying ATS not identified, so the search URL is the base page. careers.musc.edu and web.musc.edu/careers are other MUSC entry points for enrichment to probe. Regional MUSC Health hospitals post under the same MUSC Health board.",
+      "careers_notes": "muschealth.org/careers redirected to musc.career-pages.com in an earlier session; underlying ATS not identified, so the search URL is the base page. careers.musc.edu and web.musc.edu/careers are other MUSC entry points for enrichment to probe. Regional MUSC Health hospitals post under the same MUSC Health board. [enrich 2026-10-20] careers_url -> HTTP 202 at https://musc.career-pages.com/; search_url -> HTTP 202, mentions NP: False, job links: 0",
       "ats_config": {
         "host": "musc.career-pages.com"
       },
@@ -1479,7 +1704,8 @@
       ],
       "notes": "beds left null because the Wikipedia list gives two figures (310 and 396). NICU level and pediatric unit not confirmed; inclusion rests on regional size and the caller's list.",
       "confidence": "low",
-      "active": true
+      "active": true,
+      "_enrich": {}
     },
     {
       "slug": "carolina-pines-hartsville",
@@ -1490,17 +1716,19 @@
       "city": "Hartsville",
       "state": "SC",
       "address": "1304 W Bobo Newsom Hwy, Hartsville, SC 29550",
-      "lat": null,
-      "lng": null,
-      "coord_source": "pending enrichment",
+      "lat": 34.35022,
+      "lng": -80.1047,
+      "coord_source": "OpenStreetMap Nominatim (hospital) for 'Carolina Pines Regional Medical Center, Hartsville, SC'",
       "region": "South Carolina (other)",
       "hotspot": false,
       "website": "https://www.cprmc.com",
       "careers_url": "https://www.scionhealth.com/careers",
       "careers_platform": "unknown",
       "careers_search_url": null,
-      "careers_notes": "ScionHealth system careers page assumed; not confirmed. The hospital site may have its own careers link.",
-      "ats_config": {},
+      "careers_notes": "ScionHealth system careers page assumed; not confirmed. The hospital site may have its own careers link. [enrich 2026-10-20] careers_url -> HTTP 406 at https://www.scionhealth.com/careers",
+      "ats_config": {
+        "host": "www.scionhealth.com"
+      },
       "nearest_airport": "FLO Florence Regional Airport (about 35 min)",
       "beds": 116,
       "peds_beds": null,
@@ -1530,7 +1758,8 @@
       ],
       "notes": "Included only because the caller listed it; no qualifying pediatric service confirmed. Website domain cprmc.com is from memory and unverified. Verify or deactivate.",
       "confidence": "low",
-      "active": true
+      "active": true,
+      "_enrich": {}
     },
     {
       "slug": "conway-medical-center-conway",
@@ -1541,17 +1770,19 @@
       "city": "Conway",
       "state": "SC",
       "address": "300 Singleton Ridge Rd, Conway, SC 29526",
-      "lat": null,
-      "lng": null,
-      "coord_source": "pending enrichment",
+      "lat": 33.78498,
+      "lng": -79.00064,
+      "coord_source": "OpenStreetMap Nominatim (hospital) for 'Conway Medical Center, Conway, SC'",
       "region": "Grand Strand",
       "hotspot": false,
       "website": "https://www.conwaymedicalcenter.com",
       "careers_url": "https://www.conwaymedicalcenter.com/careers",
       "careers_platform": "unknown",
       "careers_search_url": null,
-      "careers_notes": "Careers path assumed on the hospital site; platform not identified.",
-      "ats_config": {},
+      "careers_notes": "Careers path assumed on the hospital site; platform not identified. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.conwaymedicalcenter.com/careers/",
+      "ats_config": {
+        "host": "www.conwaymedicalcenter.com"
+      },
       "nearest_airport": "MYR Myrtle Beach International Airport (about 25 min)",
       "beds": 210,
       "peds_beds": null,
@@ -1583,7 +1814,8 @@
       ],
       "notes": "Search results (not opened) show practicematch and doccafe pediatric openings at Conway Medical Center and a physicianjob.com 'Nurse Practitioner - Pediatrics' listing in the area. Nursery level and any pediatric unit not confirmed.",
       "confidence": "low",
-      "active": true
+      "active": true,
+      "_enrich": {}
     },
     {
       "slug": "tidelands-waccamaw-murrells-inlet",
@@ -1594,17 +1826,19 @@
       "city": "Murrells Inlet",
       "state": "SC",
       "address": "4070 Highway 17 Bypass, Murrells Inlet, SC 29576",
-      "lat": null,
-      "lng": null,
-      "coord_source": "pending enrichment",
+      "lat": 33.5606,
+      "lng": -79.04338,
+      "coord_source": "OpenStreetMap Nominatim (hospital) for 'Tidelands Waccamaw Community Hospital, Murrells Inlet, SC'",
       "region": "Grand Strand",
       "hotspot": false,
       "website": "https://www.tidelandshealth.org",
       "careers_url": "https://www.tidelandshealth.org/careers",
       "careers_platform": "unknown",
       "careers_search_url": null,
-      "careers_notes": "Tidelands Health careers landing page (caller supplied); platform not identified. A Tidelands 'Nurse Practitioner - Pediatrics' listing appeared on physicianjob.com search results, likely outpatient.",
-      "ats_config": {},
+      "careers_notes": "Tidelands Health careers landing page (caller supplied); platform not identified. A Tidelands 'Nurse Practitioner - Pediatrics' listing appeared on physicianjob.com search results, likely outpatient. [enrich 2026-10-20] careers_url -> HTTP 403 at https://www.tidelandshealth.org/careers",
+      "ats_config": {
+        "host": "www.tidelandshealth.org"
+      },
       "nearest_airport": "MYR Myrtle Beach International Airport (about 25 min)",
       "beds": 124,
       "peds_beds": null,
@@ -1634,7 +1868,8 @@
       ],
       "notes": "Included only because the caller listed it; inclusion rules may not be met. Verify maternity and nursery level; deactivate if there is no peds unit, peds ED or NICU II+.",
       "confidence": "low",
-      "active": true
+      "active": true,
+      "_enrich": {}
     },
     {
       "slug": "tidelands-georgetown-georgetown",
@@ -1645,17 +1880,19 @@
       "city": "Georgetown",
       "state": "SC",
       "address": "606 Black River Rd, Georgetown, SC 29440",
-      "lat": null,
-      "lng": null,
-      "coord_source": "pending enrichment",
+      "lat": 33.37935,
+      "lng": -79.28398,
+      "coord_source": "OpenStreetMap Nominatim (hospital) for 'Tidelands Georgetown Memorial Hospital, Georgetown, SC'",
       "region": "Grand Strand",
       "hotspot": false,
       "website": "https://www.tidelandshealth.org",
       "careers_url": "https://www.tidelandshealth.org/careers",
       "careers_platform": "unknown",
       "careers_search_url": null,
-      "careers_notes": "Tidelands Health careers landing page (caller supplied); platform not identified. A Tidelands 'Nurse Practitioner - Pediatrics' listing appeared on physicianjob.com search results, likely outpatient.",
-      "ats_config": {},
+      "careers_notes": "Tidelands Health careers landing page (caller supplied); platform not identified. A Tidelands 'Nurse Practitioner - Pediatrics' listing appeared on physicianjob.com search results, likely outpatient. [enrich 2026-10-20] careers_url -> HTTP 403 at https://www.tidelandshealth.org/careers",
+      "ats_config": {
+        "host": "www.tidelandshealth.org"
+      },
       "nearest_airport": "MYR Myrtle Beach International Airport (about 50 min)",
       "beds": 131,
       "peds_beds": null,
@@ -1683,7 +1920,8 @@
       ],
       "notes": "Included only because the caller listed it; inclusion rules may not be met. Verify pediatric and maternity services; deactivate if none.",
       "confidence": "low",
-      "active": true
+      "active": true,
+      "_enrich": {}
     },
     {
       "slug": "beaufort-memorial-beaufort",
@@ -1694,17 +1932,19 @@
       "city": "Beaufort",
       "state": "SC",
       "address": "955 Ribaut Rd, Beaufort, SC 29902",
-      "lat": null,
-      "lng": null,
-      "coord_source": "pending enrichment",
+      "lat": 32.4168,
+      "lng": -80.68732,
+      "coord_source": "OpenStreetMap Nominatim (hospital) for 'Beaufort Memorial Hospital, Beaufort, SC'",
       "region": "South Carolina (other)",
       "hotspot": false,
       "website": "https://www.bmhsc.org",
       "careers_url": "https://www.bmhsc.org/careers",
       "careers_platform": "unknown",
       "careers_search_url": null,
-      "careers_notes": "Beaufort Memorial careers landing page (caller supplied); platform not identified.",
-      "ats_config": {},
+      "careers_notes": "Beaufort Memorial careers landing page (caller supplied); platform not identified. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.bmhsc.org/careers",
+      "ats_config": {
+        "host": "www.bmhsc.org"
+      },
       "nearest_airport": "SAV Savannah/Hilton Head International Airport (about 1 hr)",
       "beds": 197,
       "peds_beds": null,
@@ -1735,7 +1975,8 @@
       ],
       "notes": "Search results seen but not opened: bmhsc.org/services/maternity/birthing-center/level-ii-nursery and bmhsc.org Collins Birthing Center pages, so the Level II nursery is well supported. Inpatient pediatric unit not confirmed. A 'Coastal South Carolina ped hospitalist' recruiting post appeared in the same search and may be this hospital or Hilton Head.",
       "confidence": "medium",
-      "active": true
+      "active": true,
+      "_enrich": {}
     },
     {
       "slug": "hilton-head-hospital-hilton-head-island",
@@ -1746,16 +1987,16 @@
       "city": "Hilton Head Island",
       "state": "SC",
       "address": "25 Hospital Center Blvd, Hilton Head Island, SC 29926",
-      "lat": null,
-      "lng": null,
-      "coord_source": "pending enrichment",
+      "lat": 32.22369,
+      "lng": -80.715,
+      "coord_source": "OpenStreetMap Nominatim (hospital) for 'Hilton Head Hospital, Hilton Head Island, SC'",
       "region": "South Carolina (other)",
       "hotspot": false,
       "website": "https://www.novanthealth.org",
       "careers_url": "https://external-novanthealth.icims.com/jobs/search?ss=1",
       "careers_platform": "icims",
       "careers_search_url": "https://external-novanthealth.icims.com/jobs/search?ss=1&searchKeyword=nurse%20practitioner",
-      "careers_notes": "Novant Health iCIMS board, same as the NC Novant records. Novant took this hospital over from Tenet (2024), so Tenet careers links are stale. Filter by South Carolina location.",
+      "careers_notes": "Novant Health iCIMS board, same as the NC Novant records. Novant took this hospital over from Tenet (2024), so Tenet careers links are stale. Filter by South Carolina location. [enrich 2026-10-20] careers_url -> HTTP 200 at https://external-novanthealth.icims.com/jobs/search?ss=1; ATS link seen: https://cdn02.icims.com/a/images.icims.com/content/platform_183.7.1.260925-90d88066668-11-0/script/lib/domreplacement/domReplacement.js; search_url -> HTTP 200, mentions NP: False, job links: 0",
       "ats_config": {
         "host": "external-novanthealth.icims.com"
       },
@@ -1790,7 +2031,8 @@
       ],
       "notes": "Nursery level and pediatric services not confirmed; verify. Sister Coastal Carolina Hospital in Hardeeville (41 beds) has no known pediatric service and was excluded. Name may now carry Novant Health branding.",
       "confidence": "low",
-      "active": true
+      "active": true,
+      "_enrich": {}
     },
     {
       "slug": "colleton-medical-center-walterboro",
@@ -1801,16 +2043,16 @@
       "city": "Walterboro",
       "state": "SC",
       "address": "501 Robertson Blvd, Walterboro, SC 29488",
-      "lat": null,
-      "lng": null,
-      "coord_source": "pending enrichment",
+      "lat": 32.92311,
+      "lng": -80.66957,
+      "coord_source": "OpenStreetMap Nominatim (hospital) for 'Colleton Medical Center, Walterboro, SC'",
       "region": "South Carolina (other)",
       "hotspot": false,
       "website": "https://www.colletonmedical.com",
       "careers_url": "https://careers.hcahealthcare.com/",
       "careers_platform": "custom",
       "careers_search_url": "https://careers.hcahealthcare.com/search/nurse-practitioner/jobs/in/sc-south-carolina",
-      "careers_notes": "HCA Healthcare system board. The search URL copies the pattern used in the Virginia record chippenham-richmond (/search/nurse-practitioner/jobs/in/va-virginia) with the SC state slug; not tested. SC listings also syndicate server-side to https://dejobs.org/south-carolina/usa/jobs/hca-healthcare/careers with only the city shown.",
+      "careers_notes": "HCA Healthcare system board. The search URL copies the pattern used in the Virginia record chippenham-richmond (/search/nurse-practitioner/jobs/in/va-virginia) with the SC state slug; not tested. SC listings also syndicate server-side to https://dejobs.org/south-carolina/usa/jobs/hca-healthcare/careers with only the city shown. [enrich 2026-10-20] careers_url -> HTTP 403 at https://careers.hcahealthcare.com/; search_url -> HTTP 403, mentions NP: False, job links: 0",
       "ats_config": {
         "host": "careers.hcahealthcare.com"
       },
@@ -1843,7 +2085,8 @@
       ],
       "notes": "Included only because the caller listed it; no qualifying pediatric service confirmed. Website domain is from memory and unverified. Verify or deactivate.",
       "confidence": "low",
-      "active": true
+      "active": true,
+      "_enrich": {}
     },
     {
       "slug": "aiken-regional-aiken",
@@ -1854,17 +2097,19 @@
       "city": "Aiken",
       "state": "SC",
       "address": "302 University Pkwy, Aiken, SC 29801",
-      "lat": null,
-      "lng": null,
-      "coord_source": "pending enrichment",
+      "lat": 33.57116,
+      "lng": -81.76196,
+      "coord_source": "Wikipedia article coordinates (API)",
       "region": "South Carolina (other)",
       "hotspot": false,
       "website": "https://www.aikenregional.com",
       "careers_url": "https://www.uhs.com/careers/",
       "careers_platform": "unknown",
       "careers_search_url": null,
-      "careers_notes": "Universal Health Services system careers page assumed; hospital-level careers link not confirmed.",
-      "ats_config": {},
+      "careers_notes": "Universal Health Services system careers page assumed; hospital-level careers link not confirmed. [enrich 2026-10-20] careers_url -> HTTP 200 at https://jobs.uhs.com/careers/; ATS link seen: https://www.icims.com/legal/privacy-notice-website/",
+      "ats_config": {
+        "host": "jobs.uhs.com"
+      },
       "nearest_airport": "AGS Augusta Regional Airport (about 35 min)",
       "beds": 273,
       "peds_beds": null,
@@ -1895,7 +2140,14 @@
       ],
       "notes": "Included as a regional referral center and on the caller's list. Pediatric unit and nursery level not confirmed; verify. Augusta area jobs (Children's Hospital of Georgia, Wellstar MCG) are outside the ledger's states.",
       "confidence": "low",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "Aiken Regional Medical Center",
+          "url": "https://en.wikipedia.org/wiki/Aiken_Regional_Medical_Center",
+          "extract": "Aiken Regional Medical Centers is located in Aiken, South Carolina on University Parkway near the University of South Carolina Aiken.\nAiken Regional Medical Centers opened its doors in 1917 as the Aiken Hospital and Relief Society. Except for several years in the early 1920s, the hospital has provided healthcare to the residents of Aiken and surrounding communities. Today, it is a 273-bed acute care facility."
+        }
+      }
     },
     {
       "slug": "piedmont-medical-center-rock-hill",
@@ -1906,17 +2158,19 @@
       "city": "Rock Hill",
       "state": "SC",
       "address": "222 S Herlong Ave, Rock Hill, SC 29732",
-      "lat": null,
-      "lng": null,
-      "coord_source": "pending enrichment",
+      "lat": 34.94167,
+      "lng": -81.02333,
+      "coord_source": "Wikipedia article coordinates (API)",
       "region": "South Carolina (other)",
       "hotspot": false,
       "website": "https://www.piedmontmedicalcenter.com",
       "careers_url": "https://www.tenethealth.com/careers",
-      "careers_platform": "unknown",
+      "careers_platform": "oracle_cloud",
       "careers_search_url": null,
-      "careers_notes": "Tenet Healthcare system careers entry point; the actual job board host was not confirmed (possibly jobs.tenethealth.com). Enrichment should detect the ATS.",
-      "ats_config": {},
+      "careers_notes": "Tenet Healthcare system careers entry point; the actual job board host was not confirmed (possibly jobs.tenethealth.com). Enrichment should detect the ATS. [enrich 2026-10-20] careers_url -> HTTP 200 at https://jobs.tenethealth.com/; ATS link seen: https://eodr.fa.us2.oraclecloud.com/fscmUI/redwood/internalmobility/opportunitymarketplace/search?optyType=JOB",
+      "ats_config": {
+        "host": "jobs.tenethealth.com"
+      },
       "nearest_airport": "CLT Charlotte Douglas International Airport (about 30 min)",
       "beds": 288,
       "peds_beds": null,
@@ -1940,15 +2194,30 @@
         "About 30 minutes from uptown Charlotte",
         "Tenet Healthcare hospital"
       ],
-      "photos": [],
-      "wikipedia_title": null,
+      "photos": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/7/7e/Main_Street_%28Rock_Hill%2C_SC%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original",
+          "caption": "Rock Hill, South Carolina",
+          "credit": "Hashtag youre it",
+          "license": "CC BY-SA 4.0",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Main_Street_(Rock_Hill,_SC).jpg"
+        }
+      ],
+      "wikipedia_title": "Rock Hill, South Carolina",
       "sources": [
         "https://neonatologysolutions.com/?p=17873",
         "https://en.wikipedia.org/wiki/List_of_hospitals_in_South_Carolina"
       ],
       "notes": "Relevant to the Charlotte hotspot search: Rock Hill is a common commute from south Charlotte, Fort Mill and Lake Wylie. Inpatient pediatric unit not confirmed. Website domain is from memory and unverified.",
       "confidence": "medium",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "Rock Hill, South Carolina",
+          "url": "https://en.wikipedia.org/wiki/Rock_Hill,_South_Carolina",
+          "extract": "Rock Hill is the most populous city in York County, South Carolina, United States, and the 5th-most populous city in the state. It is also the 4th-most populous city of the Charlotte metropolitan area, behind Charlotte, Concord, and Gastonia (all located in North Carolina). As of the 2020 census, the city's population was 74,372.\nThe city is located approximately 25 miles (40 km) south of Charlotte and approximately 70 miles (110 km) north of Columbia.\nRock Hill offers scenic riverfront views along the Catawba River and is home to numerous nature trails, restaurants, and thirty-one parks which are used for both national and local events. Its historic downtown consist of twelve contiguous buildings built as early as 1840 offering dining and retail options. The city is also home to three colleges, including Winthrop University, a public liberal arts university founded in 1886 which enrolls nearly 6,000 students annually."
+        }
+      }
     },
     {
       "slug": "piedmont-fort-mill-fort-mill",
@@ -1959,17 +2228,19 @@
       "city": "Fort Mill",
       "state": "SC",
       "address": null,
-      "lat": null,
-      "lng": null,
-      "coord_source": "pending enrichment",
+      "lat": 35.02278,
+      "lng": -80.95793,
+      "coord_source": "OpenStreetMap Nominatim (hospital) for 'Piedmont Medical Center Fort Mill, Fort Mill, SC'",
       "region": "South Carolina (other)",
       "hotspot": false,
       "website": "https://www.piedmontmedicalcenter.com",
       "careers_url": "https://www.tenethealth.com/careers",
-      "careers_platform": "unknown",
+      "careers_platform": "oracle_cloud",
       "careers_search_url": null,
-      "careers_notes": "Tenet Healthcare system careers entry point; the actual job board host was not confirmed (possibly jobs.tenethealth.com). Enrichment should detect the ATS.",
-      "ats_config": {},
+      "careers_notes": "Tenet Healthcare system careers entry point; the actual job board host was not confirmed (possibly jobs.tenethealth.com). Enrichment should detect the ATS. [enrich 2026-10-20] careers_url -> HTTP 200 at https://jobs.tenethealth.com/; ATS link seen: https://eodr.fa.us2.oraclecloud.com/fscmUI/redwood/internalmobility/opportunitymarketplace/search?optyType=JOB",
+      "ats_config": {
+        "host": "jobs.tenethealth.com"
+      },
       "nearest_airport": "CLT Charlotte Douglas International Airport (about 25 min)",
       "beds": 100,
       "peds_beds": null,
@@ -1997,7 +2268,8 @@
       ],
       "notes": "Included only because the caller listed it and for the Charlotte hotspot commute picture; no qualifying pediatric service confirmed. Address unknown (enrichment). Verify or deactivate.",
       "confidence": "low",
-      "active": true
+      "active": true,
+      "_enrich": {}
     },
     {
       "slug": "musc-lancaster-lancaster",
@@ -2008,16 +2280,16 @@
       "city": "Lancaster",
       "state": "SC",
       "address": "800 W Meeting St, Lancaster, SC 29720",
-      "lat": null,
-      "lng": null,
-      "coord_source": "pending enrichment",
+      "lat": 34.71782,
+      "lng": -80.78836,
+      "coord_source": "OpenStreetMap Nominatim (hospital) for 'MUSC Health Lancaster Medical Center, Lancaster, SC'",
       "region": "South Carolina (other)",
       "hotspot": false,
       "website": "https://muschealth.org",
       "careers_url": "https://musc.career-pages.com/",
       "careers_platform": "unknown",
       "careers_search_url": "https://musc.career-pages.com/",
-      "careers_notes": "muschealth.org/careers redirected to musc.career-pages.com in an earlier session; underlying ATS not identified, so the search URL is the base page. careers.musc.edu and web.musc.edu/careers are other MUSC entry points for enrichment to probe. Regional MUSC Health hospitals post under the same MUSC Health board.",
+      "careers_notes": "muschealth.org/careers redirected to musc.career-pages.com in an earlier session; underlying ATS not identified, so the search URL is the base page. careers.musc.edu and web.musc.edu/careers are other MUSC entry points for enrichment to probe. Regional MUSC Health hospitals post under the same MUSC Health board. [enrich 2026-10-20] careers_url -> HTTP 202 at https://musc.career-pages.com/; search_url -> HTTP 202, mentions NP: False, job links: 0",
       "ats_config": {
         "host": "musc.career-pages.com"
       },
@@ -2050,7 +2322,8 @@
       ],
       "notes": "beds left null because the Wikipedia list gives a range (199 to 225). Included only because the caller listed it; no qualifying pediatric service confirmed. Check for a new MUSC Indian Land hospital campus.",
       "confidence": "low",
-      "active": true
+      "active": true,
+      "_enrich": {}
     }
   ]
 }

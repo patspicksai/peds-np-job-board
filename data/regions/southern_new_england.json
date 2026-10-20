@@ -19,7 +19,7 @@
       "careers_url": "https://jobs.bostonchildrens.org/job-search-results/",
       "careers_platform": "custom",
       "careers_search_url": "https://jobs.bostonchildrens.org/job-search-results/?keyword=nurse%20practitioner",
-      "careers_notes": "jobs.bostonchildrens.org is a WordPress career site (Findly/Radancy CWS widget; og:url bostonchildrens.site.findly.com) whose search box uses name=keyword. Applications run on IBM Kenexa BrassRing (sjobs.brassring.com/TGnewUI/Search/Home/Home?partnerid=368&siteid=5205). A cached browser render of the keyword search showed about 12 NP titles (CICU, MSICU, Inpatient Medicine, Complex Care, Critical Care Float Pool, Hem/Onc, Pediatric Intermediate Care Unit), but the plain HTML response contained none, so listings are JS-rendered: use a headless browser or the BrassRing search. Direct WebFetch of the site was blocked this session.",
+      "careers_notes": "jobs.bostonchildrens.org is a WordPress career site (Findly/Radancy CWS widget; og:url bostonchildrens.site.findly.com) whose search box uses name=keyword. Applications run on IBM Kenexa BrassRing (sjobs.brassring.com/TGnewUI/Search/Home/Home?partnerid=368&siteid=5205). A cached browser render of the keyword search showed about 12 NP titles (CICU, MSICU, Inpatient Medicine, Complex Care, Critical Care Float Pool, Hem/Onc, Pediatric Intermediate Care Unit), but the plain HTML response contained none, so listings are JS-rendered: use a headless browser or the BrassRing search. Direct WebFetch of the site was blocked this session. [enrich 2026-10-20] careers_url -> HTTP 200 at https://jobs.bostonchildrens.org/job-search-results/; search_url -> HTTP 200, mentions NP: False, job links: 0",
       "ats_config": {
         "host": "jobs.bostonchildrens.org",
         "frontend": "Findly/Radancy CWS (WordPress)",
@@ -66,7 +66,15 @@
         "Harvard Medical School primary pediatric teaching hospital",
         "Network of community hospital pediatric programs across Massachusetts"
       ],
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/5/5b/Tch-boston.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original",
+          "caption": "Boston Children's Hospital",
+          "credit": "JosephBarillari at en.wikipedia",
+          "license": "CC BY-SA 3.0",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Tch-boston.jpg"
+        }
+      ],
       "wikipedia_title": "Boston Children's Hospital",
       "sources": [
         "https://en.wikipedia.org/wiki/Boston_Children%27s_Hospital",
@@ -75,7 +83,14 @@
       ],
       "notes": "Very large NP workforce, with frequent postings for inpatient medicine, ICU (PICU, CICU, MSICU), float pool and subspecialty NP or PA roles. Boston Children's also staffs pediatric inpatient units and nurseries at community hospitals (South Shore, Winchester, Cape Cod, St. Luke's New Bedford and others), and those roles are posted on the Boston Children's board. Acquired Franciscan Children's in 2023.",
       "confidence": "high",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "Boston Children's Hospital",
+          "url": "https://en.wikipedia.org/wiki/Boston_Children%27s_Hospital",
+          "extract": "Boston Children's Hospital (formerly known as Children's Hospital Boston until 2013) is the main pediatric training and research hospital of Harvard Medical School, Harvard University. It is a nationally ranked, freestanding acute care children's hospital located at the centre of Longwood Medical and Academic Area\nin Boston, Massachusetts. The hospital is home to the world's largest pediatric research enterprise, and it is the leading recipient of pediatric research funding from the National Institutes of Health (NIH). It provides comprehensive pediatric specialties and subspecialties to infants, children, teens, and young adults aged 0–21 throughout Massachusetts, the United States, and the world. The hospital also sometimes treats adults that require pediatric care. The hospital uses the Brigham and Women's Hospital's rooftop helipad and is an ACS verified level I pediatric trauma center, one of three in Boston. The hospital features a regional pediatric intensive-care unit and an American Academy of Pediatrics verified level IV neonatal intensive care unit.\nBoston Children's Hospital has been ranked as best pediatric medical center by U.S. News & World Report more times than any other hospital and is currently ranked as the best children's hospital in the United States. Its research enterprise is the world's largest and most highly funded pediatric hospital. In the 2022 fiscal year, it received more funding from the NIH than any other children's hospital in the nation. Boston Children's Hospital was ranked #1 in U.S. News & World Report's 2024–25 Best Children’s Hospitals Honor Roll, marking its tenth consecutive year in the #1 position. The hospital was also rated #1 in the 2025 \"World's Best Specialized Hospitals\" list for pediatrics by Newsweek."
+        }
+      }
     },
     {
       "slug": "mass-general-for-children-boston",
@@ -95,7 +110,7 @@
       "careers_url": "https://jobs.massgeneralbrigham.org/",
       "careers_platform": "unknown",
       "careers_search_url": null,
-      "careers_notes": "Mass General Brigham posts all jobs on jobs.massgeneralbrigham.org; the fetch was blocked this session so the platform and query parameter are unconfirmed. Filter for Mass General for Children or MGH pediatric units.",
+      "careers_notes": "Mass General Brigham posts all jobs on jobs.massgeneralbrigham.org; the fetch was blocked this session so the platform and query parameter are unconfirmed. Filter for Mass General for Children or MGH pediatric units. [enrich 2026-10-20] careers_url -> HTTP None at None",
       "ats_config": {
         "host": "jobs.massgeneralbrigham.org"
       },
@@ -131,7 +146,15 @@
         "Harvard Medical School teaching hospital",
         "Only children's hospital in Mass General Brigham"
       ],
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/6/6e/Massachusetts_General_Hospital_main_entrance.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original",
+          "caption": "Massachusetts General Hospital",
+          "credit": "Kenneth C. Zirkel",
+          "license": "CC BY 4.0",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Massachusetts_General_Hospital_main_entrance.jpg"
+        }
+      ],
       "wikipedia_title": "Massachusetts General Hospital",
       "sources": [
         "https://en.wikipedia.org/wiki/Massachusetts_General_Hospital",
@@ -141,7 +164,14 @@
       ],
       "notes": "NICU level conflicts between sources (Level IV per MGH med-peds page, Level III with 18 to 31 beds per older directories). Recorded as 4. Mass General Brigham operates a large Boston-area NP workforce; pediatric NP roles may also be posted for Newton-Wellesley, Salem and other MGB hospitals.",
       "confidence": "medium",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "Massachusetts General Hospital",
+          "url": "https://en.wikipedia.org/wiki/Massachusetts_General_Hospital",
+          "extract": "Massachusetts General Hospital (Mass General or MGH) is a teaching hospital located in the West End neighborhood of Boston, Massachusetts. It is the original and largest clinical education and research facility of Harvard Medical School/Harvard University, and houses the world's largest hospital-based research program with an annual research budget of more than $1.2 billion in 2021. It is the third-oldest general hospital in the United States with a patient capacity of 999 beds. Along with Brigham and Women's Hospital, Mass General is a founding member of Mass General Brigham, formerly known as Partners HealthCare, the largest healthcare provider in Massachusetts."
+        }
+      }
     },
     {
       "slug": "boston-medical-center-boston",
@@ -159,9 +189,9 @@
       "hotspot": false,
       "website": "https://www.bmc.org",
       "careers_url": "https://careers.bmc.org/jobs/search",
-      "careers_platform": "unknown",
+      "careers_platform": "workday",
       "careers_search_url": "https://careers.bmc.org/jobs/search?page=1&query=nurse%20practitioner",
-      "careers_notes": "BMC Health System careers at careers.bmc.org/jobs/search with a query= keyword parameter (and dropdown_field_3_uids[] entity filter, seen on BMC Brighton page). Job detail pages look like /jobs/<slug>. Platform vendor unconfirmed and the search URL was not fetched (blocked).",
+      "careers_notes": "BMC Health System careers at careers.bmc.org/jobs/search with a query= keyword parameter (and dropdown_field_3_uids[] entity filter, seen on BMC Brighton page). Job detail pages look like /jobs/<slug>. Platform vendor unconfirmed and the search URL was not fetched (blocked). [enrich 2026-10-20] careers_url -> HTTP 200 at https://careers.bmc.org/jobs/search; ATS link seen: https://bmc.wd1.myworkdayjobs.com/en-US/BMC/login; search_url -> HTTP 200, mentions NP: True, job links: 13",
       "ats_config": {
         "host": "careers.bmc.org",
         "search_path": "/jobs/search",
@@ -207,7 +237,14 @@
       ],
       "notes": "Named one of the five Massachusetts academic pediatric centers. BMC Health System also owns BMC Brighton (Level III NICU) and BMC South in Brockton. PICU status not confirmed from a page read this session, so picu is recorded false.",
       "confidence": "medium",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "Boston Medical Center",
+          "url": "https://en.wikipedia.org/wiki/Boston_Medical_Center",
+          "extract": "Boston Medical Center (BMC) is a non-profit 514-bed academic medical center and safety-net hospital in the South End neighborhood of Boston. As part of the Boston Medical Center Health System, the hospital provides primary and specialty care to residents of the Greater Boston area. It is also the principal teaching hospital of Boston University Chobanian & Avedisian School of Medicine and home to 66 residency and fellowship training programs."
+        }
+      }
     },
     {
       "slug": "tufts-medical-center-boston",
@@ -227,7 +264,7 @@
       "careers_url": "https://careers.tuftsmedicine.org/us/en",
       "careers_platform": "phenom",
       "careers_search_url": "https://careers.tuftsmedicine.org/us/en/search-results?keywords=nurse%20practitioner",
-      "careers_notes": "Tufts Medicine careers site careers.tuftsmedicine.org/us/en (linked from tuftsmedicine.org). The /us/en path matches the Phenom pattern; the search URL follows the Phenom search-results?keywords= convention and was not fetched (blocked), so rendering is untested. Covers Tufts MC, Lowell General, MelroseWakefield and Lawrence Memorial.",
+      "careers_notes": "Tufts Medicine careers site careers.tuftsmedicine.org/us/en (linked from tuftsmedicine.org). The /us/en path matches the Phenom pattern; the search URL follows the Phenom search-results?keywords= convention and was not fetched (blocked), so rendering is untested. Covers Tufts MC, Lowell General, MelroseWakefield and Lawrence Memorial. [enrich 2026-10-20] careers_url -> HTTP 200 at https://careers.tuftsmedicine.org/us/en; search_url -> HTTP 200, mentions NP: True, job links: 0",
       "ats_config": {
         "host": "careers.tuftsmedicine.org",
         "locale_path": "/us/en"
@@ -257,7 +294,15 @@
         "Flagship of Tufts Medicine (with Lowell General and MelroseWakefield)",
         "Inpatient pediatrics ended July 2022; pediatric patients referred to Boston Children's"
       ],
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/f/f3/Tufts_Medical_Center_%2854954430528%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original",
+          "caption": "Tufts Medical Center",
+          "credit": "Wikimedia Commons",
+          "license": "see source page",
+          "source_page": "https://en.wikipedia.org/wiki/Tufts_Medical_Center"
+        }
+      ],
       "wikipedia_title": "Tufts Medical Center",
       "sources": [
         "https://en.wikipedia.org/wiki/Tufts_Medical_Center",
@@ -268,7 +313,14 @@
       ],
       "notes": "Included for the NICU only. No general pediatric floor or PICU since 2022. Relevant for neonatal or newborn roles, not for a pediatric hospitalist or PICU NP search.",
       "confidence": "medium",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "Tufts Medical Center",
+          "url": "https://en.wikipedia.org/wiki/Tufts_Medical_Center",
+          "extract": "Tufts Medical Center (until 2008 Tufts-New England Medical Center), a 15-building campus located in Boston, Massachusetts, is a downtown Boston hospital midway between Chinatown and the Boston Theater District.\nThe hospital is a community-based full service medical center. It is also the principal teaching hospital for Tufts University School of Medicine and the Tufts University School of Dental Medicine, where all full-time Tufts physicians hold faculty appointments. Tufts Medical Center was formerly subdivided into a full-service adult hospital and the Tufts Children's Hospital, the latter of which closed in 2022.\nThe hospital is an integrated part of Tufts Medicine, which also includes Lowell General Hospital, MelroseWakefield Hospital, Lawrence Memorial Hospital of Medford (part of MelroseWakefield), home health services, and physician networks.\nTufts Medical Center's Interim President is Phil Okala. Tufts Medical Center also has satellite locations in the suburbs of Quincy, Chelmsford, Framingham, among others. It is also a major center for bio-medical research."
+        }
+      }
     },
     {
       "slug": "beth-israel-deaconess-boston",
@@ -288,7 +340,7 @@
       "careers_url": "https://jobs.bilh.org/jobs/",
       "careers_platform": "workday",
       "careers_search_url": "https://jobs.bilh.org/jobs/?q=nurse%20practitioner&sort=date_desc",
-      "careers_notes": "BILH job site jobs.bilh.org (WordPress front end) renders listings server-side (fetched 2026-10-19: titles, facilities and Req IDs visible) with q= keyword, city= and sort= parameters. Apply links go to Workday at bilh.wd1.myworkdayjobs.com/External/job/<facility>/<title>_<JR id>/apply. A facility filter exists in the UI but its parameter was not exposed.",
+      "careers_notes": "BILH job site jobs.bilh.org (WordPress front end) renders listings server-side (fetched 2026-10-19: titles, facilities and Req IDs visible) with q= keyword, city= and sort= parameters. Apply links go to Workday at bilh.wd1.myworkdayjobs.com/External/job/<facility>/<title>_<JR id>/apply. A facility filter exists in the UI but its parameter was not exposed. [enrich 2026-10-20] careers_url -> HTTP 200 at https://jobs.bilh.org/jobs/; ATS link seen: https://bilh.wd1.myworkdayjobs.com/External/job/Mount-Auburn-Hospital/Interventional-Radiology-Technologist-40-Hours_JR88269/apply?utm_source=careersite&#038;utm_medium=apply&#038;utm_campaign=JR88269; search_url -> HTTP 200, mentions NP: True, job links: 51",
       "ats_config": {
         "host": "bilh.wd1.myworkdayjobs.com",
         "tenant": "bilh",
@@ -320,7 +372,15 @@
         "Harvard Medical School teaching hospital",
         "Top-three independent teaching hospital for NIH funding"
       ],
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/5/5f/Beth_Israel_Deaconess_Medical_Center_East_Campus.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original",
+          "caption": "Beth Israel Deaconess Medical Center",
+          "credit": "Tim Pierce",
+          "license": "CC BY 3.0",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Beth_Israel_Deaconess_Medical_Center_East_Campus.jpg"
+        }
+      ],
       "wikipedia_title": "Beth Israel Deaconess Medical Center",
       "sources": [
         "https://en.wikipedia.org/wiki/Beth_Israel_Deaconess_Medical_Center",
@@ -330,7 +390,14 @@
       ],
       "notes": "NICU only. Neonatal NP roles may be employed by Boston Children's (Newborn Medicine) rather than BIDMC.",
       "confidence": "medium",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "Beth Israel Deaconess Medical Center",
+          "url": "https://en.wikipedia.org/wiki/Beth_Israel_Deaconess_Medical_Center",
+          "extract": "Beth Israel Deaconess Medical Center (BIDMC) in Boston, Massachusetts, is a teaching hospital of Harvard Medical School and one of the founding members of Beth Israel Lahey Health. It was formed out of the 1996 merger of Beth Israel Hospital (founded in 1916 by the Jewish community) and New England Deaconess Hospital (founded in 1896 by Methodist deaconesses). Among independent teaching hospitals, Beth Israel Deaconess Medical Center has ranked in the top three recipients of biomedical research funding from the National Institutes of Health. Research funding totals nearly $200 million annually. BIDMC researchers run more than 850 active sponsored projects and 200 clinical trials. The Harvard-Thorndike General Clinical Research Center, the oldest clinical research laboratory in the United States, has been located on this site since 1973."
+        }
+      }
     },
     {
       "slug": "brigham-and-womens-boston",
@@ -350,7 +417,7 @@
       "careers_url": "https://jobs.massgeneralbrigham.org/",
       "careers_platform": "unknown",
       "careers_search_url": null,
-      "careers_notes": "Mass General Brigham posts all jobs on jobs.massgeneralbrigham.org; fetch blocked this session, so the platform and query parameter are unconfirmed.",
+      "careers_notes": "Mass General Brigham posts all jobs on jobs.massgeneralbrigham.org; fetch blocked this session, so the platform and query parameter are unconfirmed. [enrich 2026-10-20] careers_url -> HTTP None at None",
       "ats_config": {
         "host": "jobs.massgeneralbrigham.org"
       },
@@ -379,7 +446,15 @@
         "Co-founder of Mass General Brigham",
         "Shares Longwood campus with Boston Children's"
       ],
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/f/f5/Brigham_and_Women%E2%80%99s_Hospital_%2854954429093%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original",
+          "caption": "Brigham and Women's Hospital",
+          "credit": "ajay_suresh",
+          "license": "CC BY 4.0",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Brigham_and_Women%E2%80%99s_Hospital_(54954429093).jpg"
+        }
+      ],
       "wikipedia_title": "Brigham and Women's Hospital",
       "sources": [
         "https://en.wikipedia.org/wiki/Brigham_and_Women%27s_Hospital",
@@ -388,7 +463,14 @@
       ],
       "notes": "NICU only; relevant for neonatal NP roles.",
       "confidence": "medium",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "Brigham and Women's Hospital",
+          "url": "https://en.wikipedia.org/wiki/Brigham_and_Women%27s_Hospital",
+          "extract": "Brigham and Women's Hospital (BWH or The Brigham) is a teaching hospital of Harvard Medical School and the largest hospital in the Longwood Medical Area in Boston, Massachusetts. Along with Massachusetts General Hospital, it is one of the two founding members of Mass General Brigham, the largest healthcare provider in Massachusetts. Giles Boland, MD, serves as the hospital's current president.\nBrigham and Women's Hospital conducts the second largest hospital-based research program in the world, with an annual research budget of more than $630 million."
+        }
+      }
     },
     {
       "slug": "south-shore-hospital-weymouth",
@@ -406,9 +488,9 @@
       "hotspot": false,
       "website": "https://www.southshorehealth.org",
       "careers_url": "https://careers.southshorehealth.org",
-      "careers_platform": "unknown",
+      "careers_platform": "workday",
       "careers_search_url": null,
-      "careers_notes": "South Shore Health careers site careers.southshorehealth.org (linked from southshorehealth.org). Fetch was blocked this session, so the platform and query format are unconfirmed. Boston Children's-employed roles at South Shore post on the Boston Children's board instead.",
+      "careers_notes": "South Shore Health careers site careers.southshorehealth.org (linked from southshorehealth.org). Fetch was blocked this session, so the platform and query format are unconfirmed. Boston Children's-employed roles at South Shore post on the Boston Children's board instead. [enrich 2026-10-20] careers_url -> HTTP 200 at https://careers.southshorehealth.org/; ATS link seen: https://southshorehealth.wd5.myworkdayjobs.com/SSH_Careers/login",
       "ats_config": {
         "host": "careers.southshorehealth.org"
       },
@@ -450,7 +532,14 @@
       ],
       "notes": "Strong fit: community peds unit, peds ED and Level III NICU in one building, about 15 miles south of Boston. NICU and some pediatric clinicians are Boston Children's employees, so check both boards. Clinical affiliate of Brigham and Women's since 2004 (teaching flag set for that affiliation).",
       "confidence": "high",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "South Shore Hospital",
+          "url": "https://en.wikipedia.org/wiki/South_Shore_Hospital",
+          "extract": "South Shore Hospital is a 396-bed hospital located in Weymouth, Massachusetts. It is the only community hospital within the state that operates a Level III neonatal intensive care unit. It is also one of two hospitals in Massachusetts with a Level II designation for adults."
+        }
+      }
     },
     {
       "slug": "beverly-hospital-beverly",
@@ -470,7 +559,7 @@
       "careers_url": "https://jobs.bilh.org/jobs/",
       "careers_platform": "workday",
       "careers_search_url": "https://jobs.bilh.org/jobs/?q=nurse%20practitioner&city=Beverly&sort=date_desc",
-      "careers_notes": "BILH job site jobs.bilh.org renders server-side with q= and city= parameters (fetched 2026-10-19); apply links go to Workday bilh.wd1.myworkdayjobs.com/External. Beverly postings show facility Beverly Hospital. The city=Beverly filter value is assumed from the City dropdown and was not tested.",
+      "careers_notes": "BILH job site jobs.bilh.org renders server-side with q= and city= parameters (fetched 2026-10-19); apply links go to Workday bilh.wd1.myworkdayjobs.com/External. Beverly postings show facility Beverly Hospital. The city=Beverly filter value is assumed from the City dropdown and was not tested. [enrich 2026-10-20] careers_url -> HTTP 200 at https://jobs.bilh.org/jobs/; ATS link seen: https://bilh.wd1.myworkdayjobs.com/External/job/Mount-Auburn-Hospital/Interventional-Radiology-Technologist-40-Hours_JR88269/apply?utm_source=careersite&#038;utm_medium=apply&#038;utm_campaign=JR88269; search_url -> HTTP 200, mentions NP: True, job links: 6",
       "ats_config": {
         "host": "bilh.wd1.myworkdayjobs.com",
         "tenant": "bilh",
@@ -513,7 +602,8 @@
       ],
       "notes": "Bed count not confirmed from a page read this session. Pediatric clinicians may be Boston Children's employees.",
       "confidence": "medium",
-      "active": true
+      "active": true,
+      "_enrich": {}
     },
     {
       "slug": "winchester-hospital-winchester",
@@ -533,7 +623,7 @@
       "careers_url": "https://jobs.bilh.org/jobs/",
       "careers_platform": "workday",
       "careers_search_url": "https://jobs.bilh.org/jobs/?q=nurse%20practitioner&city=Winchester&sort=date_desc",
-      "careers_notes": "BILH job site jobs.bilh.org renders server-side with q= and city= parameters (fetched 2026-10-19; a Winchester Hospital posting appeared in results); apply links go to Workday bilh.wd1.myworkdayjobs.com/External.",
+      "careers_notes": "BILH job site jobs.bilh.org renders server-side with q= and city= parameters (fetched 2026-10-19; a Winchester Hospital posting appeared in results); apply links go to Workday bilh.wd1.myworkdayjobs.com/External. [enrich 2026-10-20] careers_url -> HTTP 200 at https://jobs.bilh.org/jobs/; ATS link seen: https://bilh.wd1.myworkdayjobs.com/External/job/Mount-Auburn-Hospital/Interventional-Radiology-Technologist-40-Hours_JR88269/apply?utm_source=careersite&#038;utm_medium=apply&#038;utm_campaign=JR88269; search_url -> HTTP 200, mentions NP: True, job links: 6",
       "ats_config": {
         "host": "bilh.wd1.myworkdayjobs.com",
         "tenant": "bilh",
@@ -566,7 +656,15 @@
         "206 beds",
         "Part of Beth Israel Lahey Health"
       ],
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/8/83/Winchester_Hospital%2C_Winchester_MA.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original",
+          "caption": "Winchester Hospital",
+          "credit": "John Phelan",
+          "license": "CC BY-SA 4.0",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Winchester_Hospital,_Winchester_MA.jpg"
+        }
+      ],
       "wikipedia_title": "Winchester Hospital",
       "sources": [
         "https://en.wikipedia.org/wiki/Winchester_Hospital",
@@ -576,7 +674,14 @@
       ],
       "notes": "Pediatric ED and nursery clinicians are largely Boston Children's employees; check the Boston Children's board too.",
       "confidence": "high",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "Winchester Hospital",
+          "url": "https://en.wikipedia.org/wiki/Winchester_Hospital",
+          "extract": "Winchester Hospital located in Winchester, Massachusetts is a notable hospital in northwest suburb of the city of Boston, United States. It is affiliated with Beth Israel Lahey Health. The hospital provides inpatient service and integrated home care to the population residing in Winchester, Woburn, Reading, Wilmington, North Reading, Stoneham, Burlington, Billerica, Medford, Malden, Wakefield, Tewksbury and several other surrounding communities."
+        }
+      }
     },
     {
       "slug": "lowell-general-hospital-lowell",
@@ -596,7 +701,7 @@
       "careers_url": "https://careers.tuftsmedicine.org/us/en",
       "careers_platform": "phenom",
       "careers_search_url": "https://careers.tuftsmedicine.org/us/en/search-results?keywords=nurse%20practitioner",
-      "careers_notes": "Tufts Medicine careers site careers.tuftsmedicine.org/us/en (linked from the Lowell General pediatrics page). The /us/en path matches Phenom; the search URL uses the Phenom keywords convention and was not fetched (blocked). Filter to Lowell General Hospital.",
+      "careers_notes": "Tufts Medicine careers site careers.tuftsmedicine.org/us/en (linked from the Lowell General pediatrics page). The /us/en path matches Phenom; the search URL uses the Phenom keywords convention and was not fetched (blocked). Filter to Lowell General Hospital. [enrich 2026-10-20] careers_url -> HTTP 200 at https://careers.tuftsmedicine.org/us/en; search_url -> HTTP 200, mentions NP: True, job links: 0",
       "ats_config": {
         "host": "careers.tuftsmedicine.org",
         "locale_path": "/us/en"
@@ -627,7 +732,15 @@
         "Level III adult trauma center",
         "445 beds across two Lowell campuses"
       ],
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/f/f7/Lowell_General_Hospital_in_Lowell_Massachusetts_MA_USA.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original",
+          "caption": "Lowell General Hospital",
+          "credit": "Swampyank",
+          "license": "CC BY-SA 4.0",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Lowell_General_Hospital_in_Lowell_Massachusetts_MA_USA.jpg"
+        }
+      ],
       "wikipedia_title": "Lowell General Hospital",
       "sources": [
         "https://en.wikipedia.org/wiki/Lowell_General_Hospital",
@@ -638,7 +751,14 @@
       ],
       "notes": "Tufts Medicine has advertised pediatric hospitalist roles across its community hospital locations, including Lowell. Wikipedia gives two bed counts (445 and 407).",
       "confidence": "medium",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "Lowell General Hospital",
+          "url": "https://en.wikipedia.org/wiki/Lowell_General_Hospital",
+          "extract": "Founded in 1891, Lowell General Hospital is an independent, not-for-profit community hospital serving the Greater Lowell area and surrounding communities. With two primary campuses located in Lowell, Massachusetts, Lowell General Hospital offers a full range of medical and surgical services for patients. Lowell General Hospital is a member of the Voluntary Hospitals of America. Lowell General is affiliated with Tufts Medicine in Boston."
+        }
+      }
     },
     {
       "slug": "melrosewakefield-hospital-melrose",
@@ -658,7 +778,7 @@
       "careers_url": "https://careers.tuftsmedicine.org/us/en",
       "careers_platform": "phenom",
       "careers_search_url": "https://careers.tuftsmedicine.org/us/en/search-results?keywords=nurse%20practitioner",
-      "careers_notes": "Tufts Medicine careers site careers.tuftsmedicine.org/us/en (Phenom-style path). Search URL not fetched (blocked). Filter to MelroseWakefield Hospital.",
+      "careers_notes": "Tufts Medicine careers site careers.tuftsmedicine.org/us/en (Phenom-style path). Search URL not fetched (blocked). Filter to MelroseWakefield Hospital. [enrich 2026-10-20] careers_url -> HTTP 200 at https://careers.tuftsmedicine.org/us/en; search_url -> HTTP 200, mentions NP: True, job links: 0",
       "ats_config": {
         "host": "careers.tuftsmedicine.org",
         "locale_path": "/us/en"
@@ -687,7 +807,15 @@
         "Tufts University School of Medicine affiliate",
         "Site of the world's first cochlear implant"
       ],
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/3/31/Melrosewakefieldhospital.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original",
+          "caption": "MelroseWakefield Hospital",
+          "credit": "Grk1011 (talk)",
+          "license": "CC BY-SA 3.0",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Melrosewakefieldhospital.jpg"
+        }
+      ],
       "wikipedia_title": "MelroseWakefield Hospital",
       "sources": [
         "https://en.wikipedia.org/wiki/MelroseWakefield_Hospital",
@@ -696,7 +824,14 @@
       ],
       "notes": "Included for the Level II nursery. Wikipedia gives two bed counts (150 and 174).",
       "confidence": "medium",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "MelroseWakefield Hospital",
+          "url": "https://en.wikipedia.org/wiki/MelroseWakefield_Hospital",
+          "extract": "MelroseWakefield Hospital is a 174-bed non-profit hospital located in Melrose, Massachusetts.  MelroseWakefield Hospital and Lawrence Memorial Hospital of Medford function as one hospital entity with two campus locations. The MelroseWakefield Hospital campus provides many different areas of inpatient patient care including general surgery, interventional cardiovascular services, gynecology, maternity, special care nursery, orthopedics, and urology. It also offers outpatient care such as same day surgery, endoscopy, imaging and emergency services as well as serving as the region's Level III Trauma Center.\nMelroseWakefield Hospital was home to the world's first cochlear implant and laser surgery and it was among the first hospitals in the country to offer same day surgery. It is also among the top 10% of hospitals in the nation for stroke care and the top 15% in the nation for heart attack treatment.\nFollowing a failed merger attempt with Boston-based Partners HealthCare, MelroseWakefield's parent company Hallmark Health announced in June 2016 that it was seeking approval to merge with Wellforce, the operator of Tufts Medical Center in Boston and Lowell General Hospital in Lowell. As a result of the merger, Melrose-Wakefield Hospital was renamed to remove the hyphen in its name and its former parent company Hallmark Health was renamed MelroseWakefield Healthcare, a member of Wellforce.\nWellforce became Tufts Medicine on March 1, 2022. The Tufts Medicine name was selected to better reflect the system’s shared identity, its close relationship with Tufts University, and its commitment to unite the best of both academic and community health care and deliver a complete connected care experience when, where and how consumers want it.\nToday it is an integrated part of the Tufts Medicine health system of which in addition to MelroseWakefield Hospital and Lawrence Memorial Hospital, includes the Lowell General Hospital and Tufts Medical Center, home health services, and physician offices and a clinically integrated care delivery network.\nMelroseWakefield Hospital also has satellite locations in Medford, Reading, Stoneham, and Wakefield."
+        }
+      }
     },
     {
       "slug": "lawrence-hospital-lawrence",
@@ -716,7 +851,7 @@
       "careers_url": "https://pm.healthcaresource.com/CS/lawrence/#/search",
       "careers_platform": "custom",
       "careers_search_url": "https://pm.healthcaresource.com/CS/lawrence/#/search",
-      "careers_notes": "Lawrence Hospital (Merrimack Health) jobs are on HealthcareSource (now Symplr) at pm.healthcaresource.com/CS/lawrence, linked from mhlawrencehospital.org/careers. The search is a hash-routed JS app, so no keyword can be encoded in the URL. Fetch of the board was blocked this session; Methuen and Haverhill (former Holy Family) may still post elsewhere.",
+      "careers_notes": "Lawrence Hospital (Merrimack Health) jobs are on HealthcareSource (now Symplr) at pm.healthcaresource.com/CS/lawrence, linked from mhlawrencehospital.org/careers. The search is a hash-routed JS app, so no keyword can be encoded in the URL. Fetch of the board was blocked this session; Methuen and Haverhill (former Holy Family) may still post elsewhere. [enrich 2026-10-20] careers_url -> HTTP 200 at https://pm.healthcaresource.com/CS/lawrence/#/search; search_url -> HTTP 200, mentions NP: False, job links: 0",
       "ats_config": {
         "host": "pm.healthcaresource.com",
         "vendor": "HealthcareSource (Symplr)",
@@ -760,7 +895,8 @@
       ],
       "notes": "Pediatric hospitalists are Tufts (Floating) clinicians, so NP roles may post on the Tufts Medicine board. Merrimack Health removed unused pediatric beds from Methuen (20) and Haverhill (7) in its 2026 filing; only Lawrence keeps inpatient pediatrics.",
       "confidence": "high",
-      "active": true
+      "active": true,
+      "_enrich": {}
     },
     {
       "slug": "newton-wellesley-hospital-newton",
@@ -780,7 +916,7 @@
       "careers_url": "https://jobs.massgeneralbrigham.org/",
       "careers_platform": "unknown",
       "careers_search_url": null,
-      "careers_notes": "Mass General Brigham posts jobs on jobs.massgeneralbrigham.org; fetch blocked this session, so the platform and query parameter are unconfirmed. Filter to Newton-Wellesley Hospital.",
+      "careers_notes": "Mass General Brigham posts jobs on jobs.massgeneralbrigham.org; fetch blocked this session, so the platform and query parameter are unconfirmed. Filter to Newton-Wellesley Hospital. [enrich 2026-10-20] careers_url -> HTTP None at None",
       "ats_config": {
         "host": "jobs.massgeneralbrigham.org"
       },
@@ -811,7 +947,15 @@
         "Harvard and Tufts teaching affiliations",
         "273 beds"
       ],
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/2/2b/Newton_Wellesley_Hospital.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original",
+          "caption": "Newton-Wellesley Hospital",
+          "credit": "Meggiepc9",
+          "license": "CC BY 3.0",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Newton_Wellesley_Hospital.JPG"
+        }
+      ],
       "wikipedia_title": "Newton-Wellesley Hospital",
       "sources": [
         "https://en.wikipedia.org/wiki/Newton-Wellesley_Hospital",
@@ -821,7 +965,14 @@
       ],
       "notes": "Good fit for a pediatric hospitalist NP within Mass General Brigham. No dedicated pediatric ED confirmed.",
       "confidence": "high",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "Newton-Wellesley Hospital",
+          "url": "https://en.wikipedia.org/wiki/Newton-Wellesley_Hospital",
+          "extract": "Newton-Wellesley Hospital (NWH) is a community teaching medical center located in Newton, Massachusetts on Washington Street. It is affiliated with Tufts University School of Medicine and Harvard Medical School.  Founded in 1881, part of its campus is listed on the National Register of Historic Places as the Newton Cottage Hospital Historic District.\nIt is a member of Mass General Brigham, a network founded by Massachusetts General Hospital and Brigham and Women’s Hospital. The hospital offers a range of medical, surgical, and specialty care, including maternity services, a 24-hour emergency department, and orthopedic, critical care, and oncology inpatient units."
+        }
+      }
     },
     {
       "slug": "salem-hospital-salem",
@@ -841,7 +992,7 @@
       "careers_url": "https://jobs.massgeneralbrigham.org/",
       "careers_platform": "unknown",
       "careers_search_url": null,
-      "careers_notes": "Mass General Brigham posts jobs on jobs.massgeneralbrigham.org; fetch blocked this session, so the platform and query parameter are unconfirmed. Filter to Salem Hospital.",
+      "careers_notes": "Mass General Brigham posts jobs on jobs.massgeneralbrigham.org; fetch blocked this session, so the platform and query parameter are unconfirmed. Filter to Salem Hospital. [enrich 2026-10-20] careers_url -> HTTP None at None",
       "ats_config": {
         "host": "jobs.massgeneralbrigham.org"
       },
@@ -881,7 +1032,14 @@
       ],
       "notes": "Fit for pediatric ED or newborn roles only; no pediatric floor since 2017.",
       "confidence": "medium",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "Salem Hospital (Massachusetts)",
+          "url": "https://en.wikipedia.org/wiki/Salem_Hospital_(Massachusetts)",
+          "extract": "Salem Hospital, formerly known as North Shore Medical Center, is a Level III trauma center located in Salem, Massachusetts. A member of Mass General Brigham since 1996, it offers comprehensive medical and surgical services and includes emergency/trauma departments and a birthplace. It includes Salem Hospital and the Mass General Brigham Healthcare Center in Lynn, as well as outpatient care and urgent care. The Medical Staff includes nearly 800 affiliated physicians representing primary care, family practice and 50 additional sub-specialties. It is affiliated with Tufts University School of Medicine.\nSalem Hospital is a general medical and surgical hospital which had 199 licensed beds as of 2023, with plans to expand to 212 by early 2024. The hospital had 19,467 admissions in the latest year for which data are available. It performed 4,409 annual inpatient and 7,955 outpatient surgeries. Its emergency department had 90,149 visits for 2012.  A helipad at Salem Hospital is a helicopter transportation hub, with multiple daily flights to hospitals all over Boston."
+        }
+      }
     },
     {
       "slug": "emerson-hospital-concord",
@@ -901,7 +1059,7 @@
       "careers_url": "https://emersonhealth.org/careers/careers-search/",
       "careers_platform": "custom",
       "careers_search_url": "https://emersonhealth.org/careers/careers-search/",
-      "careers_notes": "Emerson Health hosts job search on its own site (emersonhealth.org/careers/careers-search/); fetched 2026-10-19, listings render server-side as embedded JSON (10 per page, titles, departments, salary ranges). Keyword parameter name not exposed in links. Job detail pages /jobs/<slug>-<id>/. Previous-applicant login points to HealthcareSource (pm.healthcaresource.com/CS/emerson), which is the likely back-end ATS.",
+      "careers_notes": "Emerson Health hosts job search on its own site (emersonhealth.org/careers/careers-search/); fetched 2026-10-19, listings render server-side as embedded JSON (10 per page, titles, departments, salary ranges). Keyword parameter name not exposed in links. Job detail pages /jobs/<slug>-<id>/. Previous-applicant login points to HealthcareSource (pm.healthcaresource.com/CS/emerson), which is the likely back-end ATS. [enrich 2026-10-20] careers_url -> HTTP 200 at https://emersonhealth.org/careers/careers-search/; search_url -> HTTP 200, mentions NP: True, job links: 0",
       "ats_config": {
         "host": "emersonhealth.org",
         "search_path": "/careers/careers-search/",
@@ -933,7 +1091,15 @@
         "179 beds",
         "$100 million campus renovation under way (2026)"
       ],
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/7/75/Emerson_Hospital%2C_Concord_MA.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original",
+          "caption": "Emerson Hospital",
+          "credit": "John Phelan",
+          "license": "CC BY 3.0",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Emerson_Hospital,_Concord_MA.jpg"
+        }
+      ],
       "wikipedia_title": "Emerson Hospital",
       "sources": [
         "https://en.wikipedia.org/wiki/Emerson_Hospital",
@@ -944,7 +1110,14 @@
       ],
       "notes": "No general pediatric inpatient unit confirmed; the in-house pediatric hospitalist covers the nursery and may cover pediatric admissions or the ED.",
       "confidence": "medium",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "Emerson Hospital",
+          "url": "https://en.wikipedia.org/wiki/Emerson_Hospital",
+          "extract": "Emerson Hospital is a hospital located in Concord, Massachusetts. It was founded in 1911 on 40 acres (16 ha) donated by Charles Emerson, a nephew of Ralph Waldo Emerson. It is a full-service, nonprofit community hospital and acute care medical center with 179 beds (as of 2023), providing advanced medical services to more than 300,000 individuals in 25 towns."
+        }
+      }
     },
     {
       "slug": "mount-auburn-hospital-cambridge",
@@ -964,7 +1137,7 @@
       "careers_url": "https://jobs.bilh.org/mount-auburn-hospital",
       "careers_platform": "workday",
       "careers_search_url": "https://jobs.bilh.org/jobs/?q=nurse%20practitioner&city=Cambridge&sort=date_desc",
-      "careers_notes": "Mount Auburn's careers page links to jobs.bilh.org/mount-auburn-hospital and jobs.bilh.org. The BILH front end renders server-side (q=, city= params); apply links go to Workday bilh.wd1.myworkdayjobs.com/External. Mount Auburn postings appeared in a 2026-10-19 fetch.",
+      "careers_notes": "Mount Auburn's careers page links to jobs.bilh.org/mount-auburn-hospital and jobs.bilh.org. The BILH front end renders server-side (q=, city= params); apply links go to Workday bilh.wd1.myworkdayjobs.com/External. Mount Auburn postings appeared in a 2026-10-19 fetch. [enrich 2026-10-20] careers_url -> HTTP 200 at https://jobs.bilh.org/locations/mount-auburn-hospital/; ATS link seen: https://jobs-joslin.icims.com/jobs/intro; search_url -> HTTP 200, mentions NP: True, job links: 12",
       "ats_config": {
         "host": "bilh.wd1.myworkdayjobs.com",
         "tenant": "bilh",
@@ -998,7 +1171,15 @@
         "About 250 beds",
         "U.S. News high performing in several adult conditions"
       ],
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/3/36/Mount_Auburn_Hospital.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original",
+          "caption": "Mount Auburn Hospital",
+          "credit": "Wikimedia Commons",
+          "license": "see source page",
+          "source_page": "https://en.wikipedia.org/wiki/Mount_Auburn_Hospital"
+        }
+      ],
       "wikipedia_title": "Mount Auburn Hospital",
       "sources": [
         "https://en.wikipedia.org/wiki/Mount_Auburn_Hospital",
@@ -1008,7 +1189,14 @@
       ],
       "notes": "Newborn-only fit.",
       "confidence": "medium",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "Mount Auburn Hospital",
+          "url": "https://en.wikipedia.org/wiki/Mount_Auburn_Hospital",
+          "extract": "Mount Auburn Hospital (MAH) is a community hospital with a patient capacity of about 200 beds in Cambridge, Massachusetts. Its main campus is located at 330 Mount Auburn St, in the neighborhood of West Cambridge. It is an affiliated teaching hospital of Harvard Medical School."
+        }
+      }
     },
     {
       "slug": "boston-medical-center-brighton",
@@ -1026,9 +1214,9 @@
       "hotspot": false,
       "website": "https://www.bmchealthsystem.org/bmc-brighton",
       "careers_url": "https://careers.bmc.org/jobs/search?page=1&dropdown_field_3_uids%5B%5D=d81aa1febab5c3c902cac2b7acfd5651&query=",
-      "careers_platform": "unknown",
+      "careers_platform": "workday",
       "careers_search_url": "https://careers.bmc.org/jobs/search?page=1&dropdown_field_3_uids%5B%5D=d81aa1febab5c3c902cac2b7acfd5651&query=nurse%20practitioner",
-      "careers_notes": "Careers link from the BMC Brighton site is careers.bmc.org/jobs/search with entity filter dropdown_field_3_uids[]=d81aa1febab5c3c902cac2b7acfd5651 (presumably BMC Brighton) and query= keyword. Not fetched (blocked); vendor unconfirmed.",
+      "careers_notes": "Careers link from the BMC Brighton site is careers.bmc.org/jobs/search with entity filter dropdown_field_3_uids[]=d81aa1febab5c3c902cac2b7acfd5651 (presumably BMC Brighton) and query= keyword. Not fetched (blocked); vendor unconfirmed. [enrich 2026-10-20] careers_url -> HTTP 200 at https://careers.bmc.org/jobs/search?page=1&dropdown_field_3_uids%5B%5D=d81aa1febab5c3c902cac2b7acfd5651&query=; ATS link seen: https://bmc.wd1.myworkdayjobs.com/en-US/BMC/login; search_url -> HTTP 200, mentions NP: True, job links: 13",
       "ats_config": {
         "host": "careers.bmc.org",
         "search_path": "/jobs/search",
@@ -1070,7 +1258,14 @@
       ],
       "notes": "Explicitly employs neonatal NPs. NICU only, no pediatric floor.",
       "confidence": "high",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "Boston Medical Center",
+          "url": "https://en.wikipedia.org/wiki/Boston_Medical_Center",
+          "extract": "Boston Medical Center (BMC) is a non-profit 514-bed academic medical center and safety-net hospital in the South End neighborhood of Boston. As part of the Boston Medical Center Health System, the hospital provides primary and specialty care to residents of the Greater Boston area. It is also the principal teaching hospital of Boston University Chobanian & Avedisian School of Medicine and home to 66 residency and fellowship training programs."
+        }
+      }
     },
     {
       "slug": "boston-medical-center-south-brockton",
@@ -1088,9 +1283,9 @@
       "hotspot": false,
       "website": "https://www.bmchealthsystem.org/bmc-south",
       "careers_url": "https://careers.bmc.org/jobs/search",
-      "careers_platform": "unknown",
+      "careers_platform": "workday",
       "careers_search_url": "https://careers.bmc.org/jobs/search?page=1&query=nurse%20practitioner",
-      "careers_notes": "BMC Health System board careers.bmc.org (query= keyword); a BMC South entity filter id was not identified. Not fetched (blocked).",
+      "careers_notes": "BMC Health System board careers.bmc.org (query= keyword); a BMC South entity filter id was not identified. Not fetched (blocked). [enrich 2026-10-20] careers_url -> HTTP 200 at https://careers.bmc.org/jobs/search; ATS link seen: https://bmc.wd1.myworkdayjobs.com/en-US/BMC/login; search_url -> HTTP 200, mentions NP: True, job links: 13",
       "ats_config": {
         "host": "careers.bmc.org",
         "search_path": "/jobs/search",
@@ -1129,7 +1324,14 @@
       ],
       "notes": "Newborn-only fit. Brockton Hospital (Signature) across town has no maternity or pediatric unit since reopening in 2024.",
       "confidence": "medium",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "Boston Medical Center – South",
+          "url": "https://en.wikipedia.org/wiki/Boston_Medical_Center_%E2%80%93_South",
+          "extract": "Boston Medical Center – South (BMC South) (formerly Good Samaritan Medical Center) is a mid-size non-profit acute-care hospital located in Brockton, Massachusetts with auxiliary facilities in the neighboring town of Stoughton. BMC South is a part of Boston Medical Center Health System, a non-profit health care system which took over the hospital in 2024 from Steward Health Care, its previous operator, which was forced to sell its Massachusetts hospitals following its bankruptcy."
+        }
+      }
     },
     {
       "slug": "bid-plymouth-plymouth",
@@ -1149,7 +1351,7 @@
       "careers_url": "https://jobs.bilh.org/jobs/",
       "careers_platform": "workday",
       "careers_search_url": "https://jobs.bilh.org/jobs/?q=nurse%20practitioner&city=Plymouth&sort=date_desc",
-      "careers_notes": "BILH job site jobs.bilh.org renders server-side (q=, city=); apply links go to Workday bilh.wd1.myworkdayjobs.com/External.",
+      "careers_notes": "BILH job site jobs.bilh.org renders server-side (q=, city=); apply links go to Workday bilh.wd1.myworkdayjobs.com/External. [enrich 2026-10-20] careers_url -> HTTP 200 at https://jobs.bilh.org/jobs/; ATS link seen: https://bilh.wd1.myworkdayjobs.com/External/job/Mount-Auburn-Hospital/Interventional-Radiology-Technologist-40-Hours_JR88269/apply?utm_source=careersite&#038;utm_medium=apply&#038;utm_campaign=JR88269; search_url -> HTTP 200, mentions NP: True, job links: 6",
       "ats_config": {
         "host": "bilh.wd1.myworkdayjobs.com",
         "tenant": "bilh",
@@ -1178,15 +1380,30 @@
         "Part of Beth Israel Lahey Health",
         "Serves the Plymouth and upper Cape corridor"
       ],
-      "photos": [],
-      "wikipedia_title": null,
+      "photos": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/d/d8/Jordan_Hospital_Plymouth%2C_MA_Cropped_Version.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original",
+          "caption": "Beth Israel Deaconess Hospital – Plymouth",
+          "credit": "Raime",
+          "license": "CC BY-SA 3.0",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Jordan_Hospital_Plymouth,_MA_Cropped_Version.JPG"
+        }
+      ],
+      "wikipedia_title": "Beth Israel Deaconess Hospital – Plymouth",
       "sources": [
         "https://neonatologysolutions.com/neonatology-group/boston-childrens-division-of-newborn-medicine",
         "https://www.mass.gov/doc/acute-inpatient-hospitals/download"
       ],
       "notes": "Bed count not confirmed. Newborn-only fit.",
       "confidence": "low",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "Beth Israel Deaconess Hospital – Plymouth",
+          "url": "https://en.wikipedia.org/wiki/Beth_Israel_Deaconess_Hospital_%E2%80%93_Plymouth",
+          "extract": "Beth Israel Deaconess Hospital – Plymouth (formerly Jordan Hospital, often shortened as BID Plymouth) is a mid-sized non-profit community hospital located in Plymouth, Massachusetts. In 2022, the hospital had 187 licensed beds and reported 11,720 patient discharges and 42,367 emergency department visits.\nIn 1900, residents of Plymouth voted to establish a hospital in their community. The corporation formed to create the hospital received state charter the next year, and the hospital accepted its first patient in 1903. It was originally named Jordan Hospital in honor of Eben Jordan, a summer resident of Plymouth who donated $20,000 toward its establishment (equivalent to $774,000 in 2025). In 2013, Jordan Hospital joined the Beth Israel Deaconess health system, and the next year was renamed Beth Israel Deaconess Hospital – Plymouth."
+        }
+      }
     },
     {
       "slug": "sturdy-memorial-attleboro",
@@ -1206,7 +1423,7 @@
       "careers_url": "https://sturdymemorial.wd5.myworkdayjobs.com/Sturdy",
       "careers_platform": "workday",
       "careers_search_url": "https://sturdymemorial.wd5.myworkdayjobs.com/Sturdy?q=nurse%20practitioner",
-      "careers_notes": "Sturdy Health careers page links to Workday sturdymemorial.wd5.myworkdayjobs.com/Sturdy (provider link uses ?q=physician, so q= works). Workday pages are JS-rendered; use the Workday CXS API (/wday/cxs/sturdymemorial/Sturdy/jobs). Not fetched (blocked).",
+      "careers_notes": "Sturdy Health careers page links to Workday sturdymemorial.wd5.myworkdayjobs.com/Sturdy (provider link uses ?q=physician, so q= works). Workday pages are JS-rendered; use the Workday CXS API (/wday/cxs/sturdymemorial/Sturdy/jobs). Not fetched (blocked). [enrich 2026-10-20] careers_url -> HTTP 200 at https://sturdymemorial.wd5.myworkdayjobs.com/Sturdy; ATS link seen: https://sturdymemorial.wd5.myworkdayjobs.com/Sturdy; search_url -> HTTP 200, mentions NP: False, job links: 0",
       "ats_config": {
         "host": "sturdymemorial.wd5.myworkdayjobs.com",
         "tenant": "sturdymemorial",
@@ -1245,7 +1462,8 @@
       ],
       "notes": "Neonatal NPs here are likely Women & Infants (Care New England) employees. Commutable from Providence.",
       "confidence": "medium",
-      "active": true
+      "active": true,
+      "_enrich": {}
     },
     {
       "slug": "franciscan-childrens-brighton",
@@ -1265,7 +1483,7 @@
       "careers_url": "https://franciscanchildrens.org",
       "careers_platform": "unknown",
       "careers_search_url": null,
-      "careers_notes": "Franciscan Children's site fetch was blocked; careers page and platform not identified. Since the 2023 acquisition by Boston Children's parent, some roles may post on jobs.bostonchildrens.org.",
+      "careers_notes": "Franciscan Children's site fetch was blocked; careers page and platform not identified. Since the 2023 acquisition by Boston Children's parent, some roles may post on jobs.bostonchildrens.org. [enrich 2026-10-20] careers_url -> HTTP None at None",
       "ats_config": {
         "host": "franciscanchildrens.org"
       },
@@ -1297,7 +1515,15 @@
         "Kennedy Day School on campus",
         "Founded 1949 with Kennedy family funding"
       ],
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/6/6c/Franciscan_Hospital_for_Children_Allston-Brighton.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original",
+          "caption": "Franciscan Children's",
+          "credit": "Puchku",
+          "license": "CC BY-SA 3.0",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Franciscan_Hospital_for_Children_Allston-Brighton.JPG"
+        }
+      ],
       "wikipedia_title": "Franciscan Children's",
       "sources": [
         "https://en.wikipedia.org/wiki/Franciscan_Children%27s",
@@ -1306,7 +1532,14 @@
       ],
       "notes": "Fit for complex care, post-acute or behavioral health NP roles rather than acute ICU. Careers URL is the main site because the careers page was not confirmed.",
       "confidence": "medium",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "Franciscan Children's",
+          "url": "https://en.wikipedia.org/wiki/Franciscan_Children%27s",
+          "extract": "Franciscan Children's is a non-profit pediatric specialty hospital located in the Brighton neighborhood of Boston, Massachusetts. Founded in 1949, the facility provides inpatient and outpatient chronic care and rehabilitation services to pediatric patients. In 2022, the hospital had 112 staffed beds and operated with revenues of $78.7 million, at a profit of $0.1 million. It also offers mobile health services such as home care and school visits, and provides special education at its Kennedy Day School. Notably, it is the only rehabilitation facility in the region which accepts infants requiring ventilator support."
+        }
+      }
     },
     {
       "slug": "shriners-childrens-boston",
@@ -1324,10 +1557,12 @@
       "hotspot": false,
       "website": "https://www.shrinerschildrens.org/en/locations/boston",
       "careers_url": "https://www.shrinerschildrens.org/en/careers",
-      "careers_platform": "unknown",
+      "careers_platform": "workday",
       "careers_search_url": null,
-      "careers_notes": "Shriners Children's national careers site; URL and platform not verified this session (fetch blocked, search budget exhausted). Confirm before scraping and filter to Boston.",
-      "ats_config": {},
+      "careers_notes": "Shriners Children's national careers site; URL and platform not verified this session (fetch blocked, search budget exhausted). Confirm before scraping and filter to Boston. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.shrinerschildrens.org/en/careers; ATS link seen: https://shrinerschildrens.wd12.myworkdayjobs.com/Shriners",
+      "ats_config": {
+        "host": "www.shrinerschildrens.org"
+      },
       "nearest_airport": "BOS Logan International (15 to 25 min)",
       "beds": 9,
       "peds_beds": 9,
@@ -1364,7 +1599,14 @@
       ],
       "notes": "Small inpatient census. NP roles here are typically burn or surgical APPs. Careers URL is a placeholder for the national Shriners site and should be verified. Within about 150 m of MGH (different institution).",
       "confidence": "low",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "Shriners Hospitals for Children",
+          "url": "https://en.wikipedia.org/wiki/Shriners_Hospitals_for_Children",
+          "extract": "Shriners Hospitals for Children, commonly known as Shriners Children's and originally Shriners Hospitals for Crippled Children until 1996, is a network of non-profit children's hospitals and other pediatric medical facilities across North America. Children with orthopaedic conditions, burns, spinal cord injuries, and cleft lip and palate are eligible for care and receive all services in a family-centered environment, regardless of the patients' ability to pay. Care for children is usually provided until age 18, although in some cases, it may be extended to age 21.\nHeadquartered in Tampa, Florida, the hospitals are owned and operated by Shriners International, formally known as the Ancient Arabic Order of the Nobles of the Mystic Shrine, a Freemasonry-related organization whose members are known as Shriners. Patients are not required to have any familial affiliation with the Shriners order or Freemasonry. The hospitals' advertising campaign features the tagline \"Love to the Rescue.\""
+        }
+      }
     },
     {
       "slug": "pappas-rehabilitation-canton",
@@ -1384,8 +1626,10 @@
       "careers_url": "https://www.mass.gov/orgs/pappas-rehabilitation-hospital-for-children",
       "careers_platform": "unknown",
       "careers_search_url": null,
-      "careers_notes": "State-run (DPH) hospital; jobs would post on the Commonwealth of Massachusetts state jobs board. Not verified this session; careers_url is the hospital's mass.gov page.",
-      "ats_config": {},
+      "careers_notes": "State-run (DPH) hospital; jobs would post on the Commonwealth of Massachusetts state jobs board. Not verified this session; careers_url is the hospital's mass.gov page. [enrich 2026-10-20] careers_url -> HTTP 403 at https://www.mass.gov/orgs/pappas-rehabilitation-hospital-for-children",
+      "ats_config": {
+        "host": "www.mass.gov"
+      },
       "nearest_airport": "BOS Logan International (30 to 40 min)",
       "beds": null,
       "peds_beds": null,
@@ -1409,13 +1653,20 @@
         "Suburban campus in Canton"
       ],
       "photos": [],
-      "wikipedia_title": null,
+      "wikipedia_title": "List of hospitals in Massachusetts",
       "sources": [
         "https://en.wikipedia.org/wiki/List_of_hospitals_in_Massachusetts"
       ],
       "notes": "Low-volume niche option; included under the specialty pediatric rule. State employment.",
       "confidence": "low",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "List of hospitals in Massachusetts",
+          "url": "https://en.wikipedia.org/wiki/List_of_hospitals_in_Massachusetts",
+          "extract": "This is a list of current and former hospitals in the Commonwealth of Massachusetts, U.S. By default, the list is sorted alphabetically by name. This table also provides the hospital network of each hospital (if applicable), the city and county where it is located, whether or not it has an emergency department, when it was opened and closed, its current status, type, and former names.\n\nName: The most recent name of the hospital. Former names will be listed in the last column.\nLocation: The lowest level census designation of the hospital's most recent location.\nNetwork: The parent organization or government agency in charge of the hospital. For closed hospitals, the network will retain its name at the time of closure and will not be updated if the network changes its name (such as Union Hospital, listed as a Partners Healthcare hospital even though the network changed its name to Mass General Brigham after the hospital closed). Text will be italicized if the hospital is independent or if it is owned or operated by a public entity.\nEmergency Department: Indicates the presence of an emergency department, along with trauma designation if applicable. \"Former\" if the hospital used to have one.\nEMS Region: As defined by the Massachusetts Office of Emergency Medical Services. Will be filled even for facilities which predate region designations.\nOpened-Closed: The years of operation.\nOpened, when possible, specifically refers to the date on which the facility admitted its first patient.\nStatus / Type / Notes:\nStatus is in italics and is generally in reference to a hospital's inpatient operations: Active, Succeeded, or Closed. Marked \"Fate Unknown\" if the hospital is no longer in operation but it cannot be determined if it was closed or acquired.\nHospital type, when available, comes after Status. When applicable, the type will always reference data from the Massachusetts Center for Health Information and Analysis. As CHIA was formed in 2012, any hospitals which either closed before data was collected or which do not fall under its purview (such as federal facilities) will be given the most appropriate typing.\nNotes will encompass all other appropriate information, including former names.\nNote: Closures and opening dates, in the case where a hospital is acquired or merges with another, will be designated depending on how substantial the change is. For example, single hospitals purchased by a new entity will generally not be considered to have closed (such as Kindred Hospital Park View, originally Springfield Municipal Hospital, is considered for this list to have been open consistently since 1931), however simultaneous mergers of multiple hospitals may be considered as a closure of the old hospitals and opening of a new facility (such as Beth Israel Deaconess Medical Center, considered for this list to have \"opened\" when its predecessors, Beth Israel Hospital and New England Deaconess Hospital, \"closed\" and merged in 1996). Additionally, a facility which is still in business is considered \"closed\" if a change in operation leads to the facility no longer meeting an arguable definition of \"hospital\" (example: Burbank Hospital \"closed\" when inpatient care ended, although the location still exists as an outpatient campus of another hospital)."
+        }
+      }
     },
     {
       "slug": "umass-memorial-childrens-worcester",
@@ -1433,10 +1684,12 @@
       "hotspot": false,
       "website": "https://www.ummhealth.org/childrens-medical-center",
       "careers_url": "https://www.ummhealth.org/careers",
-      "careers_platform": "unknown",
+      "careers_platform": "workday",
       "careers_search_url": null,
-      "careers_notes": "UMass Memorial Health careers landing page; fetch blocked this session and later rate limited (HTTP 429), so the job board host and platform are unconfirmed. Verify before scraping.",
-      "ats_config": {},
+      "careers_notes": "UMass Memorial Health careers landing page; fetch blocked this session and later rate limited (HTTP 429), so the job board host and platform are unconfirmed. Verify before scraping. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.ummhealth.org/careers; ATS link seen: https://ummh.wd1.myworkdayjobs.com/Careers",
+      "ats_config": {
+        "host": "www.ummhealth.org"
+      },
       "nearest_airport": "ORH Worcester Regional (15 min); BOS Logan International (60 min)",
       "beds": 818,
       "peds_beds": 101,
@@ -1478,7 +1731,14 @@
       ],
       "notes": "Two Worcester campuses: pediatric floor, PICU and peds ED at University Campus (55 Lake Ave N); NICU at Memorial Campus (119 Belmont St). One record covers both. Worcester is about 45 to 60 minutes west of Boston with lower housing costs.",
       "confidence": "high",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "UMass Memorial Health",
+          "url": "https://en.wikipedia.org/wiki/UMass_Memorial_Health",
+          "extract": "UMass Memorial Health (UMM Health) is a non-profit healthcare network based in Worcester, Massachusetts, operated by the University of Massachusetts and primarily serving Central Massachusetts. It is the largest health system in Central Massachusetts, and is the clinical partner of the UMass Chan Medical School."
+        }
+      }
     },
     {
       "slug": "baystate-childrens-springfield",
@@ -1496,9 +1756,9 @@
       "hotspot": false,
       "website": "https://www.baystatehealth.org/locations/baystate-childrens-hospital",
       "careers_url": "https://www.baystatehealthjobs.com/",
-      "careers_platform": "unknown",
+      "careers_platform": "workday",
       "careers_search_url": null,
-      "careers_notes": "Baystate Health job board baystatehealthjobs.com (linked as the Talent Acquisition site from baystatehealth.org and choosebaystatehealth.org). Fetch blocked this session; platform unconfirmed. choosebaystatehealth.org is a WordPress provider-recruiting site with inquiry forms (APP roles such as newborn hospitalist NP/PA are listed there).",
+      "careers_notes": "Baystate Health job board baystatehealthjobs.com (linked as the Talent Acquisition site from baystatehealth.org and choosebaystatehealth.org). Fetch blocked this session; platform unconfirmed. choosebaystatehealth.org is a WordPress provider-recruiting site with inquiry forms (APP roles such as newborn hospitalist NP/PA are listed there). [enrich 2026-10-20] careers_url -> HTTP 200 at https://baystatehealthjobs.com/; ATS link seen: https://baystatehealth.wd12.myworkdayjobs.com/External_Careers/login",
       "ats_config": {
         "host": "www.baystatehealthjobs.com",
         "provider_recruiting_host": "choosebaystatehealth.org"
@@ -1544,7 +1804,14 @@
       ],
       "notes": "Springfield is about 30 minutes from Hartford, CT, so Connecticut Children's and Hartford Hospital are within commuting range. Wikipedia lists 110 pediatric beds plus 57 bassinets.",
       "confidence": "high",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "Baystate Health",
+          "url": "https://en.wikipedia.org/wiki/Baystate_Health",
+          "extract": "Baystate Health is a non-profit integrated healthcare system headquartered in Springfield, Massachusetts, primarily serving Western Massachusetts. The system comprises four acute-care hospitals encompassing over 1,000 licensed beds; a multi-specialty group, Baystate Medical Practices, which includes over 700 physicians across 40 care locations; and a health maintenance organization (HMO), Health New England, which covers residents of parts of Massachusetts, Connecticut, New York, Vermont, and New Hampshire. The system's flagship hospital, Baystate Medical Center, serves as the only Level I trauma center in Western Massachusetts.\nIn 2022, Baystate's four hospitals reported a total of over 55,000 discharges and over 185,000 emergency department visits.  A fifth, the former Baystate Mary Lane Hospital in Ware, was demolished in August 2025, two years after its closure.\nIn 2026 Baystate entered into a definitive agreement (pending regulatory approval) to integrate Mercy Medical Center as Baystate Mercy Hospital into the Baystate hierarchy, along with several other Mercy locations.. Once completed, this would bring the number of hospitals back up to 5."
+        }
+      }
     },
     {
       "slug": "cape-cod-hospital-hyannis",
@@ -1564,7 +1831,7 @@
       "careers_url": "https://capecodhc.taleo.net/careersection/ex/jobsearch.ftl?lang=en&portal=101430233",
       "careers_platform": "taleo",
       "careers_search_url": "https://capecodhc.taleo.net/careersection/ex/jobsearch.ftl?lang=en&portal=101430233&keyword=nurse%20practitioner",
-      "careers_notes": "Cape Cod Healthcare careers page links to Taleo capecodhc.taleo.net, career section ex (external), portal 101430233; a separate union section exists. Taleo jobsearch.ftl is JS-rendered; keyword= is the usual Taleo parameter but was not tested (fetch blocked).",
+      "careers_notes": "Cape Cod Healthcare careers page links to Taleo capecodhc.taleo.net, career section ex (external), portal 101430233; a separate union section exists. Taleo jobsearch.ftl is JS-rendered; keyword= is the usual Taleo parameter but was not tested (fetch blocked). [enrich 2026-10-20] careers_url -> HTTP 200 at https://capecodhc.taleo.net/careersection/ex/jobsearch.ftl?lang=en&portal=101430233; ATS link seen: http://www.taleo.net/ftl; search_url -> HTTP 200, mentions NP: True, job links: 0",
       "ats_config": {
         "host": "capecodhc.taleo.net",
         "career_section": "ex",
@@ -1597,7 +1864,15 @@
         "283 beds",
         "Absorbed Falmouth Hospital's maternity and pediatric services in 2020"
       ],
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/e/e7/Cape_Cod_Hospital_in_Hyannis.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original",
+          "caption": "Cape Cod Hospital",
+          "credit": "Kenneth C. Zirkel",
+          "license": "CC BY-SA 4.0",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Cape_Cod_Hospital_in_Hyannis.jpg"
+        }
+      ],
       "wikipedia_title": "Cape Cod Hospital",
       "sources": [
         "https://en.wikipedia.org/wiki/Cape_Cod_Hospital",
@@ -1607,7 +1882,14 @@
       ],
       "notes": "Nursery level not stated. Pediatric hospitalists are Boston Children's employees, so check that board too.",
       "confidence": "medium",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "Cape Cod Hospital",
+          "url": "https://en.wikipedia.org/wiki/Cape_Cod_Hospital",
+          "extract": "Cape Cod Hospital is a not-for-profit regional medical center located in Hyannis, Massachusetts.  Founded in 1920, as of 2011 it is the largest hospital on Cape Cod.  The administration is headed by CEO Michael K. Lauf.\nThe hospital has 283 beds with more than 1,700 employees and 300 physicians on staff.  It has an extensive cardiac care service in a partnership with Harvard University Medical School affiliate Brigham and Women's Hospital. The hospital is also affiliated with the Floating Hospital for Children at Tufts Medical Center, as well the University of Massachusetts T.H. Chan School of Medicine.\nThe emergency department is one of the busiest in Massachusetts, providing emergency services to more than 84,000 patients on an annual basis."
+        }
+      }
     },
     {
       "slug": "st-lukes-hospital-new-bedford",
@@ -1625,9 +1907,9 @@
       "hotspot": false,
       "website": "https://www.southcoast.org/locations/st-lukes-hospital/",
       "careers_url": "https://southcoasthealthcareers.org/",
-      "careers_platform": "unknown",
+      "careers_platform": "icims",
       "careers_search_url": null,
-      "careers_notes": "southcoast.org/careers redirects to southcoasthealthcareers.org; fetch blocked, so platform unconfirmed. Boston Children's physicians and APPs at St. Luke's may post on the Boston Children's board.",
+      "careers_notes": "southcoast.org/careers redirects to southcoasthealthcareers.org; fetch blocked, so platform unconfirmed. Boston Children's physicians and APPs at St. Luke's may post on the Boston Children's board. [enrich 2026-10-20] careers_url -> HTTP 200 at https://southcoasthealthcareers.org/; ATS link seen: https://employees-southcoast.icims.com/jobs/login?loginOnly=1&redirect=&in_iframe=1&sso_connection=hs-13920-saml",
       "ats_config": {
         "host": "southcoasthealthcareers.org"
       },
@@ -1658,7 +1940,7 @@
         "Level II adult trauma center"
       ],
       "photos": [],
-      "wikipedia_title": null,
+      "wikipedia_title": "St. Luke's Hospital",
       "sources": [
         "https://www.southcoast.org/services/pediatric",
         "https://www.southcoast.org/?p=17777",
@@ -1668,7 +1950,14 @@
       ],
       "notes": "Good community peds hospitalist fit. Coastal city about an hour from Boston and 40 minutes from Providence.",
       "confidence": "high",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "St. Luke's Hospital",
+          "url": "https://en.wikipedia.org/wiki/St._Luke%27s_Hospital",
+          "extract": "St. Luke's Hospital may refer to:"
+        }
+      }
     },
     {
       "slug": "charlton-memorial-fall-river",
@@ -1686,9 +1975,9 @@
       "hotspot": false,
       "website": "https://www.southcoast.org/locations/charlton-memorial-hospital/",
       "careers_url": "https://southcoasthealthcareers.org/",
-      "careers_platform": "unknown",
+      "careers_platform": "icims",
       "careers_search_url": null,
-      "careers_notes": "southcoast.org/careers redirects to southcoasthealthcareers.org; fetch blocked, platform unconfirmed.",
+      "careers_notes": "southcoast.org/careers redirects to southcoasthealthcareers.org; fetch blocked, platform unconfirmed. [enrich 2026-10-20] careers_url -> HTTP 200 at https://southcoasthealthcareers.org/; ATS link seen: https://employees-southcoast.icims.com/jobs/login?loginOnly=1&redirect=&in_iframe=1&sso_connection=hs-13920-saml",
       "ats_config": {
         "host": "southcoasthealthcareers.org"
       },
@@ -1715,7 +2004,7 @@
         "Southcoast Health flagship for cardiac care"
       ],
       "photos": [],
-      "wikipedia_title": null,
+      "wikipedia_title": "List of hospitals in Massachusetts",
       "sources": [
         "https://www.southcoast.org/services/pediatric",
         "https://www.southcoast.org/?p=17777",
@@ -1723,7 +2012,14 @@
       ],
       "notes": "Newborn-only fit. Bed count not confirmed.",
       "confidence": "medium",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "List of hospitals in Massachusetts",
+          "url": "https://en.wikipedia.org/wiki/List_of_hospitals_in_Massachusetts",
+          "extract": "This is a list of current and former hospitals in the Commonwealth of Massachusetts, U.S. By default, the list is sorted alphabetically by name. This table also provides the hospital network of each hospital (if applicable), the city and county where it is located, whether or not it has an emergency department, when it was opened and closed, its current status, type, and former names.\n\nName: The most recent name of the hospital. Former names will be listed in the last column.\nLocation: The lowest level census designation of the hospital's most recent location.\nNetwork: The parent organization or government agency in charge of the hospital. For closed hospitals, the network will retain its name at the time of closure and will not be updated if the network changes its name (such as Union Hospital, listed as a Partners Healthcare hospital even though the network changed its name to Mass General Brigham after the hospital closed). Text will be italicized if the hospital is independent or if it is owned or operated by a public entity.\nEmergency Department: Indicates the presence of an emergency department, along with trauma designation if applicable. \"Former\" if the hospital used to have one.\nEMS Region: As defined by the Massachusetts Office of Emergency Medical Services. Will be filled even for facilities which predate region designations.\nOpened-Closed: The years of operation.\nOpened, when possible, specifically refers to the date on which the facility admitted its first patient.\nStatus / Type / Notes:\nStatus is in italics and is generally in reference to a hospital's inpatient operations: Active, Succeeded, or Closed. Marked \"Fate Unknown\" if the hospital is no longer in operation but it cannot be determined if it was closed or acquired.\nHospital type, when available, comes after Status. When applicable, the type will always reference data from the Massachusetts Center for Health Information and Analysis. As CHIA was formed in 2012, any hospitals which either closed before data was collected or which do not fall under its purview (such as federal facilities) will be given the most appropriate typing.\nNotes will encompass all other appropriate information, including former names.\nNote: Closures and opening dates, in the case where a hospital is acquired or merges with another, will be designated depending on how substantial the change is. For example, single hospitals purchased by a new entity will generally not be considered to have closed (such as Kindred Hospital Park View, originally Springfield Municipal Hospital, is considered for this list to have been open consistently since 1931), however simultaneous mergers of multiple hospitals may be considered as a closure of the old hospitals and opening of a new facility (such as Beth Israel Deaconess Medical Center, considered for this list to have \"opened\" when its predecessors, Beth Israel Hospital and New England Deaconess Hospital, \"closed\" and merged in 1996). Additionally, a facility which is still in business is considered \"closed\" if a change in operation leads to the facility no longer meeting an arguable definition of \"hospital\" (example: Burbank Hospital \"closed\" when inpatient care ended, although the location still exists as an outpatient campus of another hospital)."
+        }
+      }
     },
     {
       "slug": "berkshire-medical-center-pittsfield",
@@ -1743,8 +2039,10 @@
       "careers_url": "https://www.berkshirehealthsystems.org",
       "careers_platform": "unknown",
       "careers_search_url": null,
-      "careers_notes": "Berkshire Health Systems careers page not verified this session (search budget exhausted); careers_url is the system home page. Confirm the job board before scraping.",
-      "ats_config": {},
+      "careers_notes": "Berkshire Health Systems careers page not verified this session (search budget exhausted); careers_url is the system home page. Confirm the job board before scraping. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.berkshirehealthsystems.org/",
+      "ats_config": {
+        "host": "www.berkshirehealthsystems.org"
+      },
       "nearest_airport": "ALB Albany International (60 min); BDL Bradley International (75 min)",
       "beds": 302,
       "peds_beds": 7,
@@ -1769,7 +2067,15 @@
         "302 licensed beds, UMass Chan teaching affiliate",
         "Hub of the three-hospital Berkshire Health Systems"
       ],
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/4/4c/North_Adams_Regional_Hospital.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original",
+          "caption": "North Adams Regional Hospital",
+          "credit": "Ericshawwhite",
+          "license": "CC BY-SA 3.0",
+          "source_page": "https://commons.wikimedia.org/wiki/File:North_Adams_Regional_Hospital.JPG"
+        }
+      ],
       "wikipedia_title": "Berkshire Medical Center",
       "sources": [
         "https://en.wikipedia.org/wiki/Berkshire_Medical_Center",
@@ -1778,7 +2084,14 @@
       ],
       "notes": "Small pediatric census; the 7-bed figure comes from an older med-peds hospitalist posting and should be rechecked. Rural setting.",
       "confidence": "medium",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "North Adams Regional Hospital",
+          "url": "https://en.wikipedia.org/wiki/North_Adams_Regional_Hospital",
+          "extract": "North Adams Regional Hospital is a full-service community hospital in North Adams, Massachusetts. It serves the Northern Berkshire communities of Adams, Cheshire, Clarksburg, Florida, Lanesborough, North Adams, Savoy, Williamstown and communities in southern Vermont and in eastern New York state. The hospital is part of Northern Berkshire Healthcare (NBH), a not-for-profit organization. NBH originally closed it on March 28, 2014. Ten years to the day of its closing, on March 28, 2024, it reopened as a hospital after  serving as a 24-hour emergency hospital and de facto urgent care facility.\nThe facility was re-opened as a part of Berkshire Health Systems under the name: Berkshire Health North, the facility includes 24 hour Emergency Care, Primary and Specialty Care, Labs and Imaging as well as Community Health programs."
+        }
+      }
     },
     {
       "slug": "saint-vincent-hospital-worcester",
@@ -1798,8 +2111,10 @@
       "careers_url": "https://www.stvincenthospital.com",
       "careers_platform": "unknown",
       "careers_search_url": null,
-      "careers_notes": "Tenet Healthcare hospital; jobs post on Tenet's corporate career board. URL and platform not verified this session (careers_url is the hospital home page).",
-      "ats_config": {},
+      "careers_notes": "Tenet Healthcare hospital; jobs post on Tenet's corporate career board. URL and platform not verified this session (careers_url is the hospital home page). [enrich 2026-10-20] careers_url -> HTTP 403 at https://www.stvincenthospital.com/",
+      "ats_config": {
+        "host": "www.stvincenthospital.com"
+      },
       "nearest_airport": "ORH Worcester Regional (15 min); BOS Logan International (60 min)",
       "beds": null,
       "peds_beds": null,
@@ -1822,8 +2137,16 @@
         "Downtown Worcester teaching hospital",
         "Owned by Tenet Healthcare"
       ],
-      "photos": [],
-      "wikipedia_title": null,
+      "photos": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/1/1c/Saint_Vincent_Hospital_-_Worcester%2C_MA.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original",
+          "caption": "Saint Vincent Hospital",
+          "credit": "Wikimedia Commons",
+          "license": "see source page",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Saint_Vincent_Hospital_-_Worcester,_MA.jpg"
+        }
+      ],
+      "wikipedia_title": "Saint Vincent Hospital",
       "sources": [
         "https://www.stvincenthospital.com/services/obstetrics/special-care-nursery",
         "https://wbjournal.com/article/saint-vincent-special-care-nursery-designation-upgraded",
@@ -1831,7 +2154,14 @@
       ],
       "notes": "Newborn-only fit. A neonatology directory lists the NICU group as private practice, so NNPs may be contracted.",
       "confidence": "medium",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "Saint Vincent Hospital",
+          "url": "https://en.wikipedia.org/wiki/Saint_Vincent_Hospital",
+          "extract": "Saint Vincent Hospital is a 381-bed hospital located in Worcester, Massachusetts. Founded by the Catholic Sisters of Providence of Holyoke in 1893, Saint Vincent's was named after the patron saint of the Sisters' order, Saint Vincent de Paul. In 1990, the hospital merged with the Fallon Healthcare System. Vanguard Health Systems purchased the hospital in 2005. In 2021, nurses went on strike at the hospital, which by this time was owned by Tenet Healthcare."
+        }
+      }
     },
     {
       "slug": "cooley-dickinson-northampton",
@@ -1851,7 +2181,7 @@
       "careers_url": "https://jobs.massgeneralbrigham.org/",
       "careers_platform": "unknown",
       "careers_search_url": null,
-      "careers_notes": "Mass General Brigham member; jobs post on jobs.massgeneralbrigham.org (fetch blocked, platform unconfirmed). Filter to Cooley Dickinson.",
+      "careers_notes": "Mass General Brigham member; jobs post on jobs.massgeneralbrigham.org (fetch blocked, platform unconfirmed). Filter to Cooley Dickinson. [enrich 2026-10-20] careers_url -> HTTP None at None",
       "ats_config": {
         "host": "jobs.massgeneralbrigham.org"
       },
@@ -1879,7 +2209,15 @@
         "Childbirth Center",
         "Serves the Five College area"
       ],
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/3/30/Cooley_Dickinson_Hospital%2C_1918.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original",
+          "caption": "Cooley Dickinson Hospital",
+          "credit": "Forbes Library",
+          "license": "CC BY 4.0",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Cooley_Dickinson_Hospital,_1918.jpg"
+        }
+      ],
       "wikipedia_title": "Cooley Dickinson Hospital",
       "sources": [
         "https://www.cooleydickinson.org/2019/01/cooley-expands-inpatient-services-for-kids",
@@ -1887,7 +2225,14 @@
       ],
       "notes": "Current status of the pediatric beds (2026) not reconfirmed; the source is a 2019 news item. Likely a mixed unit with low pediatric volume.",
       "confidence": "low",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "Cooley Dickinson Hospital",
+          "url": "https://en.wikipedia.org/wiki/Cooley_Dickinson_Hospital",
+          "extract": "Cooley Dickinson Hospital is a nonprofit community hospital located in Northampton, Massachusetts. It is the primary hub of Cooley Dickinson Health Care, a regional network of primary and specialty care medical providers, an affiliate of Massachusetts General Hospital, which is part of Mass General Brigham."
+        }
+      }
     },
     {
       "slug": "women-and-infants-providence",
@@ -1904,11 +2249,13 @@
       "region": "Rhode Island",
       "hotspot": false,
       "website": "https://www.womenandinfants.org",
-      "careers_url": "https://www.womenandinfants.org",
+      "careers_url": "https://careers.carenewengland.org/careers-home",
       "careers_platform": "unknown",
       "careers_search_url": null,
-      "careers_notes": "Care New England careers board not verified this session (WebFetch rate limited, search budget exhausted). careers_url is the hospital home page; confirm the Care New England job board before scraping.",
-      "ats_config": {},
+      "careers_notes": "Care New England careers board not verified this session (WebFetch rate limited, search budget exhausted). careers_url is the hospital home page; confirm the Care New England job board before scraping. [enrich 2026-10-20] careers_url -> HTTP 200 at https://careers.carenewengland.org/careers-home; ATS link seen: https://www.icims.com/legal/privacy-notice-website/",
+      "ats_config": {
+        "host": "careers.carenewengland.org"
+      },
       "nearest_airport": "PVD T. F. Green (15 min)",
       "beds": 137,
       "peds_beds": null,
@@ -1945,7 +2292,8 @@
       ],
       "notes": "Major neonatal NP employer. Typed as specialty_pediatric because it is a women's and newborn specialty hospital, not a general children's hospital.",
       "confidence": "high",
-      "active": true
+      "active": true,
+      "_enrich": {}
     },
     {
       "slug": "kent-hospital-warwick",
@@ -1962,11 +2310,13 @@
       "region": "Rhode Island",
       "hotspot": false,
       "website": "https://www.kentri.org",
-      "careers_url": "https://www.kentri.org",
+      "careers_url": "https://careers.carenewengland.org/careers-home?hsLang=en",
       "careers_platform": "unknown",
       "careers_search_url": null,
-      "careers_notes": "Care New England careers board not verified this session; careers_url is the hospital home page.",
-      "ats_config": {},
+      "careers_notes": "Care New England careers board not verified this session; careers_url is the hospital home page. [enrich 2026-10-20] careers_url -> HTTP 200 at https://careers.carenewengland.org/careers-home?hsLang=en; ATS link seen: https://www.icims.com/legal/privacy-notice-website/",
+      "ats_config": {
+        "host": "careers.carenewengland.org"
+      },
       "nearest_airport": "PVD T. F. Green (10 min)",
       "beds": null,
       "peds_beds": null,
@@ -1999,7 +2349,14 @@
       ],
       "notes": "Newborn-only fit; neonatal NPs likely shared with Women & Infants. Bed count not confirmed (WebFetch rate limited).",
       "confidence": "medium",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "Kent Hospital",
+          "url": "https://en.wikipedia.org/wiki/Kent_Hospital",
+          "extract": "Kent Hospital is a community teaching hospital located in Warwick, Rhode Island. It was a founding member of the Care New England in 1996, along with Women & Infants Hospital and Butler Hospital."
+        }
+      }
     },
     {
       "slug": "hasbro-childrens-providence",
