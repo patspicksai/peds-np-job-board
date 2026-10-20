@@ -1,0 +1,22 @@
+name: netcheck
+on:
+  workflow_dispatch:
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Probe job boards from GitHub's network
+        run: |
+          set +e
+          echo "== Workday JSON API (MaineHealth)"
+          curl -sS -m 20 -X POST "https://mainehealth.wd1.myworkdayjobs.com/wday/cxs/mainehealth/MaineHealth/jobs" \
+            -H 'Content-Type: application/json' -H 'Accept: application/json' \
+            -d '{"appliedFacets":{},"limit":5,"offset":0,"searchText":"nurse practitioner"}' | head -c 600; echo
+          echo "== iCIMS style page"
+          curl -sS -m 20 -o /dev/null -w "icims status %{http_code}\n" -A "Mozilla/5.0" "https://careers-childrensnational.icims.com/jobs/search?ss=1&searchKeyword=nurse+practitioner"
+          echo "== UNC Health careers"
+          curl -sS -m 20 -o /dev/null -w "unc status %{http_code}\n" -A "Mozilla/5.0" "https://jobs.unchealthcare.org/"
+          echo "== Wikipedia API"
+          curl -sS -m 20 "https://en.wikipedia.org/api/rest_v1/page/summary/Maine_Medical_Center" | head -c 300; echo
+          echo "== ntfy"
+          curl -sS -m 20 -o /dev/null -w "ntfy status %{http_code}\n" https://ntfy.sh/
