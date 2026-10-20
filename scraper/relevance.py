@@ -128,19 +128,47 @@ def title_is_app_candidate(title: str) -> bool:
     return bool(PA_RE.search(t))
 
 
+# Description phrases that say the role's patients are children (not a passing mention of a pediatrics department)
+PEDS_POPULATION_RE = re.compile(
+    r"p(?:a)?ediatric\s+(?:and\s+adolescent\s+)?(?:patients?|population|inpatients?|intensive|critical|emergency|"
+    r"hospital(?:ist|\s+medicine)?|unit|floor|service|cardi\w+|oncolog\w+|hematolog\w+|surg\w+|neuro\w*|"
+    r"nurse\s+practitioner|subspecialt\w+|acute\s+care)|"
+    r"(?:care\s+(?:of|for)|caring\s+for|treat(?:s|ing)?)\s+(?:critically\s+ill\s+)?(?:infants|children|neonates|newborns|kids)|"
+    r"\bNICU\b|\bPICU\b|\bPCICU\b|neonatal\s+(?:intensive|patients|unit|nurse\s+practitioner)|"
+    r"infants,?\s+children|children\s+and\s+adolescents|birth\s+(?:to|through)\s+(?:age\s+)?(?:1[0-9]|2[0-6])|"
+    r"(?:adult\s+and\s+pediatric|pediatric\s+and\s+adult)\s+(?:patients?|care|populations?)|"
+    r"\(adult\s+and\s+pediatric\)|\bages?\s+0\s*-\s*(?:1[0-9]|2[0-6])\b|\b0\s*-\s*(?:18|21|26)\s+years|"
+    r"pediatric\s+diseases|children'?s\s+hospital\s+(?:unit|floor|service)",
+    _I)
+# Adult / all-ages specialties: a pediatric word in the description does not make these pediatric roles
+ADULT_TITLE_RE = re.compile(
+    r"family\s+medicine|family\s+practice|internal\s+medicine|\bOB\s*/?\s*GYN\b|obstetric|gyn(?:ecolog)?\w*|"
+    r"women'?s\s+(?:health|care)|menopause|geriatric|gerontolog|\badult\b|\bAGACNP\b|\bAGPCNP\b|urogyn|"
+    r"breast|prostate|hospice|long[\s-]+term\s+care|post[\s-]+acute|skilled\s+nursing|memory\s+care", _I)
+
+
 def peds_signal(title: str, text: str, location: str = "", department: str = "") -> tuple[int, str]:
-    """0 none, 1 weak (description only), 2 explicit (title / department / location, or repeated in text)."""
+    """0 none, 1 weak (passing mention in the description), 2 explicit.
+
+    Explicit = a pediatric word in the title / department / location, or the description says the patients are
+    children ("pediatric patients", "pediatric intensive care", NICU/PICU, "caring for infants and children").
+    Adult / all-ages specialty titles (family medicine, OB/GYN, adult ...) never become pediatric from the
+    description alone.
+    """
     head = " ".join([title or "", department or "", location or ""])
     if PEDS_STRONG_RE.search(head) or PEDS_WEAK_RE.search(head):
         m = PEDS_STRONG_RE.search(head) or PEDS_WEAK_RE.search(head)
         return 2, f"'{m.group(0)}' in title/unit/location"
     body = text or ""
+    if ADULT_TITLE_RE.search(title or ""):
+        return 0, ""
+    pop = PEDS_POPULATION_RE.findall(body)
+    if pop:
+        return 2, f"description describes pediatric patients ('{sorted(set(x.lower() for x in pop))[0] if isinstance(pop[0], str) else 'pediatric'}')"
     strong = PEDS_STRONG_RE.findall(body)
-    if len(strong) >= 2:
-        return 2, f"pediatric terms in description ({', '.join(sorted(set(s.lower() for s in strong))[:3])})"
     weak = PEDS_WEAK_RE.findall(body)
     if strong or len(weak) >= 2:
-        return 1, "pediatric mention in description"
+        return 1, "passing pediatric mention in description"
     return 0, ""
 
 
@@ -218,8 +246,8 @@ def classify(title: str, text: str = "", hospital: dict | None = None, location:
     childrens = hospital.get("hospital_type") in CHILDRENS_TYPES
     hotspot = bool(hospital.get("hotspot"))
     sig, sig_note = peds_signal(title, text, location, department)
-    pediatric = sig >= 1 or childrens
-    explicit = sig >= 2 or childrens
+    pediatric = sig >= 2 or childrens
+    explicit = pediatric
     acute_words = bool(re.search(r"acute\s+care|inpatient|hospitalist|critical\s+care|intensive", f"{title} {department}", _I))
 
     if pediatric:

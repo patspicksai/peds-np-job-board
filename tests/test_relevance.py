@@ -101,3 +101,17 @@ def test_requirements_extracted():
     reqs = r.extract_requirements("Qualifications\n• Current CPNP-AC certification\n• PALS required\n• Team player")
     assert any("CPNP-AC" in x for x in reqs) and any("PALS" in x for x in reqs)
     assert not any("Team player" in x for x in reqs)
+
+
+def test_description_only_mentions_are_not_pediatric():
+    # a pediatric certification in a list of acceptable boards, or "pediatrics" in a system blurb, is not a peds role
+    v = r.classify("Critical Care Nocturnist - NP/PA", "ACNP, AGACNP, PNP-AC or NNP board certification preferred. "
+                   "Atrium is recognized for cardiology, oncology, pediatrics and rehabilitation.", AMC)
+    assert not v.keep
+    v = r.classify("Family Medicine - NP/PA", "Care for patients from pediatrics to geriatrics. Pediatric patients welcome.", AMC_HOT)
+    assert v.relevance == 1
+    # the description says the patients are children
+    v = r.classify("Day Hospital Advanced Practice Provider", "The CPNP cares for patients 0-21 years with pediatric diseases.", AMC)
+    assert v.keep and v.relevance >= 2
+    v = r.classify("NP/PA - Neurosurgery (0.75 FTE)", "Care for neurosurgery patients for all age groups (adult and pediatric).", AMC)
+    assert v.keep and v.relevance >= 2
