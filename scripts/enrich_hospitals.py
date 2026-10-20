@@ -269,6 +269,36 @@ def discover_careers_link(page_url: str) -> str | None:
         return None
 
 
+OG_RE = re.compile(r'<meta[^>]+(?:property|name)=["\'](?:og:image|twitter:image)["\'][^>]*content=["\']([^"\']+)["\']', re.I)
+OG_RE2 = re.compile(r'<meta[^>]+content=["\']([^"\']+)["\'][^>]*(?:property|name)=["\'](?:og:image|twitter:image)["\']', re.I)
+
+
+def website_og_image(url: str) -> dict | None:
+    """Return {url, page} for the site's og:image / twitter:image, if it looks like a real photo."""
+    try:
+        r = requests.get(url, headers={"User-Agent": BROWSER_UA, "Accept-Language": "en-US,en;q=0.9"},
+                         timeout=30, allow_redirects=True)
+        if r.status_code != 200:
+            return None
+        html = r.text[:400000]
+        m = OG_RE.search(html) or OG_RE2.search(html)
+        if not m:
+            return None
+        from urllib.parse import urljoin
+        img = urljoin(r.url, m.group(1).strip())
+        lo = img.lower()
+        if any(x in lo for x in ("logo", "icon", "favicon", ".svg", "placeholder", "default-share", "og-default")):
+            return None
+        # confirm it is an image
+        h = requests.head(img, headers={"User-Agent": BROWSER_UA}, timeout=20, allow_redirects=True)
+        ct = h.headers.get("Content-Type", "")
+        if h.status_code == 200 and ct.startswith("image/") and int(h.headers.get("Content-Length", "100000") or 100000) > 15000:
+            return {"url": img, "page": r.url, "content_type": ct}
+    except Exception as e:  # noqa: BLE001
+        log("   og:image error", e)
+    return None
+
+
 def enrich(h: dict) -> dict:
     e = h.setdefault("_enrich", {})
     e["enriched_at"] = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
@@ -284,6 +314,13 @@ def enrich(h: dict) -> dict:
                 site = wikidata_website(w.get("wikibase_item"))
                 if site:
                     e["website_from_wikidata"] = site
+    # photo fallback: the hospital site's share image
+    if not h.get("photos") and not e.get("wikipedia", {}).get("image"):
+        site = h.get("website")
+        if site and not is_placeholder(site):
+            og = website_og_image(site)
+            if og:
+                e["website_og_image"] = og
     # geocode
     if not (isinstance(h.get("lat"), (int, float)) and isinstance(h.get("lng"), (int, float))) and not e.get("wikipedia", {}).get("coords"):
         n = nominatim(h)
@@ -320,6 +357,7 @@ def main():
     ap.add_argument("files", nargs="+")
     ap.add_argument("--out-dir", default=None)
     ap.add_argument("--limit", type=int, default=0)
+    ap.add_argument("--photos-only", action="store_true", help="only look for a website share image for records without photos")
     a = ap.parse_args()
     for f in a.files:
         src = Path(f)
@@ -331,7 +369,14 @@ def main():
         for i, h in enumerate(hs):
             t0 = time.time()
             try:
-                enrich(h)
+                if a.photos_only:
+                    h.setdefault("_enrich", {})
+                    if not h.get("photos") and h.get("website") and not is_placeholder(h.get("website")):
+                        og = website_og_image(h["website"])
+                        if og:
+                            h["_enrich"]["website_og_image"] = og
+                else:
+                    enrich(h)
             except Exception as ex:  # noqa: BLE001
                 h.setdefault("_enrich", {})["error"] = f"{type(ex).__name__}: {ex}"[:300]
             w = h.get("_enrich", {}).get("wikipedia", {})

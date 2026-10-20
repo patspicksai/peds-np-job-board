@@ -19,7 +19,7 @@
       "careers_url": "https://jobs.ynhhs.org/",
       "careers_platform": "custom",
       "careers_search_url": "https://jobs.ynhhs.org/jobs?keywords=nurse%20practitioner&sortBy=relevance&page=1",
-      "careers_notes": "Yale New Haven Health posts all hospitals (YNHH and YNHCH, Bridgeport, Greenwich, Lawrence + Memorial, Westerly) on one Jibe career site at jobs.ynhhs.org (assets on cms.jibecdn.com; talent network at ynhhs.jibeapply.com). The pediatric nursing category page /jobs/categories/NURSING-STAFF+-+PEDIATRICS was fetched 2026-10-19 and returned only page chrome, so listings are JS-rendered. The careers page links a pre-filtered search of the form /jobs?sortBy=relevance&page=1&categories=ADVANCED%20PRACTICE&tags2=..., so categories=ADVANCED%20PRACTICE is the APP filter. The keyword search URL uses the standard Jibe keywords parameter; a test fetch was blocked in this session, so it is unverified. Jibe sites usually expose a JSON endpoint at /api/jobs with the same parameters.",
+      "careers_notes": "Yale New Haven Health posts all hospitals (YNHH and YNHCH, Bridgeport, Greenwich, Lawrence + Memorial, Westerly) on one Jibe career site at jobs.ynhhs.org (assets on cms.jibecdn.com; talent network at ynhhs.jibeapply.com). The pediatric nursing category page /jobs/categories/NURSING-STAFF+-+PEDIATRICS was fetched 2026-10-19 and returned only page chrome, so listings are JS-rendered. The careers page links a pre-filtered search of the form /jobs?sortBy=relevance&page=1&categories=ADVANCED%20PRACTICE&tags2=..., so categories=ADVANCED%20PRACTICE is the APP filter. The keyword search URL uses the standard Jibe keywords parameter; a test fetch was blocked in this session, so it is unverified. Jibe sites usually expose a JSON endpoint at /api/jobs with the same parameters. [enrich 2026-10-20] careers_url -> HTTP 200 at https://jobs.ynhhs.org/jobs; ATS link seen: https://internal-ynhhs.icims.com/jobs/login?loginOnly=1&redirect=&in_iframe=1&sso_connection=hs-5071-adfs\\; search_url -> HTTP 200, mentions NP: True, job links: 5",
       "ats_config": {
         "host": "jobs.ynhhs.org",
         "vendor": "Jibe",
@@ -66,7 +66,15 @@
         "Yale pediatric hospitalists also staff Bridgeport, Greenwich and Griffin newborn and inpatient services",
         "Yale New Haven Hospital campuses are ANCC Magnet designated"
       ],
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/7/70/Aerial_closeup_YNHH_2010.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original",
+          "caption": "Yale New Haven Children's Hospital",
+          "credit": "YNHHEditor",
+          "license": "CC BY-SA 3.0",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Aerial_closeup_YNHH_2010.jpg"
+        }
+      ],
       "wikipedia_title": "Yale New Haven Children's Hospital",
       "sources": [
         "https://en.wikipedia.org/wiki/Yale_New_Haven_Children%27s_Hospital",
@@ -80,7 +88,14 @@
       ],
       "notes": "Bed counts differ: Wikipedia lists 202 beds and a 19 bed PICU; the 2025 YNHHS ranking release says 208 licensed beds and the YNHH critical care page says 21 PICU beds (including the 6 bed PCICU). The 208 likely includes the 42 beds licensed to YNHCH at Bridgeport Hospital, which has its own record. Postings for both campuses appear on jobs.ynhhs.org under Yale New Haven Hospital or Bridgeport Hospital. New Haven is about 2 hours from Boston and 1.5 to 2 hours from New York City by train (Metro-North and Amtrak at Union Station).",
       "confidence": "high",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "Yale New Haven Children's Hospital",
+          "url": "https://en.wikipedia.org/wiki/Yale_New_Haven_Children%27s_Hospital",
+          "extract": "Yale New Haven Children's Hospital (YNHCH) is a 202-bed pediatric acute care children's hospital located in New Haven, Connecticut. The hospital is affiliated with the Yale School of Medicine. The hospital provides comprehensive pediatric care to infants, children, teens, and young adults aged 0 to 21 in Connecticut and throughout New England. Yale New Haven Children's Hospital also features a Level I Pediatric Trauma Center, one of two in the state.\nAs of 2026, U.S. News & World Report ranks YNHCH in seven pediatric specialties: diabetes and endocrinology (#19); neonatology (#37); nephrology (#46); gastroenterology and GI surgery (#26); pulmonology and lung surgery (#50); orthopedics (#34); pediatric & adolescent behavioral health (top 50). The hospital is also the top-ranked children's hospital in Connecticut and the second-ranked children's hospital in New England."
+        }
+      }
     },
     {
       "slug": "connecticut-childrens-hartford",
@@ -100,7 +115,7 @@
       "careers_url": "https://fa-evav-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/connecticutchildrenscareers",
       "careers_platform": "oracle_cloud",
       "careers_search_url": "https://fa-evav-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/connecticutchildrenscareers/jobs?keyword=nurse%20practitioner",
-      "careers_notes": "Connecticut Children's uses Oracle Cloud HCM Candidate Experience; the nursing careers page links Search Jobs to the connecticutchildrenscareers site and individual postings follow /job/<id> (for example job 2767). Oracle Candidate Experience pages are JS-rendered; use the REST endpoint /hcmRestApi/resources/latest/recruitingCEJobRequisitions with siteNumber=connecticutchildrenscareers and a keyword finder. The keyword search URL follows the standard Oracle pattern and was not fetched this session. APRN roles are posted here, including NICU roles staffed at Hartford Hospital and UConn Health.",
+      "careers_notes": "Connecticut Children's uses Oracle Cloud HCM Candidate Experience; the nursing careers page links Search Jobs to the connecticutchildrenscareers site and individual postings follow /job/<id> (for example job 2767). Oracle Candidate Experience pages are JS-rendered; use the REST endpoint /hcmRestApi/resources/latest/recruitingCEJobRequisitions with siteNumber=connecticutchildrenscareers and a keyword finder. The keyword search URL follows the standard Oracle pattern and was not fetched this session. APRN roles are posted here, including NICU roles staffed at Hartford Hospital and UConn Health. [enrich 2026-10-20] careers_url -> HTTP 200 at https://fa-evav-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/connecticutchildrenscareers; ATS link seen: https://fa-evav-saasfaprod1.fa.ocs.oraclecloud.com:443; search_url -> HTTP 200, mentions NP: False, job links: 0",
       "ats_config": {
         "host": "fa-evav-saasfaprod1.fa.ocs.oraclecloud.com",
         "site_number": "connecticutchildrenscareers"
@@ -139,7 +154,15 @@
         "ANCC Magnet recognized",
         "Primary pediatric teaching affiliate of UConn and Quinnipiac medical schools"
       ],
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/3/3d/Hartford_Hospital_main_entrance.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original",
+          "caption": "Hartford Hospital",
+          "credit": "Elipongo",
+          "license": "Public domain",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Hartford_Hospital_main_entrance.JPG"
+        }
+      ],
       "wikipedia_title": "Connecticut Children's Medical Center",
       "sources": [
         "https://en.wikipedia.org/wiki/Connecticut_Children%27s_Medical_Center",
@@ -156,7 +179,14 @@
       ],
       "notes": "Bed counts vary by source: Wikipedia infobox 185 and body text 230, a Hartford Hospital page says 188 acute care beds including the 32 bed NICU, and recruiting text says a 187 bed system; 187 is used here. The 12 bed Connecticut Children's satellite inpatient unit at Saint Mary's Hospital in Waterbury (open since 2008) is proposed for closure with beds moving to Hartford (CON docket 26-32825-CON, DPH hearing July 30, 2026; outcome not confirmed). Wikipedia also mentions contracted services at hospitals in Waterbury, Farmington, Glastonbury and Shelton. The NICU at Hartford Hospital and the NICU at UConn Health have their own records here because they sit in those hospitals.",
       "confidence": "high",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "Hartford Hospital",
+          "url": "https://en.wikipedia.org/wiki/Hartford_Hospital",
+          "extract": "Hartford Hospital is an 867-bed acute care teaching hospital located in the South End of Hartford, Connecticut. Hartford Hospital was established in 1854. The hospital campus is located on Seymour Street in Hartford and is directly adjacent to the main campus of the Connecticut Children's Medical Center. Hartford Hospital was ranked #2 in Connecticut by  U.S. News Best Hospitals and ranked #1 in the Hartford, Connecticut metro region by the same source. The hospital is a major tertiary care facility for the statewide region and is state designated as a Level I Trauma Center, able to care for the most critically injured of patients.  It has 45 operating rooms and one of the largest surgical caseloads in the United States. The emergency room receives over 100,000 visits per year."
+        }
+      }
     },
     {
       "slug": "hartford-hospital-hartford",
@@ -176,7 +206,7 @@
       "careers_url": "https://www.hhccareers.org/us/search-results",
       "careers_platform": "phenom",
       "careers_search_url": "https://www.hhccareers.org/us/en/search-results?keywords=nurse%20practitioner",
-      "careers_notes": "Hartford HealthCare's official career site is www.hhccareers.org, a Phenom site (images on cdn.phenompeople.com, /us/en/ locale paths, /us/search-results). The search-results page was fetched 2026-10-19 and showed no listings in the static HTML, so results are JS-rendered; use the Phenom widgets API or a search fallback. Job detail URLs look like /jobs/<id>-<slug> (for example /jobs/8362259-patient-service-coordinator-cardiology). The keywords parameter is the standard Phenom pattern and was not tested. HHC jobs are also syndicated to dejobs.org with requisition IDs. hartfordhealthcare.org/careers could not be fetched.",
+      "careers_notes": "Hartford HealthCare's official career site is www.hhccareers.org, a Phenom site (images on cdn.phenompeople.com, /us/en/ locale paths, /us/search-results). The search-results page was fetched 2026-10-19 and showed no listings in the static HTML, so results are JS-rendered; use the Phenom widgets API or a search fallback. Job detail URLs look like /jobs/<id>-<slug> (for example /jobs/8362259-patient-service-coordinator-cardiology). The keywords parameter is the standard Phenom pattern and was not tested. HHC jobs are also syndicated to dejobs.org with requisition IDs. hartfordhealthcare.org/careers could not be fetched. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.hhccareers.org/us/en; search_url -> HTTP 200, mentions NP: True, job links: 0",
       "ats_config": {
         "host": "www.hhccareers.org",
         "locale_path": "/us/en",
@@ -206,7 +236,15 @@
         "ACGME residency and fellowship programs, UConn affiliate",
         "Flagship of Hartford HealthCare, Connecticut's largest health system"
       ],
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/3/3d/Hartford_Hospital_main_entrance.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original",
+          "caption": "Hartford Hospital",
+          "credit": "Elipongo",
+          "license": "Public domain",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Hartford_Hospital_main_entrance.JPG"
+        }
+      ],
       "wikipedia_title": "Hartford Hospital",
       "sources": [
         "https://en.wikipedia.org/wiki/Hartford_Hospital",
@@ -218,7 +256,14 @@
       ],
       "notes": "NICU nurse practitioner and neonatal roles at this site are posted by Connecticut Children's (Oracle board), not Hartford HealthCare. Hartford Hospital's pediatrics page says most pediatric services are now at Connecticut Children's on the Hartford Hospital campus; no separate pediatric unit or pediatric ED was confirmed. Magnet status not confirmed this session.",
       "confidence": "medium",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "Hartford Hospital",
+          "url": "https://en.wikipedia.org/wiki/Hartford_Hospital",
+          "extract": "Hartford Hospital is an 867-bed acute care teaching hospital located in the South End of Hartford, Connecticut. Hartford Hospital was established in 1854. The hospital campus is located on Seymour Street in Hartford and is directly adjacent to the main campus of the Connecticut Children's Medical Center. Hartford Hospital was ranked #2 in Connecticut by  U.S. News Best Hospitals and ranked #1 in the Hartford, Connecticut metro region by the same source. The hospital is a major tertiary care facility for the statewide region and is state designated as a Level I Trauma Center, able to care for the most critically injured of patients.  It has 45 operating rooms and one of the largest surgical caseloads in the United States. The emergency room receives over 100,000 visits per year."
+        }
+      }
     },
     {
       "slug": "uconn-john-dempsey-farmington",
@@ -238,7 +283,7 @@
       "careers_url": "https://www.uconnhealth.org/about-us/careers",
       "careers_platform": "unknown",
       "careers_search_url": null,
-      "careers_notes": "UConn Health's own careers landing page is www.uconnhealth.org/about-us/careers (health.uconn.edu/jobs redirects to the nursing careers page). The underlying job board platform could not be confirmed (fetch blocked this session). NICU APRN roles at this hospital are employed by Connecticut Children's and post on its Oracle board: fa-evav-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/connecticutchildrenscareers.",
+      "careers_notes": "UConn Health's own careers landing page is www.uconnhealth.org/about-us/careers (health.uconn.edu/jobs redirects to the nursing careers page). The underlying job board platform could not be confirmed (fetch blocked this session). NICU APRN roles at this hospital are employed by Connecticut Children's and post on its Oracle board: fa-evav-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/connecticutchildrenscareers. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.uconnhealth.org/about-us/careers",
       "ats_config": {
         "host": "www.uconnhealth.org",
         "nicu_employer_ats": {
@@ -271,8 +316,16 @@
         "Teaching site for UConn School of Medicine",
         "Suburban campus about 10 miles west of downtown Hartford"
       ],
-      "photos": [],
-      "wikipedia_title": null,
+      "photos": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/0/08/UConn_Health_Center.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original",
+          "caption": "UConn Health",
+          "credit": "Ragesoss",
+          "license": "CC BY-SA 4.0",
+          "source_page": "https://commons.wikimedia.org/wiki/File:UConn_Health_Center.jpg"
+        }
+      ],
+      "wikipedia_title": "UConn Health",
       "sources": [
         "https://www.connecticutchildrens.org/neonatology/nicu-levels-newborn-hospital-care-explained/",
         "https://connecticutchildrens.org/specialties-conditions/neonatology",
@@ -281,7 +334,14 @@
       ],
       "notes": "Bed count, Magnet status and any pediatric inpatient service were not confirmed this session (UConn Health pages were partly blocked). An older AAP District I roster lists the UConn NICU at 30 beds, which is unverified. UConn Health also now operates Waterbury Hospital (separate record).",
       "confidence": "medium",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "UConn Health",
+          "url": "https://en.wikipedia.org/wiki/UConn_Health",
+          "extract": "UConn Health is a healthcare system and hospital, and branch of the University of Connecticut that oversees clinical care, advanced biomedical research, and academic education in medicine. The system is funded directly by the State of Connecticut and the University’s financial endowment. Its primary location, UConn John Dempsey Hospital, is a teaching hospital located in Farmington, Connecticut, in the US. In total, UConn Health comprises the hospital, the UConn School of Medicine, School of Dental Medicine, and Graduate School. Additional community satellite locations are located in Avon, Canton, East Hartford, Putnam, Simsbury, Southington, Storrs, Torrington, West Hartford, and Willimantic, including two urgent cares in both Storrs and Canton. UConn Health also owns and operates many smaller clinics around the state that contain UConn Medical Group, UConn Health Partners, University Dentists and research facilities. Andrew Agwunobi stepped down as the CEO of UConn Health in February 2022 after serving since 2014 for a private-sector job. Bruce Liang was UConn Heath's interim CEO for 2022–2024 and remains dean of the UConn School of Medicine. Andrew Agwunobi returned to UConn Health as Executive Vice President of Health Affairs and CEO beginning May 31, 2024.\nUConn Health has about 5,000 employees, and is closely linked with the University of Connecticut's main campus in Storrs through several cross-campus academic projects. Personnel are at the same time both University and Connecticut state employees. UConn Health is part of a plan introduced by Connecticut Governor Dannel P. Malloy, called \"Bioscience Connecticut,\" and approved by the Connecticut General Assembly in 2011, to stimulate the economy in the state of Connecticut."
+        }
+      }
     },
     {
       "slug": "saint-francis-hartford",
@@ -301,7 +361,7 @@
       "careers_url": "https://trinityhealth.wd1.myworkdayjobs.com/Jobs",
       "careers_platform": "workday",
       "careers_search_url": "https://trinityhealth.wd1.myworkdayjobs.com/Jobs?q=nurse%20practitioner",
-      "careers_notes": "Trinity Health (national) Workday tenant. A Saint Francis posting resolves to trinityhealth.wd1.myworkdayjobs.com/Jobs/job/Saint-Francis-Hospital---Hartford-CT/<title>_<req>, so Connecticut facilities are encoded in the location segment of the job path. Marketing front end is jobs.trinity-health.org. Workday listings are JS-rendered; use the Workday CXS JSON endpoint (/wday/cxs/trinityhealth/Jobs/jobs) and filter to Connecticut locations. Search URL not fetched this session. Medical group APP roles post as Trinity Health Of New England Medical Group.",
+      "careers_notes": "Trinity Health (national) Workday tenant. A Saint Francis posting resolves to trinityhealth.wd1.myworkdayjobs.com/Jobs/job/Saint-Francis-Hospital---Hartford-CT/<title>_<req>, so Connecticut facilities are encoded in the location segment of the job path. Marketing front end is jobs.trinity-health.org. Workday listings are JS-rendered; use the Workday CXS JSON endpoint (/wday/cxs/trinityhealth/Jobs/jobs) and filter to Connecticut locations. Search URL not fetched this session. Medical group APP roles post as Trinity Health Of New England Medical Group. [enrich 2026-10-20] careers_url -> HTTP 200 at https://trinityhealth.wd1.myworkdayjobs.com/Jobs; ATS link seen: https://trinityhealth.wd1.myworkdayjobs.com/Jobs; search_url -> HTTP 200, mentions NP: False, job links: 0",
       "ats_config": {
         "host": "trinityhealth.wd1.myworkdayjobs.com",
         "tenant": "trinityhealth",
@@ -333,7 +393,15 @@
         "Teaching site for UConn and Quinnipiac medical students",
         "Flagship of Trinity Health Of New England (Catholic)"
       ],
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/8/8e/St._Francis_Hospital%2C_114_Woodland_Street_in_Hartford%2C_Connecticut%2C_2009-09-02.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original",
+          "caption": "Saint Francis Hospital & Medical Center",
+          "credit": "Wikimedia Commons",
+          "license": "see source page",
+          "source_page": "https://en.wikipedia.org/wiki/Saint_Francis_Hospital_%26_Medical_Center"
+        }
+      ],
       "wikipedia_title": "Saint Francis Hospital and Medical Center",
       "sources": [
         "https://en.wikipedia.org/wiki/Saint_Francis_Hospital_and_Medical_Center",
@@ -344,7 +412,14 @@
       ],
       "notes": "A general pediatric inpatient unit or pediatric ED was not confirmed this session (a Saint Francis Children's Center page exists but could not be fetched), so peds_inpatient is false pending verification. Hospital website URL is the Trinity Health Of New England location page pattern and was not fetched. NICU APRN roles post on the Trinity Health Workday tenant under Saint Francis Hospital - Hartford CT or Trinity Health Of New England Medical Group.",
       "confidence": "medium",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "Saint Francis Hospital & Medical Center",
+          "url": "https://en.wikipedia.org/wiki/Saint_Francis_Hospital_%26_Medical_Center",
+          "extract": "Saint Francis Hospital & Medical Center is a 617-bed acute care hospital located on Woodland Street in Hartford, Connecticut. The hospital was established in 1897 by the Sisters of Saint Joseph of Chambéry. With 617 beds and 65 bassinets, it is the largest Catholic hospital in New England."
+        }
+      }
     },
     {
       "slug": "ynhch-bridgeport",
@@ -364,7 +439,7 @@
       "careers_url": "https://jobs.ynhhs.org/",
       "careers_platform": "custom",
       "careers_search_url": "https://jobs.ynhhs.org/jobs?keywords=nurse%20practitioner&sortBy=relevance&page=1",
-      "careers_notes": "Yale New Haven Health posts all hospitals (YNHH and YNHCH, Bridgeport, Greenwich, Lawrence + Memorial, Westerly) on one Jibe career site at jobs.ynhhs.org (assets on cms.jibecdn.com; talent network at ynhhs.jibeapply.com). The pediatric nursing category page /jobs/categories/NURSING-STAFF+-+PEDIATRICS was fetched 2026-10-19 and returned only page chrome, so listings are JS-rendered. The careers page links a pre-filtered search of the form /jobs?sortBy=relevance&page=1&categories=ADVANCED%20PRACTICE&tags2=..., so categories=ADVANCED%20PRACTICE is the APP filter. The keyword search URL uses the standard Jibe keywords parameter; a test fetch was blocked in this session, so it is unverified. Jibe sites usually expose a JSON endpoint at /api/jobs with the same parameters.",
+      "careers_notes": "Yale New Haven Health posts all hospitals (YNHH and YNHCH, Bridgeport, Greenwich, Lawrence + Memorial, Westerly) on one Jibe career site at jobs.ynhhs.org (assets on cms.jibecdn.com; talent network at ynhhs.jibeapply.com). The pediatric nursing category page /jobs/categories/NURSING-STAFF+-+PEDIATRICS was fetched 2026-10-19 and returned only page chrome, so listings are JS-rendered. The careers page links a pre-filtered search of the form /jobs?sortBy=relevance&page=1&categories=ADVANCED%20PRACTICE&tags2=..., so categories=ADVANCED%20PRACTICE is the APP filter. The keyword search URL uses the standard Jibe keywords parameter; a test fetch was blocked in this session, so it is unverified. Jibe sites usually expose a JSON endpoint at /api/jobs with the same parameters. [enrich 2026-10-20] careers_url -> HTTP 200 at https://jobs.ynhhs.org/jobs; ATS link seen: https://internal-ynhhs.icims.com/jobs/login?loginOnly=1&redirect=&in_iframe=1&sso_connection=hs-5071-adfs\\; search_url -> HTTP 200, mentions NP: True, job links: 5",
       "ats_config": {
         "host": "jobs.ynhhs.org",
         "vendor": "Jibe",
@@ -402,7 +477,15 @@
         "Level II trauma center; host of the state's burn center",
         "Pediatric specialty center in nearby Trumbull with over 35 specialties"
       ],
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/4/4b/BridgeportHospitalEntrance.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original",
+          "caption": "Bridgeport Hospital",
+          "credit": "John Cappiello",
+          "license": "CC BY 3.0",
+          "source_page": "https://commons.wikimedia.org/wiki/File:BridgeportHospitalEntrance.jpg"
+        }
+      ],
       "wikipedia_title": "Bridgeport Hospital",
       "sources": [
         "https://en.wikipedia.org/wiki/Bridgeport_Hospital",
@@ -414,7 +497,14 @@
       ],
       "notes": "beds is the whole Bridgeport Hospital (501 on two campuses including the Milford campus); peds_beds is the 42 beds licensed to YNHCH here, which likely combine the 20 bed pediatric unit and NICU beds. No PICU on site; critically ill children transfer to YNHCH New Haven. Postings appear on jobs.ynhhs.org under Bridgeport Hospital or Yale New Haven Children's Hospital. The Milford campus (former Milford Hospital) has no confirmed pediatric unit and is not listed separately.",
       "confidence": "high",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "Bridgeport Hospital",
+          "url": "https://en.wikipedia.org/wiki/Bridgeport_Hospital",
+          "extract": "Bridgeport Hospital is a not-for-profit general medical and surgical hospital in Bridgeport, Connecticut.  It is a member of Yale New Haven Health System and affiliated with Yale School of Medicine."
+        }
+      }
     },
     {
       "slug": "greenwich-hospital-greenwich",
@@ -434,7 +524,7 @@
       "careers_url": "https://jobs.ynhhs.org/",
       "careers_platform": "custom",
       "careers_search_url": "https://jobs.ynhhs.org/jobs?keywords=nurse%20practitioner&sortBy=relevance&page=1",
-      "careers_notes": "Yale New Haven Health posts all hospitals (YNHH and YNHCH, Bridgeport, Greenwich, Lawrence + Memorial, Westerly) on one Jibe career site at jobs.ynhhs.org (assets on cms.jibecdn.com; talent network at ynhhs.jibeapply.com). The pediatric nursing category page /jobs/categories/NURSING-STAFF+-+PEDIATRICS was fetched 2026-10-19 and returned only page chrome, so listings are JS-rendered. The careers page links a pre-filtered search of the form /jobs?sortBy=relevance&page=1&categories=ADVANCED%20PRACTICE&tags2=..., so categories=ADVANCED%20PRACTICE is the APP filter. The keyword search URL uses the standard Jibe keywords parameter; a test fetch was blocked in this session, so it is unverified. Jibe sites usually expose a JSON endpoint at /api/jobs with the same parameters.",
+      "careers_notes": "Yale New Haven Health posts all hospitals (YNHH and YNHCH, Bridgeport, Greenwich, Lawrence + Memorial, Westerly) on one Jibe career site at jobs.ynhhs.org (assets on cms.jibecdn.com; talent network at ynhhs.jibeapply.com). The pediatric nursing category page /jobs/categories/NURSING-STAFF+-+PEDIATRICS was fetched 2026-10-19 and returned only page chrome, so listings are JS-rendered. The careers page links a pre-filtered search of the form /jobs?sortBy=relevance&page=1&categories=ADVANCED%20PRACTICE&tags2=..., so categories=ADVANCED%20PRACTICE is the APP filter. The keyword search URL uses the standard Jibe keywords parameter; a test fetch was blocked in this session, so it is unverified. Jibe sites usually expose a JSON endpoint at /api/jobs with the same parameters. [enrich 2026-10-20] careers_url -> HTTP 200 at https://jobs.ynhhs.org/jobs; ATS link seen: https://internal-ynhhs.icims.com/jobs/login?loginOnly=1&redirect=&in_iframe=1&sso_connection=hs-5071-adfs\\; search_url -> HTTP 200, mentions NP: True, job links: 5",
       "ats_config": {
         "host": "jobs.ynhhs.org",
         "vendor": "Jibe",
@@ -468,7 +558,15 @@
         "YNHCH pediatric specialty center opened in Greenwich in 2019",
         "Level III trauma center; about 5 miles from Westchester County Airport"
       ],
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/a/a9/Greenwich_Hospital_%28Connecticut%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original",
+          "caption": "Greenwich Hospital (Connecticut)",
+          "credit": "ajay_suresh",
+          "license": "CC BY 2.0",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Greenwich_Hospital_(Connecticut).jpg"
+        }
+      ],
       "wikipedia_title": "Greenwich Hospital (Connecticut)",
       "sources": [
         "https://en.wikipedia.org/wiki/Greenwich_Hospital_(Connecticut)",
@@ -480,7 +578,14 @@
       ],
       "notes": "Pediatric bed count not stated. Postings appear on jobs.ynhhs.org under Greenwich Hospital or YNHCH. Older roster lists the Greenwich NICU at 10 beds (unverified). Close to the New York state line, so Westchester and NYC employers are within commuting range.",
       "confidence": "high",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "Greenwich Hospital (Connecticut)",
+          "url": "https://en.wikipedia.org/wiki/Greenwich_Hospital_(Connecticut)",
+          "extract": "Greenwich Hospital is a teaching hospital in Greenwich, Connecticut, serving people in lower Fairfield County and lower Westchester County, New York.\nA member of Yale New Haven Health System, Greenwich Hospital is a teaching institution. It has an internal medicine residency program and is a major academic affiliate of Yale School of Medicine. The hospital is also affiliated with New York Medical College School of Medicine, Columbia University School of Social Work, Fairfield University School of Nursing and Graduate School of Education, Norwalk Community College, Pace University, and Westchester Community College Respiratory Therapy, among others.\nIn its 2020 fiscal year, the hospital reported 12,737 inpatient and 253,779 outpatient discharges. During the same period, the hospital emergency department had 32,534 visits.\nGreenwich Hospital has sub-specialties that include geriatrics, oncology, orthopedics, obstetrics, pediatrics, ophthalmology and home care.\nThe hospital is located on a campus on Perryridge Road, northwest of downtown Greenwich.\nThe main campus encompasses the Helmsley Medical Building and the Thomas and Olive C. Watson Pavilion. Located across the street from the hospital at 77 Lafayette Place, the Sherman and Gloria H. Cohen Pavilion houses the Smilow Cancer Hospital Greenwich Hospital Campus, home to the Bendheim Cancer Center and the Breast Center. Greenwich Hospital also has an Endoscopy Center at 500 W. Putnam Avenue, the Greenwich Fertility Center, Helmsley Ambulatory Surgery Center, and the Weight Loss & Diabetes Center at 55 Holly Hill Lane, a facility for diagnostic imaging and physical therapy at 2015 W. Main Street in Stamford, Conn., as well as multiple satellite blood draw stations.\nGreenwich Hospital is licensed as an acute care facility by the Connecticut Department of Public Health & Addiction Services. In 2017, it opened the Steven and Betsy Coman Palliative Care Center.\nThe hospital has 777 medical staff and 1,790 employees overall. Robert Blenderman is president of Greenwich Hospital."
+        }
+      }
     },
     {
       "slug": "st-vincents-bridgeport",
@@ -500,7 +605,7 @@
       "careers_url": "https://www.hhccareers.org/us/search-results",
       "careers_platform": "phenom",
       "careers_search_url": "https://www.hhccareers.org/us/en/search-results?keywords=nurse%20practitioner",
-      "careers_notes": "Hartford HealthCare's official career site is www.hhccareers.org, a Phenom site (images on cdn.phenompeople.com, /us/en/ locale paths, /us/search-results). The search-results page was fetched 2026-10-19 and showed no listings in the static HTML, so results are JS-rendered; use the Phenom widgets API or a search fallback. Job detail URLs look like /jobs/<id>-<slug> (for example /jobs/8362259-patient-service-coordinator-cardiology). The keywords parameter is the standard Phenom pattern and was not tested. HHC jobs are also syndicated to dejobs.org with requisition IDs. hartfordhealthcare.org/careers could not be fetched.",
+      "careers_notes": "Hartford HealthCare's official career site is www.hhccareers.org, a Phenom site (images on cdn.phenompeople.com, /us/en/ locale paths, /us/search-results). The search-results page was fetched 2026-10-19 and showed no listings in the static HTML, so results are JS-rendered; use the Phenom widgets API or a search fallback. Job detail URLs look like /jobs/<id>-<slug> (for example /jobs/8362259-patient-service-coordinator-cardiology). The keywords parameter is the standard Phenom pattern and was not tested. HHC jobs are also syndicated to dejobs.org with requisition IDs. hartfordhealthcare.org/careers could not be fetched. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.hhccareers.org/us/en; search_url -> HTTP 200, mentions NP: True, job links: 0",
       "ats_config": {
         "host": "www.hhccareers.org",
         "locale_path": "/us/en",
@@ -532,7 +637,7 @@
         "Connecticut Children's affiliate hospital"
       ],
       "photos": [],
-      "wikipedia_title": null,
+      "wikipedia_title": "St. Vincent's HealthCare",
       "sources": [
         "https://www.practicematch.com/advanced-practitioners/job-details.cfm/1145498",
         "https://careerconnection.napnap.org/job/pediatric-hospitalistnewborn-nursery-nurse-practitioner-or-physician-assistant/ba5122c0-dafcd606907261966bdaff957590b791/",
@@ -542,7 +647,14 @@
       ],
       "notes": "A 2026 posting for a Pediatric Hospitalist/Newborn Nursery NP or PA lists St. Vincent's Medical Center but also says New Britain, so the role may split with The Hospital of Central Connecticut. Whether St. Vincent's still runs a staffed general pediatric ward (versus nursery plus consults) was not confirmed; NICU level comes from an older AAP District I roster. Bed count and website not verified this session.",
       "confidence": "low",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "St. Vincent's HealthCare",
+          "url": "https://en.wikipedia.org/wiki/St._Vincent%27s_HealthCare",
+          "extract": "St. Vincent's HealthCare, based in Jacksonville, Florida, is a network of three acute-care hospitals, a long-term skilled nursing facility, 30+ primary care centers, nearly a dozen medical laboratories, transportation and prescription services, and a health outreach ministry. It is part of  Ascension, the largest Catholic hospital system in the United States."
+        }
+      }
     },
     {
       "slug": "danbury-hospital-danbury",
@@ -562,7 +674,7 @@
       "careers_url": "https://jobs.jobvite.com/nuvance/jobs",
       "careers_platform": "jobvite",
       "careers_search_url": "https://jobs.jobvite.com/nuvance/jobs",
-      "careers_notes": "The former Nuvance Health hospitals (Danbury, Norwalk, New Milford, Sharon, plus Vassar, Putnam and Northern Dutchess in NY) still post on the Jobvite board jobs.jobvite.com/nuvance, now titled Northwell Health Careers. Fetched 2026-10-19: listings render server-side (about 176 visible across 12 categories, with Show More links), titles carry the hospital and town. Category search is /nuvance/search?c=<Category>&p=<page>; no keyword parameter seen, so filter by title text (APRN, NP). Northwell's own site jobs.northwell.edu may take over these postings; check both.",
+      "careers_notes": "The former Nuvance Health hospitals (Danbury, Norwalk, New Milford, Sharon, plus Vassar, Putnam and Northern Dutchess in NY) still post on the Jobvite board jobs.jobvite.com/nuvance, now titled Northwell Health Careers. Fetched 2026-10-19: listings render server-side (about 176 visible across 12 categories, with Show More links), titles carry the hospital and town. Category search is /nuvance/search?c=<Category>&p=<page>; no keyword parameter seen, so filter by title text (APRN, NP). Northwell's own site jobs.northwell.edu may take over these postings; check both. [enrich 2026-10-20] careers_url -> HTTP 200 at https://jobs.jobvite.com/nuvance/jobs; search_url -> HTTP 200, mentions NP: True, job links: 176",
       "ats_config": {
         "host": "jobs.jobvite.com",
         "company": "nuvance",
@@ -603,7 +715,8 @@
       ],
       "notes": "Connecticut Children's alliance page (read 2026-10-20) lists a pediatric inpatient unit, NICU and nursery, and pediatric emergency medicine consultation at Northwell Danbury Hospital. Bed count not confirmed (reportedly about 450). Pediatric hospitalist and NICU APP roles may be employed by Connecticut Children's (Oracle board) rather than Northwell. Website is the legacy Nuvance domain; Northwell may have moved hospital pages to northwell.edu.",
       "confidence": "medium",
-      "active": true
+      "active": true,
+      "_enrich": {}
     },
     {
       "slug": "norwalk-hospital-norwalk",
@@ -623,7 +736,7 @@
       "careers_url": "https://jobs.jobvite.com/nuvance/jobs",
       "careers_platform": "jobvite",
       "careers_search_url": "https://jobs.jobvite.com/nuvance/jobs",
-      "careers_notes": "The former Nuvance Health hospitals (Danbury, Norwalk, New Milford, Sharon, plus Vassar, Putnam and Northern Dutchess in NY) still post on the Jobvite board jobs.jobvite.com/nuvance, now titled Northwell Health Careers. Fetched 2026-10-19: listings render server-side (about 176 visible across 12 categories, with Show More links), titles carry the hospital and town. Category search is /nuvance/search?c=<Category>&p=<page>; no keyword parameter seen, so filter by title text (APRN, NP). Northwell's own site jobs.northwell.edu may take over these postings; check both.",
+      "careers_notes": "The former Nuvance Health hospitals (Danbury, Norwalk, New Milford, Sharon, plus Vassar, Putnam and Northern Dutchess in NY) still post on the Jobvite board jobs.jobvite.com/nuvance, now titled Northwell Health Careers. Fetched 2026-10-19: listings render server-side (about 176 visible across 12 categories, with Show More links), titles carry the hospital and town. Category search is /nuvance/search?c=<Category>&p=<page>; no keyword parameter seen, so filter by title text (APRN, NP). Northwell's own site jobs.northwell.edu may take over these postings; check both. [enrich 2026-10-20] careers_url -> HTTP 200 at https://jobs.jobvite.com/nuvance/jobs; search_url -> HTTP 200, mentions NP: True, job links: 176",
       "ats_config": {
         "host": "jobs.jobvite.com",
         "company": "nuvance",
@@ -654,7 +767,15 @@
         "Shoreline Fairfield County location on Metro-North",
         "Part of Northwell Health (former Nuvance Health)"
       ],
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/5/52/NorwalkCTNorwalkHospital09052007.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original",
+          "caption": "Norwalk Hospital",
+          "credit": "User:Noroton",
+          "license": "Public domain",
+          "source_page": "https://commons.wikimedia.org/wiki/File:NorwalkCTNorwalkHospital09052007.JPG"
+        }
+      ],
       "wikipedia_title": "Norwalk Hospital",
       "sources": [
         "https://www.connecticutchildrens.org/about-us/impact/care-alliances/connecticut-childrens-alliance-northwell-health",
@@ -664,7 +785,14 @@
       ],
       "notes": "The Connecticut Children's alliance page (read 2026-10-20) lists a pediatric emergency center, NICU and wellborn nursery but no inpatient pediatric unit, so peds_inpatient is false; verify. Peds ED NP roles may be Connecticut Children's employees. Bed count not confirmed (reportedly about 360).",
       "confidence": "medium",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "Norwalk Hospital",
+          "url": "https://en.wikipedia.org/wiki/Norwalk_Hospital",
+          "extract": "Norwalk Hospital is a not-for-profit, acute care community teaching hospital in the Hospital Hill section of Norwalk, Connecticut. The hospital serves a population of 250,000 in lower Fairfield County, Connecticut. The 366-bed hospital has more than 500 physicians on its active medical staff, and 2,000 health professionals and support personnel. The hospital was part of the Western Connecticut Health Network, which included two other hospitals - Danbury Hospital and New Milford Hospital - up until April 2019, when WCHN merged with Health Quest to form Nuvance Health."
+        }
+      }
     },
     {
       "slug": "stamford-hospital-stamford",
@@ -684,7 +812,7 @@
       "careers_url": "https://fa-ewfb-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/Careers",
       "careers_platform": "oracle_cloud",
       "careers_search_url": "https://fa-ewfb-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/ProviderCareers/jobs?keyword=nurse%20practitioner",
-      "careers_notes": "Stamford Health uses Oracle Cloud HCM Candidate Experience on fa-ewfb-saasfaprod1.fa.ocs.oraclecloud.com with three sites: Careers (general), MedicalGroupCareers and ProviderCareers (physician and APP). NP roles most likely post under ProviderCareers; check Careers too. Oracle pages are JS-rendered; use /hcmRestApi/resources/latest/recruitingCEJobRequisitions with the siteNumber. Site names come from R2b scratch (2026-10-19); the keyword URL follows the standard Oracle pattern and was not fetched.",
+      "careers_notes": "Stamford Health uses Oracle Cloud HCM Candidate Experience on fa-ewfb-saasfaprod1.fa.ocs.oraclecloud.com with three sites: Careers (general), MedicalGroupCareers and ProviderCareers (physician and APP). NP roles most likely post under ProviderCareers; check Careers too. Oracle pages are JS-rendered; use /hcmRestApi/resources/latest/recruitingCEJobRequisitions with the siteNumber. Site names come from R2b scratch (2026-10-19); the keyword URL follows the standard Oracle pattern and was not fetched. [enrich 2026-10-20] careers_url -> HTTP 200 at https://fa-ewfb-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/Careers; ATS link seen: https://fa-ewfb-saasfaprod1.fa.ocs.oraclecloud.com:443; search_url -> HTTP 200, mentions NP: False, job links: 0",
       "ats_config": {
         "host": "fa-ewfb-saasfaprod1.fa.ocs.oraclecloud.com",
         "site_number": "ProviderCareers",
@@ -719,7 +847,15 @@
         "NICU listed as Level III (about 16 beds) on an AAP District I roster",
         "Independent system with its own Oracle provider careers site"
       ],
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/6/6d/Stamford_Hospital.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original",
+          "caption": "Stamford Hospital",
+          "credit": "Wiki4833",
+          "license": "CC BY-SA 4.0",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Stamford_Hospital.jpg"
+        }
+      ],
       "wikipedia_title": "Stamford Hospital",
       "sources": [
         "https://neonatologysolutions.com/?p=24807",
@@ -728,7 +864,14 @@
       ],
       "notes": "Pediatric facts come from R2b scratch (newsroom headlines about a 2017 Cohen Children's inpatient unit, a NICU gift, a pediatric ER expansion, and a pediatric emergency APP posting), not from pages read in full. Verify whether the Cohen Children's partnership is still active after Northwell absorbed Danbury and Norwalk. Bed count not confirmed (reportedly about 300).",
       "confidence": "medium",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "Stamford Hospital",
+          "url": "https://en.wikipedia.org/wiki/Stamford_Hospital",
+          "extract": "Stamford Hospital, residing on the Bennett Medical Center campus, is a 305-bed, not-for-profit hospital and the central facility for Stamford Health. The hospital is the regional healthcare facility for Fairfield and Westchester counties, and is the only hospital in the city of Stamford, Connecticut.\nStamford Hospital is the largest teaching affiliate of the Columbia University Vagelos College of Physicians & Surgeons outside of NewYork-Presbyterian/Columbia University Irving Medical Center (NYP/CUIMC). The faculty at Stamford hospital have academic appointments from the university, as well as Columbia-affiliated physician residency training programs. Columbia medical students rotate through several departments at Stamford Hospital, including Primary Care, Family Medicine, Surgery, and Obstetrics & Gynecology.\nAs of 2005, Stamford Hospital had a total of 2,254 employees, making it one of the city's largest employers. A large segment are represented by the New England Health Care Employees Union, District 1199, affiliated with the Service Employees International Union."
+        }
+      }
     },
     {
       "slug": "lawrence-memorial-new-london",
@@ -748,7 +891,7 @@
       "careers_url": "https://jobs.ynhhs.org/",
       "careers_platform": "custom",
       "careers_search_url": "https://jobs.ynhhs.org/jobs?keywords=nurse%20practitioner&sortBy=relevance&page=1",
-      "careers_notes": "Yale New Haven Health posts all hospitals (YNHH and YNHCH, Bridgeport, Greenwich, Lawrence + Memorial, Westerly) on one Jibe career site at jobs.ynhhs.org (assets on cms.jibecdn.com; talent network at ynhhs.jibeapply.com). The pediatric nursing category page /jobs/categories/NURSING-STAFF+-+PEDIATRICS was fetched 2026-10-19 and returned only page chrome, so listings are JS-rendered. The careers page links a pre-filtered search of the form /jobs?sortBy=relevance&page=1&categories=ADVANCED%20PRACTICE&tags2=..., so categories=ADVANCED%20PRACTICE is the APP filter. The keyword search URL uses the standard Jibe keywords parameter; a test fetch was blocked in this session, so it is unverified. Jibe sites usually expose a JSON endpoint at /api/jobs with the same parameters.",
+      "careers_notes": "Yale New Haven Health posts all hospitals (YNHH and YNHCH, Bridgeport, Greenwich, Lawrence + Memorial, Westerly) on one Jibe career site at jobs.ynhhs.org (assets on cms.jibecdn.com; talent network at ynhhs.jibeapply.com). The pediatric nursing category page /jobs/categories/NURSING-STAFF+-+PEDIATRICS was fetched 2026-10-19 and returned only page chrome, so listings are JS-rendered. The careers page links a pre-filtered search of the form /jobs?sortBy=relevance&page=1&categories=ADVANCED%20PRACTICE&tags2=..., so categories=ADVANCED%20PRACTICE is the APP filter. The keyword search URL uses the standard Jibe keywords parameter; a test fetch was blocked in this session, so it is unverified. Jibe sites usually expose a JSON endpoint at /api/jobs with the same parameters. [enrich 2026-10-20] careers_url -> HTTP 200 at https://jobs.ynhhs.org/jobs; ATS link seen: https://internal-ynhhs.icims.com/jobs/login?loginOnly=1&redirect=&in_iframe=1&sso_connection=hs-5071-adfs\\; search_url -> HTTP 200, mentions NP: True, job links: 5",
       "ats_config": {
         "host": "jobs.ynhhs.org",
         "vendor": "Jibe",
@@ -779,7 +922,15 @@
         "About 280 beds; Yale New Haven Health member since 2016",
         "Amtrak Northeast Corridor station in New London"
       ],
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/c/c8/Lawrence_and_Memorial_Hospital%2C_December_2023.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original",
+          "caption": "Lawrence + Memorial Hospital",
+          "credit": "Pi.1415926535",
+          "license": "CC BY-SA 4.0",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Lawrence_and_Memorial_Hospital,_December_2023.jpg"
+        }
+      ],
       "wikipedia_title": "Lawrence + Memorial Hospital",
       "sources": [
         "https://www.ynhhs.org/about/corporate-overview/delivery-networks",
@@ -789,7 +940,14 @@
       ],
       "notes": "YNHHS lists 280 beds; Wikipedia says 308 licensed (250 staffed). Pediatric unit size and staffing model (Yale PHM or community pediatricians) not confirmed. Westerly Hospital (RI) is the sister YNHHS hospital 15 miles east and does not meet inclusion on its own.",
       "confidence": "medium",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "Lawrence + Memorial Hospital",
+          "url": "https://en.wikipedia.org/wiki/Lawrence_%2B_Memorial_Hospital",
+          "extract": "Lawrence + Memorial Hospital is a private, not-for-profit hospital located in New London, Connecticut. It is affiliated with Yale New Haven Health System. The hospital has been serving its region since 1912, and joined the Yale New Haven Health System on September 8, 2016. Its primary regions include 10 towns along the Connecticut shoreline between Rhode Island and the Connecticut River and as far inland as Montville. The hospital is also a health care provider for Fishers Island, New York, Rhode Island, and other parts of eastern Connecticut.\nAffiliates include the John Diabetes Center affiliate at Lawrence + Memorial – New London and Mystic, Center for Hospice Care, Community Partnerships for a healthy community, Visiting Nurses Association of Southeastern Connecticut, Lawrence + Memorial Medical Group and Occupational Rehabilitation.\nDuring a fiscal year ending September 30, 2020, the hospital reported 12,609 inpatient discharges and 284,718 outpatient encounters. It employed 709 medical staff and 2,307 overall. During the fiscal year 2024, inpatient discharges went up to 13,175. Medical staff increased to 889, and total staff increased to 2,382."
+        }
+      }
     },
     {
       "slug": "waterbury-hospital-waterbury",
@@ -809,7 +967,7 @@
       "careers_url": "https://www.uconnhealth.org/about-us/careers",
       "careers_platform": "unknown",
       "careers_search_url": null,
-      "careers_notes": "UConn Health careers landing page (same board as UConn John Dempsey Hospital); platform unconfirmed. Waterbury Hospital legacy postings may still appear on its own site during the ownership transition. Neonatal roles may be Connecticut Children's employees on its Oracle board.",
+      "careers_notes": "UConn Health careers landing page (same board as UConn John Dempsey Hospital); platform unconfirmed. Waterbury Hospital legacy postings may still appear on its own site during the ownership transition. Neonatal roles may be Connecticut Children's employees on its Oracle board. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.uconnhealth.org/about-us/careers",
       "ats_config": {
         "host": "www.uconnhealth.org"
       },
@@ -836,7 +994,15 @@
         "Reportedly acquired by UConn Health from Prospect Medical",
         "Community teaching hospital serving the Naugatuck Valley"
       ],
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/4/4b/Waterbury_State_Office_Complex_01.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original",
+          "caption": "Vermont State Hospital",
+          "credit": "Ɱ",
+          "license": "CC BY-SA 4.0",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Waterbury_State_Office_Complex_01.jpg"
+        }
+      ],
       "wikipedia_title": "Waterbury Hospital",
       "sources": [
         "https://neonatologysolutions.com/?p=24807",
@@ -845,7 +1011,14 @@
       ],
       "notes": "Inclusion rests on the NICU level from a dated roster; verify the current NICU level and whether the UConn Health transaction is complete. Bed count unknown. If the Saint Mary's pediatric unit closes, check whether any pediatric beds move here.",
       "confidence": "low",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "Vermont State Hospital",
+          "url": "https://en.wikipedia.org/wiki/Vermont_State_Hospital",
+          "extract": "Vermont State Hospital, alternately known as the Vermont State Asylum for the Insane and the Waterbury Asylum, was a mental institution built in 1890 in Waterbury, Vermont to help relieve overcrowding at the privately run Vermont Asylum for the Insane in Brattleboro, Vermont, now known as the Brattleboro Retreat. Originally intended to treat the criminally insane, the hospital eventually took in patients with a wide variety of problems, including mild to severe mental disabilities, epilepsy, depression, alcoholism and senility. The hospital campus, much of which now houses other state offices as the Waterbury State Office Complex, was listed on the National Register of Historic Places in 2016. Partly as a replacement for this facility, the state currently operates the 25 bed Vermont Psychiatric Care Hospital in Berlin, Vermont."
+        }
+      }
     },
     {
       "slug": "saint-marys-waterbury",
@@ -865,7 +1038,7 @@
       "careers_url": "https://trinityhealth.wd1.myworkdayjobs.com/Jobs",
       "careers_platform": "workday",
       "careers_search_url": "https://trinityhealth.wd1.myworkdayjobs.com/Jobs?q=nurse%20practitioner",
-      "careers_notes": "Trinity Health (national) Workday tenant. A Saint Francis posting resolves to trinityhealth.wd1.myworkdayjobs.com/Jobs/job/Saint-Francis-Hospital---Hartford-CT/<title>_<req>, so Connecticut facilities are encoded in the location segment of the job path. Marketing front end is jobs.trinity-health.org. Workday listings are JS-rendered; use the Workday CXS JSON endpoint (/wday/cxs/trinityhealth/Jobs/jobs) and filter to Connecticut locations. Search URL not fetched this session. Medical group APP roles post as Trinity Health Of New England Medical Group.",
+      "careers_notes": "Trinity Health (national) Workday tenant. A Saint Francis posting resolves to trinityhealth.wd1.myworkdayjobs.com/Jobs/job/Saint-Francis-Hospital---Hartford-CT/<title>_<req>, so Connecticut facilities are encoded in the location segment of the job path. Marketing front end is jobs.trinity-health.org. Workday listings are JS-rendered; use the Workday CXS JSON endpoint (/wday/cxs/trinityhealth/Jobs/jobs) and filter to Connecticut locations. Search URL not fetched this session. Medical group APP roles post as Trinity Health Of New England Medical Group. [enrich 2026-10-20] careers_url -> HTTP 200 at https://trinityhealth.wd1.myworkdayjobs.com/Jobs; ATS link seen: https://trinityhealth.wd1.myworkdayjobs.com/Jobs; search_url -> HTTP 200, mentions NP: False, job links: 0",
       "ats_config": {
         "host": "trinityhealth.wd1.myworkdayjobs.com",
         "tenant": "trinityhealth",
@@ -906,7 +1079,14 @@
       ],
       "notes": "Watch the Office of Health Strategy decision on the Connecticut Children's CON: if approved, peds_inpatient should flip to false and peds_beds to null. Unit staff are Connecticut Children's employees (Oracle board), not Trinity. Bed count for the whole hospital not confirmed.",
       "confidence": "medium",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "Saint Mary's Hospital",
+          "url": "https://en.wikipedia.org/wiki/Saint_Mary%27s_Hospital",
+          "extract": "Saint Mary's Hospital may refer to:"
+        }
+      }
     },
     {
       "slug": "hospital-of-central-connecticut-new-britain",
@@ -926,7 +1106,7 @@
       "careers_url": "https://www.hhccareers.org/us/search-results",
       "careers_platform": "phenom",
       "careers_search_url": "https://www.hhccareers.org/us/en/search-results?keywords=nurse%20practitioner",
-      "careers_notes": "Hartford HealthCare's official career site is www.hhccareers.org, a Phenom site (images on cdn.phenompeople.com, /us/en/ locale paths, /us/search-results). The search-results page was fetched 2026-10-19 and showed no listings in the static HTML, so results are JS-rendered; use the Phenom widgets API or a search fallback. Job detail URLs look like /jobs/<id>-<slug> (for example /jobs/8362259-patient-service-coordinator-cardiology). The keywords parameter is the standard Phenom pattern and was not tested. HHC jobs are also syndicated to dejobs.org with requisition IDs. hartfordhealthcare.org/careers could not be fetched.",
+      "careers_notes": "Hartford HealthCare's official career site is www.hhccareers.org, a Phenom site (images on cdn.phenompeople.com, /us/en/ locale paths, /us/search-results). The search-results page was fetched 2026-10-19 and showed no listings in the static HTML, so results are JS-rendered; use the Phenom widgets API or a search fallback. Job detail URLs look like /jobs/<id>-<slug> (for example /jobs/8362259-patient-service-coordinator-cardiology). The keywords parameter is the standard Phenom pattern and was not tested. HHC jobs are also syndicated to dejobs.org with requisition IDs. hartfordhealthcare.org/careers could not be fetched. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.hhccareers.org/us/en; search_url -> HTTP 200, mentions NP: True, job links: 0",
       "ats_config": {
         "host": "www.hhccareers.org",
         "locale_path": "/us/en",
@@ -967,7 +1147,14 @@
       ],
       "notes": "No general pediatric inpatient unit or pediatric ED was named on the pages read (2026-10-20), so peds_inpatient is false; verify. A 2026 HHC pediatric hospitalist and newborn nursery NP posting mentions New Britain and St. Vincent's. NICU APPs are Connecticut Children's employees.",
       "confidence": "medium",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "List of hospitals in Connecticut",
+          "url": "https://en.wikipedia.org/wiki/List_of_hospitals_in_Connecticut",
+          "extract": "This is a list of hospitals in Connecticut, sorted by hospital name.  The American Hospital Directory listed 51 hospitals in Connecticut in 2020."
+        }
+      }
     },
     {
       "slug": "middlesex-hospital-middletown",
@@ -987,7 +1174,7 @@
       "careers_url": "https://middlesexhealth.org",
       "careers_platform": "unknown",
       "careers_search_url": null,
-      "careers_notes": "Independent system; careers board not identified this session (careers_url is the system home page). Enrichment should locate the job board.",
+      "careers_notes": "Independent system; careers board not identified this session (careers_url is the system home page). Enrichment should locate the job board. [enrich 2026-10-20] careers_url -> HTTP 202 at https://middlesexhealth.org/",
       "ats_config": {
         "host": "middlesexhealth.org"
       },
@@ -1015,7 +1202,15 @@
         "Level II nursery per an AAP District I roster",
         "Independent system with a family medicine residency"
       ],
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/d/d9/Middlesex_Hospital_main_entrance.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original",
+          "caption": "Middlesex Hospital (Connecticut)",
+          "credit": "Middlesex Hospital Marketing",
+          "license": "CC BY-SA 4.0",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Middlesex_Hospital_main_entrance.jpg"
+        }
+      ],
       "wikipedia_title": "Middlesex Hospital (Connecticut)",
       "sources": [
         "https://en.wikipedia.org/wiki/Middlesex_Hospital_(Connecticut)",
@@ -1024,7 +1219,14 @@
       ],
       "notes": "Inclusion rests on the Level II nursery listing from a dated roster; Wikipedia does not mention a pediatric unit or NICU. Verify nursery level and whether any inpatient pediatric beds remain. teaching set true for the family medicine residency.",
       "confidence": "low",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "Middlesex Hospital (Connecticut)",
+          "url": "https://en.wikipedia.org/wiki/Middlesex_Hospital_(Connecticut)",
+          "extract": "Middlesex Hospital is a non-profit, acute care community hospital in Middletown, Connecticut. It is a subsidiary of Middlesex Health System, Inc.\nIts service area includes Middlesex County, Connecticut, and the lower Connecticut River Valley region. In 2015 Middlesex became the first hospital in Connecticut to join the Mayo Clinic Care Network."
+        }
+      }
     },
     {
       "slug": "backus-hospital-norwich",
@@ -1044,7 +1246,7 @@
       "careers_url": "https://www.hhccareers.org/us/search-results",
       "careers_platform": "phenom",
       "careers_search_url": "https://www.hhccareers.org/us/en/search-results?keywords=nurse%20practitioner",
-      "careers_notes": "Hartford HealthCare's official career site is www.hhccareers.org, a Phenom site (images on cdn.phenompeople.com, /us/en/ locale paths, /us/search-results). The search-results page was fetched 2026-10-19 and showed no listings in the static HTML, so results are JS-rendered; use the Phenom widgets API or a search fallback. Job detail URLs look like /jobs/<id>-<slug> (for example /jobs/8362259-patient-service-coordinator-cardiology). The keywords parameter is the standard Phenom pattern and was not tested. HHC jobs are also syndicated to dejobs.org with requisition IDs. hartfordhealthcare.org/careers could not be fetched.",
+      "careers_notes": "Hartford HealthCare's official career site is www.hhccareers.org, a Phenom site (images on cdn.phenompeople.com, /us/en/ locale paths, /us/search-results). The search-results page was fetched 2026-10-19 and showed no listings in the static HTML, so results are JS-rendered; use the Phenom widgets API or a search fallback. Job detail URLs look like /jobs/<id>-<slug> (for example /jobs/8362259-patient-service-coordinator-cardiology). The keywords parameter is the standard Phenom pattern and was not tested. HHC jobs are also syndicated to dejobs.org with requisition IDs. hartfordhealthcare.org/careers could not be fetched. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.hhccareers.org/us/en; search_url -> HTTP 200, mentions NP: True, job links: 0",
       "ats_config": {
         "host": "www.hhccareers.org",
         "locale_path": "/us/en",
@@ -1073,7 +1275,15 @@
         "Level II nursery per an AAP District I roster",
         "Connecticut Children's affiliate hospital"
       ],
-      "photos": [],
+      "photos": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/a/a8/Backus_Hospital_main_entrance.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=original",
+          "caption": "Backus Hospital",
+          "credit": "Staraction",
+          "license": "CC BY-SA 4.0",
+          "source_page": "https://commons.wikimedia.org/wiki/File:Backus_Hospital_main_entrance.jpg"
+        }
+      ],
       "wikipedia_title": "William W. Backus Hospital",
       "sources": [
         "https://neonatologysolutions.com/?p=24807",
@@ -1082,7 +1292,14 @@
       ],
       "notes": "Inclusion rests on a dated roster listing a Level II nursery. Verify current nursery level, pediatric unit status and bed count (reportedly about 200).",
       "confidence": "low",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "Backus Hospital",
+          "url": "https://en.wikipedia.org/wiki/Backus_Hospital",
+          "extract": "The William W. Backus Hospital is a 213-bed, not-for-profit, acute care community hospital in Norwich, Connecticut. Backus Hospital provides inpatient care for approximately 11,000 patients each year, and has more than 400,000 outpatient visits. The hospital operates outpatient centers in Colchester, Montville, Ledyard, and Plainfield; and the Backus Outpatient Care Center in Norwich."
+        }
+      }
     },
     {
       "slug": "manchester-memorial-manchester",
@@ -1102,7 +1319,7 @@
       "careers_url": "https://www.hhccareers.org/us/search-results",
       "careers_platform": "phenom",
       "careers_search_url": "https://www.hhccareers.org/us/en/search-results?keywords=nurse%20practitioner",
-      "careers_notes": "Hartford HealthCare's official career site is www.hhccareers.org, a Phenom site (images on cdn.phenompeople.com, /us/en/ locale paths, /us/search-results). The search-results page was fetched 2026-10-19 and showed no listings in the static HTML, so results are JS-rendered; use the Phenom widgets API or a search fallback. Job detail URLs look like /jobs/<id>-<slug> (for example /jobs/8362259-patient-service-coordinator-cardiology). The keywords parameter is the standard Phenom pattern and was not tested. HHC jobs are also syndicated to dejobs.org with requisition IDs. hartfordhealthcare.org/careers could not be fetched.",
+      "careers_notes": "Hartford HealthCare's official career site is www.hhccareers.org, a Phenom site (images on cdn.phenompeople.com, /us/en/ locale paths, /us/search-results). The search-results page was fetched 2026-10-19 and showed no listings in the static HTML, so results are JS-rendered; use the Phenom widgets API or a search fallback. Job detail URLs look like /jobs/<id>-<slug> (for example /jobs/8362259-patient-service-coordinator-cardiology). The keywords parameter is the standard Phenom pattern and was not tested. HHC jobs are also syndicated to dejobs.org with requisition IDs. hartfordhealthcare.org/careers could not be fetched. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.hhccareers.org/us/en; search_url -> HTTP 200, mentions NP: True, job links: 0",
       "ats_config": {
         "host": "www.hhccareers.org",
         "locale_path": "/us/en",
@@ -1141,7 +1358,14 @@
       ],
       "notes": "Inclusion rests on a dated roster listing a Level II nursery. Verify that the birthing center and nursery are still open after the ownership change, and the bed count (reportedly about 250). Website set to the Hartford HealthCare system site; enrichment should find the hospital page.",
       "confidence": "low",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "Manchester Memorial Hospital",
+          "url": "https://en.wikipedia.org/wiki/Manchester_Memorial_Hospital",
+          "extract": "Manchester Memorial Hospital is a 249-bed community hospital located in central Manchester, Connecticut, an eastern Connecticut community about 10 minutes east of Hartford. The hospital opened in 1920, and was dedicated as a memorial to all Manchester residents who died during the First World War. In 1970, the hospital was rededicated as a memorial to veterans of all wars. The hospital operates a family medicine residency training program for newly graduated osteopathic physicians.\nOn January 12, 2025, Prospect Medical filed for Chapter 11 bankruptcy protection, listing assets and liabilities between $1 billion and $10 billion. The company struggled with rising interest costs and high debt. In January 2026, Hartford Healthcare completed their purchase of Manchester Memorial from Prospect."
+        }
+      }
     },
     {
       "slug": "midstate-medical-center-meriden",
@@ -1161,7 +1385,7 @@
       "careers_url": "https://www.hhccareers.org/us/search-results",
       "careers_platform": "phenom",
       "careers_search_url": "https://www.hhccareers.org/us/en/search-results?keywords=nurse%20practitioner",
-      "careers_notes": "Hartford HealthCare's official career site is www.hhccareers.org, a Phenom site (images on cdn.phenompeople.com, /us/en/ locale paths, /us/search-results). The search-results page was fetched 2026-10-19 and showed no listings in the static HTML, so results are JS-rendered; use the Phenom widgets API or a search fallback. Job detail URLs look like /jobs/<id>-<slug> (for example /jobs/8362259-patient-service-coordinator-cardiology). The keywords parameter is the standard Phenom pattern and was not tested. HHC jobs are also syndicated to dejobs.org with requisition IDs. hartfordhealthcare.org/careers could not be fetched.",
+      "careers_notes": "Hartford HealthCare's official career site is www.hhccareers.org, a Phenom site (images on cdn.phenompeople.com, /us/en/ locale paths, /us/search-results). The search-results page was fetched 2026-10-19 and showed no listings in the static HTML, so results are JS-rendered; use the Phenom widgets API or a search fallback. Job detail URLs look like /jobs/<id>-<slug> (for example /jobs/8362259-patient-service-coordinator-cardiology). The keywords parameter is the standard Phenom pattern and was not tested. HHC jobs are also syndicated to dejobs.org with requisition IDs. hartfordhealthcare.org/careers could not be fetched. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.hhccareers.org/us/en; search_url -> HTTP 200, mentions NP: True, job links: 0",
       "ats_config": {
         "host": "www.hhccareers.org",
         "locale_path": "/us/en",
@@ -1201,7 +1425,8 @@
       ],
       "notes": "Included as a neonatal NP employer site; nursery level was not stated on the pages read (2026-10-20), so nicu_level is null (likely Level II; verify). No pediatric inpatient unit or pediatric ED found. NNPs may be Connecticut Children's employees (Oracle board) rather than HHC.",
       "confidence": "low",
-      "active": true
+      "active": true,
+      "_enrich": {}
     },
     {
       "slug": "hospital-for-special-care-new-britain",
@@ -1221,7 +1446,7 @@
       "careers_url": "https://www.hfsc.org",
       "careers_platform": "unknown",
       "careers_search_url": null,
-      "careers_notes": "Independent nonprofit; careers board not identified this session (careers_url is the hospital home page). Enrichment should locate the job board.",
+      "careers_notes": "Independent nonprofit; careers board not identified this session (careers_url is the hospital home page). Enrichment should locate the job board. [enrich 2026-10-20] careers_url -> HTTP None at None",
       "ats_config": {
         "host": "www.hfsc.org"
       },
@@ -1256,7 +1481,14 @@
       ],
       "notes": "Mixed adult and pediatric specialty hospital; typed specialty_pediatric because the pediatric programs are why it is listed. peds_inpatient is false because there is no general pediatric floor; verify pediatric bed counts and whether NP roles exist in the pediatric programs.",
       "confidence": "low",
-      "active": true
+      "active": true,
+      "_enrich": {
+        "wikipedia": {
+          "title": "British Columbia Children's Hospital",
+          "url": "https://en.wikipedia.org/wiki/British_Columbia_Children%27s_Hospital",
+          "extract": "British Columbia Children's Hospital is a medical facility located in Vancouver, British Columbia, and is an agency of the Provincial Health Services Authority. It specializes in health care for patients from birth to 16 years of age (possibly longer if followed by a specialist team). It is also a teaching and research facility for children's medicine. The hospital includes the Sunny Hill Health Centre, which provides specialized services to children and youth with developmental disabilities aged birth to 16 years.\nThe hospital employs more than 650 doctors.\nThe hospital is adjacent to the B.C. Women's Hospital & Health Centre. Previously, the two were officially a single organization and were known as the Children's & Women's Health Centre of British Columbia.\nWorking with the hospital and the community, the BC Children's Hospital Foundation raises funds to support and enhance the delivery of pediatric care in British Columbia. The Foundation provides funding to B.C. Children's Hospital, as well as its sister facilities, the BC Children's Hospital Research Institute, to support research into childhood diseases, the purchase of medical equipment, and a range of child health education and training programs."
+        }
+      }
     }
   ]
 }

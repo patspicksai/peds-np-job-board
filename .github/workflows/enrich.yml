@@ -10,6 +10,10 @@ on:
         description: "Max hospitals per file (0 = all)"
         required: false
         default: "0"
+      photos_only:
+        description: "Only look for website share images for records without photos (true/false)"
+        required: false
+        default: "false"
 permissions:
   contents: write
 jobs:
@@ -25,7 +29,8 @@ jobs:
       - name: Enrich
         run: |
           mkdir -p /tmp/enrich
-          python3 scripts/enrich_hospitals.py ${{ github.event.inputs.files }} --out-dir /tmp/enrich --limit ${{ github.event.inputs.limit }} 2>&1 | tee /tmp/enrich/run.log
+          EXTRA=""; [ "${{ github.event.inputs.photos_only }}" = "true" ] && EXTRA="--photos-only"
+          python3 scripts/enrich_hospitals.py ${{ github.event.inputs.files }} --out-dir /tmp/enrich --limit ${{ github.event.inputs.limit }} $EXTRA 2>&1 | tee /tmp/enrich/run.log
       - name: Publish to ci-logs
         if: always()
         run: bash scraper/tools/ci_publish.sh /tmp/enrich "enrich/${{ github.run_id }}" "enrich ${{ github.run_id }}"

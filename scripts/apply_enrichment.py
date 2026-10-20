@@ -47,6 +47,16 @@ def apply(h: dict, e: dict) -> list[str]:
             "source_page": img.get("source_page") or w.get("url"),
         }]
         changed.append("photo:wiki")
+    if not h.get("photos") and e.get("website_og_image", {}).get("url"):
+        og = e["website_og_image"]
+        h["photos"] = [{
+            "url": og["url"],
+            "caption": h.get("name"),
+            "credit": (h.get("health_system") or h.get("name")) + " (hospital website)",
+            "license": "Hospital website image, all rights reserved; linked from the hospital's own site",
+            "source_page": og.get("page") or h.get("website"),
+        }]
+        changed.append("photo:website")
     if is_placeholder(h.get("website")) and e.get("website_from_wikidata"):
         h["website"] = e["website_from_wikidata"]
         changed.append("website:wikidata")
@@ -80,7 +90,10 @@ def apply(h: dict, e: dict) -> list[str]:
         h["careers_notes"] = ((h.get("careers_notes") or "") + " " + note).strip()
     if is_placeholder(h.get("careers_url")) and h.get("website") and not is_placeholder(h.get("website")):
         changed.append("careers_url:still_placeholder")
-    h["_enrich"] = {"wikipedia": {k: w.get(k) for k in ("title", "url", "extract") if w.get(k)}} if w else {}
+    if w:
+        h["_enrich"] = {"wikipedia": {k: w.get(k) for k in ("title", "url", "extract") if w.get(k)}}
+    elif not isinstance(h.get("_enrich"), dict):
+        h["_enrich"] = {}
     if w.get("extract") and len(h.get("description") or "") < 120:
         changed.append("description:needs_writing")
     return changed
