@@ -1,0 +1,2335 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!doctype html><html lang="en-US" >
+<head>
+<script>
+window.sLogger = window.sLogger || {
+log: function () {}
+};
+</script>
+<script src="https://cdn02.icims.com/a/images.icims.com/content/platform_188.3.1.261016-2e0b6b063c0-11-pg-0/react/sumoLogger.js"></script>
+<script>
+(function () {
+var endpoint = 'https://endpoint1.collection.us2.sumologic.com/receiver/v1/http/ZaVnC4dhaV0ZLhAUD9cQnVfubT6WLJDaDh9erfZ7eDVTyYt7Mv9cuDUFwVEhzC1ZdSSGda6PkaM-6sSapa6LqYgX6GWj0DCWgdj17eVsD9eMK_CtnHN1gA==';
+if (!endpoint || typeof window.SumoLogger !== 'function') {
+return;
+}
+window.sLogger = new SumoLogger({
+endpoint: endpoint,
+returnPromise: false,
+clientUrl: window.location.href
+});
+})();
+</script>
+<script type="text/javascript">
+function icims_stripIFrameParameter(url) {
+url = url.replace(/\?in_iframe=1\&?/, '?');
+url = url.replace(/\&in_iframe=1\&?/, '&');
+url = url.replace(/(\?|&)$/, '');
+return url;
+}
+
+document.cookie = "i18next=en;SameSite=None;Secure";
+var icimsWindow = false;
+try {
+icimsWindow = window.top.location.href.indexOf('') >= 0;
+} catch (e) {}
+
+if (icimsWindow) {
+try {
+
+if (window.history.replaceState) {
+parent.updateUrl(icims_stripIFrameParameter(window.location.href));
+}
+} catch (e) {}
+
+try {
+
+var windowUrl = window.top.location.href;
+if (windowUrl.match(/\?in_iframe=1\&?/) || windowUrl.match(/\&in_iframe=1\&?/)) {
+document.cookie = 'icims_iframeRedirReferer=' + encodeURIComponent(document.referrer) + ';SameSite=None;Secure;path=/';
+window.top.location.href = icims_stripIFrameParameter(windowUrl);
+}
+} catch (e) {}
+
+}
+</script>
+<title>Job Listings at Dartmouth Health</title>
+<link rel="stylesheet" type="text/css" href="https://providers-dartmouth-hitchcock.icims.com/hostedcontent/platform_188.3.1.261016-2e0b6b063c0-11-pg-0/css/fonts.css" />
+<link rel="preload" as="style" type="text/css" href="https://cdn02.icims.com/platform_188.3.1.261016-2e0b6b063c0-11-pg-0/provider.icims.com/staticcontent/css/social-portal.css" />
+<link rel="stylesheet" type="text/css" href="https://cdn02.icims.com/a/images.icims.com/content/platform_188.3.1.261016-2e0b6b063c0-11-pg-0/css/icims.blue.ranked.css" data-theme-dark="https://cdn02.icims.com/a/images.icims.com/content/platform_188.3.1.261016-2e0b6b063c0-11-pg-0/css/icims.dark.css" data-theme-light="https://cdn02.icims.com/a/images.icims.com/content/platform_188.3.1.261016-2e0b6b063c0-11-pg-0/css/icims.blue.ranked.css" id="theme-icims" />
+<link rel="stylesheet" type="text/css" href="https://cdn02.icims.com/a/images.icims.com/content/platform_188.3.1.261016-2e0b6b063c0-11-pg-0/css/bootstrap.blue.ranked.css" data-theme-dark="https://cdn02.icims.com/a/images.icims.com/content/platform_188.3.1.261016-2e0b6b063c0-11-pg-0/css/bootstrap.dark.css" data-theme-light="https://cdn02.icims.com/a/images.icims.com/content/platform_188.3.1.261016-2e0b6b063c0-11-pg-0/css/bootstrap.blue.ranked.css" id="theme-bootstrap" />
+<link rel="stylesheet" type="text/css" href="https://cdn02.icims.com/platform_188.3.1.261016-2e0b6b063c0-11-pg-0/dartmouth-hitchcock.icims.com/icims2/servlet/icims2?module=AppInert&action=renderDynamicPortalCss&a=0&portal=141&page=new_search&group=new_base%2Cnew_searchBox%2Cnew_job_card%2Cnew_search_agent_create%2Cnew_job_table&asv=1792228180100&type=adaptive" />
+<script type="text/javascript" src="https://cdn02.icims.com/a/images.icims.com/content/platform_188.3.1.261016-2e0b6b063c0-11-pg-0/script/lib/jquery/jquery-3.7.1.min.js"></script>
+<script type="text/javascript" src="https://cdn02.icims.com/a/images.icims.com/content/platform_188.3.1.261016-2e0b6b063c0-11-pg-0/script/lib/jquery/jquery-migrate-3.5.2.min.js"></script>
+<script type="text/javascript" src="https://cdn02.icims.com/a/images.icims.com/content/platform_188.3.1.261016-2e0b6b063c0-11-pg-0/script/lib/domreplacement/domReplacement.js"></script>
+<script type="text/javascript" src="https://cdn02.icims.com/a/images.icims.com/content/platform_188.3.1.261016-2e0b6b063c0-11-pg-0/script/common/icims.js"></script>
+<script type="text/javascript" src="https://cdn02.icims.com/a/images.icims.com/content/platform_188.3.1.261016-2e0b6b063c0-11-pg-0/script/portal/utils.js"></script>
+<script type="text/javascript" src="https://cdn02.icims.com/a/images.icims.com/content/platform_188.3.1.261016-2e0b6b063c0-11-pg-0/script/portal/dataLayer/search.js"></script>
+<script type="text/javascript" src="https://cdn02.icims.com/a/images.icims.com/content/platform_188.3.1.261016-2e0b6b063c0-11-pg-0/script/portal/geolocation.js"></script>
+<script type="text/javascript" src="https://cdn02.icims.com/a/images.icims.com/content/platform_188.3.1.261016-2e0b6b063c0-11-pg-0/script/icims.application.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="format-detection" content="telephone=no">
+<script type="text/javascript">
+var isMobile = false;
+
+var redirectUrl = 'https:\/\/providers-dartmouth-hitchcock.icims.com\/jobs\/search?ss=1&searchKeyword=nurse+practitioner&in_iframe=1';
+try {
+if (isMobile) {
+document.cookie = 'icims_iframeRedirReferer=' + encodeURIComponent(document.referrer) + ';SameSite=None;Secure;path=/';
+}
+} catch (e) {}
+</script>
+<script type="text/javascript" src="https://cdn02.icims.com/a/images.icims.com/content/platform_188.3.1.261016-2e0b6b063c0-11-pg-0/script/portal/mobileDetect.js"></script>
+<meta name="description" content="View all current positions at Dartmouth Health across all categories and locations. See a position you like? Contact us and apply today!"/>
+
+
+
+<meta name="robots" content="noindex,follow">
+
+
+
+
+<link rel="canonical" href="https://providers-dartmouth-hitchcock.icims.com/jobs/search?searchKeyword=nurse+practitioner&searchRelation=keyword_all&ss=1" />
+<link rel="alternate" media="only screen and (max-width: 767px)"
+href="https://providers-dartmouth-hitchcock.icims.com/jobs/search?searchKeyword=nurse+practitioner&searchRelation=keyword_all&ss=1&mobile=true&needsRedirect=false" />
+<!-- Don't use rel="prev" if we're on page zero, don't use rel="next" if we're on last page. -->
+
+
+
+
+
+
+<script type="text/javascript">
+
+icimsAddOnload(function() {
+
+// ...and unhide the sort arrow entities. We hide the sort arrow and unhide it if Javascript is enabled
+// to solve an edge case where user had Javascript on sorted, then Javascript was turned off.
+// All other evidence of sortability would disappear except the arrows.
+$('.iCIMS_SortArrowEntity').removeClass('iCIMS_NoDisplay');
+if (isMobile) {
+// make entire row clickable
+$('.iCIMS_JobsTable').find('.iCIMS_JobListingRow').each(function() {
+var $tr = $(this);
+var href = $tr.find('a').attr('href');
+if(href) {
+$tr.css({'cursor': 'pointer'});
+$tr.click(function(e) {
+document.location = href;
+});
+}
+});
+
+
+}
+paginator = $('#iCIMS_Paginator')[0];
+selectedPage = paginator ? paginator.selectedIndex : -1;
+
+
+
+});
+var paginator;
+var selectedPage;
+function changePage() {
+if (!paginator || (selectedPage != -1 && selectedPage == paginator.selectedIndex)) {
+return;
+}
+selectedPage = paginator.selectedIndex;
+window.location.href = paginator.options[selectedPage].value;
+}
+
+var geoErrNotSupported = 'Sorry, geolocation is not supported by your browser.';
+var geoErrDefault = 'Sorry, we can\'t get your location because an error occurred when retrieving your location.';
+var geoErrPermission = 'Sorry, we can\'t get your location because you don\'t have that enabled. Please turn it on in your system settings.';
+var geoErrPositionUnavailable = 'Sorry, we can\'t get your location because your location information is unavailable.';
+var geoErrTimeout = 'Sorry, we can\'t get your location because the request to get your location timed out.';
+var geoErrUnknown = 'Sorry, we can\'t get your location because an unknown error occurred when retrieving your location.';
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Loading resource bundle -->
+<script type="text/javascript" src="https://cdn02.icims.com/a/images.icims.com/content/platform_188.3.1.261016-2e0b6b063c0-11-pg-0/script/messageformat/messageformat.js"></script>
+<script type="text/javascript" src="https://cdn02.icims.com/a/images.icims.com/content/platform_188.3.1.261016-2e0b6b063c0-11-pg-0/script/messageformat/locale/en.js"></script>
+<script type="text/javascript">
+
+function ResourceBundle(lang) {
+var messageFormat = new MessageFormat(lang);
+var resourceBundle = new Array();
+resourceBundle['mootools_utils.helpers.js.SelectMonth_4'] = 'Select Month';
+resourceBundle['utils.js.Updating_689'] = 'Updating';
+resourceBundle['icimsdropdown.js.NoResults_3'] = 'No Results';
+resourceBundle['utils.js.MsgtextPleaseWait_1153'] = '{msgText}, please wait...';
+resourceBundle['icimsdropdown.js.NoResults_1168'] = 'No Results';
+resourceBundle['mootools_utils.helpers.js.CloseDatePicker_1'] = 'Close Date Picker';
+resourceBundle['icimsdropdown.js.MakeASelection_1'] = '-Select-';
+resourceBundle['handlebarshelpers.js.MakeSelection'] = '&mdash; Make a Selection &mdash;';
+resourceBundle['utils.js.Sending_688'] = 'Sending';
+resourceBundle['utils.js.Saving_687'] = 'Saving';
+resourceBundle['utils.js.ErrorCannotOpenPopUpPleas_686'] = 'Error: Cannot open pop-up. Please make sure pop-up blockers are disabled.';
+resourceBundle['utils.js.PleaseSpecifyAValidPageNu_691'] = 'Please specify a valid page number';
+resourceBundle['icimsdropdown.js.Loading_1169'] = 'Loading...';
+resourceBundle['mootools_utils.helpers.js.NextMonth_3'] = 'Next Month';
+resourceBundle['mootools_utils.helpers.js.SelectYear_5'] = 'Select Year';
+resourceBundle['icimsdropdown.js.ResultsFoundCount'] = '{count, plural, =1 {{count} result available. Use down and up arrow keys to navigate.} other {{count} results available. Use down and up arrow keys to navigate. }}';
+resourceBundle['utils.js.anError_1'] = 'An error occurred while attempting to contact the server. Please try again.';
+resourceBundle['icims.tags.js.ResultsNotFound'] = 'No Results Found';
+resourceBundle['icimsdropdown.js.ResultsFound_4'] = 'Results available. Use down and up arrow keys to navigate.';
+resourceBundle['utils.js.CandidateSearch_123'] = 'Candidate Search';
+resourceBundle['utils.js.Loading_690'] = 'Loading';
+resourceBundle['mootools_utils.helpers.js.PreviousMonth_2'] = 'Previous Month';
+resourceBundle['icimsdropdown.js.convertDropdownToTextOption_5'] = '\u2014 Enter Manually \u2014';
+resourceBundle['icimsdropdown.js.MakeASelection_1166'] = '\u2014 Make a Selection \u2014';
+resourceBundle['icimsdropdown.js.TypeToSearch_2'] = '\u2014 Type to Search \u2014';
+resourceBundle['handlebarshelpers.js.welcome-text'] = 'Welcome, {name}!';
+resourceBundle['utils.js.Moved'] = '{itemsMoved} moved to {targetLabel}';
+resourceBundle['icimsdropdown.js.TypeToSearch_1167'] = '\u2014 Type to Search \u2014';
+resourceBundle['handlebarshelpers.js.Close_1'] = 'Close';
+resourceBundle['icims.tags.js.ResultsFoundCount'] = '{count, plural, =1 {{count} result available. Use down and up arrow keys to navigate.} other {{count} results available. Use down and up arrow keys to navigate.}}';
+
+ResourceBundle.prototype.get = function (message, variables) {
+if (typeof (resourceBundle[message]) === 'undefined') {
+return '';
+}
+if (typeof (resourceBundle[message]) === 'string') {
+resourceBundle[message] = messageFormat.compile(resourceBundle[message]);
+}
+return resourceBundle[message](variables);
+}
+}
+var resourceBundle = new ResourceBundle('');
+</script><script type="text/javascript">
+logEval = true;
+function icims_resizeIFrameHeight() {
+
+icims_resizeIFrame('https://providers-dartmouth-hitchcock.icims.com');
+
+}
+function icims_scroll(x, y) {
+icims_scrollIFrame(x, y, 'https://providers-dartmouth-hitchcock.icims.com');
+}
+if (window.attachEvent) {
+window.attachEvent('onresize', icims_resizeIFrameHeight);
+} else if (window.addEventListener) {
+window.addEventListener('resize', icims_resizeIFrameHeight, true);
+}
+icimsAddOnload(function() {
+icimsCheckCookie();
+icims_resizeIFrameHeight();
+
+if (document.querySelectorAll) {
+var errorMsg = document.querySelectorAll('.iCIMS_ErrorMessage');
+if (errorMsg && errorMsg.length > 0) {
+for (var i = 0; i < errorMsg.length; i++) {
+if (errorMsg[i].offsetHeight > 0) {
+try {
+errorMsg[i].focus();
+} catch (e) {}
+break;
+}
+}
+}
+}
+if (icimsWindow) {
+var inframeBodyTag = document.getElementsByTagName('body')[0];
+var h1Tag = document.getElementsByTagName('h1')[0];
+var innerSkipLink = document.getElementById('icims_skipLink2');
+if (!innerSkipLink) {
+innerSkipLink = document.createElement('a');
+innerSkipLink.textContent = 'Skip to Main Content';
+innerSkipLink.setAttribute('id', 'icims_skipLink2');
+innerSkipLink.setAttribute('style', 'left: -9999px; position: absolute; top: -1px;');
+innerSkipLink.setAttribute('href', '#iCIMS_Header');
+innerSkipLink.onfocus = function() {
+if(document.querySelector('.iCIMS_TopHeader')) {
+const topHeader = document.querySelector('.iCIMS_TopHeader');
+topHeader.style.marginTop = '15px'
+}
+innerSkipLink.setAttribute('style', 'top: 5px; position: relative; z-index: 999; padding: 10px;');
+}
+innerSkipLink.onblur = function() {
+innerSkipLink.setAttribute('style', 'left: -9999px; position: absolute; top: -1px;');
+}
+if (inframeBodyTag.firstElementChild) {
+inframeBodyTag.insertBefore(innerSkipLink, inframeBodyTag.firstElementChild);
+} else {
+inframeBodyTag.appendChild(innerSkipLink);
+}
+}
+}
+
+if (icimsWindow) {
+var bodyTag = window.parent.document.getElementsByTagName('body')[0];
+var outerSkiplink = window.parent.document.getElementById('icims_skipLink1');
+if (bodyTag) {
+if(outerSkiplink){
+outerSkiplink.parentNode.removeChild(outerSkiplink);
+}
+outerSkiplink = document.createElement('a');
+outerSkiplink.textContent = 'Skip Branding';
+outerSkiplink.setAttribute('id', 'icims_skipLink1');
+outerSkiplink.setAttribute('style', 'left: -9999px; position: absolute; top: -1px;');
+outerSkiplink.setAttribute('href', (icims_stripIFrameParameter ? icims_stripIFrameParameter(window.location.href) : window.location.href) + '#icims_content_iframe');
+outerSkiplink.onfocus = function() {
+if(document.querySelector('.iCIMS_TopHeader')) {
+const topHeader = document.querySelector('.iCIMS_TopHeader');
+topHeader.style.marginTop = '15px'
+}
+outerSkiplink.setAttribute('style', 'top: 5px; position: relative; z-index: 999; padding: 10px;');
+}
+outerSkiplink.onblur = function() {
+outerSkiplink.setAttribute('style', 'left: -9999px; position: absolute; top: -1px;');
+}
+if (bodyTag.firstElementChild) {
+bodyTag.insertBefore(outerSkiplink, bodyTag.firstElementChild);
+} else {
+bodyTag.appendChild(outerSkiplink);
+}
+}
+}
+
+var messages = document.getElementsByClassName('iCIMS_GenericMessage');
+var primaryMessage, secondaryMessage, focusMessage;
+if (messages) {
+for (var index = 0; index < messages.length; index++) {
+if (ICIMS.hasClass(messages[index], 'iCIMS_SuccessMessage') || (ICIMS.hasClass(messages[index], 'iCIMS_ErrorMessage') && !ICIMS.hasClass(messages[index], 'iCIMS_FieldError'))) {
+
+primaryMessage = primaryMessage || messages[index];
+} else if (ICIMS.hasClass(messages[index], 'iCIMS_SystemMessage')) {
+secondaryMessage = secondaryMessage || messages[index];
+}
+if (primaryMessage) {
+break;
+}
+}
+focusMessage = primaryMessage || secondaryMessage;
+if (focusMessage) {
+focusMessage.focus();
+}
+}
+
+});
+var icimsIframeResizeTimerAlwaysOn = false;
+var icimsIframeResizeTimer = setInterval(icims_resizeIFrameHeight, 500);
+
+try {
+if (window.orientation) {
+window.addEventListener("orientationchange", icims_resizeIFrameHeight, false);
+}
+} catch (e) {}
+
+var isHub = false;
+if (!window.history.replaceState || isHub) {
+icimsAddOnload(function() {
+var links = document.getElementsByTagName("a");
+for (var i = 0; i < links.length; i++) {
+if (!links[i].target) {
+var href = links[i].getAttribute('href')
+if (href) {
+var prevInnerHTML = links[i].innerHTML;
+links[i].setAttribute('href', icims_stripIFrameParameter(href));
+
+links[i].innerHTML = prevInnerHTML;
+}
+if (href && href != '#') {
+links[i].target = icimsWindow ? "_top" : "_parent";
+}
+}
+}
+});
+}
+
+icimsAddOnload(function() {
+try {
+parent.document.title = document.title;
+} catch (e) {}
+});
+</script>
+</head>
+<body>
+<noscript>
+<META HTTP-EQUIV="Refresh" CONTENT="0;URL=/jsDisabledError.jsp">
+</noscript>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id="
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-W8W92P');</script>
+<!-- Customer GTM Container -->
+
+<!-- End Google Tag Manager -->
+<script type="text/javascript">
+try {
+document.body.className += " iCIMS_chrome iCIMS_chrome141";
+} catch(e) {}
+</script>
+<div id="iCIMS_NoCookiesMessage" class="iCIMS_ErrorMsg iCIMS_ErrorMessage iCIMS_NoCookies" style="display: none">
+<div class="iCIMS_ErrorMsgTitle">Please Enable Cookies to Continue</div>
+Please enable cookies in your browser to experience all the personalized features of this site, including the ability to apply for a job.</div>
+
+
+<div class="iCIMS_MainWrapper iCIMS_ListingsPage  ">
+<div class="iCIMS_TopHeader">
+<div class="iCIMS_BackToWelcome">
+<div class="iCIMS_Navigation">
+
+
+<div class="iCIMS_NavigationIconContainer">
+<a class="iCIMS_Anchor_Nav" href="https://providers-dartmouth-hitchcock.icims.com/jobs/intro?in_iframe=1">
+<span class="halflings halflings-menu-left" aria-hidden="true"></span>
+<span class="iCIMS_NavigationText">Welcome page</span>
+</a>
+</div>
+
+</div>
+</div>
+<div class="icims-user-profile text-right">
+<div class="iCIMS_profilePicture">
+<div class="iCIMS_userMenu">
+<div class="iCIMS_userMenuName">
+Returning Candidate?</div>
+<div class="iCIMS_userMenuLink">
+<a href="https://providers-dartmouth-hitchcock.icims.com/jobs/login?loginOnly=1&amp;redirect=search&amp;in_iframe=1&amp;hashed=-435679131">
+Log back in!</a>
+</div>
+</div>
+<div class="iCIMS_FloatHack"></div>
+</div>
+</div>
+</div>
+
+<div id="iCIMS_Header" tabindex="-1"><h1 class="iCIMS_Header">Job Listings</h1></div>
+
+
+
+
+
+<div class="iCIMS_InfoMsg iCIMS_InfoMsg_Jobs">
+<br>Here are our current job openings. Please click on the job title for more information, and apply from that page if you are interested.<br><br>
+</div>
+
+
+
+<p class="iCIMS_SubHeader iCIMS_SubHeader_Jobs" aria-describedby="searchForm">
+Use this form to perform another job search
+</p>
+
+
+
+
+
+<div id="geolocation_error_msg" class="iCIMS_Message iCIMS_ErrorMessage iCIMS_NoDisplay">
+The system cannot access your location for 1 of 2 reasons:<ol><li>Permission to access your location has been denied.  Please reload the page and allow the browser to access your location information.</li><li>Your location information has yet to be received. Please wait a moment then hit [Search] again.</li></ol>
+</div>
+<form accept-charset="utf-8" id="searchForm" name="searchForm" action="https://providers-dartmouth-hitchcock.icims.com/jobs/search?in_iframe=1&amp;hashed=-435679131" onsubmit="return VerifySearchParameters();">
+<input type="hidden" name="ss" value="1" />
+<input type="hidden" name="in_iframe" value="1" />
+<div class="iCIMS_JobSearchTable">
+
+<div id="search_core_mobile_container_no_show">
+<div id="advanced_search_filters_mobile_modal_no_show">
+
+
+<div class="input-group">
+<label for="jsb_f_keywords_i">Start your job search here</label>
+<div class="form-group has-feedback">
+<input type="text" id="jsb_f_keywords_i"
+class="form-control Field_SearchKeywords iCIMS_RoundedInput"
+name="searchKeyword"
+maxlength="100"
+value="nurse practitioner"
+placeholder="Start your job search here"
+/>
+<span  class="form-control-feedback glyphicons glyphicons-search" aria-hidden="true"></span>
+</div>
+
+<div class="input-group-btn iCIMS_SearchButtonKeywordContainer">
+<input type="submit" id="jsb_form_submit_i" class="iCIMS_PrimaryButton" value="Search" />
+</div>
+
+</div>
+
+<div class="" id="searchFormAdvancedFilters">
+
+<div class="SearchFormRelationFilter iCIMS_InfoData iCIMS_InfoData_JobSearch">
+<label for="keyword_all" class="radio-inline">
+<input type="radio" name="searchRelation" id="keyword_all" value="keyword_all" checked="checked">
+<span>All Keywords</span>
+</label>
+<label for="keyword_any" class="radio-inline">
+<input type="radio" name="searchRelation" id="keyword_any" value="keyword_any" >
+<span>Any Keywords</span>
+</label>
+</div>
+
+<div class="iCIMS_Table">
+<div class="iCIMS_TableRow">
+
+<div class="iCIMS_InfoData iCIMS_InfoData_JobSearch iCIMS_TableCell">
+<label for="jsb_f_position_s" id="jsb_f_position_label">
+Category
+</label>
+<select id="jsb_f_position_s" class="Field_SearchMultiSelect" name="searchCategory" >
+<option value="" selected="selected">
+(All)
+</option>
+
+<option value="28129" >Advanced Practice Provider</option>
+
+<option value="28128" >Allied Health</option>
+
+<option value="8730" >Information Systems/Technology</option>
+
+<option value="28130" >Intern/Extern</option>
+
+<option value="28131" >LNA/MA</option>
+
+<option value="28132" >Nursing</option>
+
+<option value="28133" >Nursing Residency</option>
+
+<option value="28134" >Physician</option>
+
+<option value="8739" >Professional/Management</option>
+
+<option value="28135" >Research/Science</option>
+
+<option value="28136" >Secretarial/Clerical/Administrative</option>
+
+<option value="28137" >Service</option>
+
+</select>
+</div>
+
+
+
+
+<div class="iCIMS_InfoData iCIMS_InfoData_JobSearch iCIMS_TableCell">
+<label for="jsb_f_positiontype_s" id="jsb_f_positiontype_label">
+Position Type
+</label>
+<select id="jsb_f_positiontype_s" class="Field_SearchMultiSelect" name="searchPositionType" >
+<option value="" selected="selected">
+(All)
+</option>
+
+<option value="2049" >Full-Time (30 to 40 hrs per week)</option>
+
+<option value="2050" >Part-Time (20 to 29 hrs per week)</option>
+
+<option value="28151" >Non-Benefit Eligible (.02 to 19.9 per week)</option>
+
+<option value="28152" >Per Diem (.01 per week, no set schedule/varies)</option>
+
+<option value="32213" >POI</option>
+
+</select>
+</div>
+
+
+<div class="iCIMS_InfoData iCIMS_InfoData_JobSearch iCIMS_TableCell">
+<label for="jsb_f_location_s" id="jsb_f_location_label">
+Location
+</label>
+<select id="jsb_f_location_s" class="Field_SearchMultiSelect" onchange="icimsLocationChange(this)" name="searchLocation" >
+<option value="" selected="selected">
+(All)
+</option>
+
+
+
+<script type="text/javascript">document.write("<option value=\"zipRadius\" >(Zip Code)</option>");</script>
+
+<option value="-12813-Claremont" >NH,Claremont</option>
+
+<option value="-12813-Concord" >NH,Concord</option>
+
+<option value="-12813-Hampstead" >NH,Hampstead</option>
+
+<option value="-12813-Keene" >NH,Keene</option>
+
+<option value="-12813-Lebanon" >NH,Lebanon</option>
+
+<option value="-12813-Manchester" >NH,Manchester</option>
+
+<option value="-12813-Milford" >NH,Milford</option>
+
+<option value="-12813-Nashua" >NH,Nashua</option>
+
+<option value="-12813-New London" >NH,New London</option>
+
+<option value="-12813-Newport" >NH,Newport</option>
+
+<option value="-12829-Bennington" >VT,Bennington</option>
+
+<option value="-12829-St. Johnsbury" >VT,St. Johnsbury</option>
+
+<option value="-12829-Windsor" >VT,Windsor</option>
+
+</select>
+<div id="select_accessibility" class="sr-only" aria-live="polite" ></div>
+<div id="select_accessibility_one" class="sr-only" aria-hidden="true">One additional field has been created</div>
+<div id="select_accessibility_two" class="sr-only" aria-hidden="true">Two additional fields have been created</div>
+<div id="select_accessibility_one_collapse" class="sr-only" aria-hidden="true">One field has been collapsed</div>
+<div id="select_accessibility_two_collapse" class="sr-only" aria-hidden="true">Two fields have been collapsed</div>
+<input type="hidden" id="lat" name="latitude" value="" />
+<input type="hidden" id="lon" name="longitude" value="" />
+</div>
+
+
+<div class="iCIMS_InfoData iCIMS_InfoData_JobSearch iCIMS_TableCell" >
+<div class="iCIMS_Zip_Code_Block iCIMS_ZipRadiusBlock">
+<label for="jsb_f_zipcode_i">
+Zip Code
+</label>
+<input type="text" id="jsb_f_zipcode_i" name="searchZip" class="iCIMS_RoundedInput form-control" value="" />
+</div>
+</div>
+<div class="iCIMS_InfoField_JobSearch_Zip iCIMS_TableCell">
+<div class="iCIMS_Radius_Block iCIMS_ZipRadiusBlock">
+
+
+
+<div class="iCIMS_InfoData iCIMS_Radius_Input">
+<label for="jsb_f_zipradius_s">
+Find jobs within
+(miles)
+</label>
+<select id="jsb_f_zipradius_s" name="searchRadius" class="iCIMS_RoundedInput">
+
+
+<option value="5" >5</option>
+
+
+<option value="10" >10</option>
+
+
+<option value="15" >15</option>
+
+
+<option value="20" selected="selected">20</option>
+
+
+<option value="25" >25</option>
+
+
+<option value="35" >35</option>
+
+
+<option value="50" >50</option>
+
+
+<option value="75" >75</option>
+
+
+<option value="100" >100</option>
+
+
+<option value="150" >150</option>
+
+
+<option value="200" >200</option>
+
+</select>
+</div>
+
+
+</div>
+</div>
+
+</div>
+</div>
+</div>
+<div class="iCIMS_Table iCIMS_Search_Action_Container">
+<div class="iCIMS_TableRow">
+<div class="iCIMS_InfoData iCIMS_InfoData_JobSearch iCIMS_TableCell iCIMS_JobSearchSubmitBtn_Mobile">
+<input type="submit" id="jsb_form_submit_i_mobile" class="iCIMS_PrimaryButton" value="Search" />
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+
+</div>
+
+</form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="region" aria-live="polite" class="iCIMS_NoDisplay" id="iCIMS_SortTextDiv">
+<div class="iCIMS_SortText">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div  tabindex="-1"  class="iCIMS_Message iCIMS_SystemMessage iCIMS_GenericMessage">
+
+
+
+Click column header to sort
+
+
+
+
+</div>
+
+</div>
+</div>
+
+
+
+<div class="container-fluid iCIMS_SearchResultsHeader">
+<div class="row">
+<div class="pull-left">
+
+
+<h2 class="iCIMS_SubHeader iCIMS_SubHeader_Jobs">
+Search Results
+Page 1 of 1 
+</h2>
+
+
+
+</div>
+<div class="pull-right">
+<div class="pull-left">
+
+<label for="iCIMS_SortSelect" class="iCIMS_SortSelect_Label">Sort By</label>
+<select id="iCIMS_SortSelect" class="iCIMS_SortSelect" onchange="window.location.href='https://providers-dartmouth-hitchcock.icims.com/jobs/search?mode=redo&amp;pr=0&amp;schemaId=' + encodeURIComponent(this.options[this.selectedIndex].value) + '&amp;o=' + this.options[this.selectedIndex].getAttribute('orderby') + '&amp;in_iframe=1&amp;searchKeyword=nurse+practitioner&amp;searchRelation=keyword_all';">
+<option>Sort By...</option>
+
+
+<option value="$T{Job}.$F{ExtJobID}" orderby="D" >
+Requisition ID <span class="iCIMS_SortArrowEntity iCIMS_NoDisplay">(Ascending)</span>
+</option>
+<option value="$T{Job}.$F{ExtJobID}" orderby="A" >
+Requisition ID <span class="iCIMS_SortArrowEntity iCIMS_NoDisplay">(Descending)</span>
+</option>
+
+
+
+<option value="$T{Job}.$F{JobTitle}" orderby="D" >
+Job Posting Title <span class="iCIMS_SortArrowEntity iCIMS_NoDisplay">(Ascending)</span>
+</option>
+<option value="$T{Job}.$F{JobTitle}" orderby="A" >
+Job Posting Title <span class="iCIMS_SortArrowEntity iCIMS_NoDisplay">(Descending)</span>
+</option>
+
+
+
+
+
+<option value="$T{Job}.$T{JobPost}.$F{PostedDateTime}" orderby="D" >
+Requisition Post Information* : Posted Date <span class="iCIMS_SortArrowEntity iCIMS_NoDisplay">(Ascending)</span>
+</option>
+<option value="$T{Job}.$T{JobPost}.$F{PostedDateTime}" orderby="A" >
+Requisition Post Information* : Posted Date <span class="iCIMS_SortArrowEntity iCIMS_NoDisplay">(Descending)</span>
+</option>
+
+
+
+
+
+<option value="$T{Job}.$T{JobLocation}.$T{Company}.$T{ResumeContent3120}.$F{Title}" orderby="D" >
+Location Name <span class="iCIMS_SortArrowEntity iCIMS_NoDisplay">(Ascending)</span>
+</option>
+<option value="$T{Job}.$T{JobLocation}.$T{Company}.$T{ResumeContent3120}.$F{Title}" orderby="A" >
+Location Name <span class="iCIMS_SortArrowEntity iCIMS_NoDisplay">(Descending)</span>
+</option>
+
+
+</select>
+
+</div>
+</div>
+</div>
+
+</div>
+
+
+
+
+
+<ul class="container-fluid iCIMS_JobsTable">
+
+<li class="iCIMS_JobCardItem">
+<div class="row">
+<div class="col-xs-6 header left">
+<span class="sr-only field-label">Job Locations</span>
+<span >
+US-NH-Keene</span>
+</div>
+<div class="col-xs-6 header right">
+<span class="sr-only field-label">Requisition Post Information* : Posted Date</span>
+<span title="10/13/2026 3:41 PM">
+6 days ago<span class="sr-only">(10/13/2026 3:41 PM)</span></span>
+</div>
+<div class="col-xs-12 title">
+<a href="https://providers-dartmouth-hitchcock.icims.com/jobs/42639/orthopedic-np-or-pa/job?in_iframe=1" class="iCIMS_Anchor" title="42639 - Orthopedic NP or PA">
+<span class="sr-only field-label">Job Posting Title</span>
+<h3 >
+Orthopedic NP or PA</h3>
+</a>
+</div>
+<div class="col-xs-12 additionalFields">
+<dl class="iCIMS_JobHeaderGroup">
+<div class="iCIMS_JobHeaderTag">
+<dt class="iCIMS_JobHeaderField">Requisition ID</dt>
+<dd class="iCIMS_JobHeaderData"><span >
+2026-42639</span>
+</dd>
+</div>
+<div class="iCIMS_JobHeaderTag">
+<dt class="iCIMS_JobHeaderField"><span class="glyphicons glyphicons-map-marker" aria-hidden="true"></span>
+<span class="sr-only field-label">Location Name</span>
+</dt>
+<dd class="iCIMS_JobHeaderData"><span >
+Keene, NH</span>
+</dd>
+</div>
+</dl>
+</div>
+</div>
+</li>
+
+<li class="iCIMS_JobCardItem">
+<div class="row">
+<div class="col-xs-6 header left">
+<span class="sr-only field-label">Job Locations</span>
+<span >
+US-NH-Lebanon</span>
+</div>
+<div class="col-xs-6 header right">
+<span class="sr-only field-label">Requisition Post Information* : Posted Date</span>
+<span title="10/15/2026 11:13 AM">
+5 days ago<span class="sr-only">(10/15/2026 11:13 AM)</span></span>
+</div>
+<div class="col-xs-12 title">
+<a href="https://providers-dartmouth-hitchcock.icims.com/jobs/42294/neurosurgery-advanced-practice-provider---inpatient/job?in_iframe=1" class="iCIMS_Anchor" title="42294 - Neurosurgery Advanced Practice Provider - Inpatient">
+<span class="sr-only field-label">Job Posting Title</span>
+<h3 >
+Neurosurgery Advanced Practice Provider - Inpatient</h3>
+</a>
+</div>
+<div class="col-xs-12 additionalFields">
+<dl class="iCIMS_JobHeaderGroup">
+<div class="iCIMS_JobHeaderTag">
+<dt class="iCIMS_JobHeaderField">Requisition ID</dt>
+<dd class="iCIMS_JobHeaderData"><span >
+2026-42294</span>
+</dd>
+</div>
+<div class="iCIMS_JobHeaderTag">
+<dt class="iCIMS_JobHeaderField"><span class="glyphicons glyphicons-map-marker" aria-hidden="true"></span>
+<span class="sr-only field-label">Location Name</span>
+</dt>
+<dd class="iCIMS_JobHeaderData"><span >
+Lebanon, NH</span>
+</dd>
+</div>
+</dl>
+</div>
+</div>
+</li>
+
+<li class="iCIMS_JobCardItem">
+<div class="row">
+<div class="col-xs-6 header left">
+<span class="sr-only field-label">Job Locations</span>
+<span >
+US-NH-Lebanon</span>
+</div>
+<div class="col-xs-6 header right">
+<span class="sr-only field-label">Requisition Post Information* : Posted Date</span>
+<span title="10/13/2026 4:33 PM">
+6 days ago<span class="sr-only">(10/13/2026 4:33 PM)</span></span>
+</div>
+<div class="col-xs-12 title">
+<a href="https://providers-dartmouth-hitchcock.icims.com/jobs/42141/surgical-oncology-advanced-practice-provider---inpatient-or-first-assist/job?in_iframe=1" class="iCIMS_Anchor" title="42141 - Surgical Oncology Advanced Practice Provider - Inpatient/OR First-Assist">
+<span class="sr-only field-label">Job Posting Title</span>
+<h3 >
+Surgical Oncology Advanced Practice Provider - Inpatient/OR First-Assist</h3>
+</a>
+</div>
+<div class="col-xs-12 additionalFields">
+<dl class="iCIMS_JobHeaderGroup">
+<div class="iCIMS_JobHeaderTag">
+<dt class="iCIMS_JobHeaderField">Requisition ID</dt>
+<dd class="iCIMS_JobHeaderData"><span >
+2026-42141</span>
+</dd>
+</div>
+<div class="iCIMS_JobHeaderTag">
+<dt class="iCIMS_JobHeaderField"><span class="glyphicons glyphicons-map-marker" aria-hidden="true"></span>
+<span class="sr-only field-label">Location Name</span>
+</dt>
+<dd class="iCIMS_JobHeaderData"><span >
+Lebanon, NH</span>
+</dd>
+</div>
+</dl>
+</div>
+</div>
+</li>
+
+<li class="iCIMS_JobCardItem">
+<div class="row">
+<div class="col-xs-6 header left">
+<span class="sr-only field-label">Job Locations</span>
+<span >
+US-NH-Lebanon</span>
+</div>
+<div class="col-xs-6 header right">
+<span class="sr-only field-label">Requisition Post Information* : Posted Date</span>
+<span title="9/30/2026 2:20 PM">
+3 weeks ago<span class="sr-only">(9/30/2026 2:20 PM)</span></span>
+</div>
+<div class="col-xs-12 title">
+<a href="https://providers-dartmouth-hitchcock.icims.com/jobs/41855/foot-and-ankle-surgical-advanced-practice-provider/job?in_iframe=1" class="iCIMS_Anchor" title="41855 - Foot and Ankle Surgical Advanced Practice Provider">
+<span class="sr-only field-label">Job Posting Title</span>
+<h3 >
+Foot and Ankle Surgical Advanced Practice Provider</h3>
+</a>
+</div>
+<div class="col-xs-12 additionalFields">
+<dl class="iCIMS_JobHeaderGroup">
+<div class="iCIMS_JobHeaderTag">
+<dt class="iCIMS_JobHeaderField">Requisition ID</dt>
+<dd class="iCIMS_JobHeaderData"><span >
+2026-41855</span>
+</dd>
+</div>
+<div class="iCIMS_JobHeaderTag">
+<dt class="iCIMS_JobHeaderField"><span class="glyphicons glyphicons-map-marker" aria-hidden="true"></span>
+<span class="sr-only field-label">Location Name</span>
+</dt>
+<dd class="iCIMS_JobHeaderData"><span >
+Lebanon, NH</span>
+</dd>
+</div>
+</dl>
+</div>
+</div>
+</li>
+
+<li class="iCIMS_JobCardItem">
+<div class="row">
+<div class="col-xs-6 header left">
+<span class="sr-only field-label">Job Locations</span>
+<span >
+US-NH-Concord</span>
+</div>
+<div class="col-xs-6 header right">
+<span class="sr-only field-label">Requisition Post Information* : Posted Date</span>
+<span title="10/12/2026 8:33 AM">
+1 week ago<span class="sr-only">(10/12/2026 8:33 AM)</span></span>
+</div>
+<div class="col-xs-12 title">
+<a href="https://providers-dartmouth-hitchcock.icims.com/jobs/41519/neurology-np-or-pa---dartmouth-hitchcock-clinic-concord/job?in_iframe=1" class="iCIMS_Anchor" title="41519 - Neurology NP or PA - Dartmouth Hitchcock Clinic Concord">
+<span class="sr-only field-label">Job Posting Title</span>
+<h3 >
+Neurology NP or PA - Dartmouth Hitchcock Clinic Concord</h3>
+</a>
+</div>
+<div class="col-xs-12 additionalFields">
+<dl class="iCIMS_JobHeaderGroup">
+<div class="iCIMS_JobHeaderTag">
+<dt class="iCIMS_JobHeaderField">Requisition ID</dt>
+<dd class="iCIMS_JobHeaderData"><span >
+2026-41519</span>
+</dd>
+</div>
+<div class="iCIMS_JobHeaderTag">
+<dt class="iCIMS_JobHeaderField"><span class="glyphicons glyphicons-map-marker" aria-hidden="true"></span>
+<span class="sr-only field-label">Location Name</span>
+</dt>
+<dd class="iCIMS_JobHeaderData"><span >
+Concord, NH</span>
+</dd>
+</div>
+</dl>
+</div>
+</div>
+</li>
+
+<li class="iCIMS_JobCardItem">
+<div class="row">
+<div class="col-xs-6 header left">
+<span class="sr-only field-label">Job Locations</span>
+<span >
+US-NH-Lebanon</span>
+</div>
+<div class="col-xs-6 header right">
+<span class="sr-only field-label">Requisition Post Information* : Posted Date</span>
+<span title="8/19/2026 9:48 AM">
+2 months ago<span class="sr-only">(8/19/2026 9:48 AM)</span></span>
+</div>
+<div class="col-xs-12 title">
+<a href="https://providers-dartmouth-hitchcock.icims.com/jobs/41504/orthopaedic-advanced-practice-provider---trauma/job?in_iframe=1" class="iCIMS_Anchor" title="41504 - Orthopaedic Advanced Practice Provider - Trauma">
+<span class="sr-only field-label">Job Posting Title</span>
+<h3 >
+Orthopaedic Advanced Practice Provider - Trauma</h3>
+</a>
+</div>
+<div class="col-xs-12 additionalFields">
+<dl class="iCIMS_JobHeaderGroup">
+<div class="iCIMS_JobHeaderTag">
+<dt class="iCIMS_JobHeaderField">Requisition ID</dt>
+<dd class="iCIMS_JobHeaderData"><span >
+2026-41504</span>
+</dd>
+</div>
+<div class="iCIMS_JobHeaderTag">
+<dt class="iCIMS_JobHeaderField"><span class="glyphicons glyphicons-map-marker" aria-hidden="true"></span>
+<span class="sr-only field-label">Location Name</span>
+</dt>
+<dd class="iCIMS_JobHeaderData"><span >
+Lebanon, NH</span>
+</dd>
+</div>
+</dl>
+</div>
+</div>
+</li>
+
+<li class="iCIMS_JobCardItem">
+<div class="row">
+<div class="col-xs-6 header left">
+<span class="sr-only field-label">Job Locations</span>
+<span >
+US-NH-Concord</span>
+</div>
+<div class="col-xs-6 header right">
+<span class="sr-only field-label">Requisition Post Information* : Posted Date</span>
+<span title="7/30/2026 9:04 AM">
+3 months ago<span class="sr-only">(7/30/2026 9:04 AM)</span></span>
+</div>
+<div class="col-xs-12 title">
+<a href="https://providers-dartmouth-hitchcock.icims.com/jobs/40888/general-medical-advanced-practice-provider%2c-new-hampshire-hospital---per-diem/job?in_iframe=1" class="iCIMS_Anchor" title="40888 - General Medical Advanced Practice Provider, New Hampshire Hospital - Per Diem">
+<span class="sr-only field-label">Job Posting Title</span>
+<h3 >
+General Medical Advanced Practice Provider, New Hampshire Hospital - Per Diem</h3>
+</a>
+</div>
+<div class="col-xs-12 additionalFields">
+<dl class="iCIMS_JobHeaderGroup">
+<div class="iCIMS_JobHeaderTag">
+<dt class="iCIMS_JobHeaderField">Requisition ID</dt>
+<dd class="iCIMS_JobHeaderData"><span >
+2026-40888</span>
+</dd>
+</div>
+<div class="iCIMS_JobHeaderTag">
+<dt class="iCIMS_JobHeaderField"><span class="glyphicons glyphicons-map-marker" aria-hidden="true"></span>
+<span class="sr-only field-label">Location Name</span>
+</dt>
+<dd class="iCIMS_JobHeaderData"><span >
+Concord, NH</span>
+</dd>
+</div>
+</dl>
+</div>
+</div>
+</li>
+
+<li class="iCIMS_JobCardItem">
+<div class="row">
+<div class="col-xs-6 header left">
+<span class="sr-only field-label">Job Locations</span>
+<span >
+US-NH-Keene</span>
+</div>
+<div class="col-xs-6 header right">
+<span class="sr-only field-label">Requisition Post Information* : Posted Date</span>
+<span title="7/10/2026 3:46 PM">
+3 months ago<span class="sr-only">(7/10/2026 3:46 PM)</span></span>
+</div>
+<div class="col-xs-12 title">
+<a href="https://providers-dartmouth-hitchcock.icims.com/jobs/40866/gynecology-and-urogynecology-aprn/job?in_iframe=1" class="iCIMS_Anchor" title="40866 - Gynecology and Urogynecology APRN">
+<span class="sr-only field-label">Job Posting Title</span>
+<h3 >
+Gynecology and Urogynecology APRN</h3>
+</a>
+</div>
+<div class="col-xs-12 additionalFields">
+<dl class="iCIMS_JobHeaderGroup">
+<div class="iCIMS_JobHeaderTag">
+<dt class="iCIMS_JobHeaderField">Requisition ID</dt>
+<dd class="iCIMS_JobHeaderData"><span >
+2026-40866</span>
+</dd>
+</div>
+<div class="iCIMS_JobHeaderTag">
+<dt class="iCIMS_JobHeaderField"><span class="glyphicons glyphicons-map-marker" aria-hidden="true"></span>
+<span class="sr-only field-label">Location Name</span>
+</dt>
+<dd class="iCIMS_JobHeaderData"><span >
+Keene, NH</span>
+</dd>
+</div>
+</dl>
+</div>
+</div>
+</li>
+
+<li class="iCIMS_JobCardItem">
+<div class="row">
+<div class="col-xs-6 header left">
+<span class="sr-only field-label">Job Locations</span>
+<span >
+US-NH-Lebanon</span>
+</div>
+<div class="col-xs-6 header right">
+<span class="sr-only field-label">Requisition Post Information* : Posted Date</span>
+<span title="8/17/2026 9:25 AM">
+2 months ago<span class="sr-only">(8/17/2026 9:25 AM)</span></span>
+</div>
+<div class="col-xs-12 title">
+<a href="https://providers-dartmouth-hitchcock.icims.com/jobs/40632/health-at-home-aprn-palliative-%26-hospice-care-%28ft%29/job?in_iframe=1" class="iCIMS_Anchor" title="40632 - Health at Home APRN-Palliative &amp; Hospice Care (FT)">
+<span class="sr-only field-label">Job Posting Title</span>
+<h3 >
+Health at Home APRN-Palliative &amp; Hospice Care (FT)</h3>
+</a>
+</div>
+<div class="col-xs-12 additionalFields">
+<dl class="iCIMS_JobHeaderGroup">
+<div class="iCIMS_JobHeaderTag">
+<dt class="iCIMS_JobHeaderField">Requisition ID</dt>
+<dd class="iCIMS_JobHeaderData"><span >
+2026-40632</span>
+</dd>
+</div>
+<div class="iCIMS_JobHeaderTag">
+<dt class="iCIMS_JobHeaderField"><span class="glyphicons glyphicons-map-marker" aria-hidden="true"></span>
+<span class="sr-only field-label">Location Name</span>
+</dt>
+<dd class="iCIMS_JobHeaderData"><span >
+Lebanon, NH</span>
+</dd>
+</div>
+</dl>
+</div>
+</div>
+</li>
+
+<li class="iCIMS_JobCardItem">
+<div class="row">
+<div class="col-xs-6 header left">
+<span class="sr-only field-label">Job Locations</span>
+<span >
+US-NH-Lebanon</span>
+</div>
+<div class="col-xs-6 header right">
+<span class="sr-only field-label">Requisition Post Information* : Posted Date</span>
+<span title="7/1/2026 9:22 AM">
+4 months ago<span class="sr-only">(7/1/2026 9:22 AM)</span></span>
+</div>
+<div class="col-xs-12 title">
+<a href="https://providers-dartmouth-hitchcock.icims.com/jobs/40555/thoracic-oncology-advanced-practice-provider/job?in_iframe=1" class="iCIMS_Anchor" title="40555 - Thoracic Oncology Advanced Practice Provider">
+<span class="sr-only field-label">Job Posting Title</span>
+<h3 >
+Thoracic Oncology Advanced Practice Provider</h3>
+</a>
+</div>
+<div class="col-xs-12 additionalFields">
+<dl class="iCIMS_JobHeaderGroup">
+<div class="iCIMS_JobHeaderTag">
+<dt class="iCIMS_JobHeaderField">Requisition ID</dt>
+<dd class="iCIMS_JobHeaderData"><span >
+2026-40555</span>
+</dd>
+</div>
+<div class="iCIMS_JobHeaderTag">
+<dt class="iCIMS_JobHeaderField"><span class="glyphicons glyphicons-map-marker" aria-hidden="true"></span>
+<span class="sr-only field-label">Location Name</span>
+</dt>
+<dd class="iCIMS_JobHeaderData"><span >
+Lebanon, NH</span>
+</dd>
+</div>
+</dl>
+</div>
+</div>
+</li>
+
+<li class="iCIMS_JobCardItem">
+<div class="row">
+<div class="col-xs-6 header left">
+<span class="sr-only field-label">Job Locations</span>
+<span >
+US-NH-Manchester</span>
+</div>
+<div class="col-xs-6 header right">
+<span class="sr-only field-label">Requisition Post Information* : Posted Date</span>
+<span title="6/24/2026 8:43 AM">
+4 months ago<span class="sr-only">(6/24/2026 8:43 AM)</span></span>
+</div>
+<div class="col-xs-12 title">
+<a href="https://providers-dartmouth-hitchcock.icims.com/jobs/40492/general-cardiology-advanced-practice-provider-%28ft%29-manchester/job?in_iframe=1" class="iCIMS_Anchor" title="40492 - General Cardiology Advanced Practice Provider (FT) Manchester">
+<span class="sr-only field-label">Job Posting Title</span>
+<h3 >
+General Cardiology Advanced Practice Provider (FT) Manchester</h3>
+</a>
+</div>
+<div class="col-xs-12 additionalFields">
+<dl class="iCIMS_JobHeaderGroup">
+<div class="iCIMS_JobHeaderTag">
+<dt class="iCIMS_JobHeaderField">Requisition ID</dt>
+<dd class="iCIMS_JobHeaderData"><span >
+2026-40492</span>
+</dd>
+</div>
+<div class="iCIMS_JobHeaderTag">
+<dt class="iCIMS_JobHeaderField"><span class="glyphicons glyphicons-map-marker" aria-hidden="true"></span>
+<span class="sr-only field-label">Location Name</span>
+</dt>
+<dd class="iCIMS_JobHeaderData"><span >
+Manchester, NH</span>
+</dd>
+</div>
+</dl>
+</div>
+</div>
+</li>
+
+<li class="iCIMS_JobCardItem">
+<div class="row">
+<div class="col-xs-6 header left">
+<span class="sr-only field-label">Job Locations</span>
+<span >
+US-NH-Newport</span>
+</div>
+<div class="col-xs-6 header right">
+<span class="sr-only field-label">Requisition Post Information* : Posted Date</span>
+<span title="6/9/2026 11:15 AM">
+4 months ago<span class="sr-only">(6/9/2026 11:15 AM)</span></span>
+</div>
+<div class="col-xs-12 title">
+<a href="https://providers-dartmouth-hitchcock.icims.com/jobs/40319/advanced-practice-provider---outpatient-clinic%2c-family-medicine---newport-health-center/job?in_iframe=1" class="iCIMS_Anchor" title="40319 - Advanced Practice Provider - Outpatient Clinic, Family Medicine - Newport Health Center">
+<span class="sr-only field-label">Job Posting Title</span>
+<h3 >
+Advanced Practice Provider - Outpatient Clinic, Family Medicine - Newport Health Center</h3>
+</a>
+</div>
+<div class="col-xs-12 additionalFields">
+<dl class="iCIMS_JobHeaderGroup">
+<div class="iCIMS_JobHeaderTag">
+<dt class="iCIMS_JobHeaderField">Requisition ID</dt>
+<dd class="iCIMS_JobHeaderData"><span >
+2026-40319</span>
+</dd>
+</div>
+<div class="iCIMS_JobHeaderTag">
+<dt class="iCIMS_JobHeaderField"><span class="glyphicons glyphicons-map-marker" aria-hidden="true"></span>
+<span class="sr-only field-label">Location Name</span>
+</dt>
+<dd class="iCIMS_JobHeaderData"><span >
+Newport, NH</span>
+</dd>
+</div>
+</dl>
+</div>
+</div>
+</li>
+
+<li class="iCIMS_JobCardItem">
+<div class="row">
+<div class="col-xs-6 header left">
+<span class="sr-only field-label">Job Locations</span>
+<span >
+US-NH-Lebanon</span>
+</div>
+<div class="col-xs-6 header right">
+<span class="sr-only field-label">Requisition Post Information* : Posted Date</span>
+<span title="7/21/2026 3:33 PM">
+3 months ago<span class="sr-only">(7/21/2026 3:33 PM)</span></span>
+</div>
+<div class="col-xs-12 title">
+<a href="https://providers-dartmouth-hitchcock.icims.com/jobs/40234/aprn-or-pa-%28ft%29-outpatient-clinic-%e2%80%93-same-day-access-in-basket-clinician/job?in_iframe=1" class="iCIMS_Anchor" title="40234 - APRN or PA (FT) Outpatient Clinic – Same Day Access/In-Basket Clinician">
+<span class="sr-only field-label">Job Posting Title</span>
+<h3 >
+APRN or PA (FT) Outpatient Clinic &ndash; Same Day Access/In-Basket Clinician</h3>
+</a>
+</div>
+<div class="col-xs-12 additionalFields">
+<dl class="iCIMS_JobHeaderGroup">
+<div class="iCIMS_JobHeaderTag">
+<dt class="iCIMS_JobHeaderField">Requisition ID</dt>
+<dd class="iCIMS_JobHeaderData"><span >
+2026-40234</span>
+</dd>
+</div>
+<div class="iCIMS_JobHeaderTag">
+<dt class="iCIMS_JobHeaderField"><span class="glyphicons glyphicons-map-marker" aria-hidden="true"></span>
+<span class="sr-only field-label">Location Name</span>
+</dt>
+<dd class="iCIMS_JobHeaderData"><span >
+Lebanon, NH</span>
+</dd>
+</div>
+</dl>
+</div>
+</div>
+</li>
+
+<li class="iCIMS_JobCardItem">
+<div class="row">
+<div class="col-xs-6 header left">
+<span class="sr-only field-label">Job Locations</span>
+<span >
+US-NH-Lebanon</span>
+</div>
+<div class="col-xs-6 header right">
+<span class="sr-only field-label">Requisition Post Information* : Posted Date</span>
+<span title="10/9/2026 12:31 PM">
+1 week ago<span class="sr-only">(10/9/2026 12:31 PM)</span></span>
+</div>
+<div class="col-xs-12 title">
+<a href="https://providers-dartmouth-hitchcock.icims.com/jobs/40151/orthopaedic-advanced-practice-provider---outpatient/job?in_iframe=1" class="iCIMS_Anchor" title="40151 - Orthopaedic Advanced Practice Provider - Outpatient">
+<span class="sr-only field-label">Job Posting Title</span>
+<h3 >
+Orthopaedic Advanced Practice Provider - Outpatient</h3>
+</a>
+</div>
+<div class="col-xs-12 additionalFields">
+<dl class="iCIMS_JobHeaderGroup">
+<div class="iCIMS_JobHeaderTag">
+<dt class="iCIMS_JobHeaderField">Requisition ID</dt>
+<dd class="iCIMS_JobHeaderData"><span >
+2026-40151</span>
+</dd>
+</div>
+<div class="iCIMS_JobHeaderTag">
+<dt class="iCIMS_JobHeaderField"><span class="glyphicons glyphicons-map-marker" aria-hidden="true"></span>
+<span class="sr-only field-label">Location Name</span>
+</dt>
+<dd class="iCIMS_JobHeaderData"><span >
+Lebanon, NH</span>
+</dd>
+</div>
+</dl>
+</div>
+</div>
+</li>
+
+<li class="iCIMS_JobCardItem">
+<div class="row">
+<div class="col-xs-6 header left">
+<span class="sr-only field-label">Job Locations</span>
+<span >
+US-NH-Lebanon</span>
+</div>
+<div class="col-xs-6 header right">
+<span class="sr-only field-label">Requisition Post Information* : Posted Date</span>
+<span title="9/10/2026 4:43 PM">
+1 month ago<span class="sr-only">(9/10/2026 4:43 PM)</span></span>
+</div>
+<div class="col-xs-12 title">
+<a href="https://providers-dartmouth-hitchcock.icims.com/jobs/39307/rheumatology-advanced-practice-provider-%28ft%29-lebanon/job?in_iframe=1" class="iCIMS_Anchor" title="39307 - Rheumatology Advanced Practice Provider (FT) Lebanon">
+<span class="sr-only field-label">Job Posting Title</span>
+<h3 >
+Rheumatology Advanced Practice Provider (FT) Lebanon</h3>
+</a>
+</div>
+<div class="col-xs-12 additionalFields">
+<dl class="iCIMS_JobHeaderGroup">
+<div class="iCIMS_JobHeaderTag">
+<dt class="iCIMS_JobHeaderField">Requisition ID</dt>
+<dd class="iCIMS_JobHeaderData"><span >
+2026-39307</span>
+</dd>
+</div>
+<div class="iCIMS_JobHeaderTag">
+<dt class="iCIMS_JobHeaderField"><span class="glyphicons glyphicons-map-marker" aria-hidden="true"></span>
+<span class="sr-only field-label">Location Name</span>
+</dt>
+<dd class="iCIMS_JobHeaderData"><span >
+Lebanon, NH</span>
+</dd>
+</div>
+</dl>
+</div>
+</div>
+</li>
+
+<li class="iCIMS_JobCardItem">
+<div class="row">
+<div class="col-xs-6 header left">
+<span class="sr-only field-label">Job Locations</span>
+<span >
+US-NH-Lebanon | US-NH-New London</span>
+</div>
+<div class="col-xs-6 header right">
+<span class="sr-only field-label">Requisition Post Information* : Posted Date</span>
+<span title="9/30/2026 4:42 PM">
+3 weeks ago<span class="sr-only">(9/30/2026 4:42 PM)</span></span>
+</div>
+<div class="col-xs-12 title">
+<a href="https://providers-dartmouth-hitchcock.icims.com/jobs/39051/orthopaedic-advanced-practice-provider---adult-pediatrics/job?in_iframe=1" class="iCIMS_Anchor" title="39051 - Orthopaedic Advanced Practice Provider - Adult/Pediatrics">
+<span class="sr-only field-label">Job Posting Title</span>
+<h3 >
+Orthopaedic Advanced Practice Provider - Adult/Pediatrics</h3>
+</a>
+</div>
+<div class="col-xs-12 additionalFields">
+<dl class="iCIMS_JobHeaderGroup">
+<div class="iCIMS_JobHeaderTag">
+<dt class="iCIMS_JobHeaderField">Requisition ID</dt>
+<dd class="iCIMS_JobHeaderData"><span >
+2026-39051</span>
+</dd>
+</div>
+<div class="iCIMS_JobHeaderTag">
+<dt class="iCIMS_JobHeaderField"><span class="glyphicons glyphicons-map-marker" aria-hidden="true"></span>
+<span class="sr-only field-label">Additional Locations</span>
+</dt>
+<dd class="iCIMS_JobHeaderData"><span >
+US-NH-New London</span>
+</dd>
+</div>
+<div class="iCIMS_JobHeaderTag">
+<dt class="iCIMS_JobHeaderField"><span class="glyphicons glyphicons-map-marker" aria-hidden="true"></span>
+<span class="sr-only field-label">Location Name</span>
+</dt>
+<dd class="iCIMS_JobHeaderData"><span >
+Lebanon, NH</span>
+</dd>
+</div>
+</dl>
+</div>
+</div>
+</li>
+
+<li class="iCIMS_JobCardItem">
+<div class="row">
+<div class="col-xs-6 header left">
+<span class="sr-only field-label">Job Locations</span>
+<span >
+US-NH-Lebanon</span>
+</div>
+<div class="col-xs-6 header right">
+<span class="sr-only field-label">Requisition Post Information* : Posted Date</span>
+<span title="5/7/2026 10:10 AM">
+5 months ago<span class="sr-only">(5/7/2026 10:10 AM)</span></span>
+</div>
+<div class="col-xs-12 title">
+<a href="https://providers-dartmouth-hitchcock.icims.com/jobs/38973/surgical-oncology-advanced-practice-provider-%28np-pa%29/job?in_iframe=1" class="iCIMS_Anchor" title="38973 - Surgical Oncology Advanced Practice Provider (NP/PA)">
+<span class="sr-only field-label">Job Posting Title</span>
+<h3 >
+Surgical Oncology Advanced Practice Provider (NP/PA)</h3>
+</a>
+</div>
+<div class="col-xs-12 additionalFields">
+<dl class="iCIMS_JobHeaderGroup">
+<div class="iCIMS_JobHeaderTag">
+<dt class="iCIMS_JobHeaderField">Requisition ID</dt>
+<dd class="iCIMS_JobHeaderData"><span >
+2026-38973</span>
+</dd>
+</div>
+<div class="iCIMS_JobHeaderTag">
+<dt class="iCIMS_JobHeaderField"><span class="glyphicons glyphicons-map-marker" aria-hidden="true"></span>
+<span class="sr-only field-label">Location Name</span>
+</dt>
+<dd class="iCIMS_JobHeaderData"><span >
+Lebanon, NH</span>
+</dd>
+</div>
+</dl>
+</div>
+</div>
+</li>
+
+<li class="iCIMS_JobCardItem">
+<div class="row">
+<div class="col-xs-6 header left">
+<span class="sr-only field-label">Job Locations</span>
+<span >
+US-VT-Bennington</span>
+</div>
+<div class="col-xs-6 header right">
+<span class="sr-only field-label">Requisition Post Information* : Posted Date</span>
+<span title="5/14/2026 11:27 AM">
+5 months ago<span class="sr-only">(5/14/2026 11:27 AM)</span></span>
+</div>
+<div class="col-xs-12 title">
+<a href="https://providers-dartmouth-hitchcock.icims.com/jobs/38569/psychiatric-advanced-practice-nurse---bennington%2c-vt/job?in_iframe=1" class="iCIMS_Anchor" title="38569 - Psychiatric Advanced Practice Nurse - Bennington, VT">
+<span class="sr-only field-label">Job Posting Title</span>
+<h3 >
+Psychiatric Advanced Practice Nurse - Bennington, VT</h3>
+</a>
+</div>
+<div class="col-xs-12 additionalFields">
+<dl class="iCIMS_JobHeaderGroup">
+<div class="iCIMS_JobHeaderTag">
+<dt class="iCIMS_JobHeaderField">Requisition ID</dt>
+<dd class="iCIMS_JobHeaderData"><span >
+2026-38569</span>
+</dd>
+</div>
+<div class="iCIMS_JobHeaderTag">
+<dt class="iCIMS_JobHeaderField"><span class="glyphicons glyphicons-map-marker" aria-hidden="true"></span>
+<span class="sr-only field-label">Location Name</span>
+</dt>
+<dd class="iCIMS_JobHeaderData"><span >
+Bennington, VT</span>
+</dd>
+</div>
+</dl>
+</div>
+</div>
+</li>
+
+<li class="iCIMS_JobCardItem">
+<div class="row">
+<div class="col-xs-6 header left">
+<span class="sr-only field-label">Job Locations</span>
+<span >
+US-NH-Lebanon</span>
+</div>
+<div class="col-xs-6 header right">
+<span class="sr-only field-label">Requisition Post Information* : Posted Date</span>
+<span title="4/8/2026 9:46 PM">
+6 months ago<span class="sr-only">(4/8/2026 9:46 PM)</span></span>
+</div>
+<div class="col-xs-12 title">
+<a href="https://providers-dartmouth-hitchcock.icims.com/jobs/37923/advanced-practice-provider-%28ft%29---hospital-medicine/job?in_iframe=1" class="iCIMS_Anchor" title="37923 - Advanced Practice Provider (FT) - Hospital Medicine">
+<span class="sr-only field-label">Job Posting Title</span>
+<h3 >
+Advanced Practice Provider (FT) - Hospital Medicine</h3>
+</a>
+</div>
+<div class="col-xs-12 additionalFields">
+<dl class="iCIMS_JobHeaderGroup">
+<div class="iCIMS_JobHeaderTag">
+<dt class="iCIMS_JobHeaderField">Requisition ID</dt>
+<dd class="iCIMS_JobHeaderData"><span >
+2026-37923</span>
+</dd>
+</div>
+<div class="iCIMS_JobHeaderTag">
+<dt class="iCIMS_JobHeaderField"><span class="glyphicons glyphicons-map-marker" aria-hidden="true"></span>
+<span class="sr-only field-label">Location Name</span>
+</dt>
+<dd class="iCIMS_JobHeaderData"><span >
+Lebanon, NH</span>
+</dd>
+</div>
+</dl>
+</div>
+</div>
+</li>
+
+<li class="iCIMS_JobCardItem">
+<div class="row">
+<div class="col-xs-6 header left">
+<span class="sr-only field-label">Job Locations</span>
+<span >
+US-NH-Lebanon</span>
+</div>
+<div class="col-xs-6 header right">
+<span class="sr-only field-label">Requisition Post Information* : Posted Date</span>
+<span title="3/13/2026 9:33 AM">
+7 months ago<span class="sr-only">(3/13/2026 9:33 AM)</span></span>
+</div>
+<div class="col-xs-12 title">
+<a href="https://providers-dartmouth-hitchcock.icims.com/jobs/37909/inpatient-hematology-advanced-practice-provider---cellular-therapy-immunotherapy/job?in_iframe=1" class="iCIMS_Anchor" title="37909 - Inpatient Hematology Advanced Practice Provider - Cellular Therapy/Immunotherapy">
+<span class="sr-only field-label">Job Posting Title</span>
+<h3 >
+Inpatient Hematology Advanced Practice Provider - Cellular Therapy/Immunotherapy</h3>
+</a>
+</div>
+<div class="col-xs-12 additionalFields">
+<dl class="iCIMS_JobHeaderGroup">
+<div class="iCIMS_JobHeaderTag">
+<dt class="iCIMS_JobHeaderField">Requisition ID</dt>
+<dd class="iCIMS_JobHeaderData"><span >
+2026-37909</span>
+</dd>
+</div>
+<div class="iCIMS_JobHeaderTag">
+<dt class="iCIMS_JobHeaderField"><span class="glyphicons glyphicons-map-marker" aria-hidden="true"></span>
+<span class="sr-only field-label">Location Name</span>
+</dt>
+<dd class="iCIMS_JobHeaderData"><span >
+Lebanon, NH</span>
+</dd>
+</div>
+</dl>
+</div>
+</div>
+</li>
+
+<li class="iCIMS_JobCardItem">
+<div class="row">
+<div class="col-xs-6 header left">
+<span class="sr-only field-label">Job Locations</span>
+<span >
+US-NH-Manchester</span>
+</div>
+<div class="col-xs-6 header right">
+<span class="sr-only field-label">Requisition Post Information* : Posted Date</span>
+<span title="10/19/2026 9:41 AM">
+15 hours ago<span class="sr-only">(10/19/2026 9:41 AM)</span></span>
+</div>
+<div class="col-xs-12 title">
+<a href="https://providers-dartmouth-hitchcock.icims.com/jobs/37492/pediatric-endocrinology/job?in_iframe=1" class="iCIMS_Anchor" title="37492 - Pediatric Endocrinology">
+<span class="sr-only field-label">Job Posting Title</span>
+<h3 >
+Pediatric Endocrinology</h3>
+</a>
+</div>
+<div class="col-xs-12 additionalFields">
+<dl class="iCIMS_JobHeaderGroup">
+<div class="iCIMS_JobHeaderTag">
+<dt class="iCIMS_JobHeaderField">Requisition ID</dt>
+<dd class="iCIMS_JobHeaderData"><span >
+2026-37492</span>
+</dd>
+</div>
+<div class="iCIMS_JobHeaderTag">
+<dt class="iCIMS_JobHeaderField"><span class="glyphicons glyphicons-map-marker" aria-hidden="true"></span>
+<span class="sr-only field-label">Location Name</span>
+</dt>
+<dd class="iCIMS_JobHeaderData"><span >
+Manchester, NH</span>
+</dd>
+</div>
+</dl>
+</div>
+</div>
+</li>
+
+<li class="iCIMS_JobCardItem">
+<div class="row">
+<div class="col-xs-6 header left">
+<span class="sr-only field-label">Job Locations</span>
+<span >
+US-NH-Lebanon</span>
+</div>
+<div class="col-xs-6 header right">
+<span class="sr-only field-label">Requisition Post Information* : Posted Date</span>
+<span title="4/15/2026 8:43 AM">
+6 months ago<span class="sr-only">(4/15/2026 8:43 AM)</span></span>
+</div>
+<div class="col-xs-12 title">
+<a href="https://providers-dartmouth-hitchcock.icims.com/jobs/36222/psychiatric-aprn---west-central-behavioral-health/job?in_iframe=1" class="iCIMS_Anchor" title="36222 - Psychiatric APRN - West Central Behavioral Health">
+<span class="sr-only field-label">Job Posting Title</span>
+<h3 >
+Psychiatric APRN - West Central Behavioral Health</h3>
+</a>
+</div>
+<div class="col-xs-12 additionalFields">
+<dl class="iCIMS_JobHeaderGroup">
+<div class="iCIMS_JobHeaderTag">
+<dt class="iCIMS_JobHeaderField">Requisition ID</dt>
+<dd class="iCIMS_JobHeaderData"><span >
+2025-36222</span>
+</dd>
+</div>
+<div class="iCIMS_JobHeaderTag">
+<dt class="iCIMS_JobHeaderField"><span class="glyphicons glyphicons-map-marker" aria-hidden="true"></span>
+<span class="sr-only field-label">Location Name</span>
+</dt>
+<dd class="iCIMS_JobHeaderData"><span >
+Lebanon, NH</span>
+</dd>
+</div>
+</dl>
+</div>
+</div>
+</li>
+
+<li class="iCIMS_JobCardItem">
+<div class="row">
+<div class="col-xs-6 header left">
+<span class="sr-only field-label">Job Locations</span>
+<span >
+US-NH-Keene</span>
+</div>
+<div class="col-xs-6 header right">
+<span class="sr-only field-label">Requisition Post Information* : Posted Date</span>
+<span title="10/21/2025 8:46 AM">
+12 months ago<span class="sr-only">(10/21/2025 8:46 AM)</span></span>
+</div>
+<div class="col-xs-12 title">
+<a href="https://providers-dartmouth-hitchcock.icims.com/jobs/34917/otolaryngology-advanced-practice-provider/job?in_iframe=1" class="iCIMS_Anchor" title="34917 - Otolaryngology Advanced Practice Provider">
+<span class="sr-only field-label">Job Posting Title</span>
+<h3 >
+Otolaryngology Advanced Practice Provider</h3>
+</a>
+</div>
+<div class="col-xs-12 additionalFields">
+<dl class="iCIMS_JobHeaderGroup">
+<div class="iCIMS_JobHeaderTag">
+<dt class="iCIMS_JobHeaderField">Requisition ID</dt>
+<dd class="iCIMS_JobHeaderData"><span >
+2025-34917</span>
+</dd>
+</div>
+<div class="iCIMS_JobHeaderTag">
+<dt class="iCIMS_JobHeaderField"><span class="glyphicons glyphicons-map-marker" aria-hidden="true"></span>
+<span class="sr-only field-label">Location Name</span>
+</dt>
+<dd class="iCIMS_JobHeaderData"><span >
+Keene, NH</span>
+</dd>
+</div>
+</dl>
+</div>
+</div>
+</li>
+
+<li class="iCIMS_JobCardItem">
+<div class="row">
+<div class="col-xs-6 header left">
+<span class="sr-only field-label">Job Locations</span>
+<span >
+US-NH-Keene</span>
+</div>
+<div class="col-xs-6 header right">
+<span class="sr-only field-label">Requisition Post Information* : Posted Date</span>
+<span title="6/2/2026 12:46 PM">
+5 months ago<span class="sr-only">(6/2/2026 12:46 PM)</span></span>
+</div>
+<div class="col-xs-12 title">
+<a href="https://providers-dartmouth-hitchcock.icims.com/jobs/31874/oncology-advanced-practice-provider---cheshire-medical-center/job?in_iframe=1" class="iCIMS_Anchor" title="31874 - Oncology Advanced Practice Provider - Cheshire Medical Center">
+<span class="sr-only field-label">Job Posting Title</span>
+<h3 >
+Oncology Advanced Practice Provider - Cheshire Medical Center</h3>
+</a>
+</div>
+<div class="col-xs-12 additionalFields">
+<dl class="iCIMS_JobHeaderGroup">
+<div class="iCIMS_JobHeaderTag">
+<dt class="iCIMS_JobHeaderField">Requisition ID</dt>
+<dd class="iCIMS_JobHeaderData"><span >
+2025-31874</span>
+</dd>
+</div>
+<div class="iCIMS_JobHeaderTag">
+<dt class="iCIMS_JobHeaderField"><span class="glyphicons glyphicons-map-marker" aria-hidden="true"></span>
+<span class="sr-only field-label">Location Name</span>
+</dt>
+<dd class="iCIMS_JobHeaderData"><span >
+Keene, NH</span>
+</dd>
+</div>
+</dl>
+</div>
+</div>
+</li>
+
+<li class="iCIMS_JobCardItem">
+<div class="row">
+<div class="col-xs-6 header left">
+<span class="sr-only field-label">Job Locations</span>
+<span >
+US-NH-Manchester</span>
+</div>
+<div class="col-xs-6 header right">
+<span class="sr-only field-label">Requisition Post Information* : Posted Date</span>
+<span title="5/29/2026 11:01 AM">
+5 months ago<span class="sr-only">(5/29/2026 11:01 AM)</span></span>
+</div>
+<div class="col-xs-12 title">
+<a href="https://providers-dartmouth-hitchcock.icims.com/jobs/31832/vascular-surgery-physician-assistant/job?in_iframe=1" class="iCIMS_Anchor" title="31832 - Vascular Surgery Physician Assistant">
+<span class="sr-only field-label">Job Posting Title</span>
+<h3 >
+Vascular Surgery Physician Assistant</h3>
+</a>
+</div>
+<div class="col-xs-12 additionalFields">
+<dl class="iCIMS_JobHeaderGroup">
+<div class="iCIMS_JobHeaderTag">
+<dt class="iCIMS_JobHeaderField">Requisition ID</dt>
+<dd class="iCIMS_JobHeaderData"><span >
+2025-31832</span>
+</dd>
+</div>
+<div class="iCIMS_JobHeaderTag">
+<dt class="iCIMS_JobHeaderField"><span class="glyphicons glyphicons-map-marker" aria-hidden="true"></span>
+<span class="sr-only field-label">Location Name</span>
+</dt>
+<dd class="iCIMS_JobHeaderData"><span >
+Manchester, NH</span>
+</dd>
+</div>
+</dl>
+</div>
+</div>
+</li>
+
+<li class="iCIMS_JobCardItem">
+<div class="row">
+<div class="col-xs-6 header left">
+<span class="sr-only field-label">Job Locations</span>
+<span >
+US-NH-Lebanon</span>
+</div>
+<div class="col-xs-6 header right">
+<span class="sr-only field-label">Requisition Post Information* : Posted Date</span>
+<span title="2/4/2026 4:22 PM">
+8 months ago<span class="sr-only">(2/4/2026 4:22 PM)</span></span>
+</div>
+<div class="col-xs-12 title">
+<a href="https://providers-dartmouth-hitchcock.icims.com/jobs/31355/breast-oncology-advanced-practice-provider/job?in_iframe=1" class="iCIMS_Anchor" title="31355 - Breast Oncology Advanced Practice Provider">
+<span class="sr-only field-label">Job Posting Title</span>
+<h3 >
+Breast Oncology Advanced Practice Provider</h3>
+</a>
+</div>
+<div class="col-xs-12 additionalFields">
+<dl class="iCIMS_JobHeaderGroup">
+<div class="iCIMS_JobHeaderTag">
+<dt class="iCIMS_JobHeaderField">Requisition ID</dt>
+<dd class="iCIMS_JobHeaderData"><span >
+2025-31355</span>
+</dd>
+</div>
+<div class="iCIMS_JobHeaderTag">
+<dt class="iCIMS_JobHeaderField"><span class="glyphicons glyphicons-map-marker" aria-hidden="true"></span>
+<span class="sr-only field-label">Location Name</span>
+</dt>
+<dd class="iCIMS_JobHeaderData"><span >
+Lebanon, NH</span>
+</dd>
+</div>
+</dl>
+</div>
+</div>
+</li>
+
+<li class="iCIMS_JobCardItem">
+<div class="row">
+<div class="col-xs-6 header left">
+<span class="sr-only field-label">Job Locations</span>
+<span >
+US-NH-Concord</span>
+</div>
+<div class="col-xs-6 header right">
+<span class="sr-only field-label">Requisition Post Information* : Posted Date</span>
+<span title="7/30/2026 9:12 AM">
+3 months ago<span class="sr-only">(7/30/2026 9:12 AM)</span></span>
+</div>
+<div class="col-xs-12 title">
+<a href="https://providers-dartmouth-hitchcock.icims.com/jobs/30721/inpatient-psychiatric-advanced-practice-nurse%2c-new-hampshire-hospital/job?in_iframe=1" class="iCIMS_Anchor" title="30721 - Inpatient Psychiatric Advanced Practice Nurse, New Hampshire Hospital">
+<span class="sr-only field-label">Job Posting Title</span>
+<h3 >
+Inpatient Psychiatric Advanced Practice Nurse, New Hampshire Hospital</h3>
+</a>
+</div>
+<div class="col-xs-12 additionalFields">
+<dl class="iCIMS_JobHeaderGroup">
+<div class="iCIMS_JobHeaderTag">
+<dt class="iCIMS_JobHeaderField">Requisition ID</dt>
+<dd class="iCIMS_JobHeaderData"><span >
+2025-30721</span>
+</dd>
+</div>
+<div class="iCIMS_JobHeaderTag">
+<dt class="iCIMS_JobHeaderField"><span class="glyphicons glyphicons-map-marker" aria-hidden="true"></span>
+<span class="sr-only field-label">Location Name</span>
+</dt>
+<dd class="iCIMS_JobHeaderData"><span >
+Concord, NH</span>
+</dd>
+</div>
+</dl>
+</div>
+</div>
+</li>
+
+<li class="iCIMS_JobCardItem">
+<div class="row">
+<div class="col-xs-6 header left">
+<span class="sr-only field-label">Job Locations</span>
+<span >
+US-NH-Keene</span>
+</div>
+<div class="col-xs-6 header right">
+<span class="sr-only field-label">Requisition Post Information* : Posted Date</span>
+<span title="8/4/2026 10:07 AM">
+3 months ago<span class="sr-only">(8/4/2026 10:07 AM)</span></span>
+</div>
+<div class="col-xs-12 title">
+<a href="https://providers-dartmouth-hitchcock.icims.com/jobs/28352/urology-advanced-practice-provider/job?in_iframe=1" class="iCIMS_Anchor" title="28352 - Urology Advanced Practice Provider">
+<span class="sr-only field-label">Job Posting Title</span>
+<h3 >
+Urology Advanced Practice Provider</h3>
+</a>
+</div>
+<div class="col-xs-12 additionalFields">
+<dl class="iCIMS_JobHeaderGroup">
+<div class="iCIMS_JobHeaderTag">
+<dt class="iCIMS_JobHeaderField">Requisition ID</dt>
+<dd class="iCIMS_JobHeaderData"><span >
+2024-28352</span>
+</dd>
+</div>
+<div class="iCIMS_JobHeaderTag">
+<dt class="iCIMS_JobHeaderField"><span class="glyphicons glyphicons-map-marker" aria-hidden="true"></span>
+<span class="sr-only field-label">Location Name</span>
+</dt>
+<dd class="iCIMS_JobHeaderData"><span >
+Keene, NH</span>
+</dd>
+</div>
+</dl>
+</div>
+</div>
+</li>
+
+<li class="iCIMS_JobCardItem">
+<div class="row">
+<div class="col-xs-6 header left">
+<span class="sr-only field-label">Job Locations</span>
+<span >
+US-NH-Lebanon</span>
+</div>
+<div class="col-xs-6 header right">
+<span class="sr-only field-label">Requisition Post Information* : Posted Date</span>
+<span title="2/13/2026 11:22 AM">
+8 months ago<span class="sr-only">(2/13/2026 11:22 AM)</span></span>
+</div>
+<div class="col-xs-12 title">
+<a href="https://providers-dartmouth-hitchcock.icims.com/jobs/27163/outpatient-headache-neurology-clinic-np-or-pa/job?in_iframe=1" class="iCIMS_Anchor" title="27163 - Outpatient Headache Neurology Clinic NP or PA">
+<span class="sr-only field-label">Job Posting Title</span>
+<h3 >
+Outpatient Headache Neurology Clinic NP or PA</h3>
+</a>
+</div>
+<div class="col-xs-12 additionalFields">
+<dl class="iCIMS_JobHeaderGroup">
+<div class="iCIMS_JobHeaderTag">
+<dt class="iCIMS_JobHeaderField">Requisition ID</dt>
+<dd class="iCIMS_JobHeaderData"><span >
+2024-27163</span>
+</dd>
+</div>
+<div class="iCIMS_JobHeaderTag">
+<dt class="iCIMS_JobHeaderField"><span class="glyphicons glyphicons-map-marker" aria-hidden="true"></span>
+<span class="sr-only field-label">Location Name</span>
+</dt>
+<dd class="iCIMS_JobHeaderData"><span >
+Lebanon, NH</span>
+</dd>
+</div>
+</dl>
+</div>
+</div>
+</li>
+
+<li class="iCIMS_JobCardItem">
+<div class="row">
+<div class="col-xs-6 header left">
+<span class="sr-only field-label">Job Locations</span>
+<span >
+US-NH-Lebanon</span>
+</div>
+<div class="col-xs-6 header right">
+<span class="sr-only field-label">Requisition Post Information* : Posted Date</span>
+<span title="2/13/2026 11:23 AM">
+8 months ago<span class="sr-only">(2/13/2026 11:23 AM)</span></span>
+</div>
+<div class="col-xs-12 title">
+<a href="https://providers-dartmouth-hitchcock.icims.com/jobs/24158/outpatient-stroke-neurology-np-or-pa/job?in_iframe=1" class="iCIMS_Anchor" title="24158 - Outpatient Stroke Neurology NP or PA">
+<span class="sr-only field-label">Job Posting Title</span>
+<h3 >
+Outpatient Stroke Neurology NP or PA</h3>
+</a>
+</div>
+<div class="col-xs-12 additionalFields">
+<dl class="iCIMS_JobHeaderGroup">
+<div class="iCIMS_JobHeaderTag">
+<dt class="iCIMS_JobHeaderField">Requisition ID</dt>
+<dd class="iCIMS_JobHeaderData"><span >
+2024-24158</span>
+</dd>
+</div>
+<div class="iCIMS_JobHeaderTag">
+<dt class="iCIMS_JobHeaderField"><span class="glyphicons glyphicons-map-marker" aria-hidden="true"></span>
+<span class="sr-only field-label">Location Name</span>
+</dt>
+<dd class="iCIMS_JobHeaderData"><span >
+Lebanon, NH</span>
+</dd>
+</div>
+</dl>
+</div>
+</div>
+</li>
+
+<li class="iCIMS_JobCardItem">
+<div class="row">
+<div class="col-xs-6 header left">
+<span class="sr-only field-label">Job Locations</span>
+<span >
+US-NH-Lebanon</span>
+</div>
+<div class="col-xs-6 header right">
+<span class="sr-only field-label">Requisition Post Information* : Posted Date</span>
+<span title="2/13/2026 11:20 AM">
+8 months ago<span class="sr-only">(2/13/2026 11:20 AM)</span></span>
+</div>
+<div class="col-xs-12 title">
+<a href="https://providers-dartmouth-hitchcock.icims.com/jobs/23453/outpatient-general-neurology-np-or-pa/job?in_iframe=1" class="iCIMS_Anchor" title="23453 - Outpatient General Neurology NP or PA">
+<span class="sr-only field-label">Job Posting Title</span>
+<h3 >
+Outpatient General Neurology NP or PA</h3>
+</a>
+</div>
+<div class="col-xs-12 additionalFields">
+<dl class="iCIMS_JobHeaderGroup">
+<div class="iCIMS_JobHeaderTag">
+<dt class="iCIMS_JobHeaderField">Requisition ID</dt>
+<dd class="iCIMS_JobHeaderData"><span >
+2024-23453</span>
+</dd>
+</div>
+<div class="iCIMS_JobHeaderTag">
+<dt class="iCIMS_JobHeaderField"><span class="glyphicons glyphicons-map-marker" aria-hidden="true"></span>
+<span class="sr-only field-label">Location Name</span>
+</dt>
+<dd class="iCIMS_JobHeaderData"><span >
+Lebanon, NH</span>
+</dd>
+</div>
+</dl>
+</div>
+</div>
+</li>
+
+<li class="iCIMS_JobCardItem">
+<div class="row">
+<div class="col-xs-6 header left">
+<span class="sr-only field-label">Job Locations</span>
+<span >
+US-NH-Lebanon</span>
+</div>
+<div class="col-xs-6 header right">
+<span class="sr-only field-label">Requisition Post Information* : Posted Date</span>
+<span title="7/9/2024 4:43 PM">
+2 years ago<span class="sr-only">(7/9/2024 4:43 PM)</span></span>
+</div>
+<div class="col-xs-12 title">
+<a href="https://providers-dartmouth-hitchcock.icims.com/jobs/22563/advanced-practice-provider-%28ft%29-geriatrics/job?in_iframe=1" class="iCIMS_Anchor" title="22563 - Advanced Practice Provider (FT) Geriatrics">
+<span class="sr-only field-label">Job Posting Title</span>
+<h3 >
+Advanced Practice Provider (FT) Geriatrics</h3>
+</a>
+</div>
+<div class="col-xs-12 additionalFields">
+<dl class="iCIMS_JobHeaderGroup">
+<div class="iCIMS_JobHeaderTag">
+<dt class="iCIMS_JobHeaderField">Requisition ID</dt>
+<dd class="iCIMS_JobHeaderData"><span >
+2024-22563</span>
+</dd>
+</div>
+<div class="iCIMS_JobHeaderTag">
+<dt class="iCIMS_JobHeaderField"><span class="glyphicons glyphicons-map-marker" aria-hidden="true"></span>
+<span class="sr-only field-label">Location Name</span>
+</dt>
+<dd class="iCIMS_JobHeaderData"><span >
+Lebanon, NH</span>
+</dd>
+</div>
+</dl>
+</div>
+</div>
+</li>
+
+<li class="iCIMS_JobCardItem">
+<div class="row">
+<div class="col-xs-6 header left">
+<span class="sr-only field-label">Job Locations</span>
+<span >
+US-NH-Manchester</span>
+</div>
+<div class="col-xs-6 header right">
+<span class="sr-only field-label">Requisition Post Information* : Posted Date</span>
+<span title="8/22/2025 11:11 AM">
+1 year ago<span class="sr-only">(8/22/2025 11:11 AM)</span></span>
+</div>
+<div class="col-xs-12 title">
+<a href="https://providers-dartmouth-hitchcock.icims.com/jobs/11765/advanced-practice-provider-%28ft%29---gastroenterology-manchester/job?in_iframe=1" class="iCIMS_Anchor" title="11765 - Advanced Practice Provider (FT) - Gastroenterology Manchester">
+<span class="sr-only field-label">Job Posting Title</span>
+<h3 >
+Advanced Practice Provider (FT) - Gastroenterology Manchester</h3>
+</a>
+</div>
+<div class="col-xs-12 additionalFields">
+<dl class="iCIMS_JobHeaderGroup">
+<div class="iCIMS_JobHeaderTag">
+<dt class="iCIMS_JobHeaderField">Requisition ID</dt>
+<dd class="iCIMS_JobHeaderData"><span >
+2022-11765</span>
+</dd>
+</div>
+<div class="iCIMS_JobHeaderTag">
+<dt class="iCIMS_JobHeaderField"><span class="glyphicons glyphicons-map-marker" aria-hidden="true"></span>
+<span class="sr-only field-label">Location Name</span>
+</dt>
+<dd class="iCIMS_JobHeaderData"><span >
+Manchester, NH</span>
+</dd>
+</div>
+</dl>
+</div>
+</div>
+</li>
+
+</ul>
+
+
+
+
+<div class="iCIMS_Paginator_Bottom">
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="iCIMS_SubHeader iCIMS_SubHeader_Connect">
+Need help finding the right job?
+</h2>
+<div class="iCIMS_InfoMsg iCIMS_InfoMsg_Connect">
+<div class="iCIMS_Expandable_Container">
+<div class="iCIMS_Expandable_Text">
+We can recommend jobs specifically for you!
+<a href="https://providers-dartmouth-hitchcock.icims.com/connect?back=intro&findajob=1&in_iframe=1&hashed=-435679131" class="iCIMS_Anchor" target="_parent">
+Click here to get started.
+</a>
+
+</div>
+</div>
+</div>
+
+
+
+
+
+
+<div class="iCIMS_Logo"><a class="iCIMS_Faq_Link" title="Application FAQs (Opens new window)" href="https://icims.help/candidate-faq" target="_blank">Application FAQs</a><span class="iCIMS_Logo_Image"></span><p class="iCIMS_Logo_Text">Software Powered by ICIMS<br><a href="http://www.icims.com/platform_help?utm_source=platform&utm_medium=link&utm_content=page1&utm_campaign=platform%20help" target="_blank" title="Powered by the ICIMS Talent Platform (Opens new window)" class="iCIMS_Logo_Link">www.icims.com</a></p></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+(function(w, d, s) {
+if (w !== w.top) return;
+w['_jobchat_host'] = 'https://app.textrecruit.com';
+w['_jobchat_account'] = '62d8494f6cbe0d2f945fa86c';
+w['_jobchat_namespace'] = 'JC';
+var o = d.createElement(s);
+o.async = 1;
+o.src = w['_jobchat_host'] + '/js/jobchat.js';
+var y = d.getElementsByTagName(s)[0];
+y.parentNode.insertBefore(o, y);
+})(window, document, 'script');
+</script>
+<script type="text/javascript">
+if (icimsWindow) {
+try {
+window.parent.postMessage('{ "pageTitle" : "' + document.title + '" }', document.location.origin);
+} catch (e) {}
+}
+</script>
+</body>
+</html>
+
