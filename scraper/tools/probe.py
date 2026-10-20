@@ -122,7 +122,9 @@ def main() -> int:
                     net = []
                     page = ctx.new_page()
 
-                    def on_resp(resp, net=net):
+                    bodies = []
+
+                    def on_resp(resp, net=net, bodies=bodies):
                         try:
                             rt = resp.request.resource_type
                             if rt in ("xhr", "fetch", "document"):
@@ -131,6 +133,11 @@ def main() -> int:
                                     pd = resp.request.post_data or ""
                                     line += f"\n    POSTDATA: {pd[:1500]}"
                                 net.append(line)
+                                ct = (resp.headers or {}).get("content-type", "")
+                                if rt in ("xhr", "fetch") and ("json" in ct or "javascript" in ct) and \
+                                        re.search(r"job|search|requisition|widgets|cxs", resp.url, re.I) and \
+                                        not re.search(r"analytics|track|telemetry|nr-data|google|pendo", resp.url, re.I):
+                                    bodies.append((resp.url, resp))
                         except Exception:  # noqa: BLE001
                             pass
 
@@ -150,6 +157,12 @@ def main() -> int:
                         summary.append(f"      sigs={json.dumps(sigs(html))[:1500]}")
                     except Exception as e:  # noqa: BLE001
                         summary.append(f"[pw]  {name} EXC {type(e).__name__}: {str(e)[:300]}")
+                    for bi, (burl, bresp) in enumerate(bodies[:8]):
+                        try:
+                            btxt = bresp.text()
+                            (out_dir / f"{name}.xhr{bi}.txt").write_text(burl + "\n\n" + btxt[:400_000])
+                        except Exception as e:  # noqa: BLE001
+                            net.append(f"body-capture-failed {burl} {e}")
                     (out_dir / f"{name}.net.txt").write_text("\n".join(net))
                     page.close()
                 browser.close()
