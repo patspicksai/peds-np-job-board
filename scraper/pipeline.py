@@ -58,11 +58,96 @@ WD_LINK = re.compile(r"https?://([a-z0-9-]+)\.(wd\d+)\.myworkdayjobs\.com/(?:[a-
 OC_LINK = re.compile(r"https?://([a-z0-9-]+\.fa\.[a-z0-9]+\.oraclecloud\.com)(?::443)?/hcmUI/CandidateExperience/[a-z]{2}/sites/([A-Za-z0-9_]+)")
 
 
+ICIMS_LINK = re.compile(r"https?://((?:[a-z0-9-]+\.)?[a-z0-9-]+\.icims\.com)/jobs", re.I)
+TALEO_LINK = re.compile(r"https?://([a-z0-9-]+\.taleo\.net)/careersection/([A-Za-z0-9_]+)/", re.I)
+CAREERS_TEXT = re.compile(r"^(?:careers?|jobs|job (?:search|openings|opportunities)|work (?:with|for) us|join (?:our|the) team|"
+                          r"search (?:all )?jobs|employment(?: opportunities)?|view (?:all )?jobs)$", re.I)
+CAREERS_HREF = re.compile(r"career|/jobs?\b|employment|join-?us|work-?with-?us", re.I)
+
+
+def _fetch_page(url: str, notes: list[str], allow_browser: bool = True) -> tuple[str | None, str]:
+    try:
+        r = http.get(url)
+        return r.text, r.url
+    except http.FetchError as e:
+        notes.append(f"sniff: {e}")
+        if allow_browser and http.is_bot_block(e):
+            try:
+                res = browser.render(url, settle_ms=1500)
+                if res.get("status", 200) < 400:
+                    return res["html"], res["url"]
+            except Exception as e2:  # noqa: BLE001
+                notes.append(f"sniff playwright: {type(e2).__name__}: {str(e2)[:120]}")
+    except Exception as e:  # noqa: BLE001
+        notes.append(f"sniff: {type(e).__name__}: {str(e)[:160]}")
+    return None, url
+
+
+def recognize(html: str, final: str, hospital: dict, deadline: float, notes: list[str]) -> Adapter | None:
+    """Known front end in the page itself, or a link to a known ATS board."""
+    host = urlsplit(final).netloc
+    for name, pat in SNIFF_RULES:
+        if pat.search(html):
+            notes.append(f"sniff: recognized {name} front end on {host}")
+            return _make(name, hospital, deadline, host=host, page_url=final)
+    m = OC_LINK.search(html)
+    if m:
+        notes.append(f"sniff: page links to Oracle Recruiting Cloud {m.group(1)} site {m.group(2)}")
+        h2 = dict(hospital, ats_config={**(hospital.get("ats_config") or {}), "host": m.group(1), "site_number": m.group(2)})
+        return get_adapter("oracle_cloud")(h2, deadline)
+    for m in WD_LINK.finditer(html):
+        if m.group(3).lower() in ("login", "job", "details", "wday"):
+            continue
+        notes.append(f"sniff: page links to Workday {m.group(1)}.{m.group(2)} site {m.group(3)}")
+        h2 = dict(hospital, ats_config={**(hospital.get("ats_config") or {}),
+                                        "host": f"{m.group(1)}.{m.group(2)}.myworkdayjobs.com",
+                                        "tenant": m.group(1), "site": m.group(3)})
+        return get_adapter("workday")(h2, deadline)
+    m = ICIMS_LINK.search(html)
+    if m:
+        notes.append(f"sniff: page links to iCIMS portal {m.group(1)}")
+        h2 = dict(hospital, careers_search_url=f"https://{m.group(1)}/jobs/search",
+                  ats_config={**(hospital.get("ats_config") or {}), "host": m.group(1)})
+        return get_adapter("icims")(h2, deadline)
+    m = TALEO_LINK.search(html)
+    if m:
+        notes.append(f"sniff: page links to Taleo {m.group(1)} section {m.group(2)}")
+        h2 = dict(hospital, ats_config={**(hospital.get("ats_config") or {}), "host": m.group(1), "career_section": m.group(2)})
+        return get_adapter("taleo")(h2, deadline)
+    return None
+
+
+def careers_links(html: str, base: str, limit: int = 3) -> list[str]:
+    """Links that look like the site's careers / jobs entry point (for homepage-only careers URLs)."""
+    from bs4 import BeautifulSoup
+    from urllib.parse import urljoin
+    soup = BeautifulSoup(html or "", "lxml")
+    scored: list[tuple[int, str]] = []
+    for a in soup.find_all("a", href=True):
+        href = a["href"].strip()
+        if href.startswith(("#", "mailto:", "tel:", "javascript:")):
+            continue
+        text = re.sub(r"\s+", " ", a.get_text(" ", strip=True))
+        u = urljoin(base, href)
+        score = (2 if CAREERS_TEXT.match(text) else 0) + (1 if CAREERS_HREF.search(urlsplit(u).netloc + urlsplit(u).path) else 0)
+        if score and not re.search(r"facebook|linkedin|twitter|instagram|youtube|indeed|glassdoor", u, re.I):
+            scored.append((score, u))
+    out, seen = [], set()
+    for _, u in sorted(scored, key=lambda x: -x[0]):
+        n = u.split("#")[0].rstrip("/")
+        if n not in seen and n != base.rstrip("/"):
+            seen.add(n)
+            out.append(u)
+    return out[:limit]
+
+
 def sniff_adapter(hospital: dict, deadline: float, notes: list[str]) -> Adapter | None:
-    """For generic/custom hospitals: fetch the careers page and recognize a known front end."""
+    """For generic/custom hospitals: fetch the careers page and recognize a known front end or ATS link.
+    Homepage-only careers URLs get one hop: the page's own "Careers" / "Jobs" links are sniffed too."""
     url = hospital.get("careers_search_url") or hospital.get("careers_url")
     if not url:
         return None
+    host = urlsplit(url).netloc
     html, final = None, url
     try:
         r = http.get(url)
@@ -71,7 +156,6 @@ def sniff_adapter(hospital: dict, deadline: float, notes: list[str]) -> Adapter 
         notes.append(f"sniff: {e}")
         if http.is_bot_block(e):
             # Cloudflare-fronted CareerSite tenants expose /search/jobs.json to a real browser
-            host = urlsplit(url).netloc
             try:
                 res = browser.render(f"https://{host}/search/jobs.json?q=nurse+practitioner", settle_ms=500)
                 if '"total_entries"' in (res.get("html") or ""):
@@ -86,23 +170,40 @@ def sniff_adapter(hospital: dict, deadline: float, notes: list[str]) -> Adapter 
         notes.append(f"sniff: {type(e).__name__}: {str(e)[:160]}")
     if not html:
         return None
-    host = urlsplit(final).netloc
-    for name, pat in SNIFF_RULES:
-        if pat.search(html):
-            notes.append(f"sniff: recognized {name} front end on {host}")
-            return _make(name, hospital, deadline, host=host, page_url=final)
-    m = OC_LINK.search(html)
-    if m:
-        notes.append(f"sniff: page links to Oracle Recruiting Cloud {m.group(1)} site {m.group(2)}")
-        h2 = dict(hospital, ats_config={**(hospital.get("ats_config") or {}), "host": m.group(1), "site_number": m.group(2)})
-        return get_adapter("oracle_cloud")(h2, deadline)
-    m = WD_LINK.search(html)
-    if m and m.group(3).lower() not in ("login", "job", "details"):
-        notes.append(f"sniff: page links to Workday {m.group(1)}.{m.group(2)} site {m.group(3)}")
-        h2 = dict(hospital, ats_config={**(hospital.get("ats_config") or {}),
-                                        "host": f"{m.group(1)}.{m.group(2)}.myworkdayjobs.com",
-                                        "tenant": m.group(1), "site": m.group(3)})
-        return get_adapter("workday")(h2, deadline)
+    found = recognize(html, final, hospital, deadline, notes)
+    if found is not None:
+        return found
+    for link in careers_links(html, final):
+        if time.time() > deadline:
+            break
+        h2, f2 = _fetch_page(link, notes)
+        if not h2:
+            continue
+        found = recognize(h2, f2, hospital, deadline, notes)
+        if found is not None:
+            notes.append(f"sniff: followed careers link {link}")
+            return found
+    return None
+
+
+def _resniff(hospital: dict, deadline: float, res: "BoardResult", current: Adapter | None) -> Adapter | None:
+    """Sniff careers_url / website for a board different from the one that just failed or came back empty."""
+    cur_key = (getattr(current, "platform", ""), (getattr(current, "cfg", {}) or {}).get("host"),
+               (getattr(current, "cfg", {}) or {}).get("site"))
+    for field in ("careers_url", "careers_search_url", "website"):
+        url = hospital.get(field)
+        if not url:
+            continue
+        h2 = {k: v for k, v in hospital.items() if k not in ("careers_search_url", "careers_url")}
+        h2["careers_url"] = url
+        h2["ats_config"] = {k: v for k, v in (hospital.get("ats_config") or {}).items()
+                            if k in ("location_aliases", "flagship")}
+        alt = sniff_adapter(h2, deadline, res.notes)
+        if alt is None:
+            continue
+        key = (alt.platform, alt.cfg.get("host"), alt.cfg.get("site"))
+        if key != cur_key:
+            return alt
     return None
 
 
@@ -153,6 +254,16 @@ def run_board(key: str, platform: str, group: list[dict], known: dict[str, dict]
         res.method = adapter.method
         res.notes.extend(adapter.notes)
         if not listings and platform != "generic" and adapter.platform != "generic":
+            # the careers page may point at a different board (front end, other Workday site): sniff it
+            alt = _resniff(lead, deadline, res, adapter)
+            if alt is not None:
+                al = alt.search(opts.keywords)
+                res.notes.extend(alt.notes)
+                if al:
+                    adapter, listings = alt, al
+                    res.adapter_used, res.method = alt.platform, alt.method
+                    res.platform = f"{platform}->{alt.platform}"
+        if not listings and platform != "generic" and adapter.platform != "generic":
             # fall back to the generic adapter before declaring the board empty
             g = GenericAdapter(lead, deadline, reason=f"{adapter.platform} adapter returned 0 listings; trying generic")
             gl = g.search(opts.keywords)
@@ -169,8 +280,23 @@ def run_board(key: str, platform: str, group: list[dict], known: dict[str, dict]
             res.requests = adapter.requests
         if not isinstance(e, (AdapterError, http.FetchError)):
             res.notes.append("traceback: " + traceback.format_exc(limit=4)[-800:])
-        # last resort: generic adapter
+        # the ledger's platform may be wrong or incomplete (no Workday tenant): sniff the careers page
         if platform != "generic" and time.time() < deadline:
+            try:
+                alt = _resniff(lead, deadline, res, adapter)
+                if alt is not None:
+                    al = alt.search(opts.keywords)
+                    res.notes.extend(alt.notes)
+                    if al:
+                        adapter, res.listings = alt, al
+                        res.adapter_used, res.method = alt.platform, alt.method
+                        res.platform = f"{platform}->{alt.platform}"
+                        res.notes.append(f"recovered via sniffed {alt.platform} board after: {res.error}")
+                        res.error, res.error_status = None, None
+            except Exception as e3:  # noqa: BLE001
+                res.notes.append(f"sniff fallback failed: {type(e3).__name__}: {str(e3)[:200]}")
+        # last resort: generic adapter
+        if res.error and platform != "generic" and time.time() < deadline:
             try:
                 g = GenericAdapter(lead, deadline, reason=f"{platform} failed: {res.error[:160]}")
                 gl = g.search(opts.keywords)

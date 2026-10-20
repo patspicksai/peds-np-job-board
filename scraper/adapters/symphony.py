@@ -56,12 +56,21 @@ def parse_cws_config(html: str) -> dict:
 
 
 def cws_filter_param(filters: list[str]) -> str:
-    """["ats_portalid:Kenexa"] -> 'ats_portalid="Kenexa"' (the Google Talent customAttributeFilter syntax)."""
+    """CWS sitewide filters -> Google Talent customAttributeFilter.
+
+    ["ats_portalid:Kenexa"] -> 'ats_portalid="Kenexa"'; "~" separates alternative values:
+    ["brand:Northwell Health~Northwell"] -> '(brand="Northwell Health" OR brand="Northwell")'.
+    """
     parts = []
     for f in filters or []:
-        if ":" in f:
-            k, v = f.split(":", 1)
-            parts.append(f'{k.strip()}="{v.strip()}"')
+        if ":" not in f:
+            continue
+        k, v = f.split(":", 1)
+        vals = [x.strip() for x in v.split("~") if x.strip()]
+        if len(vals) == 1:
+            parts.append(f'{k.strip()}="{vals[0]}"')
+        elif vals:
+            parts.append("(" + " OR ".join(f'{k.strip()}="{x}"' for x in vals) + ")")
     return " AND ".join(parts)
 
 

@@ -84,5 +84,10 @@ def board_key(hospital: dict, platform: str) -> str:
         segs = [s for s in segs if not re.match(r"^[a-z]{2}-[A-Z]{2}$", s)]
         extra = segs[0] if segs else ""
     if platform == "generic":
-        return f"generic|{hospital.get('slug')}"
+        # hospitals that point at the same careers page share one board (system sites: RWJBarnabas, MGB, HCA)
+        url = hospital.get("careers_search_url") or hospital.get("careers_url") or ""
+        p = urlsplit(url)
+        if not p.netloc or re.search(r"google\.[a-z.]+/maps", url):
+            return f"generic|{hospital.get('slug')}"
+        return f"generic|{p.netloc.lower().removeprefix('www.')}{p.path.rstrip('/')}?{p.query}".lower()
     return f"{platform}|{host}|{extra}".lower()

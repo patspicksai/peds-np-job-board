@@ -201,6 +201,7 @@ def test_symphony_cws_api_config_and_jsonp():
     assert cfg == {"api": "https://jobsapi-google.m-cloud.io/api/", "org_id": "companies/8fb8d45a-cbb2-48b9-b438-d16a91fb3bef",
                    "filters": ["ats_portalid:Kenexa"], "detail_path": "/job"}
     assert cws_filter_param(cfg["filters"]) == 'ats_portalid="Kenexa"'
+    assert cws_filter_param(["brand:Northwell Health~Flexstaff"]) == '(brand="Northwell Health" OR brand="Flexstaff")'
     body = ('CWS.jobs.jobCallback({"totalHits":23,"searchResults":[{"job":{"id":23891411,"ref":"86798BR",'
             '"title":"Nurse Practitioner or Physician Assistant, Inpatient Medicine","primary_city":"Boston",'
             '"primary_state":"MA","google_locations":[{"address":"300 Longwood Ave, Boston, MA 02115, USA"}],'
