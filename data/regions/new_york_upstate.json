@@ -200,12 +200,15 @@
       "hotspot": false,
       "website": "https://www.ochbuffalo.org",
       "careers_url": "https://www.kaleidahealth.org/careers/",
-      "careers_platform": "unknown",
+      "careers_platform": "custom",
       "careers_search_url": null,
-      "careers_notes": "Kaleida Health careers. careers_url is a best guess at the kaleidahealth.org careers path and is unverified. The ATS was not confirmed in this session; requisition IDs on aggregator copies (for example 73340BR, Nurse Practitioner FNP/PNP, OCH Dept of Neurology) use the BrassRing style suffix. Kaleida postings syndicate to DirectEmployers (dejobs.org, usnlx.com) with department names such as 'OCH ...' for the children's hospital. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.kaleidahealth.org/careers/ [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.kaleidahealth.org/careers/",
+      "careers_notes": "Kaleida Health careers. careers_url is a best guess at the kaleidahealth.org careers path and is unverified. The ATS was not confirmed in this session; requisition IDs on aggregator copies (for example 73340BR, Nurse Practitioner FNP/PNP, OCH Dept of Neurology) use the BrassRing style suffix. Kaleida postings syndicate to DirectEmployers (dejobs.org, usnlx.com) with department names such as 'OCH ...' for the children's hospital. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.kaleidahealth.org/careers/ [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.kaleidahealth.org/careers/ [fix 2026-10-20] kaleidahealth.org/careers 'Search All Openings' links to an Infor CloudSuite HCM board: https://css-y9x4ku9mqsygapwx-prd.inforcloudsuite.com/hcm/Jobs/form/JobBoard(1000,KH-EXTERNAL)... (WebFetch; full href truncated). Same product as Northern Light; the engine has no Infor adapter, so this board stays unread.",
       "ats_config": {
-        "host": "www.kaleidahealth.org",
-        "flagship": true
+        "flagship": true,
+        "host": "css-y9x4ku9mqsygapwx-prd.inforcloudsuite.com",
+        "vendor": "Infor CloudSuite HCM",
+        "job_board": "KH-EXTERNAL",
+        "hr_organization": "1000"
       },
       "nearest_airport": "BUF Buffalo Niagara International (about 7 mi straight-line)",
       "beds": 185,
@@ -255,7 +258,8 @@
         "https://medicine.buffalo.edu/departments/pediatrics/education/fellowships/critical-care/golisano.html",
         "https://www.wxxinews.org/new-york-public-news-network/2025-08-19/oishei-rebrands-as-golisano-childrens-hospital-after-largest-donation-in-hospital-history",
         "https://ability.usnlx.com/buffalo-ny/nurse-practitioner-fnppnp/9DDE72ECFBE145CA8CA8D9A01AD342A5/job",
-        "https://profiles.health.ny.gov/hospital/bed_type/Pediatric+ICU+Beds"
+        "https://profiles.health.ny.gov/hospital/bed_type/Pediatric+ICU+Beds",
+        "https://www.kaleidahealth.org/careers/"
       ],
       "notes": "Postings may still say Oishei or OCH. Wikipedia infobox lists 197 beds vs 185 in the article text. NYS DOH lists it (as Golisano Children's Hospital of Buffalo) as a Regional Perinatal Center with pediatric, PICU and NICU beds. Kaleida's Buffalo General Medical Center is attached on the same campus (adult only).",
       "confidence": "high",
@@ -483,12 +487,15 @@
       "region": "Upstate NY",
       "hotspot": false,
       "website": "https://www.sjhsyr.org/",
-      "careers_url": "https://jobs.trinity-health.org/",
-      "careers_platform": "phenom",
-      "careers_search_url": null,
-      "careers_notes": "Trinity Health system job board (best guess; verify) covers St. Joseph's Syracuse and St. Peter's Albany. [enrich 2026-10-20] careers_url -> HTTP 200 at https://jobs.trinity-health.org/",
+      "careers_url": "https://trinityhealth.wd1.myworkdayjobs.com/Jobs",
+      "careers_platform": "workday",
+      "careers_search_url": "https://trinityhealth.wd1.myworkdayjobs.com/Jobs?q=nurse%20practitioner",
+      "careers_notes": "Trinity Health system job board (best guess; verify) covers St. Joseph's Syracuse and St. Peter's Albany. [enrich 2026-10-20] careers_url -> HTTP 200 at https://jobs.trinity-health.org/ [fix 2026-10-20] Moved to the Trinity Health Workday board (tenant trinityhealth, site Jobs) that five working Trinity records already use; the jobs.trinity-health.org Phenom search path returned 404 in the dry run. Inferred from the system board, not checked for this hospital's postings.",
       "ats_config": {
-        "host": "jobs.trinity-health.org"
+        "host": "trinityhealth.wd1.myworkdayjobs.com",
+        "tenant": "trinityhealth",
+        "site": "Jobs",
+        "front_end_host": "jobs.trinity-health.org"
       },
       "nearest_airport": "SYR Syracuse Hancock International (15 min)",
       "beds": 431,
@@ -546,12 +553,15 @@
       "region": "Upstate NY",
       "hotspot": false,
       "website": "https://www.sphp.com/",
-      "careers_url": "https://jobs.trinity-health.org/",
-      "careers_platform": "phenom",
-      "careers_search_url": null,
-      "careers_notes": "Trinity Health system job board (best guess; verify) covers St. Joseph's Syracuse and St. Peter's Albany. [enrich 2026-10-20] careers_url -> HTTP 200 at https://jobs.trinity-health.org/",
+      "careers_url": "https://trinityhealth.wd1.myworkdayjobs.com/Jobs",
+      "careers_platform": "workday",
+      "careers_search_url": "https://trinityhealth.wd1.myworkdayjobs.com/Jobs?q=nurse%20practitioner",
+      "careers_notes": "Trinity Health system job board (best guess; verify) covers St. Joseph's Syracuse and St. Peter's Albany. [enrich 2026-10-20] careers_url -> HTTP 200 at https://jobs.trinity-health.org/ [fix 2026-10-20] Moved to the Trinity Health Workday board (tenant trinityhealth, site Jobs) that five working Trinity records already use; the jobs.trinity-health.org Phenom search path returned 404 in the dry run. Inferred from the system board, not checked for this hospital's postings.",
       "ats_config": {
-        "host": "jobs.trinity-health.org"
+        "host": "trinityhealth.wd1.myworkdayjobs.com",
+        "tenant": "trinityhealth",
+        "site": "Jobs",
+        "front_end_host": "jobs.trinity-health.org"
       },
       "nearest_airport": "ALB Albany International (15 min)",
       "beds": 482,
@@ -609,12 +619,19 @@
       "region": "Upstate NY",
       "hotspot": false,
       "website": "https://www.chsbuffalo.org/",
-      "careers_url": "https://www.chsbuffalo.org/careers",
-      "careers_platform": "unknown",
-      "careers_search_url": null,
-      "careers_notes": "Catholic Health Buffalo careers page; URL is a best guess; verify. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.chsbuffalo.org/careers/",
+      "careers_url": "https://jobs.chsbuffalo.org/search/jobs",
+      "careers_platform": "jobvite",
+      "careers_search_url": "https://jobs.chsbuffalo.org/search/jobs?q=nurse+practitioner",
+      "careers_notes": "Catholic Health Buffalo careers page; URL is a best guess; verify. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.chsbuffalo.org/careers/ [fix 2026-10-20] Catholic Health (Buffalo) jobs are on jobs.chsbuffalo.org, a Talemetry (Jobvite) CareerSite portal (chsbuffalo.org/careers is a marketing page). Verified by web search: 'Nurse Practitioner MHB MCCC' (/jobs/4726571-...) and 'Nurse Practitioner SCH SJC MCCC' (/jobs/9682166-...) plus facility searches /search/<facility>/jobs. Engine: careersite adapter on /search/jobs.json.",
       "ats_config": {
-        "host": "www.chsbuffalo.org"
+        "host": "jobs.chsbuffalo.org",
+        "adapter": "careersite",
+        "vendor": "Talemetry (Jobvite) CareerSite",
+        "location_aliases": [
+          "Sisters of Charity Hospital",
+          "St. Joseph Campus",
+          "SCH"
+        ]
       },
       "nearest_airport": "BUF Buffalo Niagara International (15 min)",
       "beds": 310,
@@ -647,7 +664,9 @@
       ],
       "wikipedia_title": "Sisters of Charity Hospital",
       "sources": [
-        "model knowledge (to verify); enrichment pending"
+        "model knowledge (to verify); enrichment pending",
+        "https://jobs.chsbuffalo.org/jobs/9682166-nurse-practitioner-sch-sjc-mccc",
+        "https://jobs.chsbuffalo.org/jobs/4726571-nurse-practitioner-mhb-mccc"
       ],
       "notes": "nicu_level mapped from the NYS DOH perinatal designation lists recorded in the R3 scratch (Regional Perinatal Center treated as AAP level IV, Level 3 as III, Level 2 as II).",
       "confidence": "medium",
@@ -675,12 +694,18 @@
       "region": "Upstate NY",
       "hotspot": false,
       "website": "https://www.chsbuffalo.org/",
-      "careers_url": "https://www.chsbuffalo.org/careers",
-      "careers_platform": "unknown",
-      "careers_search_url": null,
-      "careers_notes": "Catholic Health Buffalo careers page; URL is a best guess; verify. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.chsbuffalo.org/careers/",
+      "careers_url": "https://jobs.chsbuffalo.org/search/jobs",
+      "careers_platform": "jobvite",
+      "careers_search_url": "https://jobs.chsbuffalo.org/search/jobs?q=nurse+practitioner",
+      "careers_notes": "Catholic Health Buffalo careers page; URL is a best guess; verify. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.chsbuffalo.org/careers/ [fix 2026-10-20] Catholic Health (Buffalo) jobs are on jobs.chsbuffalo.org, a Talemetry (Jobvite) CareerSite portal (chsbuffalo.org/careers is a marketing page). Verified by web search: 'Nurse Practitioner MHB MCCC' (/jobs/4726571-...) and 'Nurse Practitioner SCH SJC MCCC' (/jobs/9682166-...) plus facility searches /search/<facility>/jobs. Engine: careersite adapter on /search/jobs.json.",
       "ats_config": {
-        "host": "www.chsbuffalo.org"
+        "host": "jobs.chsbuffalo.org",
+        "adapter": "careersite",
+        "vendor": "Talemetry (Jobvite) CareerSite",
+        "location_aliases": [
+          "Mercy Hospital of Buffalo",
+          "MHB"
+        ]
       },
       "nearest_airport": "BUF Buffalo Niagara International (20 min)",
       "beds": 470,
@@ -716,7 +741,9 @@
       "wikipedia_title": "Mercy Hospital of Buffalo",
       "sources": [
         "https://profiles.health.ny.gov/hospital/bed_type/Pediatric+Beds",
-        "model knowledge (to verify); enrichment pending"
+        "model knowledge (to verify); enrichment pending",
+        "https://jobs.chsbuffalo.org/jobs/9682166-nurse-practitioner-sch-sjc-mccc",
+        "https://jobs.chsbuffalo.org/jobs/4726571-nurse-practitioner-mhb-mccc"
       ],
       "notes": "NYS DOH profiles lists pediatric beds at this hospital (bed counts not shown). nicu_level mapped from the NYS DOH perinatal designation lists recorded in the R3 scratch (Regional Perinatal Center treated as AAP level IV, Level 3 as III, Level 2 as II).",
       "confidence": "medium",
@@ -739,11 +766,14 @@
       "hotspot": false,
       "website": "https://www.kaleidahealth.org/",
       "careers_url": "https://www.kaleidahealth.org/careers/",
-      "careers_platform": "unknown",
+      "careers_platform": "custom",
       "careers_search_url": null,
-      "careers_notes": "Kaleida Health careers; ATS not confirmed (requisition IDs look BrassRing style per R3b scratch). [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.kaleidahealth.org/careers/",
+      "careers_notes": "Kaleida Health careers; ATS not confirmed (requisition IDs look BrassRing style per R3b scratch). [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.kaleidahealth.org/careers/ [fix 2026-10-20] kaleidahealth.org/careers 'Search All Openings' links to an Infor CloudSuite HCM board: https://css-y9x4ku9mqsygapwx-prd.inforcloudsuite.com/hcm/Jobs/form/JobBoard(1000,KH-EXTERNAL)... (WebFetch; full href truncated). Same product as Northern Light; the engine has no Infor adapter, so this board stays unread.",
       "ats_config": {
-        "host": "www.kaleidahealth.org"
+        "host": "css-y9x4ku9mqsygapwx-prd.inforcloudsuite.com",
+        "vendor": "Infor CloudSuite HCM",
+        "job_board": "KH-EXTERNAL",
+        "hr_organization": "1000"
       },
       "nearest_airport": "BUF Buffalo Niagara International (10 min)",
       "beds": null,
@@ -777,7 +807,8 @@
       ],
       "wikipedia_title": null,
       "sources": [
-        "model knowledge (to verify); enrichment pending"
+        "model knowledge (to verify); enrichment pending",
+        "https://www.kaleidahealth.org/careers/"
       ],
       "notes": "nicu_level mapped from the NYS DOH perinatal designation lists recorded in the R3 scratch (Regional Perinatal Center treated as AAP level IV, Level 3 as III, Level 2 as II).",
       "confidence": "medium",
@@ -870,12 +901,14 @@
       "region": "Upstate NY",
       "hotspot": false,
       "website": "https://www.arnothealth.org/",
-      "careers_url": "https://www.arnothealth.org/careers",
+      "careers_url": "https://cayugahealth.wd12.myworkdayjobs.com/CentralusH",
       "careers_platform": "workday",
-      "careers_search_url": null,
-      "careers_notes": "Arnot Health and Cayuga Health merged as Centralus Health in 2025; postings may move to a shared board. URL is a best guess; verify. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.arnothealth.org/careers; ATS link seen: https://cayugahealth.wd12.myworkdayjobs.com/CentralusH",
+      "careers_search_url": "https://cayugahealth.wd12.myworkdayjobs.com/CentralusH?q=nurse%20practitioner",
+      "careers_notes": "Arnot Health and Cayuga Health merged as Centralus Health in 2025; postings may move to a shared board. URL is a best guess; verify. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.arnothealth.org/careers; ATS link seen: https://cayugahealth.wd12.myworkdayjobs.com/CentralusH [fix 2026-10-20] Centralus Health (Cayuga + Arnot) Workday tenant cayugahealth, site CentralusH, from the ATS link seen by the enrichment fetch; both hospitals now share one board so postings attribute by city instead of all landing on Arnot.",
       "ats_config": {
-        "host": "www.arnothealth.org"
+        "host": "cayugahealth.wd12.myworkdayjobs.com",
+        "tenant": "cayugahealth",
+        "site": "CentralusH"
       },
       "nearest_airport": "ELM Elmira Corning Regional (15 min)",
       "beds": null,
@@ -942,12 +975,14 @@
       "region": "Upstate NY",
       "hotspot": false,
       "website": "https://www.cayugahealth.org/",
-      "careers_url": "https://www.cayugahealth.org/careers/",
-      "careers_platform": "unknown",
-      "careers_search_url": null,
-      "careers_notes": "Arnot Health and Cayuga Health merged as Centralus Health in 2025; postings may move to a shared board. URL is a best guess; verify. [enrich 2026-10-20] careers_url -> HTTP 200 at https://cayugahealth.org/careers/",
+      "careers_url": "https://cayugahealth.wd12.myworkdayjobs.com/CentralusH",
+      "careers_platform": "workday",
+      "careers_search_url": "https://cayugahealth.wd12.myworkdayjobs.com/CentralusH?q=nurse%20practitioner",
+      "careers_notes": "Arnot Health and Cayuga Health merged as Centralus Health in 2025; postings may move to a shared board. URL is a best guess; verify. [enrich 2026-10-20] careers_url -> HTTP 200 at https://cayugahealth.org/careers/ [fix 2026-10-20] Centralus Health (Cayuga + Arnot) Workday tenant cayugahealth, site CentralusH, from the ATS link seen by the enrichment fetch; both hospitals now share one board so postings attribute by city instead of all landing on Arnot.",
       "ats_config": {
-        "host": "cayugahealth.org"
+        "host": "cayugahealth.wd12.myworkdayjobs.com",
+        "tenant": "cayugahealth",
+        "site": "CentralusH"
       },
       "nearest_airport": "ITH Ithaca Tompkins International (15 min)",
       "beds": 193,
@@ -1012,12 +1047,14 @@
       "region": "Upstate NY",
       "hotspot": false,
       "website": "https://samaritanhealth.com/",
-      "careers_url": "https://samaritanhealth.com/careers/",
+      "careers_url": "https://samaritanhealth.wd12.myworkdayjobs.com/shsny",
       "careers_platform": "workday",
-      "careers_search_url": null,
-      "careers_notes": "careers URL is a best guess from the hospital domain; verify in enrichment. [enrich 2026-10-20] careers_url -> HTTP 200 at https://samaritanhealth.com/careers/career-opportunities/; ATS link seen: https://samaritanhealth.wd12.myworkdayjobs.com/shsny",
+      "careers_search_url": "https://samaritanhealth.wd12.myworkdayjobs.com/shsny?q=nurse%20practitioner",
+      "careers_notes": "careers URL is a best guess from the hospital domain; verify in enrichment. [enrich 2026-10-20] careers_url -> HTTP 200 at https://samaritanhealth.com/careers/career-opportunities/; ATS link seen: https://samaritanhealth.wd12.myworkdayjobs.com/shsny [fix 2026-10-20] Workday tenant samaritanhealth, site shsny, from the ATS link on samaritanhealth.com careers seen by the enrichment fetch (HTTP 200).",
       "ats_config": {
-        "host": "samaritanhealth.com"
+        "host": "samaritanhealth.wd12.myworkdayjobs.com",
+        "tenant": "samaritanhealth",
+        "site": "shsny"
       },
       "nearest_airport": "ART Watertown International (SYR for most flights)",
       "beds": 294,
@@ -1351,14 +1388,19 @@
       "region": "Upstate NY",
       "hotspot": false,
       "website": "https://www.glensfallshospital.org/",
-      "careers_url": "https://albanymed.wd5.myworkdayjobs.com/Albany_Med_System_Career_Site",
+      "careers_url": "https://albanymed.wd5.myworkdayjobs.com/Albany_Med",
       "careers_platform": "workday",
-      "careers_search_url": "https://albanymed.wd5.myworkdayjobs.com/Albany_Med_System_Career_Site?q=nurse%20practitioner",
-      "careers_notes": "Albany Med Health System Workday board, shared by Albany Med, Glens Falls, Saratoga and Columbia Memorial; filter by location. [enrich 2026-10-20] careers_url -> HTTP 200 at https://albanymed.wd5.myworkdayjobs.com/Albany_Med_System_Career_Site; ATS link seen: https://albanymed.wd5.myworkdayjobs.com/Albany_Med_System_Career_Site; search_url -> HTTP 200, mentions NP: False, job links: 0",
+      "careers_search_url": "https://albanymed.wd5.myworkdayjobs.com/Albany_Med?q=nurse%20practitioner",
+      "careers_notes": "Albany Med Health System Workday board, shared by Albany Med, Glens Falls, Saratoga and Columbia Memorial; filter by location. [enrich 2026-10-20] careers_url -> HTTP 200 at https://albanymed.wd5.myworkdayjobs.com/Albany_Med_System_Career_Site; ATS link seen: https://albanymed.wd5.myworkdayjobs.com/Albany_Med_System_Career_Site; search_url -> HTTP 200, mentions NP: False, job links: 0 [fix 2026-10-20] Workday site corrected from Albany_Med_System_Career_Site (0 jobs in the 2026-10-20 dry run) to Albany_Med. Verified by web search: NP postings incl. 'Nurse Practitioner Pediatric Gastroenterology' and 'Physician Assistant/Nurse Practitioner - Columbia Memorial Hospital Emergency Medicine' live under albanymed.wd5.myworkdayjobs.com/en-US/Albany_Med/job/... An older enrichment note saw an Oracle board (hdbg.fa.us2.oraclecloud.com CX_1) on Glens Falls' own careers page; kept in ats_config.alt_board if Glens Falls postings are missing from Albany_Med.",
       "ats_config": {
         "host": "albanymed.wd5.myworkdayjobs.com",
         "tenant": "albanymed",
-        "site": "Albany_Med_System_Career_Site"
+        "site": "Albany_Med",
+        "alt_board": {
+          "platform": "oracle_cloud",
+          "host": "hdbg.fa.us2.oraclecloud.com",
+          "site_number": "CX_1"
+        }
       },
       "nearest_airport": "ALB Albany International (45 min)",
       "beds": 410,
@@ -1394,7 +1436,9 @@
       "wikipedia_title": "Glens Falls Hospital",
       "sources": [
         "https://profiles.health.ny.gov/hospital/bed_type/Pediatric+Beds",
-        "model knowledge (to verify); enrichment pending"
+        "model knowledge (to verify); enrichment pending",
+        "https://albanymed.wd5.myworkdayjobs.com/en-US/Albany_Med/job/Physician-Assistant-Nurse-Practitioner---Columbia-Memorial-Hospital--Emergency-Medicine_64548",
+        "https://albanymed.wd5.myworkdayjobs.com/en-US/Albany_Med/job/22-New-Scotland-Avenue-Albany-NY-12208/Nurse-Practitioner-Pediatric-Gastroenterology---22-New-Scotland-Ave-Albany_69931"
       ],
       "notes": "Bed count from Wikipedia list per R3 scratch. NYS DOH profiles lists pediatric beds at this hospital (bed counts not shown).",
       "confidence": "medium",
@@ -1422,14 +1466,14 @@
       "region": "Upstate NY",
       "hotspot": false,
       "website": "https://www.saratogahospital.org/",
-      "careers_url": "https://albanymed.wd5.myworkdayjobs.com/Albany_Med_System_Career_Site",
+      "careers_url": "https://albanymed.wd5.myworkdayjobs.com/Albany_Med",
       "careers_platform": "workday",
-      "careers_search_url": "https://albanymed.wd5.myworkdayjobs.com/Albany_Med_System_Career_Site?q=nurse%20practitioner",
-      "careers_notes": "Albany Med Health System Workday board, shared by Albany Med, Glens Falls, Saratoga and Columbia Memorial; filter by location. [enrich 2026-10-20] careers_url -> HTTP 200 at https://albanymed.wd5.myworkdayjobs.com/Albany_Med_System_Career_Site; ATS link seen: https://albanymed.wd5.myworkdayjobs.com/Albany_Med_System_Career_Site; search_url -> HTTP 200, mentions NP: False, job links: 0",
+      "careers_search_url": "https://albanymed.wd5.myworkdayjobs.com/Albany_Med?q=nurse%20practitioner",
+      "careers_notes": "Albany Med Health System Workday board, shared by Albany Med, Glens Falls, Saratoga and Columbia Memorial; filter by location. [enrich 2026-10-20] careers_url -> HTTP 200 at https://albanymed.wd5.myworkdayjobs.com/Albany_Med_System_Career_Site; ATS link seen: https://albanymed.wd5.myworkdayjobs.com/Albany_Med_System_Career_Site; search_url -> HTTP 200, mentions NP: False, job links: 0 [fix 2026-10-20] Workday site corrected from Albany_Med_System_Career_Site (0 jobs in the 2026-10-20 dry run) to Albany_Med. Verified by web search: NP postings incl. 'Nurse Practitioner Pediatric Gastroenterology' and 'Physician Assistant/Nurse Practitioner - Columbia Memorial Hospital Emergency Medicine' live under albanymed.wd5.myworkdayjobs.com/en-US/Albany_Med/job/...",
       "ats_config": {
         "host": "albanymed.wd5.myworkdayjobs.com",
         "tenant": "albanymed",
-        "site": "Albany_Med_System_Career_Site"
+        "site": "Albany_Med"
       },
       "nearest_airport": "ALB Albany International (25 min)",
       "beds": 171,
@@ -1465,7 +1509,9 @@
       "wikipedia_title": "Saratoga Hospital",
       "sources": [
         "https://profiles.health.ny.gov/hospital/bed_type/Pediatric+Beds",
-        "model knowledge (to verify); enrichment pending"
+        "model knowledge (to verify); enrichment pending",
+        "https://albanymed.wd5.myworkdayjobs.com/en-US/Albany_Med/job/Physician-Assistant-Nurse-Practitioner---Columbia-Memorial-Hospital--Emergency-Medicine_64548",
+        "https://albanymed.wd5.myworkdayjobs.com/en-US/Albany_Med/job/22-New-Scotland-Avenue-Albany-NY-12208/Nurse-Practitioner-Pediatric-Gastroenterology---22-New-Scotland-Ave-Albany_69931"
       ],
       "notes": "Magnet status from model knowledge. Inclusion rests on the NYS DOH pediatric bed list; the unit may be small or a few licensed beds. Verify it is staffed. NYS DOH profiles lists pediatric beds at this hospital (bed counts not shown).",
       "confidence": "low",
@@ -1549,11 +1595,14 @@
       "hotspot": false,
       "website": "https://www.ogh.org/",
       "careers_url": "https://www.kaleidahealth.org/careers/",
-      "careers_platform": "unknown",
+      "careers_platform": "custom",
       "careers_search_url": null,
-      "careers_notes": "Kaleida Health careers; ATS not confirmed (requisition IDs look BrassRing style per R3b scratch). [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.kaleidahealth.org/careers/",
+      "careers_notes": "Kaleida Health careers; ATS not confirmed (requisition IDs look BrassRing style per R3b scratch). [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.kaleidahealth.org/careers/ [fix 2026-10-20] kaleidahealth.org/careers 'Search All Openings' links to an Infor CloudSuite HCM board: https://css-y9x4ku9mqsygapwx-prd.inforcloudsuite.com/hcm/Jobs/form/JobBoard(1000,KH-EXTERNAL)... (WebFetch; full href truncated). Same product as Northern Light; the engine has no Infor adapter, so this board stays unread.",
       "ats_config": {
-        "host": "www.kaleidahealth.org"
+        "host": "css-y9x4ku9mqsygapwx-prd.inforcloudsuite.com",
+        "vendor": "Infor CloudSuite HCM",
+        "job_board": "KH-EXTERNAL",
+        "hr_organization": "1000"
       },
       "nearest_airport": "BUF Buffalo Niagara International (1 hr 30 min)",
       "beds": null,
@@ -1580,7 +1629,8 @@
       "wikipedia_title": null,
       "sources": [
         "https://profiles.health.ny.gov/hospital/bed_type/Pediatric+Beds",
-        "model knowledge (to verify); enrichment pending"
+        "model knowledge (to verify); enrichment pending",
+        "https://www.kaleidahealth.org/careers/"
       ],
       "notes": "Kaleida network membership from the R3 scratch. Inclusion rests on the NYS DOH pediatric bed list; the unit may be small or a few licensed beds. Verify it is staffed. NYS DOH profiles lists pediatric beds at this hospital (bed counts not shown).",
       "confidence": "low",

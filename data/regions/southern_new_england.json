@@ -108,13 +108,18 @@
       "region": "Boston metro",
       "hotspot": false,
       "website": "https://www.massgeneral.org/children",
-      "careers_url": "https://jobs.massgeneralbrigham.org/",
-      "careers_platform": "unknown",
-      "careers_search_url": null,
-      "careers_notes": "Mass General Brigham posts all jobs on jobs.massgeneralbrigham.org; the fetch was blocked this session so the platform and query parameter are unconfirmed. Filter for Mass General for Children or MGH pediatric units. [enrich 2026-10-20] careers_url -> HTTP None at None",
+      "careers_url": "https://massgeneralbrigham.wd1.myworkdayjobs.com/MGBExternal",
+      "careers_platform": "workday",
+      "careers_search_url": "https://massgeneralbrigham.wd1.myworkdayjobs.com/MGBExternal?q=nurse%20practitioner",
+      "careers_notes": "Mass General Brigham posts all jobs on jobs.massgeneralbrigham.org; the fetch was blocked this session so the platform and query parameter are unconfirmed. Filter for Mass General for Children or MGH pediatric units. [enrich 2026-10-20] careers_url -> HTTP None at None [fix 2026-10-20] Workday tenant massgeneralbrigham, site MGBExternal (jobs.massgeneralbrigham.org does not resolve). Verified by web search: NP postings incl. 'Nurse Practitioner, Pediatric Emergency Department' (RQ4056485) under massgeneralbrigham.wd1.myworkdayjobs.com/en-US/MGBExternal. The same tenant has a second site, PhysicianOrganization, carrying physician-organization NP roles; the engine reads one site per board, so that site is not scraped.",
       "ats_config": {
-        "host": "jobs.massgeneralbrigham.org",
-        "flagship": true
+        "flagship": true,
+        "host": "massgeneralbrigham.wd1.myworkdayjobs.com",
+        "tenant": "massgeneralbrigham",
+        "site": "MGBExternal",
+        "alt_sites": [
+          "PhysicianOrganization"
+        ]
       },
       "nearest_airport": "BOS Logan International (15 to 25 min)",
       "beds": 999,
@@ -162,7 +167,8 @@
         "https://en.wikipedia.org/wiki/Massachusetts_General_Hospital",
         "https://medpeds.mgh.harvard.edu/hospitals",
         "https://www.mass.gov/info-details/trauma-hospital-destinations",
-        "https://neonatologysolutions.com/?p=18669"
+        "https://neonatologysolutions.com/?p=18669",
+        "https://massgeneralbrigham.wd1.myworkdayjobs.com/en-US/MGBExternal/job/Nurse-Practitioner--Pediatric-Emergency-Department_RQ4056485"
       ],
       "notes": "NICU level conflicts between sources (Level IV per MGH med-peds page, Level III with 18 to 31 beds per older directories). Recorded as 4. Mass General Brigham operates a large Boston-area NP workforce; pediatric NP roles may also be posted for Newton-Wellesley, Salem and other MGB hospitals.",
       "confidence": "medium",
@@ -416,12 +422,17 @@
       "region": "Boston metro",
       "hotspot": false,
       "website": "https://www.brighamandwomens.org",
-      "careers_url": "https://jobs.massgeneralbrigham.org/",
-      "careers_platform": "unknown",
-      "careers_search_url": null,
-      "careers_notes": "Mass General Brigham posts all jobs on jobs.massgeneralbrigham.org; fetch blocked this session, so the platform and query parameter are unconfirmed. [enrich 2026-10-20] careers_url -> HTTP None at None",
+      "careers_url": "https://massgeneralbrigham.wd1.myworkdayjobs.com/MGBExternal",
+      "careers_platform": "workday",
+      "careers_search_url": "https://massgeneralbrigham.wd1.myworkdayjobs.com/MGBExternal?q=nurse%20practitioner",
+      "careers_notes": "Mass General Brigham posts all jobs on jobs.massgeneralbrigham.org; fetch blocked this session, so the platform and query parameter are unconfirmed. [enrich 2026-10-20] careers_url -> HTTP None at None [fix 2026-10-20] Workday tenant massgeneralbrigham, site MGBExternal (jobs.massgeneralbrigham.org does not resolve). Verified by web search: NP postings incl. 'Nurse Practitioner, Pediatric Emergency Department' (RQ4056485) under massgeneralbrigham.wd1.myworkdayjobs.com/en-US/MGBExternal. The same tenant has a second site, PhysicianOrganization, carrying physician-organization NP roles; the engine reads one site per board, so that site is not scraped.",
       "ats_config": {
-        "host": "jobs.massgeneralbrigham.org"
+        "host": "massgeneralbrigham.wd1.myworkdayjobs.com",
+        "tenant": "massgeneralbrigham",
+        "site": "MGBExternal",
+        "alt_sites": [
+          "PhysicianOrganization"
+        ]
       },
       "nearest_airport": "BOS Logan International (20 to 30 min)",
       "beds": 793,
@@ -461,7 +472,8 @@
       "sources": [
         "https://en.wikipedia.org/wiki/Brigham_and_Women%27s_Hospital",
         "https://neonatologysolutions.com/?p=24807",
-        "https://en.wikipedia.org/wiki/Boston_Children%27s_Hospital"
+        "https://en.wikipedia.org/wiki/Boston_Children%27s_Hospital",
+        "https://massgeneralbrigham.wd1.myworkdayjobs.com/en-US/MGBExternal/job/Nurse-Practitioner--Pediatric-Emergency-Department_RQ4056485"
       ],
       "notes": "NICU only; relevant for neonatal NP roles.",
       "confidence": "medium",
@@ -915,12 +927,17 @@
       "region": "Boston metro",
       "hotspot": false,
       "website": "https://www.nwh.org",
-      "careers_url": "https://jobs.massgeneralbrigham.org/",
-      "careers_platform": "unknown",
-      "careers_search_url": null,
-      "careers_notes": "Mass General Brigham posts jobs on jobs.massgeneralbrigham.org; fetch blocked this session, so the platform and query parameter are unconfirmed. Filter to Newton-Wellesley Hospital. [enrich 2026-10-20] careers_url -> HTTP None at None",
+      "careers_url": "https://massgeneralbrigham.wd1.myworkdayjobs.com/MGBExternal",
+      "careers_platform": "workday",
+      "careers_search_url": "https://massgeneralbrigham.wd1.myworkdayjobs.com/MGBExternal?q=nurse%20practitioner",
+      "careers_notes": "Mass General Brigham posts jobs on jobs.massgeneralbrigham.org; fetch blocked this session, so the platform and query parameter are unconfirmed. Filter to Newton-Wellesley Hospital. [enrich 2026-10-20] careers_url -> HTTP None at None [fix 2026-10-20] Workday tenant massgeneralbrigham, site MGBExternal (jobs.massgeneralbrigham.org does not resolve). Verified by web search: NP postings incl. 'Nurse Practitioner, Pediatric Emergency Department' (RQ4056485) under massgeneralbrigham.wd1.myworkdayjobs.com/en-US/MGBExternal. The same tenant has a second site, PhysicianOrganization, carrying physician-organization NP roles; the engine reads one site per board, so that site is not scraped.",
       "ats_config": {
-        "host": "jobs.massgeneralbrigham.org"
+        "host": "massgeneralbrigham.wd1.myworkdayjobs.com",
+        "tenant": "massgeneralbrigham",
+        "site": "MGBExternal",
+        "alt_sites": [
+          "PhysicianOrganization"
+        ]
       },
       "nearest_airport": "BOS Logan International (30 to 40 min)",
       "beds": 273,
@@ -963,7 +980,8 @@
         "https://en.wikipedia.org/wiki/Newton-Wellesley_Hospital",
         "https://medpeds.mgh.harvard.edu/hospitals",
         "https://www.nwh.org/ContentPage.aspx?nd=1297",
-        "https://neonatologysolutions.com/?p=24807"
+        "https://neonatologysolutions.com/?p=24807",
+        "https://massgeneralbrigham.wd1.myworkdayjobs.com/en-US/MGBExternal/job/Nurse-Practitioner--Pediatric-Emergency-Department_RQ4056485"
       ],
       "notes": "Good fit for a pediatric hospitalist NP within Mass General Brigham. No dedicated pediatric ED confirmed.",
       "confidence": "high",
@@ -991,12 +1009,17 @@
       "region": "Boston metro",
       "hotspot": false,
       "website": "https://salem.massgeneralbrigham.org",
-      "careers_url": "https://jobs.massgeneralbrigham.org/",
-      "careers_platform": "unknown",
-      "careers_search_url": null,
-      "careers_notes": "Mass General Brigham posts jobs on jobs.massgeneralbrigham.org; fetch blocked this session, so the platform and query parameter are unconfirmed. Filter to Salem Hospital. [enrich 2026-10-20] careers_url -> HTTP None at None",
+      "careers_url": "https://massgeneralbrigham.wd1.myworkdayjobs.com/MGBExternal",
+      "careers_platform": "workday",
+      "careers_search_url": "https://massgeneralbrigham.wd1.myworkdayjobs.com/MGBExternal?q=nurse%20practitioner",
+      "careers_notes": "Mass General Brigham posts jobs on jobs.massgeneralbrigham.org; fetch blocked this session, so the platform and query parameter are unconfirmed. Filter to Salem Hospital. [enrich 2026-10-20] careers_url -> HTTP None at None [fix 2026-10-20] Workday tenant massgeneralbrigham, site MGBExternal (jobs.massgeneralbrigham.org does not resolve). Verified by web search: NP postings incl. 'Nurse Practitioner, Pediatric Emergency Department' (RQ4056485) under massgeneralbrigham.wd1.myworkdayjobs.com/en-US/MGBExternal. The same tenant has a second site, PhysicianOrganization, carrying physician-organization NP roles; the engine reads one site per board, so that site is not scraped.",
       "ats_config": {
-        "host": "jobs.massgeneralbrigham.org"
+        "host": "massgeneralbrigham.wd1.myworkdayjobs.com",
+        "tenant": "massgeneralbrigham",
+        "site": "MGBExternal",
+        "alt_sites": [
+          "PhysicianOrganization"
+        ]
       },
       "nearest_airport": "BOS Logan International (30 to 40 min)",
       "beds": 212,
@@ -1038,7 +1061,8 @@
         "https://salem.massgeneralbrigham.org/pediatric_emergency_medicine/ouchless_ER",
         "https://www.beckershospitalreview.com/quality/nursing/north-shore-medical-center-plans-to-shut-down-pediatric-inpatient-unit/",
         "https://neonatologysolutions.com/?p=18669",
-        "https://www.mass.gov/info-details/trauma-hospital-destinations"
+        "https://www.mass.gov/info-details/trauma-hospital-destinations",
+        "https://massgeneralbrigham.wd1.myworkdayjobs.com/en-US/MGBExternal/job/Nurse-Practitioner--Pediatric-Emergency-Department_RQ4056485"
       ],
       "notes": "Fit for pediatric ED or newborn roles only; no pediatric floor since 2017.",
       "confidence": "medium",
@@ -1590,12 +1614,14 @@
       "region": "Boston metro",
       "hotspot": false,
       "website": "https://www.shrinerschildrens.org/en/locations/boston",
-      "careers_url": "https://www.shrinerschildrens.org/en/careers",
+      "careers_url": "https://shrinerschildrens.wd12.myworkdayjobs.com/Shriners",
       "careers_platform": "workday",
-      "careers_search_url": null,
-      "careers_notes": "Shriners Children's national careers site; URL and platform not verified this session (fetch blocked, search budget exhausted). Confirm before scraping and filter to Boston. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.shrinerschildrens.org/en/careers; ATS link seen: https://shrinerschildrens.wd12.myworkdayjobs.com/Shriners",
+      "careers_search_url": "https://shrinerschildrens.wd12.myworkdayjobs.com/Shriners?q=nurse%20practitioner",
+      "careers_notes": "Shriners Children's national careers site; URL and platform not verified this session (fetch blocked, search budget exhausted). Confirm before scraping and filter to Boston. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.shrinerschildrens.org/en/careers; ATS link seen: https://shrinerschildrens.wd12.myworkdayjobs.com/Shriners [fix 2026-10-20] Workday tenant shrinerschildrens, site Shriners, from the ATS link on shrinerschildrens.org/en/careers seen by the enrichment fetch (HTTP 200); national board, the engine filters to footprint states and attributes by city.",
       "ats_config": {
-        "host": "www.shrinerschildrens.org"
+        "host": "shrinerschildrens.wd12.myworkdayjobs.com",
+        "tenant": "shrinerschildrens",
+        "site": "Shriners"
       },
       "nearest_airport": "BOS Logan International (15 to 25 min)",
       "beds": 9,
@@ -1794,14 +1820,16 @@
       "region": "Massachusetts (other)",
       "hotspot": false,
       "website": "https://www.baystatehealth.org/locations/baystate-childrens-hospital",
-      "careers_url": "https://www.baystatehealthjobs.com/",
+      "careers_url": "https://baystatehealth.wd12.myworkdayjobs.com/External_Careers",
       "careers_platform": "workday",
-      "careers_search_url": null,
-      "careers_notes": "Baystate Health job board baystatehealthjobs.com (linked as the Talent Acquisition site from baystatehealth.org and choosebaystatehealth.org). Fetch blocked this session; platform unconfirmed. choosebaystatehealth.org is a WordPress provider-recruiting site with inquiry forms (APP roles such as newborn hospitalist NP/PA are listed there). [enrich 2026-10-20] careers_url -> HTTP 200 at https://baystatehealthjobs.com/; ATS link seen: https://baystatehealth.wd12.myworkdayjobs.com/External_Careers/login",
+      "careers_search_url": "https://baystatehealth.wd12.myworkdayjobs.com/External_Careers?q=nurse%20practitioner",
+      "careers_notes": "Baystate Health job board baystatehealthjobs.com (linked as the Talent Acquisition site from baystatehealth.org and choosebaystatehealth.org). Fetch blocked this session; platform unconfirmed. choosebaystatehealth.org is a WordPress provider-recruiting site with inquiry forms (APP roles such as newborn hospitalist NP/PA are listed there). [enrich 2026-10-20] careers_url -> HTTP 200 at https://baystatehealthjobs.com/; ATS link seen: https://baystatehealth.wd12.myworkdayjobs.com/External_Careers/login [fix 2026-10-20] Workday tenant baystatehealth, site External_Careers, from the ATS link on baystatehealthjobs.com seen by the enrichment fetch (HTTP 200).",
       "ats_config": {
-        "host": "www.baystatehealthjobs.com",
+        "flagship": true,
         "provider_recruiting_host": "choosebaystatehealth.org",
-        "flagship": true
+        "host": "baystatehealth.wd12.myworkdayjobs.com",
+        "tenant": "baystatehealth",
+        "site": "External_Careers"
       },
       "nearest_airport": "BDL Bradley International (25 min)",
       "beds": 716,
@@ -2214,12 +2242,17 @@
       "region": "Massachusetts (other)",
       "hotspot": false,
       "website": "https://www.cooleydickinson.org",
-      "careers_url": "https://jobs.massgeneralbrigham.org/",
-      "careers_platform": "unknown",
-      "careers_search_url": null,
-      "careers_notes": "Mass General Brigham member; jobs post on jobs.massgeneralbrigham.org (fetch blocked, platform unconfirmed). Filter to Cooley Dickinson. [enrich 2026-10-20] careers_url -> HTTP None at None",
+      "careers_url": "https://massgeneralbrigham.wd1.myworkdayjobs.com/MGBExternal",
+      "careers_platform": "workday",
+      "careers_search_url": "https://massgeneralbrigham.wd1.myworkdayjobs.com/MGBExternal?q=nurse%20practitioner",
+      "careers_notes": "Mass General Brigham member; jobs post on jobs.massgeneralbrigham.org (fetch blocked, platform unconfirmed). Filter to Cooley Dickinson. [enrich 2026-10-20] careers_url -> HTTP None at None [fix 2026-10-20] Workday tenant massgeneralbrigham, site MGBExternal (jobs.massgeneralbrigham.org does not resolve). Verified by web search: NP postings incl. 'Nurse Practitioner, Pediatric Emergency Department' (RQ4056485) under massgeneralbrigham.wd1.myworkdayjobs.com/en-US/MGBExternal. The same tenant has a second site, PhysicianOrganization, carrying physician-organization NP roles; the engine reads one site per board, so that site is not scraped.",
       "ats_config": {
-        "host": "jobs.massgeneralbrigham.org"
+        "host": "massgeneralbrigham.wd1.myworkdayjobs.com",
+        "tenant": "massgeneralbrigham",
+        "site": "MGBExternal",
+        "alt_sites": [
+          "PhysicianOrganization"
+        ]
       },
       "nearest_airport": "BDL Bradley International (45 min)",
       "beds": null,
@@ -2257,7 +2290,8 @@
       "wikipedia_title": "Cooley Dickinson Hospital",
       "sources": [
         "https://www.cooleydickinson.org/2019/01/cooley-expands-inpatient-services-for-kids",
-        "https://en.wikipedia.org/wiki/List_of_hospitals_in_Massachusetts"
+        "https://en.wikipedia.org/wiki/List_of_hospitals_in_Massachusetts",
+        "https://massgeneralbrigham.wd1.myworkdayjobs.com/en-US/MGBExternal/job/Nurse-Practitioner--Pediatric-Emergency-Department_RQ4056485"
       ],
       "notes": "Current status of the pediatric beds (2026) not reconfirmed; the source is a 2019 news item. Likely a mixed unit with low pediatric volume.",
       "confidence": "low",

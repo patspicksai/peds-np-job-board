@@ -987,12 +987,18 @@
       "region": "New Hampshire",
       "hotspot": false,
       "website": "http://www.catholicmedicalcenter.org",
-      "careers_url": "https://careers.hcahealthcare.com/",
-      "careers_platform": "unknown",
-      "careers_search_url": null,
-      "careers_notes": "HCA Healthcare corporate career site. URL not verified this session (fetch blocked and search budget exhausted); confirm the board and its platform before scraping, and filter to New Hampshire. [enrich 2026-10-20] careers_url -> HTTP 403 at https://careers.hcahealthcare.com/",
+      "careers_url": "https://careers.hcahealthcare.com/search/jobs",
+      "careers_platform": "jobvite",
+      "careers_search_url": "https://careers.hcahealthcare.com/search/jobs?q=nurse+practitioner&location=Manchester%2C+NH%2C+United+States",
+      "careers_notes": "HCA Healthcare corporate career site. URL not verified this session (fetch blocked and search budget exhausted); confirm the board and its platform before scraping, and filter to New Hampshire. [enrich 2026-10-20] careers_url -> HTTP 403 at https://careers.hcahealthcare.com/ [fix 2026-10-20] careers.hcahealthcare.com is a Talemetry (Jobvite) CareerSite portal, the same family as jobs.unchealthcare.org: posting pages /jobs/<id>-<slug> render server side (WebFetch of /jobs/15762370, a Johnston-Willis APP posting, worked; apply.talemetry.com and ttcportals markers), search paths /search/jobs?q=&location=. No separate HCA JSON API was found; the engine's careersite adapter reads /search/jobs.json?q= in the browser because plain requests get 403 (bot wall) and WebFetch is refused /search by robots.txt. Untested here: whether headed Chrome passes the 403, and the adapter has no location filter, so the national results are capped at 150 per keyword.",
       "ats_config": {
-        "host": "careers.hcahealthcare.com"
+        "host": "careers.hcahealthcare.com",
+        "adapter": "careersite",
+        "needs_browser": true,
+        "vendor": "Talemetry (Jobvite) CareerSite",
+        "location_aliases": [
+          "Catholic Medical Center"
+        ]
       },
       "nearest_airport": "MHT Manchester-Boston Regional Airport (about 5 mi straight-line)",
       "beds": 330,
@@ -1029,7 +1035,8 @@
       "sources": [
         "https://en.wikipedia.org/wiki/Catholic_Medical_Center",
         "https://en.wikipedia.org/wiki/List_of_hospitals_in_New_Hampshire",
-        "https://neonatologysolutions.com/?p=24807"
+        "https://neonatologysolutions.com/?p=24807",
+        "https://careers.hcahealthcare.com/jobs/15762370-primary-care-advanced-practice-provider"
       ],
       "notes": "No inpatient pediatric unit found. Closing date of the HCA sale not confirmed; careers likely moved to HCA's board. Elliot, across town, has the Level III NICU and peds ED, so CMC is a secondary option in Manchester.",
       "confidence": "medium",
@@ -1129,12 +1136,18 @@
       "region": "New Hampshire",
       "hotspot": false,
       "website": "https://wdhospital.org",
-      "careers_url": "https://wdhospital.org",
-      "careers_platform": "unknown",
-      "careers_search_url": null,
-      "careers_notes": "Careers board not located (wdhospital.org fetch blocked, search exhausted). As a Mass General Brigham member, postings may be on the MGB board; confirm before scraping. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.massgeneralbrigham.org/en/about/wentworth-douglass-hospital",
+      "careers_url": "https://massgeneralbrigham.wd1.myworkdayjobs.com/MGBExternal",
+      "careers_platform": "workday",
+      "careers_search_url": "https://massgeneralbrigham.wd1.myworkdayjobs.com/MGBExternal?q=nurse%20practitioner",
+      "careers_notes": "Careers board not located (wdhospital.org fetch blocked, search exhausted). As a Mass General Brigham member, postings may be on the MGB board; confirm before scraping. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.massgeneralbrigham.org/en/about/wentworth-douglass-hospital [fix 2026-10-20] Moved to the Mass General Brigham Workday board (tenant massgeneralbrigham, site MGBExternal), shared with the other MGB hospitals. Inferred from MGB membership; no Wentworth-Douglass posting was seen on that board in this pass, so confirm on the next run (listings attribute by 'Dover, NH').",
       "ats_config": {
-        "host": "www.massgeneralbrigham.org"
+        "host": "massgeneralbrigham.wd1.myworkdayjobs.com",
+        "tenant": "massgeneralbrigham",
+        "site": "MGBExternal",
+        "location_aliases": [
+          "Wentworth-Douglass",
+          "Dover, NH"
+        ]
       },
       "nearest_airport": "PSM Portsmouth International Airport at Pease (about 9 mi straight-line); PWM Portland Jetport about 45 mi",
       "beds": 178,
@@ -1202,12 +1215,18 @@
       "region": "New Hampshire",
       "hotspot": false,
       "website": "https://www.google.com/maps/place/?q=place_id:ChIJsd7OuvS_4okRZdmrtOjaBD0",
-      "careers_url": "https://careers.hcahealthcare.com/",
-      "careers_platform": "unknown",
-      "careers_search_url": null,
-      "careers_notes": "HCA Healthcare corporate career site. URL not verified this session (fetch blocked and search budget exhausted); confirm the board and its platform before scraping, and filter to New Hampshire. [enrich 2026-10-20] careers_url -> HTTP 403 at https://careers.hcahealthcare.com/",
+      "careers_url": "https://careers.hcahealthcare.com/search/jobs",
+      "careers_platform": "jobvite",
+      "careers_search_url": "https://careers.hcahealthcare.com/search/jobs?q=nurse+practitioner&location=Portsmouth%2C+NH%2C+United+States",
+      "careers_notes": "HCA Healthcare corporate career site. URL not verified this session (fetch blocked and search budget exhausted); confirm the board and its platform before scraping, and filter to New Hampshire. [enrich 2026-10-20] careers_url -> HTTP 403 at https://careers.hcahealthcare.com/ [fix 2026-10-20] careers.hcahealthcare.com is a Talemetry (Jobvite) CareerSite portal, the same family as jobs.unchealthcare.org: posting pages /jobs/<id>-<slug> render server side (WebFetch of /jobs/15762370, a Johnston-Willis APP posting, worked; apply.talemetry.com and ttcportals markers), search paths /search/jobs?q=&location=. No separate HCA JSON API was found; the engine's careersite adapter reads /search/jobs.json?q= in the browser because plain requests get 403 (bot wall) and WebFetch is refused /search by robots.txt. Untested here: whether headed Chrome passes the 403, and the adapter has no location filter, so the national results are capped at 150 per keyword.",
       "ats_config": {
-        "host": "careers.hcahealthcare.com"
+        "host": "careers.hcahealthcare.com",
+        "adapter": "careersite",
+        "needs_browser": true,
+        "vendor": "Talemetry (Jobvite) CareerSite",
+        "location_aliases": [
+          "Portsmouth Regional Hospital"
+        ]
       },
       "nearest_airport": "PSM Portsmouth International Airport at Pease (about 2 mi straight-line)",
       "beds": null,
@@ -1232,7 +1251,8 @@
       "wikipedia_title": null,
       "sources": [
         "https://en.wikipedia.org/wiki/List_of_hospitals_in_New_Hampshire",
-        "https://neonatologysolutions.com/?p=24807"
+        "https://neonatologysolutions.com/?p=24807",
+        "https://careers.hcahealthcare.com/jobs/15762370-primary-care-advanced-practice-provider"
       ],
       "notes": "Included as a regional referral center (Level II trauma) only; no pediatric unit, NICU or bed count verified. Hospital website not verified this session, so website holds a Google Maps place link; replace with the official site. HCA ownership from the earlier attempt's reading of Wikipedia's NH hospital list.",
       "confidence": "low",

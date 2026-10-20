@@ -498,13 +498,16 @@
       "region": "Hudson Valley",
       "hotspot": false,
       "website": "https://www.wmchealth.org/service-line/pediatric-services",
-      "careers_url": "https://wmchealthjobs.org",
-      "careers_platform": "unknown",
-      "careers_search_url": "https://wmchealthjobs.org",
-      "careers_notes": "wmchealthjobs.org is linked as Careers from wmchealth.org. Board could not be fetched this session (permission timeout); platform unverified. [enrich 2026-10-20] careers_url -> HTTP 200 at https://wmchealthjobs.org/; search_url -> HTTP 200, mentions NP: False, job links: 0",
+      "careers_url": "https://wmchealthjobs.org/search-jobs/",
+      "careers_platform": "custom",
+      "careers_search_url": "https://wmchealthjobs.org/search-jobs/?job_filter_category=&job_filter_location=&job_filter_locality=&job_filter_department=&job_filter_schedule=&job_keywords=nurse+practitioner&job_category=&job_location=&job_locality=",
+      "careers_notes": "wmchealthjobs.org is linked as Careers from wmchealth.org. Board could not be fetched this session (permission timeout); platform unverified. [enrich 2026-10-20] careers_url -> HTTP 200 at https://wmchealthjobs.org/; search_url -> HTTP 200, mentions NP: False, job links: 0 [fix 2026-10-20] wmchealthjobs.org is a server-rendered WordPress board (WebFetch of /search-jobs/page/2/?...&job_location=26 listed postings with facility and pagination); posting links are https://wmchealthjobs.org/?jobs=<slug>-<id>, which the generic adapter's job-link pattern does not match yet, so the engine still sees no listings until generic.JOBISH_HREF accepts '[?&]jobs='. The NP/PA recruiting page jobs.wmchealthjobs.org/wmc-0137-other-npspas lists open services as plain text only.",
       "ats_config": {
+        "flagship": true,
         "host": "wmchealthjobs.org",
-        "flagship": true
+        "vendor": "WordPress job board",
+        "keyword_param": "job_keywords",
+        "np_pa_page": "https://jobs.wmchealthjobs.org/wmc-0137-other-npspas"
       },
       "nearest_airport": "HPN Westchester County Airport",
       "beds": null,
@@ -550,7 +553,8 @@
         "https://www.wmchealth.org/service-line/trauma",
         "https://en.wikipedia.org/wiki/Westchester_Medical_Center",
         "https://en.wikipedia.org/wiki/List_of_hospitals_in_New_York_(state)",
-        "https://profiles.health.ny.gov/Hospital/designated_center/Regional+Perinatal+Center"
+        "https://profiles.health.ny.gov/Hospital/designated_center/Regional+Perinatal+Center",
+        "https://jobs.wmchealthjobs.org/wmc-0137-other-npspas"
       ],
       "notes": "Region set to Hudson Valley for Valhalla per regions.md. WMCHealth also runs Maria Fareri Children's Healthcare Services with pediatric emergency and inpatient care at MidHudson Regional Hospital in Poughkeepsie. Bed and PICU counts not confirmed this session; the hospital's Wikipedia page fetch was rate limited.",
       "confidence": "medium",
@@ -654,15 +658,15 @@
       "region": "Upstate NY",
       "hotspot": false,
       "website": "https://www.albanymed.org/albany/childrens-hospital/",
-      "careers_url": "https://albanymed.wd5.myworkdayjobs.com/Albany_Med_System_Career_Site",
+      "careers_url": "https://albanymed.wd5.myworkdayjobs.com/Albany_Med",
       "careers_platform": "workday",
-      "careers_search_url": "https://albanymed.wd5.myworkdayjobs.com/Albany_Med_System_Career_Site?q=nurse%20practitioner",
-      "careers_notes": "Workday board linked from albanymed.org/careers as Albany Med Health System Careers. Direct fetch blocked this session (permission timeout); Workday is JS-rendered, use the cxs JSON API. Glens Falls Hospital's careers subpage instead links an Oracle Cloud board (hdbg.fa.us2.oraclecloud.com, site CX_1). [enrich 2026-10-20] careers_url -> HTTP 200 at https://albanymed.wd5.myworkdayjobs.com/Albany_Med_System_Career_Site; ATS link seen: https://albanymed.wd5.myworkdayjobs.com/Albany_Med_System_Career_Site; search_url -> HTTP 200, mentions NP: False, job links: 0",
+      "careers_search_url": "https://albanymed.wd5.myworkdayjobs.com/Albany_Med?q=nurse%20practitioner",
+      "careers_notes": "Workday board linked from albanymed.org/careers as Albany Med Health System Careers. Direct fetch blocked this session (permission timeout); Workday is JS-rendered, use the cxs JSON API. Glens Falls Hospital's careers subpage instead links an Oracle Cloud board (hdbg.fa.us2.oraclecloud.com, site CX_1). [enrich 2026-10-20] careers_url -> HTTP 200 at https://albanymed.wd5.myworkdayjobs.com/Albany_Med_System_Career_Site; ATS link seen: https://albanymed.wd5.myworkdayjobs.com/Albany_Med_System_Career_Site; search_url -> HTTP 200, mentions NP: False, job links: 0 [fix 2026-10-20] Workday site corrected from Albany_Med_System_Career_Site (0 jobs in the 2026-10-20 dry run) to Albany_Med. Verified by web search: NP postings incl. 'Nurse Practitioner Pediatric Gastroenterology' and 'Physician Assistant/Nurse Practitioner - Columbia Memorial Hospital Emergency Medicine' live under albanymed.wd5.myworkdayjobs.com/en-US/Albany_Med/job/...",
       "ats_config": {
+        "flagship": true,
         "host": "albanymed.wd5.myworkdayjobs.com",
         "tenant": "albanymed",
-        "site": "Albany_Med_System_Career_Site",
-        "flagship": true
+        "site": "Albany_Med"
       },
       "nearest_airport": "ALB Albany International Airport (15 min)",
       "beds": 125,
@@ -705,7 +709,9 @@
         "https://www.albanymed.org/news/albany-medical-center-receives-level-1-pediatric-trauma-verification-from-american-college-of-surgeons/",
         "https://www.albanymed.org/careers/",
         "https://en.wikipedia.org/wiki/List_of_hospitals_in_New_York_(state)",
-        "https://profiles.health.ny.gov/Hospital/designated_center/Regional+Perinatal+Center"
+        "https://profiles.health.ny.gov/Hospital/designated_center/Regional+Perinatal+Center",
+        "https://albanymed.wd5.myworkdayjobs.com/en-US/Albany_Med/job/Physician-Assistant-Nurse-Practitioner---Columbia-Memorial-Hospital--Emergency-Medicine_64548",
+        "https://albanymed.wd5.myworkdayjobs.com/en-US/Albany_Med/job/22-New-Scotland-Avenue-Albany-NY-12208/Nurse-Practitioner-Pediatric-Gastroenterology---22-New-Scotland-Ave-Albany_69931"
       ],
       "notes": "Albany Med Health System also includes Glens Falls, Saratoga and Columbia Memorial hospitals. picu set true given Level I pediatric trauma and RPC status; PICU bed count not confirmed this session. nicu_level mapped from the NYS DOH perinatal designation (Regional Perinatal Center treated as AAP level IV, Level 3 as III, Level 2 as II).",
       "confidence": "medium",
@@ -733,13 +739,15 @@
       "region": "Long Island",
       "hotspot": false,
       "website": "https://www.stonybrookchildrens.org/",
-      "careers_url": "https://careers.stonybrookmedicine.edu/",
-      "careers_platform": "unknown",
-      "careers_search_url": "https://careers.stonybrookmedicine.edu/",
-      "careers_notes": "Stony Brook Medicine careers host from the repo probe list; not fetchable this session, platform unverified. [enrich 2026-10-20] careers_url -> HTTP None at None; search_url -> HTTP None, mentions NP: None, job links: None",
+      "careers_url": "https://stonybrooku.taleo.net/careersection/11external/jobsearch.ftl?lang=en&portal=101430233",
+      "careers_platform": "taleo",
+      "careers_search_url": "https://stonybrooku.taleo.net/careersection/11external/jobsearch.ftl?lang=en&portal=101430233&keyword=nurse%20practitioner",
+      "careers_notes": "Stony Brook Medicine careers host from the repo probe list; not fetchable this session, platform unverified. [enrich 2026-10-20] careers_url -> HTTP None at None; search_url -> HTTP None, mentions NP: None, job links: None [fix 2026-10-20] Stony Brook Medicine Taleo section 11external, portal 101430233, from the link on stonybrookmedicine.edu/careers seen by the enrichment fetch; Southampton already read this board via sniffing (9 listings). careers.stonybrookmedicine.edu does not resolve. Both records now share one board.",
       "ats_config": {
-        "host": "careers.stonybrookmedicine.edu",
-        "flagship": true
+        "flagship": true,
+        "host": "stonybrooku.taleo.net",
+        "career_section": "11external",
+        "portal": "101430233"
       },
       "nearest_airport": "ISP Long Island MacArthur Airport (20 min)",
       "beds": null,
@@ -809,12 +817,16 @@
       "region": "NYC metro",
       "hotspot": false,
       "website": "https://www.nychealthandhospitals.org/elmhurst/",
-      "careers_url": "https://careers.nychhc.org/",
-      "careers_platform": "taleo",
-      "careers_search_url": null,
-      "careers_notes": "NYC H+H careers board (Taleo per orchestrator; tenant host and career section not confirmed). Many physician and APP roles at H+H sites are employed by the academic affiliate or by PAGNY (pagny.org/careers), so NP postings may also appear there. [enrich 2026-10-20] careers_url -> HTTP 200 at https://careers.nychhc.org/",
+      "careers_url": "https://providercareers.nychealthandhospitals.org/search",
+      "careers_platform": "custom",
+      "careers_search_url": "https://providercareers.nychealthandhospitals.org/search",
+      "careers_notes": "NYC H+H careers board (Taleo per orchestrator; tenant host and career section not confirmed). Many physician and APP roles at H+H sites are employed by the academic affiliate or by PAGNY (pagny.org/careers), so NP postings may also appear there. [enrich 2026-10-20] careers_url -> HTTP 200 at https://careers.nychhc.org/ [fix 2026-10-20] NP roles employed by H+H post on the Provider Careers board providercareers.nychealthandhospitals.org (web search found NP postings there, e.g. 'Nurse Practitioner - Pediatric Primary Care' /job/ccb2771f-...). careers.nychhc.org (recorded as Taleo) returned 0 listings and could not be fetched. The provider board is a client-rendered app (WebFetch got only the page head), so the engine needs the Playwright path of the generic adapter; the search query parameter is not confirmed, so careers_search_url is the base search page (the generic adapter appends ?q=nurse practitioner variants itself).",
       "ats_config": {
-        "host": "careers.nychhc.org"
+        "host": "providercareers.nychealthandhospitals.org",
+        "staff_board_host": "careers.nychhc.org",
+        "location_aliases": [
+          "NYC Health + Hospitals/Elmhurst"
+        ]
       },
       "nearest_airport": "LGA LaGuardia Airport",
       "beds": 525,
@@ -856,7 +868,9 @@
         "https://profiles.health.ny.gov/hospital/bed_type/Pediatric+Beds",
         "https://www.governor.ny.gov/news/governor-hochul-announces-275-million-expand-maternal-and-pediatric-health-care-elmhurst",
         "https://queenspost.com/queens-bp-donovan-richards-to-allocate-5-5-million-to-help-build-pediatric-icu-at-elmhurst-hospital",
-        "model knowledge (to verify); enrichment pending"
+        "model knowledge (to verify); enrichment pending",
+        "https://providercareers.nychealthandhospitals.org/search",
+        "https://providercareers.nychealthandhospitals.org/job/ccb2771f-bbc6-ef11-9123-34800d0f0cb4"
       ],
       "notes": "A pediatric ICU was being funded (2021 Queens BP allocation) and a 275 million dollar maternal and pediatric expansion was announced in 2024; only headlines were seen, so check whether the PICU has opened (DOH PICU list did not include Elmhurst). Bed count from Wikipedia list per R3 scratch. NYS DOH profiles lists pediatric beds at this hospital (bed counts not shown). nicu_level mapped from the NYS DOH perinatal designation lists recorded in the R3 scratch (Regional Perinatal Center treated as AAP level IV, Level 3 as III, Level 2 as II).",
       "confidence": "medium",
@@ -884,12 +898,16 @@
       "region": "NYC metro",
       "hotspot": false,
       "website": "https://www.nychealthandhospitals.org/kingscounty/",
-      "careers_url": "https://careers.nychhc.org/",
-      "careers_platform": "taleo",
-      "careers_search_url": null,
-      "careers_notes": "NYC H+H careers board (Taleo per orchestrator; tenant host and career section not confirmed). Many physician and APP roles at H+H sites are employed by the academic affiliate or by PAGNY (pagny.org/careers), so NP postings may also appear there. [enrich 2026-10-20] careers_url -> HTTP 200 at https://careers.nychhc.org/",
+      "careers_url": "https://providercareers.nychealthandhospitals.org/search",
+      "careers_platform": "custom",
+      "careers_search_url": "https://providercareers.nychealthandhospitals.org/search",
+      "careers_notes": "NYC H+H careers board (Taleo per orchestrator; tenant host and career section not confirmed). Many physician and APP roles at H+H sites are employed by the academic affiliate or by PAGNY (pagny.org/careers), so NP postings may also appear there. [enrich 2026-10-20] careers_url -> HTTP 200 at https://careers.nychhc.org/ [fix 2026-10-20] NP roles employed by H+H post on the Provider Careers board providercareers.nychealthandhospitals.org (web search found NP postings there, e.g. 'Nurse Practitioner - Pediatric Primary Care' /job/ccb2771f-...). careers.nychhc.org (recorded as Taleo) returned 0 listings and could not be fetched. The provider board is a client-rendered app (WebFetch got only the page head), so the engine needs the Playwright path of the generic adapter; the search query parameter is not confirmed, so careers_search_url is the base search page (the generic adapter appends ?q=nurse practitioner variants itself).",
       "ats_config": {
-        "host": "careers.nychhc.org"
+        "host": "providercareers.nychealthandhospitals.org",
+        "staff_board_host": "careers.nychhc.org",
+        "location_aliases": [
+          "NYC Health + Hospitals/Kings County"
+        ]
       },
       "nearest_airport": "JFK John F. Kennedy International",
       "beds": 627,
@@ -930,7 +948,9 @@
       "sources": [
         "https://profiles.health.ny.gov/hospital/bed_type/Pediatric+Beds",
         "https://profiles.health.ny.gov/hospital/bed_type/Pediatric+ICU+Beds",
-        "model knowledge (to verify); enrichment pending"
+        "model knowledge (to verify); enrichment pending",
+        "https://providercareers.nychealthandhospitals.org/search",
+        "https://providercareers.nychealthandhospitals.org/job/ccb2771f-bbc6-ef11-9123-34800d0f0cb4"
       ],
       "notes": "Pediatric trauma level not confirmed. Bed count from Wikipedia list per R3 scratch. NYS DOH profiles lists pediatric beds at this hospital (bed counts not shown). NYS DOH profiles lists pediatric ICU beds here. nicu_level mapped from the NYS DOH perinatal designation lists recorded in the R3 scratch (Regional Perinatal Center treated as AAP level IV, Level 3 as III, Level 2 as II).",
       "confidence": "medium",
@@ -958,12 +978,16 @@
       "region": "NYC metro",
       "hotspot": false,
       "website": "https://www.nychealthandhospitals.org/jacobi/",
-      "careers_url": "https://careers.nychhc.org/",
-      "careers_platform": "taleo",
-      "careers_search_url": null,
-      "careers_notes": "NYC H+H careers board (Taleo per orchestrator; tenant host and career section not confirmed). Many physician and APP roles at H+H sites are employed by the academic affiliate or by PAGNY (pagny.org/careers), so NP postings may also appear there. [enrich 2026-10-20] careers_url -> HTTP 200 at https://careers.nychhc.org/",
+      "careers_url": "https://providercareers.nychealthandhospitals.org/search",
+      "careers_platform": "custom",
+      "careers_search_url": "https://providercareers.nychealthandhospitals.org/search",
+      "careers_notes": "NYC H+H careers board (Taleo per orchestrator; tenant host and career section not confirmed). Many physician and APP roles at H+H sites are employed by the academic affiliate or by PAGNY (pagny.org/careers), so NP postings may also appear there. [enrich 2026-10-20] careers_url -> HTTP 200 at https://careers.nychhc.org/ [fix 2026-10-20] NP roles employed by H+H post on the Provider Careers board providercareers.nychealthandhospitals.org (web search found NP postings there, e.g. 'Nurse Practitioner - Pediatric Primary Care' /job/ccb2771f-...). careers.nychhc.org (recorded as Taleo) returned 0 listings and could not be fetched. The provider board is a client-rendered app (WebFetch got only the page head), so the engine needs the Playwright path of the generic adapter; the search query parameter is not confirmed, so careers_search_url is the base search page (the generic adapter appends ?q=nurse practitioner variants itself).",
       "ats_config": {
-        "host": "careers.nychhc.org"
+        "host": "providercareers.nychealthandhospitals.org",
+        "staff_board_host": "careers.nychhc.org",
+        "location_aliases": [
+          "NYC Health + Hospitals/Jacobi"
+        ]
       },
       "nearest_airport": "LGA LaGuardia Airport",
       "beds": 457,
@@ -1007,7 +1031,9 @@
       "sources": [
         "https://profiles.health.ny.gov/hospital/bed_type/Pediatric+Beds",
         "https://profiles.health.ny.gov/hospital/bed_type/Pediatric+ICU+Beds",
-        "model knowledge (to verify); enrichment pending"
+        "model knowledge (to verify); enrichment pending",
+        "https://providercareers.nychealthandhospitals.org/search",
+        "https://providercareers.nychealthandhospitals.org/job/ccb2771f-bbc6-ef11-9123-34800d0f0cb4"
       ],
       "notes": "Pediatric trauma level comes from the R3 scratch note that CHAM sends pediatric trauma to Jacobi; verify. Physician and APP staff may be employed by PAGNY (pagny.org/careers). Bed count from Wikipedia list per R3 scratch. NYS DOH profiles lists pediatric beds at this hospital (bed counts not shown). NYS DOH profiles lists pediatric ICU beds here. nicu_level mapped from the NYS DOH perinatal designation lists recorded in the R3 scratch (Regional Perinatal Center treated as AAP level IV, Level 3 as III, Level 2 as II).",
       "confidence": "medium",
@@ -1035,12 +1061,16 @@
       "region": "NYC metro",
       "hotspot": false,
       "website": "https://www.nychealthandhospitals.org/lincoln/",
-      "careers_url": "https://careers.nychhc.org/",
-      "careers_platform": "taleo",
-      "careers_search_url": null,
-      "careers_notes": "NYC H+H careers board (Taleo per orchestrator; tenant host and career section not confirmed). Many physician and APP roles at H+H sites are employed by the academic affiliate or by PAGNY (pagny.org/careers), so NP postings may also appear there. [enrich 2026-10-20] careers_url -> HTTP 200 at https://careers.nychhc.org/",
+      "careers_url": "https://providercareers.nychealthandhospitals.org/search",
+      "careers_platform": "custom",
+      "careers_search_url": "https://providercareers.nychealthandhospitals.org/search",
+      "careers_notes": "NYC H+H careers board (Taleo per orchestrator; tenant host and career section not confirmed). Many physician and APP roles at H+H sites are employed by the academic affiliate or by PAGNY (pagny.org/careers), so NP postings may also appear there. [enrich 2026-10-20] careers_url -> HTTP 200 at https://careers.nychhc.org/ [fix 2026-10-20] NP roles employed by H+H post on the Provider Careers board providercareers.nychealthandhospitals.org (web search found NP postings there, e.g. 'Nurse Practitioner - Pediatric Primary Care' /job/ccb2771f-...). careers.nychhc.org (recorded as Taleo) returned 0 listings and could not be fetched. The provider board is a client-rendered app (WebFetch got only the page head), so the engine needs the Playwright path of the generic adapter; the search query parameter is not confirmed, so careers_search_url is the base search page (the generic adapter appends ?q=nurse practitioner variants itself).",
       "ats_config": {
-        "host": "careers.nychhc.org"
+        "host": "providercareers.nychealthandhospitals.org",
+        "staff_board_host": "careers.nychhc.org",
+        "location_aliases": [
+          "NYC Health + Hospitals/Lincoln"
+        ]
       },
       "nearest_airport": "LGA LaGuardia Airport",
       "beds": 362,
@@ -1076,7 +1106,9 @@
         "https://profiles.health.ny.gov/hospital/bed_type/Pediatric+ICU+Beds",
         "https://hoodline.com/2026/08/bronx-babies-get-7m-lifeline-with-new-lincoln-hospital-nicu/",
         "https://www.bxtimes.com/justin-sanchez-secures-7m-for-new-nicu-lincoln/",
-        "model knowledge (to verify); enrichment pending"
+        "model knowledge (to verify); enrichment pending",
+        "https://providercareers.nychealthandhospitals.org/search",
+        "https://providercareers.nychealthandhospitals.org/job/ccb2771f-bbc6-ef11-9123-34800d0f0cb4"
       ],
       "notes": "Physician and APP roles may be employed by PAGNY (a PAGNY pediatric emergency medicine posting surfaced in search). Bed count from Wikipedia list per R3 scratch. NYS DOH profiles lists pediatric beds at this hospital (bed counts not shown). NYS DOH profiles lists pediatric ICU beds here. nicu_level mapped from the NYS DOH perinatal designation lists recorded in the R3 scratch (Regional Perinatal Center treated as AAP level IV, Level 3 as III, Level 2 as II).",
       "confidence": "medium",
@@ -1098,12 +1130,16 @@
       "region": "NYC metro",
       "hotspot": false,
       "website": "https://www.nychealthandhospitals.org/harlem/",
-      "careers_url": "https://careers.nychhc.org/",
-      "careers_platform": "taleo",
-      "careers_search_url": null,
-      "careers_notes": "NYC H+H careers board (Taleo per orchestrator; tenant host and career section not confirmed). Many physician and APP roles at H+H sites are employed by the academic affiliate or by PAGNY (pagny.org/careers), so NP postings may also appear there. [enrich 2026-10-20] careers_url -> HTTP 200 at https://careers.nychhc.org/",
+      "careers_url": "https://providercareers.nychealthandhospitals.org/search",
+      "careers_platform": "custom",
+      "careers_search_url": "https://providercareers.nychealthandhospitals.org/search",
+      "careers_notes": "NYC H+H careers board (Taleo per orchestrator; tenant host and career section not confirmed). Many physician and APP roles at H+H sites are employed by the academic affiliate or by PAGNY (pagny.org/careers), so NP postings may also appear there. [enrich 2026-10-20] careers_url -> HTTP 200 at https://careers.nychhc.org/ [fix 2026-10-20] NP roles employed by H+H post on the Provider Careers board providercareers.nychealthandhospitals.org (web search found NP postings there, e.g. 'Nurse Practitioner - Pediatric Primary Care' /job/ccb2771f-...). careers.nychhc.org (recorded as Taleo) returned 0 listings and could not be fetched. The provider board is a client-rendered app (WebFetch got only the page head), so the engine needs the Playwright path of the generic adapter; the search query parameter is not confirmed, so careers_search_url is the base search page (the generic adapter appends ?q=nurse practitioner variants itself).",
       "ats_config": {
-        "host": "careers.nychhc.org"
+        "host": "providercareers.nychealthandhospitals.org",
+        "staff_board_host": "careers.nychhc.org",
+        "location_aliases": [
+          "NYC Health + Hospitals/Harlem"
+        ]
       },
       "nearest_airport": "LGA LaGuardia Airport",
       "beds": 272,
@@ -1144,7 +1180,9 @@
       "sources": [
         "https://profiles.health.ny.gov/hospital/bed_type/Pediatric+Beds",
         "https://profiles.health.ny.gov/hospital/bed_type/Pediatric+ICU+Beds",
-        "model knowledge (to verify); enrichment pending"
+        "model knowledge (to verify); enrichment pending",
+        "https://providercareers.nychealthandhospitals.org/search",
+        "https://providercareers.nychealthandhospitals.org/job/ccb2771f-bbc6-ef11-9123-34800d0f0cb4"
       ],
       "notes": "Pediatric ED status not confirmed (peds_ed left false); founding year from model knowledge. Bed count from Wikipedia list per R3 scratch. NYS DOH profiles lists pediatric beds at this hospital (bed counts not shown). NYS DOH profiles lists pediatric ICU beds here. nicu_level mapped from the NYS DOH perinatal designation lists recorded in the R3 scratch (Regional Perinatal Center treated as AAP level IV, Level 3 as III, Level 2 as II).",
       "confidence": "medium",
@@ -1172,12 +1210,16 @@
       "region": "NYC metro",
       "hotspot": false,
       "website": "https://www.nychealthandhospitals.org/queens/",
-      "careers_url": "https://careers.nychhc.org/",
-      "careers_platform": "taleo",
-      "careers_search_url": null,
-      "careers_notes": "NYC H+H careers board (Taleo per orchestrator; tenant host and career section not confirmed). Many physician and APP roles at H+H sites are employed by the academic affiliate or by PAGNY (pagny.org/careers), so NP postings may also appear there. [enrich 2026-10-20] careers_url -> HTTP 200 at https://careers.nychhc.org/",
+      "careers_url": "https://providercareers.nychealthandhospitals.org/search",
+      "careers_platform": "custom",
+      "careers_search_url": "https://providercareers.nychealthandhospitals.org/search",
+      "careers_notes": "NYC H+H careers board (Taleo per orchestrator; tenant host and career section not confirmed). Many physician and APP roles at H+H sites are employed by the academic affiliate or by PAGNY (pagny.org/careers), so NP postings may also appear there. [enrich 2026-10-20] careers_url -> HTTP 200 at https://careers.nychhc.org/ [fix 2026-10-20] NP roles employed by H+H post on the Provider Careers board providercareers.nychealthandhospitals.org (web search found NP postings there, e.g. 'Nurse Practitioner - Pediatric Primary Care' /job/ccb2771f-...). careers.nychhc.org (recorded as Taleo) returned 0 listings and could not be fetched. The provider board is a client-rendered app (WebFetch got only the page head), so the engine needs the Playwright path of the generic adapter; the search query parameter is not confirmed, so careers_search_url is the base search page (the generic adapter appends ?q=nurse practitioner variants itself).",
       "ats_config": {
-        "host": "careers.nychhc.org"
+        "host": "providercareers.nychealthandhospitals.org",
+        "staff_board_host": "careers.nychhc.org",
+        "location_aliases": [
+          "NYC Health + Hospitals/Queens"
+        ]
       },
       "nearest_airport": "JFK John F. Kennedy International",
       "beds": 253,
@@ -1211,7 +1253,9 @@
       ],
       "wikipedia_title": "Queens Hospital Center",
       "sources": [
-        "model knowledge (to verify); enrichment pending"
+        "model knowledge (to verify); enrichment pending",
+        "https://providercareers.nychealthandhospitals.org/search",
+        "https://providercareers.nychealthandhospitals.org/job/ccb2771f-bbc6-ef11-9123-34800d0f0cb4"
       ],
       "notes": "Included on the NICU designation. Not on the NYS DOH pediatric bed list; verify whether there is any inpatient pediatric unit or pediatric ED. Bed count from Wikipedia list per R3 scratch. nicu_level mapped from the NYS DOH perinatal designation lists recorded in the R3 scratch (Regional Perinatal Center treated as AAP level IV, Level 3 as III, Level 2 as II).",
       "confidence": "low",
@@ -1239,12 +1283,16 @@
       "region": "NYC metro",
       "hotspot": false,
       "website": "https://www.nychealthandhospitals.org/woodhull/",
-      "careers_url": "https://careers.nychhc.org/",
-      "careers_platform": "taleo",
-      "careers_search_url": null,
-      "careers_notes": "NYC H+H careers board (Taleo per orchestrator; tenant host and career section not confirmed). Many physician and APP roles at H+H sites are employed by the academic affiliate or by PAGNY (pagny.org/careers), so NP postings may also appear there. [enrich 2026-10-20] careers_url -> HTTP 200 at https://careers.nychhc.org/",
+      "careers_url": "https://providercareers.nychealthandhospitals.org/search",
+      "careers_platform": "custom",
+      "careers_search_url": "https://providercareers.nychealthandhospitals.org/search",
+      "careers_notes": "NYC H+H careers board (Taleo per orchestrator; tenant host and career section not confirmed). Many physician and APP roles at H+H sites are employed by the academic affiliate or by PAGNY (pagny.org/careers), so NP postings may also appear there. [enrich 2026-10-20] careers_url -> HTTP 200 at https://careers.nychhc.org/ [fix 2026-10-20] NP roles employed by H+H post on the Provider Careers board providercareers.nychealthandhospitals.org (web search found NP postings there, e.g. 'Nurse Practitioner - Pediatric Primary Care' /job/ccb2771f-...). careers.nychhc.org (recorded as Taleo) returned 0 listings and could not be fetched. The provider board is a client-rendered app (WebFetch got only the page head), so the engine needs the Playwright path of the generic adapter; the search query parameter is not confirmed, so careers_search_url is the base search page (the generic adapter appends ?q=nurse practitioner variants itself).",
       "ats_config": {
-        "host": "careers.nychhc.org"
+        "host": "providercareers.nychealthandhospitals.org",
+        "staff_board_host": "careers.nychhc.org",
+        "location_aliases": [
+          "NYC Health + Hospitals/Woodhull"
+        ]
       },
       "nearest_airport": "LGA LaGuardia Airport",
       "beds": 371,
@@ -1282,7 +1330,9 @@
       "wikipedia_title": "Woodhull Medical and Mental Health Center",
       "sources": [
         "https://profiles.health.ny.gov/hospital/bed_type/Pediatric+Beds",
-        "model knowledge (to verify); enrichment pending"
+        "model knowledge (to verify); enrichment pending",
+        "https://providercareers.nychealthandhospitals.org/search",
+        "https://providercareers.nychealthandhospitals.org/job/ccb2771f-bbc6-ef11-9123-34800d0f0cb4"
       ],
       "notes": "Academic affiliate and pediatric ED status not confirmed. Bed count from Wikipedia list per R3 scratch. NYS DOH profiles lists pediatric beds at this hospital (bed counts not shown). nicu_level mapped from the NYS DOH perinatal designation lists recorded in the R3 scratch (Regional Perinatal Center treated as AAP level IV, Level 3 as III, Level 2 as II).",
       "confidence": "medium",
@@ -1310,12 +1360,16 @@
       "region": "NYC metro",
       "hotspot": false,
       "website": "https://www.nychealthandhospitals.org/metropolitan/",
-      "careers_url": "https://careers.nychhc.org/",
-      "careers_platform": "taleo",
-      "careers_search_url": null,
-      "careers_notes": "NYC H+H careers board (Taleo per orchestrator; tenant host and career section not confirmed). Many physician and APP roles at H+H sites are employed by the academic affiliate or by PAGNY (pagny.org/careers), so NP postings may also appear there. [enrich 2026-10-20] careers_url -> HTTP 200 at https://careers.nychhc.org/",
+      "careers_url": "https://providercareers.nychealthandhospitals.org/search",
+      "careers_platform": "custom",
+      "careers_search_url": "https://providercareers.nychealthandhospitals.org/search",
+      "careers_notes": "NYC H+H careers board (Taleo per orchestrator; tenant host and career section not confirmed). Many physician and APP roles at H+H sites are employed by the academic affiliate or by PAGNY (pagny.org/careers), so NP postings may also appear there. [enrich 2026-10-20] careers_url -> HTTP 200 at https://careers.nychhc.org/ [fix 2026-10-20] NP roles employed by H+H post on the Provider Careers board providercareers.nychealthandhospitals.org (web search found NP postings there, e.g. 'Nurse Practitioner - Pediatric Primary Care' /job/ccb2771f-...). careers.nychhc.org (recorded as Taleo) returned 0 listings and could not be fetched. The provider board is a client-rendered app (WebFetch got only the page head), so the engine needs the Playwright path of the generic adapter; the search query parameter is not confirmed, so careers_search_url is the base search page (the generic adapter appends ?q=nurse practitioner variants itself).",
       "ats_config": {
-        "host": "careers.nychhc.org"
+        "host": "providercareers.nychealthandhospitals.org",
+        "staff_board_host": "careers.nychhc.org",
+        "location_aliases": [
+          "NYC Health + Hospitals/Metropolitan"
+        ]
       },
       "nearest_airport": "LGA LaGuardia Airport",
       "beds": 607,
@@ -1347,7 +1401,9 @@
       "sources": [
         "https://profiles.health.ny.gov/hospital/bed_type/Pediatric+Beds",
         "https://www.nychealthandhospitals.org/gme-programs/nymc-metropolitan-pediatric-residency-program/facilities-and-locations/",
-        "model knowledge (to verify); enrichment pending"
+        "model knowledge (to verify); enrichment pending",
+        "https://providercareers.nychealthandhospitals.org/search",
+        "https://providercareers.nychealthandhospitals.org/job/ccb2771f-bbc6-ef11-9123-34800d0f0cb4"
       ],
       "notes": "Bed count 607 is from the Wikipedia list per R3 scratch and looks high for this campus; verify. Pediatric ED flag from model knowledge. NYS DOH profiles lists pediatric beds at this hospital (bed counts not shown). nicu_level mapped from the NYS DOH perinatal designation lists recorded in the R3 scratch (Regional Perinatal Center treated as AAP level IV, Level 3 as III, Level 2 as II).",
       "confidence": "medium",
@@ -1369,12 +1425,16 @@
       "region": "NYC metro",
       "hotspot": false,
       "website": "https://www.nychealthandhospitals.org/southbrooklynhealth/",
-      "careers_url": "https://careers.nychhc.org/",
-      "careers_platform": "taleo",
-      "careers_search_url": null,
-      "careers_notes": "NYC H+H careers board (Taleo per orchestrator; tenant host and career section not confirmed). Many physician and APP roles at H+H sites are employed by the academic affiliate or by PAGNY (pagny.org/careers), so NP postings may also appear there. [enrich 2026-10-20] careers_url -> HTTP 200 at https://careers.nychhc.org/",
+      "careers_url": "https://providercareers.nychealthandhospitals.org/search",
+      "careers_platform": "custom",
+      "careers_search_url": "https://providercareers.nychealthandhospitals.org/search",
+      "careers_notes": "NYC H+H careers board (Taleo per orchestrator; tenant host and career section not confirmed). Many physician and APP roles at H+H sites are employed by the academic affiliate or by PAGNY (pagny.org/careers), so NP postings may also appear there. [enrich 2026-10-20] careers_url -> HTTP 200 at https://careers.nychhc.org/ [fix 2026-10-20] NP roles employed by H+H post on the Provider Careers board providercareers.nychealthandhospitals.org (web search found NP postings there, e.g. 'Nurse Practitioner - Pediatric Primary Care' /job/ccb2771f-...). careers.nychhc.org (recorded as Taleo) returned 0 listings and could not be fetched. The provider board is a client-rendered app (WebFetch got only the page head), so the engine needs the Playwright path of the generic adapter; the search query parameter is not confirmed, so careers_search_url is the base search page (the generic adapter appends ?q=nurse practitioner variants itself).",
       "ats_config": {
-        "host": "careers.nychhc.org"
+        "host": "providercareers.nychealthandhospitals.org",
+        "staff_board_host": "careers.nychhc.org",
+        "location_aliases": [
+          "NYC Health + Hospitals/South Brooklyn Health"
+        ]
       },
       "nearest_airport": "JFK John F. Kennedy International",
       "beds": 371,
@@ -1412,7 +1472,9 @@
       "wikipedia_title": "Coney Island Hospital",
       "sources": [
         "https://profiles.health.ny.gov/hospital/bed_type/Pediatric+Beds",
-        "model knowledge (to verify); enrichment pending"
+        "model knowledge (to verify); enrichment pending",
+        "https://providercareers.nychealthandhospitals.org/search",
+        "https://providercareers.nychealthandhospitals.org/job/ccb2771f-bbc6-ef11-9123-34800d0f0cb4"
       ],
       "notes": "Tower opening year and rename timing from model knowledge; verify. Bed count from Wikipedia list (as Coney Island) per R3 scratch. NYS DOH profiles lists pediatric beds at this hospital (bed counts not shown). nicu_level mapped from the NYS DOH perinatal designation lists recorded in the R3 scratch (Regional Perinatal Center treated as AAP level IV, Level 3 as III, Level 2 as II).",
       "confidence": "medium",
@@ -1440,12 +1502,16 @@
       "region": "NYC metro",
       "hotspot": false,
       "website": "https://www.nychealthandhospitals.org/northcentralbronx/",
-      "careers_url": "https://careers.nychhc.org/",
-      "careers_platform": "taleo",
-      "careers_search_url": null,
-      "careers_notes": "NYC H+H careers board (Taleo per orchestrator; tenant host and career section not confirmed). Many physician and APP roles at H+H sites are employed by the academic affiliate or by PAGNY (pagny.org/careers), so NP postings may also appear there. [enrich 2026-10-20] careers_url -> HTTP 200 at https://careers.nychhc.org/",
+      "careers_url": "https://providercareers.nychealthandhospitals.org/search",
+      "careers_platform": "custom",
+      "careers_search_url": "https://providercareers.nychealthandhospitals.org/search",
+      "careers_notes": "NYC H+H careers board (Taleo per orchestrator; tenant host and career section not confirmed). Many physician and APP roles at H+H sites are employed by the academic affiliate or by PAGNY (pagny.org/careers), so NP postings may also appear there. [enrich 2026-10-20] careers_url -> HTTP 200 at https://careers.nychhc.org/ [fix 2026-10-20] NP roles employed by H+H post on the Provider Careers board providercareers.nychealthandhospitals.org (web search found NP postings there, e.g. 'Nurse Practitioner - Pediatric Primary Care' /job/ccb2771f-...). careers.nychhc.org (recorded as Taleo) returned 0 listings and could not be fetched. The provider board is a client-rendered app (WebFetch got only the page head), so the engine needs the Playwright path of the generic adapter; the search query parameter is not confirmed, so careers_search_url is the base search page (the generic adapter appends ?q=nurse practitioner variants itself).",
       "ats_config": {
-        "host": "careers.nychhc.org"
+        "host": "providercareers.nychealthandhospitals.org",
+        "staff_board_host": "careers.nychhc.org",
+        "location_aliases": [
+          "NYC Health + Hospitals/North Central Bronx"
+        ]
       },
       "nearest_airport": "LGA LaGuardia Airport",
       "beds": 200,
@@ -1482,7 +1548,9 @@
       "wikipedia_title": "North Central Bronx Hospital",
       "sources": [
         "https://profiles.health.ny.gov/hospital/bed_type/Pediatric+Beds",
-        "model knowledge (to verify); enrichment pending"
+        "model knowledge (to verify); enrichment pending",
+        "https://providercareers.nychealthandhospitals.org/search",
+        "https://providercareers.nychealthandhospitals.org/job/ccb2771f-bbc6-ef11-9123-34800d0f0cb4"
       ],
       "notes": "Size of the pediatric unit unknown; verify it is still active. Bed count from Wikipedia list per R3 scratch. NYS DOH profiles lists pediatric beds at this hospital (bed counts not shown). nicu_level mapped from the NYS DOH perinatal designation lists recorded in the R3 scratch (Regional Perinatal Center treated as AAP level IV, Level 3 as III, Level 2 as II).",
       "confidence": "low",
@@ -1583,12 +1651,14 @@
       "region": "NYC metro",
       "hotspot": false,
       "website": "https://www.rumcsi.org/",
-      "careers_url": "https://www.rumcsi.org/careers",
+      "careers_url": "https://rumcsi.wd5.myworkdayjobs.com/RUMC",
       "careers_platform": "workday",
-      "careers_search_url": null,
-      "careers_notes": "careers URL is a best guess from the hospital domain; verify in enrichment. [enrich 2026-10-20] careers_url -> HTTP 200 at https://rumcsi.org/careers/; ATS link seen: https://rumcsi.wd5.myworkdayjobs.com/RUMC",
+      "careers_search_url": "https://rumcsi.wd5.myworkdayjobs.com/RUMC?q=nurse%20practitioner",
+      "careers_notes": "careers URL is a best guess from the hospital domain; verify in enrichment. [enrich 2026-10-20] careers_url -> HTTP 200 at https://rumcsi.org/careers/; ATS link seen: https://rumcsi.wd5.myworkdayjobs.com/RUMC [fix 2026-10-20] Workday tenant rumcsi, site RUMC, from the ATS link on rumcsi.org/careers seen by the enrichment fetch (HTTP 200).",
       "ats_config": {
-        "host": "rumcsi.org"
+        "host": "rumcsi.wd5.myworkdayjobs.com",
+        "tenant": "rumcsi",
+        "site": "RUMC"
       },
       "nearest_airport": "EWR Newark Liberty International",
       "beds": 448,
@@ -4082,12 +4152,15 @@
       "region": "Hudson Valley",
       "hotspot": false,
       "website": "https://www.wmchealth.org/",
-      "careers_url": "https://wmchealthjobs.org",
-      "careers_platform": "unknown",
-      "careers_search_url": null,
-      "careers_notes": "WMCHealth network job site (link found on wmchealth.org by the R3 pass); covers all network hospitals. [enrich 2026-10-20] careers_url -> HTTP 200 at https://wmchealthjobs.org/",
+      "careers_url": "https://wmchealthjobs.org/search-jobs/",
+      "careers_platform": "custom",
+      "careers_search_url": "https://wmchealthjobs.org/search-jobs/?job_filter_category=&job_filter_location=&job_filter_locality=&job_filter_department=&job_filter_schedule=&job_keywords=nurse+practitioner&job_category=&job_location=&job_locality=",
+      "careers_notes": "WMCHealth network job site (link found on wmchealth.org by the R3 pass); covers all network hospitals. [enrich 2026-10-20] careers_url -> HTTP 200 at https://wmchealthjobs.org/ [fix 2026-10-20] wmchealthjobs.org is a server-rendered WordPress board (WebFetch of /search-jobs/page/2/?...&job_location=26 listed postings with facility and pagination); posting links are https://wmchealthjobs.org/?jobs=<slug>-<id>, which the generic adapter's job-link pattern does not match yet, so the engine still sees no listings until generic.JOBISH_HREF accepts '[?&]jobs='. The NP/PA recruiting page jobs.wmchealthjobs.org/wmc-0137-other-npspas lists open services as plain text only.",
       "ats_config": {
-        "host": "wmchealthjobs.org"
+        "host": "wmchealthjobs.org",
+        "vendor": "WordPress job board",
+        "keyword_param": "job_keywords",
+        "np_pa_page": "https://jobs.wmchealthjobs.org/wmc-0137-other-npspas"
       },
       "nearest_airport": "SWF New York Stewart International",
       "beds": 243,
@@ -4117,7 +4190,8 @@
       "wikipedia_title": null,
       "sources": [
         "https://profiles.health.ny.gov/hospital/bed_type/Pediatric+Beds",
-        "model knowledge (to verify); enrichment pending"
+        "model knowledge (to verify); enrichment pending",
+        "https://jobs.wmchealthjobs.org/wmc-0137-other-npspas"
       ],
       "notes": "Pediatric ED and Maria Fareri branding from the existing Maria Fareri record notes. Trauma level from model knowledge. Bed count from Wikipedia list per R3 scratch. NYS DOH profiles lists pediatric beds at this hospital (bed counts not shown).",
       "confidence": "medium",
@@ -4198,12 +4272,15 @@
       "region": "Hudson Valley",
       "hotspot": false,
       "website": "https://www.goodsamhosp.org/",
-      "careers_url": "https://wmchealthjobs.org",
-      "careers_platform": "unknown",
-      "careers_search_url": null,
-      "careers_notes": "WMCHealth network job site (link found on wmchealth.org by the R3 pass); covers all network hospitals. [enrich 2026-10-20] careers_url -> HTTP 200 at https://wmchealthjobs.org/",
+      "careers_url": "https://wmchealthjobs.org/search-jobs/",
+      "careers_platform": "custom",
+      "careers_search_url": "https://wmchealthjobs.org/search-jobs/?job_filter_category=&job_filter_location=&job_filter_locality=&job_filter_department=&job_filter_schedule=&job_keywords=nurse+practitioner&job_category=&job_location=&job_locality=",
+      "careers_notes": "WMCHealth network job site (link found on wmchealth.org by the R3 pass); covers all network hospitals. [enrich 2026-10-20] careers_url -> HTTP 200 at https://wmchealthjobs.org/ [fix 2026-10-20] wmchealthjobs.org is a server-rendered WordPress board (WebFetch of /search-jobs/page/2/?...&job_location=26 listed postings with facility and pagination); posting links are https://wmchealthjobs.org/?jobs=<slug>-<id>, which the generic adapter's job-link pattern does not match yet, so the engine still sees no listings until generic.JOBISH_HREF accepts '[?&]jobs='. The NP/PA recruiting page jobs.wmchealthjobs.org/wmc-0137-other-npspas lists open services as plain text only.",
       "ats_config": {
-        "host": "wmchealthjobs.org"
+        "host": "wmchealthjobs.org",
+        "vendor": "WordPress job board",
+        "keyword_param": "job_keywords",
+        "np_pa_page": "https://jobs.wmchealthjobs.org/wmc-0137-other-npspas"
       },
       "nearest_airport": "EWR Newark Liberty International (SWF also close)",
       "beds": 286,
@@ -4231,7 +4308,8 @@
       "wikipedia_title": "Good Samaritan Hospital (Suffern)",
       "sources": [
         "https://profiles.health.ny.gov/hospital/bed_type/Pediatric+Beds",
-        "model knowledge (to verify); enrichment pending"
+        "model knowledge (to verify); enrichment pending",
+        "https://jobs.wmchealthjobs.org/wmc-0137-other-npspas"
       ],
       "notes": "Bed count from Wikipedia list per R3 scratch. NYS DOH profiles lists pediatric beds at this hospital (bed counts not shown). nicu_level mapped from the NYS DOH perinatal designation lists recorded in the R3 scratch (Regional Perinatal Center treated as AAP level IV, Level 3 as III, Level 2 as II).",
       "confidence": "medium",
@@ -4379,14 +4457,14 @@
       "region": "Hudson Valley",
       "hotspot": false,
       "website": "https://www.columbiamemorialhealth.org/",
-      "careers_url": "https://albanymed.wd5.myworkdayjobs.com/Albany_Med_System_Career_Site",
+      "careers_url": "https://albanymed.wd5.myworkdayjobs.com/Albany_Med",
       "careers_platform": "workday",
-      "careers_search_url": "https://albanymed.wd5.myworkdayjobs.com/Albany_Med_System_Career_Site?q=nurse%20practitioner",
-      "careers_notes": "Albany Med Health System Workday board, shared by Albany Med, Glens Falls, Saratoga and Columbia Memorial; filter by location. [enrich 2026-10-20] careers_url -> HTTP 200 at https://albanymed.wd5.myworkdayjobs.com/Albany_Med_System_Career_Site; ATS link seen: https://albanymed.wd5.myworkdayjobs.com/Albany_Med_System_Career_Site; search_url -> HTTP 200, mentions NP: False, job links: 0",
+      "careers_search_url": "https://albanymed.wd5.myworkdayjobs.com/Albany_Med?q=nurse%20practitioner",
+      "careers_notes": "Albany Med Health System Workday board, shared by Albany Med, Glens Falls, Saratoga and Columbia Memorial; filter by location. [enrich 2026-10-20] careers_url -> HTTP 200 at https://albanymed.wd5.myworkdayjobs.com/Albany_Med_System_Career_Site; ATS link seen: https://albanymed.wd5.myworkdayjobs.com/Albany_Med_System_Career_Site; search_url -> HTTP 200, mentions NP: False, job links: 0 [fix 2026-10-20] Workday site corrected from Albany_Med_System_Career_Site (0 jobs in the 2026-10-20 dry run) to Albany_Med. Verified by web search: NP postings incl. 'Nurse Practitioner Pediatric Gastroenterology' and 'Physician Assistant/Nurse Practitioner - Columbia Memorial Hospital Emergency Medicine' live under albanymed.wd5.myworkdayjobs.com/en-US/Albany_Med/job/...",
       "ats_config": {
         "host": "albanymed.wd5.myworkdayjobs.com",
         "tenant": "albanymed",
-        "site": "Albany_Med_System_Career_Site"
+        "site": "Albany_Med"
       },
       "nearest_airport": "ALB Albany International (50 min)",
       "beds": 206,
@@ -4421,7 +4499,9 @@
       "wikipedia_title": null,
       "sources": [
         "https://profiles.health.ny.gov/hospital/bed_type/Pediatric+Beds",
-        "model knowledge (to verify); enrichment pending"
+        "model knowledge (to verify); enrichment pending",
+        "https://albanymed.wd5.myworkdayjobs.com/en-US/Albany_Med/job/Physician-Assistant-Nurse-Practitioner---Columbia-Memorial-Hospital--Emergency-Medicine_64548",
+        "https://albanymed.wd5.myworkdayjobs.com/en-US/Albany_Med/job/22-New-Scotland-Avenue-Albany-NY-12208/Nurse-Practitioner-Pediatric-Gastroenterology---22-New-Scotland-Ave-Albany_69931"
       ],
       "notes": "Region set to Hudson Valley per the S1 assignment (R3b had seeded it as Upstate NY). Inclusion rests on the DOH pediatric bed list; unit size unknown. Bed count from Wikipedia list per R3 scratch. NYS DOH profiles lists pediatric beds at this hospital (bed counts not shown).",
       "confidence": "low",
@@ -4445,12 +4525,15 @@
       "region": "Hudson Valley",
       "hotspot": false,
       "website": "https://www.hahv.org/",
-      "careers_url": "https://wmchealthjobs.org",
-      "careers_platform": "unknown",
-      "careers_search_url": null,
-      "careers_notes": "WMCHealth network job site (link found on wmchealth.org by the R3 pass); covers all network hospitals. [enrich 2026-10-20] careers_url -> HTTP 200 at https://wmchealthjobs.org/",
+      "careers_url": "https://wmchealthjobs.org/search-jobs/",
+      "careers_platform": "custom",
+      "careers_search_url": "https://wmchealthjobs.org/search-jobs/?job_filter_category=&job_filter_location=&job_filter_locality=&job_filter_department=&job_filter_schedule=&job_keywords=nurse+practitioner&job_category=&job_location=&job_locality=",
+      "careers_notes": "WMCHealth network job site (link found on wmchealth.org by the R3 pass); covers all network hospitals. [enrich 2026-10-20] careers_url -> HTTP 200 at https://wmchealthjobs.org/ [fix 2026-10-20] wmchealthjobs.org is a server-rendered WordPress board (WebFetch of /search-jobs/page/2/?...&job_location=26 listed postings with facility and pagination); posting links are https://wmchealthjobs.org/?jobs=<slug>-<id>, which the generic adapter's job-link pattern does not match yet, so the engine still sees no listings until generic.JOBISH_HREF accepts '[?&]jobs='. The NP/PA recruiting page jobs.wmchealthjobs.org/wmc-0137-other-npspas lists open services as plain text only.",
       "ats_config": {
-        "host": "wmchealthjobs.org"
+        "host": "wmchealthjobs.org",
+        "vendor": "WordPress job board",
+        "keyword_param": "job_keywords",
+        "np_pa_page": "https://jobs.wmchealthjobs.org/wmc-0137-other-npspas"
       },
       "nearest_airport": "SWF New York Stewart International (45 min)",
       "beds": 147,
@@ -4478,7 +4561,8 @@
       "sources": [
         "https://www.wmchealth.org/press-releases/new-york-state-and-wmchealth-usher-in-new-era-of-healthcare-in-ulster-county-with-opening-of-reimagined-healthalliance-hospital",
         "https://beckershospitalreview.com/capital/wmchealth-opens-new-113m-hospital-in-upstate-new-york.html",
-        "model knowledge (to verify); enrichment pending"
+        "model knowledge (to verify); enrichment pending",
+        "https://jobs.wmchealthjobs.org/wmc-0137-other-npspas"
       ],
       "notes": "Included at the caller's request as the regional hospital for Ulster County; not on the DOH pediatric bed or NICU lists. Verify whether any pediatric beds or a birthing unit exist. Bed count from Wikipedia list per R3 scratch.",
       "confidence": "low",
@@ -5381,12 +5465,14 @@
       "region": "Long Island",
       "hotspot": false,
       "website": "https://www.stonybrookmedicine.edu/southampton",
-      "careers_url": "https://www.stonybrookmedicine.edu/careers",
+      "careers_url": "https://stonybrooku.taleo.net/careersection/11external/jobsearch.ftl?lang=en&portal=101430233",
       "careers_platform": "taleo",
-      "careers_search_url": null,
-      "careers_notes": "Stony Brook Medicine careers (orchestrator URL). The existing Stony Brook Children's record uses careers.stonybrookmedicine.edu; enrichment should settle which host lists jobs. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.stonybrookmedicine.edu/careers; ATS link seen: https://stonybrooku.taleo.net/careersection/11external/jobsearch.ftl?lang=en&amp;radiusType=K&amp;searchExpanded=true&amp;organization=559340755404&amp;radius=1&amp;portal=101430233",
+      "careers_search_url": "https://stonybrooku.taleo.net/careersection/11external/jobsearch.ftl?lang=en&portal=101430233&keyword=nurse%20practitioner",
+      "careers_notes": "Stony Brook Medicine careers (orchestrator URL). The existing Stony Brook Children's record uses careers.stonybrookmedicine.edu; enrichment should settle which host lists jobs. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.stonybrookmedicine.edu/careers; ATS link seen: https://stonybrooku.taleo.net/careersection/11external/jobsearch.ftl?lang=en&amp;radiusType=K&amp;searchExpanded=true&amp;organization=559340755404&amp;radius=1&amp;portal=101430233 [fix 2026-10-20] Stony Brook Medicine Taleo section 11external, portal 101430233, from the link on stonybrookmedicine.edu/careers seen by the enrichment fetch; Southampton already read this board via sniffing (9 listings). careers.stonybrookmedicine.edu does not resolve. Both records now share one board.",
       "ats_config": {
-        "host": "www.stonybrookmedicine.edu"
+        "host": "stonybrooku.taleo.net",
+        "career_section": "11external",
+        "portal": "101430233"
       },
       "nearest_airport": "ISP Long Island MacArthur",
       "beds": null,

@@ -1786,13 +1786,13 @@
       "region": "Pennsylvania (other)",
       "hotspot": false,
       "website": "https://www.pennstatehealth.org/childrens",
-      "careers_url": "https://www.pennstatehealth.org/childrens",
+      "careers_url": "https://careers.pennstatehealth.org/",
       "careers_platform": "unknown",
       "careers_search_url": null,
-      "careers_notes": "Careers site could not be verified this session: the web search budget ran out and direct fetches of Penn State Health pages were blocked. careers_url is the main website as a placeholder; locate the real job search page and platform before scraping. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.pennstatehealth.org/childrens",
+      "careers_notes": "Careers site could not be verified this session: the web search budget ran out and direct fetches of Penn State Health pages were blocked. careers_url is the main website as a placeholder; locate the real job search page and platform before scraping. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.pennstatehealth.org/childrens [fix 2026-10-20] Pointed at careers.pennstatehealth.org like the two working Penn State Health records instead of the children's hospital homepage; that board yielded few listings in the dry run, so its real ATS still needs finding.",
       "ats_config": {
-        "host": "www.pennstatehealth.org",
-        "flagship": true
+        "flagship": true,
+        "host": "www.pennstatehealth.org"
       },
       "nearest_airport": "MDT Harrisburg International (about 7 mi straight-line); BWI Baltimore/Washington International about 75 mi",
       "beds": 134,
@@ -1864,12 +1864,12 @@
       "hotspot": false,
       "website": "https://www.chp.edu/",
       "careers_url": "https://careers.upmc.com/",
-      "careers_platform": "custom",
+      "careers_platform": "unknown",
       "careers_search_url": null,
       "careers_notes": "Careers site could not be verified this session: the web search budget ran out and direct fetches of UPMC pages were blocked. careers_url is the main website as a placeholder; locate the real job search page and platform before scraping. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.chp.edu/ [fix 2026-10-20] all UPMC jobs post on careers.upmc.com; host set so the shared-board attribution includes this hospital.",
       "ats_config": {
-        "host": "careers.upmc.com",
-        "flagship": true
+        "flagship": true,
+        "host": "careers.upmc.com"
       },
       "nearest_airport": "PIT Pittsburgh International (about 15 mi straight-line)",
       "beds": 317,
@@ -1950,12 +1950,14 @@
       "region": "Pennsylvania (other)",
       "hotspot": false,
       "website": "https://www.lvhn.org/locations/lehigh-valley-hospital-cedar-crest",
-      "careers_url": "https://www.lvhn.org/",
-      "careers_platform": "unknown",
-      "careers_search_url": null,
-      "careers_notes": "Careers site could not be verified this session: the web search budget ran out and direct fetches of Lehigh Valley Health Network pages were blocked. careers_url is the main website as a placeholder; locate the real job search page and platform before scraping. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.lvhn.org/",
+      "careers_url": "https://lvhn.wd1.myworkdayjobs.com/LVHN",
+      "careers_platform": "workday",
+      "careers_search_url": "https://lvhn.wd1.myworkdayjobs.com/LVHN?q=nurse%20practitioner",
+      "careers_notes": "Careers site could not be verified this session: the web search budget ran out and direct fetches of Lehigh Valley Health Network pages were blocked. careers_url is the main website as a placeholder; locate the real job search page and platform before scraping. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.lvhn.org/ [fix 2026-10-20] LVHN moved from iCIMS (careers-lvhn.icims.com search now 404) to Workday tenant lvhn, site LVHN. Verified by web search: postings under lvhn.wd1.myworkdayjobs.com/LVHN/job/Allentown-PA/... and the 'Search for Jobs' page.",
       "ats_config": {
-        "host": "www.lvhn.org"
+        "host": "lvhn.wd1.myworkdayjobs.com",
+        "tenant": "lvhn",
+        "site": "LVHN"
       },
       "nearest_airport": "ABE Lehigh Valley International (about 7 mi straight-line); PHL Philadelphia International about 50 mi",
       "beds": null,
@@ -1996,7 +1998,8 @@
       "wikipedia_title": "Lehigh Valley Hospital–Cedar Crest",
       "sources": [
         "https://en.wikipedia.org/wiki/Lehigh_Valley_Hospital%E2%80%93Cedar_Crest",
-        "https://en.wikipedia.org/wiki/List_of_hospitals_in_Pennsylvania"
+        "https://en.wikipedia.org/wiki/List_of_hospitals_in_Pennsylvania",
+        "https://lvhn.wd1.myworkdayjobs.com/LVHN"
       ],
       "notes": "The campus ED is a combined adult Level I and pediatric Level II trauma ED; a separate pediatric ED was not confirmed, so peds_ed is false pending verification. PICU and NICU specifics (beds, level) not found this session; picu set true on the basis of its children's hospital and pediatric trauma status, verify. Check whether LVHN now operates under Jefferson Health (not confirmed from any page read this session); if so, careers may run through Jefferson's site.",
       "confidence": "low",
@@ -2024,12 +2027,14 @@
       "region": "Pennsylvania (other)",
       "hotspot": false,
       "website": "https://www.sluhn.org/",
-      "careers_url": "https://www.slhn.org/careers/students-career-paths",
+      "careers_url": "https://sluhn.wd1.myworkdayjobs.com/SLUHNAP",
       "careers_platform": "workday",
-      "careers_search_url": null,
-      "careers_notes": "Careers site could not be verified this session: the web search budget ran out and direct fetches of St. Luke's University Health Network pages were blocked. careers_url is the main website as a placeholder; locate the real job search page and platform before scraping. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.slhn.org/careers/students-career-paths; ATS link seen: https://sluhn.wd1.myworkdayjobs.com/SLUHNAP",
+      "careers_search_url": "https://sluhn.wd1.myworkdayjobs.com/SLUHNAP?q=nurse%20practitioner",
+      "careers_notes": "Careers site could not be verified this session: the web search budget ran out and direct fetches of St. Luke's University Health Network pages were blocked. careers_url is the main website as a placeholder; locate the real job search page and platform before scraping. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.slhn.org/careers/students-career-paths; ATS link seen: https://sluhn.wd1.myworkdayjobs.com/SLUHNAP [fix 2026-10-20] Workday tenant sluhn, site SLUHNAP (the network's advanced practice site; Nursing-Recruiting and SLUHN are the RN and general sites). Verified by web search: NP/PA postings incl. Critical Care (R114358) and Neurology (Grand View) (R138719) under sluhn.wd1.myworkdayjobs.com/SLUHNAP. careers.slhn.org does not resolve.",
       "ats_config": {
-        "host": "www.slhn.org"
+        "host": "sluhn.wd1.myworkdayjobs.com",
+        "tenant": "sluhn",
+        "site": "SLUHNAP"
       },
       "nearest_airport": "ABE Lehigh Valley International (about 4 mi straight-line); PHL Philadelphia International about 51 mi",
       "beds": null,
@@ -2059,7 +2064,8 @@
       "wikipedia_title": "St. Luke's University Health Network",
       "sources": [
         "https://en.wikipedia.org/wiki/St._Luke%27s_University_Health_Network",
-        "https://en.wikipedia.org/wiki/List_of_hospitals_in_Pennsylvania"
+        "https://en.wikipedia.org/wiki/List_of_hospitals_in_Pennsylvania",
+        "https://sluhn.wd1.myworkdayjobs.com/en-US/SLUHNAP/job/Nurse-Practitioner-or-Physician-Assistant---Critical-Care-Opportunities--FT--PT--Per-Diem-_R114358"
       ],
       "notes": "Wikipedia does not say which campus hosts the 17 bed pediatric unit; assumed Bethlehem. PICU and NICU level not confirmed. St. Luke's careers site not verified this session.",
       "confidence": "low",
@@ -2228,12 +2234,18 @@
       "region": "Pennsylvania (other)",
       "hotspot": false,
       "website": "http://www.lancastergeneralhealth.org",
-      "careers_url": "http://www.lancastergeneralhealth.org",
-      "careers_platform": "unknown",
-      "careers_search_url": null,
-      "careers_notes": "Careers site could not be verified this session: the web search budget ran out and direct fetches of Penn Medicine Lancaster General Health pages were blocked. careers_url is the main website as a placeholder; locate the real job search page and platform before scraping. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.pennmedicine.org/locations/entity/lancaster-general-health",
+      "careers_url": "https://careers.pennmedicine.org/",
+      "careers_platform": "jobvite",
+      "careers_search_url": "https://careers.pennmedicine.org/search/nurse-practitioner-physician-assistant/jobs",
+      "careers_notes": "Careers site could not be verified this session: the web search budget ran out and direct fetches of Penn Medicine Lancaster General Health pages were blocked. careers_url is the main website as a placeholder; locate the real job search page and platform before scraping. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.pennmedicine.org/locations/entity/lancaster-general-health [fix 2026-10-20] careers.pennmedicine.org is a Talemetry (Jobvite) CareerSite portal (web search shows /search/<category>/jobs, /jobs/<id>-<slug> and /pages/ paths, the same layout as jobs.unchealthcare.org); the NP/PA category page is /search/nurse-practitioner-physician-assistant/jobs. Plain requests get 403, so the engine reads /search/jobs.json in the browser (careersite adapter). This hospital was moved here from a placeholder homepage on the assumption that all Penn Medicine entities post on this board; confirm on the next run.",
       "ats_config": {
-        "host": "www.pennmedicine.org"
+        "host": "careers.pennmedicine.org",
+        "adapter": "careersite",
+        "needs_browser": true,
+        "vendor": "Talemetry (Jobvite) CareerSite",
+        "location_aliases": [
+          "Lancaster General Hospital"
+        ]
       },
       "nearest_airport": "MDT Harrisburg International (about 26 mi straight-line); PHL Philadelphia International about 57 mi",
       "beds": 631,
@@ -2270,7 +2282,8 @@
       ],
       "wikipedia_title": "Lancaster General Hospital",
       "sources": [
-        "https://en.wikipedia.org/wiki/Lancaster_General_Hospital"
+        "https://en.wikipedia.org/wiki/Lancaster_General_Hospital",
+        "https://careers.pennmedicine.org/search/nurse-practitioner-physician-assistant/jobs"
       ],
       "notes": "Specific pediatric unit, NICU level and peds ED details not confirmed this session. CHOP partnership roles may post on CHOP's site.",
       "confidence": "low",
@@ -2368,12 +2381,13 @@
       "region": "Delaware",
       "hotspot": false,
       "website": "https://www.nemours.org/",
-      "careers_url": "https://www.nemours.org/",
+      "careers_url": "https://epyz.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1",
       "careers_platform": "oracle_cloud",
-      "careers_search_url": null,
-      "careers_notes": "Careers site could not be verified this session: the web search budget ran out and direct fetches of Nemours pages were blocked. careers_url is the main website as a placeholder; locate the real job search page and platform before scraping. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.nemours.org/; ATS link seen: https://epyz.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1&#34;}}",
+      "careers_search_url": "https://epyz.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/jobs?keyword=nurse+practitioner",
+      "careers_notes": "Careers site could not be verified this session: the web search budget ran out and direct fetches of Nemours pages were blocked. careers_url is the main website as a placeholder; locate the real job search page and platform before scraping. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.nemours.org/; ATS link seen: https://epyz.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1&#34;}} [fix 2026-10-20] Oracle Recruiting Cloud host and site from the ATS link on nemours.org seen by the enrichment fetch (HTTP 200); national board (DE, PA, NJ, FL), out-of-footprint postings are dropped.",
       "ats_config": {
-        "host": "www.nemours.org"
+        "host": "epyz.fa.us2.oraclecloud.com",
+        "site_number": "CX_1"
       },
       "nearest_airport": "ILG Wilmington (New Castle) (about 7 mi straight-line); PHL Philadelphia International about 18 mi",
       "beds": 195,
@@ -2654,12 +2668,12 @@
       "region": "North Jersey",
       "hotspot": false,
       "website": "http://www.uhnj.org",
-      "careers_url": "https://www.uhnj.org/uh-employees/human-resources/careers/",
+      "careers_url": "https://careers-uhnjcareers.icims.com/jobs/search",
       "careers_platform": "icims",
-      "careers_search_url": null,
-      "careers_notes": "Careers site could not be verified this session: the web search budget ran out and direct fetches of University Hospital pages were blocked. careers_url is the main website as a placeholder; locate the real job search page and platform before scraping. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.uhnj.org/uh-employees/human-resources/careers/; ATS link seen: https://careers-uhnjcareers.icims.com/jobs/search?ss=1&amp;searchKeyword=&amp;searchCategory=&amp;searchZip=&amp;searchRadius=20",
+      "careers_search_url": "https://careers-uhnjcareers.icims.com/jobs/search?ss=1&searchKeyword=nurse%20practitioner",
+      "careers_notes": "Careers site could not be verified this session: the web search budget ran out and direct fetches of University Hospital pages were blocked. careers_url is the main website as a placeholder; locate the real job search page and platform before scraping. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.uhnj.org/uh-employees/human-resources/careers/; ATS link seen: https://careers-uhnjcareers.icims.com/jobs/search?ss=1&amp;searchKeyword=&amp;searchCategory=&amp;searchZip=&amp;searchRadius=20 [fix 2026-10-20] iCIMS portal careers-uhnjcareers.icims.com from the link on uhnj.org careers seen by the enrichment fetch (HTTP 200).",
       "ats_config": {
-        "host": "www.uhnj.org"
+        "host": "careers-uhnjcareers.icims.com"
       },
       "nearest_airport": "EWR Newark Liberty International (about 4 mi straight-line)",
       "beds": 518,
@@ -2790,12 +2804,18 @@
       "region": "North Jersey",
       "hotspot": false,
       "website": "https://www.princetonhcs.org/",
-      "careers_url": "https://www.princetonhcs.org/",
-      "careers_platform": "unknown",
-      "careers_search_url": null,
-      "careers_notes": "Careers site could not be verified this session: the web search budget ran out and direct fetches of Penn Medicine Princeton Health pages were blocked. careers_url is the main website as a placeholder; locate the real job search page and platform before scraping. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.pennmedicine.org/locations/entity/princeton-health",
+      "careers_url": "https://careers.pennmedicine.org/",
+      "careers_platform": "jobvite",
+      "careers_search_url": "https://careers.pennmedicine.org/search/nurse-practitioner-physician-assistant/jobs",
+      "careers_notes": "Careers site could not be verified this session: the web search budget ran out and direct fetches of Penn Medicine Princeton Health pages were blocked. careers_url is the main website as a placeholder; locate the real job search page and platform before scraping. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.pennmedicine.org/locations/entity/princeton-health [fix 2026-10-20] careers.pennmedicine.org is a Talemetry (Jobvite) CareerSite portal (web search shows /search/<category>/jobs, /jobs/<id>-<slug> and /pages/ paths, the same layout as jobs.unchealthcare.org); the NP/PA category page is /search/nurse-practitioner-physician-assistant/jobs. Plain requests get 403, so the engine reads /search/jobs.json in the browser (careersite adapter). This hospital was moved here from a placeholder homepage on the assumption that all Penn Medicine entities post on this board; confirm on the next run.",
       "ats_config": {
-        "host": "www.pennmedicine.org"
+        "host": "careers.pennmedicine.org",
+        "adapter": "careersite",
+        "needs_browser": true,
+        "vendor": "Talemetry (Jobvite) CareerSite",
+        "location_aliases": [
+          "Penn Medicine Princeton Medical Center"
+        ]
       },
       "nearest_airport": "TTN Trenton-Mercer (about 11 mi straight-line); EWR Newark Liberty International about 34 mi",
       "beds": 355,
@@ -2834,7 +2854,8 @@
       "sources": [
         "https://en.wikipedia.org/wiki/Penn_Medicine_Princeton_Medical_Center",
         "https://en.wikipedia.org/wiki/Children%27s_Hospital_of_Philadelphia",
-        "https://acnj.org/wp-content/uploads/20251203-Maternal-Health-Hospital-Data.pdf"
+        "https://acnj.org/wp-content/uploads/20251203-Maternal-Health-Hospital-Data.pdf",
+        "https://careers.pennmedicine.org/search/nurse-practitioner-physician-assistant/jobs"
       ],
       "notes": "Pediatric APPs may be CHOP employees and post on CHOP's site. NICU level not reported in ACNJ data. Website URL is from prior knowledge of the system's domain and was not opened this session.",
       "confidence": "medium",
@@ -3328,12 +3349,14 @@
       "region": "South Jersey",
       "hotspot": false,
       "website": "https://www.jeffersonhealth.org/",
-      "careers_url": "https://www.jeffersonhealth.org/",
-      "careers_platform": "unknown",
-      "careers_search_url": null,
-      "careers_notes": "Careers site could not be verified this session: the web search budget ran out and direct fetches of Jefferson Health pages were blocked. careers_url is the main website as a placeholder; locate the real job search page and platform before scraping. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.jeffersonhealth.org/home",
+      "careers_url": "https://jeffersonhealth.wd5.myworkdayjobs.com/ThomasJeffersonExternal",
+      "careers_platform": "workday",
+      "careers_search_url": "https://jeffersonhealth.wd5.myworkdayjobs.com/ThomasJeffersonExternal?q=nurse%20practitioner",
+      "careers_notes": "Careers site could not be verified this session: the web search budget ran out and direct fetches of Jefferson Health pages were blocked. careers_url is the main website as a placeholder; locate the real job search page and platform before scraping. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.jeffersonhealth.org/home [fix 2026-10-20] Workday tenant jeffersonhealth, site ThomasJeffersonExternal set explicitly on every Jefferson record so they share one board (before, two failing records sat on a placeholder homepage). Verified by web search: 'Trauma - Nurse Practitioner - Einstein Hospital' (REQ-0021306) under this site.",
       "ats_config": {
-        "host": "www.jeffersonhealth.org"
+        "host": "jeffersonhealth.wd5.myworkdayjobs.com",
+        "tenant": "jeffersonhealth",
+        "site": "ThomasJeffersonExternal"
       },
       "nearest_airport": "PHL Philadelphia International (about 13 mi straight-line)",
       "beds": null,
@@ -3362,7 +3385,8 @@
       "sources": [
         "https://acnj.org/wp-content/uploads/20251203-Maternal-Health-Hospital-Data.pdf",
         "https://www.nj.gov/dobi/division_insurance/managedcare/genacutehospitals.pdf",
-        "https://en.wikipedia.org/wiki/List_of_hospitals_in_New_Jersey"
+        "https://en.wikipedia.org/wiki/List_of_hospitals_in_New_Jersey",
+        "https://jeffersonhealth.wd5.myworkdayjobs.com/en-US/ThomasJeffersonExternal/job/Trauma---Nurse-Practitioner---Einstein-Hospital_REQ-0021306"
       ],
       "notes": "nicu_level 3 inferred from Intensive Community Perinatal Center designation. Pediatric services otherwise unverified. Website URL is from prior knowledge of the system's domain and was not opened this session.",
       "confidence": "low",
@@ -4198,12 +4222,14 @@
       "region": "Philadelphia metro",
       "hotspot": false,
       "website": "https://www.jeffersonhealth.org/",
-      "careers_url": "https://www.jeffersonhealth.org/",
-      "careers_platform": "unknown",
-      "careers_search_url": null,
-      "careers_notes": "Careers site could not be verified this session: the web search budget ran out and direct fetches of Jefferson Health pages were blocked. careers_url is the main website as a placeholder; locate the real job search page and platform before scraping. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.jeffersonhealth.org/home",
+      "careers_url": "https://jeffersonhealth.wd5.myworkdayjobs.com/ThomasJeffersonExternal",
+      "careers_platform": "workday",
+      "careers_search_url": "https://jeffersonhealth.wd5.myworkdayjobs.com/ThomasJeffersonExternal?q=nurse%20practitioner",
+      "careers_notes": "Careers site could not be verified this session: the web search budget ran out and direct fetches of Jefferson Health pages were blocked. careers_url is the main website as a placeholder; locate the real job search page and platform before scraping. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.jeffersonhealth.org/home [fix 2026-10-20] Workday tenant jeffersonhealth, site ThomasJeffersonExternal set explicitly on every Jefferson record so they share one board (before, two failing records sat on a placeholder homepage). Verified by web search: 'Trauma - Nurse Practitioner - Einstein Hospital' (REQ-0021306) under this site.",
       "ats_config": {
-        "host": "www.jeffersonhealth.org"
+        "host": "jeffersonhealth.wd5.myworkdayjobs.com",
+        "tenant": "jeffersonhealth",
+        "site": "ThomasJeffersonExternal"
       },
       "nearest_airport": "PHL Philadelphia International (about 12 mi straight-line)",
       "beds": null,
@@ -4230,7 +4256,8 @@
       "wikipedia_title": "Einstein Medical Center Philadelphia",
       "sources": [
         "https://en.wikipedia.org/wiki/Einstein_Medical_Center_Philadelphia",
-        "https://en.wikipedia.org/wiki/List_of_hospitals_in_Pennsylvania"
+        "https://en.wikipedia.org/wiki/List_of_hospitals_in_Pennsylvania",
+        "https://jeffersonhealth.wd5.myworkdayjobs.com/en-US/ThomasJeffersonExternal/job/Trauma---Nurse-Practitioner---Einstein-Hospital_REQ-0021306"
       ],
       "notes": "Main pediatric NP setting here is the NICU (NNP roles). Bed count not found. Jefferson careers platform not verified.",
       "confidence": "medium",
@@ -4513,12 +4540,18 @@
       "region": "Philadelphia metro",
       "hotspot": false,
       "website": "https://www.pennmedicine.org/",
-      "careers_url": "https://www.pennmedicine.org/",
-      "careers_platform": "unknown",
-      "careers_search_url": null,
-      "careers_notes": "Careers site could not be verified this session: the web search budget ran out and direct fetches of Penn Medicine pages were blocked. careers_url is the main website as a placeholder; locate the real job search page and platform before scraping. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.pennmedicine.org/",
+      "careers_url": "https://careers.pennmedicine.org/",
+      "careers_platform": "jobvite",
+      "careers_search_url": "https://careers.pennmedicine.org/search/nurse-practitioner-physician-assistant/jobs",
+      "careers_notes": "Careers site could not be verified this session: the web search budget ran out and direct fetches of Penn Medicine pages were blocked. careers_url is the main website as a placeholder; locate the real job search page and platform before scraping. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.pennmedicine.org/ [fix 2026-10-20] careers.pennmedicine.org is a Talemetry (Jobvite) CareerSite portal (web search shows /search/<category>/jobs, /jobs/<id>-<slug> and /pages/ paths, the same layout as jobs.unchealthcare.org); the NP/PA category page is /search/nurse-practitioner-physician-assistant/jobs. Plain requests get 403, so the engine reads /search/jobs.json in the browser (careersite adapter). This hospital was moved here from a placeholder homepage on the assumption that all Penn Medicine entities post on this board; confirm on the next run.",
       "ats_config": {
-        "host": "www.pennmedicine.org"
+        "host": "careers.pennmedicine.org",
+        "adapter": "careersite",
+        "needs_browser": true,
+        "vendor": "Talemetry (Jobvite) CareerSite",
+        "location_aliases": [
+          "Pennsylvania Hospital"
+        ]
       },
       "nearest_airport": "PHL Philadelphia International (about 7 mi straight-line)",
       "beds": 515,
@@ -4551,7 +4584,8 @@
       "wikipedia_title": "Pennsylvania Hospital",
       "sources": [
         "https://en.wikipedia.org/wiki/Pennsylvania_Hospital",
-        "https://en.wikipedia.org/wiki/List_of_hospitals_in_Pennsylvania"
+        "https://en.wikipedia.org/wiki/List_of_hospitals_in_Pennsylvania",
+        "https://careers.pennmedicine.org/search/nurse-practitioner-physician-assistant/jobs"
       ],
       "notes": "Included as a likely NICU employer pending verification; no page read this session confirmed a NICU or its level. Penn Medicine careers platform not verified.",
       "confidence": "low",
@@ -4580,7 +4614,7 @@
       "hotspot": false,
       "website": "https://www.upmc.com/",
       "careers_url": "https://careers.upmc.com/",
-      "careers_platform": "custom",
+      "careers_platform": "unknown",
       "careers_search_url": null,
       "careers_notes": "Careers site could not be verified this session: the web search budget ran out and direct fetches of UPMC pages were blocked. careers_url is the main website as a placeholder; locate the real job search page and platform before scraping. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.upmc.com/ [fix 2026-10-20] all UPMC jobs post on careers.upmc.com; host set so the shared-board attribution includes this hospital.",
       "ats_config": {

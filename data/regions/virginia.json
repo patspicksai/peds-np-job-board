@@ -198,15 +198,18 @@
       "region": "Virginia (other)",
       "hotspot": false,
       "website": "https://childrens.uvahealth.com/",
-      "careers_url": "https://uva.wd1.myworkdayjobs.com/UVAJobs",
-      "careers_platform": "workday",
-      "careers_search_url": "https://uva.wd1.myworkdayjobs.com/en-US/UVAJobs?q=nurse%20practitioner",
-      "careers_notes": "UVA Health (medical center and UVA Physicians Group) posts on the University of Virginia Workday tenant, site UVAJobs (job detail pattern /UVAJobs/job/<location>/<title>_R00xxxxx, e.g. R0043427 UVA Pediatrics Harrisonburg Nurse Practitioner seen in search results 2026-10-19). Workday search pages are JS-rendered; the direct fetch of the UVAJobs search page was blocked (permission timeout), so rendering not tested. Scraper should use the Workday CXS JSON endpoint (POST /wday/cxs/uva/UVAJobs/jobs with searchText). Same tenant also hosts UVAStudentJobs; ignore that site. [enrich 2026-10-20] careers_url -> HTTP 200 at https://uva.wd1.myworkdayjobs.com/UVAJobs; ATS link seen: https://uva.wd1.myworkdayjobs.com/UVAJobs; search_url -> HTTP 200, mentions NP: False, job links: 0",
+      "careers_url": "https://careers.uvahealth.org/us/en",
+      "careers_platform": "phenom",
+      "careers_search_url": "https://careers.uvahealth.org/us/en/search-results?keywords=nurse%20practitioner",
+      "careers_notes": "UVA Health (medical center and UVA Physicians Group) posts on the University of Virginia Workday tenant, site UVAJobs (job detail pattern /UVAJobs/job/<location>/<title>_R00xxxxx, e.g. R0043427 UVA Pediatrics Harrisonburg Nurse Practitioner seen in search results 2026-10-19). Workday search pages are JS-rendered; the direct fetch of the UVAJobs search page was blocked (permission timeout), so rendering not tested. Scraper should use the Workday CXS JSON endpoint (POST /wday/cxs/uva/UVAJobs/jobs with searchText). Same tenant also hosts UVAStudentJobs; ignore that site. [enrich 2026-10-20] careers_url -> HTTP 200 at https://uva.wd1.myworkdayjobs.com/UVAJobs; ATS link seen: https://uva.wd1.myworkdayjobs.com/UVAJobs; search_url -> HTTP 200, mentions NP: False, job links: 0 [fix 2026-10-20] uvahealth.com/about/jobs now 302-redirects to careers.uvahealth.org/us/en (Location header seen by WebFetch); the /us/en layout is a Phenom site, read by the phenom adapter (search-results?keywords=). The old Workday site uva/UVAJobs listed 0 jobs in the dry run. Phenom is inferred from the URL layout; the page itself was not fetched.",
       "ats_config": {
-        "host": "uva.wd1.myworkdayjobs.com",
-        "tenant": "uva",
-        "site": "UVAJobs",
-        "flagship": true
+        "flagship": true,
+        "host": "careers.uvahealth.org",
+        "old_workday": {
+          "host": "uva.wd1.myworkdayjobs.com",
+          "tenant": "uva",
+          "site": "UVAJobs"
+        }
       },
       "nearest_airport": "CHO Charlottesville-Albemarle (about 9 mi)",
       "beds": 679,
@@ -256,7 +259,8 @@
         "https://childrens.uvahealth.com/services/neonatology/nicu-services",
         "https://www.uvahealth.com/about/facts-stats",
         "https://en.wikipedia.org/wiki/List_of_hospitals_in_Virginia",
-        "https://neonatologysolutions.com/?p=19552"
+        "https://neonatologysolutions.com/?p=19552",
+        "https://uvahealth.com/about/jobs"
       ],
       "notes": "Strong academic option. peds_beds is the 111 from the Wikipedia hospital list (not confirmed on a UVA page); beds is the University Medical Center count (679, FY2025). NICU had 51 beds per a third-party NICU directory; UVA's 2025 Vision and Voice story describes a NICU expansion (not read). Pediatric ED presence inferred from UVA pediatric emergency department RN postings seen in search results and the main ED serving children; a dedicated peds ED footprint was not confirmed on a page read. Magnet status not stated on pages read.",
       "confidence": "medium",
@@ -446,12 +450,19 @@
       "region": "Richmond",
       "hotspot": false,
       "website": "https://www.hcavirginia.com/locations/chippenham-hospital",
-      "careers_url": "https://careers.hcahealthcare.com/search/jobs/in/va-virginia",
-      "careers_platform": "custom",
-      "careers_search_url": "https://careers.hcahealthcare.com/search/nurse-practitioner/jobs/in/va-virginia",
-      "careers_notes": "HCA Healthcare central job board careers.hcahealthcare.com (TalentBrew-style paths: /search/jobs/in/va-virginia, /search/<keyword>/jobs, facility pages /pages/<facility-slug>, job detail /jobs/<id>-<title-slug>). WebFetch was refused by robots.txt (2026-10-19), so rendering was not tested. Underlying ATS not confirmed from a page read, so platform is recorded as custom. The Richmond keyword search URL combines the two observed path patterns (/search/<keyword>/jobs and /jobs/in/<place>) and is untested. Richmond facility jobs post under CJW Medical Center (Chippenham and Johnston-Willis share one license). [enrich 2026-10-20] careers_url -> HTTP 403 at https://careers.hcahealthcare.com/search/jobs/in/va-virginia; search_url -> HTTP 403, mentions NP: False, job links: 0",
+      "careers_url": "https://careers.hcahealthcare.com/search/jobs",
+      "careers_platform": "jobvite",
+      "careers_search_url": "https://careers.hcahealthcare.com/search/jobs?q=nurse+practitioner&location=Richmond%2C+VA%2C+United+States",
+      "careers_notes": "HCA Healthcare central job board careers.hcahealthcare.com (TalentBrew-style paths: /search/jobs/in/va-virginia, /search/<keyword>/jobs, facility pages /pages/<facility-slug>, job detail /jobs/<id>-<title-slug>). WebFetch was refused by robots.txt (2026-10-19), so rendering was not tested. Underlying ATS not confirmed from a page read, so platform is recorded as custom. The Richmond keyword search URL combines the two observed path patterns (/search/<keyword>/jobs and /jobs/in/<place>) and is untested. Richmond facility jobs post under CJW Medical Center (Chippenham and Johnston-Willis share one license). [enrich 2026-10-20] careers_url -> HTTP 403 at https://careers.hcahealthcare.com/search/jobs/in/va-virginia; search_url -> HTTP 403, mentions NP: False, job links: 0 [fix 2026-10-20] careers.hcahealthcare.com is a Talemetry (Jobvite) CareerSite portal, the same family as jobs.unchealthcare.org: posting pages /jobs/<id>-<slug> render server side (WebFetch of /jobs/15762370, a Johnston-Willis APP posting, worked; apply.talemetry.com and ttcportals markers), search paths /search/jobs?q=&location=. No separate HCA JSON API was found; the engine's careersite adapter reads /search/jobs.json?q= in the browser because plain requests get 403 (bot wall) and WebFetch is refused /search by robots.txt. Untested here: whether headed Chrome passes the 403, and the adapter has no location filter, so the national results are capped at 150 per keyword.",
       "ats_config": {
-        "host": "careers.hcahealthcare.com"
+        "host": "careers.hcahealthcare.com",
+        "adapter": "careersite",
+        "needs_browser": true,
+        "vendor": "Talemetry (Jobvite) CareerSite",
+        "location_aliases": [
+          "Chippenham Hospital",
+          "CJW Medical Center"
+        ]
       },
       "nearest_airport": "RIC Richmond International (about 11 mi straight-line)",
       "beds": 667,
@@ -487,7 +498,8 @@
         "https://www.wtvr.com/2019/10/16/chippenham-hospital-pediatric-er",
         "https://wtvr.com/news/local-news/chippenham-hospital-nicu-closing-consolidating-with-johnston-willis-hospital-ausut-29-2022",
         "https://www.beckershospitalreview.com/care-coordination/2-hca-hospitals-will-combine-nicus.html",
-        "https://www.12onyourside.com/2022/01/18/pediatric-units-henrico-doctors-hospital-close-permanently-april-1/"
+        "https://www.12onyourside.com/2022/01/18/pediatric-units-henrico-doctors-hospital-close-permanently-april-1/",
+        "https://careers.hcahealthcare.com/jobs/15762370-primary-care-advanced-practice-provider"
       ],
       "notes": "Facts from page titles and search listings only; every fetch of hcavirginia.com, WTVR and 12onyourside was rate limited (HTTP 429) on 2026-10-19. Pediatric ER confirmed by HCA's own kids' ER location page title. peds_inpatient true per the seed brief (pediatric ER and peds inpatient) and HCA's pediatrics specialty page; bed count unknown. beds is the combined CJW license from the Wikipedia list. teaching true because CJW hosts HCA GME programs (FREIDA lists CJW institutions), not verified in detail.",
       "confidence": "low",
@@ -511,12 +523,19 @@
       "region": "Richmond",
       "hotspot": false,
       "website": "https://www.hcavirginia.com/locations/johnston-willis-hospital",
-      "careers_url": "https://careers.hcahealthcare.com/search/jobs/in/va-virginia",
-      "careers_platform": "custom",
-      "careers_search_url": "https://careers.hcahealthcare.com/search/nurse-practitioner/jobs/in/va-virginia",
-      "careers_notes": "HCA Healthcare central job board careers.hcahealthcare.com (TalentBrew-style paths: /search/jobs/in/va-virginia, /search/<keyword>/jobs, facility pages /pages/<facility-slug>, job detail /jobs/<id>-<title-slug>). WebFetch was refused by robots.txt (2026-10-19), so rendering was not tested. Underlying ATS not confirmed from a page read, so platform is recorded as custom. The Richmond keyword search URL combines the two observed path patterns (/search/<keyword>/jobs and /jobs/in/<place>) and is untested. Jobs post under CJW Medical Center. [enrich 2026-10-20] careers_url -> HTTP 403 at https://careers.hcahealthcare.com/search/jobs/in/va-virginia; search_url -> HTTP 403, mentions NP: False, job links: 0",
+      "careers_url": "https://careers.hcahealthcare.com/search/jobs",
+      "careers_platform": "jobvite",
+      "careers_search_url": "https://careers.hcahealthcare.com/search/jobs?q=nurse+practitioner&location=Richmond%2C+VA%2C+United+States",
+      "careers_notes": "HCA Healthcare central job board careers.hcahealthcare.com (TalentBrew-style paths: /search/jobs/in/va-virginia, /search/<keyword>/jobs, facility pages /pages/<facility-slug>, job detail /jobs/<id>-<title-slug>). WebFetch was refused by robots.txt (2026-10-19), so rendering was not tested. Underlying ATS not confirmed from a page read, so platform is recorded as custom. The Richmond keyword search URL combines the two observed path patterns (/search/<keyword>/jobs and /jobs/in/<place>) and is untested. Jobs post under CJW Medical Center. [enrich 2026-10-20] careers_url -> HTTP 403 at https://careers.hcahealthcare.com/search/jobs/in/va-virginia; search_url -> HTTP 403, mentions NP: False, job links: 0 [fix 2026-10-20] careers.hcahealthcare.com is a Talemetry (Jobvite) CareerSite portal, the same family as jobs.unchealthcare.org: posting pages /jobs/<id>-<slug> render server side (WebFetch of /jobs/15762370, a Johnston-Willis APP posting, worked; apply.talemetry.com and ttcportals markers), search paths /search/jobs?q=&location=. No separate HCA JSON API was found; the engine's careersite adapter reads /search/jobs.json?q= in the browser because plain requests get 403 (bot wall) and WebFetch is refused /search by robots.txt. Untested here: whether headed Chrome passes the 403, and the adapter has no location filter, so the national results are capped at 150 per keyword.",
       "ats_config": {
-        "host": "careers.hcahealthcare.com"
+        "host": "careers.hcahealthcare.com",
+        "adapter": "careersite",
+        "needs_browser": true,
+        "vendor": "Talemetry (Jobvite) CareerSite",
+        "location_aliases": [
+          "Johnston-Willis Hospital",
+          "CJW Medical Center"
+        ]
       },
       "nearest_airport": "RIC Richmond International (about 15 mi straight-line)",
       "beds": null,
@@ -548,7 +567,8 @@
         "https://www.hcavirginia.com/locations/johnston-willis-hospital/specialties/NICU",
         "https://www.hcavirginia.com/locations/johnston-willis-hospital",
         "https://wtvr.com/news/local-news/chippenham-hospital-nicu-closing-consolidating-with-johnston-willis-hospital-ausut-29-2022",
-        "https://www.beckershospitalreview.com/care-coordination/2-hca-hospitals-will-combine-nicus.html"
+        "https://www.beckershospitalreview.com/care-coordination/2-hca-hospitals-will-combine-nicus.html",
+        "https://careers.hcahealthcare.com/jobs/15762370-primary-care-advanced-practice-provider"
       ],
       "notes": "Listed for NICU NP and neonatal roles (neonatal NPs are often employed by Pediatrix or another neonatology group rather than HCA). NICU bed count may have grown after the 2022 consolidation; not confirmed. beds left null because Wikipedia gives only the combined CJW figure (667), recorded on the Chippenham record.",
       "confidence": "medium",
@@ -572,12 +592,19 @@
       "region": "Richmond",
       "hotspot": false,
       "website": "https://www.hcavirginia.com/locations/henrico-doctors-hospital",
-      "careers_url": "https://careers.hcahealthcare.com/search/jobs/in/va-virginia",
-      "careers_platform": "custom",
-      "careers_search_url": "https://careers.hcahealthcare.com/search/nurse-practitioner/jobs/in/va-virginia",
-      "careers_notes": "HCA Healthcare central job board (TalentBrew-style paths); robots.txt refused WebFetch on 2026-10-19 so rendering untested. Keyword plus place path combines two observed patterns and is untested. Filter by facility name. Facility filter: Henrico Doctors' Hospital (HCA Virginia). [enrich 2026-10-20] careers_url -> HTTP 403 at https://careers.hcahealthcare.com/search/jobs/in/va-virginia; search_url -> HTTP 403, mentions NP: False, job links: 0",
+      "careers_url": "https://careers.hcahealthcare.com/search/jobs",
+      "careers_platform": "jobvite",
+      "careers_search_url": "https://careers.hcahealthcare.com/search/jobs?q=nurse+practitioner&location=Richmond%2C+VA%2C+United+States",
+      "careers_notes": "HCA Healthcare central job board (TalentBrew-style paths); robots.txt refused WebFetch on 2026-10-19 so rendering untested. Keyword plus place path combines two observed patterns and is untested. Filter by facility name. Facility filter: Henrico Doctors' Hospital (HCA Virginia). [enrich 2026-10-20] careers_url -> HTTP 403 at https://careers.hcahealthcare.com/search/jobs/in/va-virginia; search_url -> HTTP 403, mentions NP: False, job links: 0 [fix 2026-10-20] careers.hcahealthcare.com is a Talemetry (Jobvite) CareerSite portal, the same family as jobs.unchealthcare.org: posting pages /jobs/<id>-<slug> render server side (WebFetch of /jobs/15762370, a Johnston-Willis APP posting, worked; apply.talemetry.com and ttcportals markers), search paths /search/jobs?q=&location=. No separate HCA JSON API was found; the engine's careersite adapter reads /search/jobs.json?q= in the browser because plain requests get 403 (bot wall) and WebFetch is refused /search by robots.txt. Untested here: whether headed Chrome passes the 403, and the adapter has no location filter, so the national results are capped at 150 per keyword.",
       "ats_config": {
-        "host": "careers.hcahealthcare.com"
+        "host": "careers.hcahealthcare.com",
+        "adapter": "careersite",
+        "needs_browser": true,
+        "vendor": "Talemetry (Jobvite) CareerSite",
+        "location_aliases": [
+          "Henrico Doctors' Hospital",
+          "Henrico Doctors"
+        ]
       },
       "nearest_airport": "RIC Richmond International (about 13 mi)",
       "beds": null,
@@ -609,7 +636,8 @@
         "https://neonatologysolutions.com/?p=19552",
         "https://en.wikipedia.org/wiki/List_of_hospitals_in_Virginia",
         "https://www.12onyourside.com/2022/01/18/pediatric-units-henrico-doctors-hospital-close-permanently-april-1/",
-        "model knowledge (to verify); enrichment pending"
+        "model knowledge (to verify); enrichment pending",
+        "https://careers.hcahealthcare.com/jobs/15762370-primary-care-advanced-practice-provider"
       ],
       "notes": "Pediatric unit closure (April 2022), pediatric ER and NICU from search result headlines and the HCA NICU page title recorded in the R5b scratch; the pages were not opened. Coordinates from the R5b scratch (Google Places, Forest campus). NICU NP roles likely.",
       "confidence": "low",
@@ -1441,12 +1469,18 @@
       "region": "Virginia (other)",
       "hotspot": false,
       "website": "https://www.hcavirginia.com/locations/spotsylvania-regional-medical-center",
-      "careers_url": "https://careers.hcahealthcare.com/search/jobs/in/va-virginia",
-      "careers_platform": "custom",
-      "careers_search_url": "https://careers.hcahealthcare.com/search/nurse-practitioner/jobs/in/va-virginia",
-      "careers_notes": "HCA Healthcare central job board (TalentBrew-style paths); robots.txt refused WebFetch on 2026-10-19 so rendering untested. Keyword plus place path combines two observed patterns and is untested. Filter by facility name. Facility filter: Spotsylvania Regional Medical Center (HCA Virginia). [enrich 2026-10-20] careers_url -> HTTP 403 at https://careers.hcahealthcare.com/search/jobs/in/va-virginia; search_url -> HTTP 403, mentions NP: False, job links: 0",
+      "careers_url": "https://careers.hcahealthcare.com/search/jobs",
+      "careers_platform": "jobvite",
+      "careers_search_url": "https://careers.hcahealthcare.com/search/jobs?q=nurse+practitioner&location=Fredericksburg%2C+VA%2C+United+States",
+      "careers_notes": "HCA Healthcare central job board (TalentBrew-style paths); robots.txt refused WebFetch on 2026-10-19 so rendering untested. Keyword plus place path combines two observed patterns and is untested. Filter by facility name. Facility filter: Spotsylvania Regional Medical Center (HCA Virginia). [enrich 2026-10-20] careers_url -> HTTP 403 at https://careers.hcahealthcare.com/search/jobs/in/va-virginia; search_url -> HTTP 403, mentions NP: False, job links: 0 [fix 2026-10-20] careers.hcahealthcare.com is a Talemetry (Jobvite) CareerSite portal, the same family as jobs.unchealthcare.org: posting pages /jobs/<id>-<slug> render server side (WebFetch of /jobs/15762370, a Johnston-Willis APP posting, worked; apply.talemetry.com and ttcportals markers), search paths /search/jobs?q=&location=. No separate HCA JSON API was found; the engine's careersite adapter reads /search/jobs.json?q= in the browser because plain requests get 403 (bot wall) and WebFetch is refused /search by robots.txt. Untested here: whether headed Chrome passes the 403, and the adapter has no location filter, so the national results are capped at 150 per keyword.",
       "ats_config": {
-        "host": "careers.hcahealthcare.com"
+        "host": "careers.hcahealthcare.com",
+        "adapter": "careersite",
+        "needs_browser": true,
+        "vendor": "Talemetry (Jobvite) CareerSite",
+        "location_aliases": [
+          "Spotsylvania Regional Medical Center"
+        ]
       },
       "nearest_airport": "RIC Richmond International (about 55 mi); DCA Reagan National (about 55 mi)",
       "beds": null,
@@ -1475,7 +1509,8 @@
       "sources": [
         "https://neonatologysolutions.com/?p=19552",
         "https://en.wikipedia.org/wiki/List_of_hospitals_in_Virginia",
-        "model knowledge (to verify); enrichment pending"
+        "model knowledge (to verify); enrichment pending",
+        "https://careers.hcahealthcare.com/jobs/15762370-primary-care-advanced-practice-provider"
       ],
       "notes": "No inpatient pediatric unit known. Coordinates from the R5b scratch (Google Places).",
       "confidence": "low",
@@ -1765,12 +1800,18 @@
       "region": "Virginia (other)",
       "hotspot": false,
       "website": "https://www.hcavirginia.com/locations/lewisgale-medical-center",
-      "careers_url": "https://careers.hcahealthcare.com/search/jobs/in/va-virginia",
-      "careers_platform": "custom",
-      "careers_search_url": "https://careers.hcahealthcare.com/search/nurse-practitioner/jobs/in/va-virginia",
-      "careers_notes": "HCA Healthcare central job board (TalentBrew-style paths); robots.txt refused WebFetch on 2026-10-19 so rendering untested. Keyword plus place path combines two observed patterns and is untested. Filter by facility name. Facility filter: LewisGale Medical Center (HCA Virginia, Salem). [enrich 2026-10-20] careers_url -> HTTP 403 at https://careers.hcahealthcare.com/search/jobs/in/va-virginia; search_url -> HTTP 403, mentions NP: False, job links: 0",
+      "careers_url": "https://careers.hcahealthcare.com/search/jobs",
+      "careers_platform": "jobvite",
+      "careers_search_url": "https://careers.hcahealthcare.com/search/jobs?q=nurse+practitioner&location=Salem%2C+VA%2C+United+States",
+      "careers_notes": "HCA Healthcare central job board (TalentBrew-style paths); robots.txt refused WebFetch on 2026-10-19 so rendering untested. Keyword plus place path combines two observed patterns and is untested. Filter by facility name. Facility filter: LewisGale Medical Center (HCA Virginia, Salem). [enrich 2026-10-20] careers_url -> HTTP 403 at https://careers.hcahealthcare.com/search/jobs/in/va-virginia; search_url -> HTTP 403, mentions NP: False, job links: 0 [fix 2026-10-20] careers.hcahealthcare.com is a Talemetry (Jobvite) CareerSite portal, the same family as jobs.unchealthcare.org: posting pages /jobs/<id>-<slug> render server side (WebFetch of /jobs/15762370, a Johnston-Willis APP posting, worked; apply.talemetry.com and ttcportals markers), search paths /search/jobs?q=&location=. No separate HCA JSON API was found; the engine's careersite adapter reads /search/jobs.json?q= in the browser because plain requests get 403 (bot wall) and WebFetch is refused /search by robots.txt. Untested here: whether headed Chrome passes the 403, and the adapter has no location filter, so the national results are capped at 150 per keyword.",
       "ats_config": {
-        "host": "careers.hcahealthcare.com"
+        "host": "careers.hcahealthcare.com",
+        "adapter": "careersite",
+        "needs_browser": true,
+        "vendor": "Talemetry (Jobvite) CareerSite",
+        "location_aliases": [
+          "LewisGale Medical Center"
+        ]
       },
       "nearest_airport": "ROA Roanoke-Blacksburg Regional (about 8 mi)",
       "beds": null,
@@ -1799,7 +1840,8 @@
       "wikipedia_title": null,
       "sources": [
         "https://en.wikipedia.org/wiki/List_of_hospitals_in_Virginia",
-        "model knowledge (to verify); enrichment pending"
+        "model knowledge (to verify); enrichment pending",
+        "https://careers.hcahealthcare.com/jobs/15762370-primary-care-advanced-practice-provider"
       ],
       "notes": "NICU opening from an HCA Virginia newsroom headline noted in the R5b scratch (not opened). No inpatient pediatric unit known (Carilion Children's is the valley's pediatric center). Coordinates from the R5b scratch (Google Places).",
       "confidence": "low",
@@ -1882,12 +1924,18 @@
       "region": "Virginia (other)",
       "hotspot": false,
       "website": "https://www.sovahhealth.com/",
-      "careers_url": "https://www.lifepointhealth.net/careers",
-      "careers_platform": "unknown",
-      "careers_search_url": null,
-      "careers_notes": "Sovah Health is a Lifepoint Health system; jobs post on the Lifepoint careers board (a 'Registered Nurse RN Pediatrics Danville VA' posting was seen in search results 2026-10-19). ATS not confirmed. [enrich 2026-10-20] careers_url -> HTTP 404 at https://www.lifepointhealth.net/careers",
+      "careers_url": "https://jobs.lifepointhealth.net/jobs/?filter%5Bcompany%5D%5B%5D=Sovah+Health+-+Danville",
+      "careers_platform": "oracle_cloud",
+      "careers_search_url": "https://jobs.lifepointhealth.net/jobs/?filter%5Bcompany%5D%5B%5D=Sovah+Health+-+Danville&filter%5Bcategory%5D%5B%5D=Advanced+Practice+Provider",
+      "careers_notes": "Sovah Health is a Lifepoint Health system; jobs post on the Lifepoint careers board (a 'Registered Nurse RN Pediatrics Danville VA' posting was seen in search results 2026-10-19). ATS not confirmed. [enrich 2026-10-20] careers_url -> HTTP 404 at https://www.lifepointhealth.net/careers [fix 2026-10-20] Lifepoint jobs are on jobs.lifepointhealth.net (WordPress, server-rendered; facility filter filter[company][]=Sovah Health - Danville, category filter Advanced Practice Provider; verified by WebFetch of the Wilson facility pages). Staff postings come from Oracle Recruiting Cloud ibnjjb.fa.ocs.oraclecloud.com site CX_1 (sign-in link on the board; CX_1 job pages in web search), which the engine reads by API. Provider postings (NP/PA/MD) carry '-s1' ids from a separate provider source and may be missing from CX_1, so agents should also read careers_search_url (no NP keyword parameter confirmed; the category filter is used instead).",
       "ats_config": {
-        "host": "www.lifepointhealth.net"
+        "host": "ibnjjb.fa.ocs.oraclecloud.com",
+        "site_number": "CX_1",
+        "front_end_host": "jobs.lifepointhealth.net",
+        "facility_filter": "Sovah Health - Danville",
+        "location_aliases": [
+          "Sovah Health - Danville"
+        ]
       },
       "nearest_airport": "GSO Piedmont Triad International (about 50 mi)",
       "beds": null,
@@ -1924,7 +1972,9 @@
       "wikipedia_title": "Sentara Health",
       "sources": [
         "https://en.wikipedia.org/wiki/List_of_hospitals_in_Virginia",
-        "model knowledge (to verify); enrichment pending"
+        "model knowledge (to verify); enrichment pending",
+        "https://jobs.lifepointhealth.net/wilson-medical-center/",
+        "https://ibnjjb.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1"
       ],
       "notes": "peds_inpatient rests on a single 'Registered Nurse RN Pediatrics Danville VA' job title seen in search results (R5b scratch); verify. NICU level unknown. Coordinates from the R5b scratch (Google Places).",
       "confidence": "low",

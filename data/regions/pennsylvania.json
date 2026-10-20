@@ -359,12 +359,14 @@
       "region": "Philadelphia metro",
       "hotspot": false,
       "website": "https://www.jeffersonhealth.org/",
-      "careers_url": "https://careers.jefferson.edu/",
+      "careers_url": "https://jeffersonhealth.wd5.myworkdayjobs.com/ThomasJeffersonExternal",
       "careers_platform": "workday",
-      "careers_search_url": null,
-      "careers_notes": "careers.jefferson.edu job paths (/job/...) were seen in earlier search results. The caller suggested a Workday tenant at jefferson.wd1.myworkdayjobs.com; not verified this pass, so platform is unknown. [enrich 2026-10-20] careers_url -> HTTP 200 at https://jeffersonhealth.wd5.myworkdayjobs.com/ThomasJeffersonExternal; ATS link seen: https://jeffersonhealth.wd5.myworkdayjobs.com/ThomasJeffersonExternal",
+      "careers_search_url": "https://jeffersonhealth.wd5.myworkdayjobs.com/ThomasJeffersonExternal?q=nurse%20practitioner",
+      "careers_notes": "careers.jefferson.edu job paths (/job/...) were seen in earlier search results. The caller suggested a Workday tenant at jefferson.wd1.myworkdayjobs.com; not verified this pass, so platform is unknown. [enrich 2026-10-20] careers_url -> HTTP 200 at https://jeffersonhealth.wd5.myworkdayjobs.com/ThomasJeffersonExternal; ATS link seen: https://jeffersonhealth.wd5.myworkdayjobs.com/ThomasJeffersonExternal [fix 2026-10-20] Workday tenant jeffersonhealth, site ThomasJeffersonExternal set explicitly on every Jefferson record so they share one board (before, two failing records sat on a placeholder homepage). Verified by web search: 'Trauma - Nurse Practitioner - Einstein Hospital' (REQ-0021306) under this site.",
       "ats_config": {
-        "host": "jeffersonhealth.wd5.myworkdayjobs.com"
+        "host": "jeffersonhealth.wd5.myworkdayjobs.com",
+        "tenant": "jeffersonhealth",
+        "site": "ThomasJeffersonExternal"
       },
       "nearest_airport": "PHL Philadelphia International (about 8 mi)",
       "beds": 937,
@@ -403,7 +405,8 @@
       "sources": [
         "https://www.nemours.org/locations/collaborating-hospitals.html",
         "R4b scratch (https://en.wikipedia.org/wiki/List_of_hospitals_in_Pennsylvania; https://neonatologysolutions.com/?p=24291)",
-        "model knowledge (to verify); enrichment pending"
+        "model knowledge (to verify); enrichment pending",
+        "https://jeffersonhealth.wd5.myworkdayjobs.com/en-US/ThomasJeffersonExternal/job/Trauma---Nurse-Practitioner---Einstein-Hospital_REQ-0021306"
       ],
       "notes": "Bed count from the Wikipedia PA list and may include Jefferson's other Center City buildings. Nemours involvement here (newborn, NICU or pediatric unit) was confirmed only as a listing; pediatric roles may post on careers.nemours.org. Verify whether TJUH still has a pediatric inpatient unit.",
       "confidence": "medium",
@@ -432,11 +435,17 @@
       "hotspot": false,
       "website": "https://www.pennmedicine.org/",
       "careers_url": "https://careers.pennmedicine.org/",
-      "careers_platform": "unknown",
-      "careers_search_url": null,
-      "careers_notes": "careers.pennmedicine.org (earlier search results showed /search/jobs/in/... paths and a 'Join our Talent Network' page). Platform not confirmed. CHOP neonatal and pediatric clinicians placed at Penn hospitals post on careers.chop.edu instead. [enrich 2026-10-20] careers_url -> HTTP 403 at https://careers.pennmedicine.org/",
+      "careers_platform": "jobvite",
+      "careers_search_url": "https://careers.pennmedicine.org/search/nurse-practitioner-physician-assistant/jobs",
+      "careers_notes": "careers.pennmedicine.org (earlier search results showed /search/jobs/in/... paths and a 'Join our Talent Network' page). Platform not confirmed. CHOP neonatal and pediatric clinicians placed at Penn hospitals post on careers.chop.edu instead. [enrich 2026-10-20] careers_url -> HTTP 403 at https://careers.pennmedicine.org/ [fix 2026-10-20] careers.pennmedicine.org is a Talemetry (Jobvite) CareerSite portal (web search shows /search/<category>/jobs, /jobs/<id>-<slug> and /pages/ paths, the same layout as jobs.unchealthcare.org); the NP/PA category page is /search/nurse-practitioner-physician-assistant/jobs. Plain requests get 403, so the engine reads /search/jobs.json in the browser (careersite adapter).",
       "ats_config": {
-        "host": "careers.pennmedicine.org"
+        "host": "careers.pennmedicine.org",
+        "adapter": "careersite",
+        "needs_browser": true,
+        "vendor": "Talemetry (Jobvite) CareerSite",
+        "location_aliases": [
+          "Hospital of the University of Pennsylvania"
+        ]
       },
       "nearest_airport": "PHL Philadelphia International (about 6 mi)",
       "beds": 790,
@@ -473,7 +482,8 @@
       "wikipedia_title": "Hospital of the University of Pennsylvania",
       "sources": [
         "R4b scratch (https://en.wikipedia.org/wiki/List_of_hospitals_in_Pennsylvania; https://neonatologysolutions.com/?p=24291)",
-        "model knowledge (to verify); enrichment pending"
+        "model knowledge (to verify); enrichment pending",
+        "https://careers.pennmedicine.org/search/nurse-practitioner-physician-assistant/jobs"
       ],
       "notes": "Neonatal NP roles here are usually CHOP employees posting on careers.chop.edu. NICU level and size come from an older statewide list (neonatologysolutions.com) recorded in the R4b scratch; confirm the current level. Penn Presbyterian Medical Center shares the campus but has no pediatric services and was not added.",
       "confidence": "medium",
@@ -495,12 +505,14 @@
       "region": "Philadelphia metro",
       "hotspot": false,
       "website": "https://www.jeffersonhealth.org/",
-      "careers_url": "https://careers.jefferson.edu/",
+      "careers_url": "https://jeffersonhealth.wd5.myworkdayjobs.com/ThomasJeffersonExternal",
       "careers_platform": "workday",
-      "careers_search_url": null,
-      "careers_notes": "careers.jefferson.edu job paths (/job/...) were seen in earlier search results. The caller suggested a Workday tenant at jefferson.wd1.myworkdayjobs.com; not verified this pass, so platform is unknown. [enrich 2026-10-20] careers_url -> HTTP 200 at https://jeffersonhealth.wd5.myworkdayjobs.com/ThomasJeffersonExternal; ATS link seen: https://jeffersonhealth.wd5.myworkdayjobs.com/ThomasJeffersonExternal",
+      "careers_search_url": "https://jeffersonhealth.wd5.myworkdayjobs.com/ThomasJeffersonExternal?q=nurse%20practitioner",
+      "careers_notes": "careers.jefferson.edu job paths (/job/...) were seen in earlier search results. The caller suggested a Workday tenant at jefferson.wd1.myworkdayjobs.com; not verified this pass, so platform is unknown. [enrich 2026-10-20] careers_url -> HTTP 200 at https://jeffersonhealth.wd5.myworkdayjobs.com/ThomasJeffersonExternal; ATS link seen: https://jeffersonhealth.wd5.myworkdayjobs.com/ThomasJeffersonExternal [fix 2026-10-20] Workday tenant jeffersonhealth, site ThomasJeffersonExternal set explicitly on every Jefferson record so they share one board (before, two failing records sat on a placeholder homepage). Verified by web search: 'Trauma - Nurse Practitioner - Einstein Hospital' (REQ-0021306) under this site.",
       "ats_config": {
-        "host": "jeffersonhealth.wd5.myworkdayjobs.com"
+        "host": "jeffersonhealth.wd5.myworkdayjobs.com",
+        "tenant": "jeffersonhealth",
+        "site": "ThomasJeffersonExternal"
       },
       "nearest_airport": "PHL Philadelphia International (about 20 mi)",
       "beds": 655,
@@ -536,7 +548,8 @@
       "wikipedia_title": "Abington Hospital",
       "sources": [
         "R4b scratch (https://en.wikipedia.org/wiki/List_of_hospitals_in_Pennsylvania; https://neonatologysolutions.com/?p=24291)",
-        "model knowledge (to verify); enrichment pending"
+        "model knowledge (to verify); enrichment pending",
+        "https://jeffersonhealth.wd5.myworkdayjobs.com/en-US/ThomasJeffersonExternal/job/Trauma---Nurse-Practitioner---Einstein-Hospital_REQ-0021306"
       ],
       "notes": "Included as a large regional referral hospital with a Level III NICU. Verify whether Abington still has a general pediatric inpatient unit and who staffs it (CHOP and Nemours both partner with Jefferson hospitals).",
       "confidence": "low",
@@ -696,11 +709,13 @@
       "region": "Pennsylvania (other)",
       "hotspot": false,
       "website": "https://www.ahn.org/",
-      "careers_url": "https://careers.ahn.org/",
+      "careers_url": "https://www.ahn.org/",
       "careers_platform": "unknown",
       "careers_search_url": null,
-      "careers_notes": "Careers URL is the system careers site from model knowledge or the caller's list; not fetched this pass. Enrichment job should probe it and detect the platform. [enrich 2026-10-20] careers_url -> HTTP None at None",
-      "ats_config": {},
+      "careers_notes": "Careers URL is the system careers site from model knowledge or the caller's list; not fetched this pass. Enrichment job should probe it and detect the platform. [enrich 2026-10-20] careers_url -> HTTP None at None [fix 2026-10-20] careers.ahn.org does not resolve; pointed at www.ahn.org like the two working AHN records, whose board the engine sniffs to AHN's Workday (387 listings in the dry run); postings attribute by 'Erie'.",
+      "ats_config": {
+        "host": "www.ahn.org"
+      },
       "nearest_airport": "ERI Erie International (about 5 mi)",
       "beds": 371,
       "peds_beds": null,
@@ -900,12 +915,18 @@
       "region": "Pennsylvania (other)",
       "hotspot": false,
       "website": "https://www.conemaugh.org/",
-      "careers_url": "https://www.conemaugh.org/",
-      "careers_platform": "unknown",
-      "careers_search_url": null,
-      "careers_notes": "Careers page not fetched; LifePoint hospitals usually post through a LifePoint-wide job board. careers_url is the main site as a placeholder. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.conemaugh.org/",
+      "careers_url": "https://jobs.lifepointhealth.net/jobs/?filter%5Bcompany%5D%5B%5D=Conemaugh+Memorial+Medical+Center",
+      "careers_platform": "oracle_cloud",
+      "careers_search_url": "https://jobs.lifepointhealth.net/jobs/?filter%5Bcompany%5D%5B%5D=Conemaugh+Memorial+Medical+Center&filter%5Bcategory%5D%5B%5D=Advanced+Practice+Provider",
+      "careers_notes": "Careers page not fetched; LifePoint hospitals usually post through a LifePoint-wide job board. careers_url is the main site as a placeholder. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.conemaugh.org/ [fix 2026-10-20] Lifepoint jobs are on jobs.lifepointhealth.net (WordPress, server-rendered; facility filter filter[company][]=Conemaugh Memorial Medical Center, category filter Advanced Practice Provider; verified by WebFetch of the Wilson facility pages). Staff postings come from Oracle Recruiting Cloud ibnjjb.fa.ocs.oraclecloud.com site CX_1 (sign-in link on the board; CX_1 job pages in web search), which the engine reads by API. Provider postings (NP/PA/MD) carry '-s1' ids from a separate provider source and may be missing from CX_1, so agents should also read careers_search_url (no NP keyword parameter confirmed; the category filter is used instead).",
       "ats_config": {
-        "host": "www.conemaugh.org"
+        "host": "ibnjjb.fa.ocs.oraclecloud.com",
+        "site_number": "CX_1",
+        "front_end_host": "jobs.lifepointhealth.net",
+        "facility_filter": "Conemaugh Memorial Medical Center",
+        "location_aliases": [
+          "Conemaugh Memorial Medical Center"
+        ]
       },
       "nearest_airport": "JST John Murtha Johnstown-Cambria County (about 5 mi); PIT Pittsburgh International about 75 mi",
       "beds": 470,
@@ -933,7 +954,9 @@
       "wikipedia_title": "Conemaugh Memorial Medical Center",
       "sources": [
         "R4b scratch (https://en.wikipedia.org/wiki/List_of_hospitals_in_Pennsylvania; https://neonatologysolutions.com/?p=24291)",
-        "model knowledge (to verify); enrichment pending"
+        "model knowledge (to verify); enrichment pending",
+        "https://jobs.lifepointhealth.net/wilson-medical-center/",
+        "https://ibnjjb.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1"
       ],
       "notes": "NICU level and size come from an older statewide list (neonatologysolutions.com) recorded in the R4b scratch; confirm the current level. Verify whether a pediatric inpatient unit and pediatric ICU still operate.",
       "confidence": "low",
@@ -1026,12 +1049,14 @@
       "region": "Pennsylvania (other)",
       "hotspot": false,
       "website": "https://www.lvhn.org/",
-      "careers_url": "https://careers-lvhn.icims.com/jobs/search",
-      "careers_platform": "icims",
-      "careers_search_url": "https://careers-lvhn.icims.com/jobs/search?ss=1&searchKeyword=nurse%20practitioner",
-      "careers_notes": "iCIMS host careers-lvhn.icims.com confirmed from job URLs in search results (e.g. /jobs/2129/us-pa-hazleton/job); jobs.lvhn.org is the branded front end. Search URL follows the standard iCIMS pattern and was not test-fetched. LVHN combined with Jefferson Health in 2024, so postings may migrate to Jefferson's system. [enrich 2026-10-20] careers_url -> HTTP 404 at https://careers-lvhn.icims.com/jobs/search; ATS link seen: https://cdn13.icims.com/icims-branding/0.6.0/assets/favicon.ico; search_url -> HTTP 404, mentions NP: False, job links: 0",
+      "careers_url": "https://lvhn.wd1.myworkdayjobs.com/LVHN",
+      "careers_platform": "workday",
+      "careers_search_url": "https://lvhn.wd1.myworkdayjobs.com/LVHN?q=nurse%20practitioner",
+      "careers_notes": "iCIMS host careers-lvhn.icims.com confirmed from job URLs in search results (e.g. /jobs/2129/us-pa-hazleton/job); jobs.lvhn.org is the branded front end. Search URL follows the standard iCIMS pattern and was not test-fetched. LVHN combined with Jefferson Health in 2024, so postings may migrate to Jefferson's system. [enrich 2026-10-20] careers_url -> HTTP 404 at https://careers-lvhn.icims.com/jobs/search; ATS link seen: https://cdn13.icims.com/icims-branding/0.6.0/assets/favicon.ico; search_url -> HTTP 404, mentions NP: False, job links: 0 [fix 2026-10-20] LVHN moved from iCIMS (careers-lvhn.icims.com search now 404) to Workday tenant lvhn, site LVHN. Verified by web search: postings under lvhn.wd1.myworkdayjobs.com/LVHN/job/Allentown-PA/... and the 'Search for Jobs' page.",
       "ats_config": {
-        "host": "careers-lvhn.icims.com"
+        "host": "lvhn.wd1.myworkdayjobs.com",
+        "tenant": "lvhn",
+        "site": "LVHN"
       },
       "nearest_airport": "AVP Wilkes-Barre/Scranton International (about 35 mi); ABE Lehigh Valley International about 50 mi",
       "beds": null,
@@ -1069,7 +1094,8 @@
       "sources": [
         "https://careers-lvhn.icims.com/jobs/2129/us-pa-hazleton/job",
         "https://www.practicematch.com/physicians/job-details.cfm/1118621",
-        "https://careercenter.njaap.org/job/pediatric-hospital-medicine/85268078/"
+        "https://careercenter.njaap.org/job/pediatric-hospital-medicine/85268078/",
+        "https://lvhn.wd1.myworkdayjobs.com/LVHN"
       ],
       "notes": "Inclusion rests on search-result titles for Pediatric Hospital Medicine roles in Hazleton; whether there is a staffed pediatric unit (versus newborn and ED coverage only) is unverified. Address and coordinates pending.",
       "confidence": "low",
@@ -1093,12 +1119,14 @@
       "region": "Pennsylvania (other)",
       "hotspot": false,
       "website": "https://www.lvhn.org/",
-      "careers_url": "https://careers-lvhn.icims.com/jobs/search",
-      "careers_platform": "icims",
-      "careers_search_url": "https://careers-lvhn.icims.com/jobs/search?ss=1&searchKeyword=nurse%20practitioner",
-      "careers_notes": "iCIMS host careers-lvhn.icims.com confirmed from job URLs in search results (e.g. /jobs/2129/us-pa-hazleton/job); jobs.lvhn.org is the branded front end. Search URL follows the standard iCIMS pattern and was not test-fetched. LVHN combined with Jefferson Health in 2024, so postings may migrate to Jefferson's system. [enrich 2026-10-20] careers_url -> HTTP 404 at https://careers-lvhn.icims.com/jobs/search; ATS link seen: https://cdn13.icims.com/icims-branding/0.6.0/assets/favicon.ico; search_url -> HTTP 404, mentions NP: False, job links: 0",
+      "careers_url": "https://lvhn.wd1.myworkdayjobs.com/LVHN",
+      "careers_platform": "workday",
+      "careers_search_url": "https://lvhn.wd1.myworkdayjobs.com/LVHN?q=nurse%20practitioner",
+      "careers_notes": "iCIMS host careers-lvhn.icims.com confirmed from job URLs in search results (e.g. /jobs/2129/us-pa-hazleton/job); jobs.lvhn.org is the branded front end. Search URL follows the standard iCIMS pattern and was not test-fetched. LVHN combined with Jefferson Health in 2024, so postings may migrate to Jefferson's system. [enrich 2026-10-20] careers_url -> HTTP 404 at https://careers-lvhn.icims.com/jobs/search; ATS link seen: https://cdn13.icims.com/icims-branding/0.6.0/assets/favicon.ico; search_url -> HTTP 404, mentions NP: False, job links: 0 [fix 2026-10-20] LVHN moved from iCIMS (careers-lvhn.icims.com search now 404) to Workday tenant lvhn, site LVHN. Verified by web search: postings under lvhn.wd1.myworkdayjobs.com/LVHN/job/Allentown-PA/... and the 'Search for Jobs' page.",
       "ats_config": {
-        "host": "careers-lvhn.icims.com"
+        "host": "lvhn.wd1.myworkdayjobs.com",
+        "tenant": "lvhn",
+        "site": "LVHN"
       },
       "nearest_airport": "ABE Lehigh Valley International (about 40 mi); EWR Newark Liberty about 75 mi",
       "beds": 239,
@@ -1135,7 +1163,8 @@
       "wikipedia_title": null,
       "sources": [
         "R4b scratch (https://en.wikipedia.org/wiki/List_of_hospitals_in_Pennsylvania; https://neonatologysolutions.com/?p=24291)",
-        "model knowledge (to verify); enrichment pending"
+        "model knowledge (to verify); enrichment pending",
+        "https://lvhn.wd1.myworkdayjobs.com/LVHN"
       ],
       "notes": "NICU level and size come from an older statewide list (neonatologysolutions.com) recorded in the R4b scratch; confirm the current level. Pediatric inpatient unit not confirmed. St. Luke's Monroe Campus is a few miles away in Stroud Township.",
       "confidence": "low",
@@ -1159,11 +1188,15 @@
       "region": "Pennsylvania (other)",
       "hotspot": false,
       "website": "https://www.slhn.org/",
-      "careers_url": "https://careers.slhn.org/",
-      "careers_platform": "unknown",
-      "careers_search_url": null,
-      "careers_notes": "Careers URL is the system careers site from model knowledge or the caller's list; not fetched this pass. Enrichment job should probe it and detect the platform. [enrich 2026-10-20] careers_url -> HTTP None at None",
-      "ats_config": {},
+      "careers_url": "https://sluhn.wd1.myworkdayjobs.com/SLUHNAP",
+      "careers_platform": "workday",
+      "careers_search_url": "https://sluhn.wd1.myworkdayjobs.com/SLUHNAP?q=nurse%20practitioner",
+      "careers_notes": "Careers URL is the system careers site from model knowledge or the caller's list; not fetched this pass. Enrichment job should probe it and detect the platform. [enrich 2026-10-20] careers_url -> HTTP None at None [fix 2026-10-20] Workday tenant sluhn, site SLUHNAP (the network's advanced practice site; Nursing-Recruiting and SLUHN are the RN and general sites). Verified by web search: NP/PA postings incl. Critical Care (R114358) and Neurology (Grand View) (R138719) under sluhn.wd1.myworkdayjobs.com/SLUHNAP. careers.slhn.org does not resolve.",
+      "ats_config": {
+        "host": "sluhn.wd1.myworkdayjobs.com",
+        "tenant": "sluhn",
+        "site": "SLUHNAP"
+      },
       "nearest_airport": "ABE Lehigh Valley International (about 8 mi)",
       "beds": null,
       "peds_beds": null,
@@ -1199,7 +1232,8 @@
       "wikipedia_title": null,
       "sources": [
         "R4b scratch (https://en.wikipedia.org/wiki/List_of_hospitals_in_Pennsylvania; https://neonatologysolutions.com/?p=24291)",
-        "model knowledge (to verify); enrichment pending"
+        "model knowledge (to verify); enrichment pending",
+        "https://sluhn.wd1.myworkdayjobs.com/en-US/SLUHNAP/job/Nurse-Practitioner-or-Physician-Assistant---Critical-Care-Opportunities--FT--PT--Per-Diem-_R114358"
       ],
       "notes": "NICU level and size come from an older statewide list (neonatologysolutions.com) recorded in the R4b scratch; confirm the current level. Bed count not recorded. St. Luke's University Health Network careers at careers.slhn.org (caller's list).",
       "confidence": "low",
@@ -1223,11 +1257,15 @@
       "region": "Philadelphia metro",
       "hotspot": false,
       "website": "https://www.slhn.org/",
-      "careers_url": "https://careers.slhn.org/",
-      "careers_platform": "unknown",
-      "careers_search_url": null,
-      "careers_notes": "Careers URL is the system careers site from model knowledge or the caller's list; not fetched this pass. Enrichment job should probe it and detect the platform. [enrich 2026-10-20] careers_url -> HTTP None at None",
-      "ats_config": {},
+      "careers_url": "https://sluhn.wd1.myworkdayjobs.com/SLUHNAP",
+      "careers_platform": "workday",
+      "careers_search_url": "https://sluhn.wd1.myworkdayjobs.com/SLUHNAP?q=nurse%20practitioner",
+      "careers_notes": "Careers URL is the system careers site from model knowledge or the caller's list; not fetched this pass. Enrichment job should probe it and detect the platform. [enrich 2026-10-20] careers_url -> HTTP None at None [fix 2026-10-20] Workday tenant sluhn, site SLUHNAP (the network's advanced practice site; Nursing-Recruiting and SLUHN are the RN and general sites). Verified by web search: NP/PA postings incl. Critical Care (R114358) and Neurology (Grand View) (R138719) under sluhn.wd1.myworkdayjobs.com/SLUHNAP. careers.slhn.org does not resolve.",
+      "ats_config": {
+        "host": "sluhn.wd1.myworkdayjobs.com",
+        "tenant": "sluhn",
+        "site": "SLUHNAP"
+      },
       "nearest_airport": "PHL Philadelphia International (about 40 mi); ABE Lehigh Valley International about 25 mi",
       "beds": 194,
       "peds_beds": null,
@@ -1254,7 +1292,8 @@
       "sources": [
         "https://www.wfmz.com/business/grand-view-health-officially-joins-st-luke-s-university-health-network/article_9810f06c-7eb2-406f-b71f-c424dc50f81c.html",
         "https://slhn.org/blog/2025/grand-view-and-sluhn-sign-a-definitive-agreement-to-partner",
-        "R4b scratch (https://en.wikipedia.org/wiki/List_of_hospitals_in_Pennsylvania; https://neonatologysolutions.com/?p=24291)"
+        "R4b scratch (https://en.wikipedia.org/wiki/List_of_hospitals_in_Pennsylvania; https://neonatologysolutions.com/?p=24291)",
+        "https://sluhn.wd1.myworkdayjobs.com/en-US/SLUHNAP/job/Nurse-Practitioner-or-Physician-Assistant---Critical-Care-Opportunities--FT--PT--Per-Diem-_R114358"
       ],
       "notes": "Merger confirmed from search-result titles (WFMZ: Grand View Health officially joins St. Luke's). Postings should move to careers.slhn.org. Nursery level from older list; verify.",
       "confidence": "low",
@@ -1282,12 +1321,14 @@
       "region": "Philadelphia metro",
       "hotspot": false,
       "website": "https://www.shrinerschildrens.org/en/locations/philadelphia",
-      "careers_url": "https://www.shrinerschildrens.org/en/careers",
+      "careers_url": "https://shrinerschildrens.wd12.myworkdayjobs.com/Shriners",
       "careers_platform": "workday",
-      "careers_search_url": null,
-      "careers_notes": "Shriners Children's posts all locations on one national career site; URL from model knowledge, not fetched. Filter by Philadelphia. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.shrinerschildrens.org/en/careers; ATS link seen: https://shrinerschildrens.wd12.myworkdayjobs.com/Shriners",
+      "careers_search_url": "https://shrinerschildrens.wd12.myworkdayjobs.com/Shriners?q=nurse%20practitioner",
+      "careers_notes": "Shriners Children's posts all locations on one national career site; URL from model knowledge, not fetched. Filter by Philadelphia. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.shrinerschildrens.org/en/careers; ATS link seen: https://shrinerschildrens.wd12.myworkdayjobs.com/Shriners [fix 2026-10-20] Workday tenant shrinerschildrens, site Shriners, from the ATS link on shrinerschildrens.org/en/careers seen by the enrichment fetch (HTTP 200); national board, the engine filters to footprint states and attributes by city.",
       "ats_config": {
-        "host": "www.shrinerschildrens.org"
+        "host": "shrinerschildrens.wd12.myworkdayjobs.com",
+        "tenant": "shrinerschildrens",
+        "site": "Shriners"
       },
       "nearest_airport": "PHL Philadelphia International (about 12 mi)",
       "beds": 53,
@@ -1608,11 +1649,17 @@
       "hotspot": false,
       "website": "https://www.pennmedicine.org/",
       "careers_url": "https://careers.pennmedicine.org/",
-      "careers_platform": "unknown",
-      "careers_search_url": null,
-      "careers_notes": "careers.pennmedicine.org (earlier search results showed /search/jobs/in/... paths and a 'Join our Talent Network' page). Platform not confirmed. CHOP neonatal and pediatric clinicians placed at Penn hospitals post on careers.chop.edu instead. [enrich 2026-10-20] careers_url -> HTTP 403 at https://careers.pennmedicine.org/",
+      "careers_platform": "jobvite",
+      "careers_search_url": "https://careers.pennmedicine.org/search/nurse-practitioner-physician-assistant/jobs",
+      "careers_notes": "careers.pennmedicine.org (earlier search results showed /search/jobs/in/... paths and a 'Join our Talent Network' page). Platform not confirmed. CHOP neonatal and pediatric clinicians placed at Penn hospitals post on careers.chop.edu instead. [enrich 2026-10-20] careers_url -> HTTP 403 at https://careers.pennmedicine.org/ [fix 2026-10-20] careers.pennmedicine.org is a Talemetry (Jobvite) CareerSite portal (web search shows /search/<category>/jobs, /jobs/<id>-<slug> and /pages/ paths, the same layout as jobs.unchealthcare.org); the NP/PA category page is /search/nurse-practitioner-physician-assistant/jobs. Plain requests get 403, so the engine reads /search/jobs.json in the browser (careersite adapter).",
       "ats_config": {
-        "host": "careers.pennmedicine.org"
+        "host": "careers.pennmedicine.org",
+        "adapter": "careersite",
+        "needs_browser": true,
+        "vendor": "Talemetry (Jobvite) CareerSite",
+        "location_aliases": [
+          "Chester County Hospital"
+        ]
       },
       "nearest_airport": "PHL Philadelphia International (about 22 mi)",
       "beds": 329,
@@ -1650,7 +1697,8 @@
       "wikipedia_title": "Chester County Hospital",
       "sources": [
         "R4b scratch (https://en.wikipedia.org/wiki/List_of_hospitals_in_Pennsylvania; https://neonatologysolutions.com/?p=24291)",
-        "model knowledge (to verify); enrichment pending"
+        "model knowledge (to verify); enrichment pending",
+        "https://careers.pennmedicine.org/search/nurse-practitioner-physician-assistant/jobs"
       ],
       "notes": "Verify whether CHOP still runs an inpatient pediatric unit here (reported, not confirmed this pass; if so set peds_inpatient true). CHOP-employed clinicians post on careers.chop.edu. NICU level and size come from an older statewide list (neonatologysolutions.com) recorded in the R4b scratch; confirm the current level.",
       "confidence": "low",
@@ -1915,12 +1963,14 @@
       "region": "Philadelphia metro",
       "hotspot": false,
       "website": "https://www.jeffersonhealth.org/",
-      "careers_url": "https://careers.jefferson.edu/",
+      "careers_url": "https://jeffersonhealth.wd5.myworkdayjobs.com/ThomasJeffersonExternal",
       "careers_platform": "workday",
-      "careers_search_url": null,
-      "careers_notes": "careers.jefferson.edu job paths (/job/...) were seen in earlier search results. The caller suggested a Workday tenant at jefferson.wd1.myworkdayjobs.com; not verified this pass, so platform is unknown. [enrich 2026-10-20] careers_url -> HTTP 200 at https://jeffersonhealth.wd5.myworkdayjobs.com/ThomasJeffersonExternal; ATS link seen: https://jeffersonhealth.wd5.myworkdayjobs.com/ThomasJeffersonExternal",
+      "careers_search_url": "https://jeffersonhealth.wd5.myworkdayjobs.com/ThomasJeffersonExternal?q=nurse%20practitioner",
+      "careers_notes": "careers.jefferson.edu job paths (/job/...) were seen in earlier search results. The caller suggested a Workday tenant at jefferson.wd1.myworkdayjobs.com; not verified this pass, so platform is unknown. [enrich 2026-10-20] careers_url -> HTTP 200 at https://jeffersonhealth.wd5.myworkdayjobs.com/ThomasJeffersonExternal; ATS link seen: https://jeffersonhealth.wd5.myworkdayjobs.com/ThomasJeffersonExternal [fix 2026-10-20] Workday tenant jeffersonhealth, site ThomasJeffersonExternal set explicitly on every Jefferson record so they share one board (before, two failing records sat on a placeholder homepage). Verified by web search: 'Trauma - Nurse Practitioner - Einstein Hospital' (REQ-0021306) under this site.",
       "ats_config": {
-        "host": "jeffersonhealth.wd5.myworkdayjobs.com"
+        "host": "jeffersonhealth.wd5.myworkdayjobs.com",
+        "tenant": "jeffersonhealth",
+        "site": "ThomasJeffersonExternal"
       },
       "nearest_airport": "PHL Philadelphia International (about 25 mi)",
       "beds": 171,
@@ -1956,7 +2006,8 @@
       "wikipedia_title": null,
       "sources": [
         "R4b scratch (https://en.wikipedia.org/wiki/List_of_hospitals_in_Pennsylvania; https://neonatologysolutions.com/?p=24291)",
-        "model knowledge (to verify); enrichment pending"
+        "model knowledge (to verify); enrichment pending",
+        "https://jeffersonhealth.wd5.myworkdayjobs.com/en-US/ThomasJeffersonExternal/job/Trauma---Nurse-Practitioner---Einstein-Hospital_REQ-0021306"
       ],
       "notes": "NICU level and size come from an older statewide list (neonatologysolutions.com) recorded in the R4b scratch; confirm the current level. Small NICU; verify level.",
       "confidence": "low",

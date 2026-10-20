@@ -193,18 +193,19 @@
       "region": "Triangle",
       "hotspot": true,
       "website": "https://www.wakemed.org/",
-      "careers_url": "https://jobs.wakemed.org/search-jobs",
-      "careers_platform": "custom",
-      "careers_search_url": "https://jobs.wakemed.org/search-jobs/nurse%20practitioner/1241/1",
-      "careers_notes": "Radancy TalentBrew style board (path /search-jobs/<keyword>/1241/<page>). Server-rendered: the nurse practitioner search showed 294 results on 2026-10-19, about 15 per page, including 'NNP, Neonatology (NICU)' and 'PNP, Neonatology (Newborn Nursery)' in Raleigh. The keyword match is broad, so filter titles for NP, PNP, APP. [enrich 2026-10-20] careers_url -> HTTP 200 at https://jobs.wakemed.org/careers-home; ATS link seen: https://www.icims.com/legal/privacy-notice-website/; search_url -> HTTP 404, mentions NP: False, job links: 4",
+      "careers_url": "https://jobs.wakemed.org/careers-home",
+      "careers_platform": "icims",
+      "careers_search_url": "https://jobs.wakemed.org/careers-home/jobs?keywords=nurse%20practitioner",
+      "careers_notes": "Radancy TalentBrew style board (path /search-jobs/<keyword>/1241/<page>). Server-rendered: the nurse practitioner search showed 294 results on 2026-10-19, about 15 per page, including 'NNP, Neonatology (NICU)' and 'PNP, Neonatology (Newborn Nursery)' in Raleigh. The keyword match is broad, so filter titles for NP, PNP, APP. [enrich 2026-10-20] careers_url -> HTTP 200 at https://jobs.wakemed.org/careers-home; ATS link seen: https://www.icims.com/legal/privacy-notice-website/; search_url -> HTTP 404, mentions NP: False, job links: 4 [fix 2026-10-20] jobs.wakemed.org now redirects /search-jobs to /careers-home (enrichment fetch 2026-10-20, iCIMS legal link), i.e. an iCIMS Attract (Jibe) site, so the old TalentBrew-style search URL 404s. Engine: jibe adapter, GET /api/jobs?keywords=. Not re-fetched in this pass.",
       "ats_config": {
-        "host": "jobs.wakemed.org",
-        "org_id": "1241",
-        "flagship": true,
         "location_aliases": [
           "Children's Hospital",
           "WakeMed Children's"
-        ]
+        ],
+        "flagship": true,
+        "host": "jobs.wakemed.org",
+        "jibe_host": "jobs.wakemed.org",
+        "adapter": "jibe"
       },
       "nearest_airport": "RDU Raleigh-Durham International",
       "beds": 664,
@@ -268,13 +269,14 @@
       "region": "Triangle",
       "hotspot": true,
       "website": "https://www.wakemed.org/",
-      "careers_url": "https://jobs.wakemed.org/search-jobs",
-      "careers_platform": "custom",
-      "careers_search_url": "https://jobs.wakemed.org/search-jobs/nurse%20practitioner/1241/1",
-      "careers_notes": "Radancy TalentBrew style board (path /search-jobs/<keyword>/1241/<page>). Server-rendered: the nurse practitioner search showed 294 results on 2026-10-19, about 15 per page, including 'NNP, Neonatology (NICU)' and 'PNP, Neonatology (Newborn Nursery)' in Raleigh. The keyword match is broad, so filter titles for NP, PNP, APP. [enrich 2026-10-20] careers_url -> HTTP 200 at https://jobs.wakemed.org/careers-home; ATS link seen: https://www.icims.com/legal/privacy-notice-website/; search_url -> HTTP 404, mentions NP: False, job links: 4",
+      "careers_url": "https://jobs.wakemed.org/careers-home",
+      "careers_platform": "icims",
+      "careers_search_url": "https://jobs.wakemed.org/careers-home/jobs?keywords=nurse%20practitioner",
+      "careers_notes": "Radancy TalentBrew style board (path /search-jobs/<keyword>/1241/<page>). Server-rendered: the nurse practitioner search showed 294 results on 2026-10-19, about 15 per page, including 'NNP, Neonatology (NICU)' and 'PNP, Neonatology (Newborn Nursery)' in Raleigh. The keyword match is broad, so filter titles for NP, PNP, APP. [enrich 2026-10-20] careers_url -> HTTP 200 at https://jobs.wakemed.org/careers-home; ATS link seen: https://www.icims.com/legal/privacy-notice-website/; search_url -> HTTP 404, mentions NP: False, job links: 4 [fix 2026-10-20] jobs.wakemed.org now redirects /search-jobs to /careers-home (enrichment fetch 2026-10-20, iCIMS legal link), i.e. an iCIMS Attract (Jibe) site, so the old TalentBrew-style search URL 404s. Engine: jibe adapter, GET /api/jobs?keywords=. Not re-fetched in this pass.",
       "ats_config": {
         "host": "jobs.wakemed.org",
-        "org_id": "1241"
+        "jibe_host": "jobs.wakemed.org",
+        "adapter": "jibe"
       },
       "nearest_airport": "RDU Raleigh-Durham International",
       "beds": 208,
@@ -330,13 +332,14 @@
       "region": "Triangle",
       "hotspot": true,
       "website": "https://www.wakemed.org/",
-      "careers_url": "https://jobs.wakemed.org/search-jobs",
-      "careers_platform": "custom",
-      "careers_search_url": "https://jobs.wakemed.org/search-jobs/nurse%20practitioner/1241/1",
-      "careers_notes": "Radancy TalentBrew style board (path /search-jobs/<keyword>/1241/<page>). Server-rendered: the nurse practitioner search showed 294 results on 2026-10-19, about 15 per page, including 'NNP, Neonatology (NICU)' and 'PNP, Neonatology (Newborn Nursery)' in Raleigh. The keyword match is broad, so filter titles for NP, PNP, APP. [enrich 2026-10-20] careers_url -> HTTP 200 at https://jobs.wakemed.org/careers-home; ATS link seen: https://www.icims.com/legal/privacy-notice-website/; search_url -> HTTP 404, mentions NP: False, job links: 4",
+      "careers_url": "https://jobs.wakemed.org/careers-home",
+      "careers_platform": "icims",
+      "careers_search_url": "https://jobs.wakemed.org/careers-home/jobs?keywords=nurse%20practitioner",
+      "careers_notes": "Radancy TalentBrew style board (path /search-jobs/<keyword>/1241/<page>). Server-rendered: the nurse practitioner search showed 294 results on 2026-10-19, about 15 per page, including 'NNP, Neonatology (NICU)' and 'PNP, Neonatology (Newborn Nursery)' in Raleigh. The keyword match is broad, so filter titles for NP, PNP, APP. [enrich 2026-10-20] careers_url -> HTTP 200 at https://jobs.wakemed.org/careers-home; ATS link seen: https://www.icims.com/legal/privacy-notice-website/; search_url -> HTTP 404, mentions NP: False, job links: 4 [fix 2026-10-20] jobs.wakemed.org now redirects /search-jobs to /careers-home (enrichment fetch 2026-10-20, iCIMS legal link), i.e. an iCIMS Attract (Jibe) site, so the old TalentBrew-style search URL 404s. Engine: jibe adapter, GET /api/jobs?keywords=. Not re-fetched in this pass.",
       "ats_config": {
         "host": "jobs.wakemed.org",
-        "org_id": "1241"
+        "jibe_host": "jobs.wakemed.org",
+        "adapter": "jibe"
       },
       "nearest_airport": "RDU Raleigh-Durham International",
       "beds": 61,
@@ -949,12 +952,18 @@
       "region": "Triangle",
       "hotspot": true,
       "website": "https://www.centralcarolinahosp.com/",
-      "careers_url": "https://www.lifepointhealth.net/careers",
-      "careers_platform": "unknown",
-      "careers_search_url": null,
-      "careers_notes": "Lifepoint Health (Duke LifePoint) facility; jobs post on the Lifepoint system board. URL and platform unverified; filter to Sanford, NC. [enrich 2026-10-20] careers_url -> HTTP 404 at https://www.lifepointhealth.net/careers",
+      "careers_url": "https://jobs.lifepointhealth.net/jobs/?filter%5Bcompany%5D%5B%5D=Central+Carolina+Hospital",
+      "careers_platform": "oracle_cloud",
+      "careers_search_url": "https://jobs.lifepointhealth.net/jobs/?filter%5Bcompany%5D%5B%5D=Central+Carolina+Hospital&filter%5Bcategory%5D%5B%5D=Advanced+Practice+Provider",
+      "careers_notes": "Lifepoint Health (Duke LifePoint) facility; jobs post on the Lifepoint system board. URL and platform unverified; filter to Sanford, NC. [enrich 2026-10-20] careers_url -> HTTP 404 at https://www.lifepointhealth.net/careers [fix 2026-10-20] Lifepoint jobs are on jobs.lifepointhealth.net (WordPress, server-rendered; facility filter filter[company][]=Central Carolina Hospital, category filter Advanced Practice Provider; verified by WebFetch of the Wilson facility pages). Staff postings come from Oracle Recruiting Cloud ibnjjb.fa.ocs.oraclecloud.com site CX_1 (sign-in link on the board; CX_1 job pages in web search), which the engine reads by API. Provider postings (NP/PA/MD) carry '-s1' ids from a separate provider source and may be missing from CX_1, so agents should also read careers_search_url (no NP keyword parameter confirmed; the category filter is used instead).",
       "ats_config": {
-        "host": "www.lifepointhealth.net"
+        "host": "ibnjjb.fa.ocs.oraclecloud.com",
+        "site_number": "CX_1",
+        "front_end_host": "jobs.lifepointhealth.net",
+        "facility_filter": "Central Carolina Hospital",
+        "location_aliases": [
+          "Central Carolina Hospital"
+        ]
       },
       "nearest_airport": "RDU Raleigh-Durham International (about 50 min)",
       "beds": 127,
@@ -983,7 +992,9 @@
       "wikipedia_title": null,
       "sources": [
         "model knowledge (to verify); enrichment pending",
-        "https://en.wikipedia.org/wiki/List_of_hospitals_in_North_Carolina"
+        "https://en.wikipedia.org/wiki/List_of_hospitals_in_North_Carolina",
+        "https://jobs.lifepointhealth.net/wilson-medical-center/",
+        "https://ibnjjb.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1"
       ],
       "notes": "Hotspot community hospital (Sanford is at the edge of the Triangle). Peds flags false. Lifepoint careers URL unverified.",
       "confidence": "medium",
@@ -1007,12 +1018,18 @@
       "region": "Triangle",
       "hotspot": true,
       "website": "https://www.mariaparham.com/",
-      "careers_url": "https://www.lifepointhealth.net/careers",
-      "careers_platform": "unknown",
-      "careers_search_url": null,
-      "careers_notes": "Lifepoint Health (Duke LifePoint) facility; jobs post on the Lifepoint system board. URL and platform unverified; filter to Henderson, NC. [enrich 2026-10-20] careers_url -> HTTP 404 at https://www.lifepointhealth.net/careers",
+      "careers_url": "https://jobs.lifepointhealth.net/jobs/?filter%5Bcompany%5D%5B%5D=Maria+Parham+Health",
+      "careers_platform": "oracle_cloud",
+      "careers_search_url": "https://jobs.lifepointhealth.net/jobs/?filter%5Bcompany%5D%5B%5D=Maria+Parham+Health&filter%5Bcategory%5D%5B%5D=Advanced+Practice+Provider",
+      "careers_notes": "Lifepoint Health (Duke LifePoint) facility; jobs post on the Lifepoint system board. URL and platform unverified; filter to Henderson, NC. [enrich 2026-10-20] careers_url -> HTTP 404 at https://www.lifepointhealth.net/careers [fix 2026-10-20] Lifepoint jobs are on jobs.lifepointhealth.net (WordPress, server-rendered; facility filter filter[company][]=Maria Parham Health, category filter Advanced Practice Provider; verified by WebFetch of the Wilson facility pages). Staff postings come from Oracle Recruiting Cloud ibnjjb.fa.ocs.oraclecloud.com site CX_1 (sign-in link on the board; CX_1 job pages in web search), which the engine reads by API. Provider postings (NP/PA/MD) carry '-s1' ids from a separate provider source and may be missing from CX_1, so agents should also read careers_search_url (no NP keyword parameter confirmed; the category filter is used instead).",
       "ats_config": {
-        "host": "www.lifepointhealth.net"
+        "host": "ibnjjb.fa.ocs.oraclecloud.com",
+        "site_number": "CX_1",
+        "front_end_host": "jobs.lifepointhealth.net",
+        "facility_filter": "Maria Parham Health",
+        "location_aliases": [
+          "Maria Parham Health"
+        ]
       },
       "nearest_airport": "RDU Raleigh-Durham International (about 50 min)",
       "beds": 161,
@@ -1041,7 +1058,9 @@
       "wikipedia_title": null,
       "sources": [
         "model knowledge (to verify); enrichment pending",
-        "https://en.wikipedia.org/wiki/List_of_hospitals_in_North_Carolina"
+        "https://en.wikipedia.org/wiki/List_of_hospitals_in_North_Carolina",
+        "https://jobs.lifepointhealth.net/wilson-medical-center/",
+        "https://ibnjjb.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1"
       ],
       "notes": "Hotspot-region community hospital at the far north edge of the Triangle; long commute from Chapel Hill (about 1 hour). Peds flags false. The Franklin satellite detail is from model knowledge; verify.",
       "confidence": "medium",
@@ -1181,12 +1200,18 @@
       "region": "Triangle",
       "hotspot": true,
       "website": "https://www.personhospital.com/",
-      "careers_url": "https://www.lifepointhealth.net/careers",
-      "careers_platform": "unknown",
-      "careers_search_url": null,
-      "careers_notes": "Lifepoint Health (Duke LifePoint) facility; jobs post on the Lifepoint system board. URL and platform unverified; filter to Roxboro, NC. [enrich 2026-10-20] careers_url -> HTTP 404 at https://www.lifepointhealth.net/careers",
+      "careers_url": "https://jobs.lifepointhealth.net/jobs/?filter%5Bcompany%5D%5B%5D=Person+Memorial+Hospital",
+      "careers_platform": "oracle_cloud",
+      "careers_search_url": "https://jobs.lifepointhealth.net/jobs/?filter%5Bcompany%5D%5B%5D=Person+Memorial+Hospital&filter%5Bcategory%5D%5B%5D=Advanced+Practice+Provider",
+      "careers_notes": "Lifepoint Health (Duke LifePoint) facility; jobs post on the Lifepoint system board. URL and platform unverified; filter to Roxboro, NC. [enrich 2026-10-20] careers_url -> HTTP 404 at https://www.lifepointhealth.net/careers [fix 2026-10-20] Lifepoint jobs are on jobs.lifepointhealth.net (WordPress, server-rendered; facility filter filter[company][]=Person Memorial Hospital, category filter Advanced Practice Provider; verified by WebFetch of the Wilson facility pages). Staff postings come from Oracle Recruiting Cloud ibnjjb.fa.ocs.oraclecloud.com site CX_1 (sign-in link on the board; CX_1 job pages in web search), which the engine reads by API. Provider postings (NP/PA/MD) carry '-s1' ids from a separate provider source and may be missing from CX_1, so agents should also read careers_search_url (no NP keyword parameter confirmed; the category filter is used instead).",
       "ats_config": {
-        "host": "www.lifepointhealth.net"
+        "host": "ibnjjb.fa.ocs.oraclecloud.com",
+        "site_number": "CX_1",
+        "front_end_host": "jobs.lifepointhealth.net",
+        "facility_filter": "Person Memorial Hospital",
+        "location_aliases": [
+          "Person Memorial Hospital"
+        ]
       },
       "nearest_airport": "RDU Raleigh-Durham International (about 45 min)",
       "beds": 38,
@@ -1212,7 +1237,9 @@
       "wikipedia_title": null,
       "sources": [
         "model knowledge (to verify); enrichment pending",
-        "https://en.wikipedia.org/wiki/List_of_hospitals_in_North_Carolina"
+        "https://en.wikipedia.org/wiki/List_of_hospitals_in_North_Carolina",
+        "https://jobs.lifepointhealth.net/wilson-medical-center/",
+        "https://ibnjjb.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1"
       ],
       "notes": "Hotspot-region community hospital, included per rule 4. No pediatric services.",
       "confidence": "medium",
@@ -4497,13 +4524,20 @@
       "region": "North Carolina (other)",
       "hotspot": false,
       "website": "https://www.missionhealth.org/",
-      "careers_url": "https://careers.hcahealthcare.com/",
-      "careers_platform": "unknown",
-      "careers_search_url": null,
-      "careers_notes": "Mission Health is an HCA Healthcare division. Mission APP postings syndicate on hcahealthcare.dejobs.org; the HCA careers platform was not confirmed this session. Filter to Asheville, NC. [enrich 2026-10-20] careers_url -> HTTP 403 at https://careers.hcahealthcare.com/",
+      "careers_url": "https://careers.hcahealthcare.com/search/jobs",
+      "careers_platform": "jobvite",
+      "careers_search_url": "https://careers.hcahealthcare.com/search/jobs?q=nurse+practitioner&location=Asheville%2C+NC%2C+United+States",
+      "careers_notes": "Mission Health is an HCA Healthcare division. Mission APP postings syndicate on hcahealthcare.dejobs.org; the HCA careers platform was not confirmed this session. Filter to Asheville, NC. [enrich 2026-10-20] careers_url -> HTTP 403 at https://careers.hcahealthcare.com/ [fix 2026-10-20] careers.hcahealthcare.com is a Talemetry (Jobvite) CareerSite portal, the same family as jobs.unchealthcare.org: posting pages /jobs/<id>-<slug> render server side (WebFetch of /jobs/15762370, a Johnston-Willis APP posting, worked; apply.talemetry.com and ttcportals markers), search paths /search/jobs?q=&location=. No separate HCA JSON API was found; the engine's careersite adapter reads /search/jobs.json?q= in the browser because plain requests get 403 (bot wall) and WebFetch is refused /search by robots.txt. Untested here: whether headed Chrome passes the 403, and the adapter has no location filter, so the national results are capped at 150 per keyword.",
       "ats_config": {
+        "flagship": true,
         "host": "careers.hcahealthcare.com",
-        "flagship": true
+        "adapter": "careersite",
+        "needs_browser": true,
+        "vendor": "Talemetry (Jobvite) CareerSite",
+        "location_aliases": [
+          "Mission Children's Hospital",
+          "Mission Hospital"
+        ]
       },
       "nearest_airport": "AVL Asheville Regional (about 20 min)",
       "beds": 733,
@@ -4538,7 +4572,8 @@
       "wikipedia_title": "Mission Hospital (Asheville, North Carolina)",
       "sources": [
         "model knowledge (to verify); enrichment pending",
-        "https://en.wikipedia.org/wiki/List_of_hospitals_in_North_Carolina"
+        "https://en.wikipedia.org/wiki/List_of_hospitals_in_North_Carolina",
+        "https://careers.hcahealthcare.com/jobs/15762370-primary-care-advanced-practice-provider"
       ],
       "notes": "Main western NC target for an acute care PNP. PICU and NICU are supported by PICU physician and NNP postings in the NC west scratch file (not read) and model knowledge; NICU level reportedly III, not confirmed, so null. Pediatric ED status unverified. HCA ownership has drawn state scrutiny over staffing; worth asking about unit staffing in interviews. One record covers Mission Hospital; no separate parent record.",
       "confidence": "medium",
@@ -4827,12 +4862,18 @@
       "region": "North Carolina (other)",
       "hotspot": false,
       "website": "https://www.wilsonmedical.com/",
-      "careers_url": "https://www.lifepointhealth.net/careers",
-      "careers_platform": "unknown",
-      "careers_search_url": null,
-      "careers_notes": "Lifepoint Health (Duke LifePoint) facility; jobs post on the Lifepoint system board. URL and platform unverified; filter to Wilson, NC. [enrich 2026-10-20] careers_url -> HTTP 404 at https://www.lifepointhealth.net/careers",
+      "careers_url": "https://jobs.lifepointhealth.net/jobs/?filter%5Bcompany%5D%5B%5D=Wilson+Medical+Center",
+      "careers_platform": "oracle_cloud",
+      "careers_search_url": "https://jobs.lifepointhealth.net/jobs/?filter%5Bcompany%5D%5B%5D=Wilson+Medical+Center&filter%5Bcategory%5D%5B%5D=Advanced+Practice+Provider",
+      "careers_notes": "Lifepoint Health (Duke LifePoint) facility; jobs post on the Lifepoint system board. URL and platform unverified; filter to Wilson, NC. [enrich 2026-10-20] careers_url -> HTTP 404 at https://www.lifepointhealth.net/careers [fix 2026-10-20] Lifepoint jobs are on jobs.lifepointhealth.net (WordPress, server-rendered; facility filter filter[company][]=Wilson Medical Center, category filter Advanced Practice Provider; verified by WebFetch of the Wilson facility pages). Staff postings come from Oracle Recruiting Cloud ibnjjb.fa.ocs.oraclecloud.com site CX_1 (sign-in link on the board; CX_1 job pages in web search), which the engine reads by API. Provider postings (NP/PA/MD) carry '-s1' ids from a separate provider source and may be missing from CX_1, so agents should also read careers_search_url (no NP keyword parameter confirmed; the category filter is used instead).",
       "ats_config": {
-        "host": "www.lifepointhealth.net"
+        "host": "ibnjjb.fa.ocs.oraclecloud.com",
+        "site_number": "CX_1",
+        "front_end_host": "jobs.lifepointhealth.net",
+        "facility_filter": "Wilson Medical Center",
+        "location_aliases": [
+          "Wilson Medical Center"
+        ]
       },
       "nearest_airport": "RDU Raleigh-Durham International (about 1 hr)",
       "beds": 270,
@@ -4861,7 +4902,9 @@
       "wikipedia_title": "Wilson Medical Center",
       "sources": [
         "model knowledge (to verify); enrichment pending",
-        "https://en.wikipedia.org/wiki/List_of_hospitals_in_North_Carolina"
+        "https://en.wikipedia.org/wiki/List_of_hospitals_in_North_Carolina",
+        "https://jobs.lifepointhealth.net/wilson-medical-center/",
+        "https://ibnjjb.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1"
       ],
       "notes": "Named 'ECU Health Wilson' in the assignment; a 2026-10-20 search found only the Duke LifePoint joint venture (2011) and an ECU Health outpatient Healthplex in Wilson, so ownership is kept as Lifepoint (verify). peds_inpatient true rests on a PracticeMatch pediatrics posting for Wilson listed in the NC west scratch file (not read). Unread search leads to verify: https://www.beckershospitalreview.com/hospital-transactions-and-valuation/north-carolina-ag-approves-duke-lifepoint-wilson-medical-center-merger/.",
       "confidence": "low",
@@ -5008,12 +5051,13 @@
       "region": "North Carolina (other)",
       "hotspot": false,
       "website": "https://www.catawbavalleyhealth.org/",
-      "careers_url": "https://www.catawbavalleyhealth.org/careers/",
+      "careers_url": "https://fa-eveq-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1",
       "careers_platform": "oracle_cloud",
-      "careers_search_url": null,
-      "careers_notes": "Catawba Valley Health System careers page from model knowledge; URL and platform unverified, enrichment should probe it. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.catawbavalleyhealth.org/careers/; ATS link seen: https://fa-eveq-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1",
+      "careers_search_url": "https://fa-eveq-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/jobs?keyword=nurse+practitioner",
+      "careers_notes": "Catawba Valley Health System careers page from model knowledge; URL and platform unverified, enrichment should probe it. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.catawbavalleyhealth.org/careers/; ATS link seen: https://fa-eveq-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1 [fix 2026-10-20] Oracle Recruiting Cloud host and site from the ATS link on catawbavalleyhealth.org/careers seen by the enrichment fetch (HTTP 200); engine reads the REST API.",
       "ats_config": {
-        "host": "www.catawbavalleyhealth.org"
+        "host": "fa-eveq-saasfaprod1.fa.ocs.oraclecloud.com",
+        "site_number": "CX_1"
       },
       "nearest_airport": "CLT Charlotte Douglas International (about 1 hr)",
       "beds": 200,
@@ -5076,12 +5120,18 @@
       "region": "North Carolina (other)",
       "hotspot": false,
       "website": "https://www.fryemedctr.com/",
-      "careers_url": "https://www.lifepointhealth.net/careers",
-      "careers_platform": "unknown",
-      "careers_search_url": null,
-      "careers_notes": "Lifepoint Health (Duke LifePoint) facility; jobs post on the Lifepoint system board. URL and platform unverified; filter to Hickory, NC. [enrich 2026-10-20] careers_url -> HTTP 404 at https://www.lifepointhealth.net/careers",
+      "careers_url": "https://jobs.lifepointhealth.net/jobs/?filter%5Bcompany%5D%5B%5D=Frye+Regional+Medical+Center",
+      "careers_platform": "oracle_cloud",
+      "careers_search_url": "https://jobs.lifepointhealth.net/jobs/?filter%5Bcompany%5D%5B%5D=Frye+Regional+Medical+Center&filter%5Bcategory%5D%5B%5D=Advanced+Practice+Provider",
+      "careers_notes": "Lifepoint Health (Duke LifePoint) facility; jobs post on the Lifepoint system board. URL and platform unverified; filter to Hickory, NC. [enrich 2026-10-20] careers_url -> HTTP 404 at https://www.lifepointhealth.net/careers [fix 2026-10-20] Lifepoint jobs are on jobs.lifepointhealth.net (WordPress, server-rendered; facility filter filter[company][]=Frye Regional Medical Center, category filter Advanced Practice Provider; verified by WebFetch of the Wilson facility pages). Staff postings come from Oracle Recruiting Cloud ibnjjb.fa.ocs.oraclecloud.com site CX_1 (sign-in link on the board; CX_1 job pages in web search), which the engine reads by API. Provider postings (NP/PA/MD) carry '-s1' ids from a separate provider source and may be missing from CX_1, so agents should also read careers_search_url (no NP keyword parameter confirmed; the category filter is used instead).",
       "ats_config": {
-        "host": "www.lifepointhealth.net"
+        "host": "ibnjjb.fa.ocs.oraclecloud.com",
+        "site_number": "CX_1",
+        "front_end_host": "jobs.lifepointhealth.net",
+        "facility_filter": "Frye Regional Medical Center",
+        "location_aliases": [
+          "Frye Regional Medical Center"
+        ]
       },
       "nearest_airport": "CLT Charlotte Douglas International (about 1 hr)",
       "beds": 209,
@@ -5111,7 +5161,9 @@
       "wikipedia_title": null,
       "sources": [
         "model knowledge (to verify); enrichment pending",
-        "https://en.wikipedia.org/wiki/List_of_hospitals_in_North_Carolina"
+        "https://en.wikipedia.org/wiki/List_of_hospitals_in_North_Carolina",
+        "https://jobs.lifepointhealth.net/wilson-medical-center/",
+        "https://ibnjjb.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1"
       ],
       "notes": "Borderline inclusion: no confirmed pediatric unit, NICU II+ or peds ED (all flags false). Kept because the assignment named it and a Hickory pediatrics posting exists; drop if verification finds only a Level I nursery. Unread search leads to verify: https://nursa.com/facilities/frye-regional-medical-center-hickory-nc. Deactivated 2026-10-20: no pediatric service confirmed and not in a hotspot region.",
       "confidence": "low",
@@ -5432,18 +5484,19 @@
       "region": "Triangle",
       "hotspot": true,
       "website": "https://www.wakemed.org/",
-      "careers_url": "https://jobs.wakemed.org/search-jobs",
-      "careers_platform": "custom",
-      "careers_search_url": "https://jobs.wakemed.org/search-jobs/nurse%20practitioner/1241/1",
-      "careers_notes": "Radancy TalentBrew style board (path /search-jobs/<keyword>/1241/<page>). Server-rendered: the nurse practitioner search showed 294 results on 2026-10-19, about 15 per page, including 'NNP, Neonatology (NICU)' and 'PNP, Neonatology (Newborn Nursery)' in Raleigh. The keyword match is broad, so filter titles for NP, PNP, APP. [enrich 2026-10-20] careers_url -> HTTP 200 at https://jobs.wakemed.org/careers-home; ATS link seen: https://www.icims.com/legal/privacy-notice-website/; search_url -> HTTP 404, mentions NP: False, job links: 4",
+      "careers_url": "https://jobs.wakemed.org/careers-home",
+      "careers_platform": "icims",
+      "careers_search_url": "https://jobs.wakemed.org/careers-home/jobs?keywords=nurse%20practitioner",
+      "careers_notes": "Radancy TalentBrew style board (path /search-jobs/<keyword>/1241/<page>). Server-rendered: the nurse practitioner search showed 294 results on 2026-10-19, about 15 per page, including 'NNP, Neonatology (NICU)' and 'PNP, Neonatology (Newborn Nursery)' in Raleigh. The keyword match is broad, so filter titles for NP, PNP, APP. [enrich 2026-10-20] careers_url -> HTTP 200 at https://jobs.wakemed.org/careers-home; ATS link seen: https://www.icims.com/legal/privacy-notice-website/; search_url -> HTTP 404, mentions NP: False, job links: 4 [fix 2026-10-20] jobs.wakemed.org now redirects /search-jobs to /careers-home (enrichment fetch 2026-10-20, iCIMS legal link), i.e. an iCIMS Attract (Jibe) site, so the old TalentBrew-style search URL 404s. Engine: jibe adapter, GET /api/jobs?keywords=. Not re-fetched in this pass.",
       "ats_config": {
-        "host": "jobs.wakemed.org",
-        "org_id": "1241",
         "location_aliases": [
           "Raleigh Campus",
           "WakeMed Raleigh",
           "New Bern Avenue"
-        ]
+        ],
+        "host": "jobs.wakemed.org",
+        "jibe_host": "jobs.wakemed.org",
+        "adapter": "jibe"
       },
       "nearest_airport": "RDU Raleigh-Durham International",
       "beds": 664,

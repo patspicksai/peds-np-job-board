@@ -949,12 +949,18 @@
       "region": "DC / Northern Virginia",
       "hotspot": false,
       "website": "https://www.hcavirginia.com/locations/reston-hospital-center",
-      "careers_url": "https://careers.hcahealthcare.com/search/jobs/in/va-virginia",
-      "careers_platform": "custom",
-      "careers_search_url": "https://careers.hcahealthcare.com/search/nurse-practitioner/jobs/in/va-virginia",
-      "careers_notes": "HCA Healthcare central job board (TalentBrew-style paths); robots.txt refused WebFetch on 2026-10-19 so rendering untested. Keyword plus place path combines two observed patterns and is untested. Filter by facility name. Facility filter: Reston Hospital Center (HCA Virginia). [enrich 2026-10-20] careers_url -> HTTP 403 at https://careers.hcahealthcare.com/search/jobs/in/va-virginia; search_url -> HTTP 403, mentions NP: False, job links: 0",
+      "careers_url": "https://careers.hcahealthcare.com/search/jobs",
+      "careers_platform": "jobvite",
+      "careers_search_url": "https://careers.hcahealthcare.com/search/jobs?q=nurse+practitioner&location=Reston%2C+VA%2C+United+States",
+      "careers_notes": "HCA Healthcare central job board (TalentBrew-style paths); robots.txt refused WebFetch on 2026-10-19 so rendering untested. Keyword plus place path combines two observed patterns and is untested. Filter by facility name. Facility filter: Reston Hospital Center (HCA Virginia). [enrich 2026-10-20] careers_url -> HTTP 403 at https://careers.hcahealthcare.com/search/jobs/in/va-virginia; search_url -> HTTP 403, mentions NP: False, job links: 0 [fix 2026-10-20] careers.hcahealthcare.com is a Talemetry (Jobvite) CareerSite portal, the same family as jobs.unchealthcare.org: posting pages /jobs/<id>-<slug> render server side (WebFetch of /jobs/15762370, a Johnston-Willis APP posting, worked; apply.talemetry.com and ttcportals markers), search paths /search/jobs?q=&location=. No separate HCA JSON API was found; the engine's careersite adapter reads /search/jobs.json?q= in the browser because plain requests get 403 (bot wall) and WebFetch is refused /search by robots.txt. Untested here: whether headed Chrome passes the 403, and the adapter has no location filter, so the national results are capped at 150 per keyword.",
       "ats_config": {
-        "host": "careers.hcahealthcare.com"
+        "host": "careers.hcahealthcare.com",
+        "adapter": "careersite",
+        "needs_browser": true,
+        "vendor": "Talemetry (Jobvite) CareerSite",
+        "location_aliases": [
+          "Reston Hospital Center"
+        ]
       },
       "nearest_airport": "IAD Dulles (about 7 mi)",
       "beds": null,
@@ -985,7 +991,8 @@
         "https://neonatologysolutions.com/?p=18112",
         "https://childrensnational.org/departments/neonatology/regional-nicus",
         "https://www.restonnow.com/2015/05/26/check-out-reston-hospitals-kids-only-emergency-room/",
-        "model knowledge (to verify); enrichment pending"
+        "model knowledge (to verify); enrichment pending",
+        "https://careers.hcahealthcare.com/jobs/15762370-primary-care-advanced-practice-provider"
       ],
       "notes": "Kids-only ER is from a 2015 Reston Now headline; confirm it is still open. Inpatient pediatric unit not confirmed (false).",
       "confidence": "low",
@@ -1009,12 +1016,19 @@
       "region": "DC / Northern Virginia",
       "hotspot": false,
       "website": "https://www.hcavirginia.com/locations/stonesprings-hospital-center",
-      "careers_url": "https://careers.hcahealthcare.com/search/jobs/in/va-virginia",
-      "careers_platform": "custom",
-      "careers_search_url": "https://careers.hcahealthcare.com/search/nurse-practitioner/jobs/in/va-virginia",
-      "careers_notes": "HCA Healthcare central job board (TalentBrew-style paths); robots.txt refused WebFetch on 2026-10-19 so rendering untested. Keyword plus place path combines two observed patterns and is untested. Filter by facility name. Facility filter: StoneSprings Hospital Center (HCA Virginia). [enrich 2026-10-20] careers_url -> HTTP 403 at https://careers.hcahealthcare.com/search/jobs/in/va-virginia; search_url -> HTTP 403, mentions NP: False, job links: 0",
+      "careers_url": "https://careers.hcahealthcare.com/search/jobs",
+      "careers_platform": "jobvite",
+      "careers_search_url": "https://careers.hcahealthcare.com/search/jobs?q=nurse+practitioner&location=Dulles%2C+VA%2C+United+States",
+      "careers_notes": "HCA Healthcare central job board (TalentBrew-style paths); robots.txt refused WebFetch on 2026-10-19 so rendering untested. Keyword plus place path combines two observed patterns and is untested. Filter by facility name. Facility filter: StoneSprings Hospital Center (HCA Virginia). [enrich 2026-10-20] careers_url -> HTTP 403 at https://careers.hcahealthcare.com/search/jobs/in/va-virginia; search_url -> HTTP 403, mentions NP: False, job links: 0 [fix 2026-10-20] careers.hcahealthcare.com is a Talemetry (Jobvite) CareerSite portal, the same family as jobs.unchealthcare.org: posting pages /jobs/<id>-<slug> render server side (WebFetch of /jobs/15762370, a Johnston-Willis APP posting, worked; apply.talemetry.com and ttcportals markers), search paths /search/jobs?q=&location=. No separate HCA JSON API was found; the engine's careersite adapter reads /search/jobs.json?q= in the browser because plain requests get 403 (bot wall) and WebFetch is refused /search by robots.txt. Untested here: whether headed Chrome passes the 403, and the adapter has no location filter, so the national results are capped at 150 per keyword.",
       "ats_config": {
-        "host": "careers.hcahealthcare.com"
+        "host": "careers.hcahealthcare.com",
+        "adapter": "careersite",
+        "needs_browser": true,
+        "vendor": "Talemetry (Jobvite) CareerSite",
+        "location_aliases": [
+          "StoneSprings Hospital Center",
+          "StoneSprings"
+        ]
       },
       "nearest_airport": "IAD Dulles (about 8 mi)",
       "beds": null,
@@ -1044,7 +1058,8 @@
       "sources": [
         "https://childrensnational.org/departments/neonatology/regional-nicus",
         "https://childrensnational.org:443/get-care/locations/stone-springs-hospital-center",
-        "model knowledge (to verify); enrichment pending"
+        "model knowledge (to verify); enrichment pending",
+        "https://careers.hcahealthcare.com/jobs/15762370-primary-care-advanced-practice-provider"
       ],
       "notes": "Included on the Children's National regional NICU listing; NICU level not stated there (nicu_level null, likely Level II; verify). Pediatric ED status unknown.",
       "confidence": "low",
@@ -1140,14 +1155,17 @@
       "region": "DC / Northern Virginia",
       "hotspot": false,
       "website": "https://uvahealth.com/locations/profile/uva-health-prince-william-medical-center",
-      "careers_url": "https://uva.wd1.myworkdayjobs.com/UVAJobs",
-      "careers_platform": "workday",
-      "careers_search_url": "https://uva.wd1.myworkdayjobs.com/en-US/UVAJobs?q=nurse%20practitioner",
-      "careers_notes": "UVA Health Workday (tenant uva, site UVAJobs). The former Novant Health UVA Health System community hospitals (Prince William, Haymarket, Culpeper) came under full UVA Health ownership in 2024; confirm whether they post on UVAJobs or a separate UVA Community Health site. Facility filter: Prince William Medical Center (Manassas). [enrich 2026-10-20] careers_url -> HTTP 200 at https://uva.wd1.myworkdayjobs.com/UVAJobs; ATS link seen: https://uva.wd1.myworkdayjobs.com/UVAJobs; search_url -> HTTP 200, mentions NP: False, job links: 0",
+      "careers_url": "https://careers.uvahealth.org/us/en",
+      "careers_platform": "phenom",
+      "careers_search_url": "https://careers.uvahealth.org/us/en/search-results?keywords=nurse%20practitioner",
+      "careers_notes": "UVA Health Workday (tenant uva, site UVAJobs). The former Novant Health UVA Health System community hospitals (Prince William, Haymarket, Culpeper) came under full UVA Health ownership in 2024; confirm whether they post on UVAJobs or a separate UVA Community Health site. Facility filter: Prince William Medical Center (Manassas). [enrich 2026-10-20] careers_url -> HTTP 200 at https://uva.wd1.myworkdayjobs.com/UVAJobs; ATS link seen: https://uva.wd1.myworkdayjobs.com/UVAJobs; search_url -> HTTP 200, mentions NP: False, job links: 0 [fix 2026-10-20] uvahealth.com/about/jobs now 302-redirects to careers.uvahealth.org/us/en (Location header seen by WebFetch); the /us/en layout is a Phenom site, read by the phenom adapter (search-results?keywords=). The old Workday site uva/UVAJobs listed 0 jobs in the dry run. Phenom is inferred from the URL layout; the page itself was not fetched.",
       "ats_config": {
-        "host": "uva.wd1.myworkdayjobs.com",
-        "tenant": "uva",
-        "site": "UVAJobs"
+        "host": "careers.uvahealth.org",
+        "old_workday": {
+          "host": "uva.wd1.myworkdayjobs.com",
+          "tenant": "uva",
+          "site": "UVAJobs"
+        }
       },
       "nearest_airport": "IAD Dulles (about 20 mi)",
       "beds": null,
@@ -1176,7 +1194,8 @@
       "wikipedia_title": null,
       "sources": [
         "https://neonatologysolutions.com/?p=19552",
-        "model knowledge (to verify); enrichment pending"
+        "model knowledge (to verify); enrichment pending",
+        "https://uvahealth.com/about/jobs"
       ],
       "notes": "Name updated from the Novant Health UVA Health System brand. Confirm the current official name and website path, and whether jobs post on the UVA Workday tenant. No inpatient pediatric unit known.",
       "confidence": "low",
@@ -1200,14 +1219,17 @@
       "region": "DC / Northern Virginia",
       "hotspot": false,
       "website": "https://uvahealth.com/locations/profile/uva-health-haymarket-medical-center",
-      "careers_url": "https://uva.wd1.myworkdayjobs.com/UVAJobs",
-      "careers_platform": "workday",
-      "careers_search_url": "https://uva.wd1.myworkdayjobs.com/en-US/UVAJobs?q=nurse%20practitioner",
-      "careers_notes": "UVA Health Workday (tenant uva, site UVAJobs). The former Novant Health UVA Health System community hospitals (Prince William, Haymarket, Culpeper) came under full UVA Health ownership in 2024; confirm whether they post on UVAJobs or a separate UVA Community Health site. Facility filter: Haymarket Medical Center. [enrich 2026-10-20] careers_url -> HTTP 200 at https://uva.wd1.myworkdayjobs.com/UVAJobs; ATS link seen: https://uva.wd1.myworkdayjobs.com/UVAJobs; search_url -> HTTP 200, mentions NP: False, job links: 0",
+      "careers_url": "https://careers.uvahealth.org/us/en",
+      "careers_platform": "phenom",
+      "careers_search_url": "https://careers.uvahealth.org/us/en/search-results?keywords=nurse%20practitioner",
+      "careers_notes": "UVA Health Workday (tenant uva, site UVAJobs). The former Novant Health UVA Health System community hospitals (Prince William, Haymarket, Culpeper) came under full UVA Health ownership in 2024; confirm whether they post on UVAJobs or a separate UVA Community Health site. Facility filter: Haymarket Medical Center. [enrich 2026-10-20] careers_url -> HTTP 200 at https://uva.wd1.myworkdayjobs.com/UVAJobs; ATS link seen: https://uva.wd1.myworkdayjobs.com/UVAJobs; search_url -> HTTP 200, mentions NP: False, job links: 0 [fix 2026-10-20] uvahealth.com/about/jobs now 302-redirects to careers.uvahealth.org/us/en (Location header seen by WebFetch); the /us/en layout is a Phenom site, read by the phenom adapter (search-results?keywords=). The old Workday site uva/UVAJobs listed 0 jobs in the dry run. Phenom is inferred from the URL layout; the page itself was not fetched.",
       "ats_config": {
-        "host": "uva.wd1.myworkdayjobs.com",
-        "tenant": "uva",
-        "site": "UVAJobs"
+        "host": "careers.uvahealth.org",
+        "old_workday": {
+          "host": "uva.wd1.myworkdayjobs.com",
+          "tenant": "uva",
+          "site": "UVAJobs"
+        }
       },
       "nearest_airport": "IAD Dulles (about 20 mi)",
       "beds": null,
@@ -1236,7 +1258,8 @@
       "wikipedia_title": null,
       "sources": [
         "https://neonatologysolutions.com/?p=19552",
-        "model knowledge (to verify); enrichment pending"
+        "model knowledge (to verify); enrichment pending",
+        "https://uvahealth.com/about/jobs"
       ],
       "notes": "Name updated from the Novant brand; confirm. No inpatient pediatric unit known.",
       "confidence": "low",
@@ -1847,16 +1870,18 @@
       "region": "Baltimore metro",
       "hotspot": false,
       "website": "https://www.lifebridgehealth.org/sinai/childrens-hospital",
-      "careers_url": "https://careers.lifebridgehealth.org/",
-      "careers_platform": "unknown",
-      "careers_search_url": null,
-      "careers_notes": "LifeBridge Health systemwide careers site (Sinai, Northwest, Carroll, Grace); platform not confirmed in this pass. [enrich 2026-10-20] careers_url -> HTTP 200 at https://careers.lifebridgehealth.org/",
+      "careers_url": "https://jobs.lifebridgehealth.org/search/physicians-and-app/jobs",
+      "careers_platform": "jobvite",
+      "careers_search_url": "https://jobs.lifebridgehealth.org/search/jobs?q=nurse+practitioner",
+      "careers_notes": "LifeBridge Health systemwide careers site (Sinai, Northwest, Carroll, Grace); platform not confirmed in this pass. [enrich 2026-10-20] careers_url -> HTTP 200 at https://careers.lifebridgehealth.org/ [fix 2026-10-20] careers.lifebridgehealth.org is a WordPress marketing site; its 'Search Jobs' and 'View Openings' links (WebFetch of /physician-and-app/) go to jobs.lifebridgehealth.org, a Talemetry CareerSite (apply.talemetry.com talent community); the provider category is /search/physicians-and-app/jobs. Engine: careersite adapter on /search/jobs.json.",
       "ats_config": {
-        "host": "careers.lifebridgehealth.org",
         "location_aliases": [
           "Sinai Hospital",
           "Sinai"
-        ]
+        ],
+        "host": "jobs.lifebridgehealth.org",
+        "adapter": "careersite",
+        "vendor": "Talemetry (Jobvite) CareerSite"
       },
       "nearest_airport": "BWI (about 15 mi)",
       "beds": 429,
@@ -1897,7 +1922,8 @@
       "sources": [
         "https://mhcc.maryland.gov/mhcc/pages/hcfs/hcfs_hospital/documents/acute_care/chcf_acute_care_fy26_licensedbeds.pdf",
         "https://www.miemss.org/home/hospitals/perinatal-programs",
-        "model knowledge (to verify); enrichment pending"
+        "model knowledge (to verify); enrichment pending",
+        "https://careers.lifebridgehealth.org/physician-and-app/"
       ],
       "notes": "Beds and peds_beds are MHCC FY2026 licensed acute and pediatric beds (Maryland resets licensed beds yearly from average daily census). Hospital beds are the whole Sinai license. Pediatric ED from model knowledge; a PICU is reportedly present but not confirmed (picu false). Verify both.",
       "confidence": "medium",
@@ -2643,16 +2669,18 @@
       "region": "Baltimore metro",
       "hotspot": false,
       "website": "https://www.lifebridgehealth.org/carroll",
-      "careers_url": "https://careers.lifebridgehealth.org/",
-      "careers_platform": "unknown",
-      "careers_search_url": null,
-      "careers_notes": "LifeBridge Health systemwide careers site (Sinai, Northwest, Carroll, Grace); platform not confirmed in this pass. [enrich 2026-10-20] careers_url -> HTTP 200 at https://careers.lifebridgehealth.org/",
+      "careers_url": "https://jobs.lifebridgehealth.org/search/physicians-and-app/jobs",
+      "careers_platform": "jobvite",
+      "careers_search_url": "https://jobs.lifebridgehealth.org/search/jobs?q=nurse+practitioner",
+      "careers_notes": "LifeBridge Health systemwide careers site (Sinai, Northwest, Carroll, Grace); platform not confirmed in this pass. [enrich 2026-10-20] careers_url -> HTTP 200 at https://careers.lifebridgehealth.org/ [fix 2026-10-20] careers.lifebridgehealth.org is a WordPress marketing site; its 'Search Jobs' and 'View Openings' links (WebFetch of /physician-and-app/) go to jobs.lifebridgehealth.org, a Talemetry CareerSite (apply.talemetry.com talent community); the provider category is /search/physicians-and-app/jobs. Engine: careersite adapter on /search/jobs.json.",
       "ats_config": {
-        "host": "careers.lifebridgehealth.org",
         "location_aliases": [
           "Carroll Hospital",
           "Westminster"
-        ]
+        ],
+        "host": "jobs.lifebridgehealth.org",
+        "adapter": "careersite",
+        "vendor": "Talemetry (Jobvite) CareerSite"
       },
       "nearest_airport": "BWI (about 35 mi)",
       "beds": 169,
@@ -2680,7 +2708,8 @@
       "wikipedia_title": "LifeBridge Health",
       "sources": [
         "https://mhcc.maryland.gov/mhcc/pages/hcfs/hcfs_hospital/documents/acute_care/chcf_acute_care_fy26_licensedbeds.pdf",
-        "model knowledge (to verify); enrichment pending"
+        "model knowledge (to verify); enrichment pending",
+        "https://careers.lifebridgehealth.org/physician-and-app/"
       ],
       "notes": "Beds and peds_beds are MHCC FY2026 licensed acute and pediatric beds (Maryland resets licensed beds yearly from average daily census, so a small pediatric count may be a few beds on a mixed unit; verify unit size).",
       "confidence": "low",

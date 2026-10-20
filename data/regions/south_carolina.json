@@ -16,13 +16,15 @@
       "region": "Charleston SC",
       "hotspot": false,
       "website": "https://musckids.org",
-      "careers_url": "https://musc.career-pages.com/",
+      "careers_url": "https://musc.wd1.myworkdayjobs.com/MUSC",
       "careers_platform": "workday",
-      "careers_search_url": "https://musc.career-pages.com/",
-      "careers_notes": "muschealth.org/careers returns a 302 redirect to musc.career-pages.com. The fetch of that host was blocked this session, so the underlying ATS was not identified and the search URL is the untested base page. MUSC NP and APP postings are also syndicated to CareerBuilder under MUSCP / MUSC Community Physicians; faculty and physician roles route through providerrecruitment@musc.edu. [enrich 2026-10-20] careers_url -> HTTP 200 at https://musc.career-pages.com/; ATS link seen: https://musc.wd1.myworkdayjobs.com/MUSC/login; search_url -> HTTP 200, mentions NP: False, job links: 9",
+      "careers_search_url": "https://musc.wd1.myworkdayjobs.com/MUSC?q=nurse%20practitioner",
+      "careers_notes": "muschealth.org/careers returns a 302 redirect to musc.career-pages.com. The fetch of that host was blocked this session, so the underlying ATS was not identified and the search URL is the untested base page. MUSC NP and APP postings are also syndicated to CareerBuilder under MUSCP / MUSC Community Physicians; faculty and physician roles route through providerrecruitment@musc.edu. [enrich 2026-10-20] careers_url -> HTTP 200 at https://musc.career-pages.com/; ATS link seen: https://musc.wd1.myworkdayjobs.com/MUSC/login; search_url -> HTTP 200, mentions NP: False, job links: 9 [fix 2026-10-20] Workday tenant musc, site MUSC (musc.career-pages.com is only a landing page). Verified by web search: NP/APP postings for Charleston, MUSC Health East Cooper and MUSC Health Lancaster (NNP R-0000056485) live under musc.wd1.myworkdayjobs.com/MUSC/job/...; engine reads it through the Workday CXS API.",
       "ats_config": {
-        "host": "musc.career-pages.com",
-        "flagship": true
+        "flagship": true,
+        "host": "musc.wd1.myworkdayjobs.com",
+        "tenant": "musc",
+        "site": "MUSC"
       },
       "nearest_airport": "CHS Charleston International Airport",
       "beds": 250,
@@ -84,7 +86,9 @@
         "https://practicematch.com/physicians/job-details.cfm/913789/pediatrics/south%2dcarolina/charleston/medical%2duniversity%2dof%2dsouth%2dcarolina/?row=7",
         "https://en.wikipedia.org/wiki/MUSC_Health_University_Medical_Center",
         "https://muschealth.org/careers",
-        "https://www.scstatehouse.gov/CommitteeInfo/Ways&MeansMeetingHandouts/Healthcare/Children's Hospital Collab.pdf"
+        "https://www.scstatehouse.gov/CommitteeInfo/Ways&MeansMeetingHandouts/Healthcare/Children's Hospital Collab.pdf",
+        "https://musc.wd1.myworkdayjobs.com/MUSC",
+        "https://musc.wd1.myworkdayjobs.com/MUSC/job/Lancaster/Advanced-Practice-Provider--APP----Neonatal-Nurse-Practitioner--NNP----MUSC-Health-Lancaster-Medical-Center_R-0000056485"
       ],
       "notes": "Shares the downtown MUSC campus with MUSC Health University Medical Center (171 Ashley Ave, 865 licensed beds, Magnet), which holds the adult Level I trauma designation; no separate adult record was created. Bed and unit counts vary by source: MUSC critical care page says 28 PICU beds, a 2026 MUSC faculty posting says 25 PICU and 89 NICU beds, the 2019 MUSC review says the NICU grew from 66 to 82 beds. The MUSC Division of Pediatric Child Abuse alone lists seven APPs. Downtown peninsula parking and traffic are real commute factors; many staff live in Mount Pleasant, West Ashley, James Island or Summerville.",
       "confidence": "high",
@@ -337,12 +341,18 @@
       "region": "Grand Strand",
       "hotspot": false,
       "website": "https://mygrandstrandhealth.com/",
-      "careers_url": "https://careers.hcahealthcare.com/",
-      "careers_platform": "unknown",
-      "careers_search_url": "https://careers.hcahealthcare.com/",
-      "careers_notes": "HCA Healthcare system careers site; fetch was blocked this session so platform and query format were not confirmed. HCA South Carolina listings do render server-side on the DirectEmployers syndication page https://dejobs.org/south-carolina/usa/jobs/hca-healthcare/careers (employer shown only as HCA Healthcare plus city: Charleston, North Charleston, Summerville, Moncks Corner, Walterboro, Myrtle Beach, North Myrtle Beach, Little River, Greenville). [enrich 2026-10-20] careers_url -> HTTP 403 at https://careers.hcahealthcare.com/; search_url -> HTTP 403, mentions NP: False, job links: 0",
+      "careers_url": "https://careers.hcahealthcare.com/search/jobs",
+      "careers_platform": "jobvite",
+      "careers_search_url": "https://careers.hcahealthcare.com/search/jobs?q=nurse+practitioner&location=Myrtle+Beach%2C+SC%2C+United+States",
+      "careers_notes": "HCA Healthcare system careers site; fetch was blocked this session so platform and query format were not confirmed. HCA South Carolina listings do render server-side on the DirectEmployers syndication page https://dejobs.org/south-carolina/usa/jobs/hca-healthcare/careers (employer shown only as HCA Healthcare plus city: Charleston, North Charleston, Summerville, Moncks Corner, Walterboro, Myrtle Beach, North Myrtle Beach, Little River, Greenville). [enrich 2026-10-20] careers_url -> HTTP 403 at https://careers.hcahealthcare.com/; search_url -> HTTP 403, mentions NP: False, job links: 0 [fix 2026-10-20] careers.hcahealthcare.com is a Talemetry (Jobvite) CareerSite portal, the same family as jobs.unchealthcare.org: posting pages /jobs/<id>-<slug> render server side (WebFetch of /jobs/15762370, a Johnston-Willis APP posting, worked; apply.talemetry.com and ttcportals markers), search paths /search/jobs?q=&location=. No separate HCA JSON API was found; the engine's careersite adapter reads /search/jobs.json?q= in the browser because plain requests get 403 (bot wall) and WebFetch is refused /search by robots.txt. Untested here: whether headed Chrome passes the 403, and the adapter has no location filter, so the national results are capped at 150 per keyword.",
       "ats_config": {
-        "host": "careers.hcahealthcare.com"
+        "host": "careers.hcahealthcare.com",
+        "adapter": "careersite",
+        "needs_browser": true,
+        "vendor": "Talemetry (Jobvite) CareerSite",
+        "location_aliases": [
+          "Grand Strand Medical Center"
+        ]
       },
       "nearest_airport": "MYR Myrtle Beach International Airport",
       "beds": 403,
@@ -376,7 +386,8 @@
       "sources": [
         "https://en.wikipedia.org/wiki/Grand_Strand_Medical_Center",
         "https://en.wikipedia.org/wiki/List_of_hospitals_in_South_Carolina",
-        "https://dejobs.org/south-carolina/usa/jobs/hca-healthcare/careers"
+        "https://dejobs.org/south-carolina/usa/jobs/hca-healthcare/careers",
+        "https://careers.hcahealthcare.com/jobs/15762370-primary-care-advanced-practice-provider"
       ],
       "notes": "peds_ed is based on a Google Places patient review that names the Grand Strand Pediatric Emergency Department; confirm on the hospital site (mygrandstrandhealth.com was blocked this session). NICU presence and level not confirmed. Bed count 403 per Wikipedia infobox; the Wikipedia hospital list says 369. Commuter towns: Myrtle Beach, Conway, Surfside Beach, North Myrtle Beach, Little River.",
       "confidence": "medium",
@@ -404,12 +415,18 @@
       "region": "Charleston SC",
       "hotspot": false,
       "website": "https://tridenthealthsystem.com",
-      "careers_url": "https://careers.hcahealthcare.com/",
-      "careers_platform": "unknown",
-      "careers_search_url": "https://careers.hcahealthcare.com/",
-      "careers_notes": "HCA Healthcare system careers site; fetch was blocked this session so platform and query format were not confirmed. HCA South Carolina listings do render server-side on the DirectEmployers syndication page https://dejobs.org/south-carolina/usa/jobs/hca-healthcare/careers (employer shown only as HCA Healthcare plus city: Charleston, North Charleston, Summerville, Moncks Corner, Walterboro, Myrtle Beach, North Myrtle Beach, Little River, Greenville). [enrich 2026-10-20] careers_url -> HTTP 403 at https://careers.hcahealthcare.com/; search_url -> HTTP 403, mentions NP: False, job links: 0",
+      "careers_url": "https://careers.hcahealthcare.com/search/jobs",
+      "careers_platform": "jobvite",
+      "careers_search_url": "https://careers.hcahealthcare.com/search/jobs?q=nurse+practitioner&location=Summerville%2C+SC%2C+United+States",
+      "careers_notes": "HCA Healthcare system careers site; fetch was blocked this session so platform and query format were not confirmed. HCA South Carolina listings do render server-side on the DirectEmployers syndication page https://dejobs.org/south-carolina/usa/jobs/hca-healthcare/careers (employer shown only as HCA Healthcare plus city: Charleston, North Charleston, Summerville, Moncks Corner, Walterboro, Myrtle Beach, North Myrtle Beach, Little River, Greenville). [enrich 2026-10-20] careers_url -> HTTP 403 at https://careers.hcahealthcare.com/; search_url -> HTTP 403, mentions NP: False, job links: 0 [fix 2026-10-20] careers.hcahealthcare.com is a Talemetry (Jobvite) CareerSite portal, the same family as jobs.unchealthcare.org: posting pages /jobs/<id>-<slug> render server side (WebFetch of /jobs/15762370, a Johnston-Willis APP posting, worked; apply.talemetry.com and ttcportals markers), search paths /search/jobs?q=&location=. No separate HCA JSON API was found; the engine's careersite adapter reads /search/jobs.json?q= in the browser because plain requests get 403 (bot wall) and WebFetch is refused /search by robots.txt. Untested here: whether headed Chrome passes the 403, and the adapter has no location filter, so the national results are capped at 150 per keyword.",
       "ats_config": {
-        "host": "careers.hcahealthcare.com"
+        "host": "careers.hcahealthcare.com",
+        "adapter": "careersite",
+        "needs_browser": true,
+        "vendor": "Talemetry (Jobvite) CareerSite",
+        "location_aliases": [
+          "Summerville Medical Center"
+        ]
       },
       "nearest_airport": "CHS Charleston International Airport",
       "beds": 124,
@@ -454,7 +471,8 @@
         "https://doccafe.com/job/physician/pediatrics/19272052/pediatric-icu-physician",
         "https://en.wikipedia.org/wiki/List_of_hospitals_in_South_Carolina",
         "https://en.wikipedia.org/wiki/Trident_Medical_Center",
-        "https://dejobs.org/south-carolina/usa/jobs/hca-healthcare/careers"
+        "https://dejobs.org/south-carolina/usa/jobs/hca-healthcare/careers",
+        "https://careers.hcahealthcare.com/jobs/15762370-primary-care-advanced-practice-provider"
       ],
       "notes": "Google Places now lists it as HCA Healthcare Summerville Hospital, A part of Trident Hospital, which suggests a 2025-26 HCA rebrand; confirm the official name. Pediatric physician roles are employed by Pediatrix (Mednax), so some pediatric APP roles may post on Pediatrix careers rather than HCA. Beds 124 per the Wikipedia hospital list. Website shown is the Trident Health system site from Wikipedia. Trident Health pediatrics page lists a dedicated pediatric ER at Summerville; nursery level stated as II in one place and III in another.",
       "confidence": "medium",
@@ -482,12 +500,14 @@
       "region": "Charleston SC",
       "hotspot": false,
       "website": "https://muschealth.org",
-      "careers_url": "https://musc.career-pages.com/",
+      "careers_url": "https://musc.wd1.myworkdayjobs.com/MUSC",
       "careers_platform": "workday",
-      "careers_search_url": "https://musc.career-pages.com/",
-      "careers_notes": "muschealth.org/careers redirected to musc.career-pages.com in an earlier session; underlying ATS not identified, so the search URL is the base page. careers.musc.edu and web.musc.edu/careers are other MUSC entry points for enrichment to probe. Regional MUSC Health hospitals post under the same MUSC Health board. [enrich 2026-10-20] careers_url -> HTTP 200 at https://musc.career-pages.com/; ATS link seen: https://musc.wd1.myworkdayjobs.com/MUSC/login; search_url -> HTTP 200, mentions NP: False, job links: 9",
+      "careers_search_url": "https://musc.wd1.myworkdayjobs.com/MUSC?q=nurse%20practitioner",
+      "careers_notes": "muschealth.org/careers redirected to musc.career-pages.com in an earlier session; underlying ATS not identified, so the search URL is the base page. careers.musc.edu and web.musc.edu/careers are other MUSC entry points for enrichment to probe. Regional MUSC Health hospitals post under the same MUSC Health board. [enrich 2026-10-20] careers_url -> HTTP 200 at https://musc.career-pages.com/; ATS link seen: https://musc.wd1.myworkdayjobs.com/MUSC/login; search_url -> HTTP 200, mentions NP: False, job links: 9 [fix 2026-10-20] Workday tenant musc, site MUSC (musc.career-pages.com is only a landing page). Verified by web search: NP/APP postings for Charleston, MUSC Health East Cooper and MUSC Health Lancaster (NNP R-0000056485) live under musc.wd1.myworkdayjobs.com/MUSC/job/...; engine reads it through the Workday CXS API.",
       "ats_config": {
-        "host": "musc.career-pages.com"
+        "host": "musc.wd1.myworkdayjobs.com",
+        "tenant": "musc",
+        "site": "MUSC"
       },
       "nearest_airport": "CHS Charleston International Airport (about 20 min)",
       "beds": 865,
@@ -522,7 +542,9 @@
       "wikipedia_title": "MUSC Health University Medical Center",
       "sources": [
         "https://en.wikipedia.org/wiki/MUSC_Health_University_Medical_Center",
-        "model knowledge (to verify); enrichment pending"
+        "model knowledge (to verify); enrichment pending",
+        "https://musc.wd1.myworkdayjobs.com/MUSC",
+        "https://musc.wd1.myworkdayjobs.com/MUSC/job/Lancaster/Advanced-Practice-Provider--APP----Neonatal-Nurse-Practitioner--NNP----MUSC-Health-Lancaster-Medical-Center_R-0000056485"
       ],
       "notes": "Pediatric services are recorded under musc-shawn-jenkins-childrens-charleston; pediatric flags here are false on purpose to avoid double counting. Beds: Wikipedia infobox 865 licensed, Wikipedia list 728 (the larger figure may include the children's hospital). Roper Hospital is about 200 m away on Calhoun St. Downtown peninsula parking and traffic are real commute factors.",
       "confidence": "medium",
@@ -684,12 +706,18 @@
       "region": "Charleston SC",
       "hotspot": false,
       "website": "https://tridenthealthsystem.com",
-      "careers_url": "https://careers.hcahealthcare.com/",
-      "careers_platform": "custom",
-      "careers_search_url": "https://careers.hcahealthcare.com/search/nurse-practitioner/jobs/in/sc-south-carolina",
-      "careers_notes": "HCA Healthcare system board. The search URL copies the pattern used in the Virginia record chippenham-richmond (/search/nurse-practitioner/jobs/in/va-virginia) with the SC state slug; not tested. SC listings also syndicate server-side to https://dejobs.org/south-carolina/usa/jobs/hca-healthcare/careers with only the city shown. [enrich 2026-10-20] careers_url -> HTTP 403 at https://careers.hcahealthcare.com/; search_url -> HTTP 403, mentions NP: False, job links: 0",
+      "careers_url": "https://careers.hcahealthcare.com/search/jobs",
+      "careers_platform": "jobvite",
+      "careers_search_url": "https://careers.hcahealthcare.com/search/jobs?q=nurse+practitioner&location=North+Charleston%2C+SC%2C+United+States",
+      "careers_notes": "HCA Healthcare system board. The search URL copies the pattern used in the Virginia record chippenham-richmond (/search/nurse-practitioner/jobs/in/va-virginia) with the SC state slug; not tested. SC listings also syndicate server-side to https://dejobs.org/south-carolina/usa/jobs/hca-healthcare/careers with only the city shown. [enrich 2026-10-20] careers_url -> HTTP 403 at https://careers.hcahealthcare.com/; search_url -> HTTP 403, mentions NP: False, job links: 0 [fix 2026-10-20] careers.hcahealthcare.com is a Talemetry (Jobvite) CareerSite portal, the same family as jobs.unchealthcare.org: posting pages /jobs/<id>-<slug> render server side (WebFetch of /jobs/15762370, a Johnston-Willis APP posting, worked; apply.talemetry.com and ttcportals markers), search paths /search/jobs?q=&location=. No separate HCA JSON API was found; the engine's careersite adapter reads /search/jobs.json?q= in the browser because plain requests get 403 (bot wall) and WebFetch is refused /search by robots.txt. Untested here: whether headed Chrome passes the 403, and the adapter has no location filter, so the national results are capped at 150 per keyword.",
       "ats_config": {
-        "host": "careers.hcahealthcare.com"
+        "host": "careers.hcahealthcare.com",
+        "adapter": "careersite",
+        "needs_browser": true,
+        "vendor": "Talemetry (Jobvite) CareerSite",
+        "location_aliases": [
+          "Trident Medical Center"
+        ]
       },
       "nearest_airport": "CHS Charleston International Airport (about 15 min)",
       "beds": 321,
@@ -726,7 +754,8 @@
       "wikipedia_title": "Trident Medical Center",
       "sources": [
         "https://Tridenthealthsystem.com/specialties/pediatrics",
-        "https://en.wikipedia.org/wiki/Trident_Medical_Center"
+        "https://en.wikipedia.org/wiki/Trident_Medical_Center",
+        "https://careers.hcahealthcare.com/jobs/15762370-primary-care-advanced-practice-provider"
       ],
       "notes": "Included as a large regional referral center. The Trident Health pediatrics page read this pass describes pediatric services only at the Summerville campus; Trident's own NICU level and any pediatric unit were not confirmed (nicu_level left null; reportedly Level III). Google Places now uses HCA Healthcare branding for the Summerville campus, so Trident may also be mid-rebrand; confirm the official name. Pediatric physician roles in the market are Pediatrix employed, so some peds APP roles may post on Pediatrix careers.",
       "confidence": "low",
@@ -1012,12 +1041,14 @@
       "region": "South Carolina (other)",
       "hotspot": false,
       "website": "https://muschealth.org",
-      "careers_url": "https://musc.career-pages.com/",
+      "careers_url": "https://musc.wd1.myworkdayjobs.com/MUSC",
       "careers_platform": "workday",
-      "careers_search_url": "https://musc.career-pages.com/",
-      "careers_notes": "muschealth.org/careers redirected to musc.career-pages.com in an earlier session; underlying ATS not identified, so the search URL is the base page. careers.musc.edu and web.musc.edu/careers are other MUSC entry points for enrichment to probe. Regional MUSC Health hospitals post under the same MUSC Health board. [enrich 2026-10-20] careers_url -> HTTP 200 at https://musc.career-pages.com/; ATS link seen: https://musc.wd1.myworkdayjobs.com/MUSC/login; search_url -> HTTP 200, mentions NP: False, job links: 9",
+      "careers_search_url": "https://musc.wd1.myworkdayjobs.com/MUSC?q=nurse%20practitioner",
+      "careers_notes": "muschealth.org/careers redirected to musc.career-pages.com in an earlier session; underlying ATS not identified, so the search URL is the base page. careers.musc.edu and web.musc.edu/careers are other MUSC entry points for enrichment to probe. Regional MUSC Health hospitals post under the same MUSC Health board. [enrich 2026-10-20] careers_url -> HTTP 200 at https://musc.career-pages.com/; ATS link seen: https://musc.wd1.myworkdayjobs.com/MUSC/login; search_url -> HTTP 200, mentions NP: False, job links: 9 [fix 2026-10-20] Workday tenant musc, site MUSC (musc.career-pages.com is only a landing page). Verified by web search: NP/APP postings for Charleston, MUSC Health East Cooper and MUSC Health Lancaster (NNP R-0000056485) live under musc.wd1.myworkdayjobs.com/MUSC/job/...; engine reads it through the Workday CXS API.",
       "ats_config": {
-        "host": "musc.career-pages.com"
+        "host": "musc.wd1.myworkdayjobs.com",
+        "tenant": "musc",
+        "site": "MUSC"
       },
       "nearest_airport": "CAE Columbia Metropolitan Airport (about 25 min)",
       "beds": 74,
@@ -1052,7 +1083,9 @@
       ],
       "wikipedia_title": null,
       "sources": [
-        "model knowledge (to verify); enrichment pending"
+        "model knowledge (to verify); enrichment pending",
+        "https://musc.wd1.myworkdayjobs.com/MUSC",
+        "https://musc.wd1.myworkdayjobs.com/MUSC/job/Lancaster/Advanced-Practice-Provider--APP----Neonatal-Nurse-Practitioner--NNP----MUSC-Health-Lancaster-Medical-Center_R-0000056485"
       ],
       "notes": "Inclusion rests on one MUSC NNP posting seen in an earlier session (Level I/II nursery, ADC 1 to 2), so this is a low volume nursery. No pediatric unit known. Sister MUSC Health Columbia Medical Center Downtown (former Providence Hospital, about 258 beds, cardiac focus) has no known pediatric services and was excluded.",
       "confidence": "low",
@@ -1144,12 +1177,14 @@
       "region": "South Carolina (other)",
       "hotspot": false,
       "website": "https://muschealth.org",
-      "careers_url": "https://musc.career-pages.com/",
-      "careers_platform": "unknown",
-      "careers_search_url": "https://musc.career-pages.com/",
-      "careers_notes": "muschealth.org/careers redirected to musc.career-pages.com in an earlier session; underlying ATS not identified, so the search URL is the base page. careers.musc.edu and web.musc.edu/careers are other MUSC entry points for enrichment to probe. Regional MUSC Health hospitals post under the same MUSC Health board. [enrich 2026-10-20] careers_url -> HTTP 202 at https://musc.career-pages.com/; search_url -> HTTP 202, mentions NP: False, job links: 0",
+      "careers_url": "https://musc.wd1.myworkdayjobs.com/MUSC",
+      "careers_platform": "workday",
+      "careers_search_url": "https://musc.wd1.myworkdayjobs.com/MUSC?q=nurse%20practitioner",
+      "careers_notes": "muschealth.org/careers redirected to musc.career-pages.com in an earlier session; underlying ATS not identified, so the search URL is the base page. careers.musc.edu and web.musc.edu/careers are other MUSC entry points for enrichment to probe. Regional MUSC Health hospitals post under the same MUSC Health board. [enrich 2026-10-20] careers_url -> HTTP 202 at https://musc.career-pages.com/; search_url -> HTTP 202, mentions NP: False, job links: 0 [fix 2026-10-20] Workday tenant musc, site MUSC (musc.career-pages.com is only a landing page). Verified by web search: NP/APP postings for Charleston, MUSC Health East Cooper and MUSC Health Lancaster (NNP R-0000056485) live under musc.wd1.myworkdayjobs.com/MUSC/job/...; engine reads it through the Workday CXS API.",
       "ats_config": {
-        "host": "musc.career-pages.com"
+        "host": "musc.wd1.myworkdayjobs.com",
+        "tenant": "musc",
+        "site": "MUSC"
       },
       "nearest_airport": "CAE Columbia Metropolitan Airport (about 45 min)",
       "beds": 119,
@@ -1184,7 +1219,9 @@
       "wikipedia_title": null,
       "sources": [
         "https://en.wikipedia.org/wiki/List_of_hospitals_in_South_Carolina",
-        "model knowledge (to verify); enrichment pending"
+        "model knowledge (to verify); enrichment pending",
+        "https://musc.wd1.myworkdayjobs.com/MUSC",
+        "https://musc.wd1.myworkdayjobs.com/MUSC/job/Lancaster/Advanced-Practice-Provider--APP----Neonatal-Nurse-Practitioner--NNP----MUSC-Health-Lancaster-Medical-Center_R-0000056485"
       ],
       "notes": "Included only because the caller listed it; no qualifying pediatric service was confirmed. Verify whether it has a Level II nursery or pediatric beds, otherwise deactivate.",
       "confidence": "low",
@@ -1206,12 +1243,14 @@
       "region": "South Carolina (other)",
       "hotspot": false,
       "website": "https://muschealth.org",
-      "careers_url": "https://musc.career-pages.com/",
-      "careers_platform": "unknown",
-      "careers_search_url": "https://musc.career-pages.com/",
-      "careers_notes": "muschealth.org/careers redirected to musc.career-pages.com in an earlier session; underlying ATS not identified, so the search URL is the base page. careers.musc.edu and web.musc.edu/careers are other MUSC entry points for enrichment to probe. Regional MUSC Health hospitals post under the same MUSC Health board. [enrich 2026-10-20] careers_url -> HTTP 202 at https://musc.career-pages.com/; search_url -> HTTP 202, mentions NP: False, job links: 0",
+      "careers_url": "https://musc.wd1.myworkdayjobs.com/MUSC",
+      "careers_platform": "workday",
+      "careers_search_url": "https://musc.wd1.myworkdayjobs.com/MUSC?q=nurse%20practitioner",
+      "careers_notes": "muschealth.org/careers redirected to musc.career-pages.com in an earlier session; underlying ATS not identified, so the search URL is the base page. careers.musc.edu and web.musc.edu/careers are other MUSC entry points for enrichment to probe. Regional MUSC Health hospitals post under the same MUSC Health board. [enrich 2026-10-20] careers_url -> HTTP 202 at https://musc.career-pages.com/; search_url -> HTTP 202, mentions NP: False, job links: 0 [fix 2026-10-20] Workday tenant musc, site MUSC (musc.career-pages.com is only a landing page). Verified by web search: NP/APP postings for Charleston, MUSC Health East Cooper and MUSC Health Lancaster (NNP R-0000056485) live under musc.wd1.myworkdayjobs.com/MUSC/job/...; engine reads it through the Workday CXS API.",
       "ats_config": {
-        "host": "musc.career-pages.com"
+        "host": "musc.wd1.myworkdayjobs.com",
+        "tenant": "musc",
+        "site": "MUSC"
       },
       "nearest_airport": "CAE Columbia Metropolitan Airport (about 45 min)",
       "beds": 286,
@@ -1248,7 +1287,9 @@
       "wikipedia_title": null,
       "sources": [
         "https://en.wikipedia.org/wiki/List_of_hospitals_in_South_Carolina",
-        "model knowledge (to verify); enrichment pending"
+        "model knowledge (to verify); enrichment pending",
+        "https://musc.wd1.myworkdayjobs.com/MUSC",
+        "https://musc.wd1.myworkdayjobs.com/MUSC/job/Lancaster/Advanced-Practice-Provider--APP----Neonatal-Nurse-Practitioner--NNP----MUSC-Health-Lancaster-Medical-Center_R-0000056485"
       ],
       "notes": "Included as a regional referral center and on the caller's list. Nursery level and pediatric unit not confirmed. Name may appear as The Regional Medical Center or RMC on older postings.",
       "confidence": "low",
@@ -1529,12 +1570,13 @@
       "region": "South Carolina (other)",
       "hotspot": false,
       "website": "https://www.selfregional.org",
-      "careers_url": "https://www.selfregional.org/careers",
+      "careers_url": "https://recruiting.ultipro.com/GRE1050GNHP/JobBoard/2b67ecb4-00fb-4863-931a-7bf0ebcb493a/",
       "careers_platform": "ultipro",
-      "careers_search_url": null,
-      "careers_notes": "Self Regional careers landing page (caller supplied); platform not identified. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.selfregional.org/careers/; ATS link seen: https://recruiting.ultipro.com/GRE1050GNHP/JobBoard/2b67ecb4-00fb-4863-931a-7bf0ebcb493a/?q=&amp;o=postedDateDesc&amp;w=&amp;wc=&amp;we=&amp;wpst=",
+      "careers_search_url": "https://recruiting.ultipro.com/GRE1050GNHP/JobBoard/2b67ecb4-00fb-4863-931a-7bf0ebcb493a/?q=nurse%20practitioner",
+      "careers_notes": "Self Regional careers landing page (caller supplied); platform not identified. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.selfregional.org/careers/; ATS link seen: https://recruiting.ultipro.com/GRE1050GNHP/JobBoard/2b67ecb4-00fb-4863-931a-7bf0ebcb493a/?q=&amp;o=postedDateDesc&amp;w=&amp;wc=&amp;we=&amp;wpst= [fix 2026-10-20] UKG board path from the link on selfregional.org/careers seen by the enrichment fetch (HTTP 200).",
       "ats_config": {
-        "host": "www.selfregional.org"
+        "host": "recruiting.ultipro.com",
+        "board_path": "/GRE1050GNHP/JobBoard/2b67ecb4-00fb-4863-931a-7bf0ebcb493a"
       },
       "nearest_airport": "CAE Columbia Metropolitan Airport (about 1 hr 15 min) or GSP (about 1 hr 15 min)",
       "beds": 358,
@@ -1593,12 +1635,14 @@
       "region": "South Carolina (other)",
       "hotspot": false,
       "website": "https://www.shrinerschildrens.org/en/locations/greenville",
-      "careers_url": "https://www.shrinerschildrens.org/en/careers",
+      "careers_url": "https://shrinerschildrens.wd12.myworkdayjobs.com/Shriners",
       "careers_platform": "workday",
-      "careers_search_url": null,
-      "careers_notes": "Shriners Children's system careers page, same as the Boston Shriners record; platform not identified. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.shrinerschildrens.org/en/careers; ATS link seen: https://shrinerschildrens.wd12.myworkdayjobs.com/Shriners",
+      "careers_search_url": "https://shrinerschildrens.wd12.myworkdayjobs.com/Shriners?q=nurse%20practitioner",
+      "careers_notes": "Shriners Children's system careers page, same as the Boston Shriners record; platform not identified. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.shrinerschildrens.org/en/careers; ATS link seen: https://shrinerschildrens.wd12.myworkdayjobs.com/Shriners [fix 2026-10-20] Workday tenant shrinerschildrens, site Shriners, from the ATS link on shrinerschildrens.org/en/careers seen by the enrichment fetch (HTTP 200); national board, the engine filters to footprint states and attributes by city.",
       "ats_config": {
-        "host": "www.shrinerschildrens.org"
+        "host": "shrinerschildrens.wd12.myworkdayjobs.com",
+        "tenant": "shrinerschildrens",
+        "site": "Shriners"
       },
       "nearest_airport": "GSP Greenville-Spartanburg International Airport (about 25 min)",
       "beds": 50,
@@ -1734,12 +1778,14 @@
       "region": "South Carolina (other)",
       "hotspot": false,
       "website": "https://muschealth.org",
-      "careers_url": "https://musc.career-pages.com/",
-      "careers_platform": "unknown",
-      "careers_search_url": "https://musc.career-pages.com/",
-      "careers_notes": "muschealth.org/careers redirected to musc.career-pages.com in an earlier session; underlying ATS not identified, so the search URL is the base page. careers.musc.edu and web.musc.edu/careers are other MUSC entry points for enrichment to probe. Regional MUSC Health hospitals post under the same MUSC Health board. [enrich 2026-10-20] careers_url -> HTTP 202 at https://musc.career-pages.com/; search_url -> HTTP 202, mentions NP: False, job links: 0",
+      "careers_url": "https://musc.wd1.myworkdayjobs.com/MUSC",
+      "careers_platform": "workday",
+      "careers_search_url": "https://musc.wd1.myworkdayjobs.com/MUSC?q=nurse%20practitioner",
+      "careers_notes": "muschealth.org/careers redirected to musc.career-pages.com in an earlier session; underlying ATS not identified, so the search URL is the base page. careers.musc.edu and web.musc.edu/careers are other MUSC entry points for enrichment to probe. Regional MUSC Health hospitals post under the same MUSC Health board. [enrich 2026-10-20] careers_url -> HTTP 202 at https://musc.career-pages.com/; search_url -> HTTP 202, mentions NP: False, job links: 0 [fix 2026-10-20] Workday tenant musc, site MUSC (musc.career-pages.com is only a landing page). Verified by web search: NP/APP postings for Charleston, MUSC Health East Cooper and MUSC Health Lancaster (NNP R-0000056485) live under musc.wd1.myworkdayjobs.com/MUSC/job/...; engine reads it through the Workday CXS API.",
       "ats_config": {
-        "host": "musc.career-pages.com"
+        "host": "musc.wd1.myworkdayjobs.com",
+        "tenant": "musc",
+        "site": "MUSC"
       },
       "nearest_airport": "FLO Florence Regional Airport (about 10 min)",
       "beds": null,
@@ -1775,7 +1821,9 @@
       "wikipedia_title": null,
       "sources": [
         "https://en.wikipedia.org/wiki/List_of_hospitals_in_South_Carolina",
-        "model knowledge (to verify); enrichment pending"
+        "model knowledge (to verify); enrichment pending",
+        "https://musc.wd1.myworkdayjobs.com/MUSC",
+        "https://musc.wd1.myworkdayjobs.com/MUSC/job/Lancaster/Advanced-Practice-Provider--APP----Neonatal-Nurse-Practitioner--NNP----MUSC-Health-Lancaster-Medical-Center_R-0000056485"
       ],
       "notes": "beds left null because the Wikipedia list gives two figures (310 and 396). NICU level and pediatric unit not confirmed; inclusion rests on regional size and the caller's list.",
       "confidence": "low",
@@ -2132,12 +2180,18 @@
       "region": "South Carolina (other)",
       "hotspot": false,
       "website": "https://www.colletonmedical.com",
-      "careers_url": "https://careers.hcahealthcare.com/",
-      "careers_platform": "custom",
-      "careers_search_url": "https://careers.hcahealthcare.com/search/nurse-practitioner/jobs/in/sc-south-carolina",
-      "careers_notes": "HCA Healthcare system board. The search URL copies the pattern used in the Virginia record chippenham-richmond (/search/nurse-practitioner/jobs/in/va-virginia) with the SC state slug; not tested. SC listings also syndicate server-side to https://dejobs.org/south-carolina/usa/jobs/hca-healthcare/careers with only the city shown. [enrich 2026-10-20] careers_url -> HTTP 403 at https://careers.hcahealthcare.com/; search_url -> HTTP 403, mentions NP: False, job links: 0",
+      "careers_url": "https://careers.hcahealthcare.com/search/jobs",
+      "careers_platform": "jobvite",
+      "careers_search_url": "https://careers.hcahealthcare.com/search/jobs?q=nurse+practitioner&location=Walterboro%2C+SC%2C+United+States",
+      "careers_notes": "HCA Healthcare system board. The search URL copies the pattern used in the Virginia record chippenham-richmond (/search/nurse-practitioner/jobs/in/va-virginia) with the SC state slug; not tested. SC listings also syndicate server-side to https://dejobs.org/south-carolina/usa/jobs/hca-healthcare/careers with only the city shown. [enrich 2026-10-20] careers_url -> HTTP 403 at https://careers.hcahealthcare.com/; search_url -> HTTP 403, mentions NP: False, job links: 0 [fix 2026-10-20] careers.hcahealthcare.com is a Talemetry (Jobvite) CareerSite portal, the same family as jobs.unchealthcare.org: posting pages /jobs/<id>-<slug> render server side (WebFetch of /jobs/15762370, a Johnston-Willis APP posting, worked; apply.talemetry.com and ttcportals markers), search paths /search/jobs?q=&location=. No separate HCA JSON API was found; the engine's careersite adapter reads /search/jobs.json?q= in the browser because plain requests get 403 (bot wall) and WebFetch is refused /search by robots.txt. Untested here: whether headed Chrome passes the 403, and the adapter has no location filter, so the national results are capped at 150 per keyword.",
       "ats_config": {
-        "host": "careers.hcahealthcare.com"
+        "host": "careers.hcahealthcare.com",
+        "adapter": "careersite",
+        "needs_browser": true,
+        "vendor": "Talemetry (Jobvite) CareerSite",
+        "location_aliases": [
+          "Colleton Medical Center"
+        ]
       },
       "nearest_airport": "CHS Charleston International Airport (about 50 min)",
       "beds": 135,
@@ -2164,7 +2218,8 @@
       "wikipedia_title": null,
       "sources": [
         "https://en.wikipedia.org/wiki/List_of_hospitals_in_South_Carolina",
-        "model knowledge (to verify); enrichment pending"
+        "model knowledge (to verify); enrichment pending",
+        "https://careers.hcahealthcare.com/jobs/15762370-primary-care-advanced-practice-provider"
       ],
       "notes": "Included only because the caller listed it; no qualifying pediatric service confirmed. Website domain is from memory and unverified. Verify or deactivate.",
       "confidence": "low",
@@ -2369,12 +2424,14 @@
       "region": "South Carolina (other)",
       "hotspot": false,
       "website": "https://muschealth.org",
-      "careers_url": "https://musc.career-pages.com/",
-      "careers_platform": "unknown",
-      "careers_search_url": "https://musc.career-pages.com/",
-      "careers_notes": "muschealth.org/careers redirected to musc.career-pages.com in an earlier session; underlying ATS not identified, so the search URL is the base page. careers.musc.edu and web.musc.edu/careers are other MUSC entry points for enrichment to probe. Regional MUSC Health hospitals post under the same MUSC Health board. [enrich 2026-10-20] careers_url -> HTTP 202 at https://musc.career-pages.com/; search_url -> HTTP 202, mentions NP: False, job links: 0",
+      "careers_url": "https://musc.wd1.myworkdayjobs.com/MUSC",
+      "careers_platform": "workday",
+      "careers_search_url": "https://musc.wd1.myworkdayjobs.com/MUSC?q=nurse%20practitioner",
+      "careers_notes": "muschealth.org/careers redirected to musc.career-pages.com in an earlier session; underlying ATS not identified, so the search URL is the base page. careers.musc.edu and web.musc.edu/careers are other MUSC entry points for enrichment to probe. Regional MUSC Health hospitals post under the same MUSC Health board. [enrich 2026-10-20] careers_url -> HTTP 202 at https://musc.career-pages.com/; search_url -> HTTP 202, mentions NP: False, job links: 0 [fix 2026-10-20] Workday tenant musc, site MUSC (musc.career-pages.com is only a landing page). Verified by web search: NP/APP postings for Charleston, MUSC Health East Cooper and MUSC Health Lancaster (NNP R-0000056485) live under musc.wd1.myworkdayjobs.com/MUSC/job/...; engine reads it through the Workday CXS API.",
       "ats_config": {
-        "host": "musc.career-pages.com"
+        "host": "musc.wd1.myworkdayjobs.com",
+        "tenant": "musc",
+        "site": "MUSC"
       },
       "nearest_airport": "CLT Charlotte Douglas International Airport (about 50 min)",
       "beds": null,
@@ -2409,7 +2466,9 @@
       "wikipedia_title": null,
       "sources": [
         "https://en.wikipedia.org/wiki/List_of_hospitals_in_South_Carolina",
-        "model knowledge (to verify); enrichment pending"
+        "model knowledge (to verify); enrichment pending",
+        "https://musc.wd1.myworkdayjobs.com/MUSC",
+        "https://musc.wd1.myworkdayjobs.com/MUSC/job/Lancaster/Advanced-Practice-Provider--APP----Neonatal-Nurse-Practitioner--NNP----MUSC-Health-Lancaster-Medical-Center_R-0000056485"
       ],
       "notes": "beds left null because the Wikipedia list gives a range (199 to 225). Included only because the caller listed it; no qualifying pediatric service confirmed. Check for a new MUSC Indian Land hospital campus.",
       "confidence": "low",

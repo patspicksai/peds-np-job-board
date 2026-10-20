@@ -20,7 +20,7 @@ from ..textutil import ABBRS as _ABBRS
 from ..models import Listing, normalize_url
 from .base import Adapter, AdapterError, parse_detail_html
 
-JOBISH_HREF = re.compile(r"/(?:job|jobs|position|positions|posting|postings|requisition|opening|openings|vacanc|career)s?[/_-]|jobdetail|job_id=|jobid=|reqid=|/details/|/apply", re.I)
+JOBISH_HREF = re.compile(r"/(?:job|jobs|position|positions|posting|postings|requisition|opening|openings|vacanc|career)s?[/_-]|jobdetail|job_id=|jobid=|reqid=|/details/|/apply|[?&]jobs?=", re.I)
 NAV_TEXT = re.compile(r"^(?:search|jobs|careers?|apply|home|login|sign in|benefits|view all.*|see all.*|next|previous|\d+)$", re.I)
 
 
