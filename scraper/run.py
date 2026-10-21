@@ -17,7 +17,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 from types import SimpleNamespace
 
-from . import config, detect, pipeline
+from . import attribution, config, detect, pipeline
 from .models import normalize_url
 
 log = logging.getLogger("scraper")
@@ -100,6 +100,7 @@ def main(argv=None) -> int:
     except Exception as e:  # noqa: BLE001
         print(f"error: cannot load ledger {a.ledger}: {e}", file=sys.stderr)
         return 2
+    attribution.LEDGER = list(hospitals)  # full ledger for cross-group attribution, before --only / --limit
     if a.only:
         want = {s.strip() for s in a.only.split(",") if s.strip()}
         hospitals = [h for h in hospitals if h["slug"] in want]

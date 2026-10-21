@@ -68,6 +68,28 @@ def match_level(hospital: dict, text: str) -> int:
     return 0
 
 
+def names_hospital_itself(hospital: dict, text: str) -> bool:
+    """True when the text names this hospital by its own name (an alias or a distinctive word of `name`), not merely
+    its parent campus. A children's-hospital-within-a-hospital record matched only through the parent's name is
+    not evidence that a posting is pediatric."""
+    t = " " + _norm(text) + " "
+    # location_aliases say which campus a posting is at, not whether it is the children's hospital, so only the
+    # record's own name counts here
+    a = _norm(hospital.get("name") or "")
+    if a and f" {a} " in t:
+        return True
+    system_words = set(_norm(hospital.get("health_system") or "").split())
+    parent_words = set(_norm(hospital.get("parent_hospital") or "").split())
+    words = {w.replace("'s", "") for w in t.split()}
+    for w in _norm(hospital.get("name") or "").split():
+        w2 = w.replace("'s", "").strip("'")
+        if len(w2) < 3 or w2 in STOP or w2 in STATE_WORDS or w2 in system_words or w2 in parent_words or w2.isdigit():
+            continue
+        if w2 in words:
+            return True
+    return False
+
+
 def flagship(group: list[dict]) -> dict:
     for h in group:
         if (h.get("ats_config") or {}).get("flagship"):
@@ -76,12 +98,47 @@ def flagship(group: list[dict]) -> dict:
     return sorted(group, key=lambda h: rank.get(h.get("hospital_type"), 5))[0]
 
 
+# The full ledger (set by scraper.run before any --only/--limit filtering) so a posting that a shared board
+# carries for a hospital outside its own group can still land on the right ledger record.
+LEDGER: list[dict] = []
+
+
+def relocate(group: list[dict], location_text: str, extra_text: str = ""):
+    """For a posting the group could not place (level 'none'): the ledger hospital, outside the group but in the
+    same health system and the same state as the posting, that the posting's location names (alias, distinctive
+    name word, or city). Shared system boards carry other members' jobs; this puts them on the right record.
+    None when the posting's state is unknown, the group has no health system, or nothing in it matches."""
+    if not LEDGER:
+        return None
+    from .textutil import split_location  # local import: textutil imports nothing from here, but keep it lazy
+    _city, state = split_location(location_text or "")
+    systems = {h.get("health_system") for h in group if h.get("health_system")}
+    if not state or not systems:
+        return None
+    in_group = {h["slug"] for h in group}
+    text = f"{location_text} {extra_text}"
+    best, best_level = None, 0
+    for h in LEDGER:
+        if h["slug"] in in_group or h.get("active") is False or h.get("health_system") not in systems:
+            continue
+        if (h.get("state") or "").upper() != state.upper():
+            continue
+        lvl = match_level(h, text)
+        if lvl > best_level:
+            best, best_level = h, lvl
+    return best
+
+
 def attribute(group: list[dict], location_text: str, extra_text: str = "", pediatric_title: bool = False):
-    """-> (hospital, level) where level is 'name' | 'city' | 'none'."""
+    """-> (hospital, level) where level is 'name' | 'city' | 'ledger' | 'none'. 'ledger' means the posting named a
+    ledger hospital outside this board's group (a system board carrying another member's jobs)."""
     text = f"{location_text} {extra_text}"
     scored = [(match_level(h, text), h) for h in group]
     best = max(s for s, _ in scored) if scored else 0
     if best == 0:
+        other = relocate(group, location_text, extra_text)
+        if other is not None:
+            return other, "ledger"
         return flagship(group), "none"
     cands = [h for s, h in scored if s == best]
     if len(cands) > 1:

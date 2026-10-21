@@ -140,6 +140,12 @@ PEDS_POPULATION_RE = re.compile(
     r"\(adult\s+and\s+pediatric\)|\bages?\s+0\s*-\s*(?:1[0-9]|2[0-6])\b|\b0\s*-\s*(?:18|21|26)\s+years|"
     r"pediatric\s+diseases|children'?s\s+hospital\s+(?:unit|floor|service)",
     _I)
+# All-ages phrasing that is not evidence of a pediatric role (scrubbed from the description before scoring)
+ALL_AGES_RE = re.compile(
+    r"(?:care\s+(?:of|for)|caring\s+for|treat(?:s|ing)?|serv(?:es|ing))\s+(?:children|kids|infants|pediatric(?:s)?)\s+(?:and|to|through|&)\s+adults?"
+    r"|(?:children|pediatrics?|infants?|infancy|birth|newborns?)\s+(?:to|through)\s+(?:adults?|adulthood|geriatrics?|seniors|the\s+elderly|old\s+age)"
+    r"|(?:patients?\s+of\s+)?all\s+ages|across\s+the\s+lifespan|every\s+stage\s+of\s+life"
+    r"|newborns?\s+to\s+(?:seniors|the\s+elderly|geriatrics?)|from\s+pediatrics?\s+to\s+geriatrics?", _I)
 # Adult / all-ages specialties: a pediatric word in the description does not make these pediatric roles
 ADULT_TITLE_RE = re.compile(
     r"family\s+medicine|family\s+practice|internal\s+medicine|\bOB\s*/?\s*GYN\b|obstetric|gyn(?:ecolog)?\w*|"
@@ -163,11 +169,14 @@ def peds_signal(title: str, text: str, location: str = "", department: str = "")
     body = text or ""
     if ADULT_TITLE_RE.search(title or ""):
         return 0, ""
-    pop = PEDS_POPULATION_RE.findall(body)
+    # "care for children and adults", "from pediatrics to geriatrics", "patients of all ages": family-practice or
+    # system boilerplate, not a pediatric population statement
+    scrubbed = ALL_AGES_RE.sub(" ", body)
+    pop = PEDS_POPULATION_RE.findall(scrubbed)
     if pop:
         return 2, f"description describes pediatric patients ('{sorted(set(x.lower() for x in pop))[0] if isinstance(pop[0], str) else 'pediatric'}')"
-    strong = PEDS_STRONG_RE.findall(body)
-    weak = PEDS_WEAK_RE.findall(body)
+    strong = PEDS_STRONG_RE.findall(scrubbed)
+    weak = PEDS_WEAK_RE.findall(scrubbed)
     if strong or len(weak) >= 2:
         return 1, "passing pediatric mention in description"
     return 0, ""
@@ -253,11 +262,23 @@ def classify(title: str, text: str = "", hospital: dict | None = None, location:
     # An adult-specialty title stays adult even at a children's hospital or with pediatric words in the body.
     pediatric = (sig >= 2 or childrens) and not adult_title
     # Relevance 3 needs the pediatric evidence in the title or unit name; description-only evidence caps at 2.
-    explicit = head_peds and not adult_title
+    # At a children's hospital the unit itself is pediatric (an ICU at Boston Children's is a PICU), so the hospital
+    # counts as that evidence; the pipeline's relevance_context already demotes a children's-hospital-within-a-hospital
+    # record to its adult parent unless the posting names the children's hospital.
+    explicit = (head_peds or childrens) and not adult_title
     nnp_only = bool(re.search(r"\bNNPs?\b|neonatal\s+nurse\s+practitioner", f"{title} {text}", _I)) and not re.search(
         r"\bC?PNPs?\b|pediatric\s+nurse\s+practitioner|PNP-?AC|CPNP-?AC|acute\s+care\s+pediatric|\bAPP\b|advanced\s+practice\s+provider|NP\s*(?:or|/)\s*PA", f"{title} {text}", _I)
+    # an explicit NNP certification / licensure requirement makes the NP track NNP-only even when the text also says
+    # "NP/PA" (experience phrasing) or "APP"
+    if re.search(r"NNP(?:-BC)?\s+(?:certif|licens|board)|neonatal\s+nurse\s+practitioner\s+(?:certif|licens)|certified\s+neonatal\s+nurse\s+practitioner|\bNNP\s+candidates?\b",
+                 text or "", _I) and not re.search(r"\bC?PNPs?\b|PNP-?AC|CPNP-?AC|pediatric\s+nurse\s+practitioner", f"{title} {text}", _I):
+        nnp_only = True
     if nnp_only:
         tags = sorted(set(tags + ["NNP required"]))
+    # a Physician Assistant title that only says NPs are welcome in the body: keep, but never "strong"
+    pa_titled = bool(PA_RE.search(title or "")) and not (APP_RE.search(title or "") or APP_ACRONYM_RE.search(title or ""))
+    if pa_titled:
+        tags = sorted(set(tags + ["PA title"]))
     acute_words = bool(re.search(r"acute\s+care|inpatient|hospitalist|critical\s+care|intensive", f"{title} {department}", _I))
 
     if pediatric:
@@ -268,6 +289,8 @@ def classify(title: str, text: str = "", hospital: dict | None = None, location:
         why = sig_note or "posting at a children's hospital"
         if explicit and acute and nnp_only:
             return Verdict(True, 2, setting, f"NICU role that asks for a neonatal nurse practitioner (NNP) credential; {why}.", tags, True, True)
+        if explicit and acute and pa_titled:
+            return Verdict(True, 2, setting, f"Physician Assistant title; the posting says NPs may apply, so check eligibility ({SETTING_LABELS.get(setting, setting)}); {why}.", tags, True, True)
         if explicit and acute:
             return Verdict(True, 3, setting, f"Pediatric acute care APP role ({SETTING_LABELS.get(setting, setting)}); {why}.", tags, True, True)
         if acute:

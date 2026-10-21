@@ -234,12 +234,16 @@ def _make(name: str, hospital: dict, deadline: float, host: str, page_url: str |
 
 # --------------------------------------------------------------------------------------------- board run
 
-def relevance_context(hospital: dict, level: str, group: list[dict]) -> dict:
-    """Hospital dict as seen by relevance.classify, adjusted for how confidently we attributed the posting."""
+def relevance_context(hospital: dict, level: str, group: list[dict], text: str = "") -> dict:
+    """Hospital dict as seen by relevance.classify, adjusted for how confidently we attributed the posting.
+    `text` is the posting's location / facility / department text: a children's hospital within a hospital counts as
+    pediatric context only when that text names the children's hospital itself, not just the parent campus."""
     ctx = dict(hospital)
     childrens_board = all(h.get("hospital_type") in relevance.CHILDRENS_TYPES for h in group) and \
         ("child" in (hospital.get("health_system") or hospital.get("name") or "").lower())
-    if hospital.get("hospital_type") in relevance.CHILDRENS_TYPES and not (level == "name" or childrens_board):
+    own_name = level == "name" and (hospital.get("hospital_type") != "childrens_hospital_within_hospital" or
+                                    attribution.names_hospital_itself(hospital, text))
+    if hospital.get("hospital_type") in relevance.CHILDRENS_TYPES and not (own_name or childrens_board):
         ctx["hospital_type"] = "academic_medical_center"
     if level == "none" and len(group) >= 1 and not childrens_board:
         ctx["hotspot"] = False  # never keep a non-pediatric role we could not place at a ledger hospital
@@ -338,9 +342,9 @@ def run_board(key: str, platform: str, group: list[dict], known: dict[str, dict]
             continue
         ped_title = relevance.peds_signal(li.title, "", li.location_text)[0] >= 2
         hosp, level = attribution.attribute(group, li.location_text, (li.extra.get("facility") or ""), ped_title)
-        ctx = relevance_context(hosp, level, group)
+        ctx = relevance_context(hosp, level, group, f"{li.location_text} {li.extra.get('facility') or ''} {li.title}")
         pr = relevance.listing_priority(li.title, li.location_text, ctx)
-        res.per_hospital[hosp["slug"]]["listings"] += 1
+        res.per_hospital.setdefault(hosp["slug"], {"listings": 0, "candidates": 0, "new": 0, "known": 0, "samples": []})["listings"] += 1
         if pr == 0:
             continue
         if li.snippet and pr < 3 and relevance.peds_signal("", li.snippet)[0] >= 1:
@@ -462,7 +466,7 @@ def build_job(li: Listing, d: dict, group: list[dict], hosp: dict, level: str, a
         city, st = locate_fallback(location, desc, hosp, group, level, city)
     if st and st not in attribution.FOOTPRINT:
         return None
-    ctx = relevance_context(hosp, level, group)
+    ctx = relevance_context(hosp, level, group, f"{location} {li.location_text} {li.extra.get('facility') or ''} {d.get('department') or ''} {li.title}")
     v = relevance.classify(li.title, desc, ctx, location, d.get("department") or "")
     if not v.keep or v.relevance <= 0:
         return None
@@ -470,6 +474,9 @@ def build_job(li: Listing, d: dict, group: list[dict], hosp: dict, level: str, a
     if level == "none" and len(group) >= 1 and (hosp.get("health_system") or "") and \
             not all(h.get("hospital_type") in relevance.CHILDRENS_TYPES for h in group):
         reason += f" Posted on the {hosp.get('health_system')} system board without a matching location; attributed to the flagship {hosp.get('name')}."
+    elif level == "ledger":
+        board_sys = next((h.get("health_system") for h in group if h.get("health_system")), None) or group[0].get("name")
+        reason += f" Posted on the {board_sys} board; the posting's location names {hosp.get('name')}."
     tags = v.tags
     title = li.title or d.get("title") or ""
     job = Job(
