@@ -1,0 +1,119 @@
+https://static.adp.com/static/redbox/ext/config/config.js?26.42.48
+
+
+try {
+  window.MYADP_CONFIG = {
+    API_BASE_URL: 'https://my.adp.com/myadp_prefix/',
+    OPENADP_STATIC_BASE_URL: 'https://static.open.adp.com/',
+    OPENADP_ENV: 'prod',
+    SHOW_FEATURE_FLAG_INDICATORS: 'false',
+    FUSE_PRACTITIONER_FEATURES_ENABLED: 'false',
+    BENEFITS_DECISION_SUPPORT_NEW_COST_CALCULATOR: 'true',
+    BENEFITS_DVS_ENABLED: 'true',
+    BENEFITS_MASKING_ENABLED: 'false',
+    BENEFITS_POLLING_ENABLED: 'true',
+    BENEFITS_PLAN_FIT_COMPARISON: 'true',
+    BENEFITS_PLAN_FIT_ENGAGEMENT_TRACKING: 'true',
+    BUILD_VERSION: '26.42.48',
+    C0_CLASSIC_ORG_CHART_HOST: 'https://peoplesearchapi.adpcorp.com',
+    CHANNEL_RESTRICTIONS_BYPASS_ENABLED: 'false',
+    COOKIE_DOMAIN: '.adp.com',
+    COUNTRY_DIALING: '1',
+    EETIME_URL: 'https://eetd2.adp.com',
+    EMPLOYEE_DOCUMENTS_ENABLED: '',
+    EV6_URL: 'https://enterpriseportal.adp.com',
+    FIND_ME_API_BASE_URL: 'https://findmeapi.adp.com',
+    FIRST_TIME_USER_URL: 'https://netsecure.adp.com/pages/pub/ccmain.jsp?rtnURL=https://my.adp.com/static/redbox/login.html',
+    FORGOT_ID_PASSWORD_URL: 'https://netsecure.adp.com/pages/secmgt/static/ess/forgot?rtnUrl=https://my.adp.com/static/redbox/login.html',
+    FIREBASE_CONFIG: '{"apiKey":"AIzaSyD33BccP7A3WeqNuklfgcSSPUcfqYw0uDo","authDomain":"api-project-825950710244.firebaseapp.com","databaseURL":"https://api-project-825950710244.firebaseio.com","projectId":"api-project-825950710244","storageBucket":"api-project-825950710244.appspot.com","messagingSenderId":"825950710244","appId":"1:825950710244:web:e5c4b2bdfae2f600ddfff1","measurementId":"G-8S5JJ58YBM"}',
+    GA_DOMAIN: 'adp.com',
+    GA_ID: 'UA-51853638-2',
+    GMV_URL: '',
+    GOOGLE_KEY_CLIENT_ID: '&client=gme-adpoem&channel=REDBOX',
+    ISI_CHANGE_UID_URL: 'https://netsecure.adp.com/pages/sms/ess/v2/basic/myself/redirect.jsp?portlet=changeUid&outerframe=my-prod',
+    ISI_PASSWORD_URL: 'https://netsecure.adp.com/pages/sms/ess/v2/basic/myself/redirect.jsp?portlet=changePwd&outerframe=my-prod',
+    ISI_SECURITY_QUESTIONS_URL: 'https://netsecure.adp.com/pages/sms/ess/v2/basic/myself/redirect.jsp?portlet=secQA&outerframe=my-prod',
+    LINKEDIN_URL_FOR_AUTH: 'https://www.linkedin.com/oauth/v2/authorization?response_type=code&client_id=78u8yywcsfue0l&scope=r_fullprofile&state=123&redirect_uri=https://my.adp.com/static/redbox/linkedin-redirect.html',
+    LOCALE: 'en-US',
+    LOGIN_ACTION: 'https://agateway.adp.com/siteminderagent/forms/login.fcc',
+    MANAGER_TIMEOFF_ENABLED: 'true',
+    MANAGE_PASSKEYS_CDN_URL: 'https://passkey.adp.com',
+    MOBILE_SSO_CLIENT_ID: '62eecbae-9247-4bbb-9a38-26b694b9046e',
+    MOBILE_SSO_DVS_FEDERATED_CLIENT_ID: 'ecf2a6b0-0b99-4fe5-be7f-468baaea76d6',
+    MOBILE_SSO_ADP_FEDERATED_CLIENT_ID: '2ccad634-d266-40ee-b026-1ed6fe04e319',
+    NET_SECURE_URL: 'https://netsecure.adp.com',
+    NNL_APP_SDK_URL: 'https://online.adp.com/nnlappsdk-8.0.0',
+    NNL_REG_ENDPOINT: 'https://online.adp.com/nnlgateway/nnl/reg',
+    PAY_CUSTOM_CONTENT_ENABLED: 'true',
+    PENDO_API_KEY: 'c380d53d-4118-4d5f-5442-9841e31b218f',
+    PENDO_ENABLED: 'true',
+    PERS_SEC_PREFS_CDN_URL: 'https://psp.online.adp.com',
+    TOTAL_REWARDS_ESS_CDN_URL: 'https://static.nasben.adp.com',
+    BOTD_ENABLED: 'true',
+    PWC_URL: 'https://pwc.adp.com/pwc',
+    DC_ANALYTICS_URL: 'https://static.datacloud.adp.com',
+    R8_URL: 'https://portal.adp.com',
+    RECRUITING_URL: 'https://recruiting.adp.com',
+    RETIREMENT_DEBUG_ENABLED: 'false',
+    STATIC_DOMAIN: 'https://static.adp.com/static/redbox/',
+    STATIC_ROOT_FULL_URL: 'https://static.adp.com/static/redbox/',
+    STATIC_FULL_VERSION_ROOT_URL: 'https://static.adp.com/static/redbox/26.42.48/',
+    TAM_SSO_ESS_URL: 'https://absence.adp.com/absence',
+    TIME_ATTENDANCE_EXTERNAL_URL: 'https://time.adp.com/portal/theme',
+    TMS_SSO_LINKS_SLIDEUP_ENABLED: 'false',
+    TMS_URL: 'https://tms.adp.com',
+    TMS_MY_ADP_LEARNING:'false',
+    TRANSPARENCY_INSIGHTS_ENABLED: 'false',
+    TRANSPARENCY_INSIGHTS_MAP: '',
+    VANTAGE_URL: 'https://adpvantage.adp.com',
+    VERSIONING_ENABLED: 'true',
+    WFN_URL: 'https://workforcenow.adp.com',
+    WFN_NEXT_GEN_URL: 'https://workforcenow.cloud.adp.com',
+    WISELY_ACTIVATION_URL: 'https://activatewisely.com',
+    WISELY_ENROLL_URL: 'https://www.mywisely.com/app/main/selfenroll?guid=',
+    USE_NEW_EMERGENCY_CONTACTS: 'true',
+    CHAT_URL: 'https://chatapi.adp.com',
+    CHAT_HRSD_URL: '',
+    CHAT_BASE_URL: 'https://chatapi.adp.com/web-component/chat-widget/1.11.0/',
+    CHAT_BASE_URL_V2: 'https://chatapi.adp.com/web-component/chat-widget/esm/2.1.0/',
+    CHAT_HRSD_PROFILE: 'HRSD',
+    GLANCE_URL: 'https://www.glancecdn.net/cobrowse/CobrowseJS.ashx',
+    GLANCE_SITE: 'production',
+    GLANCE_GROUP_ID: '20820',
+    HRO_SSO_TO_VOYA: 'https://fed.adp.com/affwebservices/public/saml2sso?SPID=totalsourceing',
+    TIME_DEVICE_MANAGEMENT_URL: 'https://time.adp.com/wfm/device-management/deviceconfiguration.html',
+    WISELY_LOGIN_URL: 'https://www.mywisely.com/app/main/login',
+    PCP_SUPPORT_URL: 'http://van.us.nascloud-prod.aws.adp',
+    BACKGROUND_CHECK_URL: 'https://recruiting.adp.com/smicro/mfe/adprm/rm-background-ui',
+    SUPPORT_TOOL_URL: 'https://support-my.adp.com/static/admin/login.html',
+    LIFEMART_PERK_URL: 'https://fed.adp.com/affwebservices/public/saml2sso?SPID=NASlifecare',
+    ENVIRONMENT: 'PROD',
+    FIREBASE_REMOTE_CONFIG_MIN_FETCH_INTERVAL_MS: '-1',
+    DYNATRACE_URL: 'https://js-cdn.dynatrace.com/jstag/176666e3e5a/bf11493kpk/2ddd294154e553a9_complete.js',
+    DYNATRACE_ENABLED: 'true',
+    OIDC_CONFIG: '{"issuer":"https://myadpid.adp.com","loginUrl":"https://myadpid.adp.com/auth/oauth/v2/authorize","tokenEndpoint":"https://myadpid.adp.com/auth/oauth/v2/token","logoutUrl":"https://myadpid.adp.com/auth/oauth/v2/osm_logout","clientId":"9e15284e-ae24-4671-93f1-9189589da19a","redirectUri":"https://my.adp.com/index.html","smSessionRefreshEndpoint":"https://amer-1.token.identity.adp.com/auth/sm_session_refresh.json?APPID=MYADP"}'
+  };
+
+  (function() {
+    // patch for windows 10 ltsb 2015 and other ie versions that don't support origin
+    // https://tosbourn.com/a-fix-for-window-location-origin-in-internet-explorer/
+    // this isn't config, but in the spirit of kiss, this file is already included in every app, making this the least invasive way to make the change
+    if (!window.location.origin) {
+      window.location.origin = window.location.protocol + "//" + window.location.hostname + (window.location.port ? ':' + window.location.port: '');
+    }
+
+    // remove domain from api base url on mobile android, it is assumed that the current domain can handle the api calls there
+
+    try {
+      if (window.navigator.userAgent.indexOf('Android') > -1
+        && window.location.href.indexOf('/api/redboxroute') > -1) {
+
+        if (window.MYADP_CONFIG.API_BASE_URL) {
+          var url = new URL(window.MYADP_CONFIG.API_BASE_URL);
+          window.MYADP_CONFIG.API_BASE_URL = url.pathname + url.search + url.hash;
+        }
+      }
+    } catch (ex) {}
+  })();
+
+} catch (e) {}

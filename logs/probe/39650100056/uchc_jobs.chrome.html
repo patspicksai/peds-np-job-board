@@ -1,0 +1,3083 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"><html lang="en"><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:400,300,700" rel="stylesheet" type="text/css">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/styles.asp" rel="stylesheet">
+    
+    <meta http-equiv="CACHE-CONTROL" content="Private">
+    <meta http-equiv="Expires" content="Wed, 21 Oct 2026 18:14:23 UTC">
+    <meta name="COPYRIGHT" content="Copyright © 1998-2010, Greentree Systems, Inc., All Rights Reserved.">
+    <meta name="GENERATOR" content="iGreentree AWD Generator(8.4.3), Date Created: 07/27/2010 10:50:58 AM">
+    <meta name="format-detection" content="telephone=no">
+
+    <base href="HTTPS://jobs.uchc.edu/CSS_External/">
+    <title>UConn Health Candidate Self-Service
+    </title>
+
+    
+
+    <script src="https://apis.google.com/_/scs/abc-static/_/js/k=gapi.lb.en.etOqPKhAhvg.O/m=client/rt=j/sv=1/d=1/ed=1/rs=AHpOoo-l5JrVgGKVELwC844E6riBHX86-w/cb=gapi.loaded_0?le=scs" async=""></script><script type="text/javascript" language="JavaScript">
+
+        function OpenHelpDialog()
+        {
+            $('#helpModal').modal('show');
+        }
+
+        // SYS Script - Client Side Session Timeout Processing
+
+        var giTOMins=0;
+        var giTOSec=0;
+        var gsTOURL='';
+        var gsTOMsgURL='';
+        var gtmrTO=null;
+        var giScrollX = 0;
+        var giScrollY = 0;
+
+        // Returns information about browser window and scroll positions.
+
+        function getBrowserWindowInfoClientWidth() {
+            return getBrowserWindowInfoFilterResults (
+                window.innerWidth ? window.innerWidth : 0,
+                document.documentElement ? document.documentElement.clientWidth : 0,
+                document.body ? document.body.clientWidth : 0
+            );
+        }
+        function getBrowserWindowInfoClientHeight() {
+            return getBrowserWindowInfoFilterResults (
+                window.innerHeight ? window.innerHeight : 0,
+                document.documentElement ? document.documentElement.clientHeight : 0,
+                document.body ? document.body.clientHeight : 0
+            );
+        }
+        function getBrowserWindowInfoScrollLeft() {
+            return getBrowserWindowInfoFilterResults (
+                window.pageXOffset ? window.pageXOffset : 0,
+                document.documentElement ? document.documentElement.scrollLeft : 0,
+                document.body ? document.body.scrollLeft : 0
+            );
+        }
+        function getBrowserWindowInfoScrollTop() {
+            return getBrowserWindowInfoFilterResults (
+                window.pageYOffset ? window.pageYOffset : 0,
+                document.documentElement ? document.documentElement.scrollTop : 0,
+                document.body ? document.body.scrollTop : 0
+            );
+        }
+        function getBrowserWindowInfoFilterResults(n_win, n_docel, n_body) {
+            var n_result = n_win ? n_win : 0;
+            if (n_docel && (!n_result || (n_result > n_docel)))
+                n_result = n_docel;
+            return n_body && (!n_result || (n_result > n_body)) ? n_body : n_result;
+        }
+
+        // Timeout processing
+
+        function sysInitClientSideSessionTimeoutProcessing(piTimoutMins, psTimeoutURL, psTimeoutMsgURL, pfClearHolder) {
+            sysInitClientSideSessionTimeoutProcessingClear();
+            giTOMins=(piTimoutMins==null)?30:piTimoutMins;
+            gsTOURL=(psTimeoutURL==null)?gsTOURL:psTimeoutURL;
+            gsTOMsgURL=(psTimeoutMsgURL==null)?gsTOMsgURL:psTimeoutMsgURL;
+            pfClearHolder=(pfClearHolder==null)?true:pfClearHolder;
+            giTOSec=0;
+            if (pfClearHolder) {
+                var fResetScroll=true;
+                try
+                {
+                    var objIFMTmr = document.getElementById('ifrmTimeoutPage');
+                    var divTmr1 = document.getElementById('divTimeoutPageHolderO');
+                    var divTmr2 = document.getElementById('divTimeoutPageHolder');
+                    fResetScroll=(divTmr1.style.display=='');
+                    objIFMTmr.src = 'HTTPS://jobs.uchc.edu/CSS_External/Blank.htm';
+                    divTmr2.style.display='none';
+                    divTmr1.style.display='none';
+
+                    if (fResetScroll) {
+                        window.setTimeout('window.scrollTo('+giScrollX+','+giScrollY+');', 25);
+                    }
+
+                } catch(e) { /*Ignore*/ }
+            }
+
+            sysInitClientSideSessionTimeoutProcessingDown();
+        }
+        function sysInitClientSideSessionTimeoutProcessingDown() {
+            var sCandidateKey='';
+            giTOSec--;
+            if (giTOSec == -1) {
+                giTOSec = 59;
+                giTOMins--;
+            }
+            if (giTOMins <= 1) {
+                window.status = 'Session Time Remaining: ' + giTOMins + ' minute(s) and '+giTOSec+' second(s).';
+                //} else {
+                //	window.status = 'Time remaining: ' + giTOMins + ' minutes.';
+            }
+            if ((giTOMins==0)&&(giTOSec<=1)) {
+                gtmrTO=null;
+                if (gsTOURL!=null) {
+                    if(sCandidateKey.length>0){
+                        $('#msgModal').modal('hide');
+                        window.location.href = gsTOURL;
+                    }
+                }
+
+            } else {
+                if ((giTOMins==5)&&(giTOSec==0)) {
+                    if ((gsTOMsgURL!=null)&&(sCandidateKey.length>0)) {
+                        try
+                        {
+                            $('#msgModal').modal('show');
+
+                        }
+                        catch(e)
+                        {
+                            //window.focus();
+                            //window.open(gsTOMsgURL,'tmrmsg','top=0,left=0,height=200,width=300,toolbar=no,location=no,status=no,menubar=no,scrollbars=no,resizable=no');
+                            $('#msgModal').modal('show');
+                        }
+                    }
+                }
+                else if(giTOMins<=4){
+                    if(giTOSec<10){
+                        $('#msgModal > div > div > .modal-body > div > label').html(giTOMins + " : " + "0" + giTOSec);
+                    }
+                    else{
+                        $('#msgModal > div > div > .modal-body > div > label').html(giTOMins + " : " + giTOSec);
+                    }
+                }
+                gtmrTO = setTimeout('sysInitClientSideSessionTimeoutProcessingDown();', 1000);
+            }
+
+        }
+        function sysInitClientSideSessionTimeoutProcessingClear() {
+            if (gtmrTO!=null) {
+                clearTimeout(gtmrTO);
+            }
+            gtmrTO=null;
+        }
+
+
+        // sysButtonMakeCool(this);
+
+        function sysButtonMakeCool(pObj) {
+            pObj.style.color = '#A9EFFF';
+            pObj.style.backgroundColor = '';
+        }
+
+
+
+        // sysButtonMakeNormal(this);
+
+        function sysButtonMakeNormal(pObj) {
+            pObj.style.color = '#fff';
+            pObj.style.backgroundColor = '';
+        }
+
+
+
+
+        // sysSubmitForm
+
+        function sysSubmitForm(psFormElementName, pEleName, pEleValue, psOverrideAction, psOverrideTarget) {
+
+            var iFrmIndex = -1;
+            var iFrmChildIndex = -1;
+            var fFound=false;
+            var retVal=false;
+            psFormElementName=(psFormElementName==null)?'':psFormElementName.toUpperCase();
+            for (var i=0;i<document.forms.length;i++) {
+                if (document.forms[i].name.toUpperCase()==psFormElementName) {
+                    iFrmIndex=i;
+                    fFound=true;
+                    i=document.forms.length;
+                } else {
+                    if (document.forms[i].forms!=null) {
+                        if (document.forms[i].forms.length > 0) {
+                            for (var ii=0;i<document.forms[i].forms.length;ii++) {
+                                if (document.forms[i].forms[ii].name.toUpperCase()==psFormElementName) {
+                                    iFrmIndex=i;
+                                    iFrmChildIndex=ii;
+                                    fFound=true;
+                                    i=document.forms.length;
+                                    ii=document.forms[i].forms.length;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            if (fFound) {
+                if ((pEleName!=null)&&(pEleValue!=null)) {
+                    var objFrm=null;
+                    if (iFrmChildIndex==-1) {
+                        var objFrm = document.forms[iFrmIndex];
+                    } else {
+                        var objFrm = document.forms[iFrmIndex].forms[iFrmChildIndex];
+                    }
+                    if (objFrm!=null) {
+                        objFrm.elements[pEleName].value=pEleValue;
+                    }
+                }
+                if (iFrmChildIndex==-1) {
+                    retVal=true;
+                    if (psOverrideAction != null) {
+                        document.forms[iFrmIndex].action=psOverrideAction;
+                    }
+                    if (psOverrideTarget != null) {
+                        document.forms[iFrmIndex].target=psOverrideTarget;
+                    }
+                    document.forms[iFrmIndex].submit();
+                } else {
+                    retVal=true;
+                    if (psOverrideAction != null) {
+                        document.forms[iFrmIndex].forms[iFrmChildIndex].action=psOverrideAction;
+                    }
+                    if (psOverrideTarget != null) {
+                        document.forms[iFrmIndex].forms[iFrmChildIndex].target=psOverrideTarget;
+                    }
+                    document.forms[iFrmIndex].forms[iFrmChildIndex].submit();
+                }
+            } else {
+                window.alert('Error: Cannot find FORM [' + psFormElementName + ']');
+            }
+            return (retVal);
+        }
+
+
+
+    </script>
+
+    
+
+    <script language="JavaScript">
+
+        // String Object Prototypes (CLIENT SIDE)
+
+        function trimLeft(pstr) {
+            var newstr = null;
+            var fFlag=false;
+            if (pstr!=null) {
+                newstr='';
+                for (var i=0;i<pstr.length;i++) {
+                    if (pstr.charAt(i)!=' ') {
+                        fFlag=true;
+                        newstr +=  pstr.charAt(i);
+                    } else {
+                        if (fFlag) {
+                            newstr += pstr.charAt(i);
+                        }
+                    }
+
+                }
+                //newstr = pstr.replace(/[ ]*/, "");
+            }
+            return (newstr);
+        }
+
+        function trimRight(pstr) {
+            var newstr = null;
+            var fFlag=false;
+            if (pstr!=null) {
+                newstr='';
+                for (var i=pstr.length-1;i>-1;i--) {
+                    if (pstr.charAt(i)!=' ') {
+                        fFlag=true;
+                        newstr = pstr.charAt(i) + newstr;
+                    } else {
+                        if (fFlag) {
+                            newstr = pstr.charAt(i) + newstr;
+                        }
+                    }
+
+                }
+                //newstr = pstr.replace(/[ ]*$/, "");
+            }
+            return (newstr);
+        }
+
+        function trim(pstr) {
+            var newstr = null;
+            if (pstr!=null) {
+                newstr=trimRight(trimLeft(pstr));
+                //newstr = pstr.replace(/[ ]*/, "").replace(/[ ]*$/, "");
+            }
+            return (newstr);
+        }
+
+</script>
+    <!-- SYSAPPIGNORESTART -->
+<style type="text/css">
+		A:active.MenuTop			{ font-weight:normal; cursor:hand; text-decoration:none; color:#fff; background-color:#000066;}
+		A:active.Page			{ font-family:Verdana, Arial; font-weight:normal; font-size:9pt; cursor:hand; text-decoration:underline; color:#337ab7; background-color:transparent; }
+		A:active.ProfSecHdr			{ font-family:Verdana, Arial; font-weight:normal; font-size:9pt; cursor:hand; text-decoration:underline; color:; ;}
+		A:active.TblHdr			{ font-family:Verdana, Arial; font-weight:bold; font-size:10pt; cursor:hand; text-decoration:none; color:#ffffff; }
+		A:hover.MenuTop			{ cursor:hand; text-decoration:underline; padding-bottom:1px; padding-top:1px; color:; background-color:#000066;}
+		A:hover.Page			{ font-family:Verdana, Arial; font-weight:normal; font-size:9pt; cursor:hand; text-decoration:underline; color:#23527c; ; }
+		A:hover.ProfSecHdr			{ font-family:Verdana, Arial; font-weight:normal; font-size:9pt; cursor:hand; text-decoration:underline; color:; ;}
+		A:hover.TblHdr			{ font-family:Verdana, Arial; font-weight:bold; font-size:10pt; cursor:hand; text-decoration:none; color:#ffffff; }
+		TD.TblColFld	SPAN { font-family:Verdana, Arial !important; font-weight:normal; font-size:10pt !important; padding:0px; }
+</style>
+<style type="text/css">
+	DIV.UnsupportedBrowser {
+		display:none;
+		margin:20px 40px;
+		border: 1px solid darkred;
+		text-align: center;
+		color: darkred;
+		padding-top:20px;
+		padding-bottom: 20px;
+		box-sizing: border-box;
+		font-size: 1.5em;
+		font-weight: normal;
+	}
+	DIV.UnsupportedBrowser SPAN {
+		font-weight:bold;
+		color: darkred;
+	}
+</style>
+
+<!--[if lt IE 9]>
+	<Style>
+	DIV.UnsupportedBrowser {display:block}
+	</Style>
+<![endif]-->
+
+<!-- SYSAPPIGNOREEND -->
+
+<style type="text/css">  @-webkit-keyframes rotate {
+    from  { -webkit-transform: rotate(0deg); }
+    to   { -webkit-transform: rotate(360deg); }
+  }
+
+  @keyframes rotate {
+    from  { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+  }
+
+    .dropbox-dropin-btn, .dropbox-dropin-btn:link, .dropbox-dropin-btn:hover {
+      display: inline-block;
+      height: 14px;
+      font-family: "Lucida Grande", "Segoe UI", "Tahoma", "Helvetica Neue", "Helvetica", sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      color: #636363;
+      text-decoration: none;
+      padding: 1px 7px 5px 3px;
+      border: 1px solid #ebebeb;
+      border-radius: 2px;
+      border-bottom-color: #d4d4d4;
+        background: #fcfcfc;
+  background: -moz-linear-gradient(top, #fcfcfc 0%, #f5f5f5 100%);
+  background: -webkit-linear-gradient(top, #fcfcfc 0%, #f5f5f5 100%);
+  background: linear-gradient(to bottom, #fcfcfc 0%, #f5f5f5 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fcfcfc', endColorstr='#f5f5f5',GradientType=0);  
+    }
+
+    .dropbox-dropin-default:hover, .dropbox-dropin-error:hover {
+      border-color: #dedede;
+      border-bottom-color: #cacaca;
+        background: #fdfdfd;
+  background: -moz-linear-gradient(top, #fdfdfd 0%, #f5f5f5 100%);
+  background: -webkit-linear-gradient(top, #fdfdfd 0%, #f5f5f5 100%);
+  background: linear-gradient(to bottom, #fdfdfd 0%, #f5f5f5 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fdfdfd', endColorstr='#f5f5f5',GradientType=0);  
+    }
+
+    .dropbox-dropin-default:active, .dropbox-dropin-error:active {
+      border-color: #d1d1d1;
+      box-shadow: inset 0 1px 1px rgba(0,0,0,0.1);
+    }
+
+    .dropbox-dropin-btn .dropin-btn-status {
+      display: inline-block;
+      width: 15px;
+      height: 14px;
+      vertical-align: bottom;
+      margin: 0 5px 0 2px;
+      background: transparent url('https://www.dropbox.com/static/metaserver/static/images/widgets/dbx-saver-status.png') no-repeat;
+      position: relative;
+      top: 2px;
+    }
+
+    .dropbox-dropin-default .dropin-btn-status {
+      background-position: 0px 0px;
+    }
+
+    .dropbox-dropin-progress .dropin-btn-status {
+      width: 18px;
+      margin: 0 4px 0 0;
+      background: url('https://www.dropbox.com/static/metaserver/static/images/widgets/dbx-progress.png') no-repeat center center;
+        -webkit-animation-name: rotate;
+        -webkit-animation-duration: 1.7s;
+        -webkit-animation-iteration-count: infinite;
+        -webkit-animation-timing-function: linear;
+      animation-name: rotate;
+      animation-duration: 1.7s;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+    }
+
+    .dropbox-dropin-success .dropin-btn-status {
+      background-position: -15px 0px;
+    }
+
+    .dropbox-dropin-disabled {
+      background: #e0e0e0;
+      border: 1px #dadada solid;
+      border-bottom: 1px solid #ccc;
+      box-shadow: none;
+    }
+
+    .dropbox-dropin-disabled .dropin-btn-status {
+      background-position: -30px 0px;
+    }
+
+    .dropbox-dropin-error .dropin-btn-status {
+      background-position: -45px 0px;
+    }
+
+  @media only screen and (-webkit-min-device-pixel-ratio: 1.4) {
+      .dropbox-dropin-btn .dropin-btn-status {
+        background-image: url('https://www.dropbox.com/static/metaserver/static/images/widgets/dbx-saver-status-2x.png');
+        background-size: 60px 14px;
+          -webkit-background-size: 60px 14px;
+      }
+
+      .dropbox-dropin-progress .dropin-btn-status {
+        background: url('https://www.dropbox.com/static/metaserver/static/images/widgets/dbx-progress-2x.png') no-repeat center center;
+        background-size: 20px 20px;
+          -webkit-background-size: 20px 20px;
+      }
+  }
+
+    .dropbox-saver:hover, .dropbox-chooser:hover {
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .dropbox-chooser, .dropbox-dropin-btn {
+      line-height: 11px !important;
+      text-decoration: none !important;
+      box-sizing: content-box !important;
+        -webkit-box-sizing: content-box !important;
+        -moz-box-sizing: content-box !important;
+    }
+    </style></head>
+
+<body onload="sysInitClientSideSessionTimeoutProcessing(30, 'HTTPS://jobs.uchc.edu/CSS_External/CSSResp_TimeoutMessage.ASP?T=20261021141423&amp;', 'HTTPS://jobs.uchc.edu/CSS_External/CSSPage_TimoutMessage.ASP?T=20261021141423&amp;');" onunload="sysInitClientSideSessionTimeoutProcessingClear();" style="">
+    <!--<FORM AUTOCOMPLETE=OFF ID=frmPrimary NAME=frmPrimary METHOD=POST ACTION="HTTPS://jobs.uchc.edu/CSS_External/Dummy.ASP?T=20261021141423&">-->
+    <!--
+
+** NOTE **
+
+YOU MUST LINK THE Global Script "SYS - Application Path Information" INTO YOUR PAGE
+IN ORDER FOR MENU ITEMS TO WORK CORRECTLY
+
+**********
+
+-->
+    <div class="container">
+
+
+
+        <!-- SYSAPPIGNORESTART -->
+<script type="text/javascript" language="javascript">
+
+    function requestClose() {
+        sysInitClientSideSessionTimeoutProcessing();
+        $('#msgModal').modal('hide');
+    }
+
+</script>
+<div id="not-supported-browser" class="UnsupportedBrowser">
+<span>BROWSER NOT SUPPORTED</span> - You are using an unsupported browser. Some features may not work correctly.
+</div>
+<div class="header-area">
+    <a href="https://www.uconnhealth.org" class="navbar-brand logo">
+        <img src="images/logo_uconnhealth_greentree.png" class="masthead-logo" alt="Career Opportunities at UConn Health"></a>
+    <!--<h1 class="pull-right">Welcome to </h1>-->
+
+    <h1 class="pull-right masthead-text">Career Opportunities at UConn Health</h1>
+    <div class="modal fade" id="msgModal" data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button data-dismiss="modal" class="close"><span class="glyphicon glyphicon-remove-circle"></span></button>
+                    <h2 class="heading2">Session Timeout</h2>
+                </div>
+                <!-- end modal-header -->
+
+                    <div class="modal-body">
+                        <!-- <div class="sign-in well-sm">-->
+                        <div class="alert alert-danger alert-block fade in">
+                            <h4>UConn Health Employment Center</h4><br>
+                            Your session will time out in <label>5</label> minutes.If you would like more time, please press the <b>OK</b> button.
+                            <br>
+                            <br>
+                            <input type="BUTTON" id="cmdOkay" name="cmdOkay" onclick="javascript: requestClose();" value="OK" title="Press to continue session" alt="Press to continue session" class="btn-green btn btn-block">
+                        </div>
+                    </div>
+                    <!-- end modal body -->
+                    <!-- end modal footer -->
+
+                <!-- end modal content -->
+            </div>
+            <!-- end modal dialog -->
+        </div>
+    </div>
+</div>
+<!-- SYSAPPIGNOREEND -->
+
+<!---------------------------------------Cloud Links-------------------------------------------------->
+    <script type="text/javascript" src="https://www.dropbox.com/static/api/2/dropins.js" id="dropboxjs" data-app-key="wvyzp3qq52an1x1"></script>
+    <script type="text/javascript" src="https://js.live.net/v5.0/OneDrive.js" id="onedrive-js" client-id="00000000481C0C75"></script>
+    
+    <script type="text/javascript" src="https://apis.google.com/js/client.js" id="googledrive-js" gapi_processed="true" data-app-client-id="891398077459-vo747avhsdnjr9b55cgb5rbc6g7hhuo7.apps.googleusercontent.com" data-app-developer-key="891398077459" data-app-appid="891398077459"></script>
+   <script type="text/javascript" src="https://apis.google.com/js/api.js" gapi_processed="true"></script>
+
+<!---------------------------------------Cloud Links-------------------------------------------------->
+<!-- SYSAPPIGNORESTART -->
+<!------navigation---------------->
+
+<nav class="navbar">
+    <div class="container-fluid">
+        <div>
+            <!--Brand and toggle get grouped for better mobile display-->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-navigation">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="main-navigation">
+                
+<ul class="nav navbar-nav">
+    <li id="1" class="active"><a href="HTTPS://jobs.uchc.edu/CSS_External/CSSPage_Welcome.ASP?T=20261021141423&amp;" onmouseover="window.status='Find&nbsp;Jobs';return true;" onmouseout="window.status='';return true;">Find&nbsp;Jobs</a></li>
+
+    
+    <li id="2"><a href="HTTPS://jobs.uchc.edu/CSS_External/CSSPage_UpdateProfileStatus.ASP?T=20261021141423&amp;" onmouseover="window.status='Application&nbsp;Status';return true;" onmouseout="window.status='';return true;">Application&nbsp;Status</a></li>
+    
+    <li id="3"><a href="HTTPS://jobs.uchc.edu/CSS_External/CSSPage_UpdateProfileAlerts.ASP?T=20261021141423&amp;" onmouseover="window.status='Job&nbsp;Alerts';return true;" onmouseout="window.status='';return true;">Job&nbsp;Alerts</a></li>
+    
+    <li id="4"><a href="HTTPS://jobs.uchc.edu/CSS_External/CSSPage_UpdateProfile.ASP?T=20261021141423&amp;" onmouseover="window.status='My&nbsp;Profile';return true;" onmouseout="window.status='';return true;">My&nbsp;Profile</a></li>
+     
+
+   <!--  
+    -->
+</ul>
+
+<!--<ul class="nav navbar-nav navbar-right">-->
+    <!--<li></li>-->
+   <!-- <li></li>-->
+<!--</ul>-->
+
+
+                <!-- /.navbar-collapse -->
+            </div>
+        </div>
+        <div class="pull-right">
+            
+        </div>
+        <!-- /.container-fluid -->
+    </div>
+</nav>
+<div class="modal fade" id="myModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button data-dismiss="modal" class="close" onclick="RedirectToWelcome('HTTPS://jobs.uchc.edu/CSS_External/CSSPage_Welcome.ASP?T=20261021141423&amp;');"><span class="glyphicon glyphicon-remove-circle" title="Close popup"></span></button>
+                <h2 class="heading2">Sign in</h2>
+                 <div class="display-message">                 
+                </div>              
+            </div>
+            <!-- end modal-header -->
+            <div class="modal-body">
+                <div class="sign-in well-sm">
+                
+
+                    <form autocomplete="off" id="frmLogin" name="frmLogin" method="post" action="HTTPS://jobs.uchc.edu/CSS_External/CSSResp_Login.ASP?T=20261021141423&amp;">
+                        <input type="hidden" id="RetURL" name="RetURL" value="HTTPS://jobs.uchc.edu/CSS_External/CSSPage_SearchResults.ASP">
+                        <input type="HIDDEN" name="Type" value="CAT"><input type="HIDDEN" name="InitURL" value="CSSPage_Welcome.asp"><input type="HIDDEN" name="ResultSort" value=""><input type="HIDDEN" name="SRCH" value="All Positions"><input type="HIDDEN" name="Key" value="{F4D8A502-D709-436C-BE1B-FF14A8866F6A}">
+
+                        <span class="glyphicon glyphicon-chevron-left pull-right icon-large close2" title="Go back"></span>
+
+                        <div class="col-sm-12">
+                            
+                        </div>
+
+                        <h5>Email Address</h5>
+                        <input type="text" class="form-control" id="Login" name="Login" value="" title="Enter the Email Address you entered during registration.">
+                        <br>
+                        <h5>Password</h5>
+                        <input type="password" class="form-control" id="LoginPWD" name="LoginPWD" value="" title="Enter&nbsp;either&nbsp;the Email Address or the User ID&nbsp;you&nbsp;entered&nbsp;during registration.">
+                        <br>
+                        <br>
+                        <input type="submit" class="btn-green btn btn-block" style="display: none;" id="loginForm" onclick="sysSubmitForm('frmLogin');" value="Sign In">
+                        <!--<a class="underline" id="forgot-password" href="#">Forgot password?</a><br>-->
+                        <br>
+                        <!--<input type="submit" id="cmdLogin" name="cmdLogin" class="Button" value="Login" onclick="sysSubmitForm('frmLogin');" onmouseover="sysButtonMakeCool(this);" onmouseout="sysButtonMakeNormal(this);">-->
+                        <input type="button" id="forgot-password" class="btn-forgot btn btn-block" value="Forgot Password?">
+                        <br>
+                    </form>
+                </div>
+
+                <a class="btn-green btn btn-block" id="loginBtn">Sign In</a>
+
+                
+
+                <div class="sign-in well-sm">
+                    <div class="hidden-message">
+                        <p></p>
+                    </div>   
+                    <span class="glyphicon glyphicon-chevron-left pull-right icon-large close2" title="Go back"></span>
+                    <!--<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">-->
+
+
+<!--<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" >
+    <!DOCTYPE HTML PUBLIC "-//W3C//DTD W3 HTML//EN">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" >
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css' >
+    <link href="css/bootstrap.min.css" rel="stylesheet" >
+    <link href="css/styles.asp" rel="stylesheet" >
+    <meta http-equiv="CACHE-CONTROL" content="Private" >
+    <meta http-equiv="Expires" content="Wed, 21 Oct 2026 18:14:23 UTC" >
+    <meta name="COPYRIGHT" content="Copyright &copy; 1998-2010, Greentree Systems, Inc., All Rights Reserved." >
+    <meta name="GENERATOR" content="iGreentree AWD Generator(8.4.3), Date Created: 07/27/2010 10:51:07 AM" >
+
+    <base href="HTTPS://jobs.uchc.edu/CSS_External/">
+    <title>UConn Health Candidate Self-Service
+</title>-->
+    
+
+
+    <script type="text/javascript" language="JavaScript">
+
+
+        // SYS Script - Client Side Session Timeout Processing
+
+        var giTOMins=0;
+        var giTOSec=0;
+        var gsTOURL='';
+        var gsTOMsgURL='';
+        var gtmrTO=null;
+        var giScrollX = 0;
+        var giScrollY = 0;
+
+        // Returns information about browser window and scroll positions.
+
+        function getBrowserWindowInfoClientWidth() {
+            return getBrowserWindowInfoFilterResults (
+                window.innerWidth ? window.innerWidth : 0,
+                document.documentElement ? document.documentElement.clientWidth : 0,
+                document.body ? document.body.clientWidth : 0
+            );
+        }
+        function getBrowserWindowInfoClientHeight() {
+            return getBrowserWindowInfoFilterResults (
+                window.innerHeight ? window.innerHeight : 0,
+                document.documentElement ? document.documentElement.clientHeight : 0,
+                document.body ? document.body.clientHeight : 0
+            );
+        }
+        function getBrowserWindowInfoScrollLeft() {
+            return getBrowserWindowInfoFilterResults (
+                window.pageXOffset ? window.pageXOffset : 0,
+                document.documentElement ? document.documentElement.scrollLeft : 0,
+                document.body ? document.body.scrollLeft : 0
+            );
+        }
+        function getBrowserWindowInfoScrollTop() {
+            return getBrowserWindowInfoFilterResults (
+                window.pageYOffset ? window.pageYOffset : 0,
+                document.documentElement ? document.documentElement.scrollTop : 0,
+                document.body ? document.body.scrollTop : 0
+            );
+        }
+        function getBrowserWindowInfoFilterResults(n_win, n_docel, n_body) {
+            var n_result = n_win ? n_win : 0;
+            if (n_docel && (!n_result || (n_result > n_docel)))
+                n_result = n_docel;
+            return n_body && (!n_result || (n_result > n_body)) ? n_body : n_result;
+        }
+
+        // Timeout processing
+
+        function sysInitClientSideSessionTimeoutProcessing(piTimoutMins, psTimeoutURL, psTimeoutMsgURL, pfClearHolder) {
+            sysInitClientSideSessionTimeoutProcessingClear();
+            giTOMins=(piTimoutMins==null)?30:piTimoutMins;
+            gsTOURL=(psTimeoutURL==null)?gsTOURL:psTimeoutURL;
+            gsTOMsgURL=(psTimeoutMsgURL==null)?gsTOMsgURL:psTimeoutMsgURL;
+            pfClearHolder=(pfClearHolder==null)?true:pfClearHolder;
+            giTOSec=0;
+            if (pfClearHolder) {
+                var fResetScroll=true;
+                try
+                {
+                    var objIFMTmr = document.getElementById('ifrmTimeoutPage');
+                    var divTmr1 = document.getElementById('divTimeoutPageHolderO');
+                    var divTmr2 = document.getElementById('divTimeoutPageHolder');
+                    fResetScroll=(divTmr1.style.display=='');
+                    objIFMTmr.src = 'HTTPS://jobs.uchc.edu/CSS_External/Blank.htm';
+                    divTmr2.style.display='none';
+                    divTmr1.style.display='none';
+
+                    if (fResetScroll) {
+                        window.setTimeout('window.scrollTo('+giScrollX+','+giScrollY+');', 25);
+                    }
+
+                } catch(e) { /*Ignore*/ }
+            }
+
+            sysInitClientSideSessionTimeoutProcessingDown();
+        }
+        function sysInitClientSideSessionTimeoutProcessingDown() {
+            var sCandidateKey='';
+            giTOSec--;
+            if (giTOSec == -1) {
+                giTOSec = 59;
+                giTOMins--;
+            }
+            if (giTOMins <= 1) {
+                window.status = 'Session Time Remaining: ' + giTOMins + ' minute(s) and '+giTOSec+' second(s).';
+                //} else {
+                //	window.status = 'Time remaining: ' + giTOMins + ' minutes.';
+            }
+            if ((giTOMins==0)&&(giTOSec<=1)) {
+                gtmrTO=null;
+                if (gsTOURL!=null) {
+                    //window.location.href = gsTOURL;
+                    //$('#msgModal').modal('show');
+                }
+
+            } else {
+                if ((giTOMins==5)&&(giTOSec==0)) {
+                    if ((gsTOMsgURL!=null)&&(sCandidateKey.length>0)) {
+                        try
+                        {
+                            if (document.all) {
+                                giScrollX = getBrowserWindowInfoScrollLeft();
+                                giScrollY = getBrowserWindowInfoScrollTop();
+                            } else  {
+                                giScrollX = window.pageXOffset;
+                                giScrollY = window.pageYOffset;
+                            }
+                            var objIFMTmr = document.getElementById('ifrmTimeoutPage');
+                            var divTmr1 = document.getElementById('divTimeoutPageHolderO');
+                            var divTmr2 = document.getElementById('divTimeoutPageHolder');
+                            divTmr2.style.display='';
+                            divTmr1.style.display='';
+                            objIFMTmr.src = gsTOMsgURL;
+                        }
+                        catch(e)
+                        {
+                            //window.focus();
+                            //window.open(gsTOMsgURL,'tmrmsg','top=0,left=0,height=200,width=300,toolbar=no,location=no,status=no,menubar=no,scrollbars=no,resizable=no');
+                            $('#msgModal').modal('show');
+                        }
+                    }
+                }
+                gtmrTO = setTimeout('sysInitClientSideSessionTimeoutProcessingDown();', 1000);
+            }
+
+        }
+        function sysInitClientSideSessionTimeoutProcessingClear() {
+            if (gtmrTO!=null) {
+                clearTimeout(gtmrTO);
+            }
+            gtmrTO=null;
+        }
+
+
+        // SYS Script - Validate Add New Candidate
+
+        var sysfSubmittingNewCandidate=false;
+
+        function sysfnGetNamedEleValue(psFormElementName, psNameElementName) {
+            var retVal=null;
+            var objFrm=null;
+            var objEle=null;
+            var sH = '';
+
+            objFrm = sysfnobjGetFormElement(psFormElementName);
+            if (objFrm!=null) {
+                objEle = objFrm.elements[psNameElementName];
+                if (objEle!=null) {
+                    retVal=objEle.value;
+                }
+            }
+            return (retVal);
+        }
+
+        function sysfnfValidateName(psFormElementName, psNameElementName, psLabel, pfRequired) {
+            var retVal=false;
+            var objFrm=null;
+            var objEle=null;
+            var sH = '';
+
+            pfRequired=(pfRequired==null)?true:pfRequired;
+            objFrm = sysfnobjGetFormElement(psFormElementName);
+
+            if (objFrm!=null) {
+                objEle = objFrm.elements[psNameElementName];
+                if (objEle!=null) {
+                    if (objEle.value.length>0) {
+                        if (psNameElementName.toLowerCase() != 'email') {
+                            sH = objEle.value.charAt(0).toUpperCase();
+                            if (objEle.value.length>1) {
+                                sH = sH + objEle.value.substring(1, objEle.value.length);
+                            }
+                            objEle.value = sH;
+                        } else {
+                            sH = objEle.value;
+                        }
+                        if (psNameElementName.toLowerCase()=='email') {
+                            if (sysfnfValidateEmail(sH)) {
+                                retVal=true;
+                            } else {
+                                window.alert('Sorry, the ' + psLabel + ' ['+sH+'] is invalid.\n\nPlease correct and try again.');
+                                objEle.focus();
+                            }
+                        } else {
+                            retVal=true;
+                        }
+                    } else if (pfRequired) {
+                        window.alert('Sorry,\n' + psLabel + ' requires an entry.\n\nPlease correct and try again.');
+                        objEle.focus();
+                    } else {
+                        retVal=true;
+                    }
+                }
+            }
+            return (retVal);
+        }
+
+        // Used to Add a new candidate
+        function sysfnfValidateAddNewCandidate(pObj) {
+            var retVal=false;
+            	var fEmailRequired = false;
+
+        if (!sysfSubmittingNewCandidate) {
+            sysfSubmittingNewCandidate=true;
+            //if (sysfnfValidateUserIDAndPassword('frmNewCandidate', 'CSSLogin', 'CSSPassword', 'CSSPassword2')) {
+                if (sysfnfValidateName('frmNewCandidate', 'NameFirst', 'First Name')) {
+                    if (sysfnfValidateName('frmNewCandidate', 'NameLast', 'Last Name')) {
+                        if ((fEmailRequired)||(sysfnGetNamedEleValue('frmNewCandidate', 'Email').length>0)) {
+                            if (sysfnfValidateName('frmNewCandidate', 'Email', 'Email', fEmailRequired)) {
+								if (sysfnfValidateUserPassword('frmNewCandidate', 'CSSPassword', 'CSSPassword2')) {
+									retVal=true;
+								}
+                            }
+                        } else {
+                            retVal=true;
+                        }
+                    }
+                }
+            //}
+            if (!retVal) {
+                sysfSubmittingNewCandidate=false;
+            } else {
+                pObj.value='Submitting...'
+            }
+        }
+            return (retVal);
+        }
+
+        // Used to Update the UserID/PWD or UserPWD
+        function sysfnfValidateUpdateLogin(pObj, psFormElementName, pfUpdatePasswordOnly) {
+            var retVal=false;
+            if (!sysfSubmittingNewCandidate) {
+                sysfSubmittingNewCandidate=true;
+                if (!pfUpdatePasswordOnly) {
+                    if (sysfnfValidateUserIDAndPassword(psFormElementName, 'CSSLogin1', 'CSSPassword1A', 'CSSPassword1B')) {
+                        retVal=true;
+                    }
+                } else {
+                    if (sysfnfValidateUserPassword(psFormElementName, 'CSSPassword2A', 'CSSPassword2B')) {
+                        retVal=true;
+                    }
+                }
+                if (!retVal) {
+                    sysfSubmittingNewCandidate=false;
+                } else {
+                    pObj.value='Submitting...'
+                }
+            }
+            return (retVal);
+        }
+
+
+        // SYS Script - Validate Email Address Format
+
+        function sysfnfValidateEmail(psAddressString) {
+            var sInvalidChars = '!#$%^&*()=+{}[]|\\;:\"/?>,< ';
+            var sHost = '';
+            var iPos = -1;
+            var iCnt = 0;
+
+            if ((psAddressString==null)||(psAddressString=='undefined')) {
+                psAddressString='';
+            }
+
+            if (psAddressString.length==0) {
+                //window.alert('psAddressString.length='+psAddressString.length);
+
+                return (false);
+            }
+            for (var iPos=0; iPos < psAddressString.length; iPos++) {
+                if (sInvalidChars.indexOf(psAddressString.charAt(iPos))>-1) {
+                    //window.alert('charAt='+psAddressString.charAt(iPos));
+
+                    iPos = psAddressString.length;
+                    return (false);
+                }
+                if (psAddressString.charAt(iPos)=='@') {
+                    iCnt++;
+                    if (iCnt>1) {
+                        //window.alert('Too Many @='+iCnt);
+
+                        iPos = psAddressString.length;
+                        return (false);
+                    }
+                }
+            }
+            iPos=psAddressString.indexOf('@');
+            if ((iPos==0)||(iPos==1)||(iPos==(psAddressString.length-1))) {
+                //window.alert('@ cannot find or invalid position='+iPos);
+
+                return (false);
+            }
+            sHost = psAddressString.substring(iPos + 1);
+
+            return sysfnfIsValidIPHost(sHost.toUpperCase());
+        }
+
+        function sysfnfIsValidIPHost(psHostString) {
+            var sHost='';
+            var bDottedQuad=false;
+            var arrSplit;
+            var ictr=0;
+            var bAns=false;
+
+            if ((psHostString==null)||(psHostString=='undefined')) {
+                psHostString='';
+            }
+
+            if (psHostString.length==0) {
+                // length = 0
+                return (false);
+            }
+
+            sHost = psHostString;
+
+            if (sHost.indexOf('.')==-1) {
+                // no "."
+
+                return (false);
+            }
+            arrSplit = sHost.split('.');
+            if  (arrSplit.length==4) {
+                bDottedQuad = true;
+                for (var i=0;i<arrSplit.length;i++) {
+                    if (isNaN(arrSplit[i])) {
+                        i=arrSplit.length;
+                        bDottedQuad = false;
+                    }
+                }
+                if (bDottedQuad) {
+                    bAns = true;
+                    for (var i=0;i<arrSplit.length;i++) {
+                        if (i==0) {
+                            if (parseFloat(arrSplit[i]) > 239 ) {
+                                bAns = false;
+                                i=arrSplit.length;
+                            }
+                        } else {
+                            if (parseFloat(arrSplit[i]) > 255 ) {
+                                bAns = false;
+                                i=arrSplit.length;
+                            }
+                        }
+                    }
+                    return (bAns);
+                }
+            }
+
+            return (sysfnfIsTopLevelDomain(arrSplit[arrSplit.length-1]));
+        }
+
+        function sysfnfIsTopLevelDomain(psDomainString) {
+            if ((psDomainString==null)||(psDomainString=='undefined')) {
+                psDomainString='';
+            }
+            if (psDomainString.length==0) {
+                // length = 0
+
+                return (false);
+            }
+            psDomainString=psDomainString.toUpperCase();
+            var arrTopLevels = new Array();
+
+            //Obtained from www.IANA.com.  Can and will change
+
+            // infrastructure domains
+            arrTopLevels[arrTopLevels.length] = 'ARPA';
+            // generic domains
+            arrTopLevels[arrTopLevels.length] = 'AERO';
+            arrTopLevels[arrTopLevels.length] = 'BIZ';
+            arrTopLevels[arrTopLevels.length] = 'COM';
+            arrTopLevels[arrTopLevels.length] = 'COOP';
+            arrTopLevels[arrTopLevels.length] = 'EDU';
+            arrTopLevels[arrTopLevels.length] = 'GOV';
+            arrTopLevels[arrTopLevels.length] = 'INFO';
+            arrTopLevels[arrTopLevels.length] = 'INT';
+            arrTopLevels[arrTopLevels.length] = 'MIL';
+            arrTopLevels[arrTopLevels.length] = 'MUSEUM';
+            arrTopLevels[arrTopLevels.length] = 'NAME';
+            arrTopLevels[arrTopLevels.length] = 'NET';
+            arrTopLevels[arrTopLevels.length] = 'ORG';
+            arrTopLevels[arrTopLevels.length] = 'PRO';
+            // country code domains
+            arrTopLevels[arrTopLevels.length] = 'AC';
+            arrTopLevels[arrTopLevels.length] = 'AD';
+            arrTopLevels[arrTopLevels.length] = 'AE';
+            arrTopLevels[arrTopLevels.length] = 'AF';
+            arrTopLevels[arrTopLevels.length] = 'AG';
+            arrTopLevels[arrTopLevels.length] = 'AI';
+            arrTopLevels[arrTopLevels.length] = 'AL';
+            arrTopLevels[arrTopLevels.length] = 'AM';
+            arrTopLevels[arrTopLevels.length] = 'AN';
+            arrTopLevels[arrTopLevels.length] = 'AO';
+            arrTopLevels[arrTopLevels.length] = 'AQ';
+            arrTopLevels[arrTopLevels.length] = 'AR';
+            arrTopLevels[arrTopLevels.length] = 'AS';
+            arrTopLevels[arrTopLevels.length] = 'AT';
+            arrTopLevels[arrTopLevels.length] = 'AU';
+            arrTopLevels[arrTopLevels.length] = 'AW';
+            arrTopLevels[arrTopLevels.length] = 'AZ';
+            arrTopLevels[arrTopLevels.length] = 'AX';
+            arrTopLevels[arrTopLevels.length] = 'BA';
+            arrTopLevels[arrTopLevels.length] = 'BB';
+            arrTopLevels[arrTopLevels.length] = 'BD';
+            arrTopLevels[arrTopLevels.length] = 'BE';
+            arrTopLevels[arrTopLevels.length] = 'BF';
+            arrTopLevels[arrTopLevels.length] = 'BG';
+            arrTopLevels[arrTopLevels.length] = 'BH';
+            arrTopLevels[arrTopLevels.length] = 'BI';
+            arrTopLevels[arrTopLevels.length] = 'BJ';
+            arrTopLevels[arrTopLevels.length] = 'BM';
+            arrTopLevels[arrTopLevels.length] = 'BN';
+            arrTopLevels[arrTopLevels.length] = 'BO';
+            arrTopLevels[arrTopLevels.length] = 'BR';
+            arrTopLevels[arrTopLevels.length] = 'BS';
+            arrTopLevels[arrTopLevels.length] = 'BT';
+            arrTopLevels[arrTopLevels.length] = 'BV';
+            arrTopLevels[arrTopLevels.length] = 'BW';
+            arrTopLevels[arrTopLevels.length] = 'BY';
+            arrTopLevels[arrTopLevels.length] = 'BZ';
+            arrTopLevels[arrTopLevels.length] = 'CA';
+            arrTopLevels[arrTopLevels.length] = 'CC';
+            arrTopLevels[arrTopLevels.length] = 'CD';
+            arrTopLevels[arrTopLevels.length] = 'CF';
+            arrTopLevels[arrTopLevels.length] = 'CG';
+            arrTopLevels[arrTopLevels.length] = 'CH';
+            arrTopLevels[arrTopLevels.length] = 'CI';
+            arrTopLevels[arrTopLevels.length] = 'CK';
+            arrTopLevels[arrTopLevels.length] = 'CL';
+            arrTopLevels[arrTopLevels.length] = 'CM';
+            arrTopLevels[arrTopLevels.length] = 'CN';
+            arrTopLevels[arrTopLevels.length] = 'CO';
+            arrTopLevels[arrTopLevels.length] = 'CR';
+            arrTopLevels[arrTopLevels.length] = 'CS';
+            arrTopLevels[arrTopLevels.length] = 'CU';
+            arrTopLevels[arrTopLevels.length] = 'CV';
+            arrTopLevels[arrTopLevels.length] = 'CX';
+            arrTopLevels[arrTopLevels.length] = 'CY';
+            arrTopLevels[arrTopLevels.length] = 'CZ';
+            arrTopLevels[arrTopLevels.length] = 'DE';
+            arrTopLevels[arrTopLevels.length] = 'DJ';
+            arrTopLevels[arrTopLevels.length] = 'DK';
+            arrTopLevels[arrTopLevels.length] = 'DM';
+            arrTopLevels[arrTopLevels.length] = 'DO';
+            arrTopLevels[arrTopLevels.length] = 'DZ';
+            arrTopLevels[arrTopLevels.length] = 'EC';
+            arrTopLevels[arrTopLevels.length] = 'EE';
+            arrTopLevels[arrTopLevels.length] = 'EG';
+            arrTopLevels[arrTopLevels.length] = 'EH';
+            arrTopLevels[arrTopLevels.length] = 'ER';
+            arrTopLevels[arrTopLevels.length] = 'ES';
+            arrTopLevels[arrTopLevels.length] = 'ET';
+            arrTopLevels[arrTopLevels.length] = 'EU';
+            arrTopLevels[arrTopLevels.length] = 'FI';
+            arrTopLevels[arrTopLevels.length] = 'FJ';
+            arrTopLevels[arrTopLevels.length] = 'FK';
+            arrTopLevels[arrTopLevels.length] = 'FM';
+            arrTopLevels[arrTopLevels.length] = 'FO';
+            arrTopLevels[arrTopLevels.length] = 'FR';
+            arrTopLevels[arrTopLevels.length] = 'GA';
+            arrTopLevels[arrTopLevels.length] = 'GB';
+            arrTopLevels[arrTopLevels.length] = 'GD';
+            arrTopLevels[arrTopLevels.length] = 'GE';
+            arrTopLevels[arrTopLevels.length] = 'GF';
+            arrTopLevels[arrTopLevels.length] = 'GG';
+            arrTopLevels[arrTopLevels.length] = 'GH';
+            arrTopLevels[arrTopLevels.length] = 'GI';
+            arrTopLevels[arrTopLevels.length] = 'GL';
+            arrTopLevels[arrTopLevels.length] = 'GM';
+            arrTopLevels[arrTopLevels.length] = 'GN';
+            arrTopLevels[arrTopLevels.length] = 'GP';
+            arrTopLevels[arrTopLevels.length] = 'GQ';
+            arrTopLevels[arrTopLevels.length] = 'GR';
+            arrTopLevels[arrTopLevels.length] = 'GS';
+            arrTopLevels[arrTopLevels.length] = 'GT';
+            arrTopLevels[arrTopLevels.length] = 'GU';
+            arrTopLevels[arrTopLevels.length] = 'GW';
+            arrTopLevels[arrTopLevels.length] = 'GY';
+            arrTopLevels[arrTopLevels.length] = 'HK';
+            arrTopLevels[arrTopLevels.length] = 'HM';
+            arrTopLevels[arrTopLevels.length] = 'HN';
+            arrTopLevels[arrTopLevels.length] = 'HR';
+            arrTopLevels[arrTopLevels.length] = 'HT';
+            arrTopLevels[arrTopLevels.length] = 'HU';
+            arrTopLevels[arrTopLevels.length] = 'ID';
+            arrTopLevels[arrTopLevels.length] = 'IE';
+            arrTopLevels[arrTopLevels.length] = 'IL';
+            arrTopLevels[arrTopLevels.length] = 'IM';
+            arrTopLevels[arrTopLevels.length] = 'IN';
+            arrTopLevels[arrTopLevels.length] = 'IO';
+            arrTopLevels[arrTopLevels.length] = 'IQ';
+            arrTopLevels[arrTopLevels.length] = 'IR';
+            arrTopLevels[arrTopLevels.length] = 'IS';
+            arrTopLevels[arrTopLevels.length] = 'IT';
+            arrTopLevels[arrTopLevels.length] = 'JE';
+            arrTopLevels[arrTopLevels.length] = 'JM';
+            arrTopLevels[arrTopLevels.length] = 'JO';
+            arrTopLevels[arrTopLevels.length] = 'JP';
+            arrTopLevels[arrTopLevels.length] = 'KE';
+            arrTopLevels[arrTopLevels.length] = 'KG';
+            arrTopLevels[arrTopLevels.length] = 'KH';
+            arrTopLevels[arrTopLevels.length] = 'KI';
+            arrTopLevels[arrTopLevels.length] = 'KM';
+            arrTopLevels[arrTopLevels.length] = 'KN';
+            arrTopLevels[arrTopLevels.length] = 'KP';
+            arrTopLevels[arrTopLevels.length] = 'KR';
+            arrTopLevels[arrTopLevels.length] = 'KW';
+            arrTopLevels[arrTopLevels.length] = 'KY';
+            arrTopLevels[arrTopLevels.length] = 'KZ';
+            arrTopLevels[arrTopLevels.length] = 'LA';
+            arrTopLevels[arrTopLevels.length] = 'LB';
+            arrTopLevels[arrTopLevels.length] = 'LC';
+            arrTopLevels[arrTopLevels.length] = 'LI';
+            arrTopLevels[arrTopLevels.length] = 'LK';
+            arrTopLevels[arrTopLevels.length] = 'LR';
+            arrTopLevels[arrTopLevels.length] = 'LS';
+            arrTopLevels[arrTopLevels.length] = 'LT';
+            arrTopLevels[arrTopLevels.length] = 'LU';
+            arrTopLevels[arrTopLevels.length] = 'LV';
+            arrTopLevels[arrTopLevels.length] = 'LY';
+            arrTopLevels[arrTopLevels.length] = 'MA';
+            arrTopLevels[arrTopLevels.length] = 'MC';
+            arrTopLevels[arrTopLevels.length] = 'MD';
+            arrTopLevels[arrTopLevels.length] = 'MG';
+            arrTopLevels[arrTopLevels.length] = 'MH';
+            arrTopLevels[arrTopLevels.length] = 'MK';
+            arrTopLevels[arrTopLevels.length] = 'ML';
+            arrTopLevels[arrTopLevels.length] = 'MM';
+            arrTopLevels[arrTopLevels.length] = 'MN';
+            arrTopLevels[arrTopLevels.length] = 'MO';
+            arrTopLevels[arrTopLevels.length] = 'MP';
+            arrTopLevels[arrTopLevels.length] = 'MQ';
+            arrTopLevels[arrTopLevels.length] = 'MR';
+            arrTopLevels[arrTopLevels.length] = 'MS';
+            arrTopLevels[arrTopLevels.length] = 'MT';
+            arrTopLevels[arrTopLevels.length] = 'MU';
+            arrTopLevels[arrTopLevels.length] = 'MV';
+            arrTopLevels[arrTopLevels.length] = 'MW';
+            arrTopLevels[arrTopLevels.length] = 'MX';
+            arrTopLevels[arrTopLevels.length] = 'MY';
+            arrTopLevels[arrTopLevels.length] = 'MZ';
+            arrTopLevels[arrTopLevels.length] = 'NA';
+            arrTopLevels[arrTopLevels.length] = 'NC';
+            arrTopLevels[arrTopLevels.length] = 'NE';
+            arrTopLevels[arrTopLevels.length] = 'NF';
+            arrTopLevels[arrTopLevels.length] = 'NG';
+            arrTopLevels[arrTopLevels.length] = 'NI';
+            arrTopLevels[arrTopLevels.length] = 'NL';
+            arrTopLevels[arrTopLevels.length] = 'NO';
+            arrTopLevels[arrTopLevels.length] = 'NP';
+            arrTopLevels[arrTopLevels.length] = 'NR';
+            arrTopLevels[arrTopLevels.length] = 'NU';
+            arrTopLevels[arrTopLevels.length] = 'NZ';
+            arrTopLevels[arrTopLevels.length] = 'OM';
+            arrTopLevels[arrTopLevels.length] = 'PA';
+            arrTopLevels[arrTopLevels.length] = 'PE';
+            arrTopLevels[arrTopLevels.length] = 'PF';
+            arrTopLevels[arrTopLevels.length] = 'PG';
+            arrTopLevels[arrTopLevels.length] = 'PH';
+            arrTopLevels[arrTopLevels.length] = 'PK';
+            arrTopLevels[arrTopLevels.length] = 'PL';
+            arrTopLevels[arrTopLevels.length] = 'PM';
+            arrTopLevels[arrTopLevels.length] = 'PN';
+            arrTopLevels[arrTopLevels.length] = 'PR';
+            arrTopLevels[arrTopLevels.length] = 'PS';
+            arrTopLevels[arrTopLevels.length] = 'PT';
+            arrTopLevels[arrTopLevels.length] = 'PW';
+            arrTopLevels[arrTopLevels.length] = 'PY';
+            arrTopLevels[arrTopLevels.length] = 'QA';
+            arrTopLevels[arrTopLevels.length] = 'RE';
+            arrTopLevels[arrTopLevels.length] = 'RO';
+            arrTopLevels[arrTopLevels.length] = 'RU';
+            arrTopLevels[arrTopLevels.length] = 'RW';
+            arrTopLevels[arrTopLevels.length] = 'SA';
+            arrTopLevels[arrTopLevels.length] = 'SB';
+            arrTopLevels[arrTopLevels.length] = 'SC';
+            arrTopLevels[arrTopLevels.length] = 'SD';
+            arrTopLevels[arrTopLevels.length] = 'SE';
+            arrTopLevels[arrTopLevels.length] = 'SG';
+            arrTopLevels[arrTopLevels.length] = 'SH';
+            arrTopLevels[arrTopLevels.length] = 'SI';
+            arrTopLevels[arrTopLevels.length] = 'SJ';
+            arrTopLevels[arrTopLevels.length] = 'SK';
+            arrTopLevels[arrTopLevels.length] = 'SL';
+            arrTopLevels[arrTopLevels.length] = 'SM';
+            arrTopLevels[arrTopLevels.length] = 'SN';
+            arrTopLevels[arrTopLevels.length] = 'SO';
+            arrTopLevels[arrTopLevels.length] = 'SR';
+            arrTopLevels[arrTopLevels.length] = 'ST';
+            arrTopLevels[arrTopLevels.length] = 'SV';
+            arrTopLevels[arrTopLevels.length] = 'SY';
+            arrTopLevels[arrTopLevels.length] = 'SZ';
+            arrTopLevels[arrTopLevels.length] = 'TC';
+            arrTopLevels[arrTopLevels.length] = 'TD';
+            arrTopLevels[arrTopLevels.length] = 'TF';
+            arrTopLevels[arrTopLevels.length] = 'TG';
+            arrTopLevels[arrTopLevels.length] = 'TH';
+            arrTopLevels[arrTopLevels.length] = 'TJ';
+            arrTopLevels[arrTopLevels.length] = 'TK';
+            arrTopLevels[arrTopLevels.length] = 'TL';
+            arrTopLevels[arrTopLevels.length] = 'TM';
+            arrTopLevels[arrTopLevels.length] = 'TN';
+            arrTopLevels[arrTopLevels.length] = 'TO';
+            arrTopLevels[arrTopLevels.length] = 'TP';
+            arrTopLevels[arrTopLevels.length] = 'TR';
+            arrTopLevels[arrTopLevels.length] = 'TT';
+            arrTopLevels[arrTopLevels.length] = 'TV';
+            arrTopLevels[arrTopLevels.length] = 'TW';
+            arrTopLevels[arrTopLevels.length] = 'TZ';
+            arrTopLevels[arrTopLevels.length] = 'UA';
+            arrTopLevels[arrTopLevels.length] = 'UG';
+            arrTopLevels[arrTopLevels.length] = 'UK';
+            arrTopLevels[arrTopLevels.length] = 'UM';
+            arrTopLevels[arrTopLevels.length] = 'US';
+            arrTopLevels[arrTopLevels.length] = 'UY';
+            arrTopLevels[arrTopLevels.length] = 'UZ';
+            arrTopLevels[arrTopLevels.length] = 'VA';
+            arrTopLevels[arrTopLevels.length] = 'VC';
+            arrTopLevels[arrTopLevels.length] = 'VE';
+            arrTopLevels[arrTopLevels.length] = 'VG';
+            arrTopLevels[arrTopLevels.length] = 'VI';
+            arrTopLevels[arrTopLevels.length] = 'VN';
+            arrTopLevels[arrTopLevels.length] = 'VU';
+            arrTopLevels[arrTopLevels.length] = 'WF';
+            arrTopLevels[arrTopLevels.length] = 'WS';
+            arrTopLevels[arrTopLevels.length] = 'YE';
+            arrTopLevels[arrTopLevels.length] = 'YT';
+            arrTopLevels[arrTopLevels.length] = 'YU';
+            arrTopLevels[arrTopLevels.length] = 'ZA';
+            arrTopLevels[arrTopLevels.length] = 'ZM';
+            arrTopLevels[arrTopLevels.length] = 'ZW';
+
+            for (var i=0; i<arrTopLevels.length; i++) {
+                if (arrTopLevels[i]==psDomainString) {
+                    i=arrTopLevels.length;
+                    return (true);
+                }
+            }
+            return (false);
+        }
+
+
+
+        // sysAssignValueToFormItem
+
+        function sysAssignValueToFormItem(psFormElementName, pEleName, pEleValue) {
+            var iFrmIndex = -1;
+            var iFrmChildIndex = -1;
+            var fFound=false;
+            var retVal=false;
+            psFormElementName=(psFormElementName==null)?'':psFormElementName.toUpperCase();
+            for (var i=0;i<document.forms.length;i++) {
+                if (document.forms[i].name.toUpperCase()==psFormElementName) {
+                    iFrmIndex=i;
+                    fFound=true;
+                    i=document.forms.length;
+                } else {
+                    if (document.forms[i].forms!=null) {
+                        if (document.forms[i].forms.length > 0) {
+                            for (var ii=0;i<document.forms[i].forms.length;ii++) {
+                                if (document.forms[i].forms[ii].name.toUpperCase()==psFormElementName) {
+                                    iFrmIndex=i;
+                                    iFrmChildIndex=ii;
+                                    fFound=true;
+                                    i=document.forms.length;
+                                    ii=document.forms[i].forms.length;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            if (fFound) {
+                if ((pEleName!=null)&&(pEleValue!=null)) {
+                    var objFrm=null;
+                    if (iFrmChildIndex==-1) {
+                        var objFrm = document.forms[iFrmIndex];
+                    } else {
+                        var objFrm = document.forms[iFrmIndex].forms[iFrmChildIndex];
+                    }
+                    if (objFrm!=null) {
+                        objFrm.elements[pEleName].value=pEleValue;
+                        retVal=true;
+                    } else {
+                        window.alert('Sorry, Could not find ['+pEleName+']');
+                    }
+                }
+            } else {
+                window.alert('Error: Cannot find FORM [' + psFormElementName + ']');
+            }
+            return (retVal);
+        }
+
+
+
+        // sysButtonMakeCool(this);
+
+        function sysButtonMakeCool(pObj) {
+            pObj.style.color = '#A9EFFF';
+            pObj.style.backgroundColor = '';
+        }
+
+
+
+        // sysButtonMakeNormal(this);
+
+        function sysButtonMakeNormal(pObj) {
+            pObj.style.color = '#fff';
+            pObj.style.backgroundColor = '';
+        }
+
+
+
+
+        // sysfnfValidateUserIDAndPassword
+
+        function sysfnfValidateUserIDAndPassword(psFormElementName, psLoginElementName, psOrigPWDElementName, psConfPWDElementName) {
+            var retVal = false;
+            var objFrm = null;
+            var objLogin = null;
+            var objOrigPWD = null;
+            var objConfPWD = null;
+            var fLoginPassed=true;
+            var fPWDPassed=true;
+            var sValidEntries='0123456789abcdefghijklmnopqrstuvwxyz!@#$%^&*.';
+            var iLoginUserIDMinimumLength = 7;
+            var iLoginPasswordMinimumLength = 8;
+			/*HM add new vars*/
+			var iLoginPasswordMinimumCriteria = 3;
+			var iLoginPasswordMinimumCriteriaCnt = 0
+			var slcasemarker = '  ';
+			var sucasemarker = '  ';
+			var snummarker = '  ';
+			var sspeccharmarker = '  ';
+			/*HM end*/
+            objFrm = sysfnobjGetFormElement(psFormElementName);
+            if (objFrm!=null) {
+                objLogin = objFrm.elements[psLoginElementName];
+                objOrigPWD = objFrm.elements[psOrigPWDElementName];
+                objConfPWD = objFrm.elements[psConfPWDElementName];
+                if ((objLogin!=null)&&(objOrigPWD!=null)&&(objConfPWD!=null)) {
+                    // VALIDATE UserID
+                    if (objLogin.value.indexOf(' ')==-1) {
+                        if (objLogin.value.length>=iLoginUserIDMinimumLength) {
+                            for (var i=0;i<objLogin.value.length;i++) {
+                                if (sValidEntries.indexOf(objLogin.value.charAt(i).toLowerCase())==-1) {
+                                    fLoginPassed=false;
+                                    i=objLogin.value.length;
+                                    window.alert('Sorry, Only characters a through z, A through Z, or 0 through 9 are allowed.\n\nPlease retry.');
+                                    objLogin.focus();
+                                }
+                            }
+                        } else {
+                            fLoginPassed=false;
+                            window.alert('Sorry, UserID must be at least ' + iLoginUserIDMinimumLength + ' characters in length.\n\nPlease retry.');
+                            objLogin.focus();
+                        }
+                    } else {
+                        fLoginPassed=false;
+                        window.alert('Sorry, UserID cannot have any spaces.\n\nPlease retry.');
+                        objLogin.focus();
+                    }
+                    if (fLoginPassed) {
+                        // VALIDATE Original Password
+                        if (objOrigPWD.value.indexOf(' ')==-1) {
+                            if (objOrigPWD.value.length>=iLoginPasswordMinimumLength) {
+                                if (objOrigPWD.value.toLowerCase()!=objLogin.value.toLowerCase()) {
+                                    if (objOrigPWD.value.toLowerCase()!='password') {
+										/*HM 10/23/2017 append this block with a new validation block */
+                                        for (var i=0;i<objOrigPWD.value.length;i++) {
+                                            if (sValidEntries.indexOf(objOrigPWD.value.charAt(i).toLowerCase())==-1) {
+                                                fPWDPassed=false;
+                                                i=objOrigPWD.value.length;
+                                                window.alert('Sorry, Only characters a through z, A through Z, 0 through 9 or !@#$%^&*. are allowed.\n\nPlease retry.');
+                                                objOrigPWD.focus();
+                                            }
+                                        }
+     									/*begin new block*/
+     									var p = objOrigPWDNoCaseChange.value;
+										if (p.search(/[a-z]/) > -1) {
+											slcasemarker = '* ';
+											iLoginPasswordMinimumCriteriaCnt++
+										}
+										if (p.search(/[A-Z]/) > -1) {
+											iLoginPasswordMinimumCriteriaCnt++
+											sucasemarker = '* ';
+										}
+										if (p.search(/[0-9]/) > -1) {
+											iLoginPasswordMinimumCriteriaCnt++
+											snummarker = '* ';
+										}
+										if (p.search(/[!@#$%^&*]/) > -1) {
+											iLoginPasswordMinimumCriteriaCnt++
+											sspeccharmarker = '* '
+										}
+                                        if (iLoginPasswordMinimumCriteriaCnt < iLoginPasswordMinimumCriteria) {
+                                        //check that specified criteria were filled.
+                                       		objOrigPWD.focus();
+                                       		alert('Sorry, Password must have at least ' + iLoginPasswordMinimumCriteria + ' of these 4 criteria.\nYou have only used '+ iLoginPasswordMinimumCriteriaCnt + ' out of the '+iLoginPasswordMinimumCriteria+'. Ones you have used are marked with a *\n\n' + sucasemarker + 'Upper Case Letter\n' + slcasemarker + 'Lower Case Letter\n' + snummarker + 'Number (0-9)\n' + sspeccharmarker + 'Special Character !@#$%^&*.\n\nPlease retry.');
+                                       		fPWDPassed=false;
+                                        }
+                                        /*end new block*/
+                                    } else {
+
+                                        window.alert('Sorry, Password cannot be any case variation of the word \"password\".\n\nPlease retry.');
+                                        objOrigPWD.focus();
+                                    }
+                                } else {
+                                    fPWDPassed=false;
+                                    window.alert('Sorry, Password cannot be the same as your UserID.\n\nPlease retry.');
+                                    objOrigPWD.focus();
+                                }
+                            } else {
+                                fPWDPassed=false;
+                                window.alert('Sorry, Password must be at least ' + iLoginPasswordMinimumLength + ' characters in length.\n\nPlease retry.');
+                                objOrigPWD.focus();
+                            }
+                        } else {
+                            fPWDPassed=false;
+                            window.alert('Sorry, Password cannot have any spaces.\n\nPlease retry.');
+                            objOrigPWD.focus();
+                        }
+                    }
+                    if ((fLoginPassed)&&(fPWDPassed)) {
+                        // CHECK TO SEE IF PASSWORDS MATCH
+                        if (objOrigPWD.value!=objConfPWD.value) {
+                            window.alert('Sorry, Your Confirmation Password entry does not match your Password entry.\n\nPlease retry.');
+                            objConfPWD.focus();
+                        } else {
+                            retVal=true;
+                        }
+                    }
+                }
+            }
+            return (retVal);
+        }
+
+
+        // sysfnfValidateUserPassword
+
+        function sysfnfValidateUserPassword(psFormElementName, psOrigPWDElementName, psConfPWDElementName) {
+            var retVal = false;
+            var objFrm = null;
+            var objOrigPWD = null;
+            var objOrigPWDNoCaseChange = null;
+            var objConfPWD = null;
+            var fLoginPassed=true;
+            var fPWDPassed=true;
+            var sValidEntries='0123456789abcdefghijklmnopqrstuvwxyz!@#$%^&*.';
+            var sLogin='';
+            var iLoginUserIDMinimumLength = 7;
+            var iLoginPasswordMinimumLength = 8;
+			/*HM add new vars*/
+			var iLoginPasswordMinimumCriteria = 3;
+			var iLoginPasswordMinimumCriteriaCnt = 0
+			var slcasemarker = '  ';
+			var sucasemarker = '  ';
+			var snummarker = '  ';
+			var sspeccharmarker = '  ';
+			/*HM end*/
+            objFrm = sysfnobjGetFormElement(psFormElementName);
+            if (objFrm!=null) {
+                objOrigPWD = objFrm.elements[psOrigPWDElementName];
+                objOrigPWDNoCaseChange = objFrm.elements[psOrigPWDElementName];
+                objConfPWD = objFrm.elements[psConfPWDElementName];
+                if ((objOrigPWD!=null)&&(objConfPWD!=null)) {
+                    // VALIDATE Original Password
+                    if (objOrigPWD.value.indexOf(' ')==-1) {
+                        if (objOrigPWD.value.length>=iLoginPasswordMinimumLength) {
+ 						//if (objOrigPWD.value.length>=8) {
+                            if (objOrigPWD.value.toLowerCase()!=sLogin.toLowerCase()) {
+                                if (objOrigPWD.value.toLowerCase()!='password') {
+										/*HM 10/23/2017 append this block with a new validation block */
+                                        for (var i=0;i<objOrigPWD.value.length;i++) {
+                                            if (sValidEntries.indexOf(objOrigPWD.value.charAt(i).toLowerCase())==-1) {
+                                                fPWDPassed=false;
+                                                i=objOrigPWD.value.length;
+                                                window.alert('Sorry, Only characters a through z, A through Z, 0 through 9 or !@#$%^&*. are allowed.\n\nPlease retry.');
+                                                objOrigPWD.focus();
+                                            }
+                                        }
+     									/*begin new block*/
+     									var p = objOrigPWDNoCaseChange.value;
+										if (p.search(/[a-z]/) > -1) {
+											slcasemarker = '* ';
+											iLoginPasswordMinimumCriteriaCnt++
+										}
+										if (p.search(/[A-Z]/) > -1) {
+											iLoginPasswordMinimumCriteriaCnt++
+											sucasemarker = '* ';
+										}
+										if (p.search(/[0-9]/) > -1) {
+											iLoginPasswordMinimumCriteriaCnt++
+											snummarker = '* ';
+										}
+										if (p.search(/[!@#$%^&*.]/) > -1) {
+											iLoginPasswordMinimumCriteriaCnt++
+											sspeccharmarker = '* '
+										}
+                                        if (iLoginPasswordMinimumCriteriaCnt < iLoginPasswordMinimumCriteria) {
+                                        //check that specified criteria were filled.
+                                       		objOrigPWD.focus();
+                                       		alert('Sorry, Password must have at least ' + iLoginPasswordMinimumCriteria + ' of these 4 criteria.\nYou have only used '+ iLoginPasswordMinimumCriteriaCnt + ' out of the '+iLoginPasswordMinimumCriteria+'. Criteria you have used are marked with a *\n\n' + sucasemarker + 'Upper Case Letter\n' + slcasemarker + 'Lower Case Letter\n' + snummarker + 'Number (0-9)\n' + sspeccharmarker + 'Special Character !@#$%^&*.\n\nPlease retry.');
+                                       		fPWDPassed=false;
+                                        }
+                                        /*end new block*/
+                                } else {
+                                    fPWDPassed=false;
+                                    window.alert('Sorry, Password cannot be any case variation of the word \"password\".\n\nPlease retry.');
+                                    objOrigPWD.focus();
+                                }
+                            } else {
+                                fPWDPassed=false;
+                                window.alert('Sorry, Password cannot be the same as your UserID.\n\nPlease retry.');
+                                objOrigPWD.focus();
+                            }
+                        } else {
+                            fPWDPassed=false;
+                            window.alert('Sorry, Password must be at least '+ iLoginPasswordMinimumLength +' characters in length.\n\nPlease retry.');
+                            objOrigPWD.focus();
+                        }
+                    } else {
+                        fPWDPassed=false;
+                        window.alert('Sorry, Password cannot have any spaces.\n\nPlease retry.');
+                        objOrigPWD.focus();
+                    }
+                    if ((fLoginPassed)&&(fPWDPassed)) {
+                        // CHECK TO SEE IF PASSWORDS MATCH
+                        if (objOrigPWD.value!=objConfPWD.value) {
+                            window.alert('Sorry, Your Confirmation Password entry does not match your Password entry.\n\nPlease retry.');
+                            objConfPWD.focus();
+                        } else {
+                            retVal=true;
+                        }
+                    }
+                }
+            } else {
+                window.alert('Cannot find Form ['+psFormElementName+']');
+            }
+            return (retVal);
+        }
+
+
+
+
+
+        // sysfnobjGetFormElement
+
+        function sysfnobjGetFormElement(psFormElementName) {
+            var iFrmIndex = -1;
+            var iFrmChildIndex = -1;
+            var fFound=false;
+            var retVal=null;
+            psFormElementName=(psFormElementName==null)?'':psFormElementName.toUpperCase();
+            for (var i=0;i<document.forms.length;i++) {
+                if (document.forms[i].name.toUpperCase()==psFormElementName) {
+                    iFrmIndex=i;
+                    fFound=true;
+                    i=document.forms.length;
+                } else {
+                    if (document.forms[i].forms!=null) {
+                        if (document.forms[i].forms.length > 0) {
+                            for (var ii=0;i<document.forms[i].forms.length;ii++) {
+                                if (document.forms[i].forms[ii].name.toUpperCase()==psFormElementName) {
+                                    iFrmIndex=i;
+                                    iFrmChildIndex=ii;
+                                    fFound=true;
+                                    i=document.forms.length;
+                                    ii=document.forms[i].forms.length;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            if (fFound) {
+                if (iFrmChildIndex==-1) {
+                    retVal = document.forms[iFrmIndex];
+                } else {
+                    retVal = document.forms[iFrmIndex].forms[iFrmChildIndex];
+                }
+            }
+            return (retVal);
+        }
+
+
+
+        // sysSubmitForm
+
+        function sysSubmitForm(psFormElementName, pEleName, pEleValue, psOverrideAction, psOverrideTarget) {
+            var iFrmIndex = -1;
+            var iFrmChildIndex = -1;
+            var fFound=false;
+            var retVal=false;
+            psFormElementName=(psFormElementName==null)?'':psFormElementName.toUpperCase();
+            for (var i=0;i<document.forms.length;i++) {
+                if (document.forms[i].name.toUpperCase()==psFormElementName) {
+                    iFrmIndex=i;
+                    fFound=true;
+                    i=document.forms.length;
+                } else {
+                    if (document.forms[i].forms!=null) {
+                        if (document.forms[i].forms.length > 0) {
+                            for (var ii=0;i<document.forms[i].forms.length;ii++) {
+                                if (document.forms[i].forms[ii].name.toUpperCase()==psFormElementName) {
+                                    iFrmIndex=i;
+                                    iFrmChildIndex=ii;
+                                    fFound=true;
+                                    i=document.forms.length;
+                                    ii=document.forms[i].forms.length;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            if (fFound) {
+                if ((pEleName!=null)&&(pEleValue!=null)) {
+                    var objFrm=null;
+                    if (iFrmChildIndex==-1) {
+                        var objFrm = document.forms[iFrmIndex];
+                    } else {
+                        var objFrm = document.forms[iFrmIndex].forms[iFrmChildIndex];
+                    }
+                    if (objFrm!=null) {
+                        objFrm.elements[pEleName].value=pEleValue;
+                    }
+                }
+                if (iFrmChildIndex==-1) {
+                    retVal=true;
+                    if (psOverrideAction != null) {
+                        document.forms[iFrmIndex].action=psOverrideAction;
+                    }
+                    if (psOverrideTarget != null) {
+                        document.forms[iFrmIndex].target=psOverrideTarget;
+                    }
+                    document.forms[iFrmIndex].submit();
+                } else {
+                    retVal=true;
+                    if (psOverrideAction != null) {
+                        document.forms[iFrmIndex].forms[iFrmChildIndex].action=psOverrideAction;
+                    }
+                    if (psOverrideTarget != null) {
+                        document.forms[iFrmIndex].forms[iFrmChildIndex].target=psOverrideTarget;
+                    }
+                    document.forms[iFrmIndex].forms[iFrmChildIndex].submit();
+                }
+            } else {
+                window.alert('Error: Cannot find FORM [' + psFormElementName + ']');
+            }
+            return (retVal);
+        }
+
+
+
+    </script>
+
+    <!---->
+
+        
+
+<!--</head>-->
+
+<script language="javascript" type="text/javascript">
+      function fnAgreeToConsent() {
+          var eleDiv=null;
+          eleDiv=document.getElementById('divNewCandidateForm');
+          if (!((eleDiv==null)||(eleDiv=='undefined'))) {
+              eleDiv.style.display='';
+          }
+          var eleDiv=null;
+          eleDiv=document.getElementById('divConsentForm');
+          if (!((eleDiv==null)||(eleDiv=='undefined'))) {
+              eleDiv.style.display='none';
+          }
+      }
+</script>
+<!--<body
+    onload="sysInitClientSideSessionTimeoutProcessing(30, 'HTTPS://jobs.uchc.edu/CSS_External/CSSResp_TimeoutMessage.ASP?T=20261021141424&', 'HTTPS://jobs.uchc.edu/CSS_External/CSSPage_TimoutMessage.ASP?T=20261021141424&');"
+    onunload="sysInitClientSideSessionTimeoutProcessingClear();">-->
+    <div>
+        <!--<div class="TitleTop" align="left"><span class="TitleTop">Create&nbsp;New&nbsp;User&nbsp;ID&nbsp;and&nbsp;Password</span></div>-->
+        <div class="row">
+            <div class="col-sm-12">
+            </div>
+            <div class="WorkArea" id="divConsentForm" style="padding: 15px; padding-top: 25px; display:none;">
+                <p>Do you consent</p><input type="BUTTON" id="cmdSignConsent" name="cmdSignConsent" class="btn btn-default" value="I Agree" title="Click to agree to our consent decree" onclick="fnAgreeToConsent();">
+            </div>
+            <div class="WorkArea" id="divNewCandidateForm" style="padding: 0px; padding-top: 10px; ">
+                <form id="frmNewCandidate" name="frmNewCandidate" method="POST" action="HTTPS://jobs.uchc.edu/CSS_External/CSSResp_AddNewCandidate.ASP?T=20261021141424&amp;">
+                    <input type="HIDDEN" name="Type" value="CAT"><input type="HIDDEN" name="InitURL" value="CSSPage_Welcome.asp"><input type="HIDDEN" name="ResultSort" value=""><input type="HIDDEN" name="InitPage" value="1"><input type="HIDDEN" name="SRCH" value="All Positions"><input type="HIDDEN" name="Key" value="{F4D8A502-D709-436C-BE1B-FF14A8866F6A}"><input type="HIDDEN" name="LastURL" value=""><input type="HIDDEN" name="RetURL" value="CSSPage_SearchResults.ASP"><input type="HIDDEN" name="SuccessURL" value="CSSPage_SearchResults.ASP"><input type="HIDDEN" name="ADDOVERRIDE" value="FALSE"><input type="HIDDEN" id="AgreeToConsentDecree" name="AgreeToConsentDecree" value="TRUE">
+                    <!--Create New UserId and Password Box-->
+                    <div class="clearfix"></div>
+                    <div class="col-lg-12 col-md-12 col-sm-12 updateProfile">
+                        <ul class="list-group">
+							<!--
+                            <li class="list-group-item">
+                                <h6><SPAN STYLE="font-size:8pt;font-weight:normal;color:#ff0000;">*</SPAN>&nbsp;Enter a User ID:&nbsp;<br />
+                                    <BR><SPAN STYLE="font-weight:normal;font-size:8pt;">(At least 7 characters, no spaces.)</SPAN>
+                                </h6>
+                                <input type="TEXT"
+                                    id="CSSLogin" name="CSSLogin"
+                                    class="form-control"
+                                    value=""
+                                    alt="Enter a User ID"
+                                    title="Enter a User ID"
+                                    maxlength="20" size="20">
+                            </li>
+							-->
+                            <li class="list-group-item">
+                                <h6><span style="font-size:8pt;font-weight:normal;color:#ff0000;">*</span>&nbsp;First Name:&nbsp;<br>
+                                    
+                                </h6>
+                                <input type="TEXT" id="NameFirst" name="NameFirst" class="form-control" value="" title="Enter your First Name" maxlength="50" size="30">
+                            </li>
+                            <li class="list-group-item">
+                                <h6><span style="font-size:8pt;font-weight:normal;color:#ff0000;">*</span>&nbsp;Last Name:&nbsp;<br>
+                                    
+                                </h6>
+                                <input type="TEXT" id="NameLast" name="NameLast" class="form-control" value="" title="Enter your Last Name" maxlength="50" size="30">
+                            </li>
+                            <li class="list-group-item">
+                                <h6>Enter your Email Address:&nbsp;<br>
+                                    </h6>
+                                <input type="TEXT" id="Email" name="Email" class="form-control" value="" title="Enter your email address" maxlength="100" size="30">
+                            </li>
+                            <li class="list-group-item">
+                                <h6><span style="font-size:8pt;font-weight:normal;color:#ff0000;">*</span>&nbsp;Enter a Password:&nbsp;<br>
+                                    <br><span style="font-weight:normal;font-size:8pt;">(At least 8 characters, no spaces, including one upper case letter, one special character and alphanumeric character.)</span>
+                                </h6>
+                                <input type="PASSWORD" id="CSSPassword" name="CSSPassword" class="form-control" value="" title="Enter a Password:" maxlength="20" size="20">
+                            </li>
+                            <li class="list-group-item">
+                                <h6><span style="font-size:8pt;font-weight:normal;color:#ff0000;">*</span>&nbsp;Retype Password to Confirm:&nbsp;<br>
+                                    
+                                </h6>
+                                <input type="PASSWORD" id="CSSPassword2" name="CSSPassword2" class="form-control" value="" title="Retype Password to Confirm" maxlength="20" size="20">
+                            </li>
+                        </ul>
+
+
+                    </div>
+                    <!--box ends-->
+                </form>
+            <div class="col-md-12">
+                
+
+                <!--<input type="BUTTON" id="cmdSignIn" name="cmdSignIn" class="btn-green btn-red btn btn-block" value="Create user account" alt="Click to create user account"
+                    title="Click to create user account" onclick="if (sysfnfValidateAddNewCandidate(this)) { sysSubmitForm('frmNewCandidate'); }" />-->
+               <input type="BUTTON" id="cmdSignIn" name="cmdSignIn" class="btn-green btn-red btn btn-block" value="CREATE NEW USER ACCOUNT" alt="Click to create user account" title="Click to create user account" onclick="if (sysfnfValidateAddNewCandidate(this)) { sysSubmitForm('frmNewCandidate'); }">
+                
+             </div>
+           </div>
+        </div>
+    </div>
+<!--</body>-->
+<!--</html>-->
+
+                </div>
+
+                <a class="btn-green btn btn-block btn-red" id="register">CREATE AN ACCOUNT</a>
+                <!--<a href="HTTPS://jobs.uchc.edu/CSS_External/CSSPage_NewCandidate.ASP?T=20261021141424&" class="btn-green btn btn-block btn-red" id="register">Create New account</a>-->
+
+                
+
+                <div class="sign-in well-sm">
+                    <div class="hidden-message">
+                        <p><span style="color:#ff0000;">To apply for this position, choose from any of the following locations to browse and upload your resume.</span></p>
+                    </div>                    
+                    <form autocomplete="off" id="frmRegisterUsingResume" name="frmRegisterUsingResume" method="post" enctype="multipart/form-data" action="HTTPS://jobs.uchc.edu/CSS_External/CSSResp_ResumeParsing.ASP?T=20261021141424&amp;">
+                        <input type="hidden" name="RetURL" value="CSSPage_Welcome.ASP">
+                        <input type="HIDDEN" name="Type" value="CAT"><input type="HIDDEN" name="InitURL" value="CSSPage_Welcome.asp"><input type="HIDDEN" name="ResultSort" value=""><input type="HIDDEN" name="SRCH" value="All Positions"><input type="HIDDEN" name="Key" value="{F4D8A502-D709-436C-BE1B-FF14A8866F6A}"><input type="hidden" name="SuccessURL" value="HTTPS://jobs.uchc.edu/CSS_External/CSSPage_SearchResults.ASP">
+                        <span class="glyphicon glyphicon-chevron-left pull-right icon-large close2" title="Go back"></span>
+                        <h6 class="col-sm-12">Choose file location</h6>
+                        <div class="col-sm-12">
+                            <a class="btn btn-mycomputer" id="mydeviceRegister">
+                                <span class="glyphicon">
+                                    <img src="images/mycomputer.png"></span> My Device</a>
+
+                            <a class="btn btn-mycomputer" id="mycomputerRegister">
+                                <span class="glyphicon">
+                                    <img src="images/mycomputer.png"></span> My Computer</a>
+
+                     
+                            <a id="dropboxRegister" class="btn btn-dropbox hide">
+                                <span class="glyphicon">
+                                    <img src="images/dropbox.png"></span> DropBox</a>
+
+                            <a id="onedriveRegister" class="btn btn-onedrive hide">
+                                <span class="glyphicon">
+                                    <img src="images/onedrive.png"></span> OneDrive</a>
+
+                            <a id="googledriveRegister" class="btn btn-googledrive hide">
+                                <span class="glyphicon">
+                                    <img src="images/googledrive.png"></span> GoogleDrive</a>
+                            <!-- <input type="hidden" class="hiddenClass" value="">-->
+                        </div>
+
+                        <h6 class="col-sm-12">Select Resume:&nbsp;&nbsp;</h6>
+
+                        <input type="HIDDEN" name="DocUploadValidationExtensionsRegister" id="DocUploadValidationExtensionsRegister" value=",.DOC,.TXT,.HTM,.HTML,.PDF,.BMP,.GIF,.TIF,.RTF,.DOCX,.MSG,">
+                        <input type="HIDDEN" name="FileExtRegister" value=",.DOC,.TXT,.HTM,.HTML,.PDF,.BMP,.GIF,.TIF,.RTF,.DOCX,.MSG,">
+                        <input type="HIDDEN" name="DocTypeDescRegister" value="Resume">
+                        <input type="HIDDEN" name="SelectedResumeOption" id="SelectedResumeOption" value="mycomputer">
+                        <input type="HIDDEN" name="ResumeParsingFor" value="RegisterUsingResume">
+                        <input type="HIDDEN" name="GoogleDriveFileMIMETypes" value="application/vnd.google-apps.document,application/vnd.google-apps.file,application/pdf,text/plain,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document">
+                        
+                        <div class="col-sm-12">
+                            <div>
+                                <input type="file" class="File FileUploader" id="resumeFile" name="resumeFile" onchange="javascript:FileValidation(this)" style="padding: 5px; padding-left: 12px; padding-right: 0px; margin-bottom: 12px;">
+                            </div>
+                            <div id="Dropbox-Container-Register" class="CloudFileContainer" style="display: none;"><a href="#" class=" dropbox-dropin-btn dropbox-dropin-default" title="Choose from DropBox"><span class="dropin-btn-status"></span>Browse....</a>
+                                <input type="HIDDEN" name="FileDropBoxFileURLRegister">
+                                <input type="text" name="FileDropBoxFileNameRegister" class="DriveTextBox" readonly="true">&nbsp;&nbsp;
+                                <input type="HIDDEN" name="CurrentDropBoxContainerRegister" id="CurrentDropBoxContainerRegister">
+                            </div>
+                            <div id="Onedrive-Container-Register" class="CloudFileContainer" style="display: none;"><button title="Open from OneDrive" class="onedrive-btn" style="direction: ltr; background-color: rgb(9, 74, 178); border: 1px solid rgb(9, 74, 178); height: 20px; padding-left: 4px; padding-right: 4px; text-align: center; cursor: pointer;"><img alt="" src="//js.live.net/v5.0/images/SkyDrivePicker/SkyDriveIcon_white.png" style="vertical-align: middle; height: 16px;"><span class="onedrive-text" style="font-family: &quot;Segoe UI&quot;, &quot;Segoe UI Web Regular&quot;, &quot;Helvetica Neue&quot;, &quot;BBAlpha Sans&quot;, &quot;S60 Sans&quot;, Arial, &quot;sans-serif&quot;; font-size: 12px; font-weight: bold; color: rgb(255, 255, 255); text-align: center; vertical-align: middle; margin-left: 2px; margin-right: 0px;">Browse....</span></button>
+                                <input type="HIDDEN" name="FileOneDriveFileURLRegister">
+                                <input type="text" name="FileOneDriveFileNameRegister" class="DriveTextBox" readonly="true">&nbsp;&nbsp;
+                                <input type="HIDDEN" name="CurrentOneDriveContainerRegister" id="CurrentOneDriveContainerRegister">
+                            </div>
+                            <div id="GoogleDrive-Container-Register" class="CloudFileContainer" style="display: none;">                                
+                                <a href="#" class="google-drive-btn google-drive-dropin-btn google-drive-dropin-default" title="Choose from GoogleDrive"><span class="google-drive-btn-status"></span>Browse....</a>
+                                <input type="HIDDEN" name="FileGoogleDriveFileURLRegister">
+                                <input type="text" name="FileGoogleDriveFileNameRegister" class="DriveTextBox" readonly="true">&nbsp;&nbsp;
+                                <input type="HIDDEN" name="CurrentGoogleDriveContainerRegister" id="CurrentGoogleDriveContainerRegister">
+                            </div>
+
+                        </div>
+
+                        <input type="submit" class="btn-green btn btn-block btn-red" id="registerUsingResumeForm" onclick="javascript: return RegisterUsingResumeForm(this); sysSubmitForm('frmRegisterUsingResume');" value="Upload">
+                    </form>
+                </div>
+                <!--<a class="btn-green btn btn-block btn-red btn-longtext" id="registerUsingResume">USE RESUME TO CREATE AN ACCOUNT</a>-->
+                <a class="btn-green btn btn-block btn-pink" id="registerUsingResume">USE RESUME TO CREATE AN ACCOUNT</a>
+
+                
+            </div>
+            <!-- end modal-body -->
+
+            <!--forgot password expands here-->
+            <div class="forgotPass">
+                <span class="glyphicon glyphicon-remove-circle pull-right icon-large close2" data-dismiss="modal" onclick="RedirectToWelcome('HTTPS://jobs.uchc.edu/CSS_External/CSSPage_Welcome.ASP?T=20261021141424&amp;');"></span>
+                <!--<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">-->
+
+
+<!--<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/styles.asp" rel="stylesheet">
+    <base href="HTTPS://jobs.uchc.edu/CSS_External/">
+    <title>UConn Health Candidate Self-Service
+    </title>-->
+    
+
+
+    <script type="text/javascript" language="JavaScript">
+
+
+        // SYS Script - Client Side Session Timeout Processing
+
+        var giTOMins=0;
+        var giTOSec=0;
+        var gsTOURL='';
+        var gsTOMsgURL='';
+        var gtmrTO=null;
+        var giScrollX = 0;
+        var giScrollY = 0;
+
+        // Returns information about browser window and scroll positions.
+
+        function getBrowserWindowInfoClientWidth() {
+            return getBrowserWindowInfoFilterResults (
+                window.innerWidth ? window.innerWidth : 0,
+                document.documentElement ? document.documentElement.clientWidth : 0,
+                document.body ? document.body.clientWidth : 0
+            );
+        }
+        function getBrowserWindowInfoClientHeight() {
+            return getBrowserWindowInfoFilterResults (
+                window.innerHeight ? window.innerHeight : 0,
+                document.documentElement ? document.documentElement.clientHeight : 0,
+                document.body ? document.body.clientHeight : 0
+            );
+        }
+        function getBrowserWindowInfoScrollLeft() {
+            return getBrowserWindowInfoFilterResults (
+                window.pageXOffset ? window.pageXOffset : 0,
+                document.documentElement ? document.documentElement.scrollLeft : 0,
+                document.body ? document.body.scrollLeft : 0
+            );
+        }
+        function getBrowserWindowInfoScrollTop() {
+            return getBrowserWindowInfoFilterResults (
+                window.pageYOffset ? window.pageYOffset : 0,
+                document.documentElement ? document.documentElement.scrollTop : 0,
+                document.body ? document.body.scrollTop : 0
+            );
+        }
+        function getBrowserWindowInfoFilterResults(n_win, n_docel, n_body) {
+            var n_result = n_win ? n_win : 0;
+            if (n_docel && (!n_result || (n_result > n_docel)))
+                n_result = n_docel;
+            return n_body && (!n_result || (n_result > n_body)) ? n_body : n_result;
+        }
+
+        // Timeout processing
+
+        function sysInitClientSideSessionTimeoutProcessing(piTimoutMins, psTimeoutURL, psTimeoutMsgURL, pfClearHolder) {
+            sysInitClientSideSessionTimeoutProcessingClear();
+            giTOMins=(piTimoutMins==null)?30:piTimoutMins;
+            gsTOURL=(psTimeoutURL==null)?gsTOURL:psTimeoutURL;
+            gsTOMsgURL=(psTimeoutMsgURL==null)?gsTOMsgURL:psTimeoutMsgURL;
+            pfClearHolder=(pfClearHolder==null)?true:pfClearHolder;
+            giTOSec=0;
+            if (pfClearHolder) {
+                var fResetScroll=true;
+                try
+                {
+                    var objIFMTmr = document.getElementById('ifrmTimeoutPage');
+                    var divTmr1 = document.getElementById('divTimeoutPageHolderO');
+                    var divTmr2 = document.getElementById('divTimeoutPageHolder');
+                    fResetScroll=(divTmr1.style.display=='');
+                    objIFMTmr.src = 'HTTPS://jobs.uchc.edu/CSS_External/Blank.htm';
+                    divTmr2.style.display='none';
+                    divTmr1.style.display='none';
+
+                    if (fResetScroll) {
+                        window.setTimeout('window.scrollTo('+giScrollX+','+giScrollY+');', 25);
+                    }
+
+                } catch(e) { /*Ignore*/ }
+            }
+
+            sysInitClientSideSessionTimeoutProcessingDown();
+        }
+        function sysInitClientSideSessionTimeoutProcessingDown() {
+            var sCandidateKey='';
+            giTOSec--;
+            if (giTOSec == -1) {
+                giTOSec = 59;
+                giTOMins--;
+            }
+            if (giTOMins <= 1) {
+                window.status = 'Session Time Remaining: ' + giTOMins + ' minute(s) and '+giTOSec+' second(s).';
+                //} else {
+                //	window.status = 'Time remaining: ' + giTOMins + ' minutes.';
+            }
+            if ((giTOMins==0)&&(giTOSec<=1)) {
+                gtmrTO=null;
+                if (gsTOURL!=null) {
+                    //window.location.href = gsTOURL;
+                }
+
+            } else {
+                if ((giTOMins==5)&&(giTOSec==0)) {
+                    if ((gsTOMsgURL!=null)&&(sCandidateKey.length>0)) {
+                        try
+                        {
+                            if (document.all) {
+                                giScrollX = getBrowserWindowInfoScrollLeft();
+                                giScrollY = getBrowserWindowInfoScrollTop();
+                            } else  {
+                                giScrollX = window.pageXOffset;
+                                giScrollY = window.pageYOffset;
+                            }
+                            var objIFMTmr = document.getElementById('ifrmTimeoutPage');
+                            var divTmr1 = document.getElementById('divTimeoutPageHolderO');
+                            var divTmr2 = document.getElementById('divTimeoutPageHolder');
+                            divTmr2.style.display='';
+                            divTmr1.style.display='';
+                            objIFMTmr.src = gsTOMsgURL;
+                        }
+                        catch(e)
+                        {
+                            //window.focus();
+                            //window.open(gsTOMsgURL,'tmrmsg','top=0,left=0,height=200,width=300,toolbar=no,location=no,status=no,menubar=no,scrollbars=no,resizable=no');
+                            //$('#msgModal').modal('show');
+                        }
+                    }
+                }
+                gtmrTO = setTimeout('sysInitClientSideSessionTimeoutProcessingDown();', 1000);
+            }
+
+        }
+        function sysInitClientSideSessionTimeoutProcessingClear() {
+            if (gtmrTO!=null) {
+                clearTimeout(gtmrTO);
+            }
+            gtmrTO=null;
+        }
+
+
+        // sysButtonMakeCool(this);
+
+        function sysButtonMakeCool(pObj) {
+            pObj.style.color = '#A9EFFF';
+            pObj.style.backgroundColor = '';
+        }
+
+
+
+        // sysButtonMakeNormal(this);
+
+        function sysButtonMakeNormal(pObj) {
+            pObj.style.color = '#fff';
+            pObj.style.backgroundColor = '';
+        }
+
+
+
+
+        // sysSubmitForm
+
+        function sysSubmitForm(psFormElementName, pEleName, pEleValue, psOverrideAction, psOverrideTarget) {
+            var iFrmIndex = -1;
+            var iFrmChildIndex = -1;
+            var fFound=false;
+            var retVal=false;
+            psFormElementName=(psFormElementName==null)?'':psFormElementName.toUpperCase();
+            for (var i=0;i<document.forms.length;i++) {
+                if (document.forms[i].name.toUpperCase()==psFormElementName) {
+                    iFrmIndex=i;
+                    fFound=true;
+                    i=document.forms.length;
+                } else {
+                    if (document.forms[i].forms!=null) {
+                        if (document.forms[i].forms.length > 0) {
+                            for (var ii=0;i<document.forms[i].forms.length;ii++) {
+                                if (document.forms[i].forms[ii].name.toUpperCase()==psFormElementName) {
+                                    iFrmIndex=i;
+                                    iFrmChildIndex=ii;
+                                    fFound=true;
+                                    i=document.forms.length;
+                                    ii=document.forms[i].forms.length;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            if (fFound) {
+                if ((pEleName!=null)&&(pEleValue!=null)) {
+                    var objFrm=null;
+                    if (iFrmChildIndex==-1) {
+                        var objFrm = document.forms[iFrmIndex];
+                    } else {
+                        var objFrm = document.forms[iFrmIndex].forms[iFrmChildIndex];
+                    }
+                    if (objFrm!=null) {
+                        objFrm.elements[pEleName].value=pEleValue;
+                    }
+                }
+                if (iFrmChildIndex==-1) {
+                    retVal=true;
+                    if (psOverrideAction != null) {
+                        document.forms[iFrmIndex].action=psOverrideAction;
+                    }
+                    if (psOverrideTarget != null) {
+                        document.forms[iFrmIndex].target=psOverrideTarget;
+                    }
+                    document.forms[iFrmIndex].submit();
+                } else {
+                    retVal=true;
+                    if (psOverrideAction != null) {
+                        document.forms[iFrmIndex].forms[iFrmChildIndex].action=psOverrideAction;
+                    }
+                    if (psOverrideTarget != null) {
+                        document.forms[iFrmIndex].forms[iFrmChildIndex].target=psOverrideTarget;
+                    }
+                    document.forms[iFrmIndex].forms[iFrmChildIndex].submit();
+                }
+            } else {
+                window.alert('Error: Cannot find FORM [' + psFormElementName + ']');
+            }
+            $('#forgot').modal('show');
+            return (retVal);
+        }
+
+
+
+    </script>
+
+    
+
+<!--</head>-->
+
+
+<!--<body
+    onload="sysInitClientSideSessionTimeoutProcessing(30, 'HTTPS://jobs.uchc.edu/CSS_External/CSSResp_TimeoutMessage.ASP?T=20261021141424&', 'HTTPS://jobs.uchc.edu/CSS_External/CSSPage_TimoutMessage.ASP?T=20261021141424&');"
+    onunload="sysInitClientSideSessionTimeoutProcessingClear();">-->
+
+    <div class="panel-default col-sm-12 well">
+         <div class="col-sm-12">
+        
+    </div>
+        <form id="frmSendPwd" name="frmSendPwd" method="POST" action="HTTPS://jobs.uchc.edu/CSS_External/CSSResp_Login.ASP?T=20261021141424&amp;">
+            <h5>Please enter your email address:&nbsp;</h5>
+            <br>
+            <input type="HIDDEN" id="Action" name="Action" value="SendPassword"><input type="HIDDEN" id="RetURL" name="RetURL" value="CSSPage_SearchResults.ASP">
+            <input type="TEXT" size="40" id="Login" name="Login" value="" title="Enter the Email Address you entered during registration." class="form-control">
+            <br>
+            <input type="BUTTON" id="cmdSendPwd" name="cmdSendPwd" class="btn-green btn btn-block" value="Send Reset Email" onclick="sysSubmitForm('frmSendPwd');">
+        </form>
+    </div>
+<!--</body>-->
+<!--</html>-->
+
+            </div>
+            <!--forgot password ends here-->
+
+            <!-- end modal footer -->
+
+            <!-- end modal content -->
+        </div>
+        <!-- end modal dialog -->
+    </div>
+</div>
+<!--navigations ends-->
+<script type="text/javascript">
+    function RedirectToWelcome(link)
+    {
+        location.href = link;
+    }
+</script>
+<!-- SYSAPPIGNOREEND -->
+
+        <div class="category row">
+            <div class="col-sm-12">
+            </div>
+            <div class="col-md-12 tabular-sec">
+                <div class="panel panel-default">
+
+                    <!--Previous link Start-->
+                    <!--<table cellpadding="0" cellspacing="0" border="0">
+                        <tr><td colspan=2><DIV NOWRAP STYLE="padding-top:10px;"><a HREF="javascript:sysSubmitForm('frmReturnToInit');" CLASS="btn green-bg" ALT="Return to Previous Page" TITLE="Return to Previous Page"><span class="glyphicon glyphicon-backward"></span> Return&nbsp;to&nbsp;Previous&nbsp;Page</a>
+</DIV></td></tr><tr><td colspan=2>&nbsp;</td></tr>
+
+                    </table>-->
+                    <!--Previous link End-->
+
+                    
+                    <div class="panel-heading">
+                        <h4 class="shrink">All Positions&nbsp;Results  Available Positions:&nbsp;<span class="badge">157</span> </h4>
+                        <div class="multi-sel-modal row filter-box">
+                            <div class="col-sm-12 updateProfile jobAlert">
+                                <div class="panel panel-default">
+                                    <div class="white-grad"></div>
+                                    <div class="panel-heading">
+                                        <h4 class="shrink">Filter job results</h4>
+                                    </div>
+                                    <div class="panel-body">
+
+                                        
+
+                                        <br>
+                                        <div class="col-sm-12 well-sm">
+                                            <!--<button class="green-bg btn btn-md ">Apply</button>
+                                            <button class="btn-default btn btn-md " id="filter-cancel">Cancel</button>-->
+                                            <input type="BUTTON" id="cmdRefineSearch" name="cmdRefineSearch" alt="Click to Refine Search Results with current values" title="Click to Refine Search Results with current values" value="Refine Search Results" class="green-bg btn btn-default cancel" onclick="sysSubmitForm('frmRefinedSearch');">
+                                            <input type="BUTTON" alt="Click to remove Refine Seach values" title="Click to remove Refine Seach values" class="btn btn-default cancel" id="cmdClearRefineSearch" name="cmdClearRefineSearch" onclick="sysSubmitForm('frmRefinedSearchClear');" value="Remove Filter">
+                                            <div>
+                                                You can use <b>*</b> in Refine Search fields.<br>Examples: <i>Design*</i>, <i>*Eng*</i>, or <i>*</i> (for all values).
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="clearfix"></div>
+
+                    </div>
+                    <div class="table2 table-collapse">
+                        <div class="tr heading">
+                            <div class="td"><a href="javascript:sysSubmitForm('frmSort1');" alt="Sort Results" title="Sort Results">Job Title<span class="glyphicon glyphicon-triangle-bottom pull-right" style="display:none;"></span></a></div><div class="td"><a href="javascript:sysSubmitForm('frmSort2');" alt="Sort Results" title="Sort Results">Location<span class="glyphicon glyphicon-triangle-bottom pull-right" style="display:none;"></span></a></div><div class="td"><a href="javascript:sysSubmitForm('frmSort3');" alt="Sort Results" title="Sort Results">Department<span class="glyphicon glyphicon-triangle-bottom pull-right" style="display:none;"></span></a></div><div class="td"><a href="javascript:sysSubmitForm('frmSort4');" alt="Sort Results" title="Sort Results">Job No.<span class="glyphicon glyphicon-triangle-bottom pull-right" style="display:none;"></span></a></div>
+                        <span class="glyphicon glyphicon-menu-down btn"></span></div>
+                        <form autocomplete="OFF" id="frmSR1" name="frmSR1" method="POST" action="HTTPS://jobs.uchc.edu/CSS_External/CSSPage_JobDetail.ASP?T=20261021141424&amp;"><input type="HIDDEN" id="Key" name="Key" value="{F4D8A502-D709-436C-BE1B-FF14A8866F6A}"><input type="HIDDEN" id="Type" name="Type" value="CAT"><input type="HIDDEN" id="InitPage" name="InitPage" value="1"><input type="HIDDEN" id="InitURL" name="InitURL" value="CSSPage_Welcome.asp"><input type="HIDDEN" id="SRCH" name="SRCH" value="All Positions"><input type="HIDDEN" id="Search" name="Search" value=""><input type="HIDDEN" id="RetColsQS" name="RetColsQS" value=""><input type="HIDDEN" id="RetColsGR" name="RetColsGR" value=""><input type="HIDDEN" id="SRPage" name="SRPage" value="1"><input type="HIDDEN" id="SRURL" name="SRURL" value="CSSPage_SearchResults.ASP"><input type="HIDDEN" id="ReqKey" name="ReqKey" value="{50C3245D-7DEC-46D7-96DD-CD52634EF874}"><input type="HIDDEN" id="ResultSort" name="ResultSort" value=""></form>
+<div class="tr"><div class="td"><h6>Job&nbsp;Title</h6><a href="javascript:sysSubmitForm('frmSR1');" title="Click to view job description" alt="Click to view job description">(RN) Clinical Documentation Specialist&nbsp;</a><form autocomplete="OFF" id="frmSort1" name="frmSort1" method="POST" action="HTTPS://jobs.uchc.edu/CSS_External/CSSPage_SearchResults.ASP">
+<input type="HIDDEN" id="Key" name="Key" value="{F4D8A502-D709-436C-BE1B-FF14A8866F6A}">
+<input type="HIDDEN" id="Type" name="Type" value="CAT">
+<input type="HIDDEN" id="InitPage" name="InitPage" value="1">
+<input type="HIDDEN" id="InitURL" name="InitURL" value="CSSPage_Welcome.asp">
+<input type="HIDDEN" id="SRCH" name="SRCH" value="All Positions">
+<input type="HIDDEN" id="Search" name="Search" value="">
+<input type="HIDDEN" id="RetColsQS" name="RetColsQS" value="">
+<input type="HIDDEN" id="RetColsGR" name="RetColsGR" value="">
+<input type="HIDDEN" id="ResultSort" name="ResultSort" value="[Job Title]">
+</form></div>
+<div class="td"><h6>Location</h6>Farmington&nbsp;<form autocomplete="OFF" id="frmSort2" name="frmSort2" method="POST" action="HTTPS://jobs.uchc.edu/CSS_External/CSSPage_SearchResults.ASP">
+<input type="HIDDEN" id="Key" name="Key" value="{F4D8A502-D709-436C-BE1B-FF14A8866F6A}">
+<input type="HIDDEN" id="Type" name="Type" value="CAT">
+<input type="HIDDEN" id="InitPage" name="InitPage" value="1">
+<input type="HIDDEN" id="InitURL" name="InitURL" value="CSSPage_Welcome.asp">
+<input type="HIDDEN" id="SRCH" name="SRCH" value="All Positions">
+<input type="HIDDEN" id="Search" name="Search" value="">
+<input type="HIDDEN" id="RetColsQS" name="RetColsQS" value="">
+<input type="HIDDEN" id="RetColsGR" name="RetColsGR" value="">
+<input type="HIDDEN" id="ResultSort" name="ResultSort" value="[Location]">
+</form></div>
+<div class="td"><h6>Department</h6>80100-Health Information Management&nbsp;<form autocomplete="OFF" id="frmSort3" name="frmSort3" method="POST" action="HTTPS://jobs.uchc.edu/CSS_External/CSSPage_SearchResults.ASP">
+<input type="HIDDEN" id="Key" name="Key" value="{F4D8A502-D709-436C-BE1B-FF14A8866F6A}">
+<input type="HIDDEN" id="Type" name="Type" value="CAT">
+<input type="HIDDEN" id="InitPage" name="InitPage" value="1">
+<input type="HIDDEN" id="InitURL" name="InitURL" value="CSSPage_Welcome.asp">
+<input type="HIDDEN" id="SRCH" name="SRCH" value="All Positions">
+<input type="HIDDEN" id="Search" name="Search" value="">
+<input type="HIDDEN" id="RetColsQS" name="RetColsQS" value="">
+<input type="HIDDEN" id="RetColsGR" name="RetColsGR" value="">
+<input type="HIDDEN" id="ResultSort" name="ResultSort" value="[Department]">
+</form></div>
+<div class="td"><h6>Job&nbsp;No.</h6>2027-633&nbsp;<form autocomplete="OFF" id="frmSort4" name="frmSort4" method="POST" action="HTTPS://jobs.uchc.edu/CSS_External/CSSPage_SearchResults.ASP">
+<input type="HIDDEN" id="Key" name="Key" value="{F4D8A502-D709-436C-BE1B-FF14A8866F6A}">
+<input type="HIDDEN" id="Type" name="Type" value="CAT">
+<input type="HIDDEN" id="InitPage" name="InitPage" value="1">
+<input type="HIDDEN" id="InitURL" name="InitURL" value="CSSPage_Welcome.asp">
+<input type="HIDDEN" id="SRCH" name="SRCH" value="All Positions">
+<input type="HIDDEN" id="Search" name="Search" value="">
+<input type="HIDDEN" id="RetColsQS" name="RetColsQS" value="">
+<input type="HIDDEN" id="RetColsGR" name="RetColsGR" value="">
+<input type="HIDDEN" id="ResultSort" name="ResultSort" value="[Job No.]">
+</form></div>
+<span class="glyphicon glyphicon-menu-down btn"></span></div>
+<form autocomplete="OFF" id="frmSR2" name="frmSR2" method="POST" action="HTTPS://jobs.uchc.edu/CSS_External/CSSPage_JobDetail.ASP?T=20261021141424&amp;"><input type="HIDDEN" id="Key" name="Key" value="{F4D8A502-D709-436C-BE1B-FF14A8866F6A}"><input type="HIDDEN" id="Type" name="Type" value="CAT"><input type="HIDDEN" id="InitPage" name="InitPage" value="1"><input type="HIDDEN" id="InitURL" name="InitURL" value="CSSPage_Welcome.asp"><input type="HIDDEN" id="SRCH" name="SRCH" value="All Positions"><input type="HIDDEN" id="Search" name="Search" value=""><input type="HIDDEN" id="RetColsQS" name="RetColsQS" value=""><input type="HIDDEN" id="RetColsGR" name="RetColsGR" value=""><input type="HIDDEN" id="SRPage" name="SRPage" value="1"><input type="HIDDEN" id="SRURL" name="SRURL" value="CSSPage_SearchResults.ASP"><input type="HIDDEN" id="ReqKey" name="ReqKey" value="{72F6C4BD-0FF3-4FFB-9375-C54FBA71134A}"><input type="HIDDEN" id="ResultSort" name="ResultSort" value=""></form>
+<div class="tr"><div class="td"><h6>Job&nbsp;Title</h6><a href="javascript:sysSubmitForm('frmSR2');" title="Click to view job description" alt="Click to view job description">Administrative Director&nbsp;</a><form autocomplete="OFF" id="frmSort1" name="frmSort1" method="POST" action="HTTPS://jobs.uchc.edu/CSS_External/CSSPage_SearchResults.ASP">
+<input type="HIDDEN" id="Key" name="Key" value="{F4D8A502-D709-436C-BE1B-FF14A8866F6A}">
+<input type="HIDDEN" id="Type" name="Type" value="CAT">
+<input type="HIDDEN" id="InitPage" name="InitPage" value="1">
+<input type="HIDDEN" id="InitURL" name="InitURL" value="CSSPage_Welcome.asp">
+<input type="HIDDEN" id="SRCH" name="SRCH" value="All Positions">
+<input type="HIDDEN" id="Search" name="Search" value="">
+<input type="HIDDEN" id="RetColsQS" name="RetColsQS" value="">
+<input type="HIDDEN" id="RetColsGR" name="RetColsGR" value="">
+<input type="HIDDEN" id="ResultSort" name="ResultSort" value="[Job Title]">
+</form></div>
+<div class="td"><h6>Location</h6>Farmington&nbsp;<form autocomplete="OFF" id="frmSort2" name="frmSort2" method="POST" action="HTTPS://jobs.uchc.edu/CSS_External/CSSPage_SearchResults.ASP">
+<input type="HIDDEN" id="Key" name="Key" value="{F4D8A502-D709-436C-BE1B-FF14A8866F6A}">
+<input type="HIDDEN" id="Type" name="Type" value="CAT">
+<input type="HIDDEN" id="InitPage" name="InitPage" value="1">
+<input type="HIDDEN" id="InitURL" name="InitURL" value="CSSPage_Welcome.asp">
+<input type="HIDDEN" id="SRCH" name="SRCH" value="All Positions">
+<input type="HIDDEN" id="Search" name="Search" value="">
+<input type="HIDDEN" id="RetColsQS" name="RetColsQS" value="">
+<input type="HIDDEN" id="RetColsGR" name="RetColsGR" value="">
+<input type="HIDDEN" id="ResultSort" name="ResultSort" value="[Location]">
+</form></div>
+<div class="td"><h6>Department</h6>20000-Dean's Office - Dental&nbsp;<form autocomplete="OFF" id="frmSort3" name="frmSort3" method="POST" action="HTTPS://jobs.uchc.edu/CSS_External/CSSPage_SearchResults.ASP">
+<input type="HIDDEN" id="Key" name="Key" value="{F4D8A502-D709-436C-BE1B-FF14A8866F6A}">
+<input type="HIDDEN" id="Type" name="Type" value="CAT">
+<input type="HIDDEN" id="InitPage" name="InitPage" value="1">
+<input type="HIDDEN" id="InitURL" name="InitURL" value="CSSPage_Welcome.asp">
+<input type="HIDDEN" id="SRCH" name="SRCH" value="All Positions">
+<input type="HIDDEN" id="Search" name="Search" value="">
+<input type="HIDDEN" id="RetColsQS" name="RetColsQS" value="">
+<input type="HIDDEN" id="RetColsGR" name="RetColsGR" value="">
+<input type="HIDDEN" id="ResultSort" name="ResultSort" value="[Department]">
+</form></div>
+<div class="td"><h6>Job&nbsp;No.</h6>2027-457&nbsp;<form autocomplete="OFF" id="frmSort4" name="frmSort4" method="POST" action="HTTPS://jobs.uchc.edu/CSS_External/CSSPage_SearchResults.ASP">
+<input type="HIDDEN" id="Key" name="Key" value="{F4D8A502-D709-436C-BE1B-FF14A8866F6A}">
+<input type="HIDDEN" id="Type" name="Type" value="CAT">
+<input type="HIDDEN" id="InitPage" name="InitPage" value="1">
+<input type="HIDDEN" id="InitURL" name="InitURL" value="CSSPage_Welcome.asp">
+<input type="HIDDEN" id="SRCH" name="SRCH" value="All Positions">
+<input type="HIDDEN" id="Search" name="Search" value="">
+<input type="HIDDEN" id="RetColsQS" name="RetColsQS" value="">
+<input type="HIDDEN" id="RetColsGR" name="RetColsGR" value="">
+<input type="HIDDEN" id="ResultSort" name="ResultSort" value="[Job No.]">
+</form></div>
+<span class="glyphicon glyphicon-menu-down btn"></span></div>
+<form autocomplete="OFF" id="frmSR3" name="frmSR3" method="POST" action="HTTPS://jobs.uchc.edu/CSS_External/CSSPage_JobDetail.ASP?T=20261021141424&amp;"><input type="HIDDEN" id="Key" name="Key" value="{F4D8A502-D709-436C-BE1B-FF14A8866F6A}"><input type="HIDDEN" id="Type" name="Type" value="CAT"><input type="HIDDEN" id="InitPage" name="InitPage" value="1"><input type="HIDDEN" id="InitURL" name="InitURL" value="CSSPage_Welcome.asp"><input type="HIDDEN" id="SRCH" name="SRCH" value="All Positions"><input type="HIDDEN" id="Search" name="Search" value=""><input type="HIDDEN" id="RetColsQS" name="RetColsQS" value=""><input type="HIDDEN" id="RetColsGR" name="RetColsGR" value=""><input type="HIDDEN" id="SRPage" name="SRPage" value="1"><input type="HIDDEN" id="SRURL" name="SRURL" value="CSSPage_SearchResults.ASP"><input type="HIDDEN" id="ReqKey" name="ReqKey" value="{0361F696-8192-41BA-8E8C-C4DBFA2146A3}"><input type="HIDDEN" id="ResultSort" name="ResultSort" value=""></form>
+<div class="tr"><div class="td"><h6>Job&nbsp;Title</h6><a href="javascript:sysSubmitForm('frmSR3');" title="Click to view job description" alt="Click to view job description">Assoc Prof/Clinical - Vice Chair&nbsp;</a><form autocomplete="OFF" id="frmSort1" name="frmSort1" method="POST" action="HTTPS://jobs.uchc.edu/CSS_External/CSSPage_SearchResults.ASP">
+<input type="HIDDEN" id="Key" name="Key" value="{F4D8A502-D709-436C-BE1B-FF14A8866F6A}">
+<input type="HIDDEN" id="Type" name="Type" value="CAT">
+<input type="HIDDEN" id="InitPage" name="InitPage" value="1">
+<input type="HIDDEN" id="InitURL" name="InitURL" value="CSSPage_Welcome.asp">
+<input type="HIDDEN" id="SRCH" name="SRCH" value="All Positions">
+<input type="HIDDEN" id="Search" name="Search" value="">
+<input type="HIDDEN" id="RetColsQS" name="RetColsQS" value="">
+<input type="HIDDEN" id="RetColsGR" name="RetColsGR" value="">
+<input type="HIDDEN" id="ResultSort" name="ResultSort" value="[Job Title]">
+</form></div>
+<div class="td"><h6>Location</h6>Farmington&nbsp;<form autocomplete="OFF" id="frmSort2" name="frmSort2" method="POST" action="HTTPS://jobs.uchc.edu/CSS_External/CSSPage_SearchResults.ASP">
+<input type="HIDDEN" id="Key" name="Key" value="{F4D8A502-D709-436C-BE1B-FF14A8866F6A}">
+<input type="HIDDEN" id="Type" name="Type" value="CAT">
+<input type="HIDDEN" id="InitPage" name="InitPage" value="1">
+<input type="HIDDEN" id="InitURL" name="InitURL" value="CSSPage_Welcome.asp">
+<input type="HIDDEN" id="SRCH" name="SRCH" value="All Positions">
+<input type="HIDDEN" id="Search" name="Search" value="">
+<input type="HIDDEN" id="RetColsQS" name="RetColsQS" value="">
+<input type="HIDDEN" id="RetColsGR" name="RetColsGR" value="">
+<input type="HIDDEN" id="ResultSort" name="ResultSort" value="[Location]">
+</form></div>
+<div class="td"><h6>Department</h6>10320-Family Medicine&nbsp;<form autocomplete="OFF" id="frmSort3" name="frmSort3" method="POST" action="HTTPS://jobs.uchc.edu/CSS_External/CSSPage_SearchResults.ASP">
+<input type="HIDDEN" id="Key" name="Key" value="{F4D8A502-D709-436C-BE1B-FF14A8866F6A}">
+<input type="HIDDEN" id="Type" name="Type" value="CAT">
+<input type="HIDDEN" id="InitPage" name="InitPage" value="1">
+<input type="HIDDEN" id="InitURL" name="InitURL" value="CSSPage_Welcome.asp">
+<input type="HIDDEN" id="SRCH" name="SRCH" value="All Positions">
+<input type="HIDDEN" id="Search" name="Search" value="">
+<input type="HIDDEN" id="RetColsQS" name="RetColsQS" value="">
+<input type="HIDDEN" id="RetColsGR" name="RetColsGR" value="">
+<input type="HIDDEN" id="ResultSort" name="ResultSort" value="[Department]">
+</form></div>
+<div class="td"><h6>Job&nbsp;No.</h6>2023-953&nbsp;<form autocomplete="OFF" id="frmSort4" name="frmSort4" method="POST" action="HTTPS://jobs.uchc.edu/CSS_External/CSSPage_SearchResults.ASP">
+<input type="HIDDEN" id="Key" name="Key" value="{F4D8A502-D709-436C-BE1B-FF14A8866F6A}">
+<input type="HIDDEN" id="Type" name="Type" value="CAT">
+<input type="HIDDEN" id="InitPage" name="InitPage" value="1">
+<input type="HIDDEN" id="InitURL" name="InitURL" value="CSSPage_Welcome.asp">
+<input type="HIDDEN" id="SRCH" name="SRCH" value="All Positions">
+<input type="HIDDEN" id="Search" name="Search" value="">
+<input type="HIDDEN" id="RetColsQS" name="RetColsQS" value="">
+<input type="HIDDEN" id="RetColsGR" name="RetColsGR" value="">
+<input type="HIDDEN" id="ResultSort" name="ResultSort" value="[Job No.]">
+</form></div>
+<span class="glyphicon glyphicon-menu-down btn"></span></div>
+<form autocomplete="OFF" id="frmSR4" name="frmSR4" method="POST" action="HTTPS://jobs.uchc.edu/CSS_External/CSSPage_JobDetail.ASP?T=20261021141424&amp;"><input type="HIDDEN" id="Key" name="Key" value="{F4D8A502-D709-436C-BE1B-FF14A8866F6A}"><input type="HIDDEN" id="Type" name="Type" value="CAT"><input type="HIDDEN" id="InitPage" name="InitPage" value="1"><input type="HIDDEN" id="InitURL" name="InitURL" value="CSSPage_Welcome.asp"><input type="HIDDEN" id="SRCH" name="SRCH" value="All Positions"><input type="HIDDEN" id="Search" name="Search" value=""><input type="HIDDEN" id="RetColsQS" name="RetColsQS" value=""><input type="HIDDEN" id="RetColsGR" name="RetColsGR" value=""><input type="HIDDEN" id="SRPage" name="SRPage" value="1"><input type="HIDDEN" id="SRURL" name="SRURL" value="CSSPage_SearchResults.ASP"><input type="HIDDEN" id="ReqKey" name="ReqKey" value="{DC11193A-771C-4213-A015-DFCC0128F1D2}"><input type="HIDDEN" id="ResultSort" name="ResultSort" value=""></form>
+<div class="tr"><div class="td"><h6>Job&nbsp;Title</h6><a href="javascript:sysSubmitForm('frmSR4');" title="Click to view job description" alt="Click to view job description">Associate Prof/Clinical - Clinical-Consult Epilepsy Neurologist&nbsp;</a><form autocomplete="OFF" id="frmSort1" name="frmSort1" method="POST" action="HTTPS://jobs.uchc.edu/CSS_External/CSSPage_SearchResults.ASP">
+<input type="HIDDEN" id="Key" name="Key" value="{F4D8A502-D709-436C-BE1B-FF14A8866F6A}">
+<input type="HIDDEN" id="Type" name="Type" value="CAT">
+<input type="HIDDEN" id="InitPage" name="InitPage" value="1">
+<input type="HIDDEN" id="InitURL" name="InitURL" value="CSSPage_Welcome.asp">
+<input type="HIDDEN" id="SRCH" name="SRCH" value="All Positions">
+<input type="HIDDEN" id="Search" name="Search" value="">
+<input type="HIDDEN" id="RetColsQS" name="RetColsQS" value="">
+<input type="HIDDEN" id="RetColsGR" name="RetColsGR" value="">
+<input type="HIDDEN" id="ResultSort" name="ResultSort" value="[Job Title]">
+</form></div>
+<div class="td"><h6>Location</h6>Farmington&nbsp;<form autocomplete="OFF" id="frmSort2" name="frmSort2" method="POST" action="HTTPS://jobs.uchc.edu/CSS_External/CSSPage_SearchResults.ASP">
+<input type="HIDDEN" id="Key" name="Key" value="{F4D8A502-D709-436C-BE1B-FF14A8866F6A}">
+<input type="HIDDEN" id="Type" name="Type" value="CAT">
+<input type="HIDDEN" id="InitPage" name="InitPage" value="1">
+<input type="HIDDEN" id="InitURL" name="InitURL" value="CSSPage_Welcome.asp">
+<input type="HIDDEN" id="SRCH" name="SRCH" value="All Positions">
+<input type="HIDDEN" id="Search" name="Search" value="">
+<input type="HIDDEN" id="RetColsQS" name="RetColsQS" value="">
+<input type="HIDDEN" id="RetColsGR" name="RetColsGR" value="">
+<input type="HIDDEN" id="ResultSort" name="ResultSort" value="[Location]">
+</form></div>
+<div class="td"><h6>Department</h6>10440-Neurology&nbsp;<form autocomplete="OFF" id="frmSort3" name="frmSort3" method="POST" action="HTTPS://jobs.uchc.edu/CSS_External/CSSPage_SearchResults.ASP">
+<input type="HIDDEN" id="Key" name="Key" value="{F4D8A502-D709-436C-BE1B-FF14A8866F6A}">
+<input type="HIDDEN" id="Type" name="Type" value="CAT">
+<input type="HIDDEN" id="InitPage" name="InitPage" value="1">
+<input type="HIDDEN" id="InitURL" name="InitURL" value="CSSPage_Welcome.asp">
+<input type="HIDDEN" id="SRCH" name="SRCH" value="All Positions">
+<input type="HIDDEN" id="Search" name="Search" value="">
+<input type="HIDDEN" id="RetColsQS" name="RetColsQS" value="">
+<input type="HIDDEN" id="RetColsGR" name="RetColsGR" value="">
+<input type="HIDDEN" id="ResultSort" name="ResultSort" value="[Department]">
+</form></div>
+<div class="td"><h6>Job&nbsp;No.</h6>2026-990&nbsp;<form autocomplete="OFF" id="frmSort4" name="frmSort4" method="POST" action="HTTPS://jobs.uchc.edu/CSS_External/CSSPage_SearchResults.ASP">
+<input type="HIDDEN" id="Key" name="Key" value="{F4D8A502-D709-436C-BE1B-FF14A8866F6A}">
+<input type="HIDDEN" id="Type" name="Type" value="CAT">
+<input type="HIDDEN" id="InitPage" name="InitPage" value="1">
+<input type="HIDDEN" id="InitURL" name="InitURL" value="CSSPage_Welcome.asp">
+<input type="HIDDEN" id="SRCH" name="SRCH" value="All Positions">
+<input type="HIDDEN" id="Search" name="Search" value="">
+<input type="HIDDEN" id="RetColsQS" name="RetColsQS" value="">
+<input type="HIDDEN" id="RetColsGR" name="RetColsGR" value="">
+<input type="HIDDEN" id="ResultSort" name="ResultSort" value="[Job No.]">
+</form></div>
+<span class="glyphicon glyphicon-menu-down btn"></span></div>
+<form autocomplete="OFF" id="frmSR5" name="frmSR5" method="POST" action="HTTPS://jobs.uchc.edu/CSS_External/CSSPage_JobDetail.ASP?T=20261021141424&amp;"><input type="HIDDEN" id="Key" name="Key" value="{F4D8A502-D709-436C-BE1B-FF14A8866F6A}"><input type="HIDDEN" id="Type" name="Type" value="CAT"><input type="HIDDEN" id="InitPage" name="InitPage" value="1"><input type="HIDDEN" id="InitURL" name="InitURL" value="CSSPage_Welcome.asp"><input type="HIDDEN" id="SRCH" name="SRCH" value="All Positions"><input type="HIDDEN" id="Search" name="Search" value=""><input type="HIDDEN" id="RetColsQS" name="RetColsQS" value=""><input type="HIDDEN" id="RetColsGR" name="RetColsGR" value=""><input type="HIDDEN" id="SRPage" name="SRPage" value="1"><input type="HIDDEN" id="SRURL" name="SRURL" value="CSSPage_SearchResults.ASP"><input type="HIDDEN" id="ReqKey" name="ReqKey" value="{CB269E9A-0F21-497B-B5EE-B5D662A2CF44}"><input type="HIDDEN" id="ResultSort" name="ResultSort" value=""></form>
+<div class="tr"><div class="td"><h6>Job&nbsp;Title</h6><a href="javascript:sysSubmitForm('frmSR5');" title="Click to view job description" alt="Click to view job description">Asst Nursing Mgr&nbsp;</a><form autocomplete="OFF" id="frmSort1" name="frmSort1" method="POST" action="HTTPS://jobs.uchc.edu/CSS_External/CSSPage_SearchResults.ASP">
+<input type="HIDDEN" id="Key" name="Key" value="{F4D8A502-D709-436C-BE1B-FF14A8866F6A}">
+<input type="HIDDEN" id="Type" name="Type" value="CAT">
+<input type="HIDDEN" id="InitPage" name="InitPage" value="1">
+<input type="HIDDEN" id="InitURL" name="InitURL" value="CSSPage_Welcome.asp">
+<input type="HIDDEN" id="SRCH" name="SRCH" value="All Positions">
+<input type="HIDDEN" id="Search" name="Search" value="">
+<input type="HIDDEN" id="RetColsQS" name="RetColsQS" value="">
+<input type="HIDDEN" id="RetColsGR" name="RetColsGR" value="">
+<input type="HIDDEN" id="ResultSort" name="ResultSort" value="[Job Title]">
+</form></div>
+<div class="td"><h6>Location</h6>Farmington&nbsp;<form autocomplete="OFF" id="frmSort2" name="frmSort2" method="POST" action="HTTPS://jobs.uchc.edu/CSS_External/CSSPage_SearchResults.ASP">
+<input type="HIDDEN" id="Key" name="Key" value="{F4D8A502-D709-436C-BE1B-FF14A8866F6A}">
+<input type="HIDDEN" id="Type" name="Type" value="CAT">
+<input type="HIDDEN" id="InitPage" name="InitPage" value="1">
+<input type="HIDDEN" id="InitURL" name="InitURL" value="CSSPage_Welcome.asp">
+<input type="HIDDEN" id="SRCH" name="SRCH" value="All Positions">
+<input type="HIDDEN" id="Search" name="Search" value="">
+<input type="HIDDEN" id="RetColsQS" name="RetColsQS" value="">
+<input type="HIDDEN" id="RetColsGR" name="RetColsGR" value="">
+<input type="HIDDEN" id="ResultSort" name="ResultSort" value="[Location]">
+</form></div>
+<div class="td"><h6>Department</h6>81012-N.N.I.C.U. Unit&nbsp;<form autocomplete="OFF" id="frmSort3" name="frmSort3" method="POST" action="HTTPS://jobs.uchc.edu/CSS_External/CSSPage_SearchResults.ASP">
+<input type="HIDDEN" id="Key" name="Key" value="{F4D8A502-D709-436C-BE1B-FF14A8866F6A}">
+<input type="HIDDEN" id="Type" name="Type" value="CAT">
+<input type="HIDDEN" id="InitPage" name="InitPage" value="1">
+<input type="HIDDEN" id="InitURL" name="InitURL" value="CSSPage_Welcome.asp">
+<input type="HIDDEN" id="SRCH" name="SRCH" value="All Positions">
+<input type="HIDDEN" id="Search" name="Search" value="">
+<input type="HIDDEN" id="RetColsQS" name="RetColsQS" value="">
+<input type="HIDDEN" id="RetColsGR" name="RetColsGR" value="">
+<input type="HIDDEN" id="ResultSort" name="ResultSort" value="[Department]">
+</form></div>
+<div class="td"><h6>Job&nbsp;No.</h6>2026-1114&nbsp;<form autocomplete="OFF" id="frmSort4" name="frmSort4" method="POST" action="HTTPS://jobs.uchc.edu/CSS_External/CSSPage_SearchResults.ASP">
+<input type="HIDDEN" id="Key" name="Key" value="{F4D8A502-D709-436C-BE1B-FF14A8866F6A}">
+<input type="HIDDEN" id="Type" name="Type" value="CAT">
+<input type="HIDDEN" id="InitPage" name="InitPage" value="1">
+<input type="HIDDEN" id="InitURL" name="InitURL" value="CSSPage_Welcome.asp">
+<input type="HIDDEN" id="SRCH" name="SRCH" value="All Positions">
+<input type="HIDDEN" id="Search" name="Search" value="">
+<input type="HIDDEN" id="RetColsQS" name="RetColsQS" value="">
+<input type="HIDDEN" id="RetColsGR" name="RetColsGR" value="">
+<input type="HIDDEN" id="ResultSort" name="ResultSort" value="[Job No.]">
+</form></div>
+<span class="glyphicon glyphicon-menu-down btn"></span></div>
+<form autocomplete="OFF" id="frmSR6" name="frmSR6" method="POST" action="HTTPS://jobs.uchc.edu/CSS_External/CSSPage_JobDetail.ASP?T=20261021141424&amp;"><input type="HIDDEN" id="Key" name="Key" value="{F4D8A502-D709-436C-BE1B-FF14A8866F6A}"><input type="HIDDEN" id="Type" name="Type" value="CAT"><input type="HIDDEN" id="InitPage" name="InitPage" value="1"><input type="HIDDEN" id="InitURL" name="InitURL" value="CSSPage_Welcome.asp"><input type="HIDDEN" id="SRCH" name="SRCH" value="All Positions"><input type="HIDDEN" id="Search" name="Search" value=""><input type="HIDDEN" id="RetColsQS" name="RetColsQS" value=""><input type="HIDDEN" id="RetColsGR" name="RetColsGR" value=""><input type="HIDDEN" id="SRPage" name="SRPage" value="1"><input type="HIDDEN" id="SRURL" name="SRURL" value="CSSPage_SearchResults.ASP"><input type="HIDDEN" id="ReqKey" name="ReqKey" value="{EC4C2356-6380-406A-A66F-8285AD263ADF}"><input type="HIDDEN" id="ResultSort" name="ResultSort" value=""></form>
+<div class="tr"><div class="td"><h6>Job&nbsp;Title</h6><a href="javascript:sysSubmitForm('frmSR6');" title="Click to view job description" alt="Click to view job description">Asst Nursing Mgr-Endocrinology/Diabetes, Infectious Disease&nbsp;</a><form autocomplete="OFF" id="frmSort1" name="frmSort1" method="POST" action="HTTPS://jobs.uchc.edu/CSS_External/CSSPage_SearchResults.ASP">
+<input type="HIDDEN" id="Key" name="Key" value="{F4D8A502-D709-436C-BE1B-FF14A8866F6A}">
+<input type="HIDDEN" id="Type" name="Type" value="CAT">
+<input type="HIDDEN" id="InitPage" name="InitPage" value="1">
+<input type="HIDDEN" id="InitURL" name="InitURL" value="CSSPage_Welcome.asp">
+<input type="HIDDEN" id="SRCH" name="SRCH" value="All Positions">
+<input type="HIDDEN" id="Search" name="Search" value="">
+<input type="HIDDEN" id="RetColsQS" name="RetColsQS" value="">
+<input type="HIDDEN" id="RetColsGR" name="RetColsGR" value="">
+<input type="HIDDEN" id="ResultSort" name="ResultSort" value="[Job Title]">
+</form></div>
+<div class="td"><h6>Location</h6>Farmington&nbsp;<form autocomplete="OFF" id="frmSort2" name="frmSort2" method="POST" action="HTTPS://jobs.uchc.edu/CSS_External/CSSPage_SearchResults.ASP">
+<input type="HIDDEN" id="Key" name="Key" value="{F4D8A502-D709-436C-BE1B-FF14A8866F6A}">
+<input type="HIDDEN" id="Type" name="Type" value="CAT">
+<input type="HIDDEN" id="InitPage" name="InitPage" value="1">
+<input type="HIDDEN" id="InitURL" name="InitURL" value="CSSPage_Welcome.asp">
+<input type="HIDDEN" id="SRCH" name="SRCH" value="All Positions">
+<input type="HIDDEN" id="Search" name="Search" value="">
+<input type="HIDDEN" id="RetColsQS" name="RetColsQS" value="">
+<input type="HIDDEN" id="RetColsGR" name="RetColsGR" value="">
+<input type="HIDDEN" id="ResultSort" name="ResultSort" value="[Location]">
+</form></div>
+<div class="td"><h6>Department</h6>80810-Endocrinology&nbsp;<form autocomplete="OFF" id="frmSort3" name="frmSort3" method="POST" action="HTTPS://jobs.uchc.edu/CSS_External/CSSPage_SearchResults.ASP">
+<input type="HIDDEN" id="Key" name="Key" value="{F4D8A502-D709-436C-BE1B-FF14A8866F6A}">
+<input type="HIDDEN" id="Type" name="Type" value="CAT">
+<input type="HIDDEN" id="InitPage" name="InitPage" value="1">
+<input type="HIDDEN" id="InitURL" name="InitURL" value="CSSPage_Welcome.asp">
+<input type="HIDDEN" id="SRCH" name="SRCH" value="All Positions">
+<input type="HIDDEN" id="Search" name="Search" value="">
+<input type="HIDDEN" id="RetColsQS" name="RetColsQS" value="">
+<input type="HIDDEN" id="RetColsGR" name="RetColsGR" value="">
+<input type="HIDDEN" id="ResultSort" name="ResultSort" value="[Department]">
+</form></div>
+<div class="td"><h6>Job&nbsp;No.</h6>2027-539&nbsp;<form autocomplete="OFF" id="frmSort4" name="frmSort4" method="POST" action="HTTPS://jobs.uchc.edu/CSS_External/CSSPage_SearchResults.ASP">
+<input type="HIDDEN" id="Key" name="Key" value="{F4D8A502-D709-436C-BE1B-FF14A8866F6A}">
+<input type="HIDDEN" id="Type" name="Type" value="CAT">
+<input type="HIDDEN" id="InitPage" name="InitPage" value="1">
+<input type="HIDDEN" id="InitURL" name="InitURL" value="CSSPage_Welcome.asp">
+<input type="HIDDEN" id="SRCH" name="SRCH" value="All Positions">
+<input type="HIDDEN" id="Search" name="Search" value="">
+<input type="HIDDEN" id="RetColsQS" name="RetColsQS" value="">
+<input type="HIDDEN" id="RetColsGR" name="RetColsGR" value="">
+<input type="HIDDEN" id="ResultSort" name="ResultSort" value="[Job No.]">
+</form></div>
+<span class="glyphicon glyphicon-menu-down btn"></span></div>
+<form autocomplete="OFF" id="frmSR7" name="frmSR7" method="POST" action="HTTPS://jobs.uchc.edu/CSS_External/CSSPage_JobDetail.ASP?T=20261021141424&amp;"><input type="HIDDEN" id="Key" name="Key" value="{F4D8A502-D709-436C-BE1B-FF14A8866F6A}"><input type="HIDDEN" id="Type" name="Type" value="CAT"><input type="HIDDEN" id="InitPage" name="InitPage" value="1"><input type="HIDDEN" id="InitURL" name="InitURL" value="CSSPage_Welcome.asp"><input type="HIDDEN" id="SRCH" name="SRCH" value="All Positions"><input type="HIDDEN" id="Search" name="Search" value=""><input type="HIDDEN" id="RetColsQS" name="RetColsQS" value=""><input type="HIDDEN" id="RetColsGR" name="RetColsGR" value=""><input type="HIDDEN" id="SRPage" name="SRPage" value="1"><input type="HIDDEN" id="SRURL" name="SRURL" value="CSSPage_SearchResults.ASP"><input type="HIDDEN" id="ReqKey" name="ReqKey" value="{088FF647-D609-4C61-832E-2E9BBCF871B7}"><input type="HIDDEN" id="ResultSort" name="ResultSort" value=""></form>
+<div class="tr"><div class="td"><h6>Job&nbsp;Title</h6><a href="javascript:sysSubmitForm('frmSR7');" title="Click to view job description" alt="Click to view job description">Asst Nursing Mgr-PACU&nbsp;</a><form autocomplete="OFF" id="frmSort1" name="frmSort1" method="POST" action="HTTPS://jobs.uchc.edu/CSS_External/CSSPage_SearchResults.ASP">
+<input type="HIDDEN" id="Key" name="Key" value="{F4D8A502-D709-436C-BE1B-FF14A8866F6A}">
+<input type="HIDDEN" id="Type" name="Type" value="CAT">
+<input type="HIDDEN" id="InitPage" name="InitPage" value="1">
+<input type="HIDDEN" id="InitURL" name="InitURL" value="CSSPage_Welcome.asp">
+<input type="HIDDEN" id="SRCH" name="SRCH" value="All Positions">
+<input type="HIDDEN" id="Search" name="Search" value="">
+<input type="HIDDEN" id="RetColsQS" name="RetColsQS" value="">
+<input type="HIDDEN" id="RetColsGR" name="RetColsGR" value="">
+<input type="HIDDEN" id="ResultSort" name="ResultSort" value="[Job Title]">
+</form></div>
+<div class="td"><h6>Location</h6>Farmington&nbsp;<form autocomplete="OFF" id="frmSort2" name="frmSort2" method="POST" action="HTTPS://jobs.uchc.edu/CSS_External/CSSPage_SearchResults.ASP">
+<input type="HIDDEN" id="Key" name="Key" value="{F4D8A502-D709-436C-BE1B-FF14A8866F6A}">
+<input type="HIDDEN" id="Type" name="Type" value="CAT">
+<input type="HIDDEN" id="InitPage" name="InitPage" value="1">
+<input type="HIDDEN" id="InitURL" name="InitURL" value="CSSPage_Welcome.asp">
+<input type="HIDDEN" id="SRCH" name="SRCH" value="All Positions">
+<input type="HIDDEN" id="Search" name="Search" value="">
+<input type="HIDDEN" id="RetColsQS" name="RetColsQS" value="">
+<input type="HIDDEN" id="RetColsGR" name="RetColsGR" value="">
+<input type="HIDDEN" id="ResultSort" name="ResultSort" value="[Location]">
+</form></div>
+<div class="td"><h6>Department</h6>81017-Postoperative Services Unit&nbsp;<form autocomplete="OFF" id="frmSort3" name="frmSort3" method="POST" action="HTTPS://jobs.uchc.edu/CSS_External/CSSPage_SearchResults.ASP">
+<input type="HIDDEN" id="Key" name="Key" value="{F4D8A502-D709-436C-BE1B-FF14A8866F6A}">
+<input type="HIDDEN" id="Type" name="Type" value="CAT">
+<input type="HIDDEN" id="InitPage" name="InitPage" value="1">
+<input type="HIDDEN" id="InitURL" name="InitURL" value="CSSPage_Welcome.asp">
+<input type="HIDDEN" id="SRCH" name="SRCH" value="All Positions">
+<input type="HIDDEN" id="Search" name="Search" value="">
+<input type="HIDDEN" id="RetColsQS" name="RetColsQS" value="">
+<input type="HIDDEN" id="RetColsGR" name="RetColsGR" value="">
+<input type="HIDDEN" id="ResultSort" name="ResultSort" value="[Department]">
+</form></div>
+<div class="td"><h6>Job&nbsp;No.</h6>2026-476&nbsp;<form autocomplete="OFF" id="frmSort4" name="frmSort4" method="POST" action="HTTPS://jobs.uchc.edu/CSS_External/CSSPage_SearchResults.ASP">
+<input type="HIDDEN" id="Key" name="Key" value="{F4D8A502-D709-436C-BE1B-FF14A8866F6A}">
+<input type="HIDDEN" id="Type" name="Type" value="CAT">
+<input type="HIDDEN" id="InitPage" name="InitPage" value="1">
+<input type="HIDDEN" id="InitURL" name="InitURL" value="CSSPage_Welcome.asp">
+<input type="HIDDEN" id="SRCH" name="SRCH" value="All Positions">
+<input type="HIDDEN" id="Search" name="Search" value="">
+<input type="HIDDEN" id="RetColsQS" name="RetColsQS" value="">
+<input type="HIDDEN" id="RetColsGR" name="RetColsGR" value="">
+<input type="HIDDEN" id="ResultSort" name="ResultSort" value="[Job No.]">
+</form></div>
+<span class="glyphicon glyphicon-menu-down btn"></span></div>
+<form autocomplete="OFF" id="frmSR8" name="frmSR8" method="POST" action="HTTPS://jobs.uchc.edu/CSS_External/CSSPage_JobDetail.ASP?T=20261021141424&amp;"><input type="HIDDEN" id="Key" name="Key" value="{F4D8A502-D709-436C-BE1B-FF14A8866F6A}"><input type="HIDDEN" id="Type" name="Type" value="CAT"><input type="HIDDEN" id="InitPage" name="InitPage" value="1"><input type="HIDDEN" id="InitURL" name="InitURL" value="CSSPage_Welcome.asp"><input type="HIDDEN" id="SRCH" name="SRCH" value="All Positions"><input type="HIDDEN" id="Search" name="Search" value=""><input type="HIDDEN" id="RetColsQS" name="RetColsQS" value=""><input type="HIDDEN" id="RetColsGR" name="RetColsGR" value=""><input type="HIDDEN" id="SRPage" name="SRPage" value="1"><input type="HIDDEN" id="SRURL" name="SRURL" value="CSSPage_SearchResults.ASP"><input type="HIDDEN" id="ReqKey" name="ReqKey" value="{3FC18F96-DF70-4004-8FE5-38D36FEA00B9}"><input type="HIDDEN" id="ResultSort" name="ResultSort" value=""></form>
+<div class="tr"><div class="td"><h6>Job&nbsp;Title</h6><a href="javascript:sysSubmitForm('frmSR8');" title="Click to view job description" alt="Click to view job description">Asst Prof/Basic Sciences - Grant Writer&nbsp;</a><form autocomplete="OFF" id="frmSort1" name="frmSort1" method="POST" action="HTTPS://jobs.uchc.edu/CSS_External/CSSPage_SearchResults.ASP">
+<input type="HIDDEN" id="Key" name="Key" value="{F4D8A502-D709-436C-BE1B-FF14A8866F6A}">
+<input type="HIDDEN" id="Type" name="Type" value="CAT">
+<input type="HIDDEN" id="InitPage" name="InitPage" value="1">
+<input type="HIDDEN" id="InitURL" name="InitURL" value="CSSPage_Welcome.asp">
+<input type="HIDDEN" id="SRCH" name="SRCH" value="All Positions">
+<input type="HIDDEN" id="Search" name="Search" value="">
+<input type="HIDDEN" id="RetColsQS" name="RetColsQS" value="">
+<input type="HIDDEN" id="RetColsGR" name="RetColsGR" value="">
+<input type="HIDDEN" id="ResultSort" name="ResultSort" value="[Job Title]">
+</form></div>
+<div class="td"><h6>Location</h6>Farmington&nbsp;<form autocomplete="OFF" id="frmSort2" name="frmSort2" method="POST" action="HTTPS://jobs.uchc.edu/CSS_External/CSSPage_SearchResults.ASP">
+<input type="HIDDEN" id="Key" name="Key" value="{F4D8A502-D709-436C-BE1B-FF14A8866F6A}">
+<input type="HIDDEN" id="Type" name="Type" value="CAT">
+<input type="HIDDEN" id="InitPage" name="InitPage" value="1">
+<input type="HIDDEN" id="InitURL" name="InitURL" value="CSSPage_Welcome.asp">
+<input type="HIDDEN" id="SRCH" name="SRCH" value="All Positions">
+<input type="HIDDEN" id="Search" name="Search" value="">
+<input type="HIDDEN" id="RetColsQS" name="RetColsQS" value="">
+<input type="HIDDEN" id="RetColsGR" name="RetColsGR" value="">
+<input type="HIDDEN" id="ResultSort" name="ResultSort" value="[Location]">
+</form></div>
+<div class="td"><h6>Department</h6>10000-Dean's Office - Med&nbsp;<form autocomplete="OFF" id="frmSort3" name="frmSort3" method="POST" action="HTTPS://jobs.uchc.edu/CSS_External/CSSPage_SearchResults.ASP">
+<input type="HIDDEN" id="Key" name="Key" value="{F4D8A502-D709-436C-BE1B-FF14A8866F6A}">
+<input type="HIDDEN" id="Type" name="Type" value="CAT">
+<input type="HIDDEN" id="InitPage" name="InitPage" value="1">
+<input type="HIDDEN" id="InitURL" name="InitURL" value="CSSPage_Welcome.asp">
+<input type="HIDDEN" id="SRCH" name="SRCH" value="All Positions">
+<input type="HIDDEN" id="Search" name="Search" value="">
+<input type="HIDDEN" id="RetColsQS" name="RetColsQS" value="">
+<input type="HIDDEN" id="RetColsGR" name="RetColsGR" value="">
+<input type="HIDDEN" id="ResultSort" name="ResultSort" value="[Department]">
+</form></div>
+<div class="td"><h6>Job&nbsp;No.</h6>2027-221&nbsp;<form autocomplete="OFF" id="frmSort4" name="frmSort4" method="POST" action="HTTPS://jobs.uchc.edu/CSS_External/CSSPage_SearchResults.ASP">
+<input type="HIDDEN" id="Key" name="Key" value="{F4D8A502-D709-436C-BE1B-FF14A8866F6A}">
+<input type="HIDDEN" id="Type" name="Type" value="CAT">
+<input type="HIDDEN" id="InitPage" name="InitPage" value="1">
+<input type="HIDDEN" id="InitURL" name="InitURL" value="CSSPage_Welcome.asp">
+<input type="HIDDEN" id="SRCH" name="SRCH" value="All Positions">
+<input type="HIDDEN" id="Search" name="Search" value="">
+<input type="HIDDEN" id="RetColsQS" name="RetColsQS" value="">
+<input type="HIDDEN" id="RetColsGR" name="RetColsGR" value="">
+<input type="HIDDEN" id="ResultSort" name="ResultSort" value="[Job No.]">
+</form></div>
+<span class="glyphicon glyphicon-menu-down btn"></span></div>
+<form autocomplete="OFF" id="frmSR9" name="frmSR9" method="POST" action="HTTPS://jobs.uchc.edu/CSS_External/CSSPage_JobDetail.ASP?T=20261021141424&amp;"><input type="HIDDEN" id="Key" name="Key" value="{F4D8A502-D709-436C-BE1B-FF14A8866F6A}"><input type="HIDDEN" id="Type" name="Type" value="CAT"><input type="HIDDEN" id="InitPage" name="InitPage" value="1"><input type="HIDDEN" id="InitURL" name="InitURL" value="CSSPage_Welcome.asp"><input type="HIDDEN" id="SRCH" name="SRCH" value="All Positions"><input type="HIDDEN" id="Search" name="Search" value=""><input type="HIDDEN" id="RetColsQS" name="RetColsQS" value=""><input type="HIDDEN" id="RetColsGR" name="RetColsGR" value=""><input type="HIDDEN" id="SRPage" name="SRPage" value="1"><input type="HIDDEN" id="SRURL" name="SRURL" value="CSSPage_SearchResults.ASP"><input type="HIDDEN" id="ReqKey" name="ReqKey" value="{8BCDA1D1-9E53-4862-83DD-4E785718136E}"><input type="HIDDEN" id="ResultSort" name="ResultSort" value=""></form>
+<div class="tr"><div class="td"><h6>Job&nbsp;Title</h6><a href="javascript:sysSubmitForm('frmSR9');" title="Click to view job description" alt="Click to view job description">Asst Prof/Basic Sciences - NEAG Comprehensive Cancer Center&nbsp;</a><form autocomplete="OFF" id="frmSort1" name="frmSort1" method="POST" action="HTTPS://jobs.uchc.edu/CSS_External/CSSPage_SearchResults.ASP">
+<input type="HIDDEN" id="Key" name="Key" value="{F4D8A502-D709-436C-BE1B-FF14A8866F6A}">
+<input type="HIDDEN" id="Type" name="Type" value="CAT">
+<input type="HIDDEN" id="InitPage" name="InitPage" value="1">
+<input type="HIDDEN" id="InitURL" name="InitURL" value="CSSPage_Welcome.asp">
+<input type="HIDDEN" id="SRCH" name="SRCH" value="All Positions">
+<input type="HIDDEN" id="Search" name="Search" value="">
+<input type="HIDDEN" id="RetColsQS" name="RetColsQS" value="">
+<input type="HIDDEN" id="RetColsGR" name="RetColsGR" value="">
+<input type="HIDDEN" id="ResultSort" name="ResultSort" value="[Job Title]">
+</form></div>
+<div class="td"><h6>Location</h6>Farmington&nbsp;<form autocomplete="OFF" id="frmSort2" name="frmSort2" method="POST" action="HTTPS://jobs.uchc.edu/CSS_External/CSSPage_SearchResults.ASP">
+<input type="HIDDEN" id="Key" name="Key" value="{F4D8A502-D709-436C-BE1B-FF14A8866F6A}">
+<input type="HIDDEN" id="Type" name="Type" value="CAT">
+<input type="HIDDEN" id="InitPage" name="InitPage" value="1">
+<input type="HIDDEN" id="InitURL" name="InitURL" value="CSSPage_Welcome.asp">
+<input type="HIDDEN" id="SRCH" name="SRCH" value="All Positions">
+<input type="HIDDEN" id="Search" name="Search" value="">
+<input type="HIDDEN" id="RetColsQS" name="RetColsQS" value="">
+<input type="HIDDEN" id="RetColsGR" name="RetColsGR" value="">
+<input type="HIDDEN" id="ResultSort" name="ResultSort" value="[Location]">
+</form></div>
+<div class="td"><h6>Department</h6>10520-Neag Cancer Center (SOM)&nbsp;<form autocomplete="OFF" id="frmSort3" name="frmSort3" method="POST" action="HTTPS://jobs.uchc.edu/CSS_External/CSSPage_SearchResults.ASP">
+<input type="HIDDEN" id="Key" name="Key" value="{F4D8A502-D709-436C-BE1B-FF14A8866F6A}">
+<input type="HIDDEN" id="Type" name="Type" value="CAT">
+<input type="HIDDEN" id="InitPage" name="InitPage" value="1">
+<input type="HIDDEN" id="InitURL" name="InitURL" value="CSSPage_Welcome.asp">
+<input type="HIDDEN" id="SRCH" name="SRCH" value="All Positions">
+<input type="HIDDEN" id="Search" name="Search" value="">
+<input type="HIDDEN" id="RetColsQS" name="RetColsQS" value="">
+<input type="HIDDEN" id="RetColsGR" name="RetColsGR" value="">
+<input type="HIDDEN" id="ResultSort" name="ResultSort" value="[Department]">
+</form></div>
+<div class="td"><h6>Job&nbsp;No.</h6>2014-229&nbsp;<form autocomplete="OFF" id="frmSort4" name="frmSort4" method="POST" action="HTTPS://jobs.uchc.edu/CSS_External/CSSPage_SearchResults.ASP">
+<input type="HIDDEN" id="Key" name="Key" value="{F4D8A502-D709-436C-BE1B-FF14A8866F6A}">
+<input type="HIDDEN" id="Type" name="Type" value="CAT">
+<input type="HIDDEN" id="InitPage" name="InitPage" value="1">
+<input type="HIDDEN" id="InitURL" name="InitURL" value="CSSPage_Welcome.asp">
+<input type="HIDDEN" id="SRCH" name="SRCH" value="All Positions">
+<input type="HIDDEN" id="Search" name="Search" value="">
+<input type="HIDDEN" id="RetColsQS" name="RetColsQS" value="">
+<input type="HIDDEN" id="RetColsGR" name="RetColsGR" value="">
+<input type="HIDDEN" id="ResultSort" name="ResultSort" value="[Job No.]">
+</form></div>
+<span class="glyphicon glyphicon-menu-down btn"></span></div>
+<form autocomplete="OFF" id="frmSR10" name="frmSR10" method="POST" action="HTTPS://jobs.uchc.edu/CSS_External/CSSPage_JobDetail.ASP?T=20261021141424&amp;"><input type="HIDDEN" id="Key" name="Key" value="{F4D8A502-D709-436C-BE1B-FF14A8866F6A}"><input type="HIDDEN" id="Type" name="Type" value="CAT"><input type="HIDDEN" id="InitPage" name="InitPage" value="1"><input type="HIDDEN" id="InitURL" name="InitURL" value="CSSPage_Welcome.asp"><input type="HIDDEN" id="SRCH" name="SRCH" value="All Positions"><input type="HIDDEN" id="Search" name="Search" value=""><input type="HIDDEN" id="RetColsQS" name="RetColsQS" value=""><input type="HIDDEN" id="RetColsGR" name="RetColsGR" value=""><input type="HIDDEN" id="SRPage" name="SRPage" value="1"><input type="HIDDEN" id="SRURL" name="SRURL" value="CSSPage_SearchResults.ASP"><input type="HIDDEN" id="ReqKey" name="ReqKey" value="{79526F31-00E9-4B45-BA85-0FEC14C32E8D}"><input type="HIDDEN" id="ResultSort" name="ResultSort" value=""></form>
+<div class="tr"><div class="td"><h6>Job&nbsp;Title</h6><a href="javascript:sysSubmitForm('frmSR10');" title="Click to view job description" alt="Click to view job description">Asst Prof/Basic Sciences - RESEARCH&nbsp;</a><form autocomplete="OFF" id="frmSort1" name="frmSort1" method="POST" action="HTTPS://jobs.uchc.edu/CSS_External/CSSPage_SearchResults.ASP">
+<input type="HIDDEN" id="Key" name="Key" value="{F4D8A502-D709-436C-BE1B-FF14A8866F6A}">
+<input type="HIDDEN" id="Type" name="Type" value="CAT">
+<input type="HIDDEN" id="InitPage" name="InitPage" value="1">
+<input type="HIDDEN" id="InitURL" name="InitURL" value="CSSPage_Welcome.asp">
+<input type="HIDDEN" id="SRCH" name="SRCH" value="All Positions">
+<input type="HIDDEN" id="Search" name="Search" value="">
+<input type="HIDDEN" id="RetColsQS" name="RetColsQS" value="">
+<input type="HIDDEN" id="RetColsGR" name="RetColsGR" value="">
+<input type="HIDDEN" id="ResultSort" name="ResultSort" value="[Job Title]">
+</form></div>
+<div class="td"><h6>Location</h6>Farmington&nbsp;<form autocomplete="OFF" id="frmSort2" name="frmSort2" method="POST" action="HTTPS://jobs.uchc.edu/CSS_External/CSSPage_SearchResults.ASP">
+<input type="HIDDEN" id="Key" name="Key" value="{F4D8A502-D709-436C-BE1B-FF14A8866F6A}">
+<input type="HIDDEN" id="Type" name="Type" value="CAT">
+<input type="HIDDEN" id="InitPage" name="InitPage" value="1">
+<input type="HIDDEN" id="InitURL" name="InitURL" value="CSSPage_Welcome.asp">
+<input type="HIDDEN" id="SRCH" name="SRCH" value="All Positions">
+<input type="HIDDEN" id="Search" name="Search" value="">
+<input type="HIDDEN" id="RetColsQS" name="RetColsQS" value="">
+<input type="HIDDEN" id="RetColsGR" name="RetColsGR" value="">
+<input type="HIDDEN" id="ResultSort" name="ResultSort" value="[Location]">
+</form></div>
+<div class="td"><h6>Department</h6>10260-Obstetrics and Gynecology&nbsp;<form autocomplete="OFF" id="frmSort3" name="frmSort3" method="POST" action="HTTPS://jobs.uchc.edu/CSS_External/CSSPage_SearchResults.ASP">
+<input type="HIDDEN" id="Key" name="Key" value="{F4D8A502-D709-436C-BE1B-FF14A8866F6A}">
+<input type="HIDDEN" id="Type" name="Type" value="CAT">
+<input type="HIDDEN" id="InitPage" name="InitPage" value="1">
+<input type="HIDDEN" id="InitURL" name="InitURL" value="CSSPage_Welcome.asp">
+<input type="HIDDEN" id="SRCH" name="SRCH" value="All Positions">
+<input type="HIDDEN" id="Search" name="Search" value="">
+<input type="HIDDEN" id="RetColsQS" name="RetColsQS" value="">
+<input type="HIDDEN" id="RetColsGR" name="RetColsGR" value="">
+<input type="HIDDEN" id="ResultSort" name="ResultSort" value="[Department]">
+</form></div>
+<div class="td"><h6>Job&nbsp;No.</h6>2019-1033&nbsp;<form autocomplete="OFF" id="frmSort4" name="frmSort4" method="POST" action="HTTPS://jobs.uchc.edu/CSS_External/CSSPage_SearchResults.ASP">
+<input type="HIDDEN" id="Key" name="Key" value="{F4D8A502-D709-436C-BE1B-FF14A8866F6A}">
+<input type="HIDDEN" id="Type" name="Type" value="CAT">
+<input type="HIDDEN" id="InitPage" name="InitPage" value="1">
+<input type="HIDDEN" id="InitURL" name="InitURL" value="CSSPage_Welcome.asp">
+<input type="HIDDEN" id="SRCH" name="SRCH" value="All Positions">
+<input type="HIDDEN" id="Search" name="Search" value="">
+<input type="HIDDEN" id="RetColsQS" name="RetColsQS" value="">
+<input type="HIDDEN" id="RetColsGR" name="RetColsGR" value="">
+<input type="HIDDEN" id="ResultSort" name="ResultSort" value="[Job No.]">
+</form></div>
+<span class="glyphicon glyphicon-menu-down btn"></span></div>
+<form autocomplete="OFF" id="frmSR11" name="frmSR11" method="POST" action="HTTPS://jobs.uchc.edu/CSS_External/CSSPage_JobDetail.ASP?T=20261021141424&amp;"><input type="HIDDEN" id="Key" name="Key" value="{F4D8A502-D709-436C-BE1B-FF14A8866F6A}"><input type="HIDDEN" id="Type" name="Type" value="CAT"><input type="HIDDEN" id="InitPage" name="InitPage" value="1"><input type="HIDDEN" id="InitURL" name="InitURL" value="CSSPage_Welcome.asp"><input type="HIDDEN" id="SRCH" name="SRCH" value="All Positions"><input type="HIDDEN" id="Search" name="Search" value=""><input type="HIDDEN" id="RetColsQS" name="RetColsQS" value=""><input type="HIDDEN" id="RetColsGR" name="RetColsGR" value=""><input type="HIDDEN" id="SRPage" name="SRPage" value="1"><input type="HIDDEN" id="SRURL" name="SRURL" value="CSSPage_SearchResults.ASP"><input type="HIDDEN" id="ReqKey" name="ReqKey" value="{2E4B05F0-AAA9-4EB7-B0C9-28043B161241}"><input type="HIDDEN" id="ResultSort" name="ResultSort" value=""></form>
+<div class="tr"><div class="td"><h6>Job&nbsp;Title</h6><a href="javascript:sysSubmitForm('frmSR11');" title="Click to view job description" alt="Click to view job description">Asst Prof/Basic Sciences - Urology&nbsp;</a><form autocomplete="OFF" id="frmSort1" name="frmSort1" method="POST" action="HTTPS://jobs.uchc.edu/CSS_External/CSSPage_SearchResults.ASP">
+<input type="HIDDEN" id="Key" name="Key" value="{F4D8A502-D709-436C-BE1B-FF14A8866F6A}">
+<input type="HIDDEN" id="Type" name="Type" value="CAT">
+<input type="HIDDEN" id="InitPage" name="InitPage" value="1">
+<input type="HIDDEN" id="InitURL" name="InitURL" value="CSSPage_Welcome.asp">
+<input type="HIDDEN" id="SRCH" name="SRCH" value="All Positions">
+<input type="HIDDEN" id="Search" name="Search" value="">
+<input type="HIDDEN" id="RetColsQS" name="RetColsQS" value="">
+<input type="HIDDEN" id="RetColsGR" name="RetColsGR" value="">
+<input type="HIDDEN" id="ResultSort" name="ResultSort" value="[Job Title]">
+</form></div>
+<div class="td"><h6>Location</h6>Farmington&nbsp;<form autocomplete="OFF" id="frmSort2" name="frmSort2" method="POST" action="HTTPS://jobs.uchc.edu/CSS_External/CSSPage_SearchResults.ASP">
+<input type="HIDDEN" id="Key" name="Key" value="{F4D8A502-D709-436C-BE1B-FF14A8866F6A}">
+<input type="HIDDEN" id="Type" name="Type" value="CAT">
+<input type="HIDDEN" id="InitPage" name="InitPage" value="1">
+<input type="HIDDEN" id="InitURL" name="InitURL" value="CSSPage_Welcome.asp">
+<input type="HIDDEN" id="SRCH" name="SRCH" value="All Positions">
+<input type="HIDDEN" id="Search" name="Search" value="">
+<input type="HIDDEN" id="RetColsQS" name="RetColsQS" value="">
+<input type="HIDDEN" id="RetColsGR" name="RetColsGR" value="">
+<input type="HIDDEN" id="ResultSort" name="ResultSort" value="[Location]">
+</form></div>
+<div class="td"><h6>Department</h6>10229-Surgery-Basic Sciences&nbsp;<form autocomplete="OFF" id="frmSort3" name="frmSort3" method="POST" action="HTTPS://jobs.uchc.edu/CSS_External/CSSPage_SearchResults.ASP">
+<input type="HIDDEN" id="Key" name="Key" value="{F4D8A502-D709-436C-BE1B-FF14A8866F6A}">
+<input type="HIDDEN" id="Type" name="Type" value="CAT">
+<input type="HIDDEN" id="InitPage" name="InitPage" value="1">
+<input type="HIDDEN" id="InitURL" name="InitURL" value="CSSPage_Welcome.asp">
+<input type="HIDDEN" id="SRCH" name="SRCH" value="All Positions">
+<input type="HIDDEN" id="Search" name="Search" value="">
+<input type="HIDDEN" id="RetColsQS" name="RetColsQS" value="">
+<input type="HIDDEN" id="RetColsGR" name="RetColsGR" value="">
+<input type="HIDDEN" id="ResultSort" name="ResultSort" value="[Department]">
+</form></div>
+<div class="td"><h6>Job&nbsp;No.</h6>2026-1088&nbsp;<form autocomplete="OFF" id="frmSort4" name="frmSort4" method="POST" action="HTTPS://jobs.uchc.edu/CSS_External/CSSPage_SearchResults.ASP">
+<input type="HIDDEN" id="Key" name="Key" value="{F4D8A502-D709-436C-BE1B-FF14A8866F6A}">
+<input type="HIDDEN" id="Type" name="Type" value="CAT">
+<input type="HIDDEN" id="InitPage" name="InitPage" value="1">
+<input type="HIDDEN" id="InitURL" name="InitURL" value="CSSPage_Welcome.asp">
+<input type="HIDDEN" id="SRCH" name="SRCH" value="All Positions">
+<input type="HIDDEN" id="Search" name="Search" value="">
+<input type="HIDDEN" id="RetColsQS" name="RetColsQS" value="">
+<input type="HIDDEN" id="RetColsGR" name="RetColsGR" value="">
+<input type="HIDDEN" id="ResultSort" name="ResultSort" value="[Job No.]">
+</form></div>
+<span class="glyphicon glyphicon-menu-down btn"></span></div>
+<form autocomplete="OFF" id="frmSR12" name="frmSR12" method="POST" action="HTTPS://jobs.uchc.edu/CSS_External/CSSPage_JobDetail.ASP?T=20261021141424&amp;"><input type="HIDDEN" id="Key" name="Key" value="{F4D8A502-D709-436C-BE1B-FF14A8866F6A}"><input type="HIDDEN" id="Type" name="Type" value="CAT"><input type="HIDDEN" id="InitPage" name="InitPage" value="1"><input type="HIDDEN" id="InitURL" name="InitURL" value="CSSPage_Welcome.asp"><input type="HIDDEN" id="SRCH" name="SRCH" value="All Positions"><input type="HIDDEN" id="Search" name="Search" value=""><input type="HIDDEN" id="RetColsQS" name="RetColsQS" value=""><input type="HIDDEN" id="RetColsGR" name="RetColsGR" value=""><input type="HIDDEN" id="SRPage" name="SRPage" value="1"><input type="HIDDEN" id="SRURL" name="SRURL" value="CSSPage_SearchResults.ASP"><input type="HIDDEN" id="ReqKey" name="ReqKey" value="{FB102804-1B6C-4671-BFA4-B67F7DD91C4A}"><input type="HIDDEN" id="ResultSort" name="ResultSort" value=""></form>
+<div class="tr"><div class="td"><h6>Job&nbsp;Title</h6><a href="javascript:sysSubmitForm('frmSR12');" title="Click to view job description" alt="Click to view job description">Asst Prof/Clinical&nbsp;</a><form autocomplete="OFF" id="frmSort1" name="frmSort1" method="POST" action="HTTPS://jobs.uchc.edu/CSS_External/CSSPage_SearchResults.ASP">
+<input type="HIDDEN" id="Key" name="Key" value="{F4D8A502-D709-436C-BE1B-FF14A8866F6A}">
+<input type="HIDDEN" id="Type" name="Type" value="CAT">
+<input type="HIDDEN" id="InitPage" name="InitPage" value="1">
+<input type="HIDDEN" id="InitURL" name="InitURL" value="CSSPage_Welcome.asp">
+<input type="HIDDEN" id="SRCH" name="SRCH" value="All Positions">
+<input type="HIDDEN" id="Search" name="Search" value="">
+<input type="HIDDEN" id="RetColsQS" name="RetColsQS" value="">
+<input type="HIDDEN" id="RetColsGR" name="RetColsGR" value="">
+<input type="HIDDEN" id="ResultSort" name="ResultSort" value="[Job Title]">
+</form></div>
+<div class="td"><h6>Location</h6>Farmington&nbsp;<form autocomplete="OFF" id="frmSort2" name="frmSort2" method="POST" action="HTTPS://jobs.uchc.edu/CSS_External/CSSPage_SearchResults.ASP">
+<input type="HIDDEN" id="Key" name="Key" value="{F4D8A502-D709-436C-BE1B-FF14A8866F6A}">
+<input type="HIDDEN" id="Type" name="Type" value="CAT">
+<input type="HIDDEN" id="InitPage" name="InitPage" value="1">
+<input type="HIDDEN" id="InitURL" name="InitURL" value="CSSPage_Welcome.asp">
+<input type="HIDDEN" id="SRCH" name="SRCH" value="All Positions">
+<input type="HIDDEN" id="Search" name="Search" value="">
+<input type="HIDDEN" id="RetColsQS" name="RetColsQS" value="">
+<input type="HIDDEN" id="RetColsGR" name="RetColsGR" value="">
+<input type="HIDDEN" id="ResultSort" name="ResultSort" value="[Location]">
+</form></div>
+<div class="td"><h6>Department</h6>10500-Univ Of Conn Center On Aging&nbsp;<form autocomplete="OFF" id="frmSort3" name="frmSort3" method="POST" action="HTTPS://jobs.uchc.edu/CSS_External/CSSPage_SearchResults.ASP">
+<input type="HIDDEN" id="Key" name="Key" value="{F4D8A502-D709-436C-BE1B-FF14A8866F6A}">
+<input type="HIDDEN" id="Type" name="Type" value="CAT">
+<input type="HIDDEN" id="InitPage" name="InitPage" value="1">
+<input type="HIDDEN" id="InitURL" name="InitURL" value="CSSPage_Welcome.asp">
+<input type="HIDDEN" id="SRCH" name="SRCH" value="All Positions">
+<input type="HIDDEN" id="Search" name="Search" value="">
+<input type="HIDDEN" id="RetColsQS" name="RetColsQS" value="">
+<input type="HIDDEN" id="RetColsGR" name="RetColsGR" value="">
+<input type="HIDDEN" id="ResultSort" name="ResultSort" value="[Department]">
+</form></div>
+<div class="td"><h6>Job&nbsp;No.</h6>2024-072&nbsp;<form autocomplete="OFF" id="frmSort4" name="frmSort4" method="POST" action="HTTPS://jobs.uchc.edu/CSS_External/CSSPage_SearchResults.ASP">
+<input type="HIDDEN" id="Key" name="Key" value="{F4D8A502-D709-436C-BE1B-FF14A8866F6A}">
+<input type="HIDDEN" id="Type" name="Type" value="CAT">
+<input type="HIDDEN" id="InitPage" name="InitPage" value="1">
+<input type="HIDDEN" id="InitURL" name="InitURL" value="CSSPage_Welcome.asp">
+<input type="HIDDEN" id="SRCH" name="SRCH" value="All Positions">
+<input type="HIDDEN" id="Search" name="Search" value="">
+<input type="HIDDEN" id="RetColsQS" name="RetColsQS" value="">
+<input type="HIDDEN" id="RetColsGR" name="RetColsGR" value="">
+<input type="HIDDEN" id="ResultSort" name="ResultSort" value="[Job No.]">
+</form></div>
+<span class="glyphicon glyphicon-menu-down btn"></span></div>
+<form autocomplete="OFF" id="frmSR13" name="frmSR13" method="POST" action="HTTPS://jobs.uchc.edu/CSS_External/CSSPage_JobDetail.ASP?T=20261021141424&amp;"><input type="HIDDEN" id="Key" name="Key" value="{F4D8A502-D709-436C-BE1B-FF14A8866F6A}"><input type="HIDDEN" id="Type" name="Type" value="CAT"><input type="HIDDEN" id="InitPage" name="InitPage" value="1"><input type="HIDDEN" id="InitURL" name="InitURL" value="CSSPage_Welcome.asp"><input type="HIDDEN" id="SRCH" name="SRCH" value="All Positions"><input type="HIDDEN" id="Search" name="Search" value=""><input type="HIDDEN" id="RetColsQS" name="RetColsQS" value=""><input type="HIDDEN" id="RetColsGR" name="RetColsGR" value=""><input type="HIDDEN" id="SRPage" name="SRPage" value="1"><input type="HIDDEN" id="SRURL" name="SRURL" value="CSSPage_SearchResults.ASP"><input type="HIDDEN" id="ReqKey" name="ReqKey" value="{3A297ABC-C0FF-46C6-803D-504686BAA4EA}"><input type="HIDDEN" id="ResultSort" name="ResultSort" value=""></form>
+<div class="tr"><div class="td"><h6>Job&nbsp;Title</h6><a href="javascript:sysSubmitForm('frmSR13');" title="Click to view job description" alt="Click to view job description">Asst Prof/Clinical - Blood Bank/Transfusion Medicine&nbsp;</a><form autocomplete="OFF" id="frmSort1" name="frmSort1" method="POST" action="HTTPS://jobs.uchc.edu/CSS_External/CSSPage_SearchResults.ASP">
+<input type="HIDDEN" id="Key" name="Key" value="{F4D8A502-D709-436C-BE1B-FF14A8866F6A}">
+<input type="HIDDEN" id="Type" name="Type" value="CAT">
+<input type="HIDDEN" id="InitPage" name="InitPage" value="1">
+<input type="HIDDEN" id="InitURL" name="InitURL" value="CSSPage_Welcome.asp">
+<input type="HIDDEN" id="SRCH" name="SRCH" value="All Positions">
+<input type="HIDDEN" id="Search" name="Search" value="">
+<input type="HIDDEN" id="RetColsQS" name="RetColsQS" value="">
+<input type="HIDDEN" id="RetColsGR" name="RetColsGR" value="">
+<input type="HIDDEN" id="ResultSort" name="ResultSort" value="[Job Title]">
+</form></div>
+<div class="td"><h6>Location</h6>Farmington&nbsp;<form autocomplete="OFF" id="frmSort2" name="frmSort2" method="POST" action="HTTPS://jobs.uchc.edu/CSS_External/CSSPage_SearchResults.ASP">
+<input type="HIDDEN" id="Key" name="Key" value="{F4D8A502-D709-436C-BE1B-FF14A8866F6A}">
+<input type="HIDDEN" id="Type" name="Type" value="CAT">
+<input type="HIDDEN" id="InitPage" name="InitPage" value="1">
+<input type="HIDDEN" id="InitURL" name="InitURL" value="CSSPage_Welcome.asp">
+<input type="HIDDEN" id="SRCH" name="SRCH" value="All Positions">
+<input type="HIDDEN" id="Search" name="Search" value="">
+<input type="HIDDEN" id="RetColsQS" name="RetColsQS" value="">
+<input type="HIDDEN" id="RetColsGR" name="RetColsGR" value="">
+<input type="HIDDEN" id="ResultSort" name="ResultSort" value="[Location]">
+</form></div>
+<div class="td"><h6>Department</h6>10120-Pathology &amp; Laboratory Medicine&nbsp;<form autocomplete="OFF" id="frmSort3" name="frmSort3" method="POST" action="HTTPS://jobs.uchc.edu/CSS_External/CSSPage_SearchResults.ASP">
+<input type="HIDDEN" id="Key" name="Key" value="{F4D8A502-D709-436C-BE1B-FF14A8866F6A}">
+<input type="HIDDEN" id="Type" name="Type" value="CAT">
+<input type="HIDDEN" id="InitPage" name="InitPage" value="1">
+<input type="HIDDEN" id="InitURL" name="InitURL" value="CSSPage_Welcome.asp">
+<input type="HIDDEN" id="SRCH" name="SRCH" value="All Positions">
+<input type="HIDDEN" id="Search" name="Search" value="">
+<input type="HIDDEN" id="RetColsQS" name="RetColsQS" value="">
+<input type="HIDDEN" id="RetColsGR" name="RetColsGR" value="">
+<input type="HIDDEN" id="ResultSort" name="ResultSort" value="[Department]">
+</form></div>
+<div class="td"><h6>Job&nbsp;No.</h6>2027-105&nbsp;<form autocomplete="OFF" id="frmSort4" name="frmSort4" method="POST" action="HTTPS://jobs.uchc.edu/CSS_External/CSSPage_SearchResults.ASP">
+<input type="HIDDEN" id="Key" name="Key" value="{F4D8A502-D709-436C-BE1B-FF14A8866F6A}">
+<input type="HIDDEN" id="Type" name="Type" value="CAT">
+<input type="HIDDEN" id="InitPage" name="InitPage" value="1">
+<input type="HIDDEN" id="InitURL" name="InitURL" value="CSSPage_Welcome.asp">
+<input type="HIDDEN" id="SRCH" name="SRCH" value="All Positions">
+<input type="HIDDEN" id="Search" name="Search" value="">
+<input type="HIDDEN" id="RetColsQS" name="RetColsQS" value="">
+<input type="HIDDEN" id="RetColsGR" name="RetColsGR" value="">
+<input type="HIDDEN" id="ResultSort" name="ResultSort" value="[Job No.]">
+</form></div>
+<span class="glyphicon glyphicon-menu-down btn"></span></div>
+<form autocomplete="OFF" id="frmSR14" name="frmSR14" method="POST" action="HTTPS://jobs.uchc.edu/CSS_External/CSSPage_JobDetail.ASP?T=20261021141424&amp;"><input type="HIDDEN" id="Key" name="Key" value="{F4D8A502-D709-436C-BE1B-FF14A8866F6A}"><input type="HIDDEN" id="Type" name="Type" value="CAT"><input type="HIDDEN" id="InitPage" name="InitPage" value="1"><input type="HIDDEN" id="InitURL" name="InitURL" value="CSSPage_Welcome.asp"><input type="HIDDEN" id="SRCH" name="SRCH" value="All Positions"><input type="HIDDEN" id="Search" name="Search" value=""><input type="HIDDEN" id="RetColsQS" name="RetColsQS" value=""><input type="HIDDEN" id="RetColsGR" name="RetColsGR" value=""><input type="HIDDEN" id="SRPage" name="SRPage" value="1"><input type="HIDDEN" id="SRURL" name="SRURL" value="CSSPage_SearchResults.ASP"><input type="HIDDEN" id="ReqKey" name="ReqKey" value="{6F951DFB-4161-4227-8245-A72CF8FAABC8}"><input type="HIDDEN" id="ResultSort" name="ResultSort" value=""></form>
+<div class="tr"><div class="td"><h6>Job&nbsp;Title</h6><a href="javascript:sysSubmitForm('frmSR14');" title="Click to view job description" alt="Click to view job description">Asst Prof/Clinical - BMT Transplant&nbsp;</a><form autocomplete="OFF" id="frmSort1" name="frmSort1" method="POST" action="HTTPS://jobs.uchc.edu/CSS_External/CSSPage_SearchResults.ASP">
+<input type="HIDDEN" id="Key" name="Key" value="{F4D8A502-D709-436C-BE1B-FF14A8866F6A}">
+<input type="HIDDEN" id="Type" name="Type" value="CAT">
+<input type="HIDDEN" id="InitPage" name="InitPage" value="1">
+<input type="HIDDEN" id="InitURL" name="InitURL" value="CSSPage_Welcome.asp">
+<input type="HIDDEN" id="SRCH" name="SRCH" value="All Positions">
+<input type="HIDDEN" id="Search" name="Search" value="">
+<input type="HIDDEN" id="RetColsQS" name="RetColsQS" value="">
+<input type="HIDDEN" id="RetColsGR" name="RetColsGR" value="">
+<input type="HIDDEN" id="ResultSort" name="ResultSort" value="[Job Title]">
+</form></div>
+<div class="td"><h6>Location</h6>Farmington&nbsp;<form autocomplete="OFF" id="frmSort2" name="frmSort2" method="POST" action="HTTPS://jobs.uchc.edu/CSS_External/CSSPage_SearchResults.ASP">
+<input type="HIDDEN" id="Key" name="Key" value="{F4D8A502-D709-436C-BE1B-FF14A8866F6A}">
+<input type="HIDDEN" id="Type" name="Type" value="CAT">
+<input type="HIDDEN" id="InitPage" name="InitPage" value="1">
+<input type="HIDDEN" id="InitURL" name="InitURL" value="CSSPage_Welcome.asp">
+<input type="HIDDEN" id="SRCH" name="SRCH" value="All Positions">
+<input type="HIDDEN" id="Search" name="Search" value="">
+<input type="HIDDEN" id="RetColsQS" name="RetColsQS" value="">
+<input type="HIDDEN" id="RetColsGR" name="RetColsGR" value="">
+<input type="HIDDEN" id="ResultSort" name="ResultSort" value="[Location]">
+</form></div>
+<div class="td"><h6>Department</h6>10520-Neag Cancer Center (SOM)&nbsp;<form autocomplete="OFF" id="frmSort3" name="frmSort3" method="POST" action="HTTPS://jobs.uchc.edu/CSS_External/CSSPage_SearchResults.ASP">
+<input type="HIDDEN" id="Key" name="Key" value="{F4D8A502-D709-436C-BE1B-FF14A8866F6A}">
+<input type="HIDDEN" id="Type" name="Type" value="CAT">
+<input type="HIDDEN" id="InitPage" name="InitPage" value="1">
+<input type="HIDDEN" id="InitURL" name="InitURL" value="CSSPage_Welcome.asp">
+<input type="HIDDEN" id="SRCH" name="SRCH" value="All Positions">
+<input type="HIDDEN" id="Search" name="Search" value="">
+<input type="HIDDEN" id="RetColsQS" name="RetColsQS" value="">
+<input type="HIDDEN" id="RetColsGR" name="RetColsGR" value="">
+<input type="HIDDEN" id="ResultSort" name="ResultSort" value="[Department]">
+</form></div>
+<div class="td"><h6>Job&nbsp;No.</h6>2026-831&nbsp;<form autocomplete="OFF" id="frmSort4" name="frmSort4" method="POST" action="HTTPS://jobs.uchc.edu/CSS_External/CSSPage_SearchResults.ASP">
+<input type="HIDDEN" id="Key" name="Key" value="{F4D8A502-D709-436C-BE1B-FF14A8866F6A}">
+<input type="HIDDEN" id="Type" name="Type" value="CAT">
+<input type="HIDDEN" id="InitPage" name="InitPage" value="1">
+<input type="HIDDEN" id="InitURL" name="InitURL" value="CSSPage_Welcome.asp">
+<input type="HIDDEN" id="SRCH" name="SRCH" value="All Positions">
+<input type="HIDDEN" id="Search" name="Search" value="">
+<input type="HIDDEN" id="RetColsQS" name="RetColsQS" value="">
+<input type="HIDDEN" id="RetColsGR" name="RetColsGR" value="">
+<input type="HIDDEN" id="ResultSort" name="ResultSort" value="[Job No.]">
+</form></div>
+<span class="glyphicon glyphicon-menu-down btn"></span></div>
+<form autocomplete="OFF" id="frmSR15" name="frmSR15" method="POST" action="HTTPS://jobs.uchc.edu/CSS_External/CSSPage_JobDetail.ASP?T=20261021141424&amp;"><input type="HIDDEN" id="Key" name="Key" value="{F4D8A502-D709-436C-BE1B-FF14A8866F6A}"><input type="HIDDEN" id="Type" name="Type" value="CAT"><input type="HIDDEN" id="InitPage" name="InitPage" value="1"><input type="HIDDEN" id="InitURL" name="InitURL" value="CSSPage_Welcome.asp"><input type="HIDDEN" id="SRCH" name="SRCH" value="All Positions"><input type="HIDDEN" id="Search" name="Search" value=""><input type="HIDDEN" id="RetColsQS" name="RetColsQS" value=""><input type="HIDDEN" id="RetColsGR" name="RetColsGR" value=""><input type="HIDDEN" id="SRPage" name="SRPage" value="1"><input type="HIDDEN" id="SRURL" name="SRURL" value="CSSPage_SearchResults.ASP"><input type="HIDDEN" id="ReqKey" name="ReqKey" value="{71C07FB7-5E9D-400D-9741-AA84BD8A5CF3}"><input type="HIDDEN" id="ResultSort" name="ResultSort" value=""></form>
+<div class="tr"><div class="td"><h6>Job&nbsp;Title</h6><a href="javascript:sysSubmitForm('frmSR15');" title="Click to view job description" alt="Click to view job description">Asst Prof/Clinical - Cardiac Surgeon&nbsp;</a><form autocomplete="OFF" id="frmSort1" name="frmSort1" method="POST" action="HTTPS://jobs.uchc.edu/CSS_External/CSSPage_SearchResults.ASP">
+<input type="HIDDEN" id="Key" name="Key" value="{F4D8A502-D709-436C-BE1B-FF14A8866F6A}">
+<input type="HIDDEN" id="Type" name="Type" value="CAT">
+<input type="HIDDEN" id="InitPage" name="InitPage" value="1">
+<input type="HIDDEN" id="InitURL" name="InitURL" value="CSSPage_Welcome.asp">
+<input type="HIDDEN" id="SRCH" name="SRCH" value="All Positions">
+<input type="HIDDEN" id="Search" name="Search" value="">
+<input type="HIDDEN" id="RetColsQS" name="RetColsQS" value="">
+<input type="HIDDEN" id="RetColsGR" name="RetColsGR" value="">
+<input type="HIDDEN" id="ResultSort" name="ResultSort" value="[Job Title]">
+</form></div>
+<div class="td"><h6>Location</h6>Farmington&nbsp;<form autocomplete="OFF" id="frmSort2" name="frmSort2" method="POST" action="HTTPS://jobs.uchc.edu/CSS_External/CSSPage_SearchResults.ASP">
+<input type="HIDDEN" id="Key" name="Key" value="{F4D8A502-D709-436C-BE1B-FF14A8866F6A}">
+<input type="HIDDEN" id="Type" name="Type" value="CAT">
+<input type="HIDDEN" id="InitPage" name="InitPage" value="1">
+<input type="HIDDEN" id="InitURL" name="InitURL" value="CSSPage_Welcome.asp">
+<input type="HIDDEN" id="SRCH" name="SRCH" value="All Positions">
+<input type="HIDDEN" id="Search" name="Search" value="">
+<input type="HIDDEN" id="RetColsQS" name="RetColsQS" value="">
+<input type="HIDDEN" id="RetColsGR" name="RetColsGR" value="">
+<input type="HIDDEN" id="ResultSort" name="ResultSort" value="[Location]">
+</form></div>
+<div class="td"><h6>Department</h6>10221-Cardio Surgery&nbsp;<form autocomplete="OFF" id="frmSort3" name="frmSort3" method="POST" action="HTTPS://jobs.uchc.edu/CSS_External/CSSPage_SearchResults.ASP">
+<input type="HIDDEN" id="Key" name="Key" value="{F4D8A502-D709-436C-BE1B-FF14A8866F6A}">
+<input type="HIDDEN" id="Type" name="Type" value="CAT">
+<input type="HIDDEN" id="InitPage" name="InitPage" value="1">
+<input type="HIDDEN" id="InitURL" name="InitURL" value="CSSPage_Welcome.asp">
+<input type="HIDDEN" id="SRCH" name="SRCH" value="All Positions">
+<input type="HIDDEN" id="Search" name="Search" value="">
+<input type="HIDDEN" id="RetColsQS" name="RetColsQS" value="">
+<input type="HIDDEN" id="RetColsGR" name="RetColsGR" value="">
+<input type="HIDDEN" id="ResultSort" name="ResultSort" value="[Department]">
+</form></div>
+<div class="td"><h6>Job&nbsp;No.</h6>2026-586&nbsp;<form autocomplete="OFF" id="frmSort4" name="frmSort4" method="POST" action="HTTPS://jobs.uchc.edu/CSS_External/CSSPage_SearchResults.ASP">
+<input type="HIDDEN" id="Key" name="Key" value="{F4D8A502-D709-436C-BE1B-FF14A8866F6A}">
+<input type="HIDDEN" id="Type" name="Type" value="CAT">
+<input type="HIDDEN" id="InitPage" name="InitPage" value="1">
+<input type="HIDDEN" id="InitURL" name="InitURL" value="CSSPage_Welcome.asp">
+<input type="HIDDEN" id="SRCH" name="SRCH" value="All Positions">
+<input type="HIDDEN" id="Search" name="Search" value="">
+<input type="HIDDEN" id="RetColsQS" name="RetColsQS" value="">
+<input type="HIDDEN" id="RetColsGR" name="RetColsGR" value="">
+<input type="HIDDEN" id="ResultSort" name="ResultSort" value="[Job No.]">
+</form></div>
+<span class="glyphicon glyphicon-menu-down btn"></span></div>
+
+                    </div>
+                    
+                </div>
+            </div>
+            <form id="frmPage2" name="frmPage2" method="POST" action="HTTPS://jobs.uchc.edu/CSS_External/CSSPage_SearchResults.ASP?T=20261021141424&amp;"><input type="HIDDEN" id="Page" name="Page" value="2"><input type="HIDDEN" id="Key" name="Key" value="{F4D8A502-D709-436C-BE1B-FF14A8866F6A}"><input type="HIDDEN" id="Type" name="Type" value="CAT"><input type="HIDDEN" id="InitPage" name="InitPage" value="1"><input type="HIDDEN" id="InitURL" name="InitURL" value="CSSPage_Welcome.asp"><input type="HIDDEN" id="SRCH" name="SRCH" value="All Positions"><input type="HIDDEN" id="Search" name="Search" value=""><input type="HIDDEN" id="RetColsQS" name="RetColsQS" value=""><input type="HIDDEN" id="RetColsGR" name="RetColsGR" value=""><input type="HIDDEN" id="ResultSort" name="ResultSort" value=""></form><form id="frmPage3" name="frmPage3" method="POST" action="HTTPS://jobs.uchc.edu/CSS_External/CSSPage_SearchResults.ASP?T=20261021141424&amp;"><input type="HIDDEN" id="Page" name="Page" value="3"><input type="HIDDEN" id="Key" name="Key" value="{F4D8A502-D709-436C-BE1B-FF14A8866F6A}"><input type="HIDDEN" id="Type" name="Type" value="CAT"><input type="HIDDEN" id="InitPage" name="InitPage" value="1"><input type="HIDDEN" id="InitURL" name="InitURL" value="CSSPage_Welcome.asp"><input type="HIDDEN" id="SRCH" name="SRCH" value="All Positions"><input type="HIDDEN" id="Search" name="Search" value=""><input type="HIDDEN" id="RetColsQS" name="RetColsQS" value=""><input type="HIDDEN" id="RetColsGR" name="RetColsGR" value=""><input type="HIDDEN" id="ResultSort" name="ResultSort" value=""></form><form id="frmPage4" name="frmPage4" method="POST" action="HTTPS://jobs.uchc.edu/CSS_External/CSSPage_SearchResults.ASP?T=20261021141424&amp;"><input type="HIDDEN" id="Page" name="Page" value="4"><input type="HIDDEN" id="Key" name="Key" value="{F4D8A502-D709-436C-BE1B-FF14A8866F6A}"><input type="HIDDEN" id="Type" name="Type" value="CAT"><input type="HIDDEN" id="InitPage" name="InitPage" value="1"><input type="HIDDEN" id="InitURL" name="InitURL" value="CSSPage_Welcome.asp"><input type="HIDDEN" id="SRCH" name="SRCH" value="All Positions"><input type="HIDDEN" id="Search" name="Search" value=""><input type="HIDDEN" id="RetColsQS" name="RetColsQS" value=""><input type="HIDDEN" id="RetColsGR" name="RetColsGR" value=""><input type="HIDDEN" id="ResultSort" name="ResultSort" value=""></form><form id="frmPage5" name="frmPage5" method="POST" action="HTTPS://jobs.uchc.edu/CSS_External/CSSPage_SearchResults.ASP?T=20261021141424&amp;"><input type="HIDDEN" id="Page" name="Page" value="5"><input type="HIDDEN" id="Key" name="Key" value="{F4D8A502-D709-436C-BE1B-FF14A8866F6A}"><input type="HIDDEN" id="Type" name="Type" value="CAT"><input type="HIDDEN" id="InitPage" name="InitPage" value="1"><input type="HIDDEN" id="InitURL" name="InitURL" value="CSSPage_Welcome.asp"><input type="HIDDEN" id="SRCH" name="SRCH" value="All Positions"><input type="HIDDEN" id="Search" name="Search" value=""><input type="HIDDEN" id="RetColsQS" name="RetColsQS" value=""><input type="HIDDEN" id="RetColsGR" name="RetColsGR" value=""><input type="HIDDEN" id="ResultSort" name="ResultSort" value=""></form><form id="frmPage6" name="frmPage6" method="POST" action="HTTPS://jobs.uchc.edu/CSS_External/CSSPage_SearchResults.ASP?T=20261021141424&amp;"><input type="HIDDEN" id="Page" name="Page" value="6"><input type="HIDDEN" id="Key" name="Key" value="{F4D8A502-D709-436C-BE1B-FF14A8866F6A}"><input type="HIDDEN" id="Type" name="Type" value="CAT"><input type="HIDDEN" id="InitPage" name="InitPage" value="1"><input type="HIDDEN" id="InitURL" name="InitURL" value="CSSPage_Welcome.asp"><input type="HIDDEN" id="SRCH" name="SRCH" value="All Positions"><input type="HIDDEN" id="Search" name="Search" value=""><input type="HIDDEN" id="RetColsQS" name="RetColsQS" value=""><input type="HIDDEN" id="RetColsGR" name="RetColsGR" value=""><input type="HIDDEN" id="ResultSort" name="ResultSort" value=""></form><form id="frmPage7" name="frmPage7" method="POST" action="HTTPS://jobs.uchc.edu/CSS_External/CSSPage_SearchResults.ASP?T=20261021141424&amp;"><input type="HIDDEN" id="Page" name="Page" value="7"><input type="HIDDEN" id="Key" name="Key" value="{F4D8A502-D709-436C-BE1B-FF14A8866F6A}"><input type="HIDDEN" id="Type" name="Type" value="CAT"><input type="HIDDEN" id="InitPage" name="InitPage" value="1"><input type="HIDDEN" id="InitURL" name="InitURL" value="CSSPage_Welcome.asp"><input type="HIDDEN" id="SRCH" name="SRCH" value="All Positions"><input type="HIDDEN" id="Search" name="Search" value=""><input type="HIDDEN" id="RetColsQS" name="RetColsQS" value=""><input type="HIDDEN" id="RetColsGR" name="RetColsGR" value=""><input type="HIDDEN" id="ResultSort" name="ResultSort" value=""></form><form id="frmPage8" name="frmPage8" method="POST" action="HTTPS://jobs.uchc.edu/CSS_External/CSSPage_SearchResults.ASP?T=20261021141424&amp;"><input type="HIDDEN" id="Page" name="Page" value="8"><input type="HIDDEN" id="Key" name="Key" value="{F4D8A502-D709-436C-BE1B-FF14A8866F6A}"><input type="HIDDEN" id="Type" name="Type" value="CAT"><input type="HIDDEN" id="InitPage" name="InitPage" value="1"><input type="HIDDEN" id="InitURL" name="InitURL" value="CSSPage_Welcome.asp"><input type="HIDDEN" id="SRCH" name="SRCH" value="All Positions"><input type="HIDDEN" id="Search" name="Search" value=""><input type="HIDDEN" id="RetColsQS" name="RetColsQS" value=""><input type="HIDDEN" id="RetColsGR" name="RetColsGR" value=""><input type="HIDDEN" id="ResultSort" name="ResultSort" value=""></form><form id="frmPage9" name="frmPage9" method="POST" action="HTTPS://jobs.uchc.edu/CSS_External/CSSPage_SearchResults.ASP?T=20261021141424&amp;"><input type="HIDDEN" id="Page" name="Page" value="9"><input type="HIDDEN" id="Key" name="Key" value="{F4D8A502-D709-436C-BE1B-FF14A8866F6A}"><input type="HIDDEN" id="Type" name="Type" value="CAT"><input type="HIDDEN" id="InitPage" name="InitPage" value="1"><input type="HIDDEN" id="InitURL" name="InitURL" value="CSSPage_Welcome.asp"><input type="HIDDEN" id="SRCH" name="SRCH" value="All Positions"><input type="HIDDEN" id="Search" name="Search" value=""><input type="HIDDEN" id="RetColsQS" name="RetColsQS" value=""><input type="HIDDEN" id="RetColsGR" name="RetColsGR" value=""><input type="HIDDEN" id="ResultSort" name="ResultSort" value=""></form><form id="frmPage10" name="frmPage10" method="POST" action="HTTPS://jobs.uchc.edu/CSS_External/CSSPage_SearchResults.ASP?T=20261021141424&amp;"><input type="HIDDEN" id="Page" name="Page" value="10"><input type="HIDDEN" id="Key" name="Key" value="{F4D8A502-D709-436C-BE1B-FF14A8866F6A}"><input type="HIDDEN" id="Type" name="Type" value="CAT"><input type="HIDDEN" id="InitPage" name="InitPage" value="1"><input type="HIDDEN" id="InitURL" name="InitURL" value="CSSPage_Welcome.asp"><input type="HIDDEN" id="SRCH" name="SRCH" value="All Positions"><input type="HIDDEN" id="Search" name="Search" value=""><input type="HIDDEN" id="RetColsQS" name="RetColsQS" value=""><input type="HIDDEN" id="RetColsGR" name="RetColsGR" value=""><input type="HIDDEN" id="ResultSort" name="ResultSort" value=""></form><form id="frmPage11" name="frmPage11" method="POST" action="HTTPS://jobs.uchc.edu/CSS_External/CSSPage_SearchResults.ASP?T=20261021141424&amp;"><input type="HIDDEN" id="Page" name="Page" value="11"><input type="HIDDEN" id="Key" name="Key" value="{F4D8A502-D709-436C-BE1B-FF14A8866F6A}"><input type="HIDDEN" id="Type" name="Type" value="CAT"><input type="HIDDEN" id="InitPage" name="InitPage" value="1"><input type="HIDDEN" id="InitURL" name="InitURL" value="CSSPage_Welcome.asp"><input type="HIDDEN" id="SRCH" name="SRCH" value="All Positions"><input type="HIDDEN" id="Search" name="Search" value=""><input type="HIDDEN" id="RetColsQS" name="RetColsQS" value=""><input type="HIDDEN" id="RetColsGR" name="RetColsGR" value=""><input type="HIDDEN" id="ResultSort" name="ResultSort" value=""></form><div class="col-sm-12"><nav><ul class="pagination"><li>
+</li><li class="page-sel">
+<a href="#">Previous</a>&nbsp;</li>
+<li class="page-sel">
+<a href="#">1</a>&nbsp;</li>
+<li>
+<a href="javascript:sysSubmitForm('frmPage2');" alt="Go to Page 2" title="Go to Page 2">2</a>&nbsp;</li>
+<li>
+<a href="javascript:sysSubmitForm('frmPage3');" alt="Go to Page 3" title="Go to Page 3">3</a>&nbsp;</li>
+<li>
+<a href="javascript:sysSubmitForm('frmPage4');" alt="Go to Page 4" title="Go to Page 4">4</a>&nbsp;</li>
+<li>
+<a href="javascript:sysSubmitForm('frmPage5');" alt="Go to Page 5" title="Go to Page 5">5</a>&nbsp;</li>
+<li>
+<a href="javascript:sysSubmitForm('frmPage6');" alt="Go to Page 6" title="Go to Page 6">6</a>&nbsp;</li>
+<li>
+<a href="javascript:sysSubmitForm('frmPage7');" alt="Go to Page 7" title="Go to Page 7">7</a>&nbsp;</li>
+<li>
+<a href="javascript:sysSubmitForm('frmPage8');" alt="Go to Page 8" title="Go to Page 8">8</a>&nbsp;</li>
+<li>
+<a href="javascript:sysSubmitForm('frmPage9');" alt="Go to Page 9" title="Go to Page 9">9</a>&nbsp;</li>
+<li>
+<a href="javascript:sysSubmitForm('frmPage10');" alt="Go to Page 10" title="Go to Page 10">10</a>&nbsp;</li>
+<li>
+<a href="javascript:sysSubmitForm('frmPage11');" alt="Go to Page 11" title="Go to Page 11">11</a>&nbsp;</li>
+&nbsp;&nbsp;<li>
+<a href="javascript:sysSubmitForm('frmPage2');" alt="Go to Next Results Page" title="Go to Next Results Page">Next</a>&nbsp;</li>
+</ul></nav></div>
+<div class="col-sm-12">
+                <form autocomplete="OFF" id="frmReturnToInit" name="frmReturnToInit" method="POST" action="HTTPS://jobs.uchc.edu/CSS_External/CSSPage_Welcome.asp?T=20261021141424&amp;">
+<input type="HIDDEN" id="Page" name="Page" value="1">
+</form>
+<a href="javascript:sysSubmitForm('frmReturnToInit');" class="btn green-bg" alt="Return to Previous Page" title="Return to Previous Page"><span class="glyphicon glyphicon-backward"></span> Return&nbsp;to&nbsp;Previous&nbsp;Page</a>
+<a class="btn btn-default" target="CSSHELP" title="Click to view Help contents for this page" onclick="OpenHelpDialog();"><span class="glyphicon glyphicon-question-sign"></span> Help</a>
+            </div>
+            <!--</FORM>-->
+            <!-- </div>
+            </div>-->
+        </div>
+        <div class="row">
+            <!--<div class="col-xs-12">
+
+              <a href="#" class="underline btn help pull-right">Help <span class="glyphicon glyphicon-info-sign icon-large"></span></a>
+             <br><br><br>
+            </div>-->
+        </div>
+
+        <!-- SYSAPPIGNORESTART --><footer>
+    <div class="well">
+        <div class="row">
+            <div class="col-m-8"><h6 class="pull-left" style="padding-left:10px; padding-top:25px;">© 2026 Greentree Systems, Inc</h6></div>
+            <div class="col-m-4"><h6 class="pull-right" style="padding-right:10px;"><a href="http://www.greentreesystems.com" target="_blank"><img src="images/powered-by-igreentree.png" alt="Powered by iGreentree"></a></h6></div>
+        </div>
+    </div>
+</footer><!-- SYSAPPIGNOREEND -->
+<!--------------------------Help Dialog Open-------------------------->
+
+<div class="modal fade" id="helpModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button data-dismiss="modal" class="close"><span class="glyphicon glyphicon-remove-circle"></span></button>
+                <h2 class="heading2">Search Results Help</h2>
+            </div>
+            <!-- end modal-header -->
+            <div class="modal-body">
+                <div class="modal-body">
+                    <div class="alert alert-success alert-block fade in">
+                        <p>
+                            
+                            Click on a specific job to view the Job Detail for that position.  
+                           
+                                    <br>
+                            <br>
+                            Click on a column header to sort the results list by that column.
+                           
+                                    <br>
+                            <br>
+                            If there are more jobs listed than will fit on one page, please use the navigation links to view the additional pages.
+                            
+                        </p>
+                        <br>
+                        <br>
+                        <input type="BUTTON" id="helpOkay" name="cmdOkay" onclick="javascript: CloseHelp();" value="OK" class="btn-green btn btn-block">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--------------------------Help Dialog CLose-------------------------->
+
+
+
+
+    </div>
+    <div class="modal-backdrop fade in"></div>
+    <div class="shade"></div>
+    <!-------------------container ends here-------------------------->
+
+    <!---------------------------------------jquery-------------------------------------------------->
+    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <!-- If no online access, fallback to our hardcoded version of jQuery -->
+    <script>window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')</script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/custom.js"></script>
+    <script src="js/custom.list.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script type="text/javascript" language="javascript">
+        $(document).ready(function () {
+            $(".navbar-nav > li").removeClass("active");
+            $(".navbar-nav > li#1").addClass("active");
+            var sessionError='';
+            if(sessionError=="true")
+            {
+                $(".filter-box").addClass("modal-disp");
+            }
+            var addUserError = '';
+            var sessionError = '';
+            var sendPasswordError = '';
+
+            if (addUserError.length > 0) {
+                $('#myModal').modal('show');
+                $("#register").css("display", "none");
+                $("#register").prev(".sign-in").slideDown();
+                $(".modal-body .btn-green").not(this).css("display", "none");
+                $("#cmdSignIn").css("display", "block");
+            }
+            else if (sessionError.length > 0) {
+                $('#myModal').modal('show');
+                $("#loginBtn").css("display", "none");
+                $("#loginBtn").prev(".sign-in").slideDown();
+                $(".modal-body .btn-green").not(this).css("display", "none");
+                $("#loginForm").css("display", "block");
+            }
+            else if (sendPasswordError.length > 0) {
+                $('#myModal').modal('show');
+                $("#forgot-password").click();
+            }
+        })
+    </script>
+
+
+</body></html>

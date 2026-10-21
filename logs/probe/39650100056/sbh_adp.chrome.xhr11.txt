@@ -1,0 +1,53 @@
+https://myjobs.adp.com/workforcenow/login.html?TYPE=33554433&REALMOID=06-0001af31-928e-1f44-95e3-1d270b400000&GUID=&SMAUTHREASON=0&METHOD=POST&SMAGENTNAME=OfymWX96LvZziVavZWLyorj9DaKMn3pXfyO0cYI0fEH854xDAljad6cWCiVTv8ZAVE5olDx54yROkKUg7pCdsvlpLjqCTmP9&TARGET=-SM-HTTPS%3a%2f%2fmyjobs%2eadp%2ecom%2fcx%2fstaffing%2fv2%2fjob--applicant%3ftz%3dAmerica%2fNew_York
+
+<!DOCTYPE html>
+<html lang="en" data-critters-container>
+  <head>
+    <title id="cx-title"></title>
+    <base href="/">
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="og:title" property="og:title" content>
+    <meta name="description" property="description" content>
+    <meta name="og:description" property="og:description" content>
+    <meta name="image" property="image" content>
+    <meta name="og:image" property="og:image" content>
+    <link id="cx-favicon" rel="icon" type="image/png" href sizes="16x16">
+    <link id="cx-canonical-link" rel="canonical" href>
+    <script src="https://online.adp.com/inc/js/lib/6a8f894227f41759348779077d1e5851.js"></script>
+  <link rel="stylesheet" href="https://myjobs.cf.adp.com/styles.671006d3ffca3ca1.css"></head>
+
+  <body synerg-theme="one">
+    <cx-root>
+      <div id="errorMsgElement" style="padding: 20% 0; text-align: center"></div>
+      <sdf-busy-indicator id="cx-busy-indicator" class="cx-busy-indicator" size="lg" fullscreen="true" overlay="true"></sdf-busy-indicator>
+    </cx-root>
+  <script src="https://myjobs.cf.adp.com/runtime.58ee32149482a387.js" type="module"></script><script src="https://myjobs.cf.adp.com/polyfills.d1049113254e70ac.js" type="module"></script><script src="https://myjobs.cf.adp.com/main.856350db4aff5549.js" type="module"></script></body>
+
+  <script>
+    window.MYJOBS_CONFIG = {
+      CDN_ROOT: 'https://myjobs.cf.adp.com/',
+    };
+  </script>
+
+<script src="https://synerg.adp.com/config/synerg-config.js"></script>
+<script src="https://synerg.adp.com/features/config/synerg-config.js"></script>
+<script src="./assets/customTheme.js"> </script>
+
+  <script>
+    window.SynergConfig.initialize()
+      .then((cfg) => {
+        console.log('Core SynerG Components are ready with the default theme');
+        // Now load the global styles for the default theme
+        return cfg.loadGlobalStyles(['sdf-global', 'sdf-utilities', 'sdf-variables']);
+      })
+      .then(() => {
+        // Notice that this config is called SynergFeaturesConfig and should be loaded after synerg
+        return window.SynergFeaturesConfig.initialize().then((cfg) => {
+          console.log('SynerG Extensions Components are ready with the default theme');
+        });
+      })
+      .then(() => {
+        console.log('Both libraries are ready');
+      });
+  </script>
+</html>

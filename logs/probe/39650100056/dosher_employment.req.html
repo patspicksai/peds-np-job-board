@@ -1,0 +1,1062 @@
+<!doctype html>
+<html lang='en' class='no-js  content-page is-content-page content-page-employment  has-top-bar-important-info  has-fh-logo-in-copyright has-fc-logo-in-copyright has-both-fasthealth-and-fastcommand-footer-logo has-content-menu not-ios not-android not-mobile no-ie' data-clientID='3538' data-fhID='867' data-template='site' data-is-printable-version='false'>
+<head>
+<script>
+(function () {
+    if (
+        window.location.href ===
+        'https://www.dosher.org/getpage.php?name=BHI_clinic'
+    ) {
+        if (!document.querySelector('meta[name="robots"]')) {
+            var meta = document.createElement('meta');
+            meta.name = 'robots';
+            meta.content = 'noindex';
+            document.head.appendChild(meta);
+        }
+    }
+})();
+</script>
+<!-- ============================================================
+  SCRIPT #1: Accessibility Remediation (FULL) + callable rerun hook
+  - Adds: window.FH_RUN_A11Y() so other scripts can rerun remediation
+  - Runs once on load and can be safely rerun any time
+============================================================ -->
+<script>
+(function () {
+  // Expose a callable runner so other scripts can re-run remediation after DOM changes
+  if (typeof window.FH_RUN_A11Y !== "function") {
+    window.FH_RUN_A11Y = function () {
+      // =========================
+      // A11Y Remediation Bundle
+      // - Missing form labels
+      // - Empty/icon-only buttons
+      // - Broken aria references
+      // - Low contrast detection + safe fix
+      // - Skips visually-hidden helpers from contrast checks
+      // =========================
+
+      // ---- Helpers ----
+      function cssEscapeId(id) {
+        return (window.CSS && CSS.escape) ? CSS.escape(id) : id.replace(/([ #;?%&,.+*~\':"!^$[\]()=>|\/@])/g,'\');
+      }
+
+      function ensureStyle(id, cssText) {
+        if (document.getElementById(id)) return;
+        var s = document.createElement("style");
+        s.id = id;
+        s.textContent = cssText;
+        document.head.appendChild(s);
+      }
+
+      function idExists(id) {
+        return !!(id && document.getElementById(id));
+      }
+
+      function isVisuallyHiddenClass(el) {
+        return !!(el && el.classList && (
+          el.classList.contains("screen-reader-text") ||
+          el.classList.contains("sr-only") ||
+          el.classList.contains("fh-sr-only")
+        ));
+      }
+
+      // SR-only style for injected labels
+      ensureStyle("fh-a11y-sr-only-style",
+        ".fh-sr-only{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important;}"
+      );
+
+      // Contrast “chip” styling for flagged nodes
+      ensureStyle("fh-a11y-contrast-fix-style", `
+        .fh-a11y-low-contrast{
+          background-color: rgba(255,255,255,0.92) !important;
+          padding: 0.08em 0.18em !important;
+          border-radius: 0.15em !important;
+          box-decoration-break: clone;
+          -webkit-box-decoration-break: clone;
+        }
+        .fh-a11y-low-contrast.fh-a11y-text-dark{ color:#111 !important; }
+        .fh-a11y-low-contrast.fh-a11y-text-light{
+          color:#fff !important;
+          background-color: rgba(0,0,0,0.72) !important;
+        }
+        a.fh-a11y-low-contrast{ text-decoration: underline !important; text-underline-offset: 0.15em; }
+        .fh-a11y-touched:focus,
+        .fh-a11y-touched:focus-visible{
+          outline: 3px solid #111 !important;
+          outline-offset: 2px !important;
+        }
+      `);
+
+      // ---- Label / button / aria helpers ----
+      function hasAssociatedLabel(el) {
+        if (el.closest("label")) return true;
+
+        var id = (el.getAttribute("id") || "").trim();
+        if (id && document.querySelector('label[for="' + cssEscapeId(id) + '"]')) return true;
+
+        var ariaLabel = (el.getAttribute("aria-label") || "").trim();
+        if (ariaLabel) return true;
+
+        var labelledBy = (el.getAttribute("aria-labelledby") || "").trim();
+        if (labelledBy) {
+          var tokens = labelledBy.split(/\s+/).filter(Boolean);
+          if (tokens.some(idExists)) return true;
+        }
+        return false;
+      }
+
+      function bestFieldLabelText(el) {
+        var p = (el.getAttribute("placeholder") || "").trim();
+        if (p) return p;
+
+        var n = (el.getAttribute("name") || "").trim();
+        if (n) return n.replace(/[_\-]+/g, " ");
+
+        var t = (el.getAttribute("type") || "").toLowerCase();
+        if (t === "search") return "Search this site";
+        if (t === "email") return "Email";
+        if (t === "tel") return "Phone";
+        if (t === "password") return "Password";
+        return "Input field";
+      }
+
+      function ensureElementId(el, prefix) {
+        var id = (el.getAttribute("id") || "").trim();
+        if (id) return id;
+
+        var base = (prefix + "-" + (el.getAttribute("name") || el.tagName.toLowerCase()))
+          .replace(/[^a-z0-9\-_]/gi, "-").replace(/-+/g, "-").toLowerCase();
+
+        var candidate = base, i = 1;
+        while (document.getElementById(candidate)) candidate = base + "-" + (i++);
+        el.setAttribute("id", candidate);
+        return candidate;
+      }
+
+      function addSrOnlyLabel(el, text) {
+        var id = ensureElementId(el, "fh-a11y-field");
+        var existing = document.querySelector('label[for="' + cssEscapeId(id) + '"]');
+        if (existing) return;
+
+        var label = document.createElement("label");
+        label.className = "fh-sr-only";
+        label.setAttribute("for", id);
+        label.textContent = text;
+
+        el.parentNode.insertBefore(label, el);
+        el.classList.add("fh-a11y-touched");
+      }
+
+      function buttonHasAccessibleName(btn) {
+        var txt = (btn.textContent || "").replace(/\s+/g, " ").trim();
+        if (txt) return true;
+
+        var ariaLabel = (btn.getAttribute("aria-label") || "").trim();
+        if (ariaLabel) return true;
+
+        var labelledBy = (btn.getAttribute("aria-labelledby") || "").trim();
+        if (labelledBy) {
+          var tokens = labelledBy.split(/\s+/).filter(Boolean);
+          if (tokens.some(idExists)) return true;
+        }
+
+        var title = (btn.getAttribute("title") || "").trim();
+        if (title) return true;
+
+        return false;
+      }
+
+      function bestButtonLabelText(btn) {
+        var t = (btn.getAttribute("title") || "").trim();
+        if (t) return t;
+
+        var icon = btn.querySelector("i[title], svg[title]");
+        if (icon) {
+          var it = (icon.getAttribute("title") || "").trim();
+          if (it) return it;
+        }
+
+        var type = (btn.getAttribute("type") || "button").toLowerCase();
+        if (type === "submit") return "Submit";
+        if (type === "reset") return "Reset";
+        return "Button";
+      }
+
+      function fixAriaIdRefList(el, attrName) {
+        var val = (el.getAttribute(attrName) || "").trim();
+        if (!val) return;
+
+        var tokens = val.split(/\s+/).filter(Boolean);
+        var kept = tokens.filter(idExists);
+
+        if (kept.length) el.setAttribute(attrName, kept.join(" "));
+        else el.removeAttribute(attrName);
+      }
+
+      // ---- Contrast math (WCAG) ----
+      function parseColor(str) {
+        if (!str) return null;
+        str = str.trim();
+
+        var m = str.match(/^rgba?\((\d+),\s*(\d+),\s*(\d+)(?:,\s*([0-9.]+))?\)$/i);
+        if (m) return { r:+m[1], g:+m[2], b:+m[3], a:(m[4]===undefined?1:+m[4]) };
+
+        var h = str.match(/^#([0-9a-f]{3}|[0-9a-f]{6}|[0-9a-f]{8})$/i);
+        if (h) {
+          var hex = h[1];
+          if (hex.length === 3) return { r:parseInt(hex[0]+hex[0],16), g:parseInt(hex[1]+hex[1],16), b:parseInt(hex[2]+hex[2],16), a:1 };
+          if (hex.length === 6) return { r:parseInt(hex.slice(0,2),16), g:parseInt(hex.slice(2,4),16), b:parseInt(hex.slice(4,6),16), a:1 };
+          if (hex.length === 8) return { r:parseInt(hex.slice(0,2),16), g:parseInt(hex.slice(2,4),16), b:parseInt(hex.slice(4,6),16), a:parseInt(hex.slice(6,8),16)/255 };
+        }
+        return null;
+      }
+
+      function blend(fg, bg) {
+        var a = fg.a + bg.a * (1 - fg.a);
+        if (a === 0) return { r:0,g:0,b:0,a:0 };
+        return {
+          r: Math.round((fg.r*fg.a + bg.r*bg.a*(1-fg.a)) / a),
+          g: Math.round((fg.g*fg.a + bg.g*bg.a*(1-fg.a)) / a),
+          b: Math.round((fg.b*fg.a + bg.b*bg.a*(1-fg.a)) / a),
+          a: a
+        };
+      }
+
+      function relLuminance(c) {
+        function channel(v) {
+          v /= 255;
+          return (v <= 0.03928) ? (v/12.92) : Math.pow((v+0.055)/1.055, 2.4);
+        }
+        return 0.2126*channel(c.r) + 0.7152*channel(c.g) + 0.0722*channel(c.b);
+      }
+
+      function contrastRatio(fg, bg) {
+        var L1 = relLuminance(fg), L2 = relLuminance(bg);
+        var lighter = Math.max(L1, L2), darker = Math.min(L1, L2);
+        return (lighter + 0.05) / (darker + 0.05);
+      }
+
+      function getEffectiveBgColor(el) {
+        var cur = el;
+        while (cur && cur !== document.documentElement) {
+          var cs = getComputedStyle(cur);
+          var bg = parseColor(cs.backgroundColor);
+          if (bg && bg.a > 0.01) return bg;
+          cur = cur.parentElement;
+        }
+        return parseColor(getComputedStyle(document.body).backgroundColor) || {r:255,g:255,b:255,a:1};
+      }
+
+      function isLargeText(cs) {
+        var fs = parseFloat(cs.fontSize || "0");
+        var fw = (cs.fontWeight || "").toString();
+        var bold = (fw === "bold" || parseInt(fw,10) >= 700);
+        return (fs >= 24) || (bold && fs >= 18.66);
+      }
+
+      function isFullyTransparentColor(str) {
+        return !!(str && (str === "transparent" || /rgba\(\s*\d+,\s*\d+,\s*\d+,\s*0(\.0+)?\s*\)/i.test(str)));
+      }
+
+      function applyContrastFix(el, bg) {
+        var bgLum = relLuminance(bg);
+        if (bgLum < 0.35) el.classList.add("fh-a11y-low-contrast", "fh-a11y-text-light", "fh-a11y-touched");
+        else el.classList.add("fh-a11y-low-contrast", "fh-a11y-text-dark", "fh-a11y-touched");
+      }
+
+      // ---- Execute remediation ----
+      // 1) Fix broken aria references
+      ["aria-labelledby","aria-describedby","aria-controls","aria-owns","aria-flowto"].forEach(function (attr) {
+        document.querySelectorAll("[" + attr + "]").forEach(function (el) {
+          fixAriaIdRefList(el, attr);
+        });
+      });
+
+      // 2) Missing labels
+      var fieldSelector = 'input:not([type="hidden"]):not([type="submit"]):not([type="button"]):not([type="reset"]), select, textarea';
+      document.querySelectorAll(fieldSelector).forEach(function (el) {
+        if (!hasAssociatedLabel(el)) addSrOnlyLabel(el, bestFieldLabelText(el));
+      });
+
+      // 3) Empty/icon-only buttons
+      document.querySelectorAll("button, [role='button']").forEach(function (btn) {
+        if (!buttonHasAccessibleName(btn)) {
+          btn.setAttribute("aria-label", bestButtonLabelText(btn));
+          btn.classList.add("fh-a11y-touched");
+        }
+        btn.querySelectorAll("i.fa, i.fas, i.far, i.fab, svg").forEach(function (icon) {
+          if (!icon.hasAttribute("aria-label") && !icon.hasAttribute("aria-labelledby")) {
+            icon.setAttribute("aria-hidden", "true");
+            icon.setAttribute("focusable", "false");
+          }
+        });
+      });
+
+      // 4) Low contrast (skip SR-only/screen-reader-text helpers)
+      var textCandidates = document.querySelectorAll("a, button, label, p, li, span, h1, h2, h3, h4, h5, h6, td, th");
+      textCandidates.forEach(function (el) {
+        if (!el || !el.tagName) return;
+        if (isVisuallyHiddenClass(el)) return;
+
+        var cs = getComputedStyle(el);
+        if (cs.display === "none" || cs.visibility === "hidden" || parseFloat(cs.opacity) === 0) return;
+
+        var txt = (el.textContent || "").replace(/\s+/g, " ").trim();
+        if (!txt) return;
+
+        if (isFullyTransparentColor(cs.color)) return;
+
+        var fg = parseColor(cs.color);
+        if (!fg) return;
+
+        var bg = getEffectiveBgColor(el);
+        if (fg.a < 1) fg = blend(fg, bg);
+
+        var ratio = contrastRatio(fg, bg);
+        var required = isLargeText(cs) ? 3.0 : 4.5;
+
+        if (ratio + 1e-6 < required) applyContrastFix(el, bg);
+      });
+    };
+  }
+
+  // Initial run
+  window.FH_RUN_A11Y();
+
+  // Optional: rerun when other scripts request it
+  window.addEventListener("FH_A11Y_RERUN", function () {
+    window.FH_RUN_A11Y();
+  });
+
+  // Light observer: rerun when new DOM nodes are added (menus/forms injected)
+  // (Doesn't undo changes; just reapplies missing a11y attributes where needed.)
+  try {
+    var mo = new MutationObserver(function (muts) {
+      var needs = false;
+      for (var i = 0; i < muts.length; i++) {
+        if (muts[i].addedNodes && muts[i].addedNodes.length) { needs = true; break; }
+      }
+      if (needs) window.FH_RUN_A11Y();
+    });
+    mo.observe(document.documentElement, { childList: true, subtree: true });
+  } catch (e) {}
+
+})();
+</script>
+
+<!-- ============================================================
+  SCRIPT #2: Your Foundation_2015 Icon Grid (FULL)
+  - Change #1: make images slightly larger by increasing COL_WIDTH_PX
+  - Change #2: after conversion completes, re-run accessibility via
+               window.FH_RUN_A11Y() (if present)
+============================================================ -->
+<script>
+/**
+ * Runs on any URL containing: getpage.php?name=Foundation_2015
+ * Converts the .mobile-block-table icon table into a CSS Grid,
+ * preserves accessibility + mobile stacking,
+ * and centers the final (incomplete) row at ALL breakpoints.
+ *
+ * ✅ Detects columns from REAL layout (offsetTop), with fallbacks.
+ * ✅ Re-centers after resize + image load + post-render passes.
+ * ✅ Even-column edge cases:
+ *    - If cols==2 and remainder==1: span last item across both columns and center it.
+ *    - Otherwise: use invisible spacers; and when “half-column” centering is impossible,
+ *      force odd column count (cols-1) for that viewport.
+ */
+(function () {
+  if (!window.location.href.includes("getpage.php?name=Foundation_2015")) return;
+
+  // ✅ Slightly larger icons: increase column width
+  var COL_WIDTH_PX = 180;   // was 140
+  var DESKTOP_MAX_WIDTH_PX = 1100;
+
+  function ensureStyles() {
+    if (document.getElementById("fh-icon-grid-style")) return;
+
+    var style = document.createElement("style");
+    style.id = "fh-icon-grid-style";
+    style.textContent = `
+      .fh-icon-grid{
+        display:grid;
+        justify-content:center;
+        justify-items:center;
+        align-items:center;
+        gap:20px;
+        padding:20px;
+        margin:0 auto;
+        max-width:${DESKTOP_MAX_WIDTH_PX}px;
+
+        grid-template-columns: repeat(auto-fit, minmax(${COL_WIDTH_PX}px, ${COL_WIDTH_PX}px));
+      }
+
+      .fh-icon-grid__item{
+        display:flex;
+        justify-content:center;
+        justify-self:center;
+        align-items:center;
+        width:${COL_WIDTH_PX}px;
+      }
+
+      .fh-icon-grid__item a{
+        display:inline-flex;
+        justify-content:center;
+        align-items:center;
+        text-decoration:none;
+      }
+
+      .fh-icon-grid__item img{
+        max-width:100%;
+        height:auto;
+        display:block;
+      }
+
+      .fh-icon-grid__spacer{
+        visibility:hidden;
+        pointer-events:none;
+      }
+
+      /* ✅ 2-column special case: last item spans both columns and centers */
+      .fh-icon-grid__last-span{
+        grid-column: 1 / -1;
+        justify-self: center;
+      }
+
+      @media (max-width: 480px){
+        .fh-icon-grid{
+          grid-template-columns: 1fr;
+          gap:14px;
+          padding:14px;
+        }
+        .fh-icon-grid__item{
+          width:auto;
+        }
+      }
+    `;
+    document.head.appendChild(style);
+  }
+
+  function cleanText(s) {
+    return (s || "").replace(/[_\-]+/g, " ").replace(/\s+/g, " ").trim();
+  }
+
+  function labelFromHref(href) {
+    try {
+      var u = new URL(href, window.location.origin);
+      var name = u.searchParams.get("name");
+      return name ? cleanText(decodeURIComponent(name)) : "";
+    } catch (e) { return ""; }
+  }
+
+  function labelFromImg(src) {
+    var file = (src || "").split("/").pop() || "";
+    file = file.split("?")[0].replace(/\.(png|jpg|jpeg|gif|webp|svg)$/i, "");
+    return cleanText(decodeURIComponent(file));
+  }
+
+  function isIntendedIcon(img) {
+    var src = (img && img.getAttribute("src")) || "";
+    if (!/\/docs\//i.test(src)) return false;
+    if (!/\.(png|jpg|jpeg|webp|gif|svg)(\?|$)/i.test(src)) return false;
+    return true;
+  }
+
+  function findTargetTable() {
+    var tables = Array.from(document.querySelectorAll("table.mobile-block-table"));
+    if (!tables.length) return null;
+
+    var best = null, bestCount = 0;
+    tables.forEach(function (t) {
+      var count = 0;
+      t.querySelectorAll("a img").forEach(function (img) {
+        if (isIntendedIcon(img)) count++;
+      });
+      if (count > bestCount) { bestCount = count; best = t; }
+    });
+    return best;
+  }
+
+  // ----------------------------
+  // Centering helpers
+  // ----------------------------
+  function removeGridSpacers(grid) {
+    Array.from(grid.querySelectorAll(".fh-icon-grid__spacer")).forEach(function (n) {
+      n.remove();
+    });
+  }
+
+  function clearInlineGridTweaks(grid) {
+    if (!grid) return;
+    grid.style.removeProperty("grid-template-columns");
+  }
+
+  function clearLastSpan(grid) {
+    if (!grid) return;
+    Array.from(grid.querySelectorAll(".fh-icon-grid__last-span")).forEach(function (el) {
+      el.classList.remove("fh-icon-grid__last-span");
+    });
+  }
+
+  function getColumnCountFromLayout(grid) {
+    if (!grid) return 1;
+
+    var items = Array.from(grid.children).filter(function (el) {
+      return el.classList.contains("fh-icon-grid__item") &&
+        !el.classList.contains("fh-icon-grid__spacer");
+    });
+
+    if (items.length <= 1) return 1;
+
+    var firstTop = items[0].offsetTop;
+    var count = 0;
+    for (var i = 0; i < items.length; i++) {
+      if (items[i].offsetTop !== firstTop) break;
+      count++;
+    }
+
+    // If layout isn't settled yet, fallback to resolved template count when possible
+    if (count === 1 && items.length > 1) {
+      var gtc = (getComputedStyle(grid).gridTemplateColumns || "").trim();
+      var tokens = gtc.split(/\s+/).filter(Boolean);
+      var resolved = tokens.filter(function (t) { return /px|fr|%|rem|em|vw|vh/.test(t); });
+
+      if (resolved.length > 1 && !/repeat\(|minmax\(/i.test(gtc)) {
+        count = resolved.length;
+      }
+    }
+
+    return Math.max(1, count);
+  }
+
+  function setOddColumnCountIfNeeded(grid, cols, remainder, colWidthPx) {
+    // Half-column centering impossible when cols even and missing slots odd
+    var missing = cols - remainder;
+
+    if (cols >= 3 && cols % 2 === 0 && missing % 2 === 1) {
+      var newCols = cols - 1; // make odd
+      grid.style.gridTemplateColumns = "repeat(" + newCols + ", " + colWidthPx + "px)";
+      return true;
+    }
+    return false;
+  }
+
+  function centerFinalRow(grid) {
+    if (!grid) return;
+
+    // Always reset
+    removeGridSpacers(grid);
+    clearInlineGridTweaks(grid);
+    clearLastSpan(grid);
+
+    var cols = getColumnCountFromLayout(grid);
+    if (cols <= 1) return;
+
+    var items = Array.from(grid.children).filter(function (el) {
+      return el.classList.contains("fh-icon-grid__item") &&
+        !el.classList.contains("fh-icon-grid__spacer");
+    });
+
+    var remainder = items.length % cols;
+    if (remainder === 0) return;
+
+    // ✅ Special case: 2 columns, 1 item in last row -> span both columns, perfect centering
+    if (cols === 2 && remainder === 1) {
+      items[items.length - 1].classList.add("fh-icon-grid__last-span");
+      return;
+    }
+
+    // If even-column half-offset issue exists (>=3 cols), force odd columns and re-evaluate once
+    if (setOddColumnCountIfNeeded(grid, cols, remainder, COL_WIDTH_PX)) {
+      removeGridSpacers(grid);
+      clearLastSpan(grid);
+
+      cols = getColumnCountFromLayout(grid);
+      if (cols <= 1) return;
+
+      items = Array.from(grid.children).filter(function (el) {
+        return el.classList.contains("fh-icon-grid__item") &&
+          !el.classList.contains("fh-icon-grid__spacer");
+      });
+
+      remainder = items.length % cols;
+      if (remainder === 0) return;
+
+      // If we ended up at 2 cols after forcing, apply the special-case rule
+      if (cols === 2 && remainder === 1) {
+        items[items.length - 1].classList.add("fh-icon-grid__last-span");
+        return;
+      }
+    }
+
+    // Default: pad with invisible spacers
+    var totalSpacers = cols - remainder;
+    var leftSpacers = Math.floor(totalSpacers / 2);
+    var rightSpacers = totalSpacers - leftSpacers;
+
+    function makeSpacer() {
+      var s = document.createElement("div");
+      s.className = "fh-icon-grid__item fh-icon-grid__spacer";
+      s.setAttribute("aria-hidden", "true");
+      return s;
+    }
+
+    var insertBefore = items[items.length - remainder];
+    for (var i = 0; i < leftSpacers; i++) {
+      grid.insertBefore(makeSpacer(), insertBefore);
+    }
+    for (var j = 0; j < rightSpacers; j++) {
+      grid.appendChild(makeSpacer());
+    }
+  }
+
+  function installRecenterTriggers(grid) {
+    var rafId = null;
+    var timeoutId = null;
+
+    function schedule() {
+      if (!grid) return;
+
+      if (rafId) cancelAnimationFrame(rafId);
+      rafId = requestAnimationFrame(function () {
+        centerFinalRow(grid);
+
+        if (timeoutId) clearTimeout(timeoutId);
+        timeoutId = setTimeout(function () {
+          centerFinalRow(grid);
+        }, 150);
+      });
+    }
+
+    window.addEventListener("resize", schedule);
+
+    // Images often shift layout after load
+    grid.querySelectorAll("img").forEach(function (img) {
+      if (!img || img.complete) return;
+      img.addEventListener("load", schedule, { once: true });
+    });
+
+    schedule();
+    setTimeout(schedule, 400);
+    setTimeout(schedule, 900);
+  }
+
+  // ----------------------------
+  // Main conversion
+  // ----------------------------
+  function convertIfReady() {
+    if (document.querySelector(".fh-icon-grid")) return true;
+
+    var table = findTargetTable();
+    if (!table) return false;
+
+    var anchors = [];
+    table.querySelectorAll("a").forEach(function (a) {
+      var img = a.querySelector("img");
+      if (!img) return;
+      if (!isIntendedIcon(img)) return;
+      anchors.push(a);
+    });
+
+    if (anchors.length < 8) return false;
+
+    ensureStyles();
+
+    var grid = document.createElement("div");
+    grid.className = "fh-icon-grid";
+    grid.setAttribute("role", "list");
+    grid.setAttribute("aria-label", "Foundation quick links");
+
+    anchors.forEach(function (a) {
+      var img = a.querySelector("img");
+      var label = labelFromHref(a.getAttribute("href")) || labelFromImg(img.getAttribute("src"));
+
+      var aria = (a.getAttribute("aria-label") || "").trim();
+      if (!aria || aria.toLowerCase() === "image link") {
+        if (label) a.setAttribute("aria-label", label);
+      }
+
+      var alt = (img.getAttribute("alt") || "").trim();
+      if (!alt) {
+        if (label) img.setAttribute("alt", label);
+      }
+
+      var item = document.createElement("div");
+      item.className = "fh-icon-grid__item";
+      item.setAttribute("role", "listitem");
+      item.appendChild(a);
+      grid.appendChild(item);
+    });
+
+    table.after(grid);
+    table.remove();
+
+    requestAnimationFrame(function () {
+      installRecenterTriggers(grid);
+
+      // ✅ Re-run accessibility remediation after DOM rebuild
+      if (typeof window.FH_RUN_A11Y === "function") {
+        window.FH_RUN_A11Y();
+      } else {
+        // optional event-based hook
+        window.dispatchEvent(new Event("FH_A11Y_RERUN"));
+      }
+    });
+
+    return true;
+  }
+
+  function start() {
+    if (convertIfReady()) return;
+
+    var tries = 0;
+    var maxTries = 80;
+
+    var obs = new MutationObserver(function () {
+      tries++;
+      if (convertIfReady() || tries >= maxTries) obs.disconnect();
+    });
+
+    obs.observe(document.documentElement, { childList: true, subtree: true });
+
+    var interval = setInterval(function () {
+      tries++;
+      if (convertIfReady() || tries >= maxTries) {
+        clearInterval(interval);
+        obs.disconnect();
+      }
+    }, 250);
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", start);
+  } else {
+    start();
+  }
+})();
+</script>
+
+    <meta charset="UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Online Employment Center</title>
+
+    
+
+    <!--@@bio_header@@-->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="/common_js/font-awesome-4.7.0/css/font-awesome.min.css" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="/common_js/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet"></noscript>
+
+    <link href="https://use.typekit.net/lad5zst.css" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="https://use.typekit.net/lad5zst.css" rel="stylesheet"></noscript>
+
+    <link href="/common_js/flexslider/flexslider.css.php" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="/common_js/flexslider/flexslider.css.php" rel="stylesheet"></noscript>
+
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,400;0,700;1,400;1,700&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,400;0,700;1,400;1,700&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet"></noscript>	  
+  
+	<script>(function(d){if(d){if(d.classList){d.classList.remove("no-js");d.classList.add("js");}else{d.className=d.className.replace(/\bno-js\b/,"js");}}})(document.documentElement)</script>  
+<script>
+(function () {
+
+  function setContrast(el) {
+    if (!el || !el.style) return;
+    el.style.setProperty('filter', 'contrast(1.5)', 'important');
+  }
+
+  function findEmailSpan() {
+    var spans = document.querySelectorAll('span.sr-only');
+    for (var i = 0; i < spans.length; i++) {
+      var t = (spans[i].textContent || '').replace(/\s+/g, ' ').trim().toLowerCase();
+      if (t === 'please enter your email address:' ||
+          t.indexOf('please enter your email address:') !== -1) {
+        return spans[i];
+      }
+    }
+    return null;
+  }
+
+  function apply() {
+    // 1) Skip link
+    var skip = document.getElementById('FH-The-Skip-Link');
+    if (skip) setContrast(skip);
+
+    // 2) Email sr-only span
+    var emailSpan = findEmailSpan();
+    if (emailSpan) setContrast(emailSpan);
+  }
+
+  // Run once
+  apply();
+
+  // Re-apply if theme/CMS mutates styles
+  try {
+    var mo = new MutationObserver(function () {
+      apply();
+    });
+    mo.observe(document.documentElement, {
+      subtree: true,
+      attributes: true,
+      attributeFilter: ['style', 'class'],
+      childList: true
+    });
+  } catch (e) {}
+
+})();
+</script>
+    <link rel='stylesheet' type='text/css' href='/common_js/common_css.php?c=3538&amp;last_modified=1730491623'>
+    <link rel="alternate" type="application/xml" title="Jobs Listing for Dosher Memorial Hospital" href="/jobs/jobs.xml" />
+<link rel="alternate" type="application/xml" title="Indeed Jobs Listing for Dosher Memorial Hospital" href="/jobs/indeed.xml" />
+<link rel='stylesheet' type='text/css' href='/style.php'>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+
+    <link rel="canonical" href="https://www.dosher.org/getpage.php?name=employment">
+
+    <!-- Begin Twitter Info -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Online Employment Center">
+    <meta name="twitter:description" content="Dosher Employment Center Career Opportunities Thank you for your interest in the job opportunities at Dosher Memorial Hospital. Preferred Method of Applying: To proceed in your job search, simply browse our list of current job openings below to see what position interests you. When you have found a position that matches your skills you may click on the position title and it will take you to our online applicant system which will allow you to enter your demographic information and your resume. We currently employ approximately 435 clinical and non-clinical staff members. At Dosher Hospital, our goal is to be a great place for employees to work, and we strive to employ the very best people in healthcare. Please make note of three important hospital policies: Our Standards of Behavior policy is a description of behaviors and ideals of what we expect of our employees and what our employees can expect of their supervisors. As all employees are expected to agree to our Standards, all job applicants should be willing to meet these Standards before taking time to apply. Please review the link above before applying. Dosher Memorial Hospital requires the following vaccines, Influenza vaccine, measles, mumps and rubella (MMR) vaccine, if blood test is negative, Tetanus (Td/Tdap) vaccine, if no record, Varicella Vaccine, if blood test is negative and Hepatitis B vaccine or signed declination, if at risk and no record OR record and blood test is negative. Our current employment opportunities include: &#x25CF;Cardiac Rehab&#x25CF;Cardiopulmonary&#x25CF;Diagnostic Imaging&#x25CF;Dosher Memorial Clinic Network&#x25CF;Emergency Department&#x25CF;Employee Health&#x25CF;Laboratory&#x25CF;Nursing&#x25CF;Patient Care Unit / Medical Surgical Unit&#x25CF;Plant Operations&#x25CF;Registration&#x25CF;Surgical Services&#x25CF;Wound Care Center&#x25CF;x - General Application F.A.Q.&apos;s How do I apply for positions at Dosher Memorial Hospital? All of our positions are posted on our website at www.dosher.org The Careers tab will take you to all open positions. To apply, click on any position that interests you, then click the link at the bottom of the page &quot;Click Here to fill out our official online application. What happens after I submit my application? When you submit application with your qualifications, you will immediately be entered into consideration for the position(s) to which you applied and you will receive an email confirmation that your information was received. Within 24 hours (excluding weekends) Human Resources reviews submitted applications, comparing advertised requirements, preferences, and needs of the position, and determines which applicants meet the requirements and forward to the hiring manager. The hiring manger will contact you directly to set up an interview. How long is a position open to receive applications? In general, if a posting is still on our website, it is still open to receive applications. What is the status of my application? Has the position been filled? During the review process, you will receive email updates from Human Resources regarding the status of your application. Can you give me more information about the job, the hiring department, or the hiring manager? We cannot provide names or contact details of hiring managers. In some cases, the posting may provide a contact person for more information or additional questions. Will I receive notification if I am not being considered for the position? Yes, you will receive an email explaining you are no longer being considered for the position. How do I know if I am qualified for a position when looking at the job posting? When looking at postings online, pay particular attention to three important fields: &quot;Minimum Education/Experience&quot;, &quot;Required Skills&quot;, and &quot;Required Licenses/Certifications&quot;. Qualified applicants must meet all of the requirements in these fields to be considered for a position. The most qualified applicants will likely also meet some or all of the qualifications listed in the &quot;Preferred Experience, Skills, Training/Education&quot; field. How long should I expect to wait until I hear back once I&apos;ve submitted my application? submit application (email confirmation within 24 hours) This will include information to let you know if you meet the qualifications and your information is being forwarded to the hiring manager or if your application is not being considered. Hiring manager will set up interview with the qualified candidate within 24 hours. Hiring manager will interview within 7 days. If decision is made not to hire you will receive a letter from Human Resources stating no offer will be made Human Resources will contact any candidates with an offer within 24 hours of the decision to hire Dosher Memorial Hospital is an equal opportunity employer In order to provide equal employment and advancement opportunities to all individuals, employment decisions at Dosher Memorial Hospital will be based on merit, qualifications, and abilities. Dosher Memorial Hospital does not discriminate in employment opportunities or practices on the basis of race, color, religion, gender, national origin, age, disability or any other classification in accordance with federal, state and local statutes, regulations and ordinances. Legal information Dosher Memorial Hospital will maintain your application for as long as legally required. Upon submitting your application we will take every effort to review it for proper consideration. If your qualifications meet the current needs of Dosher Memorial Hospital, our Human Resources Department will contact you. Drug testing Dosher Memorial Hospital is committed to providing a safe, efficient, and productive work environment for all employees. To help ensure a safe and healthful working environment, each applicant to whom an offer of employment has been made will be required as a condition of employment to undergo a substance test. Applicants will be asked to read the policy and sign a Pre-Employment Offer and Employee Consent to Drug Screening. Benefit information To receive more information regarding our benefits please click here . Community information To receive more information regarding our community please click here .">
+    <meta name="twitter:image" content="https://pictures.fasthealth.com/pictures/308476.png?last_modified=1675290250">
+    <!-- End Twitter Info -->
+
+    <!-- Begin Open Graph Info -->
+    <meta property="og:locale" content="en_US">
+    <meta property="og:site_name" content="Dosher Memorial Hospital">
+    <meta property="og:url" content="https://www.dosher.org/getpage.php?name=employment&amp;sub=Careers">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Online Employment Center">
+    <meta property="og:description" content="Dosher Employment Center Career Opportunities Thank you for your interest in the job opportunities at Dosher Memorial Hospital. Preferred Method of Applying: To proceed in your job search, simply browse our list of current job openings below to see what position interests you. When you have found a position that matches your skills you may click on the position title and it will take you to our online applicant system which will allow you to enter your demographic information and your resume. We currently employ approximately 435 clinical and non-clinical staff members. At Dosher Hospital, our goal is to be a great place for employees to work, and we strive to employ the very best people in healthcare. Please make note of three important hospital policies: Our Standards of Behavior policy is a description of behaviors and ideals of what we expect of our employees and what our employees can expect of their supervisors. As all employees are expected to agree to our Standards, all job applicants should be willing to meet these Standards before taking time to apply. Please review the link above before applying. Dosher Memorial Hospital requires the following vaccines, Influenza vaccine, measles, mumps and rubella (MMR) vaccine, if blood test is negative, Tetanus (Td/Tdap) vaccine, if no record, Varicella Vaccine, if blood test is negative and Hepatitis B vaccine or signed declination, if at risk and no record OR record and blood test is negative. Our current employment opportunities include: &#x25CF;Cardiac Rehab&#x25CF;Cardiopulmonary&#x25CF;Diagnostic Imaging&#x25CF;Dosher Memorial Clinic Network&#x25CF;Emergency Department&#x25CF;Employee Health&#x25CF;Laboratory&#x25CF;Nursing&#x25CF;Patient Care Unit / Medical Surgical Unit&#x25CF;Plant Operations&#x25CF;Registration&#x25CF;Surgical Services&#x25CF;Wound Care Center&#x25CF;x - General Application F.A.Q.&apos;s How do I apply for positions at Dosher Memorial Hospital? All of our positions are posted on our website at www.dosher.org The Careers tab will take you to all open positions. To apply, click on any position that interests you, then click the link at the bottom of the page &quot;Click Here to fill out our official online application. What happens after I submit my application? When you submit application with your qualifications, you will immediately be entered into consideration for the position(s) to which you applied and you will receive an email confirmation that your information was received. Within 24 hours (excluding weekends) Human Resources reviews submitted applications, comparing advertised requirements, preferences, and needs of the position, and determines which applicants meet the requirements and forward to the hiring manager. The hiring manger will contact you directly to set up an interview. How long is a position open to receive applications? In general, if a posting is still on our website, it is still open to receive applications. What is the status of my application? Has the position been filled? During the review process, you will receive email updates from Human Resources regarding the status of your application. Can you give me more information about the job, the hiring department, or the hiring manager? We cannot provide names or contact details of hiring managers. In some cases, the posting may provide a contact person for more information or additional questions. Will I receive notification if I am not being considered for the position? Yes, you will receive an email explaining you are no longer being considered for the position. How do I know if I am qualified for a position when looking at the job posting? When looking at postings online, pay particular attention to three important fields: &quot;Minimum Education/Experience&quot;, &quot;Required Skills&quot;, and &quot;Required Licenses/Certifications&quot;. Qualified applicants must meet all of the requirements in these fields to be considered for a position. The most qualified applicants will likely also meet some or all of the qualifications listed in the &quot;Preferred Experience, Skills, Training/Education&quot; field. How long should I expect to wait until I hear back once I&apos;ve submitted my application? submit application (email confirmation within 24 hours) This will include information to let you know if you meet the qualifications and your information is being forwarded to the hiring manager or if your application is not being considered. Hiring manager will set up interview with the qualified candidate within 24 hours. Hiring manager will interview within 7 days. If decision is made not to hire you will receive a letter from Human Resources stating no offer will be made Human Resources will contact any candidates with an offer within 24 hours of the decision to hire Dosher Memorial Hospital is an equal opportunity employer In order to provide equal employment and advancement opportunities to all individuals, employment decisions at Dosher Memorial Hospital will be based on merit, qualifications, and abilities. Dosher Memorial Hospital does not discriminate in employment opportunities or practices on the basis of race, color, religion, gender, national origin, age, disability or any other classification in accordance with federal, state and local statutes, regulations and ordinances. Legal information Dosher Memorial Hospital will maintain your application for as long as legally required. Upon submitting your application we will take every effort to review it for proper consideration. If your qualifications meet the current needs of Dosher Memorial Hospital, our Human Resources Department will contact you. Drug testing Dosher Memorial Hospital is committed to providing a safe, efficient, and productive work environment for all employees. To help ensure a safe and healthful working environment, each applicant to whom an offer of employment has been made will be required as a condition of employment to undergo a substance test. Applicants will be asked to read the policy and sign a Pre-Employment Offer and Employee Consent to Drug Screening. Benefit information To receive more information regarding our benefits please click here . Community information To receive more information regarding our community please click here .">
+    <meta property="og:image" content="https://pictures.fasthealth.com/pictures/308476.png?last_modified=1675290250">
+    <meta property="og:image:url" content="https://pictures.fasthealth.com/pictures/308476.png?last_modified=1675290250">
+    <meta property="og:image:secure_url" content="https://pictures.fasthealth.com/pictures/308476.png?last_modified=1675290250">
+    <meta property="og:image:width" content="400">
+    <meta property="og:image:height" content="151">
+    <!-- End Open Graph Info -->
+
+</head>
+<body class=" content-page is-content-page content-page-employment  has-top-bar-important-info  has-fh-logo-in-copyright has-fc-logo-in-copyright has-both-fasthealth-and-fastcommand-footer-logo has-content-menu not-ios not-android not-mobile no-ie" data-clientID="3538" data-fhID="867" data-template="site" data-is-printable-version='false'>
+
+<a href="#main_content_area" class="screen-reader-text" tabindex="0" id="FH-The-Skip-Link">skip navigation</a>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_TRACKING_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'GA_TRACKING_ID');
+        gtag('config','AW-849460422');
+    </script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-49CMB49BZ7"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-49CMB49BZ7');
+</script>
+
+    <!--@@important_alert_bar@@--><div class="important-information-wrappings" id="ImportantInformationWrappings" data-client="3538"><div class="important-information-wrapper" id="ImportantInformationWrapper"><table cellpadding="0" cellspacing="0" class="mobile-block-table" data-height="100%" width="100%">
+    <tbody>
+        <tr data-height="10px">
+            <td align="left"><font face="Helvetica"><span class="the-page-title">Appointments Available! </span> <a href="/getpage.php?name=dmclinics&amp;sub=Services" class="click-for-more-info" target="_blank">Click for info</a> </font></td>
+	    <td align="right" data-width="100px"><font face="Helvetica"><a href="https://www.fastcommand.com/getpage.php?name=contact_fastcommand" style="text-decoration:none; font-weight: normal;" target="_blank">FastCommand</a> </font></td>
+        </tr>
+        <tr>
+            <td colspan='2'>
+            <h3><font face="Helvetica"><marquee>Immediate new patient primary care appointments available.  Call 910-454-4670 or click on link above.</marquee></font></h3>
+            </td>
+	    
+        </tr>
+    </tbody>
+</table></div></div>
+
+    <!--@@mobile_home_page_ticker@@-->
+
+    <header>
+        <div class="header">
+
+	    <div class="header-logo"><a href='/' target='_top'><img decoding='async'  fetchpriority="high" width='400' height='151' data-banner-id='308476' src='https://pictures.fasthealth.com/pictures/308476.png?last_modified=1675290250' alt='Dosher Memorial Hospital Logo' class='banner-image'></a></div><!-- end .header-logo -->
+          
+<div class="fh-header-search-listing-wrapper" id="FH-Desktop-Search-Container">
+	<ul class="fh-header-search-listing">
+		<li class="header-search-menu" id="FH-Show-Desktop-Search-Item">
+			<i class="fa fa-search fa-fw" title="Show Site Search Field" id="FH-Show-Desktop-Search"></i>
+		</li>
+		<li class="fh-header-search-item" id="FH-Desktop-Search-Item">
+			<div class="fh-header-search-container">
+				  <div class="desktop-search-box-wrappings">
+				   <div class="desktop-search-box-wrapper">
+					 <form method="GET" action="/search/google_search.php#main_content_area" role="search">
+					   <input type="hidden" name="cx" value="2ce6c677b93f9ec9d">
+					   <span class="search-fields"><input type="search" name="q" size="16" class="search-text" placeholder="Search" id="FH-Desktop-Search-Field"><button
+					   type="submit" name="sa" class="search-submit"><i class="fa fa-search fa-fw" title="Search Site"></i></button></span><!-- end .search-fields -->
+					 </form>
+				   </div><!-- end .desktop-search-box-wrapper -->
+				 </div><!-- end .desktop-search-box-wrappings -->
+			</div><!-- end .fh-header-search-container -->
+		</li>
+	</ul><!-- end .fh-header-search-listing -->
+</div><!-- end .fh-header-search-listing-wrapper -->          
+          
+	    <div class="header-container">          
+		<div class="mobile-navbar-wrappings">
+		    <div class="mobile-navbar-wrapper"><ul class="mobile-navbar-listing-items">
+			<li class="mobile-navbar-item mobile-navbar-item-show-menu"><i class="fa fa-bars fa-fw show-menu" id="Mobile-Show-Menu"></i></li>
+			<li class="mobile-navbar-item mobile-navbar-item-show-search"><i class="fa fa-search fa-fw show-search" id="Mobile-Show-Search"></i></li>
+		    </ul></div><!-- end .mobile-navbar-wrapper -->
+		</div><!-- end .mobile-navbar-wrappings -->
+		  <div class="mobile-search-box-wrappings">
+		   <div class="mobile-search-box-wrapper">
+		     <form method="GET" action="/search/google_search.php#main_content_area" role="search">
+		       <input type="hidden" name="cx" value="2ce6c677b93f9ec9d">
+		       <span class="search-fields"><input type="search" name="q" size="16" class="search-text" placeholder="Search"><button
+		       type="submit" name="sa" class="search-submit"><i class="fa fa-search fa-fw"></i></button></span><!-- end .search-fields -->
+		     </form>
+		   </div><!-- end .mobile-search-box-wrapper -->
+		 </div><!-- end .mobile-search-box-wrappings -->
+          
+
+
+		<div class="social-networking-links-wrappings">
+		    <div class="social-networking-links-wrapper">
+			<ul data-num-links="3" data-num-items-even="false" data-num-items-odd="true" data-num-items-divible-by="(3)" data-num-items-not-divible-by="(2)" data-num-links-gt="(0)(1)(2)" data-menu-group="3000" class="social-networking-links-listing header-social-links-listing"><li data-menu-group="3000" class="list-item list-item-0 list-item-first has-link not-label no-script has-image has-image-in-link-text list-item-image list-item-image-replace" data-menu-id="110421"><a data-menu-id="110421" href="https://www.facebook.com/Dosher-Memorial-Hospital-265946053454873/" target="_top" ><img src="/images/menu_74361.png?last_modified=1595618235" id="fh-image-6ad90022a6c84" decoding="async" loading="lazy" alt="Facebook"></a></li><li data-menu-group="3000" class="list-item list-item-1 has-link not-label no-script has-image has-image-in-link-text list-item-image list-item-image-replace" data-menu-id="110422"><a data-menu-id="110422" href="https://www.youtube.com/channel/UCuNAx5Kz_bLZ2qhN-cFm2SA?view_as=subscriber" target="_top" ><img src="/images/menu_74367.png?last_modified=1595618224" id="fh-image-6ad90022a6ceb" decoding="async" loading="lazy" alt="Youtube"></a></li><li data-menu-group="3000" class="list-item list-item-2 list-item-last has-link not-label no-script has-image has-image-in-link-text list-item-image list-item-image-replace" data-menu-id="110423"><a data-menu-id="110423" href="https://www.instagram.com/dosherhospital/" target="_top" ><img src="/images/menu_98553.png?last_modified=1595618203" id="fh-image-6ad90022a6d1e" decoding="async" loading="lazy" alt="Instagram"></a></li></ul>
+		    </div><!-- end .social-networking-links-wrapper -->
+		</div><!-- end .social-networking-links-wrappings -->
+	    </div><!-- end .header-container -->
+        </div><!-- end .header -->
+    </header>
+
+	<!--<div class="alert-content"><a href=https://www.dosher.org/getpage.php?name=COVID-19_PatientCommunity_Information>Click here for the latest hospital and clinic updates on COVID-19</a></div>-->
+
+    <nav>
+        <div class="main-navigation-wrapper">
+	   <div class="main-navigation">
+		<ul data-tabindex="0" data-menu-group="1" data-subid="0" data-count="9" data-count-gt="(0)(1)(2)(3)(4)(5)(6)(7)(8)" data-count-evenly-divisible-by-true="(3)(9)" data-count-evenly-divisible-by-false="(2)(4)(5)(6)(7)(8)(10)(11)(12)" data-sub="" data-sub-lowercase="" data-sub-lowercase-ascii-alphanumeric="" class="navigation-menu"><li data-tabindex="-1" data-subid="0" data-subid-gt0="false" data-subid-gt1="false" data-sub="&lt;i class=&quot;fa fa-home fa-fw&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;" data-menu-group="1" data-sub-lowercase="&lt;i class=&quot;fa fa-home fa-fw&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;" data-sub-lowercase-ascii-alphanumeric="iclassfafahomefafwariahiddentruei" data-pos="1" data-menu-id="111280"  data-count-parity="even" data-is-label="false" class="not-label has-link submenu-top-item no-subnav no-image no-img"><span class="menu-link-text"><a href="/?sub=%3Ci%20class%3D%22fa%20fa-home%20fa-fw%22%20aria-hidden%3D%22true%22%3E%3C%2Fi%3E" data-tabindex="0" data-menu-group="1" data-menu-id="111280" data-is-label="false" class="main-menu-link not-label no-subnav"><i class="fa fa-home fa-fw" aria-hidden="true"></i></a></span></li><li data-tabindex="-1" data-subid="0" data-subid-gt0="false" data-subid-gt1="false" data-sub="About Us" data-menu-group="1" data-sub-lowercase="about us" data-sub-lowercase-ascii-alphanumeric="aboutus" data-pos="2" data-menu-id="110322"  data-count-gt="(0)(1)(2)(3)(4)(5)(6)(7)(8)(9)(10)(11)" data-count="12" data-num-items="12"  data-count-parity="even" data-is-label="false" class="not-label has-link submenu-top-item has-subnav no-image no-img"><span class="menu-link-text"><a href="/getpage.php?name=aboutus&amp;sub=About%20Us" data-tabindex="0" data-menu-group="1" data-menu-id="110322" data-is-label="false" class="main-menu-link not-label has-subnav">About Us</a></span><ul data-main-menu-id="110322" data-menu-group="1" data-subid="1" data-count="12" data-count-gt="(0)(1)(2)(3)(4)(5)(6)(7)(8)(9)(10)(11)" data-count-evenly-divisible-by-true="(2)(3)(4)(6)(12)" data-count-evenly-divisible-by-false="(5)(7)(8)(9)(10)(11)" data-sub="About Us" data-sub-lowercase="about us" data-sub-lowercase-ascii-alphanumeric="aboutus" class="sub-navigation-menu subnav-about-us"><li data-tabindex="-1" data-subid="1" data-subid-gt0="true" data-subid-gt1="false" data-sub="About Us" data-menu-group="1" data-sub-lowercase="about us" data-sub-lowercase-ascii-alphanumeric="aboutus" data-pos="1" data-menu-id="110329"  data-count-parity="even" data-is-label="false" class="not-label has-link submenu-item no-subnav no-image no-img"><a href="/getpage.php?name=aboutus&amp;sub=About%20Us" data-tabindex="0" data-menu-group="1" data-menu-id="110329" data-is-label="false" class="sub-menu-link not-label no-subnav">About Dosher</a></li><li data-tabindex="-1" data-subid="1" data-subid-gt0="true" data-subid-gt1="false" data-sub="About Us" data-menu-group="1" data-sub-lowercase="about us" data-sub-lowercase-ascii-alphanumeric="aboutus" data-pos="2" data-menu-id="116129"  data-count-parity="even" data-is-label="false" class="not-label has-link submenu-item no-subnav no-image no-img"><a href="/getpage.php?name=Dosher_Master_Facility_Plan&amp;sub=About%20Us" data-tabindex="0" data-menu-group="1" data-menu-id="116129" data-is-label="false" class="sub-menu-link not-label no-subnav">Master Facility Plan</a></li><li data-tabindex="-1" data-subid="1" data-subid-gt0="true" data-subid-gt1="false" data-sub="About Us" data-menu-group="1" data-sub-lowercase="about us" data-sub-lowercase-ascii-alphanumeric="aboutus" data-pos="3" data-menu-id="110339"  data-count-parity="even" data-is-label="false" class="not-label has-link submenu-item no-subnav no-image no-img"><a href="/getpage.php?name=Dosher_Leadership&amp;sub=About%20Us" data-tabindex="0" data-menu-group="1" data-menu-id="110339" data-is-label="false" class="sub-menu-link not-label no-subnav">Board of Trustees</a></li><li data-tabindex="-1" data-subid="1" data-subid-gt0="true" data-subid-gt1="false" data-sub="About Us" data-menu-group="1" data-sub-lowercase="about us" data-sub-lowercase-ascii-alphanumeric="aboutus" data-pos="4" data-menu-id="110348"  data-count-parity="even" data-is-label="false" class="not-label has-link submenu-item no-subnav no-image no-img"><a href="/getpage.php?name=message&amp;sub=About%20Us" data-tabindex="0" data-menu-group="1" data-menu-id="110348" data-is-label="false" class="sub-menu-link not-label no-subnav">CEO's Welcome</a></li><li data-tabindex="-1" data-subid="1" data-subid-gt0="true" data-subid-gt1="false" data-sub="About Us" data-menu-group="1" data-sub-lowercase="about us" data-sub-lowercase-ascii-alphanumeric="aboutus" data-pos="5" data-menu-id="110358"  data-count-parity="even" data-is-label="false" class="not-label has-link submenu-item no-subnav no-image no-img"><a href="/getpage.php?name=community&amp;sub=About%20Us" data-tabindex="0" data-menu-group="1" data-menu-id="110358" data-is-label="false" class="sub-menu-link not-label no-subnav">Community</a></li><li data-tabindex="-1" data-subid="1" data-subid-gt0="true" data-subid-gt1="false" data-sub="About Us" data-menu-group="1" data-sub-lowercase="about us" data-sub-lowercase-ascii-alphanumeric="aboutus" data-pos="6" data-menu-id="110364"  data-count-parity="even" data-is-label="false" class="not-label has-link submenu-item no-subnav no-image no-img"><a href="/getpage.php?name=leadership&amp;sub=About%20Us" data-tabindex="0" data-menu-group="1" data-menu-id="110364" data-is-label="false" class="sub-menu-link not-label no-subnav">Leadership</a></li><li data-tabindex="-1" data-subid="1" data-subid-gt0="true" data-subid-gt1="false" data-sub="About Us" data-menu-group="1" data-sub-lowercase="about us" data-sub-lowercase-ascii-alphanumeric="aboutus" data-pos="7" data-menu-id="110367"  data-count-parity="even" data-is-label="false" class="not-label has-link submenu-item no-subnav no-image no-img"><a href="/getpage.php?name=mission&amp;sub=About%20Us" data-tabindex="0" data-menu-group="1" data-menu-id="110367" data-is-label="false" class="sub-menu-link not-label no-subnav">Mission and Vision</a></li><li data-tabindex="-1" data-subid="1" data-subid-gt0="true" data-subid-gt1="false" data-sub="About Us" data-menu-group="1" data-sub-lowercase="about us" data-sub-lowercase-ascii-alphanumeric="aboutus" data-pos="8" data-menu-id="115426"  data-count-parity="even" data-is-label="false" class="not-label has-link submenu-item no-subnav no-image no-img"><a href="/getpage.php?name=Dosher_Tax_Facts&amp;sub=About%20Us" data-tabindex="0" data-menu-group="1" data-menu-id="115426" data-is-label="false" class="sub-menu-link not-label no-subnav">Tax Facts</a></li><li data-tabindex="-1" data-subid="1" data-subid-gt0="true" data-subid-gt1="false" data-sub="About Us" data-menu-group="1" data-sub-lowercase="about us" data-sub-lowercase-ascii-alphanumeric="aboutus" data-pos="9" data-menu-id="110370"  data-count-parity="even" data-is-label="false" class="not-label has-link submenu-item no-subnav no-image no-img"><a href="/getpage.php?name=news&amp;sub=About%20Us" data-tabindex="0" data-menu-group="1" data-menu-id="110370" data-is-label="false" class="sub-menu-link not-label no-subnav">News Releases</a></li><li data-tabindex="-1" data-subid="1" data-subid-gt0="true" data-subid-gt1="false" data-sub="About Us" data-menu-group="1" data-sub-lowercase="about us" data-sub-lowercase-ascii-alphanumeric="aboutus" data-pos="10" data-menu-id="110373"  data-count-parity="even" data-is-label="false" class="not-label has-link submenu-item no-subnav no-image no-img"><a href="/getpage.php?name=nondiscrimination&amp;sub=About%20Us" data-tabindex="0" data-menu-group="1" data-menu-id="110373" data-is-label="false" class="sub-menu-link not-label no-subnav">Non-discrimination Policy</a></li><li data-tabindex="-1" data-subid="1" data-subid-gt0="true" data-subid-gt1="false" data-sub="About Us" data-menu-group="1" data-sub-lowercase="about us" data-sub-lowercase-ascii-alphanumeric="aboutus" data-pos="11" data-menu-id="110377"  data-count-parity="even" data-is-label="false" class="not-label has-link submenu-item no-subnav no-image no-img"><a href="/docs/5-18-2016_9-24-29_AM.png?sub=About%20Us" data-tabindex="0" data-menu-group="1" data-menu-id="110377" data-is-label="false" target="_blank" class="sub-menu-link not-label no-subnav">USDA Opportunity Notice</a></li><li data-tabindex="-1" data-subid="1" data-subid-gt0="true" data-subid-gt1="false" data-sub="About Us" data-menu-group="1" data-sub-lowercase="about us" data-sub-lowercase-ascii-alphanumeric="aboutus" data-pos="12" data-menu-id="114686"  data-count-parity="even" data-is-label="false" class="not-label has-link submenu-item no-subnav no-image no-img"><a href="/getpage.php?name=contact&amp;sub=About%20Us" data-tabindex="0" data-menu-group="1" data-menu-id="114686" data-is-label="false" class="sub-menu-link not-label no-subnav">Contact Us</a></li></ul></li><li data-tabindex="-1" data-subid="0" data-subid-gt0="false" data-subid-gt1="false" data-sub="Providers" data-menu-group="1" data-sub-lowercase="providers" data-sub-lowercase-ascii-alphanumeric="providers" data-pos="3" data-menu-id="110325"  data-count-gt="(0)(1)(2)" data-count="3" data-num-items="3"  data-count-parity="odd" data-is-label="false" class="not-label has-link submenu-top-item has-subnav no-image no-img"><span class="menu-link-text"><a href="/staff/?sub=Providers" data-tabindex="0" data-menu-group="1" data-menu-id="110325" data-is-label="false" class="main-menu-link not-label has-subnav">Providers</a></span><ul data-main-menu-id="110325" data-menu-group="1" data-subid="1" data-count="3" data-count-gt="(0)(1)(2)" data-count-evenly-divisible-by-true="(3)" data-count-evenly-divisible-by-false="(2)(4)(5)(6)(7)(8)(9)(10)(11)(12)" data-sub="Providers" data-sub-lowercase="providers" data-sub-lowercase-ascii-alphanumeric="providers" class="sub-navigation-menu subnav-providers"><li data-tabindex="-1" data-subid="1" data-subid-gt0="true" data-subid-gt1="false" data-sub="Providers" data-menu-group="1" data-sub-lowercase="providers" data-sub-lowercase-ascii-alphanumeric="providers" data-pos="1" data-menu-id="110334"  data-count-parity="even" data-is-label="false" class="not-label has-link submenu-item no-subnav no-image no-img"><a href="/staff/?sub=Providers" data-tabindex="0" data-menu-group="1" data-menu-id="110334" data-is-label="false" class="sub-menu-link not-label no-subnav">Our Physicians and Providers</a></li><li data-tabindex="-1" data-subid="1" data-subid-gt0="true" data-subid-gt1="false" data-sub="Providers" data-menu-group="1" data-sub-lowercase="providers" data-sub-lowercase-ascii-alphanumeric="providers" data-pos="2" data-menu-id="110344"  data-count-parity="even" data-is-label="false" class="not-label has-link submenu-item no-subnav no-image no-img"><a href="/getpage.php?name=hospitalist&amp;sub=Providers" data-tabindex="0" data-menu-group="1" data-menu-id="110344" data-is-label="false" class="sub-menu-link not-label no-subnav">Hospitalist Program</a></li><li data-tabindex="-1" data-subid="1" data-subid-gt0="true" data-subid-gt1="false" data-sub="Providers" data-menu-group="1" data-sub-lowercase="providers" data-sub-lowercase-ascii-alphanumeric="providers" data-pos="3" data-menu-id="110351"  data-count-parity="even" data-is-label="false" class="not-label has-link submenu-item no-subnav no-image no-img"><a href="/getpage.php?name=physician_opportunities&amp;sub=Providers" data-tabindex="0" data-menu-group="1" data-menu-id="110351" data-is-label="false" class="sub-menu-link not-label no-subnav">Provider Opportunities</a></li></ul></li><li data-tabindex="-1" data-subid="0" data-subid-gt0="false" data-subid-gt1="false" data-sub="Services" data-menu-group="1" data-sub-lowercase="services" data-sub-lowercase-ascii-alphanumeric="services" data-pos="4" data-menu-id="111276"  data-count-gt="(0)(1)(2)(3)(4)(5)(6)(7)(8)(9)(10)(11)(12)(13)(14)(15)(16)(17)(18)(19)(20)(21)(22)(23)(24)" data-count="25" data-num-items="25"  data-count-parity="odd" data-is-label="false" class="not-label has-link submenu-top-item has-subnav no-image no-img"><span class="menu-link-text"><a href="/getpage.php?name=services&amp;sub=Services" data-tabindex="0" data-menu-group="1" data-menu-id="111276" data-is-label="false" class="main-menu-link not-label has-subnav">Services</a></span><ul data-main-menu-id="111276" data-menu-group="1" data-subid="1" data-count="25" data-count-gt="(0)(1)(2)(3)(4)(5)(6)(7)(8)(9)(10)(11)(12)(13)(14)(15)(16)(17)(18)(19)(20)(21)(22)(23)(24)" data-count-evenly-divisible-by-true="(5)" data-count-evenly-divisible-by-false="(2)(3)(4)(6)(7)(8)(9)(10)(11)(12)" data-sub="Services" data-sub-lowercase="services" data-sub-lowercase-ascii-alphanumeric="services" class="sub-navigation-menu subnav-services"><li data-tabindex="-1" data-subid="1" data-subid-gt0="true" data-subid-gt1="false" data-sub="Services" data-menu-group="1" data-sub-lowercase="services" data-sub-lowercase-ascii-alphanumeric="services" data-pos="1" data-menu-id="112386"  data-count-parity="even" data-is-label="false" class="not-label has-link submenu-item no-subnav no-image no-img"><a href="/getpage.php?name=Anesthesia&amp;sub=Services" data-tabindex="0" data-menu-group="1" data-menu-id="112386" data-is-label="false" class="sub-menu-link not-label no-subnav">Anesthesia</a></li><li data-tabindex="-1" data-subid="1" data-subid-gt0="true" data-subid-gt1="false" data-sub="Services" data-menu-group="1" data-sub-lowercase="services" data-sub-lowercase-ascii-alphanumeric="services" data-pos="2" data-menu-id="112387"  data-count-parity="even" data-is-label="false" class="not-label has-link submenu-item no-subnav no-image no-img"><a href="/getpage.php?name=cardiac_rehab&amp;sub=Services" data-tabindex="0" data-menu-group="1" data-menu-id="112387" data-is-label="false" class="sub-menu-link not-label no-subnav">Cardiac Rehabilitation</a></li><li data-tabindex="-1" data-subid="1" data-subid-gt0="true" data-subid-gt1="false" data-sub="Services" data-menu-group="1" data-sub-lowercase="services" data-sub-lowercase-ascii-alphanumeric="services" data-pos="3" data-menu-id="112388"  data-count-parity="even" data-is-label="false" class="not-label has-link submenu-item no-subnav no-image no-img"><a href="/getpage.php?name=cardioresp&amp;sub=Services" data-tabindex="0" data-menu-group="1" data-menu-id="112388" data-is-label="false" class="sub-menu-link not-label no-subnav">Cardiopulmonary & Respiratory Therapy</a></li><li data-tabindex="-1" data-subid="1" data-subid-gt0="true" data-subid-gt1="false" data-sub="Services" data-menu-group="1" data-sub-lowercase="services" data-sub-lowercase-ascii-alphanumeric="services" data-pos="4" data-menu-id="112389"  data-count-parity="even" data-is-label="false" class="not-label has-link submenu-item no-subnav no-image no-img"><a href="/getpage.php?name=social_services&amp;sub=Services" data-tabindex="0" data-menu-group="1" data-menu-id="112389" data-is-label="false" class="sub-menu-link not-label no-subnav">Case Management</a></li><li data-tabindex="-1" data-subid="1" data-subid-gt0="true" data-subid-gt1="false" data-sub="Services" data-menu-group="1" data-sub-lowercase="services" data-sub-lowercase-ascii-alphanumeric="services" data-pos="5" data-menu-id="112390"  data-count-parity="even" data-is-label="false" class="not-label has-link submenu-item no-subnav no-image no-img"><a href="/getpage.php?name=Diabetes_Education_and_Medical_Nutrition_Therapy&amp;sub=Services" data-tabindex="0" data-menu-group="1" data-menu-id="112390" data-is-label="false" class="sub-menu-link not-label no-subnav">Diabetes Education & Medical Nutrition Therapy</a></li><li data-tabindex="-1" data-subid="1" data-subid-gt0="true" data-subid-gt1="false" data-sub="Services" data-menu-group="1" data-sub-lowercase="services" data-sub-lowercase-ascii-alphanumeric="services" data-pos="6" data-menu-id="112391"  data-count-parity="even" data-is-label="false" class="not-label has-link submenu-item no-subnav no-image no-img"><a href="/getpage.php?name=diagnostic_imaging&amp;sub=Services" data-tabindex="0" data-menu-group="1" data-menu-id="112391" data-is-label="false" class="sub-menu-link not-label no-subnav">Diagnostic Imaging</a></li><li data-tabindex="-1" data-subid="1" data-subid-gt0="true" data-subid-gt1="false" data-sub="Services" data-menu-group="1" data-sub-lowercase="services" data-sub-lowercase-ascii-alphanumeric="services" data-pos="7" data-menu-id="111278"  data-count-parity="even" data-is-label="false" class="not-label has-link submenu-item no-subnav no-image no-img"><a href="/getpage.php?name=dmclinics&amp;sub=Services" data-tabindex="0" data-menu-group="1" data-menu-id="111278" data-is-label="false" class="sub-menu-link not-label no-subnav">Dosher Medical Clinics</a></li><li data-tabindex="-1" data-subid="1" data-subid-gt0="true" data-subid-gt1="false" data-sub="Services" data-menu-group="1" data-sub-lowercase="services" data-sub-lowercase-ascii-alphanumeric="services" data-pos="8" data-menu-id="112392"  data-count-parity="even" data-is-label="false" class="not-label has-link submenu-item no-subnav no-image no-img"><a href="/getpage.php?name=emergency_services&amp;sub=Services" data-tabindex="0" data-menu-group="1" data-menu-id="112392" data-is-label="false" class="sub-menu-link not-label no-subnav">Emergency Services</a></li><li data-tabindex="-1" data-subid="1" data-subid-gt0="true" data-subid-gt1="false" data-sub="Services" data-menu-group="1" data-sub-lowercase="services" data-sub-lowercase-ascii-alphanumeric="services" data-pos="9" data-menu-id="118057"  data-count-parity="even" data-is-label="false" class="not-label has-link submenu-item no-subnav no-image no-img"><a href="/getpage.php?name=dmclinics&amp;sub=Services" data-tabindex="0" data-menu-group="1" data-menu-id="118057" data-is-label="false" class="sub-menu-link not-label no-subnav">Family Medicine</a></li><li data-tabindex="-1" data-subid="1" data-subid-gt0="true" data-subid-gt1="false" data-sub="Services" data-menu-group="1" data-sub-lowercase="services" data-sub-lowercase-ascii-alphanumeric="services" data-pos="10" data-menu-id="116682"  data-count-parity="even" data-is-label="false" class="not-label has-link submenu-item no-subnav no-image no-img"><a href="/getpage.php?name=Gynecology&amp;sub=Services" data-tabindex="0" data-menu-group="1" data-menu-id="116682" data-is-label="false" class="sub-menu-link not-label no-subnav">Gynecology</a></li><li data-tabindex="-1" data-subid="1" data-subid-gt0="true" data-subid-gt1="false" data-sub="Services" data-menu-group="1" data-sub-lowercase="services" data-sub-lowercase-ascii-alphanumeric="services" data-pos="11" data-menu-id="118058"  data-count-parity="even" data-is-label="false" class="not-label has-link submenu-item no-subnav no-image no-img"><a href="/getpage.php?name=dmclinics&amp;sub=Services" data-tabindex="0" data-menu-group="1" data-menu-id="118058" data-is-label="false" class="sub-menu-link not-label no-subnav">Internal Medicine</a></li><li data-tabindex="-1" data-subid="1" data-subid-gt0="true" data-subid-gt1="false" data-sub="Services" data-menu-group="1" data-sub-lowercase="services" data-sub-lowercase-ascii-alphanumeric="services" data-pos="12" data-menu-id="112393"  data-count-parity="even" data-is-label="false" class="not-label has-link submenu-item no-subnav no-image no-img"><a href="/getpage.php?name=Joint_Replacement&amp;sub=Services" data-tabindex="0" data-menu-group="1" data-menu-id="112393" data-is-label="false" class="sub-menu-link not-label no-subnav">Joint Replacement Program</a></li><li data-tabindex="-1" data-subid="1" data-subid-gt0="true" data-subid-gt1="false" data-sub="Services" data-menu-group="1" data-sub-lowercase="services" data-sub-lowercase-ascii-alphanumeric="services" data-pos="13" data-menu-id="112394"  data-count-parity="even" data-is-label="false" class="not-label has-link submenu-item no-subnav no-image no-img"><a href="/getpage.php?name=laboratory&amp;sub=Services" data-tabindex="0" data-menu-group="1" data-menu-id="112394" data-is-label="false" class="sub-menu-link not-label no-subnav">Laboratory</a></li><li data-tabindex="-1" data-subid="1" data-subid-gt0="true" data-subid-gt1="false" data-sub="Services" data-menu-group="1" data-sub-lowercase="services" data-sub-lowercase-ascii-alphanumeric="services" data-pos="14" data-menu-id="112395"  data-count-parity="even" data-is-label="false" class="not-label has-link submenu-item no-subnav no-image no-img"><a href="/getpage.php?name=lymphedema&amp;sub=Services" data-tabindex="0" data-menu-group="1" data-menu-id="112395" data-is-label="false" class="sub-menu-link not-label no-subnav">Lymphedema Management</a></li><li data-tabindex="-1" data-subid="1" data-subid-gt0="true" data-subid-gt1="false" data-sub="Services" data-menu-group="1" data-sub-lowercase="services" data-sub-lowercase-ascii-alphanumeric="services" data-pos="15" data-menu-id="112397"  data-count-parity="even" data-is-label="false" class="not-label has-link submenu-item no-subnav no-image no-img"><a href="/getpage.php?name=occupational_therapy&amp;sub=Services" data-tabindex="0" data-menu-group="1" data-menu-id="112397" data-is-label="false" class="sub-menu-link not-label no-subnav">Occupational Therapy</a></li><li data-tabindex="-1" data-subid="1" data-subid-gt0="true" data-subid-gt1="false" data-sub="Services" data-menu-group="1" data-sub-lowercase="services" data-sub-lowercase-ascii-alphanumeric="services" data-pos="16" data-menu-id="116794"  data-count-parity="even" data-is-label="false" class="not-label has-link submenu-item no-subnav no-image no-img"><a href="/getpage.php?name=Joint_Replacement&amp;sub=Services" data-tabindex="0" data-menu-group="1" data-menu-id="116794" data-is-label="false" class="sub-menu-link not-label no-subnav">Orthopedics</a></li><li data-tabindex="-1" data-subid="1" data-subid-gt0="true" data-subid-gt1="false" data-sub="Services" data-menu-group="1" data-sub-lowercase="services" data-sub-lowercase-ascii-alphanumeric="services" data-pos="17" data-menu-id="112398"  data-count-parity="even" data-is-label="false" class="not-label has-link submenu-item no-subnav no-image no-img"><a href="/getpage.php?name=dosherpcu&amp;sub=Services" data-tabindex="0" data-menu-group="1" data-menu-id="112398" data-is-label="false" class="sub-menu-link not-label no-subnav">Patient Care Unit</a></li><li data-tabindex="-1" data-subid="1" data-subid-gt0="true" data-subid-gt1="false" data-sub="Services" data-menu-group="1" data-sub-lowercase="services" data-sub-lowercase-ascii-alphanumeric="services" data-pos="18" data-menu-id="112399"  data-count-parity="even" data-is-label="false" class="not-label has-link submenu-item no-subnav no-image no-img"><a href="/getpage.php?name=Pediatric_Dentistry&amp;sub=Services" data-tabindex="0" data-menu-group="1" data-menu-id="112399" data-is-label="false" class="sub-menu-link not-label no-subnav">Pediatric Dentistry</a></li><li data-tabindex="-1" data-subid="1" data-subid-gt0="true" data-subid-gt1="false" data-sub="Services" data-menu-group="1" data-sub-lowercase="services" data-sub-lowercase-ascii-alphanumeric="services" data-pos="19" data-menu-id="112400"  data-count-parity="even" data-is-label="false" class="not-label has-link submenu-item no-subnav no-image no-img"><a href="/getpage.php?name=physical_therapy&amp;sub=Services" data-tabindex="0" data-menu-group="1" data-menu-id="112400" data-is-label="false" class="sub-menu-link not-label no-subnav">Physical Therapy</a></li><li data-tabindex="-1" data-subid="1" data-subid-gt0="true" data-subid-gt1="false" data-sub="Services" data-menu-group="1" data-sub-lowercase="services" data-sub-lowercase-ascii-alphanumeric="services" data-pos="20" data-menu-id="118059"  data-count-parity="even" data-is-label="false" class="not-label has-link submenu-item no-subnav no-image no-img"><a href="/getpage.php?name=dmclinics&amp;sub=Services" data-tabindex="0" data-menu-group="1" data-menu-id="118059" data-is-label="false" class="sub-menu-link not-label no-subnav">Primary Care</a></li><li data-tabindex="-1" data-subid="1" data-subid-gt0="true" data-subid-gt1="false" data-sub="Services" data-menu-group="1" data-sub-lowercase="services" data-sub-lowercase-ascii-alphanumeric="services" data-pos="21" data-menu-id="112402"  data-count-parity="even" data-is-label="false" class="not-label has-link submenu-item no-subnav no-image no-img"><a href="/getpage.php?name=speech_therapy&amp;sub=Services" data-tabindex="0" data-menu-group="1" data-menu-id="112402" data-is-label="false" class="sub-menu-link not-label no-subnav">Speech Therapy</a></li><li data-tabindex="-1" data-subid="1" data-subid-gt0="true" data-subid-gt1="false" data-sub="Services" data-menu-group="1" data-sub-lowercase="services" data-sub-lowercase-ascii-alphanumeric="services" data-pos="22" data-menu-id="112403"  data-count-parity="even" data-is-label="false" class="not-label has-link submenu-item no-subnav no-image no-img"><a href="/getpage.php?name=surgical_services&amp;sub=Services" data-tabindex="0" data-menu-group="1" data-menu-id="112403" data-is-label="false" class="sub-menu-link not-label no-subnav">Surgical Services & Procedures</a></li><li data-tabindex="-1" data-subid="1" data-subid-gt0="true" data-subid-gt1="false" data-sub="Services" data-menu-group="1" data-sub-lowercase="services" data-sub-lowercase-ascii-alphanumeric="services" data-pos="23" data-menu-id="112404"  data-count-parity="even" data-is-label="false" class="not-label has-link submenu-item no-subnav no-image no-img"><a href="/getpage.php?name=swing&amp;sub=Services" data-tabindex="0" data-menu-group="1" data-menu-id="112404" data-is-label="false" class="sub-menu-link not-label no-subnav">Swing Bed Program</a></li><li data-tabindex="-1" data-subid="1" data-subid-gt0="true" data-subid-gt1="false" data-sub="Services" data-menu-group="1" data-sub-lowercase="services" data-sub-lowercase-ascii-alphanumeric="services" data-pos="24" data-menu-id="116683"  data-count-parity="even" data-is-label="false" class="not-label has-link submenu-item no-subnav no-image no-img"><a href="/getpage.php?name=Gynecology&amp;sub=Services" data-tabindex="0" data-menu-group="1" data-menu-id="116683" data-is-label="false" class="sub-menu-link not-label no-subnav">Women's Health</a></li><li data-tabindex="-1" data-subid="1" data-subid-gt0="true" data-subid-gt1="false" data-sub="Services" data-menu-group="1" data-sub-lowercase="services" data-sub-lowercase-ascii-alphanumeric="services" data-pos="25" data-menu-id="112405"  data-count-parity="even" data-is-label="false" class="not-label has-link submenu-item no-subnav no-image no-img"><a href="/getpage.php?name=Wound_Care&amp;sub=Services" data-tabindex="0" data-menu-group="1" data-menu-id="112405" data-is-label="false" class="sub-menu-link not-label no-subnav">Wound Care Center</a></li></ul></li><li data-tabindex="-1" data-subid="0" data-subid-gt0="false" data-subid-gt1="false" data-sub="Patients &amp; Visitors" data-menu-group="1" data-sub-lowercase="patients &amp; visitors" data-sub-lowercase-ascii-alphanumeric="patientsvisitors" data-pos="5" data-menu-id="110326"  data-count-gt="(0)(1)(2)(3)(4)(5)(6)(7)(8)(9)(10)(11)(12)(13)(14)(15)(16)(17)(18)(19)(20)(21)(22)" data-count="23" data-num-items="23"  data-count-parity="odd" data-is-label="false" class="not-label has-link submenu-top-item has-subnav no-image no-img"><span class="menu-link-text"><a href="/getpage.php?name=PatientPortal&amp;sub=Patients%20%26%20Visitors" data-tabindex="0" data-menu-group="1" data-menu-id="110326" data-is-label="false" class="main-menu-link not-label has-subnav">Patients & Visitors</a></span><ul data-main-menu-id="110326" data-menu-group="1" data-subid="1" data-count="23" data-count-gt="(0)(1)(2)(3)(4)(5)(6)(7)(8)(9)(10)(11)(12)(13)(14)(15)(16)(17)(18)(19)(20)(21)(22)" data-count-evenly-divisible-by-true="" data-count-evenly-divisible-by-false="(2)(3)(4)(5)(6)(7)(8)(9)(10)(11)(12)" data-sub="Patients &amp; Visitors" data-sub-lowercase="patients &amp; visitors" data-sub-lowercase-ascii-alphanumeric="patientsvisitors" class="sub-navigation-menu subnav-patients-visitors"><li data-tabindex="-1" data-subid="1" data-subid-gt0="true" data-subid-gt1="false" data-sub="Patients &amp; Visitors" data-menu-group="1" data-sub-lowercase="patients &amp; visitors" data-sub-lowercase-ascii-alphanumeric="patientsvisitors" data-pos="1" data-menu-id="110335"  data-count-parity="even" data-is-label="false" class="not-label has-link submenu-item no-subnav no-image no-img"><a href="http://caringinfo.org/?sub=Patients%20%26%20Visitors" data-tabindex="0" data-menu-group="1" data-menu-id="110335" data-is-label="false" target="_blank" class="sub-menu-link not-label no-subnav">Advance Directives</a></li><li data-tabindex="-1" data-subid="1" data-subid-gt0="true" data-subid-gt1="false" data-sub="Patients &amp; Visitors" data-menu-group="1" data-sub-lowercase="patients &amp; visitors" data-sub-lowercase-ascii-alphanumeric="patientsvisitors" data-pos="2" data-menu-id="110345"  data-count-parity="even" data-is-label="false" class="not-label has-link submenu-item no-subnav no-image no-img"><a href="/docs/MS_RQ_Auth__for__Release__of__Protected__Health__Info.pdf?sub=Patients%20%26%20Visitors" data-tabindex="0" data-menu-group="1" data-menu-id="110345" data-is-label="false" target="_blank" class="sub-menu-link not-label no-subnav">Authorization for Release of PHI</a></li><li data-tabindex="-1" data-subid="1" data-subid-gt0="true" data-subid-gt1="false" data-sub="Patients &amp; Visitors" data-menu-group="1" data-sub-lowercase="patients &amp; visitors" data-sub-lowercase-ascii-alphanumeric="patientsvisitors" data-pos="3" data-menu-id="110352"  data-count-parity="even" data-is-label="false" class="not-label has-link submenu-item no-subnav no-image no-img"><a href="/getpage.php?name=Cafeteria&amp;sub=Patients%20%26%20Visitors" data-tabindex="0" data-menu-group="1" data-menu-id="110352" data-is-label="false" class="sub-menu-link not-label no-subnav">Cafeteria and Menu</a></li><li data-tabindex="-1" data-subid="1" data-subid-gt0="true" data-subid-gt1="false" data-sub="Patients &amp; Visitors" data-menu-group="1" data-sub-lowercase="patients &amp; visitors" data-sub-lowercase-ascii-alphanumeric="patientsvisitors" data-pos="4" data-menu-id="112890"  data-count-parity="even" data-is-label="false" class="not-label has-link submenu-item no-subnav no-image no-img"><a href="/docs/Billing_Disclosures_and_The_No_Surprises_Act.pdf?sub=Patients%20%26%20Visitors" data-tabindex="0" data-menu-group="1" data-menu-id="112890" data-is-label="false" target="_blank" class="sub-menu-link not-label no-subnav">Billing Disclosures & The No Surprises Act</a></li><li data-tabindex="-1" data-subid="1" data-subid-gt0="true" data-subid-gt1="false" data-sub="Patients &amp; Visitors" data-menu-group="1" data-sub-lowercase="patients &amp; visitors" data-sub-lowercase-ascii-alphanumeric="patientsvisitors" data-pos="5" data-menu-id="116273"  data-count-parity="even" data-is-label="false" class="not-label has-link submenu-item no-subnav no-image no-img"><a href="/getpage.php?name=Billing_and_Collection_Policy&amp;sub=Patients%20%26%20Visitors" data-tabindex="0" data-menu-group="1" data-menu-id="116273" data-is-label="false" class="sub-menu-link not-label no-subnav">Billing & Collection Policy</a></li><li data-tabindex="-1" data-subid="1" data-subid-gt0="true" data-subid-gt1="false" data-sub="Patients &amp; Visitors" data-menu-group="1" data-sub-lowercase="patients &amp; visitors" data-sub-lowercase-ascii-alphanumeric="patientsvisitors" data-pos="6" data-menu-id="110357"  data-count-parity="even" data-is-label="false" class="not-label has-link submenu-item no-subnav no-image no-img"><a href="/getpage.php?name=financialaid&amp;sub=Patients%20%26%20Visitors" data-tabindex="0" data-menu-group="1" data-menu-id="110357" data-is-label="false" class="sub-menu-link not-label no-subnav">Financial Assistance/Sliding Fee Discount</a></li><li data-tabindex="-1" data-subid="1" data-subid-gt0="true" data-subid-gt1="false" data-sub="Patients &amp; Visitors" data-menu-group="1" data-sub-lowercase="patients &amp; visitors" data-sub-lowercase-ascii-alphanumeric="patientsvisitors" data-pos="7" data-menu-id="110360"  data-count-parity="even" data-is-label="false" class="not-label has-link submenu-item no-subnav no-image no-img"><a href="https://ezcost.info/dosher-memorial-hospital?sub=Patients%20%26%20Visitors" data-tabindex="0" data-menu-group="1" data-menu-id="110360" data-is-label="false" target="_blank" class="sub-menu-link not-label no-subnav">Get an Estimate for a Procedure</a></li><li data-tabindex="-1" data-subid="1" data-subid-gt0="true" data-subid-gt1="false" data-sub="Patients &amp; Visitors" data-menu-group="1" data-sub-lowercase="patients &amp; visitors" data-sub-lowercase-ascii-alphanumeric="patientsvisitors" data-pos="8" data-menu-id="110363"  data-count-parity="even" data-is-label="false" class="not-label has-link submenu-item no-subnav no-image no-img"><a href="https://ezcost.info/dosher-memorial-hospital?sub=Patients%20%26%20Visitors" data-tabindex="0" data-menu-group="1" data-menu-id="110363" data-is-label="false" target="_blank" class="sub-menu-link not-label no-subnav">Pricing Transparency</a></li><li data-tabindex="-1" data-subid="1" data-subid-gt0="true" data-subid-gt1="false" data-sub="Patients &amp; Visitors" data-menu-group="1" data-sub-lowercase="patients &amp; visitors" data-sub-lowercase-ascii-alphanumeric="patientsvisitors" data-pos="9" data-menu-id="112572"  data-count-parity="even" data-is-label="false" class="not-label has-link submenu-item no-subnav no-image no-img"><a href="/getpage.php?name=Participating_Insurance_Providers&amp;sub=Patients%20%26%20Visitors" data-tabindex="0" data-menu-group="1" data-menu-id="112572" data-is-label="false" class="sub-menu-link not-label no-subnav">Participating Insurance Providers</a></li><li data-tabindex="-1" data-subid="1" data-subid-gt0="true" data-subid-gt1="false" data-sub="Patients &amp; Visitors" data-menu-group="1" data-sub-lowercase="patients &amp; visitors" data-sub-lowercase-ascii-alphanumeric="patientsvisitors" data-pos="10" data-menu-id="110366"  data-count-parity="even" data-is-label="false" class="not-label has-link submenu-item no-subnav no-image no-img"><a href="/getpage.php?name=healthresearch&amp;sub=Patients%20%26%20Visitors" data-tabindex="0" data-menu-group="1" data-menu-id="110366" data-is-label="false" class="sub-menu-link not-label no-subnav">Health Research</a></li><li data-tabindex="-1" data-subid="1" data-subid-gt0="true" data-subid-gt1="false" data-sub="Patients &amp; Visitors" data-menu-group="1" data-sub-lowercase="patients &amp; visitors" data-sub-lowercase-ascii-alphanumeric="patientsvisitors" data-pos="11" data-menu-id="110369"  data-count-parity="even" data-is-label="false" class="not-label has-link submenu-item no-subnav no-image no-img"><a href="/getpage.php?name=map&amp;sub=Patients%20%26%20Visitors" data-tabindex="0" data-menu-group="1" data-menu-id="110369" data-is-label="false" class="sub-menu-link not-label no-subnav">Map to Hospital</a></li><li data-tabindex="-1" data-subid="1" data-subid-gt0="true" data-subid-gt1="false" data-sub="Patients &amp; Visitors" data-menu-group="1" data-sub-lowercase="patients &amp; visitors" data-sub-lowercase-ascii-alphanumeric="patientsvisitors" data-pos="12" data-menu-id="114688"  data-count-parity="even" data-is-label="false" class="not-label has-link submenu-item no-subnav no-image no-img"><a href="/getpage.php?name=Patient_and_Visitor_Parking&amp;sub=Patients%20%26%20Visitors" data-tabindex="0" data-menu-group="1" data-menu-id="114688" data-is-label="false" class="sub-menu-link not-label no-subnav">Patient & Visitor Parking</a></li><li data-tabindex="-1" data-subid="1" data-subid-gt0="true" data-subid-gt1="false" data-sub="Patients &amp; Visitors" data-menu-group="1" data-sub-lowercase="patients &amp; visitors" data-sub-lowercase-ascii-alphanumeric="patientsvisitors" data-pos="13" data-menu-id="113370"  data-count-parity="even" data-is-label="false" class="not-label has-link submenu-item no-subnav no-image no-img"><a href="/getpage.php?name=Medical_Records&amp;sub=Patients%20%26%20Visitors" data-tabindex="0" data-menu-group="1" data-menu-id="113370" data-is-label="false" class="sub-menu-link not-label no-subnav">Medical Records</a></li><li data-tabindex="-1" data-subid="1" data-subid-gt0="true" data-subid-gt1="false" data-sub="Patients &amp; Visitors" data-menu-group="1" data-sub-lowercase="patients &amp; visitors" data-sub-lowercase-ascii-alphanumeric="patientsvisitors" data-pos="14" data-menu-id="110372"  data-count-parity="even" data-is-label="false" class="not-label has-link submenu-item no-subnav no-image no-img"><a href="/docs/Privacy_Policy_032526.pdf?sub=Patients%20%26%20Visitors" data-tabindex="0" data-menu-group="1" data-menu-id="110372" data-is-label="false" target="_blank" class="sub-menu-link not-label no-subnav">Notice of Privacy Practices</a></li><li data-tabindex="-1" data-subid="1" data-subid-gt0="true" data-subid-gt1="false" data-sub="Patients &amp; Visitors" data-menu-group="1" data-sub-lowercase="patients &amp; visitors" data-sub-lowercase-ascii-alphanumeric="patientsvisitors" data-pos="15" data-menu-id="110374"  data-count-parity="even" data-is-label="false" class="not-label has-link submenu-item no-subnav no-image no-img"><a href="https://www.personapay.com/jarthur/login?sub=Patients%20%26%20Visitors" data-tabindex="0" data-menu-group="1" data-menu-id="110374" data-is-label="false" target="_blank" class="sub-menu-link not-label no-subnav">Online Bill Pay</a></li><li data-tabindex="-1" data-subid="1" data-subid-gt0="true" data-subid-gt1="false" data-sub="Patients &amp; Visitors" data-menu-group="1" data-sub-lowercase="patients &amp; visitors" data-sub-lowercase-ascii-alphanumeric="patientsvisitors" data-pos="16" data-menu-id="110376"  data-count-parity="even" data-is-label="false" class="not-label has-link submenu-item no-subnav no-image no-img"><a href="/getpage.php?name=PatientPortal&amp;sub=Patients%20%26%20Visitors" data-tabindex="0" data-menu-group="1" data-menu-id="110376" data-is-label="false" class="sub-menu-link not-label no-subnav">Patient Portal</a></li><li data-tabindex="-1" data-subid="1" data-subid-gt0="true" data-subid-gt1="false" data-sub="Patients &amp; Visitors" data-menu-group="1" data-sub-lowercase="patients &amp; visitors" data-sub-lowercase-ascii-alphanumeric="patientsvisitors" data-pos="17" data-menu-id="110378"  data-count-parity="even" data-is-label="false" class="not-label has-link submenu-item no-subnav no-image no-img"><a href="/docs/Patients_Rights_Brochure_2019_Outlined.pdf?sub=Patients%20%26%20Visitors" data-tabindex="0" data-menu-group="1" data-menu-id="110378" data-is-label="false" target="_blank" class="sub-menu-link not-label no-subnav">Patients’ Rights</a></li><li data-tabindex="-1" data-subid="1" data-subid-gt0="true" data-subid-gt1="false" data-sub="Patients &amp; Visitors" data-menu-group="1" data-sub-lowercase="patients &amp; visitors" data-sub-lowercase-ascii-alphanumeric="patientsvisitors" data-pos="18" data-menu-id="110379"  data-count-parity="even" data-is-label="false" class="not-label has-link submenu-item no-subnav no-image no-img"><a href="/ecard/?sub=Patients%20%26%20Visitors" data-tabindex="0" data-menu-group="1" data-menu-id="110379" data-is-label="false" class="sub-menu-link not-label no-subnav">Send an E-card</a></li><li data-tabindex="-1" data-subid="1" data-subid-gt0="true" data-subid-gt1="false" data-sub="Patients &amp; Visitors" data-menu-group="1" data-sub-lowercase="patients &amp; visitors" data-sub-lowercase-ascii-alphanumeric="patientsvisitors" data-pos="19" data-menu-id="110380"  data-count-parity="even" data-is-label="false" class="not-label has-link submenu-item no-subnav no-image no-img"><a href="/getpage.php?name=tobacco&amp;sub=Patients%20%26%20Visitors" data-tabindex="0" data-menu-group="1" data-menu-id="110380" data-is-label="false" class="sub-menu-link not-label no-subnav">Tobacco Free</a></li><li data-tabindex="-1" data-subid="1" data-subid-gt0="true" data-subid-gt1="false" data-sub="Patients &amp; Visitors" data-menu-group="1" data-sub-lowercase="patients &amp; visitors" data-sub-lowercase-ascii-alphanumeric="patientsvisitors" data-pos="20" data-menu-id="110381"  data-count-parity="even" data-is-label="false" class="not-label has-link submenu-item no-subnav no-image no-img"><a href="/getpage.php?name=visitorinfo&amp;sub=Patients%20%26%20Visitors" data-tabindex="0" data-menu-group="1" data-menu-id="110381" data-is-label="false" class="sub-menu-link not-label no-subnav">Visitor Information</a></li><li data-tabindex="-1" data-subid="1" data-subid-gt0="true" data-subid-gt1="false" data-sub="Patients &amp; Visitors" data-menu-group="1" data-sub-lowercase="patients &amp; visitors" data-sub-lowercase-ascii-alphanumeric="patientsvisitors" data-pos="21" data-menu-id="110382"  data-count-parity="even" data-is-label="false" class="not-label has-link submenu-item no-subnav no-image no-img"><a href="https://ptserver.fasthealth.com/web_dmh3_nc/forms/?formID=9830&amp;sub=Patients%20%26%20Visitors" data-tabindex="0" data-menu-group="1" data-menu-id="110382" data-is-label="false" target="_top" class="sub-menu-link not-label no-subnav">Thank a Nurse</a></li><li data-tabindex="-1" data-subid="1" data-subid-gt0="true" data-subid-gt1="false" data-sub="Patients &amp; Visitors" data-menu-group="1" data-sub-lowercase="patients &amp; visitors" data-sub-lowercase-ascii-alphanumeric="patientsvisitors" data-pos="22" data-menu-id="112573"  data-count-parity="even" data-is-label="false" class="not-label has-link submenu-item no-subnav no-image no-img"><a href="/getpage.php?name=Social_Media_Policy&amp;sub=Patients%20%26%20Visitors" data-tabindex="0" data-menu-group="1" data-menu-id="112573" data-is-label="false" class="sub-menu-link not-label no-subnav">Social Media Policy</a></li><li data-tabindex="-1" data-subid="1" data-subid-gt0="true" data-subid-gt1="false" data-sub="Patients &amp; Visitors" data-menu-group="1" data-sub-lowercase="patients &amp; visitors" data-sub-lowercase-ascii-alphanumeric="patientsvisitors" data-pos="23" data-menu-id="114687"  data-count-parity="even" data-is-label="false" class="not-label has-link submenu-item no-subnav no-image no-img"><a href="/getpage.php?name=contact&amp;sub=Patients%20%26%20Visitors" data-tabindex="0" data-menu-group="1" data-menu-id="114687" data-is-label="false" class="sub-menu-link not-label no-subnav">Contact Us</a></li></ul></li><li data-tabindex="-1" data-subid="0" data-subid-gt0="false" data-subid-gt1="false" data-sub="Careers" data-menu-group="1" data-sub-lowercase="careers" data-sub-lowercase-ascii-alphanumeric="careers" data-pos="6" data-menu-id="110323"  data-count-gt="(0)(1)(2)" data-count="3" data-num-items="3"  data-count-parity="odd" data-is-label="false" class="not-label has-link submenu-top-item has-subnav no-image no-img"><span class="menu-link-text"><a href="/getpage.php?name=employment&amp;sub=Careers" data-tabindex="0" data-menu-group="1" data-menu-id="110323" data-is-label="false" class="main-menu-link not-label has-subnav">Careers</a></span><ul data-main-menu-id="110323" data-menu-group="1" data-subid="1" data-count="3" data-count-gt="(0)(1)(2)" data-count-evenly-divisible-by-true="(3)" data-count-evenly-divisible-by-false="(2)(4)(5)(6)(7)(8)(9)(10)(11)(12)" data-sub="Careers" data-sub-lowercase="careers" data-sub-lowercase-ascii-alphanumeric="careers" class="sub-navigation-menu subnav-careers"><li data-tabindex="-1" data-subid="1" data-subid-gt0="true" data-subid-gt1="false" data-sub="Careers" data-menu-group="1" data-sub-lowercase="careers" data-sub-lowercase-ascii-alphanumeric="careers" data-pos="1" data-menu-id="110330"  data-count-parity="even" data-is-label="false" class="not-label has-link submenu-item no-subnav no-image no-img"><a href="/getpage.php?name=employment&amp;sub=Careers" data-tabindex="0" data-menu-group="1" data-menu-id="110330" data-is-label="false" class="sub-menu-link not-label no-subnav">Hospital Positions</a></li><li data-tabindex="-1" data-subid="1" data-subid-gt0="true" data-subid-gt1="false" data-sub="Careers" data-menu-group="1" data-sub-lowercase="careers" data-sub-lowercase-ascii-alphanumeric="careers" data-pos="2" data-menu-id="110340"  data-count-parity="even" data-is-label="false" class="not-label has-link submenu-item no-subnav no-image no-img"><a href="/getpage.php?name=physician_opportunities&amp;sub=Careers" data-tabindex="0" data-menu-group="1" data-menu-id="110340" data-is-label="false" class="sub-menu-link not-label no-subnav">Physician, PA, and NP Positions</a></li><li data-tabindex="-1" data-subid="1" data-subid-gt0="true" data-subid-gt1="false" data-sub="Careers" data-menu-group="1" data-sub-lowercase="careers" data-sub-lowercase-ascii-alphanumeric="careers" data-pos="3" data-menu-id="110355"  data-count-parity="even" data-is-label="false" class="not-label has-link submenu-item no-subnav no-image no-img"><a href="/getpage.php?name=standards&amp;sub=Careers" data-tabindex="0" data-menu-group="1" data-menu-id="110355" data-is-label="false" class="sub-menu-link not-label no-subnav">Standards of Behavior</a></li></ul></li><li data-tabindex="-1" data-subid="0" data-subid-gt0="false" data-subid-gt1="false" data-sub="Volunteers" data-menu-group="1" data-sub-lowercase="volunteers" data-sub-lowercase-ascii-alphanumeric="volunteers" data-pos="7" data-menu-id="112261"  data-count-gt="(0)" data-count="1" data-num-items="1"  data-count-parity="odd" data-is-label="false" class="not-label has-link submenu-top-item has-subnav no-image no-img"><span class="menu-link-text"><a href="/getpage.php?name=volunteers&amp;sub=Volunteers" data-tabindex="0" data-menu-group="1" data-menu-id="112261" data-is-label="false" class="main-menu-link not-label has-subnav">Volunteers</a></span><ul data-main-menu-id="112261" data-menu-group="1" data-subid="1" data-count="1" data-count-gt="(0)" data-count-evenly-divisible-by-true="" data-count-evenly-divisible-by-false="(2)(3)(4)(5)(6)(7)(8)(9)(10)(11)(12)" data-sub="Volunteers" data-sub-lowercase="volunteers" data-sub-lowercase-ascii-alphanumeric="volunteers" class="sub-navigation-menu subnav-volunteers"><li data-tabindex="-1" data-subid="1" data-subid-gt0="true" data-subid-gt1="false" data-sub="Volunteers" data-menu-group="1" data-sub-lowercase="volunteers" data-sub-lowercase-ascii-alphanumeric="volunteers" data-pos="1" data-menu-id="112885"  data-count-parity="even" data-is-label="false" class="not-label has-link submenu-item no-subnav no-image no-img"><a href="/getpage.php?name=volunteers&amp;sub=Volunteers" data-tabindex="0" data-menu-group="1" data-menu-id="112885" data-is-label="false" class="sub-menu-link not-label no-subnav">Volunteering at DMH</a></li></ul></li><li data-tabindex="-1" data-subid="0" data-subid-gt0="false" data-subid-gt1="false" data-sub="Quality Care" data-menu-group="1" data-sub-lowercase="quality care" data-sub-lowercase-ascii-alphanumeric="qualitycare" data-pos="8" data-menu-id="110327"  data-count-gt="(0)(1)(2)" data-count="3" data-num-items="3"  data-count-parity="odd" data-is-label="false" class="not-label has-link submenu-top-item has-subnav no-image no-img"><span class="menu-link-text"><a href="/getpage.php?name=Quality_Ratings&amp;sub=Quality%20Care" data-tabindex="0" data-menu-group="1" data-menu-id="110327" data-is-label="false" class="main-menu-link not-label has-subnav">Quality Care</a></span><ul data-main-menu-id="110327" data-menu-group="1" data-subid="1" data-count="3" data-count-gt="(0)(1)(2)" data-count-evenly-divisible-by-true="(3)" data-count-evenly-divisible-by-false="(2)(4)(5)(6)(7)(8)(9)(10)(11)(12)" data-sub="Quality Care" data-sub-lowercase="quality care" data-sub-lowercase-ascii-alphanumeric="qualitycare" class="sub-navigation-menu subnav-quality-care"><li data-tabindex="-1" data-subid="1" data-subid-gt0="true" data-subid-gt1="false" data-sub="Quality Care" data-menu-group="1" data-sub-lowercase="quality care" data-sub-lowercase-ascii-alphanumeric="qualitycare" data-pos="1" data-menu-id="110337"  data-count-parity="even" data-is-label="false" class="not-label has-link submenu-item no-subnav no-image no-img"><a href="/getpage.php?name=Quality_Ratings&amp;sub=Quality%20Care" data-tabindex="0" data-menu-group="1" data-menu-id="110337" data-is-label="false" class="sub-menu-link not-label no-subnav">Awards and Recognition</a></li><li data-tabindex="-1" data-subid="1" data-subid-gt0="true" data-subid-gt1="false" data-sub="Quality Care" data-menu-group="1" data-sub-lowercase="quality care" data-sub-lowercase-ascii-alphanumeric="qualitycare" data-pos="2" data-menu-id="110347"  data-count-parity="even" data-is-label="false" class="not-label has-link submenu-item no-subnav no-image no-img"><a href="/getpage.php?name=datalinks&amp;sub=Quality%20Care" data-tabindex="0" data-menu-group="1" data-menu-id="110347" data-is-label="false" class="sub-menu-link not-label no-subnav">Data Links</a></li><li data-tabindex="-1" data-subid="1" data-subid-gt0="true" data-subid-gt1="false" data-sub="Quality Care" data-menu-group="1" data-sub-lowercase="quality care" data-sub-lowercase-ascii-alphanumeric="qualitycare" data-pos="3" data-menu-id="110354"  data-count-parity="even" data-is-label="false" class="not-label has-link submenu-item no-subnav no-image no-img"><a href="/docs/Hurricane_Medical_Preparedness.pdf?sub=Quality%20Care" data-tabindex="0" data-menu-group="1" data-menu-id="110354" data-is-label="false" target="_blank" class="sub-menu-link not-label no-subnav">Hurricane Medical Preparedness</a></li></ul></li><li data-tabindex="-1" data-subid="0" data-subid-gt0="false" data-subid-gt1="false" data-sub="Contact Us" data-menu-group="1" data-sub-lowercase="contact us" data-sub-lowercase-ascii-alphanumeric="contactus" data-pos="9" data-menu-id="114685"  data-count-parity="even" data-is-label="false" class="not-label has-link submenu-top-item no-subnav no-image no-img"><span class="menu-link-text"><a href="/getpage.php?name=contact&amp;sub=Contact%20Us" data-tabindex="0" data-menu-group="1" data-menu-id="114685" data-is-label="false" class="main-menu-link not-label no-subnav">Contact Us</a></span></li></ul>
+	   </div><!-- end .main-navigation --> 
+	   <span class="mobile-close-menu-wrapper"><i class="fa fa-times-circle fa-fw" id="Mobile-Hide-Menu"></i></span>
+        </div><!-- end .main-navigation-wrapper -->
+    </nav>
+
+    <!--@@home_page_ticker@@-->
+
+    <div class='main-slideshow-wrappings' id='MainSlideshowWrappings'><ul class='main-slideshow-listing slides' data-tabindex='0' id='MainSlideshowListing' data-num-items="1" data-item-count-gt1="false" data-item-count-gt="(0)" data-count-parity="odd" data-num-items-even="false" data-num-items-odd="true" data-max-width='2000' data-max-height='545' data-min-width='2000' data-min-height='545' ><li data-tabindex='-1' role='presentation'  data-banner-id='309924' data-width='2000' data-height='545' class='li li-0  no-link' data-using-entered-content="false"><img alt='Medical Professionals standing around each other in the Hospital. Employment, News' width='2000' height='545' class='banner-image' src='https://pictures.fasthealth.com/pictures/309924.jpg?last_modified=1677183130' data-banner-id='309924'  decoding='async'  loading='lazy'  ></li></ul></div>
+
+    <!--@@main_video@@-->
+
+    <!--@@home_page_emergency_icons@@-->
+
+    <!--@@services_section_html@@-->
+
+    <!--@@events_and_news_section@@-->
+
+    <main id="Main-Content">
+        <div class="main">
+	    <div class="pageContent-wrappings">
+		<div class="pageContent-wrapper">
+		    <div class="content-menu"><div class="content-menu-wrapper-container"><div class="content-menu-heading"><h4 class="content-menu-title">Careers</h4></div><ul data-num-links="3" data-num-items-even="false" data-num-items-odd="true" data-num-items-divible-by="(3)" data-num-items-not-divible-by="(2)" data-num-links-gt="(0)(1)(2)" data-menu-group="1" class="content-menu-items content-menu-items-top-menu-sub-links"><li data-menu-group="1" class="list-item list-item-0 list-item-first has-link not-label no-script no-image no-image-in-link-text no-list-item-image" data-menu-id="110330"><a data-menu-id="110330" href="/getpage.php?name=employment&amp;sub=Careers">Hospital Positions</a></li><li data-menu-group="1" class="list-item list-item-1 has-link not-label no-script no-image no-image-in-link-text no-list-item-image" data-menu-id="110340"><a data-menu-id="110340" href="/getpage.php?name=physician_opportunities&amp;sub=Careers">Physician, PA, and NP Positions</a></li><li data-menu-group="1" class="list-item list-item-2 list-item-last has-link not-label no-script no-image no-image-in-link-text no-list-item-image" data-menu-id="110355"><a data-menu-id="110355" href="/getpage.php?name=standards&amp;sub=Careers">Standards of Behavior</a></li></ul></div></div>
+		    <div class="pageContent">
+			<div class="pageContent-contents" id="main_content_area">
+				<!--@@pageContent_banner@@-->
+				<!--@@content_prepend@@-->
+				<!--@@home_content@@-->
+				<h1 class="pagetitle"><span class="title-text">Dosher Employment Center</span></h1>
+<br><h2 class="feature14 heading">Career Opportunities</h2>
+<br><!--<iframe width="600" height="415" src="https://www.youtube.com/embed/3e4OETfjgto" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen align=right></iframe>--><br>
+Thank you for your interest in the job opportunities at Dosher Memorial Hospital. Preferred Method of Applying: To proceed in your job search, simply browse our list of current job openings below to see what position interests you. When you have found a position that matches your skills you may click on the position title and it will take you to our online applicant system which will allow you to enter your demographic information and your resume.<br>
+<br>We currently employ approximately 435 clinical and non-clinical staff members. At Dosher Hospital, our goal is to be a great place for employees to work, and we strive to employ the very best people in healthcare. Please make note of three important hospital policies: <a href=/getpage.php?name=standards>Our Standards of Behavior</a> policy is a description of behaviors and ideals of what we expect of our employees and what our employees can expect of their supervisors. As all employees are expected to agree to our Standards, all job applicants should be willing to meet these Standards before taking time to apply. Please review the link above before applying.<br>
+<br>Dosher Memorial Hospital requires the following vaccines, Influenza vaccine, measles, mumps and rubella (MMR) vaccine, if blood test is negative, Tetanus (Td/Tdap) vaccine, if no record, Varicella Vaccine, if blood test is negative and Hepatitis B vaccine or signed declination, if at risk and no record OR record and blood test is negative. <br>
+<br><B>Our current employment opportunities include:</B><br>
+<br><span class='bullet-image'><span class='bullet-image-container'>&#x25CF;</span></span><a href='https://www.dosher.org/jobs/show_job_category.php?category=Cardiac+Rehab&amp;sub=Careers' class='fh-job-category-link'>Cardiac Rehab</a><br><span class='bullet-image'><span class='bullet-image-container'>&#x25CF;</span></span><a href='https://www.dosher.org/jobs/show_job_category.php?category=Cardiopulmonary&amp;sub=Careers' class='fh-job-category-link'>Cardiopulmonary</a><br><span class='bullet-image'><span class='bullet-image-container'>&#x25CF;</span></span><a href='https://www.dosher.org/jobs/show_job_category.php?category=Diagnostic+Imaging&amp;sub=Careers' class='fh-job-category-link'>Diagnostic Imaging</a><br><span class='bullet-image'><span class='bullet-image-container'>&#x25CF;</span></span><a href='https://www.dosher.org/jobs/show_job_category.php?category=Dosher+Memorial+Clinic+Network&amp;sub=Careers' class='fh-job-category-link'>Dosher Memorial Clinic Network</a><br><span class='bullet-image'><span class='bullet-image-container'>&#x25CF;</span></span><a href='https://www.dosher.org/jobs/show_job_category.php?category=Emergency+Department&amp;sub=Careers' class='fh-job-category-link'>Emergency Department</a><br><span class='bullet-image'><span class='bullet-image-container'>&#x25CF;</span></span><a href='https://www.dosher.org/jobs/show_job_category.php?category=Employee+Health&amp;sub=Careers' class='fh-job-category-link'>Employee Health</a><br><span class='bullet-image'><span class='bullet-image-container'>&#x25CF;</span></span><a href='https://www.dosher.org/jobs/show_job_category.php?category=Laboratory&amp;sub=Careers' class='fh-job-category-link'>Laboratory</a><br><span class='bullet-image'><span class='bullet-image-container'>&#x25CF;</span></span><a href='https://www.dosher.org/jobs/show_job_category.php?category=Nursing&amp;sub=Careers' class='fh-job-category-link'>Nursing</a><br><span class='bullet-image'><span class='bullet-image-container'>&#x25CF;</span></span><a href='https://www.dosher.org/jobs/show_job_category.php?category=Patient+Care+Unit+%2F+Medical+Surgical+Unit&amp;sub=Careers' class='fh-job-category-link'>Patient Care Unit / Medical Surgical Unit</a><br><span class='bullet-image'><span class='bullet-image-container'>&#x25CF;</span></span><a href='https://www.dosher.org/jobs/show_job_category.php?category=Plant+Operations&amp;sub=Careers' class='fh-job-category-link'>Plant Operations</a><br><span class='bullet-image'><span class='bullet-image-container'>&#x25CF;</span></span><a href='https://www.dosher.org/jobs/show_job_category.php?category=Registration&amp;sub=Careers' class='fh-job-category-link'>Registration</a><br><span class='bullet-image'><span class='bullet-image-container'>&#x25CF;</span></span><a href='https://www.dosher.org/jobs/show_job_category.php?category=Surgical+Services&amp;sub=Careers' class='fh-job-category-link'>Surgical Services</a><br><span class='bullet-image'><span class='bullet-image-container'>&#x25CF;</span></span><a href='https://www.dosher.org/jobs/show_job_category.php?category=Wound+Care+Center&amp;sub=Careers' class='fh-job-category-link'>Wound Care Center</a><br><span class='bullet-image'><span class='bullet-image-container'>&#x25CF;</span></span><a href='https://www.dosher.org/jobs/show_job_category.php?category=x+-+General+Application&amp;sub=Careers' class='fh-job-category-link'>x - General Application</a><br><br><hr><br>
+<h2 class="feature14 heading">F.A.Q.'s</h2>
+<br><B>How do I apply for positions at Dosher Memorial Hospital?</B><br>
+All of our positions are posted on our website at www.dosher.org  The Careers tab will take you to all open positions. To apply, click on any position that interests you, then click the link at the bottom of the page "Click Here to fill out our official online application. <br>
+ <br>
+<B>What happens after I submit my application?</B><br>
+When you submit application with your qualifications, you will immediately be entered into consideration for the position(s) to which you applied and you will receive an email confirmation that your information was received. Within 24 hours (excluding weekends) Human Resources reviews submitted applications, comparing advertised requirements, preferences, and needs of the position, and determines which applicants meet the requirements and forward to the hiring manager. The hiring manger will contact you directly to set up an interview.<br>
+<br><B>How long is a position open to receive applications?</B><br>
+In general, if a posting is still on our website, it is still open to receive applications. <br>
+<br><B>What is the status of my application? Has the position been filled?</B><br>
+During the review process, you will receive email updates from Human Resources regarding the status of your application.<br>
+<br><B>Can you give me more information about the job, the hiring department, or the hiring manager?</B><br>
+We cannot provide names or contact details of hiring managers. In some cases, the posting may provide a contact person for more information or additional questions. <br>
+<br><B>Will I receive notification if I am not being considered for the position?</B><br>
+Yes, you will receive an email explaining you are no longer being considered for the position. <br>
+<br><B>How do I know if I am qualified for a position when looking at the job posting?</B><br>
+When looking at postings online, pay particular attention to three important fields: "Minimum Education/Experience", "Required Skills", and "Required Licenses/Certifications". Qualified applicants must meet all of the requirements in these fields to be considered for a position. The most qualified applicants will likely also meet some or all of the qualifications listed in the "Preferred Experience, Skills, Training/Education" field.<br>
+<br><B>How long should I expect to wait until I hear back once I've submitted my application?</B><br>
+<ul class="bullet-list">
+<li>submit application (email confirmation within 24 hours) This will include information to let you know if you meet the qualifications and your information is being forwarded to the hiring manager or if your application is not being considered.</li>
+<li>Hiring manager will set up interview with the qualified candidate within 24 hours.</li>
+<li>Hiring manager will interview within 7 days.</li>
+<li>If decision is made not to hire you will receive a letter from Human Resources stating no offer will be made</li>
+<li>Human Resources will contact any candidates with an offer within 24 hours of the decision to hire</li>
+</ul>
+<br><h2 class="feature14 heading">Dosher Memorial Hospital is an equal opportunity employer</h2>
+<br>In order to provide equal employment and advancement opportunities to all individuals, employment decisions at Dosher Memorial Hospital will be based on merit, qualifications, and abilities. Dosher Memorial Hospital does not discriminate in employment opportunities or practices on the basis of race, color, religion, gender, national origin, age, disability or any other classification in accordance with federal, state and local statutes, regulations and ordinances.<br>
+<br><h2 class="feature14 heading">Legal information</h2>
+<br>Dosher Memorial Hospital will maintain your application for as long as legally required. Upon submitting your application we will take every effort to review it for proper consideration. If your qualifications meet the current needs of Dosher Memorial Hospital, our Human Resources Department will contact you.<br>
+<br><h2 class="feature14 heading">Drug testing</h2>
+<br>Dosher Memorial Hospital is committed to providing a safe, efficient, and productive work environment for all employees. To help ensure a safe and healthful working environment, each applicant to whom an offer of employment has been made will be required as a condition of employment to undergo a substance test. Applicants will be asked to read the policy and sign a Pre-Employment Offer and Employee Consent to Drug Screening.<br>
+<br><h2 class="feature14 heading">Benefit information</h2>
+<br>To receive more information regarding our benefits please <B><a href=/getpage.php?name=benefits>click here</a></B>.<br>
+<br><h2 class="feature14 heading">Community information</h2>
+<br>To receive more information regarding our community please <B><a href=/getpage.php?name=community>click here</a></B>.<br>
+
+				
+				<!--@@content_append@@-->
+			    </div>
+		    </div><!-- end .pageContent -->
+		</div><!-- end .pageContent-wrapper -->
+	    </div><!-- end .pageContent-wrappings -->
+        </div><!-- end .main -->
+    </main>
+
+    <!--@@services_icons@@-->
+
+    <!--@@home_page_buttons@@-->
+
+    <!--@@home_page_news_section@@-->
+
+    <!--@@home_page_awards_section@@-->
+
+    <!--@@home_page_newsletter_section@@-->
+
+    <footer>
+        <div class="footer-wrappings">
+	    <div class="footer-wrapper" data-num-sections="2" data-num-sections-gt="(0)(1)" data-num-sections-gt1="true" data-num-footer-links="12" data-has-footer-links="true" data-num-footer-links-gt="(0)(1)(2)(3)(4)(5)(6)(7)(8)(9)(10)(11)" data-has-footer-logo="true" data-has-title="false" data-has-content="true"><div class="footer-section footer-links-section" data-num-links="12"><ul data-num-links="12" data-num-items-even="true" data-num-items-odd="false" data-num-items-divible-by="(2)(3)(4)(6)" data-num-items-not-divible-by="(5)(7)(8)(9)(10)" data-num-links-gt="(0)(1)(2)(3)(4)(5)(6)(7)(8)(9)(10)(11)" data-menu-group="1003" class="footer-links-listing"><li data-menu-group="1003" class="list-item list-item-0 list-item-first has-link not-label no-script no-image no-image-in-link-text no-list-item-image" data-menu-id="111386"><a data-menu-id="111386" href="/getpage.php?name=PatientPortal&amp;sub=Patients%20%26%20Visitors">Patient Portal</a></li><li data-menu-group="1003" class="list-item list-item-1 has-link not-label no-script no-image no-image-in-link-text no-list-item-image" data-menu-id="110387"><a data-menu-id="110387" href="/getpage.php?name=services&amp;sub=Medical%20Services">Hospital Medical Services</a></li><li data-menu-group="1003" class="list-item list-item-2 has-link not-label no-script no-image no-image-in-link-text no-list-item-image" data-menu-id="110400"><a data-menu-id="110400" href="/getpage.php?name=dmclinics&amp;sub=Medical%20Services">Dosher Medical Clinics</a></li><li data-menu-group="1003" class="list-item list-item-3 has-link not-label no-script no-image no-image-in-link-text no-list-item-image" data-menu-id="110407"><a data-menu-id="110407" href="/calendar/?category=0">Calendar of Events</a></li><li data-menu-group="1003" class="list-item list-item-4 has-link not-label no-script no-image no-image-in-link-text no-list-item-image" data-menu-id="110413"><a data-menu-id="110413" href="/getpage.php?name=news&amp;sub=About%20us">News Releases</a></li><li data-menu-group="1003" class="list-item list-item-5 has-link not-label no-script no-image no-image-in-link-text no-list-item-image" data-menu-id="110409"><a data-menu-id="110409" href="/ecard/">Send an E-Card</a></li><li data-menu-group="1003" class="list-item list-item-6 has-link not-label no-script no-image no-image-in-link-text no-list-item-image" data-menu-id="111387"><a data-menu-id="111387" href="https://ptserver.fasthealth.com/web_dmh3_nc/forms/?formID=9830" target="_blank" >Thank A Nurse</a></li><li data-menu-group="1003" class="list-item list-item-7 has-link not-label no-script no-image no-image-in-link-text no-list-item-image" data-menu-id="110417"><a data-menu-id="110417" href="/getpage.php?name=financialaid&amp;sub=Patients%20%26%20Visitors">Financial Assistance</a></li><li data-menu-group="1003" class="list-item list-item-8 has-link not-label no-script no-image no-image-in-link-text no-list-item-image" data-menu-id="110416"><a data-menu-id="110416" href="https://ezcost.info/dosher-memorial-hospital" target="_blank" >Price Transparency</a></li><li data-menu-group="1003" class="list-item list-item-9 has-link not-label no-script no-image no-image-in-link-text no-list-item-image" data-menu-id="110419"><a data-menu-id="110419" href="/getpage.php?name=staffportals&amp;sub=About%20us">Board & Staff Portals</a></li><li data-menu-group="1003" class="list-item list-item-10 has-link not-label no-script no-image no-image-in-link-text no-list-item-image" data-menu-id="110414"><a data-menu-id="110414" href="/getpage.php?name=Subscribe">Subscribe to our Mailing List</a></li><li data-menu-group="1003" class="list-item list-item-11 list-item-last has-link not-label no-script no-image no-image-in-link-text no-list-item-image" data-menu-id="117833"><a data-menu-id="117833" href="https://ezcost.info/dosher-memorial-hospital" target="_blank" >Patient Estimator</a></li></ul></div><div class="footer-section footer-information-section"><div class="footer-information-section-logo" data-images-count="1"><ul class='footer-logo-images' data-tabindex='0' data-num-items="1" data-item-count-gt1="false" data-item-count-gt="(0)" data-count-parity="odd" data-num-items-even="false" data-num-items-odd="true" data-max-width='320' data-max-height='121' data-min-width='320' data-min-height='121' ><li data-tabindex='-1' role='presentation'  data-banner-id='308475' data-width='320' data-height='121' class='li li-0  has-link' data-using-entered-content="false"><a href='/' target='_top'><img decoding='async'  loading='lazy'  width='320' height='121' data-banner-id='308475' src='https://pictures.fasthealth.com/pictures/308475.png?last_modified=1666731391' alt='Dosher Memorial Hospital logo' class='banner-image'></a></li></ul></div><div class="footer-information-section-content-wrapper"><p style="text-align: center; line-height: 1.2;"><a href="https://goo.gl/maps/2u4G6Jbr8qr2hQW67" target="_blank">924 North Howe Street</a><br />
+<a href="https://goo.gl/maps/2u4G6Jbr8qr2hQW67" target="_blank">Southport,&nbsp; NC 28461</a><br />
+Phone: <a href="tel:9104573800">910-457-3800</a></p>
+
+<p style="text-align: center; line-height: 1.2; max-width: 280px; margin-left: auto; margin-right: auto;">No one will be denied access to services due to inability to pay. There is a Discounted / SFS available.</p><div class='footer-social-links-listing-wrapper'><ul data-num-links="3" data-num-items-even="false" data-num-items-odd="true" data-num-items-divible-by="(3)" data-num-items-not-divible-by="(2)" data-num-links-gt="(0)(1)(2)" data-menu-group="3000" class="social-networking-links-listing footer-social-links-listing"><li data-menu-group="3000" class="list-item list-item-0 list-item-first has-link not-label no-script has-image has-image-in-link-text list-item-image list-item-image-replace" data-menu-id="110421"><a data-menu-id="110421" href="https://www.facebook.com/Dosher-Memorial-Hospital-265946053454873/" target="_top" ><img src="/images/menu_74361.png?last_modified=1595618235" id="fh-image-6ad90022afbed" decoding="async" loading="lazy" alt="Facebook"></a></li><li data-menu-group="3000" class="list-item list-item-1 has-link not-label no-script has-image has-image-in-link-text list-item-image list-item-image-replace" data-menu-id="110422"><a data-menu-id="110422" href="https://www.youtube.com/channel/UCuNAx5Kz_bLZ2qhN-cFm2SA?view_as=subscriber" target="_top" ><img src="/images/menu_74367.png?last_modified=1595618224" id="fh-image-6ad90022afc0c" decoding="async" loading="lazy" alt="Youtube"></a></li><li data-menu-group="3000" class="list-item list-item-2 list-item-last has-link not-label no-script has-image has-image-in-link-text list-item-image list-item-image-replace" data-menu-id="110423"><a data-menu-id="110423" href="https://www.instagram.com/dosherhospital/" target="_top" ><img src="/images/menu_98553.png?last_modified=1595618203" id="fh-image-6ad90022afc1f" decoding="async" loading="lazy" alt="Instagram"></a></li></ul></div></div></div></div>
+        </div><!-- end .footer -->
+        <div class="copyright-wrappings">
+          <div class="copyright-wrapper"><div class="footer-icon-image-wrapper footer-icon-image-fasthealth-wrapper"><a href='/getpage.php?name=healthresearch' target='_top'><img decoding='async'  loading='lazy'  width='300' height='68' data-banner-id='308474' src='https://pictures.fasthealth.com/pictures/308474.png?last_modified=1687874999' alt='FASTHEALTH ARTIFICIAL INLLEGENCE' class='footer-icon-image footer-icon-image-fasthealth'></a></div><ul class="copyright-items-listing">
+                    <li><a href="https://www.fasthealthcorporation.com" target="_top">&copy;2026 FastHealth Corporation</a></li>
+                    <li><a href="https://www.fasthealthcorporation.com/getpage.php?name=terms" target="_top">Terms</a></li>
+                    <li><a href="https://www.fasthealthcorporation.com/getpage.php?name=privacy" target="_top">Privacy</a></li>
+            		<li><a href="https://ezcost.info/dosher-memorial-hospital">Price Transparency</a></li>
+                </ul><div class="footer-icon-image-wrapper footer-icon-image-fastcommand-wrapper"><a href='https://dosher.fastcommand.com/' target='_blank'><img decoding='async'  loading='lazy'  width='300' height='62' data-banner-id='308473' src='https://pictures.fasthealth.com/pictures/308473.png?last_modified=1675705657' alt='FastCommand Digital Disaster Response System' class='footer-icon-image footer-icon-image-fastcommand'></a></div><!--      
+          --></div><!-- end .copyright-wrapper -->
+        </div><!-- end .copyright-wrappings -->
+    </footer>
+
+    <!--[if lt IE 9]><script src="/common_js/jquery-1.12.4.min.js"></script><![endif]-->
+    <!--[if gte IE 9]>--><script src="/common_js/jquery-3.7.0.min.js"></script><!--<![endif]-->
+
+    <script src="/common_js/flexslider/jquery.flexslider-min.js"></script>
+    <script src="/common_js/jquery.fitvids.js"></script>
+    <script src="/js/startup.js?script_version=1685558134" async></script>
+    <script src="/js/slideshow.js?script_version=1744830045" async></script>
+    <script src="/js/videos.js" async></script>
+
+	<script> (function(d) { var s = d.createElement("script"); s.setAttribute("data-accessible-account-id", "N9tJaaedIydFWW"); s.setAttribute("id", "allAccessibleWidget"); s.async = true; s.setAttribute("src", "https://app.allaccessible.org/api/N9tJaaedIydFWW.js"); d.head.appendChild(s); })(document) </script>
+	
+</body>
+</html>
