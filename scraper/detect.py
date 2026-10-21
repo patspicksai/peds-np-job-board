@@ -21,6 +21,7 @@ HOST_RULES: list[tuple[str, str]] = [
     (r"(?:^|\.)successfactors\.(?:com|eu)$|jobs\.sap\.com$", "successfactors"),
     (r"^jobs\.hopkinsmedicine\.org$", "hopkins"),
     (r"\.inforcloudsuite\.com$|\.cloud\.infor\.com$", "infor"),
+    (r"^pm\.healthcaresource\.com$", "healthcaresource"),
 ]
 
 PATH_RULES: list[tuple[str, str]] = [
@@ -37,7 +38,7 @@ PLATFORM_MAP = {
     "phenom": "phenom", "ultipro": "ultipro", "oracle_cloud": "oracle_cloud", "oracle": "oracle_cloud",
     "eightfold": "eightfold", "jibe": "jibe", "talentbrew": "talentbrew", "radancy": "talentbrew",
     "symphony": "symphony", "careersite": "careersite", "talemetry": "careersite", "hopkins": "hopkins",
-    "infor": "infor",
+    "infor": "infor", "healthcaresource": "healthcaresource",
     # recognized but not specifically implemented: generic adapter
     "jobvite": "careersite", "greenhouse": "generic", "lever": "generic", "smartrecruiters": "generic",
     "pageup": "generic", "cornerstone": "generic", "adp": "generic", "avature": "generic", "dayforce": "generic",
@@ -62,6 +63,9 @@ def detect_platform(hospital: dict) -> str:
     cfg = hospital.get("ats_config") or {}
     if cfg.get("adapter"):
         return str(cfg["adapter"])
+    # a hospital's own search page can wrap a HealthcareSource backend (Emerson, Rutland's HCTS portal)
+    if "healthcaresource" in str(cfg.get("search_api") or cfg.get("backend_host") or cfg.get("backend_client_path") or "").lower():
+        return "healthcaresource"
     for host, path in _hosts_and_paths(hospital):
         for pat, name in HOST_RULES:
             if re.search(pat, host):
@@ -80,7 +84,8 @@ def board_key(hospital: dict, platform: str) -> str:
     """Hospitals that share one job board (system-wide ATS) are scraped once per run."""
     cfg = hospital.get("ats_config") or {}
     host = (cfg.get("host") or urlsplit(hospital.get("careers_search_url") or hospital.get("careers_url") or "").netloc).lower()
-    extra = cfg.get("site") or cfg.get("site_number") or cfg.get("board_path") or cfg.get("career_section") or ""
+    extra = cfg.get("site") or cfg.get("site_number") or cfg.get("board_path") or cfg.get("career_section") or \
+        cfg.get("client_path") or cfg.get("backend_client_path") or cfg.get("job_board") or ""
     if platform == "workday" and not extra:
         segs = [s for s in urlsplit(hospital.get("careers_search_url") or hospital.get("careers_url") or "").path.split("/") if s]
         segs = [s for s in segs if not re.match(r"^[a-z]{2}-[A-Z]{2}$", s)]

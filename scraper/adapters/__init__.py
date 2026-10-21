@@ -9,6 +9,7 @@ from __future__ import annotations
 from .careersite import CareerSiteAdapter
 from .eightfold import EightfoldAdapter
 from .generic import GenericAdapter
+from .healthcaresource import HealthcareSourceAdapter
 from .hopkins import HopkinsAdapter
 from .icims import IcimsAdapter
 from .infor import InforAdapter
@@ -37,6 +38,7 @@ REGISTRY = {
     "symphony": SymphonyAdapter,
     "careersite": CareerSiteAdapter,
     "hopkins": HopkinsAdapter,
+    "healthcaresource": HealthcareSourceAdapter,
     "generic": GenericAdapter,
 }
 
