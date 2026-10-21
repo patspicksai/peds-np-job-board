@@ -34,7 +34,8 @@ def test_search_hits_parse():
     assert len(rows) == 3
     r = rows[0]
     assert r.title == "Nurse Practitioner/Physician Assistant"
-    assert r.url == "https://pm.healthcaresource.com/cs/caromont/#/job/31484"
+    assert r.url == "https://pm.healthcaresource.com/cs/caromont/?job=31484#/job/31484"
+    assert len({x.norm for x in rows}) == 3  # fragments are dropped by normalization, the query keeps them distinct
     assert r.location_text == "Gastonia, NC" and r.posted_at == "2026-01-26"
     assert r.extra["facility"] == "CaroMont Medical Group"
 

@@ -15,7 +15,8 @@ Search (verified on Actions probe 39650100056 / 39653988170, CaroMont):
   The search hit carries no description.
 Detail (GET, JSON): https://pm.healthcaresource.com/JobseekerAPI/Site/{client}/api/v2/JobPostingV2?id={posting id}
   where the posting id is the integer after the underscore in documentId (31484); the same id is the public page
-  https://pm.healthcaresource.com/cs/{client}/#/job/31484. userArea.jobSummaryDisplay holds the HTML description,
+  https://pm.healthcaresource.com/cs/{client}/#/job/31484 (stored as /cs/{client}/?job=31484#/job/31484 so the
+  fragment-dropping URL normalization still tells postings apart). userArea.jobSummaryDisplay holds the HTML description,
   userArea.jobSummary the plain text, workHours / salaryRange / requisitionNumber the rest.
 """
 from __future__ import annotations
@@ -114,7 +115,9 @@ class HealthcareSourceAdapter(Adapter):
         orgs = org_chain(src.get("hiringOrganization") or {})
         ua = src.get("userArea") or {}
         return Listing(
-            title=title, url=f"https://{HOST}/cs/{client}/#/job/{pid}", location_text=loc or "",
+            # the SPA routes on the fragment; the id is repeated in the query so the board's URL normalization
+            # (which drops fragments) keeps one job per posting
+            title=title, url=f"https://{HOST}/cs/{client}/?job={pid}#/job/{pid}", location_text=loc or "",
             posted_at=textutil.parse_date(src.get("datePosted")), external_id=str(ua.get("requisitionNumber") or pid),
             extra={"pid": pid, "client": client, "facility": " ".join(orgs[1:2]) if len(orgs) > 1 else "",
                    "orgs": orgs, "department": str(src.get("occupationalCategory") or ""),
