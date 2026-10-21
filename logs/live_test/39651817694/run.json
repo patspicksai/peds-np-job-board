@@ -1,0 +1,1967 @@
+{
+ "run_id": "2026-10-21",
+ "mode": "automated",
+ "started_at": "2026-10-21T18:21:03Z",
+ "finished_at": "2026-10-21T18:27:37Z",
+ "dry_run": true,
+ "no_details": true,
+ "keywords": [
+  "nurse practitioner",
+  "pediatric nurse practitioner",
+  "advanced practice provider",
+  "APRN",
+  "PICU",
+  "NICU"
+ ],
+ "checked": [
+  "flushing-hospital-queens",
+  "jamaica-hospital-queens",
+  "rutland-regional-rutland",
+  "bronxcare-hospital-bronx",
+  "hoboken-university-medical-center-hoboken",
+  "saint-clares-denville",
+  "st-johns-riverside-yonkers",
+  "kennedy-krieger-baltimore",
+  "hampstead-hospital-hampstead",
+  "bayhealth-kent-campus-dover",
+  "middlesex-hospital-middletown",
+  "penn-highlands-dubois-dubois",
+  "good-samaritan-university-hospital-west-islip",
+  "mercy-hospital-rockville-centre",
+  "st-catherine-of-siena-smithtown",
+  "st-charles-hospital-port-jefferson",
+  "st-francis-hospital-roslyn",
+  "st-joseph-hospital-bethpage",
+  "uconn-john-dempsey-farmington",
+  "waterbury-hospital-waterbury",
+  "saint-vincent-hospital-worcester",
+  "wynn-hospital-utica",
+  "st-johns-episcopal-far-rockaway",
+  "hospital-for-special-care-new-britain",
+  "roswell-park-buffalo"
+ ],
+ "unreachable": [
+  "adirondack-medical-center-saranac-lake",
+  "dosher-southport",
+  "sbh-health-system-bronx",
+  "brooklyn-hospital-center-brooklyn",
+  "oneida-health-hospital-oneida",
+  "auburn-community-hospital-auburn",
+  "berkshire-medical-center-pittsfield",
+  "brockton-hospital-brockton",
+  "caromont-regional-gastonia",
+  "caromont-belmont",
+  "conway-medical-center-conway",
+  "crouse-hospital-syracuse",
+  "ellis-hospital-schenectady",
+  "granville-medical-center-oxford",
+  "kidspeace-orefield",
+  "lawrence-hospital-lawrence",
+  "st-marys-hospital-for-children-bayside",
+  "childrens-home-of-pittsburgh",
+  "brattleboro-retreat-brattleboro",
+  "mt-washington-pediatric-baltimore",
+  "nathan-littauer-hospital-gloversville",
+  "columbus-regional-whiteville"
+ ],
+ "unreachable_detail": {
+  "adirondack-medical-center-saranac-lake": "careers page reachable but no job listings recognized (generic adapter): set careers_search_url / ats_config to the real job board",
+  "dosher-southport": "careers page reachable but no job listings recognized (generic adapter): set careers_search_url / ats_config to the real job board",
+  "sbh-health-system-bronx": "careers page reachable but no job listings recognized (generic adapter): set careers_search_url / ats_config to the real job board",
+  "brooklyn-hospital-center-brooklyn": "careers page reachable but no job listings recognized (generic adapter): set careers_search_url / ats_config to the real job board",
+  "oneida-health-hospital-oneida": "careers page reachable but no job listings recognized (generic adapter): set careers_search_url / ats_config to the real job board",
+  "auburn-community-hospital-auburn": "careers page reachable but no job listings recognized (generic adapter): set careers_search_url / ats_config to the real job board",
+  "berkshire-medical-center-pittsfield": "careers page reachable but no job listings recognized (generic adapter): set careers_search_url / ats_config to the real job board",
+  "brockton-hospital-brockton": "careers page reachable but no job listings recognized (generic adapter): set careers_search_url / ats_config to the real job board",
+  "caromont-regional-gastonia": "careers page reachable but no job listings recognized (generic adapter): set careers_search_url / ats_config to the real job board",
+  "caromont-belmont": "careers page reachable but no job listings recognized (generic adapter): set careers_search_url / ats_config to the real job board",
+  "conway-medical-center-conway": "careers page reachable but no job listings recognized (generic adapter): set careers_search_url / ats_config to the real job board",
+  "crouse-hospital-syracuse": "careers page reachable but no job listings recognized (generic adapter): set careers_search_url / ats_config to the real job board",
+  "ellis-hospital-schenectady": "careers page reachable but no job listings recognized (generic adapter): set careers_search_url / ats_config to the real job board",
+  "granville-medical-center-oxford": "careers page reachable but no job listings recognized (generic adapter): set careers_search_url / ats_config to the real job board",
+  "kidspeace-orefield": "careers page reachable but no job listings recognized (generic adapter): set careers_search_url / ats_config to the real job board",
+  "lawrence-hospital-lawrence": "careers page reachable but no job listings recognized (generic adapter): set careers_search_url / ats_config to the real job board",
+  "st-marys-hospital-for-children-bayside": "careers page reachable but no job listings recognized (generic adapter): set careers_search_url / ats_config to the real job board",
+  "childrens-home-of-pittsburgh": "careers page reachable but no job listings recognized (generic adapter): set careers_search_url / ats_config to the real job board",
+  "brattleboro-retreat-brattleboro": "careers page reachable but no job listings recognized (generic adapter): set careers_search_url / ats_config to the real job board",
+  "mt-washington-pediatric-baltimore": "careers page reachable but no job listings recognized (generic adapter): set careers_search_url / ats_config to the real job board",
+  "nathan-littauer-hospital-gloversville": "careers page reachable but no job listings recognized (generic adapter): set careers_search_url / ats_config to the real job board",
+  "columbus-regional-whiteville": "careers page reachable but no job listings recognized (generic adapter): set careers_search_url / ats_config to the real job board"
+ },
+ "hospitals": [
+  {
+   "slug": "adirondack-medical-center-saranac-lake",
+   "name": "Adirondack Health (Adirondack Medical Center)",
+   "platform": "generic",
+   "adapter": "generic",
+   "method": "playwright",
+   "board": "generic|adirondackhealth.hrmdirect.com/employment/job-openings.php?search=true",
+   "board_hospitals": 1,
+   "board_listings": 0,
+   "listings": 0,
+   "candidates": 0,
+   "new": 0,
+   "known": 0,
+   "status": "no_listings",
+   "error": "careers page reachable but no job listings recognized (generic adapter): set careers_search_url / ats_config to the real job board",
+   "http_status": null,
+   "seconds": 80.1,
+   "requests": 5,
+   "details_fetched": 0,
+   "details_failed": 0,
+   "notes": [
+    "generic: pages reachable but no NP/APP job links found: playwright 200 https://adirondackhealth.hrmdirect.com/employment/job-openings.php?search=true; playwright 200 https://adirondackhealth.hrmdirect.com/employment/job-openings.php?search=true&q=nurse+practitioner; playwright 200 https://adirondackhealth.hrmdirect.com/employment/job-openings.php?search=true&keywords=nurse+practitioner"
+   ],
+   "samples": [],
+   "sample_listings": []
+  },
+  {
+   "slug": "dosher-southport",
+   "name": "Dosher Memorial Hospital",
+   "platform": "generic",
+   "adapter": "generic",
+   "method": "playwright",
+   "board": "generic|dosher.org/jobs/show_job_category.php?category=dosher+memorial+clinic+network&sub=careers",
+   "board_hospitals": 1,
+   "board_listings": 0,
+   "listings": 0,
+   "candidates": 0,
+   "new": 0,
+   "known": 0,
+   "status": "no_listings",
+   "error": "careers page reachable but no job listings recognized (generic adapter): set careers_search_url / ats_config to the real job board",
+   "http_status": null,
+   "seconds": 131.1,
+   "requests": 6,
+   "details_fetched": 0,
+   "details_failed": 0,
+   "notes": [
+    "generic: pages reachable but no NP/APP job links found: playwright 200 https://www.dosher.org/jobs/show_job_category.php?category=Dosher+Memorial+Clinic+Network&sub=Careers; playwright 200 https://www.dosher.org/getpage.php?name=employment&sub=Careers&q=nurse+practitioner; playwright 200 https://www.dosher.org/getpage.php?name=employment&sub=Careers&keywords=nurse+practitioner"
+   ],
+   "samples": [],
+   "sample_listings": []
+  },
+  {
+   "slug": "flushing-hospital-queens",
+   "name": "Flushing Hospital Medical Center",
+   "platform": "generic",
+   "adapter": "generic",
+   "method": "playwright",
+   "board": "generic|medisyscareers.org/jobs?search_keywords=nurse+practitioner",
+   "board_hospitals": 2,
+   "board_listings": 7,
+   "listings": 6,
+   "candidates": 0,
+   "new": 0,
+   "known": 0,
+   "status": "ok",
+   "error": null,
+   "http_status": null,
+   "seconds": 75.6,
+   "requests": 6,
+   "details_fetched": 0,
+   "details_failed": 0,
+   "notes": [],
+   "samples": [],
+   "sample_listings": [
+    {
+     "title": "Family Nurse Practitioner (FNP)- Primary Care | Mandarin Preferred | $139K Flushing Hospital 4500 Parsons Blvd, Queens, NY 11355 $139,008.36 Clinical",
+     "url": "https://medisyscareers.org/job/4500-parsons-blvd-queens-ny-11355-203-nurse-practitioner-mandarin-chinese-speaking/",
+     "posted_at": null,
+     "location": "4500 Parsons Blvd, Queens, NY 11355"
+    },
+    {
+     "title": "Nurse Practitioner – Center of Excellence Grant Program Jamaica Hospital 8900 Van Wyck Expressway $165,841.36 Plus Differentials and Full 1199 Benefits Clinical",
+     "url": "https://medisyscareers.org/job/8900-van-wyck-expressway-203-nurse-practitioner-center-of-excellence-grant-program/",
+     "posted_at": null,
+     "location": ""
+    },
+    {
+     "title": "Nurse Practitioner – Main Clinic Jamaica Hospital 8900 Van Wyck Expressway $165,841.36 annually + Differential Clinical",
+     "url": "https://medisyscareers.org/job/8900-van-wyck-expressway-203-nurse-practitioner-main-clinic-2/",
+     "posted_at": null,
+     "location": ""
+    }
+   ]
+  },
+  {
+   "slug": "jamaica-hospital-queens",
+   "name": "Jamaica Hospital Medical Center",
+   "platform": "generic",
+   "adapter": "generic",
+   "method": "playwright",
+   "board": "generic|medisyscareers.org/jobs?search_keywords=nurse+practitioner",
+   "board_hospitals": 2,
+   "board_listings": 7,
+   "listings": 1,
+   "candidates": 0,
+   "new": 0,
+   "known": 0,
+   "status": "ok",
+   "error": null,
+   "http_status": null,
+   "seconds": 75.6,
+   "requests": 6,
+   "details_fetched": 0,
+   "details_failed": 0,
+   "notes": [],
+   "samples": [],
+   "sample_listings": [
+    {
+     "title": "Family Nurse Practitioner (FNP)- Primary Care | Mandarin Preferred | $139K Flushing Hospital 4500 Parsons Blvd, Queens, NY 11355 $139,008.36 Clinical",
+     "url": "https://medisyscareers.org/job/4500-parsons-blvd-queens-ny-11355-203-nurse-practitioner-mandarin-chinese-speaking/",
+     "posted_at": null,
+     "location": "4500 Parsons Blvd, Queens, NY 11355"
+    },
+    {
+     "title": "Nurse Practitioner – Center of Excellence Grant Program Jamaica Hospital 8900 Van Wyck Expressway $165,841.36 Plus Differentials and Full 1199 Benefits Clinical",
+     "url": "https://medisyscareers.org/job/8900-van-wyck-expressway-203-nurse-practitioner-center-of-excellence-grant-program/",
+     "posted_at": null,
+     "location": ""
+    },
+    {
+     "title": "Nurse Practitioner – Main Clinic Jamaica Hospital 8900 Van Wyck Expressway $165,841.36 annually + Differential Clinical",
+     "url": "https://medisyscareers.org/job/8900-van-wyck-expressway-203-nurse-practitioner-main-clinic-2/",
+     "posted_at": null,
+     "location": ""
+    }
+   ]
+  },
+  {
+   "slug": "sbh-health-system-bronx",
+   "name": "SBH Health System (St. Barnabas Hospital)",
+   "platform": "generic",
+   "adapter": "generic",
+   "method": "playwright",
+   "board": "generic|myjobs.adp.com/stbarnabascareers/cx?c=2169007&d=externalcareersite",
+   "board_hospitals": 1,
+   "board_listings": 0,
+   "listings": 0,
+   "candidates": 0,
+   "new": 0,
+   "known": 0,
+   "status": "no_listings",
+   "error": "careers page reachable but no job listings recognized (generic adapter): set careers_search_url / ats_config to the real job board",
+   "http_status": null,
+   "seconds": 105.5,
+   "requests": 5,
+   "details_fetched": 0,
+   "details_failed": 0,
+   "notes": [
+    "generic: pages reachable but no NP/APP job links found: playwright 200 https://myjobs.adp.com/stbarnabascareers/cx?c=2169007&d=ExternalCareerSite; playwright 200 https://myjobs.adp.com/stbarnabascareers/cx?c=2169007&d=ExternalCareerSite&q=nurse+practitioner; playwright 200 https://myjobs.adp.com/stbarnabascareers/cx?c=2169007&d=ExternalCareerSite&keywords=nurse+practitioner"
+   ],
+   "samples": [],
+   "sample_listings": []
+  },
+  {
+   "slug": "brooklyn-hospital-center-brooklyn",
+   "name": "The Brooklyn Hospital Center",
+   "platform": "generic",
+   "adapter": "generic",
+   "method": "playwright",
+   "board": "generic|myjobs.adp.com/tbhcareers/cx?c=1126207&d=external",
+   "board_hospitals": 1,
+   "board_listings": 0,
+   "listings": 0,
+   "candidates": 0,
+   "new": 0,
+   "known": 0,
+   "status": "no_listings",
+   "error": "careers page reachable but no job listings recognized (generic adapter): set careers_search_url / ats_config to the real job board",
+   "http_status": null,
+   "seconds": 130.3,
+   "requests": 5,
+   "details_fetched": 0,
+   "details_failed": 0,
+   "notes": [
+    "generic: pages reachable but no NP/APP job links found: playwright 200 https://myjobs.adp.com/tbhcareers/cx?c=1126207&d=External; playwright 200 https://myjobs.adp.com/tbhcareers/cx?c=1126207&d=External&q=nurse+practitioner; playwright 200 https://myjobs.adp.com/tbhcareers/cx?c=1126207&d=External&keywords=nurse+practitioner"
+   ],
+   "samples": [],
+   "sample_listings": []
+  },
+  {
+   "slug": "oneida-health-hospital-oneida",
+   "name": "Oneida Health Hospital",
+   "platform": "generic",
+   "adapter": "generic",
+   "method": "playwright",
+   "board": "generic|paycomonline.net/v4/ats/web.php/jobs?clientkey=0fd7e535c5ac57a6144b389acaa1998b",
+   "board_hospitals": 1,
+   "board_listings": 0,
+   "listings": 0,
+   "candidates": 0,
+   "new": 0,
+   "known": 0,
+   "status": "no_listings",
+   "error": "careers page reachable but no job listings recognized (generic adapter): set careers_search_url / ats_config to the real job board",
+   "http_status": null,
+   "seconds": 69.3,
+   "requests": 5,
+   "details_fetched": 0,
+   "details_failed": 0,
+   "notes": [
+    "generic: pages reachable but no NP/APP job links found: playwright 200 https://www.paycomonline.net/v4/ats/web.php/jobs?clientkey=0FD7E535C5AC57A6144B389ACAA1998B; playwright 200 https://www.paycomonline.net/v4/ats/web.php/jobs?clientkey=0FD7E535C5AC57A6144B389ACAA1998B&q=nurse+practitioner; playwright 200 https://www.paycomonline.net/v4/ats/web.php/jobs?clientkey=0FD7E535C5AC57A6144B389ACAA1998B&"
+   ],
+   "samples": [],
+   "sample_listings": []
+  },
+  {
+   "slug": "auburn-community-hospital-auburn",
+   "name": "Auburn Community Hospital",
+   "platform": "generic",
+   "adapter": "generic",
+   "method": "playwright",
+   "board": "generic|pm.healthcaresource.com/cs/auburnhospital?",
+   "board_hospitals": 1,
+   "board_listings": 0,
+   "listings": 0,
+   "candidates": 0,
+   "new": 0,
+   "known": 0,
+   "status": "no_listings",
+   "error": "careers page reachable but no job listings recognized (generic adapter): set careers_search_url / ats_config to the real job board",
+   "http_status": null,
+   "seconds": 91.1,
+   "requests": 5,
+   "details_fetched": 0,
+   "details_failed": 0,
+   "notes": [
+    "generic: pages reachable but no NP/APP job links found: playwright 200 https://pm.healthcaresource.com/cs/auburnhospital/#/results?what=nurse%20practitioner; playwright 200 https://pm.healthcaresource.com/cs/auburnhospital/?q=nurse+practitioner; playwright 200 https://pm.healthcaresource.com/cs/auburnhospital/?keywords=nurse+practitioner"
+   ],
+   "samples": [],
+   "sample_listings": []
+  },
+  {
+   "slug": "berkshire-medical-center-pittsfield",
+   "name": "Berkshire Medical Center",
+   "platform": "generic",
+   "adapter": "generic",
+   "method": "playwright",
+   "board": "generic|pm.healthcaresource.com/cs/berkshire?",
+   "board_hospitals": 1,
+   "board_listings": 0,
+   "listings": 0,
+   "candidates": 0,
+   "new": 0,
+   "known": 0,
+   "status": "no_listings",
+   "error": "careers page reachable but no job listings recognized (generic adapter): set careers_search_url / ats_config to the real job board",
+   "http_status": null,
+   "seconds": 122.5,
+   "requests": 5,
+   "details_fetched": 0,
+   "details_failed": 0,
+   "notes": [
+    "generic: pages reachable but no NP/APP job links found: playwright 200 https://pm.healthcaresource.com/CS/berkshire#/results?what=nurse%20practitioner; playwright 200 https://pm.healthcaresource.com/CS/berkshire?q=nurse+practitioner; playwright 200 https://pm.healthcaresource.com/CS/berkshire?keywords=nurse+practitioner"
+   ],
+   "samples": [],
+   "sample_listings": []
+  },
+  {
+   "slug": "brockton-hospital-brockton",
+   "name": "Brockton Hospital",
+   "platform": "generic",
+   "adapter": "generic",
+   "method": "playwright",
+   "board": "generic|pm.healthcaresource.com/cs/brocktonhospital?",
+   "board_hospitals": 1,
+   "board_listings": 0,
+   "listings": 0,
+   "candidates": 0,
+   "new": 0,
+   "known": 0,
+   "status": "no_listings",
+   "error": "careers page reachable but no job listings recognized (generic adapter): set careers_search_url / ats_config to the real job board",
+   "http_status": null,
+   "seconds": 110.0,
+   "requests": 5,
+   "details_fetched": 0,
+   "details_failed": 0,
+   "notes": [
+    "generic: pages reachable but no NP/APP job links found: playwright 200 https://pm.healthcaresource.com/CS/brocktonhospital/#/results?what=nurse%20practitioner; playwright 200 https://pm.healthcaresource.com/CS/brocktonhospital/?q=nurse+practitioner; playwright 200 https://pm.healthcaresource.com/CS/brocktonhospital/?keywords=nurse+practitioner"
+   ],
+   "samples": [],
+   "sample_listings": []
+  },
+  {
+   "slug": "caromont-regional-gastonia",
+   "name": "CaroMont Regional Medical Center",
+   "platform": "generic",
+   "adapter": "generic",
+   "method": "playwright",
+   "board": "generic|pm.healthcaresource.com/cs/caromont?",
+   "board_hospitals": 2,
+   "board_listings": 0,
+   "listings": 0,
+   "candidates": 0,
+   "new": 0,
+   "known": 0,
+   "status": "no_listings",
+   "error": "careers page reachable but no job listings recognized (generic adapter): set careers_search_url / ats_config to the real job board",
+   "http_status": null,
+   "seconds": 101.6,
+   "requests": 5,
+   "details_fetched": 0,
+   "details_failed": 0,
+   "notes": [
+    "generic: pages reachable but no NP/APP job links found: playwright 200 https://pm.healthcaresource.com/cs/caromont#/results?what=nurse%20practitioner; playwright 200 https://pm.healthcaresource.com/cs/caromont?q=nurse+practitioner; playwright 200 https://pm.healthcaresource.com/cs/caromont?keywords=nurse+practitioner"
+   ],
+   "samples": [],
+   "sample_listings": []
+  },
+  {
+   "slug": "caromont-belmont",
+   "name": "CaroMont Regional Medical Center - Belmont",
+   "platform": "generic",
+   "adapter": "generic",
+   "method": "playwright",
+   "board": "generic|pm.healthcaresource.com/cs/caromont?",
+   "board_hospitals": 2,
+   "board_listings": 0,
+   "listings": 0,
+   "candidates": 0,
+   "new": 0,
+   "known": 0,
+   "status": "no_listings",
+   "error": "careers page reachable but no job listings recognized (generic adapter): set careers_search_url / ats_config to the real job board",
+   "http_status": null,
+   "seconds": 101.6,
+   "requests": 5,
+   "details_fetched": 0,
+   "details_failed": 0,
+   "notes": [
+    "generic: pages reachable but no NP/APP job links found: playwright 200 https://pm.healthcaresource.com/cs/caromont#/results?what=nurse%20practitioner; playwright 200 https://pm.healthcaresource.com/cs/caromont?q=nurse+practitioner; playwright 200 https://pm.healthcaresource.com/cs/caromont?keywords=nurse+practitioner"
+   ],
+   "samples": [],
+   "sample_listings": []
+  },
+  {
+   "slug": "conway-medical-center-conway",
+   "name": "Conway Medical Center",
+   "platform": "generic",
+   "adapter": "generic",
+   "method": "playwright",
+   "board": "generic|pm.healthcaresource.com/cs/cmcsc?",
+   "board_hospitals": 1,
+   "board_listings": 0,
+   "listings": 0,
+   "candidates": 0,
+   "new": 0,
+   "known": 0,
+   "status": "no_listings",
+   "error": "careers page reachable but no job listings recognized (generic adapter): set careers_search_url / ats_config to the real job board",
+   "http_status": null,
+   "seconds": 66.0,
+   "requests": 5,
+   "details_fetched": 0,
+   "details_failed": 0,
+   "notes": [
+    "generic: pages reachable but no NP/APP job links found: playwright 200 https://pm.healthcaresource.com/cs/cmcsc#/results?what=nurse%20practitioner; playwright 200 https://pm.healthcaresource.com/cs/cmcsc?q=nurse+practitioner; playwright 200 https://pm.healthcaresource.com/cs/cmcsc?keywords=nurse+practitioner"
+   ],
+   "samples": [],
+   "sample_listings": []
+  },
+  {
+   "slug": "crouse-hospital-syracuse",
+   "name": "Crouse Hospital",
+   "platform": "generic",
+   "adapter": "generic",
+   "method": "playwright",
+   "board": "generic|pm.healthcaresource.com/cs/crouse?",
+   "board_hospitals": 1,
+   "board_listings": 0,
+   "listings": 0,
+   "candidates": 0,
+   "new": 0,
+   "known": 0,
+   "status": "no_listings",
+   "error": "careers page reachable but no job listings recognized (generic adapter): set careers_search_url / ats_config to the real job board",
+   "http_status": null,
+   "seconds": 97.4,
+   "requests": 5,
+   "details_fetched": 0,
+   "details_failed": 0,
+   "notes": [
+    "generic: pages reachable but no NP/APP job links found: playwright 200 https://pm.healthcaresource.com/CS/crouse#/results?what=nurse%20practitioner; playwright 200 https://pm.healthcaresource.com/CS/crouse?q=nurse+practitioner; playwright 200 https://pm.healthcaresource.com/CS/crouse?keywords=nurse+practitioner"
+   ],
+   "samples": [],
+   "sample_listings": []
+  },
+  {
+   "slug": "ellis-hospital-schenectady",
+   "name": "Ellis Hospital",
+   "platform": "generic",
+   "adapter": "generic",
+   "method": "playwright",
+   "board": "generic|pm.healthcaresource.com/cs/ellishospital?",
+   "board_hospitals": 1,
+   "board_listings": 0,
+   "listings": 0,
+   "candidates": 0,
+   "new": 0,
+   "known": 0,
+   "status": "no_listings",
+   "error": "careers page reachable but no job listings recognized (generic adapter): set careers_search_url / ats_config to the real job board",
+   "http_status": null,
+   "seconds": 96.0,
+   "requests": 5,
+   "details_fetched": 0,
+   "details_failed": 0,
+   "notes": [
+    "generic: pages reachable but no NP/APP job links found: playwright 200 https://pm.healthcaresource.com/cs/ellishospital#/results?what=nurse%20practitioner; playwright 200 https://pm.healthcaresource.com/cs/ellishospital?q=nurse+practitioner; playwright 200 https://pm.healthcaresource.com/cs/ellishospital?keywords=nurse+practitioner"
+   ],
+   "samples": [],
+   "sample_listings": []
+  },
+  {
+   "slug": "granville-medical-center-oxford",
+   "name": "Granville Health System (Granville Medical Center)",
+   "platform": "generic",
+   "adapter": "generic",
+   "method": "playwright",
+   "board": "generic|pm.healthcaresource.com/cs/granvillemedical?",
+   "board_hospitals": 1,
+   "board_listings": 0,
+   "listings": 0,
+   "candidates": 0,
+   "new": 0,
+   "known": 0,
+   "status": "no_listings",
+   "error": "careers page reachable but no job listings recognized (generic adapter): set careers_search_url / ats_config to the real job board",
+   "http_status": null,
+   "seconds": 103.3,
+   "requests": 5,
+   "details_fetched": 0,
+   "details_failed": 0,
+   "notes": [
+    "generic: pages reachable but no NP/APP job links found: playwright 200 https://pm.healthcaresource.com/CS/granvillemedical/#/results?what=nurse%20practitioner; playwright 200 https://pm.healthcaresource.com/CS/granvillemedical/?q=nurse+practitioner; playwright 200 https://pm.healthcaresource.com/CS/granvillemedical/?keywords=nurse+practitioner"
+   ],
+   "samples": [],
+   "sample_listings": []
+  },
+  {
+   "slug": "kidspeace-orefield",
+   "name": "KidsPeace Children's Hospital",
+   "platform": "generic",
+   "adapter": "generic",
+   "method": "playwright",
+   "board": "generic|pm.healthcaresource.com/cs/kidspeace?",
+   "board_hospitals": 1,
+   "board_listings": 0,
+   "listings": 0,
+   "candidates": 0,
+   "new": 0,
+   "known": 0,
+   "status": "no_listings",
+   "error": "careers page reachable but no job listings recognized (generic adapter): set careers_search_url / ats_config to the real job board",
+   "http_status": null,
+   "seconds": 80.7,
+   "requests": 5,
+   "details_fetched": 0,
+   "details_failed": 0,
+   "notes": [
+    "generic: pages reachable but no NP/APP job links found: playwright 200 https://pm.healthcaresource.com/CS/KIDSPEACE#/results?what=nurse%20practitioner; playwright 200 https://pm.healthcaresource.com/CS/KIDSPEACE?q=nurse+practitioner; playwright 200 https://pm.healthcaresource.com/CS/KIDSPEACE?keywords=nurse+practitioner"
+   ],
+   "samples": [],
+   "sample_listings": []
+  },
+  {
+   "slug": "lawrence-hospital-lawrence",
+   "name": "Lawrence Hospital",
+   "platform": "generic",
+   "adapter": "generic",
+   "method": "playwright",
+   "board": "generic|pm.healthcaresource.com/cs/lawrence?",
+   "board_hospitals": 1,
+   "board_listings": 0,
+   "listings": 0,
+   "candidates": 0,
+   "new": 0,
+   "known": 0,
+   "status": "no_listings",
+   "error": "careers page reachable but no job listings recognized (generic adapter): set careers_search_url / ats_config to the real job board",
+   "http_status": null,
+   "seconds": 116.4,
+   "requests": 5,
+   "details_fetched": 0,
+   "details_failed": 0,
+   "notes": [
+    "generic: pages reachable but no NP/APP job links found: playwright 200 https://pm.healthcaresource.com/CS/lawrence/#/results?what=nurse%20practitioner; playwright 200 https://pm.healthcaresource.com/CS/lawrence/?q=nurse+practitioner; playwright 200 https://pm.healthcaresource.com/CS/lawrence/?keywords=nurse+practitioner"
+   ],
+   "samples": [],
+   "sample_listings": []
+  },
+  {
+   "slug": "st-marys-hospital-for-children-bayside",
+   "name": "St. Mary's Hospital for Children",
+   "platform": "generic",
+   "adapter": "generic",
+   "method": "playwright",
+   "board": "generic|prd01-hcm01.prd.mykronos.com/ta/6156032.careers?showallopenings=&lang=en-us",
+   "board_hospitals": 1,
+   "board_listings": 0,
+   "listings": 0,
+   "candidates": 0,
+   "new": 0,
+   "known": 0,
+   "status": "no_listings",
+   "error": "careers page reachable but no job listings recognized (generic adapter): set careers_search_url / ats_config to the real job board",
+   "http_status": null,
+   "seconds": 141.5,
+   "requests": 5,
+   "details_fetched": 0,
+   "details_failed": 0,
+   "notes": [
+    "generic: pages reachable but no NP/APP job links found: playwright 200 https://prd01-hcm01.prd.mykronos.com/ta/6156032.careers?ShowAllOpenings=&lang=en-US; playwright 200 https://prd01-hcm01.prd.mykronos.com/ta/6156032.careers?ShowAllOpenings=&lang=en-US&q=nurse+practitioner; playwright 200 https://prd01-hcm01.prd.mykronos.com/ta/6156032.careers?ShowAllOpenings=&lang=en-US&keywords=nurse+practitio"
+   ],
+   "samples": [],
+   "sample_listings": []
+  },
+  {
+   "slug": "childrens-home-of-pittsburgh",
+   "name": "Children's Home of Pittsburgh and Lemieux Family Center",
+   "platform": "generic",
+   "adapter": "generic",
+   "method": "playwright",
+   "board": "generic|recruiting.paylocity.com/recruiting/jobs/all/bb1b4b91-a596-4d4b-aab4-3265f0735227?",
+   "board_hospitals": 1,
+   "board_listings": 0,
+   "listings": 0,
+   "candidates": 0,
+   "new": 0,
+   "known": 0,
+   "status": "no_listings",
+   "error": "careers page reachable but no job listings recognized (generic adapter): set careers_search_url / ats_config to the real job board",
+   "http_status": null,
+   "seconds": 84.8,
+   "requests": 5,
+   "details_fetched": 0,
+   "details_failed": 0,
+   "notes": [
+    "generic: pages reachable but no NP/APP job links found: playwright 200 https://recruiting.paylocity.com/Recruiting/Jobs/All/bb1b4b91-a596-4d4b-aab4-3265f0735227; playwright 200 https://recruiting.paylocity.com/Recruiting/Jobs/All/bb1b4b91-a596-4d4b-aab4-3265f0735227?q=nurse+practitioner; playwright 200 https://recruiting.paylocity.com/Recruiting/Jobs/All/bb1b4b91-a596-4d4b-aab4-3265f0735227?keywor"
+   ],
+   "samples": [],
+   "sample_listings": []
+  },
+  {
+   "slug": "brattleboro-retreat-brattleboro",
+   "name": "Brattleboro Retreat",
+   "platform": "generic",
+   "adapter": "generic",
+   "method": "playwright",
+   "board": "generic|recruiting.paylocity.com/recruiting/jobs/all/c13b8a1e-da34-4331-af36-4e2efa4582bd/brattleboro-retreat?",
+   "board_hospitals": 1,
+   "board_listings": 0,
+   "listings": 0,
+   "candidates": 0,
+   "new": 0,
+   "known": 0,
+   "status": "no_listings",
+   "error": "careers page reachable but no job listings recognized (generic adapter): set careers_search_url / ats_config to the real job board",
+   "http_status": null,
+   "seconds": 89.1,
+   "requests": 5,
+   "details_fetched": 0,
+   "details_failed": 0,
+   "notes": [
+    "generic: pages reachable but no NP/APP job links found: playwright 200 https://recruiting.paylocity.com/recruiting/jobs/All/c13b8a1e-da34-4331-af36-4e2efa4582bd/Brattleboro-Retreat; playwright 200 https://recruiting.paylocity.com/recruiting/jobs/All/c13b8a1e-da34-4331-af36-4e2efa4582bd/Brattleboro-Retreat?q=nurse+practitioner; playwright 200 https://recruiting.paylocity.com/recruiting/jobs/All/c13"
+   ],
+   "samples": [],
+   "sample_listings": []
+  },
+  {
+   "slug": "rutland-regional-rutland",
+   "name": "Rutland Regional Medical Center",
+   "platform": "generic",
+   "adapter": "generic",
+   "method": "requests",
+   "board": "generic|rrmccareers.hctsportals.com/search/advanced-practice-provider/jobs?",
+   "board_hospitals": 1,
+   "board_listings": 2,
+   "listings": 2,
+   "candidates": 0,
+   "new": 0,
+   "known": 0,
+   "status": "ok",
+   "error": null,
+   "http_status": null,
+   "seconds": 20.1,
+   "requests": 10,
+   "details_fetched": 0,
+   "details_failed": 0,
+   "notes": [
+    "generic: followed 2 result pages from https://rrmccareers.hctsportals.com/jobs/search?keywords=nurse+practitioner",
+    "generic: followed 2 result pages from https://rrmccareers.hctsportals.com/jobs/search?keyword=nurse+practitioner",
+    "generic: followed 2 result pages from https://rrmccareers.hctsportals.com/jobs/search?search=nurse+practitioner",
+    "generic: followed 2 result pages from https://rrmccareers.hctsportals.com/jobs/search"
+   ],
+   "samples": [],
+   "sample_listings": [
+    {
+     "title": "Advanced Practice Provider - Foley Cancer Center",
+     "url": "https://rrmccareers.hctsportals.com/jobs/1923630-advanced-practice-provider-foley-cancer-center",
+     "posted_at": null,
+     "location": "Foley Cancer Center Quick Apply Rutland, VT"
+    },
+    {
+     "title": "Advanced Practice Provider - Marble Valley Urology",
+     "url": "https://rrmccareers.hctsportals.com/jobs/2201513-advanced-practice-provider-marble-valley-urology",
+     "posted_at": null,
+     "location": "Marble Valley Urology Quick Apply Rutland, VT"
+    }
+   ]
+  },
+  {
+   "slug": "mt-washington-pediatric-baltimore",
+   "name": "Mt. Washington Pediatric Hospital",
+   "platform": "generic",
+   "adapter": "generic",
+   "method": "playwright",
+   "board": "generic|secure4.entertimeonline.com/ta/6108366.careers?jobssearch=1&lang=en-us",
+   "board_hospitals": 1,
+   "board_listings": 0,
+   "listings": 0,
+   "candidates": 0,
+   "new": 0,
+   "known": 0,
+   "status": "no_listings",
+   "error": "careers page reachable but no job listings recognized (generic adapter): set careers_search_url / ats_config to the real job board",
+   "http_status": null,
+   "seconds": 79.6,
+   "requests": 5,
+   "details_fetched": 0,
+   "details_failed": 0,
+   "notes": [
+    "generic: pages reachable but no NP/APP job links found: playwright 200 https://secure4.entertimeonline.com/ta/6108366.careers?JobsSearch=1&lang=en-US; playwright 200 https://secure4.entertimeonline.com/ta/6108366.careers?JobsSearch=1&lang=en-US&q=nurse+practitioner; playwright 200 https://secure4.entertimeonline.com/ta/6108366.careers?JobsSearch=1&lang=en-US&keywords=nurse+practitioner"
+   ],
+   "samples": [],
+   "sample_listings": []
+  },
+  {
+   "slug": "nathan-littauer-hospital-gloversville",
+   "name": "Nathan Littauer Hospital",
+   "platform": "generic",
+   "adapter": "generic",
+   "method": "playwright",
+   "board": "generic|secure7.saashr.com/ta/6101323.careers?careerssearch=1&lang=en-us",
+   "board_hospitals": 1,
+   "board_listings": 0,
+   "listings": 0,
+   "candidates": 0,
+   "new": 0,
+   "known": 0,
+   "status": "no_listings",
+   "error": "careers page reachable but no job listings recognized (generic adapter): set careers_search_url / ats_config to the real job board",
+   "http_status": null,
+   "seconds": 113.5,
+   "requests": 5,
+   "details_fetched": 0,
+   "details_failed": 0,
+   "notes": [
+    "generic: pages reachable but no NP/APP job links found: playwright 200 https://secure7.saashr.com/ta/6101323.careers?CareersSearch=1&lang=en-US; playwright 200 https://secure7.saashr.com/ta/6101323.careers?CareersSearch=1&lang=en-US&q=nurse+practitioner; playwright 200 https://secure7.saashr.com/ta/6101323.careers?CareersSearch=1&lang=en-US&keywords=nurse+practitioner"
+   ],
+   "samples": [],
+   "sample_listings": []
+  },
+  {
+   "slug": "columbus-regional-whiteville",
+   "name": "Columbus Regional Healthcare System",
+   "platform": "generic",
+   "adapter": "generic",
+   "method": "playwright",
+   "board": "generic|workforcenow.adp.com/mascsr/default/mdf/recruitment/recruitment.html?cid=86be0242-2e9b-4a21-9dac-6ef6b31fbbee&ccid=19000101_000001&lang=en_us",
+   "board_hospitals": 1,
+   "board_listings": 0,
+   "listings": 0,
+   "candidates": 0,
+   "new": 0,
+   "known": 0,
+   "status": "no_listings",
+   "error": "careers page reachable but no job listings recognized (generic adapter): set careers_search_url / ats_config to the real job board",
+   "http_status": null,
+   "seconds": 99.0,
+   "requests": 5,
+   "details_fetched": 0,
+   "details_failed": 0,
+   "notes": [
+    "generic: pages reachable but no NP/APP job links found: playwright 200 https://workforcenow.adp.com/mascsr/default/mdf/recruitment/recruitment.html?cid=86be0242-2e9b-4a21-9dac-6ef6b31fbbee&ccId=19000101_000001&lang=en_US; playwright 200 https://workforcenow.adp.com/mascsr/default/mdf/recruitment/recruitment.html?cid=86be0242-2e9b-4a21-9dac-6ef6b31fbbee&ccId=19000101_000001&lang=en_US&q=nurse+pract"
+   ],
+   "samples": [],
+   "sample_listings": []
+  },
+  {
+   "slug": "bronxcare-hospital-bronx",
+   "name": "BronxCare Hospital Center",
+   "platform": "icims",
+   "adapter": "icims",
+   "method": "requests",
+   "board": "icims|careers-bronxcare.icims.com|",
+   "board_hospitals": 1,
+   "board_listings": 34,
+   "listings": 34,
+   "candidates": 0,
+   "new": 0,
+   "known": 0,
+   "status": "ok",
+   "error": null,
+   "http_status": null,
+   "seconds": 7.3,
+   "requests": 7,
+   "details_fetched": 0,
+   "details_failed": 0,
+   "notes": [],
+   "samples": [],
+   "sample_listings": [
+    {
+     "title": "Physician-Psychiatry",
+     "url": "https://careers-bronxcare.icims.com/jobs/6098/physician-psychiatry/job",
+     "posted_at": null,
+     "location": "US-NY-Bronx"
+    },
+    {
+     "title": "Licensed Practical Nurse",
+     "url": "https://careers-bronxcare.icims.com/jobs/6089/licensed-practical-nurse/job",
+     "posted_at": null,
+     "location": "US-NY-Bronx"
+    },
+    {
+     "title": "Licensed Practical Nurse",
+     "url": "https://careers-bronxcare.icims.com/jobs/6082/licensed-practical-nurse/job",
+     "posted_at": null,
+     "location": "US-NY-Bronx"
+    }
+   ]
+  },
+  {
+   "slug": "hoboken-university-medical-center-hoboken",
+   "name": "Hoboken University Medical Center",
+   "platform": "icims",
+   "adapter": "icims",
+   "method": "requests",
+   "board": "icims|careers-carepointhealth.icims.com|",
+   "board_hospitals": 1,
+   "board_listings": 17,
+   "listings": 17,
+   "candidates": 0,
+   "new": 0,
+   "known": 0,
+   "status": "ok",
+   "error": null,
+   "http_status": null,
+   "seconds": 9.6,
+   "requests": 7,
+   "details_fetched": 0,
+   "details_failed": 0,
+   "notes": [],
+   "samples": [],
+   "sample_listings": [
+    {
+     "title": "Psychiatric Mental Health Nurse Practitioner",
+     "url": "https://careers-carepointhealth.icims.com/jobs/10757/psychiatric-mental-health-nurse-practitioner/job",
+     "posted_at": null,
+     "location": "US-NJ-Hoboken"
+    },
+    {
+     "title": "Part-time Psychiatric Mental Health Nurse Practitioner",
+     "url": "https://careers-carepointhealth.icims.com/jobs/10753/part-time-psychiatric-mental-health-nurse-practitioner/job",
+     "posted_at": null,
+     "location": "US-NJ-Hoboken"
+    },
+    {
+     "title": "Nurse Practitioner-Gastroenterology (GI)",
+     "url": "https://careers-carepointhealth.icims.com/jobs/10596/nurse-practitioner-gastroenterology-%28gi%29/job",
+     "posted_at": null,
+     "location": "US-NJ-Hoboken"
+    }
+   ]
+  },
+  {
+   "slug": "saint-clares-denville",
+   "name": "Saint Clare's Denville Hospital",
+   "platform": "icims",
+   "adapter": "icims",
+   "method": "requests",
+   "board": "icims|careers-primehealthcare.icims.com|",
+   "board_hospitals": 1,
+   "board_listings": 134,
+   "listings": 51,
+   "candidates": 0,
+   "new": 0,
+   "known": 0,
+   "status": "ok",
+   "error": null,
+   "http_status": null,
+   "seconds": 13.6,
+   "requests": 12,
+   "details_fetched": 0,
+   "details_failed": 0,
+   "notes": [
+    "dropped 83 listings outside ME-SC footprint"
+   ],
+   "samples": [],
+   "sample_listings": [
+    {
+     "title": "Acute Care Nurse Practitioner (ACNP)",
+     "url": "https://careers-primehealthcare.icims.com/jobs/286391/acute-care-nurse-practitioner-%28acnp%29/job",
+     "posted_at": null,
+     "location": "US-IL-Aurora"
+    },
+    {
+     "title": "Nurse Practitioner-Hospitalist Group-nights (Per-Diem)",
+     "url": "https://careers-primehealthcare.icims.com/jobs/285439/nurse-practitioner-hospitalist-group-nights-%28per-diem%29/job",
+     "posted_at": null,
+     "location": "US-MO-Blue Springs"
+    },
+    {
+     "title": "Urgent Care Advanced Practice Provider",
+     "url": "https://careers-primehealthcare.icims.com/jobs/285412/urgent-care-advanced-practice-provider/job",
+     "posted_at": null,
+     "location": "US-CA-Victorville"
+    }
+   ]
+  },
+  {
+   "slug": "st-johns-riverside-yonkers",
+   "name": "St. John's Riverside Hospital",
+   "platform": "icims",
+   "adapter": "icims",
+   "method": "requests",
+   "board": "icims|careers-riversidehealth.icims.com|",
+   "board_hospitals": 1,
+   "board_listings": 5,
+   "listings": 5,
+   "candidates": 0,
+   "new": 0,
+   "known": 0,
+   "status": "ok",
+   "error": null,
+   "http_status": null,
+   "seconds": 6.8,
+   "requests": 6,
+   "details_fetched": 0,
+   "details_failed": 0,
+   "notes": [],
+   "samples": [],
+   "sample_listings": [
+    {
+     "title": "Administrative Nursing Supervisor",
+     "url": "https://careers-riversidehealth.icims.com/jobs/9862/administrative-nursing-supervisor/job",
+     "posted_at": null,
+     "location": ""
+    },
+    {
+     "title": "Administrative Nursing Supervisor",
+     "url": "https://careers-riversidehealth.icims.com/jobs/9732/administrative-nursing-supervisor/job",
+     "posted_at": null,
+     "location": ""
+    },
+    {
+     "title": "Certified Medical Assistant  Riverside Medical Practices",
+     "url": "https://careers-riversidehealth.icims.com/jobs/9886/certified-medical-assistant--riverside-medical-practices/job",
+     "posted_at": null,
+     "location": ""
+    }
+   ]
+  },
+  {
+   "slug": "kennedy-krieger-baltimore",
+   "name": "Kennedy Krieger Institute",
+   "platform": "icims",
+   "adapter": "icims",
+   "method": "requests",
+   "board": "icims|jobs-kennedykrieger.icims.com|",
+   "board_hospitals": 1,
+   "board_listings": 2,
+   "listings": 2,
+   "candidates": 0,
+   "new": 0,
+   "known": 0,
+   "status": "ok",
+   "error": null,
+   "http_status": null,
+   "seconds": 5.3,
+   "requests": 6,
+   "details_fetched": 0,
+   "details_failed": 0,
+   "notes": [],
+   "samples": [],
+   "sample_listings": [
+    {
+     "title": "Pediatric Epileptologist",
+     "url": "https://jobs-kennedykrieger.icims.com/jobs/22328/pediatric-epileptologist/job",
+     "posted_at": null,
+     "location": "707 Hospital and Research Labs"
+    },
+    {
+     "title": "Licensed Clinical Social Worker (LCSW-C) The Infant Neurodevelopment Center",
+     "url": "https://jobs-kennedykrieger.icims.com/jobs/23238/licensed-clinical-social-worker-%28lcsw-c%29-the-infant-neurodevelopment-center/job",
+     "posted_at": null,
+     "location": "Fairmount Outpatient Programs"
+    }
+   ]
+  },
+  {
+   "slug": "hampstead-hospital-hampstead",
+   "name": "Hampstead Hospital",
+   "platform": "icims",
+   "adapter": "icims",
+   "method": "requests",
+   "board": "icims|providers-dartmouth-hitchcock.icims.com|",
+   "board_hospitals": 1,
+   "board_listings": 109,
+   "listings": 109,
+   "candidates": 1,
+   "new": 1,
+   "known": 0,
+   "status": "ok",
+   "error": null,
+   "http_status": null,
+   "seconds": 11.9,
+   "requests": 11,
+   "details_fetched": 0,
+   "details_failed": 0,
+   "notes": [],
+   "samples": [
+    {
+     "title": "Orthopaedic Advanced Practice Provider - Adult/Pediatrics",
+     "url": "https://providers-dartmouth-hitchcock.icims.com/jobs/39051/orthopaedic-advanced-practice-provider---adult-pediatrics/job",
+     "posted_at": "2026-09-30",
+     "relevance": 2,
+     "setting": "peds_specialty_outpatient"
+    }
+   ],
+   "sample_listings": [
+    {
+     "title": "Orthopedic NP or PA",
+     "url": "https://providers-dartmouth-hitchcock.icims.com/jobs/42639/orthopedic-np-or-pa/job",
+     "posted_at": "2026-10-14",
+     "location": "US-NH-Keene"
+    },
+    {
+     "title": "Neurosurgery Advanced Practice Provider - Inpatient",
+     "url": "https://providers-dartmouth-hitchcock.icims.com/jobs/42294/neurosurgery-advanced-practice-provider---inpatient/job",
+     "posted_at": "2026-10-15",
+     "location": "US-NH-Lebanon"
+    },
+    {
+     "title": "Surgical Oncology Advanced Practice Provider - Inpatient/OR First-Assist",
+     "url": "https://providers-dartmouth-hitchcock.icims.com/jobs/42141/surgical-oncology-advanced-practice-provider---inpatient-or-first-assist/job",
+     "posted_at": "2026-10-14",
+     "location": "US-NH-Lebanon"
+    }
+   ]
+  },
+  {
+   "slug": "bayhealth-kent-campus-dover",
+   "name": "Bayhealth Hospital, Kent Campus",
+   "platform": "infor",
+   "adapter": "infor",
+   "method": "api",
+   "board": "infor|css-bayhealth-prd.inforcloudsuite.com|",
+   "board_hospitals": 1,
+   "board_listings": 15,
+   "listings": 15,
+   "candidates": 0,
+   "new": 0,
+   "known": 0,
+   "status": "ok",
+   "error": null,
+   "http_status": null,
+   "seconds": 4.8,
+   "requests": 4,
+   "details_fetched": 0,
+   "details_failed": 0,
+   "notes": [
+    "infor: 4 page(s), 397 postings on the board, 15 advanced practice titles"
+   ],
+   "samples": [],
+   "sample_listings": [
+    {
+     "title": "Physician Assistant, Specialty",
+     "url": "https://css-bayhealth-prd.inforcloudsuite.com/hcm/Jobs/form/JobPosting%5BJobPostingSet%5D%2810%2C17022%2C1%29.JobPostingDisplay?pagesize=1&navigation=JobPosting%5BJobPostingSet%5D%2810%2C17022%2C1%29.JobPostingDisplayNav&csk.JobBoard=EXTERNAL&csk.HROrganization=10",
+     "posted_at": "2026-09-16",
+     "location": "Dover, DE"
+    },
+    {
+     "title": "Physician Assistant, Specialty",
+     "url": "https://css-bayhealth-prd.inforcloudsuite.com/hcm/Jobs/form/JobPosting%5BJobPostingSet%5D%2810%2C16400%2C1%29.JobPostingDisplay?pagesize=1&navigation=JobPosting%5BJobPostingSet%5D%2810%2C16400%2C1%29.JobPostingDisplayNav&csk.JobBoard=EXTERNAL&csk.HROrganization=10",
+     "posted_at": "2026-09-16",
+     "location": "Dover, DE"
+    },
+    {
+     "title": "Nurse Practitioner, Specialty - Urology",
+     "url": "https://css-bayhealth-prd.inforcloudsuite.com/hcm/Jobs/form/JobPosting%5BJobPostingSet%5D%2810%2C16717%2C1%29.JobPostingDisplay?pagesize=1&navigation=JobPosting%5BJobPostingSet%5D%2810%2C16717%2C1%29.JobPostingDisplayNav&csk.JobBoard=EXTERNAL&csk.HROrganization=10",
+     "posted_at": "2026-09-01",
+     "location": "Milford, DE"
+    }
+   ]
+  },
+  {
+   "slug": "middlesex-hospital-middletown",
+   "name": "Middlesex Hospital",
+   "platform": "infor",
+   "adapter": "infor",
+   "method": "api",
+   "board": "infor|css-middlesex-prd.inforcloudsuite.com|",
+   "board_hospitals": 1,
+   "board_listings": 7,
+   "listings": 7,
+   "candidates": 1,
+   "new": 1,
+   "known": 0,
+   "status": "ok",
+   "error": null,
+   "http_status": null,
+   "seconds": 2.8,
+   "requests": 3,
+   "details_fetched": 0,
+   "details_failed": 0,
+   "notes": [
+    "infor: 3 page(s), 284 postings on the board, 7 advanced practice titles"
+   ],
+   "samples": [
+    {
+     "title": "Neonatal APP - APRN or PA-C",
+     "url": "https://css-middlesex-prd.inforcloudsuite.com/hcm/Jobs/form/JobPosting%5BJobPostingSet%5D%281%2C4827%2C2%29.JobPostingDisplay?pagesize=1&navigation=JobPosting%5BJobPostingSet%5D%281%2C4827%2C2%29.JobPostingDisplayNav&csk.JobBoard=EXTERNAL&csk.HROrganization=1",
+     "posted_at": "2026-05-26",
+     "relevance": 3,
+     "setting": "nicu"
+    }
+   ],
+   "sample_listings": [
+    {
+     "title": "APRN",
+     "url": "https://css-middlesex-prd.inforcloudsuite.com/hcm/Jobs/form/JobPosting%5BJobPostingSet%5D%281%2C5617%2C1%29.JobPostingDisplay?pagesize=1&navigation=JobPosting%5BJobPostingSet%5D%281%2C5617%2C1%29.JobPostingDisplayNav&csk.JobBoard=EXTERNAL&csk.HROrganization=1",
+     "posted_at": "2026-09-23",
+     "location": "250 Flat Rock Place. Westbrook, CT"
+    },
+    {
+     "title": "Nurse Practitioner/Physician Assistant - Critical Care Unit",
+     "url": "https://css-middlesex-prd.inforcloudsuite.com/hcm/Jobs/form/JobPosting%5BJobPostingSet%5D%281%2C5630%2C1%29.JobPostingDisplay?pagesize=1&navigation=JobPosting%5BJobPostingSet%5D%281%2C5630%2C1%29.JobPostingDisplayNav&csk.JobBoard=EXTERNAL&csk.HROrganization=1",
+     "posted_at": "2026-09-15",
+     "location": "28 Crescent St. Middletown, CT"
+    },
+    {
+     "title": "Psychiatric APRN",
+     "url": "https://css-middlesex-prd.inforcloudsuite.com/hcm/Jobs/form/JobPosting%5BJobPostingSet%5D%281%2C5495%2C1%29.JobPostingDisplay?pagesize=1&navigation=JobPosting%5BJobPostingSet%5D%281%2C5495%2C1%29.JobPostingDisplayNav&csk.JobBoard=EXTERNAL&csk.HROrganization=1",
+     "posted_at": "2026-09-11",
+     "location": "1 MacDonough Place. Middletown, CT"
+    }
+   ]
+  },
+  {
+   "slug": "penn-highlands-dubois-dubois",
+   "name": "Penn Highlands DuBois",
+   "platform": "infor",
+   "adapter": "infor",
+   "method": "api",
+   "board": "infor|css-phhealthcare-prd.inforcloudsuite.com|",
+   "board_hospitals": 1,
+   "board_listings": 19,
+   "listings": 19,
+   "candidates": 0,
+   "new": 0,
+   "known": 0,
+   "status": "ok",
+   "error": null,
+   "http_status": null,
+   "seconds": 5.2,
+   "requests": 6,
+   "details_fetched": 0,
+   "details_failed": 0,
+   "notes": [
+    "infor: 6 page(s), 502 postings on the board, 19 advanced practice titles"
+   ],
+   "samples": [],
+   "sample_listings": [
+    {
+     "title": "Advanced Practice Provider (CRNP, PA-C) - General Surgery",
+     "url": "https://css-phhealthcare-prd.inforcloudsuite.com/hcm/Jobs/form/JobPosting%5BJobPostingSet%5D%281%2C20243%2C2%29.JobPostingDisplay?pagesize=1&navigation=JobPosting%5BJobPostingSet%5D%281%2C20243%2C2%29.JobPostingDisplayNav&csk.JobBoard=EXTERNAL&csk.HROrganization=1",
+     "posted_at": "2026-10-19",
+     "location": "DuBois, PA"
+    },
+    {
+     "title": "Advanced Practice Provider (CRNP, PA-C) - Emergency Medicine",
+     "url": "https://css-phhealthcare-prd.inforcloudsuite.com/hcm/Jobs/form/JobPosting%5BJobPostingSet%5D%281%2C20178%2C2%29.JobPostingDisplay?pagesize=1&navigation=JobPosting%5BJobPostingSet%5D%281%2C20178%2C2%29.JobPostingDisplayNav&csk.JobBoard=EXTERNAL&csk.HROrganization=1",
+     "posted_at": "2026-10-08",
+     "location": "Monongahela, PA"
+    },
+    {
+     "title": "Advanced Practice Provider (CRNP, PA-C) - Oncology",
+     "url": "https://css-phhealthcare-prd.inforcloudsuite.com/hcm/Jobs/form/JobPosting%5BJobPostingSet%5D%281%2C18820%2C2%29.JobPostingDisplay?pagesize=1&navigation=JobPosting%5BJobPostingSet%5D%281%2C18820%2C2%29.JobPostingDisplayNav&csk.JobBoard=EXTERNAL&csk.HROrganization=1",
+     "posted_at": "2026-09-23",
+     "location": "Monongahela, PA"
+    }
+   ]
+  },
+  {
+   "slug": "good-samaritan-university-hospital-west-islip",
+   "name": "Good Samaritan University Hospital",
+   "platform": "jibe",
+   "adapter": "jibe",
+   "method": "api",
+   "board": "jibe|jobs.chsli.org|",
+   "board_hospitals": 6,
+   "board_listings": 375,
+   "listings": 138,
+   "candidates": 0,
+   "new": 0,
+   "known": 0,
+   "status": "ok",
+   "error": null,
+   "http_status": null,
+   "seconds": 11.1,
+   "requests": 11,
+   "details_fetched": 0,
+   "details_failed": 0,
+   "notes": [],
+   "samples": [],
+   "sample_listings": [
+    {
+     "title": "NP or PA - House Coverage",
+     "url": "https://jobs.chsli.org/jobs/75344",
+     "posted_at": "2026-10-16",
+     "location": "West Islip, New York"
+    },
+    {
+     "title": "PA or NP - Cardiology Inpatient",
+     "url": "https://jobs.chsli.org/jobs/73703",
+     "posted_at": "2026-08-31",
+     "location": "West Islip, New York"
+    },
+    {
+     "title": "Advanced Practice Provider",
+     "url": "https://jobs.chsli.org/jobs/73310",
+     "posted_at": "2026-09-17",
+     "location": "Port Jefferson, New York"
+    }
+   ]
+  },
+  {
+   "slug": "mercy-hospital-rockville-centre",
+   "name": "Mercy Hospital",
+   "platform": "jibe",
+   "adapter": "jibe",
+   "method": "api",
+   "board": "jibe|jobs.chsli.org|",
+   "board_hospitals": 6,
+   "board_listings": 375,
+   "listings": 72,
+   "candidates": 5,
+   "new": 0,
+   "known": 5,
+   "status": "ok",
+   "error": null,
+   "http_status": null,
+   "seconds": 11.1,
+   "requests": 11,
+   "details_fetched": 0,
+   "details_failed": 0,
+   "notes": [],
+   "samples": [
+    {
+     "title": "Advanced Practice Provider",
+     "url": "https://jobs.chsli.org/jobs/74490",
+     "posted_at": "2026-09-23",
+     "relevance": 2,
+     "setting": "unspecified",
+     "known": true
+    },
+    {
+     "title": "Advanced Practice Provider-PD",
+     "url": "https://jobs.chsli.org/jobs/59684",
+     "posted_at": "2025-04-15",
+     "relevance": 2,
+     "setting": "unspecified",
+     "known": true
+    },
+    {
+     "title": "Advanced Practice Provider-PD",
+     "url": "https://jobs.chsli.org/jobs/75371",
+     "posted_at": "2026-10-20",
+     "relevance": 2,
+     "setting": "unspecified",
+     "known": true
+    }
+   ],
+   "sample_listings": [
+    {
+     "title": "NP or PA - House Coverage",
+     "url": "https://jobs.chsli.org/jobs/75344",
+     "posted_at": "2026-10-16",
+     "location": "West Islip, New York"
+    },
+    {
+     "title": "PA or NP - Cardiology Inpatient",
+     "url": "https://jobs.chsli.org/jobs/73703",
+     "posted_at": "2026-08-31",
+     "location": "West Islip, New York"
+    },
+    {
+     "title": "Advanced Practice Provider",
+     "url": "https://jobs.chsli.org/jobs/73310",
+     "posted_at": "2026-09-17",
+     "location": "Port Jefferson, New York"
+    }
+   ]
+  },
+  {
+   "slug": "st-catherine-of-siena-smithtown",
+   "name": "St. Catherine of Siena Hospital",
+   "platform": "jibe",
+   "adapter": "jibe",
+   "method": "api",
+   "board": "jibe|jobs.chsli.org|",
+   "board_hospitals": 6,
+   "board_listings": 375,
+   "listings": 93,
+   "candidates": 0,
+   "new": 0,
+   "known": 0,
+   "status": "ok",
+   "error": null,
+   "http_status": null,
+   "seconds": 11.1,
+   "requests": 11,
+   "details_fetched": 0,
+   "details_failed": 0,
+   "notes": [],
+   "samples": [],
+   "sample_listings": [
+    {
+     "title": "NP or PA - House Coverage",
+     "url": "https://jobs.chsli.org/jobs/75344",
+     "posted_at": "2026-10-16",
+     "location": "West Islip, New York"
+    },
+    {
+     "title": "PA or NP - Cardiology Inpatient",
+     "url": "https://jobs.chsli.org/jobs/73703",
+     "posted_at": "2026-08-31",
+     "location": "West Islip, New York"
+    },
+    {
+     "title": "Advanced Practice Provider",
+     "url": "https://jobs.chsli.org/jobs/73310",
+     "posted_at": "2026-09-17",
+     "location": "Port Jefferson, New York"
+    }
+   ]
+  },
+  {
+   "slug": "st-charles-hospital-port-jefferson",
+   "name": "St. Charles Hospital",
+   "platform": "jibe",
+   "adapter": "jibe",
+   "method": "api",
+   "board": "jibe|jobs.chsli.org|",
+   "board_hospitals": 6,
+   "board_listings": 375,
+   "listings": 24,
+   "candidates": 2,
+   "new": 0,
+   "known": 2,
+   "status": "ok",
+   "error": null,
+   "http_status": null,
+   "seconds": 11.1,
+   "requests": 11,
+   "details_fetched": 0,
+   "details_failed": 0,
+   "notes": [],
+   "samples": [
+    {
+     "title": "Advanced Practice Provider",
+     "url": "https://jobs.chsli.org/jobs/73310",
+     "posted_at": "2026-09-17",
+     "relevance": 2,
+     "setting": "peds_ed",
+     "known": true
+    },
+    {
+     "title": "Advanced Practice Provider-School Based",
+     "url": "https://jobs.chsli.org/jobs/74747",
+     "posted_at": "2026-09-17",
+     "relevance": 2,
+     "setting": "peds_primary_care",
+     "known": true
+    }
+   ],
+   "sample_listings": [
+    {
+     "title": "NP or PA - House Coverage",
+     "url": "https://jobs.chsli.org/jobs/75344",
+     "posted_at": "2026-10-16",
+     "location": "West Islip, New York"
+    },
+    {
+     "title": "PA or NP - Cardiology Inpatient",
+     "url": "https://jobs.chsli.org/jobs/73703",
+     "posted_at": "2026-08-31",
+     "location": "West Islip, New York"
+    },
+    {
+     "title": "Advanced Practice Provider",
+     "url": "https://jobs.chsli.org/jobs/73310",
+     "posted_at": "2026-09-17",
+     "location": "Port Jefferson, New York"
+    }
+   ]
+  },
+  {
+   "slug": "st-francis-hospital-roslyn",
+   "name": "St. Francis Hospital and Heart Center",
+   "platform": "jibe",
+   "adapter": "jibe",
+   "method": "api",
+   "board": "jibe|jobs.chsli.org|",
+   "board_hospitals": 6,
+   "board_listings": 375,
+   "listings": 29,
+   "candidates": 8,
+   "new": 0,
+   "known": 8,
+   "status": "ok",
+   "error": null,
+   "http_status": null,
+   "seconds": 11.1,
+   "requests": 11,
+   "details_fetched": 0,
+   "details_failed": 0,
+   "notes": [],
+   "samples": [
+    {
+     "title": "PA or NP - Critical Care",
+     "url": "https://jobs.chsli.org/jobs/75066",
+     "posted_at": "2026-10-13",
+     "relevance": 2,
+     "setting": "picu",
+     "known": true
+    },
+    {
+     "title": "APP - NP -  Floor Coverage only or PA - OR and Floor",
+     "url": "https://jobs.chsli.org/jobs/73789",
+     "posted_at": "2026-08-24",
+     "relevance": 2,
+     "setting": "peds_inpatient",
+     "known": true
+    },
+    {
+     "title": "Physician Assistant - General Surgery",
+     "url": "https://jobs.chsli.org/jobs/74075",
+     "posted_at": "2026-10-20",
+     "relevance": 2,
+     "setting": "peds_specialty_outpatient",
+     "known": true
+    }
+   ],
+   "sample_listings": [
+    {
+     "title": "NP or PA - House Coverage",
+     "url": "https://jobs.chsli.org/jobs/75344",
+     "posted_at": "2026-10-16",
+     "location": "West Islip, New York"
+    },
+    {
+     "title": "PA or NP - Cardiology Inpatient",
+     "url": "https://jobs.chsli.org/jobs/73703",
+     "posted_at": "2026-08-31",
+     "location": "West Islip, New York"
+    },
+    {
+     "title": "Advanced Practice Provider",
+     "url": "https://jobs.chsli.org/jobs/73310",
+     "posted_at": "2026-09-17",
+     "location": "Port Jefferson, New York"
+    }
+   ]
+  },
+  {
+   "slug": "st-joseph-hospital-bethpage",
+   "name": "St. Joseph Hospital",
+   "platform": "jibe",
+   "adapter": "jibe",
+   "method": "api",
+   "board": "jibe|jobs.chsli.org|",
+   "board_hospitals": 6,
+   "board_listings": 375,
+   "listings": 19,
+   "candidates": 0,
+   "new": 0,
+   "known": 0,
+   "status": "ok",
+   "error": null,
+   "http_status": null,
+   "seconds": 11.1,
+   "requests": 11,
+   "details_fetched": 0,
+   "details_failed": 0,
+   "notes": [],
+   "samples": [],
+   "sample_listings": [
+    {
+     "title": "NP or PA - House Coverage",
+     "url": "https://jobs.chsli.org/jobs/75344",
+     "posted_at": "2026-10-16",
+     "location": "West Islip, New York"
+    },
+    {
+     "title": "PA or NP - Cardiology Inpatient",
+     "url": "https://jobs.chsli.org/jobs/73703",
+     "posted_at": "2026-08-31",
+     "location": "West Islip, New York"
+    },
+    {
+     "title": "Advanced Practice Provider",
+     "url": "https://jobs.chsli.org/jobs/73310",
+     "posted_at": "2026-09-17",
+     "location": "Port Jefferson, New York"
+    }
+   ]
+  },
+  {
+   "slug": "uconn-john-dempsey-farmington",
+   "name": "UConn John Dempsey Hospital",
+   "platform": "oracle_cloud",
+   "adapter": "oracle_cloud",
+   "method": "api",
+   "board": "oracle_cloud|icjdjb.fa.ocs.oraclecloud.com|cx_1",
+   "board_hospitals": 2,
+   "board_listings": 76,
+   "listings": 15,
+   "candidates": 0,
+   "new": 0,
+   "known": 0,
+   "status": "ok",
+   "error": null,
+   "http_status": null,
+   "seconds": 7.4,
+   "requests": 8,
+   "details_fetched": 0,
+   "details_failed": 0,
+   "notes": [],
+   "samples": [],
+   "sample_listings": [
+    {
+     "title": "Nurse Practitioner Opportunity in Connecticut - 1986",
+     "url": "https://icjdjb.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/327",
+     "posted_at": "2026-10-12",
+     "location": "Waterbury, CT, United States"
+    },
+    {
+     "title": "Nurse Practitioner and/or Physician Assistant NICU Opportunity, Waterbury - 1915",
+     "url": "https://icjdjb.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/325",
+     "posted_at": "2026-10-12",
+     "location": "Waterbury, CT, United States"
+    },
+    {
+     "title": "Exciting Urology APRN/NP Opportunity in Connecticut - 1402",
+     "url": "https://icjdjb.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/339",
+     "posted_at": "2026-10-12",
+     "location": "Waterbury, CT, United States"
+    }
+   ]
+  },
+  {
+   "slug": "waterbury-hospital-waterbury",
+   "name": "Waterbury Hospital",
+   "platform": "oracle_cloud",
+   "adapter": "oracle_cloud",
+   "method": "api",
+   "board": "oracle_cloud|icjdjb.fa.ocs.oraclecloud.com|cx_1",
+   "board_hospitals": 2,
+   "board_listings": 76,
+   "listings": 61,
+   "candidates": 1,
+   "new": 1,
+   "known": 0,
+   "status": "ok",
+   "error": null,
+   "http_status": null,
+   "seconds": 7.4,
+   "requests": 8,
+   "details_fetched": 0,
+   "details_failed": 0,
+   "notes": [],
+   "samples": [
+    {
+     "title": "Nurse Practitioner and/or Physician Assistant NICU Opportunity, Waterbury - 1915",
+     "url": "https://icjdjb.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/325",
+     "posted_at": "2026-10-12",
+     "relevance": 3,
+     "setting": "nicu"
+    }
+   ],
+   "sample_listings": [
+    {
+     "title": "Nurse Practitioner Opportunity in Connecticut - 1986",
+     "url": "https://icjdjb.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/327",
+     "posted_at": "2026-10-12",
+     "location": "Waterbury, CT, United States"
+    },
+    {
+     "title": "Nurse Practitioner and/or Physician Assistant NICU Opportunity, Waterbury - 1915",
+     "url": "https://icjdjb.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/325",
+     "posted_at": "2026-10-12",
+     "location": "Waterbury, CT, United States"
+    },
+    {
+     "title": "Exciting Urology APRN/NP Opportunity in Connecticut - 1402",
+     "url": "https://icjdjb.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/339",
+     "posted_at": "2026-10-12",
+     "location": "Waterbury, CT, United States"
+    }
+   ]
+  },
+  {
+   "slug": "saint-vincent-hospital-worcester",
+   "name": "Saint Vincent Hospital",
+   "platform": "oracle_cloud",
+   "adapter": "oracle_cloud",
+   "method": "api",
+   "board": "oracle_cloud|jobs.tenethealth.com|",
+   "board_hospitals": 1,
+   "board_listings": 721,
+   "listings": 41,
+   "candidates": 0,
+   "new": 0,
+   "known": 0,
+   "status": "ok",
+   "error": null,
+   "http_status": null,
+   "seconds": 35.8,
+   "requests": 37,
+   "details_fetched": 0,
+   "details_failed": 0,
+   "notes": [
+    "site_number not configured; assuming CX_1",
+    "branded host jobs.tenethealth.com -> REST host eodr.fa.us2.oraclecloud.com",
+    "dropped 634 listings outside ME-SC footprint"
+   ],
+   "samples": [],
+   "sample_listings": [
+    {
+     "title": "Clinical Pharmacist",
+     "url": "https://jobs.tenethealth.com/en/sites/CX_1/job/2603026643",
+     "posted_at": "2026-10-21",
+     "location": "San Antonio, TX, United States"
+    },
+    {
+     "title": "Nurse Practitioner Full Time- Urology",
+     "url": "https://jobs.tenethealth.com/en/sites/CX_1/job/2603026679",
+     "posted_at": "2026-10-16",
+     "location": "Modesto, CA, United States"
+    },
+    {
+     "title": "Nurse Practitioner - Cardiothoracic Surgery - Palm Beach Gardens, FL",
+     "url": "https://jobs.tenethealth.com/en/sites/CX_1/job/2603025716",
+     "posted_at": "2026-10-14",
+     "location": "Palm Beach Gardens, FL, United States"
+    }
+   ]
+  },
+  {
+   "slug": "wynn-hospital-utica",
+   "name": "Wynn Hospital",
+   "platform": "successfactors",
+   "adapter": "successfactors",
+   "method": "requests",
+   "board": "successfactors|careers.mvhealthsystem.org|",
+   "board_hospitals": 1,
+   "board_listings": 26,
+   "listings": 26,
+   "candidates": 0,
+   "new": 0,
+   "known": 0,
+   "status": "ok",
+   "error": null,
+   "http_status": null,
+   "seconds": 5.3,
+   "requests": 6,
+   "details_fetched": 0,
+   "details_failed": 0,
+   "notes": [],
+   "samples": [],
+   "sample_listings": [
+    {
+     "title": "Laborist",
+     "url": "https://careers.mvhealthsystem.org/job/UTICA-Laborist-NY-13502/1291007000/",
+     "posted_at": "2026-10-18",
+     "location": "UTICA, NY, US, 13502"
+    },
+    {
+     "title": "Family Medicine NP/PA",
+     "url": "https://careers.mvhealthsystem.org/job/UTICA-Family-Medicine-NPPA-NY-13501/1421179600/",
+     "posted_at": "2026-10-16",
+     "location": "UTICA, NY, US, 13501"
+    },
+    {
+     "title": "Neuro Critical Care Overnight NP/PA",
+     "url": "https://careers.mvhealthsystem.org/job/UTICA-Neuro-Critical-Care-Overnight-NPPA-NY-13502/1401347000/",
+     "posted_at": "2026-10-12",
+     "location": "UTICA, NY, US, 13502"
+    }
+   ]
+  },
+  {
+   "slug": "st-johns-episcopal-far-rockaway",
+   "name": "St. John's Episcopal Hospital",
+   "platform": "ultipro",
+   "adapter": "ultipro",
+   "method": "api",
+   "board": "ultipro|myehs.rec.pro.ukg.net|/epi1010sjeh/jobboard/16d4fe52-3a0d-4b07-8565-5038c46b9f53",
+   "board_hospitals": 1,
+   "board_listings": 46,
+   "listings": 46,
+   "candidates": 0,
+   "new": 0,
+   "known": 0,
+   "status": "ok",
+   "error": null,
+   "http_status": null,
+   "seconds": 5.2,
+   "requests": 6,
+   "details_fetched": 0,
+   "details_failed": 0,
+   "notes": [],
+   "samples": [],
+   "sample_listings": [
+    {
+     "title": "Nursing Supervisor",
+     "url": "https://myehs.rec.pro.ukg.net/EPI1010SJEH/JobBoard/16d4fe52-3a0d-4b07-8565-5038c46b9f53/OpportunityDetail?opportunityId=3cd0e66a-a1fa-4e4f-ac9e-cb8c7520c9e4",
+     "posted_at": "2026-10-21",
+     "location": "Hospital, Far Rockaway, NY"
+    },
+    {
+     "title": "Clinical Documentation Integrity Specialist",
+     "url": "https://myehs.rec.pro.ukg.net/EPI1010SJEH/JobBoard/16d4fe52-3a0d-4b07-8565-5038c46b9f53/OpportunityDetail?opportunityId=c8935cb2-2c04-431e-998a-d69907f9e72f",
+     "posted_at": "2026-10-14",
+     "location": "Hospital, Far Rockaway, NY"
+    },
+    {
+     "title": "Registered Nurse - PT Night Shift Emergency Room",
+     "url": "https://myehs.rec.pro.ukg.net/EPI1010SJEH/JobBoard/16d4fe52-3a0d-4b07-8565-5038c46b9f53/OpportunityDetail?opportunityId=a19e3f7a-8983-4558-96cd-16064924b087",
+     "posted_at": "2026-10-09",
+     "location": "Hospital, Far Rockaway, NY"
+    }
+   ]
+  },
+  {
+   "slug": "hospital-for-special-care-new-britain",
+   "name": "Hospital for Special Care",
+   "platform": "workday",
+   "adapter": "workday",
+   "method": "api",
+   "board": "workday|hfsc.wd503.myworkdayjobs.com|careers",
+   "board_hospitals": 1,
+   "board_listings": 11,
+   "listings": 11,
+   "candidates": 1,
+   "new": 0,
+   "known": 1,
+   "status": "ok",
+   "error": null,
+   "http_status": null,
+   "seconds": 6.6,
+   "requests": 7,
+   "details_fetched": 0,
+   "details_failed": 0,
+   "notes": [],
+   "samples": [
+    {
+     "title": "Pediatric Nurse Practitioner (PNP) or Physician Assistant",
+     "url": "https://hfsc.wd503.myworkdayjobs.com/Careers/job/New-Britain-CT/Pediatric-Advanced-Practice-Provider_R26_0000000153",
+     "posted_at": "2026-09-29",
+     "relevance": 2,
+     "setting": "unspecified",
+     "known": true
+    }
+   ],
+   "sample_listings": [
+    {
+     "title": "Pediatric Nurse Practitioner (PNP) or Physician Assistant",
+     "url": "https://hfsc.wd503.myworkdayjobs.com/Careers/job/New-Britain-CT/Pediatric-Advanced-Practice-Provider_R26_0000000153",
+     "posted_at": "2026-09-29",
+     "location": "New Britain, CT"
+    },
+    {
+     "title": "Advanced Practice Provider - 32 to 40 Hours, Days - Hartford Satellite",
+     "url": "https://hfsc.wd503.myworkdayjobs.com/Careers/job/Hartford-CT/Advanced-Practice-Provider---32-to-40-Hours--Days_R26_0000000500",
+     "posted_at": "2026-09-30",
+     "location": "Hartford, CT"
+    },
+    {
+     "title": "Registered Respiratory Therapist nights and Pediatrics all shifts - Sign On Bonus!",
+     "url": "https://hfsc.wd503.myworkdayjobs.com/Careers/job/New-Britain-CT/Registered-Respiratory-Therapist-nights-and-Pediatrics-all-shifts---Sign-On-Bonus-_R26_0000001004",
+     "posted_at": "2026-10-09",
+     "location": "New Britain, CT"
+    }
+   ]
+  },
+  {
+   "slug": "roswell-park-buffalo",
+   "name": "Roswell Park Comprehensive Cancer Center",
+   "platform": "workday",
+   "adapter": "workday",
+   "method": "api",
+   "board": "workday|roswellpark.wd5.myworkdayjobs.com|externalcareers",
+   "board_hospitals": 1,
+   "board_listings": 11,
+   "listings": 11,
+   "candidates": 0,
+   "new": 0,
+   "known": 0,
+   "status": "ok",
+   "error": null,
+   "http_status": null,
+   "seconds": 6.3,
+   "requests": 7,
+   "details_fetched": 0,
+   "details_failed": 0,
+   "notes": [],
+   "samples": [],
+   "sample_listings": [
+    {
+     "title": "Head & Neck Medical Oncology APP",
+     "url": "https://roswellpark.wd5.myworkdayjobs.com/ExternalCareers/job/Roswell/Head---Neck-Medical-Oncology-APP_R-21540",
+     "posted_at": "2026-10-21",
+     "location": "2 Locations"
+    },
+    {
+     "title": "Practice Manager",
+     "url": "https://roswellpark.wd5.myworkdayjobs.com/ExternalCareers/job/Hospital/Practice-Manager_R-21088",
+     "posted_at": null,
+     "location": "Hospital"
+    },
+    {
+     "title": "Advanced Practice Provider II - ATC",
+     "url": "https://roswellpark.wd5.myworkdayjobs.com/ExternalCareers/job/Hospital/Advanced-Practice-Provider-II---ATC_R-21322",
+     "posted_at": null,
+     "location": "Hospital"
+    }
+   ]
+  }
+ ],
+ "jobs": [
+  {
+   "id": "fba12cefa588",
+   "hospital_slug": "hampstead-hospital-hampstead",
+   "title": "Orthopaedic Advanced Practice Provider - Adult/Pediatrics",
+   "url": "https://providers-dartmouth-hitchcock.icims.com/jobs/39051/orthopaedic-advanced-practice-provider---adult-pediatrics/job",
+   "apply_url": null,
+   "source": "employer",
+   "external_id": "39051",
+   "location_text": "US-NH-Lebanon",
+   "city": "Lebanon",
+   "state": "NH",
+   "department": null,
+   "setting": "peds_specialty_outpatient",
+   "employment_type": null,
+   "shift": null,
+   "schedule": null,
+   "salary_text": null,
+   "posted_at": "2026-09-30",
+   "summary": "Orthopaedic Advanced Practice Provider - Adult/Pediatrics at Hampstead Hospital. Setting: pediatric outpatient specialty.",
+   "description": "",
+   "requirements": [],
+   "relevance": 2,
+   "relevance_reason": "Pediatric APP role, pediatric outpatient specialty; 'Pediatrics' in title/unit/location.",
+   "tags": [],
+   "first_seen_at": null,
+   "last_seen_at": null,
+   "status": "active",
+   "raw_notes": "scraper icims/requests"
+  },
+  {
+   "id": "d4ddeb136a05",
+   "hospital_slug": "middlesex-hospital-middletown",
+   "title": "Neonatal APP - APRN or PA-C",
+   "url": "https://css-middlesex-prd.inforcloudsuite.com/hcm/Jobs/form/JobPosting%5BJobPostingSet%5D%281%2C4827%2C2%29.JobPostingDisplay?pagesize=1&navigation=JobPosting%5BJobPostingSet%5D%281%2C4827%2C2%29.JobPostingDisplayNav&csk.JobBoard=EXTERNAL&csk.HROrganization=1",
+   "apply_url": null,
+   "source": "employer",
+   "external_id": "4827",
+   "location_text": "28 Crescent St. Middletown, CT",
+   "city": "28 Crescent St. Middletown",
+   "state": "CT",
+   "department": null,
+   "setting": "nicu",
+   "employment_type": null,
+   "shift": null,
+   "schedule": null,
+   "salary_text": null,
+   "posted_at": "2026-05-26",
+   "summary": "Neonatal APP - APRN or PA-C at Middlesex Hospital. Setting: NICU / neonatology.",
+   "description": "",
+   "requirements": [],
+   "relevance": 3,
+   "relevance_reason": "Pediatric acute care APP role (NICU / neonatology); 'Neonatal' in title/unit/location.",
+   "tags": [],
+   "first_seen_at": null,
+   "last_seen_at": null,
+   "status": "active",
+   "raw_notes": "scraper infor/api"
+  },
+  {
+   "id": "35b73bec61da",
+   "hospital_slug": "waterbury-hospital-waterbury",
+   "title": "Nurse Practitioner and/or Physician Assistant NICU Opportunity, Waterbury - 1915",
+   "url": "https://icjdjb.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/job/325",
+   "apply_url": null,
+   "source": "employer",
+   "external_id": "325",
+   "location_text": "Waterbury, CT, United States",
+   "city": "Waterbury",
+   "state": "CT",
+   "department": null,
+   "setting": "nicu",
+   "employment_type": null,
+   "shift": null,
+   "schedule": null,
+   "salary_text": null,
+   "posted_at": "2026-10-12",
+   "summary": "Nurse Practitioner and/or Physician Assistant NICU Opportunity, Waterbury - 1915 at Waterbury Hospital. Setting: NICU / neonatology.",
+   "description": "",
+   "requirements": [],
+   "relevance": 3,
+   "relevance_reason": "Pediatric acute care APP role (NICU / neonatology); 'NICU' in title/unit/location.",
+   "tags": [],
+   "first_seen_at": null,
+   "last_seen_at": null,
+   "status": "active",
+   "raw_notes": "scraper oracle_cloud/api; attribution=name"
+  }
+ ],
+ "seen_again": [
+  "https://hfsc.wd503.myworkdayjobs.com/Careers/job/New-Britain-CT/Pediatric-Advanced-Practice-Provider_R26_0000000153",
+  "https://jobs.chsli.org/jobs/59684",
+  "https://jobs.chsli.org/jobs/61189",
+  "https://jobs.chsli.org/jobs/61190",
+  "https://jobs.chsli.org/jobs/61191",
+  "https://jobs.chsli.org/jobs/68988",
+  "https://jobs.chsli.org/jobs/69808",
+  "https://jobs.chsli.org/jobs/70058",
+  "https://jobs.chsli.org/jobs/73310",
+  "https://jobs.chsli.org/jobs/73789",
+  "https://jobs.chsli.org/jobs/74075",
+  "https://jobs.chsli.org/jobs/74490",
+  "https://jobs.chsli.org/jobs/74747",
+  "https://jobs.chsli.org/jobs/75066",
+  "https://jobs.chsli.org/jobs/75200",
+  "https://jobs.chsli.org/jobs/75371",
+  "https://providers-dartmouth-hitchcock.icims.com/jobs/17635/neonatology-advanced-practice-provider/job",
+  "https://providers-dartmouth-hitchcock.icims.com/jobs/42294/neurosurgery-advanced-practice-provider---inpatient/job"
+ ],
+ "closed": [],
+ "totals": {
+  "hospitals": 47,
+  "checked": 25,
+  "unreachable": 22,
+  "listings": 1617,
+  "candidates": 21,
+  "new_candidates": 3,
+  "seconds": 2349.5
+ },
+ "browser": "chrome-headed",
+ "ledger": "data/hospitals.json",
+ "wall_seconds": 394.3
+}
