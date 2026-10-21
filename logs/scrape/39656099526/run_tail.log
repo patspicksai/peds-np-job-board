@@ -1,0 +1,61 @@
+2026-10-21 18:49:33,434 INFO scraping 54 hospitals (43 boards), budget 5400s
+hospital                                       platform               method           board  list  cand  new   secs  status / error
+-------------------------------------------------------------------------------------------------------------------------------------------------
+auburn-community-hospital-auburn               healthcaresource       api                 42    42     2    2   44.2  ok
+bayhealth-kent-campus-dover                    infor                  api                 15    15     0    0   18.4  ok
+berkshire-medical-center-pittsfield            healthcaresource       api                 78    78     1    1   40.0  ok
+brockton-hospital-brockton                     healthcaresource       api                 43    43     0    0   17.5  ok
+bronxcare-hospital-bronx                       icims                  requests            34    34     0    0    7.3  ok
+caromont-belmont                               healthcaresource       api                 71     1     0    0   10.4  ok
+caromont-regional-gastonia                     healthcaresource       api                 71    70     2    2   10.4  ok
+chesapeake-regional-chesapeake                 ultipro                api                330   330     0    0   30.3  ok
+christiana-hospital-newark-de                  workday                api                129   119    10   10   39.4  ok
+christianacare-union-elkton                    workday                api                129    10     0    0   39.4  ok
+conway-medical-center-conway                   healthcaresource       api                 45    45     0    0    8.3  ok
+crouse-hospital-syracuse                       healthcaresource       api                 46    46     0    0   23.7  ok
+ellis-hospital-schenectady                     healthcaresource       api                117   117     0    0   33.6  ok
+emerson-hospital-concord                       healthcaresource       api                 70    70     0    0   46.0  ok
+erie-county-medical-center-buffalo             ultipro                api                115   115     0    0    9.4  ok
+flushing-hospital-queens                       generic                playwright           7     6     0    0  119.7  ok
+frederick-health-hospital-frederick            ultipro                api                180   180     0    0   30.6  ok
+good-samaritan-university-hospital-west-islip  jibe                   api                376   139     0    0   49.1  ok
+granville-medical-center-oxford                healthcaresource       api                 61    61     5    5   10.4  ok
+guthrie-robert-packer-hospital-sayre           oracle_cloud           api                254   173     0    0   14.3  ok
+hampstead-hospital-hampstead                   icims                  requests           109   109     1    1   59.2  ok
+hoboken-university-medical-center-hoboken      icims                  requests            17    17     0    0   11.4  ok
+hospital-for-special-care-new-britain          workday                api                 11    11     1    0    7.3  ok
+hospital-for-special-surgery-manhattan         workday                api                 50    50     1    1   11.5  ok
+jamaica-hospital-queens                        generic                playwright           7     1     0    0  119.7  ok
+kennedy-krieger-baltimore                      icims                  requests             2     2     0    0    5.3  ok
+kidspeace-orefield                             healthcaresource       api                 11    11     2    2   10.6  ok
+lawrence-hospital-lawrence                     healthcaresource       api                149   149     0    0   30.7  ok
+maimonides-childrens-brooklyn                  jibe                   api                 31    31     1    1   11.3  ok
+mercy-hospital-rockville-centre                jibe                   api                376    72     5    0   49.1  ok
+meritus-medical-center-hagerstown              ultipro                api                263   263     0    0   58.2  ok
+middlesex-hospital-middletown                  infor                  api                  7     7     1    1    9.4  ok
+penn-highlands-dubois-dubois                   infor                  api                 19    19     0    0   24.3  ok
+rochester-general-hospital-rochester           workday                api                142   128     2    2   57.6  ok
+roswell-park-buffalo                           workday                api                 11    11     0    0   11.9  ok
+rutland-regional-rutland                       healthcaresource       api                 28    28     0    0   10.0  ok
+saint-clares-denville                          icims                  requests           134    51     0    0   35.1  ok
+saint-vincent-hospital-worcester               oracle_cloud           api                719    42     0    0   42.5  ok
+st-catherine-of-siena-smithtown                jibe                   api                376    93     0    0   49.1  ok
+st-charles-hospital-port-jefferson             jibe                   api                376    24     2    0   49.1  ok
+st-francis-hospital-roslyn                     jibe                   api                376    29     9    1   49.1  ok
+st-johns-episcopal-far-rockaway                ultipro                api                 46    46     0    0    5.2  ok
+st-johns-riverside-yonkers                     icims                  requests             5     5     0    0    6.1  ok
+st-joseph-hospital-bethpage                    jibe                   api                376    19     0    0   49.1  ok
+temple-university-hospital-philadelphia        generic->icims         requests             2     2     0    0    7.6  ok
+uconn-john-dempsey-farmington                  oracle_cloud           api                 75    15     0    0   13.4  ok
+ummc-batavia                                   workday                api                142     2     0    0   57.6  ok
+unity-hospital-rochester                       workday                api                142    12     1    1   57.6  ok
+upstate-golisano-childrens-syracuse            generic                requests            34    34     3    3   42.9  ok
+waterbury-hospital-waterbury                   oracle_cloud           api                 75    60     1    1   13.4  ok
+wellspan-york-hospital-york                    generic                playwright          62    62     4    0  224.7  ok
+wyckoff-heights-medical-center-brooklyn        generic                playwright           4     4     2    2   35.5  ok
+wynn-hospital-utica                            successfactors         requests            26    26     0    0   14.3  ok
+englewood-hospital-englewood                   successfactors         requests             0     0     0    0   44.7  zero_results: board reachable but returned 0 listings for every keyword (check search URL / adapter)
+-------------------------------------------------------------------------------------------------------------------------------------------------
+hospitals=54 ok=53 not_ok=1 board_listings=3970 candidates=58 new_candidates=36
+wrote /home/runner/work/peds-np-job-board/peds-np-job-board/data/runs/2026-10-21_1853.json
+exit=0
