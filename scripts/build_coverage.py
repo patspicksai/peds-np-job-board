@@ -58,6 +58,7 @@ def main():
     ap.add_argument("run_file", nargs="?")
     ap.add_argument("--out", default=str(ROOT / "data" / "coverage.json"))
     ap.add_argument("--ledger", default=str(ROOT / "data" / "hospitals.json"))
+    ap.add_argument("--prev", default="", help="previous coverage.json to carry streaks from (default: the --out file)")
     a = ap.parse_args()
 
     run_file = a.run_file
@@ -71,9 +72,10 @@ def main():
     ledger = {h["slug"]: h for h in json.loads(Path(a.ledger).read_text()).get("hospitals", [])}
     prev = {}
     out_path = Path(a.out)
-    if out_path.exists():
+    prev_path = Path(a.prev) if a.prev else out_path
+    if prev_path.exists():
         try:
-            prev = {r["slug"]: r for r in json.loads(out_path.read_text()).get("hospitals", [])}
+            prev = {r["slug"]: r for r in json.loads(prev_path.read_text()).get("hospitals", [])}
         except Exception:  # noqa: BLE001
             prev = {}
 
