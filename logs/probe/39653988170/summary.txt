@@ -1,0 +1,26 @@
+[req] hcs_job_a 404 () final=https://pm.healthcaresource.com/JobseekerSearchAPI/caromont/api/Job/8023_31484 bytes=170 ct=application/xml; charset=utf-8 t=0.2s
+      sigs={"healthcaresource": ["healthcaresource.com/JobseekerSearchAPI/caromont/api/Job/8023_31484"]}
+      title='' anchors=0 iframes=[]
+[req] hcs_job_b 404 () final=https://pm.healthcaresource.com/JobseekerSearchAPI/caromont/api/Jobs/8023_31484 bytes=171 ct=application/xml; charset=utf-8 t=0.1s
+      sigs={"healthcaresource": ["healthcaresource.com/JobseekerSearchAPI/caromont/api/Jobs/8023_31484"]}
+      title='' anchors=0 iframes=[]
+[req] hcs_job_c 404 () final=https://pm.healthcaresource.com/JobseekerSearchAPI/caromont/api/Search/8023_31484 bytes=173 ct=application/xml; charset=utf-8 t=0.1s
+      sigs={"healthcaresource": ["healthcaresource.com/JobseekerSearchAPI/caromont/api/Search/8023_31484"]}
+      title='' anchors=0 iframes=[]
+[req] hcs_job_d 404 () final=https://pm.healthcaresource.com/cs/caromont/api/job/8023_31484 bytes=1943 ct=text/html; charset=utf-8 t=0.0s
+      sigs={}
+      title='The resource cannot be found.' anchors=0 iframes=[]
+[req] hcs_src_search 200 () final=https://pm.healthcaresource.com/JobseekerSearchAPI/caromont/api/Search?size=2 bytes=1962 ct=application/json; charset=utf-8 t=0.2s
+      sigs={}
+      title='' anchors=0 iframes=[]
+[req] hcs_term_search 500 () final=https://pm.healthcaresource.com/JobseekerSearchAPI/caromont/api/Search?size=1 bytes=123 ct=application/json; charset=utf-8 t=0.1s
+      sigs={}
+      title='' anchors=0 iframes=[]
+== mode req done in 5s
+[chrome] hcs_page 200 final=https://pm.healthcaresource.com/cs/caromont/#/job/8023_31484 bytes=59447 title='CaroMont Health - Job Search' t=5.1s
+      frames=['https://pm.healthcaresource.com/cs/caromont/#/job/8023_31484']
+      sigs={"healthcaresource": ["healthcaresource.com/CS/Content/images/favicon.ico", "healthcaresource.com/CS/Content/css/bootstrap-notifications.min.css?v=1.0.9715.15380", "healthcaresource.com/CS/Content/css/bootplus.css?v=1.0.9715.15380", "healthcaresource.com/CS/Content/css/site.css?v=1.0.9715.15380", "healthcaresource.com/CS/build/styles.bundle.css?v=1.0.9715.15380"]}
+      title='CaroMont Health - Job Search' anchors=5 iframes=[]
+      ats_links=["'New Search' https://pm.healthcaresource.com/cs/caromont/#/job/8023_31484", "'Back to Results' https://pm.healthcaresource.com/cs/caromont/#/job/8023_31484", "'Help' https://pm.healthcaresource.com/cs/caromont/#/job/8023_31484", "'Sign In' https://pm.healthcaresource.com/cs/caromont/#/job/8023_31484"]
+      xhr=["200 https://pm.healthcaresource.com/JobseekerServicesAPI/Site/caromont/api/GetClientInternalCareerSite (71b)", "400 https://pm.healthcaresource.com/JobseekerAPI/Site/caromont/api/v2/JobPostingV2?id=8023_31484&_=1792607726155 (146b)"]
+== mode chrome done in 7s
