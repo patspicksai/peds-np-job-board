@@ -115,12 +115,19 @@ def main():
             "careers_notes": (h.get("careers_notes") or "")[-300:],
         }
         rows.append(row)
-    # hospitals in the ledger that the run never reached (budget) keep their previous row, marked unchecked
+    # hospitals in the ledger that the run never reached keep their previous row. A partial run (--only a few
+    # slugs, or a retry) covers well under half the ledger: those rows stay exactly as they were. A full run that
+    # ran out of budget marks them unchecked so the gap is visible.
     seen = {r["slug"] for r in rows}
+    active = [slug for slug, h in ledger.items() if h.get("active", True)]
+    partial = len(rows) < 0.5 * max(1, len(active))
     for slug, h in ledger.items():
         if slug in seen or not h.get("active", True):
             continue
         p = prev.get(slug, {})
+        if partial and p:
+            rows.append(dict(p))
+            continue
         rows.append({**{k: p.get(k) for k in p}, "slug": slug, "name": h.get("name"), "region": h.get("region"),
                      "hotspot": bool(h.get("hotspot")), "health_system": h.get("health_system"),
                      "careers_platform": h.get("careers_platform"), "status": "unchecked", "class": "budget",
@@ -135,7 +142,8 @@ def main():
         "run_id": run.get("run_id"),
         "run_started_at": run.get("started_at"),
         "run_finished_at": finished,
-        "totals": run.get("totals", {}),
+        "totals": {**run.get("totals", {}), "hospitals": len(rows), "checked": sum(1 for r in rows if r["class"] == "ok"),
+                   "unreachable": sum(1 for r in rows if r["class"] != "ok"), **({"partial": True} if partial else {})},
         "by_class": by_class,
         "hotspot_not_ok": sum(1 for r in rows if r["hotspot"] and r["class"] != "ok"),
         "hospitals": rows,
