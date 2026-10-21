@@ -1,0 +1,46 @@
+## beaufort-memorial-beaufort  [generic / generic / playwright]  status=no_listings
+   ERROR: careers page reachable but no job listings recognized (generic adapter): set careers_search_url / ats_config to the real job board
+   note: generic: pages reachable but no NP/APP job links found: playwright 200 https://recruiting.myapps.paychex.com/appone/Branding/ReqTemplate/BrowseAllJobsbyCategory.asp?Type=REQ&FromID=1&ClientID=12555&B_ID=91&JobCode=0&CountryID=3&LanguageID=2&servervar=beaufortmemorialhospital.appone.com; playwright 2
+   (no candidate jobs)
+
+## hospital-for-special-surgery-manhattan  [generic->workday / workday / api]  status=ok
+   note: sniff: page links to Workday hss.wd1 site HSS_Careers
+   * [2/unspecified] Pediatric Ortho APP – Dr. Emily Dodwell | posted None | https://hss.wd1.myworkdayjobs.com/HSS_Careers/job/New-York-NY/Pediatric-Ortho-APP---Dr-Emily-Dodwell_JR2026-106071-1
+   first board listings: Advanced Practice Provider NP/PA (Per-Diem) (New York, NY) || Physician Assistant Florida (2 Locations) || Pediatric Ortho APP – Dr. Emily Dodwell (New York, NY)
+
+## howard-university-hospital-washington  [generic / generic / playwright]  status=no_listings
+   ERROR: careers page reachable but no job listings recognized (generic adapter): set careers_search_url / ats_config to the real job board
+   note: sniff: HTTP 404 for https://huhealthcarecareers.com/about-huh.html#content: <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN"> <html><head> <title>404 Not Found</title> </head><body> <h1>Not Found</h1> <p>The requested URL was not found
+   note: generic: pages reachable but no NP/APP job links found: playwright 200 https://huhealthcarecareers.com/?q=nurse+practitioner; playwright 200 https://huhealthcarecareers.com/?keywords=nurse+practitioner; playwright 200 https://huhealthcarecareers.com/?keyword=nurse+practitioner
+   (no candidate jobs)
+
+## mount-nittany-medical-center-state-college  [icims / icims / ]  status=error
+   ERROR: AdapterError: search 'PICU': HTTP 404 for https://careers-mountnittany.icims.com/jobs/search?ss=1&searchKeyword=PICU&in_iframe=1&pr=0: <!doctype html> <html lang="en"> <head>   <title>gone: careers-mountnittany.icims.com : dc409</title> <link rel="icon" href="https://cdn13.icims.com/icims-brand; search 'NICU': HTTP 404 for https://careers-mountnittany.icims.com/jobs/search?ss=1&searchKeyword=NICU&in_iframe=1&pr=0: <!doctype html> <html lang="en"> <head>   <title>gone: careers-mountnittany.icims.com : dc409</t
+   note: search 'nurse practitioner': HTTP 404 for https://provider-mountnittany.icims.com/jobs/search?ss=1&searchKeyword=nurse+practitioner&in_iframe=1&pr=0: <!doctype html> <html lang="en"> <head>   <title>gone: provider-mountnittany.icims.com : dc409</title> <link rel="icon" href="https://cdn13.icims.com/
+   note: search 'pediatric nurse practitioner': HTTP 404 for https://provider-mountnittany.icims.com/jobs/search?ss=1&searchKeyword=pediatric+nurse+practitioner&in_iframe=1&pr=0: <!doctype html> <html lang="en"> <head>   <title>gone: provider-mountnittany.icims.com : dc409</title> <link rel="icon" href="http
+   note: search 'advanced practice provider': HTTP 404 for https://provider-mountnittany.icims.com/jobs/search?ss=1&searchKeyword=advanced+practice+provider&in_iframe=1&pr=0: <!doctype html> <html lang="en"> <head>   <title>gone: provider-mountnittany.icims.com : dc409</title> <link rel="icon" href="https://
+   note: search 'APRN': HTTP 404 for https://provider-mountnittany.icims.com/jobs/search?ss=1&searchKeyword=APRN&in_iframe=1&pr=0: <!doctype html> <html lang="en"> <head>   <title>gone: provider-mountnittany.icims.com : dc409</title> <link rel="icon" href="https://cdn13.icims.com/icims-bran
+   note: search 'PICU': HTTP 404 for https://provider-mountnittany.icims.com/jobs/search?ss=1&searchKeyword=PICU&in_iframe=1&pr=0: <!doctype html> <html lang="en"> <head>   <title>gone: provider-mountnittany.icims.com : dc409</title> <link rel="icon" href="https://cdn13.icims.com/icims-bran
+   note: search 'NICU': HTTP 404 for https://provider-mountnittany.icims.com/jobs/search?ss=1&searchKeyword=NICU&in_iframe=1&pr=0: <!doctype html> <html lang="en"> <head>   <title>gone: provider-mountnittany.icims.com : dc409</title> <link rel="icon" href="https://cdn13.icims.com/icims-bran
+   note: search 'nurse practitioner': HTTP 404 for https://careers-mountnittany.icims.com/jobs/search?ss=1&searchKeyword=nurse+practitioner&in_iframe=1&pr=0: <!doctype html> <html lang="en"> <head>   <title>gone: careers-mountnittany.icims.com : dc409</title> <link rel="icon" href="https://cdn13.icims.com/ic
+   note: search 'pediatric nurse practitioner': HTTP 404 for https://careers-mountnittany.icims.com/jobs/search?ss=1&searchKeyword=pediatric+nurse+practitioner&in_iframe=1&pr=0: <!doctype html> <html lang="en"> <head>   <title>gone: careers-mountnittany.icims.com : dc409</title> <link rel="icon" href="https:
+   note: search 'advanced practice provider': HTTP 404 for https://careers-mountnittany.icims.com/jobs/search?ss=1&searchKeyword=advanced+practice+provider&in_iframe=1&pr=0: <!doctype html> <html lang="en"> <head>   <title>gone: careers-mountnittany.icims.com : dc409</title> <link rel="icon" href="https://cd
+   note: search 'APRN': HTTP 404 for https://careers-mountnittany.icims.com/jobs/search?ss=1&searchKeyword=APRN&in_iframe=1&pr=0: <!doctype html> <html lang="en"> <head>   <title>gone: careers-mountnittany.icims.com : dc409</title> <link rel="icon" href="https://cdn13.icims.com/icims-brand
+   note: search 'PICU': HTTP 404 for https://careers-mountnittany.icims.com/jobs/search?ss=1&searchKeyword=PICU&in_iframe=1&pr=0: <!doctype html> <html lang="en"> <head>   <title>gone: careers-mountnittany.icims.com : dc409</title> <link rel="icon" href="https://cdn13.icims.com/icims-brand
+   note: search 'NICU': HTTP 404 for https://careers-mountnittany.icims.com/jobs/search?ss=1&searchKeyword=NICU&in_iframe=1&pr=0: <!doctype html> <html lang="en"> <head>   <title>gone: careers-mountnittany.icims.com : dc409</title> <link rel="icon" href="https://cdn13.icims.com/icims-brand
+   (no candidate jobs)
+
+## nassau-university-medical-center-east-meadow  [generic / generic / playwright]  status=no_listings
+   ERROR: careers page reachable but no job listings recognized (generic adapter): set careers_search_url / ats_config to the real job board
+   note: generic: pages reachable but no NP/APP job links found: playwright 200 https://www.numc.edu/careers-at-nuhealth/job-listings-at-nuhealth/; playwright 200 https://www.numc.edu/careers-at-nuhealth/job-listings-at-nuhealth/?q=nurse+practitioner; playwright 200 https://www.numc.edu/careers-at-nuhealth/j
+   (no candidate jobs)
+
+## niagara-falls-memorial-medical-center-niagara-falls  [generic / generic / playwright]  status=no_listings
+   ERROR: careers page reachable but no job listings recognized (generic adapter): set careers_search_url / ats_config to the real job board
+   note: generic: pages reachable but no NP/APP job links found: playwright 200 https://careers.nfmmc.org/?s=nurse+practitioner; playwright 200 https://careers.nfmmc.org/?q=nurse+practitioner; playwright 200 https://careers.nfmmc.org/?keywords=nurse+practitioner
+   (no candidate jobs)
+
+## wyckoff-heights-medical-center-brooklyn  [generic / generic / playwright]  status=ok
+   * [2/unspecified] Pediatric Nurse Practitioner – Fellow More Details | posted None | https://recruiting.ultipro.com/WYC1000WHMC/JobBoard/5e6bf310-55e9-45dd-8252-85e4c670f433/OpportunityDetail?opportunityId=5da81502-9d4f-485b-ac0d-c0071285eebf
+   * [2/unspecified] Pediatric Nurse Practitioner – Fellow More Details | posted None | https://recruiting.ultipro.com/WYC1000WHMC/JobBoard/5e6bf310-55e9-45dd-8252-85e4c670f433/OpportunityDetail?opportunityId=706231b1-110c-42f1-92c8-46967c72ae0f
+   first board listings: Primary Care Nurse Practitioner Fellow More Details () || Primary Care Nurse Practitioner Fellow More Details () || Pediatric Nurse Practitioner – Fellow More Details ()

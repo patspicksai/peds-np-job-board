@@ -1,0 +1,13 @@
+run 2026-10-21 wall=51.0s ledger=data/hospitals.json browser=chrome-headed
+
+hospital                                             platform               method           board  list  cand  new   secs  status / error
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+hospital-for-special-surgery-manhattan               generic->workday       api                 50    50     1    1    8.0  ok
+wyckoff-heights-medical-center-brooklyn              generic                playwright           4     4     2    2   24.5  ok
+beaufort-memorial-beaufort                           generic                playwright           0     0     0    0   37.0  no_listings: careers page reachable but no job listings recognized (generic adapter): set careers_search_url / ats_config to the real job board
+howard-university-hospital-washington                generic                playwright           0     0     0    0   43.9  no_listings: careers page reachable but no job listings recognized (generic adapter): set careers_search_url / ats_config to the real job board
+mount-nittany-medical-center-state-college           icims                                       0     0     0    0   39.7  error: AdapterError: search 'PICU': HTTP 404 for https://careers-mountnittany.icims.com/jobs/search?ss=1&searchKeyword=PICU&in_iframe=1&pr=0: <!doctype html>
+nassau-university-medical-center-east-meadow         generic                playwright           0     0     0    0   50.8  no_listings: careers page reachable but no job listings recognized (generic adapter): set careers_search_url / ats_config to the real job board
+niagara-falls-memorial-medical-center-niagara-falls  generic                playwright           0     0     0    0   40.5  no_listings: careers page reachable but no job listings recognized (generic adapter): set careers_search_url / ats_config to the real job board
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+hospitals=7 ok=2 not_ok=5 board_listings=54 candidates=3 new_candidates=3
