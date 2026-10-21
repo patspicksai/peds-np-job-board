@@ -19,6 +19,9 @@ on:
       no_details:
         description: "skip detail fetches (true/false)"
         default: "false"
+      impersonate:
+        description: "SCRAPER_IMPERSONATE: auto (curl_cffi retry on bot walls) or off"
+        default: "auto"
 permissions:
   contents: write
 concurrency:
@@ -46,6 +49,8 @@ jobs:
           python -m pytest -q tests > "$RUNNER_TEMP/out/pytest.txt" 2>&1; echo "pytest exit=$?" >> "$RUNNER_TEMP/out/pytest.txt"
           tail -5 "$RUNNER_TEMP/out/pytest.txt"
       - name: Scrape (dry run)
+        env:
+          SCRAPER_IMPERSONATE: ${{ inputs.impersonate || 'auto' }}
         run: |
           set +e
           LEDGER="${{ inputs.ledger }}"

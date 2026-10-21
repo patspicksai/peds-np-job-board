@@ -1,6 +1,7 @@
 """HTTP session: browser-like headers, retries, per-host throttle, timeouts, budget awareness."""
 from __future__ import annotations
 
+import os
 import threading
 import time
 from urllib.parse import urlsplit
@@ -93,10 +94,19 @@ IMPERSONATE_HOSTS: set[str] = set()
 IMPERSONATE_FAILED: set[str] = set()
 _imp_lock = threading.Lock()
 BLOCK_STATUSES = (401, 403, 406, 429, 503)
+# SCRAPER_IMPERSONATE: "auto" (default) retries bot-wall statuses once through curl_cffi; "off" never retries on
+# its own (explicit impersonate=True calls still go through curl_cffi). The automatic retry is suspected of getting
+# the runner's IP challenged by Cloudflare for the rest of the run (34 boards readable on 2026-10-20 came back
+# 403 on 2026-10-21, the first run with the retry on), so the mode is an environment switch for A/B runs.
+IMPERSONATE_MODE = os.environ.get("SCRAPER_IMPERSONATE", "auto").strip().lower() or "auto"
 
 
 def cffi_available() -> bool:
     return _creq is not None
+
+
+def auto_impersonate() -> bool:
+    return _creq is not None and IMPERSONATE_MODE != "off"
 
 
 def cffi_session():
@@ -148,7 +158,7 @@ def request(method: str, url: str, *, json_api: bool = False, ok=(200,), imperso
         except requests.RequestException as e:
             # normalize network failures so adapters handle one exception type
             raise FetchError(url, None, f"{type(e).__name__}: {str(e)[:200]}") from e
-        if (r.status_code in BLOCK_STATUSES and impersonate is None and _creq is not None
+        if (r.status_code in BLOCK_STATUSES and impersonate is None and auto_impersonate()
                 and host not in IMPERSONATE_FAILED):
             try:
                 r2 = _cffi_request(method, url, {**BROWSER_HEADERS, **headers}, kw)
