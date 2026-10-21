@@ -1,0 +1,771 @@
+{
+ "run_id": "2026-10-21",
+ "mode": "automated",
+ "started_at": "2026-10-21T17:48:01Z",
+ "finished_at": "2026-10-21T17:48:39Z",
+ "dry_run": true,
+ "no_details": false,
+ "keywords": [
+  "nurse practitioner",
+  "pediatric nurse practitioner",
+  "advanced practice provider",
+  "APRN",
+  "PICU",
+  "NICU"
+ ],
+ "checked": [
+  "mercy-hospital-buffalo",
+  "sisters-of-charity-hospital-buffalo",
+  "northern-light-mercy-portland",
+  "northern-light-ar-gould-presque-isle",
+  "northern-light-acadia-bangor",
+  "northern-light-emmc-bangor",
+  "golisano-childrens-buffalo",
+  "millard-fillmore-suburban-williamsville",
+  "olean-general-hospital-olean"
+ ],
+ "unreachable": [],
+ "unreachable_detail": {},
+ "hospitals": [
+  {
+   "slug": "mercy-hospital-buffalo",
+   "name": "Mercy Hospital of Buffalo",
+   "platform": "infor",
+   "adapter": "infor",
+   "method": "api",
+   "board": "infor|chsblawsonprd-lm01.cloud.infor.com:1444|",
+   "board_hospitals": 2,
+   "board_listings": 30,
+   "listings": 30,
+   "candidates": 0,
+   "new": 0,
+   "known": 0,
+   "status": "ok",
+   "error": null,
+   "http_status": null,
+   "seconds": 33.7,
+   "requests": 34,
+   "details_fetched": 30,
+   "details_failed": 0,
+   "notes": [
+    "infor: 4 page(s), 353 postings on the board, 30 advanced practice titles"
+   ],
+   "samples": [],
+   "sample_listings": [
+    {
+     "title": "Physician Assistant TRI Ortho Williamsville",
+     "url": "https://chsblawsonprd-lm01.cloud.infor.com:1444/lmghr/Jobs/form/JobPosting%5BJobPostingSet%5D%28CHS%2C48260%2C2%29.JobPostingDisplay?pagesize=1&navigation=JobPosting%5BJobPostingSet%5D%28CHS%2C48260%2C2%29.JobPostingDisplayNav&csk.JobBoard=EXTERNAL&csk.HROrganization=CHS",
+     "posted_at": "2026-10-16",
+     "location": "Williamsville, NY"
+    },
+    {
+     "title": "Advanced Practice Provider Cardiology Admin TRI",
+     "url": "https://chsblawsonprd-lm01.cloud.infor.com:1444/lmghr/Jobs/form/JobPosting%5BJobPostingSet%5D%28CHS%2C48210%2C2%29.JobPostingDisplay?pagesize=1&navigation=JobPosting%5BJobPostingSet%5D%28CHS%2C48210%2C2%29.JobPostingDisplayNav&csk.JobBoard=EXTERNAL&csk.HROrganization=CHS",
+     "posted_at": "2026-10-08",
+     "location": "Cheektowaga, NY"
+    },
+    {
+     "title": "Advanced Practice Provider Primary Care MSM LMH",
+     "url": "https://chsblawsonprd-lm01.cloud.infor.com:1444/lmghr/Jobs/form/JobPosting%5BJobPostingSet%5D%28CHS%2C47760%2C2%29.JobPostingDisplay?pagesize=1&navigation=JobPosting%5BJobPostingSet%5D%28CHS%2C47760%2C2%29.JobPostingDisplayNav&csk.JobBoard=EXTERNAL&csk.HROrganization=CHS",
+     "posted_at": "2026-10-08",
+     "location": "Lockport, NY"
+    }
+   ]
+  },
+  {
+   "slug": "sisters-of-charity-hospital-buffalo",
+   "name": "Sisters of Charity Hospital",
+   "platform": "infor",
+   "adapter": "infor",
+   "method": "api",
+   "board": "infor|chsblawsonprd-lm01.cloud.infor.com:1444|",
+   "board_hospitals": 2,
+   "board_listings": 30,
+   "listings": 0,
+   "candidates": 0,
+   "new": 0,
+   "known": 0,
+   "status": "ok",
+   "error": null,
+   "http_status": null,
+   "seconds": 33.7,
+   "requests": 34,
+   "details_fetched": 30,
+   "details_failed": 0,
+   "notes": [
+    "infor: 4 page(s), 353 postings on the board, 30 advanced practice titles"
+   ],
+   "samples": [],
+   "sample_listings": [
+    {
+     "title": "Physician Assistant TRI Ortho Williamsville",
+     "url": "https://chsblawsonprd-lm01.cloud.infor.com:1444/lmghr/Jobs/form/JobPosting%5BJobPostingSet%5D%28CHS%2C48260%2C2%29.JobPostingDisplay?pagesize=1&navigation=JobPosting%5BJobPostingSet%5D%28CHS%2C48260%2C2%29.JobPostingDisplayNav&csk.JobBoard=EXTERNAL&csk.HROrganization=CHS",
+     "posted_at": "2026-10-16",
+     "location": "Williamsville, NY"
+    },
+    {
+     "title": "Advanced Practice Provider Cardiology Admin TRI",
+     "url": "https://chsblawsonprd-lm01.cloud.infor.com:1444/lmghr/Jobs/form/JobPosting%5BJobPostingSet%5D%28CHS%2C48210%2C2%29.JobPostingDisplay?pagesize=1&navigation=JobPosting%5BJobPostingSet%5D%28CHS%2C48210%2C2%29.JobPostingDisplayNav&csk.JobBoard=EXTERNAL&csk.HROrganization=CHS",
+     "posted_at": "2026-10-08",
+     "location": "Cheektowaga, NY"
+    },
+    {
+     "title": "Advanced Practice Provider Primary Care MSM LMH",
+     "url": "https://chsblawsonprd-lm01.cloud.infor.com:1444/lmghr/Jobs/form/JobPosting%5BJobPostingSet%5D%28CHS%2C47760%2C2%29.JobPostingDisplay?pagesize=1&navigation=JobPosting%5BJobPostingSet%5D%28CHS%2C47760%2C2%29.JobPostingDisplayNav&csk.JobBoard=EXTERNAL&csk.HROrganization=CHS",
+     "posted_at": "2026-10-08",
+     "location": "Lockport, NY"
+    }
+   ]
+  },
+  {
+   "slug": "northern-light-mercy-portland",
+   "name": "Northern Light Mercy Hospital",
+   "platform": "infor",
+   "adapter": "infor",
+   "method": "api",
+   "board": "infor|css-emh-prd.inforcloudsuite.com|",
+   "board_hospitals": 4,
+   "board_listings": 31,
+   "listings": 11,
+   "candidates": 1,
+   "new": 1,
+   "known": 0,
+   "status": "ok",
+   "error": null,
+   "http_status": null,
+   "seconds": 38.3,
+   "requests": 39,
+   "details_fetched": 31,
+   "details_failed": 0,
+   "notes": [
+    "infor: 8 page(s), 777 postings on the board, 31 advanced practice titles"
+   ],
+   "samples": [
+    {
+     "title": "Pain Management APP (Nurse Practitioner or Physician Associate)",
+     "url": "https://css-emh-prd.inforcloudsuite.com/hcm/Jobs/form/JobPosting%5BJobPostingSet%5D%2810%2C93908%2C1%29.JobPostingDisplay?pagesize=1&navigation=JobPosting%5BJobPostingSet%5D%2810%2C93908%2C1%29.JobPostingDisplayNav&csk.JobBoard=EXTERNAL&csk.HROrganization=10",
+     "posted_at": "2026-08-27",
+     "relevance": 1,
+     "setting": "mixed"
+    }
+   ],
+   "sample_listings": [
+    {
+     "title": "Outpatient Internal Medicine Nurse Practitioner or Physician Associate",
+     "url": "https://css-emh-prd.inforcloudsuite.com/hcm/Jobs/form/JobPosting%5BJobPostingSet%5D%2810%2C96407%2C1%29.JobPostingDisplay?pagesize=1&navigation=JobPosting%5BJobPostingSet%5D%2810%2C96407%2C1%29.JobPostingDisplayNav&csk.JobBoard=EXTERNAL&csk.HROrganization=10",
+     "posted_at": "2026-10-20",
+     "location": "Bangor, ME"
+    },
+    {
+     "title": "Psychiatric Mental Health Nurse Practitioner - Adult Medication Management",
+     "url": "https://css-emh-prd.inforcloudsuite.com/hcm/Jobs/form/JobPosting%5BJobPostingSet%5D%2810%2C96324%2C1%29.JobPostingDisplay?pagesize=1&navigation=JobPosting%5BJobPostingSet%5D%2810%2C96324%2C1%29.JobPostingDisplayNav&csk.JobBoard=EXTERNAL&csk.HROrganization=10",
+     "posted_at": "2026-10-15",
+     "location": "Bangor, ME"
+    },
+    {
+     "title": "Urology Physician Associate or Nurse Practitioner",
+     "url": "https://css-emh-prd.inforcloudsuite.com/hcm/Jobs/form/JobPosting%5BJobPostingSet%5D%2810%2C95540%2C1%29.JobPostingDisplay?pagesize=1&navigation=JobPosting%5BJobPostingSet%5D%2810%2C95540%2C1%29.JobPostingDisplayNav&csk.JobBoard=EXTERNAL&csk.HROrganization=10",
+     "posted_at": "2026-10-08",
+     "location": "Bangor, ME"
+    }
+   ]
+  },
+  {
+   "slug": "northern-light-ar-gould-presque-isle",
+   "name": "Northern Light AR Gould Hospital",
+   "platform": "infor",
+   "adapter": "infor",
+   "method": "api",
+   "board": "infor|css-emh-prd.inforcloudsuite.com|",
+   "board_hospitals": 4,
+   "board_listings": 31,
+   "listings": 3,
+   "candidates": 0,
+   "new": 0,
+   "known": 0,
+   "status": "ok",
+   "error": null,
+   "http_status": null,
+   "seconds": 38.3,
+   "requests": 39,
+   "details_fetched": 31,
+   "details_failed": 0,
+   "notes": [
+    "infor: 8 page(s), 777 postings on the board, 31 advanced practice titles"
+   ],
+   "samples": [],
+   "sample_listings": [
+    {
+     "title": "Outpatient Internal Medicine Nurse Practitioner or Physician Associate",
+     "url": "https://css-emh-prd.inforcloudsuite.com/hcm/Jobs/form/JobPosting%5BJobPostingSet%5D%2810%2C96407%2C1%29.JobPostingDisplay?pagesize=1&navigation=JobPosting%5BJobPostingSet%5D%2810%2C96407%2C1%29.JobPostingDisplayNav&csk.JobBoard=EXTERNAL&csk.HROrganization=10",
+     "posted_at": "2026-10-20",
+     "location": "Bangor, ME"
+    },
+    {
+     "title": "Psychiatric Mental Health Nurse Practitioner - Adult Medication Management",
+     "url": "https://css-emh-prd.inforcloudsuite.com/hcm/Jobs/form/JobPosting%5BJobPostingSet%5D%2810%2C96324%2C1%29.JobPostingDisplay?pagesize=1&navigation=JobPosting%5BJobPostingSet%5D%2810%2C96324%2C1%29.JobPostingDisplayNav&csk.JobBoard=EXTERNAL&csk.HROrganization=10",
+     "posted_at": "2026-10-15",
+     "location": "Bangor, ME"
+    },
+    {
+     "title": "Urology Physician Associate or Nurse Practitioner",
+     "url": "https://css-emh-prd.inforcloudsuite.com/hcm/Jobs/form/JobPosting%5BJobPostingSet%5D%2810%2C95540%2C1%29.JobPostingDisplay?pagesize=1&navigation=JobPosting%5BJobPostingSet%5D%2810%2C95540%2C1%29.JobPostingDisplayNav&csk.JobBoard=EXTERNAL&csk.HROrganization=10",
+     "posted_at": "2026-10-08",
+     "location": "Bangor, ME"
+    }
+   ]
+  },
+  {
+   "slug": "northern-light-acadia-bangor",
+   "name": "Northern Light Acadia Hospital",
+   "platform": "infor",
+   "adapter": "infor",
+   "method": "api",
+   "board": "infor|css-emh-prd.inforcloudsuite.com|",
+   "board_hospitals": 4,
+   "board_listings": 31,
+   "listings": 2,
+   "candidates": 2,
+   "new": 2,
+   "known": 0,
+   "status": "ok",
+   "error": null,
+   "http_status": null,
+   "seconds": 38.3,
+   "requests": 39,
+   "details_fetched": 31,
+   "details_failed": 0,
+   "notes": [
+    "infor: 8 page(s), 777 postings on the board, 31 advanced practice titles"
+   ],
+   "samples": [
+    {
+     "title": "Neonatal Nurse Practitioner/Physician Associate",
+     "url": "https://css-emh-prd.inforcloudsuite.com/hcm/Jobs/form/JobPosting%5BJobPostingSet%5D%2810%2C95264%2C1%29.JobPostingDisplay?pagesize=1&navigation=JobPosting%5BJobPostingSet%5D%2810%2C95264%2C1%29.JobPostingDisplayNav&csk.JobBoard=EXTERNAL&csk.HROrganization=10",
+     "posted_at": "2026-08-07",
+     "relevance": 2,
+     "setting": "nicu"
+    },
+    {
+     "title": "Per Diem Neonatal Nurse Practitioner/Physician Associate",
+     "url": "https://css-emh-prd.inforcloudsuite.com/hcm/Jobs/form/JobPosting%5BJobPostingSet%5D%2810%2C95263%2C1%29.JobPostingDisplay?pagesize=1&navigation=JobPosting%5BJobPostingSet%5D%2810%2C95263%2C1%29.JobPostingDisplayNav&csk.JobBoard=EXTERNAL&csk.HROrganization=10",
+     "posted_at": "2026-08-07",
+     "relevance": 2,
+     "setting": "nicu"
+    }
+   ],
+   "sample_listings": [
+    {
+     "title": "Outpatient Internal Medicine Nurse Practitioner or Physician Associate",
+     "url": "https://css-emh-prd.inforcloudsuite.com/hcm/Jobs/form/JobPosting%5BJobPostingSet%5D%2810%2C96407%2C1%29.JobPostingDisplay?pagesize=1&navigation=JobPosting%5BJobPostingSet%5D%2810%2C96407%2C1%29.JobPostingDisplayNav&csk.JobBoard=EXTERNAL&csk.HROrganization=10",
+     "posted_at": "2026-10-20",
+     "location": "Bangor, ME"
+    },
+    {
+     "title": "Psychiatric Mental Health Nurse Practitioner - Adult Medication Management",
+     "url": "https://css-emh-prd.inforcloudsuite.com/hcm/Jobs/form/JobPosting%5BJobPostingSet%5D%2810%2C96324%2C1%29.JobPostingDisplay?pagesize=1&navigation=JobPosting%5BJobPostingSet%5D%2810%2C96324%2C1%29.JobPostingDisplayNav&csk.JobBoard=EXTERNAL&csk.HROrganization=10",
+     "posted_at": "2026-10-15",
+     "location": "Bangor, ME"
+    },
+    {
+     "title": "Urology Physician Associate or Nurse Practitioner",
+     "url": "https://css-emh-prd.inforcloudsuite.com/hcm/Jobs/form/JobPosting%5BJobPostingSet%5D%2810%2C95540%2C1%29.JobPostingDisplay?pagesize=1&navigation=JobPosting%5BJobPostingSet%5D%2810%2C95540%2C1%29.JobPostingDisplayNav&csk.JobBoard=EXTERNAL&csk.HROrganization=10",
+     "posted_at": "2026-10-08",
+     "location": "Bangor, ME"
+    }
+   ]
+  },
+  {
+   "slug": "northern-light-emmc-bangor",
+   "name": "Northern Light Eastern Maine Medical Center",
+   "platform": "infor",
+   "adapter": "infor",
+   "method": "api",
+   "board": "infor|css-emh-prd.inforcloudsuite.com|",
+   "board_hospitals": 4,
+   "board_listings": 31,
+   "listings": 15,
+   "candidates": 2,
+   "new": 2,
+   "known": 0,
+   "status": "ok",
+   "error": null,
+   "http_status": null,
+   "seconds": 38.3,
+   "requests": 39,
+   "details_fetched": 31,
+   "details_failed": 0,
+   "notes": [
+    "infor: 8 page(s), 777 postings on the board, 31 advanced practice titles"
+   ],
+   "samples": [
+    {
+     "title": "Rewarding Emergency Medicine PA Opportunity at Tertiary Care Center in Maine",
+     "url": "https://css-emh-prd.inforcloudsuite.com/hcm/Jobs/form/JobPosting%5BJobPostingSet%5D%2810%2C93002%2C1%29.JobPostingDisplay?pagesize=1&navigation=JobPosting%5BJobPostingSet%5D%2810%2C93002%2C1%29.JobPostingDisplayNav&csk.JobBoard=EXTERNAL&csk.HROrganization=10",
+     "posted_at": "2026-07-23",
+     "relevance": 2,
+     "setting": "peds_ed"
+    },
+    {
+     "title": "Emergency Medicine PA/NP Opportunity at Tertiary Care Center in Maine",
+     "url": "https://css-emh-prd.inforcloudsuite.com/hcm/Jobs/form/JobPosting%5BJobPostingSet%5D%2810%2C92711%2C1%29.JobPostingDisplay?pagesize=1&navigation=JobPosting%5BJobPostingSet%5D%2810%2C92711%2C1%29.JobPostingDisplayNav&csk.JobBoard=EXTERNAL&csk.HROrganization=10",
+     "posted_at": "2026-07-21",
+     "relevance": 2,
+     "setting": "peds_ed"
+    }
+   ],
+   "sample_listings": [
+    {
+     "title": "Outpatient Internal Medicine Nurse Practitioner or Physician Associate",
+     "url": "https://css-emh-prd.inforcloudsuite.com/hcm/Jobs/form/JobPosting%5BJobPostingSet%5D%2810%2C96407%2C1%29.JobPostingDisplay?pagesize=1&navigation=JobPosting%5BJobPostingSet%5D%2810%2C96407%2C1%29.JobPostingDisplayNav&csk.JobBoard=EXTERNAL&csk.HROrganization=10",
+     "posted_at": "2026-10-20",
+     "location": "Bangor, ME"
+    },
+    {
+     "title": "Psychiatric Mental Health Nurse Practitioner - Adult Medication Management",
+     "url": "https://css-emh-prd.inforcloudsuite.com/hcm/Jobs/form/JobPosting%5BJobPostingSet%5D%2810%2C96324%2C1%29.JobPostingDisplay?pagesize=1&navigation=JobPosting%5BJobPostingSet%5D%2810%2C96324%2C1%29.JobPostingDisplayNav&csk.JobBoard=EXTERNAL&csk.HROrganization=10",
+     "posted_at": "2026-10-15",
+     "location": "Bangor, ME"
+    },
+    {
+     "title": "Urology Physician Associate or Nurse Practitioner",
+     "url": "https://css-emh-prd.inforcloudsuite.com/hcm/Jobs/form/JobPosting%5BJobPostingSet%5D%2810%2C95540%2C1%29.JobPostingDisplay?pagesize=1&navigation=JobPosting%5BJobPostingSet%5D%2810%2C95540%2C1%29.JobPostingDisplayNav&csk.JobBoard=EXTERNAL&csk.HROrganization=10",
+     "posted_at": "2026-10-08",
+     "location": "Bangor, ME"
+    }
+   ]
+  },
+  {
+   "slug": "golisano-childrens-buffalo",
+   "name": "Golisano Children's Hospital of Buffalo",
+   "platform": "infor",
+   "adapter": "infor",
+   "method": "api",
+   "board": "infor|css-y9x4ku9mqsygapwx-prd.inforcloudsuite.com|",
+   "board_hospitals": 3,
+   "board_listings": 15,
+   "listings": 5,
+   "candidates": 2,
+   "new": 2,
+   "known": 0,
+   "status": "ok",
+   "error": null,
+   "http_status": null,
+   "seconds": 22.3,
+   "requests": 21,
+   "details_fetched": 15,
+   "details_failed": 0,
+   "notes": [
+    "infor: 6 page(s), 532 postings on the board, 15 advanced practice titles"
+   ],
+   "samples": [
+    {
+     "title": "Nurse Practitioner *FNP/ANP - NSICU*",
+     "url": "https://css-y9x4ku9mqsygapwx-prd.inforcloudsuite.com/hcm/Jobs/form/JobPosting%5BJobPostingSet%5D%281000%2C7683%2C1%29.JobPostingDisplay?pagesize=1&navigation=JobPosting%5BJobPostingSet%5D%281000%2C7683%2C1%29.JobPostingDisplayNav&csk.JobBoard=KH-EXTERNAL&csk.HROrganization=1000",
+     "posted_at": "2025-06-04",
+     "relevance": 3,
+     "setting": "picu"
+    },
+    {
+     "title": "Nurse Practitioner",
+     "url": "https://css-y9x4ku9mqsygapwx-prd.inforcloudsuite.com/hcm/Jobs/form/JobPosting%5BJobPostingSet%5D%281000%2C276%2C1%29.JobPostingDisplay?pagesize=1&navigation=JobPosting%5BJobPostingSet%5D%281000%2C276%2C1%29.JobPostingDisplayNav&csk.JobBoard=KH-EXTERNAL&csk.HROrganization=1000",
+     "posted_at": "2024-12-13",
+     "relevance": 3,
+     "setting": "picu"
+    }
+   ],
+   "sample_listings": [
+    {
+     "title": "Nurse Practitioner",
+     "url": "https://css-y9x4ku9mqsygapwx-prd.inforcloudsuite.com/hcm/Jobs/form/JobPosting%5BJobPostingSet%5D%281000%2C26037%2C1%29.JobPostingDisplay?pagesize=1&navigation=JobPosting%5BJobPostingSet%5D%281000%2C26037%2C1%29.JobPostingDisplayNav&csk.JobBoard=KH-EXTERNAL&csk.HROrganization=1000",
+     "posted_at": "2026-10-14",
+     "location": "Williamsville, NY"
+    },
+    {
+     "title": "Physician Assistant",
+     "url": "https://css-y9x4ku9mqsygapwx-prd.inforcloudsuite.com/hcm/Jobs/form/JobPosting%5BJobPostingSet%5D%281000%2C26035%2C1%29.JobPostingDisplay?pagesize=1&navigation=JobPosting%5BJobPostingSet%5D%281000%2C26035%2C1%29.JobPostingDisplayNav&csk.JobBoard=KH-EXTERNAL&csk.HROrganization=1000",
+     "posted_at": "2026-10-14",
+     "location": "Williamsville, NY"
+    },
+    {
+     "title": "Sexual Assault Forensic Examiner APP",
+     "url": "https://css-y9x4ku9mqsygapwx-prd.inforcloudsuite.com/hcm/Jobs/form/JobPosting%5BJobPostingSet%5D%281000%2C26201%2C1%29.JobPostingDisplay?pagesize=1&navigation=JobPosting%5BJobPostingSet%5D%281000%2C26201%2C1%29.JobPostingDisplayNav&csk.JobBoard=KH-EXTERNAL&csk.HROrganization=1000",
+     "posted_at": "2026-10-07",
+     "location": "Olean, NY"
+    }
+   ]
+  },
+  {
+   "slug": "millard-fillmore-suburban-williamsville",
+   "name": "Millard Fillmore Suburban Hospital",
+   "platform": "infor",
+   "adapter": "infor",
+   "method": "api",
+   "board": "infor|css-y9x4ku9mqsygapwx-prd.inforcloudsuite.com|",
+   "board_hospitals": 3,
+   "board_listings": 15,
+   "listings": 9,
+   "candidates": 0,
+   "new": 0,
+   "known": 0,
+   "status": "ok",
+   "error": null,
+   "http_status": null,
+   "seconds": 22.3,
+   "requests": 21,
+   "details_fetched": 15,
+   "details_failed": 0,
+   "notes": [
+    "infor: 6 page(s), 532 postings on the board, 15 advanced practice titles"
+   ],
+   "samples": [],
+   "sample_listings": [
+    {
+     "title": "Nurse Practitioner",
+     "url": "https://css-y9x4ku9mqsygapwx-prd.inforcloudsuite.com/hcm/Jobs/form/JobPosting%5BJobPostingSet%5D%281000%2C26037%2C1%29.JobPostingDisplay?pagesize=1&navigation=JobPosting%5BJobPostingSet%5D%281000%2C26037%2C1%29.JobPostingDisplayNav&csk.JobBoard=KH-EXTERNAL&csk.HROrganization=1000",
+     "posted_at": "2026-10-14",
+     "location": "Williamsville, NY"
+    },
+    {
+     "title": "Physician Assistant",
+     "url": "https://css-y9x4ku9mqsygapwx-prd.inforcloudsuite.com/hcm/Jobs/form/JobPosting%5BJobPostingSet%5D%281000%2C26035%2C1%29.JobPostingDisplay?pagesize=1&navigation=JobPosting%5BJobPostingSet%5D%281000%2C26035%2C1%29.JobPostingDisplayNav&csk.JobBoard=KH-EXTERNAL&csk.HROrganization=1000",
+     "posted_at": "2026-10-14",
+     "location": "Williamsville, NY"
+    },
+    {
+     "title": "Sexual Assault Forensic Examiner APP",
+     "url": "https://css-y9x4ku9mqsygapwx-prd.inforcloudsuite.com/hcm/Jobs/form/JobPosting%5BJobPostingSet%5D%281000%2C26201%2C1%29.JobPostingDisplay?pagesize=1&navigation=JobPosting%5BJobPostingSet%5D%281000%2C26201%2C1%29.JobPostingDisplayNav&csk.JobBoard=KH-EXTERNAL&csk.HROrganization=1000",
+     "posted_at": "2026-10-07",
+     "location": "Olean, NY"
+    }
+   ]
+  },
+  {
+   "slug": "olean-general-hospital-olean",
+   "name": "Olean General Hospital",
+   "platform": "infor",
+   "adapter": "infor",
+   "method": "api",
+   "board": "infor|css-y9x4ku9mqsygapwx-prd.inforcloudsuite.com|",
+   "board_hospitals": 3,
+   "board_listings": 15,
+   "listings": 1,
+   "candidates": 0,
+   "new": 0,
+   "known": 0,
+   "status": "ok",
+   "error": null,
+   "http_status": null,
+   "seconds": 22.3,
+   "requests": 21,
+   "details_fetched": 15,
+   "details_failed": 0,
+   "notes": [
+    "infor: 6 page(s), 532 postings on the board, 15 advanced practice titles"
+   ],
+   "samples": [],
+   "sample_listings": [
+    {
+     "title": "Nurse Practitioner",
+     "url": "https://css-y9x4ku9mqsygapwx-prd.inforcloudsuite.com/hcm/Jobs/form/JobPosting%5BJobPostingSet%5D%281000%2C26037%2C1%29.JobPostingDisplay?pagesize=1&navigation=JobPosting%5BJobPostingSet%5D%281000%2C26037%2C1%29.JobPostingDisplayNav&csk.JobBoard=KH-EXTERNAL&csk.HROrganization=1000",
+     "posted_at": "2026-10-14",
+     "location": "Williamsville, NY"
+    },
+    {
+     "title": "Physician Assistant",
+     "url": "https://css-y9x4ku9mqsygapwx-prd.inforcloudsuite.com/hcm/Jobs/form/JobPosting%5BJobPostingSet%5D%281000%2C26035%2C1%29.JobPostingDisplay?pagesize=1&navigation=JobPosting%5BJobPostingSet%5D%281000%2C26035%2C1%29.JobPostingDisplayNav&csk.JobBoard=KH-EXTERNAL&csk.HROrganization=1000",
+     "posted_at": "2026-10-14",
+     "location": "Williamsville, NY"
+    },
+    {
+     "title": "Sexual Assault Forensic Examiner APP",
+     "url": "https://css-y9x4ku9mqsygapwx-prd.inforcloudsuite.com/hcm/Jobs/form/JobPosting%5BJobPostingSet%5D%281000%2C26201%2C1%29.JobPostingDisplay?pagesize=1&navigation=JobPosting%5BJobPostingSet%5D%281000%2C26201%2C1%29.JobPostingDisplayNav&csk.JobBoard=KH-EXTERNAL&csk.HROrganization=1000",
+     "posted_at": "2026-10-07",
+     "location": "Olean, NY"
+    }
+   ]
+  }
+ ],
+ "jobs": [
+  {
+   "id": "a668d8d3358a",
+   "hospital_slug": "northern-light-acadia-bangor",
+   "title": "Neonatal Nurse Practitioner/Physician Associate",
+   "url": "https://css-emh-prd.inforcloudsuite.com/hcm/Jobs/form/JobPosting%5BJobPostingSet%5D%2810%2C95264%2C1%29.JobPostingDisplay?pagesize=1&navigation=JobPosting%5BJobPostingSet%5D%2810%2C95264%2C1%29.JobPostingDisplayNav&csk.JobBoard=EXTERNAL&csk.HROrganization=10",
+   "apply_url": null,
+   "source": "employer",
+   "external_id": "95264",
+   "location_text": "Bangor, ME",
+   "city": "Bangor",
+   "state": "ME",
+   "department": "Neonatology Prof Services",
+   "setting": "nicu",
+   "employment_type": "Full time",
+   "shift": null,
+   "schedule": null,
+   "salary_text": "$140,000-$150,000",
+   "posted_at": "2026-08-07",
+   "summary": "Neonatal Nurse Practitioner/Physician Associate at Northern Light Acadia Hospital. Setting: NICU / neonatology. Notable: loan repayment, relocation assistance, sign-on bonus.",
+   "description": "Full-Time Neonatal Nurse Practitioner/Physician Associate\n\nNorthern Light Eastern Maine Medical Center has an excellent opportunity for a certified Neonatal Nurse Practitioner/Physician Associate with a minimum of two years of Level III-IV NICU experience to join our Level III NICU staff in a full-time position.\n\nThe Role:\n\n· Join a team of five Neonatologists and nine Neonatal Nurse Practitioners/Physician Associates providing 24/7 in-house coverage for patient care and high-risk deliveries.\n\n· Minimal transport responsibilities.\n\n· Our model consists of one 24-hour NNP/PA in-house and often a second daytime NNP for up to 12 hours, 7 days a week.\n\n· Our state-of-the-art NICU, with 29 single-family rooms, opened in June 2016 and has 35 beds to accommodate multiple gestations. All rooms include en-suite space for families to stay with their newborns.\n\n· We actively use iNO, whole body cooling, HFOV, bubble CPAP, and exclusive human milk feedings for pre-term infants.\n\n· We have approximately 450 admissions a year, 25% of these are neonatal transports.\n\n· Our neonatal transport team provides 24/7 coverage using an RN-RN transport model with helicopter, fixed wing, and ground capabilities.\n\n· We are an active part of the Vermont Oxford Network, Northern New England Perinatal Quality Improvement Network (NNEPQIN), participate in local and statewide research and other quality improvement projects, and host medical students.\n\n· Our Neonatal Nurse Practitioners/Physician Associates are involved in outreach education throughout the region and serve as NRP and STABLE instructors.\n\nQualifications:\n\n· Candidates must be NCC or NCCPA certified, have at least two years of Level III-IV NICU experience, have prescriptive authority, and hold a current Maine license or be immediately eligible for the same.\n\nPractitioners at Northern Light Eastern Maine Medical Center enjoy:\n\n· Competitive compensation and comprehensive benefits package including generous paid time off, CME allowance, employer matched retirement plan, and sign-on bonus\n\n· Top-tier education loan repayment program\n\n· Relocation assistance to make your move seamless\n\nCompensation Information:\n\n· $140,000-$150,000 annual base salary\n\n· The compensation range listed reflects the range Northern Light Health anticipates relying on in setting the wages for the position. The range may not necessarily include all additional compensation elements available, including but not limited to call pay, leadership stipends, etc.\n\nNorthern Light Eastern Maine Medical Center is a 411-bed regional tertiary care and ACS-verified Level II trauma center serving a population of 500,000, and we are the regional referral center for perinatal, neonatal, and pediatric care for the northern two-thirds of the state of Maine. Pediatric subspecialty services include surgery, gastroenterology, child neurology, cardiology, endocrinology, genetics, hematology-oncology, developmental pediatrics, orthopedics, and ophthalmology.\n\nLive Where Others Vacation:\n\nBangor is a vibrant city with a small-town feel, offering access to Maine’s stunning coastlines, lakes, and mountains – including the breathtaking Acadia National Park. Enjoy top-rated schools, cultural events, and the amenities of the nearby University of Maine. Bangor International Airport makes travel easy with direct and one-stop flights across the country. You’ll always find something new and exciting to do in the four seasons of Maine!\n\nFor more information, please contact:\n\nAmanda Lewis, CPRP, Provider Recruiter\n\nEmail: ProviderCareers@northernlight.org\n\nPhone: 207.973.5358",
+   "requirements": [
+    "Northern Light Eastern Maine Medical Center has an excellent opportunity for a certified Neonatal Nurse Practitioner/Physician Associate with a minimum of two years of Level III-IV NICU experience to join our Level III NICU staff in a full-time position.",
+    "· Our model consists of one 24-hour NNP/PA in-house and often a second daytime NNP for up to 12 hours, 7 days a week.",
+    "· Our Neonatal Nurse Practitioners/Physician Associates are involved in outreach education throughout the region and serve as NRP and STABLE instructors.",
+    "· Candidates must be NCC or NCCPA certified, have at least two years of Level III-IV NICU experience, have prescriptive authority, and hold a current Maine license or be immediately eligible for the same."
+   ],
+   "relevance": 2,
+   "relevance_reason": "NICU role that asks for a neonatal nurse practitioner (NNP) credential; 'Neonatal' in title/unit/location.",
+   "tags": [
+    "NNP required",
+    "loan repayment",
+    "relocation assistance",
+    "sign-on bonus"
+   ],
+   "first_seen_at": null,
+   "last_seen_at": null,
+   "status": "active",
+   "raw_notes": "scraper infor/api; attribution=city"
+  },
+  {
+   "id": "692b4deb122d",
+   "hospital_slug": "northern-light-acadia-bangor",
+   "title": "Per Diem Neonatal Nurse Practitioner/Physician Associate",
+   "url": "https://css-emh-prd.inforcloudsuite.com/hcm/Jobs/form/JobPosting%5BJobPostingSet%5D%2810%2C95263%2C1%29.JobPostingDisplay?pagesize=1&navigation=JobPosting%5BJobPostingSet%5D%2810%2C95263%2C1%29.JobPostingDisplayNav&csk.JobBoard=EXTERNAL&csk.HROrganization=10",
+   "apply_url": null,
+   "source": "employer",
+   "external_id": "95263",
+   "location_text": "Bangor, ME",
+   "city": "Bangor",
+   "state": "ME",
+   "department": "Neonatology Prof Services",
+   "setting": "nicu",
+   "employment_type": "Per diem",
+   "shift": null,
+   "schedule": null,
+   "salary_text": "$74.04-$79.33",
+   "posted_at": "2026-08-07",
+   "summary": "Per Diem Neonatal Nurse Practitioner/Physician Associate at Northern Light Acadia Hospital. Setting: NICU / neonatology.",
+   "description": "Per Diem Neonatal Nurse Practitioner/Physician Associate\n\nNorthern Light Eastern Maine Medical Center has an excellent opportunity for a certified Neonatal Nurse Practitioner/Physician Associate with a minimum of two years of Level III-IV NICU experience to join our Level III NICU staff in a per diem position.\n\nThe Role:\n\n· Join a team of five Neonatologists and nine Neonatal Nurse Practitioners/Physician Associates providing 24/7 in-house coverage for patient care and high-risk deliveries.\n\n· Minimal transport responsibilities.\n\n· Our model consists of one 24-hour NNP/PA in-house and often a second daytime NNP for up to 12 hours, 7 days a week.\n\n· Our state-of-the-art NICU, with 29 single-family rooms, opened in June 2016 and has 35 beds to accommodate multiple gestations. All rooms include en-suite space for families to stay with their newborns.\n\n· We actively use iNO, whole body cooling, HFOV, bubble CPAP, and exclusive human milk feedings for pre-term infants.\n\n· We have approximately 450 admissions a year, 25% of these are neonatal transports.\n\n· Our neonatal transport team provides 24/7 coverage using an RN-RN transport model with helicopter, fixed wing, and ground capabilities.\n\n· We are an active part of the Vermont Oxford Network, Northern New England Perinatal Quality Improvement Network (NNEPQIN), participate in local and statewide research and other quality improvement projects, and host medical students.\n\n· Our Neonatal Nurse Practitioners/Physician Associates are involved in outreach education throughout the region and serve as NRP and STABLE instructors.\n\nQualifications:\n\n· Candidates must be NCC or NCCPA certified, have at least two years of Level III-IV NICU experience, have prescriptive authority, and hold a current Maine license or be immediately eligible for the same.\n\nCompensation Information:\n\n· $74.04-$79.33 hourly rate\n\n· The compensation range listed reflects the range Northern Light Health anticipates relying on in setting the wages for the position. The range may not necessarily include all additional compensation elements available, including but not limited to call pay, leadership stipends, etc.\n\nNorthern Light Eastern Maine Medical Center is a 411-bed regional tertiary care and ACS-verified Level II trauma center serving a population of 500,000, and we are the regional referral center for perinatal, neonatal, and pediatric care for the northern two-thirds of the state of Maine. Pediatric subspecialty services include surgery, gastroenterology, child neurology, cardiology, endocrinology, genetics, hematology-oncology, developmental pediatrics, orthopedics, and ophthalmology.\n\nLive Where Others Vacation:\n\nBangor is a vibrant city with a small-town feel, offering access to Maine’s stunning coastlines, lakes, and mountains – including the breathtaking Acadia National Park. Enjoy top-rated schools, cultural events, and the amenities of the nearby University of Maine. Bangor International Airport makes travel easy with direct and one-stop flights across the country. You’ll always find something new and exciting to do in the four seasons of Maine!\n\nFor more information, please contact:\n\nAmanda Lewis, CPRP, Provider Recruiter\n\nEmail: ProviderCareers@northernlight.org\n\nPhone: 207.973.5358",
+   "requirements": [
+    "Northern Light Eastern Maine Medical Center has an excellent opportunity for a certified Neonatal Nurse Practitioner/Physician Associate with a minimum of two years of Level III-IV NICU experience to join our Level III NICU staff in a per diem position.",
+    "· Our model consists of one 24-hour NNP/PA in-house and often a second daytime NNP for up to 12 hours, 7 days a week.",
+    "· Our Neonatal Nurse Practitioners/Physician Associates are involved in outreach education throughout the region and serve as NRP and STABLE instructors.",
+    "· Candidates must be NCC or NCCPA certified, have at least two years of Level III-IV NICU experience, have prescriptive authority, and hold a current Maine license or be immediately eligible for the same."
+   ],
+   "relevance": 2,
+   "relevance_reason": "NICU role that asks for a neonatal nurse practitioner (NNP) credential; 'Neonatal' in title/unit/location.",
+   "tags": [
+    "NNP required",
+    "per diem"
+   ],
+   "first_seen_at": null,
+   "last_seen_at": null,
+   "status": "active",
+   "raw_notes": "scraper infor/api; attribution=city"
+  },
+  {
+   "id": "a34e05bc0dfe",
+   "hospital_slug": "northern-light-mercy-portland",
+   "title": "Pain Management APP (Nurse Practitioner or Physician Associate)",
+   "url": "https://css-emh-prd.inforcloudsuite.com/hcm/Jobs/form/JobPosting%5BJobPostingSet%5D%2810%2C93908%2C1%29.JobPostingDisplay?pagesize=1&navigation=JobPosting%5BJobPostingSet%5D%2810%2C93908%2C1%29.JobPostingDisplayNav&csk.JobBoard=EXTERNAL&csk.HROrganization=10",
+   "apply_url": null,
+   "source": "employer",
+   "external_id": "93908",
+   "location_text": "Portland, ME",
+   "city": "Portland",
+   "state": "ME",
+   "department": "Pain Management Clinic",
+   "setting": "mixed",
+   "employment_type": "Full time",
+   "shift": null,
+   "schedule": null,
+   "salary_text": "$129,595",
+   "posted_at": "2026-08-27",
+   "summary": "Pain Management APP (Nurse Practitioner or Physician Associate) at Northern Light Mercy Hospital. Setting: mixed settings. Notable: sign-on bonus, nights, relocation assistance.",
+   "description": "Northern Light Mercy Hospital is seeking a full-time Advanced Practice Provider (Nurse Practitioner or Physician Associate) to join its established, successful Pain Management practice in Portland, Maine. This is an excellent opportunity to join a collaborative, patient-centered team in one of New England’s most desirable coastal communities.\n\nCandidates should have minimum 2 years of post-certification experience. Applicants with substantial direct patient care experience gained prior to certification, such as RN experience or other advanced clinical roles, may also be considered.\n\nExperience working in Pain Management, Neurosurgery, Orthopedics, Physical Medicine & Rehabilitation, or a related specialty is preferred.\n\nEnjoy Work-Life Balance:\n\n• Monday through Thursday, 8:00-5:00.\n• No nights, weekends, or holidays.\n• No call responsibilities.\n• 288 hours annual PTO, increasing to 328 hours with tenure.\n\nPractice in a Thriving, Well-Supported Environment:\n\n• Deliver evidence-based and hands-on treatment to patients experiencing acute and chronic pain conditions.\n• Develop meaningful, long-term relationships with patients through ongoing care and follow-up.\n• Collaborate closely with experienced Pain Management physicians, an Advanced Practice Provider, registered nurses, medical assistants, and dedicated administrative staff.\n\nBenefits Information:\n\n• Generous student loan reimbursement opportunities\n• Sign-on bonus available\n• Relocation assistance, where applicable\n\nCompensation Information:\n\n• $129,595 annual base salary with the ability to earn additional compensation based on productivity and quality incentives.\n• The compensation range listed reflects the range Northern Light Health anticipates relying on in setting the wages for the position. The range may not necessarily include all additional compensation elements available, including but not limited to call pay, leadership stipends, etc.\n\nNorthern Light Health\n\nAt Northern Light Health, we’re building a better approach to healthcare because we believe people deserve access to care that works for them. As an integrated health delivery system serving Maine, we’re raising the bar with no-nonsense solutions that are leading the way to a healthier future for our state. Our nearly 10,000 team members—in hospitals, primary and specialty care practices, long-term and home healthcare, and ground and air medical transport and emergency care—are committed to making healthcare work for our patients, communities, and employees.\n\nNorthern Light Mercy Hospital\n\nNorthern Light Mercy Hospital is a nonprofit acute care hospital in Portland, Maine, and a sponsored ministry of the Sisters of Mercy of the Americas. Our work is grounded in compassion, dignity, and service, with a commitment to caring for every member of our community, especially those most in need. At Mercy, people come to work knowing their role matters. Whether at the bedside, in support services, administration, or clinical care, every team member contributes to a culture built on respect, collaboration, and purpose.\n\nWe provide a broad range of medical and surgical services, along with multiple primary and specialty care offerings and community-based programs that extend our impact beyond the hospital walls. As a member of Northern Light Health, an integrated statewide health delivery system, employees benefit from the stability, resource, and career pathways of a larger organization while working in a hospital that feels personal and connected. Team members have opportunities to grow professionally, explore new roles, and build long-term careers in an environment focused on quality, innovation, and the well-being of our workforce.\n\nPortland, Maine\n\nMercy Hospital is located in Portland - Maine’s largest and most vibrant city, offering an exceptional quality of life that attracts people from across the country. Portland is nationally recognized for its food scene, arts and culture, vibrant neighborhoods, and strong sense of community. Within minutes of the city, you can reach beaches, islands, lakes, and mountain trails, with easy access to hiking, skiing, boating, and cycling. The region also offers excellent schools, family-friendly neighborhoods, and easy travel connections through Portland International Jetport and nearby rail service to Boston. Southern Maine blends career opportunity with a lifestyle centered on balance, outdoor recreation, and coastal living, making it an ideal place to live and build a career.\n\nTo learn more, please contact:\n\nEmily Jerdonek, Provider Recruiter\nEmail: providercareers@northernlight.org\nCall: (207) 973-5358\nText “Pain Management Mercy” to (207) 560-0133",
+   "requirements": [
+    "Candidates should have minimum 2 years of post-certification experience.",
+    "Applicants with substantial direct patient care experience gained prior to certification, such as RN experience or other advanced clinical roles, may also be considered."
+   ],
+   "relevance": 1,
+   "relevance_reason": "NP role not clearly pediatric, kept because the hospital is in a hotspot region.",
+   "tags": [
+    "sign-on bonus",
+    "nights",
+    "relocation assistance"
+   ],
+   "first_seen_at": null,
+   "last_seen_at": null,
+   "status": "active",
+   "raw_notes": "scraper infor/api; attribution=city"
+  },
+  {
+   "id": "e6d8ed331abe",
+   "hospital_slug": "northern-light-emmc-bangor",
+   "title": "Rewarding Emergency Medicine PA Opportunity at Tertiary Care Center in Maine",
+   "url": "https://css-emh-prd.inforcloudsuite.com/hcm/Jobs/form/JobPosting%5BJobPostingSet%5D%2810%2C93002%2C1%29.JobPostingDisplay?pagesize=1&navigation=JobPosting%5BJobPostingSet%5D%2810%2C93002%2C1%29.JobPostingDisplayNav&csk.JobBoard=EXTERNAL&csk.HROrganization=10",
+   "apply_url": null,
+   "source": "employer",
+   "external_id": "93002",
+   "location_text": "Bangor, ME",
+   "city": "Bangor",
+   "state": "ME",
+   "department": "Emergency Med Prof Services",
+   "setting": "peds_ed",
+   "employment_type": "Full time",
+   "shift": null,
+   "schedule": null,
+   "salary_text": "$131,100 - $145,350",
+   "posted_at": "2026-07-23",
+   "summary": "Rewarding Emergency Medicine PA Opportunity at Tertiary Care Center in Maine at Northern Light Eastern Maine Medical Center. Setting: pediatric emergency. Notable: fellowship, new grad friendly, nights.",
+   "description": "Northern Light Eastern Maine Medical Center is seeking a Physician Associate or AGAC Certified Nurse Practitioner to join our hospital- employed Emergency Medicine team in Bangor, Maine.\n\nPosition Highlights:\n\n• Flexible shifts for work/life balance: 8–12-hour shifts from 7a-11p, 365 days per year – NO OVERNIGHTS\n• We use Cerner, M*Modal, Tigertext, and Vocera\n• Excellent opportunity to practice independently at the top of your license.\n• Ideal candidate will have completed an EM fellowship or have 2-3 years of EM experience.\n\nCompensation Information:\n\n• $131,100 - $145,350 annual base salary with the ability to earn additional compensation based on quality incentives.\n• The compensation range listed reflects the range Northern Light Health anticipates relying on in setting the wages for the position. The range may not necessarily include all additional compensation elements available, including but not limited to call pay, leadership stipends, etc.\n\nAbout us:\n\n• Tertiary care referral center serving the northern 2/3 of Maine.\n• 38k patients/year encompassing all ages, highest acuity ED in the state.\n• Group consists of 16 ABEM certified Emergency Medicine Physicians and 7 Physician Associates. Dual physician coverage at a minimum 24/7\n• Care areas include the main ED, Behavioral Health and observation. Access to behavioral health practitioners and clinicians 24/7\n• Full support of medical specialists. Including ED Pharmacist, PICU, NICU, IMU, CCU, and a closed ICU\n\nNorthern Light Eastern Maine Medical Center is a 411- bed, regional tertiary care and ACS-verified level II trauma center serving a patient population of approximately 500,000 in the northern two-thirds of the state. The hospital is a base for LifeFlight of Maine, a critical care air transportation service flying nearly 900 missions per year. We are a member of Northern Light Health, the most expansive integrated health delivery system in Maine. Northern Light Health offers a broad range of providers and services, including ten hospitals, primary care and specialty physician practices, long-term care, home health and hospice agencies, and emergency ground and air transport.\n\nBangor, Maine is a vibrant small city with easy access to Maine’s spectacular coast, mountains, and lakes. Schools rank among New England’s best with the flagship campus of the University of Maine located in the neighboring town of Orono. Bangor serves as the regional hub for medicine, the arts, and commerce. Bangor International Airport offers direct and one-stop service to most major destinations.\n\nFor more information, please contact:\n\nJenn Graves, Provider Recruiter II\n\nProviderCareers@northernlight.org\n\n207.973.5358",
+   "requirements": [
+    "Northern Light Eastern Maine Medical Center is seeking a Physician Associate or AGAC Certified Nurse Practitioner to join our hospital- employed Emergency Medicine team in Bangor, Maine.",
+    "Excellent opportunity to practice independently at the top of your license.",
+    "Group consists of 16 ABEM certified Emergency Medicine Physicians and 7 Physician Associates."
+   ],
+   "relevance": 2,
+   "relevance_reason": "Acute care APP role with pediatric evidence only in the description or from the hospital; description describes pediatric patients ('nicu').",
+   "tags": [
+    "PA title",
+    "fellowship",
+    "new grad friendly",
+    "nights"
+   ],
+   "first_seen_at": null,
+   "last_seen_at": null,
+   "status": "active",
+   "raw_notes": "scraper infor/api; attribution=city"
+  },
+  {
+   "id": "0d9d909cdc38",
+   "hospital_slug": "northern-light-emmc-bangor",
+   "title": "Emergency Medicine PA/NP Opportunity at Tertiary Care Center in Maine",
+   "url": "https://css-emh-prd.inforcloudsuite.com/hcm/Jobs/form/JobPosting%5BJobPostingSet%5D%2810%2C92711%2C1%29.JobPostingDisplay?pagesize=1&navigation=JobPosting%5BJobPostingSet%5D%2810%2C92711%2C1%29.JobPostingDisplayNav&csk.JobBoard=EXTERNAL&csk.HROrganization=10",
+   "apply_url": null,
+   "source": "employer",
+   "external_id": "92711",
+   "location_text": "Bangor, ME",
+   "city": "Bangor",
+   "state": "ME",
+   "department": "Emergency Med Prof Services",
+   "setting": "peds_ed",
+   "employment_type": "Full time",
+   "shift": null,
+   "schedule": null,
+   "salary_text": "$83.65 per hour",
+   "posted_at": "2026-07-21",
+   "summary": "Emergency Medicine PA/NP Opportunity at Tertiary Care Center in Maine at Northern Light Eastern Maine Medical Center. Setting: pediatric emergency. Notable: new grad friendly, fellowship, nights.",
+   "description": "Northern Light Eastern Maine Medical Center is seeking a per diem Physician Associate or AGAC Certified Nurse Practitioner to join our hospital- employed Emergency Medicine team in Bangor, Maine.\n\nPosition Highlights:\n\n• Flexible shifts for work/life balance: 8–12-hour shifts from 7a-11p, 365 days per year – NO OVERNIGHTS\n• We use Cerner, M*Modal, Tigertext, and Vocera\n• Excellent opportunity to practice independently at the top of your license.\n• Ideal candidate will have completed an EM fellowship or have 2-3 years of EM experience.\n\nCompensation Information:\n\n• $83.65 per hour\n• The compensation range listed reflects the range Northern Light Health anticipates relying on in setting the wages for the position. The range may not necessarily include all additional compensation elements available, including but not limited to call pay, leadership stipends, etc.\n\nAbout us:\n\n• Tertiary care referral center serving the northern 2/3 of Maine\n• 38k patients/year encompassing all ages, highest acuity ED in the state\n• Group consists of 16 ABEM certified Emergency Medicine Physicians and 7 Physician Associates. Dual physician coverage at a minimum 24/7\n• Care areas include the main ED, Behavioral Health and observation. Access to behavioral health practitioners and clinicians 24/7\n• Full support of medical specialists. Including ED Pharmacist, PICU, NICU, IMU, CCU, and a closed ICU\n\nNorthern Light Eastern Maine Medical Center is a 411- bed, regional tertiary care and ACS-verified level II trauma center serving a patient population of approximately 500,000 in the northern two-thirds of the state. The hospital is a base for LifeFlight of Maine, a critical care air transportation service flying nearly 900 missions per year. We are a member of Northern Light Health, the most expansive integrated health delivery system in Maine. Northern Light Health offers a broad range of providers and services, including ten hospitals, primary care and specialty physician practices, long-term care, home health and hospice agencies, and emergency ground and air transport.\n\nBangor, Maine is a vibrant small city with easy access to Maine’s spectacular coast, mountains, and lakes. Schools rank among New England’s best with the flagship campus of the University of Maine located in the neighboring town of Orono. Bangor serves as the regional hub for medicine, the arts, and commerce. Bangor International Airport offers direct and one-stop service to most major destinations.\n\nFor more information, please contact:\n\nJenn Graves, Provider Recruiter II\n\nProviderCareers@northernlight.org\n\n207.973.5358",
+   "requirements": [
+    "Northern Light Eastern Maine Medical Center is seeking a per diem Physician Associate or AGAC Certified Nurse Practitioner to join our hospital- employed Emergency Medicine team in Bangor, Maine.",
+    "Excellent opportunity to practice independently at the top of your license.",
+    "Group consists of 16 ABEM certified Emergency Medicine Physicians and 7 Physician Associates."
+   ],
+   "relevance": 2,
+   "relevance_reason": "Acute care APP role with pediatric evidence only in the description or from the hospital; description describes pediatric patients ('nicu').",
+   "tags": [
+    "new grad friendly",
+    "fellowship",
+    "nights",
+    "per diem"
+   ],
+   "first_seen_at": null,
+   "last_seen_at": null,
+   "status": "active",
+   "raw_notes": "scraper infor/api; attribution=city"
+  },
+  {
+   "id": "306cd19817da",
+   "hospital_slug": "golisano-childrens-buffalo",
+   "title": "Nurse Practitioner *FNP/ANP - NSICU*",
+   "url": "https://css-y9x4ku9mqsygapwx-prd.inforcloudsuite.com/hcm/Jobs/form/JobPosting%5BJobPostingSet%5D%281000%2C7683%2C1%29.JobPostingDisplay?pagesize=1&navigation=JobPosting%5BJobPostingSet%5D%281000%2C7683%2C1%29.JobPostingDisplayNav&csk.JobBoard=KH-EXTERNAL&csk.HROrganization=1000",
+   "apply_url": null,
+   "source": "employer",
+   "external_id": "7683",
+   "location_text": "Buffalo, NY",
+   "city": "Buffalo",
+   "state": "NY",
+   "department": null,
+   "setting": "picu",
+   "employment_type": "Pd",
+   "shift": null,
+   "schedule": null,
+   "salary_text": "$63.15-$79.40",
+   "posted_at": "2025-06-04",
+   "summary": "Nurse Practitioner *FNP/ANP - NSICU* at Golisano Children's Hospital of Buffalo. Setting: PICU / pediatric critical care. Notable: FNP accepted.",
+   "description": "Nurse Practitioner *FNP/ANP - NSICU*\n\nDepartment: BGMC Adv Practice Prov\nLocation: Buffalo General Medical Center\nLocation of Job: US:NY:Buffalo\nWork Type: Per-Diem\nScheduled Work Hours: Variable\nShift 9\n\nJob Description\n\nPractice of Advanced Practice Provider/Nurse Practitioner may include the diagnosis of illness and physical conditions and the performance of therapeutic and corrective measures within a specialty of practice, in collaboration with a licensed physician qualified to collaborate in the specialty involved, provided such services are performed in accordance with a written practice agreement and written practice protocols. Adheres to current Kaleida policies and standards of practice.\n\nEducation And Credentials\n\nCompletion of masters, post-masters’ or doctorate NP program accredited by CCNE or ACEN. Current active RN and NP license in NYS. National NP certification (internal hire required upon transfer into new position; external hire required at the time of application). Current BLS, ACLS. DEA or DEA eligible. Agreement from appropriate physician to enter into a collaborative agreement.\n\nExperience\n\nAt least 2 years of clinical nursing experience. Two (2) years of clinical experience in specialty area of practice (neuroscience/neurosurgery/critical care) as RN or NP preferred.\n\n**For Registered Nurse clinical positions, internal applicants must have been employed in the same job title as the per diem position for which they are applying or in a comparable area of practice. Internal applicants must have a minimum of nine (9) continuous months of comparable work experience within two (2) years of the time the per diem job is posted. External applicants must have a minimum of one (1) continuous year of comparable work experience within two (2) years of the time the per diem job is posted. All applicants will be required to satisfy all orientation/probationary requirements.**\n\nWorking Conditions\n\nJob Details\n\nStandard Hours Bi-Weekly: 15.00\nFTE: 0.200000\nWeekend/Holiday Requirement: Yes\nOn Call Required: No\nWith Rotation: Yes\nWork Arrangement: Onsite\nUnion Code: U06 - CWA 1168 BGH RN\nRequisition ID#: 7683\nGrade: RN5A\nPay Frequency: Bi-Weekly\nSalary Range: $63.15-$79.40\n\n*Wage will be determined based on factors such as candidate's experience, qualifications, internal equity, and any applicable collective bargaining agreement.\n\nKaleida Health’s mission is to advance the health of our community, and we believe our diversity, equity, and inclusion (DEI) strategic work is mission- critical for the good of our workforce and the community who need and depend on our care and services. We understand that racism and health inequities stand firmly in the way of advancing the health of our community, and Kaleida Health envisions DEI as the pursuit of equity and restorative justice for every person. We will exemplify courage and accountability through both the professing and practice of our core values for our friends, colleagues, and community. Kaleida Health is committed to creating a culture of equity and inclusion where diversity is valued and celebrated!",
+   "requirements": [
+    "Nurse Practitioner *FNP/ANP - NSICU",
+    "Completion of masters, post-masters’ or doctorate NP program accredited by CCNE or ACEN.",
+    "Current active RN and NP license in NYS.",
+    "National NP certification (internal hire required upon transfer into new position; external hire required at the time of application).",
+    "Current BLS, ACLS.",
+    "DEA or DEA eligible.",
+    "At least 2 years of clinical nursing experience.",
+    "Two (2) years of clinical experience in specialty area of practice (neuroscience/neurosurgery/critical care) as RN or NP preferred."
+   ],
+   "relevance": 3,
+   "relevance_reason": "Pediatric acute care APP role (PICU / pediatric critical care); posting at a children's hospital.",
+   "tags": [
+    "FNP accepted",
+    "union",
+    "per diem"
+   ],
+   "first_seen_at": null,
+   "last_seen_at": null,
+   "status": "active",
+   "raw_notes": "scraper infor/api; attribution=name"
+  },
+  {
+   "id": "39b867187800",
+   "hospital_slug": "golisano-childrens-buffalo",
+   "title": "Nurse Practitioner",
+   "url": "https://css-y9x4ku9mqsygapwx-prd.inforcloudsuite.com/hcm/Jobs/form/JobPosting%5BJobPostingSet%5D%281000%2C276%2C1%29.JobPostingDisplay?pagesize=1&navigation=JobPosting%5BJobPostingSet%5D%281000%2C276%2C1%29.JobPostingDisplayNav&csk.JobBoard=KH-EXTERNAL&csk.HROrganization=1000",
+   "apply_url": null,
+   "source": "employer",
+   "external_id": "276",
+   "location_text": "Buffalo, NY",
+   "city": "Buffalo",
+   "state": "NY",
+   "department": null,
+   "setting": "picu",
+   "employment_type": "Pd",
+   "shift": null,
+   "schedule": null,
+   "salary_text": "$63.15-$79.40",
+   "posted_at": "2024-12-13",
+   "summary": "Nurse Practitioner at Golisano Children's Hospital of Buffalo. Setting: PICU / pediatric critical care.",
+   "description": "Nurse Practitioner\n\nLocation:Buffalo General Medical Center\nLocation of Job: US:NY:Buffalo\nWork Type: Per-Diem\nShift: Shift 9\n\nJob Description\n\nSummary:\nPractice of Advanced Practice Provider/Nurse Practitioner may include the diagnosis of illness and physical conditions and the performance of therapeutic and corrective measures within a specialty of practice, in collaboration with a licensed physician qualified to collaborate in the specialty involved, provided such services are performed in accordance with a written practice agreement and written practice protocols. Adheres to current Kaleida policies and standards of practice.\n\nEducation And Credentials\n\nResponsibilities:\nCurrent NYS registration as a Registered Professional Nurse, Nurse Practitioner and American Heart Association-Basic Life Support (BLS) required upon hire and must be maintained thereafter. ANCC or national certification in area of specialty (Family/Adult) required within six (6) months of hire/transfer into position. Agreement from appropriate physician to enter into a collaborative agreement. **For Registered Nurse clinical positions, internal applicants must have been employed in the same job title as the per diem position for which they are applying or in a comparable area of practice. Internal applicants must have a minimum of nine (9) continuous months of comparable work experience within two (2) years of the time the per diem job is posted. External applicants must have a minimum of one (1) continuous year of comparable work experience within two (2) years of the time the per diem job is posted. All applicants will be required to satisfy all orientation/probationary requirements.**\n\nExperience\n\nOther information:\nTwo (2) years of clinical experience in specialty area of practice as RN or NP preferred.\n\nJob Details\n\nDepartment: BGMC Critical Care APPs\nStandard Hours Per Week: 15.00\nWeekend/Holiday Requirement: No\nOn Call Required: No\nWith Rotation:No\nScheduled Work Hours: Variable\nWork Arrangement: Onsite\nUnion Code: U06 - CWA 1168 BGH RN\nRequisition ID#: 276\nGrade: RN5A\nPay Frequency: Bi-Weekly\nSalary Range: $63.15-$79.40\n\n*Wage will be determined based on factors such as candidate's experience, qualifications, internal equity, and any applicable collective bargaining agreement.\n\nKaleida Health’s mission is to advance the health of our community, and we believe our diversity, equity, and inclusion (DEI) strategic work is mission- critical for the good of our workforce and the community who need and depend on our care and services. We understand that racism and health inequities stand firmly in the way of advancing the health of our community, and Kaleida Health envisions DEI as the pursuit of equity and restorative justice for every person. We will exemplify courage and accountability through both the professing and practice of our core values for our friends, colleagues, and community. Kaleida Health is committed to creating a culture of equity and inclusion where diversity is valued and celebrated!",
+   "requirements": [
+    "Current NYS registration as a Registered Professional Nurse, Nurse Practitioner and American Heart Association-Basic Life Support (BLS) required upon hire and must be maintained thereafter.",
+    "ANCC or national certification in area of specialty (Family/Adult) required within six (6) months of hire/transfer into position.",
+    "Two (2) years of clinical experience in specialty area of practice as RN or NP preferred."
+   ],
+   "relevance": 3,
+   "relevance_reason": "Pediatric acute care APP role (PICU / pediatric critical care); posting at a children's hospital.",
+   "tags": [
+    "union",
+    "per diem"
+   ],
+   "first_seen_at": null,
+   "last_seen_at": null,
+   "status": "active",
+   "raw_notes": "scraper infor/api; attribution=name"
+  }
+ ],
+ "seen_again": [],
+ "closed": [],
+ "totals": {
+  "hospitals": 9,
+  "checked": 9,
+  "unreachable": 0,
+  "listings": 76,
+  "candidates": 7,
+  "new_candidates": 7,
+  "seconds": 94.3
+ },
+ "browser": "not used",
+ "ledger": "data/hospitals.json",
+ "wall_seconds": 38.3
+}

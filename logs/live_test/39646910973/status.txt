@@ -1,0 +1,15 @@
+run 2026-10-21 wall=38.3s ledger=data/hospitals.json browser=not used
+
+hospital                                 platform               method           board  list  cand  new   secs  status / error
+-------------------------------------------------------------------------------------------------------------------------------------------
+golisano-childrens-buffalo               infor                  api                 15     5     2    2   22.3  ok
+mercy-hospital-buffalo                   infor                  api                 30    30     0    0   33.7  ok
+millard-fillmore-suburban-williamsville  infor                  api                 15     9     0    0   22.3  ok
+northern-light-acadia-bangor             infor                  api                 31     2     2    2   38.3  ok
+northern-light-ar-gould-presque-isle     infor                  api                 31     3     0    0   38.3  ok
+northern-light-emmc-bangor               infor                  api                 31    15     2    2   38.3  ok
+northern-light-mercy-portland            infor                  api                 31    11     1    1   38.3  ok
+olean-general-hospital-olean             infor                  api                 15     1     0    0   22.3  ok
+sisters-of-charity-hospital-buffalo      infor                  api                 30     0     0    0   33.7  ok
+-------------------------------------------------------------------------------------------------------------------------------------------
+hospitals=9 ok=9 not_ok=0 board_listings=76 candidates=7 new_candidates=7
