@@ -1,0 +1,96 @@
+url: http://127.0.0.1:8000/
+[desktop] status=200 load=0.8s title='NP Job Finder'
+[desktop] clicked first '[data-job-id]' and captured desktop_card.png
+[desktop] coverage view: 141 rows, captured desktop_coverage.png
+[desktop] coverage capture error: Locator.click: Timeout 5000ms exceeded.
+Call log:
+  - waiting for locator("#coverage .crow").first
+    - locator resolved to <article class="crow" tabindex="0" data-slug="northern-light-mercy-portland" aria-label="Northern Light Mercy Hospital, No listings recognized">…</article>
+  - attempting click action
+    2 × waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - <dl class="facts">…</dl> from <aside id="panel" class="panel" role="dialog" aria-modal="false" aria-labelledby="panelTitle">…</aside> subtree intercepts pointer events
+    - retrying click action
+    - waiting 20ms
+    - waiting for element to be visible, enabled and stable
+    - element is visible, enabled and stable
+    - scrolling into view if needed
+    - done scrolling
+    - <p class="d-why">Likely match: Pediatric APP role, pediatric prima…</p> from <aside id="panel" class="panel" role="dialog" aria-modal="false" aria-labelledby="panelTitle">…</aside> subtree intercepts pointer events
+  2 × retrying click action
+      - waiting 100ms
+      - waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - <span>Philadelphia, PA</span> from <aside id="panel" class="panel" role="dialog" aria-modal="false" aria-labelledby="panelTitle">…</aside> subtree intercepts pointer events
+  2 × retrying click action
+      - waiting 500ms
+      - waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - <dl class="facts">…</dl> from <aside id="panel" class="panel" role="dialog" aria-modal="false" aria-labelledby="panelTitle">…</aside> subtree intercepts pointer events
+    - retrying click action
+      - waiting 500ms
+      - waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - <p class="d-why">Likely match: Pediatric APP role, pediatric prima…</p> from <aside id="panel" class="panel" role="dialog" aria-modal="false" aria-labelledby="panelTitle">…</aside> subtree intercepts pointer events
+    - retrying click action
+      - waiting 500ms
+      - waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - <span>Philadelphia, PA</span> from <aside id="panel" class="panel" role="dialog" aria-modal="false" aria-labelledby="panelTitle">…</aside> subtree intercepts pointer events
+    - retrying click action
+      - waiting 500ms
+      - waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - <span>Philadelphia, PA</span> from <aside id="panel" class="panel" role="dialog" aria-modal="false" aria-labelledby="panelTitle">…</aside> subtree intercepts pointer events
+  - retrying click action
+    - waiting 500ms
+    - waiting for element to be visible, enabled and stable
+    - element is visible, enabled and stable
+    - scrolling into view if needed
+    - done scrolling
+    - <dl class="facts">…</dl> from <aside id="panel" class="panel" role="dialog" aria-modal="false" aria-labelledby="panelTitle">…</aside> subtree intercepts pointer events
+  - retrying click action
+    - waiting 500ms
+
+[mobile] status=200 load=0.8s title='NP Job Finder'
+[mobile] clicked first '[data-job-id]' and captured mobile_card.png
+[mobile] coverage capture error: Locator.click: Timeout 5000ms exceeded.
+Call log:
+  - waiting for locator(".view-seg [data-view=\"coverage\"]").first
+    - locator resolved to <button type="button" data-view="coverage" aria-pressed="false" title="Which hospital boards the last automated run could not read">…</button>
+  - attempting click action
+    2 × waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - <div class="panel-bar">…</div> from <main id="stage" class="stage">…</main> subtree intercepts pointer events
+    - retrying click action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - <div class="panel-bar">…</div> from <main id="stage" class="stage">…</main> subtree intercepts pointer events
+    - retrying click action
+      - waiting 100ms
+    10 × waiting for element to be visible, enabled and stable
+       - element is visible, enabled and stable
+       - scrolling into view if needed
+       - done scrolling
+       - <div class="panel-bar">…</div> from <main id="stage" class="stage">…</main> subtree intercepts pointer events
+     - retrying click action
+       - waiting 500ms
+
+source: local (a9fdae361c50d0b511f170b1d6c360727ff32a0e)
