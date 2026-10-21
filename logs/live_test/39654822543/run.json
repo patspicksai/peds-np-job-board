@@ -1,0 +1,576 @@
+{
+ "run_id": "2026-10-21",
+ "mode": "automated",
+ "started_at": "2026-10-21T18:40:58Z",
+ "finished_at": "2026-10-21T18:42:18Z",
+ "dry_run": true,
+ "no_details": false,
+ "keywords": [
+  "nurse practitioner",
+  "pediatric nurse practitioner",
+  "advanced practice provider",
+  "APRN",
+  "PICU",
+  "NICU"
+ ],
+ "checked": [
+  "emerson-hospital-concord",
+  "auburn-community-hospital-auburn",
+  "berkshire-medical-center-pittsfield",
+  "brockton-hospital-brockton",
+  "caromont-regional-gastonia",
+  "caromont-belmont",
+  "conway-medical-center-conway",
+  "crouse-hospital-syracuse",
+  "ellis-hospital-schenectady",
+  "granville-medical-center-oxford",
+  "kidspeace-orefield",
+  "lawrence-hospital-lawrence",
+  "rutland-regional-rutland"
+ ],
+ "unreachable": [],
+ "unreachable_detail": {},
+ "hospitals": [
+  {
+   "slug": "emerson-hospital-concord",
+   "name": "Emerson Hospital",
+   "platform": "healthcaresource",
+   "adapter": "healthcaresource",
+   "method": "api",
+   "board": "healthcaresource|emersonhealth.org|/cs/emerson",
+   "board_hospitals": 1,
+   "board_listings": 1,
+   "listings": 1,
+   "candidates": 0,
+   "new": 0,
+   "known": 0,
+   "status": "ok",
+   "error": null,
+   "http_status": null,
+   "seconds": 40.2,
+   "requests": 7,
+   "details_fetched": 1,
+   "details_failed": 0,
+   "notes": [],
+   "samples": [],
+   "sample_listings": [
+    {
+     "title": "Nurse Practitioner",
+     "url": "https://pm.healthcaresource.com/cs/emerson/#/job/17557",
+     "posted_at": "2026-09-01",
+     "location": "Concord, MA"
+    }
+   ]
+  },
+  {
+   "slug": "auburn-community-hospital-auburn",
+   "name": "Auburn Community Hospital",
+   "platform": "healthcaresource",
+   "adapter": "healthcaresource",
+   "method": "api",
+   "board": "healthcaresource|pm.healthcaresource.com|/cs/auburnhospital",
+   "board_hospitals": 1,
+   "board_listings": 1,
+   "listings": 1,
+   "candidates": 1,
+   "new": 1,
+   "known": 0,
+   "status": "ok",
+   "error": null,
+   "http_status": null,
+   "seconds": 41.0,
+   "requests": 7,
+   "details_fetched": 1,
+   "details_failed": 0,
+   "notes": [],
+   "samples": [
+    {
+     "title": "Nurse Practitioner",
+     "url": "https://pm.healthcaresource.com/cs/auburnhospital/#/job/99",
+     "posted_at": "2025-05-19",
+     "relevance": 3,
+     "setting": "peds_ed"
+    }
+   ],
+   "sample_listings": [
+    {
+     "title": "Nurse Practitioner",
+     "url": "https://pm.healthcaresource.com/cs/auburnhospital/#/job/99",
+     "posted_at": "2025-05-19",
+     "location": "Auburn , NY"
+    }
+   ]
+  },
+  {
+   "slug": "berkshire-medical-center-pittsfield",
+   "name": "Berkshire Medical Center",
+   "platform": "healthcaresource",
+   "adapter": "healthcaresource",
+   "method": "api",
+   "board": "healthcaresource|pm.healthcaresource.com|/cs/berkshire",
+   "board_hospitals": 1,
+   "board_listings": 1,
+   "listings": 1,
+   "candidates": 0,
+   "new": 0,
+   "known": 0,
+   "status": "ok",
+   "error": null,
+   "http_status": null,
+   "seconds": 42.0,
+   "requests": 7,
+   "details_fetched": 1,
+   "details_failed": 0,
+   "notes": [],
+   "samples": [],
+   "sample_listings": [
+    {
+     "title": "Nurse Practitioner",
+     "url": "https://pm.healthcaresource.com/cs/berkshire/#/job/21695",
+     "posted_at": "2026-04-27",
+     "location": "Pittsfield, MA"
+    }
+   ]
+  },
+  {
+   "slug": "brockton-hospital-brockton",
+   "name": "Brockton Hospital",
+   "platform": "healthcaresource",
+   "adapter": "healthcaresource",
+   "method": "api",
+   "board": "healthcaresource|pm.healthcaresource.com|/cs/brocktonhospital",
+   "board_hospitals": 1,
+   "board_listings": 1,
+   "listings": 1,
+   "candidates": 0,
+   "new": 0,
+   "known": 0,
+   "status": "ok",
+   "error": null,
+   "http_status": null,
+   "seconds": 39.2,
+   "requests": 7,
+   "details_fetched": 1,
+   "details_failed": 0,
+   "notes": [],
+   "samples": [],
+   "sample_listings": [
+    {
+     "title": "Nurse Practitioner - Primary Care",
+     "url": "https://pm.healthcaresource.com/cs/brocktonhospital/#/job/18580",
+     "posted_at": "2026-05-05",
+     "location": "Brockton, MA"
+    }
+   ]
+  },
+  {
+   "slug": "caromont-regional-gastonia",
+   "name": "CaroMont Regional Medical Center",
+   "platform": "healthcaresource",
+   "adapter": "healthcaresource",
+   "method": "api",
+   "board": "healthcaresource|pm.healthcaresource.com|/cs/caromont",
+   "board_hospitals": 2,
+   "board_listings": 1,
+   "listings": 1,
+   "candidates": 1,
+   "new": 1,
+   "known": 0,
+   "status": "ok",
+   "error": null,
+   "http_status": null,
+   "seconds": 36.2,
+   "requests": 7,
+   "details_fetched": 1,
+   "details_failed": 0,
+   "notes": [],
+   "samples": [
+    {
+     "title": "Nurse Practitioner/Physician Assistant",
+     "url": "https://pm.healthcaresource.com/cs/caromont/#/job/31484",
+     "posted_at": "2026-01-26",
+     "relevance": 1,
+     "setting": "unspecified"
+    }
+   ],
+   "sample_listings": [
+    {
+     "title": "Nurse Practitioner/Physician Assistant",
+     "url": "https://pm.healthcaresource.com/cs/caromont/#/job/31484",
+     "posted_at": "2026-01-26",
+     "location": "Gastonia, NC"
+    }
+   ]
+  },
+  {
+   "slug": "caromont-belmont",
+   "name": "CaroMont Regional Medical Center - Belmont",
+   "platform": "healthcaresource",
+   "adapter": "healthcaresource",
+   "method": "api",
+   "board": "healthcaresource|pm.healthcaresource.com|/cs/caromont",
+   "board_hospitals": 2,
+   "board_listings": 1,
+   "listings": 0,
+   "candidates": 0,
+   "new": 0,
+   "known": 0,
+   "status": "ok",
+   "error": null,
+   "http_status": null,
+   "seconds": 36.2,
+   "requests": 7,
+   "details_fetched": 1,
+   "details_failed": 0,
+   "notes": [],
+   "samples": [],
+   "sample_listings": [
+    {
+     "title": "Nurse Practitioner/Physician Assistant",
+     "url": "https://pm.healthcaresource.com/cs/caromont/#/job/31484",
+     "posted_at": "2026-01-26",
+     "location": "Gastonia, NC"
+    }
+   ]
+  },
+  {
+   "slug": "conway-medical-center-conway",
+   "name": "Conway Medical Center",
+   "platform": "healthcaresource",
+   "adapter": "healthcaresource",
+   "method": "api",
+   "board": "healthcaresource|pm.healthcaresource.com|/cs/cmcsc",
+   "board_hospitals": 1,
+   "board_listings": 1,
+   "listings": 1,
+   "candidates": 0,
+   "new": 0,
+   "known": 0,
+   "status": "ok",
+   "error": null,
+   "http_status": null,
+   "seconds": 33.0,
+   "requests": 6,
+   "details_fetched": 0,
+   "details_failed": 0,
+   "notes": [],
+   "samples": [],
+   "sample_listings": [
+    {
+     "title": "Authorization Specialist",
+     "url": "https://pm.healthcaresource.com/cs/cmcsc/#/job/10936",
+     "posted_at": "2026-09-25",
+     "location": "Conway, SC"
+    }
+   ]
+  },
+  {
+   "slug": "crouse-hospital-syracuse",
+   "name": "Crouse Hospital",
+   "platform": "healthcaresource",
+   "adapter": "healthcaresource",
+   "method": "api",
+   "board": "healthcaresource|pm.healthcaresource.com|/cs/crouse",
+   "board_hospitals": 1,
+   "board_listings": 1,
+   "listings": 1,
+   "candidates": 0,
+   "new": 0,
+   "known": 0,
+   "status": "ok",
+   "error": null,
+   "http_status": null,
+   "seconds": 35.0,
+   "requests": 6,
+   "details_fetched": 0,
+   "details_failed": 0,
+   "notes": [],
+   "samples": [],
+   "sample_listings": [
+    {
+     "title": "Respiratory Therapist",
+     "url": "https://pm.healthcaresource.com/cs/crouse/#/job/18690",
+     "posted_at": "2025-09-26",
+     "location": "Syracuse, NY"
+    }
+   ]
+  },
+  {
+   "slug": "ellis-hospital-schenectady",
+   "name": "Ellis Hospital",
+   "platform": "healthcaresource",
+   "adapter": "healthcaresource",
+   "method": "api",
+   "board": "healthcaresource|pm.healthcaresource.com|/cs/ellishospital",
+   "board_hospitals": 1,
+   "board_listings": 1,
+   "listings": 1,
+   "candidates": 0,
+   "new": 0,
+   "known": 0,
+   "status": "ok",
+   "error": null,
+   "http_status": null,
+   "seconds": 40.1,
+   "requests": 7,
+   "details_fetched": 1,
+   "details_failed": 0,
+   "notes": [],
+   "samples": [],
+   "sample_listings": [
+    {
+     "title": "Nurse Practitioner/Physician Assistant – Cardiology – Glenville",
+     "url": "https://pm.healthcaresource.com/cs/ellishospital/#/job/9467",
+     "posted_at": "2026-09-14",
+     "location": "Schenectady , NY"
+    }
+   ]
+  },
+  {
+   "slug": "granville-medical-center-oxford",
+   "name": "Granville Health System (Granville Medical Center)",
+   "platform": "healthcaresource",
+   "adapter": "healthcaresource",
+   "method": "api",
+   "board": "healthcaresource|pm.healthcaresource.com|/cs/granvillemedical",
+   "board_hospitals": 1,
+   "board_listings": 1,
+   "listings": 1,
+   "candidates": 1,
+   "new": 1,
+   "known": 0,
+   "status": "ok",
+   "error": null,
+   "http_status": null,
+   "seconds": 37.2,
+   "requests": 7,
+   "details_fetched": 1,
+   "details_failed": 0,
+   "notes": [],
+   "samples": [
+    {
+     "title": "Advanced Practice Provider (APP) Hospitalist",
+     "url": "https://pm.healthcaresource.com/cs/granvillemedical/#/job/3960",
+     "posted_at": "2024-05-28",
+     "relevance": 1,
+     "setting": "unspecified"
+    }
+   ],
+   "sample_listings": [
+    {
+     "title": "Advanced Practice Provider (APP) Hospitalist",
+     "url": "https://pm.healthcaresource.com/cs/granvillemedical/#/job/3960",
+     "posted_at": "2024-05-28",
+     "location": "Oxford, NC"
+    }
+   ]
+  },
+  {
+   "slug": "kidspeace-orefield",
+   "name": "KidsPeace Children's Hospital",
+   "platform": "healthcaresource",
+   "adapter": "healthcaresource",
+   "method": "api",
+   "board": "healthcaresource|pm.healthcaresource.com|/cs/kidspeace",
+   "board_hospitals": 1,
+   "board_listings": 1,
+   "listings": 1,
+   "candidates": 0,
+   "new": 0,
+   "known": 0,
+   "status": "ok",
+   "error": null,
+   "http_status": null,
+   "seconds": 35.0,
+   "requests": 6,
+   "details_fetched": 0,
+   "details_failed": 0,
+   "notes": [],
+   "samples": [],
+   "sample_listings": [
+    {
+     "title": "Therapist - Bangor",
+     "url": "https://pm.healthcaresource.com/cs/KIDSPEACE/#/job/13519",
+     "posted_at": "2026-01-16",
+     "location": "Bangor, ME"
+    }
+   ]
+  },
+  {
+   "slug": "lawrence-hospital-lawrence",
+   "name": "Lawrence Hospital",
+   "platform": "healthcaresource",
+   "adapter": "healthcaresource",
+   "method": "api",
+   "board": "healthcaresource|pm.healthcaresource.com|/cs/lawrence",
+   "board_hospitals": 1,
+   "board_listings": 1,
+   "listings": 1,
+   "candidates": 0,
+   "new": 0,
+   "known": 0,
+   "status": "ok",
+   "error": null,
+   "http_status": null,
+   "seconds": 47.2,
+   "requests": 8,
+   "details_fetched": 0,
+   "details_failed": 0,
+   "notes": [],
+   "samples": [],
+   "sample_listings": [
+    {
+     "title": "Respiratory Therapist , Per Diem",
+     "url": "https://pm.healthcaresource.com/cs/lawrence/#/job/15725",
+     "posted_at": "2026-04-06",
+     "location": "HAverhill, MA"
+    }
+   ]
+  },
+  {
+   "slug": "rutland-regional-rutland",
+   "name": "Rutland Regional Medical Center",
+   "platform": "healthcaresource",
+   "adapter": "healthcaresource",
+   "method": "api",
+   "board": "healthcaresource|rrmccareers.hctsportals.com|/cs/rrmc",
+   "board_hospitals": 1,
+   "board_listings": 1,
+   "listings": 1,
+   "candidates": 0,
+   "new": 0,
+   "known": 0,
+   "status": "ok",
+   "error": null,
+   "http_status": null,
+   "seconds": 32.2,
+   "requests": 6,
+   "details_fetched": 0,
+   "details_failed": 0,
+   "notes": [],
+   "samples": [],
+   "sample_listings": [
+    {
+     "title": "Respiratory Care Practitioner Pines",
+     "url": "https://pm.healthcaresource.com/cs/rrmc/#/job/18770",
+     "posted_at": "2026-04-17",
+     "location": "Rutland, VT"
+    }
+   ]
+  }
+ ],
+ "jobs": [
+  {
+   "id": "c4c5ae440f2b",
+   "hospital_slug": "auburn-community-hospital-auburn",
+   "title": "Nurse Practitioner",
+   "url": "https://pm.healthcaresource.com/cs/auburnhospital/#/job/99",
+   "apply_url": null,
+   "source": "employer",
+   "external_id": "1124",
+   "location_text": "Auburn , NY",
+   "city": "Auburn",
+   "state": "NY",
+   "department": "Childrens Health Specialists",
+   "setting": "peds_ed",
+   "employment_type": "Full time",
+   "shift": null,
+   "schedule": null,
+   "salary_text": "$110,000 to $125,000 per year",
+   "posted_at": "2025-05-19",
+   "summary": "Nurse Practitioner at Auburn Community Hospital. Setting: pediatric emergency.",
+   "description": "GENERAL SUMMARY:\n\nThe nurse practitioner (NP) will assist in medical care of office patients in the outpatient setting as outlined in the Principal Duties and responsibilities below and will participate in all aspects of patient care as indicated. The NP will also have direct reporting responsibility to the Attending Physician of the respective patients for all evaluations and other duties performed.\n\nMAJOR RESPONSIBILITIES:\n\nMay provide direct care to patients.\n\nDemonstrate the ability to problem-solve, analyze exiting programs, and apply process improvement principles.\n\nExamine patients to obtain information about their physical condition.\n\nMake tentative diagnosis and decisions about management and the patient\n\nObtain, compile and record patient medical data, including health notes and results of physical examination\n\nAdminister or order diagnostic tests, such as x-ray, electrocardiograms, and laboratory tests\n\nParticipate in patient care conferences when appropriate.\n\nDescribe the etiology and symptomatology of each selected disease process within specialty area.\n\nDiscuss current trends in management of patients with each selected disease process.\n\nConsistently execute those aspects of the nursing care plan requiring specialized clinical expertise and skill.\n\nRecognize and address situations and concurrent medical problems which pose a challenge to the patient.\n\nAssist with the communication of the discharge plan to the patient and significant others.\n\nObtain the results of diagnostic studies and initiate further treatment in collaboration with attending physician/designee.\n\nConsistently demonstrate commitment and accountability for the primary responsibility of providing quality patient care to a specialized group of patients.\n\nAlways demonstrate respect for the patient’s confidentiality.\n\nDemonstrate responsiveness to the patient and family members.\n\nInterpret medical/nursing management to the patient, family and other health care professionals.\n\nDiscuss the stages of death and dying and methods of intervention appropriate to each patient, which will enhance and ensure quality of nursing care.\n\nMaintain awareness of new developments in specialized area of expertise.\n\nApply appropriate current theoretical concepts when implementing changes in medical/nursing care.\n\nIdentify the appropriate personnel to contact for specific problems.\n\nInteract with, and appropriately involve other health professionals in patient management.\n\nDemonstrate a working knowledge of computers/information systems.\n\nDemonstrate competence in crisis situations.\n\nRecognize/identify critical changes in patient’s clinical status.\n\nIdentify the clinical manifestations of an emergency situation which require immediate intervention and respond in an appropriate and timely manner.\n\nIdentify and respond appropriately to the impact of the crisis of acute illness upon the patient, family and other members of the health care team.\n\nPerform other duties within the scope of the position\n\nQUALIFICATIONS:\n\nMust possess current licensure as a Nurse Practitioner in NYS. Must possess demonstrated effective communication skills both written and verbal.\n\nSalary: $110,000 to $125,000 per year DOE",
+   "requirements": [
+    "Must possess current licensure as a Nurse Practitioner in NYS."
+   ],
+   "relevance": 3,
+   "relevance_reason": "Pediatric acute care APP role (pediatric emergency); 'Childrens' in title/unit/location.",
+   "tags": [],
+   "first_seen_at": null,
+   "last_seen_at": null,
+   "status": "active",
+   "raw_notes": "scraper healthcaresource/api"
+  },
+  {
+   "id": "d0cb271576ba",
+   "hospital_slug": "caromont-regional-gastonia",
+   "title": "Nurse Practitioner/Physician Assistant",
+   "url": "https://pm.healthcaresource.com/cs/caromont/#/job/31484",
+   "apply_url": null,
+   "source": "employer",
+   "external_id": "40206",
+   "location_text": "Gastonia, NC",
+   "city": "Gastonia",
+   "state": "NC",
+   "department": "CMG - CFM - Overhead Eastern Region",
+   "setting": "unspecified",
+   "employment_type": "Full time",
+   "shift": null,
+   "schedule": "Mon-Fri 8a-5p, 1 weekend per month covering Urgent Care",
+   "salary_text": null,
+   "posted_at": "2026-01-26",
+   "summary": "Nurse Practitioner/Physician Assistant at CaroMont Regional Medical Center. Notable: FNP accepted.",
+   "description": "** Exciting Employment Opportunity for Advanced Practice Providers! **\n\nJoin the dynamic team at CaroMont Medical Group, located just a short drive from the vibrant city of Charlotte, NC—one of the fastest-growing cities in the nation! We are seeking Board Certified Advanced Practice Providers (NP/PA) to work across our Primary Care Service Line which includes our Family Medicine and Urgent Care Clinics.\n\n** Position Highlights: **\n\nJoin a collaborative and supportive team environment with a strong commitment to quality care.\n\nDeliver full-spectrum care, including Pediatrics.\n\nPractice in modern, well-equipped facilities with access to CaroMont’s extensive resources and network.\n\nCrosstrain and provide coverage for CaroMont Urgent Care, training provided.\n\nFamily Medicine & Urgent Care Shifts\n\nCover one weekend shift per month in Urgent Care\n\n**Requirements**\n\nMaster’s or Doctoral degree from accredited NP or PA program\n\nBoard Certified FNP or PA-C\n\nActive NC License & DEA and Active SC License & DEA\n\nBLS/ACLS certification\n\n** Why CaroMont? **\n\nCaroMont Health is an independent, not-for-profit healthcare system that prides itself on delivering exceptional care through a 476-bed hospital, brand-new satellite campus in Belmont, NC which opened its doors to the public in January 2025, extensive primary care, specialty physician network, and an accredited Cancer Center. We are deeply committed to enhancing the health and well-being of our community.\n\n** What We Offer: **\n\n- Competitive Compensation and Benefits Package: Enjoy a comprehensive benefits package that includes a productivity bonus, CME, Paid Time Off, Generous Benefits, and Malpractice Coverage.\n\n- Supportive administrative team and leadership\n\n- Opportunities for professional development and growth\n\n- Community and Lifestyle: Experience the charm of family-oriented communities with beautiful neighborhoods, top-notch public and private schools, and a strong sense of community spirit.\n\nJust minutes away from the bustling Charlotte metro area, you’ll have access to fabulous shopping, gourmet dining, exciting professional sporting events, concerts, and cultural experiences. Plus, with Charlotte Douglas International Airport nearby, traveling is a breeze!\n\n** Outdoor Adventures Await: **\n\nEnjoy a four-season climate with opportunities for outdoor recreation. Lakes, mountains, and beaches are all just a short drive away, perfect for those who love to explore nature and seek adventure.\n\n** Ready to Join Us? **\n\nIf you’re interested in bringing your skills to our team and making a positive impact in the community, we encourage you to apply today! Visit www.caromonthealth.org to start your journey with us.\n\nDon’t miss out on this incredible opportunity to build your career while enjoying a fulfilling lifestyle in a welcoming community!",
+   "requirements": [
+    "Board Certified FNP or PA-C",
+    "Active NC License & DEA and Active SC License & DEA",
+    "BLS/ACLS certification"
+   ],
+   "relevance": 1,
+   "relevance_reason": "NP role not clearly pediatric, kept because the hospital is in a hotspot region.",
+   "tags": [
+    "FNP accepted"
+   ],
+   "first_seen_at": null,
+   "last_seen_at": null,
+   "status": "active",
+   "raw_notes": "scraper healthcaresource/api; attribution=city"
+  },
+  {
+   "id": "841b17bbfc23",
+   "hospital_slug": "granville-medical-center-oxford",
+   "title": "Advanced Practice Provider (APP) Hospitalist",
+   "url": "https://pm.healthcaresource.com/cs/granvillemedical/#/job/3960",
+   "apply_url": null,
+   "source": "employer",
+   "external_id": "5890",
+   "location_text": "Oxford, NC",
+   "city": "Oxford",
+   "state": "NC",
+   "department": "Medical/Surgical",
+   "setting": "unspecified",
+   "employment_type": "Full time",
+   "shift": null,
+   "schedule": "12 hour days, 7on, 7off ",
+   "salary_text": null,
+   "posted_at": "2024-05-28",
+   "summary": "Advanced Practice Provider (APP) Hospitalist at Granville Health System (Granville Medical Center).",
+   "description": "Position Summary\n\nThe Advanced Practice Provider (APP) Hospitalist with Granville Health System in Oxford, NC, is responsible for examining and treating patients independently within their scope of practice and in collaboration with other healthcare professionals. Granville Health System is a rural, county-based, 62-bed hospital 40-miles North of Raleigh.\n\nThis role ensures proper illness and injury care, disease prevention, diagnosis, treatment, and recovery. The APP Hospitalist relies on experience and judgment to plan and accomplish goals and performs a variety of tasks. The role involves providing direct inpatient care to adult patients. Participation in the hospital's safety and infection control programs is mandatory to reduce risk to employees.\n\n• Provide direct in-patient care to adult patients.\n• Responsible for providing episodic and chronic care, as well as screening and educational assistance to patients.\n• Conduct inpatient and outpatient consultations in internal medicine.\n• Provide quality care to patients by following the most current evidence-based guidelines and procedures of practice.\n• Adhere to all institutional policies, procedures, and regulations to ensure patient safety and quality of care.\n• Take part in quality assurance audits, including continuing education, and peer review.\n• Participate in continuing education and training to keep abreast of current developments in the industry.\n• Recognize the diversity of the patient population and treat all warmly and kindly.\n• Familiarity with a variety of concepts, practices, and procedures in the field.\n• Knowledge of CPT/ICD-10 coding.\n• Sufficient clinical knowledge and experience to provide clinical competence and meet institutional standards of care.\n• Interpersonal skills to deal harmoniously with staff, patients, and family members.\n• Demonstrated ability to meet the responsibilities of the position.\n\nNurse Practitioner Qualifications:\n\n• Master’s degree in area of specialty required\n• Certification as a Certified Registered Nurse Practitioner (CRNP)\n• State authority for advanced practice\n• Familiar with a variety of the field's concepts, practices, and procedures\n\nPhysician Assistant Qualifications:\n\n• Master’s degree in area of specialty required\n• Certification by the National Commission on Certification of Physicians Assistants (NCCPA) as a PA-C.\n• State authority for advanced practice\n• Familiar with a variety of the field's concepts, practices, and procedures",
+   "requirements": [
+    "Certification as a Certified Registered Nurse Practitioner (CRNP)",
+    "Certification by the National Commission on Certification of Physicians Assistants (NCCPA) as a PA-C."
+   ],
+   "relevance": 1,
+   "relevance_reason": "NP role not clearly pediatric, kept because the hospital is in a hotspot region.",
+   "tags": [],
+   "first_seen_at": null,
+   "last_seen_at": null,
+   "status": "active",
+   "raw_notes": "scraper healthcaresource/api"
+  }
+ ],
+ "seen_again": [],
+ "closed": [],
+ "totals": {
+  "hospitals": 13,
+  "checked": 13,
+  "unreachable": 0,
+  "listings": 12,
+  "candidates": 3,
+  "new_candidates": 3,
+  "seconds": 458.3
+ },
+ "browser": "not used",
+ "ledger": "data/hospitals.json",
+ "wall_seconds": 80.2
+}
