@@ -12461,12 +12461,15 @@
       "region": "NYC metro",
       "hotspot": false,
       "website": "https://maimo.org/",
-      "careers_url": "https://maimo.org/careers/",
-      "careers_platform": "unknown",
-      "careers_search_url": null,
-      "careers_notes": "Maimonides is moving into NYC Health + Hospitals (transaction advancing in 2026), so postings may migrate to the H+H board. careers URL is a best guess; verify. [enrich 2026-10-20] careers_url -> HTTP 404 at https://maimo.org/careers/",
+      "careers_url": "https://careers.maimo.org/jobs",
+      "careers_platform": "icims",
+      "careers_search_url": "https://careers.maimo.org/jobs?keywords=nurse%20practitioner",
+      "careers_notes": "Maimonides is moving into NYC Health + Hospitals (transaction advancing in 2026), so postings may migrate to the H+H board. careers URL is a best guess; verify. [enrich 2026-10-20] careers_url -> HTTP 404 at https://maimo.org/careers/ [gap-fix 2026-10-21] Maimonides jobs are on a Jibe (iCIMS Attract) front end careers.maimo.org backed by careers-maimo.icims.com (Actions probe 39428696372).",
       "ats_config": {
-        "host": "maimo.org"
+        "host": "careers.maimo.org",
+        "jibe_host": "careers.maimo.org",
+        "adapter": "jibe",
+        "icims_host": "careers-maimo.icims.com"
       },
       "nearest_airport": "JFK John F. Kennedy International",
       "beds": 711,
@@ -17916,12 +17919,13 @@
       "region": "Upstate NY",
       "hotspot": false,
       "website": "https://www.ecmc.edu/",
-      "careers_url": "https://www.ecmc.edu/careers/",
+      "careers_url": "https://ecmc462.rec.pro.ukg.net/ERI1003ECMC/JobBoard/4d1858fb-5b2a-499b-a320-4f1f4e5bcb06/",
       "careers_platform": "ultipro",
-      "careers_search_url": null,
-      "careers_notes": "careers URL is a best guess from the hospital domain; verify in enrichment. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.ecmc.edu/careers/",
+      "careers_search_url": "https://ecmc462.rec.pro.ukg.net/ERI1003ECMC/JobBoard/4d1858fb-5b2a-499b-a320-4f1f4e5bcb06/?q=nurse%20practitioner",
+      "careers_notes": "careers URL is a best guess from the hospital domain; verify in enrichment. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.ecmc.edu/careers/ [gap-fix 2026-10-21] UKG Pro board ecmc462.rec.pro.ukg.net linked from ecmc.edu/careers (Actions probe 39425394446).",
       "ats_config": {
-        "host": "www.ecmc.edu"
+        "host": "ecmc462.rec.pro.ukg.net",
+        "board_path": "/ERI1003ECMC/JobBoard/4d1858fb-5b2a-499b-a320-4f1f4e5bcb06"
       },
       "nearest_airport": "BUF Buffalo Niagara International (15 min)",
       "beds": 330,
@@ -18862,12 +18866,14 @@
       "region": "Upstate NY",
       "hotspot": false,
       "website": "https://www.rochesterregional.org/locations/rochester-general-hospital",
-      "careers_url": "https://careers.rochesterregional.org/",
-      "careers_platform": "unknown",
-      "careers_search_url": null,
-      "careers_notes": "Rochester Regional careers site (req_ style job URLs seen by R3b); platform not confirmed. [enrich 2026-10-20] careers_url -> HTTP 200 at https://careers.rochesterregional.org/; ATS link seen: https://rrhs.wd5.myworkdayjobs.com/RRH/login",
+      "careers_url": "https://rrhs.wd5.myworkdayjobs.com/RRH",
+      "careers_platform": "workday",
+      "careers_search_url": "https://rrhs.wd5.myworkdayjobs.com/RRH?q=nurse%20practitioner",
+      "careers_notes": "Rochester Regional careers site (req_ style job URLs seen by R3b); platform not confirmed. [enrich 2026-10-20] careers_url -> HTTP 200 at https://careers.rochesterregional.org/; ATS link seen: https://rrhs.wd5.myworkdayjobs.com/RRH/login [gap-fix 2026-10-21] Rochester Regional Health posts on Workday rrhs.wd5 site RRH (cxs jobs JSON 200, 85 NP hits, Actions probe 39425394446); careers.rochesterregional.org is a TalentBrew marketing front.",
       "ats_config": {
-        "host": "careers.rochesterregional.org"
+        "host": "rrhs.wd5.myworkdayjobs.com",
+        "tenant": "rrhs",
+        "site": "RRH"
       },
       "nearest_airport": "ROC Frederick Douglass Greater Rochester International (20 min)",
       "beds": 528,
@@ -19764,12 +19770,14 @@
       "region": "Upstate NY",
       "hotspot": false,
       "website": "https://www.rochesterregional.org/locations/united-memorial-medical-center",
-      "careers_url": "https://careers.rochesterregional.org/",
-      "careers_platform": "unknown",
-      "careers_search_url": null,
-      "careers_notes": "Rochester Regional careers site (req_ style job URLs seen by R3b); platform not confirmed. [enrich 2026-10-20] careers_url -> HTTP 200 at https://careers.rochesterregional.org/; ATS link seen: https://rrhs.wd5.myworkdayjobs.com/RRH/login",
+      "careers_url": "https://rrhs.wd5.myworkdayjobs.com/RRH",
+      "careers_platform": "workday",
+      "careers_search_url": "https://rrhs.wd5.myworkdayjobs.com/RRH?q=nurse%20practitioner",
+      "careers_notes": "Rochester Regional careers site (req_ style job URLs seen by R3b); platform not confirmed. [enrich 2026-10-20] careers_url -> HTTP 200 at https://careers.rochesterregional.org/; ATS link seen: https://rrhs.wd5.myworkdayjobs.com/RRH/login [gap-fix 2026-10-21] Rochester Regional Health posts on Workday rrhs.wd5 site RRH (Actions probe 39425394446).",
       "ats_config": {
-        "host": "careers.rochesterregional.org"
+        "host": "rrhs.wd5.myworkdayjobs.com",
+        "tenant": "rrhs",
+        "site": "RRH"
       },
       "nearest_airport": "BUF Buffalo Niagara International (40 min)",
       "beds": null,
@@ -19832,12 +19840,14 @@
       "region": "Upstate NY",
       "hotspot": false,
       "website": "https://www.rochesterregional.org/locations/unity-hospital",
-      "careers_url": "https://careers.rochesterregional.org/",
-      "careers_platform": "unknown",
-      "careers_search_url": null,
-      "careers_notes": "Rochester Regional careers site (req_ style job URLs seen by R3b); platform not confirmed. [enrich 2026-10-20] careers_url -> HTTP 200 at https://careers.rochesterregional.org/; ATS link seen: https://rrhs.wd5.myworkdayjobs.com/RRH/login",
+      "careers_url": "https://rrhs.wd5.myworkdayjobs.com/RRH",
+      "careers_platform": "workday",
+      "careers_search_url": "https://rrhs.wd5.myworkdayjobs.com/RRH?q=nurse%20practitioner",
+      "careers_notes": "Rochester Regional careers site (req_ style job URLs seen by R3b); platform not confirmed. [enrich 2026-10-20] careers_url -> HTTP 200 at https://careers.rochesterregional.org/; ATS link seen: https://rrhs.wd5.myworkdayjobs.com/RRH/login [gap-fix 2026-10-21] Rochester Regional Health posts on Workday rrhs.wd5 site RRH (Actions probe 39425394446).",
       "ats_config": {
-        "host": "careers.rochesterregional.org"
+        "host": "rrhs.wd5.myworkdayjobs.com",
+        "tenant": "rrhs",
+        "site": "RRH"
       },
       "nearest_airport": "ROC Frederick Douglass Greater Rochester International (15 min)",
       "beds": null,
@@ -19894,14 +19904,14 @@
       "region": "Upstate NY",
       "hotspot": false,
       "website": "https://www.upstate.edu/gch/",
-      "careers_url": "https://careers.upstate.edu/cw/en-us/listing/",
-      "careers_platform": "pageup",
-      "careers_search_url": "https://careers.upstate.edu/cw/en-us/filter/?search-keyword=nurse%20practitioner",
-      "careers_notes": "SUNY Upstate posts jobs on a PageUp board at careers.upstate.edu (a search result showed a posting at /cw/en-us/job/510525/clinical-assistant-professorhospitalist). The listing and filter URLs here follow the standard PageUp pattern and were not test fetched (fetch was rate limited). Some Upstate titles also appear on statejobs.ny.gov because Upstate is a SUNY state employer. A full time Pediatric APP Hospitalist role at Upstate Golisano was seen on Ladders (12 hour rotating shifts). [enrich 2026-10-20] careers_url -> HTTP 404 at https://careers.upstate.edu/cw/en-us/listing/; search_url -> HTTP 404, mentions NP: False, job links: 4 [enrich 2026-10-20] careers_url -> HTTP 404 at https://careers.upstate.edu/cw/en-us/listing/; search_url -> HTTP 404, mentions NP: False, job links: 4",
+      "careers_url": "https://careers.upstate.edu/jobs/search",
+      "careers_platform": "custom",
+      "careers_search_url": "https://careers.upstate.edu/jobs/search?query=nurse%20practitioner",
+      "careers_notes": "SUNY Upstate posts jobs on a PageUp board at careers.upstate.edu (a search result showed a posting at /cw/en-us/job/510525/clinical-assistant-professorhospitalist). The listing and filter URLs here follow the standard PageUp pattern and were not test fetched (fetch was rate limited). Some Upstate titles also appear on statejobs.ny.gov because Upstate is a SUNY state employer. A full time Pediatric APP Hospitalist role at Upstate Golisano was seen on Ladders (12 hour rotating shifts). [enrich 2026-10-20] careers_url -> HTTP 404 at https://careers.upstate.edu/cw/en-us/listing/; search_url -> HTTP 404, mentions NP: False, job links: 4 [enrich 2026-10-20] careers_url -> HTTP 404 at https://careers.upstate.edu/cw/en-us/listing/; search_url -> HTTP 404, mentions NP: False, job links: 4 [gap-fix 2026-10-21] PageUp /cw/en-us/listing/ is gone (404); careers.upstate.edu/jobs/search?query= is server-rendered with /jobs/<slug> links and rel=next paging (Actions probe 39428696372).",
       "ats_config": {
+        "flagship": true,
         "host": "careers.upstate.edu",
-        "listing_path": "/cw/en-us/listing/",
-        "flagship": true
+        "vendor": "Upstate custom (server rendered, rel=next paging)"
       },
       "nearest_airport": "SYR Syracuse Hancock International (about 5 mi straight-line)",
       "beds": 752,
@@ -20577,8 +20587,8 @@
       "website": "https://www.englewoodhealth.org/",
       "careers_url": "https://careers.englewoodhealth.org/",
       "careers_platform": "successfactors",
-      "careers_search_url": null,
-      "careers_notes": "Careers site could not be verified this session: the web search budget ran out and direct fetches of Englewood Health pages were blocked. careers_url is the main website as a placeholder; locate the real job search page and platform before scraping. [enrich 2026-10-20] careers_url -> HTTP 200 at https://careers.englewoodhealth.org/",
+      "careers_search_url": "https://careers.englewoodhealth.org/search/?q=nurse%20practitioner",
+      "careers_notes": "Careers site could not be verified this session: the web search budget ran out and direct fetches of Englewood Health pages were blocked. careers_url is the main website as a placeholder; locate the real job search page and platform before scraping. [enrich 2026-10-20] careers_url -> HTTP 200 at https://careers.englewoodhealth.org/ [gap-fix 2026-10-21] New SuccessFactors UI renders job cards client-side (li.JobsList_jobCard); search URL set so the Playwright fallback renders the results page (10 NP rows on Actions probe 39425394446).",
       "ats_config": {
         "host": "careers.englewoodhealth.org"
       },
@@ -23659,12 +23669,14 @@
       "region": "Philadelphia metro",
       "hotspot": false,
       "website": "https://www.templehealth.org/",
-      "careers_url": "https://careers.templehealth.org/",
-      "careers_platform": "unknown",
-      "careers_search_url": null,
-      "careers_notes": "Careers URL is the system careers site from model knowledge or the caller's list; not fetched this pass. Enrichment job should probe it and detect the platform. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.templehealth.org/careers",
+      "careers_url": "https://jobs.silkroad.com/templehealth/Careers",
+      "careers_platform": "custom",
+      "careers_search_url": "https://jobs.silkroad.com/templehealth/Careers?SearchString=nurse%20practitioner",
+      "careers_notes": "Careers URL is the system careers site from model knowledge or the caller's list; not fetched this pass. Enrichment job should probe it and detect the platform. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.templehealth.org/careers [gap-fix 2026-10-21] Temple Health jobs are on SilkRoad (server-rendered a.sr-panel rows at /templehealth/Careers/jobs/<id>, Actions probe 39428696372).",
       "ats_config": {
-        "host": "www.templehealth.org"
+        "host": "jobs.silkroad.com",
+        "vendor": "SilkRoad Recruiting",
+        "client_path": "/templehealth/Careers"
       },
       "nearest_airport": "PHL Philadelphia International (about 12 mi)",
       "beds": 733,
@@ -24279,12 +24291,13 @@
       "region": "Pennsylvania (other)",
       "hotspot": false,
       "website": "https://www.guthrie.org/",
-      "careers_url": "https://www.guthrie.org/jobs",
+      "careers_url": "https://elfw.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001",
       "careers_platform": "oracle_cloud",
-      "careers_search_url": null,
-      "careers_notes": "Guthrie posts jobs on its own site with paths like guthrie.org/jobs/pediatrics/pediatrics-hospitalist-nppa-sayre-pa (seen in search results); underlying ATS not identified. [enrich 2026-10-20] careers_url -> HTTP 404 at https://www.guthrie.org/jobs; ATS link seen: https://elfw.fa.us2.oraclecloud.com/fscmUI/faces/FuseOverview",
+      "careers_search_url": "https://elfw.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/jobs?keyword=nurse%20practitioner",
+      "careers_notes": "Guthrie posts jobs on its own site with paths like guthrie.org/jobs/pediatrics/pediatrics-hospitalist-nppa-sayre-pa (seen in search results); underlying ATS not identified. [enrich 2026-10-20] careers_url -> HTTP 404 at https://www.guthrie.org/jobs; ATS link seen: https://elfw.fa.us2.oraclecloud.com/fscmUI/faces/FuseOverview [gap-fix 2026-10-21] careers.guthrie.org is a vanity shell for Oracle Recruiting Cloud elfw.fa.us2 site CX_1001 (Actions probe 39425394446).",
       "ats_config": {
-        "host": "www.guthrie.org"
+        "host": "elfw.fa.us2.oraclecloud.com",
+        "site_number": "CX_1001"
       },
       "nearest_airport": "ELM Elmira Corning Regional (about 20 mi); BGM Greater Binghamton about 45 mi",
       "beds": 254,
@@ -25731,11 +25744,14 @@
       "region": "Pennsylvania (other)",
       "hotspot": false,
       "website": "https://www.wellspan.org/",
-      "careers_url": "https://careers.wellspan.org/",
-      "careers_platform": "unknown",
-      "careers_search_url": null,
-      "careers_notes": "Careers URL is the system careers site from model knowledge or the caller's list; not fetched this pass. Enrichment job should probe it and detect the platform. [enrich 2026-10-20] careers_url -> HTTP None at None",
-      "ats_config": {},
+      "careers_url": "https://www.joinwellspan.org/Search",
+      "careers_platform": "custom",
+      "careers_search_url": "https://www.joinwellspan.org/Search?keyword=nurse%20practitioner",
+      "careers_notes": "Careers URL is the system careers site from model knowledge or the caller's list; not fetched this pass. Enrichment job should probe it and detect the platform. [enrich 2026-10-20] careers_url -> HTTP None at None [gap-fix 2026-10-21] careers.wellspan.org is DNS-dead; WellSpan jobs are on joinwellspan.org (JSON /api/search/job-search Results[].url=/job-listings?jobId=N, 425 NP hits on Actions probe 39428696372).",
+      "ats_config": {
+        "host": "www.joinwellspan.org",
+        "vendor": "Sitecore custom (client-rendered; /api/search/job-search JSON)"
+      },
       "nearest_airport": "MDT Harrisburg International (about 22 mi); BWI Baltimore/Washington about 50 mi",
       "beds": 580,
       "peds_beds": null,
@@ -26005,12 +26021,14 @@
       "region": "Delaware",
       "hotspot": false,
       "website": "https://christianacare.org/facilities/christianahospital/",
-      "careers_url": "https://christianacare.org/facilities/christianahospital/",
-      "careers_platform": "unknown",
-      "careers_search_url": null,
-      "careers_notes": "Careers site could not be verified this session: the web search budget ran out and direct fetches of ChristianaCare pages were blocked. careers_url is the main website as a placeholder; locate the real job search page and platform before scraping. [enrich 2026-10-20] careers_url -> HTTP 200 at https://christianacare.org/us/en/facilities/christiana-hospital",
+      "careers_url": "https://christianacare.wd5.myworkdayjobs.com/CCHS",
+      "careers_platform": "workday",
+      "careers_search_url": "https://christianacare.wd5.myworkdayjobs.com/CCHS?q=nurse%20practitioner",
+      "careers_notes": "Careers site could not be verified this session: the web search budget ran out and direct fetches of ChristianaCare pages were blocked. careers_url is the main website as a placeholder; locate the real job search page and platform before scraping. [enrich 2026-10-20] careers_url -> HTTP 200 at https://christianacare.org/us/en/facilities/christiana-hospital [gap-fix 2026-10-21] ChristianaCare posts on Workday christianacare.wd5 site CCHS (cxs jobs JSON 200, 34 NP hits, Actions probe 39425394446).",
       "ats_config": {
-        "host": "christianacare.org"
+        "host": "christianacare.wd5.myworkdayjobs.com",
+        "tenant": "christianacare",
+        "site": "CCHS"
       },
       "nearest_airport": "ILG Wilmington (New Castle) (about 4 mi straight-line); PHL Philadelphia International about 26 mi",
       "beds": 906,
@@ -29144,12 +29162,14 @@
       "region": "Maryland (other)",
       "hotspot": false,
       "website": "https://christianacare.org/facilities/union-hospital/",
-      "careers_url": "https://christianacare.org/careers/",
-      "careers_platform": "unknown",
-      "careers_search_url": null,
-      "careers_notes": "ChristianaCare careers page (path unverified); jobs post systemwide, filter to Union Hospital (Elkton). [enrich 2026-10-20] careers_url -> HTTP 200 at https://careers.christianacare.org/",
+      "careers_url": "https://christianacare.wd5.myworkdayjobs.com/CCHS",
+      "careers_platform": "workday",
+      "careers_search_url": "https://christianacare.wd5.myworkdayjobs.com/CCHS?q=nurse%20practitioner",
+      "careers_notes": "ChristianaCare careers page (path unverified); jobs post systemwide, filter to Union Hospital (Elkton). [enrich 2026-10-20] careers_url -> HTTP 200 at https://careers.christianacare.org/ [gap-fix 2026-10-21] ChristianaCare posts on Workday christianacare.wd5 site CCHS (Actions probe 39425394446).",
       "ats_config": {
-        "host": "christianacare.org"
+        "host": "christianacare.wd5.myworkdayjobs.com",
+        "tenant": "christianacare",
+        "site": "CCHS"
       },
       "nearest_airport": "PHL Philadelphia International (about 45 mi); BWI (about 55 mi)",
       "beds": 99,
@@ -29199,12 +29219,13 @@
       "region": "Maryland (other)",
       "hotspot": false,
       "website": "https://www.frederickhealth.org/",
-      "careers_url": "https://www.frederickhealth.org/careers",
-      "careers_platform": "unknown",
-      "careers_search_url": null,
-      "careers_notes": "Frederick Health careers page (path unverified); ATS not confirmed. [enrich 2026-10-20] careers_url -> HTTP 403 at https://www.frederickhealth.org/careers",
+      "careers_url": "https://recruiting.ultipro.com/FRE1010FRHS/JobBoard/776a147e-2e0b-43d0-844e-bbd49deeb24d/",
+      "careers_platform": "ultipro",
+      "careers_search_url": "https://recruiting.ultipro.com/FRE1010FRHS/JobBoard/776a147e-2e0b-43d0-844e-bbd49deeb24d/?q=nurse%20practitioner",
+      "careers_notes": "Frederick Health careers page (path unverified); ATS not confirmed. [enrich 2026-10-20] careers_url -> HTTP 403 at https://www.frederickhealth.org/careers [gap-fix 2026-10-21] frederickhealth.org is Cloudflare-walled; jobs are on UKG Pro (LoadSearchResults JSON 200 on Actions probe 39425394446).",
       "ats_config": {
-        "host": "www.frederickhealth.org"
+        "host": "recruiting.ultipro.com",
+        "board_path": "/FRE1010FRHS/JobBoard/776a147e-2e0b-43d0-844e-bbd49deeb24d"
       },
       "nearest_airport": "IAD Dulles (about 40 mi); BWI (about 50 mi)",
       "beds": 268,
@@ -29406,12 +29427,13 @@
       "region": "Maryland (other)",
       "hotspot": false,
       "website": "https://www.meritushealth.com/",
-      "careers_url": "https://www.meritushealth.com/careers",
+      "careers_url": "https://recruiting.ultipro.com/MER1012MERH/JobBoard/23a054d5-dd9d-4a01-ba62-0bc75b4673d6/",
       "careers_platform": "ultipro",
-      "careers_search_url": null,
-      "careers_notes": "Meritus Health careers page (path unverified); ATS not confirmed. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.meritushealth.com/careers; ATS link seen: https://recruiting.ultipro.com/MER1012MERH/JobBoard/23a054d5-dd9d-4a01-ba62-0bc75b4673d6/?q=\\u0026o=postedDateDesc",
+      "careers_search_url": "https://recruiting.ultipro.com/MER1012MERH/JobBoard/23a054d5-dd9d-4a01-ba62-0bc75b4673d6/?q=nurse%20practitioner",
+      "careers_notes": "Meritus Health careers page (path unverified); ATS not confirmed. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.meritushealth.com/careers; ATS link seen: https://recruiting.ultipro.com/MER1012MERH/JobBoard/23a054d5-dd9d-4a01-ba62-0bc75b4673d6/?q=\\u0026o=postedDateDesc [gap-fix 2026-10-21] UKG Pro board (LoadSearchResults JSON 200 on Actions probe 39425394446).",
       "ats_config": {
-        "host": "www.meritushealth.com"
+        "host": "recruiting.ultipro.com",
+        "board_path": "/MER1012MERH/JobBoard/23a054d5-dd9d-4a01-ba62-0bc75b4673d6"
       },
       "nearest_airport": "HGR Hagerstown Regional (about 8 mi); IAD Dulles (about 65 mi)",
       "beds": 264,
@@ -30513,12 +30535,13 @@
       "region": "Hampton Roads",
       "hotspot": false,
       "website": "https://www.chesapeakeregional.com/",
-      "careers_url": "https://www.chesapeakeregional.com/careers",
+      "careers_url": "https://crhukg.rec.pro.ukg.net/CHE1503CHPE/JobBoard/09584b08-b32f-4882-8c7b-223bbd8e3851/",
       "careers_platform": "ultipro",
-      "careers_search_url": null,
-      "careers_notes": "Chesapeake Regional Healthcare careers page (path unverified); ATS not confirmed. [enrich 2026-10-20] careers_url -> HTTP 200 at https://chesapeakeregional.com/careers",
+      "careers_search_url": "https://crhukg.rec.pro.ukg.net/CHE1503CHPE/JobBoard/09584b08-b32f-4882-8c7b-223bbd8e3851/?q=nurse%20practitioner",
+      "careers_notes": "Chesapeake Regional Healthcare careers page (path unverified); ATS not confirmed. [enrich 2026-10-20] careers_url -> HTTP 200 at https://chesapeakeregional.com/careers [gap-fix 2026-10-21] UKG Pro board crhukg.rec.pro.ukg.net (LoadSearchResults JSON 200 on Actions probe 39425394446).",
       "ats_config": {
-        "host": "www.chesapeakeregional.com"
+        "host": "crhukg.rec.pro.ukg.net",
+        "board_path": "/CHE1503CHPE/JobBoard/09584b08-b32f-4882-8c7b-223bbd8e3851"
       },
       "nearest_airport": "ORF Norfolk International (about 15 mi)",
       "beds": null,

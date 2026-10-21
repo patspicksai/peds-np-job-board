@@ -2881,12 +2881,13 @@
       "region": "Maryland (other)",
       "hotspot": false,
       "website": "https://www.frederickhealth.org/",
-      "careers_url": "https://www.frederickhealth.org/careers",
-      "careers_platform": "unknown",
-      "careers_search_url": null,
-      "careers_notes": "Frederick Health careers page (path unverified); ATS not confirmed. [enrich 2026-10-20] careers_url -> HTTP 403 at https://www.frederickhealth.org/careers",
+      "careers_url": "https://recruiting.ultipro.com/FRE1010FRHS/JobBoard/776a147e-2e0b-43d0-844e-bbd49deeb24d/",
+      "careers_platform": "ultipro",
+      "careers_search_url": "https://recruiting.ultipro.com/FRE1010FRHS/JobBoard/776a147e-2e0b-43d0-844e-bbd49deeb24d/?q=nurse%20practitioner",
+      "careers_notes": "Frederick Health careers page (path unverified); ATS not confirmed. [enrich 2026-10-20] careers_url -> HTTP 403 at https://www.frederickhealth.org/careers [gap-fix 2026-10-21] frederickhealth.org is Cloudflare-walled; jobs are on UKG Pro (LoadSearchResults JSON 200 on Actions probe 39425394446).",
       "ats_config": {
-        "host": "www.frederickhealth.org"
+        "host": "recruiting.ultipro.com",
+        "board_path": "/FRE1010FRHS/JobBoard/776a147e-2e0b-43d0-844e-bbd49deeb24d"
       },
       "nearest_airport": "IAD Dulles (about 40 mi); BWI (about 50 mi)",
       "beds": 268,
@@ -2946,12 +2947,13 @@
       "region": "Maryland (other)",
       "hotspot": false,
       "website": "https://www.meritushealth.com/",
-      "careers_url": "https://www.meritushealth.com/careers",
+      "careers_url": "https://recruiting.ultipro.com/MER1012MERH/JobBoard/23a054d5-dd9d-4a01-ba62-0bc75b4673d6/",
       "careers_platform": "ultipro",
-      "careers_search_url": null,
-      "careers_notes": "Meritus Health careers page (path unverified); ATS not confirmed. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.meritushealth.com/careers; ATS link seen: https://recruiting.ultipro.com/MER1012MERH/JobBoard/23a054d5-dd9d-4a01-ba62-0bc75b4673d6/?q=\\u0026o=postedDateDesc",
+      "careers_search_url": "https://recruiting.ultipro.com/MER1012MERH/JobBoard/23a054d5-dd9d-4a01-ba62-0bc75b4673d6/?q=nurse%20practitioner",
+      "careers_notes": "Meritus Health careers page (path unverified); ATS not confirmed. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.meritushealth.com/careers; ATS link seen: https://recruiting.ultipro.com/MER1012MERH/JobBoard/23a054d5-dd9d-4a01-ba62-0bc75b4673d6/?q=\\u0026o=postedDateDesc [gap-fix 2026-10-21] UKG Pro board (LoadSearchResults JSON 200 on Actions probe 39425394446).",
       "ats_config": {
-        "host": "www.meritushealth.com"
+        "host": "recruiting.ultipro.com",
+        "board_path": "/MER1012MERH/JobBoard/23a054d5-dd9d-4a01-ba62-0bc75b4673d6"
       },
       "nearest_airport": "HGR Hagerstown Regional (about 8 mi); IAD Dulles (about 65 mi)",
       "beds": 264,
@@ -3361,12 +3363,14 @@
       "region": "Maryland (other)",
       "hotspot": false,
       "website": "https://christianacare.org/facilities/union-hospital/",
-      "careers_url": "https://christianacare.org/careers/",
-      "careers_platform": "unknown",
-      "careers_search_url": null,
-      "careers_notes": "ChristianaCare careers page (path unverified); jobs post systemwide, filter to Union Hospital (Elkton). [enrich 2026-10-20] careers_url -> HTTP 200 at https://careers.christianacare.org/",
+      "careers_url": "https://christianacare.wd5.myworkdayjobs.com/CCHS",
+      "careers_platform": "workday",
+      "careers_search_url": "https://christianacare.wd5.myworkdayjobs.com/CCHS?q=nurse%20practitioner",
+      "careers_notes": "ChristianaCare careers page (path unverified); jobs post systemwide, filter to Union Hospital (Elkton). [enrich 2026-10-20] careers_url -> HTTP 200 at https://careers.christianacare.org/ [gap-fix 2026-10-21] ChristianaCare posts on Workday christianacare.wd5 site CCHS (Actions probe 39425394446).",
       "ats_config": {
-        "host": "christianacare.org"
+        "host": "christianacare.wd5.myworkdayjobs.com",
+        "tenant": "christianacare",
+        "site": "CCHS"
       },
       "nearest_airport": "PHL Philadelphia International (about 45 mi); BWI (about 55 mi)",
       "beds": 99,

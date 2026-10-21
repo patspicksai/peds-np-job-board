@@ -290,12 +290,14 @@
       "region": "Philadelphia metro",
       "hotspot": false,
       "website": "https://www.templehealth.org/",
-      "careers_url": "https://careers.templehealth.org/",
-      "careers_platform": "unknown",
-      "careers_search_url": null,
-      "careers_notes": "Careers URL is the system careers site from model knowledge or the caller's list; not fetched this pass. Enrichment job should probe it and detect the platform. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.templehealth.org/careers",
+      "careers_url": "https://jobs.silkroad.com/templehealth/Careers",
+      "careers_platform": "custom",
+      "careers_search_url": "https://jobs.silkroad.com/templehealth/Careers?SearchString=nurse%20practitioner",
+      "careers_notes": "Careers URL is the system careers site from model knowledge or the caller's list; not fetched this pass. Enrichment job should probe it and detect the platform. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.templehealth.org/careers [gap-fix 2026-10-21] Temple Health jobs are on SilkRoad (server-rendered a.sr-panel rows at /templehealth/Careers/jobs/<id>, Actions probe 39428696372).",
       "ats_config": {
-        "host": "www.templehealth.org"
+        "host": "jobs.silkroad.com",
+        "vendor": "SilkRoad Recruiting",
+        "client_path": "/templehealth/Careers"
       },
       "nearest_airport": "PHL Philadelphia International (about 12 mi)",
       "beds": 733,
@@ -577,11 +579,14 @@
       "region": "Pennsylvania (other)",
       "hotspot": false,
       "website": "https://www.wellspan.org/",
-      "careers_url": "https://careers.wellspan.org/",
-      "careers_platform": "unknown",
-      "careers_search_url": null,
-      "careers_notes": "Careers URL is the system careers site from model knowledge or the caller's list; not fetched this pass. Enrichment job should probe it and detect the platform. [enrich 2026-10-20] careers_url -> HTTP None at None",
-      "ats_config": {},
+      "careers_url": "https://www.joinwellspan.org/Search",
+      "careers_platform": "custom",
+      "careers_search_url": "https://www.joinwellspan.org/Search?keyword=nurse%20practitioner",
+      "careers_notes": "Careers URL is the system careers site from model knowledge or the caller's list; not fetched this pass. Enrichment job should probe it and detect the platform. [enrich 2026-10-20] careers_url -> HTTP None at None [gap-fix 2026-10-21] careers.wellspan.org is DNS-dead; WellSpan jobs are on joinwellspan.org (JSON /api/search/job-search Results[].url=/job-listings?jobId=N, 425 NP hits on Actions probe 39428696372).",
+      "ats_config": {
+        "host": "www.joinwellspan.org",
+        "vendor": "Sitecore custom (client-rendered; /api/search/job-search JSON)"
+      },
       "nearest_airport": "MDT Harrisburg International (about 22 mi); BWI Baltimore/Washington about 50 mi",
       "beds": 580,
       "peds_beds": null,
@@ -984,12 +989,13 @@
       "region": "Pennsylvania (other)",
       "hotspot": false,
       "website": "https://www.guthrie.org/",
-      "careers_url": "https://www.guthrie.org/jobs",
+      "careers_url": "https://elfw.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001",
       "careers_platform": "oracle_cloud",
-      "careers_search_url": null,
-      "careers_notes": "Guthrie posts jobs on its own site with paths like guthrie.org/jobs/pediatrics/pediatrics-hospitalist-nppa-sayre-pa (seen in search results); underlying ATS not identified. [enrich 2026-10-20] careers_url -> HTTP 404 at https://www.guthrie.org/jobs; ATS link seen: https://elfw.fa.us2.oraclecloud.com/fscmUI/faces/FuseOverview",
+      "careers_search_url": "https://elfw.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/jobs?keyword=nurse%20practitioner",
+      "careers_notes": "Guthrie posts jobs on its own site with paths like guthrie.org/jobs/pediatrics/pediatrics-hospitalist-nppa-sayre-pa (seen in search results); underlying ATS not identified. [enrich 2026-10-20] careers_url -> HTTP 404 at https://www.guthrie.org/jobs; ATS link seen: https://elfw.fa.us2.oraclecloud.com/fscmUI/faces/FuseOverview [gap-fix 2026-10-21] careers.guthrie.org is a vanity shell for Oracle Recruiting Cloud elfw.fa.us2 site CX_1001 (Actions probe 39425394446).",
       "ats_config": {
-        "host": "www.guthrie.org"
+        "host": "elfw.fa.us2.oraclecloud.com",
+        "site_number": "CX_1001"
       },
       "nearest_airport": "ELM Elmira Corning Regional (about 20 mi); BGM Greater Binghamton about 45 mi",
       "beds": 254,

@@ -108,14 +108,14 @@
       "region": "Upstate NY",
       "hotspot": false,
       "website": "https://www.upstate.edu/gch/",
-      "careers_url": "https://careers.upstate.edu/cw/en-us/listing/",
-      "careers_platform": "pageup",
-      "careers_search_url": "https://careers.upstate.edu/cw/en-us/filter/?search-keyword=nurse%20practitioner",
-      "careers_notes": "SUNY Upstate posts jobs on a PageUp board at careers.upstate.edu (a search result showed a posting at /cw/en-us/job/510525/clinical-assistant-professorhospitalist). The listing and filter URLs here follow the standard PageUp pattern and were not test fetched (fetch was rate limited). Some Upstate titles also appear on statejobs.ny.gov because Upstate is a SUNY state employer. A full time Pediatric APP Hospitalist role at Upstate Golisano was seen on Ladders (12 hour rotating shifts). [enrich 2026-10-20] careers_url -> HTTP 404 at https://careers.upstate.edu/cw/en-us/listing/; search_url -> HTTP 404, mentions NP: False, job links: 4 [enrich 2026-10-20] careers_url -> HTTP 404 at https://careers.upstate.edu/cw/en-us/listing/; search_url -> HTTP 404, mentions NP: False, job links: 4",
+      "careers_url": "https://careers.upstate.edu/jobs/search",
+      "careers_platform": "custom",
+      "careers_search_url": "https://careers.upstate.edu/jobs/search?query=nurse%20practitioner",
+      "careers_notes": "SUNY Upstate posts jobs on a PageUp board at careers.upstate.edu (a search result showed a posting at /cw/en-us/job/510525/clinical-assistant-professorhospitalist). The listing and filter URLs here follow the standard PageUp pattern and were not test fetched (fetch was rate limited). Some Upstate titles also appear on statejobs.ny.gov because Upstate is a SUNY state employer. A full time Pediatric APP Hospitalist role at Upstate Golisano was seen on Ladders (12 hour rotating shifts). [enrich 2026-10-20] careers_url -> HTTP 404 at https://careers.upstate.edu/cw/en-us/listing/; search_url -> HTTP 404, mentions NP: False, job links: 4 [enrich 2026-10-20] careers_url -> HTTP 404 at https://careers.upstate.edu/cw/en-us/listing/; search_url -> HTTP 404, mentions NP: False, job links: 4 [gap-fix 2026-10-21] PageUp /cw/en-us/listing/ is gone (404); careers.upstate.edu/jobs/search?query= is server-rendered with /jobs/<slug> links and rel=next paging (Actions probe 39428696372).",
       "ats_config": {
+        "flagship": true,
         "host": "careers.upstate.edu",
-        "listing_path": "/cw/en-us/listing/",
-        "flagship": true
+        "vendor": "Upstate custom (server rendered, rel=next paging)"
       },
       "nearest_airport": "SYR Syracuse Hancock International (about 5 mi straight-line)",
       "beds": 752,
@@ -354,12 +354,14 @@
       "region": "Upstate NY",
       "hotspot": false,
       "website": "https://www.rochesterregional.org/locations/rochester-general-hospital",
-      "careers_url": "https://careers.rochesterregional.org/",
-      "careers_platform": "unknown",
-      "careers_search_url": null,
-      "careers_notes": "Rochester Regional careers site (req_ style job URLs seen by R3b); platform not confirmed. [enrich 2026-10-20] careers_url -> HTTP 200 at https://careers.rochesterregional.org/; ATS link seen: https://rrhs.wd5.myworkdayjobs.com/RRH/login",
+      "careers_url": "https://rrhs.wd5.myworkdayjobs.com/RRH",
+      "careers_platform": "workday",
+      "careers_search_url": "https://rrhs.wd5.myworkdayjobs.com/RRH?q=nurse%20practitioner",
+      "careers_notes": "Rochester Regional careers site (req_ style job URLs seen by R3b); platform not confirmed. [enrich 2026-10-20] careers_url -> HTTP 200 at https://careers.rochesterregional.org/; ATS link seen: https://rrhs.wd5.myworkdayjobs.com/RRH/login [gap-fix 2026-10-21] Rochester Regional Health posts on Workday rrhs.wd5 site RRH (cxs jobs JSON 200, 85 NP hits, Actions probe 39425394446); careers.rochesterregional.org is a TalentBrew marketing front.",
       "ats_config": {
-        "host": "careers.rochesterregional.org"
+        "host": "rrhs.wd5.myworkdayjobs.com",
+        "tenant": "rrhs",
+        "site": "RRH"
       },
       "nearest_airport": "ROC Frederick Douglass Greater Rochester International (20 min)",
       "beds": 528,
@@ -425,12 +427,14 @@
       "region": "Upstate NY",
       "hotspot": false,
       "website": "https://www.rochesterregional.org/locations/unity-hospital",
-      "careers_url": "https://careers.rochesterregional.org/",
-      "careers_platform": "unknown",
-      "careers_search_url": null,
-      "careers_notes": "Rochester Regional careers site (req_ style job URLs seen by R3b); platform not confirmed. [enrich 2026-10-20] careers_url -> HTTP 200 at https://careers.rochesterregional.org/; ATS link seen: https://rrhs.wd5.myworkdayjobs.com/RRH/login",
+      "careers_url": "https://rrhs.wd5.myworkdayjobs.com/RRH",
+      "careers_platform": "workday",
+      "careers_search_url": "https://rrhs.wd5.myworkdayjobs.com/RRH?q=nurse%20practitioner",
+      "careers_notes": "Rochester Regional careers site (req_ style job URLs seen by R3b); platform not confirmed. [enrich 2026-10-20] careers_url -> HTTP 200 at https://careers.rochesterregional.org/; ATS link seen: https://rrhs.wd5.myworkdayjobs.com/RRH/login [gap-fix 2026-10-21] Rochester Regional Health posts on Workday rrhs.wd5 site RRH (Actions probe 39425394446).",
       "ats_config": {
-        "host": "careers.rochesterregional.org"
+        "host": "rrhs.wd5.myworkdayjobs.com",
+        "tenant": "rrhs",
+        "site": "RRH"
       },
       "nearest_airport": "ROC Frederick Douglass Greater Rochester International (15 min)",
       "beds": null,
@@ -836,12 +840,13 @@
       "region": "Upstate NY",
       "hotspot": false,
       "website": "https://www.ecmc.edu/",
-      "careers_url": "https://www.ecmc.edu/careers/",
+      "careers_url": "https://ecmc462.rec.pro.ukg.net/ERI1003ECMC/JobBoard/4d1858fb-5b2a-499b-a320-4f1f4e5bcb06/",
       "careers_platform": "ultipro",
-      "careers_search_url": null,
-      "careers_notes": "careers URL is a best guess from the hospital domain; verify in enrichment. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.ecmc.edu/careers/",
+      "careers_search_url": "https://ecmc462.rec.pro.ukg.net/ERI1003ECMC/JobBoard/4d1858fb-5b2a-499b-a320-4f1f4e5bcb06/?q=nurse%20practitioner",
+      "careers_notes": "careers URL is a best guess from the hospital domain; verify in enrichment. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.ecmc.edu/careers/ [gap-fix 2026-10-21] UKG Pro board ecmc462.rec.pro.ukg.net linked from ecmc.edu/careers (Actions probe 39425394446).",
       "ats_config": {
-        "host": "www.ecmc.edu"
+        "host": "ecmc462.rec.pro.ukg.net",
+        "board_path": "/ERI1003ECMC/JobBoard/4d1858fb-5b2a-499b-a320-4f1f4e5bcb06"
       },
       "nearest_airport": "BUF Buffalo Niagara International (15 min)",
       "beds": 330,
@@ -2416,12 +2421,14 @@
       "region": "Upstate NY",
       "hotspot": false,
       "website": "https://www.rochesterregional.org/locations/united-memorial-medical-center",
-      "careers_url": "https://careers.rochesterregional.org/",
-      "careers_platform": "unknown",
-      "careers_search_url": null,
-      "careers_notes": "Rochester Regional careers site (req_ style job URLs seen by R3b); platform not confirmed. [enrich 2026-10-20] careers_url -> HTTP 200 at https://careers.rochesterregional.org/; ATS link seen: https://rrhs.wd5.myworkdayjobs.com/RRH/login",
+      "careers_url": "https://rrhs.wd5.myworkdayjobs.com/RRH",
+      "careers_platform": "workday",
+      "careers_search_url": "https://rrhs.wd5.myworkdayjobs.com/RRH?q=nurse%20practitioner",
+      "careers_notes": "Rochester Regional careers site (req_ style job URLs seen by R3b); platform not confirmed. [enrich 2026-10-20] careers_url -> HTTP 200 at https://careers.rochesterregional.org/; ATS link seen: https://rrhs.wd5.myworkdayjobs.com/RRH/login [gap-fix 2026-10-21] Rochester Regional Health posts on Workday rrhs.wd5 site RRH (Actions probe 39425394446).",
       "ats_config": {
-        "host": "careers.rochesterregional.org"
+        "host": "rrhs.wd5.myworkdayjobs.com",
+        "tenant": "rrhs",
+        "site": "RRH"
       },
       "nearest_airport": "BUF Buffalo Niagara International (40 min)",
       "beds": null,

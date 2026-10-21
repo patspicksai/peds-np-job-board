@@ -1854,12 +1854,15 @@
       "region": "NYC metro",
       "hotspot": false,
       "website": "https://maimo.org/",
-      "careers_url": "https://maimo.org/careers/",
-      "careers_platform": "unknown",
-      "careers_search_url": null,
-      "careers_notes": "Maimonides is moving into NYC Health + Hospitals (transaction advancing in 2026), so postings may migrate to the H+H board. careers URL is a best guess; verify. [enrich 2026-10-20] careers_url -> HTTP 404 at https://maimo.org/careers/",
+      "careers_url": "https://careers.maimo.org/jobs",
+      "careers_platform": "icims",
+      "careers_search_url": "https://careers.maimo.org/jobs?keywords=nurse%20practitioner",
+      "careers_notes": "Maimonides is moving into NYC Health + Hospitals (transaction advancing in 2026), so postings may migrate to the H+H board. careers URL is a best guess; verify. [enrich 2026-10-20] careers_url -> HTTP 404 at https://maimo.org/careers/ [gap-fix 2026-10-21] Maimonides jobs are on a Jibe (iCIMS Attract) front end careers.maimo.org backed by careers-maimo.icims.com (Actions probe 39428696372).",
       "ats_config": {
-        "host": "maimo.org"
+        "host": "careers.maimo.org",
+        "jibe_host": "careers.maimo.org",
+        "adapter": "jibe",
+        "icims_host": "careers-maimo.icims.com"
       },
       "nearest_airport": "JFK John F. Kennedy International",
       "beds": 711,

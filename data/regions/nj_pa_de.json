@@ -2456,12 +2456,14 @@
       "region": "Delaware",
       "hotspot": false,
       "website": "https://christianacare.org/facilities/christianahospital/",
-      "careers_url": "https://christianacare.org/facilities/christianahospital/",
-      "careers_platform": "unknown",
-      "careers_search_url": null,
-      "careers_notes": "Careers site could not be verified this session: the web search budget ran out and direct fetches of ChristianaCare pages were blocked. careers_url is the main website as a placeholder; locate the real job search page and platform before scraping. [enrich 2026-10-20] careers_url -> HTTP 200 at https://christianacare.org/us/en/facilities/christiana-hospital",
+      "careers_url": "https://christianacare.wd5.myworkdayjobs.com/CCHS",
+      "careers_platform": "workday",
+      "careers_search_url": "https://christianacare.wd5.myworkdayjobs.com/CCHS?q=nurse%20practitioner",
+      "careers_notes": "Careers site could not be verified this session: the web search budget ran out and direct fetches of ChristianaCare pages were blocked. careers_url is the main website as a placeholder; locate the real job search page and platform before scraping. [enrich 2026-10-20] careers_url -> HTTP 200 at https://christianacare.org/us/en/facilities/christiana-hospital [gap-fix 2026-10-21] ChristianaCare posts on Workday christianacare.wd5 site CCHS (cxs jobs JSON 200, 34 NP hits, Actions probe 39425394446).",
       "ats_config": {
-        "host": "christianacare.org"
+        "host": "christianacare.wd5.myworkdayjobs.com",
+        "tenant": "christianacare",
+        "site": "CCHS"
       },
       "nearest_airport": "ILG Wilmington (New Castle) (about 4 mi straight-line); PHL Philadelphia International about 26 mi",
       "beds": 906,
@@ -3099,8 +3101,8 @@
       "website": "https://www.englewoodhealth.org/",
       "careers_url": "https://careers.englewoodhealth.org/",
       "careers_platform": "successfactors",
-      "careers_search_url": null,
-      "careers_notes": "Careers site could not be verified this session: the web search budget ran out and direct fetches of Englewood Health pages were blocked. careers_url is the main website as a placeholder; locate the real job search page and platform before scraping. [enrich 2026-10-20] careers_url -> HTTP 200 at https://careers.englewoodhealth.org/",
+      "careers_search_url": "https://careers.englewoodhealth.org/search/?q=nurse%20practitioner",
+      "careers_notes": "Careers site could not be verified this session: the web search budget ran out and direct fetches of Englewood Health pages were blocked. careers_url is the main website as a placeholder; locate the real job search page and platform before scraping. [enrich 2026-10-20] careers_url -> HTTP 200 at https://careers.englewoodhealth.org/ [gap-fix 2026-10-21] New SuccessFactors UI renders job cards client-side (li.JobsList_jobCard); search URL set so the Playwright fallback renders the results page (10 NP rows on Actions probe 39425394446).",
       "ats_config": {
         "host": "careers.englewoodhealth.org"
       },
