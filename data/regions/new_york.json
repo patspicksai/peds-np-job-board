@@ -2481,12 +2481,12 @@
       "region": "NYC metro",
       "hotspot": false,
       "website": "https://wyckoffhospital.org/",
-      "careers_url": "https://wyckoffhospital.org/careers/",
+      "careers_url": "https://whmcny.org/careers/",
       "careers_platform": "unknown",
       "careers_search_url": null,
-      "careers_notes": "careers URL is a best guess from the hospital domain; verify in enrichment. [enrich 2026-10-20] careers_url -> HTTP 404 at https://wyckoffhospital.org/careers/",
+      "careers_notes": "careers URL is a best guess from the hospital domain; verify in enrichment. [enrich 2026-10-20] careers_url -> HTTP 404 at https://wyckoffhospital.org/careers/ [gap-fix 2026-10-21] wyckoffhospital.org/careers is 404; the site moved to whmcny.org (careers at /careers/, Actions probe 39650100056); ATS not yet identified.",
       "ats_config": {
-        "host": "wyckoffhospital.org"
+        "host": "whmcny.org"
       },
       "nearest_airport": "LGA LaGuardia Airport",
       "beds": 350,
@@ -3230,11 +3230,13 @@
       "region": "NYC metro",
       "hotspot": false,
       "website": "https://www.hss.edu/",
-      "careers_url": "https://careers.hss.edu/",
+      "careers_url": "https://www.hss.edu/careers",
       "careers_platform": "unknown",
       "careers_search_url": null,
-      "careers_notes": "careers URL is a best guess from the hospital domain; verify in enrichment. [enrich 2026-10-20] careers_url -> HTTP None at None",
-      "ats_config": {},
+      "careers_notes": "careers URL is a best guess from the hospital domain; verify in enrichment. [enrich 2026-10-20] careers_url -> HTTP None at None [gap-fix 2026-10-21] careers.hss.edu is DNS-dead and the former jobs-hss.icims.com portal is gone (iCIMS 'gone' page, Actions probe 39650100056); HSS careers moved to hss.edu/careers, board not yet identified.",
+      "ats_config": {
+        "host": "www.hss.edu"
+      },
       "nearest_airport": "LGA LaGuardia Airport",
       "beds": null,
       "peds_beds": null,
@@ -4810,10 +4812,10 @@
       "region": "Long Island",
       "hotspot": false,
       "website": "https://www.numc.edu/",
-      "careers_url": "https://www.numc.edu/careers/",
+      "careers_url": "https://www.numc.edu/careers-at-nuhealth/job-listings-at-nuhealth/",
       "careers_platform": "unknown",
-      "careers_search_url": null,
-      "careers_notes": "Public benefit corporation; careers URL is a best guess; verify. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.numc.edu/careers-at-nuhealth/",
+      "careers_search_url": "https://www.numc.edu/careers-at-nuhealth/job-listings-at-nuhealth/",
+      "careers_notes": "Public benefit corporation; careers URL is a best guess; verify. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.numc.edu/careers-at-nuhealth/ [gap-fix 2026-10-21] NuHealth job listings are a static page at /careers-at-nuhealth/job-listings-at-nuhealth/ (Actions probe 39650100056); not yet live-tested.",
       "ats_config": {
         "host": "www.numc.edu"
       },

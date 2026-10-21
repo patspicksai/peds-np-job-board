@@ -311,12 +311,12 @@
       "region": "DC / Northern Virginia",
       "hotspot": false,
       "website": "https://huhealthcare.com/",
-      "careers_url": "https://huhealthcare.com/careers",
+      "careers_url": "https://huhealthcarecareers.com/",
       "careers_platform": "unknown",
       "careers_search_url": null,
-      "careers_notes": "Howard University Hospital careers page (path unverified). Since 2023 the hospital is reportedly managed by Adventist HealthCare, so postings may also appear on the Adventist board. [enrich 2026-10-20] careers_url -> HTTP 403 at https://www.huhealthcare.com/careers",
+      "careers_notes": "Howard University Hospital careers page (path unverified). Since 2023 the hospital is reportedly managed by Adventist HealthCare, so postings may also appear on the Adventist board. [enrich 2026-10-20] careers_url -> HTTP 403 at https://www.huhealthcare.com/careers [gap-fix 2026-10-21] huhealthcare.com/careers and huhcareers.com are marketing shells; 'Search Careers' points to huhealthcarecareers.com (Actions probe 39650100056), platform not yet identified.",
       "ats_config": {
-        "host": "huhealthcare.com"
+        "host": "huhealthcarecareers.com"
       },
       "nearest_airport": "DCA Reagan National (about 7 mi)",
       "beds": null,
@@ -461,7 +461,7 @@
       "careers_url": "https://www.hschealth.org/careers",
       "careers_platform": "unknown",
       "careers_search_url": null,
-      "careers_notes": "HSC Health Care System careers page (path unverified); enrichment should probe. [enrich 2026-10-20] careers_url -> HTTP None at None",
+      "careers_notes": "HSC Health Care System careers page (path unverified); enrichment should probe. [enrich 2026-10-20] careers_url -> HTTP None at None [gap-fix 2026-10-21] hschealth.org times out from Actions (probe 39650100056) and no ATS could be found by search; HSC Health Care System is a Children's National affiliate, check childrensnational.wd108 for HSC postings.",
       "ats_config": {
         "host": "www.hschealth.org"
       },

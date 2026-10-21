@@ -5104,7 +5104,7 @@
       "careers_url": "https://www.carterethealth.org/careers/",
       "careers_platform": "unknown",
       "careers_search_url": null,
-      "careers_notes": "Carteret Health Care careers page from model knowledge; URL and platform unverified, enrichment should probe it. [enrich 2026-10-20] careers_url -> HTTP 403 at https://www.carterethealth.org/careers/",
+      "careers_notes": "Carteret Health Care careers page from model knowledge; URL and platform unverified, enrichment should probe it. [enrich 2026-10-20] careers_url -> HTTP 403 at https://www.carterethealth.org/careers/ [gap-fix 2026-10-21] carterethealth.org is Cloudflare-walled (403 'Just a moment' to requests, curl_cffi and Chrome, Actions probe 39425397994); the underlying ATS could not be identified from search results.",
       "ats_config": {
         "host": "www.carterethealth.org"
       },
@@ -5869,7 +5869,7 @@
       "careers_url": "https://www.washingtonregional.org/careers/",
       "careers_platform": "unknown",
       "careers_search_url": null,
-      "careers_notes": "Washington Regional Medical Center careers page from model knowledge; URL and platform unverified, enrichment should probe it. [enrich 2026-10-20] careers_url -> HTTP None at None",
+      "careers_notes": "Washington Regional Medical Center careers page from model knowledge; URL and platform unverified, enrichment should probe it. [enrich 2026-10-20] careers_url -> HTTP None at None [gap-fix 2026-10-21] washingtonregional.org is DNS-dead; this 25-bed Affinity Health Partners critical access hospital has no findable online job board (web search 2026-10-21). Jobs, if any, are on Indeed only.",
       "ats_config": {},
       "nearest_airport": "PGV Pitt-Greenville (about 1 hr)",
       "beds": 25,
@@ -8355,7 +8355,7 @@
       "careers_url": "https://franciscanchildrens.org",
       "careers_platform": "unknown",
       "careers_search_url": null,
-      "careers_notes": "Franciscan Children's site fetch was blocked; careers page and platform not identified. Since the 2023 acquisition by Boston Children's parent, some roles may post on jobs.bostonchildrens.org. [enrich 2026-10-20] careers_url -> HTTP None at None",
+      "careers_notes": "Franciscan Children's site fetch was blocked; careers page and platform not identified. Since the 2023 acquisition by Boston Children's parent, some roles may post on jobs.bostonchildrens.org. [enrich 2026-10-20] careers_url -> HTTP None at None [gap-fix 2026-10-21] franciscanchildrens.org has a broken TLS chain on Actions; Franciscan Children's is part of Boston Children's and its postings (e.g. Occupational Health NP) appear on jobs.bostonchildrens.org, which the boston-childrens-boston record already reads.",
       "ats_config": {
         "host": "franciscanchildrens.org"
       },
@@ -8896,7 +8896,7 @@
       "careers_url": "https://www.mass.gov/orgs/pappas-rehabilitation-hospital-for-children",
       "careers_platform": "unknown",
       "careers_search_url": null,
-      "careers_notes": "State-run (DPH) hospital; jobs would post on the Commonwealth of Massachusetts state jobs board. Not verified this session; careers_url is the hospital's mass.gov page. [enrich 2026-10-20] careers_url -> HTTP 403 at https://www.mass.gov/orgs/pappas-rehabilitation-hospital-for-children",
+      "careers_notes": "State-run (DPH) hospital; jobs would post on the Commonwealth of Massachusetts state jobs board. Not verified this session; careers_url is the hospital's mass.gov page. [enrich 2026-10-20] careers_url -> HTTP 403 at https://www.mass.gov/orgs/pappas-rehabilitation-hospital-for-children [gap-fix 2026-10-21] mass.gov returns 403/404 to Actions; state DPH jobs post on the Commonwealth MassCareers board (not a per-hospital board). Leave unreadable.",
       "ats_config": {
         "host": "www.mass.gov"
       },
@@ -12096,11 +12096,13 @@
       "region": "NYC metro",
       "hotspot": false,
       "website": "https://www.hss.edu/",
-      "careers_url": "https://careers.hss.edu/",
+      "careers_url": "https://www.hss.edu/careers",
       "careers_platform": "unknown",
       "careers_search_url": null,
-      "careers_notes": "careers URL is a best guess from the hospital domain; verify in enrichment. [enrich 2026-10-20] careers_url -> HTTP None at None",
-      "ats_config": {},
+      "careers_notes": "careers URL is a best guess from the hospital domain; verify in enrichment. [enrich 2026-10-20] careers_url -> HTTP None at None [gap-fix 2026-10-21] careers.hss.edu is DNS-dead and the former jobs-hss.icims.com portal is gone (iCIMS 'gone' page, Actions probe 39650100056); HSS careers moved to hss.edu/careers, board not yet identified.",
+      "ats_config": {
+        "host": "www.hss.edu"
+      },
       "nearest_airport": "LGA LaGuardia Airport",
       "beds": null,
       "peds_beds": null,
@@ -14987,12 +14989,12 @@
       "region": "NYC metro",
       "hotspot": false,
       "website": "https://wyckoffhospital.org/",
-      "careers_url": "https://wyckoffhospital.org/careers/",
+      "careers_url": "https://whmcny.org/careers/",
       "careers_platform": "unknown",
       "careers_search_url": null,
-      "careers_notes": "careers URL is a best guess from the hospital domain; verify in enrichment. [enrich 2026-10-20] careers_url -> HTTP 404 at https://wyckoffhospital.org/careers/",
+      "careers_notes": "careers URL is a best guess from the hospital domain; verify in enrichment. [enrich 2026-10-20] careers_url -> HTTP 404 at https://wyckoffhospital.org/careers/ [gap-fix 2026-10-21] wyckoffhospital.org/careers is 404; the site moved to whmcny.org (careers at /careers/, Actions probe 39650100056); ATS not yet identified.",
       "ats_config": {
-        "host": "wyckoffhospital.org"
+        "host": "whmcny.org"
       },
       "nearest_airport": "LGA LaGuardia Airport",
       "beds": 350,
@@ -15565,10 +15567,10 @@
       "region": "Long Island",
       "hotspot": false,
       "website": "https://www.numc.edu/",
-      "careers_url": "https://www.numc.edu/careers/",
+      "careers_url": "https://www.numc.edu/careers-at-nuhealth/job-listings-at-nuhealth/",
       "careers_platform": "unknown",
-      "careers_search_url": null,
-      "careers_notes": "Public benefit corporation; careers URL is a best guess; verify. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.numc.edu/careers-at-nuhealth/",
+      "careers_search_url": "https://www.numc.edu/careers-at-nuhealth/job-listings-at-nuhealth/",
+      "careers_notes": "Public benefit corporation; careers URL is a best guess; verify. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.numc.edu/careers-at-nuhealth/ [gap-fix 2026-10-21] NuHealth job listings are a static page at /careers-at-nuhealth/job-listings-at-nuhealth/ (Actions probe 39650100056); not yet live-tested.",
       "ats_config": {
         "host": "www.numc.edu"
       },
@@ -17737,7 +17739,7 @@
       "careers_url": "https://www.carthagehospital.com/careers/",
       "careers_platform": "unknown",
       "careers_search_url": null,
-      "careers_notes": "careers URL is a best guess from the hospital domain; verify in enrichment. [enrich 2026-10-20] careers_url -> HTTP None at None",
+      "careers_notes": "careers URL is a best guess from the hospital domain; verify in enrichment. [enrich 2026-10-20] careers_url -> HTTP None at None [gap-fix 2026-10-21] carthagehospital.com has an invalid TLS certificate on Actions (probe 39650100056); board not identified.",
       "ats_config": {},
       "nearest_airport": "ART Watertown International (SYR for most flights)",
       "beds": null,
@@ -18699,12 +18701,12 @@
       "region": "Upstate NY",
       "hotspot": false,
       "website": "https://www.nfmmc.org/",
-      "careers_url": "https://www.nfmmc.org/careers/",
+      "careers_url": "https://careers.nfmmc.org/",
       "careers_platform": "unknown",
-      "careers_search_url": null,
-      "careers_notes": "careers URL is a best guess from the hospital domain; verify in enrichment. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.nfmmc.org/careers",
+      "careers_search_url": "https://careers.nfmmc.org/?s=nurse+practitioner",
+      "careers_notes": "careers URL is a best guess from the hospital domain; verify in enrichment. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.nfmmc.org/careers [gap-fix 2026-10-21] nfmmc.org/careers links only to Indeed; the hospital's own listings are on the WordPress site careers.nfmmc.org (web search 2026-10-21); not yet live-tested.",
       "ats_config": {
-        "host": "www.nfmmc.org"
+        "host": "careers.nfmmc.org"
       },
       "nearest_airport": "BUF Buffalo Niagara International (30 min)",
       "beds": 133,
@@ -24823,7 +24825,7 @@
       "careers_url": "https://www.commonwealthhealth.net/",
       "careers_platform": "unknown",
       "careers_search_url": null,
-      "careers_notes": "Ownership moved from Commonwealth Health (CHS) to Tenor Health in early 2026, so the old Commonwealth Health careers site may be retired. careers_url is a placeholder; find Tenor Health's job board. Penn State Health has supplied pediatric physicians here, so some peds roles may post on careers.pennstatehealth.org. [enrich 2026-10-20] careers_url -> HTTP 200 at https://commonwealthhealth.net/",
+      "careers_notes": "Ownership moved from Commonwealth Health (CHS) to Tenor Health in early 2026, so the old Commonwealth Health careers site may be retired. careers_url is a placeholder; find Tenor Health's job board. Penn State Health has supplied pediatric physicians here, so some peds roles may post on careers.pennstatehealth.org. [enrich 2026-10-20] careers_url -> HTTP 200 at https://commonwealthhealth.net/ [gap-fix 2026-10-21] commonwealthhealth.net career page carries no ATS link (Actions probe 39650100056); the Tenor Health board after the 2026 acquisition was not found.",
       "ats_config": {
         "host": "commonwealthhealth.net"
       },
@@ -24889,12 +24891,13 @@
       "region": "Pennsylvania (other)",
       "hotspot": false,
       "website": "https://www.mountnittany.org/",
-      "careers_url": "https://www.mountnittany.org/",
-      "careers_platform": "unknown",
-      "careers_search_url": null,
-      "careers_notes": "Careers page not fetched; careers_url is the main site as a placeholder. [enrich 2026-10-20] careers_url -> HTTP 200 at https://mountnittany.org/",
+      "careers_url": "https://careers-mountnittany.icims.com/jobs/search?ss=1",
+      "careers_platform": "icims",
+      "careers_search_url": "https://careers-mountnittany.icims.com/jobs/search?ss=1&searchKeyword=nurse%20practitioner",
+      "careers_notes": "Careers page not fetched; careers_url is the main site as a placeholder. [enrich 2026-10-20] careers_url -> HTTP 200 at https://mountnittany.org/ [gap-fix 2026-10-21] Mount Nittany Health posts staff jobs on careers-mountnittany.icims.com and providers on provider-mountnittany.icims.com (web search 2026-10-21); not yet live-tested.",
       "ats_config": {
-        "host": "mountnittany.org"
+        "host": "careers-mountnittany.icims.com",
+        "provider_recruiting_host": "provider-mountnittany.icims.com"
       },
       "nearest_airport": "SCE State College University Park (about 5 mi)",
       "beds": 260,
@@ -27666,12 +27669,12 @@
       "region": "DC / Northern Virginia",
       "hotspot": false,
       "website": "https://huhealthcare.com/",
-      "careers_url": "https://huhealthcare.com/careers",
+      "careers_url": "https://huhealthcarecareers.com/",
       "careers_platform": "unknown",
       "careers_search_url": null,
-      "careers_notes": "Howard University Hospital careers page (path unverified). Since 2023 the hospital is reportedly managed by Adventist HealthCare, so postings may also appear on the Adventist board. [enrich 2026-10-20] careers_url -> HTTP 403 at https://www.huhealthcare.com/careers",
+      "careers_notes": "Howard University Hospital careers page (path unverified). Since 2023 the hospital is reportedly managed by Adventist HealthCare, so postings may also appear on the Adventist board. [enrich 2026-10-20] careers_url -> HTTP 403 at https://www.huhealthcare.com/careers [gap-fix 2026-10-21] huhealthcare.com/careers and huhcareers.com are marketing shells; 'Search Careers' points to huhealthcarecareers.com (Actions probe 39650100056), platform not yet identified.",
       "ats_config": {
-        "host": "huhealthcare.com"
+        "host": "huhealthcarecareers.com"
       },
       "nearest_airport": "DCA Reagan National (about 7 mi)",
       "beds": null,
@@ -27957,7 +27960,7 @@
       "careers_url": "https://www.hschealth.org/careers",
       "careers_platform": "unknown",
       "careers_search_url": null,
-      "careers_notes": "HSC Health Care System careers page (path unverified); enrichment should probe. [enrich 2026-10-20] careers_url -> HTTP None at None",
+      "careers_notes": "HSC Health Care System careers page (path unverified); enrichment should probe. [enrich 2026-10-20] careers_url -> HTTP None at None [gap-fix 2026-10-21] hschealth.org times out from Actions (probe 39650100056) and no ATS could be found by search; HSC Health Care System is a Children's National affiliate, check childrensnational.wd108 for HSC postings.",
       "ats_config": {
         "host": "www.hschealth.org"
       },
@@ -31162,7 +31165,7 @@
       "careers_url": "https://www.augustahealth.com/careers/physicians-advanced-practice-providers/",
       "careers_platform": "unknown",
       "careers_search_url": null,
-      "careers_notes": "Augusta Health physician and APP careers page; provider jobs are reportedly listed through PracticeMatch (R5b scratch). ATS not confirmed. [enrich 2026-10-20] careers_url -> HTTP 200 at https://employer.practicematch.com/employer/augusta-health-physician-jobs/",
+      "careers_notes": "Augusta Health physician and APP careers page; provider jobs are reportedly listed through PracticeMatch (R5b scratch). ATS not confirmed. [enrich 2026-10-20] careers_url -> HTTP 200 at https://employer.practicematch.com/employer/augusta-health-physician-jobs/ [gap-fix 2026-10-21] augustahealth.com APP page redirects to employer.practicematch.com (physician/APP recruiting only, Actions probe 39425397994); the staff board was not identified.",
       "ats_config": {
         "host": "www.augustahealth.com"
       },
@@ -33992,12 +33995,15 @@
       "region": "South Carolina (other)",
       "hotspot": false,
       "website": "https://www.bmhsc.org",
-      "careers_url": "https://www.bmhsc.org/careers",
-      "careers_platform": "unknown",
-      "careers_search_url": null,
-      "careers_notes": "Beaufort Memorial careers landing page (caller supplied); platform not identified. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.bmhsc.org/careers",
+      "careers_url": "https://recruiting.myapps.paychex.com/appone/Branding/ReqTemplate/BrowseAllJobsbyCategory.asp?Type=REQ&FromID=1&ClientID=12555&B_ID=91&JobCode=0&CountryID=3&LanguageID=2&servervar=beaufortmemorialhospital.appone.com",
+      "careers_platform": "custom",
+      "careers_search_url": "https://recruiting.myapps.paychex.com/appone/Branding/ReqTemplate/BrowseAllJobsbyCategory.asp?Type=REQ&FromID=1&ClientID=12555&B_ID=91&JobCode=0&CountryID=3&LanguageID=2&servervar=beaufortmemorialhospital.appone.com",
+      "careers_notes": "Beaufort Memorial careers landing page (caller supplied); platform not identified. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.bmhsc.org/careers [gap-fix 2026-10-21] Paychex AppOne board; BrowseAllJobsbyCategory renders server-side MainInfoReq.asp?R_ID= links (Actions probe 39428696372); not yet live-tested.",
       "ats_config": {
-        "host": "www.bmhsc.org"
+        "host": "recruiting.myapps.paychex.com",
+        "vendor": "Paychex AppOne",
+        "client_id": "12555",
+        "servervar": "beaufortmemorialhospital.appone.com"
       },
       "nearest_airport": "SAV Savannah/Hilton Head International Airport (about 1 hr)",
       "beds": 197,

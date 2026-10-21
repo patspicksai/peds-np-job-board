@@ -1542,7 +1542,7 @@
       "careers_url": "https://franciscanchildrens.org",
       "careers_platform": "unknown",
       "careers_search_url": null,
-      "careers_notes": "Franciscan Children's site fetch was blocked; careers page and platform not identified. Since the 2023 acquisition by Boston Children's parent, some roles may post on jobs.bostonchildrens.org. [enrich 2026-10-20] careers_url -> HTTP None at None",
+      "careers_notes": "Franciscan Children's site fetch was blocked; careers page and platform not identified. Since the 2023 acquisition by Boston Children's parent, some roles may post on jobs.bostonchildrens.org. [enrich 2026-10-20] careers_url -> HTTP None at None [gap-fix 2026-10-21] franciscanchildrens.org has a broken TLS chain on Actions; Franciscan Children's is part of Boston Children's and its postings (e.g. Occupational Health NP) appear on jobs.bostonchildrens.org, which the boston-childrens-boston record already reads.",
       "ats_config": {
         "host": "franciscanchildrens.org"
       },
@@ -1687,7 +1687,7 @@
       "careers_url": "https://www.mass.gov/orgs/pappas-rehabilitation-hospital-for-children",
       "careers_platform": "unknown",
       "careers_search_url": null,
-      "careers_notes": "State-run (DPH) hospital; jobs would post on the Commonwealth of Massachusetts state jobs board. Not verified this session; careers_url is the hospital's mass.gov page. [enrich 2026-10-20] careers_url -> HTTP 403 at https://www.mass.gov/orgs/pappas-rehabilitation-hospital-for-children",
+      "careers_notes": "State-run (DPH) hospital; jobs would post on the Commonwealth of Massachusetts state jobs board. Not verified this session; careers_url is the hospital's mass.gov page. [enrich 2026-10-20] careers_url -> HTTP 403 at https://www.mass.gov/orgs/pappas-rehabilitation-hospital-for-children [gap-fix 2026-10-21] mass.gov returns 403/404 to Actions; state DPH jobs post on the Commonwealth MassCareers board (not a per-hospital board). Leave unreadable.",
       "ats_config": {
         "host": "www.mass.gov"
       },

@@ -151,7 +151,7 @@
       "careers_url": "https://www.commonwealthhealth.net/",
       "careers_platform": "unknown",
       "careers_search_url": null,
-      "careers_notes": "Ownership moved from Commonwealth Health (CHS) to Tenor Health in early 2026, so the old Commonwealth Health careers site may be retired. careers_url is a placeholder; find Tenor Health's job board. Penn State Health has supplied pediatric physicians here, so some peds roles may post on careers.pennstatehealth.org. [enrich 2026-10-20] careers_url -> HTTP 200 at https://commonwealthhealth.net/",
+      "careers_notes": "Ownership moved from Commonwealth Health (CHS) to Tenor Health in early 2026, so the old Commonwealth Health careers site may be retired. careers_url is a placeholder; find Tenor Health's job board. Penn State Health has supplied pediatric physicians here, so some peds roles may post on careers.pennstatehealth.org. [enrich 2026-10-20] careers_url -> HTTP 200 at https://commonwealthhealth.net/ [gap-fix 2026-10-21] commonwealthhealth.net career page carries no ATS link (Actions probe 39650100056); the Tenor Health board after the 2026 acquisition was not found.",
       "ats_config": {
         "host": "commonwealthhealth.net"
       },
@@ -777,12 +777,13 @@
       "region": "Pennsylvania (other)",
       "hotspot": false,
       "website": "https://www.mountnittany.org/",
-      "careers_url": "https://www.mountnittany.org/",
-      "careers_platform": "unknown",
-      "careers_search_url": null,
-      "careers_notes": "Careers page not fetched; careers_url is the main site as a placeholder. [enrich 2026-10-20] careers_url -> HTTP 200 at https://mountnittany.org/",
+      "careers_url": "https://careers-mountnittany.icims.com/jobs/search?ss=1",
+      "careers_platform": "icims",
+      "careers_search_url": "https://careers-mountnittany.icims.com/jobs/search?ss=1&searchKeyword=nurse%20practitioner",
+      "careers_notes": "Careers page not fetched; careers_url is the main site as a placeholder. [enrich 2026-10-20] careers_url -> HTTP 200 at https://mountnittany.org/ [gap-fix 2026-10-21] Mount Nittany Health posts staff jobs on careers-mountnittany.icims.com and providers on provider-mountnittany.icims.com (web search 2026-10-21); not yet live-tested.",
       "ats_config": {
-        "host": "mountnittany.org"
+        "host": "careers-mountnittany.icims.com",
+        "provider_recruiting_host": "provider-mountnittany.icims.com"
       },
       "nearest_airport": "SCE State College University Park (about 5 mi)",
       "beds": 260,

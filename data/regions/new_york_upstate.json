@@ -1987,7 +1987,7 @@
       "careers_url": "https://www.carthagehospital.com/careers/",
       "careers_platform": "unknown",
       "careers_search_url": null,
-      "careers_notes": "careers URL is a best guess from the hospital domain; verify in enrichment. [enrich 2026-10-20] careers_url -> HTTP None at None",
+      "careers_notes": "careers URL is a best guess from the hospital domain; verify in enrichment. [enrich 2026-10-20] careers_url -> HTTP None at None [gap-fix 2026-10-21] carthagehospital.com has an invalid TLS certificate on Actions (probe 39650100056); board not identified.",
       "ats_config": {},
       "nearest_airport": "ART Watertown International (SYR for most flights)",
       "beds": null,
@@ -2301,12 +2301,12 @@
       "region": "Upstate NY",
       "hotspot": false,
       "website": "https://www.nfmmc.org/",
-      "careers_url": "https://www.nfmmc.org/careers/",
+      "careers_url": "https://careers.nfmmc.org/",
       "careers_platform": "unknown",
-      "careers_search_url": null,
-      "careers_notes": "careers URL is a best guess from the hospital domain; verify in enrichment. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.nfmmc.org/careers",
+      "careers_search_url": "https://careers.nfmmc.org/?s=nurse+practitioner",
+      "careers_notes": "careers URL is a best guess from the hospital domain; verify in enrichment. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.nfmmc.org/careers [gap-fix 2026-10-21] nfmmc.org/careers links only to Indeed; the hospital's own listings are on the WordPress site careers.nfmmc.org (web search 2026-10-21); not yet live-tested.",
       "ats_config": {
-        "host": "www.nfmmc.org"
+        "host": "careers.nfmmc.org"
       },
       "nearest_airport": "BUF Buffalo Niagara International (30 min)",
       "beds": 133,
