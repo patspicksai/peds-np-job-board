@@ -777,13 +777,13 @@
       "region": "Pennsylvania (other)",
       "hotspot": false,
       "website": "https://www.mountnittany.org/",
-      "careers_url": "https://careers-mountnittany.icims.com/jobs/search?ss=1",
-      "careers_platform": "icims",
-      "careers_search_url": "https://careers-mountnittany.icims.com/jobs/search?ss=1&searchKeyword=nurse%20practitioner",
-      "careers_notes": "Careers page not fetched; careers_url is the main site as a placeholder. [enrich 2026-10-20] careers_url -> HTTP 200 at https://mountnittany.org/ [gap-fix 2026-10-21] Mount Nittany Health posts staff jobs on careers-mountnittany.icims.com and providers on provider-mountnittany.icims.com (web search 2026-10-21); not yet live-tested.",
+      "careers_url": "https://mountnittany.org/careers/",
+      "careers_platform": "unknown",
+      "careers_search_url": null,
+      "careers_notes": "Careers page not fetched; careers_url is the main site as a placeholder. [enrich 2026-10-20] careers_url -> HTTP 200 at https://mountnittany.org/ [gap-fix 2026-10-21] Mount Nittany Health posts staff jobs on careers-mountnittany.icims.com and providers on provider-mountnittany.icims.com (web search 2026-10-21); not yet live-tested. [gap-fix 2026-10-21] the careers-mountnittany.icims.com and provider-mountnittany.icims.com portals are gone (iCIMS 'gone' page on live_test); the current board behind mountnittany.org/careers 'Search Open Positions' is not yet identified.",
       "ats_config": {
-        "host": "careers-mountnittany.icims.com",
-        "provider_recruiting_host": "provider-mountnittany.icims.com"
+        "provider_recruiting_host": "provider-mountnittany.icims.com",
+        "host": "mountnittany.org"
       },
       "nearest_airport": "SCE State College University Park (about 5 mi)",
       "beds": 260,

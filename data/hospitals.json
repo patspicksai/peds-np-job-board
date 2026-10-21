@@ -12096,12 +12096,14 @@
       "region": "NYC metro",
       "hotspot": false,
       "website": "https://www.hss.edu/",
-      "careers_url": "https://www.hss.edu/careers",
-      "careers_platform": "unknown",
-      "careers_search_url": null,
-      "careers_notes": "careers URL is a best guess from the hospital domain; verify in enrichment. [enrich 2026-10-20] careers_url -> HTTP None at None [gap-fix 2026-10-21] careers.hss.edu is DNS-dead and the former jobs-hss.icims.com portal is gone (iCIMS 'gone' page, Actions probe 39650100056); HSS careers moved to hss.edu/careers, board not yet identified.",
+      "careers_url": "https://hss.wd1.myworkdayjobs.com/HSS_Careers",
+      "careers_platform": "workday",
+      "careers_search_url": "https://hss.wd1.myworkdayjobs.com/HSS_Careers?q=nurse%20practitioner",
+      "careers_notes": "careers URL is a best guess from the hospital domain; verify in enrichment. [enrich 2026-10-20] careers_url -> HTTP None at None [gap-fix 2026-10-21] careers.hss.edu is DNS-dead and the former jobs-hss.icims.com portal is gone (iCIMS 'gone' page, Actions probe 39650100056); HSS careers moved to hss.edu/careers, board not yet identified. [gap-fix 2026-10-21] hss.edu/careers links to Workday hss.wd1 site HSS_Careers (sniffed on live_test, 50 listings, Pediatric Ortho APP found).",
       "ats_config": {
-        "host": "www.hss.edu"
+        "host": "hss.wd1.myworkdayjobs.com",
+        "tenant": "hss",
+        "site": "HSS_Careers"
       },
       "nearest_airport": "LGA LaGuardia Airport",
       "beds": null,
@@ -15570,7 +15572,7 @@
       "careers_url": "https://www.numc.edu/careers-at-nuhealth/job-listings-at-nuhealth/",
       "careers_platform": "unknown",
       "careers_search_url": "https://www.numc.edu/careers-at-nuhealth/job-listings-at-nuhealth/",
-      "careers_notes": "Public benefit corporation; careers URL is a best guess; verify. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.numc.edu/careers-at-nuhealth/ [gap-fix 2026-10-21] NuHealth job listings are a static page at /careers-at-nuhealth/job-listings-at-nuhealth/ (Actions probe 39650100056); not yet live-tested.",
+      "careers_notes": "Public benefit corporation; careers URL is a best guess; verify. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.numc.edu/careers-at-nuhealth/ [gap-fix 2026-10-21] NuHealth job listings are a static page at /careers-at-nuhealth/job-listings-at-nuhealth/ (Actions probe 39650100056); not yet live-tested. [gap-fix 2026-10-21] live_test: the NuHealth listings page carries no NP/APP job links (postings are PDFs / text); leave unreadable.",
       "ats_config": {
         "host": "www.numc.edu"
       },
@@ -18704,7 +18706,7 @@
       "careers_url": "https://careers.nfmmc.org/",
       "careers_platform": "unknown",
       "careers_search_url": "https://careers.nfmmc.org/?s=nurse+practitioner",
-      "careers_notes": "careers URL is a best guess from the hospital domain; verify in enrichment. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.nfmmc.org/careers [gap-fix 2026-10-21] nfmmc.org/careers links only to Indeed; the hospital's own listings are on the WordPress site careers.nfmmc.org (web search 2026-10-21); not yet live-tested.",
+      "careers_notes": "careers URL is a best guess from the hospital domain; verify in enrichment. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.nfmmc.org/careers [gap-fix 2026-10-21] nfmmc.org/careers links only to Indeed; the hospital's own listings are on the WordPress site careers.nfmmc.org (web search 2026-10-21); not yet live-tested. [gap-fix 2026-10-21] live_test: careers.nfmmc.org rendered with no recognizable NP/APP links; needs a probe (WordPress category pages).",
       "ats_config": {
         "host": "careers.nfmmc.org"
       },
@@ -24891,13 +24893,13 @@
       "region": "Pennsylvania (other)",
       "hotspot": false,
       "website": "https://www.mountnittany.org/",
-      "careers_url": "https://careers-mountnittany.icims.com/jobs/search?ss=1",
-      "careers_platform": "icims",
-      "careers_search_url": "https://careers-mountnittany.icims.com/jobs/search?ss=1&searchKeyword=nurse%20practitioner",
-      "careers_notes": "Careers page not fetched; careers_url is the main site as a placeholder. [enrich 2026-10-20] careers_url -> HTTP 200 at https://mountnittany.org/ [gap-fix 2026-10-21] Mount Nittany Health posts staff jobs on careers-mountnittany.icims.com and providers on provider-mountnittany.icims.com (web search 2026-10-21); not yet live-tested.",
+      "careers_url": "https://mountnittany.org/careers/",
+      "careers_platform": "unknown",
+      "careers_search_url": null,
+      "careers_notes": "Careers page not fetched; careers_url is the main site as a placeholder. [enrich 2026-10-20] careers_url -> HTTP 200 at https://mountnittany.org/ [gap-fix 2026-10-21] Mount Nittany Health posts staff jobs on careers-mountnittany.icims.com and providers on provider-mountnittany.icims.com (web search 2026-10-21); not yet live-tested. [gap-fix 2026-10-21] the careers-mountnittany.icims.com and provider-mountnittany.icims.com portals are gone (iCIMS 'gone' page on live_test); the current board behind mountnittany.org/careers 'Search Open Positions' is not yet identified.",
       "ats_config": {
-        "host": "careers-mountnittany.icims.com",
-        "provider_recruiting_host": "provider-mountnittany.icims.com"
+        "provider_recruiting_host": "provider-mountnittany.icims.com",
+        "host": "mountnittany.org"
       },
       "nearest_airport": "SCE State College University Park (about 5 mi)",
       "beds": 260,
@@ -27672,7 +27674,7 @@
       "careers_url": "https://huhealthcarecareers.com/",
       "careers_platform": "unknown",
       "careers_search_url": null,
-      "careers_notes": "Howard University Hospital careers page (path unverified). Since 2023 the hospital is reportedly managed by Adventist HealthCare, so postings may also appear on the Adventist board. [enrich 2026-10-20] careers_url -> HTTP 403 at https://www.huhealthcare.com/careers [gap-fix 2026-10-21] huhealthcare.com/careers and huhcareers.com are marketing shells; 'Search Careers' points to huhealthcarecareers.com (Actions probe 39650100056), platform not yet identified.",
+      "careers_notes": "Howard University Hospital careers page (path unverified). Since 2023 the hospital is reportedly managed by Adventist HealthCare, so postings may also appear on the Adventist board. [enrich 2026-10-20] careers_url -> HTTP 403 at https://www.huhealthcare.com/careers [gap-fix 2026-10-21] huhealthcare.com/careers and huhcareers.com are marketing shells; 'Search Careers' points to huhealthcarecareers.com (Actions probe 39650100056), platform not yet identified. [gap-fix 2026-10-21] live_test: huhealthcarecareers.com rendered with no recognizable job links; needs a probe of its XHRs.",
       "ats_config": {
         "host": "huhealthcarecareers.com"
       },
@@ -33998,7 +34000,7 @@
       "careers_url": "https://recruiting.myapps.paychex.com/appone/Branding/ReqTemplate/BrowseAllJobsbyCategory.asp?Type=REQ&FromID=1&ClientID=12555&B_ID=91&JobCode=0&CountryID=3&LanguageID=2&servervar=beaufortmemorialhospital.appone.com",
       "careers_platform": "custom",
       "careers_search_url": "https://recruiting.myapps.paychex.com/appone/Branding/ReqTemplate/BrowseAllJobsbyCategory.asp?Type=REQ&FromID=1&ClientID=12555&B_ID=91&JobCode=0&CountryID=3&LanguageID=2&servervar=beaufortmemorialhospital.appone.com",
-      "careers_notes": "Beaufort Memorial careers landing page (caller supplied); platform not identified. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.bmhsc.org/careers [gap-fix 2026-10-21] Paychex AppOne board; BrowseAllJobsbyCategory renders server-side MainInfoReq.asp?R_ID= links (Actions probe 39428696372); not yet live-tested.",
+      "careers_notes": "Beaufort Memorial careers landing page (caller supplied); platform not identified. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.bmhsc.org/careers [gap-fix 2026-10-21] Paychex AppOne board; BrowseAllJobsbyCategory renders server-side MainInfoReq.asp?R_ID= links (Actions probe 39428696372); not yet live-tested. [gap-fix 2026-10-21] live_test: the generic adapter does not recognize AppOne's MainInfoReq.asp rows; needs a small Paychex AppOne parser.",
       "ats_config": {
         "host": "recruiting.myapps.paychex.com",
         "vendor": "Paychex AppOne",

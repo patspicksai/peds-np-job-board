@@ -3230,12 +3230,14 @@
       "region": "NYC metro",
       "hotspot": false,
       "website": "https://www.hss.edu/",
-      "careers_url": "https://www.hss.edu/careers",
-      "careers_platform": "unknown",
-      "careers_search_url": null,
-      "careers_notes": "careers URL is a best guess from the hospital domain; verify in enrichment. [enrich 2026-10-20] careers_url -> HTTP None at None [gap-fix 2026-10-21] careers.hss.edu is DNS-dead and the former jobs-hss.icims.com portal is gone (iCIMS 'gone' page, Actions probe 39650100056); HSS careers moved to hss.edu/careers, board not yet identified.",
+      "careers_url": "https://hss.wd1.myworkdayjobs.com/HSS_Careers",
+      "careers_platform": "workday",
+      "careers_search_url": "https://hss.wd1.myworkdayjobs.com/HSS_Careers?q=nurse%20practitioner",
+      "careers_notes": "careers URL is a best guess from the hospital domain; verify in enrichment. [enrich 2026-10-20] careers_url -> HTTP None at None [gap-fix 2026-10-21] careers.hss.edu is DNS-dead and the former jobs-hss.icims.com portal is gone (iCIMS 'gone' page, Actions probe 39650100056); HSS careers moved to hss.edu/careers, board not yet identified. [gap-fix 2026-10-21] hss.edu/careers links to Workday hss.wd1 site HSS_Careers (sniffed on live_test, 50 listings, Pediatric Ortho APP found).",
       "ats_config": {
-        "host": "www.hss.edu"
+        "host": "hss.wd1.myworkdayjobs.com",
+        "tenant": "hss",
+        "site": "HSS_Careers"
       },
       "nearest_airport": "LGA LaGuardia Airport",
       "beds": null,
@@ -4815,7 +4817,7 @@
       "careers_url": "https://www.numc.edu/careers-at-nuhealth/job-listings-at-nuhealth/",
       "careers_platform": "unknown",
       "careers_search_url": "https://www.numc.edu/careers-at-nuhealth/job-listings-at-nuhealth/",
-      "careers_notes": "Public benefit corporation; careers URL is a best guess; verify. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.numc.edu/careers-at-nuhealth/ [gap-fix 2026-10-21] NuHealth job listings are a static page at /careers-at-nuhealth/job-listings-at-nuhealth/ (Actions probe 39650100056); not yet live-tested.",
+      "careers_notes": "Public benefit corporation; careers URL is a best guess; verify. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.numc.edu/careers-at-nuhealth/ [gap-fix 2026-10-21] NuHealth job listings are a static page at /careers-at-nuhealth/job-listings-at-nuhealth/ (Actions probe 39650100056); not yet live-tested. [gap-fix 2026-10-21] live_test: the NuHealth listings page carries no NP/APP job links (postings are PDFs / text); leave unreadable.",
       "ats_config": {
         "host": "www.numc.edu"
       },

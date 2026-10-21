@@ -2067,7 +2067,7 @@
       "careers_url": "https://recruiting.myapps.paychex.com/appone/Branding/ReqTemplate/BrowseAllJobsbyCategory.asp?Type=REQ&FromID=1&ClientID=12555&B_ID=91&JobCode=0&CountryID=3&LanguageID=2&servervar=beaufortmemorialhospital.appone.com",
       "careers_platform": "custom",
       "careers_search_url": "https://recruiting.myapps.paychex.com/appone/Branding/ReqTemplate/BrowseAllJobsbyCategory.asp?Type=REQ&FromID=1&ClientID=12555&B_ID=91&JobCode=0&CountryID=3&LanguageID=2&servervar=beaufortmemorialhospital.appone.com",
-      "careers_notes": "Beaufort Memorial careers landing page (caller supplied); platform not identified. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.bmhsc.org/careers [gap-fix 2026-10-21] Paychex AppOne board; BrowseAllJobsbyCategory renders server-side MainInfoReq.asp?R_ID= links (Actions probe 39428696372); not yet live-tested.",
+      "careers_notes": "Beaufort Memorial careers landing page (caller supplied); platform not identified. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.bmhsc.org/careers [gap-fix 2026-10-21] Paychex AppOne board; BrowseAllJobsbyCategory renders server-side MainInfoReq.asp?R_ID= links (Actions probe 39428696372); not yet live-tested. [gap-fix 2026-10-21] live_test: the generic adapter does not recognize AppOne's MainInfoReq.asp rows; needs a small Paychex AppOne parser.",
       "ats_config": {
         "host": "recruiting.myapps.paychex.com",
         "vendor": "Paychex AppOne",
