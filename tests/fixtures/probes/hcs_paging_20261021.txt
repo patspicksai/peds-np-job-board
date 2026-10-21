@@ -1,0 +1,6 @@
+# HealthcareSource search API: which of size / from the proxy honors
+hcs_s100 https://pm.healthcaresource.com/JobseekerSearchAPI/caromont/api/Search?size=100 POST:{"query":{"bool":{"must":{"multi_match":{"query":"nurse practitioner","fields":["title","description"]}}}}} MODES:req
+hcs_s25_from0 https://pm.healthcaresource.com/JobseekerSearchAPI/caromont/api/Search?size=25 POST:{"from":0,"query":{"bool":{"must":{"multi_match":{"query":"nurse practitioner","fields":["title","description"]}}}}} MODES:req
+hcs_s25_from25 https://pm.healthcaresource.com/JobseekerSearchAPI/caromont/api/Search?size=25&from=25 POST:{"query":{"bool":{"must":{"multi_match":{"query":"nurse practitioner","fields":["title","description"]}}}}} MODES:req
+hcs_s25_bodysize https://pm.healthcaresource.com/JobseekerSearchAPI/caromont/api/Search POST:{"size":25,"from":25,"query":{"bool":{"must":{"multi_match":{"query":"nurse practitioner","fields":["title","description"]}}}}} MODES:req
+hcs_s50 https://pm.healthcaresource.com/JobseekerSearchAPI/caromont/api/Search?size=50 POST:{"query":{"bool":{"must":{"multi_match":{"query":"nurse practitioner","fields":["title","description"]}}}}} MODES:req
