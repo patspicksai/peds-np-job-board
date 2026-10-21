@@ -1,0 +1,21 @@
+run 2026-10-21 wall=43.8s ledger=data/hospitals.json browser=chrome-headed
+
+hospital                                 platform               method           board  list  cand  new   secs  status / error
+-------------------------------------------------------------------------------------------------------------------------------------------
+chesapeake-regional-chesapeake           ultipro                api                331   331     0    0   20.3  ok
+christiana-hospital-newark-de            workday                api                129   119     0    0   17.4  ok
+christianacare-union-elkton              workday                api                129    10     0    0   17.4  ok
+englewood-hospital-englewood             successfactors         playwright           2     2     0    0   34.6  ok
+erie-county-medical-center-buffalo       ultipro                api                115   115     0    0    9.2  ok
+frederick-health-hospital-frederick      ultipro                api                181   181     0    0   20.2  ok
+guthrie-robert-packer-hospital-sayre     oracle_cloud           api                254   173     0    0   14.3  ok
+maimonides-childrens-brooklyn            jibe                   api                 31    31     1    1    5.4  ok
+meritus-medical-center-hagerstown        ultipro                api                261   261     0    0   27.0  ok
+rochester-general-hospital-rochester     workday                api                143   129     2    2   15.2  ok
+temple-university-hospital-philadelphia  generic->icims         requests             2     2     0    0    7.0  ok
+ummc-batavia                             workday                api                143     2     0    0   15.2  ok
+unity-hospital-rochester                 workday                api                143    12     1    1   15.2  ok
+upstate-golisano-childrens-syracuse      generic                requests            34    34     3    3    9.2  ok
+wellspan-york-hospital-york              generic                playwright          62    62     4    4   43.6  ok
+-------------------------------------------------------------------------------------------------------------------------------------------
+hospitals=15 ok=15 not_ok=0 board_listings=1545 candidates=11 new_candidates=11

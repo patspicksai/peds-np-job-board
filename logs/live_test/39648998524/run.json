@@ -1,0 +1,1096 @@
+{
+ "run_id": "2026-10-21",
+ "mode": "automated",
+ "started_at": "2026-10-21T18:02:16Z",
+ "finished_at": "2026-10-21T18:03:00Z",
+ "dry_run": true,
+ "no_details": true,
+ "keywords": [
+  "nurse practitioner",
+  "pediatric nurse practitioner",
+  "advanced practice provider",
+  "APRN",
+  "PICU",
+  "NICU"
+ ],
+ "checked": [
+  "upstate-golisano-childrens-syracuse",
+  "temple-university-hospital-philadelphia",
+  "wellspan-york-hospital-york",
+  "maimonides-childrens-brooklyn",
+  "guthrie-robert-packer-hospital-sayre",
+  "englewood-hospital-englewood",
+  "chesapeake-regional-chesapeake",
+  "erie-county-medical-center-buffalo",
+  "frederick-health-hospital-frederick",
+  "meritus-medical-center-hagerstown",
+  "christiana-hospital-newark-de",
+  "christianacare-union-elkton",
+  "rochester-general-hospital-rochester",
+  "ummc-batavia",
+  "unity-hospital-rochester"
+ ],
+ "unreachable": [],
+ "unreachable_detail": {},
+ "hospitals": [
+  {
+   "slug": "upstate-golisano-childrens-syracuse",
+   "name": "Upstate Golisano Children's Hospital",
+   "platform": "generic",
+   "adapter": "generic",
+   "method": "requests",
+   "board": "generic|careers.upstate.edu/jobs/search?query=nurse%20practitioner",
+   "board_hospitals": 1,
+   "board_listings": 34,
+   "listings": 34,
+   "candidates": 3,
+   "new": 3,
+   "known": 0,
+   "status": "ok",
+   "error": null,
+   "http_status": null,
+   "seconds": 9.2,
+   "requests": 3,
+   "details_fetched": 0,
+   "details_failed": 0,
+   "notes": [
+    "generic: followed 2 result pages from https://careers.upstate.edu/jobs/search?query=nurse%20practitioner"
+   ],
+   "samples": [
+    {
+     "title": "Per Diem Pediatric Advanced Practice Provider Hospitalist",
+     "url": "https://careers.upstate.edu/jobs/per-diem-pediatric-advanced-practice-provider-hospitalist-syracuse-new-york-united-states",
+     "posted_at": null,
+     "relevance": 3,
+     "setting": "peds_inpatient"
+    },
+    {
+     "title": "Pediatric Neurology APP",
+     "url": "https://careers.upstate.edu/jobs/pediatric-neurology-app-syracuse-new-york-united-states",
+     "posted_at": null,
+     "relevance": 2,
+     "setting": "peds_specialty_outpatient"
+    },
+    {
+     "title": "Pediatric Advanced Practice Provider Hospitalist",
+     "url": "https://careers.upstate.edu/jobs/pediatric-advanced-practice-provider-hospitalist-syracuse-new-york-united-states-8122ef0f-7094-4b18-8503-1ec838051ddd",
+     "posted_at": null,
+     "relevance": 3,
+     "setting": "peds_inpatient"
+    }
+   ],
+   "sample_listings": [
+    {
+     "title": "Physician Assistant or Nurse Practitioner",
+     "url": "https://careers.upstate.edu/jobs/physician-assistant-or-nurse-practitioner-syracuse-new-york-united-states",
+     "posted_at": null,
+     "location": ""
+    },
+    {
+     "title": "Nurse Practitioner / Physician Assistant",
+     "url": "https://careers.upstate.edu/jobs/nurse-practitioner-physician-assistant-syracuse-new-york-united-states-b508bc92-9092-4b0a-b35f-fb24962193b6",
+     "posted_at": null,
+     "location": ""
+    },
+    {
+     "title": "Outpatient Psychiatric Nurse Practitioner (Adult)",
+     "url": "https://careers.upstate.edu/jobs/outpatient-psychiatric-nurse-practitioner-adult-syracuse-new-york-united-states",
+     "posted_at": null,
+     "location": ""
+    }
+   ]
+  },
+  {
+   "slug": "temple-university-hospital-philadelphia",
+   "name": "Temple University Hospital",
+   "platform": "generic->icims",
+   "adapter": "icims",
+   "method": "requests",
+   "board": "generic|jobs.silkroad.com/templehealth/careers?searchstring=nurse%20practitioner",
+   "board_hospitals": 1,
+   "board_listings": 2,
+   "listings": 2,
+   "candidates": 0,
+   "new": 0,
+   "known": 0,
+   "status": "ok",
+   "error": null,
+   "http_status": null,
+   "seconds": 7.0,
+   "requests": 6,
+   "details_fetched": 0,
+   "details_failed": 0,
+   "notes": [
+    "sniff: page links to iCIMS portal lksomphysiciancareers-temple.icims.com"
+   ],
+   "samples": [],
+   "sample_listings": [
+    {
+     "title": "Neurology- Cognitive/Dementia",
+     "url": "https://lksomphysiciancareers-temple.icims.com/jobs/2146/neurology--cognitive-dementia/job",
+     "posted_at": "2026-10-15",
+     "location": "US-PA-Philadelphia"
+    },
+    {
+     "title": "Chair, Department of Obstetrics, Gynecology & Reproductive Sciences, CMO and Chief, OB/GYN, Temple Women & Families Hospital",
+     "url": "https://lksomphysiciancareers-temple.icims.com/jobs/2056/chair%2c-department-of-obstetrics%2c-gynecology-%26-reproductive-sciences%2c-cmo-and-chief%2c-ob-gyn%2c-temple-women-%26-families-hospital/job",
+     "posted_at": null,
+     "location": "US-Philadelphia"
+    }
+   ]
+  },
+  {
+   "slug": "wellspan-york-hospital-york",
+   "name": "WellSpan York Hospital",
+   "platform": "generic",
+   "adapter": "generic",
+   "method": "playwright",
+   "board": "generic|joinwellspan.org/search?keyword=nurse%20practitioner",
+   "board_hospitals": 1,
+   "board_listings": 62,
+   "listings": 62,
+   "candidates": 4,
+   "new": 4,
+   "known": 0,
+   "status": "ok",
+   "error": null,
+   "http_status": null,
+   "seconds": 43.6,
+   "requests": 5,
+   "details_fetched": 0,
+   "details_failed": 0,
+   "notes": [],
+   "samples": [
+    {
+     "title": "Advanced Practice Professional - Neonatology",
+     "url": "https://www.joinwellspan.org/job-listings?jobId=224002",
+     "posted_at": null,
+     "relevance": 3,
+     "setting": "nicu"
+    },
+    {
+     "title": "Advanced Practice Professional - NICU Level III",
+     "url": "https://www.joinwellspan.org/job-listings?jobId=225610",
+     "posted_at": null,
+     "relevance": 3,
+     "setting": "nicu"
+    },
+    {
+     "title": "Advanced Practice Professional - Pediatric Hospitalist",
+     "url": "https://www.joinwellspan.org/job-listings?jobId=229105",
+     "posted_at": null,
+     "relevance": 3,
+     "setting": "peds_inpatient"
+    }
+   ],
+   "sample_listings": [
+    {
+     "title": "Advanced Practice Professional - Emergency Medicine",
+     "url": "https://www.joinwellspan.org/job-listings?jobId=225331",
+     "posted_at": null,
+     "location": ""
+    },
+    {
+     "title": "Advanced Practice Professional - Emergency Department",
+     "url": "https://www.joinwellspan.org/job-listings?jobId=228554",
+     "posted_at": null,
+     "location": ""
+    },
+    {
+     "title": "Advanced Practice Professional - Emergency Department",
+     "url": "https://www.joinwellspan.org/job-listings?jobId=229835",
+     "posted_at": null,
+     "location": ""
+    }
+   ]
+  },
+  {
+   "slug": "maimonides-childrens-brooklyn",
+   "name": "Maimonides Infants and Children's Hospital of Brooklyn",
+   "platform": "jibe",
+   "adapter": "jibe",
+   "method": "api",
+   "board": "jibe|careers.maimo.org|",
+   "board_hospitals": 1,
+   "board_listings": 31,
+   "listings": 31,
+   "candidates": 1,
+   "new": 1,
+   "known": 0,
+   "status": "ok",
+   "error": null,
+   "http_status": null,
+   "seconds": 5.4,
+   "requests": 6,
+   "details_fetched": 0,
+   "details_failed": 0,
+   "notes": [],
+   "samples": [
+    {
+     "title": "Nurse Practitioner - Outpatient Child and Adolescent Psychiatry Nurse Practitioner",
+     "url": "https://careers.maimo.org/jobs/11371",
+     "posted_at": "2026-08-26",
+     "relevance": 2,
+     "setting": "peds_specialty_outpatient"
+    }
+   ],
+   "sample_listings": [
+    {
+     "title": "Nurse Practitioner",
+     "url": "https://careers.maimo.org/jobs/11630",
+     "posted_at": "2026-05-28",
+     "location": "Brooklyn, New York"
+    },
+    {
+     "title": "Nurse Practitioner - Geriatric Home Visits",
+     "url": "https://careers.maimo.org/jobs/10713",
+     "posted_at": "2026-01-23",
+     "location": "Brooklyn, New York"
+    },
+    {
+     "title": "Nurse Practitioner - Outpatient Child and Adolescent Psychiatry Nurse Practitioner",
+     "url": "https://careers.maimo.org/jobs/11371",
+     "posted_at": "2026-08-26",
+     "location": "Brooklyn, New York"
+    }
+   ]
+  },
+  {
+   "slug": "guthrie-robert-packer-hospital-sayre",
+   "name": "Guthrie Robert Packer Hospital",
+   "platform": "oracle_cloud",
+   "adapter": "oracle_cloud",
+   "method": "api",
+   "board": "oracle_cloud|elfw.fa.us2.oraclecloud.com|cx_1001",
+   "board_hospitals": 1,
+   "board_listings": 254,
+   "listings": 173,
+   "candidates": 0,
+   "new": 0,
+   "known": 0,
+   "status": "ok",
+   "error": null,
+   "http_status": null,
+   "seconds": 14.3,
+   "requests": 15,
+   "details_fetched": 0,
+   "details_failed": 0,
+   "notes": [],
+   "samples": [],
+   "sample_listings": [
+    {
+     "title": "Patient Service Specialist- Bariatric Surgery-Full Time",
+     "url": "https://elfw.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/25433",
+     "posted_at": "2026-10-20",
+     "location": "Sayre, PA, United States"
+    },
+    {
+     "title": "Pharmacist - Pharmacy - Full Time",
+     "url": "https://elfw.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/25322",
+     "posted_at": "2026-10-16",
+     "location": "Sayre, PA, United States"
+    },
+    {
+     "title": "Pharmacist, Night Relief - Pharmacy - Per Diem",
+     "url": "https://elfw.fa.us2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/25323",
+     "posted_at": "2026-10-16",
+     "location": "Sayre, PA, United States"
+    }
+   ]
+  },
+  {
+   "slug": "englewood-hospital-englewood",
+   "name": "Englewood Hospital",
+   "platform": "successfactors",
+   "adapter": "generic",
+   "method": "playwright",
+   "board": "successfactors|careers.englewoodhealth.org|",
+   "board_hospitals": 1,
+   "board_listings": 2,
+   "listings": 2,
+   "candidates": 0,
+   "new": 0,
+   "known": 0,
+   "status": "ok",
+   "error": null,
+   "http_status": null,
+   "seconds": 34.6,
+   "requests": 6,
+   "details_fetched": 0,
+   "details_failed": 0,
+   "notes": [
+    "sniff: recognized successfactors front end on careers.englewoodhealth.org",
+    "sniff: recognized successfactors front end on careers.englewoodhealth.org",
+    "sniff: recognized successfactors front end on careers.englewoodhealth.org",
+    "sniff: followed careers link http://careers.englewoodhealth.org",
+    "successfactors adapter returned 0 listings; trying generic"
+   ],
+   "samples": [],
+   "sample_listings": [
+    {
+     "title": "Physician Assistant Inpatient Surgical Services Nights PT",
+     "url": "https://careers.englewoodhealth.org/job/Physician-Assistant-Inpatient-Surgical-Services-Nights-PT/65545-en_US",
+     "posted_at": null,
+     "location": ""
+    },
+    {
+     "title": "Physician Assistant Inpatient Surgical Services Nights FT",
+     "url": "https://careers.englewoodhealth.org/job/Physician-Assistant-Inpatient-Surgical-Services-Nights-FT/65544-en_US",
+     "posted_at": null,
+     "location": ""
+    }
+   ]
+  },
+  {
+   "slug": "chesapeake-regional-chesapeake",
+   "name": "Chesapeake Regional Medical Center",
+   "platform": "ultipro",
+   "adapter": "ultipro",
+   "method": "api",
+   "board": "ultipro|crhukg.rec.pro.ukg.net|/che1503chpe/jobboard/09584b08-b32f-4882-8c7b-223bbd8e3851",
+   "board_hospitals": 1,
+   "board_listings": 331,
+   "listings": 331,
+   "candidates": 0,
+   "new": 0,
+   "known": 0,
+   "status": "ok",
+   "error": null,
+   "http_status": null,
+   "seconds": 20.3,
+   "requests": 21,
+   "details_fetched": 0,
+   "details_failed": 0,
+   "notes": [],
+   "samples": [],
+   "sample_listings": [
+    {
+     "title": "SW Case Manager II",
+     "url": "https://crhukg.rec.pro.ukg.net/CHE1503CHPE/JobBoard/09584b08-b32f-4882-8c7b-223bbd8e3851/OpportunityDetail?opportunityId=95bd2573-a008-4797-8180-56deeabd8c98",
+     "posted_at": "2026-10-21",
+     "location": "Hospital Medical Center, Chesapeake, VA"
+    },
+    {
+     "title": "Mobility Tech - Stepdown",
+     "url": "https://crhukg.rec.pro.ukg.net/CHE1503CHPE/JobBoard/09584b08-b32f-4882-8c7b-223bbd8e3851/OpportunityDetail?opportunityId=42fb7e3b-4710-4412-9c26-0d80a69814aa",
+     "posted_at": "2026-10-21",
+     "location": "Hospital Medical Center, Chesapeake, VA"
+    },
+    {
+     "title": "Mobility Tech",
+     "url": "https://crhukg.rec.pro.ukg.net/CHE1503CHPE/JobBoard/09584b08-b32f-4882-8c7b-223bbd8e3851/OpportunityDetail?opportunityId=63c0b2c3-dbc3-43d9-b762-13e9efc16a6f",
+     "posted_at": "2026-10-21",
+     "location": "Hospital Medical Center, Chesapeake, VA"
+    }
+   ]
+  },
+  {
+   "slug": "erie-county-medical-center-buffalo",
+   "name": "Erie County Medical Center",
+   "platform": "ultipro",
+   "adapter": "ultipro",
+   "method": "api",
+   "board": "ultipro|ecmc462.rec.pro.ukg.net|/eri1003ecmc/jobboard/4d1858fb-5b2a-499b-a320-4f1f4e5bcb06",
+   "board_hospitals": 1,
+   "board_listings": 115,
+   "listings": 115,
+   "candidates": 0,
+   "new": 0,
+   "known": 0,
+   "status": "ok",
+   "error": null,
+   "http_status": null,
+   "seconds": 9.2,
+   "requests": 10,
+   "details_fetched": 0,
+   "details_failed": 0,
+   "notes": [],
+   "samples": [],
+   "sample_listings": [
+    {
+     "title": "Medical Surgical Technician - FT - Day Shift",
+     "url": "https://ecmc462.rec.pro.ukg.net/ERI1003ECMC/JobBoard/4d1858fb-5b2a-499b-a320-4f1f4e5bcb06/OpportunityDetail?opportunityId=60c1a650-4e6d-4b42-8135-7e16a637599c",
+     "posted_at": "2026-10-21",
+     "location": "Buffalo, NY"
+    },
+    {
+     "title": "Licensed Practical Nurse - FT - Day Shift",
+     "url": "https://ecmc462.rec.pro.ukg.net/ERI1003ECMC/JobBoard/4d1858fb-5b2a-499b-a320-4f1f4e5bcb06/OpportunityDetail?opportunityId=1182d4de-fdb5-48d8-bfc0-e4b4f8894a91",
+     "posted_at": "2026-10-21",
+     "location": "Buffalo, NY"
+    },
+    {
+     "title": "Intern Pharmacy - PT - Varied Shift",
+     "url": "https://ecmc462.rec.pro.ukg.net/ERI1003ECMC/JobBoard/4d1858fb-5b2a-499b-a320-4f1f4e5bcb06/OpportunityDetail?opportunityId=3472dfae-2928-4da4-ba58-b250e058d2fc",
+     "posted_at": "2026-10-20",
+     "location": "Buffalo, NY"
+    }
+   ]
+  },
+  {
+   "slug": "frederick-health-hospital-frederick",
+   "name": "Frederick Health Hospital",
+   "platform": "ultipro",
+   "adapter": "ultipro",
+   "method": "api",
+   "board": "ultipro|recruiting.ultipro.com|/fre1010frhs/jobboard/776a147e-2e0b-43d0-844e-bbd49deeb24d",
+   "board_hospitals": 1,
+   "board_listings": 181,
+   "listings": 181,
+   "candidates": 0,
+   "new": 0,
+   "known": 0,
+   "status": "ok",
+   "error": null,
+   "http_status": null,
+   "seconds": 20.2,
+   "requests": 13,
+   "details_fetched": 0,
+   "details_failed": 0,
+   "notes": [],
+   "samples": [],
+   "sample_listings": [
+    {
+     "title": "Forensic Nurse Examiner - PRN",
+     "url": "https://recruiting.ultipro.com/FRE1010FRHS/JobBoard/776a147e-2e0b-43d0-844e-bbd49deeb24d/OpportunityDetail?opportunityId=18ef2efc-f12c-488e-8e42-4c017918daf9",
+     "posted_at": "2026-10-21",
+     "location": "Main Campus, Frederick, MD"
+    },
+    {
+     "title": "Forensic Nurse Examiner - PRN",
+     "url": "https://recruiting.ultipro.com/FRE1010FRHS/JobBoard/776a147e-2e0b-43d0-844e-bbd49deeb24d/OpportunityDetail?opportunityId=9030fe0d-a0f6-485f-92cc-48ede6ce7a54",
+     "posted_at": "2026-10-21",
+     "location": "Main Campus, Frederick, MD"
+    },
+    {
+     "title": "EHS Assistant (Housekeeping) Emergency Relief",
+     "url": "https://recruiting.ultipro.com/FRE1010FRHS/JobBoard/776a147e-2e0b-43d0-844e-bbd49deeb24d/OpportunityDetail?opportunityId=e707bfa5-be9a-4358-9e34-01e009bb3a87",
+     "posted_at": "2026-10-21",
+     "location": "Main Campus, Frederick, MD"
+    }
+   ]
+  },
+  {
+   "slug": "meritus-medical-center-hagerstown",
+   "name": "Meritus Medical Center",
+   "platform": "ultipro",
+   "adapter": "ultipro",
+   "method": "api",
+   "board": "ultipro|recruiting.ultipro.com|/mer1012merh/jobboard/23a054d5-dd9d-4a01-ba62-0bc75b4673d6",
+   "board_hospitals": 1,
+   "board_listings": 261,
+   "listings": 261,
+   "candidates": 0,
+   "new": 0,
+   "known": 0,
+   "status": "ok",
+   "error": null,
+   "http_status": null,
+   "seconds": 27.0,
+   "requests": 15,
+   "details_fetched": 0,
+   "details_failed": 0,
+   "notes": [],
+   "samples": [],
+   "sample_listings": [
+    {
+     "title": "RN - Women and Pediatrics - Full Time - Nightshift",
+     "url": "https://recruiting.ultipro.com/MER1012MERH/JobBoard/23a054d5-dd9d-4a01-ba62-0bc75b4673d6/OpportunityDetail?opportunityId=fdb5d8b2-1fef-4c8d-a1c2-7f9b4f28f7bd",
+     "posted_at": "2026-10-21",
+     "location": "Meritus Medical Center, Hagerstown, MD"
+    },
+    {
+     "title": "Unit Nutrition Assistant",
+     "url": "https://recruiting.ultipro.com/MER1012MERH/JobBoard/23a054d5-dd9d-4a01-ba62-0bc75b4673d6/OpportunityDetail?opportunityId=37e40460-07ae-4617-9e0b-d3095c345c74",
+     "posted_at": "2026-10-20",
+     "location": "Meritus Medical Center, Hagerstown, MD"
+    },
+    {
+     "title": "RN - Ortho | Neuro | Trauma - Full Time - Nightshift",
+     "url": "https://recruiting.ultipro.com/MER1012MERH/JobBoard/23a054d5-dd9d-4a01-ba62-0bc75b4673d6/OpportunityDetail?opportunityId=735f9bc8-2ec1-422a-ae64-0c558b5884fe",
+     "posted_at": "2026-10-20",
+     "location": "Meritus Medical Center, Hagerstown, MD"
+    }
+   ]
+  },
+  {
+   "slug": "christiana-hospital-newark-de",
+   "name": "Christiana Hospital",
+   "platform": "workday",
+   "adapter": "workday",
+   "method": "api",
+   "board": "workday|christianacare.wd5.myworkdayjobs.com|cchs",
+   "board_hospitals": 2,
+   "board_listings": 129,
+   "listings": 119,
+   "candidates": 0,
+   "new": 0,
+   "known": 0,
+   "status": "ok",
+   "error": null,
+   "http_status": null,
+   "seconds": 17.4,
+   "requests": 13,
+   "details_fetched": 0,
+   "details_failed": 0,
+   "notes": [],
+   "samples": [],
+   "sample_listings": [
+    {
+     "title": "Emergency Medicine Nurse Practitioner",
+     "url": "https://christianacare.wd5.myworkdayjobs.com/CCHS/job/Newark-DE/Emergency-Medicine-Nurse-Practitioner_JR78542",
+     "posted_at": null,
+     "location": "Newark, DE"
+    },
+    {
+     "title": "Nurse Practitioner or Physician Assistant, Sleep Wellness Center, Newark, DE",
+     "url": "https://christianacare.wd5.myworkdayjobs.com/CCHS/job/Newark-DE/Nurse-Practitioner-or-Physician-Assistant--Sleep-Wellness-Center--Newark--DE_JR94105",
+     "posted_at": "2026-10-05",
+     "location": "Newark, DE"
+    },
+    {
+     "title": "Transplant Program Team, NP/PA",
+     "url": "https://christianacare.wd5.myworkdayjobs.com/CCHS/job/Newark-DE/Transplant-Program-Team--NP-PA_JR82803",
+     "posted_at": "2026-10-19",
+     "location": "Newark, DE"
+    }
+   ]
+  },
+  {
+   "slug": "christianacare-union-elkton",
+   "name": "ChristianaCare, Union Hospital",
+   "platform": "workday",
+   "adapter": "workday",
+   "method": "api",
+   "board": "workday|christianacare.wd5.myworkdayjobs.com|cchs",
+   "board_hospitals": 2,
+   "board_listings": 129,
+   "listings": 10,
+   "candidates": 0,
+   "new": 0,
+   "known": 0,
+   "status": "ok",
+   "error": null,
+   "http_status": null,
+   "seconds": 17.4,
+   "requests": 13,
+   "details_fetched": 0,
+   "details_failed": 0,
+   "notes": [],
+   "samples": [],
+   "sample_listings": [
+    {
+     "title": "Emergency Medicine Nurse Practitioner",
+     "url": "https://christianacare.wd5.myworkdayjobs.com/CCHS/job/Newark-DE/Emergency-Medicine-Nurse-Practitioner_JR78542",
+     "posted_at": null,
+     "location": "Newark, DE"
+    },
+    {
+     "title": "Nurse Practitioner or Physician Assistant, Sleep Wellness Center, Newark, DE",
+     "url": "https://christianacare.wd5.myworkdayjobs.com/CCHS/job/Newark-DE/Nurse-Practitioner-or-Physician-Assistant--Sleep-Wellness-Center--Newark--DE_JR94105",
+     "posted_at": "2026-10-05",
+     "location": "Newark, DE"
+    },
+    {
+     "title": "Transplant Program Team, NP/PA",
+     "url": "https://christianacare.wd5.myworkdayjobs.com/CCHS/job/Newark-DE/Transplant-Program-Team--NP-PA_JR82803",
+     "posted_at": "2026-10-19",
+     "location": "Newark, DE"
+    }
+   ]
+  },
+  {
+   "slug": "rochester-general-hospital-rochester",
+   "name": "Rochester General Hospital",
+   "platform": "workday",
+   "adapter": "workday",
+   "method": "api",
+   "board": "workday|rrhs.wd5.myworkdayjobs.com|rrh",
+   "board_hospitals": 3,
+   "board_listings": 143,
+   "listings": 129,
+   "candidates": 2,
+   "new": 2,
+   "known": 0,
+   "status": "ok",
+   "error": null,
+   "http_status": null,
+   "seconds": 15.2,
+   "requests": 15,
+   "details_fetched": 0,
+   "details_failed": 0,
+   "notes": [],
+   "samples": [
+    {
+     "title": "Nurse Practitioner - Monroe County Children's Detention Center",
+     "url": "https://rrhs.wd5.myworkdayjobs.com/RRH/job/Northeast-Health-Service----RGPA/Nurse-Practitioner---Monroe-County-Children-s-Detention-Center_REQ_233639",
+     "posted_at": "2026-10-08",
+     "relevance": 2,
+     "setting": "unspecified"
+    },
+    {
+     "title": "Nurse Practitioner - Pediatrics",
+     "url": "https://rrhs.wd5.myworkdayjobs.com/RRH/job/Riedman-Health-Center/Nurse-Practitioner---Pediatrics_REQ_242806-1",
+     "posted_at": "2026-10-02",
+     "relevance": 2,
+     "setting": "unspecified"
+    }
+   ],
+   "sample_listings": [
+    {
+     "title": "Critical Care MICU – Physician Assistant - Practice at the Top of Your License",
+     "url": "https://rrhs.wd5.myworkdayjobs.com/RRH/job/Rochester-General-Hospital-RGH/Practice-at-the-Top-of-Your-License---Critical-Care-MICU---Physician-Assistant_REQ_240206",
+     "posted_at": "2026-10-20",
+     "location": "2 Locations"
+    },
+    {
+     "title": "Physician Assistant - Henrietta Primary Care",
+     "url": "https://rrhs.wd5.myworkdayjobs.com/RRH/job/Henrietta-Medical-Campus/Physician-Assistant---Henrietta-Primary-Care_REQ_242126",
+     "posted_at": "2026-10-20",
+     "location": "Henrietta Medical Campus"
+    },
+    {
+     "title": "Clinic Nurse Manager- Oncology",
+     "url": "https://rrhs.wd5.myworkdayjobs.com/RRH/job/SLH---CPH-Main-40/Clinic-Nurse-Manager--Oncology_REQ_232906",
+     "posted_at": "2026-10-19",
+     "location": "SLH - CPH Main (40)"
+    }
+   ]
+  },
+  {
+   "slug": "ummc-batavia",
+   "name": "United Memorial Medical Center",
+   "platform": "workday",
+   "adapter": "workday",
+   "method": "api",
+   "board": "workday|rrhs.wd5.myworkdayjobs.com|rrh",
+   "board_hospitals": 3,
+   "board_listings": 143,
+   "listings": 2,
+   "candidates": 0,
+   "new": 0,
+   "known": 0,
+   "status": "ok",
+   "error": null,
+   "http_status": null,
+   "seconds": 15.2,
+   "requests": 15,
+   "details_fetched": 0,
+   "details_failed": 0,
+   "notes": [],
+   "samples": [],
+   "sample_listings": [
+    {
+     "title": "Critical Care MICU – Physician Assistant - Practice at the Top of Your License",
+     "url": "https://rrhs.wd5.myworkdayjobs.com/RRH/job/Rochester-General-Hospital-RGH/Practice-at-the-Top-of-Your-License---Critical-Care-MICU---Physician-Assistant_REQ_240206",
+     "posted_at": "2026-10-20",
+     "location": "2 Locations"
+    },
+    {
+     "title": "Physician Assistant - Henrietta Primary Care",
+     "url": "https://rrhs.wd5.myworkdayjobs.com/RRH/job/Henrietta-Medical-Campus/Physician-Assistant---Henrietta-Primary-Care_REQ_242126",
+     "posted_at": "2026-10-20",
+     "location": "Henrietta Medical Campus"
+    },
+    {
+     "title": "Clinic Nurse Manager- Oncology",
+     "url": "https://rrhs.wd5.myworkdayjobs.com/RRH/job/SLH---CPH-Main-40/Clinic-Nurse-Manager--Oncology_REQ_232906",
+     "posted_at": "2026-10-19",
+     "location": "SLH - CPH Main (40)"
+    }
+   ]
+  },
+  {
+   "slug": "unity-hospital-rochester",
+   "name": "Unity Hospital",
+   "platform": "workday",
+   "adapter": "workday",
+   "method": "api",
+   "board": "workday|rrhs.wd5.myworkdayjobs.com|rrh",
+   "board_hospitals": 3,
+   "board_listings": 143,
+   "listings": 12,
+   "candidates": 1,
+   "new": 1,
+   "known": 0,
+   "status": "ok",
+   "error": null,
+   "http_status": null,
+   "seconds": 15.2,
+   "requests": 15,
+   "details_fetched": 0,
+   "details_failed": 0,
+   "notes": [],
+   "samples": [
+    {
+     "title": "Pediatric / Neo- Natal Nurse Practitioner - Unity Nursery (Per Diem)",
+     "url": "https://rrhs.wd5.myworkdayjobs.com/RRH/job/Unity-Hospital/Pediatric---Neo--Natal-Nurse-Practitioner---Unity-Nursery--Per-Diem-_REQ_201927",
+     "posted_at": "2026-10-13",
+     "relevance": 3,
+     "setting": "nicu"
+    }
+   ],
+   "sample_listings": [
+    {
+     "title": "Critical Care MICU – Physician Assistant - Practice at the Top of Your License",
+     "url": "https://rrhs.wd5.myworkdayjobs.com/RRH/job/Rochester-General-Hospital-RGH/Practice-at-the-Top-of-Your-License---Critical-Care-MICU---Physician-Assistant_REQ_240206",
+     "posted_at": "2026-10-20",
+     "location": "2 Locations"
+    },
+    {
+     "title": "Physician Assistant - Henrietta Primary Care",
+     "url": "https://rrhs.wd5.myworkdayjobs.com/RRH/job/Henrietta-Medical-Campus/Physician-Assistant---Henrietta-Primary-Care_REQ_242126",
+     "posted_at": "2026-10-20",
+     "location": "Henrietta Medical Campus"
+    },
+    {
+     "title": "Clinic Nurse Manager- Oncology",
+     "url": "https://rrhs.wd5.myworkdayjobs.com/RRH/job/SLH---CPH-Main-40/Clinic-Nurse-Manager--Oncology_REQ_232906",
+     "posted_at": "2026-10-19",
+     "location": "SLH - CPH Main (40)"
+    }
+   ]
+  }
+ ],
+ "jobs": [
+  {
+   "id": "a6ec7e23f766",
+   "hospital_slug": "upstate-golisano-childrens-syracuse",
+   "title": "Per Diem Pediatric Advanced Practice Provider Hospitalist",
+   "url": "https://careers.upstate.edu/jobs/per-diem-pediatric-advanced-practice-provider-hospitalist-syracuse-new-york-united-states",
+   "apply_url": null,
+   "source": "employer",
+   "external_id": null,
+   "location_text": "",
+   "city": null,
+   "state": null,
+   "department": null,
+   "setting": "peds_inpatient",
+   "employment_type": "Per diem",
+   "shift": null,
+   "schedule": null,
+   "salary_text": null,
+   "posted_at": null,
+   "summary": "Per Diem Pediatric Advanced Practice Provider Hospitalist at Upstate Golisano Children's Hospital. Setting: pediatric inpatient / hospitalist.",
+   "description": "",
+   "requirements": [],
+   "relevance": 3,
+   "relevance_reason": "Pediatric acute care APP role (pediatric inpatient / hospitalist); 'Pediatric' in title/unit/location. Posted on the Upstate Medical University (SUNY) system board without a matching location; attributed to the flagship Upstate Golisano Children's Hospital.",
+   "tags": [
+    "per diem"
+   ],
+   "first_seen_at": null,
+   "last_seen_at": null,
+   "status": "active",
+   "raw_notes": "scraper generic/requests"
+  },
+  {
+   "id": "4c460f42003d",
+   "hospital_slug": "upstate-golisano-childrens-syracuse",
+   "title": "Pediatric Neurology APP",
+   "url": "https://careers.upstate.edu/jobs/pediatric-neurology-app-syracuse-new-york-united-states",
+   "apply_url": null,
+   "source": "employer",
+   "external_id": null,
+   "location_text": "",
+   "city": null,
+   "state": null,
+   "department": null,
+   "setting": "peds_specialty_outpatient",
+   "employment_type": null,
+   "shift": null,
+   "schedule": null,
+   "salary_text": null,
+   "posted_at": null,
+   "summary": "Pediatric Neurology APP at Upstate Golisano Children's Hospital. Setting: pediatric outpatient specialty.",
+   "description": "",
+   "requirements": [],
+   "relevance": 2,
+   "relevance_reason": "Pediatric APP role, pediatric outpatient specialty; 'Pediatric' in title/unit/location. Posted on the Upstate Medical University (SUNY) system board without a matching location; attributed to the flagship Upstate Golisano Children's Hospital.",
+   "tags": [],
+   "first_seen_at": null,
+   "last_seen_at": null,
+   "status": "active",
+   "raw_notes": "scraper generic/requests"
+  },
+  {
+   "id": "c959ae895eef",
+   "hospital_slug": "upstate-golisano-childrens-syracuse",
+   "title": "Pediatric Advanced Practice Provider Hospitalist",
+   "url": "https://careers.upstate.edu/jobs/pediatric-advanced-practice-provider-hospitalist-syracuse-new-york-united-states-8122ef0f-7094-4b18-8503-1ec838051ddd",
+   "apply_url": null,
+   "source": "employer",
+   "external_id": null,
+   "location_text": "",
+   "city": null,
+   "state": null,
+   "department": null,
+   "setting": "peds_inpatient",
+   "employment_type": null,
+   "shift": null,
+   "schedule": null,
+   "salary_text": null,
+   "posted_at": null,
+   "summary": "Pediatric Advanced Practice Provider Hospitalist at Upstate Golisano Children's Hospital. Setting: pediatric inpatient / hospitalist.",
+   "description": "",
+   "requirements": [],
+   "relevance": 3,
+   "relevance_reason": "Pediatric acute care APP role (pediatric inpatient / hospitalist); 'Pediatric' in title/unit/location. Posted on the Upstate Medical University (SUNY) system board without a matching location; attributed to the flagship Upstate Golisano Children's Hospital.",
+   "tags": [],
+   "first_seen_at": null,
+   "last_seen_at": null,
+   "status": "active",
+   "raw_notes": "scraper generic/requests"
+  },
+  {
+   "id": "ad905587fda8",
+   "hospital_slug": "wellspan-york-hospital-york",
+   "title": "Advanced Practice Professional - Neonatology",
+   "url": "https://www.joinwellspan.org/job-listings?jobId=224002",
+   "apply_url": null,
+   "source": "employer",
+   "external_id": null,
+   "location_text": "",
+   "city": null,
+   "state": null,
+   "department": null,
+   "setting": "nicu",
+   "employment_type": null,
+   "shift": null,
+   "schedule": null,
+   "salary_text": null,
+   "posted_at": null,
+   "summary": "Advanced Practice Professional - Neonatology at WellSpan York Hospital. Setting: NICU / neonatology.",
+   "description": "",
+   "requirements": [],
+   "relevance": 3,
+   "relevance_reason": "Pediatric acute care APP role (NICU / neonatology); 'Neonatology' in title/unit/location. Posted on the WellSpan Health system board without a matching location; attributed to the flagship WellSpan York Hospital.",
+   "tags": [],
+   "first_seen_at": null,
+   "last_seen_at": null,
+   "status": "active",
+   "raw_notes": "scraper generic/playwright"
+  },
+  {
+   "id": "ee683b0ce85f",
+   "hospital_slug": "wellspan-york-hospital-york",
+   "title": "Advanced Practice Professional - NICU Level III",
+   "url": "https://www.joinwellspan.org/job-listings?jobId=225610",
+   "apply_url": null,
+   "source": "employer",
+   "external_id": null,
+   "location_text": "",
+   "city": null,
+   "state": null,
+   "department": null,
+   "setting": "nicu",
+   "employment_type": null,
+   "shift": null,
+   "schedule": null,
+   "salary_text": null,
+   "posted_at": null,
+   "summary": "Advanced Practice Professional - NICU Level III at WellSpan York Hospital. Setting: NICU / neonatology.",
+   "description": "",
+   "requirements": [],
+   "relevance": 3,
+   "relevance_reason": "Pediatric acute care APP role (NICU / neonatology); 'NICU' in title/unit/location. Posted on the WellSpan Health system board without a matching location; attributed to the flagship WellSpan York Hospital.",
+   "tags": [],
+   "first_seen_at": null,
+   "last_seen_at": null,
+   "status": "active",
+   "raw_notes": "scraper generic/playwright"
+  },
+  {
+   "id": "bc6d35d370d6",
+   "hospital_slug": "wellspan-york-hospital-york",
+   "title": "Advanced Practice Professional - Pediatric Hospitalist",
+   "url": "https://www.joinwellspan.org/job-listings?jobId=229105",
+   "apply_url": null,
+   "source": "employer",
+   "external_id": null,
+   "location_text": "",
+   "city": null,
+   "state": null,
+   "department": null,
+   "setting": "peds_inpatient",
+   "employment_type": null,
+   "shift": null,
+   "schedule": null,
+   "salary_text": null,
+   "posted_at": null,
+   "summary": "Advanced Practice Professional - Pediatric Hospitalist at WellSpan York Hospital. Setting: pediatric inpatient / hospitalist.",
+   "description": "",
+   "requirements": [],
+   "relevance": 3,
+   "relevance_reason": "Pediatric acute care APP role (pediatric inpatient / hospitalist); 'Pediatric' in title/unit/location. Posted on the WellSpan Health system board without a matching location; attributed to the flagship WellSpan York Hospital.",
+   "tags": [],
+   "first_seen_at": null,
+   "last_seen_at": null,
+   "status": "active",
+   "raw_notes": "scraper generic/playwright"
+  },
+  {
+   "id": "f21dd3230e05",
+   "hospital_slug": "wellspan-york-hospital-york",
+   "title": "Advanced Practice Professional - Newborn Nursery",
+   "url": "https://www.joinwellspan.org/job-listings?jobId=228637",
+   "apply_url": null,
+   "source": "employer",
+   "external_id": null,
+   "location_text": "",
+   "city": null,
+   "state": null,
+   "department": null,
+   "setting": "nicu",
+   "employment_type": null,
+   "shift": null,
+   "schedule": null,
+   "salary_text": null,
+   "posted_at": null,
+   "summary": "Advanced Practice Professional - Newborn Nursery at WellSpan York Hospital. Setting: NICU / neonatology.",
+   "description": "",
+   "requirements": [],
+   "relevance": 3,
+   "relevance_reason": "Pediatric acute care APP role (NICU / neonatology); 'Newborn' in title/unit/location. Posted on the WellSpan Health system board without a matching location; attributed to the flagship WellSpan York Hospital.",
+   "tags": [],
+   "first_seen_at": null,
+   "last_seen_at": null,
+   "status": "active",
+   "raw_notes": "scraper generic/playwright"
+  },
+  {
+   "id": "e8cb86c1ac9f",
+   "hospital_slug": "maimonides-childrens-brooklyn",
+   "title": "Nurse Practitioner - Outpatient Child and Adolescent Psychiatry Nurse Practitioner",
+   "url": "https://careers.maimo.org/jobs/11371",
+   "apply_url": null,
+   "source": "employer",
+   "external_id": "11371",
+   "location_text": "Brooklyn, New York",
+   "city": "Brooklyn",
+   "state": "NY",
+   "department": null,
+   "setting": "peds_specialty_outpatient",
+   "employment_type": null,
+   "shift": null,
+   "schedule": null,
+   "salary_text": null,
+   "posted_at": "2026-08-26",
+   "summary": "Nurse Practitioner - Outpatient Child and Adolescent Psychiatry Nurse Practitioner at Maimonides Infants and Children's Hospital of Brooklyn. Setting: pediatric outpatient specialty.",
+   "description": "About Us We’re Maimonides Health, Brooklyn’s largest healthcare system, serving over 250,000 patients each year through the system’s 3 hospitals, 1800 physicians and healthcare professionals, more than 80 community-based practices and outpatient centers. At Maimonides Health, our core values H.E.A.R.T drives everything we do. We uphold and maintain Honesty, Empathy, Accountability, Respect, and Teamwork to empower our talented team, engage our respective communities and adhere to Planetree's philosophy of patient-centered care. The system is anchored by Maimonides Medical Center, one of the nation’s largest independent teaching hospitals and home to centers of excellence in numerous specialties; Maimonides Midwood Community Hospital (formerly New York Community Hospital), a 130-bed adult medical-surgical hospital; and Maimonides Children's Hospital, Brooklyn's only children's hospital and only pediatric trauma center. Maimonides' clinical programs rank among the best in the country for patient outcomes, including its Heart and Vascular Institute, Neuroscience Institute, Boneand Joint Center, and Cancer Center. Maimonides is an affiliate of Northwell Health and a major clinical training site for SUNY Downstate College of Medicine. Overview A Nurse Practitioner, certified under section 6910 of the New York State Education Law is a licensed registered nurse who provides primary health care in accordance with written policies approved by nursing/medical administration. Demonstrates accountability for nursing practice and advocates for patients and supports patient rights. In the area of clinical expertise of the psychiatric patient, he/she assumes clinical, educational research and performance improvement responsibilities for implementing the nursing process within the framework and philosophy of the department of Nursing. Outpatient Child and Adolescent Psychiatry Nurse Practitioner (NYSNA) BC# 82890 / ICIMS JOB# 11371 Monday – Friday (2) Days 11am – 7pm (3) Days 9am – 5pm Responsibilities Develops and implements a collaborative practice agreement in the specific clinical area and performs a periodic review of the collaborative practice agreement. 2.* Assesses the health status of clients/families by means of comprehensive health history and physical examinations. 3.* Initiates therapeutic and diagnostic procedures, consultations and laboratory examinations. Interprets findings and alters plan of care including, but not limited to, prescribing and altering medication regimens and ordering blood according to agreed-upon collaborative practice agreement and designated protocols in designated area. 4.* Provides teaching and counseling in areas of health promotion and maintenance and in disease prevention; coordinates patient education in a manner consistent with patients’ biopsychosocial profile. 5. Documents findings and plan of care in patient’s medical record 6.* Consults with physician as established in the collaborative practice agreement. 7.* Initiates referrals to specialty services and fosters continuity of care. 8.* Initiates hospital admission and discharge after collaborative consultation with physician. Works collaboratively with interdisciplinary team to promote optimal patient outcomes. 10.* Patient care responsibilities are delivered with a knowledge of patient growth and development and are appropriate to the ages of the patients served. Professional Practice Domain 11.* Demonstrates accountability for nursing practice. 12.* Advocates for patients and supports patient rights. 13. Serves as a resource person to nurses and other health team members. 14. Participates in peer review. 15. Participates in approved medical and nursing research studies. 16. Participates in defining, maintaining and interpreting standards of nursing practice. 17. Contributes to the maintenance of a positive image of professional nursing in the medical center and in the local community by implementing programs that recognize nursing as a profe",
+   "requirements": [
+    "Overview A Nurse Practitioner, certified under section 6910 of the New York State Education Law is a licensed registered nurse who provides primary health care in accordance with written policies approved by nursing/medical administration."
+   ],
+   "relevance": 2,
+   "relevance_reason": "Pediatric APP role, pediatric outpatient specialty; 'Child' in title/unit/location.",
+   "tags": [],
+   "first_seen_at": null,
+   "last_seen_at": null,
+   "status": "active",
+   "raw_notes": "scraper jibe/api"
+  },
+  {
+   "id": "1e65c409bf5d",
+   "hospital_slug": "unity-hospital-rochester",
+   "title": "Pediatric / Neo- Natal Nurse Practitioner - Unity Nursery (Per Diem)",
+   "url": "https://rrhs.wd5.myworkdayjobs.com/RRH/job/Unity-Hospital/Pediatric---Neo--Natal-Nurse-Practitioner---Unity-Nursery--Per-Diem-_REQ_201927",
+   "apply_url": null,
+   "source": "employer",
+   "external_id": "Unity Hospital",
+   "location_text": "Unity Hospital",
+   "city": null,
+   "state": "NY",
+   "department": null,
+   "setting": "nicu",
+   "employment_type": "Per diem",
+   "shift": null,
+   "schedule": null,
+   "salary_text": null,
+   "posted_at": "2026-10-13",
+   "summary": "Pediatric / Neo- Natal Nurse Practitioner - Unity Nursery (Per Diem) at Unity Hospital. Setting: NICU / neonatology.",
+   "description": "",
+   "requirements": [],
+   "relevance": 3,
+   "relevance_reason": "Pediatric acute care APP role (NICU / neonatology); 'Pediatric' in title/unit/location.",
+   "tags": [
+    "per diem"
+   ],
+   "first_seen_at": null,
+   "last_seen_at": null,
+   "status": "active",
+   "raw_notes": "scraper workday/api; attribution=name"
+  },
+  {
+   "id": "cf27d3a8684d",
+   "hospital_slug": "rochester-general-hospital-rochester",
+   "title": "Nurse Practitioner - Monroe County Children's Detention Center",
+   "url": "https://rrhs.wd5.myworkdayjobs.com/RRH/job/Northeast-Health-Service----RGPA/Nurse-Practitioner---Monroe-County-Children-s-Detention-Center_REQ_233639",
+   "apply_url": null,
+   "source": "employer",
+   "external_id": "Northeast Health Service  - RGPA",
+   "location_text": "Northeast Health Service  - RGPA",
+   "city": null,
+   "state": null,
+   "department": null,
+   "setting": "unspecified",
+   "employment_type": null,
+   "shift": null,
+   "schedule": null,
+   "salary_text": null,
+   "posted_at": "2026-10-08",
+   "summary": "Nurse Practitioner - Monroe County Children's Detention Center at Rochester General Hospital.",
+   "description": "",
+   "requirements": [],
+   "relevance": 2,
+   "relevance_reason": "Pediatric APP role, setting not stated; 'Children's' in title/unit/location. Posted on the Rochester Regional Health system board without a matching location; attributed to the flagship Rochester General Hospital.",
+   "tags": [],
+   "first_seen_at": null,
+   "last_seen_at": null,
+   "status": "active",
+   "raw_notes": "scraper workday/api; attribution=none"
+  },
+  {
+   "id": "a6fbe0f9be63",
+   "hospital_slug": "rochester-general-hospital-rochester",
+   "title": "Nurse Practitioner - Pediatrics",
+   "url": "https://rrhs.wd5.myworkdayjobs.com/RRH/job/Riedman-Health-Center/Nurse-Practitioner---Pediatrics_REQ_242806-1",
+   "apply_url": null,
+   "source": "employer",
+   "external_id": "Riedman Health Center",
+   "location_text": "Riedman Health Center",
+   "city": null,
+   "state": null,
+   "department": null,
+   "setting": "unspecified",
+   "employment_type": null,
+   "shift": null,
+   "schedule": null,
+   "salary_text": null,
+   "posted_at": "2026-10-02",
+   "summary": "Nurse Practitioner - Pediatrics at Rochester General Hospital.",
+   "description": "",
+   "requirements": [],
+   "relevance": 2,
+   "relevance_reason": "Pediatric APP role, setting not stated; 'Pediatrics' in title/unit/location. Posted on the Rochester Regional Health system board without a matching location; attributed to the flagship Rochester General Hospital.",
+   "tags": [],
+   "first_seen_at": null,
+   "last_seen_at": null,
+   "status": "active",
+   "raw_notes": "scraper workday/api; attribution=none"
+  }
+ ],
+ "seen_again": [],
+ "closed": [],
+ "totals": {
+  "hospitals": 15,
+  "checked": 15,
+  "unreachable": 0,
+  "listings": 1545,
+  "candidates": 11,
+  "new_candidates": 11,
+  "seconds": 223.4
+ },
+ "browser": "chrome-headed",
+ "ledger": "data/hospitals.json",
+ "wall_seconds": 43.8
+}
