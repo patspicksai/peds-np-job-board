@@ -1,0 +1,553 @@
+{
+ "run_id": "2026-10-21",
+ "mode": "automated",
+ "started_at": "2026-10-21T18:34:17Z",
+ "finished_at": "2026-10-21T18:34:56Z",
+ "dry_run": false,
+ "no_details": false,
+ "keywords": [
+  "nurse practitioner",
+  "pediatric nurse practitioner",
+  "advanced practice provider",
+  "APRN",
+  "PICU",
+  "NICU"
+ ],
+ "checked": [
+  "mercy-hospital-buffalo",
+  "sisters-of-charity-hospital-buffalo",
+  "northern-light-mercy-portland",
+  "northern-light-ar-gould-presque-isle",
+  "northern-light-acadia-bangor",
+  "northern-light-emmc-bangor",
+  "golisano-childrens-buffalo",
+  "millard-fillmore-suburban-williamsville",
+  "olean-general-hospital-olean"
+ ],
+ "unreachable": [],
+ "unreachable_detail": {},
+ "hospitals": [
+  {
+   "slug": "mercy-hospital-buffalo",
+   "name": "Mercy Hospital of Buffalo",
+   "platform": "infor",
+   "adapter": "infor",
+   "method": "api",
+   "board": "infor|chsblawsonprd-lm01.cloud.infor.com:1444|",
+   "board_hospitals": 2,
+   "board_listings": 30,
+   "listings": 30,
+   "candidates": 0,
+   "new": 0,
+   "known": 0,
+   "status": "ok",
+   "error": null,
+   "http_status": null,
+   "seconds": 33.5,
+   "requests": 34,
+   "details_fetched": 30,
+   "details_failed": 0,
+   "notes": [
+    "infor: 4 page(s), 351 postings on the board, 30 advanced practice titles"
+   ],
+   "samples": [],
+   "sample_listings": [
+    {
+     "title": "Physician Assistant TRI Ortho Williamsville",
+     "url": "https://chsblawsonprd-lm01.cloud.infor.com:1444/lmghr/Jobs/form/JobPosting%5BJobPostingSet%5D%28CHS%2C48260%2C2%29.JobPostingDisplay?pagesize=1&navigation=JobPosting%5BJobPostingSet%5D%28CHS%2C48260%2C2%29.JobPostingDisplayNav&csk.JobBoard=EXTERNAL&csk.HROrganization=CHS",
+     "posted_at": "2026-10-16",
+     "location": "Williamsville, NY"
+    },
+    {
+     "title": "Advanced Practice Provider Cardiology Admin TRI",
+     "url": "https://chsblawsonprd-lm01.cloud.infor.com:1444/lmghr/Jobs/form/JobPosting%5BJobPostingSet%5D%28CHS%2C48210%2C2%29.JobPostingDisplay?pagesize=1&navigation=JobPosting%5BJobPostingSet%5D%28CHS%2C48210%2C2%29.JobPostingDisplayNav&csk.JobBoard=EXTERNAL&csk.HROrganization=CHS",
+     "posted_at": "2026-10-08",
+     "location": "Cheektowaga, NY"
+    },
+    {
+     "title": "Advanced Practice Provider Primary Care MSM LMH",
+     "url": "https://chsblawsonprd-lm01.cloud.infor.com:1444/lmghr/Jobs/form/JobPosting%5BJobPostingSet%5D%28CHS%2C47760%2C2%29.JobPostingDisplay?pagesize=1&navigation=JobPosting%5BJobPostingSet%5D%28CHS%2C47760%2C2%29.JobPostingDisplayNav&csk.JobBoard=EXTERNAL&csk.HROrganization=CHS",
+     "posted_at": "2026-10-08",
+     "location": "Lockport, NY"
+    }
+   ]
+  },
+  {
+   "slug": "sisters-of-charity-hospital-buffalo",
+   "name": "Sisters of Charity Hospital",
+   "platform": "infor",
+   "adapter": "infor",
+   "method": "api",
+   "board": "infor|chsblawsonprd-lm01.cloud.infor.com:1444|",
+   "board_hospitals": 2,
+   "board_listings": 30,
+   "listings": 0,
+   "candidates": 0,
+   "new": 0,
+   "known": 0,
+   "status": "ok",
+   "error": null,
+   "http_status": null,
+   "seconds": 33.5,
+   "requests": 34,
+   "details_fetched": 30,
+   "details_failed": 0,
+   "notes": [
+    "infor: 4 page(s), 351 postings on the board, 30 advanced practice titles"
+   ],
+   "samples": [],
+   "sample_listings": [
+    {
+     "title": "Physician Assistant TRI Ortho Williamsville",
+     "url": "https://chsblawsonprd-lm01.cloud.infor.com:1444/lmghr/Jobs/form/JobPosting%5BJobPostingSet%5D%28CHS%2C48260%2C2%29.JobPostingDisplay?pagesize=1&navigation=JobPosting%5BJobPostingSet%5D%28CHS%2C48260%2C2%29.JobPostingDisplayNav&csk.JobBoard=EXTERNAL&csk.HROrganization=CHS",
+     "posted_at": "2026-10-16",
+     "location": "Williamsville, NY"
+    },
+    {
+     "title": "Advanced Practice Provider Cardiology Admin TRI",
+     "url": "https://chsblawsonprd-lm01.cloud.infor.com:1444/lmghr/Jobs/form/JobPosting%5BJobPostingSet%5D%28CHS%2C48210%2C2%29.JobPostingDisplay?pagesize=1&navigation=JobPosting%5BJobPostingSet%5D%28CHS%2C48210%2C2%29.JobPostingDisplayNav&csk.JobBoard=EXTERNAL&csk.HROrganization=CHS",
+     "posted_at": "2026-10-08",
+     "location": "Cheektowaga, NY"
+    },
+    {
+     "title": "Advanced Practice Provider Primary Care MSM LMH",
+     "url": "https://chsblawsonprd-lm01.cloud.infor.com:1444/lmghr/Jobs/form/JobPosting%5BJobPostingSet%5D%28CHS%2C47760%2C2%29.JobPostingDisplay?pagesize=1&navigation=JobPosting%5BJobPostingSet%5D%28CHS%2C47760%2C2%29.JobPostingDisplayNav&csk.JobBoard=EXTERNAL&csk.HROrganization=CHS",
+     "posted_at": "2026-10-08",
+     "location": "Lockport, NY"
+    }
+   ]
+  },
+  {
+   "slug": "northern-light-mercy-portland",
+   "name": "Northern Light Mercy Hospital",
+   "platform": "infor",
+   "adapter": "infor",
+   "method": "api",
+   "board": "infor|css-emh-prd.inforcloudsuite.com|",
+   "board_hospitals": 4,
+   "board_listings": 31,
+   "listings": 11,
+   "candidates": 1,
+   "new": 1,
+   "known": 0,
+   "status": "ok",
+   "error": null,
+   "http_status": null,
+   "seconds": 39.3,
+   "requests": 39,
+   "details_fetched": 31,
+   "details_failed": 0,
+   "notes": [
+    "infor: 8 page(s), 774 postings on the board, 31 advanced practice titles"
+   ],
+   "samples": [
+    {
+     "title": "Pain Management APP (Nurse Practitioner or Physician Associate)",
+     "url": "https://css-emh-prd.inforcloudsuite.com/hcm/Jobs/form/JobPosting%5BJobPostingSet%5D%2810%2C93908%2C1%29.JobPostingDisplay?pagesize=1&navigation=JobPosting%5BJobPostingSet%5D%2810%2C93908%2C1%29.JobPostingDisplayNav&csk.JobBoard=EXTERNAL&csk.HROrganization=10",
+     "posted_at": "2026-08-27",
+     "relevance": 1,
+     "setting": "mixed"
+    }
+   ],
+   "sample_listings": [
+    {
+     "title": "Outpatient Internal Medicine Nurse Practitioner or Physician Associate",
+     "url": "https://css-emh-prd.inforcloudsuite.com/hcm/Jobs/form/JobPosting%5BJobPostingSet%5D%2810%2C96407%2C1%29.JobPostingDisplay?pagesize=1&navigation=JobPosting%5BJobPostingSet%5D%2810%2C96407%2C1%29.JobPostingDisplayNav&csk.JobBoard=EXTERNAL&csk.HROrganization=10",
+     "posted_at": "2026-10-20",
+     "location": "Bangor, ME"
+    },
+    {
+     "title": "Psychiatric Mental Health Nurse Practitioner - Adult Medication Management",
+     "url": "https://css-emh-prd.inforcloudsuite.com/hcm/Jobs/form/JobPosting%5BJobPostingSet%5D%2810%2C96324%2C1%29.JobPostingDisplay?pagesize=1&navigation=JobPosting%5BJobPostingSet%5D%2810%2C96324%2C1%29.JobPostingDisplayNav&csk.JobBoard=EXTERNAL&csk.HROrganization=10",
+     "posted_at": "2026-10-15",
+     "location": "Bangor, ME"
+    },
+    {
+     "title": "Urology Physician Associate or Nurse Practitioner",
+     "url": "https://css-emh-prd.inforcloudsuite.com/hcm/Jobs/form/JobPosting%5BJobPostingSet%5D%2810%2C95540%2C1%29.JobPostingDisplay?pagesize=1&navigation=JobPosting%5BJobPostingSet%5D%2810%2C95540%2C1%29.JobPostingDisplayNav&csk.JobBoard=EXTERNAL&csk.HROrganization=10",
+     "posted_at": "2026-10-08",
+     "location": "Bangor, ME"
+    }
+   ]
+  },
+  {
+   "slug": "northern-light-ar-gould-presque-isle",
+   "name": "Northern Light AR Gould Hospital",
+   "platform": "infor",
+   "adapter": "infor",
+   "method": "api",
+   "board": "infor|css-emh-prd.inforcloudsuite.com|",
+   "board_hospitals": 4,
+   "board_listings": 31,
+   "listings": 3,
+   "candidates": 0,
+   "new": 0,
+   "known": 0,
+   "status": "ok",
+   "error": null,
+   "http_status": null,
+   "seconds": 39.3,
+   "requests": 39,
+   "details_fetched": 31,
+   "details_failed": 0,
+   "notes": [
+    "infor: 8 page(s), 774 postings on the board, 31 advanced practice titles"
+   ],
+   "samples": [],
+   "sample_listings": [
+    {
+     "title": "Outpatient Internal Medicine Nurse Practitioner or Physician Associate",
+     "url": "https://css-emh-prd.inforcloudsuite.com/hcm/Jobs/form/JobPosting%5BJobPostingSet%5D%2810%2C96407%2C1%29.JobPostingDisplay?pagesize=1&navigation=JobPosting%5BJobPostingSet%5D%2810%2C96407%2C1%29.JobPostingDisplayNav&csk.JobBoard=EXTERNAL&csk.HROrganization=10",
+     "posted_at": "2026-10-20",
+     "location": "Bangor, ME"
+    },
+    {
+     "title": "Psychiatric Mental Health Nurse Practitioner - Adult Medication Management",
+     "url": "https://css-emh-prd.inforcloudsuite.com/hcm/Jobs/form/JobPosting%5BJobPostingSet%5D%2810%2C96324%2C1%29.JobPostingDisplay?pagesize=1&navigation=JobPosting%5BJobPostingSet%5D%2810%2C96324%2C1%29.JobPostingDisplayNav&csk.JobBoard=EXTERNAL&csk.HROrganization=10",
+     "posted_at": "2026-10-15",
+     "location": "Bangor, ME"
+    },
+    {
+     "title": "Urology Physician Associate or Nurse Practitioner",
+     "url": "https://css-emh-prd.inforcloudsuite.com/hcm/Jobs/form/JobPosting%5BJobPostingSet%5D%2810%2C95540%2C1%29.JobPostingDisplay?pagesize=1&navigation=JobPosting%5BJobPostingSet%5D%2810%2C95540%2C1%29.JobPostingDisplayNav&csk.JobBoard=EXTERNAL&csk.HROrganization=10",
+     "posted_at": "2026-10-08",
+     "location": "Bangor, ME"
+    }
+   ]
+  },
+  {
+   "slug": "northern-light-acadia-bangor",
+   "name": "Northern Light Acadia Hospital",
+   "platform": "infor",
+   "adapter": "infor",
+   "method": "api",
+   "board": "infor|css-emh-prd.inforcloudsuite.com|",
+   "board_hospitals": 4,
+   "board_listings": 31,
+   "listings": 2,
+   "candidates": 2,
+   "new": 2,
+   "known": 0,
+   "status": "ok",
+   "error": null,
+   "http_status": null,
+   "seconds": 39.3,
+   "requests": 39,
+   "details_fetched": 31,
+   "details_failed": 0,
+   "notes": [
+    "infor: 8 page(s), 774 postings on the board, 31 advanced practice titles"
+   ],
+   "samples": [
+    {
+     "title": "Neonatal Nurse Practitioner/Physician Associate",
+     "url": "https://css-emh-prd.inforcloudsuite.com/hcm/Jobs/form/JobPosting%5BJobPostingSet%5D%2810%2C95264%2C1%29.JobPostingDisplay?pagesize=1&navigation=JobPosting%5BJobPostingSet%5D%2810%2C95264%2C1%29.JobPostingDisplayNav&csk.JobBoard=EXTERNAL&csk.HROrganization=10",
+     "posted_at": "2026-08-07",
+     "relevance": 2,
+     "setting": "nicu"
+    },
+    {
+     "title": "Per Diem Neonatal Nurse Practitioner/Physician Associate",
+     "url": "https://css-emh-prd.inforcloudsuite.com/hcm/Jobs/form/JobPosting%5BJobPostingSet%5D%2810%2C95263%2C1%29.JobPostingDisplay?pagesize=1&navigation=JobPosting%5BJobPostingSet%5D%2810%2C95263%2C1%29.JobPostingDisplayNav&csk.JobBoard=EXTERNAL&csk.HROrganization=10",
+     "posted_at": "2026-08-07",
+     "relevance": 2,
+     "setting": "nicu"
+    }
+   ],
+   "sample_listings": [
+    {
+     "title": "Outpatient Internal Medicine Nurse Practitioner or Physician Associate",
+     "url": "https://css-emh-prd.inforcloudsuite.com/hcm/Jobs/form/JobPosting%5BJobPostingSet%5D%2810%2C96407%2C1%29.JobPostingDisplay?pagesize=1&navigation=JobPosting%5BJobPostingSet%5D%2810%2C96407%2C1%29.JobPostingDisplayNav&csk.JobBoard=EXTERNAL&csk.HROrganization=10",
+     "posted_at": "2026-10-20",
+     "location": "Bangor, ME"
+    },
+    {
+     "title": "Psychiatric Mental Health Nurse Practitioner - Adult Medication Management",
+     "url": "https://css-emh-prd.inforcloudsuite.com/hcm/Jobs/form/JobPosting%5BJobPostingSet%5D%2810%2C96324%2C1%29.JobPostingDisplay?pagesize=1&navigation=JobPosting%5BJobPostingSet%5D%2810%2C96324%2C1%29.JobPostingDisplayNav&csk.JobBoard=EXTERNAL&csk.HROrganization=10",
+     "posted_at": "2026-10-15",
+     "location": "Bangor, ME"
+    },
+    {
+     "title": "Urology Physician Associate or Nurse Practitioner",
+     "url": "https://css-emh-prd.inforcloudsuite.com/hcm/Jobs/form/JobPosting%5BJobPostingSet%5D%2810%2C95540%2C1%29.JobPostingDisplay?pagesize=1&navigation=JobPosting%5BJobPostingSet%5D%2810%2C95540%2C1%29.JobPostingDisplayNav&csk.JobBoard=EXTERNAL&csk.HROrganization=10",
+     "posted_at": "2026-10-08",
+     "location": "Bangor, ME"
+    }
+   ]
+  },
+  {
+   "slug": "northern-light-emmc-bangor",
+   "name": "Northern Light Eastern Maine Medical Center",
+   "platform": "infor",
+   "adapter": "infor",
+   "method": "api",
+   "board": "infor|css-emh-prd.inforcloudsuite.com|",
+   "board_hospitals": 4,
+   "board_listings": 31,
+   "listings": 15,
+   "candidates": 2,
+   "new": 2,
+   "known": 0,
+   "status": "ok",
+   "error": null,
+   "http_status": null,
+   "seconds": 39.3,
+   "requests": 39,
+   "details_fetched": 31,
+   "details_failed": 0,
+   "notes": [
+    "infor: 8 page(s), 774 postings on the board, 31 advanced practice titles"
+   ],
+   "samples": [
+    {
+     "title": "Rewarding Emergency Medicine PA Opportunity at Tertiary Care Center in Maine",
+     "url": "https://css-emh-prd.inforcloudsuite.com/hcm/Jobs/form/JobPosting%5BJobPostingSet%5D%2810%2C93002%2C1%29.JobPostingDisplay?pagesize=1&navigation=JobPosting%5BJobPostingSet%5D%2810%2C93002%2C1%29.JobPostingDisplayNav&csk.JobBoard=EXTERNAL&csk.HROrganization=10",
+     "posted_at": "2026-07-23",
+     "relevance": 2,
+     "setting": "peds_ed"
+    },
+    {
+     "title": "Emergency Medicine PA/NP Opportunity at Tertiary Care Center in Maine",
+     "url": "https://css-emh-prd.inforcloudsuite.com/hcm/Jobs/form/JobPosting%5BJobPostingSet%5D%2810%2C92711%2C1%29.JobPostingDisplay?pagesize=1&navigation=JobPosting%5BJobPostingSet%5D%2810%2C92711%2C1%29.JobPostingDisplayNav&csk.JobBoard=EXTERNAL&csk.HROrganization=10",
+     "posted_at": "2026-07-21",
+     "relevance": 2,
+     "setting": "peds_ed"
+    }
+   ],
+   "sample_listings": [
+    {
+     "title": "Outpatient Internal Medicine Nurse Practitioner or Physician Associate",
+     "url": "https://css-emh-prd.inforcloudsuite.com/hcm/Jobs/form/JobPosting%5BJobPostingSet%5D%2810%2C96407%2C1%29.JobPostingDisplay?pagesize=1&navigation=JobPosting%5BJobPostingSet%5D%2810%2C96407%2C1%29.JobPostingDisplayNav&csk.JobBoard=EXTERNAL&csk.HROrganization=10",
+     "posted_at": "2026-10-20",
+     "location": "Bangor, ME"
+    },
+    {
+     "title": "Psychiatric Mental Health Nurse Practitioner - Adult Medication Management",
+     "url": "https://css-emh-prd.inforcloudsuite.com/hcm/Jobs/form/JobPosting%5BJobPostingSet%5D%2810%2C96324%2C1%29.JobPostingDisplay?pagesize=1&navigation=JobPosting%5BJobPostingSet%5D%2810%2C96324%2C1%29.JobPostingDisplayNav&csk.JobBoard=EXTERNAL&csk.HROrganization=10",
+     "posted_at": "2026-10-15",
+     "location": "Bangor, ME"
+    },
+    {
+     "title": "Urology Physician Associate or Nurse Practitioner",
+     "url": "https://css-emh-prd.inforcloudsuite.com/hcm/Jobs/form/JobPosting%5BJobPostingSet%5D%2810%2C95540%2C1%29.JobPostingDisplay?pagesize=1&navigation=JobPosting%5BJobPostingSet%5D%2810%2C95540%2C1%29.JobPostingDisplayNav&csk.JobBoard=EXTERNAL&csk.HROrganization=10",
+     "posted_at": "2026-10-08",
+     "location": "Bangor, ME"
+    }
+   ]
+  },
+  {
+   "slug": "golisano-childrens-buffalo",
+   "name": "Golisano Children's Hospital of Buffalo",
+   "platform": "infor",
+   "adapter": "infor",
+   "method": "api",
+   "board": "infor|css-y9x4ku9mqsygapwx-prd.inforcloudsuite.com|",
+   "board_hospitals": 3,
+   "board_listings": 15,
+   "listings": 5,
+   "candidates": 1,
+   "new": 1,
+   "known": 0,
+   "status": "ok",
+   "error": null,
+   "http_status": null,
+   "seconds": 20.3,
+   "requests": 21,
+   "details_fetched": 15,
+   "details_failed": 0,
+   "notes": [
+    "infor: 6 page(s), 530 postings on the board, 15 advanced practice titles"
+   ],
+   "samples": [
+    {
+     "title": "Nurse Practitioner",
+     "url": "https://css-y9x4ku9mqsygapwx-prd.inforcloudsuite.com/hcm/Jobs/form/JobPosting%5BJobPostingSet%5D%281000%2C276%2C1%29.JobPostingDisplay?pagesize=1&navigation=JobPosting%5BJobPostingSet%5D%281000%2C276%2C1%29.JobPostingDisplayNav&csk.JobBoard=KH-EXTERNAL&csk.HROrganization=1000",
+     "posted_at": "2024-12-13",
+     "relevance": 3,
+     "setting": "picu"
+    }
+   ],
+   "sample_listings": [
+    {
+     "title": "Nurse Practitioner",
+     "url": "https://css-y9x4ku9mqsygapwx-prd.inforcloudsuite.com/hcm/Jobs/form/JobPosting%5BJobPostingSet%5D%281000%2C26037%2C1%29.JobPostingDisplay?pagesize=1&navigation=JobPosting%5BJobPostingSet%5D%281000%2C26037%2C1%29.JobPostingDisplayNav&csk.JobBoard=KH-EXTERNAL&csk.HROrganization=1000",
+     "posted_at": "2026-10-14",
+     "location": "Williamsville, NY"
+    },
+    {
+     "title": "Physician Assistant",
+     "url": "https://css-y9x4ku9mqsygapwx-prd.inforcloudsuite.com/hcm/Jobs/form/JobPosting%5BJobPostingSet%5D%281000%2C26035%2C1%29.JobPostingDisplay?pagesize=1&navigation=JobPosting%5BJobPostingSet%5D%281000%2C26035%2C1%29.JobPostingDisplayNav&csk.JobBoard=KH-EXTERNAL&csk.HROrganization=1000",
+     "posted_at": "2026-10-14",
+     "location": "Williamsville, NY"
+    },
+    {
+     "title": "Sexual Assault Forensic Examiner APP",
+     "url": "https://css-y9x4ku9mqsygapwx-prd.inforcloudsuite.com/hcm/Jobs/form/JobPosting%5BJobPostingSet%5D%281000%2C26201%2C1%29.JobPostingDisplay?pagesize=1&navigation=JobPosting%5BJobPostingSet%5D%281000%2C26201%2C1%29.JobPostingDisplayNav&csk.JobBoard=KH-EXTERNAL&csk.HROrganization=1000",
+     "posted_at": "2026-10-07",
+     "location": "Olean, NY"
+    }
+   ]
+  },
+  {
+   "slug": "millard-fillmore-suburban-williamsville",
+   "name": "Millard Fillmore Suburban Hospital",
+   "platform": "infor",
+   "adapter": "infor",
+   "method": "api",
+   "board": "infor|css-y9x4ku9mqsygapwx-prd.inforcloudsuite.com|",
+   "board_hospitals": 3,
+   "board_listings": 15,
+   "listings": 9,
+   "candidates": 0,
+   "new": 0,
+   "known": 0,
+   "status": "ok",
+   "error": null,
+   "http_status": null,
+   "seconds": 20.3,
+   "requests": 21,
+   "details_fetched": 15,
+   "details_failed": 0,
+   "notes": [
+    "infor: 6 page(s), 530 postings on the board, 15 advanced practice titles"
+   ],
+   "samples": [],
+   "sample_listings": [
+    {
+     "title": "Nurse Practitioner",
+     "url": "https://css-y9x4ku9mqsygapwx-prd.inforcloudsuite.com/hcm/Jobs/form/JobPosting%5BJobPostingSet%5D%281000%2C26037%2C1%29.JobPostingDisplay?pagesize=1&navigation=JobPosting%5BJobPostingSet%5D%281000%2C26037%2C1%29.JobPostingDisplayNav&csk.JobBoard=KH-EXTERNAL&csk.HROrganization=1000",
+     "posted_at": "2026-10-14",
+     "location": "Williamsville, NY"
+    },
+    {
+     "title": "Physician Assistant",
+     "url": "https://css-y9x4ku9mqsygapwx-prd.inforcloudsuite.com/hcm/Jobs/form/JobPosting%5BJobPostingSet%5D%281000%2C26035%2C1%29.JobPostingDisplay?pagesize=1&navigation=JobPosting%5BJobPostingSet%5D%281000%2C26035%2C1%29.JobPostingDisplayNav&csk.JobBoard=KH-EXTERNAL&csk.HROrganization=1000",
+     "posted_at": "2026-10-14",
+     "location": "Williamsville, NY"
+    },
+    {
+     "title": "Sexual Assault Forensic Examiner APP",
+     "url": "https://css-y9x4ku9mqsygapwx-prd.inforcloudsuite.com/hcm/Jobs/form/JobPosting%5BJobPostingSet%5D%281000%2C26201%2C1%29.JobPostingDisplay?pagesize=1&navigation=JobPosting%5BJobPostingSet%5D%281000%2C26201%2C1%29.JobPostingDisplayNav&csk.JobBoard=KH-EXTERNAL&csk.HROrganization=1000",
+     "posted_at": "2026-10-07",
+     "location": "Olean, NY"
+    }
+   ]
+  },
+  {
+   "slug": "olean-general-hospital-olean",
+   "name": "Olean General Hospital",
+   "platform": "infor",
+   "adapter": "infor",
+   "method": "api",
+   "board": "infor|css-y9x4ku9mqsygapwx-prd.inforcloudsuite.com|",
+   "board_hospitals": 3,
+   "board_listings": 15,
+   "listings": 1,
+   "candidates": 0,
+   "new": 0,
+   "known": 0,
+   "status": "ok",
+   "error": null,
+   "http_status": null,
+   "seconds": 20.3,
+   "requests": 21,
+   "details_fetched": 15,
+   "details_failed": 0,
+   "notes": [
+    "infor: 6 page(s), 530 postings on the board, 15 advanced practice titles"
+   ],
+   "samples": [],
+   "sample_listings": [
+    {
+     "title": "Nurse Practitioner",
+     "url": "https://css-y9x4ku9mqsygapwx-prd.inforcloudsuite.com/hcm/Jobs/form/JobPosting%5BJobPostingSet%5D%281000%2C26037%2C1%29.JobPostingDisplay?pagesize=1&navigation=JobPosting%5BJobPostingSet%5D%281000%2C26037%2C1%29.JobPostingDisplayNav&csk.JobBoard=KH-EXTERNAL&csk.HROrganization=1000",
+     "posted_at": "2026-10-14",
+     "location": "Williamsville, NY"
+    },
+    {
+     "title": "Physician Assistant",
+     "url": "https://css-y9x4ku9mqsygapwx-prd.inforcloudsuite.com/hcm/Jobs/form/JobPosting%5BJobPostingSet%5D%281000%2C26035%2C1%29.JobPostingDisplay?pagesize=1&navigation=JobPosting%5BJobPostingSet%5D%281000%2C26035%2C1%29.JobPostingDisplayNav&csk.JobBoard=KH-EXTERNAL&csk.HROrganization=1000",
+     "posted_at": "2026-10-14",
+     "location": "Williamsville, NY"
+    },
+    {
+     "title": "Sexual Assault Forensic Examiner APP",
+     "url": "https://css-y9x4ku9mqsygapwx-prd.inforcloudsuite.com/hcm/Jobs/form/JobPosting%5BJobPostingSet%5D%281000%2C26201%2C1%29.JobPostingDisplay?pagesize=1&navigation=JobPosting%5BJobPostingSet%5D%281000%2C26201%2C1%29.JobPostingDisplayNav&csk.JobBoard=KH-EXTERNAL&csk.HROrganization=1000",
+     "posted_at": "2026-10-07",
+     "location": "Olean, NY"
+    }
+   ]
+  }
+ ],
+ "jobs": [
+  {
+   "id": "a668d8d3358a",
+   "hospital_slug": "northern-light-acadia-bangor",
+   "title": "Neonatal Nurse Practitioner/Physician Associate",
+   "url": "https://css-emh-prd.inforcloudsuite.com/hcm/Jobs/form/JobPosting%5BJobPostingSet%5D%2810%2C95264%2C1%29.JobPostingDisplay?pagesize=1&navigation=JobPosting%5BJobPostingSet%5D%2810%2C95264%2C1%29.JobPostingDisplayNav&csk.JobBoard=EXTERNAL&csk.HROrganization=10",
+   "relevance": 2,
+   "setting": "nicu",
+   "posted_at": "2026-08-07"
+  },
+  {
+   "id": "692b4deb122d",
+   "hospital_slug": "northern-light-acadia-bangor",
+   "title": "Per Diem Neonatal Nurse Practitioner/Physician Associate",
+   "url": "https://css-emh-prd.inforcloudsuite.com/hcm/Jobs/form/JobPosting%5BJobPostingSet%5D%2810%2C95263%2C1%29.JobPostingDisplay?pagesize=1&navigation=JobPosting%5BJobPostingSet%5D%2810%2C95263%2C1%29.JobPostingDisplayNav&csk.JobBoard=EXTERNAL&csk.HROrganization=10",
+   "relevance": 2,
+   "setting": "nicu",
+   "posted_at": "2026-08-07"
+  },
+  {
+   "id": "a34e05bc0dfe",
+   "hospital_slug": "northern-light-mercy-portland",
+   "title": "Pain Management APP (Nurse Practitioner or Physician Associate)",
+   "url": "https://css-emh-prd.inforcloudsuite.com/hcm/Jobs/form/JobPosting%5BJobPostingSet%5D%2810%2C93908%2C1%29.JobPostingDisplay?pagesize=1&navigation=JobPosting%5BJobPostingSet%5D%2810%2C93908%2C1%29.JobPostingDisplayNav&csk.JobBoard=EXTERNAL&csk.HROrganization=10",
+   "relevance": 1,
+   "setting": "mixed",
+   "posted_at": "2026-08-27"
+  },
+  {
+   "id": "e6d8ed331abe",
+   "hospital_slug": "northern-light-emmc-bangor",
+   "title": "Rewarding Emergency Medicine PA Opportunity at Tertiary Care Center in Maine",
+   "url": "https://css-emh-prd.inforcloudsuite.com/hcm/Jobs/form/JobPosting%5BJobPostingSet%5D%2810%2C93002%2C1%29.JobPostingDisplay?pagesize=1&navigation=JobPosting%5BJobPostingSet%5D%2810%2C93002%2C1%29.JobPostingDisplayNav&csk.JobBoard=EXTERNAL&csk.HROrganization=10",
+   "relevance": 2,
+   "setting": "peds_ed",
+   "posted_at": "2026-07-23"
+  },
+  {
+   "id": "0d9d909cdc38",
+   "hospital_slug": "northern-light-emmc-bangor",
+   "title": "Emergency Medicine PA/NP Opportunity at Tertiary Care Center in Maine",
+   "url": "https://css-emh-prd.inforcloudsuite.com/hcm/Jobs/form/JobPosting%5BJobPostingSet%5D%2810%2C92711%2C1%29.JobPostingDisplay?pagesize=1&navigation=JobPosting%5BJobPostingSet%5D%2810%2C92711%2C1%29.JobPostingDisplayNav&csk.JobBoard=EXTERNAL&csk.HROrganization=10",
+   "relevance": 2,
+   "setting": "peds_ed",
+   "posted_at": "2026-07-21"
+  },
+  {
+   "id": "39b867187800",
+   "hospital_slug": "golisano-childrens-buffalo",
+   "title": "Nurse Practitioner",
+   "url": "https://css-y9x4ku9mqsygapwx-prd.inforcloudsuite.com/hcm/Jobs/form/JobPosting%5BJobPostingSet%5D%281000%2C276%2C1%29.JobPostingDisplay?pagesize=1&navigation=JobPosting%5BJobPostingSet%5D%281000%2C276%2C1%29.JobPostingDisplayNav&csk.JobBoard=KH-EXTERNAL&csk.HROrganization=1000",
+   "relevance": 3,
+   "setting": "picu",
+   "posted_at": "2024-12-13"
+  }
+ ],
+ "seen_again": [],
+ "closed": [],
+ "totals": {
+  "hospitals": 9,
+  "checked": 9,
+  "unreachable": 0,
+  "listings": 76,
+  "candidates": 6,
+  "new_candidates": 6,
+  "seconds": 93.1
+ },
+ "browser": "not used",
+ "ledger": "data/hospitals.json",
+ "wall_seconds": 39.4,
+ "compacted": true
+}
