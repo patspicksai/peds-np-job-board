@@ -1,0 +1,8 @@
+# HealthcareSource (Symplr) detail endpoint candidates for the adapter; see scraper/adapters/healthcaresource.py
+hcs_job_a https://pm.healthcaresource.com/JobseekerSearchAPI/caromont/api/Job/8023_31484 MODES:req
+hcs_job_b https://pm.healthcaresource.com/JobseekerSearchAPI/caromont/api/Jobs/8023_31484 MODES:req
+hcs_job_c https://pm.healthcaresource.com/JobseekerSearchAPI/caromont/api/Search/8023_31484 MODES:req
+hcs_job_d https://pm.healthcaresource.com/cs/caromont/api/job/8023_31484 MODES:req
+hcs_src_search https://pm.healthcaresource.com/JobseekerSearchAPI/caromont/api/Search?size=2 POST:{"query":{"bool":{"must":{"multi_match":{"query":"nurse practitioner","fields":["title","description"]}}}},"_source":{"includes":["title","description","documentId","datePosted","jobLocation","hiringOrganization","employmentType","userArea.requisitionNumber","occupationalCategory"]}} MODES:req
+hcs_term_search https://pm.healthcaresource.com/JobseekerSearchAPI/caromont/api/Search?size=1 POST:{"query":{"term":{"documentId":"8023_31484"}},"_source":true} MODES:req
+hcs_page https://pm.healthcaresource.com/cs/caromont/#/job/8023_31484 MODES:chrome
