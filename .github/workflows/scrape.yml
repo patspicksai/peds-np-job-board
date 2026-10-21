@@ -204,7 +204,8 @@ jobs:
         run: |
           BASE=$(ls "$RUNNER_TEMP"/base/*.json | head -1)
           echo "base=$BASE" >> "$GITHUB_OUTPUT"
-          SLUGS=$(python3 scripts/combine_runs.py --select "$BASE")
+          git show ${{ github.sha }}:data/coverage.json > "$RUNNER_TEMP/prev_coverage.json" 2>/dev/null || echo '{}' > "$RUNNER_TEMP/prev_coverage.json"
+          SLUGS=$(python3 scripts/combine_runs.py --select "$BASE" --prev-coverage "$RUNNER_TEMP/prev_coverage.json")
           echo "slugs=$SLUGS" >> "$GITHUB_OUTPUT"
           N=$(echo "$SLUGS" | tr ',' '\n' | grep -c . || true)
           echo "retrying $N boards: $SLUGS"

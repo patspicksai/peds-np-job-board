@@ -34,13 +34,21 @@ TRANSIENT_RE = re.compile(r"no page reachable: None|ConnectTimeout|ReadTimeout|T
                           r"ERR_CONNECTION|ERR_TIMED_OUT|net::ERR_|HTTP 5\d\d|\b50[0-9]\b", re.I)
 
 
-def retry_slugs(run: dict) -> list[str]:
+def retry_slugs(run: dict, prev_coverage: dict | None = None) -> list[str]:
+    """Boards worth a second pass: transient failure classes, plus any board that was read OK in the previous
+    coverage file but not in this run (a different ~35 boards flip each run: bot challenges served as HTML to an
+    API adapter, a listing page that came back empty once, a 403 on a site that answered the day before)."""
+    prev_ok = set()
+    for r in (prev_coverage or {}).get("hospitals", []) or []:
+        if r.get("class") == "ok" or r.get("status") == "ok":
+            prev_ok.add(r.get("slug"))
     out = []
     for r in run.get("hospitals", []):
         if r.get("status") == "ok":
             continue
         cls = classify(r.get("status") or "", r.get("error") or "")
-        if cls in RETRY_CLASSES or (cls == "dead_url" and TRANSIENT_RE.search(r.get("error") or "")):
+        if cls in RETRY_CLASSES or (cls == "dead_url" and TRANSIENT_RE.search(r.get("error") or "")) \
+                or r["slug"] in prev_ok:
             out.append(r["slug"])
     return out
 
@@ -106,10 +114,17 @@ def main() -> int:
     ap.add_argument("retry", nargs="?")
     ap.add_argument("--out", default="")
     ap.add_argument("--select", action="store_true", help="print the slugs of the base run worth retrying and exit")
+    ap.add_argument("--prev-coverage", default="", help="previous coverage.json; boards it lists as OK are retried too")
     a = ap.parse_args()
     base = json.loads(Path(a.base).read_text())
     if a.select:
-        print(",".join(retry_slugs(base)))
+        prev = None
+        if a.prev_coverage and Path(a.prev_coverage).exists():
+            try:
+                prev = json.loads(Path(a.prev_coverage).read_text())
+            except Exception:  # noqa: BLE001
+                prev = None
+        print(",".join(retry_slugs(base, prev)))
         return 0
     if not a.retry:
         ap.error("RETRY.json is required unless --select")
