@@ -9,6 +9,9 @@ from urllib.parse import urlsplit
 import requests
 from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
+import urllib3
+
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 from . import config
 
@@ -78,6 +81,8 @@ def session() -> requests.Session:
     if s is None:
         s = requests.Session()
         s.headers.update(BROWSER_HEADERS)
+        # read-only scraping of public careers pages; a few small hospital sites serve incomplete cert chains
+        s.verify = False
         retry = Retry(total=config.RETRIES, connect=config.RETRIES, read=1, backoff_factor=1.5,
                       status_forcelist=(429, 502, 503, 504), allowed_methods=frozenset({"GET", "POST"}),
                       respect_retry_after_header=True, raise_on_status=False)
@@ -112,7 +117,7 @@ def auto_impersonate() -> bool:
 def cffi_session():
     s = getattr(_local, "cffi", None)
     if s is None and _creq is not None:
-        s = _creq.Session(impersonate="chrome")
+        s = _creq.Session(impersonate="chrome", verify=False)
         _local.cffi = s
     return s
 

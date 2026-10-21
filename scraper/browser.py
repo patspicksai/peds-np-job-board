@@ -44,7 +44,8 @@ def _launch(pw):
         try:
             br = pw.chromium.launch(channel="chrome", headless=not has_display,
                                     args=["--disable-blink-features=AutomationControlled"])
-            ctx = br.new_context(locale="en-US", timezone_id="America/New_York", viewport={"width": 1366, "height": 900})
+            ctx = br.new_context(locale="en-US", timezone_id="America/New_York", viewport={"width": 1366, "height": 900},
+                                 ignore_https_errors=True)  # small hospital sites with broken cert chains
             ctx.add_init_script(_WEBDRIVER_JS)
             return br, ctx, f"chrome-{'headed' if has_display else 'headless'}"
         except Exception as e:  # noqa: BLE001
@@ -52,7 +53,7 @@ def _launch(pw):
     br = pw.chromium.launch(headless=True, args=["--disable-blink-features=AutomationControlled",
                                                  "--no-sandbox", "--disable-dev-shm-usage"])
     ctx = br.new_context(user_agent=config.USER_AGENT, locale="en-US", timezone_id="America/New_York",
-                         viewport={"width": 1366, "height": 900})
+                         viewport={"width": 1366, "height": 900}, ignore_https_errors=True)
     ctx.add_init_script(_STEALTH_JS)
     return br, ctx, "chromium-headless" + (f" ({'; '.join(errors)})" if errors else "")
 
