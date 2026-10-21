@@ -1,7 +1,9 @@
 name: scrape
 # Daily automated scrape: ledger -> data/runs/<date>.json -> data/jobs.json -> commit -> ntfy push.
-# Two crons cover 06:15 America/New_York in both EDT (10:15 UTC) and EST (11:15 UTC). The guard step skips
-# the 11:15 run when a scrape already committed today ("scrape <date>: ..." on main), so normally exactly
+# Schedule: GitHub starts cron runs late (observed 4 to 5 hours after the cron minute on 2026-10-20 and
+# 2026-10-21), so the crons are set early, at 02:15 and 03:15 UTC (22:15 / 23:15 ET), which lands the finished
+# board in the early morning Eastern even with that delay, and overnight if the delay disappears. The guard step
+# skips the second run when a scrape already committed today ("scrape <date>: ..." on main), so normally exactly
 # one scheduled run does work per day. Manual runs (workflow_dispatch) always run.
 #
 # Safety: scripts/merge_jobs.py never deletes jobs and refuses to write data/jobs.json (exit 3) if the active
@@ -17,8 +19,8 @@ name: scrape
 # in isolation came back 403 part-way through a long run on 2026-10-21, which is what this pass recovers.
 on:
   schedule:
-    - cron: "15 10 * * *"
-    - cron: "15 11 * * *"
+    - cron: "15 2 * * *"
+    - cron: "15 3 * * *"
   workflow_dispatch:
     inputs:
       only:

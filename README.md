@@ -10,7 +10,7 @@ Live site: https://patspicksai.github.io/peds-np-job-board/
 data/hospitals.json  (gold ledger, ~500 hospitals)
         |
         v
-GitHub Actions: scrape.yml  (daily, cron 06:15 ET; Python + Playwright, no AI anywhere in the loop)
+GitHub Actions: scrape.yml  (daily, cron 02:15 UTC; Python + Playwright, no AI anywhere in the loop)
         |  job 1 "scrape": every board. Per-platform adapters: Workday, iCIMS, Oracle Cloud HCM,
         |    SuccessFactors, Phenom, Jibe, TalentBrew, Symphony, Taleo, UKG, Eightfold, Hopkins,
         |    CareerSite, generic + headless Chrome
@@ -25,7 +25,7 @@ commit --> gh-pages deploy --> site (Jobs, Hospitals, Coverage views)
 
 One engine, no AI in the loop. Results, status tables and a markdown digest land on the `ci-logs` branch under `logs/scrape/<run id>/` (and `.../retry/` for the second pass). Claude is used only to build and to fix scraping gaps; the **Coverage** view on the site lists every board the last run could not read, why, and for how long, and "Copy gap list" puts that list on the clipboard to paste into a chat.
 
-GitHub starts the cron late (observed 4 to 5 hours after 06:15 ET), so a run typically lands late morning Eastern. Two crons cover EDT and EST; the guard step skips the second when the day's scrape already committed.
+GitHub starts cron runs late (observed 4 to 5 hours after the cron minute), so the cron is set early (02:15 UTC, 22:15 ET) and the finished board lands overnight or by early morning Eastern either way. A second cron an hour later is skipped by the guard step when the day's scrape already committed.
 
 ## Layout
 
@@ -60,7 +60,7 @@ scripts/
   apply_enrichment.py     applies an enrichment result onto a region file (fills only missing fields)
   append_hospital.py      atomic append/replace of records in a region file
 .github/workflows/
-  scrape.yml              daily scrape + fresh-runner retry (cron 10:15 and 11:15 UTC; second skips if the first ran); workflow_dispatch inputs: only, limit, platform, ledger, notify, commit
+  scrape.yml              daily scrape + fresh-runner retry (cron 02:15 and 03:15 UTC; second skips if the first ran); workflow_dispatch inputs: only, limit, platform, ledger, notify, commit
   pages.yml               deploys site/ + data/ to the gh-pages branch after every scrape or site change
   enrich.yml              runs scripts/enrich_hospitals.py on Actions; modes: full, photos_only, regeocode
   live_test.yml           dry run of the scraper against any ledger; results to ci-logs; `impersonate` input (auto/off) A/B tests the curl_cffi bot-wall retry
