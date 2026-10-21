@@ -151,7 +151,8 @@ ADULT_TITLE_RE = re.compile(
     r"family\s+medicine|family\s+practice|internal\s+medicine|\bOB\s*/?\s*GYN\b|obstetric|gyn(?:ecolog)?\w*|"
     r"women'?s\s+(?:health|care)|menopause|geriatric|gerontolog|\badult\b|\bAGACNP\b|\bAGPCNP\b|urogyn|"
     r"\bACHD\b|adults?\s+(?:with\s+)?congenital|adult\s+congenital|maternal[\s-]+fetal|fetal\s+(?:medicine|care|center)|"
-    r"breast|prostate|hospice|long[\s-]+term\s+care|post[\s-]+acute|skilled\s+nursing|memory\s+care", _I)
+    r"breast|prostate|hospice|long[\s-]+term\s+care|post[\s-]+acute|skilled\s+nursing|memory\s+care|"
+    r"\bANP\b|\bAGNP\b|\bAGPCNP\b|\bNSICU\b|neuro(?:science|surgical)?\s*ICU|stroke\s+program", _I)
 
 
 def peds_signal(title: str, text: str, location: str = "", department: str = "") -> tuple[int, str]:
@@ -258,7 +259,10 @@ def classify(title: str, text: str = "", hospital: dict | None = None, location:
     sig, sig_note = peds_signal(title, text, location, department)
     head = " ".join([title or "", department or ""])
     head_peds = bool(PEDS_STRONG_RE.search(head) or PEDS_WEAK_RE.search(head))
-    adult_title = bool(ADULT_TITLE_RE.search(title or ""))
+    # an explicitly pediatric title (PICU, NICU, "Pediatric ...") stays pediatric even when it also names an adult
+    # credential or unit; otherwise an adult-specialty title stays adult whatever the description says
+    strong_in_title = [m.group(0) for m in PEDS_STRONG_RE.finditer(title or "") if "congenital" not in m.group(0).lower()]
+    adult_title = bool(ADULT_TITLE_RE.search(title or "")) and not strong_in_title
     # An adult-specialty title stays adult even at a children's hospital or with pediatric words in the body.
     pediatric = (sig >= 2 or childrens) and not adult_title
     # Relevance 3 needs the pediatric evidence in the title or unit name; description-only evidence caps at 2.
