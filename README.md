@@ -37,7 +37,7 @@ spec/
   regions.md              controlled region list and hotspot flags
   scrape_playbook.md      procedure a Claude-driven gap-fill scrape follows (manual use only)
   scraper_engine_brief.md architecture of the automated engine
-  unreadable_boards_brief.md  how to work the boards the engine cannot read
+  daily_task_prompt.md    retired: prompt of the Claude morning task that was removed on 2026-10-20
 data/
   hospitals.json          GOLD ledger (merged from data/regions/*.json by scripts/merge_hospitals.py)
   jobs.json               accumulating job store
