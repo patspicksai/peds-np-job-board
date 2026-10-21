@@ -1,0 +1,868 @@
+{
+ "run_id": "2026-10-21",
+ "mode": "automated",
+ "started_at": "2026-10-21T16:49:59Z",
+ "finished_at": "2026-10-21T16:52:11Z",
+ "dry_run": true,
+ "no_details": true,
+ "keywords": [
+  "nurse practitioner",
+  "pediatric nurse practitioner",
+  "advanced practice provider",
+  "APRN",
+  "PICU",
+  "NICU"
+ ],
+ "checked": [
+  "carolinaeast-new-bern",
+  "st-francis-hospital-roslyn",
+  "emerson-hospital-concord",
+  "gw-university-hospital-washington",
+  "community-medical-center-toms-river",
+  "unterberg-childrens-long-branch",
+  "aiken-regional-aiken",
+  "uvm-cvph-plattsburgh",
+  "central-vermont-medical-center-berlin",
+  "golisano-childrens-uvm-burlington",
+  "um-childrens-baltimore",
+  "um-st-joseph-towson"
+ ],
+ "unreachable": [
+  "saint-vincent-hospital-worcester",
+  "roswell-park-buffalo"
+ ],
+ "unreachable_detail": {
+  "saint-vincent-hospital-worcester": "careers page reachable but no job listings recognized (generic adapter): set careers_search_url / ats_config to the real job board",
+  "roswell-park-buffalo": "AdapterError: workday: cannot derive host/tenant from ats_config or careers URLs"
+ },
+ "hospitals": [
+  {
+   "slug": "carolinaeast-new-bern",
+   "name": "CarolinaEast Medical Center",
+   "platform": "generic->talentbrew",
+   "adapter": "talentbrew",
+   "method": "api",
+   "board": "generic|carolinaeasthealth.com/careers?",
+   "board_hospitals": 1,
+   "board_listings": 213,
+   "listings": 213,
+   "candidates": 0,
+   "new": 0,
+   "known": 0,
+   "status": "ok",
+   "error": null,
+   "http_status": null,
+   "seconds": 12.6,
+   "requests": 12,
+   "details_fetched": 0,
+   "details_failed": 0,
+   "notes": [
+    "sniff: recognized talentbrew front end on jobs.carolinaeasthealth.com",
+    "sniff: followed careers link https://jobs.carolinaeasthealth.com/"
+   ],
+   "samples": [],
+   "sample_listings": [
+    {
+     "title": "Nurse Practitioner Cardiology- Hospital Based",
+     "url": "https://jobs.carolinaeasthealth.com/job/new-bern/nurse-practitioner-cardiology-hospital-based/242/88282549568",
+     "posted_at": null,
+     "location": ""
+    },
+    {
+     "title": "Nurse Practitioner Primary Care Havelock",
+     "url": "https://jobs.carolinaeasthealth.com/job/havelock/nurse-practitioner-primary-care-havelock/242/92971314272",
+     "posted_at": null,
+     "location": ""
+    },
+    {
+     "title": "Nurse Practitioner  EP- Heart Center",
+     "url": "https://jobs.carolinaeasthealth.com/job/new-bern/nurse-practitioner-ep-heart-center/242/84144967840",
+     "posted_at": null,
+     "location": ""
+    }
+   ]
+  },
+  {
+   "slug": "st-francis-hospital-roslyn",
+   "name": "St. Francis Hospital and Heart Center",
+   "platform": "generic->jibe",
+   "adapter": "jibe",
+   "method": "api",
+   "board": "generic|chsli.org/careers?",
+   "board_hospitals": 1,
+   "board_listings": 375,
+   "listings": 375,
+   "candidates": 8,
+   "new": 1,
+   "known": 7,
+   "status": "ok",
+   "error": null,
+   "http_status": null,
+   "seconds": 11.8,
+   "requests": 11,
+   "details_fetched": 0,
+   "details_failed": 0,
+   "notes": [
+    "sniff: recognized jibe front end on jobs.chsli.org"
+   ],
+   "samples": [
+    {
+     "title": "PA or NP - Critical Care",
+     "url": "https://jobs.chsli.org/jobs/75066",
+     "posted_at": "2026-10-13",
+     "relevance": 2,
+     "setting": "picu",
+     "known": true
+    },
+    {
+     "title": "APP - NP -  Floor Coverage only or PA - OR and Floor",
+     "url": "https://jobs.chsli.org/jobs/73789",
+     "posted_at": "2026-08-24",
+     "relevance": 2,
+     "setting": "peds_inpatient",
+     "known": true
+    },
+    {
+     "title": "Advanced Practice Provider - Neurology Service",
+     "url": "https://jobs.chsli.org/jobs/68988",
+     "posted_at": "2026-04-24",
+     "relevance": 2,
+     "setting": "peds_specialty_outpatient",
+     "known": true
+    }
+   ],
+   "sample_listings": [
+    {
+     "title": "NP or PA - House Coverage",
+     "url": "https://jobs.chsli.org/jobs/75344",
+     "posted_at": "2026-10-16",
+     "location": "West Islip, New York"
+    },
+    {
+     "title": "PA or NP - Cardiology Inpatient",
+     "url": "https://jobs.chsli.org/jobs/73703",
+     "posted_at": "2026-08-31",
+     "location": "West Islip, New York"
+    },
+    {
+     "title": "Advanced Practice Provider",
+     "url": "https://jobs.chsli.org/jobs/73310",
+     "posted_at": "2026-09-17",
+     "location": "Port Jefferson, New York"
+    }
+   ]
+  },
+  {
+   "slug": "emerson-hospital-concord",
+   "name": "Emerson Hospital",
+   "platform": "generic",
+   "adapter": "generic",
+   "method": "playwright",
+   "board": "generic|emersonhealth.org/careers/careers-search?",
+   "board_hospitals": 1,
+   "board_listings": 3,
+   "listings": 3,
+   "candidates": 0,
+   "new": 0,
+   "known": 0,
+   "status": "ok",
+   "error": null,
+   "http_status": null,
+   "seconds": 55.3,
+   "requests": 5,
+   "details_fetched": 0,
+   "details_failed": 0,
+   "notes": [],
+   "samples": [],
+   "sample_listings": [
+    {
+     "title": "Nurse Practitioner",
+     "url": "https://emersonhealth.org/jobs/nurse-practitioner-35303/",
+     "posted_at": null,
+     "location": ""
+    },
+    {
+     "title": "Nurse Practitioner",
+     "url": "https://emersonhealth.org/jobs/nurse-practitioner-35300/",
+     "posted_at": null,
+     "location": ""
+    },
+    {
+     "title": "Nurse Practitioner",
+     "url": "https://emersonhealth.org/jobs/nurse-practitioner-35299/",
+     "posted_at": null,
+     "location": ""
+    }
+   ]
+  },
+  {
+   "slug": "gw-university-hospital-washington",
+   "name": "George Washington University Hospital",
+   "platform": "generic->jibe",
+   "adapter": "jibe",
+   "method": "api",
+   "board": "generic|gwhospital.com/careers?",
+   "board_hospitals": 1,
+   "board_listings": 1696,
+   "listings": 135,
+   "candidates": 1,
+   "new": 0,
+   "known": 1,
+   "status": "ok",
+   "error": null,
+   "http_status": null,
+   "seconds": 120.4,
+   "requests": 29,
+   "details_fetched": 0,
+   "details_failed": 0,
+   "notes": [
+    "sniff: HTTP 403 for https://www.gwhospital.com/careers: bot challenge (Cloudflare)",
+    "sniff: recognized jibe front end on jobs.uhsinc.com",
+    "dropped 1561 listings outside ME-SC footprint"
+   ],
+   "samples": [
+    {
+     "title": "Psychiatric Nurse Practitioner for Adolescent Partial Program |The Horsham Clinic | Coatesville, Pennsylvania",
+     "url": "https://jobs.uhsinc.com/jobs/6968",
+     "posted_at": "2026-08-19",
+     "relevance": 2,
+     "setting": "peds_specialty_outpatient",
+     "known": true
+    }
+   ],
+   "sample_listings": [
+    {
+     "title": "NURSE PRACTITIONER-CARDIOLOGY",
+     "url": "https://jobs.uhsinc.com/jobs/361992",
+     "posted_at": "2026-09-03",
+     "location": "DENISON, Texas"
+    },
+    {
+     "title": "Nurse Practitioner (APRN) - Gastroenterology Per Diem",
+     "url": "https://jobs.uhsinc.com/jobs/363265",
+     "posted_at": "2026-08-05",
+     "location": "BRADENTON, Florida"
+    },
+    {
+     "title": "NURSE PRACTITIONER",
+     "url": "https://jobs.uhsinc.com/jobs/334920",
+     "posted_at": "2025-12-18",
+     "location": "BETHLEHEM, Pennsylvania"
+    }
+   ]
+  },
+  {
+   "slug": "community-medical-center-toms-river",
+   "name": "Community Medical Center",
+   "platform": "generic",
+   "adapter": "generic",
+   "method": "requests",
+   "board": "generic|rwjbarnabashealthcareers.org/jobs/nurse-practitioner?",
+   "board_hospitals": 2,
+   "board_listings": 28,
+   "listings": 4,
+   "candidates": 4,
+   "new": 0,
+   "known": 4,
+   "status": "ok",
+   "error": null,
+   "http_status": null,
+   "seconds": 75.0,
+   "requests": 4,
+   "details_fetched": 0,
+   "details_failed": 0,
+   "notes": [
+    "sniff: HTTP 403 for https://www.rwjbh.org/careers/: bot challenge (Cloudflare)",
+    "sniff: HTTP 403 for https://www.rwjbh.org/careers/working-at-rwjbarnabas-health/: bot challenge (Cloudflare)",
+    "generic: followed 4 result pages from https://www.rwjbarnabashealthcareers.org/jobs/nurse-practitioner/"
+   ],
+   "samples": [
+    {
+     "title": "Advanced Practice Provider (Neonatology)",
+     "url": "https://www.rwjbarnabashealthcareers.org/job/146065/advanced-practice-provider-nurse-practitioner-us-nj-toms-river-99-nj-37/",
+     "posted_at": "2026-10-19",
+     "relevance": 3,
+     "setting": "nicu",
+     "known": true
+    },
+    {
+     "title": "Advanced Practice Nurse - FT Day Neurosciences APP's - CMC",
+     "url": "https://www.rwjbarnabashealthcareers.org/job/140633/advanced-practice-nurse-ft-day-neurosciences-apps-cmc-miscellaneous-us-nj-toms-river-99-nj-37/",
+     "posted_at": "2026-10-19",
+     "relevance": 1,
+     "setting": "unspecified",
+     "known": true
+    },
+    {
+     "title": "Advanced Practice Nurse FT Day Ocean Hematology Oncology TR",
+     "url": "https://www.rwjbarnabashealthcareers.org/job/152383/advanced-practice-nurse-ft-day-ocean-hematology-oncology-tr-nurse-practitioner-us-nj-toms-river-99-nj-37-/",
+     "posted_at": "2026-10-19",
+     "relevance": 1,
+     "setting": "mixed",
+     "known": true
+    }
+   ],
+   "sample_listings": [
+    {
+     "title": "Advanced Practice Nurse",
+     "url": "https://www.rwjbarnabashealthcareers.org/job/155817/advanced-practice-nurse-nurse-practitioner-us-nj-jersey-city-414-grand-st/",
+     "posted_at": null,
+     "location": "414 Grand Street, Jersey City, NJ 07302"
+    },
+    {
+     "title": "Advanced Practice Nurse",
+     "url": "https://www.rwjbarnabashealthcareers.org/job/155941/advanced-practice-nurse-nurse-practitioner-us-nj-eatontown-200-wyckoff-road/",
+     "posted_at": null,
+     "location": "200 Wyckoff Road, Eatontown, NJ 07724"
+    },
+    {
+     "title": "Advanced Practice Nurse",
+     "url": "https://www.rwjbarnabashealthcareers.org/job/150824/advanced-practice-nurse-nurse-practitioner-us-nj-newark-201-lyons-ave/",
+     "posted_at": null,
+     "location": "201 LYONS AVE, NEWARK, NJ 07112"
+    }
+   ]
+  },
+  {
+   "slug": "unterberg-childrens-long-branch",
+   "name": "Unterberg Children's Hospital at Monmouth Medical Center",
+   "platform": "generic",
+   "adapter": "generic",
+   "method": "requests",
+   "board": "generic|rwjbarnabashealthcareers.org/jobs/nurse-practitioner?",
+   "board_hospitals": 2,
+   "board_listings": 28,
+   "listings": 24,
+   "candidates": 3,
+   "new": 0,
+   "known": 3,
+   "status": "ok",
+   "error": null,
+   "http_status": null,
+   "seconds": 75.0,
+   "requests": 4,
+   "details_fetched": 0,
+   "details_failed": 0,
+   "notes": [
+    "sniff: HTTP 403 for https://www.rwjbh.org/careers/: bot challenge (Cloudflare)",
+    "sniff: HTTP 403 for https://www.rwjbh.org/careers/working-at-rwjbarnabas-health/: bot challenge (Cloudflare)",
+    "generic: followed 4 result pages from https://www.rwjbarnabashealthcareers.org/jobs/nurse-practitioner/"
+   ],
+   "samples": [
+    {
+     "title": "Advanced Practice Nurse (Neonatology)",
+     "url": "https://www.rwjbarnabashealthcareers.org/job/136585/advanced-practice-nurse-miscellaneous-us-nj-long-branch-300-2nd-ave/",
+     "posted_at": "2026-10-19",
+     "relevance": 3,
+     "setting": "nicu",
+     "known": true
+    },
+    {
+     "title": "Advanced Practice Nurse",
+     "url": "https://www.rwjbarnabashealthcareers.org/job/146744/advanced-practice-nurse-nurse-practitioner-us-nj-long-branch-300-2nd-ave/",
+     "posted_at": "2026-10-19",
+     "relevance": 2,
+     "setting": "unspecified",
+     "known": true
+    },
+    {
+     "title": "Advanced Practice Nurse - FT Day Monmouth Heart & Vascular",
+     "url": "https://www.rwjbarnabashealthcareers.org/job/153564/advanced-practice-nurse-ft-day-monmouth-heart-vascular-nurse-practitioner-us-nj-long-branch-166-morris-avenue/",
+     "posted_at": "2026-10-19",
+     "relevance": 1,
+     "setting": "mixed",
+     "known": true
+    }
+   ],
+   "sample_listings": [
+    {
+     "title": "Advanced Practice Nurse",
+     "url": "https://www.rwjbarnabashealthcareers.org/job/155817/advanced-practice-nurse-nurse-practitioner-us-nj-jersey-city-414-grand-st/",
+     "posted_at": null,
+     "location": "414 Grand Street, Jersey City, NJ 07302"
+    },
+    {
+     "title": "Advanced Practice Nurse",
+     "url": "https://www.rwjbarnabashealthcareers.org/job/155941/advanced-practice-nurse-nurse-practitioner-us-nj-eatontown-200-wyckoff-road/",
+     "posted_at": null,
+     "location": "200 Wyckoff Road, Eatontown, NJ 07724"
+    },
+    {
+     "title": "Advanced Practice Nurse",
+     "url": "https://www.rwjbarnabashealthcareers.org/job/150824/advanced-practice-nurse-nurse-practitioner-us-nj-newark-201-lyons-ave/",
+     "posted_at": null,
+     "location": "201 LYONS AVE, NEWARK, NJ 07112"
+    }
+   ]
+  },
+  {
+   "slug": "saint-vincent-hospital-worcester",
+   "name": "Saint Vincent Hospital",
+   "platform": "generic",
+   "adapter": "generic",
+   "method": "playwright",
+   "board": "generic|stvincenthospital.com?",
+   "board_hospitals": 1,
+   "board_listings": 0,
+   "listings": 0,
+   "candidates": 0,
+   "new": 0,
+   "known": 0,
+   "status": "no_listings",
+   "error": "careers page reachable but no job listings recognized (generic adapter): set careers_search_url / ats_config to the real job board",
+   "http_status": null,
+   "seconds": 95.4,
+   "requests": 1,
+   "details_fetched": 0,
+   "details_failed": 0,
+   "notes": [
+    "sniff: HTTP 403 for https://www.stvincenthospital.com: bot challenge (Cloudflare)",
+    "generic: pages reachable but no NP/APP job links found: playwright 200 https://www.stvincenthospital.com?q=nurse+practitioner; playwright 200 https://www.stvincenthospital.com?keywords=nurse+practitioner; playwright 200 https://www.stvincenthospital.com?keyword=nurse+practitioner"
+   ],
+   "samples": [],
+   "sample_listings": []
+  },
+  {
+   "slug": "aiken-regional-aiken",
+   "name": "Aiken Regional Medical Centers",
+   "platform": "generic->jibe",
+   "adapter": "jibe",
+   "method": "api",
+   "board": "generic|uhs.com/careers?",
+   "board_hospitals": 1,
+   "board_listings": 1696,
+   "listings": 135,
+   "candidates": 0,
+   "new": 0,
+   "known": 0,
+   "status": "ok",
+   "error": null,
+   "http_status": null,
+   "seconds": 30.7,
+   "requests": 29,
+   "details_fetched": 0,
+   "details_failed": 0,
+   "notes": [
+    "sniff: recognized jibe front end on jobs.uhs.com",
+    "dropped 1561 listings outside ME-SC footprint"
+   ],
+   "samples": [],
+   "sample_listings": [
+    {
+     "title": "NURSE PRACTITIONER-CARDIOLOGY",
+     "url": "https://jobs.uhsinc.com/jobs/361992",
+     "posted_at": "2026-09-03",
+     "location": "DENISON, Texas"
+    },
+    {
+     "title": "Nurse Practitioner (APRN) - Gastroenterology Per Diem",
+     "url": "https://jobs.uhsinc.com/jobs/363265",
+     "posted_at": "2026-08-05",
+     "location": "BRADENTON, Florida"
+    },
+    {
+     "title": "NURSE PRACTITIONER",
+     "url": "https://jobs.uhsinc.com/jobs/334920",
+     "posted_at": "2025-12-18",
+     "location": "BETHLEHEM, Pennsylvania"
+    }
+   ]
+  },
+  {
+   "slug": "uvm-cvph-plattsburgh",
+   "name": "UVM Health Champlain Valley Physicians Hospital",
+   "platform": "generic",
+   "adapter": "generic",
+   "method": "playwright",
+   "board": "generic|uvmhealth.org/careers?",
+   "board_hospitals": 1,
+   "board_listings": 1,
+   "listings": 1,
+   "candidates": 1,
+   "new": 0,
+   "known": 1,
+   "status": "ok",
+   "error": null,
+   "http_status": null,
+   "seconds": 50.1,
+   "requests": 5,
+   "details_fetched": 0,
+   "details_failed": 0,
+   "notes": [
+    "sniff: HTTP 202 for https://www.uvmhealth.org/careers: <!DOCTYPE html> <html lang=\"en\"> <head>     <meta charset=\"utf-8\">     <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">     <title></title> "
+   ],
+   "samples": [
+    {
+     "title": "Nurse Practitioner/Physician Assistant Jobs",
+     "url": "https://uvmhealthcareers.org/jobs/nurse-practitioner-physician-assistant/",
+     "posted_at": null,
+     "relevance": 2,
+     "setting": "unspecified",
+     "known": true
+    }
+   ],
+   "sample_listings": [
+    {
+     "title": "Nurse Practitioner/Physician Assistant Jobs",
+     "url": "https://uvmhealthcareers.org/jobs/nurse-practitioner-physician-assistant/",
+     "posted_at": null,
+     "location": ""
+    }
+   ]
+  },
+  {
+   "slug": "central-vermont-medical-center-berlin",
+   "name": "Central Vermont Medical Center",
+   "platform": "generic",
+   "adapter": "generic",
+   "method": "requests",
+   "board": "generic|uvmhealthcareers.org/jobs/nurse-practitioner-physician-assistant?",
+   "board_hospitals": 2,
+   "board_listings": 12,
+   "listings": 0,
+   "candidates": 0,
+   "new": 0,
+   "known": 0,
+   "status": "ok",
+   "error": null,
+   "http_status": null,
+   "seconds": 4.2,
+   "requests": 1,
+   "details_fetched": 0,
+   "details_failed": 0,
+   "notes": [],
+   "samples": [],
+   "sample_listings": [
+    {
+     "title": "Adult Primary Care Nurse Practitioner or Physician Assistant - CVMC (Barre)",
+     "url": "https://www.uvmhealthcareers.org/job/11658/adult-primary-care-nurse-practitioner-or-physician-assistant-cvmc-barre-nurse-practitioner-physician-assistant-us-vt-barre-225-s-main-st/",
+     "posted_at": null,
+     "location": "225 S Main St, \n\nBarre, \nVT 05641"
+    },
+    {
+     "title": "Emergency Medicine Physician Assistant/Nurse Practitioner – UVMMC per diem",
+     "url": "https://www.uvmhealthcareers.org/job/2113/emergency-medicine-physician-assistant-per-diem-nurse-practitioner-physician-assis-us-vt-burlington-111-colchester-ave-r0050961-5/",
+     "posted_at": null,
+     "location": "111 Colchester Ave, \n\nBurlington, \nVT 05401"
+    },
+    {
+     "title": "ENT Clinic Physician Assistant or Nurse Practitioner",
+     "url": "https://www.uvmhealthcareers.org/job/12281/ent-clinic-physician-assistant-or-nurse-practitioner-nurse-practitioner-physician-assistant-us-vt-burlington-111-colchester-ave/",
+     "posted_at": null,
+     "location": "111 Colchester Ave, \n\nBurlington, \nVT 05401"
+    }
+   ]
+  },
+  {
+   "slug": "golisano-childrens-uvm-burlington",
+   "name": "Golisano Children's Hospital at University of Vermont Health",
+   "platform": "generic",
+   "adapter": "generic",
+   "method": "requests",
+   "board": "generic|uvmhealthcareers.org/jobs/nurse-practitioner-physician-assistant?",
+   "board_hospitals": 2,
+   "board_listings": 12,
+   "listings": 12,
+   "candidates": 2,
+   "new": 0,
+   "known": 2,
+   "status": "ok",
+   "error": null,
+   "http_status": null,
+   "seconds": 4.2,
+   "requests": 1,
+   "details_fetched": 0,
+   "details_failed": 0,
+   "notes": [],
+   "samples": [
+    {
+     "title": "Pediatric Hematology/Oncology Nurse Practitioner - UVMMC",
+     "url": "https://www.uvmhealthcareers.org/job/12384/pediatric-hematology-oncology-nurse-practitioner-uvmmc-nurse-practitioner-physician-assistant-us-vt-burlington-111-colchester-ave/",
+     "posted_at": "2026-09-29",
+     "relevance": 3,
+     "setting": "mixed",
+     "known": true
+    },
+    {
+     "title": "Nurse Practitioner/Physician Assistant Jobs",
+     "url": "https://www.uvmhealthcareers.org/jobs/nurse-practitioner-physician-assistant/",
+     "posted_at": null,
+     "relevance": 2,
+     "setting": "unspecified",
+     "known": true
+    }
+   ],
+   "sample_listings": [
+    {
+     "title": "Adult Primary Care Nurse Practitioner or Physician Assistant - CVMC (Barre)",
+     "url": "https://www.uvmhealthcareers.org/job/11658/adult-primary-care-nurse-practitioner-or-physician-assistant-cvmc-barre-nurse-practitioner-physician-assistant-us-vt-barre-225-s-main-st/",
+     "posted_at": null,
+     "location": "225 S Main St, \n\nBarre, \nVT 05641"
+    },
+    {
+     "title": "Emergency Medicine Physician Assistant/Nurse Practitioner – UVMMC per diem",
+     "url": "https://www.uvmhealthcareers.org/job/2113/emergency-medicine-physician-assistant-per-diem-nurse-practitioner-physician-assis-us-vt-burlington-111-colchester-ave-r0050961-5/",
+     "posted_at": null,
+     "location": "111 Colchester Ave, \n\nBurlington, \nVT 05401"
+    },
+    {
+     "title": "ENT Clinic Physician Assistant or Nurse Practitioner",
+     "url": "https://www.uvmhealthcareers.org/job/12281/ent-clinic-physician-assistant-or-nurse-practitioner-nurse-practitioner-physician-assistant-us-vt-burlington-111-colchester-ave/",
+     "posted_at": null,
+     "location": "111 Colchester Ave, \n\nBurlington, \nVT 05401"
+    }
+   ]
+  },
+  {
+   "slug": "um-childrens-baltimore",
+   "name": "University of Maryland Children's Hospital",
+   "platform": "phenom->phenom",
+   "adapter": "phenom",
+   "method": "requests+api",
+   "board": "phenom|www.umms.org|",
+   "board_hospitals": 2,
+   "board_listings": 459,
+   "listings": 411,
+   "candidates": 1,
+   "new": 0,
+   "known": 1,
+   "status": "ok",
+   "error": null,
+   "http_status": null,
+   "seconds": 31.6,
+   "requests": 25,
+   "details_fetched": 0,
+   "details_failed": 0,
+   "notes": [
+    "search 'nurse practitioner': HTTP 404 for https://www.umms.org/us/en/search-results?keywords=nurse%20practitioner: \r \r <!DOCTYPE html>\r <!--[if IE 8]>         <html class=\"no-js lt-ie9\" lang=\"en\"> <![endif]-->\r <!--[if IE 9]>         <html class=\"no-js lt-ie10\" lang=\"en\"> <!",
+    "search 'pediatric nurse practitioner': HTTP 404 for https://www.umms.org/us/en/search-results?keywords=pediatric%20nurse%20practitioner: \r \r <!DOCTYPE html>\r <!--[if IE 8]>         <html class=\"no-js lt-ie9\" lang=\"en\"> <![endif]-->\r <!--[if IE 9]>         <html class=\"no-js lt-ie10\" lang=\"en\"> <!",
+    "search 'advanced practice provider': HTTP 404 for https://www.umms.org/us/en/search-results?keywords=advanced%20practice%20provider: \r \r <!DOCTYPE html>\r <!--[if IE 8]>         <html class=\"no-js lt-ie9\" lang=\"en\"> <![endif]-->\r <!--[if IE 9]>         <html class=\"no-js lt-ie10\" lang=\"en\"> <!",
+    "search 'APRN': HTTP 404 for https://www.umms.org/us/en/search-results?keywords=APRN: \r \r <!DOCTYPE html>\r <!--[if IE 8]>         <html class=\"no-js lt-ie9\" lang=\"en\"> <![endif]-->\r <!--[if IE 9]>         <html class=\"no-js lt-ie10\" lang=\"en\"> <!",
+    "search 'PICU': HTTP 404 for https://www.umms.org/us/en/search-results?keywords=PICU: \r \r <!DOCTYPE html>\r <!--[if IE 8]>         <html class=\"no-js lt-ie9\" lang=\"en\"> <![endif]-->\r <!--[if IE 9]>         <html class=\"no-js lt-ie10\" lang=\"en\"> <!",
+    "search 'NICU': HTTP 404 for https://www.umms.org/us/en/search-results?keywords=NICU: \r \r <!DOCTYPE html>\r <!--[if IE 8]>         <html class=\"no-js lt-ie9\" lang=\"en\"> <![endif]-->\r <!--[if IE 9]>         <html class=\"no-js lt-ie10\" lang=\"en\"> <!",
+    "sniff: recognized phenom front end on careers.umms.org",
+    "recovered via sniffed phenom board after: AdapterError: search 'APRN': HTTP 404 for https://www.umms.org/us/en/search-results?keywords=APRN: \r \r <!DOCTYPE html>\r <!--[if IE 8]>         <html class=\"no-js lt-ie9\" lang=\"en\"> <![endif]-->\r <!--[if IE 9]>         <html class=\"no-js lt-ie10\" lang=\"en\"> <!; search 'PICU': HTTP 404 for https://www.umms.org/us/en/search-results?keywords=PICU: \r \r <!DOCTYPE html>\r <!--[if IE 8]>         <html class=\"no-js lt-ie9\" lang=\"en\"> <![endif]-->\r <!--[if IE 9]>         <html class=\"no-js lt-ie10\" lang=\"en\"> <!; search"
+   ],
+   "samples": [
+    {
+     "title": "Pediatric Nurse Practitioner - Chestertown, MD",
+     "url": "https://careers.umms.org/us/en/job/P-101206/Pediatric-Nurse-Practitioner-Chestertown-MD",
+     "posted_at": "2026-08-13",
+     "relevance": 2,
+     "setting": "peds_primary_care",
+     "known": true
+    }
+   ],
+   "sample_listings": [
+    {
+     "title": "Urgent Care Nurse Practitioner",
+     "url": "https://careers.umms.org/us/en/job/REF46982K/Urgent-Care-Nurse-Practitioner",
+     "posted_at": "2026-01-16",
+     "location": "La Plata, United States"
+    },
+    {
+     "title": "Respiratory Care Practitioner II Registered",
+     "url": "https://careers.umms.org/us/en/job/P-102234/Respiratory-Care-Practitioner-II-Registered",
+     "posted_at": "2026-03-27",
+     "location": "La Plata, Maryland, United States"
+    },
+    {
+     "title": "Respiratory Care Practitioner II Registered",
+     "url": "https://careers.umms.org/us/en/job/P-102502/Respiratory-Care-Practitioner-II-Registered",
+     "posted_at": "2026-04-03",
+     "location": "La Plata, Maryland, United States"
+    }
+   ]
+  },
+  {
+   "slug": "um-st-joseph-towson",
+   "name": "University of Maryland St. Joseph Medical Center",
+   "platform": "phenom->phenom",
+   "adapter": "phenom",
+   "method": "requests+api",
+   "board": "phenom|www.umms.org|",
+   "board_hospitals": 2,
+   "board_listings": 459,
+   "listings": 48,
+   "candidates": 2,
+   "new": 0,
+   "known": 2,
+   "status": "ok",
+   "error": null,
+   "http_status": null,
+   "seconds": 31.6,
+   "requests": 25,
+   "details_fetched": 0,
+   "details_failed": 0,
+   "notes": [
+    "search 'nurse practitioner': HTTP 404 for https://www.umms.org/us/en/search-results?keywords=nurse%20practitioner: \r \r <!DOCTYPE html>\r <!--[if IE 8]>         <html class=\"no-js lt-ie9\" lang=\"en\"> <![endif]-->\r <!--[if IE 9]>         <html class=\"no-js lt-ie10\" lang=\"en\"> <!",
+    "search 'pediatric nurse practitioner': HTTP 404 for https://www.umms.org/us/en/search-results?keywords=pediatric%20nurse%20practitioner: \r \r <!DOCTYPE html>\r <!--[if IE 8]>         <html class=\"no-js lt-ie9\" lang=\"en\"> <![endif]-->\r <!--[if IE 9]>         <html class=\"no-js lt-ie10\" lang=\"en\"> <!",
+    "search 'advanced practice provider': HTTP 404 for https://www.umms.org/us/en/search-results?keywords=advanced%20practice%20provider: \r \r <!DOCTYPE html>\r <!--[if IE 8]>         <html class=\"no-js lt-ie9\" lang=\"en\"> <![endif]-->\r <!--[if IE 9]>         <html class=\"no-js lt-ie10\" lang=\"en\"> <!",
+    "search 'APRN': HTTP 404 for https://www.umms.org/us/en/search-results?keywords=APRN: \r \r <!DOCTYPE html>\r <!--[if IE 8]>         <html class=\"no-js lt-ie9\" lang=\"en\"> <![endif]-->\r <!--[if IE 9]>         <html class=\"no-js lt-ie10\" lang=\"en\"> <!",
+    "search 'PICU': HTTP 404 for https://www.umms.org/us/en/search-results?keywords=PICU: \r \r <!DOCTYPE html>\r <!--[if IE 8]>         <html class=\"no-js lt-ie9\" lang=\"en\"> <![endif]-->\r <!--[if IE 9]>         <html class=\"no-js lt-ie10\" lang=\"en\"> <!",
+    "search 'NICU': HTTP 404 for https://www.umms.org/us/en/search-results?keywords=NICU: \r \r <!DOCTYPE html>\r <!--[if IE 8]>         <html class=\"no-js lt-ie9\" lang=\"en\"> <![endif]-->\r <!--[if IE 9]>         <html class=\"no-js lt-ie10\" lang=\"en\"> <!",
+    "sniff: recognized phenom front end on careers.umms.org",
+    "recovered via sniffed phenom board after: AdapterError: search 'APRN': HTTP 404 for https://www.umms.org/us/en/search-results?keywords=APRN: \r \r <!DOCTYPE html>\r <!--[if IE 8]>         <html class=\"no-js lt-ie9\" lang=\"en\"> <![endif]-->\r <!--[if IE 9]>         <html class=\"no-js lt-ie10\" lang=\"en\"> <!; search 'PICU': HTTP 404 for https://www.umms.org/us/en/search-results?keywords=PICU: \r \r <!DOCTYPE html>\r <!--[if IE 8]>         <html class=\"no-js lt-ie9\" lang=\"en\"> <![endif]-->\r <!--[if IE 9]>         <html class=\"no-js lt-ie10\" lang=\"en\"> <!; search"
+   ],
+   "samples": [
+    {
+     "title": "Neonatal Nurse Practitioner",
+     "url": "https://careers.umms.org/us/en/job/REF34536A/Neonatal-Nurse-Practitioner",
+     "posted_at": "2026-08-13",
+     "relevance": 2,
+     "setting": "nicu",
+     "known": true
+    },
+    {
+     "title": "Neonatal Nurse Practitioner- Sign on bonus!",
+     "url": "https://careers.umms.org/us/en/job/REF34537A/Neonatal-Nurse-Practitioner-Sign-on-bonus",
+     "posted_at": "2026-08-13",
+     "relevance": 3,
+     "setting": "nicu",
+     "known": true
+    }
+   ],
+   "sample_listings": [
+    {
+     "title": "Urgent Care Nurse Practitioner",
+     "url": "https://careers.umms.org/us/en/job/REF46982K/Urgent-Care-Nurse-Practitioner",
+     "posted_at": "2026-01-16",
+     "location": "La Plata, United States"
+    },
+    {
+     "title": "Respiratory Care Practitioner II Registered",
+     "url": "https://careers.umms.org/us/en/job/P-102234/Respiratory-Care-Practitioner-II-Registered",
+     "posted_at": "2026-03-27",
+     "location": "La Plata, Maryland, United States"
+    },
+    {
+     "title": "Respiratory Care Practitioner II Registered",
+     "url": "https://careers.umms.org/us/en/job/P-102502/Respiratory-Care-Practitioner-II-Registered",
+     "posted_at": "2026-04-03",
+     "location": "La Plata, Maryland, United States"
+    }
+   ]
+  },
+  {
+   "slug": "roswell-park-buffalo",
+   "name": "Roswell Park Comprehensive Cancer Center",
+   "platform": "workday",
+   "adapter": "workday",
+   "method": "",
+   "board": "workday|www.roswellpark.org|careers",
+   "board_hospitals": 1,
+   "board_listings": 0,
+   "listings": 0,
+   "candidates": 0,
+   "new": 0,
+   "known": 0,
+   "status": "error",
+   "error": "AdapterError: workday: cannot derive host/tenant from ats_config or careers URLs",
+   "http_status": null,
+   "seconds": 37.0,
+   "requests": 0,
+   "details_fetched": 0,
+   "details_failed": 0,
+   "notes": [
+    "sniff: HTTP 404 for https://www.roswellpark.org/careers: <!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\r <html xmlns=\"http://www.w3.org/1999/xhtml\">\r <hea",
+    "generic fallback failed: AdapterError: generic: no page reachable: 404 https://www.roswellpark.org/careers; playwright 404 https://www.roswellpark.org/careers?q=nurse+practitioner; playwright 404 https://www.roswellpark.org/careers?keyword"
+   ],
+   "samples": [],
+   "sample_listings": []
+  }
+ ],
+ "jobs": [
+  {
+   "id": "d035140fb238",
+   "hospital_slug": "st-francis-hospital-roslyn",
+   "title": "Advanced Practice Provider-PD",
+   "url": "https://jobs.chsli.org/jobs/75371",
+   "apply_url": null,
+   "source": "employer",
+   "external_id": "75371",
+   "location_text": "Rockville Centre, New York",
+   "city": "Rockville Centre",
+   "state": "NY",
+   "department": null,
+   "setting": "unspecified",
+   "employment_type": null,
+   "shift": null,
+   "schedule": null,
+   "salary_text": "$94.60",
+   "posted_at": "2026-10-20",
+   "summary": "Advanced Practice Provider-PD at St. Francis Hospital and Heart Center.",
+   "description": "Overview ADVANCED PRACTICE PROVIDER - OBSTETRICS AND GYNECOLOGY PHYSICIAN ASSISTANT - PER DIEM Explore a career with Mercy Hospital, a 375-bed not-for-profit hospital and member of the Catholic Health that has been serving the healthcare needs for the residents of Nassau County and its surrounding areas since 1913. Ranked among the top hospitals in New York State, Mercy offers a NYS designated Stroke Center, Breast Imaging Center of Excellence, Level III Neonatal Intensive Care Unit, and has received Pathway to Excellence designation from the American Nurses Credentialing Center – the only hospital in the region and one of only two in NY State to receive this prestigious award. Job Details Obstetrics and Gynecology Physician Assistant Job Summary: Management of complex and independent patient evaluation and management function Provide patient care commensurate with their level of advancement; competence and privileges, under the supervision of appropriately credentialed attending Excellent interpersonal and communication skills integral, converses with patients in a manner that promotes understanding and develops positive clinician-patient relationships that helps to enhance good health outcomes. Strong analytical skills needed to study clinical situations correctly, and be compassionate to make the health of patients their priority and primary concern Contribute to the collaborative patient care, to the research, teaching and consulting of patient care and provides leadership to Mercy Hospital (MH) and to the APP profession. Obstetrics and Gynecology Physician Assistant Responsibilities: Provide direct clinical services for obstetric and gynecological patients according to the established MH protocols and utilizes evidence based clinical practice standards under the supervision of an appropriately credentialed attending Perform as the Team Member during a Rapid Response, Cardiac Arrest Code, Stroke Code, Pain Rapid Response, Sepsis Rapid Response, in the absence of a physician Provide safe, effective and compassionate patient care and demonstrates responsibility for professional practice through and adhering to MH policies and participation in continuing medical education and perform bedside procedures commiserative with their competence and privileges under the supervision of appropriately credentialed attending Devote attention and resources to provide the best customer service possible and performs as a role model of professionalism through conduct, appearance, communication, mutual respect, leadership, ethical decision making, critical thinking and problem solving skills. Demonstrate an awareness of and respect for the cultural diversity of co-workers, patients and customers treating all people with fairness and respect Document patient plan of care by appropriate and prompt maintenance of medical records, orders, notes and timely signing of verbal and telephone orders Collaborate with private attending in the completion of medical admissions by participating in medication reconciliation process, examines and identifies signs and symptoms to arrive at a plan of care and documents findings in a thorough progress note Order and interpret appropriate diagnostic and laboratory tests Explain the necessity, preparation, nature and anticipated effects of procedures to patients, patient’s family, staff and healthcare students Assess family coping skills and the need for crisis or other interventions Demonstrate ongoing improvement/proficiency in bedside invasive and noninvasive procedures and maintains patient procedure logs Obstetrics and Gynecology Physician Assistant Provider Qualifications: Education- B.S. or MPA degree in accredited Physician Assistant program Experience/skills- 2 years’ experience preferred Licensure- Current registration with NY Education Dept. as Physician Assistant NCCPA Certification. ACLS, BLS, Infection Control Certificate Salary Range Starting from USD $94.60/Hr. The salary range or rate listed does",
+   "requirements": [
+    "ACLS, BLS, Infection Control Certificate Salary Range Starting from USD $94.60/Hr."
+   ],
+   "relevance": 2,
+   "relevance_reason": "Pediatric APP role, setting not stated; description describes pediatric patients ('neonatal intensive').",
+   "tags": [
+    "per diem"
+   ],
+   "first_seen_at": null,
+   "last_seen_at": null,
+   "status": "active",
+   "raw_notes": "scraper jibe/api"
+  }
+ ],
+ "seen_again": [
+  "https://careers.umms.org/us/en/job/P-101199/Pediatric-Nurse-Practitioner-Easton-MD",
+  "https://careers.umms.org/us/en/job/P-101206/Pediatric-Nurse-Practitioner-Chestertown-MD",
+  "https://careers.umms.org/us/en/job/P-101557/Inpatient-Nursery-Nurse-Practitioner-Part-Time",
+  "https://careers.umms.org/us/en/job/P-104383/NICU-Neonatal-Nurse-Practitioner-or-Physician-Assistant-NP-PA",
+  "https://careers.umms.org/us/en/job/P-106915/Nursery-Nurse-Practitioner-PRN",
+  "https://careers.umms.org/us/en/job/P-107278/Sr-Nurse-Practitioner-S-Peds-ICU-PRN",
+  "https://careers.umms.org/us/en/job/P-107279/Sr-Nurse-Practitioner-S-Peds-ICU-PRN",
+  "https://careers.umms.org/us/en/job/P-107281/Pediatric-Intensive-Care-Unit-PICU-Acute-Care-Nurse-Practitioner-or-Physician-Assistant",
+  "https://careers.umms.org/us/en/job/P-107283/Pediatric-Intensive-Care-Unit-PICU-Acute-Care-Nurse-Practitioner-or-Physician-Assistant",
+  "https://careers.umms.org/us/en/job/P-107285/Pediatric-Intensive-Care-Unit-PICU-Acute-Care-Nurse-Practitioner-or-Physician-Assistant",
+  "https://careers.umms.org/us/en/job/P-107287/Pediatric-Intensive-Care-Unit-PICU-Acute-Care-Nurse-Practitioner-or-Physician-Assistant",
+  "https://careers.umms.org/us/en/job/P-109208/Pediatric-Nurse-Practitioner-Easton",
+  "https://careers.umms.org/us/en/job/REF34536A/Neonatal-Nurse-Practitioner",
+  "https://careers.umms.org/us/en/job/REF34537A/Neonatal-Nurse-Practitioner-Sign-on-bonus",
+  "https://careers.umms.org/us/en/job/REF44551Y/NICU-Neonatal-Nurse-Practitioner-or-Physician-Assistant",
+  "https://careers.umms.org/us/en/job/REF45897T/Pediatric-Intensive-Care-Unit-PICU-Acute-Care-Nurse-Practitioner-or-Physician-Assistant",
+  "https://jobs.chsli.org/jobs/59684",
+  "https://jobs.chsli.org/jobs/61189",
+  "https://jobs.chsli.org/jobs/61190",
+  "https://jobs.chsli.org/jobs/61191",
+  "https://jobs.chsli.org/jobs/68988",
+  "https://jobs.chsli.org/jobs/69808",
+  "https://jobs.chsli.org/jobs/70058",
+  "https://jobs.chsli.org/jobs/73310",
+  "https://jobs.chsli.org/jobs/73789",
+  "https://jobs.chsli.org/jobs/74490",
+  "https://jobs.chsli.org/jobs/74747",
+  "https://jobs.chsli.org/jobs/75066",
+  "https://jobs.chsli.org/jobs/75200",
+  "https://jobs.uhsinc.com/jobs/6968",
+  "https://uvmhealthcareers.org/jobs/nurse-practitioner-physician-assistant/",
+  "https://www.rwjbarnabashealthcareers.org/job/136422/nurse-practitioner-ft-days-cbmc-neonatology-livingston-nj-nurse-practitioner-us-nj-livingston-94-old-short-hills-rd/",
+  "https://www.rwjbarnabashealthcareers.org/job/136585/advanced-practice-nurse-miscellaneous-us-nj-long-branch-300-2nd-ave/",
+  "https://www.rwjbarnabashealthcareers.org/job/136881/advanced-practice-nurse-pd-day-shore-neurology-nurse-practitioner-us-nj-toms-river/",
+  "https://www.rwjbarnabashealthcareers.org/job/140633/advanced-practice-nurse-ft-day-neurosciences-apps-cmc-miscellaneous-us-nj-toms-river-99-nj-37/",
+  "https://www.rwjbarnabashealthcareers.org/job/146065/advanced-practice-provider-nurse-practitioner-us-nj-toms-river-99-nj-37/",
+  "https://www.rwjbarnabashealthcareers.org/job/146744/advanced-practice-nurse-nurse-practitioner-us-nj-long-branch-300-2nd-ave/",
+  "https://www.rwjbarnabashealthcareers.org/job/151375/advanced-practice-provider-neonatology-nurse-practitioner-us-nj-newark-201-lyons-ave/",
+  "https://www.rwjbarnabashealthcareers.org/job/152383/advanced-practice-nurse-ft-day-ocean-hematology-oncology-tr-nurse-practitioner-us-nj-toms-river-99-nj-37-/",
+  "https://www.rwjbarnabashealthcareers.org/job/152410/advanced-practice-provider-nurse-practitioner-us-nj-lakewood-101-prospect-st/",
+  "https://www.rwjbarnabashealthcareers.org/job/152704/advanced-practice-provider-neonatology-nurse-practitioner-us-nj-belleville-1-clara-maass-drive/",
+  "https://www.rwjbarnabashealthcareers.org/job/153564/advanced-practice-nurse-ft-day-monmouth-heart-vascular-nurse-practitioner-us-nj-long-branch-166-morris-avenue/",
+  "https://www.uvmhealthcareers.org/job/12384/pediatric-hematology-oncology-nurse-practitioner-uvmmc-nurse-practitioner-physician-assistant-us-vt-burlington-111-colchester-ave/",
+  "https://www.uvmhealthcareers.org/jobs/nurse-practitioner-physician-assistant/"
+ ],
+ "closed": [],
+ "totals": {
+  "hospitals": 14,
+  "checked": 12,
+  "unreachable": 2,
+  "listings": 4483,
+  "candidates": 45,
+  "new_candidates": 1,
+  "seconds": 524.1
+ },
+ "browser": "chrome-headed",
+ "ledger": "data/hospitals.json",
+ "wall_seconds": 132.4
+}

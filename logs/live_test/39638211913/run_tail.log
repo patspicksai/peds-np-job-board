@@ -1,0 +1,20 @@
+2026-10-21 16:49:59,124 INFO scraping 14 hospitals (11 boards), budget 2040s
+hospital                               platform               method           board  list  cand  new   secs  status / error
+-----------------------------------------------------------------------------------------------------------------------------------------
+aiken-regional-aiken                   generic->jibe          api               1696   135     0    0   30.7  ok
+carolinaeast-new-bern                  generic->talentbrew    api                213   213     0    0   12.6  ok
+central-vermont-medical-center-berlin  generic                requests            12     0     0    0    4.2  ok
+community-medical-center-toms-river    generic                requests            28     4     4    0   75.0  ok
+emerson-hospital-concord               generic                playwright           3     3     0    0   55.3  ok
+golisano-childrens-uvm-burlington      generic                requests            12    12     2    0    4.2  ok
+gw-university-hospital-washington      generic->jibe          api               1696   135     1    0  120.4  ok
+st-francis-hospital-roslyn             generic->jibe          api                375   375     8    1   11.8  ok
+um-childrens-baltimore                 phenom->phenom         requests+api       459   411     1    0   31.6  ok
+um-st-joseph-towson                    phenom->phenom         requests+api       459    48     2    0   31.6  ok
+unterberg-childrens-long-branch        generic                requests            28    24     3    0   75.0  ok
+uvm-cvph-plattsburgh                   generic                playwright           1     1     1    0   50.1  ok
+roswell-park-buffalo                   workday                                     0     0     0    0   37.0  error: AdapterError: workday: cannot derive host/tenant from ats_config or careers URLs
+saint-vincent-hospital-worcester       generic                playwright           0     0     0    0   95.4  no_listings: careers page reachable but no job listings recognized (generic adapter): set careers_search_url / ats_config to the real job board
+-----------------------------------------------------------------------------------------------------------------------------------------
+hospitals=14 ok=12 not_ok=2 board_listings=4483 candidates=45 new_candidates=1
+scraper exit=0
