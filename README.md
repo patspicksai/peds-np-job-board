@@ -13,7 +13,7 @@ data/hospitals.json  (gold ledger, ~500 hospitals)
 GitHub Actions: scrape.yml  (daily, cron 02:15 UTC; Python + Playwright, no AI anywhere in the loop)
         |  job 1 "scrape": every board. Per-platform adapters: Workday, iCIMS, Oracle Cloud HCM,
         |    SuccessFactors, Phenom, Jibe, TalentBrew, Symphony, Taleo, UKG, Eightfold, Hopkins,
-        |    CareerSite, generic + headless Chrome
+        |    CareerSite, Infor CloudSuite, generic + headless Chrome
         |  job 2 "retry": a fresh runner (new IP) re-scrapes only the boards job 1 lost to bot walls,
         |    rate limits, timeouts or connection errors, and folds the results into the same run
         v
@@ -89,7 +89,7 @@ scripts/
 
 ## Known gaps (as of 2026-10-21)
 
-- The first scheduled run (2026-10-21) read 368 of 509 boards; the best pass so far (2026-10-20) read 393. Of the 141 not read: 53 reachable careers pages with no recognizable listings (marketing pages; ledger fixes), 51 bot walls (Cloudflare 403s on RWJBarnabas, UMMS, HCA, Penn Medicine, GW, UVM and a few others; these read fine in isolation and the retry pass exists to recover them), 32 dead or unreachable URLs (ledger fixes), 4 Infor CloudSuite boards without an adapter (Northern Light, Kaleida), 1 zero-result search. The Coverage view carries the live list and each ledger record's `careers_notes` says what was tried.
+- The first scheduled run (2026-10-21) read 368 of 509 boards; the best pass so far (2026-10-20) read 393. Of the 141 not read: 53 reachable careers pages with no recognizable listings (marketing pages; ledger fixes), 51 bot walls (Cloudflare 403s on RWJBarnabas, UMMS, HCA, Penn Medicine, GW, UVM and a few others; these read fine in isolation and the retry pass exists to recover them), 32 dead or unreachable URLs (ledger fixes), 1 zero-result search. The Infor CloudSuite boards (Northern Light, Kaleida, Catholic Health Buffalo: 9 hospitals) got an adapter on 2026-10-21 and read on the next run. The Coverage view carries the live list and each ledger record's `careers_notes` says what was tried.
 - Many smaller hospitals have no Wikipedia article, so some photos are website share images and some descriptions are shorter.
 - `summary` on jobs is derived from the title and description.
 - Notifications: ntfy is wired (set `NTFY_TOPIC`); a Telegram channel for a second subscriber is the planned next step. Browser push from the page itself (service worker) is not wired.
