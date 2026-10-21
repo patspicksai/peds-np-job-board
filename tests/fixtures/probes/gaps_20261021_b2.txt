@@ -1,0 +1,59 @@
+# name url [POST:json] [ACT:json] [MODES:a,b]   gap-list candidates found by search on 2026-10-21 (batch 2): confirm before patching the ledger
+chsli_api https://jobs.chsli.org/api/jobs?keywords=nurse%20practitioner&page=1&limit=20&sortBy=relevance&descending=false&internal=false MODES:req
+chsli_jobs https://jobs.chsli.org/jobs?keywords=nurse%20practitioner MODES:req
+hss_icims https://jobs-hss.icims.com/jobs/search?ss=1&searchKeyword=nurse%20practitioner&in_iframe=1 MODES:req
+prime_sc https://careers-primehealthcare.icims.com/jobs/search?ss=1&searchKeyword=nurse%20practitioner&searchLocation=Denville&in_iframe=1 MODES:req
+granville_careers https://ghshospital.org/careers MODES:req,chrome
+granville_home https://ghshospital.org/ MODES:req
+hcs_caromont_api https://pm.healthcaresource.com/JobseekerSearchAPI/caromont/api/Search?size=25 POST:{"query":{"bool":{"must":{"multi_match":{"query":"nurse practitioner","fields":["title","description"]}}}}} MODES:req
+hcs_crouse_api https://pm.healthcaresource.com/JobseekerSearchAPI/crouse/api/Search?size=25 POST:{"query":{"bool":{"must":{"multi_match":{"query":"nurse practitioner","fields":["title","description"]}}}}} MODES:req
+hcs_ellis_api https://pm.healthcaresource.com/JobseekerSearchAPI/ellishospital/api/Search?size=25 POST:{"query":{"bool":{"must":{"multi_match":{"query":"nurse practitioner","fields":["title","description"]}}}}} MODES:req
+hcs_auburn_api https://pm.healthcaresource.com/JobseekerSearchAPI/auburnhospital/api/Search?size=25 POST:{"query":{"bool":{"must":{"multi_match":{"query":"nurse practitioner","fields":["title","description"]}}}}} MODES:req
+hcs_conway_api https://pm.healthcaresource.com/JobseekerSearchAPI/cmcsc/api/Search?size=25 POST:{"query":{"bool":{"must":{"multi_match":{"query":"nurse practitioner","fields":["title","description"]}}}}} MODES:req
+hcs_kidspeace_api https://pm.healthcaresource.com/JobseekerSearchAPI/KIDSPEACE/api/Search?size=25 POST:{"query":{"bool":{"must":{"multi_match":{"query":"nurse practitioner","fields":["title","description"]}}}}} MODES:req
+hcs_lawrence_api https://pm.healthcaresource.com/JobseekerSearchAPI/lawrence/api/Search?size=25 POST:{"query":{"bool":{"must":{"multi_match":{"query":"nurse practitioner","fields":["title","description"]}}}}} MODES:req
+hcs_caromont_results https://pm.healthcaresource.com/cs/caromont#/results?what=nurse%20practitioner MODES:chrome
+kki_jobs https://jobs.kennedykrieger.org/jobs/?q=nurse%20practitioner MODES:req,chrome
+kki_search https://jobs.kennedykrieger.org/search-jobs/nurse%20practitioner MODES:req
+tbh_adp https://recruiting.adp.com/srccar/public/RTI.home?c=1126207&d=External MODES:req,chrome
+sbh_adp https://recruiting.adp.com/srccar/public/RTI.home?c=2169007&d=ExternalCareerSite MODES:req,chrome
+crhs_adp https://workforcenow.adp.com/mascsr/default/mdf/recruitment/recruitment.html?cid=86be0242-2e9b-4a21-9dac-6ef6b31fbbee&ccId=19000101_000001&lang=en_US MODES:chrome
+crhs_adp_api https://workforcenow.adp.com/mascsr/default/careercenter/public/events/staffing/v1/job-requisitions?cid=86be0242-2e9b-4a21-9dac-6ef6b31fbbee&ccId=19000101_000001&lang=en_US&timeStamp=1 MODES:req
+oneida_paycom https://www.paycomonline.net/v4/ats/web.php/jobs?clientkey=0FD7E535C5AC57A6144B389ACAA1998B MODES:req,chrome
+medisys_search https://medisyscareers.org/?s=nurse+practitioner&post_type=job_listing MODES:req
+medisys_jobs https://medisyscareers.org/jobs/?search_keywords=nurse+practitioner MODES:req,chrome
+mwph_ukgr https://secure4.entertimeonline.com/ta/6108366.careers?JobsSearch=1&lang=en-US MODES:chrome
+stmarys_ukgr https://prd01-hcm01.prd.mykronos.com/ta/6156032.careers?ShowAllOpenings=&lang=en-US MODES:chrome
+nlh_ukgr https://secure7.saashr.com/ta/6101323.careers?CareersSearch=1&lang=en-US MODES:req,chrome
+nlh_ukgr_api https://secure7.saashr.com/ta/rest/ui/recruitment/companies/%7C6101323/job-requisitions?offset=1&size=50&sort=desc&ein_id=&lang=en-US MODES:req
+stmarys_ukgr_api https://prd01-hcm01.prd.mykronos.com/ta/rest/ui/recruitment/companies/%7C6156032/job-requisitions?offset=1&size=50&sort=desc&ein_id=&lang=en-US MODES:req
+adirondack_hrm http://adirondackhealth.hrmdirect.com/employment/job-openings.php?search=true& MODES:req
+rutland_hcts https://rrmccareers.hctsportals.com MODES:req,chrome
+mvhs_careers https://careers.mvhealthsystem.org/ MODES:req,chrome
+riverside_employment https://www.riversidehealth.org/employment/ MODES:req
+bronxcare_jobs https://www.bronxcare.org/jobs/hospital-positions MODES:req
+ehs_postings https://ehs.org/careers/job-postings/ MODES:req
+numc_careers https://www.numc.edu/careers-at-nuhealth/ MODES:req
+nfmmc_careers https://www.nfmmc.org/careers MODES:req
+beaufort_careers https://www.bmhsc.org/careers MODES:req
+berkshire_careers https://www.berkshirehealthsystems.org/careers-advanced-practitioner-recruitment/ MODES:req
+brockton_careers https://signature-healthcare.org/careers MODES:req
+dosher_employment https://www.dosher.org/getpage.php?name=employment&sub=Careers MODES:req
+middlesex_careers https://middlesexhealth.org/careers MODES:req,chrome
+mountnittany_careers https://mountnittany.org/careers MODES:req
+childrenshome_jobs https://www.childrenshomepgh.org/who-we-are/job-opportunities/ MODES:req
+brattleboro_careers https://www.brattlebororetreat.org/careers MODES:req
+waterbury_careers https://www.waterburyhospital.org/careers/ MODES:req
+howard_careers https://www.huhcareers.com/ MODES:req
+conway_jobs https://www.conwaymedicalcenter.com/jobs/ MODES:req
+cwh_careers https://commonwealthhealth.net/hospital-about-us/career-opportunities/ MODES:req
+uchc_jobs https://jobs.uchc.edu/CSS_External/CSSPage_Welcome.asp MODES:chrome ACT:[{"click": "text=View All Jobs"}, {"wait": 5000}]
+stvincent_careers https://www.stvincenthospital.com/careers MODES:req
+hfsc_careers https://hfsc.org/careers MODES:req
+hschealth_careers https://www.hschealth.org/careers MODES:req
+wyckoff_home https://wyckoffhospital.org/ MODES:req
+carthage_home https://www.carthagehospital.com/ MODES:req
+franciscan_careers https://franciscanchildrens.org/careers/ MODES:req
+hampstead_careers https://www.hampsteadhospital.com/careers MODES:req
+hoboken_careers https://www.carepointhealth.org/careers/ MODES:req
+pappas_jobs https://www.mass.gov/orgs/pappas-rehabilitation-hospital-for-children MODES:req
