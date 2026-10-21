@@ -282,17 +282,18 @@
       "region": "Connecticut",
       "hotspot": false,
       "website": "https://www.uconnhealth.org/",
-      "careers_url": "https://www.uconnhealth.org/about-us/careers",
-      "careers_platform": "unknown",
-      "careers_search_url": null,
-      "careers_notes": "UConn Health's own careers landing page is www.uconnhealth.org/about-us/careers (health.uconn.edu/jobs redirects to the nursing careers page). The underlying job board platform could not be confirmed (fetch blocked this session). NICU APRN roles at this hospital are employed by Connecticut Children's and post on its Oracle board: fa-evav-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/connecticutchildrenscareers. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.uconnhealth.org/about-us/careers",
+      "careers_url": "https://icjdjb.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/jobs",
+      "careers_platform": "oracle_cloud",
+      "careers_search_url": "https://icjdjb.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/jobs?keyword=nurse%20practitioner",
+      "careers_notes": "UConn Health's own careers landing page is www.uconnhealth.org/about-us/careers (health.uconn.edu/jobs redirects to the nursing careers page). The underlying job board platform could not be confirmed (fetch blocked this session). NICU APRN roles at this hospital are employed by Connecticut Children's and post on its Oracle board: fa-evav-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/connecticutchildrenscareers. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.uconnhealth.org/about-us/careers [gap-fix 2026-10-21] UConn Health (incl. Waterbury Hospital) now recruits on Oracle Recruiting Cloud icjdjb.fa.ocs site CX_1 (linked from waterburyhospital.org/careers, Actions probe 39650100056); jobs.uchc.edu is the legacy form-driven Candidate Self-Service.",
       "ats_config": {
-        "host": "www.uconnhealth.org",
         "nicu_employer_ats": {
           "platform": "oracle_cloud",
           "host": "fa-evav-saasfaprod1.fa.ocs.oraclecloud.com",
           "site_number": "connecticutchildrenscareers"
-        }
+        },
+        "host": "icjdjb.fa.ocs.oraclecloud.com",
+        "site_number": "CX_1"
       },
       "nearest_airport": "BDL Bradley International (about 15 mi straight-line); HVN Tweed-New Haven about 33 mi",
       "beds": null,
@@ -966,12 +967,17 @@
       "region": "Connecticut",
       "hotspot": false,
       "website": "https://www.waterburyhospital.org",
-      "careers_url": "https://www.uconnhealth.org/about-us/careers",
-      "careers_platform": "unknown",
-      "careers_search_url": null,
-      "careers_notes": "UConn Health careers landing page (same board as UConn John Dempsey Hospital); platform unconfirmed. Waterbury Hospital legacy postings may still appear on its own site during the ownership transition. Neonatal roles may be Connecticut Children's employees on its Oracle board. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.uconnhealth.org/about-us/careers",
+      "careers_url": "https://icjdjb.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/jobs",
+      "careers_platform": "oracle_cloud",
+      "careers_search_url": "https://icjdjb.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/jobs?keyword=nurse%20practitioner",
+      "careers_notes": "UConn Health careers landing page (same board as UConn John Dempsey Hospital); platform unconfirmed. Waterbury Hospital legacy postings may still appear on its own site during the ownership transition. Neonatal roles may be Connecticut Children's employees on its Oracle board. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.uconnhealth.org/about-us/careers [gap-fix 2026-10-21] waterburyhospital.org/careers links 'Explore Careers at UConn Health' to Oracle Recruiting Cloud icjdjb.fa.ocs site CX_1 (Actions probe 39650100056).",
       "ats_config": {
-        "host": "www.uconnhealth.org"
+        "host": "icjdjb.fa.ocs.oraclecloud.com",
+        "site_number": "CX_1",
+        "location_aliases": [
+          "Waterbury Hospital",
+          "Waterbury, CT"
+        ]
       },
       "nearest_airport": "HVN Tweed-New Haven (about 22 mi straight-line); BDL Bradley about 33 mi",
       "beds": null,
@@ -1177,12 +1183,15 @@
       "region": "Connecticut",
       "hotspot": false,
       "website": "https://middlesexhealth.org",
-      "careers_url": "https://middlesexhealth.org",
-      "careers_platform": "unknown",
-      "careers_search_url": null,
-      "careers_notes": "Independent system; careers board not identified this session (careers_url is the system home page). Enrichment should locate the job board. [enrich 2026-10-20] careers_url -> HTTP 202 at https://middlesexhealth.org/",
+      "careers_url": "https://css-middlesex-prd.inforcloudsuite.com/hcm/Jobs/page/JobsHomePage?csk.showusingxi=true&csk.JobBoard=EXTERNAL&csk.HROrganization=1",
+      "careers_platform": "custom",
+      "careers_search_url": "https://css-middlesex-prd.inforcloudsuite.com/hcm/Jobs/page/JobsHomePage?csk.showusingxi=true&csk.JobBoard=EXTERNAL&csk.HROrganization=1",
+      "careers_notes": "Independent system; careers board not identified this session (careers_url is the system home page). Enrichment should locate the job board. [enrich 2026-10-20] careers_url -> HTTP 202 at https://middlesexhealth.org/ [gap-fix 2026-10-21] middlesexhealth.org/careers-at-middlesex-health 'View Open Positions' links to Infor CloudSuite css-middlesex-prd (board EXTERNAL, org 1) (Actions probe 39650100056).",
       "ats_config": {
-        "host": "middlesexhealth.org"
+        "host": "css-middlesex-prd.inforcloudsuite.com",
+        "vendor": "Infor CloudSuite HCM",
+        "job_board": "EXTERNAL",
+        "hr_organization": "1"
       },
       "nearest_airport": "HVN Tweed-New Haven (about 24 mi straight-line); BDL Bradley about 27 mi",
       "beds": 297,
@@ -1449,12 +1458,14 @@
       "region": "Connecticut",
       "hotspot": false,
       "website": "https://www.hfsc.org",
-      "careers_url": "https://www.hfsc.org",
-      "careers_platform": "unknown",
-      "careers_search_url": null,
-      "careers_notes": "Independent nonprofit; careers board not identified this session (careers_url is the hospital home page). Enrichment should locate the job board. [enrich 2026-10-20] careers_url -> HTTP None at None",
+      "careers_url": "https://hfsc.wd503.myworkdayjobs.com/Careers",
+      "careers_platform": "workday",
+      "careers_search_url": "https://hfsc.wd503.myworkdayjobs.com/Careers?q=nurse%20practitioner",
+      "careers_notes": "Independent nonprofit; careers board not identified this session (careers_url is the hospital home page). Enrichment should locate the job board. [enrich 2026-10-20] careers_url -> HTTP None at None [gap-fix 2026-10-21] www.hfsc.org has a bad TLS cert; hfsc.org/careers links to Workday hfsc.wd503 site Careers (Actions probe 39650100056).",
       "ats_config": {
-        "host": "www.hfsc.org"
+        "host": "hfsc.wd503.myworkdayjobs.com",
+        "tenant": "hfsc",
+        "site": "Careers"
       },
       "nearest_airport": "BDL Bradley International (about 18 mi straight-line); HVN Tweed-New Haven about 30 mi",
       "beds": null,

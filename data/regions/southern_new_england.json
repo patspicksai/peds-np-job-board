@@ -864,12 +864,13 @@
       "website": "https://www.mhlawrencehospital.org",
       "careers_url": "https://pm.healthcaresource.com/CS/lawrence/#/search",
       "careers_platform": "custom",
-      "careers_search_url": "https://pm.healthcaresource.com/CS/lawrence/#/search",
-      "careers_notes": "Lawrence Hospital (Merrimack Health) jobs are on HealthcareSource (now Symplr) at pm.healthcaresource.com/CS/lawrence, linked from mhlawrencehospital.org/careers. The search is a hash-routed JS app, so no keyword can be encoded in the URL. Fetch of the board was blocked this session; Methuen and Haverhill (former Holy Family) may still post elsewhere. [enrich 2026-10-20] careers_url -> HTTP 200 at https://pm.healthcaresource.com/CS/lawrence/#/search; search_url -> HTTP 200, mentions NP: False, job links: 0",
+      "careers_search_url": "https://pm.healthcaresource.com/CS/lawrence/#/results?what=nurse%20practitioner",
+      "careers_notes": "Lawrence Hospital (Merrimack Health) jobs are on HealthcareSource (now Symplr) at pm.healthcaresource.com/CS/lawrence, linked from mhlawrencehospital.org/careers. The search is a hash-routed JS app, so no keyword can be encoded in the URL. Fetch of the board was blocked this session; Methuen and Haverhill (former Holy Family) may still post elsewhere. [enrich 2026-10-20] careers_url -> HTTP 200 at https://pm.healthcaresource.com/CS/lawrence/#/search; search_url -> HTTP 200, mentions NP: False, job links: 0 [gap-fix 2026-10-21] search API JSON 200 on Actions probe 39650100056. Needs a HealthcareSource adapter.",
       "ats_config": {
         "host": "pm.healthcaresource.com",
         "vendor": "HealthcareSource (Symplr)",
-        "client_path": "/CS/lawrence"
+        "client_path": "/CS/lawrence",
+        "search_api": "https://pm.healthcaresource.com/JobseekerSearchAPI/lawrence/api/Search"
       },
       "nearest_airport": "BOS Logan International (35 to 45 min); MHT Manchester-Boston Regional (35 min)",
       "beds": 189,
@@ -2100,12 +2101,15 @@
       "region": "Massachusetts (other)",
       "hotspot": false,
       "website": "https://www.berkshirehealthsystems.org",
-      "careers_url": "https://www.berkshirehealthsystems.org",
-      "careers_platform": "unknown",
-      "careers_search_url": null,
-      "careers_notes": "Berkshire Health Systems careers page not verified this session (search budget exhausted); careers_url is the system home page. Confirm the job board before scraping. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.berkshirehealthsystems.org/",
+      "careers_url": "https://pm.healthcaresource.com/CS/berkshire#/search",
+      "careers_platform": "custom",
+      "careers_search_url": "https://pm.healthcaresource.com/CS/berkshire#/results?what=nurse%20practitioner",
+      "careers_notes": "Berkshire Health Systems careers page not verified this session (search budget exhausted); careers_url is the system home page. Confirm the job board before scraping. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.berkshirehealthsystems.org/ [gap-fix 2026-10-21] berkshirehealthsystems.org careers page links 'View Open Positions' to HealthcareSource /CS/berkshire (Actions probe 39650100056). Needs a HealthcareSource adapter.",
       "ats_config": {
-        "host": "www.berkshirehealthsystems.org"
+        "host": "pm.healthcaresource.com",
+        "vendor": "HealthcareSource (Symplr)",
+        "client_path": "/CS/berkshire",
+        "search_api": "https://pm.healthcaresource.com/JobseekerSearchAPI/berkshire/api/Search"
       },
       "nearest_airport": "ALB Albany International (60 min); BDL Bradley International (75 min)",
       "beds": 302,
@@ -2172,12 +2176,12 @@
       "region": "Massachusetts (other)",
       "hotspot": false,
       "website": "https://www.stvincenthospital.com",
-      "careers_url": "https://www.stvincenthospital.com",
-      "careers_platform": "unknown",
+      "careers_url": "https://www.tenethealth.com/careers",
+      "careers_platform": "oracle_cloud",
       "careers_search_url": null,
-      "careers_notes": "Tenet Healthcare hospital; jobs post on Tenet's corporate career board. URL and platform not verified this session (careers_url is the hospital home page). [enrich 2026-10-20] careers_url -> HTTP 403 at https://www.stvincenthospital.com/",
+      "careers_notes": "Tenet Healthcare hospital; jobs post on Tenet's corporate career board. URL and platform not verified this session (careers_url is the hospital home page). [enrich 2026-10-20] careers_url -> HTTP 403 at https://www.stvincenthospital.com/ [gap-fix 2026-10-21] stvincenthospital.com is Cloudflare-walled; Saint Vincent (Tenet) postings are on jobs.tenethealth.com/job/worcester/... (web search 2026-10-21), the same Tenet board Piedmont Medical Center reads OK.",
       "ats_config": {
-        "host": "www.stvincenthospital.com"
+        "host": "jobs.tenethealth.com"
       },
       "nearest_airport": "ORH Worcester Regional (15 min); BOS Logan International (60 min)",
       "beds": null,
@@ -2573,12 +2577,15 @@
       "region": "Boston metro",
       "hotspot": false,
       "website": "https://www.signature-healthcare.org",
-      "careers_url": "https://www.signature-healthcare.org",
-      "careers_platform": "unknown",
-      "careers_search_url": null,
-      "careers_notes": "Signature Healthcare careers board not identified this session (careers_url is the system home page). Enrichment should locate the job board. Neonatal coverage is reportedly by Tufts Medicine neonatology, whose staff may post on careers.tuftsmedicine.org.",
+      "careers_url": "https://pm.healthcaresource.com/CS/brocktonhospital/#/search",
+      "careers_platform": "custom",
+      "careers_search_url": "https://pm.healthcaresource.com/CS/brocktonhospital/#/results?what=nurse%20practitioner",
+      "careers_notes": "Signature Healthcare careers board not identified this session (careers_url is the system home page). Enrichment should locate the job board. Neonatal coverage is reportedly by Tufts Medicine neonatology, whose staff may post on careers.tuftsmedicine.org. [gap-fix 2026-10-21] signature-healthcare.org/careers 'View All Available Positions' links to HealthcareSource /CS/brocktonhospital (Actions probe 39650100056). Needs a HealthcareSource adapter.",
       "ats_config": {
-        "host": "www.signature-healthcare.org"
+        "host": "pm.healthcaresource.com",
+        "vendor": "HealthcareSource (Symplr)",
+        "client_path": "/CS/brocktonhospital",
+        "search_api": "https://pm.healthcaresource.com/JobseekerSearchAPI/brocktonhospital/api/Search"
       },
       "nearest_airport": "BOS Logan International (35 to 45 min); PVD T. F. Green (40 min)",
       "beds": null,

@@ -2130,12 +2130,14 @@
       "region": "NYC metro",
       "hotspot": false,
       "website": "https://www.flushinghospital.org/",
-      "careers_url": "https://www.flushinghospital.org/careers/",
-      "careers_platform": "unknown",
-      "careers_search_url": null,
-      "careers_notes": "Flushing Hospital and Jamaica Hospital share the MediSys Health Network; careers URL is a best guess; verify. [enrich 2026-10-20] careers_url -> HTTP 200 at https://flushinghospital.org/",
+      "careers_url": "https://medisyscareers.org/jobs/",
+      "careers_platform": "custom",
+      "careers_search_url": "https://medisyscareers.org/jobs/?search_keywords=nurse+practitioner",
+      "careers_notes": "Flushing Hospital and Jamaica Hospital share the MediSys Health Network; careers URL is a best guess; verify. [enrich 2026-10-20] careers_url -> HTTP 200 at https://flushinghospital.org/ [gap-fix 2026-10-21] MediSys (Jamaica + Flushing) jobs are on medisyscareers.org (WP Job Manager, Actions probe 39650100056).",
       "ats_config": {
-        "host": "flushinghospital.org"
+        "host": "medisyscareers.org",
+        "vendor": "WP Job Manager",
+        "rss_search": "https://medisyscareers.org/?feed=job_feed&search_keywords=nurse+practitioner"
       },
       "nearest_airport": "LGA LaGuardia Airport",
       "beds": 271,
@@ -2195,12 +2197,14 @@
       "region": "NYC metro",
       "hotspot": false,
       "website": "https://jamaicahospital.org/",
-      "careers_url": "https://jamaicahospital.org/careers/",
-      "careers_platform": "unknown",
-      "careers_search_url": null,
-      "careers_notes": "Jamaica Hospital and Flushing Hospital share the MediSys Health Network; careers URL is a best guess; verify. [enrich 2026-10-20] careers_url -> HTTP 200 at https://jamaicahospital.org/employment/",
+      "careers_url": "https://medisyscareers.org/jobs/",
+      "careers_platform": "custom",
+      "careers_search_url": "https://medisyscareers.org/jobs/?search_keywords=nurse+practitioner",
+      "careers_notes": "Jamaica Hospital and Flushing Hospital share the MediSys Health Network; careers URL is a best guess; verify. [enrich 2026-10-20] careers_url -> HTTP 200 at https://jamaicahospital.org/employment/ [gap-fix 2026-10-21] MediSys (Jamaica + Flushing) jobs are on medisyscareers.org (WP Job Manager; /jobs/?search_keywords= renders /job/<slug> links in Chrome, Actions probe 39650100056).",
       "ats_config": {
-        "host": "jamaicahospital.org"
+        "host": "medisyscareers.org",
+        "vendor": "WP Job Manager",
+        "rss_search": "https://medisyscareers.org/?feed=job_feed&search_keywords=nurse+practitioner"
       },
       "nearest_airport": "JFK John F. Kennedy International",
       "beds": 402,
@@ -2548,12 +2552,12 @@
       "region": "NYC metro",
       "hotspot": false,
       "website": "https://www.bronxcare.org/",
-      "careers_url": "https://www.bronxcare.org/careers",
-      "careers_platform": "unknown",
-      "careers_search_url": null,
-      "careers_notes": "careers URL is a best guess from the hospital domain; verify in enrichment. [enrich 2026-10-20] careers_url -> HTTP 404 at https://www.bronxcare.org/careers",
+      "careers_url": "https://careers-bronxcare.icims.com/jobs/search?ss=1",
+      "careers_platform": "icims",
+      "careers_search_url": "https://careers-bronxcare.icims.com/jobs/search?ss=1&searchKeyword=nurse%20practitioner",
+      "careers_notes": "careers URL is a best guess from the hospital domain; verify in enrichment. [enrich 2026-10-20] careers_url -> HTTP 404 at https://www.bronxcare.org/careers [gap-fix 2026-10-21] bronxcare.org/careers is 404; /jobs/hospital-positions embeds careers-bronxcare.icims.com (Actions probe 39650100056).",
       "ats_config": {
-        "host": "www.bronxcare.org"
+        "host": "careers-bronxcare.icims.com"
       },
       "nearest_airport": "LGA LaGuardia Airport",
       "beds": 415,
@@ -2621,12 +2625,14 @@
       "region": "NYC metro",
       "hotspot": false,
       "website": "https://www.tbh.org/",
-      "careers_url": "https://www.tbh.org/careers",
+      "careers_url": "https://myjobs.adp.com/tbhcareers/cx?c=1126207&d=External",
       "careers_platform": "adp",
-      "careers_search_url": null,
-      "careers_notes": "careers URL is a best guess from the hospital domain; verify in enrichment. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.tbh.org/careers",
+      "careers_search_url": "https://myjobs.adp.com/tbhcareers/cx?c=1126207&d=External",
+      "careers_notes": "careers URL is a best guess from the hospital domain; verify in enrichment. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.tbh.org/careers [gap-fix 2026-10-21] recruiting.adp.com/srccar RTI.home?c=1126207 redirects to the client-rendered myjobs.adp.com/tbhcareers (Actions probe 39650100056). Needs an ADP myjobs adapter.",
       "ats_config": {
-        "host": "www.tbh.org"
+        "host": "myjobs.adp.com",
+        "client": "1126207",
+        "site": "tbhcareers"
       },
       "nearest_airport": "LGA LaGuardia Airport",
       "beds": 464,
@@ -2756,12 +2762,13 @@
       "region": "NYC metro",
       "hotspot": false,
       "website": "https://www.ehs.org/",
-      "careers_url": "https://www.ehs.org/careers/",
-      "careers_platform": "unknown",
-      "careers_search_url": null,
-      "careers_notes": "careers URL is a best guess from the hospital domain; verify in enrichment. [enrich 2026-10-20] careers_url -> HTTP 200 at https://ehs.org/careers/",
+      "careers_url": "https://myehs.rec.pro.ukg.net/EPI1010SJEH/JobBoard/16d4fe52-3a0d-4b07-8565-5038c46b9f53/",
+      "careers_platform": "ultipro",
+      "careers_search_url": "https://myehs.rec.pro.ukg.net/EPI1010SJEH/JobBoard/16d4fe52-3a0d-4b07-8565-5038c46b9f53/?q=nurse%20practitioner",
+      "careers_notes": "careers URL is a best guess from the hospital domain; verify in enrichment. [enrich 2026-10-20] careers_url -> HTTP 200 at https://ehs.org/careers/ [gap-fix 2026-10-21] ehs.org/careers/job-postings links to the UKG Pro board myehs.rec.pro.ukg.net (Actions probe 39650100056).",
       "ats_config": {
-        "host": "ehs.org"
+        "host": "myehs.rec.pro.ukg.net",
+        "board_path": "/EPI1010SJEH/JobBoard/16d4fe52-3a0d-4b07-8565-5038c46b9f53"
       },
       "nearest_airport": "JFK John F. Kennedy International",
       "beds": 209,
@@ -2814,12 +2821,14 @@
       "region": "NYC metro",
       "hotspot": false,
       "website": "https://www.sbhny.org/",
-      "careers_url": "https://www.sbhny.org/careers/",
+      "careers_url": "https://myjobs.adp.com/stbarnabascareers/cx?c=2169007&d=ExternalCareerSite",
       "careers_platform": "adp",
-      "careers_search_url": null,
-      "careers_notes": "careers URL is a best guess from the hospital domain; verify in enrichment. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.sbhny.org/careers/",
+      "careers_search_url": "https://myjobs.adp.com/stbarnabascareers/cx?c=2169007&d=ExternalCareerSite",
+      "careers_notes": "careers URL is a best guess from the hospital domain; verify in enrichment. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.sbhny.org/careers/ [gap-fix 2026-10-21] recruiting.adp.com/srccar RTI.home?c=2169007 redirects to the client-rendered myjobs.adp.com/stbarnabascareers (Actions probe 39650100056). Needs an ADP myjobs adapter.",
       "ats_config": {
-        "host": "www.sbhny.org"
+        "host": "myjobs.adp.com",
+        "client": "2169007",
+        "site": "stbarnabascareers"
       },
       "nearest_airport": "LGA LaGuardia Airport",
       "beds": null,
@@ -3366,12 +3375,15 @@
       "region": "NYC metro",
       "hotspot": false,
       "website": "https://www.stmaryskids.org/",
-      "careers_url": "https://www.stmaryskids.org/careers/",
-      "careers_platform": "unknown",
-      "careers_search_url": null,
-      "careers_notes": "careers URL is a best guess from the hospital domain; verify in enrichment. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.stmaryskids.org/careers/",
+      "careers_url": "https://prd01-hcm01.prd.mykronos.com/ta/6156032.careers?ShowAllOpenings=&lang=en-US",
+      "careers_platform": "custom",
+      "careers_search_url": "https://prd01-hcm01.prd.mykronos.com/ta/6156032.careers?ShowAllOpenings=&lang=en-US",
+      "careers_notes": "careers URL is a best guess from the hospital domain; verify in enrichment. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.stmaryskids.org/careers/ [gap-fix 2026-10-21] UKG Ready board; REST job-requisitions JSON answered 200 on Actions probe 39650100056. Needs a UKG Ready adapter.",
       "ats_config": {
-        "host": "www.stmaryskids.org"
+        "host": "prd01-hcm01.prd.mykronos.com",
+        "vendor": "UKG Ready",
+        "company_id": "6156032",
+        "api": "https://prd01-hcm01.prd.mykronos.com/ta/rest/ui/recruitment/companies/%7C6156032/job-requisitions?offset=1&size=50&sort=desc&ein_id=&lang=en-US"
       },
       "nearest_airport": "LGA LaGuardia Airport",
       "beds": null,
@@ -3575,12 +3587,12 @@
       "region": "Hudson Valley",
       "hotspot": false,
       "website": "https://www.riversidehealth.org/",
-      "careers_url": "https://www.riversidehealth.org/careers",
-      "careers_platform": "unknown",
-      "careers_search_url": null,
-      "careers_notes": "careers URL is a best guess from the hospital domain; verify in enrichment. [enrich 2026-10-20] careers_url -> HTTP 429 at https://riversidehealth.org/careers",
+      "careers_url": "https://careers-riversidehealth.icims.com/jobs/search?ss=1",
+      "careers_platform": "icims",
+      "careers_search_url": "https://careers-riversidehealth.icims.com/jobs/search?ss=1&searchKeyword=nurse%20practitioner",
+      "careers_notes": "careers URL is a best guess from the hospital domain; verify in enrichment. [enrich 2026-10-20] careers_url -> HTTP 429 at https://riversidehealth.org/careers [gap-fix 2026-10-21] riversidehealth.org/careers is 404; /employment/ links to careers-riversidehealth.icims.com (Actions probe 39650100056).",
       "ats_config": {
-        "host": "riversidehealth.org"
+        "host": "careers-riversidehealth.icims.com"
       },
       "nearest_airport": "LGA LaGuardia Airport",
       "beds": 407,
@@ -4587,12 +4599,15 @@
       "region": "Long Island",
       "hotspot": false,
       "website": "https://goodsamaritan.chsli.org/",
-      "careers_url": "https://www.chsli.org/careers",
-      "careers_platform": "unknown",
-      "careers_search_url": null,
-      "careers_notes": "Catholic Health Long Island system careers page; platform not confirmed this pass. [enrich 2026-10-20] careers_url -> HTTP 200 at https://jobs.chsli.org/careers-home; ATS link seen: https://www.icims.com/legal/privacy-notice-website/",
+      "careers_url": "https://jobs.chsli.org/jobs",
+      "careers_platform": "icims",
+      "careers_search_url": "https://jobs.chsli.org/jobs?keywords=nurse%20practitioner",
+      "careers_notes": "Catholic Health Long Island system careers page; platform not confirmed this pass. [enrich 2026-10-20] careers_url -> HTTP 200 at https://jobs.chsli.org/careers-home; ATS link seen: https://www.icims.com/legal/privacy-notice-website/ [gap-fix 2026-10-21] Catholic Health (Long Island) jobs are on the Jibe front end jobs.chsli.org (api/jobs JSON 200, 275 KB, Actions probe 39650100056); chsli.org/careers times out.",
       "ats_config": {
-        "host": "www.chsli.org"
+        "host": "jobs.chsli.org",
+        "jibe_host": "jobs.chsli.org",
+        "adapter": "jibe",
+        "icims_host": "careers-chsli.icims.com"
       },
       "nearest_airport": "ISP Long Island MacArthur",
       "beds": 537,
@@ -5047,12 +5062,15 @@
       "region": "Long Island",
       "hotspot": false,
       "website": "https://stcharles.chsli.org/",
-      "careers_url": "https://www.chsli.org/careers",
-      "careers_platform": "unknown",
-      "careers_search_url": null,
-      "careers_notes": "Catholic Health Long Island system careers page; platform not confirmed this pass. [enrich 2026-10-20] careers_url -> HTTP 200 at https://jobs.chsli.org/careers-home; ATS link seen: https://www.icims.com/legal/privacy-notice-website/",
+      "careers_url": "https://jobs.chsli.org/jobs",
+      "careers_platform": "icims",
+      "careers_search_url": "https://jobs.chsli.org/jobs?keywords=nurse%20practitioner",
+      "careers_notes": "Catholic Health Long Island system careers page; platform not confirmed this pass. [enrich 2026-10-20] careers_url -> HTTP 200 at https://jobs.chsli.org/careers-home; ATS link seen: https://www.icims.com/legal/privacy-notice-website/ [gap-fix 2026-10-21] Catholic Health (Long Island) jobs are on the Jibe front end jobs.chsli.org (Actions probe 39650100056).",
       "ats_config": {
-        "host": "www.chsli.org"
+        "host": "jobs.chsli.org",
+        "jibe_host": "jobs.chsli.org",
+        "adapter": "jibe",
+        "icims_host": "careers-chsli.icims.com"
       },
       "nearest_airport": "ISP Long Island MacArthur",
       "beds": null,
@@ -5223,12 +5241,15 @@
       "region": "Long Island",
       "hotspot": false,
       "website": "https://mercy.chsli.org/",
-      "careers_url": "https://www.chsli.org/careers",
-      "careers_platform": "unknown",
-      "careers_search_url": null,
-      "careers_notes": "Catholic Health Long Island system careers page; platform not confirmed this pass. [enrich 2026-10-20] careers_url -> HTTP 200 at https://jobs.chsli.org/careers-home; ATS link seen: https://www.icims.com/legal/privacy-notice-website/",
+      "careers_url": "https://jobs.chsli.org/jobs",
+      "careers_platform": "icims",
+      "careers_search_url": "https://jobs.chsli.org/jobs?keywords=nurse%20practitioner",
+      "careers_notes": "Catholic Health Long Island system careers page; platform not confirmed this pass. [enrich 2026-10-20] careers_url -> HTTP 200 at https://jobs.chsli.org/careers-home; ATS link seen: https://www.icims.com/legal/privacy-notice-website/ [gap-fix 2026-10-21] Catholic Health (Long Island) jobs are on the Jibe front end jobs.chsli.org (Actions probe 39650100056).",
       "ats_config": {
-        "host": "www.chsli.org"
+        "host": "jobs.chsli.org",
+        "jibe_host": "jobs.chsli.org",
+        "adapter": "jibe",
+        "icims_host": "careers-chsli.icims.com"
       },
       "nearest_airport": "JFK John F. Kennedy International",
       "beds": 197,
@@ -5282,12 +5303,15 @@
       "region": "Long Island",
       "hotspot": false,
       "website": "https://stcatherines.chsli.org/",
-      "careers_url": "https://www.chsli.org/careers",
-      "careers_platform": "unknown",
-      "careers_search_url": null,
-      "careers_notes": "Catholic Health Long Island system careers page; platform not confirmed this pass. [enrich 2026-10-20] careers_url -> HTTP 200 at https://jobs.chsli.org/careers-home; ATS link seen: https://www.icims.com/legal/privacy-notice-website/",
+      "careers_url": "https://jobs.chsli.org/jobs",
+      "careers_platform": "icims",
+      "careers_search_url": "https://jobs.chsli.org/jobs?keywords=nurse%20practitioner",
+      "careers_notes": "Catholic Health Long Island system careers page; platform not confirmed this pass. [enrich 2026-10-20] careers_url -> HTTP 200 at https://jobs.chsli.org/careers-home; ATS link seen: https://www.icims.com/legal/privacy-notice-website/ [gap-fix 2026-10-21] Catholic Health (Long Island) jobs are on the Jibe front end jobs.chsli.org (Actions probe 39650100056).",
       "ats_config": {
-        "host": "www.chsli.org"
+        "host": "jobs.chsli.org",
+        "jibe_host": "jobs.chsli.org",
+        "adapter": "jibe",
+        "icims_host": "careers-chsli.icims.com"
       },
       "nearest_airport": "ISP Long Island MacArthur",
       "beds": 536,
@@ -5347,12 +5371,15 @@
       "region": "Long Island",
       "hotspot": false,
       "website": "https://stfrancisheartcenter.com/",
-      "careers_url": "https://www.chsli.org/careers",
-      "careers_platform": "unknown",
-      "careers_search_url": null,
-      "careers_notes": "Catholic Health Long Island system careers page; platform not confirmed this pass. [enrich 2026-10-20] careers_url -> HTTP 200 at https://jobs.chsli.org/careers-home; ATS link seen: https://www.icims.com/legal/privacy-notice-website/",
+      "careers_url": "https://jobs.chsli.org/jobs",
+      "careers_platform": "icims",
+      "careers_search_url": "https://jobs.chsli.org/jobs?keywords=nurse%20practitioner",
+      "careers_notes": "Catholic Health Long Island system careers page; platform not confirmed this pass. [enrich 2026-10-20] careers_url -> HTTP 200 at https://jobs.chsli.org/careers-home; ATS link seen: https://www.icims.com/legal/privacy-notice-website/ [gap-fix 2026-10-21] Catholic Health (Long Island) jobs are on the Jibe front end jobs.chsli.org (Actions probe 39650100056).",
       "ats_config": {
-        "host": "www.chsli.org"
+        "host": "jobs.chsli.org",
+        "jibe_host": "jobs.chsli.org",
+        "adapter": "jibe",
+        "icims_host": "careers-chsli.icims.com"
       },
       "nearest_airport": "LGA LaGuardia Airport",
       "beds": null,
@@ -5405,12 +5432,15 @@
       "region": "Long Island",
       "hotspot": false,
       "website": "https://stjoseph.chsli.org/",
-      "careers_url": "https://www.chsli.org/careers",
-      "careers_platform": "unknown",
-      "careers_search_url": null,
-      "careers_notes": "Catholic Health Long Island system careers page; platform not confirmed this pass. [enrich 2026-10-20] careers_url -> HTTP 200 at https://jobs.chsli.org/careers-home; ATS link seen: https://www.icims.com/legal/privacy-notice-website/",
+      "careers_url": "https://jobs.chsli.org/jobs",
+      "careers_platform": "icims",
+      "careers_search_url": "https://jobs.chsli.org/jobs?keywords=nurse%20practitioner",
+      "careers_notes": "Catholic Health Long Island system careers page; platform not confirmed this pass. [enrich 2026-10-20] careers_url -> HTTP 200 at https://jobs.chsli.org/careers-home; ATS link seen: https://www.icims.com/legal/privacy-notice-website/ [gap-fix 2026-10-21] Catholic Health (Long Island) jobs are on the Jibe front end jobs.chsli.org (Actions probe 39650100056).",
       "ats_config": {
-        "host": "www.chsli.org"
+        "host": "jobs.chsli.org",
+        "jibe_host": "jobs.chsli.org",
+        "adapter": "jibe",
+        "icims_host": "careers-chsli.icims.com"
       },
       "nearest_airport": "ISP Long Island MacArthur",
       "beds": null,

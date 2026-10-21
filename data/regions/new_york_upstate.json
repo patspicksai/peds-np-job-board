@@ -287,12 +287,15 @@
       "region": "Upstate NY",
       "hotspot": false,
       "website": "https://www.crouse.org/",
-      "careers_url": "https://www.crouse.org/careers/",
-      "careers_platform": "unknown",
-      "careers_search_url": null,
-      "careers_notes": "Crouse posts many listings via DirectEmployers (dejobs) per R3b; own ATS not identified. URL is a best guess; verify. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.crouse.org/careers/",
+      "careers_url": "https://pm.healthcaresource.com/CS/crouse#/search",
+      "careers_platform": "custom",
+      "careers_search_url": "https://pm.healthcaresource.com/CS/crouse#/results?what=nurse%20practitioner",
+      "careers_notes": "Crouse posts many listings via DirectEmployers (dejobs) per R3b; own ATS not identified. URL is a best guess; verify. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.crouse.org/careers/ [gap-fix 2026-10-21] HealthcareSource board (search API JSON 200, Actions probe 39650100056). Needs a HealthcareSource adapter.",
       "ats_config": {
-        "host": "www.crouse.org"
+        "host": "pm.healthcaresource.com",
+        "vendor": "HealthcareSource (Symplr)",
+        "client_path": "/CS/crouse",
+        "search_api": "https://pm.healthcaresource.com/JobseekerSearchAPI/crouse/api/Search"
       },
       "nearest_airport": "SYR Syracuse Hancock International (15 min)",
       "beds": 502,
@@ -1128,12 +1131,12 @@
       "region": "Upstate NY",
       "hotspot": false,
       "website": "https://www.mvhealthsystem.org/",
-      "careers_url": "https://www.mvhealthsystem.org/careers",
-      "careers_platform": "unknown",
-      "careers_search_url": null,
-      "careers_notes": "MVHS careers page; platform not confirmed. [enrich 2026-10-20] careers_url -> HTTP 404 at https://www.mvhealthsystem.org/careers",
+      "careers_url": "https://careers.mvhealthsystem.org/",
+      "careers_platform": "successfactors",
+      "careers_search_url": "https://careers.mvhealthsystem.org/search/?q=nurse%20practitioner",
+      "careers_notes": "MVHS careers page; platform not confirmed. [enrich 2026-10-20] careers_url -> HTTP 404 at https://www.mvhealthsystem.org/careers [gap-fix 2026-10-21] mvhealthsystem.org/careers is 404; MVHS jobs are on SuccessFactors RMK careers.mvhealthsystem.org (company mohawkvall; Actions probe 39650100056).",
       "ats_config": {
-        "host": "www.mvhealthsystem.org"
+        "host": "careers.mvhealthsystem.org"
       },
       "nearest_airport": "SYR Syracuse Hancock International (50 min)",
       "beds": 373,
@@ -1329,12 +1332,15 @@
       "region": "Upstate NY",
       "hotspot": false,
       "website": "https://www.ellismedicine.org/",
-      "careers_url": "https://www.ellismedicine.org/careers",
-      "careers_platform": "unknown",
-      "careers_search_url": null,
-      "careers_notes": "Ellis Medicine is independent; Albany Med interest and a lawsuit against St. Peter's were reported in 2026, so its system may change. URL is a best guess; verify. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.ellismedicine.org/careers/",
+      "careers_url": "https://pm.healthcaresource.com/cs/ellishospital#/search",
+      "careers_platform": "custom",
+      "careers_search_url": "https://pm.healthcaresource.com/cs/ellishospital#/results?what=nurse%20practitioner",
+      "careers_notes": "Ellis Medicine is independent; Albany Med interest and a lawsuit against St. Peter's were reported in 2026, so its system may change. URL is a best guess; verify. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.ellismedicine.org/careers/ [gap-fix 2026-10-21] HealthcareSource board (search API JSON 200, Actions probe 39650100056). Needs a HealthcareSource adapter.",
       "ats_config": {
-        "host": "www.ellismedicine.org"
+        "host": "pm.healthcaresource.com",
+        "vendor": "HealthcareSource (Symplr)",
+        "client_path": "/cs/ellishospital",
+        "search_api": "https://pm.healthcaresource.com/JobseekerSearchAPI/ellishospital/api/Search"
       },
       "nearest_airport": "ALB Albany International (20 min)",
       "beds": 398,
@@ -1661,12 +1667,15 @@
       "region": "Upstate NY",
       "hotspot": false,
       "website": "https://www.nlh.org/",
-      "careers_url": "https://www.nlh.org/careers/",
-      "careers_platform": "unknown",
-      "careers_search_url": null,
-      "careers_notes": "careers URL is a best guess from the hospital domain; verify in enrichment. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.nlh.org/careers",
+      "careers_url": "https://secure7.saashr.com/ta/6101323.careers?CareersSearch=1&lang=en-US",
+      "careers_platform": "custom",
+      "careers_search_url": "https://secure7.saashr.com/ta/6101323.careers?CareersSearch=1&lang=en-US",
+      "careers_notes": "careers URL is a best guess from the hospital domain; verify in enrichment. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.nlh.org/careers [gap-fix 2026-10-21] UKG Ready board embedded on nlh.org/careers; REST job-requisitions JSON answered 200 on Actions probe 39650100056. Needs a UKG Ready adapter.",
       "ats_config": {
-        "host": "www.nlh.org"
+        "host": "secure7.saashr.com",
+        "vendor": "UKG Ready",
+        "company_id": "6101323",
+        "api": "https://secure7.saashr.com/ta/rest/ui/recruitment/companies/%7C6101323/job-requisitions?offset=1&size=50&sort=desc&ein_id=&lang=en-US"
       },
       "nearest_airport": "ALB Albany International (1 hr)",
       "beds": null,
@@ -1857,12 +1866,15 @@
       "region": "Upstate NY",
       "hotspot": false,
       "website": "https://www.auburnhospital.org/",
-      "careers_url": "https://www.auburnhospital.org/careers/",
-      "careers_platform": "unknown",
-      "careers_search_url": null,
-      "careers_notes": "careers URL is a best guess from the hospital domain; verify in enrichment. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.auburnhospital.org/careers/",
+      "careers_url": "https://pm.healthcaresource.com/cs/auburnhospital/#/search",
+      "careers_platform": "custom",
+      "careers_search_url": "https://pm.healthcaresource.com/cs/auburnhospital/#/results?what=nurse%20practitioner",
+      "careers_notes": "careers URL is a best guess from the hospital domain; verify in enrichment. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.auburnhospital.org/careers/ [gap-fix 2026-10-21] HealthcareSource board (search API JSON 200, Actions probe 39650100056). Needs a HealthcareSource adapter.",
       "ats_config": {
-        "host": "www.auburnhospital.org"
+        "host": "pm.healthcaresource.com",
+        "vendor": "HealthcareSource (Symplr)",
+        "client_path": "/cs/auburnhospital",
+        "search_api": "https://pm.healthcaresource.com/JobseekerSearchAPI/auburnhospital/api/Search"
       },
       "nearest_airport": "SYR Syracuse Hancock International (35 min)",
       "beds": 99,
@@ -1911,12 +1923,13 @@
       "region": "Upstate NY",
       "hotspot": false,
       "website": "https://www.adirondackhealth.org/",
-      "careers_url": "https://www.adirondackhealth.org/careers/",
-      "careers_platform": "unknown",
-      "careers_search_url": null,
-      "careers_notes": "careers URL is a best guess from the hospital domain; verify in enrichment. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.adirondackhealth.org/careers",
+      "careers_url": "https://adirondackhealth.hrmdirect.com/employment/job-openings.php?search=true",
+      "careers_platform": "custom",
+      "careers_search_url": "https://adirondackhealth.hrmdirect.com/employment/job-openings.php?search=true",
+      "careers_notes": "careers URL is a best guess from the hospital domain; verify in enrichment. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.adirondackhealth.org/careers [gap-fix 2026-10-21] adirondackhealth.org/careers 'Job Openings' links to the ClearCompany board adirondackhealth.hrmdirect.com (Actions probe 39425397994); it answered 'System Maintenance In Progress' on probe 39650100056, retry.",
       "ats_config": {
-        "host": "www.adirondackhealth.org"
+        "host": "adirondackhealth.hrmdirect.com",
+        "vendor": "ClearCompany (HRM Direct)"
       },
       "nearest_airport": "SLK Adirondack Regional (ALB for most flights) (15 min)",
       "beds": null,
@@ -2357,12 +2370,13 @@
       "region": "Upstate NY",
       "hotspot": false,
       "website": "https://www.oneidahealth.org/",
-      "careers_url": "https://www.oneidahealth.org/careers/",
+      "careers_url": "https://www.paycomonline.net/v4/ats/web.php/jobs?clientkey=0FD7E535C5AC57A6144B389ACAA1998B",
       "careers_platform": "paycom",
-      "careers_search_url": null,
-      "careers_notes": "careers URL is a best guess from the hospital domain; verify in enrichment. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.oneidahealth.org/careers/",
+      "careers_search_url": "https://www.paycomonline.net/v4/ats/web.php/jobs?clientkey=0FD7E535C5AC57A6144B389ACAA1998B",
+      "careers_notes": "careers URL is a best guess from the hospital domain; verify in enrichment. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.oneidahealth.org/careers/ [gap-fix 2026-10-21] Paycom career page (server-rendered /portal/<key>/jobs/<id> links, Actions probe 39650100056); the generic adapter reads it.",
       "ats_config": {
-        "host": "www.oneidahealth.org"
+        "host": "www.paycomonline.net",
+        "clientkey": "0FD7E535C5AC57A6144B389ACAA1998B"
       },
       "nearest_airport": "SYR Syracuse Hancock International (35 min)",
       "beds": null,
@@ -2545,12 +2559,14 @@
       "region": "Upstate NY",
       "hotspot": false,
       "website": "https://www.roswellpark.org/",
-      "careers_url": "https://www.roswellpark.org/careers",
+      "careers_url": "https://roswellpark.wd5.myworkdayjobs.com/ExternalCareers",
       "careers_platform": "workday",
-      "careers_search_url": null,
-      "careers_notes": "Roswell Park is a NYS public benefit corporation; careers URL is a best guess; verify. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.roswellpark.org/careers; ATS link seen: https://roswellpark.wd5.myworkdayjobs.com/ExternalCareers",
+      "careers_search_url": "https://roswellpark.wd5.myworkdayjobs.com/ExternalCareers?q=nurse%20practitioner",
+      "careers_notes": "Roswell Park is a NYS public benefit corporation; careers URL is a best guess; verify. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.roswellpark.org/careers; ATS link seen: https://roswellpark.wd5.myworkdayjobs.com/ExternalCareers [gap-fix 2026-10-21] Workday tenant roswellpark.wd5 site ExternalCareers (link seen by enrichment on roswellpark.org/careers); verify with live_test.",
       "ats_config": {
-        "host": "www.roswellpark.org"
+        "host": "roswellpark.wd5.myworkdayjobs.com",
+        "tenant": "roswellpark",
+        "site": "ExternalCareers"
       },
       "nearest_airport": "BUF Buffalo Niagara International (15 min)",
       "beds": null,

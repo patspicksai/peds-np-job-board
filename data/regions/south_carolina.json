@@ -1899,12 +1899,15 @@
       "region": "Grand Strand",
       "hotspot": false,
       "website": "https://www.conwaymedicalcenter.com",
-      "careers_url": "https://www.conwaymedicalcenter.com/careers",
-      "careers_platform": "unknown",
-      "careers_search_url": null,
-      "careers_notes": "Careers path assumed on the hospital site; platform not identified. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.conwaymedicalcenter.com/careers/",
+      "careers_url": "https://pm.healthcaresource.com/cs/cmcsc#/search",
+      "careers_platform": "custom",
+      "careers_search_url": "https://pm.healthcaresource.com/cs/cmcsc#/results?what=nurse%20practitioner",
+      "careers_notes": "Careers path assumed on the hospital site; platform not identified. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.conwaymedicalcenter.com/careers/ [gap-fix 2026-10-21] HealthcareSource board (search API JSON 200, Actions probe 39650100056). Needs a HealthcareSource adapter.",
       "ats_config": {
-        "host": "www.conwaymedicalcenter.com"
+        "host": "pm.healthcaresource.com",
+        "vendor": "HealthcareSource (Symplr)",
+        "client_path": "/cs/cmcsc",
+        "search_api": "https://pm.healthcaresource.com/JobseekerSearchAPI/cmcsc/api/Search"
       },
       "nearest_airport": "MYR Myrtle Beach International Airport (about 25 min)",
       "beds": 210,

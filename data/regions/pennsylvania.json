@@ -1388,12 +1388,15 @@
       "region": "Pennsylvania (other)",
       "hotspot": false,
       "website": "https://www.kidspeace.org/",
-      "careers_url": "https://www.kidspeace.org/careers/",
-      "careers_platform": "unknown",
-      "careers_search_url": null,
-      "careers_notes": "Careers page not fetched; careers_url is the main site as a placeholder. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.kidspeace.org/careers/",
+      "careers_url": "https://pm.healthcaresource.com/CS/KIDSPEACE#/search",
+      "careers_platform": "custom",
+      "careers_search_url": "https://pm.healthcaresource.com/CS/KIDSPEACE#/results?what=nurse%20practitioner",
+      "careers_notes": "Careers page not fetched; careers_url is the main site as a placeholder. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.kidspeace.org/careers/ [gap-fix 2026-10-21] HealthcareSource board (search API JSON 200, Actions probe 39650100056). Needs a HealthcareSource adapter.",
       "ats_config": {
-        "host": "www.kidspeace.org"
+        "host": "pm.healthcaresource.com",
+        "vendor": "HealthcareSource (Symplr)",
+        "client_path": "/CS/KIDSPEACE",
+        "search_api": "https://pm.healthcaresource.com/JobseekerSearchAPI/KIDSPEACE/api/Search"
       },
       "nearest_airport": "ABE Lehigh Valley International (about 12 mi)",
       "beds": 120,
@@ -2248,12 +2251,15 @@
       "region": "Pennsylvania (other)",
       "hotspot": false,
       "website": "https://www.phhealthcare.org/",
-      "careers_url": "https://www.phhealthcare.org/phh-careers/explore-penn-highlands-career-opportunities",
-      "careers_platform": "unknown",
-      "careers_search_url": null,
-      "careers_notes": "Careers page not fetched; careers_url is the main system site placeholder (domain from model knowledge). [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.phhealthcare.org/phh-careers/explore-penn-highlands-career-opportunities",
+      "careers_url": "https://css-phhealthcare-prd.inforcloudsuite.com/hcm/Jobs/page/JobsHomePage?csk.showusingxi=true&csk.JobBoard=EXTERNAL&csk.HROrganization=1",
+      "careers_platform": "custom",
+      "careers_search_url": "https://css-phhealthcare-prd.inforcloudsuite.com/hcm/Jobs/page/JobsHomePage?csk.showusingxi=true&csk.JobBoard=EXTERNAL&csk.HROrganization=1",
+      "careers_notes": "Careers page not fetched; careers_url is the main system site placeholder (domain from model knowledge). [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.phhealthcare.org/phh-careers/explore-penn-highlands-career-opportunities [gap-fix 2026-10-21] phhealthcare.org 'Job Openings' links to Infor CloudSuite css-phhealthcare-prd (board EXTERNAL, org 1) (Actions probe 39425401887).",
       "ats_config": {
-        "host": "www.phhealthcare.org"
+        "host": "css-phhealthcare-prd.inforcloudsuite.com",
+        "vendor": "Infor CloudSuite HCM",
+        "job_board": "EXTERNAL",
+        "hr_organization": "1"
       },
       "nearest_airport": "DUJ DuBois Regional (about 10 mi); PIT Pittsburgh International about 110 mi",
       "beds": 219,

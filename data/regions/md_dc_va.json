@@ -1951,12 +1951,15 @@
       "region": "Baltimore metro",
       "hotspot": false,
       "website": "https://www.mwph.org/",
-      "careers_url": "https://www.mwph.org/careers",
-      "careers_platform": "unknown",
-      "careers_search_url": null,
-      "careers_notes": "Mt. Washington Pediatric Hospital careers page (path unverified); the hospital is jointly owned by UMMS and Johns Hopkins, so some roles may post on the UMMS board. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.mwph.org/jobs",
+      "careers_url": "https://secure4.entertimeonline.com/ta/6108366.careers?JobsSearch=1&lang=en-US",
+      "careers_platform": "custom",
+      "careers_search_url": "https://secure4.entertimeonline.com/ta/6108366.careers?JobsSearch=1&lang=en-US",
+      "careers_notes": "Mt. Washington Pediatric Hospital careers page (path unverified); the hospital is jointly owned by UMMS and Johns Hopkins, so some roles may post on the UMMS board. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.mwph.org/jobs [gap-fix 2026-10-21] UKG Ready board; the public REST job-requisitions JSON (job_requisitions[].id, job_title, location) answered 200 on Actions probe 39428696372. Needs a UKG Ready adapter (client-rendered list).",
       "ats_config": {
-        "host": "www.mwph.org"
+        "host": "secure4.entertimeonline.com",
+        "vendor": "UKG Ready",
+        "company_id": "6108366",
+        "api": "https://secure4.entertimeonline.com/ta/rest/ui/recruitment/companies/%7C6108366/job-requisitions?offset=1&size=50&sort=desc&ein_id=&lang=en-US"
       },
       "nearest_airport": "BWI (about 17 mi)",
       "beds": null,
@@ -2024,12 +2027,12 @@
       "region": "Baltimore metro",
       "hotspot": false,
       "website": "https://www.kennedykrieger.org/",
-      "careers_url": "https://www.kennedykrieger.org/careers",
-      "careers_platform": "unknown",
-      "careers_search_url": null,
-      "careers_notes": "Kennedy Krieger Institute careers page (path unverified); enrichment should probe. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.kennedykrieger.org/careers-at-kennedy-krieger-institute?_ga=2.154702523.243794028.1573670271-239465091.1563370504",
+      "careers_url": "https://jobs-kennedykrieger.icims.com/jobs/search?ss=1",
+      "careers_platform": "icims",
+      "careers_search_url": "https://jobs-kennedykrieger.icims.com/jobs/search?ss=1&searchKeyword=nurse%20practitioner",
+      "careers_notes": "Kennedy Krieger Institute careers page (path unverified); enrichment should probe. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.kennedykrieger.org/careers-at-kennedy-krieger-institute?_ga=2.154702523.243794028.1573670271-239465091.1563370504 [gap-fix 2026-10-21] jobs.kennedykrieger.org is a Nuxt front end over jobs-kennedykrieger.icims.com (Actions probe 39650100056); the iCIMS portal is set directly.",
       "ats_config": {
-        "host": "www.kennedykrieger.org"
+        "host": "jobs-kennedykrieger.icims.com"
       },
       "nearest_airport": "BWI (about 15 mi)",
       "beds": null,
