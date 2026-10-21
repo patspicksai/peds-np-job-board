@@ -60,6 +60,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
+          ref: main  # the current tip, not the trigger-time commit: a run queued behind another must start from its result
           fetch-depth: 0
       - name: Skip if today's scrape already ran
         id: guard
