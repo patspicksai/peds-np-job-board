@@ -11,6 +11,7 @@ from .eightfold import EightfoldAdapter
 from .generic import GenericAdapter
 from .hopkins import HopkinsAdapter
 from .icims import IcimsAdapter
+from .infor import InforAdapter
 from .jibe import JibeAdapter
 from .oracle_cloud import OracleCloudAdapter
 from .phenom import PhenomAdapter
@@ -24,6 +25,7 @@ from .workday import WorkdayAdapter
 REGISTRY = {
     "workday": WorkdayAdapter,
     "icims": IcimsAdapter,
+    "infor": InforAdapter,
     "jibe": JibeAdapter,
     "talentbrew": TalentBrewAdapter,
     "oracle_cloud": OracleCloudAdapter,

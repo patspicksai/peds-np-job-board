@@ -20,6 +20,7 @@ HOST_RULES: list[tuple[str, str]] = [
     (r"\.eightfold\.ai$", "eightfold"),
     (r"(?:^|\.)successfactors\.(?:com|eu)$|jobs\.sap\.com$", "successfactors"),
     (r"^jobs\.hopkinsmedicine\.org$", "hopkins"),
+    (r"\.inforcloudsuite\.com$|\.cloud\.infor\.com$", "infor"),
 ]
 
 PATH_RULES: list[tuple[str, str]] = [
@@ -36,6 +37,7 @@ PLATFORM_MAP = {
     "phenom": "phenom", "ultipro": "ultipro", "oracle_cloud": "oracle_cloud", "oracle": "oracle_cloud",
     "eightfold": "eightfold", "jibe": "jibe", "talentbrew": "talentbrew", "radancy": "talentbrew",
     "symphony": "symphony", "careersite": "careersite", "talemetry": "careersite", "hopkins": "hopkins",
+    "infor": "infor",
     # recognized but not specifically implemented: generic adapter
     "jobvite": "careersite", "greenhouse": "generic", "lever": "generic", "smartrecruiters": "generic",
     "pageup": "generic", "cornerstone": "generic", "adp": "generic", "avature": "generic", "dayforce": "generic",

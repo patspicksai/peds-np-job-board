@@ -620,18 +620,20 @@
       "hotspot": false,
       "website": "https://www.chsbuffalo.org/",
       "careers_url": "https://jobs.chsbuffalo.org/search/jobs",
-      "careers_platform": "jobvite",
-      "careers_search_url": "https://jobs.chsbuffalo.org/search/jobs?q=nurse+practitioner",
-      "careers_notes": "Catholic Health Buffalo careers page; URL is a best guess; verify. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.chsbuffalo.org/careers/ [fix 2026-10-20] Catholic Health (Buffalo) jobs are on jobs.chsbuffalo.org, a Talemetry (Jobvite) CareerSite portal (chsbuffalo.org/careers is a marketing page). Verified by web search: 'Nurse Practitioner MHB MCCC' (/jobs/4726571-...) and 'Nurse Practitioner SCH SJC MCCC' (/jobs/9682166-...) plus facility searches /search/<facility>/jobs. Engine: careersite adapter on /search/jobs.json.",
+      "careers_platform": "custom",
+      "careers_search_url": "https://chsblawsonprd-lm01.cloud.infor.com:1444/lmghr/Jobs/form/JobBoard%28CHS,EXTERNAL%29.JobSearchCompositeForm?csk.JobBoard=EXTERNAL&csk.HROrganization=CHS&menu=JobsNavigationMenu.NewJobSearch",
+      "careers_notes": "Catholic Health Buffalo careers page; URL is a best guess; verify. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.chsbuffalo.org/careers/ [fix 2026-10-20] Catholic Health (Buffalo) jobs are on jobs.chsbuffalo.org, a Talemetry (Jobvite) CareerSite portal (chsbuffalo.org/careers is a marketing page). Verified by web search: 'Nurse Practitioner MHB MCCC' (/jobs/4726571-...) and 'Nurse Practitioner SCH SJC MCCC' (/jobs/9682166-...) plus facility searches /search/<facility>/jobs. Engine: careersite adapter on /search/jobs.json. 2026-10-21: jobs.chsbuffalo.org is gone (404); chsbuffalo.org/careers links to an Infor Lawson board, read by the infor adapter.",
       "ats_config": {
-        "host": "jobs.chsbuffalo.org",
-        "adapter": "careersite",
-        "vendor": "Talemetry (Jobvite) CareerSite",
         "location_aliases": [
           "Sisters of Charity Hospital",
           "St. Joseph Campus",
           "SCH"
-        ]
+        ],
+        "host": "chsblawsonprd-lm01.cloud.infor.com:1444",
+        "base_path": "/lmghr/Jobs",
+        "vendor": "Infor CloudSuite HCM (Lawson)",
+        "job_board": "EXTERNAL",
+        "hr_organization": "CHS"
       },
       "nearest_airport": "BUF Buffalo Niagara International (15 min)",
       "beds": 310,
@@ -695,17 +697,19 @@
       "hotspot": false,
       "website": "https://www.chsbuffalo.org/",
       "careers_url": "https://jobs.chsbuffalo.org/search/jobs",
-      "careers_platform": "jobvite",
-      "careers_search_url": "https://jobs.chsbuffalo.org/search/jobs?q=nurse+practitioner",
-      "careers_notes": "Catholic Health Buffalo careers page; URL is a best guess; verify. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.chsbuffalo.org/careers/ [fix 2026-10-20] Catholic Health (Buffalo) jobs are on jobs.chsbuffalo.org, a Talemetry (Jobvite) CareerSite portal (chsbuffalo.org/careers is a marketing page). Verified by web search: 'Nurse Practitioner MHB MCCC' (/jobs/4726571-...) and 'Nurse Practitioner SCH SJC MCCC' (/jobs/9682166-...) plus facility searches /search/<facility>/jobs. Engine: careersite adapter on /search/jobs.json.",
+      "careers_platform": "custom",
+      "careers_search_url": "https://chsblawsonprd-lm01.cloud.infor.com:1444/lmghr/Jobs/form/JobBoard%28CHS,EXTERNAL%29.JobSearchCompositeForm?csk.JobBoard=EXTERNAL&csk.HROrganization=CHS&menu=JobsNavigationMenu.NewJobSearch",
+      "careers_notes": "Catholic Health Buffalo careers page; URL is a best guess; verify. [enrich 2026-10-20] careers_url -> HTTP 200 at https://www.chsbuffalo.org/careers/ [fix 2026-10-20] Catholic Health (Buffalo) jobs are on jobs.chsbuffalo.org, a Talemetry (Jobvite) CareerSite portal (chsbuffalo.org/careers is a marketing page). Verified by web search: 'Nurse Practitioner MHB MCCC' (/jobs/4726571-...) and 'Nurse Practitioner SCH SJC MCCC' (/jobs/9682166-...) plus facility searches /search/<facility>/jobs. Engine: careersite adapter on /search/jobs.json. 2026-10-21: jobs.chsbuffalo.org is gone (404); chsbuffalo.org/careers links to an Infor Lawson board, read by the infor adapter.",
       "ats_config": {
-        "host": "jobs.chsbuffalo.org",
-        "adapter": "careersite",
-        "vendor": "Talemetry (Jobvite) CareerSite",
         "location_aliases": [
           "Mercy Hospital of Buffalo",
           "MHB"
-        ]
+        ],
+        "host": "chsblawsonprd-lm01.cloud.infor.com:1444",
+        "base_path": "/lmghr/Jobs",
+        "vendor": "Infor CloudSuite HCM (Lawson)",
+        "job_board": "EXTERNAL",
+        "hr_organization": "CHS"
       },
       "nearest_airport": "BUF Buffalo Niagara International (20 min)",
       "beds": 470,
