@@ -62,6 +62,12 @@ def main() -> int:
             try:
                 cov = page.locator('.view-seg [data-view="coverage"]')
                 if cov.count() > 0:
+                    # close the detail panel the card click opened (it overlays the list and intercepts clicks)
+                    closer = page.locator('[data-act="panel-close"]')
+                    if closer.count() > 0 and closer.first.is_visible():
+                        closer.first.click(timeout=3000)
+                    page.keyboard.press("Escape")
+                    page.wait_for_timeout(600)
                     page.evaluate("document.getElementById('scroller') && (document.getElementById('scroller').scrollTop = 0)")
                     cov.first.click(timeout=5000)
                     page.wait_for_timeout(1500)
