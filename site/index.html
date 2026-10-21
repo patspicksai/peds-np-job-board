@@ -415,6 +415,46 @@ legend{padding:0;margin-bottom:6px;font:700 14px/1.3 var(--font-ui)}
   .lg-count{margin-left:0;width:100%}
 }
 @keyframes sheet-in{from{transform:translateY(24px);opacity:.4}}
+/* ---------- coverage view ---------- */
+.coverage{padding-bottom:24px}
+.cov-sum{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px 18px;align-items:start;margin:14px 0 6px;padding:16px 18px;border:1px solid var(--rule);border-radius:12px;background:var(--surface)}
+.cov-sum h2{margin:0 0 4px;font:500 22px/1.2 var(--font-display)}
+.cov-sum p{margin:0;font-size:13.5px;color:var(--ink-2)}
+.cov-nums{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:12px;font-size:13px;color:var(--ink-2);font-variant-numeric:tabular-nums}
+.cov-nums b{display:block;font:700 24px/1.1 var(--font-ui);color:var(--ink)}
+.cov-nums .bad b{color:var(--beacon)}
+.cov-nums .good b{color:var(--accent)}
+.cov-acts{display:flex;flex-direction:column;gap:8px;align-items:stretch}
+.cov-seg{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0 4px}
+.cov-seg button{height:32px;padding:0 11px;border:1px solid var(--rule);border-radius:999px;background:var(--surface);color:var(--ink-2);font:600 13px/1 var(--font-ui);cursor:pointer;white-space:nowrap}
+.cov-seg button:hover{color:var(--ink);border-color:var(--rule-strong)}
+.cov-seg button[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:var(--bg)}
+.cov-seg .n{margin-left:5px;font-weight:400;font-variant-numeric:tabular-nums;opacity:.85}
+.crow{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:6px 18px;padding:13px 8px 14px 4px;border-bottom:1px solid var(--rule);cursor:pointer;outline-offset:-2px}
+.crow:hover{background:var(--surface-2)}
+.crow.is-selected{background:var(--accent-soft)}
+.crow-top{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px;margin-bottom:5px}
+.crow-name{margin:0;font:500 17.5px/1.25 var(--font-display);text-wrap:balance}
+.crow-sub{margin:3px 0 0;font-size:13px;color:var(--ink-2)}
+.crow-err{margin:7px 0 0;font:12.5px/1.45 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;color:var(--ink-3);overflow-wrap:anywhere;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.crow-hint{margin:6px 0 0;font-size:13px;color:var(--ink-2)}
+.crow-side{display:flex;flex-direction:column;align-items:flex-end;gap:8px;text-align:right}
+.crow-since{font-size:12.5px;color:var(--ink-3)}
+.cbadge{display:inline-flex;align-items:center;gap:6px;height:22px;padding:0 8px;border-radius:5px;font:700 12px/1 var(--font-ui);white-space:nowrap;background:var(--surface-2);color:var(--ink-2)}
+.cbadge::before{content:"";width:7px;height:7px;border-radius:50%;background:currentColor}
+.cbadge.cb-ok{background:var(--accent-soft);color:var(--accent)}
+.cbadge.cb-bot_block{background:var(--beacon-soft);color:var(--beacon)}
+.cbadge.cb-dead_url,.cbadge.cb-no_adapter,.cbadge.cb-other,.cbadge.cb-unknown{background:transparent;border:1px solid currentColor;color:var(--warn)}
+.cbadge.cb-no_listings,.cbadge.cb-zero_results,.cbadge.cb-rate_limited,.cbadge.cb-budget{background:transparent;border:1px dashed currentColor;color:var(--warn)}
+.cov-empty{padding:28px 4px;max-width:46ch}
+.cov-empty h2{margin:0 0 8px;font:500 23px/1.2 var(--font-display)}
+.cov-empty p{margin:0 0 14px;color:var(--ink-2)}
+@media (max-width:860px){
+  .cov-sum{grid-template-columns:minmax(0,1fr);padding:14px}
+  .cov-acts{flex-direction:row;flex-wrap:wrap}
+  .crow{grid-template-columns:minmax(0,1fr)}
+  .crow-side{flex-direction:row;align-items:center;justify-content:space-between;text-align:left}
+}
 @media (prefers-reduced-motion: reduce){
   *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
 }
@@ -451,6 +491,7 @@ legend{padding:0;margin-bottom:6px;font:700 14px/1.3 var(--font-ui)}
     <div class="seg view-seg" role="group" aria-label="Choose a view">
       <button type="button" data-view="jobs" aria-pressed="true">Jobs<span class="n" id="nJobs"></span></button>
       <button type="button" data-view="hospitals" aria-pressed="false">Hospitals<span class="n" id="nHosp"></span></button>
+      <button type="button" data-view="coverage" aria-pressed="false" title="Which hospital boards the last automated run could not read">Coverage<span class="n" id="nCov"></span></button>
     </div>
     <label class="search">
       <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="5.25" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M11 11l3.5 3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
@@ -482,11 +523,12 @@ legend{padding:0;margin-bottom:6px;font:700 14px/1.3 var(--font-ui)}
   <div class="chips" id="chips" aria-label="Active filters" hidden></div>
 
   <main class="stage" id="stage">
-    <section class="pane list-pane" id="listPane" aria-label="Jobs and hospitals">
+    <section class="pane list-pane" id="listPane" aria-label="Jobs, hospitals and scrape coverage">
       <div class="scroller" id="scroller">
         <div class="list-head" id="listHead" aria-live="polite"></div>
         <div class="feed" id="feed" aria-label="Job postings"></div>
         <div class="ledger" id="ledger" aria-label="Hospital ledger" hidden></div>
+        <div class="coverage" id="coverage" aria-label="Scrape coverage" hidden></div>
         <div class="sentinel" id="sentinel" hidden><button type="button" class="btn" id="moreBtn">Show more jobs</button></div>
         <div class="empty" id="empty" hidden></div>
         <div class="loading" id="loading">Loading the latest postings&hellip;</div>
@@ -559,6 +601,9 @@ var REL_FILTER = {3:'Strong only', 2:'Strong + likely', 1:'All'};
 var AGE = {0:'Any time', 1:'Last 24 hours', 7:'Last 7 days', 30:'Last 30 days'};
 var SORT = {'new':'Newest first', hospital:'By hospital', rel:'By relevance'};
 var ROMAN = ['', 'I', 'II', 'III', 'IV'];
+var COV_CLASS = {ok:'Read OK', bot_block:'Bot-blocked', no_listings:'No listings recognized', dead_url:'Dead URL', no_adapter:'No adapter', zero_results:'Zero results', rate_limited:'Rate-limited', budget:'Out of time', other:'Other error', unknown:'Not read'};
+var COV_ORDER = ['bot_block', 'no_listings', 'dead_url', 'no_adapter', 'zero_results', 'rate_limited', 'budget', 'other', 'unknown'];
+var COV_FILTER = {notok:'Gaps', ok:'Read OK', all:'All boards'};
 var SOURCE = {employer:'Employer site', indeed:'Indeed', linkedin:'LinkedIn', glassdoor:'Glassdoor', ziprecruiter:'ZipRecruiter', other_aggregator:'Job aggregator'};
 
 var ICON = {
@@ -573,10 +618,10 @@ var ICON = {
 };
 
 /* ---------- state ---------- */
-var DEFAULTS = {view:'jobs', region:[], hot:false, state:[], type:[], setting:[], rel:2, age:0, q:'', star:false, stale:true, sort:'new', at:'', job:'', hosp:''};
+var DEFAULTS = {view:'jobs', region:[], hot:false, state:[], type:[], setting:[], rel:2, age:0, q:'', star:false, stale:true, sort:'new', at:'', job:'', hosp:'', cov:'notok'};
 var S = readHash();
-var D = {loaded:false, hospitals:[], H:{}, jobs:[], J:{}, jobsDoc:null, hospDoc:null, base:'', fixture:false};
-var F = {jobs:[], hospitals:[], countBySlug:{}};
+var D = {loaded:false, hospitals:[], H:{}, jobs:[], J:{}, jobsDoc:null, hospDoc:null, covDoc:null, cov:{}, covMeta:null, base:'', fixture:false};
+var F = {jobs:[], hospitals:[], countBySlug:{}, covRows:[], covCounts:{}, covNotOk:0, covHotNotOk:0};
 var stars = new Set();
 var pane = 'list';
 var panelStack = [];
@@ -671,6 +716,7 @@ function readHash(){
   if(h.indexOf('=') < 0){
     var m;
     if(h === 'hospitals') s.view = 'hospitals';
+    else if(h === 'coverage') s.view = 'coverage';
     else if((m = /^job-([A-Za-z0-9._~-]+)$/.exec(h))) s.job = m[1];
     else if((m = /^hospital-([A-Za-z0-9._~-]+)$/.exec(h))) s.hosp = m[1];
     return s;
@@ -679,7 +725,8 @@ function readHash(){
     var i = kv.indexOf('='); if(i < 0) return;
     var k = kv.slice(0, i), v = kv.slice(i + 1);
     var list = function(){ return v ? v.split(',').map(dec).map(function(x){ return x.trim(); }).filter(Boolean) : []; };
-    if(k === 'view') s.view = v === 'hospitals' ? 'hospitals' : 'jobs';
+    if(k === 'view') s.view = (v === 'hospitals' || v === 'coverage') ? v : 'jobs';
+    else if(k === 'cov') s.cov = (COV_FILTER[v] || COV_CLASS[v]) ? v : 'notok';
     else if(k === 'region') s.region = list();
     else if(k === 'state') s.state = list().map(function(x){ return x.toUpperCase(); });
     else if(k === 'type') s.type = list();
@@ -701,9 +748,10 @@ function buildHash(){
   var p = ['view=' + S.view];
   var L = function(k, a){ if(a.length) p.push(k + '=' + a.map(encodeURIComponent).join(',')); };
   L('region', S.region); if(S.hot) p.push('hot=1'); L('state', S.state); L('type', S.type); L('setting', S.setting);
-  if(S.rel > 1) p.push('rel=' + S.rel); if(S.age) p.push('age=' + S.age);
+  if(S.rel !== DEFAULTS.rel) p.push('rel=' + S.rel); if(S.age) p.push('age=' + S.age);
   if(S.q) p.push('q=' + encodeURIComponent(S.q)); if(S.star) p.push('star=1'); if(!S.stale) p.push('stale=0');
   if(S.sort !== 'new') p.push('sort=' + S.sort); if(S.at) p.push('at=' + encodeURIComponent(S.at));
+  if(S.view === 'coverage' && S.cov !== 'notok') p.push('cov=' + S.cov);
   if(S.job) p.push('job=' + encodeURIComponent(S.job)); else if(S.hosp) p.push('hosp=' + encodeURIComponent(S.hosp));
   return p.length === 1 && S.view === 'jobs' ? '' : p.join('&');
 }
@@ -749,9 +797,10 @@ function loadData(){
     (function next(i){
       if(i >= bases.length){ var err = new Error('no data'); err.attempts = attempts; reject(err); return; }
       var b = bases[i];
-      Promise.all([fetchJSON(b + 'hospitals.json'), fetchJSON(b + 'jobs.json')]).then(function(d){
+      // coverage.json is optional: an older deploy or a preview may not have it
+      Promise.all([fetchJSON(b + 'hospitals.json'), fetchJSON(b + 'jobs.json'), fetchJSON(b + 'coverage.json').catch(function(){ return null; })]).then(function(d){
         if(!d[0] || !Array.isArray(d[0].hospitals) || !d[1] || !Array.isArray(d[1].jobs)) throw new Error('unexpected file shape');
-        resolve({base:b, hospDoc:d[0], jobsDoc:d[1]});
+        resolve({base:b, hospDoc:d[0], jobsDoc:d[1], covDoc:(d[2] && Array.isArray(d[2].hospitals)) ? d[2] : null});
       }).catch(function(e){ attempts.push(b + ' (' + (e && e.message ? e.message : 'failed') + ')'); next(i + 1); });
     })(0);
   });
@@ -796,7 +845,29 @@ function ingest(r){
     if(j._h) j._h._jobs.push(j);
   });
   D.hospitals.forEach(function(h){ h._jobs.sort(cmpNew); });
+  ingestCoverage(r);
   D.loaded = true;
+}
+function ingestCoverage(r){
+  D.covDoc = r.covDoc || null; D.cov = {}; D.covMeta = null;
+  if(D.covDoc){
+    D.covDoc.hospitals.forEach(function(c){ if(c && c.slug) D.cov[c.slug] = c; });
+    D.covMeta = {source:'coverage', generated:parseTs(D.covDoc.generated_at), started:parseTs(D.covDoc.run_started_at), finished:parseTs(D.covDoc.run_finished_at), totals:D.covDoc.totals || {}, run_id:str(D.covDoc.run_id)};
+    return;
+  }
+  var lr = r.jobsDoc && r.jobsDoc.last_run;
+  if(!lr) return;
+  // fallback: only the run summary inside jobs.json, which names the boards that were not read
+  var un = arr(lr.hospitals_unreachable);
+  un.forEach(function(sl){ D.cov[sl] = {slug:sl, status:'unreachable', 'class':'unknown', error:'Not read in the last run', hint:'The run summary does not say why. The detail file (coverage.json) was not found next to the data.'}; });
+  D.covMeta = {source:'last_run', generated:parseTs(lr.finished_at), started:parseTs(lr.started_at), finished:parseTs(lr.finished_at), run_id:str(lr.run_id),
+    totals:{hospitals:D.hospitals.length, checked:(+lr.hospitals_checked || 0), unreachable:un.length, new_candidates:lr.new_jobs}};
+}
+function covOf(h){ return D.cov[h.slug] || null; }
+function covClass(h){
+  var c = covOf(h);
+  if(c) return c['class'] || (c.status === 'ok' ? 'ok' : 'other');
+  return (D.covMeta && D.covMeta.source === 'coverage') ? 'unknown' : 'ok';
 }
 function hospName(j){ return j._h ? j._h.name : (j.hospital_slug || 'Unknown hospital'); }
 function jobLoc(j){
@@ -852,6 +923,21 @@ function computeFiltered(){
     return true;
   });
   F = {jobs: jobs, hospitals: hospitals, countBySlug: counts, now: now};
+  computeCoverage(toks);
+}
+function computeCoverage(toks){
+  var rows = [], cc = {}, notok = 0, hot = 0;
+  if(!D.covMeta){ F.covRows = rows; F.covCounts = cc; F.covNotOk = 0; F.covHotNotOk = 0; return; }
+  D.hospitals.forEach(function(h){
+    if(!hospPasses(h)) return;
+    for(var i = 0; i < toks.length; i++){ if(h._search.indexOf(toks[i]) < 0) return; }
+    var cls = covClass(h);
+    cc[cls] = (cc[cls] || 0) + 1; cc.all = (cc.all || 0) + 1;
+    if(cls !== 'ok'){ notok++; if(h.hotspot) hot++; }
+    var want = S.cov === 'all' || (S.cov === 'notok' ? cls !== 'ok' : cls === S.cov);
+    if(want) rows.push(h);
+  });
+  F.covRows = rows; F.covCounts = cc; F.covNotOk = notok; F.covHotNotOk = hot;
 }
 function activeFilterCount(){
   return S.region.length + (S.hot ? 1 : 0) + S.state.length + S.type.length + S.setting.length + (S.rel > 1 ? 1 : 0) + (S.age ? 1 : 0) + (S.star ? 1 : 0) + (S.stale ? 0 : 1);
@@ -864,7 +950,7 @@ function update(opts){
   if(!opts.keepScroll && !opts.initial) $('scroller').scrollTop = 0;
   renderControls();
   renderChips();
-  if(S.view === 'jobs') renderFeed(); else renderLedger();
+  if(S.view === 'jobs') renderFeed(); else if(S.view === 'coverage') renderCoverage(); else renderLedger();
   syncMarkers(opts);
   refreshPopup();
   syncFilterPanel();
@@ -884,6 +970,7 @@ function renderControls(){
   Array.prototype.forEach.call(document.querySelectorAll('.view-seg [data-view]'), function(b){ b.setAttribute('aria-pressed', String(b.getAttribute('data-view') === S.view)); });
   $('nJobs').textContent = F.jobs.length;
   $('nHosp').textContent = F.hospitals.length;
+  $('nCov').textContent = D.covMeta ? F.covNotOk : '';
   $('hotBtn').setAttribute('aria-pressed', String(S.hot));
   $('starBtn').setAttribute('aria-pressed', String(S.star));
   Array.prototype.forEach.call(document.querySelectorAll('#relSeg [data-rel]'), function(b){ b.setAttribute('aria-pressed', String(+b.getAttribute('data-rel') === S.rel)); });
@@ -984,6 +1071,9 @@ function renderListHead(){
     h = '<span><b>' + F.jobs.length + '</b> ' + (F.jobs.length === 1 ? 'job' : 'jobs') + ', ' + SORT[S.sort].toLowerCase() + '</span>';
     if(stale) h += '<span>' + stale + ' not seen on the careers site lately</span>';
     if(S.at && D.H[S.at]) h += '<span>at ' + esc(D.H[S.at].name) + '</span><button type="button" class="link-btn" data-act="clear-at">Show all hospitals</button>';
+  } else if(S.view === 'coverage'){
+    var what = S.cov === 'all' ? 'all boards' : (S.cov === 'notok' ? 'not read in the last run' : (S.cov === 'ok' ? 'read OK' : (COV_CLASS[S.cov] || S.cov).toLowerCase()));
+    h = '<span><b>' + F.covRows.length + '</b> ' + (F.covRows.length === 1 ? 'board' : 'boards') + ', ' + what + '</span><span>Hotspot regions first</span>';
   } else {
     var withJobs = F.hospitals.filter(function(x){ return F.countBySlug[x.slug]; }).length;
     h = '<span><b>' + F.hospitals.length + '</b> ' + (F.hospitals.length === 1 ? 'hospital' : 'hospitals') + ', <b>' + withJobs + '</b> with open jobs</span><span>Hotspot regions first</span>';
@@ -1005,7 +1095,7 @@ function resetObservers(){
   visibleCards.clear();
 }
 function renderFeed(){
-  $('ledger').hidden = true; $('ledger').innerHTML = '';
+  $('ledger').hidden = true; $('ledger').innerHTML = ''; $('coverage').hidden = true; $('coverage').innerHTML = '';
   $('feed').hidden = false; $('loading').hidden = true;
   resetObservers();
   $('feed').innerHTML = '';
@@ -1085,7 +1175,7 @@ function hrowHTML(h){
   '</article>';
 }
 function renderLedger(){
-  $('feed').hidden = true; $('feed').innerHTML = ''; $('sentinel').hidden = true; $('loading').hidden = true;
+  $('feed').hidden = true; $('feed').innerHTML = ''; $('sentinel').hidden = true; $('loading').hidden = true; $('coverage').hidden = true; $('coverage').innerHTML = '';
   resetObservers();
   renderListHead();
   var el = $('ledger');
@@ -1100,6 +1190,98 @@ function renderLedger(){
       g.hospitals.map(hrowHTML).join('') + '</section>';
   }).join('');
   el.hidden = false;
+}
+
+/* ---------- coverage view ---------- */
+function covLabel(cls){ return COV_CLASS[cls] || cls; }
+function covSummaryHTML(){
+  var m = D.covMeta;
+  if(!m) return '<div class="cov-sum"><div><h2>No coverage data yet</h2><p>Each automated run writes coverage.json next to the job data; it appears here after the next scrape.</p></div></div>';
+  var t = m.totals || {}, total = +t.hospitals > 0 ? +t.hospitals : D.hospitals.length, ok = +t.checked || 0;
+  var bad = t.unreachable != null ? +t.unreachable : Math.max(0, total - ok);
+  var when = isNum(m.finished) ? m.finished : m.generated;
+  var dur = (isNum(m.started) && isNum(m.finished)) ? Math.round((m.finished - m.started) / 6e4) : NaN;
+  var p = isNum(when) ? 'Finished ' + relTime(when) + ', ' + fmtFull(when) : 'Run time unknown';
+  if(isNum(dur) && dur > 0) p += ', took ' + plural(dur, 'minute');
+  if(m.source === 'last_run') p += '. Detail file not found, so this shows the run summary only';
+  return '<div class="cov-sum"><div><h2>Last automated run</h2><p>' + esc(p) + '.</p>' +
+    '<div class="cov-nums"><span class="good"><b>' + ok + '</b>of ' + total + ' boards read</span><span class="bad"><b>' + bad + '</b>not read</span>' +
+    '<span><b>' + F.covHotNotOk + '</b>of those in hotspot regions</span>' +
+    (t.new_candidates != null ? '<span><b>' + esc(t.new_candidates) + '</b>new NP postings found</span>' : '') + '</div></div>' +
+    '<div class="cov-acts"><button type="button" class="btn btn-primary" data-act="cov-copy">' + ICON.link + 'Copy gap list</button>' +
+    '<a class="btn" href="' + REPO_URL + '/actions/workflows/scrape.yml" target="_blank" rel="noopener noreferrer">Run history' + ICON.ext + '</a></div></div>';
+}
+function covSegHTML(){
+  var cc = F.covCounts, b = [];
+  var btn = function(v, label, n){ return '<button type="button" data-cov="' + esc(v) + '" aria-pressed="' + (S.cov === v) + '">' + esc(label) + '<span class="n">' + n + '</span></button>'; };
+  b.push(btn('notok', 'Gaps', F.covNotOk));
+  COV_ORDER.forEach(function(c){ if(cc[c]) b.push(btn(c, covLabel(c), cc[c])); });
+  if(cc.ok) b.push(btn('ok', 'Read OK', cc.ok));
+  b.push(btn('all', 'All boards', cc.all || 0));
+  return '<div class="cov-seg" role="group" aria-label="Filter boards by scrape result">' + b.join('') + '</div>';
+}
+function covSince(c, cls){
+  if(cls === 'ok'){
+    var bits = [];
+    if(isNum(+c.listings)) bits.push(plural(+c.listings, 'listing') + ' seen');
+    if(isNum(+c.candidates)) bits.push(plural(+c.candidates, 'NP posting'));
+    if(+c.new > 0) bits.push(c.new + ' new');
+    return bits.join(', ');
+  }
+  var f = +c.consecutive_failures, lo = parseTs(c.last_ok_at), out = '';
+  if(f === 1) out = 'Failed in the last run'; else if(f > 1) out = 'Failed ' + f + ' runs in a row';
+  if(isNum(lo)) out += (out ? ', ' : '') + 'last read ' + fmtDay(lo);
+  else if(cls !== 'unknown' && c.first_failed_at) out += (out ? ', ' : '') + 'never read';
+  return out;
+}
+function crowHTML(h){
+  var c = covOf(h) || {}, cls = covClass(h), careers = safeUrl(c.careers_url || h.careers_url), since = covSince(c, cls);
+  var plat = str(c.careers_platform || h.careers_platform);
+  var sub = [h.health_system, [h.city, h.state].filter(Boolean).join(', '), plat && plat !== 'unknown' ? 'Board: ' + plat : ''].filter(Boolean);
+  var err = cls !== 'ok' ? str(c.error) : '';
+  return '<article class="crow' + (S.hosp === h.slug ? ' is-selected' : '') + '" tabindex="0" data-slug="' + esc(h.slug) + '" aria-label="' + esc(h.name + ', ' + covLabel(cls)) + '">' +
+    '<div><div class="crow-top"><span class="cbadge cb-' + esc(cls) + '">' + esc(covLabel(cls)) + '</span></div>' +
+    '<h3 class="crow-name">' + esc(h.name) + '</h3>' +
+    (sub.length ? '<p class="crow-sub sep"><span>' + sub.map(esc).join('</span><span>') + '</span></p>' : '') +
+    (err ? '<p class="crow-err" title="' + esc(err.slice(0, 600)) + '">' + esc(err.slice(0, 240)) + '</p>' : '') +
+    (cls !== 'ok' && c.hint ? '<p class="crow-hint">' + esc(c.hint) + '</p>' : '') + '</div>' +
+    '<div class="crow-side">' + (since ? '<span class="crow-since">' + esc(since) + '</span>' : '') +
+    (careers ? '<a class="ext-link" href="' + esc(careers) + '" target="_blank" rel="noopener noreferrer">Careers site' + ICON.ext + '</a>' : '') + '</div>' +
+  '</article>';
+}
+function renderCoverage(){
+  $('feed').hidden = true; $('feed').innerHTML = ''; $('sentinel').hidden = true; $('loading').hidden = true;
+  $('ledger').hidden = true; $('ledger').innerHTML = '';
+  resetObservers();
+  renderListHead();
+  var el = $('coverage'), html = covSummaryHTML();
+  if(D.covMeta){
+    html += covSegHTML();
+    if(!F.covRows.length){
+      html += '<div class="cov-empty"><h2>' + (S.cov === 'notok' && !activeFilterCount() && !S.q ? 'Every board was read' : 'No boards match') + '</h2><p>' +
+        (S.cov === 'notok' ? 'Nothing to fix from the last run with these filters.' : 'Try another result filter, or remove a region, state or type filter above.') + '</p></div>';
+    } else {
+      html += regionGroups(F.covRows).map(function(g){
+        var bad = g.hospitals.filter(function(h){ return covClass(h) !== 'ok'; }).length;
+        return '<section class="lg-group"><header class="lg-head"><h2>' + esc(g.region) + '</h2>' +
+          (g.hot ? '<span class="hot-tag"><span class="hot-ring" aria-hidden="true"></span>Hotspot</span>' : '') +
+          (g.group ? '<span class="lg-state">' + esc(g.group) + '</span>' : '') +
+          '<span class="lg-count">' + plural(g.hospitals.length, 'board') + (S.cov === 'all' || S.cov === 'ok' ? ', ' + bad + ' not read' : '') + '</span></header>' +
+          g.hospitals.map(crowHTML).join('') + '</section>';
+      }).join('');
+    }
+  }
+  el.innerHTML = html; el.hidden = false; $('empty').hidden = true;
+}
+function covGapText(){
+  var m = D.covMeta || {}, rows = [];
+  D.hospitals.forEach(function(h){
+    if(!hospPasses(h)) return;
+    var cls = covClass(h); if(cls === 'ok') return;
+    var c = covOf(h) || {};
+    rows.push([h.slug, h.name, h.region + (h.hotspot ? ' (hotspot)' : ''), str(c.careers_platform || h.careers_platform), cls, str(c.careers_url || h.careers_url), str(c.error).replace(/\s+/g, ' ').slice(0, 200)].join(' | '));
+  });
+  return 'Peds NP job board, boards not read by the automated run ' + (m.run_id || '') + ' (' + rows.length + ')\nslug | hospital | region | platform | class | careers_url | error\n' + rows.join('\n') + '\n';
 }
 
 /* ---------- filter panel ---------- */
@@ -1163,8 +1345,8 @@ function syncFilterPanel(){
     else if(f === 'sort') i.checked = v === S.sort;
     else if(Array.isArray(S[f])) i.checked = S[f].indexOf(v) > -1;
   });
-  var n = S.view === 'jobs' ? F.jobs.length : F.hospitals.length;
-  $('fpDone').textContent = 'Show ' + plural(n, S.view === 'jobs' ? 'job' : 'hospital');
+  var n = S.view === 'jobs' ? F.jobs.length : (S.view === 'coverage' ? F.covRows.length : F.hospitals.length);
+  $('fpDone').textContent = 'Show ' + plural(n, S.view === 'jobs' ? 'job' : (S.view === 'coverage' ? 'board' : 'hospital'));
 }
 function onFilterInput(e){
   var i = e.target; if(!i || !i.getAttribute) return;
@@ -1209,6 +1391,7 @@ function aboutHTML(){
   var lr = (D.jobsDoc && D.jobsDoc.last_run) || null, gen = D.jobsDoc ? parseTs(D.jobsDoc.generated_at) : NaN;
   var h = '<div class="pop-head"><h2 id="aboutTitle">How this board works</h2><button type="button" class="icon-btn" data-act="about-close" aria-label="Close">' + ICON.close + '</button></div><div class="pop-body">';
   h += '<p>Every morning a scheduled run visits each hospital\'s own careers site, finds pediatric and acute care NP postings, and adds new ones here with the employer\'s exact posting link and the full description. Apply on the employer site.</p>';
+  h += '<p>The <b>Coverage</b> view lists every hospital board the last run could not read, with the reason and a hint, so the gaps can be fixed before the next run. "Copy gap list" puts that list on the clipboard.</p>';
   h += '<h3>Reading a job</h3><p><b>Strong match</b> means explicitly pediatric and acute or inpatient: PICU, NICU, peds ED, hospitalist or inpatient specialty. <b>Likely match</b> is a pediatric NP role with an unclear or outpatient setting, or an acute care NP role at a children\'s hospital. <b>Context</b> roles are NP jobs at a listed hospital that are not clearly pediatric.</p>';
   h += '<p><b>New</b> marks jobs first seen in the last 48 hours. A job turns <b>stale</b> when the careers site has not shown it for 7 days or more. Stars are saved in this browser only.</p>';
   h += '<h3>Adding a hospital</h3><p>Edit <a href="' + REPO_URL + '/blob/main/data/hospitals.json" target="_blank" rel="noopener noreferrer"><code>data/hospitals.json</code></a> in the repository, following <a href="' + REPO_URL + '/blob/main/spec/hospital_schema.md" target="_blank" rel="noopener noreferrer"><code>spec/hospital_schema.md</code></a>. Set <code>"active": false</code> to hide a hospital without deleting its history. The next morning\'s run picks it up.</p>';
@@ -1422,6 +1605,12 @@ function hospDetailHTML(h){
   if(h.peds_services.length) html += '<section class="sec"><h3>Pediatric services</h3><div class="tags">' + h.peds_services.map(function(x){ return '<span class="tag">' + esc(x) + '</span>'; }).join('') + '</div></section>';
   if(h.notes) html += '<section class="sec"><h3>Notes</h3><p class="d-text">' + esc(h.notes) + '</p></section>';
   if(h.careers_notes) html += '<section class="sec"><h3>Careers site notes</h3><p class="d-text">' + esc(h.careers_notes) + '</p></section>';
+  if(D.covMeta){
+    var cv = covOf(h) || {}, ccls = covClass(h), csince = covSince(cv, ccls);
+    html += '<section class="sec" id="covSec"><h3>Last automated scrape</h3><p class="d-text"><span class="cbadge cb-' + esc(ccls) + '">' + esc(covLabel(ccls)) + '</span>' + (csince ? ' <span class="fine">' + esc(csince) + '</span>' : '') + '</p>' +
+      (ccls !== 'ok' && cv.error ? '<p class="crow-err" style="-webkit-line-clamp:4">' + esc(str(cv.error).slice(0, 400)) + '</p>' : '') +
+      (ccls !== 'ok' && cv.hint ? '<p class="d-text">' + esc(cv.hint) + '</p>' : '') + '</section>';
+  }
   var srcs = h.sources.map(safeUrl).filter(Boolean);
   if(srcs.length) html += '<section class="sec"><p class="fine">Sources: ' + srcs.map(function(u, i){ return '<a href="' + esc(u) + '" target="_blank" rel="noopener noreferrer">' + (i + 1) + '</a>'; }).join(', ') + (h.confidence ? '. Record confidence: ' + esc(h.confidence) + '.' : '') + '</p></section>';
   return html;
@@ -1588,9 +1777,9 @@ function maybeFit(initial){
 }
 function onMarkerClick(){
   var slug = this._npSlug;
-  if(S.view === 'hospitals'){
+  if(S.view === 'hospitals' || S.view === 'coverage'){
     openPopup(slug);
-    var row = document.querySelector('.hrow[data-slug="' + cssEsc(slug) + '"]');
+    var row = document.querySelector('.hrow[data-slug="' + cssEsc(slug) + '"], .crow[data-slug="' + cssEsc(slug) + '"]');
     if(row && row.scrollIntoView) row.scrollIntoView({block: 'center', behavior: prefersReduced() ? 'auto' : 'smooth'});
     return;
   }
@@ -1676,6 +1865,8 @@ function onAction(e){
   else if(act === 'lb-next'){ lbIndex = (lbIndex + 1) % lbItems.length; renderLightbox(); }
   else if(act === 'see-list'){ setPane('list'); }
   else if(act === 'view-hospitals'){ S.view = 'hospitals'; update(); }
+  else if(act === 'view-coverage'){ S.view = 'coverage'; update(); }
+  else if(act === 'cov-copy'){ copyText(covGapText(), 'Gap list'); }
   else if(act === 'unstar-filter'){ S.star = false; update(); }
   else if(act === 'retry'){ boot(); }
 }
@@ -1699,17 +1890,24 @@ function bind(){
     var row = e.target.closest('.hrow'); if(!row) return;
     openHospital(row.getAttribute('data-slug'), {trigger: row});
   });
-  ['feed', 'ledger'].forEach(function(id){
+  $('coverage').addEventListener('click', function(e){
+    var seg = e.target.closest('[data-cov]');
+    if(seg){ S.cov = seg.getAttribute('data-cov'); update({keepScroll: true, keepMap: true}); return; }
+    if(e.target.closest('[data-act], a')) return;
+    var row = e.target.closest('.crow'); if(!row) return;
+    openHospital(row.getAttribute('data-slug'), {trigger: row});
+  });
+  ['feed', 'ledger', 'coverage'].forEach(function(id){
     var el = $(id);
     el.addEventListener('keydown', function(e){
       if(e.key !== 'Enter' && e.key !== ' ') return;
       var t = e.target;
       if(t.classList.contains('job')){ e.preventDefault(); openJob(t.getAttribute('data-job-id'), {trigger: t}); }
-      else if(t.classList.contains('hrow')){ e.preventDefault(); openHospital(t.getAttribute('data-slug'), {trigger: t}); }
+      else if(t.classList.contains('hrow') || t.classList.contains('crow')){ e.preventDefault(); openHospital(t.getAttribute('data-slug'), {trigger: t}); }
     });
-    el.addEventListener('mouseover', function(e){ var c = e.target.closest('[data-slug].job, .hrow'); setHover(c ? c.getAttribute('data-slug') : ''); });
+    el.addEventListener('mouseover', function(e){ var c = e.target.closest('[data-slug].job, .hrow, .crow'); setHover(c ? c.getAttribute('data-slug') : ''); });
     el.addEventListener('mouseleave', function(){ setHover(''); });
-    el.addEventListener('focusin', function(e){ var c = e.target.closest('.job, .hrow'); if(c) setHover(c.getAttribute('data-slug')); });
+    el.addEventListener('focusin', function(e){ var c = e.target.closest('.job, .hrow, .crow'); if(c) setHover(c.getAttribute('data-slug')); });
     el.addEventListener('focusout', function(){ setHover(''); });
   });
   Array.prototype.forEach.call(document.querySelectorAll('.view-seg [data-view]'), function(b){

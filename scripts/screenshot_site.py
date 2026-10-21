@@ -2,7 +2,8 @@
 """Screenshot a URL at desktop and phone sizes (full page), then click the first job card and shoot again.
 
 Usage: python3 scripts/screenshot_site.py <url> <out_dir>
-Writes desktop.png, mobile.png, desktop_card.png, mobile_card.png, report.txt (console errors, timings).
+Writes desktop.png, mobile.png, desktop_card.png, mobile_card.png, desktop_coverage.png, mobile_coverage.png (plus _panel variants),
+report.txt (console errors, timings).
 """
 from __future__ import annotations
 
@@ -57,6 +58,26 @@ def main() -> int:
                 report.append(f"[{name}] clicked first '{clicked}' and captured {name}_card.png")
             else:
                 report.append(f"[{name}] no job card found to click")
+            # the Coverage view (board health), opened through its hash so the capture works on any deploy that has it
+            try:
+                cov = page.locator('.view-seg [data-view="coverage"]')
+                if cov.count() > 0:
+                    page.evaluate("document.getElementById('scroller') && (document.getElementById('scroller').scrollTop = 0)")
+                    cov.first.click(timeout=5000)
+                    page.wait_for_timeout(1500)
+                    page.screenshot(path=str(out / f"{name}_coverage.png"), full_page=False)
+                    rows = page.locator("#coverage .crow").count()
+                    report.append(f"[{name}] coverage view: {rows} rows, captured {name}_coverage.png")
+                    first = page.locator("#coverage .crow").first
+                    if rows and first.is_visible():
+                        first.click(timeout=5000)
+                        page.wait_for_timeout(1500)
+                        page.screenshot(path=str(out / f"{name}_coverage_panel.png"), full_page=False)
+                        report.append(f"[{name}] coverage row opened, captured {name}_coverage_panel.png")
+                else:
+                    report.append(f"[{name}] no Coverage tab on this page")
+            except Exception as e:  # noqa: BLE001
+                report.append(f"[{name}] coverage capture error: {e}")
             report.extend(f"[{name}] console {e}" for e in errors[:30])
             ctx.close()
         browser.close()

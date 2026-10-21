@@ -28,12 +28,16 @@ try {
 const html = readFileSync(join(here, 'index.html'), 'utf8');
 const hospDoc = JSON.parse(readFileSync(join(dataDir, 'hospitals.json'), 'utf8'));
 const jobsDoc = JSON.parse(readFileSync(join(dataDir, 'jobs.json'), 'utf8'));
+const covPath = join(dataDir, 'coverage.json');
+const covDoc = existsSync(covPath) ? JSON.parse(readFileSync(covPath, 'utf8')) : null;
 
 // ---------- expectations computed independently from the data ----------
 const activeHosp = new Map(hospDoc.hospitals.filter(h => h.active !== false).map(h => [h.slug, h]));
 const inactiveSlugs = new Set(hospDoc.hospitals.filter(h => h.active === false).map(h => h.slug));
 const boardJobs = jobsDoc.jobs.filter(j => j.status !== 'closed' && !(inactiveSlugs.has(j.hospital_slug) && !activeHosp.has(j.hospital_slug)));
 const ts = v => { const t = Date.parse(v); return isNaN(t) ? 0 : t; };
+// the board opens on the "Strong + likely" relevance filter, so default-filter expectations exclude context (relevance 1) jobs
+const defaultJobs = boardJobs.filter(j => (parseInt(j.relevance, 10) || 1) >= 2);
 
 let failures = 0, passes = 0;
 function check(name, cond, detail) {
@@ -148,6 +152,7 @@ async function loadPage({ hash = '', search = '', fetchMode = 'ok', noLeaflet = 
         if (isRel || isRaw || isOverride) {
           if (u.includes('hospitals.json')) return respond(hospDoc);
           if (u.includes('jobs.json')) return respond(jobsDoc);
+          if (u.includes('coverage.json')) return (covDoc && fetchMode !== 'no-coverage') ? respond(covDoc) : fail();
         }
         return fail();
       };
@@ -188,7 +193,7 @@ console.log('Data: ' + dataDir + ' (' + activeHosp.size + ' active hospitals, ' 
   check('fetches relative ./data/ first', fetched[0] && fetched[0].startsWith('./data/hospitals.json?v='), fetched[0]);
   check('cache busting param on data requests', fetched.slice(0, 2).every(u => /[?&]v=\d+/.test(u)), fetched.slice(0, 2).join(', '));
   const cs = cards(doc);
-  const expected = Math.min(boardJobs.length, 100);
+  const expected = Math.min(defaultJobs.length, 100);
   check('feed card count equals active board jobs (default filters)', cs.length === expected, cs.length + ' vs ' + expected);
   check('closed jobs are not in the feed', !jobsDoc.jobs.filter(j => j.status === 'closed').some(j => doc.querySelector('[data-job-id="' + j.id + '"]')));
   const order = cs.map(c => c.getAttribute('data-job-id'));
@@ -216,14 +221,14 @@ console.log('Data: ' + dataDir + ' (' + activeHosp.size + ' active hospitals, ' 
   const withCoords = [...activeHosp.values()].filter(h => typeof h.lat === 'number').length;
   check('one map marker per active hospital', markerEls.length === withCoords, markerEls.length + ' vs ' + withCoords);
   const L = win.L;
-  check('light Voyager tiles requested', L._calls.tileLayers.some(u => u.includes('voyager')), L._calls.tileLayers.join(','));
+  check('OpenStreetMap tiles requested', L._calls.tileLayers.some(u => u.includes('tile.openstreetmap.org')), L._calls.tileLayers.join(','));
   check('fixture notice shown for _fixture data', !doc.getElementById('notice').hidden === !!(hospDoc._fixture || jobsDoc._fixture));
   check('default view leaves the hash empty', win.location.hash === '' || win.location.hash === '#', win.location.hash);
 
   // ---------- 2. region filter ----------
   console.log('\n[region filter]');
   const regionCounts = {};
-  boardJobs.forEach(j => { const h = activeHosp.get(j.hospital_slug); if (h) regionCounts[h.region] = (regionCounts[h.region] || 0) + 1; });
+  defaultJobs.forEach(j => { const h = activeHosp.get(j.hospital_slug); if (h) regionCounts[h.region] = (regionCounts[h.region] || 0) + 1; });
   const regions = Object.keys(regionCounts).sort((a, b) => regionCounts[b] - regionCounts[a]);
   const r1 = regions[0], r2 = regions[1];
   doc.getElementById('filtersBtn').click();
@@ -248,7 +253,7 @@ console.log('Data: ' + dataDir + ' (' + activeHosp.size + ' active hospitals, ' 
   const chipBtn = [...doc.querySelectorAll('#chips .chip')].find(c => c.textContent.includes(r1));
   click(win, chipBtn);
   await tick();
-  check('removing a chip removes that filter', cards(doc).length === (r2 ? regionCounts[r2] : Math.min(boardJobs.length, 100)), cards(doc).length);
+  check('removing a chip removes that filter', cards(doc).length === (r2 ? regionCounts[r2] : Math.min(defaultJobs.length, 100)), cards(doc).length);
   if (doc.getElementById('filterPop').hidden) { doc.getElementById('filtersBtn').click(); await tick(); }
   const clr = doc.querySelector('#filterPop [data-act="clear-all"]');
   check('filter panel has a Clear all button', !!clr);
@@ -258,10 +263,10 @@ console.log('Data: ' + dataDir + ' (' + activeHosp.size + ' active hospitals, ' 
   doc.getElementById('filtersBtn').click();
   await tick();
   check('filters button closes the panel', doc.getElementById('filterPop').hidden);
-  check('clear all restores full feed', cards(doc).length === Math.min(boardJobs.length, 100), cards(doc).length);
+  check('clear all restores full feed', cards(doc).length === Math.min(defaultJobs.length, 100), cards(doc).length);
 
   // hotspots
-  const hotJobs = boardJobs.filter(j => { const h = activeHosp.get(j.hospital_slug); return h && h.hotspot; }).length;
+  const hotJobs = defaultJobs.filter(j => { const h = activeHosp.get(j.hospital_slug); return h && h.hotspot; }).length;
   doc.getElementById('hotBtn').click();
   await tick();
   check('hotspots only toggle filters to hotspot hospitals', cards(doc).length === hotJobs, cards(doc).length + ' vs ' + hotJobs);
@@ -402,7 +407,7 @@ console.log('Data: ' + dataDir + ' (' + activeHosp.size + ' active hospitals, ' 
   if (h.photos.length) check('photo gallery shows the first photo', pnl.querySelector('.gal-main img') && pnl.querySelector('.gal-main img').getAttribute('src') === h.photos[0].url);
   check('facts grid present', pnl.querySelectorAll('.facts > div').length >= 9);
   check('open jobs listed in hospital detail', pnl.querySelectorAll('.mini-job').length === atCount);
-  check('Google Maps link at the coordinates', !!pnl.querySelector('a[href*="google.com/maps/search/?api=1&query=' + h.lat + ',' + h.lng + '"]'));
+  check('Google Maps link at the coordinates', [...pnl.querySelectorAll('a')].some(a => (a.getAttribute('href') || '').includes('google.com/maps/search/?api=1&query=' + h.lat + ',' + h.lng)));
   if (h.wikipedia_title) check('Wikipedia button present', !!pnl.querySelector('a[href^="https://en.wikipedia.org/wiki/"]'));
   // open lightbox
   const opener = pnl.querySelector('[data-act="lightbox"]');
@@ -431,6 +436,68 @@ console.log('Data: ' + dataDir + ' (' + activeHosp.size + ' active hospitals, ' 
   win.close();
 }
 
+// ---------- 5b. coverage view ----------
+{
+  console.log('\n[coverage view]');
+  const { win, doc, ready, errors } = await loadPage();
+  check('page loads with coverage.json present', ready && !errors.length, errors.join(' | '));
+  const covRows = covDoc ? covDoc.hospitals.filter(c => activeHosp.has(c.slug)) : [];
+  const notOk = covRows.filter(c => c.class !== 'ok');
+  const btn = doc.querySelector('.view-seg [data-view="coverage"]');
+  check('Coverage tab exists', !!btn);
+  check('Coverage tab shows the number of boards not read', btn && btn.querySelector('.n').textContent === String(notOk.length), btn && btn.querySelector('.n').textContent);
+  btn.click(); await tick();
+  check('view=coverage in hash', hashParams(win).view === 'coverage', win.location.hash);
+  check('feed and ledger hidden, coverage shown', doc.getElementById('feed').hidden && doc.getElementById('ledger').hidden && !doc.getElementById('coverage').hidden);
+  const sum = doc.querySelector('#coverage .cov-sum');
+  check('run summary shows boards read and not read', sum && sum.textContent.includes(String(covDoc.totals.checked)) && sum.textContent.includes(String(covDoc.totals.unreachable)), sum && sum.textContent.slice(0, 160));
+  let rows = [...doc.querySelectorAll('#coverage .crow')];
+  check('default filter lists exactly the boards not read', rows.length === notOk.length && rows.every(r => notOk.some(c => c.slug === r.getAttribute('data-slug'))), rows.map(r => r.getAttribute('data-slug')).join(','));
+  const hotFirst = [...doc.querySelectorAll('#coverage .lg-group')].map(g => !!g.querySelector('.hot-tag'));
+  check('hotspot regions listed first', hotFirst.every((f, i) => i === 0 || hotFirst[i - 1] || !f), hotFirst.join(','));
+  const bad = notOk[0];
+  const badRow = rows.find(r => r.getAttribute('data-slug') === bad.slug);
+  check('gap row shows its failure class', badRow && badRow.querySelector('.cbadge').classList.contains('cb-' + bad.class));
+  check('gap row shows the error and hint', badRow && badRow.textContent.includes(bad.error.slice(0, 40)) && badRow.textContent.includes(bad.hint.slice(0, 30)));
+  check('gap row links the careers site', badRow && badRow.querySelector('a.ext-link') && badRow.querySelector('a.ext-link').getAttribute('href') === (bad.careers_url || activeHosp.get(bad.slug).careers_url));
+  const classBtn = doc.querySelector('#coverage [data-cov="' + bad.class + '"]');
+  check('class filter button exists with a count', classBtn && classBtn.querySelector('.n').textContent === String(notOk.filter(c => c.class === bad.class).length));
+  click(win, classBtn); await tick();
+  rows = [...doc.querySelectorAll('#coverage .crow')];
+  check('class filter narrows the rows', rows.length === notOk.filter(c => c.class === bad.class).length && hashParams(win).cov === bad.class, rows.length + ' ' + win.location.hash);
+  click(win, doc.querySelector('#coverage [data-cov="all"]')); await tick();
+  rows = [...doc.querySelectorAll('#coverage .crow')];
+  check('"All boards" lists every active hospital', rows.length === activeHosp.size, rows.length);
+  check('read-OK rows show listing counts', rows.some(r => r.querySelector('.cb-ok') && /listing/.test(r.textContent)));
+  click(win, doc.querySelector('#coverage [data-cov="notok"]')); await tick();
+  click(win, doc.querySelector('#coverage [data-act="cov-copy"]')); await tick(20);
+  check('"Copy gap list" copies one line per gap with slug and class', typeof win.__copied === 'string' && notOk.every(c => win.__copied.includes(c.slug + ' | ') && win.__copied.includes('| ' + c.class + ' |')), (win.__copied || '').slice(0, 200));
+  click(win, doc.querySelector('#coverage .crow')); await tick(20);
+  const panel = doc.getElementById('panel');
+  check('clicking a gap row opens the hospital panel with its scrape status', !panel.hidden && panel.querySelector('#covSec') && panel.querySelector('#covSec .cbadge'), panel.hidden);
+  // search narrows the coverage rows too
+  doc.getElementById('panel').querySelector('[data-act="panel-close"]').click(); await tick();
+  const q = doc.getElementById('q');
+  q.value = activeHosp.get(bad.slug).name.split(' ')[0]; q.dispatchEvent(new win.Event('input', { bubbles: true })); await tick(220);
+  rows = [...doc.querySelectorAll('#coverage .crow')];
+  check('search narrows the coverage list', rows.length >= 1 && rows.length < notOk.length + 1 && rows.some(r => r.getAttribute('data-slug') === bad.slug), rows.length);
+  q.value = ''; q.dispatchEvent(new win.Event('input', { bubbles: true })); await tick(220);
+  doc.querySelector('.view-seg [data-view="jobs"]').click(); await tick();
+  check('switching back to Jobs hides the coverage pane', doc.getElementById('coverage').hidden && !doc.getElementById('feed').hidden);
+  win.close();
+}
+{
+  console.log('\n[coverage fallback without coverage.json]');
+  const { win, doc, ready, errors } = await loadPage({ hash: 'coverage', fetchMode: 'no-coverage' });
+  check('page still loads when coverage.json is missing', ready && !errors.length, errors.join(' | '));
+  check('#coverage hash opens the coverage view', !doc.getElementById('coverage').hidden);
+  const sum = doc.querySelector('#coverage .cov-sum');
+  const un = (jobsDoc.last_run && jobsDoc.last_run.hospitals_unreachable) || [];
+  check('summary falls back to the run summary in jobs.json', sum && sum.textContent.includes('run summary') && sum.textContent.includes(String(jobsDoc.last_run.hospitals_checked)), sum && sum.textContent.slice(0, 200));
+  check('rows come from hospitals_unreachable', doc.querySelectorAll('#coverage .crow').length === un.length, doc.querySelectorAll('#coverage .crow').length);
+  win.close();
+}
+
 // ---------- 6. hash restores state on load ----------
 {
   console.log('\n[shareable hash]');
@@ -453,7 +520,7 @@ console.log('Data: ' + dataDir + ' (' + activeHosp.size + ' active hospitals, ' 
   console.log('\n[data loading fallbacks]');
   const a = await loadPage({ fetchMode: 'fail-relative' });
   check('falls back to raw.githubusercontent.com when ./data fails', a.ready && a.fetched.some(u => u.startsWith('https://raw.githubusercontent.com/patspicksai/peds-np-job-board/main/data/jobs.json')), a.fetched.join(', '));
-  check('fallback renders the feed', cards(a.doc).length === Math.min(boardJobs.length, 100));
+  check('fallback renders the feed', cards(a.doc).length === Math.min(defaultJobs.length, 100));
   a.win.close();
   const b = await loadPage({ search: '?data=https://example.org/alt', fetchMode: 'override-only' });
   check('?data= override is tried first and used', b.ready && b.fetched[0].startsWith('https://example.org/alt/hospitals.json'), b.fetched[0]);
