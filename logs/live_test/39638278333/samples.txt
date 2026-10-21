@@ -1,0 +1,115 @@
+## aiken-regional-aiken  [generic->jibe / jibe / api]  status=ok
+   note: sniff: recognized jibe front end on jobs.uhs.com
+   note: dropped 1561 listings outside ME-SC footprint
+   (no candidate jobs)
+   first board listings: NURSE PRACTITIONER-CARDIOLOGY (DENISON, Texas) || Nurse Practitioner (APRN) - Gastroenterology Per Diem (BRADENTON, Florida) || NURSE PRACTITIONER (BETHLEHEM, Pennsylvania)
+
+## carolinaeast-new-bern  [generic->talentbrew / talentbrew / api]  status=ok
+   note: sniff: recognized talentbrew front end on jobs.carolinaeasthealth.com
+   note: sniff: followed careers link https://jobs.carolinaeasthealth.com/
+   (no candidate jobs)
+   first board listings: Nurse Practitioner Cardiology- Hospital Based () || Nurse Practitioner Primary Care Havelock () || Nurse Practitioner  EP- Heart Center ()
+
+## central-vermont-medical-center-berlin  [generic / generic / requests]  status=ok
+   (no candidate jobs)
+   first board listings: Adult Primary Care Nurse Practitioner or Physician Assistant - CVMC (Barre) (225 S Main St, 
+
+Barre, 
+VT 05641) || Emergency Medicine Physician Assistant/Nurse Practitioner – UVMMC per diem (111 Colchester Ave, 
+
+Burlington, 
+VT 05401) || ENT Clinic Physician Assistant or Nurse Practitioner (111 Colchester Ave, 
+
+Burlington, 
+VT 05401)
+
+## community-medical-center-toms-river  [generic / generic / requests]  status=ok
+   note: sniff: HTTP 403 for https://www.rwjbh.org/careers/: bot challenge (Cloudflare)
+   note: sniff: HTTP 403 for https://www.rwjbh.org/careers/working-at-rwjbarnabas-health/: bot challenge (Cloudflare)
+   note: generic: followed 4 result pages from https://www.rwjbarnabashealthcareers.org/jobs/nurse-practitioner/
+   * [3/nicu] Advanced Practice Provider (Neonatology) | posted 2026-10-19 | https://www.rwjbarnabashealthcareers.org/job/146065/advanced-practice-provider-nurse-practitioner-us-nj-toms-river-99-nj-37/  (known)
+   * [1/unspecified] Advanced Practice Nurse - FT Day Neurosciences APP's - CMC | posted 2026-10-19 | https://www.rwjbarnabashealthcareers.org/job/140633/advanced-practice-nurse-ft-day-neurosciences-apps-cmc-miscellaneous-us-nj-toms-river-99-nj-37/  (known)
+   * [1/mixed] Advanced Practice Nurse FT Day Ocean Hematology Oncology TR | posted 2026-10-19 | https://www.rwjbarnabashealthcareers.org/job/152383/advanced-practice-nurse-ft-day-ocean-hematology-oncology-tr-nurse-practitioner-us-nj-toms-river-99-nj-37-/  (known)
+   first board listings: Advanced Practice Nurse (414 Grand Street, Jersey City, NJ 07302) || Advanced Practice Nurse (200 Wyckoff Road, Eatontown, NJ 07724) || Advanced Practice Nurse (201 LYONS AVE, NEWARK, NJ 07112)
+
+## emerson-hospital-concord  [generic / generic / playwright]  status=ok
+   (no candidate jobs)
+   first board listings: Nurse Practitioner () || Nurse Practitioner () || Nurse Practitioner ()
+
+## golisano-childrens-uvm-burlington  [generic / generic / requests]  status=ok
+   * [3/mixed] Pediatric Hematology/Oncology Nurse Practitioner - UVMMC | posted 2026-09-29 | https://www.uvmhealthcareers.org/job/12384/pediatric-hematology-oncology-nurse-practitioner-uvmmc-nurse-practitioner-physician-assistant-us-vt-burlington-111-colchester-ave/  (known)
+   * [2/unspecified] Nurse Practitioner/Physician Assistant Jobs | posted None | https://www.uvmhealthcareers.org/jobs/nurse-practitioner-physician-assistant/  (known)
+   first board listings: Adult Primary Care Nurse Practitioner or Physician Assistant - CVMC (Barre) (225 S Main St, 
+
+Barre, 
+VT 05641) || Emergency Medicine Physician Assistant/Nurse Practitioner – UVMMC per diem (111 Colchester Ave, 
+
+Burlington, 
+VT 05401) || ENT Clinic Physician Assistant or Nurse Practitioner (111 Colchester Ave, 
+
+Burlington, 
+VT 05401)
+
+## gw-university-hospital-washington  [generic->jibe / jibe / api]  status=ok
+   note: sniff: recognized jibe front end on jobs.uhsinc.com
+   note: dropped 1561 listings outside ME-SC footprint
+   * [2/peds_specialty_outpatient] Psychiatric Nurse Practitioner for Adolescent Partial Program |The Horsham Clinic | Coatesville, Pennsylvania | posted 2026-08-19 | https://jobs.uhsinc.com/jobs/6968  (known)
+   first board listings: NURSE PRACTITIONER-CARDIOLOGY (DENISON, Texas) || Nurse Practitioner (APRN) - Gastroenterology Per Diem (BRADENTON, Florida) || NURSE PRACTITIONER (BETHLEHEM, Pennsylvania)
+
+## roswell-park-buffalo  [workday / workday / ]  status=error
+   ERROR: AdapterError: workday: cannot derive host/tenant from ats_config or careers URLs
+   note: sniff: HTTP 404 for https://www.roswellpark.org/careers: <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> <html xmlns="http://www.w3.org/1999/xhtml"> <hea
+   note: generic fallback failed: AdapterError: generic: no page reachable: 404 https://www.roswellpark.org/careers; playwright 404 https://www.roswellpark.org/careers?q=nurse+practitioner; playwright 404 https://www.roswellpark.org/careers?keyword
+   (no candidate jobs)
+
+## saint-vincent-hospital-worcester  [generic / generic / playwright]  status=no_listings
+   ERROR: careers page reachable but no job listings recognized (generic adapter): set careers_search_url / ats_config to the real job board
+   note: sniff: HTTP 403 for https://www.stvincenthospital.com: bot challenge (Cloudflare)
+   note: generic: pages reachable but no NP/APP job links found: playwright 200 https://www.stvincenthospital.com?q=nurse+practitioner; playwright 200 https://www.stvincenthospital.com?keywords=nurse+practitioner; playwright 200 https://www.stvincenthospital.com?keyword=nurse+practitioner
+   (no candidate jobs)
+
+## st-francis-hospital-roslyn  [generic->jibe / jibe / api]  status=ok
+   note: sniff: recognized jibe front end on jobs.chsli.org
+   * [2/picu] PA or NP - Critical Care | posted 2026-10-13 | https://jobs.chsli.org/jobs/75066  (known)
+   * [2/peds_inpatient] APP - NP -  Floor Coverage only or PA - OR and Floor | posted 2026-08-24 | https://jobs.chsli.org/jobs/73789  (known)
+   * [2/peds_specialty_outpatient] Advanced Practice Provider - Neurology Service | posted 2026-04-24 | https://jobs.chsli.org/jobs/68988  (known)
+   first board listings: NP or PA - House Coverage (West Islip, New York) || PA or NP - Cardiology Inpatient (West Islip, New York) || Advanced Practice Provider (Port Jefferson, New York)
+
+## um-childrens-baltimore  [phenom->phenom / phenom / requests+api]  status=ok
+   note: search 'nurse practitioner': HTTP 404 for https://www.umms.org/us/en/search-results?keywords=nurse%20practitioner:   <!DOCTYPE html> <!--[if IE 8]>         <html class="no-js lt-ie9" lang="en"> <![endif]--> <!--[if IE 9]>         <html class="no-js lt-ie10" lang="en"> <!
+   note: search 'pediatric nurse practitioner': HTTP 404 for https://www.umms.org/us/en/search-results?keywords=pediatric%20nurse%20practitioner:   <!DOCTYPE html> <!--[if IE 8]>         <html class="no-js lt-ie9" lang="en"> <![endif]--> <!--[if IE 9]>         <html class="no-js lt-ie10" lang="en"> <!
+   note: search 'advanced practice provider': HTTP 404 for https://www.umms.org/us/en/search-results?keywords=advanced%20practice%20provider:   <!DOCTYPE html> <!--[if IE 8]>         <html class="no-js lt-ie9" lang="en"> <![endif]--> <!--[if IE 9]>         <html class="no-js lt-ie10" lang="en"> <!
+   note: search 'APRN': HTTP 404 for https://www.umms.org/us/en/search-results?keywords=APRN:   <!DOCTYPE html> <!--[if IE 8]>         <html class="no-js lt-ie9" lang="en"> <![endif]--> <!--[if IE 9]>         <html class="no-js lt-ie10" lang="en"> <!
+   note: search 'PICU': HTTP 404 for https://www.umms.org/us/en/search-results?keywords=PICU:   <!DOCTYPE html> <!--[if IE 8]>         <html class="no-js lt-ie9" lang="en"> <![endif]--> <!--[if IE 9]>         <html class="no-js lt-ie10" lang="en"> <!
+   note: search 'NICU': HTTP 404 for https://www.umms.org/us/en/search-results?keywords=NICU:   <!DOCTYPE html> <!--[if IE 8]>         <html class="no-js lt-ie9" lang="en"> <![endif]--> <!--[if IE 9]>         <html class="no-js lt-ie10" lang="en"> <!
+   note: sniff: recognized phenom front end on careers.umms.org
+   note: recovered via sniffed phenom board after: AdapterError: search 'APRN': HTTP 404 for https://www.umms.org/us/en/search-results?keywords=APRN:   <!DOCTYPE html> <!--[if IE 8]>         <html class="no-js lt-ie9" lang="en"> <![endif]--> <!--[if IE 9]>         <html class="no-js lt-ie10" lang="en"> <
+   * [2/peds_primary_care] Pediatric Nurse Practitioner - Chestertown, MD | posted 2026-08-13 | https://careers.umms.org/us/en/job/P-101206/Pediatric-Nurse-Practitioner-Chestertown-MD  (known)
+   first board listings: Nursery Nurse Practitioner, PRN (Largo, Maryland, United States) || Vascular Thoracic Nurse Practitioner (PRN) (Largo, Maryland, United States) || Inpatient Nursery Nurse Practitioner, Part Time (Largo, Maryland, United States)
+
+## um-st-joseph-towson  [phenom->phenom / phenom / requests+api]  status=ok
+   note: search 'nurse practitioner': HTTP 404 for https://www.umms.org/us/en/search-results?keywords=nurse%20practitioner:   <!DOCTYPE html> <!--[if IE 8]>         <html class="no-js lt-ie9" lang="en"> <![endif]--> <!--[if IE 9]>         <html class="no-js lt-ie10" lang="en"> <!
+   note: search 'pediatric nurse practitioner': HTTP 404 for https://www.umms.org/us/en/search-results?keywords=pediatric%20nurse%20practitioner:   <!DOCTYPE html> <!--[if IE 8]>         <html class="no-js lt-ie9" lang="en"> <![endif]--> <!--[if IE 9]>         <html class="no-js lt-ie10" lang="en"> <!
+   note: search 'advanced practice provider': HTTP 404 for https://www.umms.org/us/en/search-results?keywords=advanced%20practice%20provider:   <!DOCTYPE html> <!--[if IE 8]>         <html class="no-js lt-ie9" lang="en"> <![endif]--> <!--[if IE 9]>         <html class="no-js lt-ie10" lang="en"> <!
+   note: search 'APRN': HTTP 404 for https://www.umms.org/us/en/search-results?keywords=APRN:   <!DOCTYPE html> <!--[if IE 8]>         <html class="no-js lt-ie9" lang="en"> <![endif]--> <!--[if IE 9]>         <html class="no-js lt-ie10" lang="en"> <!
+   note: search 'PICU': HTTP 404 for https://www.umms.org/us/en/search-results?keywords=PICU:   <!DOCTYPE html> <!--[if IE 8]>         <html class="no-js lt-ie9" lang="en"> <![endif]--> <!--[if IE 9]>         <html class="no-js lt-ie10" lang="en"> <!
+   note: search 'NICU': HTTP 404 for https://www.umms.org/us/en/search-results?keywords=NICU:   <!DOCTYPE html> <!--[if IE 8]>         <html class="no-js lt-ie9" lang="en"> <![endif]--> <!--[if IE 9]>         <html class="no-js lt-ie10" lang="en"> <!
+   note: sniff: recognized phenom front end on careers.umms.org
+   note: recovered via sniffed phenom board after: AdapterError: search 'APRN': HTTP 404 for https://www.umms.org/us/en/search-results?keywords=APRN:   <!DOCTYPE html> <!--[if IE 8]>         <html class="no-js lt-ie9" lang="en"> <![endif]--> <!--[if IE 9]>         <html class="no-js lt-ie10" lang="en"> <
+   * [2/nicu] Neonatal Nurse Practitioner | posted 2026-08-13 | https://careers.umms.org/us/en/job/REF34536A/Neonatal-Nurse-Practitioner  (known)
+   * [3/nicu] Neonatal Nurse Practitioner- Sign on bonus! | posted 2026-08-13 | https://careers.umms.org/us/en/job/REF34537A/Neonatal-Nurse-Practitioner-Sign-on-bonus  (known)
+   first board listings: Nursery Nurse Practitioner, PRN (Largo, Maryland, United States) || Vascular Thoracic Nurse Practitioner (PRN) (Largo, Maryland, United States) || Inpatient Nursery Nurse Practitioner, Part Time (Largo, Maryland, United States)
+
+## unterberg-childrens-long-branch  [generic / generic / requests]  status=ok
+   note: sniff: HTTP 403 for https://www.rwjbh.org/careers/: bot challenge (Cloudflare)
+   note: sniff: HTTP 403 for https://www.rwjbh.org/careers/working-at-rwjbarnabas-health/: bot challenge (Cloudflare)
+   note: generic: followed 4 result pages from https://www.rwjbarnabashealthcareers.org/jobs/nurse-practitioner/
+   * [3/nicu] Advanced Practice Nurse (Neonatology) | posted 2026-10-19 | https://www.rwjbarnabashealthcareers.org/job/136585/advanced-practice-nurse-miscellaneous-us-nj-long-branch-300-2nd-ave/  (known)
+   * [2/unspecified] Advanced Practice Nurse | posted 2026-10-19 | https://www.rwjbarnabashealthcareers.org/job/146744/advanced-practice-nurse-nurse-practitioner-us-nj-long-branch-300-2nd-ave/  (known)
+   * [1/mixed] Advanced Practice Nurse - FT Day Monmouth Heart & Vascular | posted 2026-10-19 | https://www.rwjbarnabashealthcareers.org/job/153564/advanced-practice-nurse-ft-day-monmouth-heart-vascular-nurse-practitioner-us-nj-long-branch-166-morris-avenue/  (known)
+   first board listings: Advanced Practice Nurse (414 Grand Street, Jersey City, NJ 07302) || Advanced Practice Nurse (200 Wyckoff Road, Eatontown, NJ 07724) || Advanced Practice Nurse (201 LYONS AVE, NEWARK, NJ 07112)
+
+## uvm-cvph-plattsburgh  [generic / generic / playwright]  status=ok
+   note: sniff: HTTP 202 for https://www.uvmhealth.org/careers: <!DOCTYPE html> <html lang="en"> <head>     <meta charset="utf-8">     <meta name="viewport" content="width=device-width, initial-scale=1">     <title></title> 
+   * [2/unspecified] Nurse Practitioner/Physician Assistant Jobs | posted None | https://uvmhealthcareers.org/jobs/nurse-practitioner-physician-assistant/  (known)
+   first board listings: Nurse Practitioner/Physician Assistant Jobs ()
