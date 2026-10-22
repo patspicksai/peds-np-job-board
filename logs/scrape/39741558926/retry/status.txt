@@ -1,0 +1,49 @@
+run 2026-10-22 wall=436.7s ledger=data/hospitals.json browser=chrome-headed
+
+hospital                                                 platform               method           board  list  cand  new   secs  status / error
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+boston-childrens-boston                                  generic->symphony      api                 40    40    13    0   12.8  ok
+cohen-childrens-new-hyde-park                            oracle_cloud           api                198    66     0    0   27.7  ok
+huntington-hospital-huntington                           oracle_cloud           api                198     2     0    0   27.7  ok
+lenox-hill-hospital-manhattan                            oracle_cloud           api                198    24     0    0   27.7  ok
+lij-forest-hills-queens                                  oracle_cloud           api                198    24     0    0   27.7  ok
+lij-valley-stream-valley-stream                          oracle_cloud           api                198     0     0    0   27.7  ok
+long-island-jewish-medical-center-new-hyde-park          oracle_cloud           api                198    11     0    0   27.7  ok
+mather-hospital-port-jefferson                           oracle_cloud           api                198     0     0    0   27.7  ok
+north-shore-university-hospital-manhasset                oracle_cloud           api                198    22     1    0   27.7  ok
+northern-westchester-hospital-mount-kisco                oracle_cloud           api                198     3     0    0   27.7  ok
+peconic-bay-medical-center-riverhead                     oracle_cloud           api                198     1     0    0   27.7  ok
+phelps-hospital-sleepy-hollow                            oracle_cloud           api                198     0     0    0   27.7  ok
+putnam-hospital-carmel                                   oracle_cloud           api                198     5     0    0   27.7  ok
+south-shore-university-hospital-bay-shore                oracle_cloud           api                198     0     0    0   27.7  ok
+st-joseph-hospital-nashua                                generic->symphony      api                 90    56     0    0   11.0  ok
+st-marys-regional-lewiston                               generic->symphony      api                 90    34     0    0   11.0  ok
+staten-island-university-hospital-staten-island          oracle_cloud           api                198    20     0    0   27.7  ok
+valley-hospital-paramus                                  generic->symphony      api-legacy         288   288     1    0   10.3  ok
+vassar-brothers-medical-center-poughkeepsie              oracle_cloud           api                198    20     0    0   27.7  ok
+catholic-medical-center-manchester                       careersite                                  0     0     0    0  270.8  error: AdapterError: careersite: every jobs.json search failed in the browser: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!
+chester-county-hospital-west-chester                     careersite                                  0     0     0    0  303.7  error: AdapterError: careersite: every jobs.json search failed in the browser: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html lang="en-us" dir="ltr"><head>
+chippenham-richmond                                      careersite                                  0     0     0    0  270.8  error: AdapterError: careersite: every jobs.json search failed in the browser: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!
+colleton-medical-center-walterboro                       careersite                                  0     0     0    0  270.8  error: AdapterError: careersite: every jobs.json search failed in the browser: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!
+grand-strand-medical-center-myrtle-beach                 careersite                                  0     0     0    0  270.8  error: AdapterError: careersite: every jobs.json search failed in the browser: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!
+henrico-doctors-richmond                                 careersite                                  0     0     0    0  270.8  error: AdapterError: careersite: every jobs.json search failed in the browser: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!
+holy-name-medical-center-teaneck                         generic                playwright           0     0     0    0  128.0  no_listings: careers page reachable but no job listings recognized (generic adapter): set careers_search_url / ats_config to the real job board
+hospital-of-the-university-of-pennsylvania-philadelphia  careersite                                  0     0     0    0  303.7  error: AdapterError: careersite: every jobs.json search failed in the browser: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html lang="en-us" dir="ltr"><head>
+hsc-pediatric-center-washington                          generic                                     0     0     0    0  423.7  error: AdapterError: generic: no page reachable: None https://www.hschealth.org/careers; playwright TimeoutError: Page.goto: Timeout 45000ms exceeded.
+Call l
+johnston-willis-richmond                                 careersite                                  0     0     0    0  270.8  error: AdapterError: careersite: every jobs.json search failed in the browser: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!
+lancaster-general-hospital-lancaster                     careersite                                  0     0     0    0  303.7  error: AdapterError: careersite: every jobs.json search failed in the browser: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html lang="en-us" dir="ltr"><head>
+lewisgale-medical-center-salem                           careersite                                  0     0     0    0  270.8  error: AdapterError: careersite: every jobs.json search failed in the browser: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!
+mission-childrens-asheville                              careersite                                  0     0     0    0  270.8  error: AdapterError: careersite: every jobs.json search failed in the browser: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!
+penn-medicine-princeton-medical-center-plainsboro        careersite                                  0     0     0    0  303.7  error: AdapterError: careersite: every jobs.json search failed in the browser: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html lang="en-us" dir="ltr"><head>
+pennsylvania-hospital-philadelphia                       careersite                                  0     0     0    0  303.7  error: AdapterError: careersite: every jobs.json search failed in the browser: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html lang="en-us" dir="ltr"><head>
+portsmouth-regional-portsmouth                           careersite                                  0     0     0    0  270.8  error: AdapterError: careersite: every jobs.json search failed in the browser: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!
+reston-hospital-center-reston                            careersite                                  0     0     0    0  270.8  error: AdapterError: careersite: every jobs.json search failed in the browser: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!
+spartanburg-medical-center-spartanburg                   generic                                     0     0     0    0  131.2  error: AdapterError: generic: no page reachable: 403 https://www.spartanburgregional.com/careers?q=nurse+practitioner; playwright 403 https://www.spartanburg
+spotsylvania-regional-fredericksburg                     careersite                                  0     0     0    0  270.8  error: AdapterError: careersite: every jobs.json search failed in the browser: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!
+stonesprings-hospital-dulles                             careersite                                  0     0     0    0  270.8  error: AdapterError: careersite: every jobs.json search failed in the browser: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!
+summerville-medical-center-summerville                   careersite                                  0     0     0    0  270.8  error: AdapterError: careersite: every jobs.json search failed in the browser: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!
+trident-medical-center-north-charleston                  careersite                                  0     0     0    0  270.8  error: AdapterError: careersite: every jobs.json search failed in the browser: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!
+washington-regional-plymouth                             generic                                     0     0     0    0   71.4  error: AdapterError: generic: no page reachable: None https://www.washingtonregional.org/careers/; playwright Error: Page.goto: net::ERR_NAME_NOT_RESOLVED at
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+hospitals=42 ok=19 not_ok=23 board_listings=616 candidates=15 new_candidates=0
