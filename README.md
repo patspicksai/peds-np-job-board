@@ -70,6 +70,7 @@ scripts/
 
 ## Operating it
 
+- **Hide places you don't want (no code):** the site's **Places** tab is a State > Area > Hospital tree of on/off switches with a map that follows the drilldown. Off hospitals and their jobs are hidden from every view. Switches save in the browser; "Copy link with these settings" carries them to another device. Areas are defined in `AREA_DEFS` in `site/index.html` (city lists per state; an unlisted city joins the nearest listed hospital's area).
 - **Add or remove a hospital:** edit the record in the matching `data/regions/*.json` (set `"active": false` to hide one), run `python3 scripts/validate.py --seed data/regions/<file>.json`, then `python3 scripts/merge_hospitals.py`, commit, push. The site and the next scrape pick it up. Optionally run `enrich.yml` on the file to fill coordinates, photos and careers details.
 - **Run a scrape now:** `gh workflow run scrape.yml --ref main` (add `-f commit=false` for a test run; `-f only=slug1,slug2` to target boards).
 - **See what a run did:** open the Coverage view on the site, or `git fetch origin ci-logs` then `git show origin/ci-logs:logs/scrape/<run id>/status.txt` (per-hospital status), `digest.md`, `run_tail.log`.

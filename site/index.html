@@ -380,7 +380,8 @@ legend{padding:0;margin-bottom:6px;font:700 14px/1.3 var(--font-ui)}
   .brand-mark{width:22px;height:22px}
   .stats{order:3;width:100%;font-size:13px;gap:2px 14px}
   .toolbar{gap:8px}
-  .view-seg{order:0}
+  .view-seg{order:0;flex:1 1 100%;display:flex}
+  .view-seg button{flex:1 1 auto;padding:0 6px;font-size:13px}
   .search{order:2;flex:1 1 100%;max-width:none}
   #filtersBtn{order:1;margin-left:auto}
   #hotBtn{display:none}
@@ -455,9 +456,61 @@ legend{padding:0;margin-bottom:6px;font:700 14px/1.3 var(--font-ui)}
   .crow{grid-template-columns:minmax(0,1fr)}
   .crow-side{flex-direction:row;align-items:center;justify-content:space-between;text-align:left}
 }
+@media (max-width:430px){
+  .view-seg .n:not(#nPl){display:none}
+}
 @media (prefers-reduced-motion: reduce){
   *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
 }
+
+/* Places view: State > Area > Hospital on/off tree */
+.places{padding-bottom:28px}
+.pl-crumbs{display:flex;flex-wrap:wrap;align-items:center;gap:2px 6px;padding:12px 2px 2px;font-size:13.5px;color:var(--ink-3)}
+.pl-crumbs button{min-height:28px;border:0;background:none;padding:0;color:var(--accent);font:600 13.5px var(--font-ui);cursor:pointer;text-decoration:underline;text-underline-offset:3px}
+.pl-crumbs .cur{color:var(--ink-2);font-weight:600}
+.pl-head{display:flex;flex-wrap:wrap;align-items:flex-end;gap:10px 16px;padding:4px 2px 12px;border-bottom:1.5px solid var(--ink)}
+.pl-head > div:first-child{margin-right:auto;min-width:0}
+.pl-head h2{margin:0;font:500 26px/1.15 var(--font-display);text-wrap:balance}
+.pl-head p{margin:3px 0 0;font-size:13.5px;color:var(--ink-2)}
+.pl-head p b{color:var(--ink);font-variant-numeric:tabular-nums}
+.pl-acts{display:flex;flex-wrap:wrap;gap:6px}
+.pl-acts .btn{height:34px;padding:0 11px;font-size:13px}
+.pl-note{margin:10px 2px 0;font-size:13px;color:var(--ink-3);max-width:62ch}
+.prow{display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:4px 14px;padding:12px 6px 12px 4px;border-bottom:1px solid var(--rule);cursor:pointer;outline-offset:-2px}
+.prow:hover{background:var(--surface-2)}
+.prow.is-selected{background:var(--accent-soft)}
+.prow.is-off .prow-name{color:var(--ink-3)}
+.prow-name{margin:0;font:500 18px/1.25 var(--font-display);text-wrap:balance}
+.prow-sub{margin:2px 0 0;font-size:13px;color:var(--ink-2)}
+.prow-side{display:flex;align-items:center;gap:10px;font-size:13px;color:var(--ink-3);white-space:nowrap;text-align:right}
+.prow-side b{display:block;font:700 18px/1 var(--font-ui);font-variant-numeric:tabular-nums;color:var(--ink-3)}
+.prow-side b.has{color:var(--accent)}
+.prow .chev{flex:none;color:var(--ink-3)}
+.pl-bar{display:block;height:4px;margin-top:8px;border-radius:2px;background:var(--rule);overflow:hidden;max-width:240px}
+.pl-bar i{display:block;height:100%;background:var(--accent)}
+.sw{position:relative;flex:none;width:46px;height:28px;padding:0;border:0;border-radius:999px;background:var(--rule-strong);cursor:pointer;transition:background .15s}
+.sw::before{content:"";position:absolute;inset:-8px -4px}
+.sw::after{content:"";position:absolute;top:3px;left:3px;width:22px;height:22px;border-radius:50%;background:var(--surface);box-shadow:0 1px 2px var(--shadow-c);transition:transform .15s}
+.sw[aria-checked="true"]{background:var(--accent)}
+.sw[aria-checked="true"]::after{transform:translateX(18px)}
+.sw[aria-checked="mixed"]{background:var(--accent-soft);box-shadow:inset 0 0 0 1.5px var(--accent)}
+.sw[aria-checked="mixed"]::after{transform:translateX(9px)}
+@media (prefers-reduced-motion: reduce){.sw,.sw::after{transition:none}}
+.chip-off{display:inline-flex;align-items:center;gap:6px;height:30px;padding:0 12px;border:1px dashed var(--rule-strong);border-radius:999px;background:transparent;color:var(--ink-2);font:600 13px/1 var(--font-ui);cursor:pointer}
+.chip-off:hover{border-color:var(--accent);color:var(--accent)}
+.hm-dot.is-off{background:var(--surface);border:1.5px dashed var(--ink-3);color:transparent;box-shadow:none;opacity:.75}
+.hc-dot.is-off{background:var(--surface);border:1.5px dashed var(--ink-3);color:var(--ink-3);opacity:.75}
+.lg-dot.is-off{background:var(--surface);border:1.5px dashed var(--ink-3)}
+.pl-shape{stroke-width:1.5;cursor:pointer;transition:fill-opacity .15s}
+.pl-shape.on{fill:var(--accent);fill-opacity:.2;stroke:var(--accent)}
+.pl-shape.some{fill:var(--accent);fill-opacity:.09;stroke:var(--accent);stroke-dasharray:5 3}
+.pl-shape.off{fill:var(--ink-3);fill-opacity:.1;stroke:var(--ink-3);stroke-dasharray:2 4}
+.pl-shape:hover{fill-opacity:.34}
+.pl-scope{fill:none;stroke:var(--ink-2);stroke-width:1.5;stroke-dasharray:6 4;pointer-events:none}
+.leaflet-tooltip.pl-tip{padding:3px 7px;border:1px solid var(--rule);border-radius:6px;background:var(--surface);color:var(--ink);box-shadow:none;font:600 12px/1.3 var(--font-ui);white-space:nowrap}
+.leaflet-tooltip.pl-tip::before{display:none}
+.leaflet-tooltip.pl-tip.is-hid{visibility:hidden}
+.leaflet-tooltip.pl-tip.is-off{color:var(--ink-3);text-decoration:line-through}
 </style>
 </head>
 <body>
@@ -492,6 +545,7 @@ legend{padding:0;margin-bottom:6px;font:700 14px/1.3 var(--font-ui)}
       <button type="button" data-view="jobs" aria-pressed="true">Jobs<span class="n" id="nJobs"></span></button>
       <button type="button" data-view="hospitals" aria-pressed="false">Hospitals<span class="n" id="nHosp"></span></button>
       <button type="button" data-view="coverage" aria-pressed="false" title="Which hospital boards the last automated run could not read">Coverage<span class="n" id="nCov"></span></button>
+      <button type="button" data-view="places" aria-pressed="false" title="Turn states, areas and hospitals on or off">Places<span class="n" id="nPl"></span></button>
     </div>
     <label class="search">
       <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="5.25" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M11 11l3.5 3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
@@ -529,6 +583,7 @@ legend{padding:0;margin-bottom:6px;font:700 14px/1.3 var(--font-ui)}
         <div class="feed" id="feed" aria-label="Job postings"></div>
         <div class="ledger" id="ledger" aria-label="Hospital ledger" hidden></div>
         <div class="coverage" id="coverage" aria-label="Scrape coverage" hidden></div>
+        <div class="places" id="places" aria-label="Turn places on or off" hidden></div>
         <div class="sentinel" id="sentinel" hidden><button type="button" class="btn" id="moreBtn">Show more jobs</button></div>
         <div class="empty" id="empty" hidden></div>
         <div class="loading" id="loading">Loading the latest postings&hellip;</div>
@@ -537,7 +592,7 @@ legend{padding:0;margin-bottom:6px;font:700 14px/1.3 var(--font-ui)}
     </section>
     <section class="pane map-pane" id="mapPane" aria-label="Map of hospitals">
       <div id="map"></div>
-      <div class="map-legend" aria-hidden="true">
+      <div class="map-legend" id="mapLegend" aria-hidden="true">
         <span class="lg-i"><i class="lg-dot"></i>Open jobs</span>
         <span class="lg-i"><i class="lg-dot is-empty"></i>No matching jobs</span>
         <span class="lg-i"><i class="lg-dot is-hot"></i>Hotspot region</span>
@@ -590,6 +645,95 @@ var REGION_DEFS = [
   ['Triangle','North Carolina',true],['Charlotte','North Carolina',true],['Wilmington / Cape Fear','North Carolina',true],['Outer Banks / Coastal NC','North Carolina',true],['Triad','North Carolina',false],['North Carolina (other)','North Carolina',false],
   ['Charleston SC','South Carolina',false],['Grand Strand','South Carolina',false],['South Carolina (other)','South Carolina',false]
 ];
+
+/* Areas: the middle level of the Places tree. Each hospital is placed by its city; a city not listed here
+   falls into the area of the nearest listed hospital in the same state. */
+var STATE_NAME = {ME:'Maine', NH:'New Hampshire', VT:'Vermont', MA:'Massachusetts', RI:'Rhode Island', CT:'Connecticut', NY:'New York', NJ:'New Jersey', PA:'Pennsylvania', DE:'Delaware', MD:'Maryland', DC:'Washington, DC', VA:'Virginia', NC:'North Carolina', SC:'South Carolina'};
+var AREA_DEFS = {
+  ME: [['portland','Greater Portland & Southern Maine','Portland|Westbrook|Biddeford|Brunswick|York|South Portland|Scarborough|Sanford'],
+       ['central','Lewiston, Augusta & Midcoast','Lewiston|Augusta|Rockport|Waterville|Rockland|Damariscotta'],
+       ['north','Bangor & Northern Maine','Bangor|Presque Isle|Ellsworth|Houlton']],
+  NH: [['seacoast','Seacoast','Portsmouth|Dover|Exeter|Hampstead'],
+       ['south','Manchester, Nashua & Concord','Manchester|Nashua|Concord|Derry'],
+       ['west','Upper Valley & Monadnock','Lebanon|Keene|Claremont']],
+  VT: [['burlington','Burlington & Northern Vermont','Burlington|St. Albans|Saint Albans'],
+       ['central','Central Vermont','Berlin|Rutland|Montpelier'],
+       ['south','Southern Vermont','Brattleboro|Bennington']],
+  MA: [['boston','Boston & Inner Suburbs','Boston|Cambridge|Newton|Melrose|Winchester|Canton|Concord|Somerville'],
+       ['north','North Shore & Merrimack Valley','Beverly|Salem|Newburyport|Lawrence|Lowell'],
+       ['south','South Shore & South Coast','Brockton|Weymouth|Plymouth|Fall River|New Bedford|Attleboro'],
+       ['cape','Cape Cod','Hyannis|Falmouth'],
+       ['central','Worcester & Central MA','Worcester'],
+       ['west','Western MA','Springfield|Northampton|Pittsfield']],
+  RI: [['providence','Providence Metro','Providence|East Providence|Warwick|Pawtucket']],
+  CT: [['fairfield','Fairfield County','Greenwich|Stamford|Norwalk|Bridgeport|Danbury'],
+       ['newhaven','New Haven & Naugatuck Valley','New Haven|Meriden|Middletown|Waterbury'],
+       ['hartford','Greater Hartford','Hartford|New Britain|Manchester|Farmington'],
+       ['east','Eastern CT','New London|Norwich']],
+  NY: [['manhattan','Manhattan','New York'],
+       ['brooklyn','Brooklyn','Brooklyn'],
+       ['bronx','Bronx','Bronx'],
+       ['queens','Queens','Queens'],
+       ['statenisland','Staten Island','Staten Island'],
+       ['nassau','Long Island: Nassau','New Hyde Park|Valley Stream|Rockville Centre|Oceanside|Mineola|East Meadow|Manhasset|Roslyn|Bethpage'],
+       ['suffolk','Long Island: Suffolk','Port Jefferson|West Islip|Huntington|Patchogue|Riverhead|Bay Shore|Smithtown|Stony Brook|Southampton'],
+       ['westchester','Westchester','Valhalla|Yonkers|New Rochelle|Cortlandt Manor|Bronxville|Mount Kisco|Sleepy Hollow|White Plains'],
+       ['hudson','Hudson Valley','Poughkeepsie|Middletown|Suffern|Kingston|Nyack|Newburgh|Carmel|Hudson'],
+       ['capital','Albany & Capital Region','Albany|Schenectady|Glens Falls|Gloversville|Saratoga Springs|Troy'],
+       ['cny','CNY / Syracuse','Syracuse|Auburn|Cortland|Oneida|Oswego'],
+       ['utica','Utica & Mohawk Valley','Utica|Rome'],
+       ['north','North Country','Saranac Lake|Carthage|Watertown|Plattsburgh'],
+       ['southerntier','Southern Tier & Finger Lakes','Binghamton|Johnson City|Elmira|Ithaca|Norwich'],
+       ['rochester','Rochester','Rochester|Greece'],
+       ['buffalo','Buffalo & Western NY','Buffalo|Williamsville|Niagara Falls|Batavia|Medina|Olean|Jamestown|Wellsville']],
+  NJ: [['shore','Jersey Shore','Neptune|Holmdel|Freehold|Toms River|Lakewood|Brick|Red Bank|Manahawkin|Long Branch'],
+       ['newark','Newark, Hudson & Essex','Newark|Belleville|Hoboken|Jersey City|Elizabeth|Livingston|Montclair'],
+       ['bergen','Bergen & Passaic','Englewood|Teaneck|Hackensack|Westwood|Paramus|Paterson|Pompton Plains'],
+       ['morris','Morris, Union & Sussex','Morristown|Denville|Newton|Summit'],
+       ['central','Central NJ','New Brunswick|Edison|Plainsboro|Somerville|Pennington'],
+       ['south','South Jersey (Philly side)','Camden|Mullica Hill|Sewell|Mount Holly|Voorhees|Vineland'],
+       ['atlantic','Atlantic City & Cape May','Somers Point|Pomona|Atlantic City|Cape May Court House']],
+  PA: [['philly','Philadelphia','Philadelphia'],
+       ['phillyburbs','Philly Suburbs','Bryn Mawr|King of Prussia|West Chester|Meadowbrook|Abington|East Norriton|Wynnewood|Paoli|Media|Sellersville|Langhorne'],
+       ['lehigh','Lehigh Valley & Poconos','Orefield|Allentown|Easton|Bethlehem|East Stroudsburg'],
+       ['nepa','Scranton & Wilkes-Barre','Scranton|Wilkes-Barre|Hazleton'],
+       ['southcentral','Harrisburg, Hershey & Lancaster','Hershey|Camp Hill|Harrisburg|Lancaster|York|Reading|West Reading'],
+       ['central','Central PA','Danville|Williamsport|Sayre|State College|Altoona|Johnstown|DuBois'],
+       ['west','Pittsburgh & Western PA','Pittsburgh|Wexford|Erie']],
+  DE: [['north','Wilmington & Newark','Wilmington|Newark'],
+       ['south','Dover & Southern Delaware','Dover|Lewes|Seaford']],
+  MD: [['baltimore','Baltimore City','Baltimore'],
+       ['baltburbs','Baltimore Suburbs & Annapolis','Towson|Westminster|Columbia|Glen Burnie|Bel Air|Elkton|Annapolis'],
+       ['dcburbs','DC Suburbs (Montgomery & Prince George\'s)','Silver Spring|Rockville|Olney|Clinton|Bethesda|Largo'],
+       ['southern','Southern Maryland','La Plata|Leonardtown'],
+       ['western','Frederick & Western MD','Frederick|Hagerstown|Cumberland'],
+       ['eastern','Eastern Shore','Salisbury|Easton']],
+  DC: [['dc','Washington, DC','Washington']],
+  VA: [['nova','Northern Virginia','Alexandria|Fairfax|Falls Church|Leesburg|Reston|Woodbridge|Dulles|Haymarket|Manassas|Arlington'],
+       ['fredericksburg','Fredericksburg','Fredericksburg|Stafford'],
+       ['richmond','Richmond','Richmond|Mechanicsville|Petersburg|Midlothian|New Kent'],
+       ['hamptonroads','Hampton Roads','Norfolk|Newport News|Chesapeake|Hampton|Virginia Beach'],
+       ['shenandoah','Charlottesville & Shenandoah','Charlottesville|Fishersville|Harrisonburg|Winchester'],
+       ['southwest','Roanoke, Lynchburg & Southside','Roanoke|Salem|Lynchburg|Danville']],
+  NC: [['charlotte','Charlotte Metro','Charlotte|Matthews|Concord|Cornelius|Lincolnton|Monroe|Gastonia|Belmont|Mooresville|Huntersville|Kings Mountain|Shelby|Albemarle|Wadesboro|Salisbury|Statesville'],
+       ['triangle','Triangle (Raleigh, Durham, Chapel Hill)','Raleigh|Durham|Chapel Hill|Cary|Holly Springs|Clayton|Smithfield|Hillsborough|Butner|Oxford|Henderson|Roxboro|Siler City|Sanford|Dunn|Lillington'],
+       ['triad','Triad (Greensboro, Winston-Salem)','Winston-Salem|High Point|Burlington|Greensboro'],
+       ['wilmington','Wilmington & Cape Fear','Wilmington|Southport|Bolivia|Burgaw|Whiteville|Jacksonville'],
+       ['east','Eastern NC (Greenville, New Bern)','New Bern|Morehead City|Kinston|Greenville|Goldsboro|Kenansville|Washington|Tarboro|Rocky Mount|Wilson'],
+       ['obx','Outer Banks & Albemarle','Nags Head|Elizabeth City|Edenton|Windsor|Ahoskie|Plymouth'],
+       ['sandhills','Fayetteville & Sandhills','Fayetteville|Pinehurst|Laurinburg|Lumberton'],
+       ['west','Asheville, Hickory & Western NC','Asheville|Hendersonville|Hickory|Morganton|Boone']],
+  SC: [['charleston','Charleston & Lowcountry','Charleston|Mount Pleasant|Summerville|North Charleston|Walterboro'],
+       ['beaufort','Beaufort & Hilton Head','Beaufort|Hilton Head Island|Bluffton'],
+       ['grandstrand','Myrtle Beach & Grand Strand','Conway|Myrtle Beach|Georgetown|Murrells Inlet'],
+       ['peedee','Florence & Pee Dee','Florence|Hartsville'],
+       ['midlands','Columbia & Midlands','Columbia|West Columbia|Camden|Orangeburg|Sumter|Aiken'],
+       ['upstate','Greenville & Upstate','Greenville|Anderson|Spartanburg|Greenwood'],
+       ['rockhill','Rock Hill & Fort Mill (Charlotte side)','Rock Hill|Fort Mill|Lancaster']]
+};
+var AREA = {};
+Object.keys(AREA_DEFS).forEach(function(st){ AREA_DEFS[st].forEach(function(a, i){ AREA[st + '.' + a[0]] = {id: st + '.' + a[0], state: st, name: a[1], order: i}; }); });
+var PLACES_KEY = 'npjobs.places.v1';
 var REGION_INFO = {}; REGION_DEFS.forEach(function(r, i){ REGION_INFO[r[0]] = {group: r[1], hot: r[2], order: i}; });
 var STATE_ORDER = ['ME','NH','VT','MA','RI','CT','NY','NJ','PA','DE','MD','DC','VA','NC','SC'];
 var SETTING = {picu:'PICU', nicu:'NICU', peds_inpatient:'Peds inpatient', peds_ed:'Peds ED', peds_specialty_inpatient:'Peds specialty inpatient', peds_specialty_outpatient:'Peds specialty clinic', peds_primary_care:'Peds primary care', mixed:'Mixed', unspecified:'Setting unclear'};
@@ -618,10 +762,10 @@ var ICON = {
 };
 
 /* ---------- state ---------- */
-var DEFAULTS = {view:'jobs', region:[], hot:false, state:[], type:[], setting:[], rel:2, age:0, q:'', star:false, stale:true, sort:'new', at:'', job:'', hosp:'', cov:'notok'};
+var DEFAULTS = {view:'jobs', pl:'', region:[], hot:false, state:[], type:[], setting:[], rel:2, age:0, q:'', star:false, stale:true, sort:'new', at:'', job:'', hosp:'', cov:'notok'};
 var S = readHash();
 var D = {loaded:false, hospitals:[], H:{}, jobs:[], J:{}, jobsDoc:null, hospDoc:null, covDoc:null, cov:{}, covMeta:null, base:'', fixture:false};
-var F = {jobs:[], hospitals:[], countBySlug:{}, covRows:[], covCounts:{}, covNotOk:0, covHotNotOk:0};
+var F = {jobs:[], hospitals:[], hospCount:0, countBySlug:{}, covRows:[], covCounts:{}, covNotOk:0, covHotNotOk:0};
 var stars = new Set();
 var pane = 'list';
 var panelStack = [];
@@ -629,6 +773,7 @@ var lastTrigger = null;
 var feedRendered = 0, lastBucket = null;
 var cardIO = null, sentinelIO = null, visibleCards = new Set();
 var hoverSlug = '', scrollSlug = '';
+var PL = {}, TREE = [], BASEMAP = [], PL_LAYER = null;
 var MAP = null, CLUSTER = null, TILE = null, POPUP = null, MARKERS = {}, popupSlug = '', litEl = null, lastFitKey = null, tilesFailed = false, tileOk = 0;
 var gallery = [], lbItems = [], lbIndex = 0, lbReturn = null;
 var wikiCache = {};
@@ -717,6 +862,7 @@ function readHash(){
     var m;
     if(h === 'hospitals') s.view = 'hospitals';
     else if(h === 'coverage') s.view = 'coverage';
+    else if(h === 'places') s.view = 'places';
     else if((m = /^job-([A-Za-z0-9._~-]+)$/.exec(h))) s.job = m[1];
     else if((m = /^hospital-([A-Za-z0-9._~-]+)$/.exec(h))) s.hosp = m[1];
     return s;
@@ -725,7 +871,8 @@ function readHash(){
     var i = kv.indexOf('='); if(i < 0) return;
     var k = kv.slice(0, i), v = kv.slice(i + 1);
     var list = function(){ return v ? v.split(',').map(dec).map(function(x){ return x.trim(); }).filter(Boolean) : []; };
-    if(k === 'view') s.view = (v === 'hospitals' || v === 'coverage') ? v : 'jobs';
+    if(k === 'view') s.view = (v === 'hospitals' || v === 'coverage' || v === 'places') ? v : 'jobs';
+    else if(k === 'pl') s.pl = dec(v).replace(/[^A-Za-z.]/g, '');
     else if(k === 'cov') s.cov = (COV_FILTER[v] || COV_CLASS[v]) ? v : 'notok';
     else if(k === 'region') s.region = list();
     else if(k === 'state') s.state = list().map(function(x){ return x.toUpperCase(); });
@@ -752,6 +899,7 @@ function buildHash(){
   if(S.q) p.push('q=' + encodeURIComponent(S.q)); if(S.star) p.push('star=1'); if(!S.stale) p.push('stale=0');
   if(S.sort !== 'new') p.push('sort=' + S.sort); if(S.at) p.push('at=' + encodeURIComponent(S.at));
   if(S.view === 'coverage' && S.cov !== 'notok') p.push('cov=' + S.cov);
+  if(S.view === 'places' && S.pl) p.push('pl=' + S.pl);
   if(S.job) p.push('job=' + encodeURIComponent(S.job)); else if(S.hosp) p.push('hosp=' + encodeURIComponent(S.hosp));
   return p.length === 1 && S.view === 'jobs' ? '' : p.join('&');
 }
@@ -845,6 +993,9 @@ function ingest(r){
     if(j._h) j._h._jobs.push(j);
   });
   D.hospitals.forEach(function(h){ h._jobs.sort(cmpNew); });
+  assignAreas();
+  buildTree();
+  recomputeOn();
   ingestCoverage(r);
   D.loaded = true;
 }
@@ -875,9 +1026,262 @@ function jobLoc(j){
   return [c, s].filter(Boolean).join(', ');
 }
 
+
+/* ---------- places: State > Area > Hospital on/off ---------- */
+function assignAreas(){
+  var idx = {}, pending = [];
+  Object.keys(AREA_DEFS).forEach(function(st){
+    idx[st] = {};
+    AREA_DEFS[st].forEach(function(a){ a[2].split('|').forEach(function(c){ idx[st][c.toLowerCase()] = st + '.' + a[0]; }); });
+  });
+  D.hospitals.forEach(function(h){
+    var m = idx[h.state] && idx[h.state][str(h.city).trim().toLowerCase()];
+    h._area = m || ''; if(!m) pending.push(h);
+  });
+  pending.forEach(function(h){
+    var best = null, bd = Infinity;
+    if(isNum(h.lat) && isNum(h.lng)) D.hospitals.forEach(function(o){
+      if(o === h || o.state !== h.state || !o._area || !isNum(o.lat) || !isNum(o.lng)) return;
+      var dy = o.lat - h.lat, dx = (o.lng - h.lng) * Math.cos(h.lat * Math.PI / 180), d = dx * dx + dy * dy;
+      if(d < bd){ bd = d; best = o; }
+    });
+    h._area = best ? best._area : h.state + '.other';
+    if(!AREA[h._area]) AREA[h._area] = {id: h._area, state: h.state, name: 'Other ' + (STATE_NAME[h.state] || h.state), order: 99};
+  });
+  D.hospitals.forEach(function(h){ h._search += ' ' + AREA[h._area].name.toLowerCase(); });
+}
+function buildTree(){
+  var st = {};
+  D.hospitals.forEach(function(h){
+    var s = st[h.state] = st[h.state] || {kind: 'S', id: h.state, name: STATE_NAME[h.state] || h.state, areas: {}, list: []};
+    s.list.push(h);
+    var a = s.areas[h._area] = s.areas[h._area] || {kind: 'A', id: h._area, name: AREA[h._area].name, order: AREA[h._area].order, state: h.state, list: []};
+    a.list.push(h);
+  });
+  var codes = Object.keys(st).sort(function(a, b){
+    var ia = STATE_ORDER.indexOf(a), ib = STATE_ORDER.indexOf(b);
+    return (ia < 0 ? 99 : ia) - (ib < 0 ? 99 : ib) || a.localeCompare(b);
+  });
+  TREE = codes.map(function(c){
+    var s = st[c];
+    s.children = Object.keys(s.areas).map(function(k){ var a = s.areas[k]; a.list.sort(function(x, y){ return x.name.localeCompare(y.name); }); return a; })
+      .sort(function(a, b){ return (a.order - b.order) || a.name.localeCompare(b.name); });
+    return s;
+  });
+}
+function loadPlaces(){
+  try {
+    var o = JSON.parse(localStorage.getItem(PLACES_KEY) || '{}');
+    if(o && typeof o === 'object') Object.keys(o).forEach(function(k){ if(typeof o[k] === 'boolean' && /^[SAH]:/.test(k)) PL[k] = o[k]; });
+  } catch(e){}
+}
+function savePlaces(){ try { localStorage.setItem(PLACES_KEY, JSON.stringify(PL)); } catch(e){} }
+function has(k){ return Object.prototype.hasOwnProperty.call(PL, k); }
+function inherited(kind, h){
+  // value a hospital would get from the levels above `kind`
+  if(kind !== 'A' && kind !== 'S' && has('A:' + h._area)) return PL['A:' + h._area];
+  if(kind !== 'S' && has('S:' + h.state)) return PL['S:' + h.state];
+  return true;
+}
+function prefOf(h){ return has('H:' + h.slug) ? PL['H:' + h.slug] : inherited('H', h); }
+function recomputeOn(){ D.hospitals.forEach(function(h){ h._on = prefOf(h); }); }
+function offCount(){ var n = 0; D.hospitals.forEach(function(h){ if(!h._on) n++; }); return n; }
+function findNode(id){
+  if(!id) return {kind: 'R', id: '', name: 'All states', children: TREE, list: D.hospitals};
+  for(var i = 0; i < TREE.length; i++){
+    var s = TREE[i]; if(s.id === id) return s;
+    for(var j = 0; j < s.children.length; j++) if(s.children[j].id === id) return s.children[j];
+  }
+  return null;
+}
+function nodeOf(kind, id){ return kind === 'H' ? {kind: 'H', id: id, list: D.H[id] ? [D.H[id]] : []} : findNode(id); }
+function nodeState(list){
+  var on = 0; list.forEach(function(h){ if(h._on) on++; });
+  return {on: on, total: list.length, v: !list.length ? 'false' : (on === list.length ? 'true' : (on ? 'mixed' : 'false'))};
+}
+function setNode(kind, id, val){
+  var node = nodeOf(kind, id); if(!node) return;
+  if(kind === 'R'){
+    PL = {};
+    if(!val) TREE.forEach(function(s){ PL['S:' + s.id] = false; });
+  } else {
+    node.list.forEach(function(h){
+      delete PL['H:' + h.slug];
+      if(kind === 'S') delete PL['A:' + h._area];
+    });
+    var k = kind + ':' + id, h0 = node.list[0];
+    PL[k] = val;
+    if(h0 && inherited(kind, h0) === val) delete PL[k];
+  }
+  savePlaces(); recomputeOn();
+}
+function toggleNode(kind, id){
+  var node = nodeOf(kind, id); if(!node || !node.list.length) return;
+  var st = nodeState(node.list), turnOn = st.v !== 'true';
+  setNode(kind, id, turnOn);
+  var label = kind === 'H' ? node.list[0].name : (kind === 'R' ? 'Every state' : node.name);
+  toast(label + (turnOn ? ' turned on' : ' turned off'));
+  update({keepScroll: true, keepMap: true});
+}
+function placesShareLink(){
+  var items = Object.keys(PL).map(function(k){ return k.replace(':', '~') + '~' + (PL[k] ? 1 : 0); });
+  return PAGES_URL + '#view=places&places=' + encodeURIComponent(items.join(','));
+}
+function applySharedPlaces(){
+  var h = ''; try { h = (location.hash || '').replace(/^#/, ''); } catch(e){}
+  var m = /(?:^|&)places=([^&]*)/.exec(h); if(!m) return;
+  var next = {};
+  dec(m[1]).split(',').forEach(function(it){
+    var p = it.split('~'); if(p.length !== 3 || !/^[SAH]$/.test(p[0])) return;
+    next[p[0] + ':' + p[1]] = p[2] === '1';
+  });
+  var same = JSON.stringify(next) === JSON.stringify(PL);
+  if(!same && (!Object.keys(PL).length || window.confirm('Use the on/off places from this link? It replaces the ones saved in this browser.'))){
+    PL = next; savePlaces(); recomputeOn();
+    setTimeout(function(){ toast('Places from the link applied'); }, 300);
+  }
+}
+function openJobCount(h){ var n = 0; h._jobs.forEach(function(j){ if(j.relevance >= S.rel) n++; }); return n; }
+function scopeList(){ var n = findNode(S.pl); return n ? n.list : D.hospitals; }
+function swHTML(kind, id, st, label){
+  return '<button type="button" class="sw" role="switch" aria-checked="' + st.v + '" data-act="pl-sw" data-kind="' + kind + '" data-id="' + esc(id) + '" aria-label="' + esc(label + ', ' + st.on + ' of ' + st.total + ' on') + '"></button>';
+}
+var CHEV = '<svg class="chev" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+function jobsSide(n){ return '<span><b class="' + (n ? 'has' : '') + '">' + n + '</b>' + (n === 1 ? 'job' : 'jobs') + '</span>'; }
+function prowGroup(node){
+  var st = nodeState(node.list), jobs = 0;
+  node.list.forEach(function(h){ if(h._on) jobs += openJobCount(h); });
+  var sub = st.on + ' of ' + plural(st.total, 'hospital') + ' on' + (node.kind === 'S' ? ', ' + plural(node.children.length, 'area') : '');
+  return '<div class="prow' + (st.v === 'false' ? ' is-off' : '') + '" tabindex="0" data-drill="' + esc(node.id) + '">' +
+    swHTML(node.kind, node.id, st, node.name) +
+    '<div><h3 class="prow-name">' + esc(node.name) + '</h3><p class="prow-sub">' + esc(sub) + '</p>' +
+    '<span class="pl-bar" aria-hidden="true"><i style="width:' + (st.total ? Math.round(100 * st.on / st.total) : 0) + '%"></i></span></div>' +
+    '<div class="prow-side">' + jobsSide(jobs) + CHEV + '</div></div>';
+}
+function prowHosp(h){
+  var st = nodeState([h]), n = openJobCount(h);
+  var sub = [[h.city, h.state].filter(Boolean).join(', '), TYPE[h.hospital_type], h.health_system].filter(Boolean).join(', ');
+  return '<div class="prow' + (h._on ? '' : ' is-off') + (S.hosp === h.slug ? ' is-selected' : '') + '" tabindex="0" data-slug="' + esc(h.slug) + '">' +
+    swHTML('H', h.slug, st, h.name) +
+    '<div><h3 class="prow-name">' + esc(h.name) + '</h3><p class="prow-sub">' + esc(sub) + '</p>' + (capBadges(h) ? '<div class="caps" style="margin-top:6px">' + capBadges(h) + '</div>' : '') + '</div>' +
+    '<div class="prow-side">' + jobsSide(n) + '</div></div>';
+}
+function renderPlaces(){
+  $('feed').hidden = true; $('feed').innerHTML = ''; $('ledger').hidden = true; $('ledger').innerHTML = ''; $('coverage').hidden = true; $('coverage').innerHTML = '';
+  $('sentinel').hidden = true; $('loading').hidden = true; $('empty').hidden = true;
+  resetObservers();
+  var node = findNode(S.pl);
+  if(!node){ S.pl = ''; node = findNode(''); }
+  var st = nodeState(node.list), crumbs = '';
+  if(node.kind !== 'R'){
+    var parts = [['', 'All states']];
+    if(node.kind === 'A') parts.push([node.state, STATE_NAME[node.state] || node.state]);
+    crumbs = '<nav class="pl-crumbs" aria-label="Where you are">' + parts.map(function(p){ return '<button type="button" data-act="pl-go" data-to="' + esc(p[0]) + '">' + esc(p[1]) + '</button><span aria-hidden="true">/</span>'; }).join('') + '<span class="cur">' + esc(node.name) + '</span></nav>';
+  }
+  var kind = node.kind === 'R' ? 'R' : node.kind;
+  var html = crumbs + '<div class="pl-head"><div><h2>' + esc(node.name) + '</h2><p><b>' + st.on + '</b> of <b>' + st.total + '</b> hospitals on' +
+    (node.kind === 'R' ? '. Off hospitals and their jobs are hidden everywhere on the board.' : '') + '</p></div>' +
+    '<div class="pl-acts">' +
+      '<button type="button" class="btn" data-act="pl-set" data-kind="' + kind + '" data-id="' + esc(node.id) + '" data-val="1"' + (st.v === 'true' ? ' disabled' : '') + '>Turn all on</button>' +
+      '<button type="button" class="btn" data-act="pl-set" data-kind="' + kind + '" data-id="' + esc(node.id) + '" data-val="0"' + (st.v === 'false' ? ' disabled' : '') + '>Turn all off</button>' +
+      (node.kind === 'R' ? '<button type="button" class="btn" data-act="pl-share">Copy link with these settings</button>' : '') +
+    '</div></div>';
+  if(node.kind === 'R') html += '<p class="pl-note">Tap a state to see its areas, then an area to see its hospitals. Switches save in this browser; use the link button to carry them to another phone or computer.</p>';
+  html += node.kind === 'A' ? node.list.map(prowHosp).join('') : node.children.map(prowGroup).join('');
+  $('places').innerHTML = html;
+  $('places').hidden = false;
+  renderListHead();
+}
+function drillTo(id){
+  S.pl = id || ''; S.hosp = '';
+  $('scroller').scrollTop = 0;
+  update({push: true});
+}
+/* map overlay: state shapes at the top level, area shapes inside a state */
+function hullOf(list, r){
+  var pts = [];
+  list.forEach(function(h){
+    if(!isNum(h.lat) || !isNum(h.lng)) return;
+    var k = Math.cos(h.lat * Math.PI / 180);
+    for(var i = 0; i < 10; i++){ var a = i * Math.PI / 5; pts.push([h.lng * k + r * Math.cos(a), h.lat + r * Math.sin(a), k]); }
+  });
+  if(pts.length < 3) return null;
+  pts.sort(function(a, b){ return a[0] - b[0] || a[1] - b[1]; });
+  var cross = function(o, a, b){ return (a[0] - o[0]) * (b[1] - o[1]) - (a[1] - o[1]) * (b[0] - o[0]); };
+  var lo = [], up = [];
+  pts.forEach(function(p){ while(lo.length >= 2 && cross(lo[lo.length - 2], lo[lo.length - 1], p) <= 0) lo.pop(); lo.push(p); });
+  for(var i = pts.length - 1; i >= 0; i--){ var p = pts[i]; while(up.length >= 2 && cross(up[up.length - 2], up[up.length - 1], p) <= 0) up.pop(); up.push(p); }
+  up.pop(); lo.pop();
+  var k0 = Math.cos((list[0].lat || 40) * Math.PI / 180);
+  return lo.concat(up).map(function(p){ return [p[1], p[0] / k0]; });
+}
+function statePolys(code){
+  for(var i = 0; i < BASEMAP.length; i++) if(BASEMAP[i][0] === code) return BASEMAP[i][1].map(function(flat){ var a = []; for(var j = 0; j + 1 < flat.length; j += 2) a.push([flat[j], flat[j + 1]]); return [a]; });
+  return null;
+}
+function shapeTip(node, st){ return esc(node.name) + ' &middot; ' + st.on + '/' + st.total + ' on'; }
+function drawPlaces(){
+  var L = window.L;
+  if(!MAP || !L || !L.layerGroup || !L.polygon || !MAP.createPane) return;
+  if(!PL_LAYER){
+    MAP.createPane('places'); MAP.getPane('places').style.zIndex = 350;
+    PL_LAYER = L.layerGroup().addTo(MAP);
+  }
+  PL_LAYER.clearLayers();
+  var leg = $('mapLegend');
+  if(S.view !== 'places'){
+    if(leg && leg._pl){ leg.innerHTML = leg._orig; leg._pl = false; }
+    return;
+  }
+  if(leg && !leg._pl){ leg._orig = leg._orig || leg.innerHTML; leg.innerHTML = '<span class="lg-i"><i class="lg-dot"></i>On</span><span class="lg-i"><i class="lg-dot is-off"></i>Off</span><span class="lg-i">Tap a shape to drill in</span>'; leg._pl = true; }
+  var node = findNode(S.pl) || findNode('');
+  var add = function(latlngs, cls, tip, onClick, permanent, size){
+    var poly = L.polygon(latlngs, {pane: 'places', className: cls, interactive: !!onClick, weight: 1.5, smoothFactor: 0.5});
+    if(onClick) poly.on('click', onClick);
+    if(tip) poly.bindTooltip(tip, {sticky: !permanent, permanent: !!permanent, direction: 'center', className: 'pl-tip' + (permanent ? ' is-perm' : '') + (/ off$/.test(cls) ? ' is-off' : ''), opacity: 1});
+    if(tip && permanent && size) poly.on('tooltipopen', function(e){ var el = e.tooltip && e.tooltip.getElement && e.tooltip.getElement(); if(el) el.setAttribute('data-n', size); });
+    PL_LAYER.addLayer(poly);
+  };
+  if(node.kind === 'R'){
+    TREE.forEach(function(s){
+      var st = nodeState(s.list), polys = statePolys(s.id) || (hullOf(s.list, 0.25) ? [hullOf(s.list, 0.25)] : null);
+      if(polys) add(polys, 'pl-shape ' + (st.v === 'true' ? 'on' : st.v === 'mixed' ? 'some' : 'off'), shapeTip(s, st), function(){ drillTo(s.id); });
+    });
+  } else {
+    var stCode = node.kind === 'S' ? node.id : node.state, sp = statePolys(stCode);
+    if(sp) add(sp, 'pl-scope', null, null);
+    var sNode = findNode(stCode);
+    (sNode ? sNode.children : []).forEach(function(a){
+      var hull = hullOf(a.list, node.kind === 'S' ? 0.16 : 0.08); if(!hull) return;
+      var st = nodeState(a.list), cur = node.kind === 'A' && a.id === node.id;
+      if(node.kind === 'A' && !cur){ add(hull, 'pl-shape ' + (st.v === 'true' ? 'on' : st.v === 'mixed' ? 'some' : 'off'), shapeTip(a, st), function(){ drillTo(a.id); }); return; }
+      if(cur){ add(hull, 'pl-scope', null, null); return; }
+      add(hull, 'pl-shape ' + (st.v === 'true' ? 'on' : st.v === 'mixed' ? 'some' : 'off'), shapeTip(a, st), function(){ drillTo(a.id); }, true, a.list.length);
+    });
+  }
+  setTimeout(declutterTips, 30);
+}
+/* hide permanent area labels that would overlap one already shown (biggest areas keep theirs) */
+function declutterTips(){
+  if(!MAP || S.view !== 'places') return;
+  // tooltips of removed shapes linger for a moment while they fade out (opacity 0); ignore them
+  var els = Array.prototype.slice.call(document.querySelectorAll('.leaflet-tooltip.pl-tip.is-perm')).filter(function(el){ return el.style.opacity !== '0'; });
+  els.forEach(function(el){ el.classList.remove('is-hid'); });
+  var items = els.map(function(el){ return {el: el, n: +el.getAttribute('data-n') || 0, r: el.getBoundingClientRect()}; })
+    .filter(function(it){ return it.r.width > 0; })
+    .sort(function(a, b){ return b.n - a.n; });
+  var kept = [];
+  items.forEach(function(it){
+    var r = it.r;
+    var hit = kept.some(function(k){ return !(r.right + 4 < k.left || r.left - 4 > k.right || r.bottom + 2 < k.top || r.top - 2 > k.bottom); });
+    if(hit) it.el.classList.add('is-hid'); else kept.push(r);
+  });
+}
+
 /* ---------- filtering ---------- */
 function qTokens(){ return S.q.toLowerCase().split(/\s+/).map(function(t){ return t.replace(/^["']+|["']+$/g, ''); }).filter(Boolean); }
 function hospPasses(h){
+  if(!h._on) return false;
   if(S.region.length && S.region.indexOf(h.region) < 0) return false;
   if(S.hot && !h.hotspot) return false;
   if(S.state.length && S.state.indexOf(h.state) < 0) return false;
@@ -922,7 +1326,13 @@ function computeFiltered(){
     if(toks.length && !n && !toks.every(function(t){ return h._search.indexOf(t) > -1; })) return false;
     return true;
   });
-  F = {jobs: jobs, hospitals: hospitals, countBySlug: counts, now: now};
+  F = {jobs: jobs, hospitals: hospitals, hospCount: hospitals.length, countBySlug: counts, now: now};
+  if(S.view === 'places'){
+    var pc = {};
+    F.hospitals = scopeList().slice();
+    F.hospitals.forEach(function(h){ pc[h.slug] = h._on ? openJobCount(h) : 0; });
+    F.countBySlug = pc;
+  }
   computeCoverage(toks);
 }
 function computeCoverage(toks){
@@ -947,20 +1357,23 @@ function activeFilterCount(){
 function update(opts){
   opts = opts || {};
   computeFiltered();
+  renderStats();
   if(!opts.keepScroll && !opts.initial) $('scroller').scrollTop = 0;
   renderControls();
   renderChips();
-  if(S.view === 'jobs') renderFeed(); else if(S.view === 'coverage') renderCoverage(); else renderLedger();
+  if(S.view !== 'places'){ $('places').hidden = true; $('places').innerHTML = ''; }
+  if(S.view === 'jobs') renderFeed(); else if(S.view === 'coverage') renderCoverage(); else if(S.view === 'places') renderPlaces(); else renderLedger();
   syncMarkers(opts);
+  drawPlaces();
   refreshPopup();
   syncFilterPanel();
   if(!opts.noHash) writeHash(!!opts.push);
 }
 function renderStats(){
   var jd = D.jobsDoc || {}, gen = parseTs(jd.generated_at), now = Date.now();
-  var open = D.jobs.filter(function(j){ return j.status === 'active'; });
+  var open = D.jobs.filter(function(j){ return j.status === 'active' && (!j._h || j._h._on); });
   var hs = {}; open.forEach(function(j){ hs[j.hospital_slug] = 1; });
-  var week = D.jobs.filter(function(j){ return now - j._first <= 7 * DAY; }).length;
+  var week = D.jobs.filter(function(j){ return now - j._first <= 7 * DAY && (!j._h || j._h._on); }).length;
   $('stats').innerHTML =
     '<span><b>' + open.length + '</b> ' + (open.length === 1 ? 'open job' : 'open jobs') + ' at <b>' + Object.keys(hs).length + '</b> ' + (Object.keys(hs).length === 1 ? 'hospital' : 'hospitals') + '</span>' +
     '<span class="stat-new"><i class="beacon-dot" aria-hidden="true"></i><span><b>' + week + '</b> new this week</span></span>' +
@@ -969,7 +1382,9 @@ function renderStats(){
 function renderControls(){
   Array.prototype.forEach.call(document.querySelectorAll('.view-seg [data-view]'), function(b){ b.setAttribute('aria-pressed', String(b.getAttribute('data-view') === S.view)); });
   $('nJobs').textContent = F.jobs.length;
-  $('nHosp').textContent = F.hospitals.length;
+  $('nHosp').textContent = F.hospCount;
+  var offN = offCount();
+  $('nPl').textContent = offN ? offN + ' off' : '';
   $('nCov').textContent = D.covMeta ? F.covNotOk : '';
   $('hotBtn').setAttribute('aria-pressed', String(S.hot));
   $('starBtn').setAttribute('aria-pressed', String(S.star));
@@ -987,6 +1402,8 @@ function chip(k, v, label){
 }
 function renderChips(){
   var c = [];
+  var offN = S.view === 'places' ? 0 : offCount();
+  if(offN) c.push('<button type="button" class="chip-off" data-act="go-places" title="Change which places are on">' + plural(offN, 'hospital') + ' turned off in Places</button>');
   if(S.at) c.push(chip('at', '', 'At ' + (D.H[S.at] ? D.H[S.at].name : S.at)));
   if(S.hot) c.push(chip('hot', '', 'Hotspots only'));
   S.region.forEach(function(r){ c.push(chip('region', r, r)); });
@@ -998,7 +1415,7 @@ function renderChips(){
   if(S.q) c.push(chip('q', '', 'Search: ' + S.q));
   if(S.star) c.push(chip('star', '', 'Starred only'));
   if(!S.stale) c.push(chip('stale', '', 'Hiding stale postings'));
-  if(c.length > 1) c.push('<button type="button" class="chip-clear" data-act="clear-all">Clear all</button>');
+  if(c.length - (offN ? 1 : 0) > 1) c.push('<button type="button" class="chip-clear" data-act="clear-all">Clear all</button>');
   $('chips').innerHTML = c.join('');
   $('chips').hidden = !c.length;
 }
@@ -1014,8 +1431,8 @@ function removeChip(k, v){
   update({keepMap: k === 'at'});
 }
 function clearAll(){
-  var keep = {view:S.view, sort:S.sort, job:S.job, hosp:S.hosp};
-  S = clone(DEFAULTS); S.view = keep.view; S.sort = keep.sort; S.job = keep.job; S.hosp = keep.hosp;
+  var keep = {view:S.view, sort:S.sort, job:S.job, hosp:S.hosp, pl:S.pl};
+  S = clone(DEFAULTS); S.pl = keep.pl; S.view = keep.view; S.sort = keep.sort; S.job = keep.job; S.hosp = keep.hosp;
   $('q').value = '';
   update();
 }
@@ -1071,6 +1488,9 @@ function renderListHead(){
     h = '<span><b>' + F.jobs.length + '</b> ' + (F.jobs.length === 1 ? 'job' : 'jobs') + ', ' + SORT[S.sort].toLowerCase() + '</span>';
     if(stale) h += '<span>' + stale + ' not seen on the careers site lately</span>';
     if(S.at && D.H[S.at]) h += '<span>at ' + esc(D.H[S.at].name) + '</span><button type="button" class="link-btn" data-act="clear-at">Show all hospitals</button>';
+  } else if(S.view === 'places'){
+    var on = 0; D.hospitals.forEach(function(x){ if(x._on) on++; });
+    h = '<span><b>' + on + '</b> of <b>' + D.hospitals.length + '</b> hospitals on</span><span>Switches apply to every view</span>';
   } else if(S.view === 'coverage'){
     var what = S.cov === 'all' ? 'all boards' : (S.cov === 'notok' ? 'not read in the last run' : (S.cov === 'ok' ? 'read OK' : (COV_CLASS[S.cov] || S.cov).toLowerCase()));
     h = '<span><b>' + F.covRows.length + '</b> ' + (F.covRows.length === 1 ? 'board' : 'boards') + ', ' + what + '</span><span>Hotspot regions first</span>';
@@ -1576,7 +1996,7 @@ function loadWiki(h){
 function hospDetailHTML(h){
   var jobs = h._jobs, web = safeUrl(h.website), careers = safeUrl(h.careers_url), search = safeUrl(h.careers_search_url);
   var html = galleryHTML(h);
-  html += '<div class="eyebrow-row">' + (h.hotspot ? '<span class="hot-tag"><span class="hot-ring" aria-hidden="true"></span>Hotspot</span>' : '') + '<span>' + esc(h.region) + '</span><span>' + esc(TYPE[h.hospital_type] || '') + '</span></div>';
+  html += '<div class="eyebrow-row">' + (h.hotspot ? '<span class="hot-tag"><span class="hot-ring" aria-hidden="true"></span>Hotspot</span>' : '') + (!h._on ? '<span>Off in Places</span>' : '') + '<span>' + esc(AREA[h._area] ? AREA[h._area].name : h.region) + '</span><span>' + esc(TYPE[h.hospital_type] || '') + '</span></div>';
   html += '<h2 class="d-title" id="panelTitle" tabindex="-1">' + esc(h.name) + '</h2>';
   if(h.parent_hospital || h.health_system) html += '<p class="h-parent">' + esc([h.parent_hospital ? 'At ' + h.parent_hospital : '', h.health_system].filter(Boolean).join(', ')) + '</p>';
   if(h.address || h.city) html += '<p class="h-addr">' + esc(h.address || [h.city, h.state].filter(Boolean).join(', ')) + '</p>';
@@ -1587,6 +2007,7 @@ function hospDetailHTML(h){
     (web ? '<a class="btn" href="' + esc(web) + '" target="_blank" rel="noopener noreferrer">Website' + ICON.ext + '</a>' : '') +
     (h.wikipedia_title ? '<a class="btn" href="' + esc(wikiUrl(h.wikipedia_title)) + '" target="_blank" rel="noopener noreferrer">Wikipedia' + ICON.ext + '</a>' : '') +
     (isNum(h.lat) && isNum(h.lng) ? '<a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=' + h.lat + ',' + h.lng + '" target="_blank" rel="noopener noreferrer">Open in Google Maps' + ICON.ext + '</a>' : '') +
+    '<button type="button" class="btn" data-act="pl-sw" data-kind="H" data-id="' + esc(h.slug) + '">' + (h._on ? 'Turn off this hospital' : 'Turn this hospital back on') + '</button>' +
   '</div>';
   html += '<section class="sec"><h3>' + (jobs.length ? plural(jobs.length, 'open job') + ' here' : 'No open jobs here right now') + '</h3>';
   if(jobs.length){
@@ -1679,6 +2100,7 @@ function initMap(){
     CLUSTER.addTo(MAP);
     if(CLUSTER.on){ CLUSTER.on('animationend', relight); CLUSTER.on('spiderfied', relight); }
     MAP.on('zoomend moveend', relight);
+    MAP.on('zoomend moveend', function(){ declutterTips(); });
     MAP.on('zoomend', function(){ var c = MAP.getContainer && MAP.getContainer(); if(c && c.classList) c.classList.toggle('z-hi', MAP.getZoom() >= 7.5); });
     MAP.on('popupclose', function(){ popupSlug = ''; });
     POPUP = L.popup({closeButton: true, autoPanPadding: [30, 30], maxWidth: 300, offset: [0, -10]});
@@ -1691,6 +2113,7 @@ function mapMessage(msg){ var m = $('mapMsg'); m.innerHTML = '<p>' + esc(msg) + 
 function drawBase(L){
   var data = [];
   try { data = JSON.parse($('basemap-data').textContent || '[]'); } catch(e){}
+  BASEMAP = data;
   if(!data.length) return;
   var r = L.svg ? L.svg({pane: 'base', padding: 0.5}) : null;
   data.forEach(function(st){
@@ -1726,12 +2149,14 @@ function setTiles(){
 function coarse(){ try { return !!(window.matchMedia && matchMedia('(pointer: coarse)').matches); } catch(e){ return false; } }
 function hIcon(h, count){
   var size = count ? (count > 9 ? 32 : 28) : 14, box = coarse() ? 44 : Math.max(size, 22);
-  var cls = 'hm-dot' + (count ? '' : ' is-empty') + (h.hotspot ? ' is-hot' : '') + (S.at === h.slug ? ' is-at' : '');
+  if(!h._on) count = 0;
+  var cls = 'hm-dot' + (!h._on ? ' is-off' : (count ? '' : ' is-empty') + (h.hotspot ? ' is-hot' : '')) + (S.at === h.slug ? ' is-at' : '');
   return window.L.divIcon({className: 'hm', html: '<span class="' + cls + '" data-slug="' + esc(h.slug) + '" style="width:' + size + 'px;height:' + size + 'px">' + (count || '') + '</span>', iconSize: [box, box], iconAnchor: [box / 2, box / 2]});
 }
 function clusterIcon(c){
-  var ms = c.getAllChildMarkers(), jobs = 0, hot = false;
-  ms.forEach(function(m){ jobs += m.options.jobCount || 0; if(m.options.hot) hot = true; });
+  var ms = c.getAllChildMarkers(), jobs = 0, hot = false, on = 0;
+  ms.forEach(function(m){ jobs += m.options.jobCount || 0; if(m.options.hot) hot = true; if(!m.options.off) on++; });
+  if(!on) return window.L.divIcon({className: 'hc', html: '<span class="hc-dot is-off" title="' + esc(plural(ms.length, 'hospital') + ', all off') + '">' + ms.length + '</span>', iconSize: [28, 28]});
   var size = jobs ? (jobs > 99 ? 44 : 38) : 28;
   var title = plural(ms.length, 'hospital') + ', ' + (jobs ? plural(jobs, 'matching job') : 'no matching jobs');
   return window.L.divIcon({className: 'hc', html: '<span class="hc-dot' + (jobs ? '' : ' is-empty') + (hot ? ' is-hot' : '') + '" title="' + esc(title) + '">' + (jobs || ms.length) + '</span>', iconSize: [size, size]});
@@ -1743,7 +2168,7 @@ function syncMarkers(opts){
   F.hospitals.forEach(function(h){
     if(!isNum(h.lat) || !isNum(h.lng)) return;
     var n = F.countBySlug[h.slug] || 0;
-    var sig = n + '|' + (h.hotspot ? 1 : 0) + '|' + (S.at === h.slug ? 1 : 0);
+    var sig = n + '|' + (h.hotspot ? 1 : 0) + '|' + (S.at === h.slug ? 1 : 0) + '|' + (h._on ? 1 : 0);
     var m = MARKERS[h.slug];
     if(!m){
       m = window.L.marker([h.lat, h.lng], {icon: hIcon(h, n), title: h.name, keyboard: true, riseOnHover: true});
@@ -1751,7 +2176,7 @@ function syncMarkers(opts){
       m.on('click', onMarkerClick);
       MARKERS[h.slug] = m;
     } else if(m._npSig !== sig){ m.setIcon(hIcon(h, n)); m._npSig = sig; changed = true; }
-    m.options.jobCount = n; m.options.hot = !!h.hotspot;
+    m.options.jobCount = h._on ? n : 0; m.options.hot = !!h.hotspot && h._on; m.options.off = !h._on;
     layers.push(m);
   });
   var setKey = layers.map(function(l){ return l._npSlug; }).join('|');
@@ -1765,7 +2190,7 @@ function syncMarkers(opts){
 }
 function closeZoom(){ return tilesFailed ? 7 : 10; }
 function maybeFit(initial){
-  var key = [S.region.join(','), S.state.join(','), S.type.join(','), S.hot ? 1 : 0].join('|');
+  var key = S.view === 'places' ? 'places|' + S.pl : [S.region.join(','), S.state.join(','), S.type.join(','), S.hot ? 1 : 0, offCount()].join('|');
   if(key === lastFitKey) return;
   lastFitKey = key;
   var pts = F.hospitals.filter(function(h){ return isNum(h.lat) && isNum(h.lng); }).map(function(h){ return [h.lat, h.lng]; });
@@ -1777,9 +2202,9 @@ function maybeFit(initial){
 }
 function onMarkerClick(){
   var slug = this._npSlug;
-  if(S.view === 'hospitals' || S.view === 'coverage'){
+  if(S.view === 'hospitals' || S.view === 'coverage' || S.view === 'places'){
     openPopup(slug);
-    var row = document.querySelector('.hrow[data-slug="' + cssEsc(slug) + '"], .crow[data-slug="' + cssEsc(slug) + '"]');
+    var row = document.querySelector('.hrow[data-slug="' + cssEsc(slug) + '"], .crow[data-slug="' + cssEsc(slug) + '"], .prow[data-slug="' + cssEsc(slug) + '"]');
     if(row && row.scrollIntoView) row.scrollIntoView({block: 'center', behavior: prefersReduced() ? 'auto' : 'smooth'});
     return;
   }
@@ -1789,9 +2214,12 @@ function onMarkerClick(){
 }
 function popupHTML(h){
   var n = F.countBySlug[h.slug] || 0, word = jobFiltersActive() ? 'matching' : 'open';
+  if(!h._on) return '<div class="pop"><p class="pop-name">' + esc(h.name) + '</p><div class="pop-sub">' + esc([AREA[h._area] ? AREA[h._area].name : '', h.state].filter(Boolean).join(', ')) + '</div><div class="pop-count none">Turned off in Places</div>' +
+    '<div class="pop-acts"><button type="button" class="btn btn-primary" data-act="pl-sw" data-kind="H" data-id="' + esc(h.slug) + '">Turn on</button><button type="button" class="btn" data-act="hosp" data-slug="' + esc(h.slug) + '">Hospital details</button></div></div>';
   return '<div class="pop"><p class="pop-name">' + esc(h.name) + '</p><div class="pop-sub">' + esc([TYPE[h.hospital_type], [h.city, h.state].filter(Boolean).join(', ')].filter(Boolean).join(', ')) + '</div>' +
     '<div class="pop-count' + (n ? '' : ' none') + '">' + (n ? plural(n, word + ' job') : 'No ' + word + ' jobs right now') + '</div>' +
-    '<div class="pop-acts"><button type="button" class="btn btn-primary" data-act="hosp" data-slug="' + esc(h.slug) + '">Hospital details</button>' +
+    '<div class="pop-acts">' + (S.view === 'places' ? '<button type="button" class="btn' + (h._on ? '' : ' btn-primary') + '" data-act="pl-sw" data-kind="H" data-id="' + esc(h.slug) + '">' + (h._on ? 'Turn off' : 'Turn on') + '</button>' : '') +
+    '<button type="button" class="btn' + (S.view === 'places' ? '' : ' btn-primary') + '" data-act="hosp" data-slug="' + esc(h.slug) + '">Hospital details</button>' +
     (S.view === 'jobs' && S.at === h.slug ? '<button type="button" class="btn" data-act="clear-at">Show all jobs</button>' : '') +
     (isMobile() && S.view === 'jobs' && n ? '<button type="button" class="btn" data-act="see-list">See jobs</button>' : '') + '</div></div>';
 }
@@ -1857,6 +2285,11 @@ function onAction(e){
   else if(act === 'copy'){ copyText(a.getAttribute('data-text'), a.getAttribute('data-label') || 'Link'); }
   else if(act === 'clear-at'){ S.at = ''; if(MAP) MAP.closePopup(); update({keepMap: true}); }
   else if(act === 'clear-all'){ clearAll(); }
+  else if(act === 'pl-sw'){ e.preventDefault(); e.stopPropagation(); toggleNode(a.getAttribute('data-kind'), a.getAttribute('data-id')); if(panelTop()) renderPanel(); refreshPopup(); }
+  else if(act === 'pl-set'){ e.preventDefault(); setNode(a.getAttribute('data-kind'), a.getAttribute('data-id'), a.getAttribute('data-val') === '1'); update({keepScroll: true, keepMap: true}); }
+  else if(act === 'pl-go'){ e.preventDefault(); drillTo(a.getAttribute('data-to')); }
+  else if(act === 'pl-share'){ copyText(placesShareLink(), 'Link with these places'); }
+  else if(act === 'go-places'){ S.view = 'places'; S.pl = ''; $('scroller').scrollTop = 0; update({push: true}); }
   else if(act === 'fp-close' || act === 'about-close'){ closePops(); }
   else if(act === 'lightbox'){ openLightbox(+a.getAttribute('data-i') || 0); }
   else if(act === 'gal-pick'){ pickPhoto(+a.getAttribute('data-i')); }
@@ -1890,6 +2323,20 @@ function bind(){
     var row = e.target.closest('.hrow'); if(!row) return;
     openHospital(row.getAttribute('data-slug'), {trigger: row});
   });
+  $('places').addEventListener('click', function(e){
+    if(e.target.closest('[data-act], a')) return;
+    var row = e.target.closest('.prow'); if(!row) return;
+    if(row.hasAttribute('data-drill')) drillTo(row.getAttribute('data-drill'));
+    else openHospital(row.getAttribute('data-slug'), {trigger: row});
+  });
+  $('places').addEventListener('keydown', function(e){
+    if(e.key !== 'Enter' && e.key !== ' ') return;
+    var row = e.target; if(!row.classList || !row.classList.contains('prow')) return;
+    e.preventDefault();
+    if(row.hasAttribute('data-drill')) drillTo(row.getAttribute('data-drill')); else openHospital(row.getAttribute('data-slug'), {trigger: row});
+  });
+  $('places').addEventListener('mouseover', function(e){ var c = e.target.closest('.prow[data-slug]'); setHover(c ? c.getAttribute('data-slug') : ''); });
+  $('places').addEventListener('mouseleave', function(){ setHover(''); });
   $('coverage').addEventListener('click', function(e){
     var seg = e.target.closest('[data-cov]');
     if(seg){ S.cov = seg.getAttribute('data-cov'); update({keepScroll: true, keepMap: true}); return; }
@@ -1979,6 +2426,7 @@ function boot(){
   $('empty').hidden = true; $('loading').hidden = false;
   loadData().then(function(r){
     ingest(r);
+    applySharedPlaces();
     renderStats();
     if(D.fixture){
       var n = $('notice');
@@ -1998,10 +2446,11 @@ function boot(){
   });
 }
 
-window.NPJobs = {ready: false, state: function(){ return S; }, filtered: function(){ return F; }, data: function(){ return D; }, update: update};
+window.NPJobs = {ready: false, places: function(){ return PL; }, state: function(){ return S; }, filtered: function(){ return F; }, data: function(){ return D; }, update: update};
 applyStoredTheme();
 syncThemeBtn();
 loadStars();
+loadPlaces();
 bind();
 setupObservers();
 $('q').value = S.q;
