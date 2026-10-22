@@ -2,7 +2,7 @@
  "run_id": "2026-10-22",
  "mode": "automated",
  "started_at": "2026-10-22T07:37:28Z",
- "finished_at": "2026-10-22T08:06:31Z",
+ "finished_at": "2026-10-22T08:16:32Z",
  "dry_run": false,
  "no_details": false,
  "keywords": [
@@ -31,6 +31,8 @@
   "ahn-wexford-hospital-wexford",
   "ahn-west-penn-hospital-pittsburgh",
   "beebe-healthcare-lewes",
+  "st-marys-regional-lewiston",
+  "st-joseph-hospital-nashua",
   "elliot-hospital-manchester",
   "southern-nh-medical-center-nashua",
   "mount-sinai-brooklyn-brooklyn",
@@ -62,6 +64,7 @@
   "cedar-hill-regional-washington",
   "gw-university-hospital-washington",
   "adventhealth-hendersonville",
+  "boston-childrens-boston",
   "bradley-hospital-east-providence",
   "hasbro-childrens-providence",
   "geisinger-community-medical-center-scranton",
@@ -132,6 +135,7 @@
   "uvm-cvph-plattsburgh",
   "central-vermont-medical-center-berlin",
   "golisano-childrens-uvm-burlington",
+  "valley-hospital-paramus",
   "winchester-medical-center-winchester",
   "vhc-health-arlington",
   "wyckoff-heights-medical-center-brooklyn",
@@ -258,6 +262,21 @@
   "uconn-john-dempsey-farmington",
   "waterbury-hospital-waterbury",
   "ascension-saint-agnes-baltimore",
+  "cohen-childrens-new-hyde-park",
+  "lenox-hill-hospital-manhattan",
+  "lij-forest-hills-queens",
+  "long-island-jewish-medical-center-new-hyde-park",
+  "staten-island-university-hospital-staten-island",
+  "huntington-hospital-huntington",
+  "lij-valley-stream-valley-stream",
+  "mather-hospital-port-jefferson",
+  "north-shore-university-hospital-manhasset",
+  "peconic-bay-medical-center-riverhead",
+  "south-shore-university-hospital-bay-shore",
+  "northern-westchester-hospital-mount-kisco",
+  "phelps-hospital-sleepy-hollow",
+  "putnam-hospital-carmel",
+  "vassar-brothers-medical-center-poughkeepsie",
   "saint-vincent-hospital-worcester",
   "piedmont-medical-center-rock-hill",
   "piedmont-fort-mill-fort-mill",
@@ -473,8 +492,6 @@
   "adirondack-medical-center-saranac-lake",
   "anmed-medical-center-anderson",
   "augusta-health-fishersville",
-  "st-marys-regional-lewiston",
-  "st-joseph-hospital-nashua",
   "niagara-falls-memorial-medical-center-niagara-falls",
   "carteret-health-care-morehead-city",
   "carthage-area-hospital-carthage",
@@ -487,7 +504,6 @@
   "hsc-pediatric-center-washington",
   "howard-university-hospital-washington",
   "iredell-memorial-statesville",
-  "boston-childrens-boston",
   "mcleod-childrens-florence",
   "mcleod-regional-florence",
   "pappas-rehabilitation-canton",
@@ -507,24 +523,8 @@
   "mt-washington-pediatric-baltimore",
   "nathan-littauer-hospital-gloversville",
   "spartanburg-medical-center-spartanburg",
-  "valley-hospital-paramus",
   "washington-regional-plymouth",
-  "columbus-regional-whiteville",
-  "cohen-childrens-new-hyde-park",
-  "lenox-hill-hospital-manhattan",
-  "lij-forest-hills-queens",
-  "long-island-jewish-medical-center-new-hyde-park",
-  "staten-island-university-hospital-staten-island",
-  "huntington-hospital-huntington",
-  "lij-valley-stream-valley-stream",
-  "mather-hospital-port-jefferson",
-  "north-shore-university-hospital-manhasset",
-  "peconic-bay-medical-center-riverhead",
-  "south-shore-university-hospital-bay-shore",
-  "northern-westchester-hospital-mount-kisco",
-  "phelps-hospital-sleepy-hollow",
-  "putnam-hospital-carmel",
-  "vassar-brothers-medical-center-poughkeepsie"
+  "columbus-regional-whiteville"
  ],
  "unreachable_detail": {
   "catholic-medical-center-manchester": "AdapterError: careersite: every jobs.json search failed in the browser: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class=\"no-js\" lang=\"en-US\"><!--<![endif]--><head>\\n<title>At'; html search 'nurse practitioner': HTTP 403 Attention Required! | Cloudflare; html search 'pediatric nurse practitioner': HTTP 403 Attention Required! | Cloudflare",
@@ -549,8 +549,6 @@
   "adirondack-medical-center-saranac-lake": "careers page reachable but no job listings recognized (generic adapter): set careers_search_url / ats_config to the real job board",
   "anmed-medical-center-anderson": "careers page reachable but no job listings recognized (generic adapter): set careers_search_url / ats_config to the real job board",
   "augusta-health-fishersville": "careers page reachable but no job listings recognized (generic adapter): set careers_search_url / ats_config to the real job board",
-  "st-marys-regional-lewiston": "AdapterError: generic: no page reachable: 403 https://careers.covenanthealth.net/?q=nurse+practitioner; playwright 403 https://careers.covenanthealth.net/?q=nurse+practitioner; playwright 403 https://careers.covenanthealth.net/?keywords=nurse+practitioner; playwright 403 https://careers.covenanthealth.net/?keyword=nurse+practitioner",
-  "st-joseph-hospital-nashua": "AdapterError: generic: no page reachable: 403 https://careers.covenanthealth.net/?q=nurse+practitioner; playwright 403 https://careers.covenanthealth.net/?q=nurse+practitioner; playwright 403 https://careers.covenanthealth.net/?keywords=nurse+practitioner; playwright 403 https://careers.covenanthealth.net/?keyword=nurse+practitioner",
   "niagara-falls-memorial-medical-center-niagara-falls": "careers page reachable but no job listings recognized (generic adapter): set careers_search_url / ats_config to the real job board",
   "carteret-health-care-morehead-city": "careers page reachable but no job listings recognized (generic adapter): set careers_search_url / ats_config to the real job board",
   "carthage-area-hospital-carthage": "AdapterError: generic: no page reachable: 404 https://www.carthagehospital.com/careers/; playwright 404 https://www.carthagehospital.com/careers/?q=nurse+practitioner; playwright 404 https://www.carthagehospital.com/careers/?keywords=nurse+practitioner; playwright 404 https://www.carthagehospital.com/careers/?keyword=nurse+practitioner",
@@ -563,7 +561,6 @@
   "hsc-pediatric-center-washington": "AdapterError: generic: no page reachable: None https://www.hschealth.org/careers; playwright TimeoutError: Page.goto: Timeout 45000ms exceeded.\nCall log:\n  - navigating to \"https://www.hschealth.org/careers?q=nurse+practitioner https://www.hschealth.org/careers?q=nurse+practitioner; playwright TimeoutError: Page.goto: Timeout 45000ms exceeded.\nCall log:\n  - navigating to \"https://www.hschealth.org/careers?keywords=nurse+pract https://www.hschealth.org/careers?keywords=nurse+practitioner; playwright Error: Pag",
   "howard-university-hospital-washington": "careers page reachable but no job listings recognized (generic adapter): set careers_search_url / ats_config to the real job board",
   "iredell-memorial-statesville": "careers page reachable but no job listings recognized (generic adapter): set careers_search_url / ats_config to the real job board",
-  "boston-childrens-boston": "AdapterError: generic: no page reachable: 403 https://jobs.bostonchildrens.org/job-search-results/?keyword=nurse%20practitioner; playwright 403 https://jobs.bostonchildrens.org/job-search-results/?keyword=nurse%20practitioner; playwright 403 https://jobs.bostonchildrens.org/job-search-results/?q=nurse+practitioner; playwright 403 https://jobs.bostonchildrens.org/job-search-results/?keywords=nurse+practitioner",
   "mcleod-childrens-florence": "careers page reachable but no job listings recognized (generic adapter): set careers_search_url / ats_config to the real job board",
   "mcleod-regional-florence": "careers page reachable but no job listings recognized (generic adapter): set careers_search_url / ats_config to the real job board",
   "pappas-rehabilitation-canton": "AdapterError: generic: no page reachable: 404 https://www.mass.gov/orgs/pappas-rehabilitation-hospital-for-children; playwright 404 https://www.mass.gov/orgs/pappas-rehabilitation-hospital-for-children?q=nurse+practitioner; playwright 404 https://www.mass.gov/orgs/pappas-rehabilitation-hospital-for-children?keywords=nurse+practitioner; playwright 404 https://www.mass.gov/orgs/pappas-rehabilitation-hospital-for-children?keyword=nurse+practitioner",
@@ -583,24 +580,8 @@
   "mt-washington-pediatric-baltimore": "careers page reachable but no job listings recognized (generic adapter): set careers_search_url / ats_config to the real job board",
   "nathan-littauer-hospital-gloversville": "careers page reachable but no job listings recognized (generic adapter): set careers_search_url / ats_config to the real job board",
   "spartanburg-medical-center-spartanburg": "AdapterError: generic: no page reachable: 403 https://www.spartanburgregional.com/careers?q=nurse+practitioner; playwright 403 https://www.spartanburgregional.com/careers?q=nurse+practitioner; playwright 403 https://www.spartanburgregional.com/careers?keywords=nurse+practitioner; playwright 403 https://www.spartanburgregional.com/careers?keyword=nurse+practitioner",
-  "valley-hospital-paramus": "AdapterError: generic: no page reachable: 403 https://www.valleyhealthcareers.com/?q=nurse+practitioner; playwright 403 https://www.valleyhealthcareers.com/?q=nurse+practitioner; playwright 403 https://www.valleyhealthcareers.com/?keywords=nurse+practitioner; playwright 403 https://www.valleyhealthcareers.com/?keyword=nurse+practitioner",
   "washington-regional-plymouth": "AdapterError: generic: no page reachable: None https://www.washingtonregional.org/careers/; playwright Error: Page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.washingtonregional.org/careers/?q=nurse+practitioner\nCall log:\n  -  https://www.washingtonregional.org/careers/?q=nurse+practitioner; playwright Error: Page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.washingtonregional.org/careers/?keywords=nurse+practitioner\nCall lo https://www.washingtonregional.org/careers/?keywords=nurse+practitioner; playw",
-  "columbus-regional-whiteville": "careers page reachable but no job listings recognized (generic adapter): set careers_search_url / ats_config to the real job board",
-  "cohen-childrens-new-hyde-park": "AdapterError: search 'APRN': HTTP 403 for https://jobs.northwell.edu/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requisitionList.secondaryLocations,flexFieldsFacet.values,requisitionList.requisitionFlexFields&finder=findReqs;siteNumber=CX_1,facetsList=NONE,limit=25,offset=0,keyword=%22APRN%22,sortBy=POSTING_DATES_DESC: forbidden (bot block?); search 'PICU': HTTP 403 for https://jobs.northwell.edu/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requ",
-  "lenox-hill-hospital-manhattan": "AdapterError: search 'APRN': HTTP 403 for https://jobs.northwell.edu/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requisitionList.secondaryLocations,flexFieldsFacet.values,requisitionList.requisitionFlexFields&finder=findReqs;siteNumber=CX_1,facetsList=NONE,limit=25,offset=0,keyword=%22APRN%22,sortBy=POSTING_DATES_DESC: forbidden (bot block?); search 'PICU': HTTP 403 for https://jobs.northwell.edu/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requ",
-  "lij-forest-hills-queens": "AdapterError: search 'APRN': HTTP 403 for https://jobs.northwell.edu/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requisitionList.secondaryLocations,flexFieldsFacet.values,requisitionList.requisitionFlexFields&finder=findReqs;siteNumber=CX_1,facetsList=NONE,limit=25,offset=0,keyword=%22APRN%22,sortBy=POSTING_DATES_DESC: forbidden (bot block?); search 'PICU': HTTP 403 for https://jobs.northwell.edu/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requ",
-  "long-island-jewish-medical-center-new-hyde-park": "AdapterError: search 'APRN': HTTP 403 for https://jobs.northwell.edu/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requisitionList.secondaryLocations,flexFieldsFacet.values,requisitionList.requisitionFlexFields&finder=findReqs;siteNumber=CX_1,facetsList=NONE,limit=25,offset=0,keyword=%22APRN%22,sortBy=POSTING_DATES_DESC: forbidden (bot block?); search 'PICU': HTTP 403 for https://jobs.northwell.edu/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requ",
-  "staten-island-university-hospital-staten-island": "AdapterError: search 'APRN': HTTP 403 for https://jobs.northwell.edu/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requisitionList.secondaryLocations,flexFieldsFacet.values,requisitionList.requisitionFlexFields&finder=findReqs;siteNumber=CX_1,facetsList=NONE,limit=25,offset=0,keyword=%22APRN%22,sortBy=POSTING_DATES_DESC: forbidden (bot block?); search 'PICU': HTTP 403 for https://jobs.northwell.edu/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requ",
-  "huntington-hospital-huntington": "AdapterError: search 'APRN': HTTP 403 for https://jobs.northwell.edu/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requisitionList.secondaryLocations,flexFieldsFacet.values,requisitionList.requisitionFlexFields&finder=findReqs;siteNumber=CX_1,facetsList=NONE,limit=25,offset=0,keyword=%22APRN%22,sortBy=POSTING_DATES_DESC: forbidden (bot block?); search 'PICU': HTTP 403 for https://jobs.northwell.edu/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requ",
-  "lij-valley-stream-valley-stream": "AdapterError: search 'APRN': HTTP 403 for https://jobs.northwell.edu/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requisitionList.secondaryLocations,flexFieldsFacet.values,requisitionList.requisitionFlexFields&finder=findReqs;siteNumber=CX_1,facetsList=NONE,limit=25,offset=0,keyword=%22APRN%22,sortBy=POSTING_DATES_DESC: forbidden (bot block?); search 'PICU': HTTP 403 for https://jobs.northwell.edu/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requ",
-  "mather-hospital-port-jefferson": "AdapterError: search 'APRN': HTTP 403 for https://jobs.northwell.edu/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requisitionList.secondaryLocations,flexFieldsFacet.values,requisitionList.requisitionFlexFields&finder=findReqs;siteNumber=CX_1,facetsList=NONE,limit=25,offset=0,keyword=%22APRN%22,sortBy=POSTING_DATES_DESC: forbidden (bot block?); search 'PICU': HTTP 403 for https://jobs.northwell.edu/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requ",
-  "north-shore-university-hospital-manhasset": "AdapterError: search 'APRN': HTTP 403 for https://jobs.northwell.edu/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requisitionList.secondaryLocations,flexFieldsFacet.values,requisitionList.requisitionFlexFields&finder=findReqs;siteNumber=CX_1,facetsList=NONE,limit=25,offset=0,keyword=%22APRN%22,sortBy=POSTING_DATES_DESC: forbidden (bot block?); search 'PICU': HTTP 403 for https://jobs.northwell.edu/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requ",
-  "peconic-bay-medical-center-riverhead": "AdapterError: search 'APRN': HTTP 403 for https://jobs.northwell.edu/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requisitionList.secondaryLocations,flexFieldsFacet.values,requisitionList.requisitionFlexFields&finder=findReqs;siteNumber=CX_1,facetsList=NONE,limit=25,offset=0,keyword=%22APRN%22,sortBy=POSTING_DATES_DESC: forbidden (bot block?); search 'PICU': HTTP 403 for https://jobs.northwell.edu/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requ",
-  "south-shore-university-hospital-bay-shore": "AdapterError: search 'APRN': HTTP 403 for https://jobs.northwell.edu/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requisitionList.secondaryLocations,flexFieldsFacet.values,requisitionList.requisitionFlexFields&finder=findReqs;siteNumber=CX_1,facetsList=NONE,limit=25,offset=0,keyword=%22APRN%22,sortBy=POSTING_DATES_DESC: forbidden (bot block?); search 'PICU': HTTP 403 for https://jobs.northwell.edu/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requ",
-  "northern-westchester-hospital-mount-kisco": "AdapterError: search 'APRN': HTTP 403 for https://jobs.northwell.edu/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requisitionList.secondaryLocations,flexFieldsFacet.values,requisitionList.requisitionFlexFields&finder=findReqs;siteNumber=CX_1,facetsList=NONE,limit=25,offset=0,keyword=%22APRN%22,sortBy=POSTING_DATES_DESC: forbidden (bot block?); search 'PICU': HTTP 403 for https://jobs.northwell.edu/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requ",
-  "phelps-hospital-sleepy-hollow": "AdapterError: search 'APRN': HTTP 403 for https://jobs.northwell.edu/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requisitionList.secondaryLocations,flexFieldsFacet.values,requisitionList.requisitionFlexFields&finder=findReqs;siteNumber=CX_1,facetsList=NONE,limit=25,offset=0,keyword=%22APRN%22,sortBy=POSTING_DATES_DESC: forbidden (bot block?); search 'PICU': HTTP 403 for https://jobs.northwell.edu/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requ",
-  "putnam-hospital-carmel": "AdapterError: search 'APRN': HTTP 403 for https://jobs.northwell.edu/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requisitionList.secondaryLocations,flexFieldsFacet.values,requisitionList.requisitionFlexFields&finder=findReqs;siteNumber=CX_1,facetsList=NONE,limit=25,offset=0,keyword=%22APRN%22,sortBy=POSTING_DATES_DESC: forbidden (bot block?); search 'PICU': HTTP 403 for https://jobs.northwell.edu/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requ",
-  "vassar-brothers-medical-center-poughkeepsie": "AdapterError: search 'APRN': HTTP 403 for https://jobs.northwell.edu/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requisitionList.secondaryLocations,flexFieldsFacet.values,requisitionList.requisitionFlexFields&finder=findReqs;siteNumber=CX_1,facetsList=NONE,limit=25,offset=0,keyword=%22APRN%22,sortBy=POSTING_DATES_DESC: forbidden (bot block?); search 'PICU': HTTP 403 for https://jobs.northwell.edu/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requ"
+  "columbus-regional-whiteville": "careers page reachable but no job listings recognized (generic adapter): set careers_search_url / ats_config to the real job board"
  },
  "hospitals": [
   {
@@ -619,7 +600,7 @@
    "status": "error",
    "error": "AdapterError: careersite: every jobs.json search failed in the browser: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class=\"no-js\" lang=\"en-US\"><!--<![endif]--><head>\\n<title>At'; html search 'nurse practitioner': HTTP 403 Attention Required! | Cloudflare; html search 'pediatric nurse practitioner': HTTP 403 Attention Required! | Cloudflare",
    "http_status": null,
-   "seconds": 442.3,
+   "seconds": 270.8,
    "requests": 0,
    "details_fetched": 0,
    "details_failed": 0,
@@ -634,7 +615,7 @@
     "html search 'pediatric nurse practitioner': HTTP 403 Attention Required! | Cloudflare",
     "sniff: HTTP 403 for https://careers.hcahealthcare.com/search/jobs: bot challenge (Cloudflare)",
     "sniff: HTTP 403 for https://careers.hcahealthcare.com/pages/catholic-medical-center?bid=5260: bot challenge (Cloudflare)",
-    "generic fallback failed: AdapterError: generic: no page reachable: 403 https://careers.hcahealthcare.com/search/jobs?q=nurse+practitioner&location=Manchester%2C+NH%2C+United+States; playwright 403 https://careers.hcahealthcare.com/search/j"
+    "retried from a fresh runner"
    ],
    "samples": [],
    "sample_listings": []
@@ -655,7 +636,7 @@
    "status": "error",
    "error": "AdapterError: careersite: every jobs.json search failed in the browser: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class=\"no-js\" lang=\"en-US\"><!--<![endif]--><head>\\n<title>At'; html search 'nurse practitioner': HTTP 403 Attention Required! | Cloudflare; html search 'pediatric nurse practitioner': HTTP 403 Attention Required! | Cloudflare",
    "http_status": null,
-   "seconds": 442.3,
+   "seconds": 270.8,
    "requests": 0,
    "details_fetched": 0,
    "details_failed": 0,
@@ -670,7 +651,7 @@
     "html search 'pediatric nurse practitioner': HTTP 403 Attention Required! | Cloudflare",
     "sniff: HTTP 403 for https://careers.hcahealthcare.com/search/jobs: bot challenge (Cloudflare)",
     "sniff: HTTP 403 for https://careers.hcahealthcare.com/pages/catholic-medical-center?bid=5260: bot challenge (Cloudflare)",
-    "generic fallback failed: AdapterError: generic: no page reachable: 403 https://careers.hcahealthcare.com/search/jobs?q=nurse+practitioner&location=Manchester%2C+NH%2C+United+States; playwright 403 https://careers.hcahealthcare.com/search/j"
+    "retried from a fresh runner"
    ],
    "samples": [],
    "sample_listings": []
@@ -691,7 +672,7 @@
    "status": "error",
    "error": "AdapterError: careersite: every jobs.json search failed in the browser: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class=\"no-js\" lang=\"en-US\"><!--<![endif]--><head>\\n<title>At'; html search 'nurse practitioner': HTTP 403 Attention Required! | Cloudflare; html search 'pediatric nurse practitioner': HTTP 403 Attention Required! | Cloudflare",
    "http_status": null,
-   "seconds": 442.3,
+   "seconds": 270.8,
    "requests": 0,
    "details_fetched": 0,
    "details_failed": 0,
@@ -706,7 +687,7 @@
     "html search 'pediatric nurse practitioner': HTTP 403 Attention Required! | Cloudflare",
     "sniff: HTTP 403 for https://careers.hcahealthcare.com/search/jobs: bot challenge (Cloudflare)",
     "sniff: HTTP 403 for https://careers.hcahealthcare.com/pages/catholic-medical-center?bid=5260: bot challenge (Cloudflare)",
-    "generic fallback failed: AdapterError: generic: no page reachable: 403 https://careers.hcahealthcare.com/search/jobs?q=nurse+practitioner&location=Manchester%2C+NH%2C+United+States; playwright 403 https://careers.hcahealthcare.com/search/j"
+    "retried from a fresh runner"
    ],
    "samples": [],
    "sample_listings": []
@@ -727,7 +708,7 @@
    "status": "error",
    "error": "AdapterError: careersite: every jobs.json search failed in the browser: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class=\"no-js\" lang=\"en-US\"><!--<![endif]--><head>\\n<title>At'; html search 'nurse practitioner': HTTP 403 Attention Required! | Cloudflare; html search 'pediatric nurse practitioner': HTTP 403 Attention Required! | Cloudflare",
    "http_status": null,
-   "seconds": 442.3,
+   "seconds": 270.8,
    "requests": 0,
    "details_fetched": 0,
    "details_failed": 0,
@@ -742,7 +723,7 @@
     "html search 'pediatric nurse practitioner': HTTP 403 Attention Required! | Cloudflare",
     "sniff: HTTP 403 for https://careers.hcahealthcare.com/search/jobs: bot challenge (Cloudflare)",
     "sniff: HTTP 403 for https://careers.hcahealthcare.com/pages/catholic-medical-center?bid=5260: bot challenge (Cloudflare)",
-    "generic fallback failed: AdapterError: generic: no page reachable: 403 https://careers.hcahealthcare.com/search/jobs?q=nurse+practitioner&location=Manchester%2C+NH%2C+United+States; playwright 403 https://careers.hcahealthcare.com/search/j"
+    "retried from a fresh runner"
    ],
    "samples": [],
    "sample_listings": []
@@ -763,7 +744,7 @@
    "status": "error",
    "error": "AdapterError: careersite: every jobs.json search failed in the browser: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class=\"no-js\" lang=\"en-US\"><!--<![endif]--><head>\\n<title>At'; html search 'nurse practitioner': HTTP 403 Attention Required! | Cloudflare; html search 'pediatric nurse practitioner': HTTP 403 Attention Required! | Cloudflare",
    "http_status": null,
-   "seconds": 442.3,
+   "seconds": 270.8,
    "requests": 0,
    "details_fetched": 0,
    "details_failed": 0,
@@ -778,7 +759,7 @@
     "html search 'pediatric nurse practitioner': HTTP 403 Attention Required! | Cloudflare",
     "sniff: HTTP 403 for https://careers.hcahealthcare.com/search/jobs: bot challenge (Cloudflare)",
     "sniff: HTTP 403 for https://careers.hcahealthcare.com/pages/catholic-medical-center?bid=5260: bot challenge (Cloudflare)",
-    "generic fallback failed: AdapterError: generic: no page reachable: 403 https://careers.hcahealthcare.com/search/jobs?q=nurse+practitioner&location=Manchester%2C+NH%2C+United+States; playwright 403 https://careers.hcahealthcare.com/search/j"
+    "retried from a fresh runner"
    ],
    "samples": [],
    "sample_listings": []
@@ -799,7 +780,7 @@
    "status": "error",
    "error": "AdapterError: careersite: every jobs.json search failed in the browser: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class=\"no-js\" lang=\"en-US\"><!--<![endif]--><head>\\n<title>At'; html search 'nurse practitioner': HTTP 403 Attention Required! | Cloudflare; html search 'pediatric nurse practitioner': HTTP 403 Attention Required! | Cloudflare",
    "http_status": null,
-   "seconds": 442.3,
+   "seconds": 270.8,
    "requests": 0,
    "details_fetched": 0,
    "details_failed": 0,
@@ -814,7 +795,7 @@
     "html search 'pediatric nurse practitioner': HTTP 403 Attention Required! | Cloudflare",
     "sniff: HTTP 403 for https://careers.hcahealthcare.com/search/jobs: bot challenge (Cloudflare)",
     "sniff: HTTP 403 for https://careers.hcahealthcare.com/pages/catholic-medical-center?bid=5260: bot challenge (Cloudflare)",
-    "generic fallback failed: AdapterError: generic: no page reachable: 403 https://careers.hcahealthcare.com/search/jobs?q=nurse+practitioner&location=Manchester%2C+NH%2C+United+States; playwright 403 https://careers.hcahealthcare.com/search/j"
+    "retried from a fresh runner"
    ],
    "samples": [],
    "sample_listings": []
@@ -835,7 +816,7 @@
    "status": "error",
    "error": "AdapterError: careersite: every jobs.json search failed in the browser: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class=\"no-js\" lang=\"en-US\"><!--<![endif]--><head>\\n<title>At'; html search 'nurse practitioner': HTTP 403 Attention Required! | Cloudflare; html search 'pediatric nurse practitioner': HTTP 403 Attention Required! | Cloudflare",
    "http_status": null,
-   "seconds": 442.3,
+   "seconds": 270.8,
    "requests": 0,
    "details_fetched": 0,
    "details_failed": 0,
@@ -850,7 +831,7 @@
     "html search 'pediatric nurse practitioner': HTTP 403 Attention Required! | Cloudflare",
     "sniff: HTTP 403 for https://careers.hcahealthcare.com/search/jobs: bot challenge (Cloudflare)",
     "sniff: HTTP 403 for https://careers.hcahealthcare.com/pages/catholic-medical-center?bid=5260: bot challenge (Cloudflare)",
-    "generic fallback failed: AdapterError: generic: no page reachable: 403 https://careers.hcahealthcare.com/search/jobs?q=nurse+practitioner&location=Manchester%2C+NH%2C+United+States; playwright 403 https://careers.hcahealthcare.com/search/j"
+    "retried from a fresh runner"
    ],
    "samples": [],
    "sample_listings": []
@@ -871,7 +852,7 @@
    "status": "error",
    "error": "AdapterError: careersite: every jobs.json search failed in the browser: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class=\"no-js\" lang=\"en-US\"><!--<![endif]--><head>\\n<title>At'; html search 'nurse practitioner': HTTP 403 Attention Required! | Cloudflare; html search 'pediatric nurse practitioner': HTTP 403 Attention Required! | Cloudflare",
    "http_status": null,
-   "seconds": 442.3,
+   "seconds": 270.8,
    "requests": 0,
    "details_fetched": 0,
    "details_failed": 0,
@@ -886,7 +867,7 @@
     "html search 'pediatric nurse practitioner': HTTP 403 Attention Required! | Cloudflare",
     "sniff: HTTP 403 for https://careers.hcahealthcare.com/search/jobs: bot challenge (Cloudflare)",
     "sniff: HTTP 403 for https://careers.hcahealthcare.com/pages/catholic-medical-center?bid=5260: bot challenge (Cloudflare)",
-    "generic fallback failed: AdapterError: generic: no page reachable: 403 https://careers.hcahealthcare.com/search/jobs?q=nurse+practitioner&location=Manchester%2C+NH%2C+United+States; playwright 403 https://careers.hcahealthcare.com/search/j"
+    "retried from a fresh runner"
    ],
    "samples": [],
    "sample_listings": []
@@ -907,7 +888,7 @@
    "status": "error",
    "error": "AdapterError: careersite: every jobs.json search failed in the browser: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class=\"no-js\" lang=\"en-US\"><!--<![endif]--><head>\\n<title>At'; html search 'nurse practitioner': HTTP 403 Attention Required! | Cloudflare; html search 'pediatric nurse practitioner': HTTP 403 Attention Required! | Cloudflare",
    "http_status": null,
-   "seconds": 442.3,
+   "seconds": 270.8,
    "requests": 0,
    "details_fetched": 0,
    "details_failed": 0,
@@ -922,7 +903,7 @@
     "html search 'pediatric nurse practitioner': HTTP 403 Attention Required! | Cloudflare",
     "sniff: HTTP 403 for https://careers.hcahealthcare.com/search/jobs: bot challenge (Cloudflare)",
     "sniff: HTTP 403 for https://careers.hcahealthcare.com/pages/catholic-medical-center?bid=5260: bot challenge (Cloudflare)",
-    "generic fallback failed: AdapterError: generic: no page reachable: 403 https://careers.hcahealthcare.com/search/jobs?q=nurse+practitioner&location=Manchester%2C+NH%2C+United+States; playwright 403 https://careers.hcahealthcare.com/search/j"
+    "retried from a fresh runner"
    ],
    "samples": [],
    "sample_listings": []
@@ -943,7 +924,7 @@
    "status": "error",
    "error": "AdapterError: careersite: every jobs.json search failed in the browser: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class=\"no-js\" lang=\"en-US\"><!--<![endif]--><head>\\n<title>At'; html search 'nurse practitioner': HTTP 403 Attention Required! | Cloudflare; html search 'pediatric nurse practitioner': HTTP 403 Attention Required! | Cloudflare",
    "http_status": null,
-   "seconds": 442.3,
+   "seconds": 270.8,
    "requests": 0,
    "details_fetched": 0,
    "details_failed": 0,
@@ -958,7 +939,7 @@
     "html search 'pediatric nurse practitioner': HTTP 403 Attention Required! | Cloudflare",
     "sniff: HTTP 403 for https://careers.hcahealthcare.com/search/jobs: bot challenge (Cloudflare)",
     "sniff: HTTP 403 for https://careers.hcahealthcare.com/pages/catholic-medical-center?bid=5260: bot challenge (Cloudflare)",
-    "generic fallback failed: AdapterError: generic: no page reachable: 403 https://careers.hcahealthcare.com/search/jobs?q=nurse+practitioner&location=Manchester%2C+NH%2C+United+States; playwright 403 https://careers.hcahealthcare.com/search/j"
+    "retried from a fresh runner"
    ],
    "samples": [],
    "sample_listings": []
@@ -979,7 +960,7 @@
    "status": "error",
    "error": "AdapterError: careersite: every jobs.json search failed in the browser: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class=\"no-js\" lang=\"en-US\"><!--<![endif]--><head>\\n<title>At'; html search 'nurse practitioner': HTTP 403 Attention Required! | Cloudflare; html search 'pediatric nurse practitioner': HTTP 403 Attention Required! | Cloudflare",
    "http_status": null,
-   "seconds": 442.3,
+   "seconds": 270.8,
    "requests": 0,
    "details_fetched": 0,
    "details_failed": 0,
@@ -994,7 +975,7 @@
     "html search 'pediatric nurse practitioner': HTTP 403 Attention Required! | Cloudflare",
     "sniff: HTTP 403 for https://careers.hcahealthcare.com/search/jobs: bot challenge (Cloudflare)",
     "sniff: HTTP 403 for https://careers.hcahealthcare.com/pages/catholic-medical-center?bid=5260: bot challenge (Cloudflare)",
-    "generic fallback failed: AdapterError: generic: no page reachable: 403 https://careers.hcahealthcare.com/search/jobs?q=nurse+practitioner&location=Manchester%2C+NH%2C+United+States; playwright 403 https://careers.hcahealthcare.com/search/j"
+    "retried from a fresh runner"
    ],
    "samples": [],
    "sample_listings": []
@@ -1015,7 +996,7 @@
    "status": "error",
    "error": "AdapterError: careersite: every jobs.json search failed in the browser: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class=\"no-js\" lang=\"en-US\"><!--<![endif]--><head>\\n<title>At'; html search 'nurse practitioner': HTTP 403 Attention Required! | Cloudflare; html search 'pediatric nurse practitioner': HTTP 403 Attention Required! | Cloudflare",
    "http_status": null,
-   "seconds": 442.3,
+   "seconds": 270.8,
    "requests": 0,
    "details_fetched": 0,
    "details_failed": 0,
@@ -1030,7 +1011,7 @@
     "html search 'pediatric nurse practitioner': HTTP 403 Attention Required! | Cloudflare",
     "sniff: HTTP 403 for https://careers.hcahealthcare.com/search/jobs: bot challenge (Cloudflare)",
     "sniff: HTTP 403 for https://careers.hcahealthcare.com/pages/catholic-medical-center?bid=5260: bot challenge (Cloudflare)",
-    "generic fallback failed: AdapterError: generic: no page reachable: 403 https://careers.hcahealthcare.com/search/jobs?q=nurse+practitioner&location=Manchester%2C+NH%2C+United+States; playwright 403 https://careers.hcahealthcare.com/search/j"
+    "retried from a fresh runner"
    ],
    "samples": [],
    "sample_listings": []
@@ -1051,7 +1032,7 @@
    "status": "error",
    "error": "AdapterError: careersite: every jobs.json search failed in the browser: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class=\"no-js\" lang=\"en-US\"><!--<![endif]--><head>\\n<title>At'; html search 'nurse practitioner': HTTP 403 Attention Required! | Cloudflare; html search 'pediatric nurse practitioner': HTTP 403 Attention Required! | Cloudflare",
    "http_status": null,
-   "seconds": 442.3,
+   "seconds": 270.8,
    "requests": 0,
    "details_fetched": 0,
    "details_failed": 0,
@@ -1066,7 +1047,7 @@
     "html search 'pediatric nurse practitioner': HTTP 403 Attention Required! | Cloudflare",
     "sniff: HTTP 403 for https://careers.hcahealthcare.com/search/jobs: bot challenge (Cloudflare)",
     "sniff: HTTP 403 for https://careers.hcahealthcare.com/pages/catholic-medical-center?bid=5260: bot challenge (Cloudflare)",
-    "generic fallback failed: AdapterError: generic: no page reachable: 403 https://careers.hcahealthcare.com/search/jobs?q=nurse+practitioner&location=Manchester%2C+NH%2C+United+States; playwright 403 https://careers.hcahealthcare.com/search/j"
+    "retried from a fresh runner"
    ],
    "samples": [],
    "sample_listings": []
@@ -1087,7 +1068,7 @@
    "status": "error",
    "error": "AdapterError: careersite: every jobs.json search failed in the browser: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class=\"no-js\" lang=\"en-US\"><!--<![endif]--><head>\\n<title>At'; html search 'nurse practitioner': HTTP 403 Attention Required! | Cloudflare; html search 'pediatric nurse practitioner': HTTP 403 Attention Required! | Cloudflare",
    "http_status": null,
-   "seconds": 442.3,
+   "seconds": 270.8,
    "requests": 0,
    "details_fetched": 0,
    "details_failed": 0,
@@ -1102,7 +1083,7 @@
     "html search 'pediatric nurse practitioner': HTTP 403 Attention Required! | Cloudflare",
     "sniff: HTTP 403 for https://careers.hcahealthcare.com/search/jobs: bot challenge (Cloudflare)",
     "sniff: HTTP 403 for https://careers.hcahealthcare.com/pages/catholic-medical-center?bid=5260: bot challenge (Cloudflare)",
-    "generic fallback failed: AdapterError: generic: no page reachable: 403 https://careers.hcahealthcare.com/search/jobs?q=nurse+practitioner&location=Manchester%2C+NH%2C+United+States; playwright 403 https://careers.hcahealthcare.com/search/j"
+    "retried from a fresh runner"
    ],
    "samples": [],
    "sample_listings": []
@@ -1123,7 +1104,7 @@
    "status": "error",
    "error": "AdapterError: careersite: every jobs.json search failed in the browser: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html lang=\"en-us\" dir=\"ltr\"><head><title>Just a moment...</title'; html search 'nurse practitioner': HTTP 403 Just a moment...; html search 'pediatric nurse practitioner': HTTP 403 Just a moment...",
    "http_status": null,
-   "seconds": 456.0,
+   "seconds": 303.7,
    "requests": 0,
    "details_fetched": 0,
    "details_failed": 0,
@@ -1138,8 +1119,7 @@
     "html search 'pediatric nurse practitioner': HTTP 403 Just a moment...",
     "sniff: HTTP 403 for https://careers.pennmedicine.org/: bot challenge (Cloudflare)",
     "sniff: HTTP 403 for https://careers.pennmedicine.org/search/nurse-practitioner-physician-assistant/jobs: bot challenge (Cloudflare)",
-    "sniff: HTTP 403 for https://careers.pennmedicine.org/: bot challenge (Cloudflare)",
-    "generic fallback failed: AdapterError: generic: no page reachable: 403 https://careers.pennmedicine.org/search/nurse-practitioner-physician-assistant/jobs; playwright 403 https://careers.pennmedicine.org/search/nurse-practitioner-physician"
+    "retried from a fresh runner"
    ],
    "samples": [],
    "sample_listings": []
@@ -1160,7 +1140,7 @@
    "status": "error",
    "error": "AdapterError: careersite: every jobs.json search failed in the browser: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html lang=\"en-us\" dir=\"ltr\"><head><title>Just a moment...</title'; html search 'nurse practitioner': HTTP 403 Just a moment...; html search 'pediatric nurse practitioner': HTTP 403 Just a moment...",
    "http_status": null,
-   "seconds": 456.0,
+   "seconds": 303.7,
    "requests": 0,
    "details_fetched": 0,
    "details_failed": 0,
@@ -1175,8 +1155,7 @@
     "html search 'pediatric nurse practitioner': HTTP 403 Just a moment...",
     "sniff: HTTP 403 for https://careers.pennmedicine.org/: bot challenge (Cloudflare)",
     "sniff: HTTP 403 for https://careers.pennmedicine.org/search/nurse-practitioner-physician-assistant/jobs: bot challenge (Cloudflare)",
-    "sniff: HTTP 403 for https://careers.pennmedicine.org/: bot challenge (Cloudflare)",
-    "generic fallback failed: AdapterError: generic: no page reachable: 403 https://careers.pennmedicine.org/search/nurse-practitioner-physician-assistant/jobs; playwright 403 https://careers.pennmedicine.org/search/nurse-practitioner-physician"
+    "retried from a fresh runner"
    ],
    "samples": [],
    "sample_listings": []
@@ -1197,7 +1176,7 @@
    "status": "error",
    "error": "AdapterError: careersite: every jobs.json search failed in the browser: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html lang=\"en-us\" dir=\"ltr\"><head><title>Just a moment...</title'; html search 'nurse practitioner': HTTP 403 Just a moment...; html search 'pediatric nurse practitioner': HTTP 403 Just a moment...",
    "http_status": null,
-   "seconds": 456.0,
+   "seconds": 303.7,
    "requests": 0,
    "details_fetched": 0,
    "details_failed": 0,
@@ -1212,8 +1191,7 @@
     "html search 'pediatric nurse practitioner': HTTP 403 Just a moment...",
     "sniff: HTTP 403 for https://careers.pennmedicine.org/: bot challenge (Cloudflare)",
     "sniff: HTTP 403 for https://careers.pennmedicine.org/search/nurse-practitioner-physician-assistant/jobs: bot challenge (Cloudflare)",
-    "sniff: HTTP 403 for https://careers.pennmedicine.org/: bot challenge (Cloudflare)",
-    "generic fallback failed: AdapterError: generic: no page reachable: 403 https://careers.pennmedicine.org/search/nurse-practitioner-physician-assistant/jobs; playwright 403 https://careers.pennmedicine.org/search/nurse-practitioner-physician"
+    "retried from a fresh runner"
    ],
    "samples": [],
    "sample_listings": []
@@ -1234,7 +1212,7 @@
    "status": "error",
    "error": "AdapterError: careersite: every jobs.json search failed in the browser: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html lang=\"en-us\" dir=\"ltr\"><head><title>Just a moment...</title'; html search 'nurse practitioner': HTTP 403 Just a moment...; html search 'pediatric nurse practitioner': HTTP 403 Just a moment...",
    "http_status": null,
-   "seconds": 456.0,
+   "seconds": 303.7,
    "requests": 0,
    "details_fetched": 0,
    "details_failed": 0,
@@ -1249,8 +1227,7 @@
     "html search 'pediatric nurse practitioner': HTTP 403 Just a moment...",
     "sniff: HTTP 403 for https://careers.pennmedicine.org/: bot challenge (Cloudflare)",
     "sniff: HTTP 403 for https://careers.pennmedicine.org/search/nurse-practitioner-physician-assistant/jobs: bot challenge (Cloudflare)",
-    "sniff: HTTP 403 for https://careers.pennmedicine.org/: bot challenge (Cloudflare)",
-    "generic fallback failed: AdapterError: generic: no page reachable: 403 https://careers.pennmedicine.org/search/nurse-practitioner-physician-assistant/jobs; playwright 403 https://careers.pennmedicine.org/search/nurse-practitioner-physician"
+    "retried from a fresh runner"
    ],
    "samples": [],
    "sample_listings": []
@@ -1271,7 +1248,7 @@
    "status": "error",
    "error": "AdapterError: careersite: every jobs.json search failed in the browser: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html lang=\"en-us\" dir=\"ltr\"><head><title>Just a moment...</title'; html search 'nurse practitioner': HTTP 403 Just a moment...; html search 'pediatric nurse practitioner': HTTP 403 Just a moment...",
    "http_status": null,
-   "seconds": 456.0,
+   "seconds": 303.7,
    "requests": 0,
    "details_fetched": 0,
    "details_failed": 0,
@@ -1286,8 +1263,7 @@
     "html search 'pediatric nurse practitioner': HTTP 403 Just a moment...",
     "sniff: HTTP 403 for https://careers.pennmedicine.org/: bot challenge (Cloudflare)",
     "sniff: HTTP 403 for https://careers.pennmedicine.org/search/nurse-practitioner-physician-assistant/jobs: bot challenge (Cloudflare)",
-    "sniff: HTTP 403 for https://careers.pennmedicine.org/: bot challenge (Cloudflare)",
-    "generic fallback failed: AdapterError: generic: no page reachable: 403 https://careers.pennmedicine.org/search/nurse-practitioner-physician-assistant/jobs; playwright 403 https://careers.pennmedicine.org/search/nurse-practitioner-physician"
+    "retried from a fresh runner"
    ],
    "samples": [],
    "sample_listings": []
@@ -2322,54 +2298,96 @@
   {
    "slug": "st-marys-regional-lewiston",
    "name": "St. Mary's Regional Medical Center",
-   "platform": "generic",
-   "adapter": "generic",
-   "method": "",
+   "platform": "generic->symphony",
+   "adapter": "symphony",
+   "method": "api",
    "board": "generic|careers.covenanthealth.net?",
    "board_hospitals": 2,
-   "board_listings": 0,
-   "listings": 0,
+   "board_listings": 90,
+   "listings": 34,
    "candidates": 0,
    "new": 0,
    "known": 0,
-   "status": "error",
-   "error": "AdapterError: generic: no page reachable: 403 https://careers.covenanthealth.net/?q=nurse+practitioner; playwright 403 https://careers.covenanthealth.net/?q=nurse+practitioner; playwright 403 https://careers.covenanthealth.net/?keywords=nurse+practitioner; playwright 403 https://careers.covenanthealth.net/?keyword=nurse+practitioner",
+   "status": "ok",
+   "error": null,
    "http_status": null,
-   "seconds": 123.7,
-   "requests": 1,
-   "details_fetched": 0,
+   "seconds": 11.0,
+   "requests": 7,
+   "details_fetched": 14,
    "details_failed": 0,
    "notes": [
-    "sniff: HTTP 403 for https://careers.covenanthealth.net/: forbidden (bot block?)"
+    "sniff: recognized symphony front end on careers.covenanthealth.net",
+    "CWS jobs API https://jobsapi-google.m-cloud.io/api/ org companies/48afa4d5-8a7d-42ca-a22d-e0cea2e91f24 filters ['ats_portalid:Covenant-Workday-External', 'is_internal:CovenantHealthCareers']",
+    "retried from a fresh runner"
    ],
    "samples": [],
-   "sample_listings": []
+   "sample_listings": [
+    {
+     "title": "Nurse Practitioner - Geriatrics(Per Diem)",
+     "url": "https://careers.covenanthealth.net/job/23730342/nurse-practitioner-geriatrics-per-diem-lewiston-me/",
+     "posted_at": "2026-08-18",
+     "location": "Lewiston, ME 04243"
+    },
+    {
+     "title": "Women's Health Nurse Practitioner",
+     "url": "https://careers.covenanthealth.net/job/23848986/womens-health-nurse-practitioner-nashua-nh/",
+     "posted_at": "2026-09-09",
+     "location": "172 Kinsley St, Nashua, NH 03060"
+    },
+    {
+     "title": "Psychiatric-Mental Health Nurse Practitioner – Night Shift",
+     "url": "https://careers.covenanthealth.net/job/23761936/psychiatric-mental-health-nurse-practitioner-night-shift-lewiston-me/",
+     "posted_at": "2026-08-26",
+     "location": "Lewiston, ME 04243"
+    }
+   ]
   },
   {
    "slug": "st-joseph-hospital-nashua",
    "name": "St. Joseph Hospital",
-   "platform": "generic",
-   "adapter": "generic",
-   "method": "",
+   "platform": "generic->symphony",
+   "adapter": "symphony",
+   "method": "api",
    "board": "generic|careers.covenanthealth.net?",
    "board_hospitals": 2,
-   "board_listings": 0,
-   "listings": 0,
+   "board_listings": 90,
+   "listings": 56,
    "candidates": 0,
    "new": 0,
    "known": 0,
-   "status": "error",
-   "error": "AdapterError: generic: no page reachable: 403 https://careers.covenanthealth.net/?q=nurse+practitioner; playwright 403 https://careers.covenanthealth.net/?q=nurse+practitioner; playwright 403 https://careers.covenanthealth.net/?keywords=nurse+practitioner; playwright 403 https://careers.covenanthealth.net/?keyword=nurse+practitioner",
+   "status": "ok",
+   "error": null,
    "http_status": null,
-   "seconds": 123.7,
-   "requests": 1,
-   "details_fetched": 0,
+   "seconds": 11.0,
+   "requests": 7,
+   "details_fetched": 14,
    "details_failed": 0,
    "notes": [
-    "sniff: HTTP 403 for https://careers.covenanthealth.net/: forbidden (bot block?)"
+    "sniff: recognized symphony front end on careers.covenanthealth.net",
+    "CWS jobs API https://jobsapi-google.m-cloud.io/api/ org companies/48afa4d5-8a7d-42ca-a22d-e0cea2e91f24 filters ['ats_portalid:Covenant-Workday-External', 'is_internal:CovenantHealthCareers']",
+    "retried from a fresh runner"
    ],
    "samples": [],
-   "sample_listings": []
+   "sample_listings": [
+    {
+     "title": "Nurse Practitioner - Geriatrics(Per Diem)",
+     "url": "https://careers.covenanthealth.net/job/23730342/nurse-practitioner-geriatrics-per-diem-lewiston-me/",
+     "posted_at": "2026-08-18",
+     "location": "Lewiston, ME 04243"
+    },
+    {
+     "title": "Women's Health Nurse Practitioner",
+     "url": "https://careers.covenanthealth.net/job/23848986/womens-health-nurse-practitioner-nashua-nh/",
+     "posted_at": "2026-09-09",
+     "location": "172 Kinsley St, Nashua, NH 03060"
+    },
+    {
+     "title": "Psychiatric-Mental Health Nurse Practitioner – Night Shift",
+     "url": "https://careers.covenanthealth.net/job/23761936/psychiatric-mental-health-nurse-practitioner-night-shift-lewiston-me/",
+     "posted_at": "2026-08-26",
+     "location": "Lewiston, ME 04243"
+    }
+   ]
   },
   {
    "slug": "elliot-hospital-manchester",
@@ -4223,13 +4241,14 @@
    "status": "no_listings",
    "error": "careers page reachable but no job listings recognized (generic adapter): set careers_search_url / ats_config to the real job board",
    "http_status": null,
-   "seconds": 106.0,
+   "seconds": 128.0,
    "requests": 5,
    "details_fetched": 0,
    "details_failed": 0,
    "notes": [
     "sniff: HTTP 403 for https://careers.holyname.org: bot challenge (Cloudflare)",
-    "generic: pages reachable but no NP/APP job links found: playwright 200 https://www.holyname.org/?q=nurse+practitioner; playwright 200 https://www.holyname.org/?keywords=nurse+practitioner; playwright 200 https://www.holyname.org/?keyword=nurse+practitioner"
+    "generic: pages reachable but no NP/APP job links found: playwright 200 https://www.holyname.org/?q=nurse+practitioner; playwright 200 https://www.holyname.org/?keywords=nurse+practitioner; playwright 200 https://www.holyname.org/?keyword=nurse+practitioner",
+    "retried from a fresh runner"
    ],
    "samples": [],
    "sample_listings": []
@@ -4250,12 +4269,13 @@
    "status": "error",
    "error": "AdapterError: generic: no page reachable: None https://www.hschealth.org/careers; playwright TimeoutError: Page.goto: Timeout 45000ms exceeded.\nCall log:\n  - navigating to \"https://www.hschealth.org/careers?q=nurse+practitioner https://www.hschealth.org/careers?q=nurse+practitioner; playwright TimeoutError: Page.goto: Timeout 45000ms exceeded.\nCall log:\n  - navigating to \"https://www.hschealth.org/careers?keywords=nurse+pract https://www.hschealth.org/careers?keywords=nurse+practitioner; playwright Error: Pag",
    "http_status": null,
-   "seconds": 424.7,
+   "seconds": 423.7,
    "requests": 5,
    "details_fetched": 0,
    "details_failed": 0,
    "notes": [
-    "sniff: HTTP None for https://www.hschealth.org/careers: ConnectTimeout: HTTPSConnectionPool(host='www.hschealth.org', port=443): Max retries exceeded with url: /careers (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.hschealth.org', port=443) at 0x7f7b8563d100>,"
+    "sniff: HTTP None for https://www.hschealth.org/careers: ConnectTimeout: HTTPSConnectionPool(host='www.hschealth.org', port=443): Max retries exceeded with url: /careers (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.hschealth.org', port=443) at 0x7fb0b0a8d100>,",
+    "retried from a fresh runner"
    ],
    "samples": [],
    "sample_listings": []
@@ -4363,28 +4383,74 @@
   {
    "slug": "boston-childrens-boston",
    "name": "Boston Children's Hospital",
-   "platform": "generic",
-   "adapter": "generic",
-   "method": "",
+   "platform": "generic->symphony",
+   "adapter": "symphony",
+   "method": "api",
    "board": "generic|jobs.bostonchildrens.org/job-search-results?keyword=nurse%20practitioner",
    "board_hospitals": 1,
-   "board_listings": 0,
-   "listings": 0,
-   "candidates": 0,
+   "board_listings": 40,
+   "listings": 40,
+   "candidates": 13,
    "new": 0,
-   "known": 0,
-   "status": "error",
-   "error": "AdapterError: generic: no page reachable: 403 https://jobs.bostonchildrens.org/job-search-results/?keyword=nurse%20practitioner; playwright 403 https://jobs.bostonchildrens.org/job-search-results/?keyword=nurse%20practitioner; playwright 403 https://jobs.bostonchildrens.org/job-search-results/?q=nurse+practitioner; playwright 403 https://jobs.bostonchildrens.org/job-search-results/?keywords=nurse+practitioner",
+   "known": 13,
+   "status": "ok",
+   "error": null,
    "http_status": null,
-   "seconds": 72.0,
-   "requests": 1,
+   "seconds": 12.8,
+   "requests": 7,
    "details_fetched": 0,
    "details_failed": 0,
    "notes": [
-    "sniff: HTTP 403 for https://jobs.bostonchildrens.org/job-search-results/?keyword=nurse%20practitioner: forbidden (bot block?)"
+    "sniff: recognized symphony front end on jobs.bostonchildrens.org",
+    "CWS jobs API https://jobsapi-google.m-cloud.io/api/ org companies/8fb8d45a-cbb2-48b9-b438-d16a91fb3bef filters ['ats_portalid:Kenexa']",
+    "retried from a fresh runner"
    ],
-   "samples": [],
-   "sample_listings": []
+   "samples": [
+    {
+     "title": "Nurse Practitioner - Complex Care Services, per diem",
+     "url": "https://jobs.bostonchildrens.org/job/22550780/nurse-practitioner-complex-care-services-per-diem-boston-ma/",
+     "posted_at": "2026-10-19",
+     "relevance": 2,
+     "setting": "mixed",
+     "known": true
+    },
+    {
+     "title": "Nurse Practitioner or Physician Assistant, Inpatient Medicine",
+     "url": "https://jobs.bostonchildrens.org/job/23891411/nurse-practitioner-or-physician-assistant-inpatient-medicine-boston-ma/",
+     "posted_at": "2026-09-18",
+     "relevance": 3,
+     "setting": "peds_inpatient",
+     "known": true
+    },
+    {
+     "title": "Nurse Practitioner or Physician Assistant, MSICU (40 hours)",
+     "url": "https://jobs.bostonchildrens.org/job/23966419/nurse-practitioner-or-physician-assistant-msicu-40-hours-boston-ma/",
+     "posted_at": "2026-10-07",
+     "relevance": 2,
+     "setting": "picu",
+     "known": true
+    }
+   ],
+   "sample_listings": [
+    {
+     "title": "Nurse Practitioner - Complex Care Services, per diem",
+     "url": "https://jobs.bostonchildrens.org/job/22550780/nurse-practitioner-complex-care-services-per-diem-boston-ma/",
+     "posted_at": "2026-10-21",
+     "location": "300 Longwood Ave, Boston, MA 02115"
+    },
+    {
+     "title": "Nurse Practitioner or Physician Assistant, Inpatient Medicine",
+     "url": "https://jobs.bostonchildrens.org/job/23891411/nurse-practitioner-or-physician-assistant-inpatient-medicine-boston-ma/",
+     "posted_at": "2026-09-18",
+     "location": "300 Longwood Ave, Boston, MA 02115"
+    },
+    {
+     "title": "Nurse Practitioner or Physician Assistant, MSICU (40 hours)",
+     "url": "https://jobs.bostonchildrens.org/job/23966419/nurse-practitioner-or-physician-assistant-msicu-40-hours-boston-ma/",
+     "posted_at": "2026-10-07",
+     "location": "300 Longwood Ave, Boston, MA 02115"
+    }
+   ]
   },
   {
    "slug": "bradley-hospital-east-providence",
@@ -8028,12 +8094,13 @@
    "status": "error",
    "error": "AdapterError: generic: no page reachable: 403 https://www.spartanburgregional.com/careers?q=nurse+practitioner; playwright 403 https://www.spartanburgregional.com/careers?q=nurse+practitioner; playwright 403 https://www.spartanburgregional.com/careers?keywords=nurse+practitioner; playwright 403 https://www.spartanburgregional.com/careers?keyword=nurse+practitioner",
    "http_status": null,
-   "seconds": 63.1,
+   "seconds": 131.2,
    "requests": 1,
    "details_fetched": 0,
    "details_failed": 0,
    "notes": [
-    "sniff: HTTP 403 for https://www.spartanburgregional.com/careers: bot challenge (Cloudflare)"
+    "sniff: HTTP 403 for https://www.spartanburgregional.com/careers: bot challenge (Cloudflare)",
+    "retried from a fresh runner"
    ],
    "samples": [],
    "sample_listings": []
@@ -8455,28 +8522,58 @@
   {
    "slug": "valley-hospital-paramus",
    "name": "The Valley Hospital",
-   "platform": "generic",
-   "adapter": "generic",
-   "method": "",
+   "platform": "generic->symphony",
+   "adapter": "symphony",
+   "method": "api-legacy",
    "board": "generic|valleyhealthcareers.com?",
    "board_hospitals": 1,
-   "board_listings": 0,
-   "listings": 0,
-   "candidates": 0,
+   "board_listings": 288,
+   "listings": 288,
+   "candidates": 1,
    "new": 0,
-   "known": 0,
-   "status": "error",
-   "error": "AdapterError: generic: no page reachable: 403 https://www.valleyhealthcareers.com/?q=nurse+practitioner; playwright 403 https://www.valleyhealthcareers.com/?q=nurse+practitioner; playwright 403 https://www.valleyhealthcareers.com/?keywords=nurse+practitioner; playwright 403 https://www.valleyhealthcareers.com/?keyword=nurse+practitioner",
+   "known": 1,
+   "status": "ok",
+   "error": null,
    "http_status": null,
-   "seconds": 40.5,
-   "requests": 1,
-   "details_fetched": 0,
+   "seconds": 10.3,
+   "requests": 11,
+   "details_fetched": 8,
    "details_failed": 0,
    "notes": [
-    "sniff: HTTP 403 for https://www.valleyhealthcareers.com/: forbidden (bot block?)"
+    "sniff: recognized symphony front end on www.valleyhealthcareers.com",
+    "CWS jobs API https://jobsapi-internal.m-cloud.io/api/ org 1777 filters ['ats_portalid:ValleyHealth-Workday-External', 'is_internal:Valley_Health_System_Careers_']",
+    "retried from a fresh runner"
    ],
-   "samples": [],
-   "sample_listings": []
+   "samples": [
+    {
+     "title": "APP, Neonatology, Full Time, Night",
+     "url": "https://www.valleyhealthcareers.com/job/23513195/app-neonatology-full-time-night-paramus-nj/",
+     "posted_at": "2026-06-18",
+     "relevance": 3,
+     "setting": "nicu",
+     "known": true
+    }
+   ],
+   "sample_listings": [
+    {
+     "title": "New Graduate RN Residency, Spring 2027",
+     "url": "https://www.valleyhealthcareers.com/job/24037964/new-graduate-rn-residency-spring-2027-paramus-nj/",
+     "posted_at": "2026-10-21",
+     "location": "Paramus, NJ"
+    },
+    {
+     "title": "Registered Nurse, Case Manager, Care Coordination, Contingent, Day",
+     "url": "https://www.valleyhealthcareers.com/job/24031369/registered-nurse-case-manager-care-coordination-contingent-day-ridgewood-nj/",
+     "posted_at": "2026-10-20",
+     "location": "Ridgewood, NJ"
+    },
+    {
+     "title": "Registered Nurse, Case Manager, Care Coordination, Contingent, Day",
+     "url": "https://www.valleyhealthcareers.com/job/24031373/registered-nurse-case-manager-care-coordination-contingent-day-ridgewood-nj/",
+     "posted_at": "2026-10-20",
+     "location": "Ridgewood, NJ"
+    }
+   ]
   },
   {
    "slug": "winchester-medical-center-winchester",
@@ -8585,12 +8682,13 @@
    "status": "error",
    "error": "AdapterError: generic: no page reachable: None https://www.washingtonregional.org/careers/; playwright Error: Page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.washingtonregional.org/careers/?q=nurse+practitioner\nCall log:\n  -  https://www.washingtonregional.org/careers/?q=nurse+practitioner; playwright Error: Page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.washingtonregional.org/careers/?keywords=nurse+practitioner\nCall lo https://www.washingtonregional.org/careers/?keywords=nurse+practitioner; playw",
    "http_status": null,
-   "seconds": 71.6,
+   "seconds": 71.4,
    "requests": 5,
    "details_fetched": 0,
    "details_failed": 0,
    "notes": [
-    "sniff: HTTP None for https://www.washingtonregional.org/careers/: ConnectionError: HTTPSConnectionPool(host='www.washingtonregional.org', port=443): Max retries exceeded with url: /careers/ (Caused by NameResolutionError(\"HTTPSConnection(host='www.washingtonregional.org', port=443):"
+    "sniff: HTTP None for https://www.washingtonregional.org/careers/: ConnectionError: HTTPSConnectionPool(host='www.washingtonregional.org', port=443): Max retries exceeded with url: /careers/ (Caused by NameResolutionError(\"HTTPSConnection(host='www.washingtonregional.org', port=443):",
+    "retried from a fresh runner"
    ],
    "samples": [],
    "sample_listings": []
@@ -14944,540 +15042,714 @@
    "name": "Cohen Children's Medical Center",
    "platform": "oracle_cloud",
    "adapter": "oracle_cloud",
-   "method": "",
+   "method": "api",
    "board": "oracle_cloud|jobs.northwell.edu|",
    "board_hospitals": 15,
-   "board_listings": 0,
-   "listings": 0,
+   "board_listings": 198,
+   "listings": 66,
    "candidates": 0,
    "new": 0,
    "known": 0,
-   "status": "error",
-   "error": "AdapterError: search 'APRN': HTTP 403 for https://jobs.northwell.edu/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requisitionList.secondaryLocations,flexFieldsFacet.values,requisitionList.requisitionFlexFields&finder=findReqs;siteNumber=CX_1,facetsList=NONE,limit=25,offset=0,keyword=%22APRN%22,sortBy=POSTING_DATES_DESC: forbidden (bot block?); search 'PICU': HTTP 403 for https://jobs.northwell.edu/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requ",
+   "status": "ok",
+   "error": null,
    "http_status": null,
-   "seconds": 23.9,
-   "requests": 7,
-   "details_fetched": 0,
+   "seconds": 27.7,
+   "requests": 29,
+   "details_fetched": 15,
    "details_failed": 0,
    "notes": [
     "site_number not configured; assuming CX_1",
-    "branded host page: HTTP 403 for https://jobs.northwell.edu/: forbidden (bot block?)",
-    "search 'nurse practitioner': HTTP 403 for https://jobs.northwell.edu/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requisitionList.secondaryLocations,flexFieldsFacet.values,requisitionList.requisitionFlexFields&finder=findReqs;siteNumber=CX_1,facetsList=NONE,limit=25,offset=0,keyword=%22nurse%20practitioner%22,sortBy=POSTING_DATES_DESC: forbidden (bot block?)",
-    "search 'pediatric nurse practitioner': HTTP 403 for https://jobs.northwell.edu/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requisitionList.secondaryLocations,flexFieldsFacet.values,requisitionList.requisitionFlexFields&finder=findReqs;siteNumber=CX_1,facetsList=NONE,limit=25,offset=0,keyword=%22pediatric%20nurse%20practitioner%22,sortBy=POSTING_DATES_DESC: forbidde",
-    "search 'advanced practice provider': HTTP 403 for https://jobs.northwell.edu/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requisitionList.secondaryLocations,flexFieldsFacet.values,requisitionList.requisitionFlexFields&finder=findReqs;siteNumber=CX_1,facetsList=NONE,limit=25,offset=0,keyword=%22advanced%20practice%20provider%22,sortBy=POSTING_DATES_DESC: forbidden (b",
-    "search 'APRN': HTTP 403 for https://jobs.northwell.edu/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requisitionList.secondaryLocations,flexFieldsFacet.values,requisitionList.requisitionFlexFields&finder=findReqs;siteNumber=CX_1,facetsList=NONE,limit=25,offset=0,keyword=%22APRN%22,sortBy=POSTING_DATES_DESC: forbidden (bot block?)",
-    "search 'PICU': HTTP 403 for https://jobs.northwell.edu/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requisitionList.secondaryLocations,flexFieldsFacet.values,requisitionList.requisitionFlexFields&finder=findReqs;siteNumber=CX_1,facetsList=NONE,limit=25,offset=0,keyword=%22PICU%22,sortBy=POSTING_DATES_DESC: forbidden (bot block?)",
-    "search 'NICU': HTTP 403 for https://jobs.northwell.edu/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requisitionList.secondaryLocations,flexFieldsFacet.values,requisitionList.requisitionFlexFields&finder=findReqs;siteNumber=CX_1,facetsList=NONE,limit=25,offset=0,keyword=%22NICU%22,sortBy=POSTING_DATES_DESC: forbidden (bot block?)",
-    "sniff: HTTP 403 for https://jobs.northwell.edu/: forbidden (bot block?)",
-    "sniff: HTTP 404 for https://www.northwell.edu/cohen-childrens-medical-center: <!DOCTYPE html> <html lang=\"en\" dir=\"ltr\" prefix=\"og: https://ogp.me/ns#\" class=\"no-js\">   <head>     <script src=\"https://kit.fontawesome.com/9bc5a2a007.js\" cr",
-    "generic fallback failed: AdapterError: generic: no page reachable: 403 https://jobs.northwell.edu/; playwright 403 https://jobs.northwell.edu/; playwright 403 https://jobs.northwell.edu/?q=nurse+practitioner; playwright 403 https://jobs.no"
+    "branded host jobs.northwell.edu -> REST host eppr.fa.us2.oraclecloud.com",
+    "retried from a fresh runner"
    ],
    "samples": [],
-   "sample_listings": []
+   "sample_listings": [
+    {
+     "title": "Nurse Practitioner - FlexStaff- NICU",
+     "url": "https://jobs.northwell.edu/en/sites/CX_1/job/182245",
+     "posted_at": "2026-10-13",
+     "location": "Bay Shore, Suffolk, United States"
+    },
+    {
+     "title": "Nurse Practitioner (NP) - FlexStaff- Eastern L.I. Region",
+     "url": "https://jobs.northwell.edu/en/sites/CX_1/job/137830",
+     "posted_at": "2026-10-13",
+     "location": "Suffolk, United States"
+    },
+    {
+     "title": "Nurse Practitioner (NP) - FlexStaff- Staten Island, NYC, Northern Westchester",
+     "url": "https://jobs.northwell.edu/en/sites/CX_1/job/137831",
+     "posted_at": "2026-10-13",
+     "location": "Staten Island, Richmond, United States"
+    }
+   ]
   },
   {
    "slug": "lenox-hill-hospital-manhattan",
    "name": "Lenox Hill Hospital",
    "platform": "oracle_cloud",
    "adapter": "oracle_cloud",
-   "method": "",
+   "method": "api",
    "board": "oracle_cloud|jobs.northwell.edu|",
    "board_hospitals": 15,
-   "board_listings": 0,
-   "listings": 0,
+   "board_listings": 198,
+   "listings": 24,
    "candidates": 0,
    "new": 0,
    "known": 0,
-   "status": "error",
-   "error": "AdapterError: search 'APRN': HTTP 403 for https://jobs.northwell.edu/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requisitionList.secondaryLocations,flexFieldsFacet.values,requisitionList.requisitionFlexFields&finder=findReqs;siteNumber=CX_1,facetsList=NONE,limit=25,offset=0,keyword=%22APRN%22,sortBy=POSTING_DATES_DESC: forbidden (bot block?); search 'PICU': HTTP 403 for https://jobs.northwell.edu/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requ",
+   "status": "ok",
+   "error": null,
    "http_status": null,
-   "seconds": 23.9,
-   "requests": 7,
-   "details_fetched": 0,
+   "seconds": 27.7,
+   "requests": 29,
+   "details_fetched": 15,
    "details_failed": 0,
    "notes": [
     "site_number not configured; assuming CX_1",
-    "branded host page: HTTP 403 for https://jobs.northwell.edu/: forbidden (bot block?)",
-    "search 'nurse practitioner': HTTP 403 for https://jobs.northwell.edu/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requisitionList.secondaryLocations,flexFieldsFacet.values,requisitionList.requisitionFlexFields&finder=findReqs;siteNumber=CX_1,facetsList=NONE,limit=25,offset=0,keyword=%22nurse%20practitioner%22,sortBy=POSTING_DATES_DESC: forbidden (bot block?)",
-    "search 'pediatric nurse practitioner': HTTP 403 for https://jobs.northwell.edu/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requisitionList.secondaryLocations,flexFieldsFacet.values,requisitionList.requisitionFlexFields&finder=findReqs;siteNumber=CX_1,facetsList=NONE,limit=25,offset=0,keyword=%22pediatric%20nurse%20practitioner%22,sortBy=POSTING_DATES_DESC: forbidde",
-    "search 'advanced practice provider': HTTP 403 for https://jobs.northwell.edu/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requisitionList.secondaryLocations,flexFieldsFacet.values,requisitionList.requisitionFlexFields&finder=findReqs;siteNumber=CX_1,facetsList=NONE,limit=25,offset=0,keyword=%22advanced%20practice%20provider%22,sortBy=POSTING_DATES_DESC: forbidden (b",
-    "search 'APRN': HTTP 403 for https://jobs.northwell.edu/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requisitionList.secondaryLocations,flexFieldsFacet.values,requisitionList.requisitionFlexFields&finder=findReqs;siteNumber=CX_1,facetsList=NONE,limit=25,offset=0,keyword=%22APRN%22,sortBy=POSTING_DATES_DESC: forbidden (bot block?)",
-    "search 'PICU': HTTP 403 for https://jobs.northwell.edu/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requisitionList.secondaryLocations,flexFieldsFacet.values,requisitionList.requisitionFlexFields&finder=findReqs;siteNumber=CX_1,facetsList=NONE,limit=25,offset=0,keyword=%22PICU%22,sortBy=POSTING_DATES_DESC: forbidden (bot block?)",
-    "search 'NICU': HTTP 403 for https://jobs.northwell.edu/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requisitionList.secondaryLocations,flexFieldsFacet.values,requisitionList.requisitionFlexFields&finder=findReqs;siteNumber=CX_1,facetsList=NONE,limit=25,offset=0,keyword=%22NICU%22,sortBy=POSTING_DATES_DESC: forbidden (bot block?)",
-    "sniff: HTTP 403 for https://jobs.northwell.edu/: forbidden (bot block?)",
-    "sniff: HTTP 404 for https://www.northwell.edu/cohen-childrens-medical-center: <!DOCTYPE html> <html lang=\"en\" dir=\"ltr\" prefix=\"og: https://ogp.me/ns#\" class=\"no-js\">   <head>     <script src=\"https://kit.fontawesome.com/9bc5a2a007.js\" cr",
-    "generic fallback failed: AdapterError: generic: no page reachable: 403 https://jobs.northwell.edu/; playwright 403 https://jobs.northwell.edu/; playwright 403 https://jobs.northwell.edu/?q=nurse+practitioner; playwright 403 https://jobs.no"
+    "branded host jobs.northwell.edu -> REST host eppr.fa.us2.oraclecloud.com",
+    "retried from a fresh runner"
    ],
    "samples": [],
-   "sample_listings": []
+   "sample_listings": [
+    {
+     "title": "Nurse Practitioner - FlexStaff- NICU",
+     "url": "https://jobs.northwell.edu/en/sites/CX_1/job/182245",
+     "posted_at": "2026-10-13",
+     "location": "Bay Shore, Suffolk, United States"
+    },
+    {
+     "title": "Nurse Practitioner (NP) - FlexStaff- Eastern L.I. Region",
+     "url": "https://jobs.northwell.edu/en/sites/CX_1/job/137830",
+     "posted_at": "2026-10-13",
+     "location": "Suffolk, United States"
+    },
+    {
+     "title": "Nurse Practitioner (NP) - FlexStaff- Staten Island, NYC, Northern Westchester",
+     "url": "https://jobs.northwell.edu/en/sites/CX_1/job/137831",
+     "posted_at": "2026-10-13",
+     "location": "Staten Island, Richmond, United States"
+    }
+   ]
   },
   {
    "slug": "lij-forest-hills-queens",
    "name": "Long Island Jewish Forest Hills",
    "platform": "oracle_cloud",
    "adapter": "oracle_cloud",
-   "method": "",
+   "method": "api",
    "board": "oracle_cloud|jobs.northwell.edu|",
    "board_hospitals": 15,
-   "board_listings": 0,
-   "listings": 0,
+   "board_listings": 198,
+   "listings": 24,
    "candidates": 0,
    "new": 0,
    "known": 0,
-   "status": "error",
-   "error": "AdapterError: search 'APRN': HTTP 403 for https://jobs.northwell.edu/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requisitionList.secondaryLocations,flexFieldsFacet.values,requisitionList.requisitionFlexFields&finder=findReqs;siteNumber=CX_1,facetsList=NONE,limit=25,offset=0,keyword=%22APRN%22,sortBy=POSTING_DATES_DESC: forbidden (bot block?); search 'PICU': HTTP 403 for https://jobs.northwell.edu/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requ",
+   "status": "ok",
+   "error": null,
    "http_status": null,
-   "seconds": 23.9,
-   "requests": 7,
-   "details_fetched": 0,
+   "seconds": 27.7,
+   "requests": 29,
+   "details_fetched": 15,
    "details_failed": 0,
    "notes": [
     "site_number not configured; assuming CX_1",
-    "branded host page: HTTP 403 for https://jobs.northwell.edu/: forbidden (bot block?)",
-    "search 'nurse practitioner': HTTP 403 for https://jobs.northwell.edu/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requisitionList.secondaryLocations,flexFieldsFacet.values,requisitionList.requisitionFlexFields&finder=findReqs;siteNumber=CX_1,facetsList=NONE,limit=25,offset=0,keyword=%22nurse%20practitioner%22,sortBy=POSTING_DATES_DESC: forbidden (bot block?)",
-    "search 'pediatric nurse practitioner': HTTP 403 for https://jobs.northwell.edu/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requisitionList.secondaryLocations,flexFieldsFacet.values,requisitionList.requisitionFlexFields&finder=findReqs;siteNumber=CX_1,facetsList=NONE,limit=25,offset=0,keyword=%22pediatric%20nurse%20practitioner%22,sortBy=POSTING_DATES_DESC: forbidde",
-    "search 'advanced practice provider': HTTP 403 for https://jobs.northwell.edu/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requisitionList.secondaryLocations,flexFieldsFacet.values,requisitionList.requisitionFlexFields&finder=findReqs;siteNumber=CX_1,facetsList=NONE,limit=25,offset=0,keyword=%22advanced%20practice%20provider%22,sortBy=POSTING_DATES_DESC: forbidden (b",
-    "search 'APRN': HTTP 403 for https://jobs.northwell.edu/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requisitionList.secondaryLocations,flexFieldsFacet.values,requisitionList.requisitionFlexFields&finder=findReqs;siteNumber=CX_1,facetsList=NONE,limit=25,offset=0,keyword=%22APRN%22,sortBy=POSTING_DATES_DESC: forbidden (bot block?)",
-    "search 'PICU': HTTP 403 for https://jobs.northwell.edu/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requisitionList.secondaryLocations,flexFieldsFacet.values,requisitionList.requisitionFlexFields&finder=findReqs;siteNumber=CX_1,facetsList=NONE,limit=25,offset=0,keyword=%22PICU%22,sortBy=POSTING_DATES_DESC: forbidden (bot block?)",
-    "search 'NICU': HTTP 403 for https://jobs.northwell.edu/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requisitionList.secondaryLocations,flexFieldsFacet.values,requisitionList.requisitionFlexFields&finder=findReqs;siteNumber=CX_1,facetsList=NONE,limit=25,offset=0,keyword=%22NICU%22,sortBy=POSTING_DATES_DESC: forbidden (bot block?)",
-    "sniff: HTTP 403 for https://jobs.northwell.edu/: forbidden (bot block?)",
-    "sniff: HTTP 404 for https://www.northwell.edu/cohen-childrens-medical-center: <!DOCTYPE html> <html lang=\"en\" dir=\"ltr\" prefix=\"og: https://ogp.me/ns#\" class=\"no-js\">   <head>     <script src=\"https://kit.fontawesome.com/9bc5a2a007.js\" cr",
-    "generic fallback failed: AdapterError: generic: no page reachable: 403 https://jobs.northwell.edu/; playwright 403 https://jobs.northwell.edu/; playwright 403 https://jobs.northwell.edu/?q=nurse+practitioner; playwright 403 https://jobs.no"
+    "branded host jobs.northwell.edu -> REST host eppr.fa.us2.oraclecloud.com",
+    "retried from a fresh runner"
    ],
    "samples": [],
-   "sample_listings": []
+   "sample_listings": [
+    {
+     "title": "Nurse Practitioner - FlexStaff- NICU",
+     "url": "https://jobs.northwell.edu/en/sites/CX_1/job/182245",
+     "posted_at": "2026-10-13",
+     "location": "Bay Shore, Suffolk, United States"
+    },
+    {
+     "title": "Nurse Practitioner (NP) - FlexStaff- Eastern L.I. Region",
+     "url": "https://jobs.northwell.edu/en/sites/CX_1/job/137830",
+     "posted_at": "2026-10-13",
+     "location": "Suffolk, United States"
+    },
+    {
+     "title": "Nurse Practitioner (NP) - FlexStaff- Staten Island, NYC, Northern Westchester",
+     "url": "https://jobs.northwell.edu/en/sites/CX_1/job/137831",
+     "posted_at": "2026-10-13",
+     "location": "Staten Island, Richmond, United States"
+    }
+   ]
   },
   {
    "slug": "long-island-jewish-medical-center-new-hyde-park",
    "name": "Long Island Jewish Medical Center",
    "platform": "oracle_cloud",
    "adapter": "oracle_cloud",
-   "method": "",
+   "method": "api",
    "board": "oracle_cloud|jobs.northwell.edu|",
    "board_hospitals": 15,
-   "board_listings": 0,
-   "listings": 0,
+   "board_listings": 198,
+   "listings": 11,
    "candidates": 0,
    "new": 0,
    "known": 0,
-   "status": "error",
-   "error": "AdapterError: search 'APRN': HTTP 403 for https://jobs.northwell.edu/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requisitionList.secondaryLocations,flexFieldsFacet.values,requisitionList.requisitionFlexFields&finder=findReqs;siteNumber=CX_1,facetsList=NONE,limit=25,offset=0,keyword=%22APRN%22,sortBy=POSTING_DATES_DESC: forbidden (bot block?); search 'PICU': HTTP 403 for https://jobs.northwell.edu/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requ",
+   "status": "ok",
+   "error": null,
    "http_status": null,
-   "seconds": 23.9,
-   "requests": 7,
-   "details_fetched": 0,
+   "seconds": 27.7,
+   "requests": 29,
+   "details_fetched": 15,
    "details_failed": 0,
    "notes": [
     "site_number not configured; assuming CX_1",
-    "branded host page: HTTP 403 for https://jobs.northwell.edu/: forbidden (bot block?)",
-    "search 'nurse practitioner': HTTP 403 for https://jobs.northwell.edu/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requisitionList.secondaryLocations,flexFieldsFacet.values,requisitionList.requisitionFlexFields&finder=findReqs;siteNumber=CX_1,facetsList=NONE,limit=25,offset=0,keyword=%22nurse%20practitioner%22,sortBy=POSTING_DATES_DESC: forbidden (bot block?)",
-    "search 'pediatric nurse practitioner': HTTP 403 for https://jobs.northwell.edu/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requisitionList.secondaryLocations,flexFieldsFacet.values,requisitionList.requisitionFlexFields&finder=findReqs;siteNumber=CX_1,facetsList=NONE,limit=25,offset=0,keyword=%22pediatric%20nurse%20practitioner%22,sortBy=POSTING_DATES_DESC: forbidde",
-    "search 'advanced practice provider': HTTP 403 for https://jobs.northwell.edu/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requisitionList.secondaryLocations,flexFieldsFacet.values,requisitionList.requisitionFlexFields&finder=findReqs;siteNumber=CX_1,facetsList=NONE,limit=25,offset=0,keyword=%22advanced%20practice%20provider%22,sortBy=POSTING_DATES_DESC: forbidden (b",
-    "search 'APRN': HTTP 403 for https://jobs.northwell.edu/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requisitionList.secondaryLocations,flexFieldsFacet.values,requisitionList.requisitionFlexFields&finder=findReqs;siteNumber=CX_1,facetsList=NONE,limit=25,offset=0,keyword=%22APRN%22,sortBy=POSTING_DATES_DESC: forbidden (bot block?)",
-    "search 'PICU': HTTP 403 for https://jobs.northwell.edu/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requisitionList.secondaryLocations,flexFieldsFacet.values,requisitionList.requisitionFlexFields&finder=findReqs;siteNumber=CX_1,facetsList=NONE,limit=25,offset=0,keyword=%22PICU%22,sortBy=POSTING_DATES_DESC: forbidden (bot block?)",
-    "search 'NICU': HTTP 403 for https://jobs.northwell.edu/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requisitionList.secondaryLocations,flexFieldsFacet.values,requisitionList.requisitionFlexFields&finder=findReqs;siteNumber=CX_1,facetsList=NONE,limit=25,offset=0,keyword=%22NICU%22,sortBy=POSTING_DATES_DESC: forbidden (bot block?)",
-    "sniff: HTTP 403 for https://jobs.northwell.edu/: forbidden (bot block?)",
-    "sniff: HTTP 404 for https://www.northwell.edu/cohen-childrens-medical-center: <!DOCTYPE html> <html lang=\"en\" dir=\"ltr\" prefix=\"og: https://ogp.me/ns#\" class=\"no-js\">   <head>     <script src=\"https://kit.fontawesome.com/9bc5a2a007.js\" cr",
-    "generic fallback failed: AdapterError: generic: no page reachable: 403 https://jobs.northwell.edu/; playwright 403 https://jobs.northwell.edu/; playwright 403 https://jobs.northwell.edu/?q=nurse+practitioner; playwright 403 https://jobs.no"
+    "branded host jobs.northwell.edu -> REST host eppr.fa.us2.oraclecloud.com",
+    "retried from a fresh runner"
    ],
    "samples": [],
-   "sample_listings": []
+   "sample_listings": [
+    {
+     "title": "Nurse Practitioner - FlexStaff- NICU",
+     "url": "https://jobs.northwell.edu/en/sites/CX_1/job/182245",
+     "posted_at": "2026-10-13",
+     "location": "Bay Shore, Suffolk, United States"
+    },
+    {
+     "title": "Nurse Practitioner (NP) - FlexStaff- Eastern L.I. Region",
+     "url": "https://jobs.northwell.edu/en/sites/CX_1/job/137830",
+     "posted_at": "2026-10-13",
+     "location": "Suffolk, United States"
+    },
+    {
+     "title": "Nurse Practitioner (NP) - FlexStaff- Staten Island, NYC, Northern Westchester",
+     "url": "https://jobs.northwell.edu/en/sites/CX_1/job/137831",
+     "posted_at": "2026-10-13",
+     "location": "Staten Island, Richmond, United States"
+    }
+   ]
   },
   {
    "slug": "staten-island-university-hospital-staten-island",
    "name": "Staten Island University Hospital",
    "platform": "oracle_cloud",
    "adapter": "oracle_cloud",
-   "method": "",
+   "method": "api",
    "board": "oracle_cloud|jobs.northwell.edu|",
    "board_hospitals": 15,
-   "board_listings": 0,
-   "listings": 0,
+   "board_listings": 198,
+   "listings": 20,
    "candidates": 0,
    "new": 0,
    "known": 0,
-   "status": "error",
-   "error": "AdapterError: search 'APRN': HTTP 403 for https://jobs.northwell.edu/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requisitionList.secondaryLocations,flexFieldsFacet.values,requisitionList.requisitionFlexFields&finder=findReqs;siteNumber=CX_1,facetsList=NONE,limit=25,offset=0,keyword=%22APRN%22,sortBy=POSTING_DATES_DESC: forbidden (bot block?); search 'PICU': HTTP 403 for https://jobs.northwell.edu/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requ",
+   "status": "ok",
+   "error": null,
    "http_status": null,
-   "seconds": 23.9,
-   "requests": 7,
-   "details_fetched": 0,
+   "seconds": 27.7,
+   "requests": 29,
+   "details_fetched": 15,
    "details_failed": 0,
    "notes": [
     "site_number not configured; assuming CX_1",
-    "branded host page: HTTP 403 for https://jobs.northwell.edu/: forbidden (bot block?)",
-    "search 'nurse practitioner': HTTP 403 for https://jobs.northwell.edu/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requisitionList.secondaryLocations,flexFieldsFacet.values,requisitionList.requisitionFlexFields&finder=findReqs;siteNumber=CX_1,facetsList=NONE,limit=25,offset=0,keyword=%22nurse%20practitioner%22,sortBy=POSTING_DATES_DESC: forbidden (bot block?)",
-    "search 'pediatric nurse practitioner': HTTP 403 for https://jobs.northwell.edu/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requisitionList.secondaryLocations,flexFieldsFacet.values,requisitionList.requisitionFlexFields&finder=findReqs;siteNumber=CX_1,facetsList=NONE,limit=25,offset=0,keyword=%22pediatric%20nurse%20practitioner%22,sortBy=POSTING_DATES_DESC: forbidde",
-    "search 'advanced practice provider': HTTP 403 for https://jobs.northwell.edu/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requisitionList.secondaryLocations,flexFieldsFacet.values,requisitionList.requisitionFlexFields&finder=findReqs;siteNumber=CX_1,facetsList=NONE,limit=25,offset=0,keyword=%22advanced%20practice%20provider%22,sortBy=POSTING_DATES_DESC: forbidden (b",
-    "search 'APRN': HTTP 403 for https://jobs.northwell.edu/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requisitionList.secondaryLocations,flexFieldsFacet.values,requisitionList.requisitionFlexFields&finder=findReqs;siteNumber=CX_1,facetsList=NONE,limit=25,offset=0,keyword=%22APRN%22,sortBy=POSTING_DATES_DESC: forbidden (bot block?)",
-    "search 'PICU': HTTP 403 for https://jobs.northwell.edu/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requisitionList.secondaryLocations,flexFieldsFacet.values,requisitionList.requisitionFlexFields&finder=findReqs;siteNumber=CX_1,facetsList=NONE,limit=25,offset=0,keyword=%22PICU%22,sortBy=POSTING_DATES_DESC: forbidden (bot block?)",
-    "search 'NICU': HTTP 403 for https://jobs.northwell.edu/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requisitionList.secondaryLocations,flexFieldsFacet.values,requisitionList.requisitionFlexFields&finder=findReqs;siteNumber=CX_1,facetsList=NONE,limit=25,offset=0,keyword=%22NICU%22,sortBy=POSTING_DATES_DESC: forbidden (bot block?)",
-    "sniff: HTTP 403 for https://jobs.northwell.edu/: forbidden (bot block?)",
-    "sniff: HTTP 404 for https://www.northwell.edu/cohen-childrens-medical-center: <!DOCTYPE html> <html lang=\"en\" dir=\"ltr\" prefix=\"og: https://ogp.me/ns#\" class=\"no-js\">   <head>     <script src=\"https://kit.fontawesome.com/9bc5a2a007.js\" cr",
-    "generic fallback failed: AdapterError: generic: no page reachable: 403 https://jobs.northwell.edu/; playwright 403 https://jobs.northwell.edu/; playwright 403 https://jobs.northwell.edu/?q=nurse+practitioner; playwright 403 https://jobs.no"
+    "branded host jobs.northwell.edu -> REST host eppr.fa.us2.oraclecloud.com",
+    "retried from a fresh runner"
    ],
    "samples": [],
-   "sample_listings": []
+   "sample_listings": [
+    {
+     "title": "Nurse Practitioner - FlexStaff- NICU",
+     "url": "https://jobs.northwell.edu/en/sites/CX_1/job/182245",
+     "posted_at": "2026-10-13",
+     "location": "Bay Shore, Suffolk, United States"
+    },
+    {
+     "title": "Nurse Practitioner (NP) - FlexStaff- Eastern L.I. Region",
+     "url": "https://jobs.northwell.edu/en/sites/CX_1/job/137830",
+     "posted_at": "2026-10-13",
+     "location": "Suffolk, United States"
+    },
+    {
+     "title": "Nurse Practitioner (NP) - FlexStaff- Staten Island, NYC, Northern Westchester",
+     "url": "https://jobs.northwell.edu/en/sites/CX_1/job/137831",
+     "posted_at": "2026-10-13",
+     "location": "Staten Island, Richmond, United States"
+    }
+   ]
   },
   {
    "slug": "huntington-hospital-huntington",
    "name": "Huntington Hospital",
    "platform": "oracle_cloud",
    "adapter": "oracle_cloud",
-   "method": "",
+   "method": "api",
    "board": "oracle_cloud|jobs.northwell.edu|",
    "board_hospitals": 15,
-   "board_listings": 0,
-   "listings": 0,
+   "board_listings": 198,
+   "listings": 2,
    "candidates": 0,
    "new": 0,
    "known": 0,
-   "status": "error",
-   "error": "AdapterError: search 'APRN': HTTP 403 for https://jobs.northwell.edu/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requisitionList.secondaryLocations,flexFieldsFacet.values,requisitionList.requisitionFlexFields&finder=findReqs;siteNumber=CX_1,facetsList=NONE,limit=25,offset=0,keyword=%22APRN%22,sortBy=POSTING_DATES_DESC: forbidden (bot block?); search 'PICU': HTTP 403 for https://jobs.northwell.edu/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requ",
+   "status": "ok",
+   "error": null,
    "http_status": null,
-   "seconds": 23.9,
-   "requests": 7,
-   "details_fetched": 0,
+   "seconds": 27.7,
+   "requests": 29,
+   "details_fetched": 15,
    "details_failed": 0,
    "notes": [
     "site_number not configured; assuming CX_1",
-    "branded host page: HTTP 403 for https://jobs.northwell.edu/: forbidden (bot block?)",
-    "search 'nurse practitioner': HTTP 403 for https://jobs.northwell.edu/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requisitionList.secondaryLocations,flexFieldsFacet.values,requisitionList.requisitionFlexFields&finder=findReqs;siteNumber=CX_1,facetsList=NONE,limit=25,offset=0,keyword=%22nurse%20practitioner%22,sortBy=POSTING_DATES_DESC: forbidden (bot block?)",
-    "search 'pediatric nurse practitioner': HTTP 403 for https://jobs.northwell.edu/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requisitionList.secondaryLocations,flexFieldsFacet.values,requisitionList.requisitionFlexFields&finder=findReqs;siteNumber=CX_1,facetsList=NONE,limit=25,offset=0,keyword=%22pediatric%20nurse%20practitioner%22,sortBy=POSTING_DATES_DESC: forbidde",
-    "search 'advanced practice provider': HTTP 403 for https://jobs.northwell.edu/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requisitionList.secondaryLocations,flexFieldsFacet.values,requisitionList.requisitionFlexFields&finder=findReqs;siteNumber=CX_1,facetsList=NONE,limit=25,offset=0,keyword=%22advanced%20practice%20provider%22,sortBy=POSTING_DATES_DESC: forbidden (b",
-    "search 'APRN': HTTP 403 for https://jobs.northwell.edu/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requisitionList.secondaryLocations,flexFieldsFacet.values,requisitionList.requisitionFlexFields&finder=findReqs;siteNumber=CX_1,facetsList=NONE,limit=25,offset=0,keyword=%22APRN%22,sortBy=POSTING_DATES_DESC: forbidden (bot block?)",
-    "search 'PICU': HTTP 403 for https://jobs.northwell.edu/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requisitionList.secondaryLocations,flexFieldsFacet.values,requisitionList.requisitionFlexFields&finder=findReqs;siteNumber=CX_1,facetsList=NONE,limit=25,offset=0,keyword=%22PICU%22,sortBy=POSTING_DATES_DESC: forbidden (bot block?)",
-    "search 'NICU': HTTP 403 for https://jobs.northwell.edu/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requisitionList.secondaryLocations,flexFieldsFacet.values,requisitionList.requisitionFlexFields&finder=findReqs;siteNumber=CX_1,facetsList=NONE,limit=25,offset=0,keyword=%22NICU%22,sortBy=POSTING_DATES_DESC: forbidden (bot block?)",
-    "sniff: HTTP 403 for https://jobs.northwell.edu/: forbidden (bot block?)",
-    "sniff: HTTP 404 for https://www.northwell.edu/cohen-childrens-medical-center: <!DOCTYPE html> <html lang=\"en\" dir=\"ltr\" prefix=\"og: https://ogp.me/ns#\" class=\"no-js\">   <head>     <script src=\"https://kit.fontawesome.com/9bc5a2a007.js\" cr",
-    "generic fallback failed: AdapterError: generic: no page reachable: 403 https://jobs.northwell.edu/; playwright 403 https://jobs.northwell.edu/; playwright 403 https://jobs.northwell.edu/?q=nurse+practitioner; playwright 403 https://jobs.no"
+    "branded host jobs.northwell.edu -> REST host eppr.fa.us2.oraclecloud.com",
+    "retried from a fresh runner"
    ],
    "samples": [],
-   "sample_listings": []
+   "sample_listings": [
+    {
+     "title": "Nurse Practitioner - FlexStaff- NICU",
+     "url": "https://jobs.northwell.edu/en/sites/CX_1/job/182245",
+     "posted_at": "2026-10-13",
+     "location": "Bay Shore, Suffolk, United States"
+    },
+    {
+     "title": "Nurse Practitioner (NP) - FlexStaff- Eastern L.I. Region",
+     "url": "https://jobs.northwell.edu/en/sites/CX_1/job/137830",
+     "posted_at": "2026-10-13",
+     "location": "Suffolk, United States"
+    },
+    {
+     "title": "Nurse Practitioner (NP) - FlexStaff- Staten Island, NYC, Northern Westchester",
+     "url": "https://jobs.northwell.edu/en/sites/CX_1/job/137831",
+     "posted_at": "2026-10-13",
+     "location": "Staten Island, Richmond, United States"
+    }
+   ]
   },
   {
    "slug": "lij-valley-stream-valley-stream",
    "name": "Long Island Jewish Valley Stream",
    "platform": "oracle_cloud",
    "adapter": "oracle_cloud",
-   "method": "",
+   "method": "api",
    "board": "oracle_cloud|jobs.northwell.edu|",
    "board_hospitals": 15,
-   "board_listings": 0,
+   "board_listings": 198,
    "listings": 0,
    "candidates": 0,
    "new": 0,
    "known": 0,
-   "status": "error",
-   "error": "AdapterError: search 'APRN': HTTP 403 for https://jobs.northwell.edu/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requisitionList.secondaryLocations,flexFieldsFacet.values,requisitionList.requisitionFlexFields&finder=findReqs;siteNumber=CX_1,facetsList=NONE,limit=25,offset=0,keyword=%22APRN%22,sortBy=POSTING_DATES_DESC: forbidden (bot block?); search 'PICU': HTTP 403 for https://jobs.northwell.edu/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requ",
+   "status": "ok",
+   "error": null,
    "http_status": null,
-   "seconds": 23.9,
-   "requests": 7,
-   "details_fetched": 0,
+   "seconds": 27.7,
+   "requests": 29,
+   "details_fetched": 15,
    "details_failed": 0,
    "notes": [
     "site_number not configured; assuming CX_1",
-    "branded host page: HTTP 403 for https://jobs.northwell.edu/: forbidden (bot block?)",
-    "search 'nurse practitioner': HTTP 403 for https://jobs.northwell.edu/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requisitionList.secondaryLocations,flexFieldsFacet.values,requisitionList.requisitionFlexFields&finder=findReqs;siteNumber=CX_1,facetsList=NONE,limit=25,offset=0,keyword=%22nurse%20practitioner%22,sortBy=POSTING_DATES_DESC: forbidden (bot block?)",
-    "search 'pediatric nurse practitioner': HTTP 403 for https://jobs.northwell.edu/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requisitionList.secondaryLocations,flexFieldsFacet.values,requisitionList.requisitionFlexFields&finder=findReqs;siteNumber=CX_1,facetsList=NONE,limit=25,offset=0,keyword=%22pediatric%20nurse%20practitioner%22,sortBy=POSTING_DATES_DESC: forbidde",
-    "search 'advanced practice provider': HTTP 403 for https://jobs.northwell.edu/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requisitionList.secondaryLocations,flexFieldsFacet.values,requisitionList.requisitionFlexFields&finder=findReqs;siteNumber=CX_1,facetsList=NONE,limit=25,offset=0,keyword=%22advanced%20practice%20provider%22,sortBy=POSTING_DATES_DESC: forbidden (b",
-    "search 'APRN': HTTP 403 for https://jobs.northwell.edu/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requisitionList.secondaryLocations,flexFieldsFacet.values,requisitionList.requisitionFlexFields&finder=findReqs;siteNumber=CX_1,facetsList=NONE,limit=25,offset=0,keyword=%22APRN%22,sortBy=POSTING_DATES_DESC: forbidden (bot block?)",
-    "search 'PICU': HTTP 403 for https://jobs.northwell.edu/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requisitionList.secondaryLocations,flexFieldsFacet.values,requisitionList.requisitionFlexFields&finder=findReqs;siteNumber=CX_1,facetsList=NONE,limit=25,offset=0,keyword=%22PICU%22,sortBy=POSTING_DATES_DESC: forbidden (bot block?)",
-    "search 'NICU': HTTP 403 for https://jobs.northwell.edu/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requisitionList.secondaryLocations,flexFieldsFacet.values,requisitionList.requisitionFlexFields&finder=findReqs;siteNumber=CX_1,facetsList=NONE,limit=25,offset=0,keyword=%22NICU%22,sortBy=POSTING_DATES_DESC: forbidden (bot block?)",
-    "sniff: HTTP 403 for https://jobs.northwell.edu/: forbidden (bot block?)",
-    "sniff: HTTP 404 for https://www.northwell.edu/cohen-childrens-medical-center: <!DOCTYPE html> <html lang=\"en\" dir=\"ltr\" prefix=\"og: https://ogp.me/ns#\" class=\"no-js\">   <head>     <script src=\"https://kit.fontawesome.com/9bc5a2a007.js\" cr",
-    "generic fallback failed: AdapterError: generic: no page reachable: 403 https://jobs.northwell.edu/; playwright 403 https://jobs.northwell.edu/; playwright 403 https://jobs.northwell.edu/?q=nurse+practitioner; playwright 403 https://jobs.no"
+    "branded host jobs.northwell.edu -> REST host eppr.fa.us2.oraclecloud.com",
+    "retried from a fresh runner"
    ],
    "samples": [],
-   "sample_listings": []
+   "sample_listings": [
+    {
+     "title": "Nurse Practitioner - FlexStaff- NICU",
+     "url": "https://jobs.northwell.edu/en/sites/CX_1/job/182245",
+     "posted_at": "2026-10-13",
+     "location": "Bay Shore, Suffolk, United States"
+    },
+    {
+     "title": "Nurse Practitioner (NP) - FlexStaff- Eastern L.I. Region",
+     "url": "https://jobs.northwell.edu/en/sites/CX_1/job/137830",
+     "posted_at": "2026-10-13",
+     "location": "Suffolk, United States"
+    },
+    {
+     "title": "Nurse Practitioner (NP) - FlexStaff- Staten Island, NYC, Northern Westchester",
+     "url": "https://jobs.northwell.edu/en/sites/CX_1/job/137831",
+     "posted_at": "2026-10-13",
+     "location": "Staten Island, Richmond, United States"
+    }
+   ]
   },
   {
    "slug": "mather-hospital-port-jefferson",
    "name": "Mather Hospital",
    "platform": "oracle_cloud",
    "adapter": "oracle_cloud",
-   "method": "",
+   "method": "api",
    "board": "oracle_cloud|jobs.northwell.edu|",
    "board_hospitals": 15,
-   "board_listings": 0,
+   "board_listings": 198,
    "listings": 0,
    "candidates": 0,
    "new": 0,
    "known": 0,
-   "status": "error",
-   "error": "AdapterError: search 'APRN': HTTP 403 for https://jobs.northwell.edu/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requisitionList.secondaryLocations,flexFieldsFacet.values,requisitionList.requisitionFlexFields&finder=findReqs;siteNumber=CX_1,facetsList=NONE,limit=25,offset=0,keyword=%22APRN%22,sortBy=POSTING_DATES_DESC: forbidden (bot block?); search 'PICU': HTTP 403 for https://jobs.northwell.edu/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requ",
+   "status": "ok",
+   "error": null,
    "http_status": null,
-   "seconds": 23.9,
-   "requests": 7,
-   "details_fetched": 0,
+   "seconds": 27.7,
+   "requests": 29,
+   "details_fetched": 15,
    "details_failed": 0,
    "notes": [
     "site_number not configured; assuming CX_1",
-    "branded host page: HTTP 403 for https://jobs.northwell.edu/: forbidden (bot block?)",
-    "search 'nurse practitioner': HTTP 403 for https://jobs.northwell.edu/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requisitionList.secondaryLocations,flexFieldsFacet.values,requisitionList.requisitionFlexFields&finder=findReqs;siteNumber=CX_1,facetsList=NONE,limit=25,offset=0,keyword=%22nurse%20practitioner%22,sortBy=POSTING_DATES_DESC: forbidden (bot block?)",
-    "search 'pediatric nurse practitioner': HTTP 403 for https://jobs.northwell.edu/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requisitionList.secondaryLocations,flexFieldsFacet.values,requisitionList.requisitionFlexFields&finder=findReqs;siteNumber=CX_1,facetsList=NONE,limit=25,offset=0,keyword=%22pediatric%20nurse%20practitioner%22,sortBy=POSTING_DATES_DESC: forbidde",
-    "search 'advanced practice provider': HTTP 403 for https://jobs.northwell.edu/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requisitionList.secondaryLocations,flexFieldsFacet.values,requisitionList.requisitionFlexFields&finder=findReqs;siteNumber=CX_1,facetsList=NONE,limit=25,offset=0,keyword=%22advanced%20practice%20provider%22,sortBy=POSTING_DATES_DESC: forbidden (b",
-    "search 'APRN': HTTP 403 for https://jobs.northwell.edu/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requisitionList.secondaryLocations,flexFieldsFacet.values,requisitionList.requisitionFlexFields&finder=findReqs;siteNumber=CX_1,facetsList=NONE,limit=25,offset=0,keyword=%22APRN%22,sortBy=POSTING_DATES_DESC: forbidden (bot block?)",
-    "search 'PICU': HTTP 403 for https://jobs.northwell.edu/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requisitionList.secondaryLocations,flexFieldsFacet.values,requisitionList.requisitionFlexFields&finder=findReqs;siteNumber=CX_1,facetsList=NONE,limit=25,offset=0,keyword=%22PICU%22,sortBy=POSTING_DATES_DESC: forbidden (bot block?)",
-    "search 'NICU': HTTP 403 for https://jobs.northwell.edu/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requisitionList.secondaryLocations,flexFieldsFacet.values,requisitionList.requisitionFlexFields&finder=findReqs;siteNumber=CX_1,facetsList=NONE,limit=25,offset=0,keyword=%22NICU%22,sortBy=POSTING_DATES_DESC: forbidden (bot block?)",
-    "sniff: HTTP 403 for https://jobs.northwell.edu/: forbidden (bot block?)",
-    "sniff: HTTP 404 for https://www.northwell.edu/cohen-childrens-medical-center: <!DOCTYPE html> <html lang=\"en\" dir=\"ltr\" prefix=\"og: https://ogp.me/ns#\" class=\"no-js\">   <head>     <script src=\"https://kit.fontawesome.com/9bc5a2a007.js\" cr",
-    "generic fallback failed: AdapterError: generic: no page reachable: 403 https://jobs.northwell.edu/; playwright 403 https://jobs.northwell.edu/; playwright 403 https://jobs.northwell.edu/?q=nurse+practitioner; playwright 403 https://jobs.no"
+    "branded host jobs.northwell.edu -> REST host eppr.fa.us2.oraclecloud.com",
+    "retried from a fresh runner"
    ],
    "samples": [],
-   "sample_listings": []
+   "sample_listings": [
+    {
+     "title": "Nurse Practitioner - FlexStaff- NICU",
+     "url": "https://jobs.northwell.edu/en/sites/CX_1/job/182245",
+     "posted_at": "2026-10-13",
+     "location": "Bay Shore, Suffolk, United States"
+    },
+    {
+     "title": "Nurse Practitioner (NP) - FlexStaff- Eastern L.I. Region",
+     "url": "https://jobs.northwell.edu/en/sites/CX_1/job/137830",
+     "posted_at": "2026-10-13",
+     "location": "Suffolk, United States"
+    },
+    {
+     "title": "Nurse Practitioner (NP) - FlexStaff- Staten Island, NYC, Northern Westchester",
+     "url": "https://jobs.northwell.edu/en/sites/CX_1/job/137831",
+     "posted_at": "2026-10-13",
+     "location": "Staten Island, Richmond, United States"
+    }
+   ]
   },
   {
    "slug": "north-shore-university-hospital-manhasset",
    "name": "North Shore University Hospital",
    "platform": "oracle_cloud",
    "adapter": "oracle_cloud",
-   "method": "",
+   "method": "api",
    "board": "oracle_cloud|jobs.northwell.edu|",
    "board_hospitals": 15,
-   "board_listings": 0,
-   "listings": 0,
-   "candidates": 0,
+   "board_listings": 198,
+   "listings": 22,
+   "candidates": 1,
    "new": 0,
-   "known": 0,
-   "status": "error",
-   "error": "AdapterError: search 'APRN': HTTP 403 for https://jobs.northwell.edu/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requisitionList.secondaryLocations,flexFieldsFacet.values,requisitionList.requisitionFlexFields&finder=findReqs;siteNumber=CX_1,facetsList=NONE,limit=25,offset=0,keyword=%22APRN%22,sortBy=POSTING_DATES_DESC: forbidden (bot block?); search 'PICU': HTTP 403 for https://jobs.northwell.edu/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requ",
+   "known": 1,
+   "status": "ok",
+   "error": null,
    "http_status": null,
-   "seconds": 23.9,
-   "requests": 7,
-   "details_fetched": 0,
+   "seconds": 27.7,
+   "requests": 29,
+   "details_fetched": 15,
    "details_failed": 0,
    "notes": [
     "site_number not configured; assuming CX_1",
-    "branded host page: HTTP 403 for https://jobs.northwell.edu/: forbidden (bot block?)",
-    "search 'nurse practitioner': HTTP 403 for https://jobs.northwell.edu/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requisitionList.secondaryLocations,flexFieldsFacet.values,requisitionList.requisitionFlexFields&finder=findReqs;siteNumber=CX_1,facetsList=NONE,limit=25,offset=0,keyword=%22nurse%20practitioner%22,sortBy=POSTING_DATES_DESC: forbidden (bot block?)",
-    "search 'pediatric nurse practitioner': HTTP 403 for https://jobs.northwell.edu/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requisitionList.secondaryLocations,flexFieldsFacet.values,requisitionList.requisitionFlexFields&finder=findReqs;siteNumber=CX_1,facetsList=NONE,limit=25,offset=0,keyword=%22pediatric%20nurse%20practitioner%22,sortBy=POSTING_DATES_DESC: forbidde",
-    "search 'advanced practice provider': HTTP 403 for https://jobs.northwell.edu/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requisitionList.secondaryLocations,flexFieldsFacet.values,requisitionList.requisitionFlexFields&finder=findReqs;siteNumber=CX_1,facetsList=NONE,limit=25,offset=0,keyword=%22advanced%20practice%20provider%22,sortBy=POSTING_DATES_DESC: forbidden (b",
-    "search 'APRN': HTTP 403 for https://jobs.northwell.edu/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requisitionList.secondaryLocations,flexFieldsFacet.values,requisitionList.requisitionFlexFields&finder=findReqs;siteNumber=CX_1,facetsList=NONE,limit=25,offset=0,keyword=%22APRN%22,sortBy=POSTING_DATES_DESC: forbidden (bot block?)",
-    "search 'PICU': HTTP 403 for https://jobs.northwell.edu/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requisitionList.secondaryLocations,flexFieldsFacet.values,requisitionList.requisitionFlexFields&finder=findReqs;siteNumber=CX_1,facetsList=NONE,limit=25,offset=0,keyword=%22PICU%22,sortBy=POSTING_DATES_DESC: forbidden (bot block?)",
-    "search 'NICU': HTTP 403 for https://jobs.northwell.edu/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requisitionList.secondaryLocations,flexFieldsFacet.values,requisitionList.requisitionFlexFields&finder=findReqs;siteNumber=CX_1,facetsList=NONE,limit=25,offset=0,keyword=%22NICU%22,sortBy=POSTING_DATES_DESC: forbidden (bot block?)",
-    "sniff: HTTP 403 for https://jobs.northwell.edu/: forbidden (bot block?)",
-    "sniff: HTTP 404 for https://www.northwell.edu/cohen-childrens-medical-center: <!DOCTYPE html> <html lang=\"en\" dir=\"ltr\" prefix=\"og: https://ogp.me/ns#\" class=\"no-js\">   <head>     <script src=\"https://kit.fontawesome.com/9bc5a2a007.js\" cr",
-    "generic fallback failed: AdapterError: generic: no page reachable: 403 https://jobs.northwell.edu/; playwright 403 https://jobs.northwell.edu/; playwright 403 https://jobs.northwell.edu/?q=nurse+practitioner; playwright 403 https://jobs.no"
+    "branded host jobs.northwell.edu -> REST host eppr.fa.us2.oraclecloud.com",
+    "retried from a fresh runner"
    ],
-   "samples": [],
-   "sample_listings": []
+   "samples": [
+    {
+     "title": "Nurse Practitioner - FlexStaff- NICU",
+     "url": "https://jobs.northwell.edu/en/sites/CX_1/job/182245",
+     "posted_at": "2026-10-13",
+     "relevance": 3,
+     "setting": "nicu",
+     "known": true
+    }
+   ],
+   "sample_listings": [
+    {
+     "title": "Nurse Practitioner - FlexStaff- NICU",
+     "url": "https://jobs.northwell.edu/en/sites/CX_1/job/182245",
+     "posted_at": "2026-10-13",
+     "location": "Bay Shore, Suffolk, United States"
+    },
+    {
+     "title": "Nurse Practitioner (NP) - FlexStaff- Eastern L.I. Region",
+     "url": "https://jobs.northwell.edu/en/sites/CX_1/job/137830",
+     "posted_at": "2026-10-13",
+     "location": "Suffolk, United States"
+    },
+    {
+     "title": "Nurse Practitioner (NP) - FlexStaff- Staten Island, NYC, Northern Westchester",
+     "url": "https://jobs.northwell.edu/en/sites/CX_1/job/137831",
+     "posted_at": "2026-10-13",
+     "location": "Staten Island, Richmond, United States"
+    }
+   ]
   },
   {
    "slug": "peconic-bay-medical-center-riverhead",
    "name": "Peconic Bay Medical Center",
    "platform": "oracle_cloud",
    "adapter": "oracle_cloud",
-   "method": "",
+   "method": "api",
    "board": "oracle_cloud|jobs.northwell.edu|",
    "board_hospitals": 15,
-   "board_listings": 0,
-   "listings": 0,
+   "board_listings": 198,
+   "listings": 1,
    "candidates": 0,
    "new": 0,
    "known": 0,
-   "status": "error",
-   "error": "AdapterError: search 'APRN': HTTP 403 for https://jobs.northwell.edu/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requisitionList.secondaryLocations,flexFieldsFacet.values,requisitionList.requisitionFlexFields&finder=findReqs;siteNumber=CX_1,facetsList=NONE,limit=25,offset=0,keyword=%22APRN%22,sortBy=POSTING_DATES_DESC: forbidden (bot block?); search 'PICU': HTTP 403 for https://jobs.northwell.edu/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requ",
+   "status": "ok",
+   "error": null,
    "http_status": null,
-   "seconds": 23.9,
-   "requests": 7,
-   "details_fetched": 0,
+   "seconds": 27.7,
+   "requests": 29,
+   "details_fetched": 15,
    "details_failed": 0,
    "notes": [
     "site_number not configured; assuming CX_1",
-    "branded host page: HTTP 403 for https://jobs.northwell.edu/: forbidden (bot block?)",
-    "search 'nurse practitioner': HTTP 403 for https://jobs.northwell.edu/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requisitionList.secondaryLocations,flexFieldsFacet.values,requisitionList.requisitionFlexFields&finder=findReqs;siteNumber=CX_1,facetsList=NONE,limit=25,offset=0,keyword=%22nurse%20practitioner%22,sortBy=POSTING_DATES_DESC: forbidden (bot block?)",
-    "search 'pediatric nurse practitioner': HTTP 403 for https://jobs.northwell.edu/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requisitionList.secondaryLocations,flexFieldsFacet.values,requisitionList.requisitionFlexFields&finder=findReqs;siteNumber=CX_1,facetsList=NONE,limit=25,offset=0,keyword=%22pediatric%20nurse%20practitioner%22,sortBy=POSTING_DATES_DESC: forbidde",
-    "search 'advanced practice provider': HTTP 403 for https://jobs.northwell.edu/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requisitionList.secondaryLocations,flexFieldsFacet.values,requisitionList.requisitionFlexFields&finder=findReqs;siteNumber=CX_1,facetsList=NONE,limit=25,offset=0,keyword=%22advanced%20practice%20provider%22,sortBy=POSTING_DATES_DESC: forbidden (b",
-    "search 'APRN': HTTP 403 for https://jobs.northwell.edu/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requisitionList.secondaryLocations,flexFieldsFacet.values,requisitionList.requisitionFlexFields&finder=findReqs;siteNumber=CX_1,facetsList=NONE,limit=25,offset=0,keyword=%22APRN%22,sortBy=POSTING_DATES_DESC: forbidden (bot block?)",
-    "search 'PICU': HTTP 403 for https://jobs.northwell.edu/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requisitionList.secondaryLocations,flexFieldsFacet.values,requisitionList.requisitionFlexFields&finder=findReqs;siteNumber=CX_1,facetsList=NONE,limit=25,offset=0,keyword=%22PICU%22,sortBy=POSTING_DATES_DESC: forbidden (bot block?)",
-    "search 'NICU': HTTP 403 for https://jobs.northwell.edu/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requisitionList.secondaryLocations,flexFieldsFacet.values,requisitionList.requisitionFlexFields&finder=findReqs;siteNumber=CX_1,facetsList=NONE,limit=25,offset=0,keyword=%22NICU%22,sortBy=POSTING_DATES_DESC: forbidden (bot block?)",
-    "sniff: HTTP 403 for https://jobs.northwell.edu/: forbidden (bot block?)",
-    "sniff: HTTP 404 for https://www.northwell.edu/cohen-childrens-medical-center: <!DOCTYPE html> <html lang=\"en\" dir=\"ltr\" prefix=\"og: https://ogp.me/ns#\" class=\"no-js\">   <head>     <script src=\"https://kit.fontawesome.com/9bc5a2a007.js\" cr",
-    "generic fallback failed: AdapterError: generic: no page reachable: 403 https://jobs.northwell.edu/; playwright 403 https://jobs.northwell.edu/; playwright 403 https://jobs.northwell.edu/?q=nurse+practitioner; playwright 403 https://jobs.no"
+    "branded host jobs.northwell.edu -> REST host eppr.fa.us2.oraclecloud.com",
+    "retried from a fresh runner"
    ],
    "samples": [],
-   "sample_listings": []
+   "sample_listings": [
+    {
+     "title": "Nurse Practitioner - FlexStaff- NICU",
+     "url": "https://jobs.northwell.edu/en/sites/CX_1/job/182245",
+     "posted_at": "2026-10-13",
+     "location": "Bay Shore, Suffolk, United States"
+    },
+    {
+     "title": "Nurse Practitioner (NP) - FlexStaff- Eastern L.I. Region",
+     "url": "https://jobs.northwell.edu/en/sites/CX_1/job/137830",
+     "posted_at": "2026-10-13",
+     "location": "Suffolk, United States"
+    },
+    {
+     "title": "Nurse Practitioner (NP) - FlexStaff- Staten Island, NYC, Northern Westchester",
+     "url": "https://jobs.northwell.edu/en/sites/CX_1/job/137831",
+     "posted_at": "2026-10-13",
+     "location": "Staten Island, Richmond, United States"
+    }
+   ]
   },
   {
    "slug": "south-shore-university-hospital-bay-shore",
    "name": "South Shore University Hospital",
    "platform": "oracle_cloud",
    "adapter": "oracle_cloud",
-   "method": "",
+   "method": "api",
    "board": "oracle_cloud|jobs.northwell.edu|",
    "board_hospitals": 15,
-   "board_listings": 0,
+   "board_listings": 198,
    "listings": 0,
    "candidates": 0,
    "new": 0,
    "known": 0,
-   "status": "error",
-   "error": "AdapterError: search 'APRN': HTTP 403 for https://jobs.northwell.edu/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requisitionList.secondaryLocations,flexFieldsFacet.values,requisitionList.requisitionFlexFields&finder=findReqs;siteNumber=CX_1,facetsList=NONE,limit=25,offset=0,keyword=%22APRN%22,sortBy=POSTING_DATES_DESC: forbidden (bot block?); search 'PICU': HTTP 403 for https://jobs.northwell.edu/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requ",
+   "status": "ok",
+   "error": null,
    "http_status": null,
-   "seconds": 23.9,
-   "requests": 7,
-   "details_fetched": 0,
+   "seconds": 27.7,
+   "requests": 29,
+   "details_fetched": 15,
    "details_failed": 0,
    "notes": [
     "site_number not configured; assuming CX_1",
-    "branded host page: HTTP 403 for https://jobs.northwell.edu/: forbidden (bot block?)",
-    "search 'nurse practitioner': HTTP 403 for https://jobs.northwell.edu/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requisitionList.secondaryLocations,flexFieldsFacet.values,requisitionList.requisitionFlexFields&finder=findReqs;siteNumber=CX_1,facetsList=NONE,limit=25,offset=0,keyword=%22nurse%20practitioner%22,sortBy=POSTING_DATES_DESC: forbidden (bot block?)",
-    "search 'pediatric nurse practitioner': HTTP 403 for https://jobs.northwell.edu/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requisitionList.secondaryLocations,flexFieldsFacet.values,requisitionList.requisitionFlexFields&finder=findReqs;siteNumber=CX_1,facetsList=NONE,limit=25,offset=0,keyword=%22pediatric%20nurse%20practitioner%22,sortBy=POSTING_DATES_DESC: forbidde",
-    "search 'advanced practice provider': HTTP 403 for https://jobs.northwell.edu/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requisitionList.secondaryLocations,flexFieldsFacet.values,requisitionList.requisitionFlexFields&finder=findReqs;siteNumber=CX_1,facetsList=NONE,limit=25,offset=0,keyword=%22advanced%20practice%20provider%22,sortBy=POSTING_DATES_DESC: forbidden (b",
-    "search 'APRN': HTTP 403 for https://jobs.northwell.edu/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requisitionList.secondaryLocations,flexFieldsFacet.values,requisitionList.requisitionFlexFields&finder=findReqs;siteNumber=CX_1,facetsList=NONE,limit=25,offset=0,keyword=%22APRN%22,sortBy=POSTING_DATES_DESC: forbidden (bot block?)",
-    "search 'PICU': HTTP 403 for https://jobs.northwell.edu/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requisitionList.secondaryLocations,flexFieldsFacet.values,requisitionList.requisitionFlexFields&finder=findReqs;siteNumber=CX_1,facetsList=NONE,limit=25,offset=0,keyword=%22PICU%22,sortBy=POSTING_DATES_DESC: forbidden (bot block?)",
-    "search 'NICU': HTTP 403 for https://jobs.northwell.edu/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requisitionList.secondaryLocations,flexFieldsFacet.values,requisitionList.requisitionFlexFields&finder=findReqs;siteNumber=CX_1,facetsList=NONE,limit=25,offset=0,keyword=%22NICU%22,sortBy=POSTING_DATES_DESC: forbidden (bot block?)",
-    "sniff: HTTP 403 for https://jobs.northwell.edu/: forbidden (bot block?)",
-    "sniff: HTTP 404 for https://www.northwell.edu/cohen-childrens-medical-center: <!DOCTYPE html> <html lang=\"en\" dir=\"ltr\" prefix=\"og: https://ogp.me/ns#\" class=\"no-js\">   <head>     <script src=\"https://kit.fontawesome.com/9bc5a2a007.js\" cr",
-    "generic fallback failed: AdapterError: generic: no page reachable: 403 https://jobs.northwell.edu/; playwright 403 https://jobs.northwell.edu/; playwright 403 https://jobs.northwell.edu/?q=nurse+practitioner; playwright 403 https://jobs.no"
+    "branded host jobs.northwell.edu -> REST host eppr.fa.us2.oraclecloud.com",
+    "retried from a fresh runner"
    ],
    "samples": [],
-   "sample_listings": []
+   "sample_listings": [
+    {
+     "title": "Nurse Practitioner - FlexStaff- NICU",
+     "url": "https://jobs.northwell.edu/en/sites/CX_1/job/182245",
+     "posted_at": "2026-10-13",
+     "location": "Bay Shore, Suffolk, United States"
+    },
+    {
+     "title": "Nurse Practitioner (NP) - FlexStaff- Eastern L.I. Region",
+     "url": "https://jobs.northwell.edu/en/sites/CX_1/job/137830",
+     "posted_at": "2026-10-13",
+     "location": "Suffolk, United States"
+    },
+    {
+     "title": "Nurse Practitioner (NP) - FlexStaff- Staten Island, NYC, Northern Westchester",
+     "url": "https://jobs.northwell.edu/en/sites/CX_1/job/137831",
+     "posted_at": "2026-10-13",
+     "location": "Staten Island, Richmond, United States"
+    }
+   ]
   },
   {
    "slug": "northern-westchester-hospital-mount-kisco",
    "name": "Northern Westchester Hospital",
    "platform": "oracle_cloud",
    "adapter": "oracle_cloud",
-   "method": "",
+   "method": "api",
    "board": "oracle_cloud|jobs.northwell.edu|",
    "board_hospitals": 15,
-   "board_listings": 0,
-   "listings": 0,
+   "board_listings": 198,
+   "listings": 3,
    "candidates": 0,
    "new": 0,
    "known": 0,
-   "status": "error",
-   "error": "AdapterError: search 'APRN': HTTP 403 for https://jobs.northwell.edu/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requisitionList.secondaryLocations,flexFieldsFacet.values,requisitionList.requisitionFlexFields&finder=findReqs;siteNumber=CX_1,facetsList=NONE,limit=25,offset=0,keyword=%22APRN%22,sortBy=POSTING_DATES_DESC: forbidden (bot block?); search 'PICU': HTTP 403 for https://jobs.northwell.edu/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requ",
+   "status": "ok",
+   "error": null,
    "http_status": null,
-   "seconds": 23.9,
-   "requests": 7,
-   "details_fetched": 0,
+   "seconds": 27.7,
+   "requests": 29,
+   "details_fetched": 15,
    "details_failed": 0,
    "notes": [
     "site_number not configured; assuming CX_1",
-    "branded host page: HTTP 403 for https://jobs.northwell.edu/: forbidden (bot block?)",
-    "search 'nurse practitioner': HTTP 403 for https://jobs.northwell.edu/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requisitionList.secondaryLocations,flexFieldsFacet.values,requisitionList.requisitionFlexFields&finder=findReqs;siteNumber=CX_1,facetsList=NONE,limit=25,offset=0,keyword=%22nurse%20practitioner%22,sortBy=POSTING_DATES_DESC: forbidden (bot block?)",
-    "search 'pediatric nurse practitioner': HTTP 403 for https://jobs.northwell.edu/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requisitionList.secondaryLocations,flexFieldsFacet.values,requisitionList.requisitionFlexFields&finder=findReqs;siteNumber=CX_1,facetsList=NONE,limit=25,offset=0,keyword=%22pediatric%20nurse%20practitioner%22,sortBy=POSTING_DATES_DESC: forbidde",
-    "search 'advanced practice provider': HTTP 403 for https://jobs.northwell.edu/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requisitionList.secondaryLocations,flexFieldsFacet.values,requisitionList.requisitionFlexFields&finder=findReqs;siteNumber=CX_1,facetsList=NONE,limit=25,offset=0,keyword=%22advanced%20practice%20provider%22,sortBy=POSTING_DATES_DESC: forbidden (b",
-    "search 'APRN': HTTP 403 for https://jobs.northwell.edu/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requisitionList.secondaryLocations,flexFieldsFacet.values,requisitionList.requisitionFlexFields&finder=findReqs;siteNumber=CX_1,facetsList=NONE,limit=25,offset=0,keyword=%22APRN%22,sortBy=POSTING_DATES_DESC: forbidden (bot block?)",
-    "search 'PICU': HTTP 403 for https://jobs.northwell.edu/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requisitionList.secondaryLocations,flexFieldsFacet.values,requisitionList.requisitionFlexFields&finder=findReqs;siteNumber=CX_1,facetsList=NONE,limit=25,offset=0,keyword=%22PICU%22,sortBy=POSTING_DATES_DESC: forbidden (bot block?)",
-    "search 'NICU': HTTP 403 for https://jobs.northwell.edu/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requisitionList.secondaryLocations,flexFieldsFacet.values,requisitionList.requisitionFlexFields&finder=findReqs;siteNumber=CX_1,facetsList=NONE,limit=25,offset=0,keyword=%22NICU%22,sortBy=POSTING_DATES_DESC: forbidden (bot block?)",
-    "sniff: HTTP 403 for https://jobs.northwell.edu/: forbidden (bot block?)",
-    "sniff: HTTP 404 for https://www.northwell.edu/cohen-childrens-medical-center: <!DOCTYPE html> <html lang=\"en\" dir=\"ltr\" prefix=\"og: https://ogp.me/ns#\" class=\"no-js\">   <head>     <script src=\"https://kit.fontawesome.com/9bc5a2a007.js\" cr",
-    "generic fallback failed: AdapterError: generic: no page reachable: 403 https://jobs.northwell.edu/; playwright 403 https://jobs.northwell.edu/; playwright 403 https://jobs.northwell.edu/?q=nurse+practitioner; playwright 403 https://jobs.no"
+    "branded host jobs.northwell.edu -> REST host eppr.fa.us2.oraclecloud.com",
+    "retried from a fresh runner"
    ],
    "samples": [],
-   "sample_listings": []
+   "sample_listings": [
+    {
+     "title": "Nurse Practitioner - FlexStaff- NICU",
+     "url": "https://jobs.northwell.edu/en/sites/CX_1/job/182245",
+     "posted_at": "2026-10-13",
+     "location": "Bay Shore, Suffolk, United States"
+    },
+    {
+     "title": "Nurse Practitioner (NP) - FlexStaff- Eastern L.I. Region",
+     "url": "https://jobs.northwell.edu/en/sites/CX_1/job/137830",
+     "posted_at": "2026-10-13",
+     "location": "Suffolk, United States"
+    },
+    {
+     "title": "Nurse Practitioner (NP) - FlexStaff- Staten Island, NYC, Northern Westchester",
+     "url": "https://jobs.northwell.edu/en/sites/CX_1/job/137831",
+     "posted_at": "2026-10-13",
+     "location": "Staten Island, Richmond, United States"
+    }
+   ]
   },
   {
    "slug": "phelps-hospital-sleepy-hollow",
    "name": "Phelps Hospital",
    "platform": "oracle_cloud",
    "adapter": "oracle_cloud",
-   "method": "",
+   "method": "api",
    "board": "oracle_cloud|jobs.northwell.edu|",
    "board_hospitals": 15,
-   "board_listings": 0,
+   "board_listings": 198,
    "listings": 0,
    "candidates": 0,
    "new": 0,
    "known": 0,
-   "status": "error",
-   "error": "AdapterError: search 'APRN': HTTP 403 for https://jobs.northwell.edu/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requisitionList.secondaryLocations,flexFieldsFacet.values,requisitionList.requisitionFlexFields&finder=findReqs;siteNumber=CX_1,facetsList=NONE,limit=25,offset=0,keyword=%22APRN%22,sortBy=POSTING_DATES_DESC: forbidden (bot block?); search 'PICU': HTTP 403 for https://jobs.northwell.edu/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requ",
+   "status": "ok",
+   "error": null,
    "http_status": null,
-   "seconds": 23.9,
-   "requests": 7,
-   "details_fetched": 0,
+   "seconds": 27.7,
+   "requests": 29,
+   "details_fetched": 15,
    "details_failed": 0,
    "notes": [
     "site_number not configured; assuming CX_1",
-    "branded host page: HTTP 403 for https://jobs.northwell.edu/: forbidden (bot block?)",
-    "search 'nurse practitioner': HTTP 403 for https://jobs.northwell.edu/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requisitionList.secondaryLocations,flexFieldsFacet.values,requisitionList.requisitionFlexFields&finder=findReqs;siteNumber=CX_1,facetsList=NONE,limit=25,offset=0,keyword=%22nurse%20practitioner%22,sortBy=POSTING_DATES_DESC: forbidden (bot block?)",
-    "search 'pediatric nurse practitioner': HTTP 403 for https://jobs.northwell.edu/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requisitionList.secondaryLocations,flexFieldsFacet.values,requisitionList.requisitionFlexFields&finder=findReqs;siteNumber=CX_1,facetsList=NONE,limit=25,offset=0,keyword=%22pediatric%20nurse%20practitioner%22,sortBy=POSTING_DATES_DESC: forbidde",
-    "search 'advanced practice provider': HTTP 403 for https://jobs.northwell.edu/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requisitionList.secondaryLocations,flexFieldsFacet.values,requisitionList.requisitionFlexFields&finder=findReqs;siteNumber=CX_1,facetsList=NONE,limit=25,offset=0,keyword=%22advanced%20practice%20provider%22,sortBy=POSTING_DATES_DESC: forbidden (b",
-    "search 'APRN': HTTP 403 for https://jobs.northwell.edu/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requisitionList.secondaryLocations,flexFieldsFacet.values,requisitionList.requisitionFlexFields&finder=findReqs;siteNumber=CX_1,facetsList=NONE,limit=25,offset=0,keyword=%22APRN%22,sortBy=POSTING_DATES_DESC: forbidden (bot block?)",
-    "search 'PICU': HTTP 403 for https://jobs.northwell.edu/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requisitionList.secondaryLocations,flexFieldsFacet.values,requisitionList.requisitionFlexFields&finder=findReqs;siteNumber=CX_1,facetsList=NONE,limit=25,offset=0,keyword=%22PICU%22,sortBy=POSTING_DATES_DESC: forbidden (bot block?)",
-    "search 'NICU': HTTP 403 for https://jobs.northwell.edu/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requisitionList.secondaryLocations,flexFieldsFacet.values,requisitionList.requisitionFlexFields&finder=findReqs;siteNumber=CX_1,facetsList=NONE,limit=25,offset=0,keyword=%22NICU%22,sortBy=POSTING_DATES_DESC: forbidden (bot block?)",
-    "sniff: HTTP 403 for https://jobs.northwell.edu/: forbidden (bot block?)",
-    "sniff: HTTP 404 for https://www.northwell.edu/cohen-childrens-medical-center: <!DOCTYPE html> <html lang=\"en\" dir=\"ltr\" prefix=\"og: https://ogp.me/ns#\" class=\"no-js\">   <head>     <script src=\"https://kit.fontawesome.com/9bc5a2a007.js\" cr",
-    "generic fallback failed: AdapterError: generic: no page reachable: 403 https://jobs.northwell.edu/; playwright 403 https://jobs.northwell.edu/; playwright 403 https://jobs.northwell.edu/?q=nurse+practitioner; playwright 403 https://jobs.no"
+    "branded host jobs.northwell.edu -> REST host eppr.fa.us2.oraclecloud.com",
+    "retried from a fresh runner"
    ],
    "samples": [],
-   "sample_listings": []
+   "sample_listings": [
+    {
+     "title": "Nurse Practitioner - FlexStaff- NICU",
+     "url": "https://jobs.northwell.edu/en/sites/CX_1/job/182245",
+     "posted_at": "2026-10-13",
+     "location": "Bay Shore, Suffolk, United States"
+    },
+    {
+     "title": "Nurse Practitioner (NP) - FlexStaff- Eastern L.I. Region",
+     "url": "https://jobs.northwell.edu/en/sites/CX_1/job/137830",
+     "posted_at": "2026-10-13",
+     "location": "Suffolk, United States"
+    },
+    {
+     "title": "Nurse Practitioner (NP) - FlexStaff- Staten Island, NYC, Northern Westchester",
+     "url": "https://jobs.northwell.edu/en/sites/CX_1/job/137831",
+     "posted_at": "2026-10-13",
+     "location": "Staten Island, Richmond, United States"
+    }
+   ]
   },
   {
    "slug": "putnam-hospital-carmel",
    "name": "Putnam Hospital",
    "platform": "oracle_cloud",
    "adapter": "oracle_cloud",
-   "method": "",
+   "method": "api",
    "board": "oracle_cloud|jobs.northwell.edu|",
    "board_hospitals": 15,
-   "board_listings": 0,
-   "listings": 0,
+   "board_listings": 198,
+   "listings": 5,
    "candidates": 0,
    "new": 0,
    "known": 0,
-   "status": "error",
-   "error": "AdapterError: search 'APRN': HTTP 403 for https://jobs.northwell.edu/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requisitionList.secondaryLocations,flexFieldsFacet.values,requisitionList.requisitionFlexFields&finder=findReqs;siteNumber=CX_1,facetsList=NONE,limit=25,offset=0,keyword=%22APRN%22,sortBy=POSTING_DATES_DESC: forbidden (bot block?); search 'PICU': HTTP 403 for https://jobs.northwell.edu/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requ",
+   "status": "ok",
+   "error": null,
    "http_status": null,
-   "seconds": 23.9,
-   "requests": 7,
-   "details_fetched": 0,
+   "seconds": 27.7,
+   "requests": 29,
+   "details_fetched": 15,
    "details_failed": 0,
    "notes": [
     "site_number not configured; assuming CX_1",
-    "branded host page: HTTP 403 for https://jobs.northwell.edu/: forbidden (bot block?)",
-    "search 'nurse practitioner': HTTP 403 for https://jobs.northwell.edu/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requisitionList.secondaryLocations,flexFieldsFacet.values,requisitionList.requisitionFlexFields&finder=findReqs;siteNumber=CX_1,facetsList=NONE,limit=25,offset=0,keyword=%22nurse%20practitioner%22,sortBy=POSTING_DATES_DESC: forbidden (bot block?)",
-    "search 'pediatric nurse practitioner': HTTP 403 for https://jobs.northwell.edu/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requisitionList.secondaryLocations,flexFieldsFacet.values,requisitionList.requisitionFlexFields&finder=findReqs;siteNumber=CX_1,facetsList=NONE,limit=25,offset=0,keyword=%22pediatric%20nurse%20practitioner%22,sortBy=POSTING_DATES_DESC: forbidde",
-    "search 'advanced practice provider': HTTP 403 for https://jobs.northwell.edu/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requisitionList.secondaryLocations,flexFieldsFacet.values,requisitionList.requisitionFlexFields&finder=findReqs;siteNumber=CX_1,facetsList=NONE,limit=25,offset=0,keyword=%22advanced%20practice%20provider%22,sortBy=POSTING_DATES_DESC: forbidden (b",
-    "search 'APRN': HTTP 403 for https://jobs.northwell.edu/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requisitionList.secondaryLocations,flexFieldsFacet.values,requisitionList.requisitionFlexFields&finder=findReqs;siteNumber=CX_1,facetsList=NONE,limit=25,offset=0,keyword=%22APRN%22,sortBy=POSTING_DATES_DESC: forbidden (bot block?)",
-    "search 'PICU': HTTP 403 for https://jobs.northwell.edu/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requisitionList.secondaryLocations,flexFieldsFacet.values,requisitionList.requisitionFlexFields&finder=findReqs;siteNumber=CX_1,facetsList=NONE,limit=25,offset=0,keyword=%22PICU%22,sortBy=POSTING_DATES_DESC: forbidden (bot block?)",
-    "search 'NICU': HTTP 403 for https://jobs.northwell.edu/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requisitionList.secondaryLocations,flexFieldsFacet.values,requisitionList.requisitionFlexFields&finder=findReqs;siteNumber=CX_1,facetsList=NONE,limit=25,offset=0,keyword=%22NICU%22,sortBy=POSTING_DATES_DESC: forbidden (bot block?)",
-    "sniff: HTTP 403 for https://jobs.northwell.edu/: forbidden (bot block?)",
-    "sniff: HTTP 404 for https://www.northwell.edu/cohen-childrens-medical-center: <!DOCTYPE html> <html lang=\"en\" dir=\"ltr\" prefix=\"og: https://ogp.me/ns#\" class=\"no-js\">   <head>     <script src=\"https://kit.fontawesome.com/9bc5a2a007.js\" cr",
-    "generic fallback failed: AdapterError: generic: no page reachable: 403 https://jobs.northwell.edu/; playwright 403 https://jobs.northwell.edu/; playwright 403 https://jobs.northwell.edu/?q=nurse+practitioner; playwright 403 https://jobs.no"
+    "branded host jobs.northwell.edu -> REST host eppr.fa.us2.oraclecloud.com",
+    "retried from a fresh runner"
    ],
    "samples": [],
-   "sample_listings": []
+   "sample_listings": [
+    {
+     "title": "Nurse Practitioner - FlexStaff- NICU",
+     "url": "https://jobs.northwell.edu/en/sites/CX_1/job/182245",
+     "posted_at": "2026-10-13",
+     "location": "Bay Shore, Suffolk, United States"
+    },
+    {
+     "title": "Nurse Practitioner (NP) - FlexStaff- Eastern L.I. Region",
+     "url": "https://jobs.northwell.edu/en/sites/CX_1/job/137830",
+     "posted_at": "2026-10-13",
+     "location": "Suffolk, United States"
+    },
+    {
+     "title": "Nurse Practitioner (NP) - FlexStaff- Staten Island, NYC, Northern Westchester",
+     "url": "https://jobs.northwell.edu/en/sites/CX_1/job/137831",
+     "posted_at": "2026-10-13",
+     "location": "Staten Island, Richmond, United States"
+    }
+   ]
   },
   {
    "slug": "vassar-brothers-medical-center-poughkeepsie",
    "name": "Vassar Brothers Medical Center",
    "platform": "oracle_cloud",
    "adapter": "oracle_cloud",
-   "method": "",
+   "method": "api",
    "board": "oracle_cloud|jobs.northwell.edu|",
    "board_hospitals": 15,
-   "board_listings": 0,
-   "listings": 0,
+   "board_listings": 198,
+   "listings": 20,
    "candidates": 0,
    "new": 0,
    "known": 0,
-   "status": "error",
-   "error": "AdapterError: search 'APRN': HTTP 403 for https://jobs.northwell.edu/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requisitionList.secondaryLocations,flexFieldsFacet.values,requisitionList.requisitionFlexFields&finder=findReqs;siteNumber=CX_1,facetsList=NONE,limit=25,offset=0,keyword=%22APRN%22,sortBy=POSTING_DATES_DESC: forbidden (bot block?); search 'PICU': HTTP 403 for https://jobs.northwell.edu/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requ",
+   "status": "ok",
+   "error": null,
    "http_status": null,
-   "seconds": 23.9,
-   "requests": 7,
-   "details_fetched": 0,
+   "seconds": 27.7,
+   "requests": 29,
+   "details_fetched": 15,
    "details_failed": 0,
    "notes": [
     "site_number not configured; assuming CX_1",
-    "branded host page: HTTP 403 for https://jobs.northwell.edu/: forbidden (bot block?)",
-    "search 'nurse practitioner': HTTP 403 for https://jobs.northwell.edu/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requisitionList.secondaryLocations,flexFieldsFacet.values,requisitionList.requisitionFlexFields&finder=findReqs;siteNumber=CX_1,facetsList=NONE,limit=25,offset=0,keyword=%22nurse%20practitioner%22,sortBy=POSTING_DATES_DESC: forbidden (bot block?)",
-    "search 'pediatric nurse practitioner': HTTP 403 for https://jobs.northwell.edu/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requisitionList.secondaryLocations,flexFieldsFacet.values,requisitionList.requisitionFlexFields&finder=findReqs;siteNumber=CX_1,facetsList=NONE,limit=25,offset=0,keyword=%22pediatric%20nurse%20practitioner%22,sortBy=POSTING_DATES_DESC: forbidde",
-    "search 'advanced practice provider': HTTP 403 for https://jobs.northwell.edu/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requisitionList.secondaryLocations,flexFieldsFacet.values,requisitionList.requisitionFlexFields&finder=findReqs;siteNumber=CX_1,facetsList=NONE,limit=25,offset=0,keyword=%22advanced%20practice%20provider%22,sortBy=POSTING_DATES_DESC: forbidden (b",
-    "search 'APRN': HTTP 403 for https://jobs.northwell.edu/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requisitionList.secondaryLocations,flexFieldsFacet.values,requisitionList.requisitionFlexFields&finder=findReqs;siteNumber=CX_1,facetsList=NONE,limit=25,offset=0,keyword=%22APRN%22,sortBy=POSTING_DATES_DESC: forbidden (bot block?)",
-    "search 'PICU': HTTP 403 for https://jobs.northwell.edu/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requisitionList.secondaryLocations,flexFieldsFacet.values,requisitionList.requisitionFlexFields&finder=findReqs;siteNumber=CX_1,facetsList=NONE,limit=25,offset=0,keyword=%22PICU%22,sortBy=POSTING_DATES_DESC: forbidden (bot block?)",
-    "search 'NICU': HTTP 403 for https://jobs.northwell.edu/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requisitionList.secondaryLocations,flexFieldsFacet.values,requisitionList.requisitionFlexFields&finder=findReqs;siteNumber=CX_1,facetsList=NONE,limit=25,offset=0,keyword=%22NICU%22,sortBy=POSTING_DATES_DESC: forbidden (bot block?)",
-    "sniff: HTTP 403 for https://jobs.northwell.edu/: forbidden (bot block?)",
-    "sniff: HTTP 404 for https://www.northwell.edu/cohen-childrens-medical-center: <!DOCTYPE html> <html lang=\"en\" dir=\"ltr\" prefix=\"og: https://ogp.me/ns#\" class=\"no-js\">   <head>     <script src=\"https://kit.fontawesome.com/9bc5a2a007.js\" cr",
-    "generic fallback failed: AdapterError: generic: no page reachable: 403 https://jobs.northwell.edu/; playwright 403 https://jobs.northwell.edu/; playwright 403 https://jobs.northwell.edu/?q=nurse+practitioner; playwright 403 https://jobs.no"
+    "branded host jobs.northwell.edu -> REST host eppr.fa.us2.oraclecloud.com",
+    "retried from a fresh runner"
    ],
    "samples": [],
-   "sample_listings": []
+   "sample_listings": [
+    {
+     "title": "Nurse Practitioner - FlexStaff- NICU",
+     "url": "https://jobs.northwell.edu/en/sites/CX_1/job/182245",
+     "posted_at": "2026-10-13",
+     "location": "Bay Shore, Suffolk, United States"
+    },
+    {
+     "title": "Nurse Practitioner (NP) - FlexStaff- Eastern L.I. Region",
+     "url": "https://jobs.northwell.edu/en/sites/CX_1/job/137830",
+     "posted_at": "2026-10-13",
+     "location": "Suffolk, United States"
+    },
+    {
+     "title": "Nurse Practitioner (NP) - FlexStaff- Staten Island, NYC, Northern Westchester",
+     "url": "https://jobs.northwell.edu/en/sites/CX_1/job/137831",
+     "posted_at": "2026-10-13",
+     "location": "Staten Island, Richmond, United States"
+    }
+   ]
   },
   {
    "slug": "saint-vincent-hospital-worcester",
@@ -25049,143 +25321,7 @@
    ]
   }
  ],
- "jobs": [
-  {
-   "id": "2c30310e05a6",
-   "hospital_slug": "maine-medical-center-portland",
-   "title": "per diem APP - Gastroenterology - Portland",
-   "url": "https://www.careersatmainehealth.org/jobs/18385028-per-diem-app-gastroenterology-portland",
-   "relevance": 1,
-   "setting": "mixed",
-   "posted_at": "2026-10-22"
-  },
-  {
-   "id": "8b2a837aec28",
-   "hospital_slug": "ahn-west-penn-hospital-pittsburgh",
-   "title": "Nurse Practitioner Neonatal / Part-time",
-   "url": "https://highmarkhealth.wd1.myworkdayjobs.com/highmark/job/Pittsburgh-PA-15224-West-Penn-4800-Friendship-Ave/Nurse-Practitioner-Neonatal---Part-time_J290243",
-   "relevance": 2,
-   "setting": "nicu",
-   "posted_at": "2026-10-21"
-  },
-  {
-   "id": "ea60c15820ca",
-   "hospital_slug": "upmc-childrens-pittsburgh",
-   "title": "PA or CRNP (ACNP), Critical Illness Recovery Center - Mercy (Part-time)",
-   "url": "https://careers.upmc.com/job/24012781/pa-or-crnp-acnp-critical-illness-recovery-center-mercy-part-time-pittsburgh-pa/",
-   "relevance": 3,
-   "setting": "picu",
-   "posted_at": "2026-10-21"
-  },
-  {
-   "id": "5776a585c915",
-   "hospital_slug": "upmc-childrens-pittsburgh",
-   "title": "PA or CRNP, Complete Primary Care Associates - Mercy",
-   "url": "https://careers.upmc.com/job/24037036/pa-or-crnp-complete-primary-care-associates-mercy-pittsburgh-pa/",
-   "relevance": 2,
-   "setting": "peds_primary_care",
-   "posted_at": "2026-10-21"
-  },
-  {
-   "id": "a6ec7e23f766",
-   "hospital_slug": "upstate-golisano-childrens-syracuse",
-   "title": "Per Diem Pediatric Advanced Practice Provider Hospitalist",
-   "url": "https://careers.upstate.edu/jobs/per-diem-pediatric-advanced-practice-provider-hospitalist-syracuse-new-york-united-states",
-   "relevance": 3,
-   "setting": "peds_inpatient",
-   "posted_at": null
-  },
-  {
-   "id": "4c460f42003d",
-   "hospital_slug": "upstate-golisano-childrens-syracuse",
-   "title": "Pediatric Neurology APP",
-   "url": "https://careers.upstate.edu/jobs/pediatric-neurology-app-syracuse-new-york-united-states",
-   "relevance": 2,
-   "setting": "peds_specialty_outpatient",
-   "posted_at": null
-  },
-  {
-   "id": "c959ae895eef",
-   "hospital_slug": "upstate-golisano-childrens-syracuse",
-   "title": "Pediatric Advanced Practice Provider Hospitalist",
-   "url": "https://careers.upstate.edu/jobs/pediatric-advanced-practice-provider-hospitalist-syracuse-new-york-united-states-8122ef0f-7094-4b18-8503-1ec838051ddd",
-   "relevance": 3,
-   "setting": "peds_inpatient",
-   "posted_at": null
-  },
-  {
-   "id": "a26ed041276b",
-   "hospital_slug": "hassenfeld-childrens-nyu-manhattan",
-   "title": "Family Nurse Practitioner - Peds & Adult GI - Manhattan - 8 hr Days",
-   "url": "https://jobs.nyulangone.org/job/23810127/family-nurse-practitioner-peds-adult-gi-manhattan-8-hr-days-new-york-ny/",
-   "relevance": 3,
-   "setting": "mixed",
-   "posted_at": "2026-09-03"
-  },
-  {
-   "id": "a18f1bb7051e",
-   "hospital_slug": "unc-medical-center-chapel-hill",
-   "title": "Project Coordinator - Advanced Practice Provider Center",
-   "url": "https://jobs.unchealthcare.org/jobs/18023117-project-coordinator-advanced-practice-provider-center",
-   "relevance": 1,
-   "setting": "unspecified",
-   "posted_at": "2026-10-22"
-  },
-  {
-   "id": "b566800abd09",
-   "hospital_slug": "joseph-m-sanzari-childrens-hackensack",
-   "title": "NP/PA - Adult and Pediatric EM Per Diem Evenings",
-   "url": "https://jobs.hackensackmeridianhealth.org/job/hackensack/np-pa-adult-and-pediatric-em-per-diem-evenings/19511/98522589744",
-   "relevance": 3,
-   "setting": "peds_ed",
-   "posted_at": "2026-07-30"
-  },
-  {
-   "id": "54900ab0c476",
-   "hospital_slug": "university-hospital-newark",
-   "title": "Advanced Practice Nurse - OBGYN & Pediatrics",
-   "url": "https://careers-uhnjcareers.icims.com/jobs/17237/advanced-practice-nurse---obgyn-%26-pediatrics/job",
-   "relevance": 2,
-   "setting": "unspecified",
-   "posted_at": "2024-10-22"
-  },
-  {
-   "id": "13ac48abffcd",
-   "hospital_slug": "university-hospital-newark",
-   "title": "Advanced Practice Nurse - OBGYN & Pediatrics",
-   "url": "https://careers-uhnjcareers.icims.com/jobs/17039/advanced-practice-nurse---obgyn-%26-pediatrics/job",
-   "relevance": 3,
-   "setting": "peds_ed",
-   "posted_at": "2024-10-22"
-  },
-  {
-   "id": "570bb98f0afd",
-   "hospital_slug": "novant-new-hanover-regional-wilmington",
-   "title": "Physician Assistant / Nurse Practitioner Infectious Disease - Near Wilmington, NC",
-   "url": "https://jobs.novanthealth.org/jobs/238635",
-   "relevance": 1,
-   "setting": "unspecified",
-   "posted_at": "2026-09-08"
-  },
-  {
-   "id": "20ae71d1daaa",
-   "hospital_slug": "wakemed-raleigh-campus-raleigh",
-   "title": "PA or NP, Gastroenterology Outpatient",
-   "url": "https://jobs.wakemed.org/jobs/33589",
-   "relevance": 1,
-   "setting": "mixed",
-   "posted_at": "2026-10-21"
-  },
-  {
-   "id": "635904d8f315",
-   "hospital_slug": "memorial-sloan-kettering-manhattan",
-   "title": "Advanced Practice Provider | PICU (Nights)",
-   "url": "https://msk.wd108.myworkdayjobs.com/MSKCC_Careers_Primary/job/New-York-NY/Advanced-Practice-Provider---PICU--Nights-_101464-1",
-   "relevance": 3,
-   "setting": "picu",
-   "posted_at": "2026-10-21"
-  }
- ],
+ "jobs": [],
  "seen_again": [
   "https://aah.wd5.myworkdayjobs.com/External/job/Albemarle-NC---703-Leonard-Ave/Nurse-Practitioner-Urgent-Care_R259600",
   "https://aah.wd5.myworkdayjobs.com/External/job/Albemarle-NC---703-Leonard-Ave/Urgent-Care--Full-Time--NP-PA_R198520",
@@ -25343,6 +25479,8 @@
   "https://brownhealth.wd12.myworkdayjobs.com/External_Careers/job/66-Branch-Ave/Advanced-Practice-Provider-PD_JR-114168",
   "https://brownhealth.wd12.myworkdayjobs.com/External_Careers/job/Brown-Health-Medical-Group/Advanced-Practice-Provider-Urgent-Care_JR-106518",
   "https://careers-dartmouth-hitchcock.icims.com/jobs/17635/neonatology-advanced-practice-provider/job",
+  "https://careers-uhnjcareers.icims.com/jobs/17039/advanced-practice-nurse---obgyn-%26-pediatrics/job",
+  "https://careers-uhnjcareers.icims.com/jobs/17237/advanced-practice-nurse---obgyn-%26-pediatrics/job",
   "https://careers.carenewengland.org/jobs/7664",
   "https://careers.carenewengland.org/jobs/8128",
   "https://careers.carenewengland.org/jobs/8176",
@@ -25539,7 +25677,12 @@
   "https://careers.upmc.com/job/24007831/pa-or-crnp-staff-or-senior-department-of-medicine-nephrology-pittsburgh-pa/",
   "https://careers.upmc.com/job/24007834/part-time-pa-or-crnp-erie-childrens-express-care-erie-pa/",
   "https://careers.upmc.com/job/24007846/limited-part-time-pa-or-crnp-erie-childrens-express-care-erie-pa/",
+  "https://careers.upmc.com/job/24012781/pa-or-crnp-acnp-critical-illness-recovery-center-mercy-part-time-pittsburgh-pa/",
   "https://careers.upmc.com/job/24036989/pa-or-crnp-staff-or-senior-upp-plastic-surgery-pittsburgh-pa/",
+  "https://careers.upmc.com/job/24037036/pa-or-crnp-complete-primary-care-associates-mercy-pittsburgh-pa/",
+  "https://careers.upstate.edu/jobs/pediatric-advanced-practice-provider-hospitalist-syracuse-new-york-united-states-8122ef0f-7094-4b18-8503-1ec838051ddd",
+  "https://careers.upstate.edu/jobs/pediatric-neurology-app-syracuse-new-york-united-states",
+  "https://careers.upstate.edu/jobs/per-diem-pediatric-advanced-practice-provider-hospitalist-syracuse-new-york-united-states",
   "https://careers.uvahealth.org/us/en/job/R0075030/Psychiatric-Mental-Health-Nurse-Practitioner-Autonomous-Licensed-PMH-NP-UVA-Augusta-Pediatrics-VIRTUAL-POSITION",
   "https://careers.uvahealth.org/us/en/job/R0081176/UVA-Pediatrics-Culpeper-Pediatric-Nurse-Practitioner-or-Physician-Assistant-Full-Time",
   "https://careers.uvahealth.org/us/en/job/R0081865/Advanced-Practice-Provider-APP-PA-NP-Cellular-Therapy-Stem-Cell-Transplant",
@@ -25649,6 +25792,7 @@
   "https://hfsc.wd503.myworkdayjobs.com/Careers/job/New-Britain-CT/Pediatric-Advanced-Practice-Provider_R26_0000000153",
   "https://highmarkhealth.wd1.myworkdayjobs.com/highmark/job/Bridgeville-PA-15017-1370-Washington-Pike-Suite-107/Nurse-Practitioner---Outpatient-Pediatrics-Part-Time_J276766",
   "https://highmarkhealth.wd1.myworkdayjobs.com/highmark/job/Pittsburgh-PA-15212-1307-Federal-St/Nurse-Practitioner-or-Physician-Assistant---Outpatient-Pediatrics--B--Part-Time--Primary-Care_J287623",
+  "https://highmarkhealth.wd1.myworkdayjobs.com/highmark/job/Pittsburgh-PA-15224-West-Penn-4800-Friendship-Ave/Nurse-Practitioner-Neonatal---Part-time_J290243",
   "https://highmarkhealth.wd1.myworkdayjobs.com/highmark/job/Pittsburgh-PA-15224-West-Penn-4800-Friendship-Ave/Nurse-Practitioner-Neonatal_J277408",
   "https://highmarkhealth.wd1.myworkdayjobs.com/highmark/job/Pittsburgh-PA-15224-West-Penn-4800-Friendship-Ave/Nurse-Practitioner-Neonatal_J283935-1",
   "https://highmarkhealth.wd1.myworkdayjobs.com/highmark/job/Wexford-PA-15237-9795-Perry-Highway-Suite-100/Physician-Assistant-or-Nurse-Practitioner---Outpatient-Pediatrics--Part-Time_J276767-1",
@@ -25657,6 +25801,19 @@
   "https://jeffersonhealth.wd5.myworkdayjobs.com/ThomasJeffersonExternal/job/Einstein-Hosp-Phila---Tower-Bldg/NNP--Inpatient-III----NICU-Neonatology---Jefferson-Eisntein-Philadelphia_JR_9307580",
   "https://jeffersonhealth.wd5.myworkdayjobs.com/ThomasJeffersonExternal/job/Einstein-Hosp-Phila---Tower-Bldg/Pediatrics-Advanced-Practice-Provider--Nurse-Practitioner-Physician-Assistant--Jefferson-Einstein_JR_9308080-1",
   "https://jobs.ascension.org/en/sites/CX_1/job/1297733",
+  "https://jobs.bostonchildrens.org/job/22550780/nurse-practitioner-complex-care-services-per-diem-boston-ma/",
+  "https://jobs.bostonchildrens.org/job/22595344/nurse-practitioner-pa-pediatric-intermediate-care-unit-per-diem-boston-ma/",
+  "https://jobs.bostonchildrens.org/job/23083427/nurse-practitioner-physician-assistant-cicu-nights-boston-ma/",
+  "https://jobs.bostonchildrens.org/job/23213245/nurse-practitioner-or-physician-assistant-cicu-day-night-boston-ma/",
+  "https://jobs.bostonchildrens.org/job/23336278/nurse-practitioner-flex-coverage-cicu-accu-cpu-boston-ma/",
+  "https://jobs.bostonchildrens.org/job/23618296/nurse-practitioner-critical-care-float-pool-day-only-boston-ma/",
+  "https://jobs.bostonchildrens.org/job/23686995/nurse-practitioner-or-physician-assistant-complex-care-svs-24-hrs-boston-ma/",
+  "https://jobs.bostonchildrens.org/job/23717377/nurse-practitioner-physician-assistant-hematology-oncology-boston-ma/",
+  "https://jobs.bostonchildrens.org/job/23891411/nurse-practitioner-or-physician-assistant-inpatient-medicine-boston-ma/",
+  "https://jobs.bostonchildrens.org/job/23932917/flex-nurse-practitioner-eat-center-20-hours-boston-ma/",
+  "https://jobs.bostonchildrens.org/job/23934115/nurse-practitioner-float-pool-boston-ma/",
+  "https://jobs.bostonchildrens.org/job/23961543/nurse-practitioner-or-physician-assistant-micu-40-hours-boston-ma/",
+  "https://jobs.bostonchildrens.org/job/23966419/nurse-practitioner-or-physician-assistant-msicu-40-hours-boston-ma/",
   "https://jobs.chsli.org/jobs/59684",
   "https://jobs.chsli.org/jobs/61189",
   "https://jobs.chsli.org/jobs/61190",
@@ -25707,6 +25864,7 @@
   "https://jobs.hackensackmeridianhealth.org/job/brick/pa-first-assist-np-rnfa-operating-room/19511/97209505824",
   "https://jobs.hackensackmeridianhealth.org/job/edison/np-neonatalogy/19511/92097996880",
   "https://jobs.hackensackmeridianhealth.org/job/edison/np-pediatric-hospitalist/19511/95378094448",
+  "https://jobs.hackensackmeridianhealth.org/job/hackensack/np-pa-adult-and-pediatric-em-per-diem-evenings/19511/98522589744",
   "https://jobs.hackensackmeridianhealth.org/job/hackensack/np-pa-neonatal-nicu-level-iiic/19511/100464037824",
   "https://jobs.hackensackmeridianhealth.org/job/hackensack/np-pa-neonatal-nicu-level-iiic/19511/100464037840",
   "https://jobs.hackensackmeridianhealth.org/job/hackensack/np-pediatric-pain-and-palliative-care/19511/90038971856",
@@ -25715,6 +25873,7 @@
   "https://jobs.hackensackmeridianhealth.org/job/manahawkin/pa-np-gi-gastroenterology/19511/101884780128",
   "https://jobs.hackensackmeridianhealth.org/job/paramus/np-pediatric-adolescent-dermatology-outpatient/19511/94928486048",
   "https://jobs.hopkinsmedicine.org/job/99660/neonatal-nurse-practitioner-np-i-specialty-nicu-nurse-practitioner-us-md-baltimore-johns-hopkins-hospital/",
+  "https://jobs.northwell.edu/en/sites/CX_1/job/182245",
   "https://jobs.novanthealth.org/jobs/203401",
   "https://jobs.novanthealth.org/jobs/216971",
   "https://jobs.novanthealth.org/jobs/217209",
@@ -25725,6 +25884,7 @@
   "https://jobs.novanthealth.org/jobs/233050",
   "https://jobs.novanthealth.org/jobs/233892",
   "https://jobs.novanthealth.org/jobs/236463",
+  "https://jobs.novanthealth.org/jobs/238635",
   "https://jobs.novanthealth.org/jobs/240150",
   "https://jobs.novanthealth.org/jobs/240420",
   "https://jobs.novanthealth.org/jobs/242207",
@@ -25748,6 +25908,7 @@
   "https://jobs.nyulangone.org/job/23506697/per-diem-pa-or-peds-acute-care-np-picu-manhattan-11-5-hr-rotational-shifts-new-york-ny/",
   "https://jobs.nyulangone.org/job/23687953/advanced-practice-provide-neonatal-physicians-assistant-or-nurse-practitioner-nicu-level-iii-rotating-shift-mineola-mineola-ny/",
   "https://jobs.nyulangone.org/job/23715879/per-diem-neonatal-np-or-pa-nicu-manhattan-11-5-hr-rotational-shifts-new-york-ny/",
+  "https://jobs.nyulangone.org/job/23810127/family-nurse-practitioner-peds-adult-gi-manhattan-8-hr-days-new-york-ny/",
   "https://jobs.nyulangone.org/job/23819025/family-nurse-practitioner-clinical-research-manhattan-8hr-days-prior-np-experience-and-experience-in-pediatrics-required-new-york-ny/",
   "https://jobs.nyulangone.org/job/23972806/advanced-practice-pediatric-nurse-practitioner-endocrinology-garden-city-garden-city-ny/",
   "https://jobs.nyulangone.org/job/23972813/neonatal-nurse-practitioner-or-physician-assistant-nicu-manhattan-11-5hr-rotations-new-york-ny/",
@@ -25808,6 +25969,7 @@
   "https://jobs.unchealthcare.org/jobs/17949130-advanced-practice-provider-np-slash-pa-hospitalists-optimize-clinic",
   "https://jobs.unchealthcare.org/jobs/17977097-advanced-practice-provider-np-slash-pa-hematology-oncology",
   "https://jobs.unchealthcare.org/jobs/18022477-advanced-practice-provider-pa-slash-np-intensivists",
+  "https://jobs.unchealthcare.org/jobs/18023117-project-coordinator-advanced-practice-provider-center",
   "https://jobs.unchealthcare.org/jobs/18046854-advanced-practice-provider-pa-slash-np-medicine-cardiology-per-diem",
   "https://jobs.unchealthcare.org/jobs/18046855-advanced-practice-provider-pa-slash-np-medicine-cardiology-per-diem",
   "https://jobs.unchealthcare.org/jobs/18049104-advanced-practice-provider-np-slash-pa-unc-family-medicine-at-wakefield",
@@ -25877,6 +26039,7 @@
   "https://jobs.wakemed.org/jobs/33200",
   "https://jobs.wakemed.org/jobs/33239",
   "https://jobs.wakemed.org/jobs/33456",
+  "https://jobs.wakemed.org/jobs/33589",
   "https://jobs.ynhhs.org/jobs/72103",
   "https://jobs.ynhhs.org/jobs/89834",
   "https://jobs.ynhhs.org/jobs/91090",
@@ -25892,6 +26055,7 @@
   "https://montefiore.wd12.myworkdayjobs.com/MMC/job/600-East-233rd-Street/Nurse-Practitioner---Wakefield_JR232337-2",
   "https://montefiore.wd12.myworkdayjobs.com/WP/job/41-East-Post-Road/NICU-NP-Full-Time-Night-Shifts_JR232408",
   "https://montefiore.wd12.myworkdayjobs.com/WP/job/41-East-Post-Road/NICU-Nurse-Practitioner--PER-DIEM_JR234588",
+  "https://msk.wd108.myworkdayjobs.com/MSKCC_Careers_Primary/job/New-York-NY/Advanced-Practice-Provider---PICU--Nights-_101464-1",
   "https://musc.wd1.myworkdayjobs.com/MUSC/job/Charleston/MUSCP-Advanced-Practice-Provider--APP---NP-PA---Department-of-Pediatrics--Endocrinology_R-0000044397",
   "https://musc.wd1.myworkdayjobs.com/MUSC/job/Charleston/Nurse-Practitioner-or-Physician-Assistant---Neonatology_R-0000067251-1",
   "https://musc.wd1.myworkdayjobs.com/MUSC/job/Charleston/Nurse-Practitioner-or-Physician-Assistant---Pediatrics-Hematology---Oncology_R-0000069512",
@@ -25976,6 +26140,7 @@
   "https://www.careersatmainehealth.org/jobs/18347506-physician-associate-or-acute-care-nurse-practitioner-inpatient-endocrinology-and-diabetes",
   "https://www.careersatmainehealth.org/jobs/18360296-physician-associate-or-acute-care-nurse-practitioner-orthopedics-and-sports-medicine-shoulder",
   "https://www.careersatmainehealth.org/jobs/18367513-physician-associate-or-assistant-slash-acute-care-nurse-practitioner-cardiovascular-surgery-icu-nocturnist",
+  "https://www.careersatmainehealth.org/jobs/18385028-per-diem-app-gastroenterology-portland",
   "https://www.chkdcareers.org/jobs/2085621-internal-traveler-nnp-slash-npa",
   "https://www.chkdcareers.org/jobs/2193679-nnp-slash-npa",
   "https://www.chkdcareers.org/jobs/2215763-pediatric-general-surgery-np-or-pa",
@@ -26003,20 +26168,229 @@
   "https://www.towercareers.org/jobs/65797",
   "https://www.towercareers.org/jobs/65940",
   "https://www.uvmhealthcareers.org/job/12384/pediatric-hematology-oncology-nurse-practitioner-uvmmc-nurse-practitioner-physician-assistant-us-vt-burlington-111-colchester-ave/",
-  "https://www.uvmhealthcareers.org/jobs/nurse-practitioner-physician-assistant/"
+  "https://www.uvmhealthcareers.org/jobs/nurse-practitioner-physician-assistant/",
+  "https://www.valleyhealthcareers.com/job/23513195/app-neonatology-full-time-night-paramus-nj/"
  ],
  "closed": [],
  "totals": {
   "hospitals": 509,
-  "checked": 435,
-  "unreachable": 74,
-  "listings": 35532,
-  "candidates": 832,
+  "checked": 454,
+  "unreachable": 55,
+  "listings": 36148,
+  "candidates": 847,
   "new_candidates": 15,
-  "seconds": 10345.5
+  "seconds": 11736.1
  },
  "browser": "chrome-headed",
  "ledger": "data/hospitals.json",
  "wall_seconds": 1742.9,
- "compacted": true
+ "compacted": true,
+ "job_index": [
+  {
+   "id": "2c30310e05a6",
+   "hospital_slug": "maine-medical-center-portland",
+   "title": "per diem APP - Gastroenterology - Portland",
+   "url": "https://www.careersatmainehealth.org/jobs/18385028-per-diem-app-gastroenterology-portland",
+   "relevance": 1,
+   "setting": "mixed",
+   "posted_at": "2026-10-22"
+  },
+  {
+   "id": "8b2a837aec28",
+   "hospital_slug": "ahn-west-penn-hospital-pittsburgh",
+   "title": "Nurse Practitioner Neonatal / Part-time",
+   "url": "https://highmarkhealth.wd1.myworkdayjobs.com/highmark/job/Pittsburgh-PA-15224-West-Penn-4800-Friendship-Ave/Nurse-Practitioner-Neonatal---Part-time_J290243",
+   "relevance": 2,
+   "setting": "nicu",
+   "posted_at": "2026-10-21"
+  },
+  {
+   "id": "ea60c15820ca",
+   "hospital_slug": "upmc-childrens-pittsburgh",
+   "title": "PA or CRNP (ACNP), Critical Illness Recovery Center - Mercy (Part-time)",
+   "url": "https://careers.upmc.com/job/24012781/pa-or-crnp-acnp-critical-illness-recovery-center-mercy-part-time-pittsburgh-pa/",
+   "relevance": 3,
+   "setting": "picu",
+   "posted_at": "2026-10-21"
+  },
+  {
+   "id": "5776a585c915",
+   "hospital_slug": "upmc-childrens-pittsburgh",
+   "title": "PA or CRNP, Complete Primary Care Associates - Mercy",
+   "url": "https://careers.upmc.com/job/24037036/pa-or-crnp-complete-primary-care-associates-mercy-pittsburgh-pa/",
+   "relevance": 2,
+   "setting": "peds_primary_care",
+   "posted_at": "2026-10-21"
+  },
+  {
+   "id": "a6ec7e23f766",
+   "hospital_slug": "upstate-golisano-childrens-syracuse",
+   "title": "Per Diem Pediatric Advanced Practice Provider Hospitalist",
+   "url": "https://careers.upstate.edu/jobs/per-diem-pediatric-advanced-practice-provider-hospitalist-syracuse-new-york-united-states",
+   "relevance": 3,
+   "setting": "peds_inpatient",
+   "posted_at": null
+  },
+  {
+   "id": "4c460f42003d",
+   "hospital_slug": "upstate-golisano-childrens-syracuse",
+   "title": "Pediatric Neurology APP",
+   "url": "https://careers.upstate.edu/jobs/pediatric-neurology-app-syracuse-new-york-united-states",
+   "relevance": 2,
+   "setting": "peds_specialty_outpatient",
+   "posted_at": null
+  },
+  {
+   "id": "c959ae895eef",
+   "hospital_slug": "upstate-golisano-childrens-syracuse",
+   "title": "Pediatric Advanced Practice Provider Hospitalist",
+   "url": "https://careers.upstate.edu/jobs/pediatric-advanced-practice-provider-hospitalist-syracuse-new-york-united-states-8122ef0f-7094-4b18-8503-1ec838051ddd",
+   "relevance": 3,
+   "setting": "peds_inpatient",
+   "posted_at": null
+  },
+  {
+   "id": "a26ed041276b",
+   "hospital_slug": "hassenfeld-childrens-nyu-manhattan",
+   "title": "Family Nurse Practitioner - Peds & Adult GI - Manhattan - 8 hr Days",
+   "url": "https://jobs.nyulangone.org/job/23810127/family-nurse-practitioner-peds-adult-gi-manhattan-8-hr-days-new-york-ny/",
+   "relevance": 3,
+   "setting": "mixed",
+   "posted_at": "2026-09-03"
+  },
+  {
+   "id": "a18f1bb7051e",
+   "hospital_slug": "unc-medical-center-chapel-hill",
+   "title": "Project Coordinator - Advanced Practice Provider Center",
+   "url": "https://jobs.unchealthcare.org/jobs/18023117-project-coordinator-advanced-practice-provider-center",
+   "relevance": 1,
+   "setting": "unspecified",
+   "posted_at": "2026-10-22"
+  },
+  {
+   "id": "b566800abd09",
+   "hospital_slug": "joseph-m-sanzari-childrens-hackensack",
+   "title": "NP/PA - Adult and Pediatric EM Per Diem Evenings",
+   "url": "https://jobs.hackensackmeridianhealth.org/job/hackensack/np-pa-adult-and-pediatric-em-per-diem-evenings/19511/98522589744",
+   "relevance": 3,
+   "setting": "peds_ed",
+   "posted_at": "2026-07-30"
+  },
+  {
+   "id": "54900ab0c476",
+   "hospital_slug": "university-hospital-newark",
+   "title": "Advanced Practice Nurse - OBGYN & Pediatrics",
+   "url": "https://careers-uhnjcareers.icims.com/jobs/17237/advanced-practice-nurse---obgyn-%26-pediatrics/job",
+   "relevance": 2,
+   "setting": "unspecified",
+   "posted_at": "2024-10-22"
+  },
+  {
+   "id": "13ac48abffcd",
+   "hospital_slug": "university-hospital-newark",
+   "title": "Advanced Practice Nurse - OBGYN & Pediatrics",
+   "url": "https://careers-uhnjcareers.icims.com/jobs/17039/advanced-practice-nurse---obgyn-%26-pediatrics/job",
+   "relevance": 3,
+   "setting": "peds_ed",
+   "posted_at": "2024-10-22"
+  },
+  {
+   "id": "570bb98f0afd",
+   "hospital_slug": "novant-new-hanover-regional-wilmington",
+   "title": "Physician Assistant / Nurse Practitioner Infectious Disease - Near Wilmington, NC",
+   "url": "https://jobs.novanthealth.org/jobs/238635",
+   "relevance": 1,
+   "setting": "unspecified",
+   "posted_at": "2026-09-08"
+  },
+  {
+   "id": "20ae71d1daaa",
+   "hospital_slug": "wakemed-raleigh-campus-raleigh",
+   "title": "PA or NP, Gastroenterology Outpatient",
+   "url": "https://jobs.wakemed.org/jobs/33589",
+   "relevance": 1,
+   "setting": "mixed",
+   "posted_at": "2026-10-21"
+  },
+  {
+   "id": "635904d8f315",
+   "hospital_slug": "memorial-sloan-kettering-manhattan",
+   "title": "Advanced Practice Provider | PICU (Nights)",
+   "url": "https://msk.wd108.myworkdayjobs.com/MSKCC_Careers_Primary/job/New-York-NY/Advanced-Practice-Provider---PICU--Nights-_101464-1",
+   "relevance": 3,
+   "setting": "picu",
+   "posted_at": "2026-10-21"
+  }
+ ],
+ "retry": {
+  "started_at": "2026-10-22T08:09:15Z",
+  "finished_at": "2026-10-22T08:16:32Z",
+  "retried": [
+   "catholic-medical-center-manchester",
+   "portsmouth-regional-portsmouth",
+   "reston-hospital-center-reston",
+   "stonesprings-hospital-dulles",
+   "chippenham-richmond",
+   "henrico-doctors-richmond",
+   "johnston-willis-richmond",
+   "lewisgale-medical-center-salem",
+   "spotsylvania-regional-fredericksburg",
+   "mission-childrens-asheville",
+   "summerville-medical-center-summerville",
+   "trident-medical-center-north-charleston",
+   "grand-strand-medical-center-myrtle-beach",
+   "colleton-medical-center-walterboro",
+   "penn-medicine-princeton-medical-center-plainsboro",
+   "chester-county-hospital-west-chester",
+   "hospital-of-the-university-of-pennsylvania-philadelphia",
+   "pennsylvania-hospital-philadelphia",
+   "lancaster-general-hospital-lancaster",
+   "st-marys-regional-lewiston",
+   "st-joseph-hospital-nashua",
+   "holy-name-medical-center-teaneck",
+   "hsc-pediatric-center-washington",
+   "boston-childrens-boston",
+   "spartanburg-medical-center-spartanburg",
+   "valley-hospital-paramus",
+   "washington-regional-plymouth",
+   "cohen-childrens-new-hyde-park",
+   "lenox-hill-hospital-manhattan",
+   "lij-forest-hills-queens",
+   "long-island-jewish-medical-center-new-hyde-park",
+   "staten-island-university-hospital-staten-island",
+   "huntington-hospital-huntington",
+   "lij-valley-stream-valley-stream",
+   "mather-hospital-port-jefferson",
+   "north-shore-university-hospital-manhasset",
+   "peconic-bay-medical-center-riverhead",
+   "south-shore-university-hospital-bay-shore",
+   "northern-westchester-hospital-mount-kisco",
+   "phelps-hospital-sleepy-hollow",
+   "putnam-hospital-carmel",
+   "vassar-brothers-medical-center-poughkeepsie"
+  ],
+  "fixed": [
+   "st-marys-regional-lewiston",
+   "st-joseph-hospital-nashua",
+   "boston-childrens-boston",
+   "valley-hospital-paramus",
+   "cohen-childrens-new-hyde-park",
+   "lenox-hill-hospital-manhattan",
+   "lij-forest-hills-queens",
+   "long-island-jewish-medical-center-new-hyde-park",
+   "staten-island-university-hospital-staten-island",
+   "huntington-hospital-huntington",
+   "lij-valley-stream-valley-stream",
+   "mather-hospital-port-jefferson",
+   "north-shore-university-hospital-manhasset",
+   "peconic-bay-medical-center-riverhead",
+   "south-shore-university-hospital-bay-shore",
+   "northern-westchester-hospital-mount-kisco",
+   "phelps-hospital-sleepy-hollow",
+   "putnam-hospital-carmel",
+   "vassar-brothers-medical-center-poughkeepsie"
+  ],
+  "jobs_added": 0,
+  "wall_seconds": 436.7
+ }
 }
