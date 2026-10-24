@@ -1,0 +1,95 @@
+run 2026-10-24 wall=463.5s ledger=data/hospitals.json browser=chrome-headed
+
+hospital                                                 platform               method           board  list  cand  new   secs  status / error
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+boston-childrens-boston                                  generic->symphony      api                 40    40    13    0    7.4  ok
+brigham-and-womens-boston                                workday                api                642   251     0    0   98.2  ok
+cape-fear-valley-fayetteville                            workday                api                 34     0     0    0    6.7  ok
+capital-health-hopewell-pennington                       workday->workday       api                362   362     0    0   67.6  ok
+cfv-betsy-johnson-dunn                                   workday                api                 34    34     0    0    6.7  ok
+cfv-central-harnett-lillington                           workday                api                 34     0     0    0    6.7  ok
+cooley-dickinson-northampton                             workday                api                642    27     0    0   98.2  ok
+gbmc-towson                                              workday->workday       api                 73    73     0    0   19.4  ok
+hospital-for-special-surgery-manhattan                   workday                api                 53    53     1    0   11.7  ok
+lehigh-valley-hospital-hazleton                          workday                api                366    21     1    0   68.4  ok
+lehigh-valley-hospital-pocono-east-stroudsburg           workday                api                366    27     0    0   68.4  ok
+lehigh-valley-reilly-childrens-allentown                 workday                api                366   318     1    0   68.4  ok
+mass-general-for-children-boston                         workday                api                642   252     2    0   98.2  ok
+newton-wellesley-hospital-newton                         workday                api                642    43     0    0   98.2  ok
+riverside-regional-newport-news                          workday                api                 76    76     0    0   44.5  ok
+salem-hospital-salem                                     workday                api                642    41     0    0   98.2  ok
+spartanburg-medical-center-spartanburg                   generic                playwright           1     1     0    0  167.5  ok
+st-lukes-anderson-campus-easton                          workday                api                 39     5     0    0   40.2  ok
+st-lukes-childrens-bethlehem                             workday                api                 39    31     2    0   40.2  ok
+st-lukes-grand-view-sellersville                         workday                api                 39     3     0    0   40.2  ok
+virtua-mount-holly-hospital-mount-holly                  workday->workday       api                364   187     0    0   56.2  ok
+virtua-our-lady-of-lourdes-camden                        workday->workday       api                364    86     0    0   56.2  ok
+virtua-voorhees-hospital-voorhees                        workday->workday       api                364    91     0    0   56.2  ok
+wentworth-douglass-dover                                 workday                api                642    28     1    0   98.2  ok
+adventist-shady-grove-rockville                          generic->workday                            0     0     0    0    2.5  error: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+adventist-white-oak-silver-spring                        generic->workday                            0     0     0    0    2.5  error: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+ahn-saint-vincent-erie                                   generic->workday                            0     0     0    0    4.5  error: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+ahn-west-penn-hospital-pittsburgh                        generic->workday                            0     0     0    0    4.5  error: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+ahn-wexford-hospital-wexford                             generic->workday                            0     0     0    0    4.5  error: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+catholic-medical-center-manchester                       careersite                                  0     0     0    0  322.4  error: AdapterError: careersite: every jobs.json search failed in the browser: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!
+chester-county-hospital-west-chester                     careersite                                  0     0     0    0  387.9  error: AdapterError: careersite: every jobs.json search failed in the browser: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html lang="en-us" dir="ltr"><head>
+chippenham-richmond                                      careersite                                  0     0     0    0  322.4  error: AdapterError: careersite: every jobs.json search failed in the browser: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!
+christiana-hospital-newark-de                            workday                                     0     0     0    0   61.7  error: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+christianacare-union-elkton                              workday                                     0     0     0    0   61.7  error: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+colleton-medical-center-walterboro                       careersite                                  0     0     0    0  322.4  error: AdapterError: careersite: every jobs.json search failed in the browser: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!
+columbia-memorial-hospital-hudson                        workday                                     0     0     0    0   42.8  error: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+concord-hospital-concord                                 generic->workday                            0     0     0    0    9.5  error: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+duker-childrens-albany                                   workday                                     0     0     0    0   42.8  error: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+glens-falls-hospital-glens-falls                         workday                                     0     0     0    0   42.8  error: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+golisano-childrens-rochester                             workday                                     0     0     0    0   70.6  error: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+grand-strand-medical-center-myrtle-beach                 careersite                                  0     0     0    0  322.4  error: AdapterError: careersite: every jobs.json search failed in the browser: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!
+henrico-doctors-richmond                                 careersite                                  0     0     0    0  322.4  error: AdapterError: careersite: every jobs.json search failed in the browser: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!
+holy-cross-silver-spring                                 workday                                     0     0     0    0  105.3  error: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+hospital-of-the-university-of-pennsylvania-philadelphia  careersite                                  0     0     0    0  387.9  error: AdapterError: careersite: every jobs.json search failed in the browser: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html lang="en-us" dir="ltr"><head>
+hsc-pediatric-center-washington                          generic                                     0     0     0    0  428.2  error: AdapterError: generic: no page reachable: None https://www.hschealth.org/careers; playwright TimeoutError: Page.goto: Timeout 45000ms exceeded.
+Call l
+jefferson-abington-hospital-abington                     workday                                     0     0     0    0   39.8  error: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+jefferson-einstein-montgomery-east-norriton              workday                                     0     0     0    0   39.8  error: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+jefferson-einstein-philadelphia                          workday                                     0     0     0    0   39.8  error: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+jefferson-washington-township-sewell                     workday                                     0     0     0    0   39.8  error: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+johnston-willis-richmond                                 careersite                                  0     0     0    0  322.4  error: AdapterError: careersite: every jobs.json search failed in the browser: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!
+jones-memorial-hospital-wellsville                       workday                                     0     0     0    0   70.6  error: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+lancaster-general-hospital-lancaster                     careersite                                  0     0     0    0  387.9  error: AdapterError: careersite: every jobs.json search failed in the browser: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html lang="en-us" dir="ltr"><head>
+lewisgale-medical-center-salem                           careersite                                  0     0     0    0  322.4  error: AdapterError: careersite: every jobs.json search failed in the browser: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!
+mainegeneral-medical-center-augusta                      workday                                     0     0     0    0   73.4  error: AdapterError: workday: cannot derive host/tenant from ats_config or careers URLs
+mary-washington-fredericksburg                           generic->workday                            0     0     0    0   49.7  error: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+mission-childrens-asheville                              careersite                                  0     0     0    0  322.4  error: AdapterError: careersite: every jobs.json search failed in the browser: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!
+musc-columbia-northeast-columbia                         workday                                     0     0     0    0  126.4  error: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+musc-florence-florence                                   workday                                     0     0     0    0  126.4  error: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+musc-kershaw-camden                                      workday                                     0     0     0    0  126.4  error: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+musc-lancaster-lancaster                                 workday                                     0     0     0    0  126.4  error: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+musc-orangeburg-orangeburg                               workday                                     0     0     0    0  126.4  error: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+musc-shawn-jenkins-childrens-charleston                  workday                                     0     0     0    0  126.4  error: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+musc-university-medical-center-charleston                workday                                     0     0     0    0  126.4  error: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+penn-medicine-princeton-medical-center-plainsboro        careersite                                  0     0     0    0  387.9  error: AdapterError: careersite: every jobs.json search failed in the browser: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html lang="en-us" dir="ltr"><head>
+pennsylvania-hospital-philadelphia                       careersite                                  0     0     0    0  387.9  error: AdapterError: careersite: every jobs.json search failed in the browser: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html lang="en-us" dir="ltr"><head>
+portsmouth-regional-portsmouth                           careersite                                  0     0     0    0  322.4  error: AdapterError: careersite: every jobs.json search failed in the browser: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!
+reston-hospital-center-reston                            careersite                                  0     0     0    0  322.4  error: AdapterError: careersite: every jobs.json search failed in the browser: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!
+richmond-university-medical-center-staten-island         workday                                     0     0     0    0   46.3  error: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+rochester-general-hospital-rochester                     workday                                     0     0     0    0   32.3  error: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+roswell-park-buffalo                                     workday                                     0     0     0    0   37.4  error: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+saint-francis-hartford                                   workday                                     0     0     0    0  105.3  error: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+saint-francis-hospital-wilmington                        workday                                     0     0     0    0  105.3  error: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+saint-marys-waterbury                                    workday                                     0     0     0    0  105.3  error: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+saratoga-hospital-saratoga-springs                       workday                                     0     0     0    0   42.8  error: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+south-shore-hospital-weymouth                            workday                                     0     0     0    0   74.5  error: AdapterError: workday: cannot derive host/tenant from ats_config or careers URLs
+spotsylvania-regional-fredericksburg                     careersite                                  0     0     0    0  322.4  error: AdapterError: careersite: every jobs.json search failed in the browser: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!
+st-josephs-hospital-syracuse                             workday                                     0     0     0    0  105.3  error: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+st-mary-medical-center-langhorne                         workday                                     0     0     0    0  105.3  error: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+st-peters-hospital-albany                                workday                                     0     0     0    0  105.3  error: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+stafford-hospital-stafford                               generic->workday                            0     0     0    0   49.7  error: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+stonesprings-hospital-dulles                             careersite                                  0     0     0    0  322.4  error: AdapterError: careersite: every jobs.json search failed in the browser: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!
+sturdy-memorial-attleboro                                workday                                     0     0     0    0   54.5  error: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+summerville-medical-center-summerville                   careersite                                  0     0     0    0  322.4  error: AdapterError: careersite: every jobs.json search failed in the browser: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!
+thomas-jefferson-university-hospital-philadelphia        workday                                     0     0     0    0   39.8  error: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+trident-medical-center-north-charleston                  careersite                                  0     0     0    0  322.4  error: AdapterError: careersite: every jobs.json search failed in the browser: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!
+ummc-batavia                                             workday                                     0     0     0    0   32.3  error: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+unity-hospital-rochester                                 workday                                     0     0     0    0   32.3  error: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+washington-regional-plymouth                             generic                                     0     0     0    0   73.3  error: AdapterError: generic: no page reachable: None https://www.washingtonregional.org/careers/; playwright Error: Page.goto: net::ERR_NAME_NOT_RESOLVED at
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+hospitals=88 ok=24 not_ok=64 board_listings=2050 candidates=21 new_candidates=0

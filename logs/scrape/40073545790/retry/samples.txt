@@ -1,0 +1,994 @@
+## adventist-shady-grove-rockville  [generic->workday / workday / ]  status=error
+   ERROR: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: sniff: page links to Workday adventisthealthcare.wd1 site AdventistHealthCareCareers
+   note: traceback: -np-job-board/peds-np-job-board/scraper/pipeline.py", line 270, in run_board
+    listings = adapter.search(opts.keywords)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/peds-np-job-board/peds-np-job-board/scraper/adapters/workday.py", line 143, in search
+    data =
+   (no candidate jobs)
+
+## adventist-white-oak-silver-spring  [generic->workday / workday / ]  status=error
+   ERROR: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: sniff: page links to Workday adventisthealthcare.wd1 site AdventistHealthCareCareers
+   note: traceback: -np-job-board/peds-np-job-board/scraper/pipeline.py", line 270, in run_board
+    listings = adapter.search(opts.keywords)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/peds-np-job-board/peds-np-job-board/scraper/adapters/workday.py", line 143, in search
+    data =
+   (no candidate jobs)
+
+## ahn-saint-vincent-erie  [generic->workday / workday / ]  status=error
+   ERROR: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: sniff: page links to Workday highmarkhealth.wd1 site highmark
+   note: sniff: followed careers link https://careers.highmarkhealth.org/explore-jobs/?company=Allegheny+Health+Network
+   note: traceback: -np-job-board/peds-np-job-board/scraper/pipeline.py", line 270, in run_board
+    listings = adapter.search(opts.keywords)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/peds-np-job-board/peds-np-job-board/scraper/adapters/workday.py", line 143, in search
+    data =
+   (no candidate jobs)
+
+## ahn-west-penn-hospital-pittsburgh  [generic->workday / workday / ]  status=error
+   ERROR: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: sniff: page links to Workday highmarkhealth.wd1 site highmark
+   note: sniff: followed careers link https://careers.highmarkhealth.org/explore-jobs/?company=Allegheny+Health+Network
+   note: traceback: -np-job-board/peds-np-job-board/scraper/pipeline.py", line 270, in run_board
+    listings = adapter.search(opts.keywords)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/peds-np-job-board/peds-np-job-board/scraper/adapters/workday.py", line 143, in search
+    data =
+   (no candidate jobs)
+
+## ahn-wexford-hospital-wexford  [generic->workday / workday / ]  status=error
+   ERROR: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: sniff: page links to Workday highmarkhealth.wd1 site highmark
+   note: sniff: followed careers link https://careers.highmarkhealth.org/explore-jobs/?company=Allegheny+Health+Network
+   note: traceback: -np-job-board/peds-np-job-board/scraper/pipeline.py", line 270, in run_board
+    listings = adapter.search(opts.keywords)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/peds-np-job-board/peds-np-job-board/scraper/adapters/workday.py", line 143, in search
+    data =
+   (no candidate jobs)
+
+## boston-childrens-boston  [generic->symphony / symphony / api]  status=ok
+   note: sniff: recognized symphony front end on jobs.bostonchildrens.org
+   note: CWS jobs API https://jobsapi-google.m-cloud.io/api/ org companies/8fb8d45a-cbb2-48b9-b438-d16a91fb3bef filters ['ats_portalid:Kenexa']
+   * [2/mixed] Nurse Practitioner - Complex Care Services, per diem | posted 2026-10-19 | https://jobs.bostonchildrens.org/job/22550780/nurse-practitioner-complex-care-services-per-diem-boston-ma/  (known)
+   * [3/peds_inpatient] Nurse Practitioner or Physician Assistant, Inpatient Medicine | posted 2026-09-18 | https://jobs.bostonchildrens.org/job/23891411/nurse-practitioner-or-physician-assistant-inpatient-medicine-boston-ma/  (known)
+   * [2/picu] Nurse Practitioner or Physician Assistant, MSICU (40 hours) | posted 2026-10-07 | https://jobs.bostonchildrens.org/job/23966419/nurse-practitioner-or-physician-assistant-msicu-40-hours-boston-ma/  (known)
+   first board listings: Nurse Practitioner - Complex Care Services, per diem (300 Longwood Ave, Boston, MA 02115) || Nurse Practitioner or Physician Assistant, Inpatient Medicine (300 Longwood Ave, Boston, MA 02115) || Nurse Practitioner or Physician Assistant, MSICU (40 hours) (300 Longwood Ave, Boston, MA 02115)
+
+## brigham-and-womens-boston  [workday / workday / api]  status=ok
+   note: 30 low-priority listings deferred (detail budget/time); they are picked up on later runs
+   (no candidate jobs)
+   first board listings: Nurse Practitioner, Endoscopy (Salem-MA) || Nurse Practitioner, Family Medicine (South Deerfield-MA) || Nurse Practitioner - Hematology BWH (Boston-MA)
+
+## cape-fear-valley-fayetteville  [workday / workday / api]  status=ok
+   (no candidate jobs)
+   first board listings: Nurse Manager-Observation Unit, Full-Time Days () || Registered Nurse-Medical Telemetry Department, Full-Time Day & Night Shifts () || LYMPHEDEMA SPECIALIST- Occupational Therapist-Full-Time -Days ()
+
+## capital-health-hopewell-pennington  [workday->workday / workday / api]  status=ok
+   note: sniff: page links to Workday capitalhealth.wd1 site CapitalHealthCareers
+   note: recovered via sniffed workday board after: AdapterError: workday: cannot derive host/tenant from ats_config or careers URLs
+   (no candidate jobs)
+   first board listings: Nurse Practitioner - Postpartum (Hopewell) || Nurse Practitioner - PACE Program (LIFE) || Nurse Practitioner - Occupational Health (CH Occ Health Ctr)
+
+## catholic-medical-center-manchester  [careersite / careersite / ]  status=error
+   ERROR: AdapterError: careersite: every jobs.json search failed in the browser: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'; html search 'nurse practitioner': HTTP 403 Attention Required! | Cloudflare; html search 'pediatric nurse practitioner': HTTP 403 Attention Required! | Cloudflare
+   note: jobs.json 'nurse practitioner': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'pediatric nurse practitioner': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'advanced practice provider': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'APRN': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'PICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: html search 'nurse practitioner': HTTP 403 Attention Required! | Cloudflare
+   note: html search 'pediatric nurse practitioner': HTTP 403 Attention Required! | Cloudflare
+   note: sniff: HTTP 403 for https://careers.hcahealthcare.com/search/jobs: bot challenge (Cloudflare)
+   note: sniff: HTTP 403 for https://careers.hcahealthcare.com/pages/catholic-medical-center?bid=5260: bot challenge (Cloudflare)
+   note: generic fallback failed: AdapterError: generic: no page reachable: 403 https://careers.hcahealthcare.com/search/jobs?q=nurse+practitioner&location=Manchester%2C+NH%2C+United+States; playwright 403 https://careers.hcahealthcare.com/search/j
+   (no candidate jobs)
+
+## cfv-betsy-johnson-dunn  [workday / workday / api]  status=ok
+   (no candidate jobs)
+   first board listings: Nurse Manager-Observation Unit, Full-Time Days () || Registered Nurse-Medical Telemetry Department, Full-Time Day & Night Shifts () || LYMPHEDEMA SPECIALIST- Occupational Therapist-Full-Time -Days ()
+
+## cfv-central-harnett-lillington  [workday / workday / api]  status=ok
+   (no candidate jobs)
+   first board listings: Nurse Manager-Observation Unit, Full-Time Days () || Registered Nurse-Medical Telemetry Department, Full-Time Day & Night Shifts () || LYMPHEDEMA SPECIALIST- Occupational Therapist-Full-Time -Days ()
+
+## chester-county-hospital-west-chester  [careersite / careersite / ]  status=error
+   ERROR: AdapterError: careersite: every jobs.json search failed in the browser: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html lang="en-us" dir="ltr"><head><title>Just a moment...</title'; html search 'nurse practitioner': HTTP 403 Just a moment...; html search 'pediatric nurse practitioner': HTTP 403 Just a moment...
+   note: jobs.json 'nurse practitioner': HTTP 403 '<!DOCTYPE html><html lang="en-us" dir="ltr"><head><title>Just a moment...</title'
+   note: jobs.json 'pediatric nurse practitioner': HTTP 403 '<!DOCTYPE html><html lang="en-us" dir="ltr"><head><title>Just a moment...</title'
+   note: jobs.json 'advanced practice provider': HTTP 403 '<!DOCTYPE html><html lang="en-us" dir="ltr"><head><title>Just a moment...</title'
+   note: jobs.json 'APRN': HTTP 403 '<!DOCTYPE html><html lang="en-us" dir="ltr"><head><title>Just a moment...</title'
+   note: jobs.json 'PICU': HTTP 403 '<!DOCTYPE html><html lang="en-us" dir="ltr"><head><title>Just a moment...</title'
+   note: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html lang="en-us" dir="ltr"><head><title>Just a moment...</title'
+   note: html search 'nurse practitioner': HTTP 403 Just a moment...
+   note: html search 'pediatric nurse practitioner': HTTP 403 Just a moment...
+   note: sniff: HTTP 403 for https://careers.pennmedicine.org/: bot challenge (Cloudflare)
+   note: sniff: HTTP 403 for https://careers.pennmedicine.org/search/nurse-practitioner-physician-assistant/jobs: bot challenge (Cloudflare)
+   note: sniff: HTTP 403 for https://careers.pennmedicine.org/: bot challenge (Cloudflare)
+   note: generic fallback failed: AdapterError: generic: no page reachable: 403 https://careers.pennmedicine.org/search/nurse-practitioner-physician-assistant/jobs; playwright 403 https://careers.pennmedicine.org/search/nurse-practitioner-physician
+   (no candidate jobs)
+
+## chippenham-richmond  [careersite / careersite / ]  status=error
+   ERROR: AdapterError: careersite: every jobs.json search failed in the browser: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'; html search 'nurse practitioner': HTTP 403 Attention Required! | Cloudflare; html search 'pediatric nurse practitioner': HTTP 403 Attention Required! | Cloudflare
+   note: jobs.json 'nurse practitioner': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'pediatric nurse practitioner': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'advanced practice provider': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'APRN': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'PICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: html search 'nurse practitioner': HTTP 403 Attention Required! | Cloudflare
+   note: html search 'pediatric nurse practitioner': HTTP 403 Attention Required! | Cloudflare
+   note: sniff: HTTP 403 for https://careers.hcahealthcare.com/search/jobs: bot challenge (Cloudflare)
+   note: sniff: HTTP 403 for https://careers.hcahealthcare.com/pages/catholic-medical-center?bid=5260: bot challenge (Cloudflare)
+   note: generic fallback failed: AdapterError: generic: no page reachable: 403 https://careers.hcahealthcare.com/search/jobs?q=nurse+practitioner&location=Manchester%2C+NH%2C+United+States; playwright 403 https://careers.hcahealthcare.com/search/j
+   (no candidate jobs)
+
+## christiana-hospital-newark-de  [workday / workday / ]  status=error
+   ERROR: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: facet discovery failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: traceback: -np-job-board/peds-np-job-board/scraper/pipeline.py", line 270, in run_board
+    listings = adapter.search(opts.keywords)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/peds-np-job-board/peds-np-job-board/scraper/adapters/workday.py", line 143, in search
+    data =
+   note: workday failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: generic: pages reachable but no NP/APP job links found: playwright 200 https://christianacare.wd5.myworkdayjobs.com/CCHS?q=nurse%20practitioner; playwright 200 https://christianacare.wd5.myworkdayjobs.com/CCHS?keywords=nurse+practitioner; playwright 200 https://christianacare.wd5.myworkdayjobs.com/C
+   (no candidate jobs)
+
+## christianacare-union-elkton  [workday / workday / ]  status=error
+   ERROR: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: facet discovery failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: traceback: -np-job-board/peds-np-job-board/scraper/pipeline.py", line 270, in run_board
+    listings = adapter.search(opts.keywords)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/peds-np-job-board/peds-np-job-board/scraper/adapters/workday.py", line 143, in search
+    data =
+   note: workday failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: generic: pages reachable but no NP/APP job links found: playwright 200 https://christianacare.wd5.myworkdayjobs.com/CCHS?q=nurse%20practitioner; playwright 200 https://christianacare.wd5.myworkdayjobs.com/CCHS?keywords=nurse+practitioner; playwright 200 https://christianacare.wd5.myworkdayjobs.com/C
+   (no candidate jobs)
+
+## colleton-medical-center-walterboro  [careersite / careersite / ]  status=error
+   ERROR: AdapterError: careersite: every jobs.json search failed in the browser: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'; html search 'nurse practitioner': HTTP 403 Attention Required! | Cloudflare; html search 'pediatric nurse practitioner': HTTP 403 Attention Required! | Cloudflare
+   note: jobs.json 'nurse practitioner': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'pediatric nurse practitioner': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'advanced practice provider': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'APRN': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'PICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: html search 'nurse practitioner': HTTP 403 Attention Required! | Cloudflare
+   note: html search 'pediatric nurse practitioner': HTTP 403 Attention Required! | Cloudflare
+   note: sniff: HTTP 403 for https://careers.hcahealthcare.com/search/jobs: bot challenge (Cloudflare)
+   note: sniff: HTTP 403 for https://careers.hcahealthcare.com/pages/catholic-medical-center?bid=5260: bot challenge (Cloudflare)
+   note: generic fallback failed: AdapterError: generic: no page reachable: 403 https://careers.hcahealthcare.com/search/jobs?q=nurse+practitioner&location=Manchester%2C+NH%2C+United+States; playwright 403 https://careers.hcahealthcare.com/search/j
+   (no candidate jobs)
+
+## columbia-memorial-hospital-hudson  [workday / workday / ]  status=error
+   ERROR: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: facet discovery failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: traceback: -np-job-board/peds-np-job-board/scraper/pipeline.py", line 270, in run_board
+    listings = adapter.search(opts.keywords)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/peds-np-job-board/peds-np-job-board/scraper/adapters/workday.py", line 143, in search
+    data =
+   note: sniff: page links to Workday albanymed.wd5 site Albany_Med_System_Career_Site
+   note: sniff: followed careers link https://www.albanymed.org/careers/
+   note: sniff fallback failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: workday failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: generic: pages reachable but no NP/APP job links found: playwright 200 https://albanymed.wd5.myworkdayjobs.com/Albany_Med?q=nurse%20practitioner; playwright 200 https://albanymed.wd5.myworkdayjobs.com/Albany_Med?keywords=nurse+practitioner; playwright 200 https://albanymed.wd5.myworkdayjobs.com/Alba
+   (no candidate jobs)
+
+## concord-hospital-concord  [generic->workday / workday / ]  status=error
+   ERROR: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: sniff: page links to Workday crhc.wd1 site Concord_Careers
+   note: traceback: -np-job-board/peds-np-job-board/scraper/pipeline.py", line 270, in run_board
+    listings = adapter.search(opts.keywords)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/peds-np-job-board/peds-np-job-board/scraper/adapters/workday.py", line 143, in search
+    data =
+   (no candidate jobs)
+
+## cooley-dickinson-northampton  [workday / workday / api]  status=ok
+   note: 30 low-priority listings deferred (detail budget/time); they are picked up on later runs
+   (no candidate jobs)
+   first board listings: Nurse Practitioner, Endoscopy (Salem-MA) || Nurse Practitioner, Family Medicine (South Deerfield-MA) || Nurse Practitioner - Hematology BWH (Boston-MA)
+
+## duker-childrens-albany  [workday / workday / ]  status=error
+   ERROR: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: facet discovery failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: traceback: -np-job-board/peds-np-job-board/scraper/pipeline.py", line 270, in run_board
+    listings = adapter.search(opts.keywords)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/peds-np-job-board/peds-np-job-board/scraper/adapters/workday.py", line 143, in search
+    data =
+   note: sniff: page links to Workday albanymed.wd5 site Albany_Med_System_Career_Site
+   note: sniff: followed careers link https://www.albanymed.org/careers/
+   note: sniff fallback failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: workday failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: generic: pages reachable but no NP/APP job links found: playwright 200 https://albanymed.wd5.myworkdayjobs.com/Albany_Med?q=nurse%20practitioner; playwright 200 https://albanymed.wd5.myworkdayjobs.com/Albany_Med?keywords=nurse+practitioner; playwright 200 https://albanymed.wd5.myworkdayjobs.com/Alba
+   (no candidate jobs)
+
+## gbmc-towson  [workday->workday / workday / api]  status=ok
+   note: sniff: page links to Workday gbmc.wd1 site gbmc
+   note: recovered via sniffed workday board after: AdapterError: workday: cannot derive host/tenant from ats_config or careers URLs
+   (no candidate jobs)
+   first board listings: Nurse Practitioner GGL Palliative Medicine - AAMC (2 Locations) || Nurse Practitioner GGL -  Attending of Hospice Record NE (3 Locations) || Nurse Practitioner GGL Palliative Medicine - GBMC Telemedicine (GBMC Hospital)
+
+## glens-falls-hospital-glens-falls  [workday / workday / ]  status=error
+   ERROR: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: facet discovery failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: traceback: -np-job-board/peds-np-job-board/scraper/pipeline.py", line 270, in run_board
+    listings = adapter.search(opts.keywords)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/peds-np-job-board/peds-np-job-board/scraper/adapters/workday.py", line 143, in search
+    data =
+   note: sniff: page links to Workday albanymed.wd5 site Albany_Med_System_Career_Site
+   note: sniff: followed careers link https://www.albanymed.org/careers/
+   note: sniff fallback failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: workday failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: generic: pages reachable but no NP/APP job links found: playwright 200 https://albanymed.wd5.myworkdayjobs.com/Albany_Med?q=nurse%20practitioner; playwright 200 https://albanymed.wd5.myworkdayjobs.com/Albany_Med?keywords=nurse+practitioner; playwright 200 https://albanymed.wd5.myworkdayjobs.com/Alba
+   (no candidate jobs)
+
+## golisano-childrens-rochester  [workday / workday / ]  status=error
+   ERROR: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: facet discovery failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: traceback: -np-job-board/peds-np-job-board/scraper/pipeline.py", line 270, in run_board
+    listings = adapter.search(opts.keywords)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/peds-np-job-board/peds-np-job-board/scraper/adapters/workday.py", line 143, in search
+    data =
+   note: sniff: HTTP 403 for https://www.jmhny.org/: forbidden (bot block?)
+   note: workday failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: generic: pages reachable but no NP/APP job links found: playwright 200 https://rochester.wd5.myworkdayjobs.com/UR_Nursing?q=nurse%20practitioner; playwright 200 https://rochester.wd5.myworkdayjobs.com/UR_Nursing?keywords=nurse+practitioner; playwright 200 https://rochester.wd5.myworkdayjobs.com/UR_N
+   (no candidate jobs)
+
+## grand-strand-medical-center-myrtle-beach  [careersite / careersite / ]  status=error
+   ERROR: AdapterError: careersite: every jobs.json search failed in the browser: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'; html search 'nurse practitioner': HTTP 403 Attention Required! | Cloudflare; html search 'pediatric nurse practitioner': HTTP 403 Attention Required! | Cloudflare
+   note: jobs.json 'nurse practitioner': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'pediatric nurse practitioner': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'advanced practice provider': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'APRN': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'PICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: html search 'nurse practitioner': HTTP 403 Attention Required! | Cloudflare
+   note: html search 'pediatric nurse practitioner': HTTP 403 Attention Required! | Cloudflare
+   note: sniff: HTTP 403 for https://careers.hcahealthcare.com/search/jobs: bot challenge (Cloudflare)
+   note: sniff: HTTP 403 for https://careers.hcahealthcare.com/pages/catholic-medical-center?bid=5260: bot challenge (Cloudflare)
+   note: generic fallback failed: AdapterError: generic: no page reachable: 403 https://careers.hcahealthcare.com/search/jobs?q=nurse+practitioner&location=Manchester%2C+NH%2C+United+States; playwright 403 https://careers.hcahealthcare.com/search/j
+   (no candidate jobs)
+
+## henrico-doctors-richmond  [careersite / careersite / ]  status=error
+   ERROR: AdapterError: careersite: every jobs.json search failed in the browser: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'; html search 'nurse practitioner': HTTP 403 Attention Required! | Cloudflare; html search 'pediatric nurse practitioner': HTTP 403 Attention Required! | Cloudflare
+   note: jobs.json 'nurse practitioner': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'pediatric nurse practitioner': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'advanced practice provider': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'APRN': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'PICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: html search 'nurse practitioner': HTTP 403 Attention Required! | Cloudflare
+   note: html search 'pediatric nurse practitioner': HTTP 403 Attention Required! | Cloudflare
+   note: sniff: HTTP 403 for https://careers.hcahealthcare.com/search/jobs: bot challenge (Cloudflare)
+   note: sniff: HTTP 403 for https://careers.hcahealthcare.com/pages/catholic-medical-center?bid=5260: bot challenge (Cloudflare)
+   note: generic fallback failed: AdapterError: generic: no page reachable: 403 https://careers.hcahealthcare.com/search/jobs?q=nurse+practitioner&location=Manchester%2C+NH%2C+United+States; playwright 403 https://careers.hcahealthcare.com/search/j
+   (no candidate jobs)
+
+## holy-cross-silver-spring  [workday / workday / ]  status=error
+   ERROR: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: facet discovery failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: traceback: -np-job-board/peds-np-job-board/scraper/pipeline.py", line 270, in run_board
+    listings = adapter.search(opts.keywords)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/peds-np-job-board/peds-np-job-board/scraper/adapters/workday.py", line 143, in search
+    data =
+   note: sniff: page links to Workday trinityhealth.wd1 site Jobs
+   note: sniff: recognized phenom front end on jobs.trinity-health.org
+   note: sniff: followed careers link https://jobs.trinity-health.org/newengland/
+   note: sniff fallback failed: AdapterError: search 'APRN': HTTP 404 for https://jobs.trinity-health.org/us/en/search-results?keywords=APRN: <!doctype html>  <!--[if lt IE 7]>      <html class="lt-ie7" lang="en"> <![endif]-->  <!--[if IE 7]>    
+   note: workday failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: generic: pages reachable but no NP/APP job links found: playwright 200 https://trinityhealth.wd1.myworkdayjobs.com/Jobs?q=nurse%20practitioner; playwright 200 https://trinityhealth.wd1.myworkdayjobs.com/Jobs?keywords=nurse+practitioner; playwright 200 https://trinityhealth.wd1.myworkdayjobs.com/Jobs
+   (no candidate jobs)
+
+## hospital-for-special-surgery-manhattan  [workday / workday / api]  status=ok
+   * [2/peds_specialty_outpatient] Pediatric Ortho APP – Dr. Emily Dodwell | posted 2026-09-09 | https://hss.wd1.myworkdayjobs.com/HSS_Careers/job/New-York-NY/Pediatric-Ortho-APP---Dr-Emily-Dodwell_JR2026-106071-1  (known)
+   first board listings: Advanced Practice Provider NP/PA (Per-Diem) (New York, NY) || Physician Assistant Florida (2 Locations) || Pediatric Ortho APP – Dr. Emily Dodwell (New York, NY)
+
+## hospital-of-the-university-of-pennsylvania-philadelphia  [careersite / careersite / ]  status=error
+   ERROR: AdapterError: careersite: every jobs.json search failed in the browser: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html lang="en-us" dir="ltr"><head><title>Just a moment...</title'; html search 'nurse practitioner': HTTP 403 Just a moment...; html search 'pediatric nurse practitioner': HTTP 403 Just a moment...
+   note: jobs.json 'nurse practitioner': HTTP 403 '<!DOCTYPE html><html lang="en-us" dir="ltr"><head><title>Just a moment...</title'
+   note: jobs.json 'pediatric nurse practitioner': HTTP 403 '<!DOCTYPE html><html lang="en-us" dir="ltr"><head><title>Just a moment...</title'
+   note: jobs.json 'advanced practice provider': HTTP 403 '<!DOCTYPE html><html lang="en-us" dir="ltr"><head><title>Just a moment...</title'
+   note: jobs.json 'APRN': HTTP 403 '<!DOCTYPE html><html lang="en-us" dir="ltr"><head><title>Just a moment...</title'
+   note: jobs.json 'PICU': HTTP 403 '<!DOCTYPE html><html lang="en-us" dir="ltr"><head><title>Just a moment...</title'
+   note: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html lang="en-us" dir="ltr"><head><title>Just a moment...</title'
+   note: html search 'nurse practitioner': HTTP 403 Just a moment...
+   note: html search 'pediatric nurse practitioner': HTTP 403 Just a moment...
+   note: sniff: HTTP 403 for https://careers.pennmedicine.org/: bot challenge (Cloudflare)
+   note: sniff: HTTP 403 for https://careers.pennmedicine.org/search/nurse-practitioner-physician-assistant/jobs: bot challenge (Cloudflare)
+   note: sniff: HTTP 403 for https://careers.pennmedicine.org/: bot challenge (Cloudflare)
+   note: generic fallback failed: AdapterError: generic: no page reachable: 403 https://careers.pennmedicine.org/search/nurse-practitioner-physician-assistant/jobs; playwright 403 https://careers.pennmedicine.org/search/nurse-practitioner-physician
+   (no candidate jobs)
+
+## hsc-pediatric-center-washington  [generic / generic / ]  status=error
+   ERROR: AdapterError: generic: no page reachable: None https://www.hschealth.org/careers; playwright TimeoutError: Page.goto: Timeout 45000ms exceeded.
+Call log:
+  - navigating to "https://www.hschealth.org/careers?q=nurse+practitioner https://www.hschealth.org/careers?q=nurse+practitioner; playwright TimeoutError: Page.goto: Timeout 45000ms exceeded.
+Call log:
+  - navigating to "https://www.hschealth.org/careers?keywords=nurse+pract https://www.hschealth.org/careers?keywords=nurse+practitioner; playwright Error: Pag
+   note: sniff: HTTP None for https://www.hschealth.org/careers: ConnectTimeout: HTTPSConnectionPool(host='www.hschealth.org', port=443): Max retries exceeded with url: /careers (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.hschealth.org', port=443) at 0x7f15f0db4d10>,
+   (no candidate jobs)
+
+## jefferson-abington-hospital-abington  [workday / workday / ]  status=error
+   ERROR: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: facet discovery failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: traceback: -np-job-board/peds-np-job-board/scraper/pipeline.py", line 270, in run_board
+    listings = adapter.search(opts.keywords)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/peds-np-job-board/peds-np-job-board/scraper/adapters/workday.py", line 143, in search
+    data =
+   note: workday failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: generic: pages reachable but no NP/APP job links found: playwright 200 https://jeffersonhealth.wd5.myworkdayjobs.com/ThomasJeffersonExternal?q=nurse%20practitioner; playwright 200 https://jeffersonhealth.wd5.myworkdayjobs.com/ThomasJeffersonExternal?keywords=nurse+practitioner; playwright 200 https:
+   (no candidate jobs)
+
+## jefferson-einstein-montgomery-east-norriton  [workday / workday / ]  status=error
+   ERROR: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: facet discovery failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: traceback: -np-job-board/peds-np-job-board/scraper/pipeline.py", line 270, in run_board
+    listings = adapter.search(opts.keywords)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/peds-np-job-board/peds-np-job-board/scraper/adapters/workday.py", line 143, in search
+    data =
+   note: workday failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: generic: pages reachable but no NP/APP job links found: playwright 200 https://jeffersonhealth.wd5.myworkdayjobs.com/ThomasJeffersonExternal?q=nurse%20practitioner; playwright 200 https://jeffersonhealth.wd5.myworkdayjobs.com/ThomasJeffersonExternal?keywords=nurse+practitioner; playwright 200 https:
+   (no candidate jobs)
+
+## jefferson-einstein-philadelphia  [workday / workday / ]  status=error
+   ERROR: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: facet discovery failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: traceback: -np-job-board/peds-np-job-board/scraper/pipeline.py", line 270, in run_board
+    listings = adapter.search(opts.keywords)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/peds-np-job-board/peds-np-job-board/scraper/adapters/workday.py", line 143, in search
+    data =
+   note: workday failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: generic: pages reachable but no NP/APP job links found: playwright 200 https://jeffersonhealth.wd5.myworkdayjobs.com/ThomasJeffersonExternal?q=nurse%20practitioner; playwright 200 https://jeffersonhealth.wd5.myworkdayjobs.com/ThomasJeffersonExternal?keywords=nurse+practitioner; playwright 200 https:
+   (no candidate jobs)
+
+## jefferson-washington-township-sewell  [workday / workday / ]  status=error
+   ERROR: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: facet discovery failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: traceback: -np-job-board/peds-np-job-board/scraper/pipeline.py", line 270, in run_board
+    listings = adapter.search(opts.keywords)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/peds-np-job-board/peds-np-job-board/scraper/adapters/workday.py", line 143, in search
+    data =
+   note: workday failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: generic: pages reachable but no NP/APP job links found: playwright 200 https://jeffersonhealth.wd5.myworkdayjobs.com/ThomasJeffersonExternal?q=nurse%20practitioner; playwright 200 https://jeffersonhealth.wd5.myworkdayjobs.com/ThomasJeffersonExternal?keywords=nurse+practitioner; playwright 200 https:
+   (no candidate jobs)
+
+## johnston-willis-richmond  [careersite / careersite / ]  status=error
+   ERROR: AdapterError: careersite: every jobs.json search failed in the browser: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'; html search 'nurse practitioner': HTTP 403 Attention Required! | Cloudflare; html search 'pediatric nurse practitioner': HTTP 403 Attention Required! | Cloudflare
+   note: jobs.json 'nurse practitioner': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'pediatric nurse practitioner': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'advanced practice provider': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'APRN': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'PICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: html search 'nurse practitioner': HTTP 403 Attention Required! | Cloudflare
+   note: html search 'pediatric nurse practitioner': HTTP 403 Attention Required! | Cloudflare
+   note: sniff: HTTP 403 for https://careers.hcahealthcare.com/search/jobs: bot challenge (Cloudflare)
+   note: sniff: HTTP 403 for https://careers.hcahealthcare.com/pages/catholic-medical-center?bid=5260: bot challenge (Cloudflare)
+   note: generic fallback failed: AdapterError: generic: no page reachable: 403 https://careers.hcahealthcare.com/search/jobs?q=nurse+practitioner&location=Manchester%2C+NH%2C+United+States; playwright 403 https://careers.hcahealthcare.com/search/j
+   (no candidate jobs)
+
+## jones-memorial-hospital-wellsville  [workday / workday / ]  status=error
+   ERROR: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: facet discovery failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: traceback: -np-job-board/peds-np-job-board/scraper/pipeline.py", line 270, in run_board
+    listings = adapter.search(opts.keywords)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/peds-np-job-board/peds-np-job-board/scraper/adapters/workday.py", line 143, in search
+    data =
+   note: sniff: HTTP 403 for https://www.jmhny.org/: forbidden (bot block?)
+   note: workday failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: generic: pages reachable but no NP/APP job links found: playwright 200 https://rochester.wd5.myworkdayjobs.com/UR_Nursing?q=nurse%20practitioner; playwright 200 https://rochester.wd5.myworkdayjobs.com/UR_Nursing?keywords=nurse+practitioner; playwright 200 https://rochester.wd5.myworkdayjobs.com/UR_N
+   (no candidate jobs)
+
+## lancaster-general-hospital-lancaster  [careersite / careersite / ]  status=error
+   ERROR: AdapterError: careersite: every jobs.json search failed in the browser: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html lang="en-us" dir="ltr"><head><title>Just a moment...</title'; html search 'nurse practitioner': HTTP 403 Just a moment...; html search 'pediatric nurse practitioner': HTTP 403 Just a moment...
+   note: jobs.json 'nurse practitioner': HTTP 403 '<!DOCTYPE html><html lang="en-us" dir="ltr"><head><title>Just a moment...</title'
+   note: jobs.json 'pediatric nurse practitioner': HTTP 403 '<!DOCTYPE html><html lang="en-us" dir="ltr"><head><title>Just a moment...</title'
+   note: jobs.json 'advanced practice provider': HTTP 403 '<!DOCTYPE html><html lang="en-us" dir="ltr"><head><title>Just a moment...</title'
+   note: jobs.json 'APRN': HTTP 403 '<!DOCTYPE html><html lang="en-us" dir="ltr"><head><title>Just a moment...</title'
+   note: jobs.json 'PICU': HTTP 403 '<!DOCTYPE html><html lang="en-us" dir="ltr"><head><title>Just a moment...</title'
+   note: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html lang="en-us" dir="ltr"><head><title>Just a moment...</title'
+   note: html search 'nurse practitioner': HTTP 403 Just a moment...
+   note: html search 'pediatric nurse practitioner': HTTP 403 Just a moment...
+   note: sniff: HTTP 403 for https://careers.pennmedicine.org/: bot challenge (Cloudflare)
+   note: sniff: HTTP 403 for https://careers.pennmedicine.org/search/nurse-practitioner-physician-assistant/jobs: bot challenge (Cloudflare)
+   note: sniff: HTTP 403 for https://careers.pennmedicine.org/: bot challenge (Cloudflare)
+   note: generic fallback failed: AdapterError: generic: no page reachable: 403 https://careers.pennmedicine.org/search/nurse-practitioner-physician-assistant/jobs; playwright 403 https://careers.pennmedicine.org/search/nurse-practitioner-physician
+   (no candidate jobs)
+
+## lehigh-valley-hospital-hazleton  [workday / workday / api]  status=ok
+   note: 8 low-priority listings deferred (detail budget/time); they are picked up on later runs
+   * [2/peds_ed] Emergency Medicine Certified Nurse Practitioner | posted 2026-09-10 | https://lvhn.wd1.myworkdayjobs.com/LVHN/job/Hazleton-PA/Emergency-Medicine-Certified-Nurse-Practitioner_JR141404-1  (known)
+   first board listings: Neonatology Certified Registered Nurse Practitioner (Allentown, PA) || Endocrinology Certified Registered Nurse Practitioner (Allentown, PA) || Emergency Medicine Certified Nurse Practitioner (Hazleton, PA)
+
+## lehigh-valley-hospital-pocono-east-stroudsburg  [workday / workday / api]  status=ok
+   note: 8 low-priority listings deferred (detail budget/time); they are picked up on later runs
+   (no candidate jobs)
+   first board listings: Neonatology Certified Registered Nurse Practitioner (Allentown, PA) || Endocrinology Certified Registered Nurse Practitioner (Allentown, PA) || Emergency Medicine Certified Nurse Practitioner (Hazleton, PA)
+
+## lehigh-valley-reilly-childrens-allentown  [workday / workday / api]  status=ok
+   note: 8 low-priority listings deferred (detail budget/time); they are picked up on later runs
+   * [2/nicu] Neonatology Certified Registered Nurse Practitioner | posted 2026-03-09 | https://lvhn.wd1.myworkdayjobs.com/LVHN/job/Allentown-PA/Neonatology-Certified-Registered-Nurse-Practitioner_JR131453  (known)
+   first board listings: Neonatology Certified Registered Nurse Practitioner (Allentown, PA) || Endocrinology Certified Registered Nurse Practitioner (Allentown, PA) || Emergency Medicine Certified Nurse Practitioner (Hazleton, PA)
+
+## lewisgale-medical-center-salem  [careersite / careersite / ]  status=error
+   ERROR: AdapterError: careersite: every jobs.json search failed in the browser: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'; html search 'nurse practitioner': HTTP 403 Attention Required! | Cloudflare; html search 'pediatric nurse practitioner': HTTP 403 Attention Required! | Cloudflare
+   note: jobs.json 'nurse practitioner': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'pediatric nurse practitioner': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'advanced practice provider': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'APRN': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'PICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: html search 'nurse practitioner': HTTP 403 Attention Required! | Cloudflare
+   note: html search 'pediatric nurse practitioner': HTTP 403 Attention Required! | Cloudflare
+   note: sniff: HTTP 403 for https://careers.hcahealthcare.com/search/jobs: bot challenge (Cloudflare)
+   note: sniff: HTTP 403 for https://careers.hcahealthcare.com/pages/catholic-medical-center?bid=5260: bot challenge (Cloudflare)
+   note: generic fallback failed: AdapterError: generic: no page reachable: 403 https://careers.hcahealthcare.com/search/jobs?q=nurse+practitioner&location=Manchester%2C+NH%2C+United+States; playwright 403 https://careers.hcahealthcare.com/search/j
+   (no candidate jobs)
+
+## mainegeneral-medical-center-augusta  [workday / workday / ]  status=error
+   ERROR: AdapterError: workday: cannot derive host/tenant from ats_config or careers URLs
+   note: sniff: page links to Workday mainegeneral.wd5 site MaineGeneralCareers
+   note: sniff: followed careers link https://www.mainegeneral.org/careers/
+   note: sniff fallback failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: workday failed: AdapterError: workday: cannot derive host/tenant from ats_config or careers URLs
+   note: generic: pages reachable but no NP/APP job links found: playwright 200 https://www.mainegeneral.org/?q=nurse+practitioner; playwright 200 https://www.mainegeneral.org/?keywords=nurse+practitioner; playwright 200 https://www.mainegeneral.org/?keyword=nurse+practitioner
+   (no candidate jobs)
+
+## mary-washington-fredericksburg  [generic->workday / workday / ]  status=error
+   ERROR: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: sniff: HTTP 403 for https://www.marywashingtonhealthcare.com/careers/: bot challenge (Cloudflare)
+   note: sniff: page links to Workday marywashingtonhealthcare.wd5 site Externalcareers
+   note: facet discovery failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: traceback: -np-job-board/peds-np-job-board/scraper/pipeline.py", line 270, in run_board
+    listings = adapter.search(opts.keywords)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/peds-np-job-board/peds-np-job-board/scraper/adapters/workday.py", line 143, in search
+    data =
+   (no candidate jobs)
+
+## mass-general-for-children-boston  [workday / workday / api]  status=ok
+   note: 30 low-priority listings deferred (detail budget/time); they are picked up on later runs
+   * [3/nicu] NP/PA - Neonatology - MGH | posted 2026-08-06 | https://massgeneralbrigham.wd1.myworkdayjobs.com/MGBExternal/job/Boston-MA/NP-PA---Neonatology---MGH_RQ4072861  (known)
+   * [3/mixed] NP - Pediatric Endocrinology | posted 2026-08-24 | https://massgeneralbrigham.wd1.myworkdayjobs.com/MGBExternal/job/32-Fruit-Street-Boston-Yawkey-Center/NP---Pediatric-Endocrinology_RQ4077372  (known)
+   first board listings: Nurse Practitioner, Endoscopy (Salem-MA) || Nurse Practitioner, Family Medicine (South Deerfield-MA) || Nurse Practitioner - Hematology BWH (Boston-MA)
+
+## mission-childrens-asheville  [careersite / careersite / ]  status=error
+   ERROR: AdapterError: careersite: every jobs.json search failed in the browser: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'; html search 'nurse practitioner': HTTP 403 Attention Required! | Cloudflare; html search 'pediatric nurse practitioner': HTTP 403 Attention Required! | Cloudflare
+   note: jobs.json 'nurse practitioner': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'pediatric nurse practitioner': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'advanced practice provider': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'APRN': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'PICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: html search 'nurse practitioner': HTTP 403 Attention Required! | Cloudflare
+   note: html search 'pediatric nurse practitioner': HTTP 403 Attention Required! | Cloudflare
+   note: sniff: HTTP 403 for https://careers.hcahealthcare.com/search/jobs: bot challenge (Cloudflare)
+   note: sniff: HTTP 403 for https://careers.hcahealthcare.com/pages/catholic-medical-center?bid=5260: bot challenge (Cloudflare)
+   note: generic fallback failed: AdapterError: generic: no page reachable: 403 https://careers.hcahealthcare.com/search/jobs?q=nurse+practitioner&location=Manchester%2C+NH%2C+United+States; playwright 403 https://careers.hcahealthcare.com/search/j
+   (no candidate jobs)
+
+## musc-columbia-northeast-columbia  [workday / workday / ]  status=error
+   ERROR: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: traceback: -np-job-board/peds-np-job-board/scraper/pipeline.py", line 270, in run_board
+    listings = adapter.search(opts.keywords)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/peds-np-job-board/peds-np-job-board/scraper/adapters/workday.py", line 143, in search
+    data =
+   note: sniff: page links to Workday musc.wd1 site MUSC
+   note: sniff: page links to Workday musc.wd1 site MUSC
+   note: sniff: followed careers link https://musc.career-pages.com/
+   note: workday failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: generic: pages reachable but no NP/APP job links found: playwright 200 https://musc.wd1.myworkdayjobs.com/MUSC?q=nurse%20practitioner; playwright 200 https://musc.wd1.myworkdayjobs.com/MUSC?keywords=nurse+practitioner; playwright 200 https://musc.wd1.myworkdayjobs.com/MUSC?keyword=nurse+practitioner
+   (no candidate jobs)
+
+## musc-florence-florence  [workday / workday / ]  status=error
+   ERROR: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: traceback: -np-job-board/peds-np-job-board/scraper/pipeline.py", line 270, in run_board
+    listings = adapter.search(opts.keywords)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/peds-np-job-board/peds-np-job-board/scraper/adapters/workday.py", line 143, in search
+    data =
+   note: sniff: page links to Workday musc.wd1 site MUSC
+   note: sniff: page links to Workday musc.wd1 site MUSC
+   note: sniff: followed careers link https://musc.career-pages.com/
+   note: workday failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: generic: pages reachable but no NP/APP job links found: playwright 200 https://musc.wd1.myworkdayjobs.com/MUSC?q=nurse%20practitioner; playwright 200 https://musc.wd1.myworkdayjobs.com/MUSC?keywords=nurse+practitioner; playwright 200 https://musc.wd1.myworkdayjobs.com/MUSC?keyword=nurse+practitioner
+   (no candidate jobs)
+
+## musc-kershaw-camden  [workday / workday / ]  status=error
+   ERROR: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: traceback: -np-job-board/peds-np-job-board/scraper/pipeline.py", line 270, in run_board
+    listings = adapter.search(opts.keywords)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/peds-np-job-board/peds-np-job-board/scraper/adapters/workday.py", line 143, in search
+    data =
+   note: sniff: page links to Workday musc.wd1 site MUSC
+   note: sniff: page links to Workday musc.wd1 site MUSC
+   note: sniff: followed careers link https://musc.career-pages.com/
+   note: workday failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: generic: pages reachable but no NP/APP job links found: playwright 200 https://musc.wd1.myworkdayjobs.com/MUSC?q=nurse%20practitioner; playwright 200 https://musc.wd1.myworkdayjobs.com/MUSC?keywords=nurse+practitioner; playwright 200 https://musc.wd1.myworkdayjobs.com/MUSC?keyword=nurse+practitioner
+   (no candidate jobs)
+
+## musc-lancaster-lancaster  [workday / workday / ]  status=error
+   ERROR: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: traceback: -np-job-board/peds-np-job-board/scraper/pipeline.py", line 270, in run_board
+    listings = adapter.search(opts.keywords)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/peds-np-job-board/peds-np-job-board/scraper/adapters/workday.py", line 143, in search
+    data =
+   note: sniff: page links to Workday musc.wd1 site MUSC
+   note: sniff: page links to Workday musc.wd1 site MUSC
+   note: sniff: followed careers link https://musc.career-pages.com/
+   note: workday failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: generic: pages reachable but no NP/APP job links found: playwright 200 https://musc.wd1.myworkdayjobs.com/MUSC?q=nurse%20practitioner; playwright 200 https://musc.wd1.myworkdayjobs.com/MUSC?keywords=nurse+practitioner; playwright 200 https://musc.wd1.myworkdayjobs.com/MUSC?keyword=nurse+practitioner
+   (no candidate jobs)
+
+## musc-orangeburg-orangeburg  [workday / workday / ]  status=error
+   ERROR: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: traceback: -np-job-board/peds-np-job-board/scraper/pipeline.py", line 270, in run_board
+    listings = adapter.search(opts.keywords)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/peds-np-job-board/peds-np-job-board/scraper/adapters/workday.py", line 143, in search
+    data =
+   note: sniff: page links to Workday musc.wd1 site MUSC
+   note: sniff: page links to Workday musc.wd1 site MUSC
+   note: sniff: followed careers link https://musc.career-pages.com/
+   note: workday failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: generic: pages reachable but no NP/APP job links found: playwright 200 https://musc.wd1.myworkdayjobs.com/MUSC?q=nurse%20practitioner; playwright 200 https://musc.wd1.myworkdayjobs.com/MUSC?keywords=nurse+practitioner; playwright 200 https://musc.wd1.myworkdayjobs.com/MUSC?keyword=nurse+practitioner
+   (no candidate jobs)
+
+## musc-shawn-jenkins-childrens-charleston  [workday / workday / ]  status=error
+   ERROR: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: traceback: -np-job-board/peds-np-job-board/scraper/pipeline.py", line 270, in run_board
+    listings = adapter.search(opts.keywords)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/peds-np-job-board/peds-np-job-board/scraper/adapters/workday.py", line 143, in search
+    data =
+   note: sniff: page links to Workday musc.wd1 site MUSC
+   note: sniff: page links to Workday musc.wd1 site MUSC
+   note: sniff: followed careers link https://musc.career-pages.com/
+   note: workday failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: generic: pages reachable but no NP/APP job links found: playwright 200 https://musc.wd1.myworkdayjobs.com/MUSC?q=nurse%20practitioner; playwright 200 https://musc.wd1.myworkdayjobs.com/MUSC?keywords=nurse+practitioner; playwright 200 https://musc.wd1.myworkdayjobs.com/MUSC?keyword=nurse+practitioner
+   (no candidate jobs)
+
+## musc-university-medical-center-charleston  [workday / workday / ]  status=error
+   ERROR: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: traceback: -np-job-board/peds-np-job-board/scraper/pipeline.py", line 270, in run_board
+    listings = adapter.search(opts.keywords)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/peds-np-job-board/peds-np-job-board/scraper/adapters/workday.py", line 143, in search
+    data =
+   note: sniff: page links to Workday musc.wd1 site MUSC
+   note: sniff: page links to Workday musc.wd1 site MUSC
+   note: sniff: followed careers link https://musc.career-pages.com/
+   note: workday failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: generic: pages reachable but no NP/APP job links found: playwright 200 https://musc.wd1.myworkdayjobs.com/MUSC?q=nurse%20practitioner; playwright 200 https://musc.wd1.myworkdayjobs.com/MUSC?keywords=nurse+practitioner; playwright 200 https://musc.wd1.myworkdayjobs.com/MUSC?keyword=nurse+practitioner
+   (no candidate jobs)
+
+## newton-wellesley-hospital-newton  [workday / workday / api]  status=ok
+   note: 30 low-priority listings deferred (detail budget/time); they are picked up on later runs
+   (no candidate jobs)
+   first board listings: Nurse Practitioner, Endoscopy (Salem-MA) || Nurse Practitioner, Family Medicine (South Deerfield-MA) || Nurse Practitioner - Hematology BWH (Boston-MA)
+
+## penn-medicine-princeton-medical-center-plainsboro  [careersite / careersite / ]  status=error
+   ERROR: AdapterError: careersite: every jobs.json search failed in the browser: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html lang="en-us" dir="ltr"><head><title>Just a moment...</title'; html search 'nurse practitioner': HTTP 403 Just a moment...; html search 'pediatric nurse practitioner': HTTP 403 Just a moment...
+   note: jobs.json 'nurse practitioner': HTTP 403 '<!DOCTYPE html><html lang="en-us" dir="ltr"><head><title>Just a moment...</title'
+   note: jobs.json 'pediatric nurse practitioner': HTTP 403 '<!DOCTYPE html><html lang="en-us" dir="ltr"><head><title>Just a moment...</title'
+   note: jobs.json 'advanced practice provider': HTTP 403 '<!DOCTYPE html><html lang="en-us" dir="ltr"><head><title>Just a moment...</title'
+   note: jobs.json 'APRN': HTTP 403 '<!DOCTYPE html><html lang="en-us" dir="ltr"><head><title>Just a moment...</title'
+   note: jobs.json 'PICU': HTTP 403 '<!DOCTYPE html><html lang="en-us" dir="ltr"><head><title>Just a moment...</title'
+   note: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html lang="en-us" dir="ltr"><head><title>Just a moment...</title'
+   note: html search 'nurse practitioner': HTTP 403 Just a moment...
+   note: html search 'pediatric nurse practitioner': HTTP 403 Just a moment...
+   note: sniff: HTTP 403 for https://careers.pennmedicine.org/: bot challenge (Cloudflare)
+   note: sniff: HTTP 403 for https://careers.pennmedicine.org/search/nurse-practitioner-physician-assistant/jobs: bot challenge (Cloudflare)
+   note: sniff: HTTP 403 for https://careers.pennmedicine.org/: bot challenge (Cloudflare)
+   note: generic fallback failed: AdapterError: generic: no page reachable: 403 https://careers.pennmedicine.org/search/nurse-practitioner-physician-assistant/jobs; playwright 403 https://careers.pennmedicine.org/search/nurse-practitioner-physician
+   (no candidate jobs)
+
+## pennsylvania-hospital-philadelphia  [careersite / careersite / ]  status=error
+   ERROR: AdapterError: careersite: every jobs.json search failed in the browser: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html lang="en-us" dir="ltr"><head><title>Just a moment...</title'; html search 'nurse practitioner': HTTP 403 Just a moment...; html search 'pediatric nurse practitioner': HTTP 403 Just a moment...
+   note: jobs.json 'nurse practitioner': HTTP 403 '<!DOCTYPE html><html lang="en-us" dir="ltr"><head><title>Just a moment...</title'
+   note: jobs.json 'pediatric nurse practitioner': HTTP 403 '<!DOCTYPE html><html lang="en-us" dir="ltr"><head><title>Just a moment...</title'
+   note: jobs.json 'advanced practice provider': HTTP 403 '<!DOCTYPE html><html lang="en-us" dir="ltr"><head><title>Just a moment...</title'
+   note: jobs.json 'APRN': HTTP 403 '<!DOCTYPE html><html lang="en-us" dir="ltr"><head><title>Just a moment...</title'
+   note: jobs.json 'PICU': HTTP 403 '<!DOCTYPE html><html lang="en-us" dir="ltr"><head><title>Just a moment...</title'
+   note: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html lang="en-us" dir="ltr"><head><title>Just a moment...</title'
+   note: html search 'nurse practitioner': HTTP 403 Just a moment...
+   note: html search 'pediatric nurse practitioner': HTTP 403 Just a moment...
+   note: sniff: HTTP 403 for https://careers.pennmedicine.org/: bot challenge (Cloudflare)
+   note: sniff: HTTP 403 for https://careers.pennmedicine.org/search/nurse-practitioner-physician-assistant/jobs: bot challenge (Cloudflare)
+   note: sniff: HTTP 403 for https://careers.pennmedicine.org/: bot challenge (Cloudflare)
+   note: generic fallback failed: AdapterError: generic: no page reachable: 403 https://careers.pennmedicine.org/search/nurse-practitioner-physician-assistant/jobs; playwright 403 https://careers.pennmedicine.org/search/nurse-practitioner-physician
+   (no candidate jobs)
+
+## portsmouth-regional-portsmouth  [careersite / careersite / ]  status=error
+   ERROR: AdapterError: careersite: every jobs.json search failed in the browser: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'; html search 'nurse practitioner': HTTP 403 Attention Required! | Cloudflare; html search 'pediatric nurse practitioner': HTTP 403 Attention Required! | Cloudflare
+   note: jobs.json 'nurse practitioner': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'pediatric nurse practitioner': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'advanced practice provider': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'APRN': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'PICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: html search 'nurse practitioner': HTTP 403 Attention Required! | Cloudflare
+   note: html search 'pediatric nurse practitioner': HTTP 403 Attention Required! | Cloudflare
+   note: sniff: HTTP 403 for https://careers.hcahealthcare.com/search/jobs: bot challenge (Cloudflare)
+   note: sniff: HTTP 403 for https://careers.hcahealthcare.com/pages/catholic-medical-center?bid=5260: bot challenge (Cloudflare)
+   note: generic fallback failed: AdapterError: generic: no page reachable: 403 https://careers.hcahealthcare.com/search/jobs?q=nurse+practitioner&location=Manchester%2C+NH%2C+United+States; playwright 403 https://careers.hcahealthcare.com/search/j
+   (no candidate jobs)
+
+## reston-hospital-center-reston  [careersite / careersite / ]  status=error
+   ERROR: AdapterError: careersite: every jobs.json search failed in the browser: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'; html search 'nurse practitioner': HTTP 403 Attention Required! | Cloudflare; html search 'pediatric nurse practitioner': HTTP 403 Attention Required! | Cloudflare
+   note: jobs.json 'nurse practitioner': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'pediatric nurse practitioner': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'advanced practice provider': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'APRN': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'PICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: html search 'nurse practitioner': HTTP 403 Attention Required! | Cloudflare
+   note: html search 'pediatric nurse practitioner': HTTP 403 Attention Required! | Cloudflare
+   note: sniff: HTTP 403 for https://careers.hcahealthcare.com/search/jobs: bot challenge (Cloudflare)
+   note: sniff: HTTP 403 for https://careers.hcahealthcare.com/pages/catholic-medical-center?bid=5260: bot challenge (Cloudflare)
+   note: generic fallback failed: AdapterError: generic: no page reachable: 403 https://careers.hcahealthcare.com/search/jobs?q=nurse+practitioner&location=Manchester%2C+NH%2C+United+States; playwright 403 https://careers.hcahealthcare.com/search/j
+   (no candidate jobs)
+
+## richmond-university-medical-center-staten-island  [workday / workday / ]  status=error
+   ERROR: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: facet discovery failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: traceback: -np-job-board/peds-np-job-board/scraper/pipeline.py", line 270, in run_board
+    listings = adapter.search(opts.keywords)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/peds-np-job-board/peds-np-job-board/scraper/adapters/workday.py", line 143, in search
+    data =
+   note: sniff: page links to Workday rumcsi.wd5 site RUMC
+   note: sniff: followed careers link https://rumcsi.org/careers/
+   note: workday failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: generic: pages reachable but no NP/APP job links found: playwright 200 https://rumcsi.wd5.myworkdayjobs.com/RUMC?q=nurse%20practitioner; playwright 200 https://rumcsi.wd5.myworkdayjobs.com/RUMC?keywords=nurse+practitioner; playwright 200 https://rumcsi.wd5.myworkdayjobs.com/RUMC?keyword=nurse+practi
+   (no candidate jobs)
+
+## riverside-regional-newport-news  [workday / workday / api]  status=ok
+   (no candidate jobs)
+   first board listings: Advanced Practice Provider (Nurse Practitioner (NP) / Physician Assistant (PA) Trauma & Acute Care Surgery (ACS) / Surgical Intensive Care Unit (SICU) – Hampton, Virginia (2 Locations) || Advanced Practice Provider - Riverside Women's Health - Newport News, Virginia (Womens Healthcare Associates - Newport News, Virginia) || Advanced Practice Provider for Pulmonary / Critical Care – Riverside Pulmonary Specialists – Newport News, Virginia (Riverside Regional Medical Center - Medical Office Building - Newport News, Virginia)
+
+## rochester-general-hospital-rochester  [workday / workday / ]  status=error
+   ERROR: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: facet discovery failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: traceback: -np-job-board/peds-np-job-board/scraper/pipeline.py", line 270, in run_board
+    listings = adapter.search(opts.keywords)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/peds-np-job-board/peds-np-job-board/scraper/adapters/workday.py", line 143, in search
+    data =
+   note: sniff: HTTP 404 for https://www.rochesterregional.org/locations/rochester-general-hospital: <!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width"/><meta name="next-head-count" content="2"/><link 
+   note: workday failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: generic: pages reachable but no NP/APP job links found: playwright 200 https://rrhs.wd5.myworkdayjobs.com/RRH?q=nurse%20practitioner; playwright 200 https://rrhs.wd5.myworkdayjobs.com/RRH?keywords=nurse+practitioner; playwright 200 https://rrhs.wd5.myworkdayjobs.com/RRH?keyword=nurse+practitioner
+   (no candidate jobs)
+
+## roswell-park-buffalo  [workday / workday / ]  status=error
+   ERROR: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: facet discovery failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: traceback: -np-job-board/peds-np-job-board/scraper/pipeline.py", line 270, in run_board
+    listings = adapter.search(opts.keywords)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/peds-np-job-board/peds-np-job-board/scraper/adapters/workday.py", line 143, in search
+    data =
+   note: sniff: page links to Workday roswellpark.wd5 site ExternalCareers
+   note: sniff: followed careers link https://www.roswellpark.org/careers
+   note: workday failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: generic: pages reachable but no NP/APP job links found: playwright 200 https://roswellpark.wd5.myworkdayjobs.com/ExternalCareers?q=nurse%20practitioner; playwright 200 https://roswellpark.wd5.myworkdayjobs.com/ExternalCareers?keywords=nurse+practitioner; playwright 200 https://roswellpark.wd5.mywork
+   (no candidate jobs)
+
+## saint-francis-hartford  [workday / workday / ]  status=error
+   ERROR: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: facet discovery failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: traceback: -np-job-board/peds-np-job-board/scraper/pipeline.py", line 270, in run_board
+    listings = adapter.search(opts.keywords)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/peds-np-job-board/peds-np-job-board/scraper/adapters/workday.py", line 143, in search
+    data =
+   note: sniff: page links to Workday trinityhealth.wd1 site Jobs
+   note: sniff: recognized phenom front end on jobs.trinity-health.org
+   note: sniff: followed careers link https://jobs.trinity-health.org/newengland/
+   note: sniff fallback failed: AdapterError: search 'APRN': HTTP 404 for https://jobs.trinity-health.org/us/en/search-results?keywords=APRN: <!doctype html>  <!--[if lt IE 7]>      <html class="lt-ie7" lang="en"> <![endif]-->  <!--[if IE 7]>    
+   note: workday failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: generic: pages reachable but no NP/APP job links found: playwright 200 https://trinityhealth.wd1.myworkdayjobs.com/Jobs?q=nurse%20practitioner; playwright 200 https://trinityhealth.wd1.myworkdayjobs.com/Jobs?keywords=nurse+practitioner; playwright 200 https://trinityhealth.wd1.myworkdayjobs.com/Jobs
+   (no candidate jobs)
+
+## saint-francis-hospital-wilmington  [workday / workday / ]  status=error
+   ERROR: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: facet discovery failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: traceback: -np-job-board/peds-np-job-board/scraper/pipeline.py", line 270, in run_board
+    listings = adapter.search(opts.keywords)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/peds-np-job-board/peds-np-job-board/scraper/adapters/workday.py", line 143, in search
+    data =
+   note: sniff: page links to Workday trinityhealth.wd1 site Jobs
+   note: sniff: recognized phenom front end on jobs.trinity-health.org
+   note: sniff: followed careers link https://jobs.trinity-health.org/newengland/
+   note: sniff fallback failed: AdapterError: search 'APRN': HTTP 404 for https://jobs.trinity-health.org/us/en/search-results?keywords=APRN: <!doctype html>  <!--[if lt IE 7]>      <html class="lt-ie7" lang="en"> <![endif]-->  <!--[if IE 7]>    
+   note: workday failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: generic: pages reachable but no NP/APP job links found: playwright 200 https://trinityhealth.wd1.myworkdayjobs.com/Jobs?q=nurse%20practitioner; playwright 200 https://trinityhealth.wd1.myworkdayjobs.com/Jobs?keywords=nurse+practitioner; playwright 200 https://trinityhealth.wd1.myworkdayjobs.com/Jobs
+   (no candidate jobs)
+
+## saint-marys-waterbury  [workday / workday / ]  status=error
+   ERROR: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: facet discovery failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: traceback: -np-job-board/peds-np-job-board/scraper/pipeline.py", line 270, in run_board
+    listings = adapter.search(opts.keywords)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/peds-np-job-board/peds-np-job-board/scraper/adapters/workday.py", line 143, in search
+    data =
+   note: sniff: page links to Workday trinityhealth.wd1 site Jobs
+   note: sniff: recognized phenom front end on jobs.trinity-health.org
+   note: sniff: followed careers link https://jobs.trinity-health.org/newengland/
+   note: sniff fallback failed: AdapterError: search 'APRN': HTTP 404 for https://jobs.trinity-health.org/us/en/search-results?keywords=APRN: <!doctype html>  <!--[if lt IE 7]>      <html class="lt-ie7" lang="en"> <![endif]-->  <!--[if IE 7]>    
+   note: workday failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: generic: pages reachable but no NP/APP job links found: playwright 200 https://trinityhealth.wd1.myworkdayjobs.com/Jobs?q=nurse%20practitioner; playwright 200 https://trinityhealth.wd1.myworkdayjobs.com/Jobs?keywords=nurse+practitioner; playwright 200 https://trinityhealth.wd1.myworkdayjobs.com/Jobs
+   (no candidate jobs)
+
+## salem-hospital-salem  [workday / workday / api]  status=ok
+   note: 30 low-priority listings deferred (detail budget/time); they are picked up on later runs
+   (no candidate jobs)
+   first board listings: Nurse Practitioner, Endoscopy (Salem-MA) || Nurse Practitioner, Family Medicine (South Deerfield-MA) || Nurse Practitioner - Hematology BWH (Boston-MA)
+
+## saratoga-hospital-saratoga-springs  [workday / workday / ]  status=error
+   ERROR: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: facet discovery failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: traceback: -np-job-board/peds-np-job-board/scraper/pipeline.py", line 270, in run_board
+    listings = adapter.search(opts.keywords)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/peds-np-job-board/peds-np-job-board/scraper/adapters/workday.py", line 143, in search
+    data =
+   note: sniff: page links to Workday albanymed.wd5 site Albany_Med_System_Career_Site
+   note: sniff: followed careers link https://www.albanymed.org/careers/
+   note: sniff fallback failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: workday failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: generic: pages reachable but no NP/APP job links found: playwright 200 https://albanymed.wd5.myworkdayjobs.com/Albany_Med?q=nurse%20practitioner; playwright 200 https://albanymed.wd5.myworkdayjobs.com/Albany_Med?keywords=nurse+practitioner; playwright 200 https://albanymed.wd5.myworkdayjobs.com/Alba
+   (no candidate jobs)
+
+## south-shore-hospital-weymouth  [workday / workday / ]  status=error
+   ERROR: AdapterError: workday: cannot derive host/tenant from ats_config or careers URLs
+   note: sniff: page links to Workday southshorehealth.wd5 site SSH_Careers
+   note: sniff fallback failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: workday failed: AdapterError: workday: cannot derive host/tenant from ats_config or careers URLs
+   note: generic: pages reachable but no NP/APP job links found: playwright 200 https://careers.southshorehealth.org?q=nurse+practitioner; playwright 200 https://careers.southshorehealth.org?keywords=nurse+practitioner; playwright 200 https://careers.southshorehealth.org?keyword=nurse+practitioner
+   (no candidate jobs)
+
+## spartanburg-medical-center-spartanburg  [generic / generic / playwright]  status=ok
+   note: sniff: HTTP 403 for https://www.spartanburgregional.com/careers: bot challenge (Cloudflare)
+   note: detail failed https://www.spartanburgregional.com/careers/physician-career-opportunities: FetchError: HTTP 403 for https://www.spartanburgregional.com/careers/physician-career-opportunities: playwright
+   (no candidate jobs)
+   first board listings: Physician, NP, PA, CRNA & CAA Career Opportunities ()
+
+## spotsylvania-regional-fredericksburg  [careersite / careersite / ]  status=error
+   ERROR: AdapterError: careersite: every jobs.json search failed in the browser: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'; html search 'nurse practitioner': HTTP 403 Attention Required! | Cloudflare; html search 'pediatric nurse practitioner': HTTP 403 Attention Required! | Cloudflare
+   note: jobs.json 'nurse practitioner': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'pediatric nurse practitioner': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'advanced practice provider': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'APRN': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'PICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: html search 'nurse practitioner': HTTP 403 Attention Required! | Cloudflare
+   note: html search 'pediatric nurse practitioner': HTTP 403 Attention Required! | Cloudflare
+   note: sniff: HTTP 403 for https://careers.hcahealthcare.com/search/jobs: bot challenge (Cloudflare)
+   note: sniff: HTTP 403 for https://careers.hcahealthcare.com/pages/catholic-medical-center?bid=5260: bot challenge (Cloudflare)
+   note: generic fallback failed: AdapterError: generic: no page reachable: 403 https://careers.hcahealthcare.com/search/jobs?q=nurse+practitioner&location=Manchester%2C+NH%2C+United+States; playwright 403 https://careers.hcahealthcare.com/search/j
+   (no candidate jobs)
+
+## st-josephs-hospital-syracuse  [workday / workday / ]  status=error
+   ERROR: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: facet discovery failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: traceback: -np-job-board/peds-np-job-board/scraper/pipeline.py", line 270, in run_board
+    listings = adapter.search(opts.keywords)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/peds-np-job-board/peds-np-job-board/scraper/adapters/workday.py", line 143, in search
+    data =
+   note: sniff: page links to Workday trinityhealth.wd1 site Jobs
+   note: sniff: recognized phenom front end on jobs.trinity-health.org
+   note: sniff: followed careers link https://jobs.trinity-health.org/newengland/
+   note: sniff fallback failed: AdapterError: search 'APRN': HTTP 404 for https://jobs.trinity-health.org/us/en/search-results?keywords=APRN: <!doctype html>  <!--[if lt IE 7]>      <html class="lt-ie7" lang="en"> <![endif]-->  <!--[if IE 7]>    
+   note: workday failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: generic: pages reachable but no NP/APP job links found: playwright 200 https://trinityhealth.wd1.myworkdayjobs.com/Jobs?q=nurse%20practitioner; playwright 200 https://trinityhealth.wd1.myworkdayjobs.com/Jobs?keywords=nurse+practitioner; playwright 200 https://trinityhealth.wd1.myworkdayjobs.com/Jobs
+   (no candidate jobs)
+
+## st-lukes-anderson-campus-easton  [workday / workday / api]  status=ok
+   (no candidate jobs)
+   first board listings: Nurse Practitioner or Physician Assistant - Hospitalist (10 Locations) || Physician Assistant or Nurse Practitioner - Dermatology (Monroe) (East Stroudsburg, PA - 125 Smithfield Lane) || Nurse Practitioner or Physician Assistant - Women's Health (2 Locations)
+
+## st-lukes-childrens-bethlehem  [workday / workday / api]  status=ok
+   * [2/peds_specialty_outpatient] Nurse Practitioner or Physician Assistant - Pediatric Gastroenterology (Center Valley) | posted 2026-09-30 | https://sluhn.wd1.myworkdayjobs.com/SLUHNAP/job/Center-Valley-PA---5425-Lanark-Road/Nurse-Practitioner-or-Physician-Assistant---Pediatric-Gastroenterology--Center-Valley-_R140849  (known)
+   * [2/peds_primary_care] Nurse Practitioner or Physician Assistant - Pediatrics Primary Care (Anderson) | posted 2026-10-14 | https://sluhn.wd1.myworkdayjobs.com/SLUHNAP/job/Easton-PA---2200-St-Lukes-Blvd/Nurse-Practitioner-or-Physician-Assistant---Pediatrics-Primary-Care--Anderson-_R143196-1  (known)
+   first board listings: Nurse Practitioner or Physician Assistant - Hospitalist (10 Locations) || Physician Assistant or Nurse Practitioner - Dermatology (Monroe) (East Stroudsburg, PA - 125 Smithfield Lane) || Nurse Practitioner or Physician Assistant - Women's Health (2 Locations)
+
+## st-lukes-grand-view-sellersville  [workday / workday / api]  status=ok
+   (no candidate jobs)
+   first board listings: Nurse Practitioner or Physician Assistant - Hospitalist (10 Locations) || Physician Assistant or Nurse Practitioner - Dermatology (Monroe) (East Stroudsburg, PA - 125 Smithfield Lane) || Nurse Practitioner or Physician Assistant - Women's Health (2 Locations)
+
+## st-mary-medical-center-langhorne  [workday / workday / ]  status=error
+   ERROR: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: facet discovery failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: traceback: -np-job-board/peds-np-job-board/scraper/pipeline.py", line 270, in run_board
+    listings = adapter.search(opts.keywords)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/peds-np-job-board/peds-np-job-board/scraper/adapters/workday.py", line 143, in search
+    data =
+   note: sniff: page links to Workday trinityhealth.wd1 site Jobs
+   note: sniff: recognized phenom front end on jobs.trinity-health.org
+   note: sniff: followed careers link https://jobs.trinity-health.org/newengland/
+   note: sniff fallback failed: AdapterError: search 'APRN': HTTP 404 for https://jobs.trinity-health.org/us/en/search-results?keywords=APRN: <!doctype html>  <!--[if lt IE 7]>      <html class="lt-ie7" lang="en"> <![endif]-->  <!--[if IE 7]>    
+   note: workday failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: generic: pages reachable but no NP/APP job links found: playwright 200 https://trinityhealth.wd1.myworkdayjobs.com/Jobs?q=nurse%20practitioner; playwright 200 https://trinityhealth.wd1.myworkdayjobs.com/Jobs?keywords=nurse+practitioner; playwright 200 https://trinityhealth.wd1.myworkdayjobs.com/Jobs
+   (no candidate jobs)
+
+## st-peters-hospital-albany  [workday / workday / ]  status=error
+   ERROR: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: facet discovery failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: traceback: -np-job-board/peds-np-job-board/scraper/pipeline.py", line 270, in run_board
+    listings = adapter.search(opts.keywords)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/peds-np-job-board/peds-np-job-board/scraper/adapters/workday.py", line 143, in search
+    data =
+   note: sniff: page links to Workday trinityhealth.wd1 site Jobs
+   note: sniff: recognized phenom front end on jobs.trinity-health.org
+   note: sniff: followed careers link https://jobs.trinity-health.org/newengland/
+   note: sniff fallback failed: AdapterError: search 'APRN': HTTP 404 for https://jobs.trinity-health.org/us/en/search-results?keywords=APRN: <!doctype html>  <!--[if lt IE 7]>      <html class="lt-ie7" lang="en"> <![endif]-->  <!--[if IE 7]>    
+   note: workday failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: generic: pages reachable but no NP/APP job links found: playwright 200 https://trinityhealth.wd1.myworkdayjobs.com/Jobs?q=nurse%20practitioner; playwright 200 https://trinityhealth.wd1.myworkdayjobs.com/Jobs?keywords=nurse+practitioner; playwright 200 https://trinityhealth.wd1.myworkdayjobs.com/Jobs
+   (no candidate jobs)
+
+## stafford-hospital-stafford  [generic->workday / workday / ]  status=error
+   ERROR: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: sniff: HTTP 403 for https://www.marywashingtonhealthcare.com/careers/: bot challenge (Cloudflare)
+   note: sniff: page links to Workday marywashingtonhealthcare.wd5 site Externalcareers
+   note: facet discovery failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: traceback: -np-job-board/peds-np-job-board/scraper/pipeline.py", line 270, in run_board
+    listings = adapter.search(opts.keywords)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/peds-np-job-board/peds-np-job-board/scraper/adapters/workday.py", line 143, in search
+    data =
+   (no candidate jobs)
+
+## stonesprings-hospital-dulles  [careersite / careersite / ]  status=error
+   ERROR: AdapterError: careersite: every jobs.json search failed in the browser: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'; html search 'nurse practitioner': HTTP 403 Attention Required! | Cloudflare; html search 'pediatric nurse practitioner': HTTP 403 Attention Required! | Cloudflare
+   note: jobs.json 'nurse practitioner': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'pediatric nurse practitioner': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'advanced practice provider': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'APRN': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'PICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: html search 'nurse practitioner': HTTP 403 Attention Required! | Cloudflare
+   note: html search 'pediatric nurse practitioner': HTTP 403 Attention Required! | Cloudflare
+   note: sniff: HTTP 403 for https://careers.hcahealthcare.com/search/jobs: bot challenge (Cloudflare)
+   note: sniff: HTTP 403 for https://careers.hcahealthcare.com/pages/catholic-medical-center?bid=5260: bot challenge (Cloudflare)
+   note: generic fallback failed: AdapterError: generic: no page reachable: 403 https://careers.hcahealthcare.com/search/jobs?q=nurse+practitioner&location=Manchester%2C+NH%2C+United+States; playwright 403 https://careers.hcahealthcare.com/search/j
+   (no candidate jobs)
+
+## sturdy-memorial-attleboro  [workday / workday / ]  status=error
+   ERROR: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: facet discovery failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: traceback: -np-job-board/peds-np-job-board/scraper/pipeline.py", line 270, in run_board
+    listings = adapter.search(opts.keywords)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/peds-np-job-board/peds-np-job-board/scraper/adapters/workday.py", line 143, in search
+    data =
+   note: sniff: page links to Workday sturdymemorial.wd5 site Sturdy
+   note: sniff: followed careers link https://www.sturdyhealth.org/careers/
+   note: workday failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: generic: pages reachable but no NP/APP job links found: playwright 200 https://sturdymemorial.wd5.myworkdayjobs.com/Sturdy?q=nurse%20practitioner; playwright 200 https://sturdymemorial.wd5.myworkdayjobs.com/Sturdy?keywords=nurse+practitioner; playwright 200 https://sturdymemorial.wd5.myworkdayjobs.c
+   (no candidate jobs)
+
+## summerville-medical-center-summerville  [careersite / careersite / ]  status=error
+   ERROR: AdapterError: careersite: every jobs.json search failed in the browser: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'; html search 'nurse practitioner': HTTP 403 Attention Required! | Cloudflare; html search 'pediatric nurse practitioner': HTTP 403 Attention Required! | Cloudflare
+   note: jobs.json 'nurse practitioner': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'pediatric nurse practitioner': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'advanced practice provider': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'APRN': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'PICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: html search 'nurse practitioner': HTTP 403 Attention Required! | Cloudflare
+   note: html search 'pediatric nurse practitioner': HTTP 403 Attention Required! | Cloudflare
+   note: sniff: HTTP 403 for https://careers.hcahealthcare.com/search/jobs: bot challenge (Cloudflare)
+   note: sniff: HTTP 403 for https://careers.hcahealthcare.com/pages/catholic-medical-center?bid=5260: bot challenge (Cloudflare)
+   note: generic fallback failed: AdapterError: generic: no page reachable: 403 https://careers.hcahealthcare.com/search/jobs?q=nurse+practitioner&location=Manchester%2C+NH%2C+United+States; playwright 403 https://careers.hcahealthcare.com/search/j
+   (no candidate jobs)
+
+## thomas-jefferson-university-hospital-philadelphia  [workday / workday / ]  status=error
+   ERROR: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: facet discovery failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: traceback: -np-job-board/peds-np-job-board/scraper/pipeline.py", line 270, in run_board
+    listings = adapter.search(opts.keywords)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/peds-np-job-board/peds-np-job-board/scraper/adapters/workday.py", line 143, in search
+    data =
+   note: workday failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: generic: pages reachable but no NP/APP job links found: playwright 200 https://jeffersonhealth.wd5.myworkdayjobs.com/ThomasJeffersonExternal?q=nurse%20practitioner; playwright 200 https://jeffersonhealth.wd5.myworkdayjobs.com/ThomasJeffersonExternal?keywords=nurse+practitioner; playwright 200 https:
+   (no candidate jobs)
+
+## trident-medical-center-north-charleston  [careersite / careersite / ]  status=error
+   ERROR: AdapterError: careersite: every jobs.json search failed in the browser: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'; html search 'nurse practitioner': HTTP 403 Attention Required! | Cloudflare; html search 'pediatric nurse practitioner': HTTP 403 Attention Required! | Cloudflare
+   note: jobs.json 'nurse practitioner': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'pediatric nurse practitioner': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'advanced practice provider': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'APRN': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'PICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: html search 'nurse practitioner': HTTP 403 Attention Required! | Cloudflare
+   note: html search 'pediatric nurse practitioner': HTTP 403 Attention Required! | Cloudflare
+   note: sniff: HTTP 403 for https://careers.hcahealthcare.com/search/jobs: bot challenge (Cloudflare)
+   note: sniff: HTTP 403 for https://careers.hcahealthcare.com/pages/catholic-medical-center?bid=5260: bot challenge (Cloudflare)
+   note: generic fallback failed: AdapterError: generic: no page reachable: 403 https://careers.hcahealthcare.com/search/jobs?q=nurse+practitioner&location=Manchester%2C+NH%2C+United+States; playwright 403 https://careers.hcahealthcare.com/search/j
+   (no candidate jobs)
+
+## ummc-batavia  [workday / workday / ]  status=error
+   ERROR: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: facet discovery failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: traceback: -np-job-board/peds-np-job-board/scraper/pipeline.py", line 270, in run_board
+    listings = adapter.search(opts.keywords)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/peds-np-job-board/peds-np-job-board/scraper/adapters/workday.py", line 143, in search
+    data =
+   note: sniff: HTTP 404 for https://www.rochesterregional.org/locations/rochester-general-hospital: <!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width"/><meta name="next-head-count" content="2"/><link 
+   note: workday failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: generic: pages reachable but no NP/APP job links found: playwright 200 https://rrhs.wd5.myworkdayjobs.com/RRH?q=nurse%20practitioner; playwright 200 https://rrhs.wd5.myworkdayjobs.com/RRH?keywords=nurse+practitioner; playwright 200 https://rrhs.wd5.myworkdayjobs.com/RRH?keyword=nurse+practitioner
+   (no candidate jobs)
+
+## unity-hospital-rochester  [workday / workday / ]  status=error
+   ERROR: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: facet discovery failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: traceback: -np-job-board/peds-np-job-board/scraper/pipeline.py", line 270, in run_board
+    listings = adapter.search(opts.keywords)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/peds-np-job-board/peds-np-job-board/scraper/adapters/workday.py", line 143, in search
+    data =
+   note: sniff: HTTP 404 for https://www.rochesterregional.org/locations/rochester-general-hospital: <!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width"/><meta name="next-head-count" content="2"/><link 
+   note: workday failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: generic: pages reachable but no NP/APP job links found: playwright 200 https://rrhs.wd5.myworkdayjobs.com/RRH?q=nurse%20practitioner; playwright 200 https://rrhs.wd5.myworkdayjobs.com/RRH?keywords=nurse+practitioner; playwright 200 https://rrhs.wd5.myworkdayjobs.com/RRH?keyword=nurse+practitioner
+   (no candidate jobs)
+
+## virtua-mount-holly-hospital-mount-holly  [workday->workday / workday / api]  status=ok
+   note: sniff: page links to Workday virtua.wd1 site Virtua_Health_External_Career_Site
+   note: recovered via sniffed workday board after: AdapterError: workday: cannot derive host/tenant from ats_config or careers URLs
+   (no candidate jobs)
+   first board listings: Full Time - Palliative Care - Nurse Practitioner (2 Locations) || Full Time - Palliative Care - Nurse Practitioner (2 Locations) || Full Time - Palliative Home Care - Nurse Practitioner (Marlton - 536 Lippincott Dr.)
+
+## virtua-our-lady-of-lourdes-camden  [workday->workday / workday / api]  status=ok
+   note: sniff: page links to Workday virtua.wd1 site Virtua_Health_External_Career_Site
+   note: recovered via sniffed workday board after: AdapterError: workday: cannot derive host/tenant from ats_config or careers URLs
+   (no candidate jobs)
+   first board listings: Full Time - Palliative Care - Nurse Practitioner (2 Locations) || Full Time - Palliative Care - Nurse Practitioner (2 Locations) || Full Time - Palliative Home Care - Nurse Practitioner (Marlton - 536 Lippincott Dr.)
+
+## virtua-voorhees-hospital-voorhees  [workday->workday / workday / api]  status=ok
+   note: sniff: page links to Workday virtua.wd1 site Virtua_Health_External_Career_Site
+   note: recovered via sniffed workday board after: AdapterError: workday: cannot derive host/tenant from ats_config or careers URLs
+   (no candidate jobs)
+   first board listings: Full Time - Palliative Care - Nurse Practitioner (2 Locations) || Full Time - Palliative Care - Nurse Practitioner (2 Locations) || Full Time - Palliative Home Care - Nurse Practitioner (Marlton - 536 Lippincott Dr.)
+
+## washington-regional-plymouth  [generic / generic / ]  status=error
+   ERROR: AdapterError: generic: no page reachable: None https://www.washingtonregional.org/careers/; playwright Error: Page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.washingtonregional.org/careers/?q=nurse+practitioner
+Call log:
+  -  https://www.washingtonregional.org/careers/?q=nurse+practitioner; playwright Error: Page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.washingtonregional.org/careers/?keywords=nurse+practitioner
+Call lo https://www.washingtonregional.org/careers/?keywords=nurse+practitioner; playw
+   note: sniff: HTTP None for https://www.washingtonregional.org/careers/: ConnectionError: HTTPSConnectionPool(host='www.washingtonregional.org', port=443): Max retries exceeded with url: /careers/ (Caused by NameResolutionError("HTTPSConnection(host='www.washingtonregional.org', port=443):
+   (no candidate jobs)
+
+## wentworth-douglass-dover  [workday / workday / api]  status=ok
+   note: 30 low-priority listings deferred (detail budget/time); they are picked up on later runs
+   * [3/nicu] NP/PA - Special Care Nursery - WDH | posted 2026-07-30 | https://massgeneralbrigham.wd1.myworkdayjobs.com/MGBExternal/job/Dover-NH/NP-PA---Special-Care-Nursery---WDH_RQ4074484  (known)
+   first board listings: Nurse Practitioner, Endoscopy (Salem-MA) || Nurse Practitioner, Family Medicine (South Deerfield-MA) || Nurse Practitioner - Hematology BWH (Boston-MA)
