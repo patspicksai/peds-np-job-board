@@ -2,7 +2,7 @@
  "run_id": "2026-10-25",
  "mode": "automated",
  "started_at": "2026-10-25T07:36:03Z",
- "finished_at": "2026-10-25T08:06:08Z",
+ "finished_at": "2026-10-25T08:13:55Z",
  "dry_run": false,
  "no_details": false,
  "keywords": [
@@ -544,7 +544,7 @@
   "suny-downstate-university-hospital-brooklyn": "AdapterError: generic: no page reachable: 404 https://www.downstate.edu/careers/; playwright 404 https://www.downstate.edu/careers/?q=nurse+practitioner; playwright 404 https://www.downstate.edu/careers/?keywords=nurse+practitioner; playwright 404 https://www.downstate.edu/careers/?keyword=nurse+practitioner",
   "franciscan-childrens-brighton": "careers page reachable but no job listings recognized (generic adapter): set careers_search_url / ats_config to the real job board",
   "holy-name-medical-center-teaneck": "careers page reachable but no job listings recognized (generic adapter): set careers_search_url / ats_config to the real job board",
-  "hsc-pediatric-center-washington": "AdapterError: generic: no page reachable: None https://www.hschealth.org/careers; playwright TimeoutError: Page.goto: Timeout 45000ms exceeded.\nCall log:\n  - navigating to \"https://www.hschealth.org/careers?q=nurse+practitioner https://www.hschealth.org/careers?q=nurse+practitioner; playwright TimeoutError: Page.goto: Timeout 45000ms exceeded.\nCall log:\n  - navigating to \"https://www.hschealth.org/careers?keywords=nurse+pract https://www.hschealth.org/careers?keywords=nurse+practitioner; playwright TimeoutErr",
+  "hsc-pediatric-center-washington": "AdapterError: generic: no page reachable: None https://www.hschealth.org/careers; playwright TimeoutError: Page.goto: Timeout 45000ms exceeded.\nCall log:\n  - navigating to \"https://www.hschealth.org/careers?q=nurse+practitioner https://www.hschealth.org/careers?q=nurse+practitioner; playwright TimeoutError: Page.goto: Timeout 45000ms exceeded.\nCall log:\n  - navigating to \"https://www.hschealth.org/careers?keywords=nurse+pract https://www.hschealth.org/careers?keywords=nurse+practitioner; playwright Error: Pag",
   "howard-university-hospital-washington": "careers page reachable but no job listings recognized (generic adapter): set careers_search_url / ats_config to the real job board",
   "iredell-memorial-statesville": "careers page reachable but no job listings recognized (generic adapter): set careers_search_url / ats_config to the real job board",
   "pappas-rehabilitation-canton": "AdapterError: generic: no page reachable: 404 https://www.mass.gov/orgs/pappas-rehabilitation-hospital-for-children; playwright 404 https://www.mass.gov/orgs/pappas-rehabilitation-hospital-for-children?q=nurse+practitioner; playwright 404 https://www.mass.gov/orgs/pappas-rehabilitation-hospital-for-children?keywords=nurse+practitioner; playwright 404 https://www.mass.gov/orgs/pappas-rehabilitation-hospital-for-children?keyword=nurse+practitioner",
@@ -1306,12 +1306,12 @@
    "status": "error",
    "error": "AdapterError: careersite: every jobs.json search failed in the browser: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html lang=\"en-us\" dir=\"ltr\"><head><title>Just a moment...</title'; html search 'nurse practitioner': HTTP 403 Just a moment...; html search 'pediatric nurse practitioner': HTTP 403 Just a moment...",
    "http_status": null,
-   "seconds": 583.6,
+   "seconds": 238.8,
    "requests": 0,
    "details_fetched": 0,
    "details_failed": 0,
    "notes": [
-    "jobs.json 'nurse practitioner': HTTP 0 'TimeoutError: '",
+    "jobs.json 'nurse practitioner': HTTP 403 '<!DOCTYPE html><html lang=\"en-us\" dir=\"ltr\"><head><title>Just a moment...</title'",
     "jobs.json 'pediatric nurse practitioner': HTTP 403 '<!DOCTYPE html><html lang=\"en-us\" dir=\"ltr\"><head><title>Just a moment...</title'",
     "jobs.json 'advanced practice provider': HTTP 403 '<!DOCTYPE html><html lang=\"en-us\" dir=\"ltr\"><head><title>Just a moment...</title'",
     "jobs.json 'APRN': HTTP 403 '<!DOCTYPE html><html lang=\"en-us\" dir=\"ltr\"><head><title>Just a moment...</title'",
@@ -1320,7 +1320,8 @@
     "html search 'nurse practitioner': HTTP 403 Just a moment...",
     "html search 'pediatric nurse practitioner': HTTP 403 Just a moment...",
     "sniff: HTTP 403 for https://careers.pennmedicine.org/: bot challenge (Cloudflare)",
-    "sniff: HTTP 403 for https://careers.pennmedicine.org/search/nurse-practitioner-physician-assistant/jobs: bot challenge (Cloudflare)"
+    "sniff: HTTP 403 for https://careers.pennmedicine.org/search/nurse-practitioner-physician-assistant/jobs: bot challenge (Cloudflare)",
+    "retried from a fresh runner"
    ],
    "samples": [],
    "sample_listings": []
@@ -1341,12 +1342,12 @@
    "status": "error",
    "error": "AdapterError: careersite: every jobs.json search failed in the browser: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html lang=\"en-us\" dir=\"ltr\"><head><title>Just a moment...</title'; html search 'nurse practitioner': HTTP 403 Just a moment...; html search 'pediatric nurse practitioner': HTTP 403 Just a moment...",
    "http_status": null,
-   "seconds": 583.6,
+   "seconds": 238.8,
    "requests": 0,
    "details_fetched": 0,
    "details_failed": 0,
    "notes": [
-    "jobs.json 'nurse practitioner': HTTP 0 'TimeoutError: '",
+    "jobs.json 'nurse practitioner': HTTP 403 '<!DOCTYPE html><html lang=\"en-us\" dir=\"ltr\"><head><title>Just a moment...</title'",
     "jobs.json 'pediatric nurse practitioner': HTTP 403 '<!DOCTYPE html><html lang=\"en-us\" dir=\"ltr\"><head><title>Just a moment...</title'",
     "jobs.json 'advanced practice provider': HTTP 403 '<!DOCTYPE html><html lang=\"en-us\" dir=\"ltr\"><head><title>Just a moment...</title'",
     "jobs.json 'APRN': HTTP 403 '<!DOCTYPE html><html lang=\"en-us\" dir=\"ltr\"><head><title>Just a moment...</title'",
@@ -1355,7 +1356,8 @@
     "html search 'nurse practitioner': HTTP 403 Just a moment...",
     "html search 'pediatric nurse practitioner': HTTP 403 Just a moment...",
     "sniff: HTTP 403 for https://careers.pennmedicine.org/: bot challenge (Cloudflare)",
-    "sniff: HTTP 403 for https://careers.pennmedicine.org/search/nurse-practitioner-physician-assistant/jobs: bot challenge (Cloudflare)"
+    "sniff: HTTP 403 for https://careers.pennmedicine.org/search/nurse-practitioner-physician-assistant/jobs: bot challenge (Cloudflare)",
+    "retried from a fresh runner"
    ],
    "samples": [],
    "sample_listings": []
@@ -1376,12 +1378,12 @@
    "status": "error",
    "error": "AdapterError: careersite: every jobs.json search failed in the browser: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html lang=\"en-us\" dir=\"ltr\"><head><title>Just a moment...</title'; html search 'nurse practitioner': HTTP 403 Just a moment...; html search 'pediatric nurse practitioner': HTTP 403 Just a moment...",
    "http_status": null,
-   "seconds": 583.6,
+   "seconds": 238.8,
    "requests": 0,
    "details_fetched": 0,
    "details_failed": 0,
    "notes": [
-    "jobs.json 'nurse practitioner': HTTP 0 'TimeoutError: '",
+    "jobs.json 'nurse practitioner': HTTP 403 '<!DOCTYPE html><html lang=\"en-us\" dir=\"ltr\"><head><title>Just a moment...</title'",
     "jobs.json 'pediatric nurse practitioner': HTTP 403 '<!DOCTYPE html><html lang=\"en-us\" dir=\"ltr\"><head><title>Just a moment...</title'",
     "jobs.json 'advanced practice provider': HTTP 403 '<!DOCTYPE html><html lang=\"en-us\" dir=\"ltr\"><head><title>Just a moment...</title'",
     "jobs.json 'APRN': HTTP 403 '<!DOCTYPE html><html lang=\"en-us\" dir=\"ltr\"><head><title>Just a moment...</title'",
@@ -1390,7 +1392,8 @@
     "html search 'nurse practitioner': HTTP 403 Just a moment...",
     "html search 'pediatric nurse practitioner': HTTP 403 Just a moment...",
     "sniff: HTTP 403 for https://careers.pennmedicine.org/: bot challenge (Cloudflare)",
-    "sniff: HTTP 403 for https://careers.pennmedicine.org/search/nurse-practitioner-physician-assistant/jobs: bot challenge (Cloudflare)"
+    "sniff: HTTP 403 for https://careers.pennmedicine.org/search/nurse-practitioner-physician-assistant/jobs: bot challenge (Cloudflare)",
+    "retried from a fresh runner"
    ],
    "samples": [],
    "sample_listings": []
@@ -1411,12 +1414,12 @@
    "status": "error",
    "error": "AdapterError: careersite: every jobs.json search failed in the browser: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html lang=\"en-us\" dir=\"ltr\"><head><title>Just a moment...</title'; html search 'nurse practitioner': HTTP 403 Just a moment...; html search 'pediatric nurse practitioner': HTTP 403 Just a moment...",
    "http_status": null,
-   "seconds": 583.6,
+   "seconds": 238.8,
    "requests": 0,
    "details_fetched": 0,
    "details_failed": 0,
    "notes": [
-    "jobs.json 'nurse practitioner': HTTP 0 'TimeoutError: '",
+    "jobs.json 'nurse practitioner': HTTP 403 '<!DOCTYPE html><html lang=\"en-us\" dir=\"ltr\"><head><title>Just a moment...</title'",
     "jobs.json 'pediatric nurse practitioner': HTTP 403 '<!DOCTYPE html><html lang=\"en-us\" dir=\"ltr\"><head><title>Just a moment...</title'",
     "jobs.json 'advanced practice provider': HTTP 403 '<!DOCTYPE html><html lang=\"en-us\" dir=\"ltr\"><head><title>Just a moment...</title'",
     "jobs.json 'APRN': HTTP 403 '<!DOCTYPE html><html lang=\"en-us\" dir=\"ltr\"><head><title>Just a moment...</title'",
@@ -1425,7 +1428,8 @@
     "html search 'nurse practitioner': HTTP 403 Just a moment...",
     "html search 'pediatric nurse practitioner': HTTP 403 Just a moment...",
     "sniff: HTTP 403 for https://careers.pennmedicine.org/: bot challenge (Cloudflare)",
-    "sniff: HTTP 403 for https://careers.pennmedicine.org/search/nurse-practitioner-physician-assistant/jobs: bot challenge (Cloudflare)"
+    "sniff: HTTP 403 for https://careers.pennmedicine.org/search/nurse-practitioner-physician-assistant/jobs: bot challenge (Cloudflare)",
+    "retried from a fresh runner"
    ],
    "samples": [],
    "sample_listings": []
@@ -1446,12 +1450,12 @@
    "status": "error",
    "error": "AdapterError: careersite: every jobs.json search failed in the browser: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html lang=\"en-us\" dir=\"ltr\"><head><title>Just a moment...</title'; html search 'nurse practitioner': HTTP 403 Just a moment...; html search 'pediatric nurse practitioner': HTTP 403 Just a moment...",
    "http_status": null,
-   "seconds": 583.6,
+   "seconds": 238.8,
    "requests": 0,
    "details_fetched": 0,
    "details_failed": 0,
    "notes": [
-    "jobs.json 'nurse practitioner': HTTP 0 'TimeoutError: '",
+    "jobs.json 'nurse practitioner': HTTP 403 '<!DOCTYPE html><html lang=\"en-us\" dir=\"ltr\"><head><title>Just a moment...</title'",
     "jobs.json 'pediatric nurse practitioner': HTTP 403 '<!DOCTYPE html><html lang=\"en-us\" dir=\"ltr\"><head><title>Just a moment...</title'",
     "jobs.json 'advanced practice provider': HTTP 403 '<!DOCTYPE html><html lang=\"en-us\" dir=\"ltr\"><head><title>Just a moment...</title'",
     "jobs.json 'APRN': HTTP 403 '<!DOCTYPE html><html lang=\"en-us\" dir=\"ltr\"><head><title>Just a moment...</title'",
@@ -1460,7 +1464,8 @@
     "html search 'nurse practitioner': HTTP 403 Just a moment...",
     "html search 'pediatric nurse practitioner': HTTP 403 Just a moment...",
     "sniff: HTTP 403 for https://careers.pennmedicine.org/: bot challenge (Cloudflare)",
-    "sniff: HTTP 403 for https://careers.pennmedicine.org/search/nurse-practitioner-physician-assistant/jobs: bot challenge (Cloudflare)"
+    "sniff: HTTP 403 for https://careers.pennmedicine.org/search/nurse-practitioner-physician-assistant/jobs: bot challenge (Cloudflare)",
+    "retried from a fresh runner"
    ],
    "samples": [],
    "sample_listings": []
@@ -4458,14 +4463,15 @@
    "new": 0,
    "known": 0,
    "status": "error",
-   "error": "AdapterError: generic: no page reachable: None https://www.hschealth.org/careers; playwright TimeoutError: Page.goto: Timeout 45000ms exceeded.\nCall log:\n  - navigating to \"https://www.hschealth.org/careers?q=nurse+practitioner https://www.hschealth.org/careers?q=nurse+practitioner; playwright TimeoutError: Page.goto: Timeout 45000ms exceeded.\nCall log:\n  - navigating to \"https://www.hschealth.org/careers?keywords=nurse+pract https://www.hschealth.org/careers?keywords=nurse+practitioner; playwright TimeoutErr",
+   "error": "AdapterError: generic: no page reachable: None https://www.hschealth.org/careers; playwright TimeoutError: Page.goto: Timeout 45000ms exceeded.\nCall log:\n  - navigating to \"https://www.hschealth.org/careers?q=nurse+practitioner https://www.hschealth.org/careers?q=nurse+practitioner; playwright TimeoutError: Page.goto: Timeout 45000ms exceeded.\nCall log:\n  - navigating to \"https://www.hschealth.org/careers?keywords=nurse+pract https://www.hschealth.org/careers?keywords=nurse+practitioner; playwright Error: Pag",
    "http_status": null,
-   "seconds": 424.7,
+   "seconds": 422.7,
    "requests": 5,
    "details_fetched": 0,
    "details_failed": 0,
    "notes": [
-    "sniff: HTTP None for https://www.hschealth.org/careers: ConnectTimeout: HTTPSConnectionPool(host='www.hschealth.org', port=443): Max retries exceeded with url: /careers (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.hschealth.org', port=443) at 0x7f63e4a73260>,"
+    "sniff: HTTP None for https://www.hschealth.org/careers: ConnectTimeout: HTTPSConnectionPool(host='www.hschealth.org', port=443): Max retries exceeded with url: /careers (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.hschealth.org', port=443) at 0x7f04abc0ed80>,",
+    "retried from a fresh runner"
    ],
    "samples": [],
    "sample_listings": []
@@ -8941,12 +8947,13 @@
    "status": "error",
    "error": "AdapterError: generic: no page reachable: None https://www.washingtonregional.org/careers/; playwright Error: Page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.washingtonregional.org/careers/?q=nurse+practitioner\nCall log:\n  -  https://www.washingtonregional.org/careers/?q=nurse+practitioner; playwright Error: Page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.washingtonregional.org/careers/?keywords=nurse+practitioner\nCall lo https://www.washingtonregional.org/careers/?keywords=nurse+practitioner; playw",
    "http_status": null,
-   "seconds": 47.8,
+   "seconds": 28.2,
    "requests": 5,
    "details_fetched": 0,
    "details_failed": 0,
    "notes": [
-    "sniff: HTTP None for https://www.washingtonregional.org/careers/: ConnectionError: HTTPSConnectionPool(host='www.washingtonregional.org', port=443): Max retries exceeded with url: /careers/ (Caused by NameResolutionError(\"HTTPSConnection(host='www.washingtonregional.org', port=443):"
+    "sniff: HTTP None for https://www.washingtonregional.org/careers/: ConnectionError: HTTPSConnectionPool(host='www.washingtonregional.org', port=443): Max retries exceeded with url: /careers/ (Caused by NameResolutionError(\"HTTPSConnection(host='www.washingtonregional.org', port=443):",
+    "retried from a fresh runner"
    ],
    "samples": [],
    "sample_listings": []
@@ -25541,98 +25548,7 @@
    ]
   }
  ],
- "jobs": [
-  {
-   "id": "a6ec7e23f766",
-   "hospital_slug": "upstate-golisano-childrens-syracuse",
-   "title": "Per Diem Pediatric Advanced Practice Provider Hospitalist",
-   "url": "https://careers.upstate.edu/jobs/per-diem-pediatric-advanced-practice-provider-hospitalist-syracuse-new-york-united-states",
-   "relevance": 3,
-   "setting": "peds_inpatient",
-   "posted_at": null
-  },
-  {
-   "id": "4c460f42003d",
-   "hospital_slug": "upstate-golisano-childrens-syracuse",
-   "title": "Pediatric Neurology APP",
-   "url": "https://careers.upstate.edu/jobs/pediatric-neurology-app-syracuse-new-york-united-states",
-   "relevance": 2,
-   "setting": "peds_specialty_outpatient",
-   "posted_at": null
-  },
-  {
-   "id": "c959ae895eef",
-   "hospital_slug": "upstate-golisano-childrens-syracuse",
-   "title": "Pediatric Advanced Practice Provider Hospitalist",
-   "url": "https://careers.upstate.edu/jobs/pediatric-advanced-practice-provider-hospitalist-syracuse-new-york-united-states-8122ef0f-7094-4b18-8503-1ec838051ddd",
-   "relevance": 3,
-   "setting": "peds_inpatient",
-   "posted_at": null
-  },
-  {
-   "id": "3bd873233a53",
-   "hospital_slug": "duke-raleigh",
-   "title": "Nurse Practitioner or Physician Assistant- Cardiology",
-   "url": "https://careers.dukehealth.org/us/en/job/275233/Nurse-Practitioner-or-Physician-Assistant-Cardiology",
-   "relevance": 1,
-   "setting": "mixed",
-   "posted_at": "2026-10-24"
-  },
-  {
-   "id": "ed9d1474aad3",
-   "hospital_slug": "duke-university-hospital-durham",
-   "title": "Physician Assistant  or Nurse Practitioner - Outpatient Abdominal Transplant Clinic",
-   "url": "https://careers.dukehealth.org/us/en/job/269273/Physician-Assistant-or-Nurse-Practitioner-Outpatient-Abdominal-Transplant-Clinic",
-   "relevance": 1,
-   "setting": "mixed",
-   "posted_at": "2026-10-25"
-  },
-  {
-   "id": "eedfbd916b30",
-   "hospital_slug": "duke-university-hospital-durham",
-   "title": "Nurse Practitioner or Physician Assistant - Hematologic Malignancy and Cellular Therapy (HMCT)",
-   "url": "https://careers.dukehealth.org/us/en/job/276224/Nurse-Practitioner-or-Physician-Assistant-Hematologic-Malignancy-and-Cellular-Therapy-HMCT",
-   "relevance": 1,
-   "setting": "unspecified",
-   "posted_at": "2026-10-24"
-  },
-  {
-   "id": "86a8fec56f7b",
-   "hospital_slug": "atrium-cabarrus-concord",
-   "title": "Hematology Oncology (Outpatient) - Full Time NP/PA",
-   "url": "https://aah.wd5.myworkdayjobs.com/External/job/Concord-NC---100-Medical-Park-Dr/Hematology-Oncology--Outpatient----Full-Time-NP-PA_R278506",
-   "relevance": 1,
-   "setting": "unspecified",
-   "posted_at": "2026-10-23"
-  },
-  {
-   "id": "1e3632ee2d6b",
-   "hospital_slug": "atrium-stanly-albemarle",
-   "title": "Palliative Care NP - Stanly",
-   "url": "https://aah.wd5.myworkdayjobs.com/External/job/Atrium-Health-Stanly---301-Yadkin-St-Albemarle-NC/Nurse-Practitioner-Specialty-Care-Conventional_R275462",
-   "relevance": 1,
-   "setting": "mixed",
-   "posted_at": "2026-10-23"
-  },
-  {
-   "id": "64f78080ec35",
-   "hospital_slug": "christiana-hospital-newark-de",
-   "title": "NP/PA - Swingternist Partial/Full",
-   "url": "https://christianacare.wd5.myworkdayjobs.com/CCHS/job/Newark-DE/NP-PA---Standard-Hospitalist_JR94316",
-   "relevance": 2,
-   "setting": "peds_inpatient",
-   "posted_at": "2026-10-23"
-  },
-  {
-   "id": "ced50d29e43f",
-   "hospital_slug": "musc-shawn-jenkins-childrens-charleston",
-   "title": "Nurse Practitioner or Physician Assistant - Child & Adolescent Psychiatry",
-   "url": "https://musc.wd1.myworkdayjobs.com/MUSC/job/Charleston/Nurse-Practitioner-or-Physician-Assistant---Child---Adolescent-Psychiatry_R-0000066512",
-   "relevance": 2,
-   "setting": "mixed",
-   "posted_at": "2026-10-23"
-  }
- ],
+ "jobs": [],
  "seen_again": [
   "https://aah.wd5.myworkdayjobs.com/External/job/Albemarle-NC---703-Leonard-Ave/Nurse-Practitioner-Urgent-Care_R259600",
   "https://aah.wd5.myworkdayjobs.com/External/job/Albemarle-NC---703-Leonard-Ave/Urgent-Care--Full-Time--NP-PA_R198520",
@@ -25651,6 +25567,7 @@
   "https://aah.wd5.myworkdayjobs.com/External/job/Atrium-Health-Mercy---2001-Vail-Ave-Charlotte-NC/NP-PA-for-Urogynecology-and-Pelvic-Surgery-Practice_R263688",
   "https://aah.wd5.myworkdayjobs.com/External/job/Atrium-Health-Pineville---10628-Park-Rd-Charlotte-NC/Critical-Care---Full-Time---NP-PA_R170665",
   "https://aah.wd5.myworkdayjobs.com/External/job/Atrium-Health-Pineville---10628-Park-Rd-Charlotte-NC/Critical-Care---NP-PA---Full-Time_R247366-1",
+  "https://aah.wd5.myworkdayjobs.com/External/job/Atrium-Health-Stanly---301-Yadkin-St-Albemarle-NC/Nurse-Practitioner-Specialty-Care-Conventional_R275462",
   "https://aah.wd5.myworkdayjobs.com/External/job/Atrium-Health-Union---600-Hospital-Dr-Monroe-NC/Hospital-Medicine-Full-Time-NP-PA-Days_R268731",
   "https://aah.wd5.myworkdayjobs.com/External/job/Atrium-Health-Wake-Forest-Baptist---Medical-Center-Blvd-Winston-Salem-NC/Advanced-Practice-Provider---Developmental-Behavioral-Pediatrics--Winston-Salem--NC_R162341-1",
   "https://aah.wd5.myworkdayjobs.com/External/job/Atrium-Health-Wake-Forest-Baptist---Medical-Center-Blvd-Winston-Salem-NC/Neonatal---Full-Time-NP-PA_R204951-1",
@@ -25748,6 +25665,7 @@
   "https://aah.wd5.myworkdayjobs.com/External/job/Concord-NC---100-Medical-Park-Dr/Cardiac-Thoracic-Vascular-Surgery-Nocturnist-APP--Sanger-Heart---Vascular-Institute--Concord_R160697",
   "https://aah.wd5.myworkdayjobs.com/External/job/Concord-NC---100-Medical-Park-Dr/Electrophysiology-APP--Part-Time---Sanger-Heart---Vascular-Institute--Concord--NC_R172599",
   "https://aah.wd5.myworkdayjobs.com/External/job/Concord-NC---100-Medical-Park-Dr/Electrophysiology-APP_R226989",
+  "https://aah.wd5.myworkdayjobs.com/External/job/Concord-NC---100-Medical-Park-Dr/Hematology-Oncology--Outpatient----Full-Time-NP-PA_R278506",
   "https://aah.wd5.myworkdayjobs.com/External/job/Concord-NC---100-Medical-Park-Dr/Interventional-Structural-Cardiology-APP--Inpatient-and-Outpatient----Sanger-Heart---Vascular-Institute--Cabarrus_R163497",
   "https://aah.wd5.myworkdayjobs.com/External/job/Concord-NC---100-Medical-Park-Dr/Vascular-Surgery-APP_R178340",
   "https://aah.wd5.myworkdayjobs.com/External/job/Concord-NC---1085-NE-Gateway-Ct-NE/Gen-Peds-APP---AHLC-General-Pediatrics-Extended-Care----Concord--Sign-on-Bonus_R269536",
@@ -25844,6 +25762,7 @@
   "https://careers.dukehealth.org/us/en/job/268448/Physician-Assistant-Thoracic-Surgery-APP-Robotic",
   "https://careers.dukehealth.org/us/en/job/268943/Nurse-Practitioner-Physician-Assistant-Lake-Norman-Hospital-Medicine-Nocturnist",
   "https://careers.dukehealth.org/us/en/job/269108/Nurse-Practitioner-or-Physician-Assistant-Triangle-Heart-Associates",
+  "https://careers.dukehealth.org/us/en/job/269273/Physician-Assistant-or-Nurse-Practitioner-Outpatient-Abdominal-Transplant-Clinic",
   "https://careers.dukehealth.org/us/en/job/269481/Nurse-Practitioner-Physician-Assistant-Duke-GI-Clinics-of-Cary-Brier-Creek",
   "https://careers.dukehealth.org/us/en/job/269483/Nurse-Practitioner-Physician-Assistant-Duke-Epilepsy-Clinic",
   "https://careers.dukehealth.org/us/en/job/269962/Nurse-Practitioner-or-Physician-Assistant-Hematologic-Malignancies-and-Cellular-Therapy",
@@ -25883,11 +25802,13 @@
   "https://careers.dukehealth.org/us/en/job/275179/Nurse-Practitioner-Physician-Assistant-Abdominal-Transplant-Surgery-PRN",
   "https://careers.dukehealth.org/us/en/job/275225/Nurse-Practitioner-or-Physician-Assistant-Cardiovascular-Electrophysiology",
   "https://careers.dukehealth.org/us/en/job/275227/Nurse-Practitioner-Physician-Assistant-Abdominal-Transplant-Surgery-Nocturnist",
+  "https://careers.dukehealth.org/us/en/job/275233/Nurse-Practitioner-or-Physician-Assistant-Cardiology",
   "https://careers.dukehealth.org/us/en/job/275262/Nurse-Practitioner-Physician-Assistant-Harris-Smith-OB-GYN",
   "https://careers.dukehealth.org/us/en/job/275263/Nurse-Practitioner-or-Physician-Assistant-Nephrology",
   "https://careers.dukehealth.org/us/en/job/275433/Nurse-Practitioner-Physician-Assistant-Inpatient-Neurology-Hospitalist",
   "https://careers.dukehealth.org/us/en/job/275605/Nurse-Practitioner-or-Physician-Assistant-Hematology",
   "https://careers.dukehealth.org/us/en/job/275644/Nurse-Practitioner-or-Physician-Assistant-Cath-Lab-Electrophysiology-Lab-Part-Time",
+  "https://careers.dukehealth.org/us/en/job/276224/Nurse-Practitioner-or-Physician-Assistant-Hematologic-Malignancy-and-Cellular-Therapy-HMCT",
   "https://careers.dukehealth.org/us/en/job/DPC LINC/Advanced-Practice-Provider-PA-NP-Family-Medicine",
   "https://careers.dukehealth.org/us/en/job/DPC VCT 03/Hybrid-PCP-Virtual-Care-Weight-Management-APP",
   "https://careers.dukehealth.org/us/en/job/DPC VCT 04/Hybrid-PCP-Virtual-Care-Weight-Management-APP",
@@ -25987,6 +25908,9 @@
   "https://careers.upmc.com/job/24036989/pa-or-crnp-staff-or-senior-upp-plastic-surgery-pittsburgh-pa/",
   "https://careers.upmc.com/job/24037036/pa-or-crnp-complete-primary-care-associates-mercy-pittsburgh-pa/",
   "https://careers.upmc.com/job/24048502/crnp-acnp-staff-or-senior-magee-womens-surgical-associates-pittsburgh-pa/",
+  "https://careers.upstate.edu/jobs/pediatric-advanced-practice-provider-hospitalist-syracuse-new-york-united-states-8122ef0f-7094-4b18-8503-1ec838051ddd",
+  "https://careers.upstate.edu/jobs/pediatric-neurology-app-syracuse-new-york-united-states",
+  "https://careers.upstate.edu/jobs/per-diem-pediatric-advanced-practice-provider-hospitalist-syracuse-new-york-united-states",
   "https://careers.uvahealth.org/us/en/job/R0075030/Psychiatric-Mental-Health-Nurse-Practitioner-Autonomous-Licensed-PMH-NP-UVA-Augusta-Pediatrics-VIRTUAL-POSITION",
   "https://careers.uvahealth.org/us/en/job/R0081176/UVA-Pediatrics-Culpeper-Pediatric-Nurse-Practitioner-or-Physician-Assistant-Full-Time",
   "https://careers.uvahealth.org/us/en/job/R0081865/Advanced-Practice-Provider-APP-PA-NP-Cellular-Therapy-Stem-Cell-Transplant",
@@ -26031,6 +25955,7 @@
   "https://christianacare.wd5.myworkdayjobs.com/CCHS/job/Newark-DE/NP-PA---Oncology-Express-Unit_JR93333",
   "https://christianacare.wd5.myworkdayjobs.com/CCHS/job/Newark-DE/NP-PA---Outpatient-Neurology--Epilepsy_JR83333",
   "https://christianacare.wd5.myworkdayjobs.com/CCHS/job/Newark-DE/NP-PA---Outpatient-Neurology--Movement-Disorders_JR83543",
+  "https://christianacare.wd5.myworkdayjobs.com/CCHS/job/Newark-DE/NP-PA---Standard-Hospitalist_JR94316",
   "https://christianacare.wd5.myworkdayjobs.com/CCHS/job/Newark-DE/NP-PA--Diagnostic-Radiology-Full-Time--ChristianaCare-Newark--DE_JR94103",
   "https://christianacare.wd5.myworkdayjobs.com/CCHS/job/Newark-DE/NP-PA--Inpatient-Neurology_JR81045",
   "https://christianacare.wd5.myworkdayjobs.com/CCHS/job/Newark-DE/NP-PA--Outpatient-Hematology-Oncology_JR93706",
@@ -26347,6 +26272,7 @@
   "https://montefiore.wd12.myworkdayjobs.com/WP/job/41-East-Post-Road/NICU-Nurse-Practitioner--PER-DIEM_JR234588",
   "https://msk.wd108.myworkdayjobs.com/MSKCC_Careers_Primary/job/New-York-NY/Advanced-Practice-Provider---PICU--Nights-_101464-1",
   "https://musc.wd1.myworkdayjobs.com/MUSC/job/Charleston/MUSCP-Advanced-Practice-Provider--APP---NP-PA---Department-of-Pediatrics--Endocrinology_R-0000044397",
+  "https://musc.wd1.myworkdayjobs.com/MUSC/job/Charleston/Nurse-Practitioner-or-Physician-Assistant---Child---Adolescent-Psychiatry_R-0000066512",
   "https://musc.wd1.myworkdayjobs.com/MUSC/job/Charleston/Nurse-Practitioner-or-Physician-Assistant---Neonatology_R-0000067251-1",
   "https://musc.wd1.myworkdayjobs.com/MUSC/job/Charleston/Nurse-Practitioner-or-Physician-Assistant---Pediatrics-Hematology---Oncology_R-0000069512",
   "https://musc.wd1.myworkdayjobs.com/MUSC/job/Columbia/Advanced-Practice-Provider---Neonatal-Nurse-Practitioner--NNP---MUSC-Health-Columbia-Medical-Center-Northeast---Columbia--SC_R-0000070024",
@@ -26471,10 +26397,118 @@
   "listings": 37008,
   "candidates": 838,
   "new_candidates": 10,
-  "seconds": 10705.0
+  "seconds": 11394.7
  },
  "browser": "chrome-headed",
  "ledger": "data/hospitals.json",
  "wall_seconds": 1805.7,
- "compacted": true
+ "compacted": true,
+ "job_index": [
+  {
+   "id": "a6ec7e23f766",
+   "hospital_slug": "upstate-golisano-childrens-syracuse",
+   "title": "Per Diem Pediatric Advanced Practice Provider Hospitalist",
+   "url": "https://careers.upstate.edu/jobs/per-diem-pediatric-advanced-practice-provider-hospitalist-syracuse-new-york-united-states",
+   "relevance": 3,
+   "setting": "peds_inpatient",
+   "posted_at": null
+  },
+  {
+   "id": "4c460f42003d",
+   "hospital_slug": "upstate-golisano-childrens-syracuse",
+   "title": "Pediatric Neurology APP",
+   "url": "https://careers.upstate.edu/jobs/pediatric-neurology-app-syracuse-new-york-united-states",
+   "relevance": 2,
+   "setting": "peds_specialty_outpatient",
+   "posted_at": null
+  },
+  {
+   "id": "c959ae895eef",
+   "hospital_slug": "upstate-golisano-childrens-syracuse",
+   "title": "Pediatric Advanced Practice Provider Hospitalist",
+   "url": "https://careers.upstate.edu/jobs/pediatric-advanced-practice-provider-hospitalist-syracuse-new-york-united-states-8122ef0f-7094-4b18-8503-1ec838051ddd",
+   "relevance": 3,
+   "setting": "peds_inpatient",
+   "posted_at": null
+  },
+  {
+   "id": "3bd873233a53",
+   "hospital_slug": "duke-raleigh",
+   "title": "Nurse Practitioner or Physician Assistant- Cardiology",
+   "url": "https://careers.dukehealth.org/us/en/job/275233/Nurse-Practitioner-or-Physician-Assistant-Cardiology",
+   "relevance": 1,
+   "setting": "mixed",
+   "posted_at": "2026-10-24"
+  },
+  {
+   "id": "ed9d1474aad3",
+   "hospital_slug": "duke-university-hospital-durham",
+   "title": "Physician Assistant  or Nurse Practitioner - Outpatient Abdominal Transplant Clinic",
+   "url": "https://careers.dukehealth.org/us/en/job/269273/Physician-Assistant-or-Nurse-Practitioner-Outpatient-Abdominal-Transplant-Clinic",
+   "relevance": 1,
+   "setting": "mixed",
+   "posted_at": "2026-10-25"
+  },
+  {
+   "id": "eedfbd916b30",
+   "hospital_slug": "duke-university-hospital-durham",
+   "title": "Nurse Practitioner or Physician Assistant - Hematologic Malignancy and Cellular Therapy (HMCT)",
+   "url": "https://careers.dukehealth.org/us/en/job/276224/Nurse-Practitioner-or-Physician-Assistant-Hematologic-Malignancy-and-Cellular-Therapy-HMCT",
+   "relevance": 1,
+   "setting": "unspecified",
+   "posted_at": "2026-10-24"
+  },
+  {
+   "id": "86a8fec56f7b",
+   "hospital_slug": "atrium-cabarrus-concord",
+   "title": "Hematology Oncology (Outpatient) - Full Time NP/PA",
+   "url": "https://aah.wd5.myworkdayjobs.com/External/job/Concord-NC---100-Medical-Park-Dr/Hematology-Oncology--Outpatient----Full-Time-NP-PA_R278506",
+   "relevance": 1,
+   "setting": "unspecified",
+   "posted_at": "2026-10-23"
+  },
+  {
+   "id": "1e3632ee2d6b",
+   "hospital_slug": "atrium-stanly-albemarle",
+   "title": "Palliative Care NP - Stanly",
+   "url": "https://aah.wd5.myworkdayjobs.com/External/job/Atrium-Health-Stanly---301-Yadkin-St-Albemarle-NC/Nurse-Practitioner-Specialty-Care-Conventional_R275462",
+   "relevance": 1,
+   "setting": "mixed",
+   "posted_at": "2026-10-23"
+  },
+  {
+   "id": "64f78080ec35",
+   "hospital_slug": "christiana-hospital-newark-de",
+   "title": "NP/PA - Swingternist Partial/Full",
+   "url": "https://christianacare.wd5.myworkdayjobs.com/CCHS/job/Newark-DE/NP-PA---Standard-Hospitalist_JR94316",
+   "relevance": 2,
+   "setting": "peds_inpatient",
+   "posted_at": "2026-10-23"
+  },
+  {
+   "id": "ced50d29e43f",
+   "hospital_slug": "musc-shawn-jenkins-childrens-charleston",
+   "title": "Nurse Practitioner or Physician Assistant - Child & Adolescent Psychiatry",
+   "url": "https://musc.wd1.myworkdayjobs.com/MUSC/job/Charleston/Nurse-Practitioner-or-Physician-Assistant---Child---Adolescent-Psychiatry_R-0000066512",
+   "relevance": 2,
+   "setting": "mixed",
+   "posted_at": "2026-10-23"
+  }
+ ],
+ "retry": {
+  "started_at": "2026-10-25T08:06:52Z",
+  "finished_at": "2026-10-25T08:13:55Z",
+  "retried": [
+   "penn-medicine-princeton-medical-center-plainsboro",
+   "chester-county-hospital-west-chester",
+   "hospital-of-the-university-of-pennsylvania-philadelphia",
+   "pennsylvania-hospital-philadelphia",
+   "lancaster-general-hospital-lancaster",
+   "hsc-pediatric-center-washington",
+   "washington-regional-plymouth"
+  ],
+  "fixed": [],
+  "jobs_added": 0,
+  "wall_seconds": 422.8
+ }
 }
