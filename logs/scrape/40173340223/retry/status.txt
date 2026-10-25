@@ -1,0 +1,14 @@
+run 2026-10-25 wall=422.8s ledger=data/hospitals.json browser=chrome-headed
+
+hospital                                                 platform               method           board  list  cand  new   secs  status / error
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+chester-county-hospital-west-chester                     careersite                                  0     0     0    0  238.8  error: AdapterError: careersite: every jobs.json search failed in the browser: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html lang="en-us" dir="ltr"><head>
+hospital-of-the-university-of-pennsylvania-philadelphia  careersite                                  0     0     0    0  238.8  error: AdapterError: careersite: every jobs.json search failed in the browser: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html lang="en-us" dir="ltr"><head>
+hsc-pediatric-center-washington                          generic                                     0     0     0    0  422.7  error: AdapterError: generic: no page reachable: None https://www.hschealth.org/careers; playwright TimeoutError: Page.goto: Timeout 45000ms exceeded.
+Call l
+lancaster-general-hospital-lancaster                     careersite                                  0     0     0    0  238.8  error: AdapterError: careersite: every jobs.json search failed in the browser: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html lang="en-us" dir="ltr"><head>
+penn-medicine-princeton-medical-center-plainsboro        careersite                                  0     0     0    0  238.8  error: AdapterError: careersite: every jobs.json search failed in the browser: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html lang="en-us" dir="ltr"><head>
+pennsylvania-hospital-philadelphia                       careersite                                  0     0     0    0  238.8  error: AdapterError: careersite: every jobs.json search failed in the browser: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html lang="en-us" dir="ltr"><head>
+washington-regional-plymouth                             generic                                     0     0     0    0   28.2  error: AdapterError: generic: no page reachable: None https://www.washingtonregional.org/careers/; playwright Error: Page.goto: net::ERR_NAME_NOT_RESOLVED at
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+hospitals=7 ok=0 not_ok=7 board_listings=0 candidates=0 new_candidates=0
