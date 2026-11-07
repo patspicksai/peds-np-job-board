@@ -1,0 +1,345 @@
+## blythedale-childrens-valhalla  [icims / icims / ]  status=error
+   ERROR: AdapterError: icims: www.blythedale.org is not an iCIMS portal and its front end was not recognized
+   note: sniff: page links to iCIMS portal careers-blythedale.icims.com
+   note: icims failed: AdapterError: icims: www.blythedale.org is not an iCIMS portal and its front end was not recognized
+   note: generic: pages reachable but no NP/APP job links found: playwright 200 https://www.blythedale.org/careers?q=nurse+practitioner; playwright 200 https://www.blythedale.org/careers?keywords=nurse+practitioner; playwright 200 https://www.blythedale.org/careers?keyword=nurse+practitioner
+   (no candidate jobs)
+
+## bryn-mawr-hospital-bryn-mawr  [taleo / taleo / playwright]  status=zero_results
+   ERROR: board reachable but returned 0 listings for every keyword (check search URL / adapter)
+   note: search 'advanced practice provider': Error: Page.title: Execution context was destroyed, most likely because of a navigation
+   note: search 'APRN': Error: Page.title: Execution context was destroyed, most likely because of a navigation
+   note: search 'PICU': Error: Page.title: Execution context was destroyed, most likely because of a navigation
+   note: search 'NICU': Error: Page.title: Execution context was destroyed, most likely because of a navigation
+   note: taleo adapter returned 0 listings; trying generic
+   note: generic: pages reachable but no NP/APP job links found: playwright 200 https://careers.mainlinehealth.org/?utm_source=corporate_site&amp%3Butm_medium=referral&amp%3Butm_campaign=internal_navigation&q=nurse+practitioner; playwright 200 https://careers.mainlinehealth.org/?utm_source=corporate_site&amp
+   (no candidate jobs)
+
+## catholic-medical-center-manchester  [careersite / careersite / ]  status=error
+   ERROR: AdapterError: careersite: every jobs.json search failed in the browser: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'; html search 'nurse practitioner': HTTP 403 Attention Required! | Cloudflare; html search 'pediatric nurse practitioner': HTTP 403 Attention Required! | Cloudflare
+   note: jobs.json 'nurse practitioner': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'pediatric nurse practitioner': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'advanced practice provider': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'APRN': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'PICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: html search 'nurse practitioner': HTTP 403 Attention Required! | Cloudflare
+   note: html search 'pediatric nurse practitioner': HTTP 403 Attention Required! | Cloudflare
+   note: sniff: HTTP 403 for https://careers.hcahealthcare.com/search/jobs: bot challenge (Cloudflare)
+   note: sniff: HTTP 403 for https://careers.hcahealthcare.com/pages/catholic-medical-center?bid=5260: bot challenge (Cloudflare)
+   note: generic fallback failed: AdapterError: generic: no page reachable: 403 https://careers.hcahealthcare.com/search/jobs?q=nurse+practitioner&location=Manchester%2C+NH%2C+United+States; playwright 403 https://careers.hcahealthcare.com/search/j
+   (no candidate jobs)
+
+## central-maine-medical-center-lewiston  [icims / icims / ]  status=error
+   ERROR: AdapterError: search 'APRN': HTTP 520 for https://careers-primehealthcare.icims.com/jobs/search?ss=1&searchKeyword=APRN&in_iframe=1&pr=0:                                  <html> <head> <title>Maintenance</title> </head> <body> <table border="0" cellpadding="0" cellspacing="0" width="100%"> <tr><td; search 'PICU': HTTP 520 for https://careers-primehealthcare.icims.com/jobs/search?ss=1&searchKeyword=PICU&in_iframe=1&pr=0:                                  <html> <head> <title>Maintenance</title> </head> <body> <
+   note: search 'nurse practitioner': HTTP 520 for https://careers-primehealthcare.icims.com/jobs/search?ss=1&searchKeyword=nurse+practitioner&in_iframe=1&pr=0:                                  <html> <head> <title>Maintenance</title> </head> <body> <table border="0" cellpadding="0" cellspacing="0" width="10
+   note: search 'pediatric nurse practitioner': HTTP 520 for https://careers-primehealthcare.icims.com/jobs/search?ss=1&searchKeyword=pediatric+nurse+practitioner&in_iframe=1&pr=0:                                  <html> <head> <title>Maintenance</title> </head> <body> <table border="0" cellpadding="0" cells
+   note: search 'advanced practice provider': HTTP 520 for https://careers-primehealthcare.icims.com/jobs/search?ss=1&searchKeyword=advanced+practice+provider&in_iframe=1&pr=0:                                  <html> <head> <title>Maintenance</title> </head> <body> <table border="0" cellpadding="0" cellspaci
+   note: search 'APRN': HTTP 520 for https://careers-primehealthcare.icims.com/jobs/search?ss=1&searchKeyword=APRN&in_iframe=1&pr=0:                                  <html> <head> <title>Maintenance</title> </head> <body> <table border="0" cellpadding="0" cellspacing="0" width="100%"> <tr><td
+   note: search 'PICU': HTTP 520 for https://careers-primehealthcare.icims.com/jobs/search?ss=1&searchKeyword=PICU&in_iframe=1&pr=0:                                  <html> <head> <title>Maintenance</title> </head> <body> <table border="0" cellpadding="0" cellspacing="0" width="100%"> <tr><td
+   note: search 'NICU': HTTP 520 for https://careers-primehealthcare.icims.com/jobs/search?ss=1&searchKeyword=NICU&in_iframe=1&pr=0:                                  <html> <head> <title>Maintenance</title> </head> <body> <table border="0" cellpadding="0" cellspacing="0" width="100%"> <tr><td
+   note: sniff: HTTP 520 for https://careers-primehealthcare.icims.com/jobs/search?ss=1:                                  <html> <head> <title>Maintenance</title> </head> <body> <table border="0" cellpadding="0" cellspacing="0" width="100%"> <tr><td
+   note: sniff: page links to iCIMS portal careers-primehealthcare.icims.com
+   note: sniff: followed careers link https://www.cmhc.org/careers/
+   note: generic fallback failed: AdapterError: generic: no page reachable: 520 https://careers-primehealthcare.icims.com/jobs/search?ss=1; playwright 520 https://careers-primehealthcare.icims.com/jobs/search?ss=1&searchKeyword=nurse%20practitioner
+   (no candidate jobs)
+
+## chippenham-richmond  [careersite / careersite / ]  status=error
+   ERROR: AdapterError: careersite: every jobs.json search failed in the browser: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'; html search 'nurse practitioner': HTTP 403 Attention Required! | Cloudflare; html search 'pediatric nurse practitioner': HTTP 403 Attention Required! | Cloudflare
+   note: jobs.json 'nurse practitioner': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'pediatric nurse practitioner': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'advanced practice provider': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'APRN': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'PICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: html search 'nurse practitioner': HTTP 403 Attention Required! | Cloudflare
+   note: html search 'pediatric nurse practitioner': HTTP 403 Attention Required! | Cloudflare
+   note: sniff: HTTP 403 for https://careers.hcahealthcare.com/search/jobs: bot challenge (Cloudflare)
+   note: sniff: HTTP 403 for https://careers.hcahealthcare.com/pages/catholic-medical-center?bid=5260: bot challenge (Cloudflare)
+   note: generic fallback failed: AdapterError: generic: no page reachable: 403 https://careers.hcahealthcare.com/search/jobs?q=nurse+practitioner&location=Manchester%2C+NH%2C+United+States; playwright 403 https://careers.hcahealthcare.com/search/j
+   (no candidate jobs)
+
+## colleton-medical-center-walterboro  [careersite / careersite / ]  status=error
+   ERROR: AdapterError: careersite: every jobs.json search failed in the browser: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'; html search 'nurse practitioner': HTTP 403 Attention Required! | Cloudflare; html search 'pediatric nurse practitioner': HTTP 403 Attention Required! | Cloudflare
+   note: jobs.json 'nurse practitioner': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'pediatric nurse practitioner': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'advanced practice provider': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'APRN': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'PICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: html search 'nurse practitioner': HTTP 403 Attention Required! | Cloudflare
+   note: html search 'pediatric nurse practitioner': HTTP 403 Attention Required! | Cloudflare
+   note: sniff: HTTP 403 for https://careers.hcahealthcare.com/search/jobs: bot challenge (Cloudflare)
+   note: sniff: HTTP 403 for https://careers.hcahealthcare.com/pages/catholic-medical-center?bid=5260: bot challenge (Cloudflare)
+   note: generic fallback failed: AdapterError: generic: no page reachable: 403 https://careers.hcahealthcare.com/search/jobs?q=nurse+practitioner&location=Manchester%2C+NH%2C+United+States; playwright 403 https://careers.hcahealthcare.com/search/j
+   (no candidate jobs)
+
+## golisano-childrens-buffalo  [infor / infor / ]  status=error
+   ERROR: AdapterError: infor: list request failed: HTTP 500 for https://css-y9x4ku9mqsygapwx-prd.inforcloudsuite.com/hcm/Jobs/list/JobPosting.JobSearchList?sortOrderName=JobPosting.ByPostDateBeginSet&pageop=load&pagesize=100&dependentList=true&relation=JobBoard%281000%2CKH-EXTERNAL%29.Postings&isAscending=false&csk.JobBoard=KH-EXTERNAL&csk.HROrganization=1000: <html><head><title>Error</title></head><body>Internal Server Error</body></html>
+   note: sniff: HTTP 500 for https://css-y9x4ku9mqsygapwx-prd.inforcloudsuite.com/hcm/Jobs/form/JobBoard%281000,KH-EXTERNAL%29.JobSearchCompositeForm?navigation=JobBoard%281000,KH-EXTERNAL%29.JobSearchCompositeFormNav&csk.JobBoard=KH-EXTERNAL&csk.HROrganization=1000: <html><head><title>Error</title></head><b
+   note: sniff: HTTP 500 for https://hcm-y9x4ku9mqsygapwx-prd.inforcloudsuite.com/hcm/EmployeeSelfService/page/XiEmployeeCareerPage?selectedPanel=SearchEnableConsistentUI: <html><head><title>Error</title></head><body>Internal Server Error</body></html>
+   note: infor failed: AdapterError: infor: list request failed: HTTP 500 for https://css-y9x4ku9mqsygapwx-prd.inforcloudsuite.com/hcm/Jobs/list/JobPosting.JobSearchList?sortOrderName
+   note: generic: pages reachable but no NP/APP job links found: playwright 200 https://www.kaleidahealth.org/careers/?q=nurse+practitioner; playwright 200 https://www.kaleidahealth.org/careers/?keywords=nurse+practitioner; playwright 200 https://www.kaleidahealth.org/careers/?keyword=nurse+practitioner
+   (no candidate jobs)
+
+## grand-strand-medical-center-myrtle-beach  [careersite / careersite / ]  status=error
+   ERROR: AdapterError: careersite: every jobs.json search failed in the browser: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'; html search 'nurse practitioner': HTTP 403 Attention Required! | Cloudflare; html search 'pediatric nurse practitioner': HTTP 403 Attention Required! | Cloudflare
+   note: jobs.json 'nurse practitioner': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'pediatric nurse practitioner': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'advanced practice provider': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'APRN': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'PICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: html search 'nurse practitioner': HTTP 403 Attention Required! | Cloudflare
+   note: html search 'pediatric nurse practitioner': HTTP 403 Attention Required! | Cloudflare
+   note: sniff: HTTP 403 for https://careers.hcahealthcare.com/search/jobs: bot challenge (Cloudflare)
+   note: sniff: HTTP 403 for https://careers.hcahealthcare.com/pages/catholic-medical-center?bid=5260: bot challenge (Cloudflare)
+   note: generic fallback failed: AdapterError: generic: no page reachable: 403 https://careers.hcahealthcare.com/search/jobs?q=nurse+practitioner&location=Manchester%2C+NH%2C+United+States; playwright 403 https://careers.hcahealthcare.com/search/j
+   (no candidate jobs)
+
+## henrico-doctors-richmond  [careersite / careersite / ]  status=error
+   ERROR: AdapterError: careersite: every jobs.json search failed in the browser: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'; html search 'nurse practitioner': HTTP 403 Attention Required! | Cloudflare; html search 'pediatric nurse practitioner': HTTP 403 Attention Required! | Cloudflare
+   note: jobs.json 'nurse practitioner': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'pediatric nurse practitioner': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'advanced practice provider': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'APRN': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'PICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: html search 'nurse practitioner': HTTP 403 Attention Required! | Cloudflare
+   note: html search 'pediatric nurse practitioner': HTTP 403 Attention Required! | Cloudflare
+   note: sniff: HTTP 403 for https://careers.hcahealthcare.com/search/jobs: bot challenge (Cloudflare)
+   note: sniff: HTTP 403 for https://careers.hcahealthcare.com/pages/catholic-medical-center?bid=5260: bot challenge (Cloudflare)
+   note: generic fallback failed: AdapterError: generic: no page reachable: 403 https://careers.hcahealthcare.com/search/jobs?q=nurse+practitioner&location=Manchester%2C+NH%2C+United+States; playwright 403 https://careers.hcahealthcare.com/search/j
+   (no candidate jobs)
+
+## hsc-pediatric-center-washington  [generic / generic / ]  status=error
+   ERROR: AdapterError: generic: no page reachable: None https://www.hschealth.org/careers; playwright TimeoutError: Page.goto: Timeout 45000ms exceeded.
+Call log:
+  - navigating to "https://www.hschealth.org/careers?q=nurse+practitioner https://www.hschealth.org/careers?q=nurse+practitioner; playwright TimeoutError: Page.goto: Timeout 45000ms exceeded.
+Call log:
+  - navigating to "https://www.hschealth.org/careers?keywords=nurse+pract https://www.hschealth.org/careers?keywords=nurse+practitioner; playwright Error: Pag
+   note: sniff: HTTP None for https://www.hschealth.org/careers: ConnectTimeout: HTTPSConnectionPool(host='www.hschealth.org', port=443): Max retries exceeded with url: /careers (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.hschealth.org', port=443) at 0x7fb8a0b565a0>,
+   (no candidate jobs)
+
+## johnston-willis-richmond  [careersite / careersite / ]  status=error
+   ERROR: AdapterError: careersite: every jobs.json search failed in the browser: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'; html search 'nurse practitioner': HTTP 403 Attention Required! | Cloudflare; html search 'pediatric nurse practitioner': HTTP 403 Attention Required! | Cloudflare
+   note: jobs.json 'nurse practitioner': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'pediatric nurse practitioner': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'advanced practice provider': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'APRN': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'PICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: html search 'nurse practitioner': HTTP 403 Attention Required! | Cloudflare
+   note: html search 'pediatric nurse practitioner': HTTP 403 Attention Required! | Cloudflare
+   note: sniff: HTTP 403 for https://careers.hcahealthcare.com/search/jobs: bot challenge (Cloudflare)
+   note: sniff: HTTP 403 for https://careers.hcahealthcare.com/pages/catholic-medical-center?bid=5260: bot challenge (Cloudflare)
+   note: generic fallback failed: AdapterError: generic: no page reachable: 403 https://careers.hcahealthcare.com/search/jobs?q=nurse+practitioner&location=Manchester%2C+NH%2C+United+States; playwright 403 https://careers.hcahealthcare.com/search/j
+   (no candidate jobs)
+
+## lankenau-medical-center-wynnewood  [taleo / taleo / playwright]  status=zero_results
+   ERROR: board reachable but returned 0 listings for every keyword (check search URL / adapter)
+   note: search 'advanced practice provider': Error: Page.title: Execution context was destroyed, most likely because of a navigation
+   note: search 'APRN': Error: Page.title: Execution context was destroyed, most likely because of a navigation
+   note: search 'PICU': Error: Page.title: Execution context was destroyed, most likely because of a navigation
+   note: search 'NICU': Error: Page.title: Execution context was destroyed, most likely because of a navigation
+   note: taleo adapter returned 0 listings; trying generic
+   note: generic: pages reachable but no NP/APP job links found: playwright 200 https://careers.mainlinehealth.org/?utm_source=corporate_site&amp%3Butm_medium=referral&amp%3Butm_campaign=internal_navigation&q=nurse+practitioner; playwright 200 https://careers.mainlinehealth.org/?utm_source=corporate_site&amp
+   (no candidate jobs)
+
+## lewisgale-medical-center-salem  [careersite / careersite / ]  status=error
+   ERROR: AdapterError: careersite: every jobs.json search failed in the browser: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'; html search 'nurse practitioner': HTTP 403 Attention Required! | Cloudflare; html search 'pediatric nurse practitioner': HTTP 403 Attention Required! | Cloudflare
+   note: jobs.json 'nurse practitioner': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'pediatric nurse practitioner': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'advanced practice provider': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'APRN': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'PICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: html search 'nurse practitioner': HTTP 403 Attention Required! | Cloudflare
+   note: html search 'pediatric nurse practitioner': HTTP 403 Attention Required! | Cloudflare
+   note: sniff: HTTP 403 for https://careers.hcahealthcare.com/search/jobs: bot challenge (Cloudflare)
+   note: sniff: HTTP 403 for https://careers.hcahealthcare.com/pages/catholic-medical-center?bid=5260: bot challenge (Cloudflare)
+   note: generic fallback failed: AdapterError: generic: no page reachable: 403 https://careers.hcahealthcare.com/search/jobs?q=nurse+practitioner&location=Manchester%2C+NH%2C+United+States; playwright 403 https://careers.hcahealthcare.com/search/j
+   (no candidate jobs)
+
+## mcleod-childrens-florence  [generic / generic / ]  status=error
+   ERROR: AdapterError: generic: no page reachable: 403 https://jobs.mcleodhealth.org/; playwright 403 https://jobs.mcleodhealth.org/; playwright 403 https://jobs.mcleodhealth.org/?q=nurse+practitioner; playwright 403 https://jobs.mcleodhealth.org/?keywords=nurse+practitioner
+   note: sniff: HTTP 403 for https://jobs.mcleodhealth.org/: bot challenge (Cloudflare)
+   (no candidate jobs)
+
+## mcleod-regional-florence  [generic / generic / ]  status=error
+   ERROR: AdapterError: generic: no page reachable: 403 https://jobs.mcleodhealth.org/; playwright 403 https://jobs.mcleodhealth.org/; playwright 403 https://jobs.mcleodhealth.org/?q=nurse+practitioner; playwright 403 https://jobs.mcleodhealth.org/?keywords=nurse+practitioner
+   note: sniff: HTTP 403 for https://jobs.mcleodhealth.org/: bot challenge (Cloudflare)
+   (no candidate jobs)
+
+## medina-memorial-hospital-medina  [generic / generic / playwright]  status=no_listings
+   ERROR: careers page reachable but no job listings recognized (generic adapter): set careers_search_url / ats_config to the real job board
+   note: generic: pages reachable but no NP/APP job links found: playwright 200 https://orleanscommunityhealth.org/careers/?q=nurse+practitioner; playwright 200 https://orleanscommunityhealth.org/careers/?keywords=nurse+practitioner; playwright 200 https://orleanscommunityhealth.org/careers/?keyword=nurse+pr
+   (no candidate jobs)
+
+## millard-fillmore-suburban-williamsville  [infor / infor / ]  status=error
+   ERROR: AdapterError: infor: list request failed: HTTP 500 for https://css-y9x4ku9mqsygapwx-prd.inforcloudsuite.com/hcm/Jobs/list/JobPosting.JobSearchList?sortOrderName=JobPosting.ByPostDateBeginSet&pageop=load&pagesize=100&dependentList=true&relation=JobBoard%281000%2CKH-EXTERNAL%29.Postings&isAscending=false&csk.JobBoard=KH-EXTERNAL&csk.HROrganization=1000: <html><head><title>Error</title></head><body>Internal Server Error</body></html>
+   note: sniff: HTTP 500 for https://css-y9x4ku9mqsygapwx-prd.inforcloudsuite.com/hcm/Jobs/form/JobBoard%281000,KH-EXTERNAL%29.JobSearchCompositeForm?navigation=JobBoard%281000,KH-EXTERNAL%29.JobSearchCompositeFormNav&csk.JobBoard=KH-EXTERNAL&csk.HROrganization=1000: <html><head><title>Error</title></head><b
+   note: sniff: HTTP 500 for https://hcm-y9x4ku9mqsygapwx-prd.inforcloudsuite.com/hcm/EmployeeSelfService/page/XiEmployeeCareerPage?selectedPanel=SearchEnableConsistentUI: <html><head><title>Error</title></head><body>Internal Server Error</body></html>
+   note: infor failed: AdapterError: infor: list request failed: HTTP 500 for https://css-y9x4ku9mqsygapwx-prd.inforcloudsuite.com/hcm/Jobs/list/JobPosting.JobSearchList?sortOrderName
+   note: generic: pages reachable but no NP/APP job links found: playwright 200 https://www.kaleidahealth.org/careers/?q=nurse+practitioner; playwright 200 https://www.kaleidahealth.org/careers/?keywords=nurse+practitioner; playwright 200 https://www.kaleidahealth.org/careers/?keyword=nurse+practitioner
+   (no candidate jobs)
+
+## mission-childrens-asheville  [careersite / careersite / ]  status=error
+   ERROR: AdapterError: careersite: every jobs.json search failed in the browser: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'; html search 'nurse practitioner': HTTP 403 Attention Required! | Cloudflare; html search 'pediatric nurse practitioner': HTTP 403 Attention Required! | Cloudflare
+   note: jobs.json 'nurse practitioner': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'pediatric nurse practitioner': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'advanced practice provider': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'APRN': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'PICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: html search 'nurse practitioner': HTTP 403 Attention Required! | Cloudflare
+   note: html search 'pediatric nurse practitioner': HTTP 403 Attention Required! | Cloudflare
+   note: sniff: HTTP 403 for https://careers.hcahealthcare.com/search/jobs: bot challenge (Cloudflare)
+   note: sniff: HTTP 403 for https://careers.hcahealthcare.com/pages/catholic-medical-center?bid=5260: bot challenge (Cloudflare)
+   note: generic fallback failed: AdapterError: generic: no page reachable: 403 https://careers.hcahealthcare.com/search/jobs?q=nurse+practitioner&location=Manchester%2C+NH%2C+United+States; playwright 403 https://careers.hcahealthcare.com/search/j
+   (no candidate jobs)
+
+## niagara-falls-memorial-medical-center-niagara-falls  [generic / generic / playwright]  status=no_listings
+   ERROR: careers page reachable but no job listings recognized (generic adapter): set careers_search_url / ats_config to the real job board
+   note: generic: pages reachable but no NP/APP job links found: playwright 200 https://careers.nfmmc.org/?s=nurse+practitioner; playwright 200 https://careers.nfmmc.org/?q=nurse+practitioner; playwright 200 https://careers.nfmmc.org/?keywords=nurse+practitioner
+   (no candidate jobs)
+
+## olean-general-hospital-olean  [infor / infor / ]  status=error
+   ERROR: AdapterError: infor: list request failed: HTTP 500 for https://css-y9x4ku9mqsygapwx-prd.inforcloudsuite.com/hcm/Jobs/list/JobPosting.JobSearchList?sortOrderName=JobPosting.ByPostDateBeginSet&pageop=load&pagesize=100&dependentList=true&relation=JobBoard%281000%2CKH-EXTERNAL%29.Postings&isAscending=false&csk.JobBoard=KH-EXTERNAL&csk.HROrganization=1000: <html><head><title>Error</title></head><body>Internal Server Error</body></html>
+   note: sniff: HTTP 500 for https://css-y9x4ku9mqsygapwx-prd.inforcloudsuite.com/hcm/Jobs/form/JobBoard%281000,KH-EXTERNAL%29.JobSearchCompositeForm?navigation=JobBoard%281000,KH-EXTERNAL%29.JobSearchCompositeFormNav&csk.JobBoard=KH-EXTERNAL&csk.HROrganization=1000: <html><head><title>Error</title></head><b
+   note: sniff: HTTP 500 for https://hcm-y9x4ku9mqsygapwx-prd.inforcloudsuite.com/hcm/EmployeeSelfService/page/XiEmployeeCareerPage?selectedPanel=SearchEnableConsistentUI: <html><head><title>Error</title></head><body>Internal Server Error</body></html>
+   note: infor failed: AdapterError: infor: list request failed: HTTP 500 for https://css-y9x4ku9mqsygapwx-prd.inforcloudsuite.com/hcm/Jobs/list/JobPosting.JobSearchList?sortOrderName
+   note: generic: pages reachable but no NP/APP job links found: playwright 200 https://www.kaleidahealth.org/careers/?q=nurse+practitioner; playwright 200 https://www.kaleidahealth.org/careers/?keywords=nurse+practitioner; playwright 200 https://www.kaleidahealth.org/careers/?keyword=nurse+practitioner
+   (no candidate jobs)
+
+## paoli-hospital-paoli  [taleo / taleo / playwright]  status=zero_results
+   ERROR: board reachable but returned 0 listings for every keyword (check search URL / adapter)
+   note: search 'advanced practice provider': Error: Page.title: Execution context was destroyed, most likely because of a navigation
+   note: search 'APRN': Error: Page.title: Execution context was destroyed, most likely because of a navigation
+   note: search 'PICU': Error: Page.title: Execution context was destroyed, most likely because of a navigation
+   note: search 'NICU': Error: Page.title: Execution context was destroyed, most likely because of a navigation
+   note: taleo adapter returned 0 listings; trying generic
+   note: generic: pages reachable but no NP/APP job links found: playwright 200 https://careers.mainlinehealth.org/?utm_source=corporate_site&amp%3Butm_medium=referral&amp%3Butm_campaign=internal_navigation&q=nurse+practitioner; playwright 200 https://careers.mainlinehealth.org/?utm_source=corporate_site&amp
+   (no candidate jobs)
+
+## portsmouth-regional-portsmouth  [careersite / careersite / ]  status=error
+   ERROR: AdapterError: careersite: every jobs.json search failed in the browser: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'; html search 'nurse practitioner': HTTP 403 Attention Required! | Cloudflare; html search 'pediatric nurse practitioner': HTTP 403 Attention Required! | Cloudflare
+   note: jobs.json 'nurse practitioner': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'pediatric nurse practitioner': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'advanced practice provider': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'APRN': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'PICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: html search 'nurse practitioner': HTTP 403 Attention Required! | Cloudflare
+   note: html search 'pediatric nurse practitioner': HTTP 403 Attention Required! | Cloudflare
+   note: sniff: HTTP 403 for https://careers.hcahealthcare.com/search/jobs: bot challenge (Cloudflare)
+   note: sniff: HTTP 403 for https://careers.hcahealthcare.com/pages/catholic-medical-center?bid=5260: bot challenge (Cloudflare)
+   note: generic fallback failed: AdapterError: generic: no page reachable: 403 https://careers.hcahealthcare.com/search/jobs?q=nurse+practitioner&location=Manchester%2C+NH%2C+United+States; playwright 403 https://careers.hcahealthcare.com/search/j
+   (no candidate jobs)
+
+## reston-hospital-center-reston  [careersite / careersite / ]  status=error
+   ERROR: AdapterError: careersite: every jobs.json search failed in the browser: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'; html search 'nurse practitioner': HTTP 403 Attention Required! | Cloudflare; html search 'pediatric nurse practitioner': HTTP 403 Attention Required! | Cloudflare
+   note: jobs.json 'nurse practitioner': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'pediatric nurse practitioner': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'advanced practice provider': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'APRN': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'PICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: html search 'nurse practitioner': HTTP 403 Attention Required! | Cloudflare
+   note: html search 'pediatric nurse practitioner': HTTP 403 Attention Required! | Cloudflare
+   note: sniff: HTTP 403 for https://careers.hcahealthcare.com/search/jobs: bot challenge (Cloudflare)
+   note: sniff: HTTP 403 for https://careers.hcahealthcare.com/pages/catholic-medical-center?bid=5260: bot challenge (Cloudflare)
+   note: generic fallback failed: AdapterError: generic: no page reachable: 403 https://careers.hcahealthcare.com/search/jobs?q=nurse+practitioner&location=Manchester%2C+NH%2C+United+States; playwright 403 https://careers.hcahealthcare.com/search/j
+   (no candidate jobs)
+
+## riddle-hospital-media  [taleo / taleo / playwright]  status=zero_results
+   ERROR: board reachable but returned 0 listings for every keyword (check search URL / adapter)
+   note: search 'advanced practice provider': Error: Page.title: Execution context was destroyed, most likely because of a navigation
+   note: search 'APRN': Error: Page.title: Execution context was destroyed, most likely because of a navigation
+   note: search 'PICU': Error: Page.title: Execution context was destroyed, most likely because of a navigation
+   note: search 'NICU': Error: Page.title: Execution context was destroyed, most likely because of a navigation
+   note: taleo adapter returned 0 listings; trying generic
+   note: generic: pages reachable but no NP/APP job links found: playwright 200 https://careers.mainlinehealth.org/?utm_source=corporate_site&amp%3Butm_medium=referral&amp%3Butm_campaign=internal_navigation&q=nurse+practitioner; playwright 200 https://careers.mainlinehealth.org/?utm_source=corporate_site&amp
+   (no candidate jobs)
+
+## saint-clares-denville  [icims / icims / ]  status=error
+   ERROR: AdapterError: search 'APRN': HTTP 520 for https://careers-primehealthcare.icims.com/jobs/search?ss=1&searchKeyword=APRN&in_iframe=1&pr=0:                                  <html> <head> <title>Maintenance</title> </head> <body> <table border="0" cellpadding="0" cellspacing="0" width="100%"> <tr><td; search 'PICU': HTTP 520 for https://careers-primehealthcare.icims.com/jobs/search?ss=1&searchKeyword=PICU&in_iframe=1&pr=0:                                  <html> <head> <title>Maintenance</title> </head> <body> <
+   note: search 'nurse practitioner': HTTP 520 for https://careers-primehealthcare.icims.com/jobs/search?ss=1&searchKeyword=nurse+practitioner&in_iframe=1&pr=0:                                  <html> <head> <title>Maintenance</title> </head> <body> <table border="0" cellpadding="0" cellspacing="0" width="10
+   note: search 'pediatric nurse practitioner': HTTP 520 for https://careers-primehealthcare.icims.com/jobs/search?ss=1&searchKeyword=pediatric+nurse+practitioner&in_iframe=1&pr=0:                                  <html> <head> <title>Maintenance</title> </head> <body> <table border="0" cellpadding="0" cells
+   note: search 'advanced practice provider': HTTP 520 for https://careers-primehealthcare.icims.com/jobs/search?ss=1&searchKeyword=advanced+practice+provider&in_iframe=1&pr=0:                                  <html> <head> <title>Maintenance</title> </head> <body> <table border="0" cellpadding="0" cellspaci
+   note: search 'APRN': HTTP 520 for https://careers-primehealthcare.icims.com/jobs/search?ss=1&searchKeyword=APRN&in_iframe=1&pr=0:                                  <html> <head> <title>Maintenance</title> </head> <body> <table border="0" cellpadding="0" cellspacing="0" width="100%"> <tr><td
+   note: search 'PICU': HTTP 520 for https://careers-primehealthcare.icims.com/jobs/search?ss=1&searchKeyword=PICU&in_iframe=1&pr=0:                                  <html> <head> <title>Maintenance</title> </head> <body> <table border="0" cellpadding="0" cellspacing="0" width="100%"> <tr><td
+   note: search 'NICU': HTTP 520 for https://careers-primehealthcare.icims.com/jobs/search?ss=1&searchKeyword=NICU&in_iframe=1&pr=0:                                  <html> <head> <title>Maintenance</title> </head> <body> <table border="0" cellpadding="0" cellspacing="0" width="100%"> <tr><td
+   note: sniff: HTTP 520 for https://careers-primehealthcare.icims.com/jobs/search?ss=1:                                  <html> <head> <title>Maintenance</title> </head> <body> <table border="0" cellpadding="0" cellspacing="0" width="100%"> <tr><td
+   note: sniff: page links to iCIMS portal careers-primehealthcare.icims.com
+   note: sniff: followed careers link https://www.cmhc.org/careers/
+   note: generic fallback failed: AdapterError: generic: no page reachable: 520 https://careers-primehealthcare.icims.com/jobs/search?ss=1; playwright 520 https://careers-primehealthcare.icims.com/jobs/search?ss=1&searchKeyword=nurse%20practitioner
+   (no candidate jobs)
+
+## spotsylvania-regional-fredericksburg  [careersite / careersite / ]  status=error
+   ERROR: AdapterError: careersite: every jobs.json search failed in the browser: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'; html search 'nurse practitioner': HTTP 403 Attention Required! | Cloudflare; html search 'pediatric nurse practitioner': HTTP 403 Attention Required! | Cloudflare
+   note: jobs.json 'nurse practitioner': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'pediatric nurse practitioner': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'advanced practice provider': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'APRN': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'PICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: html search 'nurse practitioner': HTTP 403 Attention Required! | Cloudflare
+   note: html search 'pediatric nurse practitioner': HTTP 403 Attention Required! | Cloudflare
+   note: sniff: HTTP 403 for https://careers.hcahealthcare.com/search/jobs: bot challenge (Cloudflare)
+   note: sniff: HTTP 403 for https://careers.hcahealthcare.com/pages/catholic-medical-center?bid=5260: bot challenge (Cloudflare)
+   note: generic fallback failed: AdapterError: generic: no page reachable: 403 https://careers.hcahealthcare.com/search/jobs?q=nurse+practitioner&location=Manchester%2C+NH%2C+United+States; playwright 403 https://careers.hcahealthcare.com/search/j
+   (no candidate jobs)
+
+## stonesprings-hospital-dulles  [careersite / careersite / ]  status=error
+   ERROR: AdapterError: careersite: every jobs.json search failed in the browser: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'; html search 'nurse practitioner': HTTP 403 Attention Required! | Cloudflare; html search 'pediatric nurse practitioner': HTTP 403 Attention Required! | Cloudflare
+   note: jobs.json 'nurse practitioner': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'pediatric nurse practitioner': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'advanced practice provider': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'APRN': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'PICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: html search 'nurse practitioner': HTTP 403 Attention Required! | Cloudflare
+   note: html search 'pediatric nurse practitioner': HTTP 403 Attention Required! | Cloudflare
+   note: sniff: HTTP 403 for https://careers.hcahealthcare.com/search/jobs: bot challenge (Cloudflare)
+   note: sniff: HTTP 403 for https://careers.hcahealthcare.com/pages/catholic-medical-center?bid=5260: bot challenge (Cloudflare)
+   note: generic fallback failed: AdapterError: generic: no page reachable: 403 https://careers.hcahealthcare.com/search/jobs?q=nurse+practitioner&location=Manchester%2C+NH%2C+United+States; playwright 403 https://careers.hcahealthcare.com/search/j
+   (no candidate jobs)
+
+## summerville-medical-center-summerville  [careersite / careersite / ]  status=error
+   ERROR: AdapterError: careersite: every jobs.json search failed in the browser: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'; html search 'nurse practitioner': HTTP 403 Attention Required! | Cloudflare; html search 'pediatric nurse practitioner': HTTP 403 Attention Required! | Cloudflare
+   note: jobs.json 'nurse practitioner': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'pediatric nurse practitioner': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'advanced practice provider': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'APRN': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'PICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: html search 'nurse practitioner': HTTP 403 Attention Required! | Cloudflare
+   note: html search 'pediatric nurse practitioner': HTTP 403 Attention Required! | Cloudflare
+   note: sniff: HTTP 403 for https://careers.hcahealthcare.com/search/jobs: bot challenge (Cloudflare)
+   note: sniff: HTTP 403 for https://careers.hcahealthcare.com/pages/catholic-medical-center?bid=5260: bot challenge (Cloudflare)
+   note: generic fallback failed: AdapterError: generic: no page reachable: 403 https://careers.hcahealthcare.com/search/jobs?q=nurse+practitioner&location=Manchester%2C+NH%2C+United+States; playwright 403 https://careers.hcahealthcare.com/search/j
+   (no candidate jobs)
+
+## trident-medical-center-north-charleston  [careersite / careersite / ]  status=error
+   ERROR: AdapterError: careersite: every jobs.json search failed in the browser: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'; html search 'nurse practitioner': HTTP 403 Attention Required! | Cloudflare; html search 'pediatric nurse practitioner': HTTP 403 Attention Required! | Cloudflare
+   note: jobs.json 'nurse practitioner': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'pediatric nurse practitioner': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'advanced practice provider': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'APRN': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'PICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: html search 'nurse practitioner': HTTP 403 Attention Required! | Cloudflare
+   note: html search 'pediatric nurse practitioner': HTTP 403 Attention Required! | Cloudflare
+   note: sniff: HTTP 403 for https://careers.hcahealthcare.com/search/jobs: bot challenge (Cloudflare)
+   note: sniff: HTTP 403 for https://careers.hcahealthcare.com/pages/catholic-medical-center?bid=5260: bot challenge (Cloudflare)
+   note: generic fallback failed: AdapterError: generic: no page reachable: 403 https://careers.hcahealthcare.com/search/jobs?q=nurse+practitioner&location=Manchester%2C+NH%2C+United+States; playwright 403 https://careers.hcahealthcare.com/search/j
+   (no candidate jobs)
+
+## washington-regional-plymouth  [generic / generic / ]  status=error
+   ERROR: AdapterError: generic: no page reachable: None https://www.washingtonregional.org/careers/; playwright Error: Page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.washingtonregional.org/careers/?q=nurse+practitioner
+Call log:
+  -  https://www.washingtonregional.org/careers/?q=nurse+practitioner; playwright Error: Page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.washingtonregional.org/careers/?keywords=nurse+practitioner
+Call lo https://www.washingtonregional.org/careers/?keywords=nurse+practitioner; playw
+   note: sniff: HTTP None for https://www.washingtonregional.org/careers/: ConnectionError: HTTPSConnectionPool(host='www.washingtonregional.org', port=443): Max retries exceeded with url: /careers/ (Caused by NameResolutionError("HTTPSConnection(host='www.washingtonregional.org', port=443):
+   (no candidate jobs)
