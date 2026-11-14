@@ -1,0 +1,865 @@
+## adventist-shady-grove-rockville  [generic->workday / workday / ]  status=error
+   ERROR: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: sniff: page links to Workday adventisthealthcare.wd1 site AdventistHealthCareCareers
+   note: facet discovery failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: traceback: -np-job-board/peds-np-job-board/scraper/pipeline.py", line 270, in run_board
+    listings = adapter.search(opts.keywords)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/peds-np-job-board/peds-np-job-board/scraper/adapters/workday.py", line 143, in search
+    data =
+   (no candidate jobs)
+
+## adventist-white-oak-silver-spring  [generic->workday / workday / ]  status=error
+   ERROR: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: sniff: page links to Workday adventisthealthcare.wd1 site AdventistHealthCareCareers
+   note: facet discovery failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: traceback: -np-job-board/peds-np-job-board/scraper/pipeline.py", line 270, in run_board
+    listings = adapter.search(opts.keywords)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/peds-np-job-board/peds-np-job-board/scraper/adapters/workday.py", line 143, in search
+    data =
+   (no candidate jobs)
+
+## brigham-and-womens-boston  [workday / workday / ]  status=error
+   ERROR: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: facet discovery failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: traceback: -np-job-board/peds-np-job-board/scraper/pipeline.py", line 270, in run_board
+    listings = adapter.search(opts.keywords)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/peds-np-job-board/peds-np-job-board/scraper/adapters/workday.py", line 143, in search
+    data =
+   note: sniff: page links to Workday massgeneralbrigham.wd1 site MGBExternal
+   note: sniff: followed careers link https://www.massgeneralbrigham.org/en/about/careers
+   note: workday failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: generic: pages reachable but no NP/APP job links found: playwright 200 https://massgeneralbrigham.wd1.myworkdayjobs.com/MGBExternal?q=nurse%20practitioner; playwright 200 https://massgeneralbrigham.wd1.myworkdayjobs.com/MGBExternal?keywords=nurse+practitioner; playwright 200 https://massgeneralbrigh
+   (no candidate jobs)
+
+## bryn-mawr-hospital-bryn-mawr  [taleo / taleo / ]  status=error
+   ERROR: AdapterError: search 'APRN': Error: Page.title: Execution context was destroyed, most likely because of a navigation; search 'PICU': Error: Page.title: Execution context was destroyed, most likely because of a navigation; search 'NICU': Error: Page.title: Execution context was destroyed, most likely because of a navigation
+   note: career section page: HTTP 404 for https://careers.mainlinehealth.org/careersection/ext/jobsearch.ftl?lang=en: <!DOCTYPE html><html lang="en"><head> 	<meta http-equiv="refresh" content="0; URL=/404" /> 	</head><body></body></html>
+   note: search 'nurse practitioner': Error: Page.title: Execution context was destroyed, most likely because of a navigation
+   note: search 'pediatric nurse practitioner': Error: Page.title: Execution context was destroyed, most likely because of a navigation
+   note: search 'advanced practice provider': Error: Page.title: Execution context was destroyed, most likely because of a navigation
+   note: search 'APRN': Error: Page.title: Execution context was destroyed, most likely because of a navigation
+   note: search 'PICU': Error: Page.title: Execution context was destroyed, most likely because of a navigation
+   note: search 'NICU': Error: Page.title: Execution context was destroyed, most likely because of a navigation
+   note: sniff: page links to Taleo mainline.taleo.net section 2
+   note: taleo failed: AdapterError: search 'APRN': Error: Page.title: Execution context was destroyed, most likely because of a navigation; search 'PICU': Error: Page.title: Executio
+   note: generic: pages reachable but no NP/APP job links found: playwright 200 https://careers.mainlinehealth.org/?utm_source=corporate_site&amp%3Butm_medium=referral&amp%3Butm_campaign=internal_navigation&q=nurse+practitioner; playwright 200 https://careers.mainlinehealth.org/?utm_source=corporate_site&amp
+   (no candidate jobs)
+
+## cape-fear-valley-fayetteville  [workday / workday / ]  status=error
+   ERROR: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: facet discovery failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: traceback: -np-job-board/peds-np-job-board/scraper/pipeline.py", line 270, in run_board
+    listings = adapter.search(opts.keywords)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/peds-np-job-board/peds-np-job-board/scraper/adapters/workday.py", line 143, in search
+    data =
+   note: sniff: page links to Workday capefearvalley.wd1 site CFV
+   note: sniff: page links to Workday capefearvalley.wd1 site CFV
+   note: sniff: followed careers link https://www.capefearvalley.com/careers
+   note: workday failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: generic: pages reachable but no NP/APP job links found: playwright 200 https://capefearvalley.wd1.myworkdayjobs.com/CFV?q=nurse%20practitioner; playwright 200 https://www.capefearvalley.com/careers/?q=nurse+practitioner; playwright 200 https://www.capefearvalley.com/careers/?keywords=nurse+practitio
+   (no candidate jobs)
+
+## capital-health-hopewell-pennington  [workday / workday / ]  status=error
+   ERROR: AdapterError: workday: cannot derive host/tenant from ats_config or careers URLs
+   note: sniff: page links to Workday capitalhealth.wd1 site CapitalHealthCareers
+   note: sniff fallback failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: workday failed: AdapterError: workday: cannot derive host/tenant from ats_config or careers URLs
+   note: generic: pages reachable but no NP/APP job links found: playwright 200 https://www.capitalhealth.org/start-a-career/benefits?q=nurse+practitioner; playwright 200 https://www.capitalhealth.org/start-a-career/benefits?keywords=nurse+practitioner; playwright 200 https://www.capitalhealth.org/start-a-ca
+   (no candidate jobs)
+
+## cfv-betsy-johnson-dunn  [workday / workday / ]  status=error
+   ERROR: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: facet discovery failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: traceback: -np-job-board/peds-np-job-board/scraper/pipeline.py", line 270, in run_board
+    listings = adapter.search(opts.keywords)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/peds-np-job-board/peds-np-job-board/scraper/adapters/workday.py", line 143, in search
+    data =
+   note: sniff: page links to Workday capefearvalley.wd1 site CFV
+   note: sniff: page links to Workday capefearvalley.wd1 site CFV
+   note: sniff: followed careers link https://www.capefearvalley.com/careers
+   note: workday failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: generic: pages reachable but no NP/APP job links found: playwright 200 https://capefearvalley.wd1.myworkdayjobs.com/CFV?q=nurse%20practitioner; playwright 200 https://www.capefearvalley.com/careers/?q=nurse+practitioner; playwright 200 https://www.capefearvalley.com/careers/?keywords=nurse+practitio
+   (no candidate jobs)
+
+## cfv-central-harnett-lillington  [workday / workday / ]  status=error
+   ERROR: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: facet discovery failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: traceback: -np-job-board/peds-np-job-board/scraper/pipeline.py", line 270, in run_board
+    listings = adapter.search(opts.keywords)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/peds-np-job-board/peds-np-job-board/scraper/adapters/workday.py", line 143, in search
+    data =
+   note: sniff: page links to Workday capefearvalley.wd1 site CFV
+   note: sniff: page links to Workday capefearvalley.wd1 site CFV
+   note: sniff: followed careers link https://www.capefearvalley.com/careers
+   note: workday failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: generic: pages reachable but no NP/APP job links found: playwright 200 https://capefearvalley.wd1.myworkdayjobs.com/CFV?q=nurse%20practitioner; playwright 200 https://www.capefearvalley.com/careers/?q=nurse+practitioner; playwright 200 https://www.capefearvalley.com/careers/?keywords=nurse+practitio
+   (no candidate jobs)
+
+## christiana-hospital-newark-de  [workday / workday / ]  status=error
+   ERROR: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: facet discovery failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: traceback: -np-job-board/peds-np-job-board/scraper/pipeline.py", line 270, in run_board
+    listings = adapter.search(opts.keywords)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/peds-np-job-board/peds-np-job-board/scraper/adapters/workday.py", line 143, in search
+    data =
+   note: workday failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: generic: pages reachable but no NP/APP job links found: playwright 200 https://christianacare.wd5.myworkdayjobs.com/CCHS?q=nurse%20practitioner; playwright 200 https://christianacare.wd5.myworkdayjobs.com/CCHS?keywords=nurse+practitioner; playwright 200 https://christianacare.wd5.myworkdayjobs.com/C
+   (no candidate jobs)
+
+## christianacare-union-elkton  [workday / workday / ]  status=error
+   ERROR: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: facet discovery failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: traceback: -np-job-board/peds-np-job-board/scraper/pipeline.py", line 270, in run_board
+    listings = adapter.search(opts.keywords)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/peds-np-job-board/peds-np-job-board/scraper/adapters/workday.py", line 143, in search
+    data =
+   note: workday failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: generic: pages reachable but no NP/APP job links found: playwright 200 https://christianacare.wd5.myworkdayjobs.com/CCHS?q=nurse%20practitioner; playwright 200 https://christianacare.wd5.myworkdayjobs.com/CCHS?keywords=nurse+practitioner; playwright 200 https://christianacare.wd5.myworkdayjobs.com/C
+   (no candidate jobs)
+
+## columbia-memorial-hospital-hudson  [workday / workday / ]  status=error
+   ERROR: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: facet discovery failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: traceback: -np-job-board/peds-np-job-board/scraper/pipeline.py", line 270, in run_board
+    listings = adapter.search(opts.keywords)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/peds-np-job-board/peds-np-job-board/scraper/adapters/workday.py", line 143, in search
+    data =
+   note: sniff: page links to Workday albanymed.wd5 site Albany_Med_System_Career_Site
+   note: sniff: followed careers link https://www.albanymed.org/careers/
+   note: sniff fallback failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: workday failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: generic: pages reachable but no NP/APP job links found: playwright 200 https://albanymed.wd5.myworkdayjobs.com/Albany_Med?q=nurse%20practitioner; playwright 200 https://albanymed.wd5.myworkdayjobs.com/Albany_Med?keywords=nurse+practitioner; playwright 200 https://albanymed.wd5.myworkdayjobs.com/Alba
+   (no candidate jobs)
+
+## concord-hospital-concord  [generic->workday / workday / ]  status=error
+   ERROR: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: sniff: page links to Workday crhc.wd1 site Concord_Careers
+   note: facet discovery failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: traceback: -np-job-board/peds-np-job-board/scraper/pipeline.py", line 270, in run_board
+    listings = adapter.search(opts.keywords)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/peds-np-job-board/peds-np-job-board/scraper/adapters/workday.py", line 143, in search
+    data =
+   (no candidate jobs)
+
+## cooley-dickinson-northampton  [workday / workday / ]  status=error
+   ERROR: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: facet discovery failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: traceback: -np-job-board/peds-np-job-board/scraper/pipeline.py", line 270, in run_board
+    listings = adapter.search(opts.keywords)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/peds-np-job-board/peds-np-job-board/scraper/adapters/workday.py", line 143, in search
+    data =
+   note: sniff: page links to Workday massgeneralbrigham.wd1 site MGBExternal
+   note: sniff: followed careers link https://www.massgeneralbrigham.org/en/about/careers
+   note: workday failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: generic: pages reachable but no NP/APP job links found: playwright 200 https://massgeneralbrigham.wd1.myworkdayjobs.com/MGBExternal?q=nurse%20practitioner; playwright 200 https://massgeneralbrigham.wd1.myworkdayjobs.com/MGBExternal?keywords=nurse+practitioner; playwright 200 https://massgeneralbrigh
+   (no candidate jobs)
+
+## duker-childrens-albany  [workday / workday / ]  status=error
+   ERROR: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: facet discovery failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: traceback: -np-job-board/peds-np-job-board/scraper/pipeline.py", line 270, in run_board
+    listings = adapter.search(opts.keywords)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/peds-np-job-board/peds-np-job-board/scraper/adapters/workday.py", line 143, in search
+    data =
+   note: sniff: page links to Workday albanymed.wd5 site Albany_Med_System_Career_Site
+   note: sniff: followed careers link https://www.albanymed.org/careers/
+   note: sniff fallback failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: workday failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: generic: pages reachable but no NP/APP job links found: playwright 200 https://albanymed.wd5.myworkdayjobs.com/Albany_Med?q=nurse%20practitioner; playwright 200 https://albanymed.wd5.myworkdayjobs.com/Albany_Med?keywords=nurse+practitioner; playwright 200 https://albanymed.wd5.myworkdayjobs.com/Alba
+   (no candidate jobs)
+
+## gbmc-towson  [workday / workday / ]  status=error
+   ERROR: AdapterError: workday: cannot derive host/tenant from ats_config or careers URLs
+   note: sniff: page links to Workday gbmc.wd1 site gbmc
+   note: sniff fallback failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: workday failed: AdapterError: workday: cannot derive host/tenant from ats_config or careers URLs
+   note: generic: pages reachable but no NP/APP job links found: playwright 200 https://www.gbmc.org/careers?q=nurse+practitioner; playwright 200 https://www.gbmc.org/careers?keywords=nurse+practitioner; playwright 200 https://www.gbmc.org/careers?keyword=nurse+practitioner
+   (no candidate jobs)
+
+## glens-falls-hospital-glens-falls  [workday / workday / ]  status=error
+   ERROR: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: facet discovery failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: traceback: -np-job-board/peds-np-job-board/scraper/pipeline.py", line 270, in run_board
+    listings = adapter.search(opts.keywords)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/peds-np-job-board/peds-np-job-board/scraper/adapters/workday.py", line 143, in search
+    data =
+   note: sniff: page links to Workday albanymed.wd5 site Albany_Med_System_Career_Site
+   note: sniff: followed careers link https://www.albanymed.org/careers/
+   note: sniff fallback failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: workday failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: generic: pages reachable but no NP/APP job links found: playwright 200 https://albanymed.wd5.myworkdayjobs.com/Albany_Med?q=nurse%20practitioner; playwright 200 https://albanymed.wd5.myworkdayjobs.com/Albany_Med?keywords=nurse+practitioner; playwright 200 https://albanymed.wd5.myworkdayjobs.com/Alba
+   (no candidate jobs)
+
+## golisano-childrens-rochester  [workday / workday / ]  status=error
+   ERROR: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: facet discovery failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: traceback: -np-job-board/peds-np-job-board/scraper/pipeline.py", line 270, in run_board
+    listings = adapter.search(opts.keywords)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/peds-np-job-board/peds-np-job-board/scraper/adapters/workday.py", line 143, in search
+    data =
+   note: sniff: HTTP 403 for https://www.jmhny.org/: forbidden (bot block?)
+   note: workday failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: generic: pages reachable but no NP/APP job links found: playwright 200 https://rochester.wd5.myworkdayjobs.com/UR_Nursing?q=nurse%20practitioner; playwright 200 https://rochester.wd5.myworkdayjobs.com/UR_Nursing?keywords=nurse+practitioner; playwright 200 https://rochester.wd5.myworkdayjobs.com/UR_N
+   (no candidate jobs)
+
+## holy-cross-silver-spring  [workday / workday / ]  status=error
+   ERROR: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: facet discovery failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: traceback: -np-job-board/peds-np-job-board/scraper/pipeline.py", line 270, in run_board
+    listings = adapter.search(opts.keywords)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/peds-np-job-board/peds-np-job-board/scraper/adapters/workday.py", line 143, in search
+    data =
+   note: sniff: recognized phenom front end on jobs.trinity-health.org
+   note: sniff: followed careers link https://jobs.trinity-health.org/newengland/
+   note: sniff fallback failed: AdapterError: search 'APRN': HTTP 404 for https://jobs.trinity-health.org/us/en/search-results?keywords=APRN: <!doctype html>  <!--[if lt IE 7]>      <html class="lt-ie7" lang="en"> <![endif]-->  <!--[if IE 7]>    
+   note: workday failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: generic: pages reachable but no NP/APP job links found: playwright 200 https://trinityhealth.wd1.myworkdayjobs.com/Jobs?q=nurse%20practitioner; playwright 200 https://trinityhealth.wd1.myworkdayjobs.com/Jobs?keywords=nurse+practitioner; playwright 200 https://trinityhealth.wd1.myworkdayjobs.com/Jobs
+   (no candidate jobs)
+
+## hospital-for-special-surgery-manhattan  [workday / workday / ]  status=error
+   ERROR: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: facet discovery failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: traceback: -np-job-board/peds-np-job-board/scraper/pipeline.py", line 270, in run_board
+    listings = adapter.search(opts.keywords)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/peds-np-job-board/peds-np-job-board/scraper/adapters/workday.py", line 143, in search
+    data =
+   note: sniff: page links to Workday hss.wd1 site HSS_Careers
+   note: sniff: followed careers link https://www.hss.edu/careers
+   note: workday failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: generic: pages reachable but no NP/APP job links found: playwright 200 https://hss.wd1.myworkdayjobs.com/HSS_Careers?q=nurse%20practitioner; playwright 200 https://hss.wd1.myworkdayjobs.com/HSS_Careers?keywords=nurse+practitioner; playwright 200 https://hss.wd1.myworkdayjobs.com/HSS_Careers?keyword=
+   (no candidate jobs)
+
+## hsc-pediatric-center-washington  [generic / generic / ]  status=error
+   ERROR: AdapterError: generic: no page reachable: None https://www.hschealth.org/careers; playwright TimeoutError: Page.goto: Timeout 45000ms exceeded.
+Call log:
+  - navigating to "https://www.hschealth.org/careers?q=nurse+practitioner https://www.hschealth.org/careers?q=nurse+practitioner; playwright TimeoutError: Page.goto: Timeout 45000ms exceeded.
+Call log:
+  - navigating to "https://www.hschealth.org/careers?keywords=nurse+pract https://www.hschealth.org/careers?keywords=nurse+practitioner; playwright TimeoutErr
+   note: sniff: HTTP None for https://www.hschealth.org/careers: ConnectTimeout: HTTPSConnectionPool(host='www.hschealth.org', port=443): Max retries exceeded with url: /careers (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.hschealth.org', port=443) at 0x7f76607451c0>,
+   (no candidate jobs)
+
+## jefferson-abington-hospital-abington  [workday / workday / ]  status=error
+   ERROR: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: facet discovery failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: traceback: -np-job-board/peds-np-job-board/scraper/pipeline.py", line 270, in run_board
+    listings = adapter.search(opts.keywords)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/peds-np-job-board/peds-np-job-board/scraper/adapters/workday.py", line 143, in search
+    data =
+   note: workday failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: generic: pages reachable but no NP/APP job links found: playwright 200 https://jeffersonhealth.wd5.myworkdayjobs.com/ThomasJeffersonExternal?q=nurse%20practitioner; playwright 200 https://jeffersonhealth.wd5.myworkdayjobs.com/ThomasJeffersonExternal?keywords=nurse+practitioner; playwright 200 https:
+   (no candidate jobs)
+
+## jefferson-einstein-montgomery-east-norriton  [workday / workday / ]  status=error
+   ERROR: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: facet discovery failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: traceback: -np-job-board/peds-np-job-board/scraper/pipeline.py", line 270, in run_board
+    listings = adapter.search(opts.keywords)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/peds-np-job-board/peds-np-job-board/scraper/adapters/workday.py", line 143, in search
+    data =
+   note: workday failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: generic: pages reachable but no NP/APP job links found: playwright 200 https://jeffersonhealth.wd5.myworkdayjobs.com/ThomasJeffersonExternal?q=nurse%20practitioner; playwright 200 https://jeffersonhealth.wd5.myworkdayjobs.com/ThomasJeffersonExternal?keywords=nurse+practitioner; playwright 200 https:
+   (no candidate jobs)
+
+## jefferson-einstein-philadelphia  [workday / workday / ]  status=error
+   ERROR: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: facet discovery failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: traceback: -np-job-board/peds-np-job-board/scraper/pipeline.py", line 270, in run_board
+    listings = adapter.search(opts.keywords)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/peds-np-job-board/peds-np-job-board/scraper/adapters/workday.py", line 143, in search
+    data =
+   note: workday failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: generic: pages reachable but no NP/APP job links found: playwright 200 https://jeffersonhealth.wd5.myworkdayjobs.com/ThomasJeffersonExternal?q=nurse%20practitioner; playwright 200 https://jeffersonhealth.wd5.myworkdayjobs.com/ThomasJeffersonExternal?keywords=nurse+practitioner; playwright 200 https:
+   (no candidate jobs)
+
+## jefferson-washington-township-sewell  [workday / workday / ]  status=error
+   ERROR: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: facet discovery failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: traceback: -np-job-board/peds-np-job-board/scraper/pipeline.py", line 270, in run_board
+    listings = adapter.search(opts.keywords)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/peds-np-job-board/peds-np-job-board/scraper/adapters/workday.py", line 143, in search
+    data =
+   note: workday failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: generic: pages reachable but no NP/APP job links found: playwright 200 https://jeffersonhealth.wd5.myworkdayjobs.com/ThomasJeffersonExternal?q=nurse%20practitioner; playwright 200 https://jeffersonhealth.wd5.myworkdayjobs.com/ThomasJeffersonExternal?keywords=nurse+practitioner; playwright 200 https:
+   (no candidate jobs)
+
+## jones-memorial-hospital-wellsville  [workday / workday / ]  status=error
+   ERROR: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: facet discovery failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: traceback: -np-job-board/peds-np-job-board/scraper/pipeline.py", line 270, in run_board
+    listings = adapter.search(opts.keywords)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/peds-np-job-board/peds-np-job-board/scraper/adapters/workday.py", line 143, in search
+    data =
+   note: sniff: HTTP 403 for https://www.jmhny.org/: forbidden (bot block?)
+   note: workday failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: generic: pages reachable but no NP/APP job links found: playwright 200 https://rochester.wd5.myworkdayjobs.com/UR_Nursing?q=nurse%20practitioner; playwright 200 https://rochester.wd5.myworkdayjobs.com/UR_Nursing?keywords=nurse+practitioner; playwright 200 https://rochester.wd5.myworkdayjobs.com/UR_N
+   (no candidate jobs)
+
+## lankenau-medical-center-wynnewood  [taleo / taleo / ]  status=error
+   ERROR: AdapterError: search 'APRN': Error: Page.title: Execution context was destroyed, most likely because of a navigation; search 'PICU': Error: Page.title: Execution context was destroyed, most likely because of a navigation; search 'NICU': Error: Page.title: Execution context was destroyed, most likely because of a navigation
+   note: career section page: HTTP 404 for https://careers.mainlinehealth.org/careersection/ext/jobsearch.ftl?lang=en: <!DOCTYPE html><html lang="en"><head> 	<meta http-equiv="refresh" content="0; URL=/404" /> 	</head><body></body></html>
+   note: search 'nurse practitioner': Error: Page.title: Execution context was destroyed, most likely because of a navigation
+   note: search 'pediatric nurse practitioner': Error: Page.title: Execution context was destroyed, most likely because of a navigation
+   note: search 'advanced practice provider': Error: Page.title: Execution context was destroyed, most likely because of a navigation
+   note: search 'APRN': Error: Page.title: Execution context was destroyed, most likely because of a navigation
+   note: search 'PICU': Error: Page.title: Execution context was destroyed, most likely because of a navigation
+   note: search 'NICU': Error: Page.title: Execution context was destroyed, most likely because of a navigation
+   note: sniff: page links to Taleo mainline.taleo.net section 2
+   note: taleo failed: AdapterError: search 'APRN': Error: Page.title: Execution context was destroyed, most likely because of a navigation; search 'PICU': Error: Page.title: Executio
+   note: generic: pages reachable but no NP/APP job links found: playwright 200 https://careers.mainlinehealth.org/?utm_source=corporate_site&amp%3Butm_medium=referral&amp%3Butm_campaign=internal_navigation&q=nurse+practitioner; playwright 200 https://careers.mainlinehealth.org/?utm_source=corporate_site&amp
+   (no candidate jobs)
+
+## lehigh-valley-hospital-hazleton  [workday / workday / ]  status=error
+   ERROR: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: facet discovery failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: traceback: -np-job-board/peds-np-job-board/scraper/pipeline.py", line 270, in run_board
+    listings = adapter.search(opts.keywords)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/peds-np-job-board/peds-np-job-board/scraper/adapters/workday.py", line 143, in search
+    data =
+   note: workday failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: generic: pages reachable but no NP/APP job links found: playwright 200 https://lvhn.wd1.myworkdayjobs.com/LVHN?q=nurse%20practitioner; playwright 200 https://lvhn.wd1.myworkdayjobs.com/LVHN?keywords=nurse+practitioner; playwright 200 https://lvhn.wd1.myworkdayjobs.com/LVHN?keyword=nurse+practitioner
+   (no candidate jobs)
+
+## lehigh-valley-hospital-pocono-east-stroudsburg  [workday / workday / ]  status=error
+   ERROR: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: facet discovery failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: traceback: -np-job-board/peds-np-job-board/scraper/pipeline.py", line 270, in run_board
+    listings = adapter.search(opts.keywords)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/peds-np-job-board/peds-np-job-board/scraper/adapters/workday.py", line 143, in search
+    data =
+   note: workday failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: generic: pages reachable but no NP/APP job links found: playwright 200 https://lvhn.wd1.myworkdayjobs.com/LVHN?q=nurse%20practitioner; playwright 200 https://lvhn.wd1.myworkdayjobs.com/LVHN?keywords=nurse+practitioner; playwright 200 https://lvhn.wd1.myworkdayjobs.com/LVHN?keyword=nurse+practitioner
+   (no candidate jobs)
+
+## lehigh-valley-reilly-childrens-allentown  [workday / workday / ]  status=error
+   ERROR: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: facet discovery failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: traceback: -np-job-board/peds-np-job-board/scraper/pipeline.py", line 270, in run_board
+    listings = adapter.search(opts.keywords)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/peds-np-job-board/peds-np-job-board/scraper/adapters/workday.py", line 143, in search
+    data =
+   note: workday failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: generic: pages reachable but no NP/APP job links found: playwright 200 https://lvhn.wd1.myworkdayjobs.com/LVHN?q=nurse%20practitioner; playwright 200 https://lvhn.wd1.myworkdayjobs.com/LVHN?keywords=nurse+practitioner; playwright 200 https://lvhn.wd1.myworkdayjobs.com/LVHN?keyword=nurse+practitioner
+   (no candidate jobs)
+
+## mainegeneral-medical-center-augusta  [workday / workday / ]  status=error
+   ERROR: AdapterError: workday: cannot derive host/tenant from ats_config or careers URLs
+   note: sniff: page links to Workday mainegeneral.wd5 site MaineGeneralCareers
+   note: sniff: followed careers link https://www.mainegeneral.org/careers/
+   note: sniff fallback failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: workday failed: AdapterError: workday: cannot derive host/tenant from ats_config or careers URLs
+   note: generic: pages reachable but no NP/APP job links found: playwright 200 https://www.mainegeneral.org/?q=nurse+practitioner; playwright 200 https://www.mainegeneral.org/?keywords=nurse+practitioner; playwright 200 https://www.mainegeneral.org/?keyword=nurse+practitioner
+   (no candidate jobs)
+
+## mass-general-for-children-boston  [workday / workday / ]  status=error
+   ERROR: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: facet discovery failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: traceback: -np-job-board/peds-np-job-board/scraper/pipeline.py", line 270, in run_board
+    listings = adapter.search(opts.keywords)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/peds-np-job-board/peds-np-job-board/scraper/adapters/workday.py", line 143, in search
+    data =
+   note: sniff: page links to Workday massgeneralbrigham.wd1 site MGBExternal
+   note: sniff: followed careers link https://www.massgeneralbrigham.org/en/about/careers
+   note: workday failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: generic: pages reachable but no NP/APP job links found: playwright 200 https://massgeneralbrigham.wd1.myworkdayjobs.com/MGBExternal?q=nurse%20practitioner; playwright 200 https://massgeneralbrigham.wd1.myworkdayjobs.com/MGBExternal?keywords=nurse+practitioner; playwright 200 https://massgeneralbrigh
+   (no candidate jobs)
+
+## mcleod-childrens-florence  [generic / generic / ]  status=error
+   ERROR: AdapterError: generic: no page reachable: 403 https://jobs.mcleodhealth.org/; playwright 403 https://jobs.mcleodhealth.org/; playwright 403 https://jobs.mcleodhealth.org/?q=nurse+practitioner; playwright 403 https://jobs.mcleodhealth.org/?keywords=nurse+practitioner
+   note: sniff: HTTP 403 for https://jobs.mcleodhealth.org/: bot challenge (Cloudflare)
+   (no candidate jobs)
+
+## mcleod-regional-florence  [generic / generic / ]  status=error
+   ERROR: AdapterError: generic: no page reachable: 403 https://jobs.mcleodhealth.org/; playwright 403 https://jobs.mcleodhealth.org/; playwright 403 https://jobs.mcleodhealth.org/?q=nurse+practitioner; playwright 403 https://jobs.mcleodhealth.org/?keywords=nurse+practitioner
+   note: sniff: HTTP 403 for https://jobs.mcleodhealth.org/: bot challenge (Cloudflare)
+   (no candidate jobs)
+
+## musc-columbia-northeast-columbia  [workday / workday / ]  status=error
+   ERROR: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: facet discovery failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: traceback: -np-job-board/peds-np-job-board/scraper/pipeline.py", line 270, in run_board
+    listings = adapter.search(opts.keywords)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/peds-np-job-board/peds-np-job-board/scraper/adapters/workday.py", line 143, in search
+    data =
+   note: sniff: page links to Workday musc.wd1 site MUSC
+   note: sniff: followed careers link https://musc.career-pages.com/
+   note: workday failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: generic: pages reachable but no NP/APP job links found: playwright 200 https://musc.wd1.myworkdayjobs.com/MUSC?q=nurse%20practitioner; playwright 200 https://musc.wd1.myworkdayjobs.com/MUSC?keywords=nurse+practitioner; playwright 200 https://musc.wd1.myworkdayjobs.com/MUSC?keyword=nurse+practitioner
+   (no candidate jobs)
+
+## musc-florence-florence  [workday / workday / ]  status=error
+   ERROR: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: facet discovery failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: traceback: -np-job-board/peds-np-job-board/scraper/pipeline.py", line 270, in run_board
+    listings = adapter.search(opts.keywords)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/peds-np-job-board/peds-np-job-board/scraper/adapters/workday.py", line 143, in search
+    data =
+   note: sniff: page links to Workday musc.wd1 site MUSC
+   note: sniff: followed careers link https://musc.career-pages.com/
+   note: workday failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: generic: pages reachable but no NP/APP job links found: playwright 200 https://musc.wd1.myworkdayjobs.com/MUSC?q=nurse%20practitioner; playwright 200 https://musc.wd1.myworkdayjobs.com/MUSC?keywords=nurse+practitioner; playwright 200 https://musc.wd1.myworkdayjobs.com/MUSC?keyword=nurse+practitioner
+   (no candidate jobs)
+
+## musc-kershaw-camden  [workday / workday / ]  status=error
+   ERROR: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: facet discovery failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: traceback: -np-job-board/peds-np-job-board/scraper/pipeline.py", line 270, in run_board
+    listings = adapter.search(opts.keywords)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/peds-np-job-board/peds-np-job-board/scraper/adapters/workday.py", line 143, in search
+    data =
+   note: sniff: page links to Workday musc.wd1 site MUSC
+   note: sniff: followed careers link https://musc.career-pages.com/
+   note: workday failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: generic: pages reachable but no NP/APP job links found: playwright 200 https://musc.wd1.myworkdayjobs.com/MUSC?q=nurse%20practitioner; playwright 200 https://musc.wd1.myworkdayjobs.com/MUSC?keywords=nurse+practitioner; playwright 200 https://musc.wd1.myworkdayjobs.com/MUSC?keyword=nurse+practitioner
+   (no candidate jobs)
+
+## musc-lancaster-lancaster  [workday / workday / ]  status=error
+   ERROR: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: facet discovery failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: traceback: -np-job-board/peds-np-job-board/scraper/pipeline.py", line 270, in run_board
+    listings = adapter.search(opts.keywords)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/peds-np-job-board/peds-np-job-board/scraper/adapters/workday.py", line 143, in search
+    data =
+   note: sniff: page links to Workday musc.wd1 site MUSC
+   note: sniff: followed careers link https://musc.career-pages.com/
+   note: workday failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: generic: pages reachable but no NP/APP job links found: playwright 200 https://musc.wd1.myworkdayjobs.com/MUSC?q=nurse%20practitioner; playwright 200 https://musc.wd1.myworkdayjobs.com/MUSC?keywords=nurse+practitioner; playwright 200 https://musc.wd1.myworkdayjobs.com/MUSC?keyword=nurse+practitioner
+   (no candidate jobs)
+
+## musc-orangeburg-orangeburg  [workday / workday / ]  status=error
+   ERROR: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: facet discovery failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: traceback: -np-job-board/peds-np-job-board/scraper/pipeline.py", line 270, in run_board
+    listings = adapter.search(opts.keywords)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/peds-np-job-board/peds-np-job-board/scraper/adapters/workday.py", line 143, in search
+    data =
+   note: sniff: page links to Workday musc.wd1 site MUSC
+   note: sniff: followed careers link https://musc.career-pages.com/
+   note: workday failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: generic: pages reachable but no NP/APP job links found: playwright 200 https://musc.wd1.myworkdayjobs.com/MUSC?q=nurse%20practitioner; playwright 200 https://musc.wd1.myworkdayjobs.com/MUSC?keywords=nurse+practitioner; playwright 200 https://musc.wd1.myworkdayjobs.com/MUSC?keyword=nurse+practitioner
+   (no candidate jobs)
+
+## musc-shawn-jenkins-childrens-charleston  [workday / workday / ]  status=error
+   ERROR: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: facet discovery failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: traceback: -np-job-board/peds-np-job-board/scraper/pipeline.py", line 270, in run_board
+    listings = adapter.search(opts.keywords)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/peds-np-job-board/peds-np-job-board/scraper/adapters/workday.py", line 143, in search
+    data =
+   note: sniff: page links to Workday musc.wd1 site MUSC
+   note: sniff: followed careers link https://musc.career-pages.com/
+   note: workday failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: generic: pages reachable but no NP/APP job links found: playwright 200 https://musc.wd1.myworkdayjobs.com/MUSC?q=nurse%20practitioner; playwright 200 https://musc.wd1.myworkdayjobs.com/MUSC?keywords=nurse+practitioner; playwright 200 https://musc.wd1.myworkdayjobs.com/MUSC?keyword=nurse+practitioner
+   (no candidate jobs)
+
+## musc-university-medical-center-charleston  [workday / workday / ]  status=error
+   ERROR: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: facet discovery failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: traceback: -np-job-board/peds-np-job-board/scraper/pipeline.py", line 270, in run_board
+    listings = adapter.search(opts.keywords)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/peds-np-job-board/peds-np-job-board/scraper/adapters/workday.py", line 143, in search
+    data =
+   note: sniff: page links to Workday musc.wd1 site MUSC
+   note: sniff: followed careers link https://musc.career-pages.com/
+   note: workday failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: generic: pages reachable but no NP/APP job links found: playwright 200 https://musc.wd1.myworkdayjobs.com/MUSC?q=nurse%20practitioner; playwright 200 https://musc.wd1.myworkdayjobs.com/MUSC?keywords=nurse+practitioner; playwright 200 https://musc.wd1.myworkdayjobs.com/MUSC?keyword=nurse+practitioner
+   (no candidate jobs)
+
+## newton-wellesley-hospital-newton  [workday / workday / ]  status=error
+   ERROR: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: facet discovery failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: traceback: -np-job-board/peds-np-job-board/scraper/pipeline.py", line 270, in run_board
+    listings = adapter.search(opts.keywords)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/peds-np-job-board/peds-np-job-board/scraper/adapters/workday.py", line 143, in search
+    data =
+   note: sniff: page links to Workday massgeneralbrigham.wd1 site MGBExternal
+   note: sniff: followed careers link https://www.massgeneralbrigham.org/en/about/careers
+   note: workday failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: generic: pages reachable but no NP/APP job links found: playwright 200 https://massgeneralbrigham.wd1.myworkdayjobs.com/MGBExternal?q=nurse%20practitioner; playwright 200 https://massgeneralbrigham.wd1.myworkdayjobs.com/MGBExternal?keywords=nurse+practitioner; playwright 200 https://massgeneralbrigh
+   (no candidate jobs)
+
+## paoli-hospital-paoli  [taleo / taleo / ]  status=error
+   ERROR: AdapterError: search 'APRN': Error: Page.title: Execution context was destroyed, most likely because of a navigation; search 'PICU': Error: Page.title: Execution context was destroyed, most likely because of a navigation; search 'NICU': Error: Page.title: Execution context was destroyed, most likely because of a navigation
+   note: career section page: HTTP 404 for https://careers.mainlinehealth.org/careersection/ext/jobsearch.ftl?lang=en: <!DOCTYPE html><html lang="en"><head> 	<meta http-equiv="refresh" content="0; URL=/404" /> 	</head><body></body></html>
+   note: search 'nurse practitioner': Error: Page.title: Execution context was destroyed, most likely because of a navigation
+   note: search 'pediatric nurse practitioner': Error: Page.title: Execution context was destroyed, most likely because of a navigation
+   note: search 'advanced practice provider': Error: Page.title: Execution context was destroyed, most likely because of a navigation
+   note: search 'APRN': Error: Page.title: Execution context was destroyed, most likely because of a navigation
+   note: search 'PICU': Error: Page.title: Execution context was destroyed, most likely because of a navigation
+   note: search 'NICU': Error: Page.title: Execution context was destroyed, most likely because of a navigation
+   note: sniff: page links to Taleo mainline.taleo.net section 2
+   note: taleo failed: AdapterError: search 'APRN': Error: Page.title: Execution context was destroyed, most likely because of a navigation; search 'PICU': Error: Page.title: Executio
+   note: generic: pages reachable but no NP/APP job links found: playwright 200 https://careers.mainlinehealth.org/?utm_source=corporate_site&amp%3Butm_medium=referral&amp%3Butm_campaign=internal_navigation&q=nurse+practitioner; playwright 200 https://careers.mainlinehealth.org/?utm_source=corporate_site&amp
+   (no candidate jobs)
+
+## richmond-university-medical-center-staten-island  [workday / workday / ]  status=error
+   ERROR: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: facet discovery failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: traceback: -np-job-board/peds-np-job-board/scraper/pipeline.py", line 270, in run_board
+    listings = adapter.search(opts.keywords)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/peds-np-job-board/peds-np-job-board/scraper/adapters/workday.py", line 143, in search
+    data =
+   note: sniff: page links to Workday rumcsi.wd5 site RUMC
+   note: sniff: followed careers link https://rumcsi.org/careers/
+   note: workday failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: generic: pages reachable but no NP/APP job links found: playwright 200 https://rumcsi.wd5.myworkdayjobs.com/RUMC?q=nurse%20practitioner; playwright 200 https://rumcsi.wd5.myworkdayjobs.com/RUMC?keywords=nurse+practitioner; playwright 200 https://rumcsi.wd5.myworkdayjobs.com/RUMC?keyword=nurse+practi
+   (no candidate jobs)
+
+## riddle-hospital-media  [taleo / taleo / ]  status=error
+   ERROR: AdapterError: search 'APRN': Error: Page.title: Execution context was destroyed, most likely because of a navigation; search 'PICU': Error: Page.title: Execution context was destroyed, most likely because of a navigation; search 'NICU': Error: Page.title: Execution context was destroyed, most likely because of a navigation
+   note: career section page: HTTP 404 for https://careers.mainlinehealth.org/careersection/ext/jobsearch.ftl?lang=en: <!DOCTYPE html><html lang="en"><head> 	<meta http-equiv="refresh" content="0; URL=/404" /> 	</head><body></body></html>
+   note: search 'nurse practitioner': Error: Page.title: Execution context was destroyed, most likely because of a navigation
+   note: search 'pediatric nurse practitioner': Error: Page.title: Execution context was destroyed, most likely because of a navigation
+   note: search 'advanced practice provider': Error: Page.title: Execution context was destroyed, most likely because of a navigation
+   note: search 'APRN': Error: Page.title: Execution context was destroyed, most likely because of a navigation
+   note: search 'PICU': Error: Page.title: Execution context was destroyed, most likely because of a navigation
+   note: search 'NICU': Error: Page.title: Execution context was destroyed, most likely because of a navigation
+   note: sniff: page links to Taleo mainline.taleo.net section 2
+   note: taleo failed: AdapterError: search 'APRN': Error: Page.title: Execution context was destroyed, most likely because of a navigation; search 'PICU': Error: Page.title: Executio
+   note: generic: pages reachable but no NP/APP job links found: playwright 200 https://careers.mainlinehealth.org/?utm_source=corporate_site&amp%3Butm_medium=referral&amp%3Butm_campaign=internal_navigation&q=nurse+practitioner; playwright 200 https://careers.mainlinehealth.org/?utm_source=corporate_site&amp
+   (no candidate jobs)
+
+## riverside-regional-newport-news  [workday / workday / ]  status=error
+   ERROR: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: facet discovery failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: traceback: -np-job-board/peds-np-job-board/scraper/pipeline.py", line 270, in run_board
+    listings = adapter.search(opts.keywords)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/peds-np-job-board/peds-np-job-board/scraper/adapters/workday.py", line 143, in search
+    data =
+   note: sniff: HTTP 404 for https://www.riversideonline.com/locations/riverside-regional-medical-center:  <!DOCTYPE html> <html lang="en" xmlns="http://www.w3.org/1999/xhtml"> <head>     <link rel="preconnect" href="https://a1.b0e8.com">     <link rel="preconn
+   note: workday failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: generic: pages reachable but no NP/APP job links found: playwright 200 https://rivhs.wd1.myworkdayjobs.com/ProviderRHS?q=nurse%20practitioner; playwright 200 https://rivhs.wd1.myworkdayjobs.com/ProviderRHS?keywords=nurse+practitioner; playwright 200 https://rivhs.wd1.myworkdayjobs.com/ProviderRHS?ke
+   (no candidate jobs)
+
+## rochester-general-hospital-rochester  [workday / workday / ]  status=error
+   ERROR: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: facet discovery failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: traceback: -np-job-board/peds-np-job-board/scraper/pipeline.py", line 270, in run_board
+    listings = adapter.search(opts.keywords)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/peds-np-job-board/peds-np-job-board/scraper/adapters/workday.py", line 143, in search
+    data =
+   note: sniff: HTTP 404 for https://www.rochesterregional.org/locations/rochester-general-hospital: <!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width"/><meta name="next-head-count" content="2"/><link 
+   note: workday failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: generic: pages reachable but no NP/APP job links found: playwright 200 https://rrhs.wd5.myworkdayjobs.com/RRH?q=nurse%20practitioner; playwright 200 https://rrhs.wd5.myworkdayjobs.com/RRH?keywords=nurse+practitioner; playwright 200 https://rrhs.wd5.myworkdayjobs.com/RRH?keyword=nurse+practitioner
+   (no candidate jobs)
+
+## roswell-park-buffalo  [workday / workday / ]  status=error
+   ERROR: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: facet discovery failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: traceback: -np-job-board/peds-np-job-board/scraper/pipeline.py", line 270, in run_board
+    listings = adapter.search(opts.keywords)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/peds-np-job-board/peds-np-job-board/scraper/adapters/workday.py", line 143, in search
+    data =
+   note: sniff: page links to Workday roswellpark.wd5 site ExternalCareers
+   note: sniff: followed careers link https://www.roswellpark.org/careers
+   note: workday failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: generic: pages reachable but no NP/APP job links found: playwright 200 https://roswellpark.wd5.myworkdayjobs.com/ExternalCareers?q=nurse%20practitioner; playwright 200 https://roswellpark.wd5.myworkdayjobs.com/ExternalCareers?keywords=nurse+practitioner; playwright 200 https://roswellpark.wd5.mywork
+   (no candidate jobs)
+
+## saint-francis-hartford  [workday / workday / ]  status=error
+   ERROR: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: facet discovery failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: traceback: -np-job-board/peds-np-job-board/scraper/pipeline.py", line 270, in run_board
+    listings = adapter.search(opts.keywords)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/peds-np-job-board/peds-np-job-board/scraper/adapters/workday.py", line 143, in search
+    data =
+   note: sniff: recognized phenom front end on jobs.trinity-health.org
+   note: sniff: followed careers link https://jobs.trinity-health.org/newengland/
+   note: sniff fallback failed: AdapterError: search 'APRN': HTTP 404 for https://jobs.trinity-health.org/us/en/search-results?keywords=APRN: <!doctype html>  <!--[if lt IE 7]>      <html class="lt-ie7" lang="en"> <![endif]-->  <!--[if IE 7]>    
+   note: workday failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: generic: pages reachable but no NP/APP job links found: playwright 200 https://trinityhealth.wd1.myworkdayjobs.com/Jobs?q=nurse%20practitioner; playwright 200 https://trinityhealth.wd1.myworkdayjobs.com/Jobs?keywords=nurse+practitioner; playwright 200 https://trinityhealth.wd1.myworkdayjobs.com/Jobs
+   (no candidate jobs)
+
+## saint-francis-hospital-wilmington  [workday / workday / ]  status=error
+   ERROR: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: facet discovery failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: traceback: -np-job-board/peds-np-job-board/scraper/pipeline.py", line 270, in run_board
+    listings = adapter.search(opts.keywords)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/peds-np-job-board/peds-np-job-board/scraper/adapters/workday.py", line 143, in search
+    data =
+   note: sniff: recognized phenom front end on jobs.trinity-health.org
+   note: sniff: followed careers link https://jobs.trinity-health.org/newengland/
+   note: sniff fallback failed: AdapterError: search 'APRN': HTTP 404 for https://jobs.trinity-health.org/us/en/search-results?keywords=APRN: <!doctype html>  <!--[if lt IE 7]>      <html class="lt-ie7" lang="en"> <![endif]-->  <!--[if IE 7]>    
+   note: workday failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: generic: pages reachable but no NP/APP job links found: playwright 200 https://trinityhealth.wd1.myworkdayjobs.com/Jobs?q=nurse%20practitioner; playwright 200 https://trinityhealth.wd1.myworkdayjobs.com/Jobs?keywords=nurse+practitioner; playwright 200 https://trinityhealth.wd1.myworkdayjobs.com/Jobs
+   (no candidate jobs)
+
+## saint-marys-waterbury  [workday / workday / ]  status=error
+   ERROR: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: facet discovery failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: traceback: -np-job-board/peds-np-job-board/scraper/pipeline.py", line 270, in run_board
+    listings = adapter.search(opts.keywords)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/peds-np-job-board/peds-np-job-board/scraper/adapters/workday.py", line 143, in search
+    data =
+   note: sniff: recognized phenom front end on jobs.trinity-health.org
+   note: sniff: followed careers link https://jobs.trinity-health.org/newengland/
+   note: sniff fallback failed: AdapterError: search 'APRN': HTTP 404 for https://jobs.trinity-health.org/us/en/search-results?keywords=APRN: <!doctype html>  <!--[if lt IE 7]>      <html class="lt-ie7" lang="en"> <![endif]-->  <!--[if IE 7]>    
+   note: workday failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: generic: pages reachable but no NP/APP job links found: playwright 200 https://trinityhealth.wd1.myworkdayjobs.com/Jobs?q=nurse%20practitioner; playwright 200 https://trinityhealth.wd1.myworkdayjobs.com/Jobs?keywords=nurse+practitioner; playwright 200 https://trinityhealth.wd1.myworkdayjobs.com/Jobs
+   (no candidate jobs)
+
+## salem-hospital-salem  [workday / workday / ]  status=error
+   ERROR: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: facet discovery failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: traceback: -np-job-board/peds-np-job-board/scraper/pipeline.py", line 270, in run_board
+    listings = adapter.search(opts.keywords)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/peds-np-job-board/peds-np-job-board/scraper/adapters/workday.py", line 143, in search
+    data =
+   note: sniff: page links to Workday massgeneralbrigham.wd1 site MGBExternal
+   note: sniff: followed careers link https://www.massgeneralbrigham.org/en/about/careers
+   note: workday failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: generic: pages reachable but no NP/APP job links found: playwright 200 https://massgeneralbrigham.wd1.myworkdayjobs.com/MGBExternal?q=nurse%20practitioner; playwright 200 https://massgeneralbrigham.wd1.myworkdayjobs.com/MGBExternal?keywords=nurse+practitioner; playwright 200 https://massgeneralbrigh
+   (no candidate jobs)
+
+## saratoga-hospital-saratoga-springs  [workday / workday / ]  status=error
+   ERROR: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: facet discovery failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: traceback: -np-job-board/peds-np-job-board/scraper/pipeline.py", line 270, in run_board
+    listings = adapter.search(opts.keywords)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/peds-np-job-board/peds-np-job-board/scraper/adapters/workday.py", line 143, in search
+    data =
+   note: sniff: page links to Workday albanymed.wd5 site Albany_Med_System_Career_Site
+   note: sniff: followed careers link https://www.albanymed.org/careers/
+   note: sniff fallback failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: workday failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: generic: pages reachable but no NP/APP job links found: playwright 200 https://albanymed.wd5.myworkdayjobs.com/Albany_Med?q=nurse%20practitioner; playwright 200 https://albanymed.wd5.myworkdayjobs.com/Albany_Med?keywords=nurse+practitioner; playwright 200 https://albanymed.wd5.myworkdayjobs.com/Alba
+   (no candidate jobs)
+
+## south-shore-hospital-weymouth  [workday / workday / ]  status=error
+   ERROR: AdapterError: workday: cannot derive host/tenant from ats_config or careers URLs
+   note: sniff: page links to Workday southshorehealth.wd5 site SSH_Careers
+   note: sniff fallback failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: workday failed: AdapterError: workday: cannot derive host/tenant from ats_config or careers URLs
+   note: generic: pages reachable but no NP/APP job links found: playwright 200 https://careers.southshorehealth.org?q=nurse+practitioner; playwright 200 https://careers.southshorehealth.org?keywords=nurse+practitioner; playwright 200 https://careers.southshorehealth.org?keyword=nurse+practitioner
+   (no candidate jobs)
+
+## spartanburg-medical-center-spartanburg  [generic / generic / ]  status=error
+   ERROR: AdapterError: generic: no page reachable: 403 https://www.spartanburgregional.com/careers?q=nurse+practitioner; playwright 403 https://www.spartanburgregional.com/careers?q=nurse+practitioner; playwright 403 https://www.spartanburgregional.com/careers?keywords=nurse+practitioner; playwright 403 https://www.spartanburgregional.com/careers?keyword=nurse+practitioner
+   note: sniff: HTTP 403 for https://www.spartanburgregional.com/careers: bot challenge (Cloudflare)
+   (no candidate jobs)
+
+## st-josephs-hospital-syracuse  [workday / workday / ]  status=error
+   ERROR: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: facet discovery failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: traceback: -np-job-board/peds-np-job-board/scraper/pipeline.py", line 270, in run_board
+    listings = adapter.search(opts.keywords)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/peds-np-job-board/peds-np-job-board/scraper/adapters/workday.py", line 143, in search
+    data =
+   note: sniff: recognized phenom front end on jobs.trinity-health.org
+   note: sniff: followed careers link https://jobs.trinity-health.org/newengland/
+   note: sniff fallback failed: AdapterError: search 'APRN': HTTP 404 for https://jobs.trinity-health.org/us/en/search-results?keywords=APRN: <!doctype html>  <!--[if lt IE 7]>      <html class="lt-ie7" lang="en"> <![endif]-->  <!--[if IE 7]>    
+   note: workday failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: generic: pages reachable but no NP/APP job links found: playwright 200 https://trinityhealth.wd1.myworkdayjobs.com/Jobs?q=nurse%20practitioner; playwright 200 https://trinityhealth.wd1.myworkdayjobs.com/Jobs?keywords=nurse+practitioner; playwright 200 https://trinityhealth.wd1.myworkdayjobs.com/Jobs
+   (no candidate jobs)
+
+## st-lukes-anderson-campus-easton  [workday / workday / ]  status=error
+   ERROR: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: facet discovery failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: traceback: -np-job-board/peds-np-job-board/scraper/pipeline.py", line 270, in run_board
+    listings = adapter.search(opts.keywords)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/peds-np-job-board/peds-np-job-board/scraper/adapters/workday.py", line 143, in search
+    data =
+   note: sniff: page links to Workday sluhn.wd1 site SLUHNAP
+   note: sniff: followed careers link https://www.slhn.org/careers
+   note: workday failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: generic: pages reachable but no NP/APP job links found: playwright 200 https://sluhn.wd1.myworkdayjobs.com/SLUHNAP?q=nurse%20practitioner; playwright 200 https://sluhn.wd1.myworkdayjobs.com/SLUHNAP?keywords=nurse+practitioner; playwright 200 https://sluhn.wd1.myworkdayjobs.com/SLUHNAP?keyword=nurse+
+   (no candidate jobs)
+
+## st-lukes-childrens-bethlehem  [workday / workday / ]  status=error
+   ERROR: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: facet discovery failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: traceback: -np-job-board/peds-np-job-board/scraper/pipeline.py", line 270, in run_board
+    listings = adapter.search(opts.keywords)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/peds-np-job-board/peds-np-job-board/scraper/adapters/workday.py", line 143, in search
+    data =
+   note: sniff: page links to Workday sluhn.wd1 site SLUHNAP
+   note: sniff: followed careers link https://www.slhn.org/careers
+   note: workday failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: generic: pages reachable but no NP/APP job links found: playwright 200 https://sluhn.wd1.myworkdayjobs.com/SLUHNAP?q=nurse%20practitioner; playwright 200 https://sluhn.wd1.myworkdayjobs.com/SLUHNAP?keywords=nurse+practitioner; playwright 200 https://sluhn.wd1.myworkdayjobs.com/SLUHNAP?keyword=nurse+
+   (no candidate jobs)
+
+## st-lukes-grand-view-sellersville  [workday / workday / ]  status=error
+   ERROR: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: facet discovery failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: traceback: -np-job-board/peds-np-job-board/scraper/pipeline.py", line 270, in run_board
+    listings = adapter.search(opts.keywords)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/peds-np-job-board/peds-np-job-board/scraper/adapters/workday.py", line 143, in search
+    data =
+   note: sniff: page links to Workday sluhn.wd1 site SLUHNAP
+   note: sniff: followed careers link https://www.slhn.org/careers
+   note: workday failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: generic: pages reachable but no NP/APP job links found: playwright 200 https://sluhn.wd1.myworkdayjobs.com/SLUHNAP?q=nurse%20practitioner; playwright 200 https://sluhn.wd1.myworkdayjobs.com/SLUHNAP?keywords=nurse+practitioner; playwright 200 https://sluhn.wd1.myworkdayjobs.com/SLUHNAP?keyword=nurse+
+   (no candidate jobs)
+
+## st-mary-medical-center-langhorne  [workday / workday / ]  status=error
+   ERROR: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: facet discovery failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: traceback: -np-job-board/peds-np-job-board/scraper/pipeline.py", line 270, in run_board
+    listings = adapter.search(opts.keywords)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/peds-np-job-board/peds-np-job-board/scraper/adapters/workday.py", line 143, in search
+    data =
+   note: sniff: recognized phenom front end on jobs.trinity-health.org
+   note: sniff: followed careers link https://jobs.trinity-health.org/newengland/
+   note: sniff fallback failed: AdapterError: search 'APRN': HTTP 404 for https://jobs.trinity-health.org/us/en/search-results?keywords=APRN: <!doctype html>  <!--[if lt IE 7]>      <html class="lt-ie7" lang="en"> <![endif]-->  <!--[if IE 7]>    
+   note: workday failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: generic: pages reachable but no NP/APP job links found: playwright 200 https://trinityhealth.wd1.myworkdayjobs.com/Jobs?q=nurse%20practitioner; playwright 200 https://trinityhealth.wd1.myworkdayjobs.com/Jobs?keywords=nurse+practitioner; playwright 200 https://trinityhealth.wd1.myworkdayjobs.com/Jobs
+   (no candidate jobs)
+
+## st-peters-hospital-albany  [workday / workday / ]  status=error
+   ERROR: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: facet discovery failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: traceback: -np-job-board/peds-np-job-board/scraper/pipeline.py", line 270, in run_board
+    listings = adapter.search(opts.keywords)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/peds-np-job-board/peds-np-job-board/scraper/adapters/workday.py", line 143, in search
+    data =
+   note: sniff: recognized phenom front end on jobs.trinity-health.org
+   note: sniff: followed careers link https://jobs.trinity-health.org/newengland/
+   note: sniff fallback failed: AdapterError: search 'APRN': HTTP 404 for https://jobs.trinity-health.org/us/en/search-results?keywords=APRN: <!doctype html>  <!--[if lt IE 7]>      <html class="lt-ie7" lang="en"> <![endif]-->  <!--[if IE 7]>    
+   note: workday failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: generic: pages reachable but no NP/APP job links found: playwright 200 https://trinityhealth.wd1.myworkdayjobs.com/Jobs?q=nurse%20practitioner; playwright 200 https://trinityhealth.wd1.myworkdayjobs.com/Jobs?keywords=nurse+practitioner; playwright 200 https://trinityhealth.wd1.myworkdayjobs.com/Jobs
+   (no candidate jobs)
+
+## sturdy-memorial-attleboro  [workday / workday / ]  status=error
+   ERROR: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: facet discovery failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: traceback: -np-job-board/peds-np-job-board/scraper/pipeline.py", line 270, in run_board
+    listings = adapter.search(opts.keywords)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/peds-np-job-board/peds-np-job-board/scraper/adapters/workday.py", line 143, in search
+    data =
+   note: sniff: page links to Workday sturdymemorial.wd5 site Sturdy
+   note: sniff: followed careers link https://www.sturdyhealth.org/careers/
+   note: workday failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: generic: pages reachable but no NP/APP job links found: playwright 200 https://sturdymemorial.wd5.myworkdayjobs.com/Sturdy?q=nurse%20practitioner; playwright 200 https://sturdymemorial.wd5.myworkdayjobs.com/Sturdy?keywords=nurse+practitioner; playwright 200 https://sturdymemorial.wd5.myworkdayjobs.c
+   (no candidate jobs)
+
+## thomas-jefferson-university-hospital-philadelphia  [workday / workday / ]  status=error
+   ERROR: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: facet discovery failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: traceback: -np-job-board/peds-np-job-board/scraper/pipeline.py", line 270, in run_board
+    listings = adapter.search(opts.keywords)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/peds-np-job-board/peds-np-job-board/scraper/adapters/workday.py", line 143, in search
+    data =
+   note: workday failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: generic: pages reachable but no NP/APP job links found: playwright 200 https://jeffersonhealth.wd5.myworkdayjobs.com/ThomasJeffersonExternal?q=nurse%20practitioner; playwright 200 https://jeffersonhealth.wd5.myworkdayjobs.com/ThomasJeffersonExternal?keywords=nurse+practitioner; playwright 200 https:
+   (no candidate jobs)
+
+## ummc-batavia  [workday / workday / ]  status=error
+   ERROR: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: facet discovery failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: traceback: -np-job-board/peds-np-job-board/scraper/pipeline.py", line 270, in run_board
+    listings = adapter.search(opts.keywords)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/peds-np-job-board/peds-np-job-board/scraper/adapters/workday.py", line 143, in search
+    data =
+   note: sniff: HTTP 404 for https://www.rochesterregional.org/locations/rochester-general-hospital: <!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width"/><meta name="next-head-count" content="2"/><link 
+   note: workday failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: generic: pages reachable but no NP/APP job links found: playwright 200 https://rrhs.wd5.myworkdayjobs.com/RRH?q=nurse%20practitioner; playwright 200 https://rrhs.wd5.myworkdayjobs.com/RRH?keywords=nurse+practitioner; playwright 200 https://rrhs.wd5.myworkdayjobs.com/RRH?keyword=nurse+practitioner
+   (no candidate jobs)
+
+## unity-hospital-rochester  [workday / workday / ]  status=error
+   ERROR: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: facet discovery failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: traceback: -np-job-board/peds-np-job-board/scraper/pipeline.py", line 270, in run_board
+    listings = adapter.search(opts.keywords)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/peds-np-job-board/peds-np-job-board/scraper/adapters/workday.py", line 143, in search
+    data =
+   note: sniff: HTTP 404 for https://www.rochesterregional.org/locations/rochester-general-hospital: <!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width"/><meta name="next-head-count" content="2"/><link 
+   note: workday failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: generic: pages reachable but no NP/APP job links found: playwright 200 https://rrhs.wd5.myworkdayjobs.com/RRH?q=nurse%20practitioner; playwright 200 https://rrhs.wd5.myworkdayjobs.com/RRH?keywords=nurse+practitioner; playwright 200 https://rrhs.wd5.myworkdayjobs.com/RRH?keyword=nurse+practitioner
+   (no candidate jobs)
+
+## virtua-mount-holly-hospital-mount-holly  [workday / workday / ]  status=error
+   ERROR: AdapterError: workday: cannot derive host/tenant from ats_config or careers URLs
+   note: sniff: page links to Workday virtua.wd1 site Virtua_Health_External_Career_Site
+   note: sniff fallback failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: workday failed: AdapterError: workday: cannot derive host/tenant from ats_config or careers URLs
+   note: generic: pages reachable but no NP/APP job links found: playwright 200 https://www.virtua.org/Careers?q=nurse+practitioner; playwright 200 https://www.virtua.org/Careers?keywords=nurse+practitioner; playwright 200 https://www.virtua.org/Careers?keyword=nurse+practitioner
+   (no candidate jobs)
+
+## virtua-our-lady-of-lourdes-camden  [workday / workday / ]  status=error
+   ERROR: AdapterError: workday: cannot derive host/tenant from ats_config or careers URLs
+   note: sniff: page links to Workday virtua.wd1 site Virtua_Health_External_Career_Site
+   note: sniff fallback failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: workday failed: AdapterError: workday: cannot derive host/tenant from ats_config or careers URLs
+   note: generic: pages reachable but no NP/APP job links found: playwright 200 https://www.virtua.org/Careers?q=nurse+practitioner; playwright 200 https://www.virtua.org/Careers?keywords=nurse+practitioner; playwright 200 https://www.virtua.org/Careers?keyword=nurse+practitioner
+   (no candidate jobs)
+
+## virtua-voorhees-hospital-voorhees  [workday / workday / ]  status=error
+   ERROR: AdapterError: workday: cannot derive host/tenant from ats_config or careers URLs
+   note: sniff: page links to Workday virtua.wd1 site Virtua_Health_External_Career_Site
+   note: sniff fallback failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: workday failed: AdapterError: workday: cannot derive host/tenant from ats_config or careers URLs
+   note: generic: pages reachable but no NP/APP job links found: playwright 200 https://www.virtua.org/Careers?q=nurse+practitioner; playwright 200 https://www.virtua.org/Careers?keywords=nurse+practitioner; playwright 200 https://www.virtua.org/Careers?keyword=nurse+practitioner
+   (no candidate jobs)
+
+## washington-regional-plymouth  [generic / generic / ]  status=error
+   ERROR: AdapterError: generic: no page reachable: None https://www.washingtonregional.org/careers/; playwright Error: Page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.washingtonregional.org/careers/?q=nurse+practitioner
+Call log:
+  -  https://www.washingtonregional.org/careers/?q=nurse+practitioner; playwright Error: Page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.washingtonregional.org/careers/?keywords=nurse+practitioner
+Call lo https://www.washingtonregional.org/careers/?keywords=nurse+practitioner; playw
+   note: sniff: HTTP None for https://www.washingtonregional.org/careers/: ConnectionError: HTTPSConnectionPool(host='www.washingtonregional.org', port=443): Max retries exceeded with url: /careers/ (Caused by NameResolutionError("HTTPSConnection(host='www.washingtonregional.org', port=443):
+   (no candidate jobs)
+
+## wentworth-douglass-dover  [workday / workday / ]  status=error
+   ERROR: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: facet discovery failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: traceback: -np-job-board/peds-np-job-board/scraper/pipeline.py", line 270, in run_board
+    listings = adapter.search(opts.keywords)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/peds-np-job-board/peds-np-job-board/scraper/adapters/workday.py", line 143, in search
+    data =
+   note: sniff: page links to Workday massgeneralbrigham.wd1 site MGBExternal
+   note: sniff: followed careers link https://www.massgeneralbrigham.org/en/about/careers
+   note: workday failed: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+   note: generic: pages reachable but no NP/APP job links found: playwright 200 https://massgeneralbrigham.wd1.myworkdayjobs.com/MGBExternal?q=nurse%20practitioner; playwright 200 https://massgeneralbrigham.wd1.myworkdayjobs.com/MGBExternal?keywords=nurse+practitioner; playwright 200 https://massgeneralbrigh
+   (no candidate jobs)
