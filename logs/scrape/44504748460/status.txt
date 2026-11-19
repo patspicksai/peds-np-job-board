@@ -1,0 +1,517 @@
+run 2026-11-19 wall=1797.3s ledger=data/hospitals.json browser=chrome-headed
+
+hospital                                                 platform               method           board  list  cand  new   secs  status / error
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+adventhealth-hendersonville                              generic->symphony      api               1299    48     0    0   26.1  ok
+adventist-shady-grove-rockville                          generic->workday       api                142   102     0    0   33.4  ok
+adventist-white-oak-silver-spring                        generic->workday       api                142    40     0    0   33.4  ok
+anna-jaques-hospital-newburyport                         workday                api                552     9     0    0   82.8  ok
+arnot-ogden-medical-center-elmira                        workday                api                 48    42     0    0    9.4  ok
+ascension-saint-agnes-baltimore                          oracle_cloud           api                624    13     1    0   39.8  ok
+atlanticare-mainland-pomona                              oracle_cloud           api                258   258     0    0   46.1  ok
+atrium-anson-wadesboro                                   workday->symphony      api-legacy        1641     7     0    0   38.9  ok
+atrium-cabarrus-concord                                  workday->symphony      api-legacy        1641    47     6    0   38.9  ok
+atrium-carolinas-medical-center-charlotte                workday->symphony      api-legacy        1641   236    28    0   38.9  ok
+atrium-cleveland-shelby                                  workday->symphony      api-legacy        1641    21     0    0   38.9  ok
+atrium-kings-mountain                                    workday->symphony      api-legacy        1641     9     0    0   38.9  ok
+atrium-lake-norman-cornelius                             workday->symphony      api-legacy        1641    18     0    0   38.9  ok
+atrium-lincoln-lincolnton                                workday->symphony      api-legacy        1641    17     1    0   38.9  ok
+atrium-mercy-charlotte                                   workday->symphony      api-legacy        1641     0     0    0   38.9  ok
+atrium-pineville-charlotte                               workday->symphony      api-legacy        1641     0     0    0   38.9  ok
+atrium-stanly-albemarle                                  workday->symphony      api-legacy        1641    12     0    0   38.9  ok
+atrium-union-monroe                                      workday->symphony      api-legacy        1641    31     3    0   38.9  ok
+atrium-union-west-matthews                               workday->symphony      api-legacy        1641    18     0    0   38.9  ok
+atrium-university-city-charlotte                         workday->symphony      api-legacy        1641     0     0    0   38.9  ok
+auburn-community-hospital-auburn                         healthcaresource       api                 40    40     2    0   39.1  ok
+awfb-high-point                                          workday->symphony      api-legacy        1641    21     0    0   38.9  ok
+backus-hospital-norwich                                  phenom                 requests+api       228    13     0    0   53.3  ok
+barbara-bush-childrens-portland                          careersite             playwright-fetch   168    94     7    0  243.9  ok
+bayshore-medical-center-holmdel                          icims                  talentbrew:api     824    34     0    0   58.2  ok
+baystate-childrens-springfield                           workday                api                280   280     0    0   22.9  ok
+beebe-healthcare-lewes                                   generic->jibe          api                 64    64     0    0   22.1  ok
+bellevue-hospital-manhattan                              generic->symphony      api-legacy         774   285     0    0   19.2  ok
+berkshire-medical-center-pittsfield                      healthcaresource       api                 55    55     1    0   20.7  ok
+beth-israel-deaconess-boston                             workday                api                552   449     0    0   82.8  ok
+betty-cameron-childrens-wilmington                       icims                  jibe:api           481     4     0    0   53.6  ok
+beverly-hospital-beverly                                 workday                api                552    17     0    0   82.8  ok
+bid-plymouth-plymouth                                    workday                api                552    25     0    0   82.8  ok
+blythedale-childrens-valhalla                            icims->icims           requests             2     2     0    0    7.3  ok
+bon-secours-mary-immaculate-newport-news                 phenom                 requests+api       592    12     0    0   25.3  ok
+bon-secours-memorial-regional-mechanicsville             phenom                 requests+api       592   115     0    0   25.3  ok
+bon-secours-southside-petersburg                         phenom                 requests+api       592    14     0    0   25.3  ok
+bon-secours-st-francis-charleston                        phenom                 requests+api       317   101     0    0   20.0  ok
+bon-secours-st-francis-eastside-greenville               phenom                 requests+api       592    20     0    0   25.3  ok
+bon-secours-st-francis-midlothian                        phenom                 requests+api       592    38     0    0   25.3  ok
+bon-secours-st-marys-richmond                            phenom                 requests+api       592    51     0    0   25.3  ok
+boston-childrens-boston                                  generic->symphony      api                 50    49    20    0    7.2  ok
+boston-medical-center-boston                             workday->workday       api                114    81     0    0   38.2  ok
+boston-medical-center-brighton                           workday->workday       api                114    13     0    0   38.2  ok
+boston-medical-center-south-brockton                     workday->workday       api                114    20     0    0   38.2  ok
+bradley-hospital-east-providence                         generic->workday       api                413     3     0    0   73.2  ok
+brenner-childrens-winston-salem                          workday->symphony      api-legacy        1641   105     1    0   38.9  ok
+brigham-and-womens-boston                                workday                api                602   218     0    0   83.6  ok
+bristol-myers-squibb-childrens-new-brunswick             generic                requests            33    11     0    0   24.1  ok
+brockton-hospital-brockton                               healthcaresource       api                 38    38     0    0   20.3  ok
+bronxcare-hospital-bronx                                 icims                  requests            34    34     0    0    6.2  ok
+brookdale-hospital-brooklyn                              generic->jibe          api                 69    69     0    0   14.3  ok
+cape-cod-hospital-hyannis                                taleo                  api                 20    20     0    0   54.9  ok
+cape-fear-valley-fayetteville                            workday                api                 37     0     0    0   10.3  ok
+capital-health-hopewell-pennington                       workday->workday       api                366   366     0    0   71.6  ok
+carilion-childrens-roanoke                               workday                api                 79    79     0    0   27.7  ok
+carolina-pines-hartsville                                generic->talentbrew    api                742    67     0    0   33.5  ok
+carolinaeast-new-bern                                    generic->talentbrew    api                217   217     1    0   23.6  ok
+caromont-belmont                                         healthcaresource       api                 77     1     0    0    7.1  ok
+caromont-regional-gastonia                               healthcaresource       api                 77    76     3    0    7.1  ok
+carroll-hospital-westminster                             careersite             playwright-fetch    53     6     0    0  123.8  ok
+catawba-valley-hickory                                   oracle_cloud           api                104   104     0    0   16.2  ok
+cayuga-medical-center-ithaca                             workday                api                 48     6     0    0    9.4  ok
+centra-lynchburg-general-lynchburg                       oracle_cloud           api                242   242     0    0   53.3  ok
+centra-virginia-baptist-lynchburg                        oracle_cloud           api                242     0     0    0   53.3  ok
+central-carolina-sanford                                 oracle_cloud           api                515   100     0    0   30.1  ok
+central-maine-medical-center-lewiston                    icims                  requests           113    40     0    0   35.3  ok
+central-vermont-medical-center-berlin                    generic                requests            10     0     0    0   12.2  ok
+centrastate-medical-center-freehold                      icims                  requests            14    14     0    0    6.2  ok
+cfv-betsy-johnson-dunn                                   workday                api                 37    37     0    0   10.3  ok
+cfv-central-harnett-lillington                           workday                api                 37     0     0    0   10.3  ok
+charlton-memorial-fall-river                             icims->icims           requests             4     3     0    0    7.4  ok
+chenango-memorial-hospital-norwich                       workday->workday       api                 84    54     0    0   32.8  ok
+chesapeake-regional-chesapeake                           ultipro                api                306   306     0    0   28.5  ok
+cheshire-medical-center-keene                            icims                  requests           188    10     0    0   58.6  ok
+chester-county-hospital-west-chester                     careersite             playwright-fetch   184    16     0    0  261.6  ok
+childrens-hospital-montefiore-bronx                      generic->workday       api                173   173     1    0   31.5  ok
+childrens-hospital-of-nj-newark-beth-israel              generic                requests            33     2     1    0   24.1  ok
+childrens-national-washington                            workday                api                283   283    23    1   30.9  ok
+childrens-specialized-new-brunswick                      generic                requests            33     0     0    0   24.1  ok
+chilton-medical-center-pompton-plains                    oracle_cloud           api                284    10     0    0   49.3  ok
+chkd-norfolk                                             generic                playwright          10    10     4    0   23.7  ok
+chop-king-of-prussia                                     phenom                 requests+api       260    24     3    0   18.3  ok
+chop-philadelphia                                        phenom                 requests+api       260   236    26    0   18.3  ok
+chor-vcu-richmond                                        phenom                 requests+api       353   353     1    1   31.2  ok
+christiana-hospital-newark-de                            workday                api                125   112    12    1   26.4  ok
+christianacare-union-elkton                              workday                api                125    13     0    0   26.4  ok
+clara-maass-medical-center-belleville                    generic                requests            33     2     3    0   24.1  ok
+cohen-childrens-new-hyde-park                            oracle_cloud           api                184    57     0    0   25.4  ok
+columbia-memorial-hospital-hudson                        workday                api                 81     0     0    0   38.6  ok
+community-medical-center-toms-river                      generic                requests            33     4     4    0   24.1  ok
+concord-hospital-concord                                 generic->workday       api                 64    64     0    0   20.2  ok
+cone-alamance-regional-burlington                        phenom                 requests+api       509   162     0    0   42.8  ok
+cone-moses-cone-greensboro                               phenom                 requests+api       509   347     2    0   42.8  ok
+conemaugh-memorial-medical-center-johnstown              oracle_cloud           api                515     6     0    0   30.1  ok
+connecticut-childrens-hartford                           oracle_cloud           api                186   186    17    0   18.7  ok
+conway-medical-center-conway                             healthcaresource       api                 60    60     0    0    5.1  ok
+cooley-dickinson-northampton                             workday                api                602    32     0    0   83.6  ok
+cooper-university-hospital-camden                        generic->talentbrew    api                711   711     1    0   68.6  ok
+cooperman-barnabas-medical-center-livingston             generic                requests            33     3     1    0   24.1  ok
+crouse-hospital-syracuse                                 healthcaresource       api                 47    47     0    0   22.7  ok
+danbury-hospital-danbury                                 careersite             requests            19    19     0    0  405.3  ok
+dartmouth-health-childrens-lebanon                       icims                  requests           188   162     3    0   58.6  ok
+duke-childrens-durham                                    phenom                 requests+api       484   127     8    1   25.9  ok
+duke-health-lake-norman-mooresville                      phenom                 requests+api       484    35     5    0   25.9  ok
+duke-raleigh                                             phenom                 requests+api       484    63    11    0   25.9  ok
+duke-regional-durham                                     phenom                 requests+api       484     0     0    0   25.9  ok
+duke-university-hospital-durham                          phenom                 requests+api       484   259    44    0   25.9  ok
+duker-childrens-albany                                   workday                api                 81    81     6    0   38.6  ok
+east-cooper-medical-center-mount-pleasant                icims                  jibe:api           481    10     0    0   53.6  ok
+ecu-beaufort-washington                                  phenom                 requests+api       288    16     0    0   20.8  ok
+ecu-bertie-windsor                                       phenom                 requests+api       288     5     0    0   20.8  ok
+ecu-chowan-edenton                                       phenom                 requests+api       288    15     0    0   20.8  ok
+ecu-duplin-kenansville                                   phenom                 requests+api       288    12     0    0   20.8  ok
+ecu-edgecombe-tarboro                                    phenom                 requests+api       288     9     0    0   20.8  ok
+ecu-roanoke-chowan-ahoskie                               phenom                 requests+api       288    47     0    0   20.8  ok
+elliot-hospital-manchester                               generic->talentbrew    api                243   237     3    1   35.1  ok
+ellis-hospital-schenectady                               healthcaresource       api                119   119     0    0   31.4  ok
+elmhurst-hospital-queens                                 generic                playwright           1     0     0    0   50.3  ok
+emerson-hospital-concord                                 healthcaresource       api                 59    59     0    0   37.0  ok
+englewood-hospital-englewood                             successfactors         playwright           3     3     0    0   36.2  ok
+erie-county-medical-center-buffalo                       ultipro                api                128   128     0    0    9.2  ok
+firsthealth-moore-regional-pinehurst                     icims                  jibe:api           118   118     2    0   25.5  ok
+flushing-hospital-queens                                 generic                playwright           8     7     0    0  103.7  ok
+frederick-health-hospital-frederick                      ultipro                api                167   167     0    0   39.7  ok
+garnet-health-medical-center-middletown                  generic->jibe          api                 25    25     0    0   12.0  ok
+gbmc-towson                                              workday->workday       api                 71    71     0    0   22.3  ok
+geisinger-community-medical-center-scranton              generic->talentbrew    api                661   436     0    0   75.1  ok
+geisinger-janet-weis-childrens-danville                  generic->talentbrew    api                661   661     6    0   74.7  ok
+geisinger-wyoming-valley-wilkes-barre                    generic->talentbrew    api                661   225     0    0   75.1  ok
+glens-falls-hospital-glens-falls                         workday                api                 81     0     0    0   38.6  ok
+golisano-childrens-buffalo                               infor                  api                 19     8     1    0   23.6  ok
+golisano-childrens-rochester                             workday                api                139   139     8    0   49.9  ok
+golisano-childrens-uvm-burlington                        generic                requests            10    10     2    0   12.2  ok
+good-samaritan-hospital-suffern                          generic                requests            14     2     0    0   23.1  ok
+good-samaritan-university-hospital-west-islip            jibe                   api                347   124     0    0   55.6  ok
+goryeb-childrens-morristown                              oracle_cloud           api                284   215     6    0   49.3  ok
+granville-medical-center-oxford                          healthcaresource       api                 74    74     5    0    5.2  ok
+greenwich-hospital-greenwich                             generic->jibe          api                414    21     1    0   52.2  ok
+guthrie-cortland-medical-center-cortland                 oracle_cloud           api                258   114     0    0   14.8  ok
+guthrie-lourdes-hospital-binghamton                      oracle_cloud           api                258    51     0    0   14.8  ok
+guthrie-robert-packer-hospital-sayre                     oracle_cloud           api                258   180     0    0   14.2  ok
+hampstead-hospital-hampstead                             icims                  requests           115   115     0    0   50.3  ok
+harlem-hospital-manhattan                                generic                playwright           1     0     0    0   50.3  ok
+hartford-hospital-hartford                               phenom                 requests+api       228   108     0    0   53.3  ok
+hasbro-childrens-providence                              generic->workday       api                413   410     2    0   73.2  ok
+hassenfeld-childrens-nyu-manhattan                       generic->symphony      api-legacy         774   159     4    0   19.2  ok
+healthalliance-hospital-kingston                         generic                requests            14     2     0    0   23.1  ok
+hemby-childrens-charlotte                                icims                  jibe:api           481   106     1    0   53.6  ok
+hilton-head-hospital-hilton-head-island                  icims                  jibe:api           481    11     0    0   53.6  ok
+hoboken-university-medical-center-hoboken                icims                  requests            17    17     0    0   11.4  ok
+holy-cross-silver-spring                                 workday                api                488    22     0    0   41.7  ok
+holy-redeemer-hospital-meadowbrook                       generic->jibe          api                 57    57     0    0    8.2  ok
+hospital-for-special-care-new-britain                    workday                api                 15    15     1    0    7.5  ok
+hospital-for-special-surgery-manhattan                   workday                api                 59    59     1    0   14.2  ok
+hospital-of-central-connecticut-new-britain              phenom                 requests+api       228    15     0    0   53.3  ok
+hospital-of-the-university-of-pennsylvania-philadelphia  careersite             playwright-fetch   184   126     0    0  261.6  ok
+huntington-hospital-huntington                           oracle_cloud           api                184     6     0    0   25.4  ok
+inova-alexandria-alexandria                              oracle_cloud           api                314    59     0    0   38.2  ok
+inova-fair-oaks-fairfax                                  oracle_cloud           api                314     0     0    0   38.2  ok
+inova-lj-murphy-childrens-falls-church                   oracle_cloud           api                314   211     5    0   38.2  ok
+inova-loudoun-leesburg                                   oracle_cloud           api                314    44     0    0   38.2  ok
+inspira-medical-center-mullica-hill                      oracle_cloud           api                107    96     0    0   16.6  ok
+inspira-medical-center-vineland                          oracle_cloud           api                107    11     0    0   16.6  ok
+interfaith-medical-center-brooklyn                       generic->jibe          api                 69     0     0    0   14.3  ok
+jacobi-medical-center-bronx                              generic                playwright           1     0     0    0   50.3  ok
+jamaica-hospital-queens                                  generic                playwright           8     1     0    0  103.7  ok
+jefferson-abington-hospital-abington                     workday                api                361     5     0    0   76.4  ok
+jefferson-einstein-montgomery-east-norriton              workday                api                361    94     2    0   76.4  ok
+jefferson-einstein-philadelphia                          workday                api                361   262     0    0   76.4  ok
+jefferson-washington-township-sewell                     workday                api                361     0     0    0   76.4  ok
+jersey-city-medical-center-jersey-city                   generic                requests            33     2     0    0   24.1  ok
+jersey-shore-university-medical-center-neptune           icims                  talentbrew:api     824   143     6    0   58.2  ok
+jfk-university-medical-center-edison                     icims                  talentbrew:api     824    89     0    0   58.2  ok
+johns-hopkins-bayview-baltimore                          hopkins                requests            58     7     0    0   46.1  ok
+johns-hopkins-childrens-baltimore                        hopkins                requests            58    15     2    0   46.1  ok
+johns-hopkins-howard-county-columbia                     hopkins                requests            58     3     0    0   46.1  ok
+jones-memorial-hospital-wellsville                       workday                api                139     0     0    0   49.9  ok
+joseph-m-sanzari-childrens-hackensack                    icims                  talentbrew:api     824   164     2    0   58.2  ok
+k-hovnanian-childrens-neptune                            icims                  talentbrew:api     824   249     2    0   58.2  ok
+kennedy-krieger-baltimore                                icims                  requests             2     2     0    0    5.2  ok
+kent-hospital-warwick                                    jibe                   api                 68    30     0    0   15.2  ok
+kidspeace-orefield                                       healthcaresource       api                 13    13     2    0    5.1  ok
+kings-county-hospital-brooklyn                           generic                playwright           1     0     0    0   50.3  ok
+kravis-childrens-mount-sinai-manhattan                   generic->jibe          api                508   152     9    0   56.5  ok
+lancaster-general-hospital-lancaster                     careersite             playwright-fetch   184    26     0    0  261.6  ok
+lawrence-hospital-lawrence                               healthcaresource       api                186   186     0    0   23.8  ok
+lawrence-memorial-new-london                             generic->jibe          api                414    25     0    0   52.2  ok
+lehigh-valley-hospital-hazleton                          workday                api                374    18     1    0   73.3  ok
+lehigh-valley-hospital-pocono-east-stroudsburg           workday                api                374    27     0    0   73.3  ok
+lehigh-valley-reilly-childrens-allentown                 workday                api                374   329     2    0   73.3  ok
+lenox-hill-hospital-manhattan                            oracle_cloud           api                184    28     0    0   25.4  ok
+levine-childrens-charlotte                               workday->symphony      api-legacy        1641   102     5    0   38.9  ok
+lexington-medical-center-west-columbia                   successfactors->succes requests            35    35     0    0   34.4  ok
+lij-forest-hills-queens                                  oracle_cloud           api                184    19     0    0   25.4  ok
+lij-valley-stream-valley-stream                          oracle_cloud           api                184     0     0    0   25.4  ok
+lincoln-hospital-bronx                                   generic                playwright           1     0     0    0   50.3  ok
+long-island-jewish-medical-center-new-hyde-park          oracle_cloud           api                184    13     0    0   25.4  ok
+lowell-general-hospital-lowell                           phenom                 requests+api       358    73     0    0   45.7  ok
+luminis-anne-arundel-annapolis                           generic->talentbrew    api                269   269     0    0   30.1  ok
+maimonides-childrens-brooklyn                            jibe                   api                 16    16     1    0    7.2  ok
+maine-medical-center-biddeford                           careersite             playwright-fetch   168    15     0    0  243.9  ok
+maine-medical-center-portland                            careersite             playwright-fetch   168    29    16    1  243.9  ok
+mainegeneral-medical-center-augusta                      workday->workday       api                 60    60     2    0   27.2  ok
+manchester-memorial-manchester                           phenom                 requests+api       228    50     0    0   53.3  ok
+maria-fareri-childrens-valhalla                          generic                requests            14     9     0    0   23.1  ok
+maria-parham-henderson                                   oracle_cloud           api                515     3     0    0   30.1  ok
+mary-washington-fredericksburg                           generic                playwright          20     0     0    0  120.6  ok
+mass-general-for-children-boston                         workday                api                602   252     3    0   83.6  ok
+mather-hospital-port-jefferson                           oracle_cloud           api                184     0     0    0   25.4  ok
+maynard-childrens-greenville                             phenom                 requests+api       288   168     1    0   20.8  ok
+medstar-franklin-square-baltimore                        jibe                   api                294    96     2    0   48.7  ok
+medstar-georgetown-washington                            jibe                   api                294   162     0    0   48.7  ok
+medstar-montgomery-olney                                 jibe                   api                294     7     0    0   48.7  ok
+medstar-southern-maryland-clinton                        jibe                   api                294    12     0    0   48.7  ok
+medstar-st-marys-leonardtown                             jibe                   api                294    17     0    0   48.7  ok
+medstar-washington-hospital-center-washington            jibe                   api                294     0     0    0   48.7  ok
+melrosewakefield-hospital-melrose                        phenom                 requests+api       358    29     0    0   45.7  ok
+memorial-sloan-kettering-manhattan                       workday->workday       api                 39    39     0    0   16.2  ok
+mercy-hospital-buffalo                                   infor                  api                 28    28     0    0   31.6  ok
+mercy-hospital-rockville-centre                          jibe                   api                347    70     5    0   55.6  ok
+mercy-medical-center-baltimore                           generic->jibe          api                207   207     0    0   28.4  ok
+meritus-medical-center-hagerstown                        ultipro                api                259   259     0    0   79.4  ok
+metropolitan-hospital-manhattan                          generic                playwright           1     0     0    0   50.3  ok
+mid-coast-hospital-brunswick                             careersite             playwright-fetch   168    10     3    0  243.9  ok
+middlesex-hospital-middletown                            infor                  api                  8     8     1    0    9.7  ok
+midhudson-regional-hospital-poughkeepsie                 generic                requests            14     1     0    0   23.1  ok
+midstate-medical-center-meriden                          phenom                 requests+api       228     3     0    0   53.3  ok
+millard-fillmore-suburban-williamsville                  infor                  api                 19     9     0    0   23.6  ok
+monmouth-medical-center-southern-campus-lakewood         generic                requests            33     3     3    0   24.1  ok
+montefiore-einstein-weiler-bronx                         workday->workday       api                173   173     0    0   28.5  ok
+montefiore-new-rochelle                                  workday->workday       api                173     0     0    0   28.5  ok
+montefiore-nyack-hospital-nyack                          workday->workday       api                173     0     0    0   28.5  ok
+montefiore-st-lukes-cornwall-newburgh                    workday->workday       api                173     0     0    0   28.5  ok
+montefiore-wakefield-bronx                               workday->workday       api                173     0     0    0   28.5  ok
+mount-auburn-hospital-cambridge                          workday                api                552    27     0    0   82.8  ok
+mount-nittany-medical-center-state-college               generic->oracle_cloud  api                132   132     0    0   15.5  ok
+mount-sinai-brooklyn-brooklyn                            generic->jibe          api                508    23     0    0   56.5  ok
+mount-sinai-morningside-manhattan                        generic->jibe          api                508   326     1    0   56.5  ok
+mount-sinai-south-nassau-oceanside                       generic->jibe          api                508     6     0    0   56.5  ok
+mount-sinai-west-manhattan                               generic->jibe          api                508     0     0    0   56.5  ok
+mountainside-medical-center-montclair                    icims                  talentbrew:api     824     0     0    0   58.2  ok
+musc-columbia-northeast-columbia                         workday                api                419    59     1    0   78.9  ok
+musc-florence-florence                                   workday                api                419    33     0    0   78.9  ok
+musc-kershaw-camden                                      workday                api                419     9     0    0   78.9  ok
+musc-lancaster-lancaster                                 workday                api                419    17     0    0   78.9  ok
+musc-orangeburg-orangeburg                               workday                api                419    28     0    0   78.9  ok
+musc-shawn-jenkins-childrens-charleston                  workday                api                419   144     7    1   78.9  ok
+musc-university-medical-center-charleston                workday                api                419   128     1    0   78.9  ok
+nemours-childrens-delaware-wilmington                    oracle_cloud           api                332   180    24    0   27.2  ok
+newton-medical-center-newton                             oracle_cloud           api                284    17     0    0   49.3  ok
+newton-wellesley-hospital-newton                         workday                api                602    36     0    0   83.6  ok
+north-central-bronx-hospital-bronx                       generic                playwright           1     1     0    0   50.3  ok
+north-shore-university-hospital-manhasset                oracle_cloud           api                184    19     1    0   25.4  ok
+northern-light-acadia-bangor                             infor                  api                 31     3     2    0   34.8  ok
+northern-light-ar-gould-presque-isle                     infor                  api                 31     3     0    0   34.8  ok
+northern-light-emmc-bangor                               infor                  api                 31    15     3    0   34.8  ok
+northern-light-mercy-portland                            infor                  api                 31    10     2    0   34.8  ok
+northern-westchester-hospital-mount-kisco                oracle_cloud           api                184     2     0    0   25.4  ok
+norwalk-hospital-norwalk                                 careersite             requests            19     0     0    0  405.3  ok
+novant-ballantyne-charlotte                              icims                  jibe:api           481     0     0    0   53.6  ok
+novant-brunswick-bolivia                                 icims                  jibe:api           481    10     2    0   53.6  ok
+novant-forsyth-winston-salem                             icims                  jibe:api           481    87     1    0   53.6  ok
+novant-huntersville                                      icims                  jibe:api           481    18     3    0   53.6  ok
+novant-matthews                                          icims                  jibe:api           481     4     0    0   53.6  ok
+novant-mint-hill-charlotte                               icims                  jibe:api           481     3     2    1   53.6  ok
+novant-new-hanover-regional-wilmington                   icims                  jibe:api           481   111    16    1   53.6  ok
+novant-pender-burgaw                                     icims                  jibe:api           481     0     0    0   53.6  ok
+novant-presbyterian-charlotte                            icims                  jibe:api           481   101    17    1   53.6  ok
+novant-rowan-salisbury                                   icims                  jibe:api           481    16     0    0   53.6  ok
+novant-scotts-hill-wilmington                            icims                  jibe:api           481     0     0    0   53.6  ok
+nyp-allen-manhattan                                      phenom                 requests+api       130    77     0    0   43.9  ok
+nyp-brooklyn-methodist-brooklyn                          phenom                 requests+api       130    28     0    0   43.9  ok
+nyp-hudson-valley-cortlandt-manor                        phenom                 requests+api       130     0     0    0   43.9  ok
+nyp-komansky-childrens-manhattan                         phenom                 requests+api       130    25     4    0   43.9  ok
+nyp-lower-manhattan-manhattan                            phenom                 requests+api       130     0     0    0   43.9  ok
+nyp-morgan-stanley-childrens-manhattan                   phenom                 requests+api       130     0     0    0   43.9  ok
+nyp-queens-flushing                                      phenom                 requests+api       130     0     0    0   43.9  ok
+nyp-westchester-bronxville                               phenom                 requests+api       130     0     0    0   43.9  ok
+nyu-langone-hospital-brooklyn                            generic->symphony      api-legacy         774   109     2    2   19.2  ok
+nyu-langone-hospital-long-island-mineola                 generic->symphony      api-legacy         774   114     1    0   19.2  ok
+nyu-langone-hospital-suffolk-patchogue                   generic->symphony      api-legacy         774    68     0    0   19.2  ok
+ocean-university-medical-center-brick                    icims                  talentbrew:api     824    83     2    0   58.2  ok
+olean-general-hospital-olean                             infor                  api                 19     2     0    0   23.6  ok
+onslow-memorial-jacksonville                             generic->careersite    playwright-fetch   369     4     4    1  413.8  ok
+outer-banks-hospital-nags-head                           phenom                 requests+api       288    16     0    0   20.8  ok
+overlook-medical-center-summit                           oracle_cloud           api                284    42     1    0   49.3  ok
+pascack-valley-medical-center-westwood                   icims                  talentbrew:api     824     0     0    0   58.2  ok
+peconic-bay-medical-center-riverhead                     oracle_cloud           api                184     5     0    0   25.4  ok
+pen-bay-hospital-rockport                                careersite             playwright-fetch   168    12     0    0  243.9  ok
+penn-highlands-dubois-dubois                             infor                  api                 17    17     0    0   22.6  ok
+penn-medicine-princeton-medical-center-plainsboro        careersite             playwright-fetch   184    11     0    0  261.6  ok
+penn-state-childrens-hershey                             generic                requests             1     1     1    0    8.1  ok
+penn-state-health-holy-spirit-camp-hill                  generic                requests             1     0     0    0    8.1  ok
+penn-state-health-st-joseph-reading                      generic                requests             1     0     0    0    8.1  ok
+pennsylvania-hospital-philadelphia                       careersite             playwright-fetch   184     5     0    0  261.6  ok
+person-memorial-roxboro                                  oracle_cloud           api                515     0     0    0   30.1  ok
+phelps-hospital-sleepy-hollow                            oracle_cloud           api                184     0     0    0   25.4  ok
+piedmont-fort-mill-fort-mill                             oracle_cloud           api                668    14     0    0   38.6  ok
+piedmont-medical-center-rock-hill                        oracle_cloud           api                668    34     0    0   38.6  ok
+prisma-baptist-columbia                                  phenom->workday        api                434     0     0    0  167.5  ok
+prisma-childrens-midlands-columbia                       phenom->workday        api                434   112     4    0  167.5  ok
+prisma-childrens-upstate-greenville                      phenom->workday        api                434    16     4    0  167.5  ok
+prisma-greenville-memorial-greenville                    phenom->workday        api                434   129     0    0  167.5  ok
+prisma-richland-columbia                                 phenom->workday        api                434   139     0    0  167.5  ok
+prisma-tuomey-sumter                                     phenom->workday        api                434    28     0    0  167.5  ok
+putnam-hospital-carmel                                   oracle_cloud           api                184     6     0    0   25.4  ok
+queens-hospital-center-jamaica                           generic                playwright           1     0     0    0   50.3  ok
+reading-hospital-west-reading                            jibe                   api                131   131     0    0    6.3  ok
+richmond-university-medical-center-staten-island         workday                api                 17    17     0    0   10.9  ok
+riverside-regional-newport-news                          workday                api                 73    73     0    0   47.5  ok
+riverview-medical-center-red-bank                        icims                  talentbrew:api     824    34     5    0   58.2  ok
+rochester-general-hospital-rochester                     workday                api                142   125     1    0   57.0  ok
+roper-hospital-charleston                                phenom                 requests+api       317   216     0    0   20.0  ok
+roswell-park-buffalo                                     workday                api                 14    14     0    0   13.6  ok
+rutland-regional-rutland                                 healthcaresource       api                 22    22     0    0   12.2  ok
+rwj-university-hospital-somerset-somerville              generic                requests            33     0     0    0   24.1  ok
+saint-clares-denville                                    icims                  requests           113     5     0    0   35.3  ok
+saint-francis-hartford                                   workday                api                488   302     0    0   41.7  ok
+saint-francis-hospital-wilmington                        workday                api                488    31     0    0   41.7  ok
+saint-marys-waterbury                                    workday                api                488    16     0    0   41.7  ok
+saint-vincent-hospital-worcester                         oracle_cloud           api                668    51     2    0   38.6  ok
+salem-hospital-salem                                     workday                api                602    34     0    0   83.6  ok
+samaritan-medical-center-watertown                       workday                api                 16    16     0    0   13.7  ok
+saratoga-hospital-saratoga-springs                       workday                api                 81     0     0    0   38.6  ok
+scotland-memorial-laurinburg                             workday->symphony      api-legacy        1641     0     0    0   38.9  ok
+self-regional-greenwood                                  ultipro                api                237   237     0    0   35.2  ok
+sentara-albemarle-elizabeth-city                         workday                api                506    13     2    0   86.9  ok
+sentara-careplex-hampton                                 workday                api                506    14     0    0   86.9  ok
+sentara-leigh-norfolk                                    workday                api                506     4     0    0   86.9  ok
+sentara-martha-jefferson-charlottesville                 workday                api                506    21     0    0   86.9  ok
+sentara-norfolk-general-norfolk                          workday                api                506   314     0    0   86.9  ok
+sentara-northern-virginia-woodbridge                     workday                api                506    23     0    0   86.9  ok
+sentara-princess-anne-virginia-beach                     workday                api                506    98     0    0   86.9  ok
+sentara-rmh-harrisonburg                                 workday                api                506    19     0    0   86.9  ok
+shore-medical-center-somers-point                        generic->oracle_cloud  api                 16    16     0    0    6.6  ok
+shriners-childrens-boston                                workday                api                 98    15     2    0   16.7  ok
+shriners-childrens-greenville                            workday                api                 98     4     0    0   16.7  ok
+shriners-childrens-philadelphia                          workday                api                 98     4     1    0   16.7  ok
+sibley-memorial-washington                               hopkins                requests            58     0     0    0   46.1  ok
+sinai-samuelson-childrens-baltimore                      careersite             playwright-fetch    53    47     0    0  123.8  ok
+sisters-of-charity-hospital-buffalo                      infor                  api                 28     0     0    0   31.6  ok
+south-brooklyn-health-brooklyn                           generic                playwright           1     0     0    0   50.3  ok
+south-shore-hospital-weymouth                            workday->workday       api                159   159     0    0   27.5  ok
+south-shore-university-hospital-bay-shore                oracle_cloud           api                184     0     0    0   25.4  ok
+southern-nh-medical-center-nashua                        generic->talentbrew    api                243     6     0    0   35.1  ok
+southern-ocean-medical-center-manahawkin                 icims                  talentbrew:api     824    28     1    0   58.2  ok
+southwestern-vermont-medical-center-bennington           icims                  requests           188    16     0    0   58.6  ok
+sovah-danville-danville                                  oracle_cloud           api                515    14     0    0   30.1  ok
+spartanburg-medical-center-spartanburg                   generic                playwright           1     1     1    0   56.8  ok
+spring-harbor-westbrook                                  careersite             playwright-fetch   168     8     4    0  243.9  ok
+st-catherine-of-siena-smithtown                          jibe                   api                347    83     0    0   55.6  ok
+st-charles-hospital-port-jefferson                       jibe                   api                347    29     1    0   55.6  ok
+st-christophers-childrens-philadelphia                   generic->jibe          api                131   131     4    0    8.4  ok
+st-francis-hospital-roslyn                               jibe                   api                347    22     8    0   55.6  ok
+st-johns-episcopal-far-rockaway                          ultipro                api                 43    43     0    0    5.2  ok
+st-johns-riverside-yonkers                               icims                  requests             6     6     0    0    5.3  ok
+st-joseph-hospital-bethpage                              jibe                   api                347    19     0    0   55.6  ok
+st-joseph-hospital-nashua                                generic->symphony      api                105    64     0    0    7.1  ok
+st-josephs-childrens-paterson                            icims                  talentbrew:api     348   348     0    0   20.2  ok
+st-josephs-hospital-syracuse                             workday                api                488     0     0    0   41.7  ok
+st-lukes-anderson-campus-easton                          workday                api                 39     5     0    0   41.5  ok
+st-lukes-childrens-bethlehem                             workday                api                 39    33     3    0   41.5  ok
+st-lukes-grand-view-sellersville                         workday                api                 39     1     0    0   41.5  ok
+st-lukes-hospital-new-bedford                            icims->icims           requests             4     1     0    0    7.4  ok
+st-mary-medical-center-langhorne                         workday                api                488    20     0    0   41.7  ok
+st-marys-regional-lewiston                               generic->symphony      api                105    41     0    0    7.1  ok
+st-peters-hospital-albany                                workday                api                488    97     0    0   41.7  ok
+st-vincents-bridgeport                                   phenom                 requests+api       228    39     0    0   53.3  ok
+stafford-hospital-stafford                               generic                playwright          20    20     1    0  120.6  ok
+stamford-hospital-stamford                               oracle_cloud           api                121   121     0    0   21.4  ok
+staten-island-university-hospital-staten-island          oracle_cloud           api                184    12     0    0   25.4  ok
+stony-brook-childrens-stony-brook                        taleo                  api                  7     7     0    0   10.0  ok
+stony-brook-southampton-hospital-southampton             taleo                  api                  7     0     0    0   10.0  ok
+sturdy-memorial-attleboro                                workday                api                 54    54     1    0   17.3  ok
+suburban-hospital-bethesda                               hopkins                requests            58    10     0    0   46.1  ok
+temple-university-hospital-philadelphia                  generic->icims         requests             2     2     0    0    5.9  ok
+thomas-jefferson-university-hospital-philadelphia        workday                api                361     0     0    0   76.4  ok
+tidalhealth-nanticoke-seaford                            generic                playwright           1     1     0    0   40.1  ok
+tidalhealth-peninsula-regional-salisbury                 generic                playwright           1     0     0    0   40.1  ok
+tidelands-georgetown-georgetown                          generic->workday       api                 23    10     0    0    9.7  ok
+tidelands-waccamaw-murrells-inlet                        generic->workday       api                 23    13     0    0    9.7  ok
+trinitas-regional-medical-center-elizabeth               generic                requests            33     3     1    0   24.1  ok
+tufts-medical-center-boston                              phenom                 requests+api       358   256     0    0   45.7  ok
+uconn-john-dempsey-farmington                            oracle_cloud           api                123    26     0    0   14.3  ok
+uhs-wilson-medical-center-johnson-city                   workday->workday       api                 84    30     0    0   32.8  ok
+um-baltimore-washington-glen-burnie                      phenom->phenom         requests+api       505   174     9    0   76.9  ok
+um-capital-region-largo                                  phenom->phenom         requests+api       505    48     2    0   76.9  ok
+um-charles-regional-la-plata                             phenom->phenom         requests+api       505    22     0    0   76.9  ok
+um-childrens-baltimore                                   phenom->phenom         requests+api       505    56     2    0   76.9  ok
+um-shore-easton                                          phenom->phenom         requests+api       505    80     2    0   76.9  ok
+um-st-joseph-towson                                      phenom->phenom         requests+api       505    67     2    0   76.9  ok
+um-upper-chesapeake-bel-air                              phenom->phenom         requests+api       505    58     0    0   76.9  ok
+umass-memorial-childrens-worcester                       workday->workday       api                269   269     2    0   52.9  ok
+ummc-batavia                                             workday                api                142     3     1    0   57.0  ok
+unc-blue-ridge-morganton                                 generic->careersite    playwright-fetch   369    11     0    0  413.8  ok
+unc-chatham-siler-city                                   generic->careersite    playwright-fetch   369     7     4    0  413.8  ok
+unc-childrens-chapel-hill                                generic->careersite    playwright-fetch   369    47     5    0  413.8  ok
+unc-hillsborough                                         generic->careersite    playwright-fetch   369     3     0    0  413.8  ok
+unc-johnston-clayton                                     generic->careersite    playwright-fetch   369    31     6    0  413.8  ok
+unc-johnston-smithfield                                  generic->careersite    playwright-fetch   369     5     5    0  413.8  ok
+unc-lenoir-kinston                                       generic->careersite    playwright-fetch   369    20     8    0  413.8  ok
+unc-medical-center-chapel-hill                           generic->careersite    playwright-fetch   369   130    45    0  413.8  ok
+unc-nash-rocky-mount                                     generic->careersite    playwright-fetch   369    15     2    0  413.8  ok
+unc-rex-holly-springs                                    generic->careersite    playwright-fetch   369    11     6    0  413.8  ok
+unc-rex-raleigh                                          generic->careersite    playwright-fetch   369    50    23    0  413.8  ok
+unc-southeastern-lumberton                               generic->careersite    playwright-fetch   369     7     0    0  413.8  ok
+unc-wayne-goldsboro                                      generic->careersite    playwright-fetch   369    20     9    0  413.8  ok
+unc-youth-behavioral-health-butner                       generic->careersite    playwright-fetch   369     8     3    0  413.8  ok
+unity-hospital-rochester                                 workday                api                142    14     0    0   57.0  ok
+university-hospital-newark                               icims                  requests            11    11     1    0   13.3  ok
+unterberg-childrens-long-branch                          generic                requests            33     3     3    0   24.1  ok
+upmc-altoona-altoona                                     generic->symphony      api                656    34     1    0   17.8  ok
+upmc-chautauqua-jamestown                                generic->symphony      api                656    17     0    0   17.8  ok
+upmc-childrens-pittsburgh                                generic->symphony      api                656   389    49    0   17.8  ok
+upmc-hamot-erie                                          generic->symphony      api                656    43     2    0   17.8  ok
+upmc-harrisburg-harrisburg                               generic->symphony      api                656   106     2    0   17.8  ok
+upmc-magee-womens-pittsburgh                             generic->symphony      api                656     0     0    0   17.8  ok
+upmc-western-maryland-cumberland                         generic->symphony      api                656     7     1    0   17.8  ok
+upmc-williamsport-williamsport                           generic->symphony      api                656    36     0    0   17.8  ok
+upstate-golisano-childrens-syracuse                      generic                requests            36    36     2    0   44.5  ok
+uva-childrens-charlottesville                            phenom                 requests+api       466   382    16    0   61.4  ok
+uva-haymarket-haymarket                                  phenom                 requests+api       466    17     0    0   61.4  ok
+uva-prince-william-manassas                              phenom                 requests+api       466    67     0    0   61.4  ok
+uvm-cvph-plattsburgh                                     generic                playwright           1     1     1    0   40.0  ok
+valley-hospital-paramus                                  generic->symphony      api-legacy         286   286     1    0   10.2  ok
+vassar-brothers-medical-center-poughkeepsie              oracle_cloud           api                184    17     0    0   25.4  ok
+vhc-health-arlington                                     generic->icims         requests           303   303     0    0   43.1  ok
+virtua-mount-holly-hospital-mount-holly                  workday->workday       api                365   185     0    0   73.8  ok
+virtua-our-lady-of-lourdes-camden                        workday->workday       api                365    78     0    0   73.8  ok
+virtua-voorhees-hospital-voorhees                        workday->workday       api                365   102     0    0   73.8  ok
+wakemed-cary                                             jibe                   api                135    21     3    0   14.3  ok
+wakemed-childrens-raleigh                                jibe                   api                135    36     1    0   14.3  ok
+wakemed-north-raleigh                                    jibe                   api                135     0     0    0   14.3  ok
+wakemed-raleigh-campus-raleigh                           jibe                   api                135    78    12    0   14.3  ok
+waterbury-hospital-waterbury                             oracle_cloud           api                123    97     2    0   14.3  ok
+wellspan-york-hospital-york                              generic                playwright          55    55     3    0  170.6  ok
+wentworth-douglass-dover                                 workday                api                602    30     0    0   83.6  ok
+white-plains-hospital-white-plains                       generic->workday       api                 76    76     1    0   29.8  ok
+wilson-medical-center                                    oracle_cloud           api                515     7     0    0   30.1  ok
+winchester-hospital-winchester                           workday                api                552    25     0    0   82.8  ok
+winchester-medical-center-winchester                     generic->workday       api                 86    77     0    0   13.0  ok
+women-and-infants-providence                             jibe                   api                 68    38     4    0   15.2  ok
+woodhull-hospital-brooklyn                               generic                playwright           1     0     0    0   50.3  ok
+wynn-hospital-utica                                      successfactors         requests            26    26     0    0   14.8  ok
+ynhch-bridgeport                                         generic->jibe          api                414    83     0    0   52.2  ok
+ynhch-new-haven                                          generic->jibe          api                414   285     2    0   52.2  ok
+york-hospital-york                                       careersite             playwright-fetch   168     0     0    0  243.9  ok
+adirondack-medical-center-saranac-lake                   generic                playwright           0     0     0    0   26.5  no_listings: careers page reachable but no job listings recognized (generic adapter): set careers_search_url / ats_config to the real job board
+ahn-saint-vincent-erie                                   generic                playwright           0     0     0    0  160.9  no_listings: careers page reachable but no job listings recognized (generic adapter): set careers_search_url / ats_config to the real job board
+ahn-west-penn-hospital-pittsburgh                        generic                playwright           0     0     0    0  160.9  no_listings: careers page reachable but no job listings recognized (generic adapter): set careers_search_url / ats_config to the real job board
+ahn-wexford-hospital-wexford                             generic                playwright           0     0     0    0  160.9  no_listings: careers page reachable but no job listings recognized (generic adapter): set careers_search_url / ats_config to the real job board
+aiken-regional-aiken                                     generic                playwright           0     0     0    0   17.1  no_listings: careers page reachable but no job listings recognized (generic adapter): set careers_search_url / ats_config to the real job board
+anmed-medical-center-anderson                            generic                playwright           0     0     0    0   22.5  no_listings: careers page reachable but no job listings recognized (generic adapter): set careers_search_url / ats_config to the real job board
+augusta-health-fishersville                              generic                playwright           0     0     0    0   47.9  no_listings: careers page reachable but no job listings recognized (generic adapter): set careers_search_url / ats_config to the real job board
+bayhealth-kent-campus-dover                              infor                  api                  0     0     0    0   27.8  zero_results: board reachable but returned 0 listings for every keyword (check search URL / adapter)
+beaufort-memorial-beaufort                               generic                playwright           0     0     0    0   19.7  no_listings: careers page reachable but no job listings recognized (generic adapter): set careers_search_url / ats_config to the real job board
+brattleboro-retreat-brattleboro                          generic                playwright           0     0     0    0   48.0  no_listings: careers page reachable but no job listings recognized (generic adapter): set careers_search_url / ats_config to the real job board
+brooklyn-hospital-center-brooklyn                        generic                playwright           0     0     0    0   53.5  no_listings: careers page reachable but no job listings recognized (generic adapter): set careers_search_url / ats_config to the real job board
+bryn-mawr-hospital-bryn-mawr                             taleo                  playwright           0     0     0    0   83.9  zero_results: board reachable but returned 0 listings for every keyword (check search URL / adapter)
+carteret-health-care-morehead-city                       generic                playwright           0     0     0    0  165.6  no_listings: careers page reachable but no job listings recognized (generic adapter): set careers_search_url / ats_config to the real job board
+carthage-area-hospital-carthage                          generic                                     0     0     0    0   26.6  error: AdapterError: generic: no page reachable: 404 https://www.carthagehospital.com/careers/; playwright 404 https://www.carthagehospital.com/careers/?q=nu
+catholic-medical-center-manchester                       careersite                                  0     0     0    0  568.7  error: AdapterError: careersite: every jobs.json search failed in the browser: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!
+cedar-hill-regional-washington                           generic                                     0     0     0    0  189.4  error: AdapterError: generic: no page reachable: 403 https://www.gwhospital.com/careers?q=nurse+practitioner; playwright 403 https://www.gwhospital.com/caree
+childrens-home-of-pittsburgh                             generic                playwright           0     0     0    0   33.4  no_listings: careers page reachable but no job listings recognized (generic adapter): set careers_search_url / ats_config to the real job board
+chippenham-richmond                                      careersite                                  0     0     0    0  568.7  error: AdapterError: careersite: every jobs.json search failed in the browser: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!
+colleton-medical-center-walterboro                       careersite                                  0     0     0    0  568.7  error: AdapterError: careersite: every jobs.json search failed in the browser: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!
+columbus-regional-whiteville                             generic                playwright           0     0     0    0   92.0  no_listings: careers page reachable but no job listings recognized (generic adapter): set careers_search_url / ats_config to the real job board
+cumberland-hospital-new-kent                             generic                playwright           0     0     0    0   18.5  no_listings: careers page reachable but no job listings recognized (generic adapter): set careers_search_url / ats_config to the real job board
+dosher-southport                                         generic                playwright           0     0     0    0  102.3  no_listings: careers page reachable but no job listings recognized (generic adapter): set careers_search_url / ats_config to the real job board
+franciscan-childrens-brighton                            generic                playwright           0     0     0    0   49.7  no_listings: careers page reachable but no job listings recognized (generic adapter): set careers_search_url / ats_config to the real job board
+grand-strand-medical-center-myrtle-beach                 careersite                                  0     0     0    0  568.7  error: AdapterError: careersite: every jobs.json search failed in the browser: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!
+gw-university-hospital-washington                        generic                                     0     0     0    0  189.4  error: AdapterError: generic: no page reachable: 403 https://www.gwhospital.com/careers?q=nurse+practitioner; playwright 403 https://www.gwhospital.com/caree
+henrico-doctors-richmond                                 careersite                                  0     0     0    0  568.7  error: AdapterError: careersite: every jobs.json search failed in the browser: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!
+holy-name-medical-center-teaneck                         generic                playwright           0     0     0    0  104.6  no_listings: careers page reachable but no job listings recognized (generic adapter): set careers_search_url / ats_config to the real job board
+howard-university-hospital-washington                    generic                                     0     0     0    0  421.8  error: AdapterError: generic: no page reachable: None https://huhealthcarecareers.com/; playwright TimeoutError: Page.goto: Timeout 45000ms exceeded.
+Call lo
+hsc-pediatric-center-washington                          generic                                     0     0     0    0  320.3  error: AdapterError: generic: no page reachable: None https://www.hschealth.org/careers; playwright TimeoutError: Page.goto: Timeout 45000ms exceeded.
+Call l
+iredell-memorial-statesville                             generic                playwright           0     0     0    0   70.7  no_listings: careers page reachable but no job listings recognized (generic adapter): set careers_search_url / ats_config to the real job board
+johnston-willis-richmond                                 careersite                                  0     0     0    0  568.7  error: AdapterError: careersite: every jobs.json search failed in the browser: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!
+lankenau-medical-center-wynnewood                        taleo                  playwright           0     0     0    0   83.9  zero_results: board reachable but returned 0 listings for every keyword (check search URL / adapter)
+lewisgale-medical-center-salem                           careersite                                  0     0     0    0  568.7  error: AdapterError: careersite: every jobs.json search failed in the browser: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!
+mcleod-childrens-florence                                generic                                     0     0     0    0  150.1  error: AdapterError: generic: no page reachable: 403 https://jobs.mcleodhealth.org/; playwright 403 https://jobs.mcleodhealth.org/; playwright 403 https://jo
+mcleod-regional-florence                                 generic                                     0     0     0    0  150.1  error: AdapterError: generic: no page reachable: 403 https://jobs.mcleodhealth.org/; playwright 403 https://jobs.mcleodhealth.org/; playwright 403 https://jo
+medina-memorial-hospital-medina                          generic                                     0     0     0    0   18.0  error: AdapterError: generic: no page reachable: 202 https://orleanscommunityhealth.org/careers/; playwright Error: Page.title: Execution context was destroy
+mission-childrens-asheville                              careersite                                  0     0     0    0  568.7  error: AdapterError: careersite: every jobs.json search failed in the browser: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!
+moses-taylor-hospital-scranton                           generic                playwright           0     0     0    0   69.0  no_listings: careers page reachable but no job listings recognized (generic adapter): set careers_search_url / ats_config to the real job board
+mt-washington-pediatric-baltimore                        generic                playwright           0     0     0    0   46.9  no_listings: careers page reachable but no job listings recognized (generic adapter): set careers_search_url / ats_config to the real job board
+nassau-university-medical-center-east-meadow             generic                playwright           0     0     0    0   38.2  no_listings: careers page reachable but no job listings recognized (generic adapter): set careers_search_url / ats_config to the real job board
+nathan-littauer-hospital-gloversville                    generic                playwright           0     0     0    0   94.4  no_listings: careers page reachable but no job listings recognized (generic adapter): set careers_search_url / ats_config to the real job board
+niagara-falls-memorial-medical-center-niagara-falls      generic                                     0     0     0    0   76.8  error: AdapterError: generic: no page reachable: 403 https://careers.nfmmc.org/?s=nurse+practitioner; playwright 403 https://careers.nfmmc.org/?s=nurse+pract
+oneida-health-hospital-oneida                            generic                playwright           0     0     0    0   75.3  no_listings: careers page reachable but no job listings recognized (generic adapter): set careers_search_url / ats_config to the real job board
+oswego-hospital-oswego                                   generic                playwright           0     0     0    0   90.2  no_listings: careers page reachable but no job listings recognized (generic adapter): set careers_search_url / ats_config to the real job board
+paoli-hospital-paoli                                     taleo                  playwright           0     0     0    0   83.9  zero_results: board reachable but returned 0 listings for every keyword (check search URL / adapter)
+pappas-rehabilitation-canton                             generic                                     0     0     0    0   38.7  error: AdapterError: generic: no page reachable: 404 https://www.mass.gov/orgs/pappas-rehabilitation-hospital-for-children; playwright 404 https://www.mass.g
+portsmouth-regional-portsmouth                           careersite                                  0     0     0    0  568.7  error: AdapterError: careersite: every jobs.json search failed in the browser: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!
+reston-hospital-center-reston                            careersite                                  0     0     0    0  568.7  error: AdapterError: careersite: every jobs.json search failed in the browser: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!
+riddle-hospital-media                                    taleo                  playwright           0     0     0    0   83.9  zero_results: board reachable but returned 0 listings for every keyword (check search URL / adapter)
+rome-health-rome                                         generic                playwright           0     0     0    0   71.7  no_listings: careers page reachable but no job listings recognized (generic adapter): set careers_search_url / ats_config to the real job board
+saint-peters-university-hospital-new-brunswick           generic                playwright           0     0     0    0   32.6  no_listings: careers page reachable but no job listings recognized (generic adapter): set careers_search_url / ats_config to the real job board
+sbh-health-system-bronx                                  generic                playwright           0     0     0    0   57.7  no_listings: careers page reachable but no job listings recognized (generic adapter): set careers_search_url / ats_config to the real job board
+spotsylvania-regional-fredericksburg                     careersite                                  0     0     0    0  568.7  error: AdapterError: careersite: every jobs.json search failed in the browser: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!
+st-josephs-medical-center-yonkers                        generic                                     0     0     0    0   42.5  error: AdapterError: generic: no page reachable: 403 https://www.saintjosephs.org/careers/?q=nurse+practitioner; playwright 403 https://www.saintjosephs.org/
+st-marys-hospital-for-children-bayside                   generic                playwright           0     0     0    0   85.4  no_listings: careers page reachable but no job listings recognized (generic adapter): set careers_search_url / ats_config to the real job board
+stonesprings-hospital-dulles                             careersite                                  0     0     0    0  568.7  error: AdapterError: careersite: every jobs.json search failed in the browser: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!
+summerville-medical-center-summerville                   careersite                                  0     0     0    0  568.7  error: AdapterError: careersite: every jobs.json search failed in the browser: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!
+suny-downstate-university-hospital-brooklyn              generic                                     0     0     0    0   57.5  error: AdapterError: generic: no page reachable: 404 https://www.downstate.edu/careers/; playwright 404 https://www.downstate.edu/careers/?q=nurse+practition
+trident-medical-center-north-charleston                  careersite                                  0     0     0    0  568.7  error: AdapterError: careersite: every jobs.json search failed in the browser: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!
+washington-regional-plymouth                             generic                                     0     0     0    0   69.1  error: AdapterError: generic: no page reachable: None https://www.washingtonregional.org/careers/; playwright Error: Page.goto: net::ERR_NAME_NOT_RESOLVED at
+wyckoff-heights-medical-center-brooklyn                  generic                                     0     0     0    0   52.2  error: AdapterError: generic: no page reachable: 403 https://whmcny.org/careers/?q=nurse+practitioner; playwright 403 https://whmcny.org/careers/?q=nurse+pra
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+hospitals=509 ok=448 not_ok=61 board_listings=33757 candidates=755 new_candidates=15
