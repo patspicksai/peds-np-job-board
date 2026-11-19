@@ -2,7 +2,7 @@
  "run_id": "2026-11-19",
  "mode": "automated",
  "started_at": "2026-11-19T10:29:06Z",
- "finished_at": "2026-11-19T10:59:03Z",
+ "finished_at": "2026-11-19T11:11:01Z",
  "dry_run": false,
  "no_details": false,
  "keywords": [
@@ -132,12 +132,14 @@
   "tidalhealth-peninsula-regional-salisbury",
   "tidelands-georgetown-georgetown",
   "tidelands-waccamaw-murrells-inlet",
+  "aiken-regional-aiken",
   "uvm-cvph-plattsburgh",
   "central-vermont-medical-center-berlin",
   "golisano-childrens-uvm-burlington",
   "valley-hospital-paramus",
   "winchester-medical-center-winchester",
   "vhc-health-arlington",
+  "wyckoff-heights-medical-center-brooklyn",
   "good-samaritan-hospital-suffern",
   "healthalliance-hospital-kingston",
   "maria-fareri-childrens-valhalla",
@@ -516,9 +518,7 @@
   "saint-peters-university-hospital-new-brunswick",
   "mt-washington-pediatric-baltimore",
   "nathan-littauer-hospital-gloversville",
-  "aiken-regional-aiken",
   "washington-regional-plymouth",
-  "wyckoff-heights-medical-center-brooklyn",
   "columbus-regional-whiteville",
   "bayhealth-kent-campus-dover",
   "bryn-mawr-hospital-bryn-mawr",
@@ -547,7 +547,7 @@
   "ahn-west-penn-hospital-pittsburgh": "careers page reachable but no job listings recognized (generic adapter): set careers_search_url / ats_config to the real job board",
   "anmed-medical-center-anderson": "careers page reachable but no job listings recognized (generic adapter): set careers_search_url / ats_config to the real job board",
   "augusta-health-fishersville": "careers page reachable but no job listings recognized (generic adapter): set careers_search_url / ats_config to the real job board",
-  "niagara-falls-memorial-medical-center-niagara-falls": "AdapterError: generic: no page reachable: 403 https://careers.nfmmc.org/?s=nurse+practitioner; playwright 403 https://careers.nfmmc.org/?s=nurse+practitioner; playwright 403 https://careers.nfmmc.org/?q=nurse+practitioner; playwright 403 https://careers.nfmmc.org/?keywords=nurse+practitioner",
+  "niagara-falls-memorial-medical-center-niagara-falls": "careers page reachable but no job listings recognized (generic adapter): set careers_search_url / ats_config to the real job board",
   "carteret-health-care-morehead-city": "careers page reachable but no job listings recognized (generic adapter): set careers_search_url / ats_config to the real job board",
   "carthage-area-hospital-carthage": "AdapterError: generic: no page reachable: 404 https://www.carthagehospital.com/careers/; playwright 404 https://www.carthagehospital.com/careers/?q=nurse+practitioner; playwright 404 https://www.carthagehospital.com/careers/?keywords=nurse+practitioner; playwright 404 https://www.carthagehospital.com/careers/?keyword=nurse+practitioner",
   "moses-taylor-hospital-scranton": "careers page reachable but no job listings recognized (generic adapter): set careers_search_url / ats_config to the real job board",
@@ -558,8 +558,8 @@
   "cedar-hill-regional-washington": "AdapterError: generic: no page reachable: 403 https://www.gwhospital.com/careers?q=nurse+practitioner; playwright 403 https://www.gwhospital.com/careers?q=nurse+practitioner; playwright 403 https://www.gwhospital.com/careers?keywords=nurse+practitioner; playwright 403 https://www.gwhospital.com/careers?keyword=nurse+practitioner",
   "gw-university-hospital-washington": "AdapterError: generic: no page reachable: 403 https://www.gwhospital.com/careers?q=nurse+practitioner; playwright 403 https://www.gwhospital.com/careers?q=nurse+practitioner; playwright 403 https://www.gwhospital.com/careers?keywords=nurse+practitioner; playwright 403 https://www.gwhospital.com/careers?keyword=nurse+practitioner",
   "holy-name-medical-center-teaneck": "careers page reachable but no job listings recognized (generic adapter): set careers_search_url / ats_config to the real job board",
-  "hsc-pediatric-center-washington": "AdapterError: generic: no page reachable: None https://www.hschealth.org/careers; playwright TimeoutError: Page.goto: Timeout 45000ms exceeded.\nCall log:\n  - navigating to \"https://www.hschealth.org/careers?q=nurse+practitioner https://www.hschealth.org/careers?q=nurse+practitioner; playwright Error: Page.goto: net::ERR_ADDRESS_UNREACHABLE at https://www.hschealth.org/careers?keywords=nurse+practitioner\nCall log:\n  - n https://www.hschealth.org/careers?keywords=nurse+practitioner; playwright Error: Page.goto:",
-  "howard-university-hospital-washington": "AdapterError: generic: no page reachable: None https://huhealthcarecareers.com/; playwright TimeoutError: Page.goto: Timeout 45000ms exceeded.\nCall log:\n  - navigating to \"https://huhealthcarecareers.com/?q=nurse+practitioner\" https://huhealthcarecareers.com/?q=nurse+practitioner; playwright TimeoutError: Page.goto: Timeout 45000ms exceeded.\nCall log:\n  - navigating to \"https://huhealthcarecareers.com/?keywords=nurse+practi https://huhealthcarecareers.com/?keywords=nurse+practitioner; playwright Error: Page.g",
+  "hsc-pediatric-center-washington": "AdapterError: generic: no page reachable: None https://www.hschealth.org/careers; playwright Error: Page.goto: net::ERR_ADDRESS_UNREACHABLE at https://www.hschealth.org/careers?q=nurse+practitioner\nCall log:\n  - navigati https://www.hschealth.org/careers?q=nurse+practitioner; playwright Error: Page.goto: net::ERR_ADDRESS_UNREACHABLE at https://www.hschealth.org/careers?keywords=nurse+practitioner\nCall log:\n  - n https://www.hschealth.org/careers?keywords=nurse+practitioner; playwright TimeoutError: Page.goto:",
+  "howard-university-hospital-washington": "careers page reachable but no job listings recognized (generic adapter): set careers_search_url / ats_config to the real job board",
   "iredell-memorial-statesville": "careers page reachable but no job listings recognized (generic adapter): set careers_search_url / ats_config to the real job board",
   "mcleod-childrens-florence": "AdapterError: generic: no page reachable: 403 https://jobs.mcleodhealth.org/; playwright 403 https://jobs.mcleodhealth.org/; playwright 403 https://jobs.mcleodhealth.org/?q=nurse+practitioner; playwright 403 https://jobs.mcleodhealth.org/?keywords=nurse+practitioner",
   "mcleod-regional-florence": "AdapterError: generic: no page reachable: 403 https://jobs.mcleodhealth.org/; playwright 403 https://jobs.mcleodhealth.org/; playwright 403 https://jobs.mcleodhealth.org/?q=nurse+practitioner; playwright 403 https://jobs.mcleodhealth.org/?keywords=nurse+practitioner",
@@ -567,7 +567,7 @@
   "sbh-health-system-bronx": "careers page reachable but no job listings recognized (generic adapter): set careers_search_url / ats_config to the real job board",
   "brooklyn-hospital-center-brooklyn": "careers page reachable but no job listings recognized (generic adapter): set careers_search_url / ats_config to the real job board",
   "nassau-university-medical-center-east-meadow": "careers page reachable but no job listings recognized (generic adapter): set careers_search_url / ats_config to the real job board",
-  "medina-memorial-hospital-medina": "AdapterError: generic: no page reachable: 202 https://orleanscommunityhealth.org/careers/; playwright Error: Page.title: Execution context was destroyed, most likely because of a navigation https://orleanscommunityhealth.org/careers/?q=nurse+practitioner; playwright Error: Page.title: Execution context was destroyed, most likely because of a navigation https://orleanscommunityhealth.org/careers/?keywords=nurse+practitioner; playwright Error: Page.title: Execution context was destroyed, most likely because of ",
+  "medina-memorial-hospital-medina": "careers page reachable but no job listings recognized (generic adapter): set careers_search_url / ats_config to the real job board",
   "oswego-hospital-oswego": "careers page reachable but no job listings recognized (generic adapter): set careers_search_url / ats_config to the real job board",
   "oneida-health-hospital-oneida": "careers page reachable but no job listings recognized (generic adapter): set careers_search_url / ats_config to the real job board",
   "st-marys-hospital-for-children-bayside": "careers page reachable but no job listings recognized (generic adapter): set careers_search_url / ats_config to the real job board",
@@ -575,13 +575,11 @@
   "childrens-home-of-pittsburgh": "careers page reachable but no job listings recognized (generic adapter): set careers_search_url / ats_config to the real job board",
   "brattleboro-retreat-brattleboro": "careers page reachable but no job listings recognized (generic adapter): set careers_search_url / ats_config to the real job board",
   "rome-health-rome": "careers page reachable but no job listings recognized (generic adapter): set careers_search_url / ats_config to the real job board",
-  "st-josephs-medical-center-yonkers": "AdapterError: generic: no page reachable: 403 https://www.saintjosephs.org/careers/?q=nurse+practitioner; playwright 403 https://www.saintjosephs.org/careers/?q=nurse+practitioner; playwright 403 https://www.saintjosephs.org/careers/?keywords=nurse+practitioner; playwright 403 https://www.saintjosephs.org/careers/?keyword=nurse+practitioner",
+  "st-josephs-medical-center-yonkers": "careers page reachable but no job listings recognized (generic adapter): set careers_search_url / ats_config to the real job board",
   "saint-peters-university-hospital-new-brunswick": "careers page reachable but no job listings recognized (generic adapter): set careers_search_url / ats_config to the real job board",
   "mt-washington-pediatric-baltimore": "careers page reachable but no job listings recognized (generic adapter): set careers_search_url / ats_config to the real job board",
   "nathan-littauer-hospital-gloversville": "careers page reachable but no job listings recognized (generic adapter): set careers_search_url / ats_config to the real job board",
-  "aiken-regional-aiken": "careers page reachable but no job listings recognized (generic adapter): set careers_search_url / ats_config to the real job board",
   "washington-regional-plymouth": "AdapterError: generic: no page reachable: None https://www.washingtonregional.org/careers/; playwright Error: Page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.washingtonregional.org/careers/?q=nurse+practitioner\nCall log:\n  -  https://www.washingtonregional.org/careers/?q=nurse+practitioner; playwright Error: Page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.washingtonregional.org/careers/?keywords=nurse+practitioner\nCall lo https://www.washingtonregional.org/careers/?keywords=nurse+practitioner; playw",
-  "wyckoff-heights-medical-center-brooklyn": "AdapterError: generic: no page reachable: 403 https://whmcny.org/careers/?q=nurse+practitioner; playwright 403 https://whmcny.org/careers/?q=nurse+practitioner; playwright 403 https://whmcny.org/careers/?keywords=nurse+practitioner; playwright 403 https://whmcny.org/careers/?keyword=nurse+practitioner",
   "columbus-regional-whiteville": "careers page reachable but no job listings recognized (generic adapter): set careers_search_url / ats_config to the real job board",
   "bayhealth-kent-campus-dover": "board reachable but returned 0 listings for every keyword (check search URL / adapter)",
   "bryn-mawr-hospital-bryn-mawr": "board reachable but returned 0 listings for every keyword (check search URL / adapter)",
@@ -606,7 +604,7 @@
    "status": "error",
    "error": "AdapterError: careersite: every jobs.json search failed in the browser: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class=\"no-js\" lang=\"en-US\"><!--<![endif]--><head>\\n<title>At'; html search 'nurse practitioner': HTTP 403 Attention Required! | Cloudflare; html search 'pediatric nurse practitioner': HTTP 403 Attention Required! | Cloudflare",
    "http_status": null,
-   "seconds": 568.7,
+   "seconds": 262.5,
    "requests": 0,
    "details_fetched": 0,
    "details_failed": 0,
@@ -621,7 +619,7 @@
     "html search 'pediatric nurse practitioner': HTTP 403 Attention Required! | Cloudflare",
     "sniff: HTTP 403 for https://careers.hcahealthcare.com/search/jobs: bot challenge (Cloudflare)",
     "sniff: HTTP 403 for https://careers.hcahealthcare.com/pages/catholic-medical-center?bid=5260: bot challenge (Cloudflare)",
-    "generic fallback failed: AdapterError: generic: no page reachable: 403 https://careers.hcahealthcare.com/search/jobs?q=nurse+practitioner&location=Manchester%2C+NH%2C+United+States; playwright 403 https://careers.hcahealthcare.com/search/j"
+    "retried from a fresh runner"
    ],
    "samples": [],
    "sample_listings": []
@@ -642,7 +640,7 @@
    "status": "error",
    "error": "AdapterError: careersite: every jobs.json search failed in the browser: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class=\"no-js\" lang=\"en-US\"><!--<![endif]--><head>\\n<title>At'; html search 'nurse practitioner': HTTP 403 Attention Required! | Cloudflare; html search 'pediatric nurse practitioner': HTTP 403 Attention Required! | Cloudflare",
    "http_status": null,
-   "seconds": 568.7,
+   "seconds": 262.5,
    "requests": 0,
    "details_fetched": 0,
    "details_failed": 0,
@@ -657,7 +655,7 @@
     "html search 'pediatric nurse practitioner': HTTP 403 Attention Required! | Cloudflare",
     "sniff: HTTP 403 for https://careers.hcahealthcare.com/search/jobs: bot challenge (Cloudflare)",
     "sniff: HTTP 403 for https://careers.hcahealthcare.com/pages/catholic-medical-center?bid=5260: bot challenge (Cloudflare)",
-    "generic fallback failed: AdapterError: generic: no page reachable: 403 https://careers.hcahealthcare.com/search/jobs?q=nurse+practitioner&location=Manchester%2C+NH%2C+United+States; playwright 403 https://careers.hcahealthcare.com/search/j"
+    "retried from a fresh runner"
    ],
    "samples": [],
    "sample_listings": []
@@ -678,7 +676,7 @@
    "status": "error",
    "error": "AdapterError: careersite: every jobs.json search failed in the browser: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class=\"no-js\" lang=\"en-US\"><!--<![endif]--><head>\\n<title>At'; html search 'nurse practitioner': HTTP 403 Attention Required! | Cloudflare; html search 'pediatric nurse practitioner': HTTP 403 Attention Required! | Cloudflare",
    "http_status": null,
-   "seconds": 568.7,
+   "seconds": 262.5,
    "requests": 0,
    "details_fetched": 0,
    "details_failed": 0,
@@ -693,7 +691,7 @@
     "html search 'pediatric nurse practitioner': HTTP 403 Attention Required! | Cloudflare",
     "sniff: HTTP 403 for https://careers.hcahealthcare.com/search/jobs: bot challenge (Cloudflare)",
     "sniff: HTTP 403 for https://careers.hcahealthcare.com/pages/catholic-medical-center?bid=5260: bot challenge (Cloudflare)",
-    "generic fallback failed: AdapterError: generic: no page reachable: 403 https://careers.hcahealthcare.com/search/jobs?q=nurse+practitioner&location=Manchester%2C+NH%2C+United+States; playwright 403 https://careers.hcahealthcare.com/search/j"
+    "retried from a fresh runner"
    ],
    "samples": [],
    "sample_listings": []
@@ -714,7 +712,7 @@
    "status": "error",
    "error": "AdapterError: careersite: every jobs.json search failed in the browser: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class=\"no-js\" lang=\"en-US\"><!--<![endif]--><head>\\n<title>At'; html search 'nurse practitioner': HTTP 403 Attention Required! | Cloudflare; html search 'pediatric nurse practitioner': HTTP 403 Attention Required! | Cloudflare",
    "http_status": null,
-   "seconds": 568.7,
+   "seconds": 262.5,
    "requests": 0,
    "details_fetched": 0,
    "details_failed": 0,
@@ -729,7 +727,7 @@
     "html search 'pediatric nurse practitioner': HTTP 403 Attention Required! | Cloudflare",
     "sniff: HTTP 403 for https://careers.hcahealthcare.com/search/jobs: bot challenge (Cloudflare)",
     "sniff: HTTP 403 for https://careers.hcahealthcare.com/pages/catholic-medical-center?bid=5260: bot challenge (Cloudflare)",
-    "generic fallback failed: AdapterError: generic: no page reachable: 403 https://careers.hcahealthcare.com/search/jobs?q=nurse+practitioner&location=Manchester%2C+NH%2C+United+States; playwright 403 https://careers.hcahealthcare.com/search/j"
+    "retried from a fresh runner"
    ],
    "samples": [],
    "sample_listings": []
@@ -750,7 +748,7 @@
    "status": "error",
    "error": "AdapterError: careersite: every jobs.json search failed in the browser: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class=\"no-js\" lang=\"en-US\"><!--<![endif]--><head>\\n<title>At'; html search 'nurse practitioner': HTTP 403 Attention Required! | Cloudflare; html search 'pediatric nurse practitioner': HTTP 403 Attention Required! | Cloudflare",
    "http_status": null,
-   "seconds": 568.7,
+   "seconds": 262.5,
    "requests": 0,
    "details_fetched": 0,
    "details_failed": 0,
@@ -765,7 +763,7 @@
     "html search 'pediatric nurse practitioner': HTTP 403 Attention Required! | Cloudflare",
     "sniff: HTTP 403 for https://careers.hcahealthcare.com/search/jobs: bot challenge (Cloudflare)",
     "sniff: HTTP 403 for https://careers.hcahealthcare.com/pages/catholic-medical-center?bid=5260: bot challenge (Cloudflare)",
-    "generic fallback failed: AdapterError: generic: no page reachable: 403 https://careers.hcahealthcare.com/search/jobs?q=nurse+practitioner&location=Manchester%2C+NH%2C+United+States; playwright 403 https://careers.hcahealthcare.com/search/j"
+    "retried from a fresh runner"
    ],
    "samples": [],
    "sample_listings": []
@@ -786,7 +784,7 @@
    "status": "error",
    "error": "AdapterError: careersite: every jobs.json search failed in the browser: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class=\"no-js\" lang=\"en-US\"><!--<![endif]--><head>\\n<title>At'; html search 'nurse practitioner': HTTP 403 Attention Required! | Cloudflare; html search 'pediatric nurse practitioner': HTTP 403 Attention Required! | Cloudflare",
    "http_status": null,
-   "seconds": 568.7,
+   "seconds": 262.5,
    "requests": 0,
    "details_fetched": 0,
    "details_failed": 0,
@@ -801,7 +799,7 @@
     "html search 'pediatric nurse practitioner': HTTP 403 Attention Required! | Cloudflare",
     "sniff: HTTP 403 for https://careers.hcahealthcare.com/search/jobs: bot challenge (Cloudflare)",
     "sniff: HTTP 403 for https://careers.hcahealthcare.com/pages/catholic-medical-center?bid=5260: bot challenge (Cloudflare)",
-    "generic fallback failed: AdapterError: generic: no page reachable: 403 https://careers.hcahealthcare.com/search/jobs?q=nurse+practitioner&location=Manchester%2C+NH%2C+United+States; playwright 403 https://careers.hcahealthcare.com/search/j"
+    "retried from a fresh runner"
    ],
    "samples": [],
    "sample_listings": []
@@ -822,7 +820,7 @@
    "status": "error",
    "error": "AdapterError: careersite: every jobs.json search failed in the browser: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class=\"no-js\" lang=\"en-US\"><!--<![endif]--><head>\\n<title>At'; html search 'nurse practitioner': HTTP 403 Attention Required! | Cloudflare; html search 'pediatric nurse practitioner': HTTP 403 Attention Required! | Cloudflare",
    "http_status": null,
-   "seconds": 568.7,
+   "seconds": 262.5,
    "requests": 0,
    "details_fetched": 0,
    "details_failed": 0,
@@ -837,7 +835,7 @@
     "html search 'pediatric nurse practitioner': HTTP 403 Attention Required! | Cloudflare",
     "sniff: HTTP 403 for https://careers.hcahealthcare.com/search/jobs: bot challenge (Cloudflare)",
     "sniff: HTTP 403 for https://careers.hcahealthcare.com/pages/catholic-medical-center?bid=5260: bot challenge (Cloudflare)",
-    "generic fallback failed: AdapterError: generic: no page reachable: 403 https://careers.hcahealthcare.com/search/jobs?q=nurse+practitioner&location=Manchester%2C+NH%2C+United+States; playwright 403 https://careers.hcahealthcare.com/search/j"
+    "retried from a fresh runner"
    ],
    "samples": [],
    "sample_listings": []
@@ -858,7 +856,7 @@
    "status": "error",
    "error": "AdapterError: careersite: every jobs.json search failed in the browser: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class=\"no-js\" lang=\"en-US\"><!--<![endif]--><head>\\n<title>At'; html search 'nurse practitioner': HTTP 403 Attention Required! | Cloudflare; html search 'pediatric nurse practitioner': HTTP 403 Attention Required! | Cloudflare",
    "http_status": null,
-   "seconds": 568.7,
+   "seconds": 262.5,
    "requests": 0,
    "details_fetched": 0,
    "details_failed": 0,
@@ -873,7 +871,7 @@
     "html search 'pediatric nurse practitioner': HTTP 403 Attention Required! | Cloudflare",
     "sniff: HTTP 403 for https://careers.hcahealthcare.com/search/jobs: bot challenge (Cloudflare)",
     "sniff: HTTP 403 for https://careers.hcahealthcare.com/pages/catholic-medical-center?bid=5260: bot challenge (Cloudflare)",
-    "generic fallback failed: AdapterError: generic: no page reachable: 403 https://careers.hcahealthcare.com/search/jobs?q=nurse+practitioner&location=Manchester%2C+NH%2C+United+States; playwright 403 https://careers.hcahealthcare.com/search/j"
+    "retried from a fresh runner"
    ],
    "samples": [],
    "sample_listings": []
@@ -894,7 +892,7 @@
    "status": "error",
    "error": "AdapterError: careersite: every jobs.json search failed in the browser: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class=\"no-js\" lang=\"en-US\"><!--<![endif]--><head>\\n<title>At'; html search 'nurse practitioner': HTTP 403 Attention Required! | Cloudflare; html search 'pediatric nurse practitioner': HTTP 403 Attention Required! | Cloudflare",
    "http_status": null,
-   "seconds": 568.7,
+   "seconds": 262.5,
    "requests": 0,
    "details_fetched": 0,
    "details_failed": 0,
@@ -909,7 +907,7 @@
     "html search 'pediatric nurse practitioner': HTTP 403 Attention Required! | Cloudflare",
     "sniff: HTTP 403 for https://careers.hcahealthcare.com/search/jobs: bot challenge (Cloudflare)",
     "sniff: HTTP 403 for https://careers.hcahealthcare.com/pages/catholic-medical-center?bid=5260: bot challenge (Cloudflare)",
-    "generic fallback failed: AdapterError: generic: no page reachable: 403 https://careers.hcahealthcare.com/search/jobs?q=nurse+practitioner&location=Manchester%2C+NH%2C+United+States; playwright 403 https://careers.hcahealthcare.com/search/j"
+    "retried from a fresh runner"
    ],
    "samples": [],
    "sample_listings": []
@@ -930,7 +928,7 @@
    "status": "error",
    "error": "AdapterError: careersite: every jobs.json search failed in the browser: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class=\"no-js\" lang=\"en-US\"><!--<![endif]--><head>\\n<title>At'; html search 'nurse practitioner': HTTP 403 Attention Required! | Cloudflare; html search 'pediatric nurse practitioner': HTTP 403 Attention Required! | Cloudflare",
    "http_status": null,
-   "seconds": 568.7,
+   "seconds": 262.5,
    "requests": 0,
    "details_fetched": 0,
    "details_failed": 0,
@@ -945,7 +943,7 @@
     "html search 'pediatric nurse practitioner': HTTP 403 Attention Required! | Cloudflare",
     "sniff: HTTP 403 for https://careers.hcahealthcare.com/search/jobs: bot challenge (Cloudflare)",
     "sniff: HTTP 403 for https://careers.hcahealthcare.com/pages/catholic-medical-center?bid=5260: bot challenge (Cloudflare)",
-    "generic fallback failed: AdapterError: generic: no page reachable: 403 https://careers.hcahealthcare.com/search/jobs?q=nurse+practitioner&location=Manchester%2C+NH%2C+United+States; playwright 403 https://careers.hcahealthcare.com/search/j"
+    "retried from a fresh runner"
    ],
    "samples": [],
    "sample_listings": []
@@ -966,7 +964,7 @@
    "status": "error",
    "error": "AdapterError: careersite: every jobs.json search failed in the browser: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class=\"no-js\" lang=\"en-US\"><!--<![endif]--><head>\\n<title>At'; html search 'nurse practitioner': HTTP 403 Attention Required! | Cloudflare; html search 'pediatric nurse practitioner': HTTP 403 Attention Required! | Cloudflare",
    "http_status": null,
-   "seconds": 568.7,
+   "seconds": 262.5,
    "requests": 0,
    "details_fetched": 0,
    "details_failed": 0,
@@ -981,7 +979,7 @@
     "html search 'pediatric nurse practitioner': HTTP 403 Attention Required! | Cloudflare",
     "sniff: HTTP 403 for https://careers.hcahealthcare.com/search/jobs: bot challenge (Cloudflare)",
     "sniff: HTTP 403 for https://careers.hcahealthcare.com/pages/catholic-medical-center?bid=5260: bot challenge (Cloudflare)",
-    "generic fallback failed: AdapterError: generic: no page reachable: 403 https://careers.hcahealthcare.com/search/jobs?q=nurse+practitioner&location=Manchester%2C+NH%2C+United+States; playwright 403 https://careers.hcahealthcare.com/search/j"
+    "retried from a fresh runner"
    ],
    "samples": [],
    "sample_listings": []
@@ -1002,7 +1000,7 @@
    "status": "error",
    "error": "AdapterError: careersite: every jobs.json search failed in the browser: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class=\"no-js\" lang=\"en-US\"><!--<![endif]--><head>\\n<title>At'; html search 'nurse practitioner': HTTP 403 Attention Required! | Cloudflare; html search 'pediatric nurse practitioner': HTTP 403 Attention Required! | Cloudflare",
    "http_status": null,
-   "seconds": 568.7,
+   "seconds": 262.5,
    "requests": 0,
    "details_fetched": 0,
    "details_failed": 0,
@@ -1017,7 +1015,7 @@
     "html search 'pediatric nurse practitioner': HTTP 403 Attention Required! | Cloudflare",
     "sniff: HTTP 403 for https://careers.hcahealthcare.com/search/jobs: bot challenge (Cloudflare)",
     "sniff: HTTP 403 for https://careers.hcahealthcare.com/pages/catholic-medical-center?bid=5260: bot challenge (Cloudflare)",
-    "generic fallback failed: AdapterError: generic: no page reachable: 403 https://careers.hcahealthcare.com/search/jobs?q=nurse+practitioner&location=Manchester%2C+NH%2C+United+States; playwright 403 https://careers.hcahealthcare.com/search/j"
+    "retried from a fresh runner"
    ],
    "samples": [],
    "sample_listings": []
@@ -1038,7 +1036,7 @@
    "status": "error",
    "error": "AdapterError: careersite: every jobs.json search failed in the browser: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class=\"no-js\" lang=\"en-US\"><!--<![endif]--><head>\\n<title>At'; html search 'nurse practitioner': HTTP 403 Attention Required! | Cloudflare; html search 'pediatric nurse practitioner': HTTP 403 Attention Required! | Cloudflare",
    "http_status": null,
-   "seconds": 568.7,
+   "seconds": 262.5,
    "requests": 0,
    "details_fetched": 0,
    "details_failed": 0,
@@ -1053,7 +1051,7 @@
     "html search 'pediatric nurse practitioner': HTTP 403 Attention Required! | Cloudflare",
     "sniff: HTTP 403 for https://careers.hcahealthcare.com/search/jobs: bot challenge (Cloudflare)",
     "sniff: HTTP 403 for https://careers.hcahealthcare.com/pages/catholic-medical-center?bid=5260: bot challenge (Cloudflare)",
-    "generic fallback failed: AdapterError: generic: no page reachable: 403 https://careers.hcahealthcare.com/search/jobs?q=nurse+practitioner&location=Manchester%2C+NH%2C+United+States; playwright 403 https://careers.hcahealthcare.com/search/j"
+    "retried from a fresh runner"
    ],
    "samples": [],
    "sample_listings": []
@@ -1074,7 +1072,7 @@
    "status": "error",
    "error": "AdapterError: careersite: every jobs.json search failed in the browser: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class=\"no-js\" lang=\"en-US\"><!--<![endif]--><head>\\n<title>At'; html search 'nurse practitioner': HTTP 403 Attention Required! | Cloudflare; html search 'pediatric nurse practitioner': HTTP 403 Attention Required! | Cloudflare",
    "http_status": null,
-   "seconds": 568.7,
+   "seconds": 262.5,
    "requests": 0,
    "details_fetched": 0,
    "details_failed": 0,
@@ -1089,7 +1087,7 @@
     "html search 'pediatric nurse practitioner': HTTP 403 Attention Required! | Cloudflare",
     "sniff: HTTP 403 for https://careers.hcahealthcare.com/search/jobs: bot challenge (Cloudflare)",
     "sniff: HTTP 403 for https://careers.hcahealthcare.com/pages/catholic-medical-center?bid=5260: bot challenge (Cloudflare)",
-    "generic fallback failed: AdapterError: generic: no page reachable: 403 https://careers.hcahealthcare.com/search/jobs?q=nurse+practitioner&location=Manchester%2C+NH%2C+United+States; playwright 403 https://careers.hcahealthcare.com/search/j"
+    "retried from a fresh runner"
    ],
    "samples": [],
    "sample_listings": []
@@ -2718,7 +2716,7 @@
    "name": "Niagara Falls Memorial Medical Center",
    "platform": "generic",
    "adapter": "generic",
-   "method": "",
+   "method": "playwright",
    "board": "generic|careers.nfmmc.org?s=nurse+practitioner",
    "board_hospitals": 1,
    "board_listings": 0,
@@ -2726,15 +2724,16 @@
    "candidates": 0,
    "new": 0,
    "known": 0,
-   "status": "error",
-   "error": "AdapterError: generic: no page reachable: 403 https://careers.nfmmc.org/?s=nurse+practitioner; playwright 403 https://careers.nfmmc.org/?s=nurse+practitioner; playwright 403 https://careers.nfmmc.org/?q=nurse+practitioner; playwright 403 https://careers.nfmmc.org/?keywords=nurse+practitioner",
+   "status": "no_listings",
+   "error": "careers page reachable but no job listings recognized (generic adapter): set careers_search_url / ats_config to the real job board",
    "http_status": null,
-   "seconds": 76.8,
-   "requests": 1,
+   "seconds": 67.9,
+   "requests": 6,
    "details_fetched": 0,
    "details_failed": 0,
    "notes": [
-    "sniff: HTTP 403 for https://careers.nfmmc.org/?s=nurse+practitioner: forbidden (bot block?)"
+    "generic: pages reachable but no NP/APP job links found: playwright 200 https://careers.nfmmc.org/?s=nurse+practitioner; playwright 200 https://careers.nfmmc.org/?q=nurse+practitioner; playwright 200 https://careers.nfmmc.org/?keywords=nurse+practitioner",
+    "retried from a fresh runner"
    ],
    "samples": [],
    "sample_listings": []
@@ -4060,12 +4059,13 @@
    "status": "error",
    "error": "AdapterError: generic: no page reachable: 403 https://www.gwhospital.com/careers?q=nurse+practitioner; playwright 403 https://www.gwhospital.com/careers?q=nurse+practitioner; playwright 403 https://www.gwhospital.com/careers?keywords=nurse+practitioner; playwright 403 https://www.gwhospital.com/careers?keyword=nurse+practitioner",
    "http_status": null,
-   "seconds": 189.4,
+   "seconds": 132.4,
    "requests": 1,
    "details_fetched": 0,
    "details_failed": 0,
    "notes": [
-    "sniff: HTTP 403 for https://www.gwhospital.com/careers: bot challenge (Cloudflare)"
+    "sniff: HTTP 403 for https://www.gwhospital.com/careers: bot challenge (Cloudflare)",
+    "retried from a fresh runner"
    ],
    "samples": [],
    "sample_listings": []
@@ -4086,12 +4086,13 @@
    "status": "error",
    "error": "AdapterError: generic: no page reachable: 403 https://www.gwhospital.com/careers?q=nurse+practitioner; playwright 403 https://www.gwhospital.com/careers?q=nurse+practitioner; playwright 403 https://www.gwhospital.com/careers?keywords=nurse+practitioner; playwright 403 https://www.gwhospital.com/careers?keyword=nurse+practitioner",
    "http_status": null,
-   "seconds": 189.4,
+   "seconds": 132.4,
    "requests": 1,
    "details_fetched": 0,
    "details_failed": 0,
    "notes": [
-    "sniff: HTTP 403 for https://www.gwhospital.com/careers: bot challenge (Cloudflare)"
+    "sniff: HTTP 403 for https://www.gwhospital.com/careers: bot challenge (Cloudflare)",
+    "retried from a fresh runner"
    ],
    "samples": [],
    "sample_listings": []
@@ -4137,14 +4138,15 @@
    "new": 0,
    "known": 0,
    "status": "error",
-   "error": "AdapterError: generic: no page reachable: None https://www.hschealth.org/careers; playwright TimeoutError: Page.goto: Timeout 45000ms exceeded.\nCall log:\n  - navigating to \"https://www.hschealth.org/careers?q=nurse+practitioner https://www.hschealth.org/careers?q=nurse+practitioner; playwright Error: Page.goto: net::ERR_ADDRESS_UNREACHABLE at https://www.hschealth.org/careers?keywords=nurse+practitioner\nCall log:\n  - n https://www.hschealth.org/careers?keywords=nurse+practitioner; playwright Error: Page.goto:",
+   "error": "AdapterError: generic: no page reachable: None https://www.hschealth.org/careers; playwright Error: Page.goto: net::ERR_ADDRESS_UNREACHABLE at https://www.hschealth.org/careers?q=nurse+practitioner\nCall log:\n  - navigati https://www.hschealth.org/careers?q=nurse+practitioner; playwright Error: Page.goto: net::ERR_ADDRESS_UNREACHABLE at https://www.hschealth.org/careers?keywords=nurse+practitioner\nCall log:\n  - n https://www.hschealth.org/careers?keywords=nurse+practitioner; playwright TimeoutError: Page.goto:",
    "http_status": null,
-   "seconds": 320.3,
+   "seconds": 327.2,
    "requests": 5,
    "details_fetched": 0,
    "details_failed": 0,
    "notes": [
-    "sniff: HTTP None for https://www.hschealth.org/careers: ConnectionError: HTTPSConnectionPool(host='www.hschealth.org', port=443): Max retries exceeded with url: /careers (Caused by NewConnectionError(\"HTTPSConnection(host='www.hschealth.org', port=443): Failed to establish"
+    "sniff: HTTP None for https://www.hschealth.org/careers: ConnectionError: HTTPSConnectionPool(host='www.hschealth.org', port=443): Max retries exceeded with url: /careers (Caused by NewConnectionError(\"HTTPSConnection(host='www.hschealth.org', port=443): Failed to establish",
+    "retried from a fresh runner"
    ],
    "samples": [],
    "sample_listings": []
@@ -4154,7 +4156,7 @@
    "name": "Howard University Hospital",
    "platform": "generic",
    "adapter": "generic",
-   "method": "",
+   "method": "playwright",
    "board": "generic|huhealthcarecareers.com?",
    "board_hospitals": 1,
    "board_listings": 0,
@@ -4162,15 +4164,17 @@
    "candidates": 0,
    "new": 0,
    "known": 0,
-   "status": "error",
-   "error": "AdapterError: generic: no page reachable: None https://huhealthcarecareers.com/; playwright TimeoutError: Page.goto: Timeout 45000ms exceeded.\nCall log:\n  - navigating to \"https://huhealthcarecareers.com/?q=nurse+practitioner\" https://huhealthcarecareers.com/?q=nurse+practitioner; playwright TimeoutError: Page.goto: Timeout 45000ms exceeded.\nCall log:\n  - navigating to \"https://huhealthcarecareers.com/?keywords=nurse+practi https://huhealthcarecareers.com/?keywords=nurse+practitioner; playwright Error: Page.g",
+   "status": "no_listings",
+   "error": "careers page reachable but no job listings recognized (generic adapter): set careers_search_url / ats_config to the real job board",
    "http_status": null,
-   "seconds": 421.8,
+   "seconds": 67.7,
    "requests": 5,
    "details_fetched": 0,
    "details_failed": 0,
    "notes": [
-    "sniff: HTTP None for https://huhealthcarecareers.com/: ConnectTimeout: HTTPSConnectionPool(host='huhealthcarecareers.com', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<HTTPSConnection(host='huhealthcarecareers.com', port=443) at 0x7fed1cba1"
+    "sniff: HTTP 404 for https://huhealthcarecareers.com/about-huh.html#content: <!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01//EN\" \"http://www.w3.org/TR/html4/strict.dtd\"> <html><head> <title>404 Not Found</title> </head><body> <h1>Not Found",
+    "generic: pages reachable but no NP/APP job links found: playwright 200 https://huhealthcarecareers.com/?q=nurse+practitioner; playwright 200 https://huhealthcarecareers.com/?keywords=nurse+practitioner; playwright 200 https://huhealthcarecareers.com/?keyword=nurse+practitioner",
+    "retried from a fresh runner"
    ],
    "samples": [],
    "sample_listings": []
@@ -4537,12 +4541,13 @@
    "status": "error",
    "error": "AdapterError: generic: no page reachable: 403 https://jobs.mcleodhealth.org/; playwright 403 https://jobs.mcleodhealth.org/; playwright 403 https://jobs.mcleodhealth.org/?q=nurse+practitioner; playwright 403 https://jobs.mcleodhealth.org/?keywords=nurse+practitioner",
    "http_status": null,
-   "seconds": 150.1,
+   "seconds": 147.6,
    "requests": 1,
    "details_fetched": 0,
    "details_failed": 0,
    "notes": [
-    "sniff: HTTP 403 for https://jobs.mcleodhealth.org/: bot challenge (Cloudflare)"
+    "sniff: HTTP 403 for https://jobs.mcleodhealth.org/: bot challenge (Cloudflare)",
+    "retried from a fresh runner"
    ],
    "samples": [],
    "sample_listings": []
@@ -4563,12 +4568,13 @@
    "status": "error",
    "error": "AdapterError: generic: no page reachable: 403 https://jobs.mcleodhealth.org/; playwright 403 https://jobs.mcleodhealth.org/; playwright 403 https://jobs.mcleodhealth.org/?q=nurse+practitioner; playwright 403 https://jobs.mcleodhealth.org/?keywords=nurse+practitioner",
    "http_status": null,
-   "seconds": 150.1,
+   "seconds": 147.6,
    "requests": 1,
    "details_fetched": 0,
    "details_failed": 0,
    "notes": [
-    "sniff: HTTP 403 for https://jobs.mcleodhealth.org/: bot challenge (Cloudflare)"
+    "sniff: HTTP 403 for https://jobs.mcleodhealth.org/: bot challenge (Cloudflare)",
+    "retried from a fresh runner"
    ],
    "samples": [],
    "sample_listings": []
@@ -6663,7 +6669,7 @@
    "name": "Medina Memorial Hospital",
    "platform": "generic",
    "adapter": "generic",
-   "method": "",
+   "method": "playwright",
    "board": "generic|orleanscommunityhealth.org/careers?",
    "board_hospitals": 1,
    "board_listings": 0,
@@ -6671,15 +6677,16 @@
    "candidates": 0,
    "new": 0,
    "known": 0,
-   "status": "error",
-   "error": "AdapterError: generic: no page reachable: 202 https://orleanscommunityhealth.org/careers/; playwright Error: Page.title: Execution context was destroyed, most likely because of a navigation https://orleanscommunityhealth.org/careers/?q=nurse+practitioner; playwright Error: Page.title: Execution context was destroyed, most likely because of a navigation https://orleanscommunityhealth.org/careers/?keywords=nurse+practitioner; playwright Error: Page.title: Execution context was destroyed, most likely because of ",
+   "status": "no_listings",
+   "error": "careers page reachable but no job listings recognized (generic adapter): set careers_search_url / ats_config to the real job board",
    "http_status": null,
-   "seconds": 18.0,
+   "seconds": 73.2,
    "requests": 5,
    "details_fetched": 0,
    "details_failed": 0,
    "notes": [
-    "sniff: HTTP 202 for https://orleanscommunityhealth.org/careers/: <html><head><link rel=\"icon\" href=\"data:;\"><meta http-equiv=\"refresh\" content=\"0;/.well-known/sgcaptcha/?r=%2Fcareers%2F&y=ipr:34.223.158.89:1795084884.216\"></m"
+    "generic: pages reachable but no NP/APP job links found: playwright 200 https://orleanscommunityhealth.org/careers/?q=nurse+practitioner; playwright 200 https://orleanscommunityhealth.org/careers/?keywords=nurse+practitioner; playwright 200 https://orleanscommunityhealth.org/careers/?keyword=nurse+practitioner",
+    "retried from a fresh runner"
    ],
    "samples": [],
    "sample_listings": []
@@ -7803,7 +7810,7 @@
    "name": "St. Joseph's Medical Center",
    "platform": "generic",
    "adapter": "generic",
-   "method": "",
+   "method": "playwright",
    "board": "generic|saintjosephs.org/careers?",
    "board_hospitals": 1,
    "board_listings": 0,
@@ -7811,15 +7818,16 @@
    "candidates": 0,
    "new": 0,
    "known": 0,
-   "status": "error",
-   "error": "AdapterError: generic: no page reachable: 403 https://www.saintjosephs.org/careers/?q=nurse+practitioner; playwright 403 https://www.saintjosephs.org/careers/?q=nurse+practitioner; playwright 403 https://www.saintjosephs.org/careers/?keywords=nurse+practitioner; playwright 403 https://www.saintjosephs.org/careers/?keyword=nurse+practitioner",
+   "status": "no_listings",
+   "error": "careers page reachable but no job listings recognized (generic adapter): set careers_search_url / ats_config to the real job board",
    "http_status": null,
-   "seconds": 42.5,
-   "requests": 1,
+   "seconds": 83.2,
+   "requests": 5,
    "details_fetched": 0,
    "details_failed": 0,
    "notes": [
-    "sniff: HTTP 403 for https://www.saintjosephs.org/careers/: forbidden (bot block?)"
+    "generic: pages reachable but no NP/APP job links found: playwright 200 https://www.saintjosephs.org/careers/?q=nurse+practitioner; playwright 200 https://www.saintjosephs.org/careers/?keywords=nurse+practitioner; playwright 200 https://www.saintjosephs.org/careers/?keyword=nurse+practitioner",
+    "retried from a fresh runner"
    ],
    "samples": [],
    "sample_listings": []
@@ -8266,28 +8274,49 @@
   {
    "slug": "aiken-regional-aiken",
    "name": "Aiken Regional Medical Centers",
-   "platform": "generic",
-   "adapter": "generic",
-   "method": "playwright",
+   "platform": "generic->jibe",
+   "adapter": "jibe",
+   "method": "api",
    "board": "generic|uhs.com/careers?",
    "board_hospitals": 1,
-   "board_listings": 0,
-   "listings": 0,
+   "board_listings": 1755,
+   "listings": 130,
    "candidates": 0,
    "new": 0,
    "known": 0,
-   "status": "no_listings",
-   "error": "careers page reachable but no job listings recognized (generic adapter): set careers_search_url / ats_config to the real job board",
+   "status": "ok",
+   "error": null,
    "http_status": null,
-   "seconds": 17.1,
-   "requests": 5,
-   "details_fetched": 0,
+   "seconds": 68.7,
+   "requests": 68,
+   "details_fetched": 36,
    "details_failed": 0,
    "notes": [
-    "generic: pages reachable but no NP/APP job links found: playwright 200 https://www.uhs.com/careers/?q=nurse+practitioner; playwright 200 https://www.uhs.com/careers/?keywords=nurse+practitioner; playwright 200 https://www.uhs.com/careers/?keyword=nurse+practitioner"
+    "sniff: recognized jibe front end on jobs.uhs.com",
+    "dropped 1625 listings outside ME-SC footprint",
+    "retried from a fresh runner"
    ],
    "samples": [],
-   "sample_listings": []
+   "sample_listings": [
+    {
+     "title": "NURSE PRACTITIONER",
+     "url": "https://jobs.uhsinc.com/jobs/373499",
+     "posted_at": "2026-10-05",
+     "location": "MADERA, California"
+    },
+    {
+     "title": "Per Diem Psychiatric Mental Health Nurse Practitioner",
+     "url": "https://jobs.uhsinc.com/jobs/385285",
+     "posted_at": "2026-11-14",
+     "location": "LOWELL, Massachusetts"
+    },
+    {
+     "title": "Nurse Practitioner",
+     "url": "https://jobs.uhsinc.com/jobs/377536",
+     "posted_at": "2026-10-23",
+     "location": "JACKSONVILLE, North Carolina"
+    }
+   ]
   },
   {
    "slug": "uvm-cvph-plattsburgh",
@@ -8596,12 +8625,13 @@
    "status": "error",
    "error": "AdapterError: generic: no page reachable: None https://www.washingtonregional.org/careers/; playwright Error: Page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.washingtonregional.org/careers/?q=nurse+practitioner\nCall log:\n  -  https://www.washingtonregional.org/careers/?q=nurse+practitioner; playwright Error: Page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.washingtonregional.org/careers/?keywords=nurse+practitioner\nCall lo https://www.washingtonregional.org/careers/?keywords=nurse+practitioner; playw",
    "http_status": null,
-   "seconds": 69.1,
+   "seconds": 68.2,
    "requests": 5,
    "details_fetched": 0,
    "details_failed": 0,
    "notes": [
-    "sniff: HTTP None for https://www.washingtonregional.org/careers/: ConnectionError: HTTPSConnectionPool(host='www.washingtonregional.org', port=443): Max retries exceeded with url: /careers/ (Caused by NameResolutionError(\"HTTPSConnection(host='www.washingtonregional.org', port=443):"
+    "sniff: HTTP None for https://www.washingtonregional.org/careers/: ConnectionError: HTTPSConnectionPool(host='www.washingtonregional.org', port=443): Max retries exceeded with url: /careers/ (Caused by NameResolutionError(\"HTTPSConnection(host='www.washingtonregional.org', port=443):",
+    "retried from a fresh runner"
    ],
    "samples": [],
    "sample_listings": []
@@ -8611,26 +8641,62 @@
    "name": "Wyckoff Heights Medical Center",
    "platform": "generic",
    "adapter": "generic",
-   "method": "",
+   "method": "playwright",
    "board": "generic|whmcny.org/careers?",
    "board_hospitals": 1,
-   "board_listings": 0,
-   "listings": 0,
-   "candidates": 0,
+   "board_listings": 4,
+   "listings": 4,
+   "candidates": 2,
    "new": 0,
-   "known": 0,
-   "status": "error",
-   "error": "AdapterError: generic: no page reachable: 403 https://whmcny.org/careers/?q=nurse+practitioner; playwright 403 https://whmcny.org/careers/?q=nurse+practitioner; playwright 403 https://whmcny.org/careers/?keywords=nurse+practitioner; playwright 403 https://whmcny.org/careers/?keyword=nurse+practitioner",
+   "known": 2,
+   "status": "ok",
+   "error": null,
    "http_status": null,
-   "seconds": 52.2,
-   "requests": 1,
-   "details_fetched": 0,
+   "seconds": 42.9,
+   "requests": 7,
+   "details_fetched": 2,
    "details_failed": 0,
    "notes": [
-    "sniff: HTTP 403 for https://whmcny.org/careers/: forbidden (bot block?)"
+    "retried from a fresh runner"
    ],
-   "samples": [],
-   "sample_listings": []
+   "samples": [
+    {
+     "title": "Pediatric Nurse Practitioner – Fellow More Details",
+     "url": "https://recruiting.ultipro.com/WYC1000WHMC/JobBoard/5e6bf310-55e9-45dd-8252-85e4c670f433/OpportunityDetail?opportunityId=5da81502-9d4f-485b-ac0d-c0071285eebf",
+     "posted_at": null,
+     "relevance": 2,
+     "setting": "unspecified",
+     "known": true
+    },
+    {
+     "title": "Pediatric Nurse Practitioner – Fellow More Details",
+     "url": "https://recruiting.ultipro.com/WYC1000WHMC/JobBoard/5e6bf310-55e9-45dd-8252-85e4c670f433/OpportunityDetail?opportunityId=706231b1-110c-42f1-92c8-46967c72ae0f",
+     "posted_at": null,
+     "relevance": 2,
+     "setting": "unspecified",
+     "known": true
+    }
+   ],
+   "sample_listings": [
+    {
+     "title": "Primary Care Nurse Practitioner Fellow More Details",
+     "url": "https://recruiting.ultipro.com/WYC1000WHMC/JobBoard/5e6bf310-55e9-45dd-8252-85e4c670f433/OpportunityDetail?opportunityId=c20c80af-282e-42cb-ae43-2ddc617ffb76",
+     "posted_at": null,
+     "location": ""
+    },
+    {
+     "title": "Primary Care Nurse Practitioner Fellow More Details",
+     "url": "https://recruiting.ultipro.com/WYC1000WHMC/JobBoard/5e6bf310-55e9-45dd-8252-85e4c670f433/OpportunityDetail?opportunityId=4a7bcbd3-8887-4558-91a3-8d60de659a05",
+     "posted_at": null,
+     "location": ""
+    },
+    {
+     "title": "Pediatric Nurse Practitioner – Fellow More Details",
+     "url": "https://recruiting.ultipro.com/WYC1000WHMC/JobBoard/5e6bf310-55e9-45dd-8252-85e4c670f433/OpportunityDetail?opportunityId=5da81502-9d4f-485b-ac0d-c0071285eebf",
+     "posted_at": null,
+     "location": ""
+    }
+   ]
   },
   {
    "slug": "good-samaritan-hospital-suffern",
@@ -25141,143 +25207,7 @@
    ]
   }
  ],
- "jobs": [
-  {
-   "id": "72172be73272",
-   "hospital_slug": "maine-medical-center-portland",
-   "title": "Physician Associate/Acute Care Nurse Practitioner Hospital Medicine Per Diem Norway, ME",
-   "url": "https://www.careersatmainehealth.org/jobs/18492435-physician-associate-slash-acute-care-nurse-practitioner-hospital-medicine-per-diem-norway-me",
-   "relevance": 1,
-   "setting": "unspecified",
-   "posted_at": "2026-11-18"
-  },
-  {
-   "id": "ac872b38b3e6",
-   "hospital_slug": "elliot-hospital-manchester",
-   "title": "Nurse Practitioner - Neonatology EMG",
-   "url": "https://careers.elliot-hs.org/job/manchester/nurse-practitioner-neonatology-emg/48540/103476059328",
-   "relevance": 2,
-   "setting": "nicu",
-   "posted_at": "2026-11-18"
-  },
-  {
-   "id": "a6ec7e23f766",
-   "hospital_slug": "upstate-golisano-childrens-syracuse",
-   "title": "Per Diem Pediatric Advanced Practice Provider Hospitalist",
-   "url": "https://careers.upstate.edu/jobs/per-diem-pediatric-advanced-practice-provider-hospitalist-syracuse-new-york-united-states",
-   "relevance": 3,
-   "setting": "peds_inpatient",
-   "posted_at": null
-  },
-  {
-   "id": "c959ae895eef",
-   "hospital_slug": "upstate-golisano-childrens-syracuse",
-   "title": "Pediatric Advanced Practice Provider Hospitalist",
-   "url": "https://careers.upstate.edu/jobs/pediatric-advanced-practice-provider-hospitalist-syracuse-new-york-united-states-8122ef0f-7094-4b18-8503-1ec838051ddd",
-   "relevance": 3,
-   "setting": "peds_inpatient",
-   "posted_at": null
-  },
-  {
-   "id": "f4f9f6965fd5",
-   "hospital_slug": "nyu-langone-hospital-brooklyn",
-   "title": "Advanced Practice Provider Peds Nurse Practitioner - School Health (10 Months) Long Island City HS, Erasmus HS",
-   "url": "https://jobs.nyulangone.org/job/24229484/advanced-practice-provider-peds-nurse-practitioner-school-health-10-months-long-island-city-hs-erasmus-hs-brooklyn-ny/",
-   "relevance": 2,
-   "setting": "peds_primary_care",
-   "posted_at": "2026-11-18"
-  },
-  {
-   "id": "0f3a55537aeb",
-   "hospital_slug": "nyu-langone-hospital-brooklyn",
-   "title": "Advanced Practice Provider Peds Nurse Practitioner - School Health 10 months - PS 188 and PS 503/506",
-   "url": "https://jobs.nyulangone.org/job/24229485/advanced-practice-provider-peds-nurse-practitioner-school-health-10-months-ps-188-and-ps-503-506-brooklyn-ny/",
-   "relevance": 2,
-   "setting": "peds_primary_care",
-   "posted_at": "2026-11-18"
-  },
-  {
-   "id": "6d3e34bf6609",
-   "hospital_slug": "onslow-memorial-jacksonville",
-   "title": "Otolaryngology Advanced Practice Provider (PA/NP) - Onslow Memorial Hospital",
-   "url": "https://jobs.unchealthcare.org/jobs/18496534-otolaryngology-advanced-practice-provider-pa-slash-np-onslow-memorial-hospital",
-   "relevance": 1,
-   "setting": "mixed",
-   "posted_at": "2026-11-18"
-  },
-  {
-   "id": "b447b6b9f7f1",
-   "hospital_slug": "novant-mint-hill-charlotte",
-   "title": "Swing-Shift Hospitalist APP | Brand New Hospital",
-   "url": "https://jobs.novanthealth.org/jobs/249545",
-   "relevance": 1,
-   "setting": "unspecified",
-   "posted_at": "2026-11-18"
-  },
-  {
-   "id": "003126158f91",
-   "hospital_slug": "novant-presbyterian-charlotte",
-   "title": "Outpatient Pulmonary APP",
-   "url": "https://jobs.novanthealth.org/jobs/250912",
-   "relevance": 1,
-   "setting": "unspecified",
-   "posted_at": "2026-11-18"
-  },
-  {
-   "id": "c442d4e5386b",
-   "hospital_slug": "novant-new-hanover-regional-wilmington",
-   "title": "Behavioral Health Advanced Practice Clinician",
-   "url": "https://jobs.novanthealth.org/jobs/251306",
-   "relevance": 1,
-   "setting": "unspecified",
-   "posted_at": "2026-11-18"
-  },
-  {
-   "id": "e027ca97847f",
-   "hospital_slug": "duke-childrens-durham",
-   "title": "Nurse Practitioner/Physician Assistant - Pediatric Cardiac Stepdown",
-   "url": "https://careers.dukehealth.org/us/en/job/277411/Nurse-Practitioner-Physician-Assistant-Pediatric-Cardiac-Stepdown",
-   "relevance": 3,
-   "setting": "picu",
-   "posted_at": "2026-11-18"
-  },
-  {
-   "id": "2aa2afa6789f",
-   "hospital_slug": "chor-vcu-richmond",
-   "title": "Advanced Practice Provider Nocturnist - Pediatric Hematology/Oncology",
-   "url": "https://careers.vcuhealth.org/us/en/job/R47887/Advanced-Practice-Provider-Nocturnist-Pediatric-Hematology-Oncology",
-   "relevance": 3,
-   "setting": "mixed",
-   "posted_at": "2026-11-19"
-  },
-  {
-   "id": "dd901a9eb544",
-   "hospital_slug": "childrens-national-washington",
-   "title": "Advanced Practice Provider, Gastroenterology",
-   "url": "https://childrensnational.wd108.myworkdayjobs.com/CN_Careers/job/Childrens-National-Hospital-Main-Campus/Advanced-Practice-Provider--Gastroenterology_R-002703",
-   "relevance": 2,
-   "setting": "peds_specialty_outpatient",
-   "posted_at": "2026-11-18"
-  },
-  {
-   "id": "77b5fd98908d",
-   "hospital_slug": "christiana-hospital-newark-de",
-   "title": "NP/PA - Hospitalist",
-   "url": "https://christianacare.wd5.myworkdayjobs.com/CCHS/job/Newark-DE/NP-PA---Hospitalist_JR94868",
-   "relevance": 2,
-   "setting": "peds_inpatient",
-   "posted_at": "2026-11-18"
-  },
-  {
-   "id": "d253f1dc730f",
-   "hospital_slug": "musc-shawn-jenkins-childrens-charleston",
-   "title": "MUSCP - Advanced Practice Provider (NP/PA) - Pediatrics: Neonatology",
-   "url": "https://musc.wd1.myworkdayjobs.com/MUSC/job/Charleston/MUSCP---Advanced-Practice-Provider--NP-PA----Pediatrics--Neonatology_R-0000071095-1",
-   "relevance": 3,
-   "setting": "nicu",
-   "posted_at": "2026-11-18"
-  }
- ],
+ "jobs": [],
  "seen_again": [
   "https://albanymed.wd5.myworkdayjobs.com/Albany_Med/job/22-New-Scotland-Avenue-Albany-NY-12208/Nurse-Practitioner---Peds-GI_71902",
   "https://albanymed.wd5.myworkdayjobs.com/Albany_Med/job/391-Myrtle-Avenue-Albany-NY-12208/Nurse-Practitioner_69684",
@@ -25428,6 +25358,7 @@
   "https://careers.dukehealth.org/us/en/job/276671/Nurse-Practitioner-or-Physician-Assistant-Medical-Oncology",
   "https://careers.dukehealth.org/us/en/job/277071/Nurse-Practitioner-Physician-Assistant-Duke-Radiology-Nuclear-Medicine-Division",
   "https://careers.dukehealth.org/us/en/job/277072/Nurse-Practitioner-Physician-Assistant-Duke-Radiology-Community-Division",
+  "https://careers.dukehealth.org/us/en/job/277411/Nurse-Practitioner-Physician-Assistant-Pediatric-Cardiac-Stepdown",
   "https://careers.dukehealth.org/us/en/job/DPC LINC/Advanced-Practice-Provider-PA-NP-Family-Medicine",
   "https://careers.dukehealth.org/us/en/job/DPC VCT 03/Hybrid-PCP-Virtual-Care-Weight-Management-APP",
   "https://careers.dukehealth.org/us/en/job/DPC VCT 04/Hybrid-PCP-Virtual-Care-Weight-Management-APP",
@@ -25438,6 +25369,7 @@
   "https://careers.ecuhealth.org/us/en/job/985928/Nurse-Practitioner-Workers-Comp",
   "https://careers.elliot-hs.org/job/manchester/neonatal-nurse-practitioner/48540/97530882208",
   "https://careers.elliot-hs.org/job/manchester/nurse-practitioner-neonatology-emg-ne/48540/97530882160",
+  "https://careers.elliot-hs.org/job/manchester/nurse-practitioner-neonatology-emg/48540/103476059328",
   "https://careers.maimo.org/jobs/11371",
   "https://careers.medstarhealth.org/jobs/159707",
   "https://careers.medstarhealth.org/jobs/167884",
@@ -25527,6 +25459,8 @@
   "https://careers.upmc.com/job/24140792/pa-or-crnp-enp-upp-emergency-medicine-upmc-passavant-part-time-pittsburgh-pa/",
   "https://careers.upmc.com/job/24140793/pa-or-crnp-gastroenterology-upmc-st-margaret-pittsburgh-pa/",
   "https://careers.upmc.com/job/24144648/pa-or-crnp-hillman-cancer-center-shadyside-pittsburgh-pa/",
+  "https://careers.upstate.edu/jobs/pediatric-advanced-practice-provider-hospitalist-syracuse-new-york-united-states-8122ef0f-7094-4b18-8503-1ec838051ddd",
+  "https://careers.upstate.edu/jobs/per-diem-pediatric-advanced-practice-provider-hospitalist-syracuse-new-york-united-states",
   "https://careers.uvahealth.org/us/en/job/R0075030/Psychiatric-Mental-Health-Nurse-Practitioner-Autonomous-Licensed-PMH-NP-UVA-Augusta-Pediatrics-VIRTUAL-POSITION",
   "https://careers.uvahealth.org/us/en/job/R0081176/UVA-Pediatrics-Culpeper-Pediatric-Nurse-Practitioner-or-Physician-Assistant-Full-Time",
   "https://careers.uvahealth.org/us/en/job/R0081865/Advanced-Practice-Provider-APP-PA-NP-Cellular-Therapy-Stem-Cell-Transplant",
@@ -25543,6 +25477,7 @@
   "https://careers.uvahealth.org/us/en/job/R0088818/Advanced-Practice-Provider-NP-PA-APP-Preoperative-Anesthesia-Clinic",
   "https://careers.uvahealth.org/us/en/job/R0089274/Advanced-Practice-Provider-APP-NP-PA-Pediatric-Hospital-Medicine-and-Medical-Subspecialties",
   "https://careers.uvahealth.org/us/en/job/R0089311/Advanced-Practice-Provider-APP-NP-PA-Pediatric-Palliative-Care",
+  "https://careers.vcuhealth.org/us/en/job/R47887/Advanced-Practice-Provider-Nocturnist-Pediatric-Hematology-Oncology",
   "https://childrensnational.wd108.myworkdayjobs.com/CN_Careers/job/Advanced-Practice-Provider--Bone-and-Marrow-Transplant--Inpatient_R-000903",
   "https://childrensnational.wd108.myworkdayjobs.com/CN_Careers/job/CNPA-Chevy-Chase/CNPA-Nurse-Practitioner_R-002334",
   "https://childrensnational.wd108.myworkdayjobs.com/CN_Careers/job/CNPA-Quince-Orchard/Nurse-Practitioner---School-Based-Health--35hrs-wk-_260000DZ-3",
@@ -25555,6 +25490,7 @@
   "https://childrensnational.wd108.myworkdayjobs.com/CN_Careers/job/Childrens-National-Hospital-Main-Campus/Advanced-Practice-Provider---Pulmonary-Medicine_R-001678",
   "https://childrensnational.wd108.myworkdayjobs.com/CN_Careers/job/Childrens-National-Hospital-Main-Campus/Advanced-Practice-Provider--Bone-and-Marrow-Transplant_260000ZU-2",
   "https://childrensnational.wd108.myworkdayjobs.com/CN_Careers/job/Childrens-National-Hospital-Main-Campus/Advanced-Practice-Provider--Cardiac-Critical-Care-Medicine_260000Q9-3",
+  "https://childrensnational.wd108.myworkdayjobs.com/CN_Careers/job/Childrens-National-Hospital-Main-Campus/Advanced-Practice-Provider--Gastroenterology_R-002703",
   "https://childrensnational.wd108.myworkdayjobs.com/CN_Careers/job/Childrens-National-Hospital-Main-Campus/Advanced-Practice-Provider--Neurology_R-001429-1",
   "https://childrensnational.wd108.myworkdayjobs.com/CN_Careers/job/Childrens-National-Hospital-Main-Campus/Advanced-Practice-Provider--Neurology_R-001430",
   "https://childrensnational.wd108.myworkdayjobs.com/CN_Careers/job/Childrens-National-Hospital-Main-Campus/Advanced-Practice-Provider--Neurology_R-001434",
@@ -25566,6 +25502,7 @@
   "https://childrensnational.wd108.myworkdayjobs.com/CN_Careers/job/Shepherd-Park--Rare-Disease-Institute/Advanced-Practice-Provider--Genetics_R-002482",
   "https://childrensnational.wd108.myworkdayjobs.com/CN_Careers/job/Tech-Hill/Nurse-Practitioner--PRN--CNPA_26000060-2",
   "https://christianacare.wd5.myworkdayjobs.com/CCHS/job/Newark-DE/Emergency-Medicine-Nurse-Practitioner_JR78542",
+  "https://christianacare.wd5.myworkdayjobs.com/CCHS/job/Newark-DE/NP-PA---Hospitalist_JR94868",
   "https://christianacare.wd5.myworkdayjobs.com/CCHS/job/Newark-DE/NP-PA---Inpatient-Neurology_JR93945",
   "https://christianacare.wd5.myworkdayjobs.com/CCHS/job/Newark-DE/NP-PA---Lead-Advanced-Practice-Clinician---Oncology_JR81140",
   "https://christianacare.wd5.myworkdayjobs.com/CCHS/job/Newark-DE/NP-PA---Oncology-Express-Unit_JR93333",
@@ -25742,16 +25679,21 @@
   "https://jobs.novanthealth.org/jobs/249101",
   "https://jobs.novanthealth.org/jobs/249102",
   "https://jobs.novanthealth.org/jobs/249516",
+  "https://jobs.novanthealth.org/jobs/249545",
   "https://jobs.novanthealth.org/jobs/249659",
   "https://jobs.novanthealth.org/jobs/250579",
+  "https://jobs.novanthealth.org/jobs/250912",
   "https://jobs.novanthealth.org/jobs/250939",
   "https://jobs.novanthealth.org/jobs/250995",
   "https://jobs.novanthealth.org/jobs/251233",
+  "https://jobs.novanthealth.org/jobs/251306",
   "https://jobs.nyulangone.org/job/23506697/per-diem-pa-or-peds-acute-care-np-picu-manhattan-11-5-hr-rotational-shifts-new-york-ny/",
   "https://jobs.nyulangone.org/job/23687953/advanced-practice-provide-neonatal-physicians-assistant-or-nurse-practitioner-nicu-level-iii-rotating-shift-mineola-mineola-ny/",
   "https://jobs.nyulangone.org/job/23715879/per-diem-neonatal-np-or-pa-nicu-manhattan-11-5-hr-rotational-shifts-new-york-ny/",
   "https://jobs.nyulangone.org/job/23972806/advanced-practice-pediatric-nurse-practitioner-endocrinology-garden-city-garden-city-ny/",
   "https://jobs.nyulangone.org/job/23972813/neonatal-nurse-practitioner-or-physician-assistant-nicu-manhattan-11-5hr-rotations-new-york-ny/",
+  "https://jobs.nyulangone.org/job/24229484/advanced-practice-provider-peds-nurse-practitioner-school-health-10-months-long-island-city-hs-erasmus-hs-brooklyn-ny/",
+  "https://jobs.nyulangone.org/job/24229485/advanced-practice-provider-peds-nurse-practitioner-school-health-10-months-ps-188-and-ps-503-506-brooklyn-ny/",
   "https://jobs.tenethealth.com/en/sites/CX_1/job/2603028406",
   "https://jobs.tenethealth.com/en/sites/CX_1/job/2603028408",
   "https://jobs.unchealthcare.org/jobs/12926085-neonatal-nurse-practitioner-nnp-peds-neonatology",
@@ -25873,6 +25815,7 @@
   "https://jobs.unchealthcare.org/jobs/18475554-burn-icu-advanced-practice-provider-pa-slash-np-unc-faculty-physicians",
   "https://jobs.unchealthcare.org/jobs/18475577-burn-icu-advanced-practice-provider-pa-slash-np-north-carolina-jaycee-burn-center",
   "https://jobs.unchealthcare.org/jobs/18491921-oncology-advanced-practice-provider-np-slash-pa-unc-school-of-medicine",
+  "https://jobs.unchealthcare.org/jobs/18496534-otolaryngology-advanced-practice-provider-pa-slash-np-onslow-memorial-hospital",
   "https://jobs.wakemed.org/jobs/30191",
   "https://jobs.wakemed.org/jobs/30324",
   "https://jobs.wakemed.org/jobs/31703",
@@ -25903,6 +25846,7 @@
   "https://massgeneralbrigham.wd1.myworkdayjobs.com/MGBExternal/job/Hatfield-MA/Nurse-Practitioner-Physician-Assistant--Orthopedic-Walk-In-Clinic_RQ4082247",
   "https://montefiore.wd12.myworkdayjobs.com/MMC/job/600-East-233rd-Street/Nurse-Practitioner---Wakefield_JR232337-2",
   "https://montefiore.wd12.myworkdayjobs.com/WP/job/41-East-Post-Road/NICU-NP-Full-Time-Night-Shifts_JR232408",
+  "https://musc.wd1.myworkdayjobs.com/MUSC/job/Charleston/MUSCP---Advanced-Practice-Provider--NP-PA----Pediatrics--Neonatology_R-0000071095-1",
   "https://musc.wd1.myworkdayjobs.com/MUSC/job/Charleston/MUSCP-Advanced-Practice-Provider--APP---NP-PA---Department-of-Pediatrics--Endocrinology_R-0000044397",
   "https://musc.wd1.myworkdayjobs.com/MUSC/job/Charleston/Nurse-Practitioner-or-Physician-Assistant---Burn-Surgery_R-0000071225",
   "https://musc.wd1.myworkdayjobs.com/MUSC/job/Charleston/Nurse-Practitioner-or-Physician-Assistant---Child---Adolescent-Psychiatry_R-0000066512",
@@ -25926,6 +25870,8 @@
   "https://pm.healthcaresource.com/cs/granvillemedical/?job=4599#/job/4599",
   "https://providers-dartmouth-hitchcock.icims.com/jobs/17635/neonatology-advanced-practice-provider/job",
   "https://providers-dartmouth-hitchcock.icims.com/jobs/42294/neurosurgery-advanced-practice-provider---inpatient/job",
+  "https://recruiting.ultipro.com/WYC1000WHMC/JobBoard/5e6bf310-55e9-45dd-8252-85e4c670f433/OpportunityDetail?opportunityId=5da81502-9d4f-485b-ac0d-c0071285eebf",
+  "https://recruiting.ultipro.com/WYC1000WHMC/JobBoard/5e6bf310-55e9-45dd-8252-85e4c670f433/OpportunityDetail?opportunityId=706231b1-110c-42f1-92c8-46967c72ae0f",
   "https://rochester.wd5.myworkdayjobs.com/UR_Nursing/job/Strong-Memorial-Hospital/Development-and-Behavioral-Pediatrics---Pediatric-Nurse-Practitioner-Family-Nurse-Practitioner--Psychiatric-Mental-Health-Nurse-Practitioner-Physician-Assistant_R275967",
   "https://rochester.wd5.myworkdayjobs.com/UR_Nursing/job/Strong-Memorial-Hospital/NICU-Newborn-Nursery----Nurse-Practitioner--NNP--PNP----Physician-Assistant--PA-_R269899",
   "https://rochester.wd5.myworkdayjobs.com/UR_Nursing/job/Strong-Memorial-Hospital/Pediatric-Cardiac-Surgery---Family-Pediatric-Nurse-Practitioner-Physician-Assistant_R275052",
@@ -25987,6 +25933,7 @@
   "https://www.careersatmainehealth.org/jobs/18434625-physician-associate-slash-acute-care-nurse-practitioner-thoracic-surgery",
   "https://www.careersatmainehealth.org/jobs/18460004-psychiatric-nurse-practitioner-slash-physician-associate-child-and-adolescent-services",
   "https://www.careersatmainehealth.org/jobs/18465257-nurse-practitioner-slash-physician-associate-general-surgery-portland",
+  "https://www.careersatmainehealth.org/jobs/18492435-physician-associate-slash-acute-care-nurse-practitioner-hospital-medicine-per-diem-norway-me",
   "https://www.chkdcareers.org/jobs/2085621-internal-traveler-nnp-slash-npa",
   "https://www.chkdcareers.org/jobs/2215763-pediatric-general-surgery-np-or-pa",
   "https://www.chkdcareers.org/jobs/2230694-app-nnp-apprentice",
@@ -26023,15 +25970,190 @@
  "closed": [],
  "totals": {
   "hospitals": 509,
-  "checked": 448,
-  "unreachable": 61,
-  "listings": 33757,
-  "candidates": 755,
+  "checked": 450,
+  "unreachable": 59,
+  "listings": 35516,
+  "candidates": 757,
   "new_candidates": 15,
-  "seconds": 10679.8
+  "seconds": 12021.3
  },
  "browser": "chrome-headed",
  "ledger": "data/hospitals.json",
  "wall_seconds": 1797.3,
- "compacted": true
+ "compacted": true,
+ "job_index": [
+  {
+   "id": "72172be73272",
+   "hospital_slug": "maine-medical-center-portland",
+   "title": "Physician Associate/Acute Care Nurse Practitioner Hospital Medicine Per Diem Norway, ME",
+   "url": "https://www.careersatmainehealth.org/jobs/18492435-physician-associate-slash-acute-care-nurse-practitioner-hospital-medicine-per-diem-norway-me",
+   "relevance": 1,
+   "setting": "unspecified",
+   "posted_at": "2026-11-18"
+  },
+  {
+   "id": "ac872b38b3e6",
+   "hospital_slug": "elliot-hospital-manchester",
+   "title": "Nurse Practitioner - Neonatology EMG",
+   "url": "https://careers.elliot-hs.org/job/manchester/nurse-practitioner-neonatology-emg/48540/103476059328",
+   "relevance": 2,
+   "setting": "nicu",
+   "posted_at": "2026-11-18"
+  },
+  {
+   "id": "a6ec7e23f766",
+   "hospital_slug": "upstate-golisano-childrens-syracuse",
+   "title": "Per Diem Pediatric Advanced Practice Provider Hospitalist",
+   "url": "https://careers.upstate.edu/jobs/per-diem-pediatric-advanced-practice-provider-hospitalist-syracuse-new-york-united-states",
+   "relevance": 3,
+   "setting": "peds_inpatient",
+   "posted_at": null
+  },
+  {
+   "id": "c959ae895eef",
+   "hospital_slug": "upstate-golisano-childrens-syracuse",
+   "title": "Pediatric Advanced Practice Provider Hospitalist",
+   "url": "https://careers.upstate.edu/jobs/pediatric-advanced-practice-provider-hospitalist-syracuse-new-york-united-states-8122ef0f-7094-4b18-8503-1ec838051ddd",
+   "relevance": 3,
+   "setting": "peds_inpatient",
+   "posted_at": null
+  },
+  {
+   "id": "f4f9f6965fd5",
+   "hospital_slug": "nyu-langone-hospital-brooklyn",
+   "title": "Advanced Practice Provider Peds Nurse Practitioner - School Health (10 Months) Long Island City HS, Erasmus HS",
+   "url": "https://jobs.nyulangone.org/job/24229484/advanced-practice-provider-peds-nurse-practitioner-school-health-10-months-long-island-city-hs-erasmus-hs-brooklyn-ny/",
+   "relevance": 2,
+   "setting": "peds_primary_care",
+   "posted_at": "2026-11-18"
+  },
+  {
+   "id": "0f3a55537aeb",
+   "hospital_slug": "nyu-langone-hospital-brooklyn",
+   "title": "Advanced Practice Provider Peds Nurse Practitioner - School Health 10 months - PS 188 and PS 503/506",
+   "url": "https://jobs.nyulangone.org/job/24229485/advanced-practice-provider-peds-nurse-practitioner-school-health-10-months-ps-188-and-ps-503-506-brooklyn-ny/",
+   "relevance": 2,
+   "setting": "peds_primary_care",
+   "posted_at": "2026-11-18"
+  },
+  {
+   "id": "6d3e34bf6609",
+   "hospital_slug": "onslow-memorial-jacksonville",
+   "title": "Otolaryngology Advanced Practice Provider (PA/NP) - Onslow Memorial Hospital",
+   "url": "https://jobs.unchealthcare.org/jobs/18496534-otolaryngology-advanced-practice-provider-pa-slash-np-onslow-memorial-hospital",
+   "relevance": 1,
+   "setting": "mixed",
+   "posted_at": "2026-11-18"
+  },
+  {
+   "id": "b447b6b9f7f1",
+   "hospital_slug": "novant-mint-hill-charlotte",
+   "title": "Swing-Shift Hospitalist APP | Brand New Hospital",
+   "url": "https://jobs.novanthealth.org/jobs/249545",
+   "relevance": 1,
+   "setting": "unspecified",
+   "posted_at": "2026-11-18"
+  },
+  {
+   "id": "003126158f91",
+   "hospital_slug": "novant-presbyterian-charlotte",
+   "title": "Outpatient Pulmonary APP",
+   "url": "https://jobs.novanthealth.org/jobs/250912",
+   "relevance": 1,
+   "setting": "unspecified",
+   "posted_at": "2026-11-18"
+  },
+  {
+   "id": "c442d4e5386b",
+   "hospital_slug": "novant-new-hanover-regional-wilmington",
+   "title": "Behavioral Health Advanced Practice Clinician",
+   "url": "https://jobs.novanthealth.org/jobs/251306",
+   "relevance": 1,
+   "setting": "unspecified",
+   "posted_at": "2026-11-18"
+  },
+  {
+   "id": "e027ca97847f",
+   "hospital_slug": "duke-childrens-durham",
+   "title": "Nurse Practitioner/Physician Assistant - Pediatric Cardiac Stepdown",
+   "url": "https://careers.dukehealth.org/us/en/job/277411/Nurse-Practitioner-Physician-Assistant-Pediatric-Cardiac-Stepdown",
+   "relevance": 3,
+   "setting": "picu",
+   "posted_at": "2026-11-18"
+  },
+  {
+   "id": "2aa2afa6789f",
+   "hospital_slug": "chor-vcu-richmond",
+   "title": "Advanced Practice Provider Nocturnist - Pediatric Hematology/Oncology",
+   "url": "https://careers.vcuhealth.org/us/en/job/R47887/Advanced-Practice-Provider-Nocturnist-Pediatric-Hematology-Oncology",
+   "relevance": 3,
+   "setting": "mixed",
+   "posted_at": "2026-11-19"
+  },
+  {
+   "id": "dd901a9eb544",
+   "hospital_slug": "childrens-national-washington",
+   "title": "Advanced Practice Provider, Gastroenterology",
+   "url": "https://childrensnational.wd108.myworkdayjobs.com/CN_Careers/job/Childrens-National-Hospital-Main-Campus/Advanced-Practice-Provider--Gastroenterology_R-002703",
+   "relevance": 2,
+   "setting": "peds_specialty_outpatient",
+   "posted_at": "2026-11-18"
+  },
+  {
+   "id": "77b5fd98908d",
+   "hospital_slug": "christiana-hospital-newark-de",
+   "title": "NP/PA - Hospitalist",
+   "url": "https://christianacare.wd5.myworkdayjobs.com/CCHS/job/Newark-DE/NP-PA---Hospitalist_JR94868",
+   "relevance": 2,
+   "setting": "peds_inpatient",
+   "posted_at": "2026-11-18"
+  },
+  {
+   "id": "d253f1dc730f",
+   "hospital_slug": "musc-shawn-jenkins-childrens-charleston",
+   "title": "MUSCP - Advanced Practice Provider (NP/PA) - Pediatrics: Neonatology",
+   "url": "https://musc.wd1.myworkdayjobs.com/MUSC/job/Charleston/MUSCP---Advanced-Practice-Provider--NP-PA----Pediatrics--Neonatology_R-0000071095-1",
+   "relevance": 3,
+   "setting": "nicu",
+   "posted_at": "2026-11-18"
+  }
+ ],
+ "retry": {
+  "started_at": "2026-11-19T11:03:37Z",
+  "finished_at": "2026-11-19T11:11:01Z",
+  "retried": [
+   "catholic-medical-center-manchester",
+   "portsmouth-regional-portsmouth",
+   "reston-hospital-center-reston",
+   "stonesprings-hospital-dulles",
+   "chippenham-richmond",
+   "henrico-doctors-richmond",
+   "johnston-willis-richmond",
+   "lewisgale-medical-center-salem",
+   "spotsylvania-regional-fredericksburg",
+   "mission-childrens-asheville",
+   "summerville-medical-center-summerville",
+   "trident-medical-center-north-charleston",
+   "grand-strand-medical-center-myrtle-beach",
+   "colleton-medical-center-walterboro",
+   "niagara-falls-memorial-medical-center-niagara-falls",
+   "cedar-hill-regional-washington",
+   "gw-university-hospital-washington",
+   "hsc-pediatric-center-washington",
+   "howard-university-hospital-washington",
+   "mcleod-childrens-florence",
+   "mcleod-regional-florence",
+   "medina-memorial-hospital-medina",
+   "st-josephs-medical-center-yonkers",
+   "aiken-regional-aiken",
+   "washington-regional-plymouth",
+   "wyckoff-heights-medical-center-brooklyn"
+  ],
+  "fixed": [
+   "aiken-regional-aiken",
+   "wyckoff-heights-medical-center-brooklyn"
+  ],
+  "jobs_added": 0,
+  "wall_seconds": 443.4
+ }
 }
