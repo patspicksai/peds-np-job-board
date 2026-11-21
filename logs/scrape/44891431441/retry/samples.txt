@@ -1,0 +1,465 @@
+## adventist-shady-grove-rockville  [generic->workday / workday / api]  status=ok
+   note: sniff: HTTP 403 for https://www.adventisthealthcare.com/careers/: forbidden (bot block?)
+   note: sniff: page links to Workday adventisthealthcare.wd1 site AdventistHealthCareCareers
+   (no candidate jobs)
+   first board listings: Cardiology, Nurse Practitioner VPT (Rockville, MD) || Nurse Practitioner (NP), Evening Shift, Neurosurgery (Rockville, MD) || Nurse Practitioner (NP), Day Shift, Neurosurgery (Rockville, MD)
+
+## adventist-white-oak-silver-spring  [generic->workday / workday / api]  status=ok
+   note: sniff: HTTP 403 for https://www.adventisthealthcare.com/careers/: forbidden (bot block?)
+   note: sniff: page links to Workday adventisthealthcare.wd1 site AdventistHealthCareCareers
+   (no candidate jobs)
+   first board listings: Cardiology, Nurse Practitioner VPT (Rockville, MD) || Nurse Practitioner (NP), Evening Shift, Neurosurgery (Rockville, MD) || Nurse Practitioner (NP), Day Shift, Neurosurgery (Rockville, MD)
+
+## brigham-and-womens-boston  [workday / workday / api]  status=ok
+   note: 26 low-priority listings deferred (detail budget/time); they are picked up on later runs
+   * [3/nicu] Neonatal Nurse Practitioner NNP PNP Per Diem BWH | posted 2026-11-20 | https://massgeneralbrigham.wd1.myworkdayjobs.com/MGBExternal/job/Boston-MA/Neonatal-Nurse-Practitioner-NNP-PNP-Per-Diem-BWH_RQ4087189
+   first board listings: Nurse Practitioner Oncology MGBCI (Boston-MA) || Nurse Practitioner - Hematology BWH (Boston-MA) || Nurse Practitioner/Physician Assistant, Cardiology (Northampton-MA)
+
+## bryn-mawr-hospital-bryn-mawr  [taleo / taleo / ]  status=error
+   ERROR: AdapterError: search 'APRN': Error: Page.title: Execution context was destroyed, most likely because of a navigation; search 'PICU': Error: Page.title: Execution context was destroyed, most likely because of a navigation; search 'NICU': Error: Page.title: Execution context was destroyed, most likely because of a navigation
+   note: career section page: HTTP 404 for https://careers.mainlinehealth.org/careersection/ext/jobsearch.ftl?lang=en: <!DOCTYPE html><html lang="en"><head> 	<meta http-equiv="refresh" content="0; URL=/404" /> 	</head><body></body></html>
+   note: search 'nurse practitioner': Error: Page.title: Execution context was destroyed, most likely because of a navigation
+   note: search 'pediatric nurse practitioner': Error: Page.title: Execution context was destroyed, most likely because of a navigation
+   note: search 'advanced practice provider': Error: Page.title: Execution context was destroyed, most likely because of a navigation
+   note: search 'APRN': Error: Page.title: Execution context was destroyed, most likely because of a navigation
+   note: search 'PICU': Error: Page.title: Execution context was destroyed, most likely because of a navigation
+   note: search 'NICU': Error: Page.title: Execution context was destroyed, most likely because of a navigation
+   note: sniff: page links to Taleo mainline.taleo.net section 2
+   note: taleo failed: AdapterError: search 'APRN': Error: Page.title: Execution context was destroyed, most likely because of a navigation; search 'PICU': Error: Page.title: Executio
+   note: generic: pages reachable but no NP/APP job links found: playwright 200 https://careers.mainlinehealth.org/?utm_source=corporate_site&amp%3Butm_medium=referral&amp%3Butm_campaign=internal_navigation&q=nurse+practitioner; playwright 200 https://careers.mainlinehealth.org/?utm_source=corporate_site&amp
+   (no candidate jobs)
+
+## catholic-medical-center-manchester  [careersite / careersite / ]  status=error
+   ERROR: AdapterError: careersite: every jobs.json search failed in the browser: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'; html search 'nurse practitioner': HTTP 403 Attention Required! | Cloudflare; html search 'pediatric nurse practitioner': HTTP 403 Attention Required! | Cloudflare
+   note: jobs.json 'nurse practitioner': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'pediatric nurse practitioner': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'advanced practice provider': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'APRN': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'PICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: html search 'nurse practitioner': HTTP 403 Attention Required! | Cloudflare
+   note: html search 'pediatric nurse practitioner': HTTP 403 Attention Required! | Cloudflare
+   note: sniff: HTTP 403 for https://careers.hcahealthcare.com/search/jobs: bot challenge (Cloudflare)
+   note: sniff: HTTP 403 for https://careers.hcahealthcare.com/pages/catholic-medical-center?bid=5260: bot challenge (Cloudflare)
+   note: generic fallback failed: AdapterError: generic: no page reachable: 403 https://careers.hcahealthcare.com/search/jobs?q=nurse+practitioner&location=Manchester%2C+NH%2C+United+States; playwright 403 https://careers.hcahealthcare.com/search/j
+   (no candidate jobs)
+
+## chippenham-richmond  [careersite / careersite / ]  status=error
+   ERROR: AdapterError: careersite: every jobs.json search failed in the browser: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'; html search 'nurse practitioner': HTTP 403 Attention Required! | Cloudflare; html search 'pediatric nurse practitioner': HTTP 403 Attention Required! | Cloudflare
+   note: jobs.json 'nurse practitioner': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'pediatric nurse practitioner': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'advanced practice provider': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'APRN': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'PICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: html search 'nurse practitioner': HTTP 403 Attention Required! | Cloudflare
+   note: html search 'pediatric nurse practitioner': HTTP 403 Attention Required! | Cloudflare
+   note: sniff: HTTP 403 for https://careers.hcahealthcare.com/search/jobs: bot challenge (Cloudflare)
+   note: sniff: HTTP 403 for https://careers.hcahealthcare.com/pages/catholic-medical-center?bid=5260: bot challenge (Cloudflare)
+   note: generic fallback failed: AdapterError: generic: no page reachable: 403 https://careers.hcahealthcare.com/search/jobs?q=nurse+practitioner&location=Manchester%2C+NH%2C+United+States; playwright 403 https://careers.hcahealthcare.com/search/j
+   (no candidate jobs)
+
+## colleton-medical-center-walterboro  [careersite / careersite / ]  status=error
+   ERROR: AdapterError: careersite: every jobs.json search failed in the browser: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'; html search 'nurse practitioner': HTTP 403 Attention Required! | Cloudflare; html search 'pediatric nurse practitioner': HTTP 403 Attention Required! | Cloudflare
+   note: jobs.json 'nurse practitioner': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'pediatric nurse practitioner': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'advanced practice provider': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'APRN': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'PICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: html search 'nurse practitioner': HTTP 403 Attention Required! | Cloudflare
+   note: html search 'pediatric nurse practitioner': HTTP 403 Attention Required! | Cloudflare
+   note: sniff: HTTP 403 for https://careers.hcahealthcare.com/search/jobs: bot challenge (Cloudflare)
+   note: sniff: HTTP 403 for https://careers.hcahealthcare.com/pages/catholic-medical-center?bid=5260: bot challenge (Cloudflare)
+   note: generic fallback failed: AdapterError: generic: no page reachable: 403 https://careers.hcahealthcare.com/search/jobs?q=nurse+practitioner&location=Manchester%2C+NH%2C+United+States; playwright 403 https://careers.hcahealthcare.com/search/j
+   (no candidate jobs)
+
+## columbia-memorial-hospital-hudson  [workday / workday / api]  status=ok
+   (no candidate jobs)
+   first board listings: Nurse Clinician Neuro and Surgical Intensive Care Unit - Full Time (43 New Scotland Avenue Albany, NY 12208) || Nurse Practitioner (391 Myrtle Avenue Albany, NY 12208) || NP, Fixed Program (43 New Scotland Avenue Albany, NY 12208)
+
+## concord-hospital-concord  [generic->workday / workday / api]  status=ok
+   note: sniff: HTTP 403 for http://www.concordhospital.org: forbidden (bot block?)
+   note: sniff: page links to Workday crhc.wd1 site Concord_Careers
+   (no candidate jobs)
+   first board listings: Inpatient Multi-Specialty Night Advanced Provider (Concord, New Hampshire) || APRN/PA-C - Cardiology (Part-time) (Laconia, New Hampshire) || APRN/PA-C - Cardiology (2 Locations)
+
+## cooley-dickinson-northampton  [workday / workday / api]  status=ok
+   note: 26 low-priority listings deferred (detail budget/time); they are picked up on later runs
+   (no candidate jobs)
+   first board listings: Nurse Practitioner Oncology MGBCI (Boston-MA) || Nurse Practitioner - Hematology BWH (Boston-MA) || Nurse Practitioner/Physician Assistant, Cardiology (Northampton-MA)
+
+## duker-childrens-albany  [workday / workday / api]  status=ok
+   * [3/nicu] Advanced Practice Provider - Neonatology | posted 2026-08-31 | https://albanymed.wd5.myworkdayjobs.com/Albany_Med/job/43-New-Scotland-Avenue-Albany-NY-12208/Nurse-Practitioner---NICU_67528  (known)
+   * [3/nicu] Advanced Practice Provider Neonatology | posted 2026-09-21 | https://albanymed.wd5.myworkdayjobs.com/Albany_Med/job/43-New-Scotland-Avenue-Albany-NY-12208/Advanced-Practice-Provider-Neonatology_71612  (known)
+   * [3/nicu] Advanced Practice Provider Neonatology | posted 2026-11-02 | https://albanymed.wd5.myworkdayjobs.com/Albany_Med/job/43-New-Scotland-Avenue-Albany-NY-12208/Advanced-Practice-Provider-Neonatology_72078  (known)
+   first board listings: Nurse Clinician Neuro and Surgical Intensive Care Unit - Full Time (43 New Scotland Avenue Albany, NY 12208) || Nurse Practitioner (391 Myrtle Avenue Albany, NY 12208) || NP, Fixed Program (43 New Scotland Avenue Albany, NY 12208)
+
+## englewood-hospital-englewood  [successfactors / successfactors / requests]  status=zero_results
+   ERROR: board reachable but returned 0 listings for every keyword (check search URL / adapter)
+   note: sniff: recognized successfactors front end on careers.englewoodhealth.org
+   note: sniff: recognized successfactors front end on careers.englewoodhealth.org
+   note: sniff: recognized successfactors front end on careers.englewoodhealth.org
+   note: sniff: followed careers link http://careers.englewoodhealth.org
+   note: successfactors adapter returned 0 listings; trying generic
+   note: generic: pages reachable but no NP/APP job links found: playwright 200 https://careers.englewoodhealth.org/search/?q=nurse%20practitioner; playwright 200 https://careers.englewoodhealth.org/?q=nurse+practitioner; playwright 200 https://careers.englewoodhealth.org/?keywords=nurse+practitioner
+   (no candidate jobs)
+
+## glens-falls-hospital-glens-falls  [workday / workday / api]  status=ok
+   (no candidate jobs)
+   first board listings: Nurse Clinician Neuro and Surgical Intensive Care Unit - Full Time (43 New Scotland Avenue Albany, NY 12208) || Nurse Practitioner (391 Myrtle Avenue Albany, NY 12208) || NP, Fixed Program (43 New Scotland Avenue Albany, NY 12208)
+
+## grand-strand-medical-center-myrtle-beach  [careersite / careersite / ]  status=error
+   ERROR: AdapterError: careersite: every jobs.json search failed in the browser: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'; html search 'nurse practitioner': HTTP 403 Attention Required! | Cloudflare; html search 'pediatric nurse practitioner': HTTP 403 Attention Required! | Cloudflare
+   note: jobs.json 'nurse practitioner': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'pediatric nurse practitioner': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'advanced practice provider': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'APRN': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'PICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: html search 'nurse practitioner': HTTP 403 Attention Required! | Cloudflare
+   note: html search 'pediatric nurse practitioner': HTTP 403 Attention Required! | Cloudflare
+   note: sniff: HTTP 403 for https://careers.hcahealthcare.com/search/jobs: bot challenge (Cloudflare)
+   note: sniff: HTTP 403 for https://careers.hcahealthcare.com/pages/catholic-medical-center?bid=5260: bot challenge (Cloudflare)
+   note: generic fallback failed: AdapterError: generic: no page reachable: 403 https://careers.hcahealthcare.com/search/jobs?q=nurse+practitioner&location=Manchester%2C+NH%2C+United+States; playwright 403 https://careers.hcahealthcare.com/search/j
+   (no candidate jobs)
+
+## henrico-doctors-richmond  [careersite / careersite / ]  status=error
+   ERROR: AdapterError: careersite: every jobs.json search failed in the browser: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'; html search 'nurse practitioner': HTTP 403 Attention Required! | Cloudflare; html search 'pediatric nurse practitioner': HTTP 403 Attention Required! | Cloudflare
+   note: jobs.json 'nurse practitioner': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'pediatric nurse practitioner': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'advanced practice provider': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'APRN': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'PICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: html search 'nurse practitioner': HTTP 403 Attention Required! | Cloudflare
+   note: html search 'pediatric nurse practitioner': HTTP 403 Attention Required! | Cloudflare
+   note: sniff: HTTP 403 for https://careers.hcahealthcare.com/search/jobs: bot challenge (Cloudflare)
+   note: sniff: HTTP 403 for https://careers.hcahealthcare.com/pages/catholic-medical-center?bid=5260: bot challenge (Cloudflare)
+   note: generic fallback failed: AdapterError: generic: no page reachable: 403 https://careers.hcahealthcare.com/search/jobs?q=nurse+practitioner&location=Manchester%2C+NH%2C+United+States; playwright 403 https://careers.hcahealthcare.com/search/j
+   (no candidate jobs)
+
+## holy-cross-silver-spring  [workday / workday / api]  status=ok
+   note: filtered to footprint states via facet Location_Region_State_Province (excluded AL, CA, FL, GA, IA, ID, IL, IN, LA, MI, OH, OR)
+   (no candidate jobs)
+   first board listings: Nurse Practitioner (Gaithersburg, Maryland) || Nurse Practitioner (Saint Francis Healthcare Service - Wilmington, Delaware) || Nurse Practitioner (Saint Francis Healthcare Service - Wilmington, Delaware)
+
+## hsc-pediatric-center-washington  [generic / generic / ]  status=error
+   ERROR: AdapterError: generic: no page reachable: None https://www.hschealth.org/careers; playwright TimeoutError: Page.goto: Timeout 45000ms exceeded.
+Call log:
+  - navigating to "https://www.hschealth.org/careers?q=nurse+practitioner https://www.hschealth.org/careers?q=nurse+practitioner; playwright TimeoutError: Page.goto: Timeout 45000ms exceeded.
+Call log:
+  - navigating to "https://www.hschealth.org/careers?keywords=nurse+pract https://www.hschealth.org/careers?keywords=nurse+practitioner; playwright Error: Pag
+   note: sniff: HTTP None for https://www.hschealth.org/careers: ConnectTimeout: HTTPSConnectionPool(host='www.hschealth.org', port=443): Max retries exceeded with url: /careers (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.hschealth.org', port=443) at 0x7f2b38e09010>,
+   (no candidate jobs)
+
+## jefferson-abington-hospital-abington  [workday / workday / api]  status=ok
+   note: 22 low-priority listings deferred (detail budget/time); they are picked up on later runs
+   (no candidate jobs)
+   first board listings: Trauma - Nurse Practitioner - Einstein Hospital (Einstein Hosp Phila - Tower Bldg) || Hospital Medicine-Per Diem-Advanced Practice Clinician (Philadelphia, PA) || Assistant Professor, Nurse Anesthesia Program, Jefferson College of Nursing, Thomas Jefferson University, Montgomery County (Karabots Medical Building)
+
+## jefferson-einstein-montgomery-east-norriton  [workday / workday / api]  status=ok
+   note: 22 low-priority listings deferred (detail budget/time); they are picked up on later runs
+   * [2/mixed] NNP (Inpatient III) - NICU/Neonatology - Jefferson Eisntein Philadelphia | posted 2025-01-14 | https://jeffersonhealth.wd5.myworkdayjobs.com/ThomasJeffersonExternal/job/Einstein-Hosp-Phila---Tower-Bldg/NNP--Inpatient-III----NICU-Neonatology---Jefferson-Eisntein-Philadelphia_JR_9307580  (known)
+   * [3/peds_ed] Pediatrics Advanced Practice Provider (Nurse Practitioner/Physician Assistant) Jefferson Einstein | posted 2024-12-10 | https://jeffersonhealth.wd5.myworkdayjobs.com/ThomasJeffersonExternal/job/Einstein-Hosp-Phila---Tower-Bldg/Pediatrics-Advanced-Practice-Provider--Nurse-Practitioner-Physician-Assistant--Jefferson-Einstein_JR_9308080-1  (known)
+   first board listings: Trauma - Nurse Practitioner - Einstein Hospital (Einstein Hosp Phila - Tower Bldg) || Hospital Medicine-Per Diem-Advanced Practice Clinician (Philadelphia, PA) || Assistant Professor, Nurse Anesthesia Program, Jefferson College of Nursing, Thomas Jefferson University, Montgomery County (Karabots Medical Building)
+
+## jefferson-einstein-philadelphia  [workday / workday / api]  status=ok
+   note: 22 low-priority listings deferred (detail budget/time); they are picked up on later runs
+   (no candidate jobs)
+   first board listings: Trauma - Nurse Practitioner - Einstein Hospital (Einstein Hosp Phila - Tower Bldg) || Hospital Medicine-Per Diem-Advanced Practice Clinician (Philadelphia, PA) || Assistant Professor, Nurse Anesthesia Program, Jefferson College of Nursing, Thomas Jefferson University, Montgomery County (Karabots Medical Building)
+
+## jefferson-washington-township-sewell  [workday / workday / api]  status=ok
+   note: 22 low-priority listings deferred (detail budget/time); they are picked up on later runs
+   (no candidate jobs)
+   first board listings: Trauma - Nurse Practitioner - Einstein Hospital (Einstein Hosp Phila - Tower Bldg) || Hospital Medicine-Per Diem-Advanced Practice Clinician (Philadelphia, PA) || Assistant Professor, Nurse Anesthesia Program, Jefferson College of Nursing, Thomas Jefferson University, Montgomery County (Karabots Medical Building)
+
+## johnston-willis-richmond  [careersite / careersite / ]  status=error
+   ERROR: AdapterError: careersite: every jobs.json search failed in the browser: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'; html search 'nurse practitioner': HTTP 403 Attention Required! | Cloudflare; html search 'pediatric nurse practitioner': HTTP 403 Attention Required! | Cloudflare
+   note: jobs.json 'nurse practitioner': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'pediatric nurse practitioner': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'advanced practice provider': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'APRN': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'PICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: html search 'nurse practitioner': HTTP 403 Attention Required! | Cloudflare
+   note: html search 'pediatric nurse practitioner': HTTP 403 Attention Required! | Cloudflare
+   note: sniff: HTTP 403 for https://careers.hcahealthcare.com/search/jobs: bot challenge (Cloudflare)
+   note: sniff: HTTP 403 for https://careers.hcahealthcare.com/pages/catholic-medical-center?bid=5260: bot challenge (Cloudflare)
+   note: generic fallback failed: AdapterError: generic: no page reachable: 403 https://careers.hcahealthcare.com/search/jobs?q=nurse+practitioner&location=Manchester%2C+NH%2C+United+States; playwright 403 https://careers.hcahealthcare.com/search/j
+   (no candidate jobs)
+
+## lankenau-medical-center-wynnewood  [taleo / taleo / ]  status=error
+   ERROR: AdapterError: search 'APRN': Error: Page.title: Execution context was destroyed, most likely because of a navigation; search 'PICU': Error: Page.title: Execution context was destroyed, most likely because of a navigation; search 'NICU': Error: Page.title: Execution context was destroyed, most likely because of a navigation
+   note: career section page: HTTP 404 for https://careers.mainlinehealth.org/careersection/ext/jobsearch.ftl?lang=en: <!DOCTYPE html><html lang="en"><head> 	<meta http-equiv="refresh" content="0; URL=/404" /> 	</head><body></body></html>
+   note: search 'nurse practitioner': Error: Page.title: Execution context was destroyed, most likely because of a navigation
+   note: search 'pediatric nurse practitioner': Error: Page.title: Execution context was destroyed, most likely because of a navigation
+   note: search 'advanced practice provider': Error: Page.title: Execution context was destroyed, most likely because of a navigation
+   note: search 'APRN': Error: Page.title: Execution context was destroyed, most likely because of a navigation
+   note: search 'PICU': Error: Page.title: Execution context was destroyed, most likely because of a navigation
+   note: search 'NICU': Error: Page.title: Execution context was destroyed, most likely because of a navigation
+   note: sniff: page links to Taleo mainline.taleo.net section 2
+   note: taleo failed: AdapterError: search 'APRN': Error: Page.title: Execution context was destroyed, most likely because of a navigation; search 'PICU': Error: Page.title: Executio
+   note: generic: pages reachable but no NP/APP job links found: playwright 200 https://careers.mainlinehealth.org/?utm_source=corporate_site&amp%3Butm_medium=referral&amp%3Butm_campaign=internal_navigation&q=nurse+practitioner; playwright 200 https://careers.mainlinehealth.org/?utm_source=corporate_site&amp
+   (no candidate jobs)
+
+## lewisgale-medical-center-salem  [careersite / careersite / ]  status=error
+   ERROR: AdapterError: careersite: every jobs.json search failed in the browser: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'; html search 'nurse practitioner': HTTP 403 Attention Required! | Cloudflare; html search 'pediatric nurse practitioner': HTTP 403 Attention Required! | Cloudflare
+   note: jobs.json 'nurse practitioner': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'pediatric nurse practitioner': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'advanced practice provider': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'APRN': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'PICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: html search 'nurse practitioner': HTTP 403 Attention Required! | Cloudflare
+   note: html search 'pediatric nurse practitioner': HTTP 403 Attention Required! | Cloudflare
+   note: sniff: HTTP 403 for https://careers.hcahealthcare.com/search/jobs: bot challenge (Cloudflare)
+   note: sniff: HTTP 403 for https://careers.hcahealthcare.com/pages/catholic-medical-center?bid=5260: bot challenge (Cloudflare)
+   note: generic fallback failed: AdapterError: generic: no page reachable: 403 https://careers.hcahealthcare.com/search/jobs?q=nurse+practitioner&location=Manchester%2C+NH%2C+United+States; playwright 403 https://careers.hcahealthcare.com/search/j
+   (no candidate jobs)
+
+## mass-general-for-children-boston  [workday / workday / api]  status=ok
+   note: 26 low-priority listings deferred (detail budget/time); they are picked up on later runs
+   * [3/mixed] NP - Pediatric Allergy - MGH | posted 2026-11-02 | https://massgeneralbrigham.wd1.myworkdayjobs.com/MGBExternal/job/32-Fruit-Street-Boston-Yawkey-Center/NP---Pediatric-Allergy---MGH_RQ4082164-1  (known)
+   * [3/mixed] NP - Pediatric Endocrinology | posted 2026-08-24 | https://massgeneralbrigham.wd1.myworkdayjobs.com/MGBExternal/job/32-Fruit-Street-Boston-Yawkey-Center/NP---Pediatric-Endocrinology_RQ4077372  (known)
+   * [2/mixed] Nurse Practitioner/Physician Assistant, Orthopedic Walk-In Clinic | posted 2026-10-07 | https://massgeneralbrigham.wd1.myworkdayjobs.com/MGBExternal/job/Hatfield-MA/Nurse-Practitioner-Physician-Assistant--Orthopedic-Walk-In-Clinic_RQ4082247  (known)
+   first board listings: Nurse Practitioner Oncology MGBCI (Boston-MA) || Nurse Practitioner - Hematology BWH (Boston-MA) || Nurse Practitioner/Physician Assistant, Cardiology (Northampton-MA)
+
+## mission-childrens-asheville  [careersite / careersite / ]  status=error
+   ERROR: AdapterError: careersite: every jobs.json search failed in the browser: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'; html search 'nurse practitioner': HTTP 403 Attention Required! | Cloudflare; html search 'pediatric nurse practitioner': HTTP 403 Attention Required! | Cloudflare
+   note: jobs.json 'nurse practitioner': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'pediatric nurse practitioner': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'advanced practice provider': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'APRN': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'PICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: html search 'nurse practitioner': HTTP 403 Attention Required! | Cloudflare
+   note: html search 'pediatric nurse practitioner': HTTP 403 Attention Required! | Cloudflare
+   note: sniff: HTTP 403 for https://careers.hcahealthcare.com/search/jobs: bot challenge (Cloudflare)
+   note: sniff: HTTP 403 for https://careers.hcahealthcare.com/pages/catholic-medical-center?bid=5260: bot challenge (Cloudflare)
+   note: generic fallback failed: AdapterError: generic: no page reachable: 403 https://careers.hcahealthcare.com/search/jobs?q=nurse+practitioner&location=Manchester%2C+NH%2C+United+States; playwright 403 https://careers.hcahealthcare.com/search/j
+   (no candidate jobs)
+
+## musc-columbia-northeast-columbia  [workday / workday / api]  status=ok
+   note: dropped 1 listings outside ME-SC footprint
+   note: 14 low-priority listings deferred (detail budget/time); they are picked up on later runs
+   * [3/nicu] Advanced Practice Provider | Neonatal Nurse Practitioner (NNP)| MUSC Health Columbia Medical Center Northeast - Columbia, SC | posted 2026-10-21 | https://musc.wd1.myworkdayjobs.com/MUSC/job/Columbia/Advanced-Practice-Provider---Neonatal-Nurse-Practitioner--NNP---MUSC-Health-Columbia-Medical-Center-Northeast---Columbia--SC_R-0000070024  (known)
+   first board listings: Nurse Practitioner - Peds Endocrinology (Charleston) || Nurse Practitioner or Physician Assistant - Neonatology (Charleston) || Nurse Practitioner or Physician Assistant - Neonatology (Charleston)
+
+## musc-florence-florence  [workday / workday / api]  status=ok
+   note: dropped 1 listings outside ME-SC footprint
+   note: 14 low-priority listings deferred (detail budget/time); they are picked up on later runs
+   (no candidate jobs)
+   first board listings: Nurse Practitioner - Peds Endocrinology (Charleston) || Nurse Practitioner or Physician Assistant - Neonatology (Charleston) || Nurse Practitioner or Physician Assistant - Neonatology (Charleston)
+
+## musc-kershaw-camden  [workday / workday / api]  status=ok
+   note: dropped 1 listings outside ME-SC footprint
+   note: 14 low-priority listings deferred (detail budget/time); they are picked up on later runs
+   (no candidate jobs)
+   first board listings: Nurse Practitioner - Peds Endocrinology (Charleston) || Nurse Practitioner or Physician Assistant - Neonatology (Charleston) || Nurse Practitioner or Physician Assistant - Neonatology (Charleston)
+
+## musc-lancaster-lancaster  [workday / workday / api]  status=ok
+   note: dropped 1 listings outside ME-SC footprint
+   note: 14 low-priority listings deferred (detail budget/time); they are picked up on later runs
+   (no candidate jobs)
+   first board listings: Nurse Practitioner - Peds Endocrinology (Charleston) || Nurse Practitioner or Physician Assistant - Neonatology (Charleston) || Nurse Practitioner or Physician Assistant - Neonatology (Charleston)
+
+## musc-orangeburg-orangeburg  [workday / workday / api]  status=ok
+   note: dropped 1 listings outside ME-SC footprint
+   note: 14 low-priority listings deferred (detail budget/time); they are picked up on later runs
+   (no candidate jobs)
+   first board listings: Nurse Practitioner - Peds Endocrinology (Charleston) || Nurse Practitioner or Physician Assistant - Neonatology (Charleston) || Nurse Practitioner or Physician Assistant - Neonatology (Charleston)
+
+## musc-shawn-jenkins-childrens-charleston  [workday / workday / api]  status=ok
+   note: dropped 1 listings outside ME-SC footprint
+   note: 14 low-priority listings deferred (detail budget/time); they are picked up on later runs
+   * [2/peds_specialty_outpatient] Nurse Practitioner - Peds Endocrinology | posted 2026-08-13 | https://musc.wd1.myworkdayjobs.com/MUSC/job/Charleston/MUSCP-Advanced-Practice-Provider--APP---NP-PA---Department-of-Pediatrics--Endocrinology_R-0000044397  (known)
+   * [3/nicu] Nurse Practitioner or Physician Assistant - Neonatology | posted 2026-08-25 | https://musc.wd1.myworkdayjobs.com/MUSC/job/Charleston/Nurse-Practitioner-or-Physician-Assistant---Neonatology_R-0000067251-1  (known)
+   * [3/nicu] Nurse Practitioner or Physician Assistant - Neonatology | posted 2026-11-04 | https://musc.wd1.myworkdayjobs.com/MUSC/job/Charleston/Nurse-Practitioner-or-Physician-Assistant---Neonatology_R-0000070610  (known)
+   first board listings: Nurse Practitioner - Peds Endocrinology (Charleston) || Nurse Practitioner or Physician Assistant - Neonatology (Charleston) || Nurse Practitioner or Physician Assistant - Neonatology (Charleston)
+
+## musc-university-medical-center-charleston  [workday / workday / api]  status=ok
+   note: dropped 1 listings outside ME-SC footprint
+   note: 14 low-priority listings deferred (detail budget/time); they are picked up on later runs
+   * [2/mixed] Nurse Practitioner or Physician Assistant - Burn Surgery | posted 2026-11-16 | https://musc.wd1.myworkdayjobs.com/MUSC/job/Charleston/Nurse-Practitioner-or-Physician-Assistant---Burn-Surgery_R-0000071225  (known)
+   first board listings: Nurse Practitioner - Peds Endocrinology (Charleston) || Nurse Practitioner or Physician Assistant - Neonatology (Charleston) || Nurse Practitioner or Physician Assistant - Neonatology (Charleston)
+
+## newton-wellesley-hospital-newton  [workday / workday / api]  status=ok
+   note: 26 low-priority listings deferred (detail budget/time); they are picked up on later runs
+   (no candidate jobs)
+   first board listings: Nurse Practitioner Oncology MGBCI (Boston-MA) || Nurse Practitioner - Hematology BWH (Boston-MA) || Nurse Practitioner/Physician Assistant, Cardiology (Northampton-MA)
+
+## paoli-hospital-paoli  [taleo / taleo / ]  status=error
+   ERROR: AdapterError: search 'APRN': Error: Page.title: Execution context was destroyed, most likely because of a navigation; search 'PICU': Error: Page.title: Execution context was destroyed, most likely because of a navigation; search 'NICU': Error: Page.title: Execution context was destroyed, most likely because of a navigation
+   note: career section page: HTTP 404 for https://careers.mainlinehealth.org/careersection/ext/jobsearch.ftl?lang=en: <!DOCTYPE html><html lang="en"><head> 	<meta http-equiv="refresh" content="0; URL=/404" /> 	</head><body></body></html>
+   note: search 'nurse practitioner': Error: Page.title: Execution context was destroyed, most likely because of a navigation
+   note: search 'pediatric nurse practitioner': Error: Page.title: Execution context was destroyed, most likely because of a navigation
+   note: search 'advanced practice provider': Error: Page.title: Execution context was destroyed, most likely because of a navigation
+   note: search 'APRN': Error: Page.title: Execution context was destroyed, most likely because of a navigation
+   note: search 'PICU': Error: Page.title: Execution context was destroyed, most likely because of a navigation
+   note: search 'NICU': Error: Page.title: Execution context was destroyed, most likely because of a navigation
+   note: sniff: page links to Taleo mainline.taleo.net section 2
+   note: taleo failed: AdapterError: search 'APRN': Error: Page.title: Execution context was destroyed, most likely because of a navigation; search 'PICU': Error: Page.title: Executio
+   note: generic: pages reachable but no NP/APP job links found: playwright 200 https://careers.mainlinehealth.org/?utm_source=corporate_site&amp%3Butm_medium=referral&amp%3Butm_campaign=internal_navigation&q=nurse+practitioner; playwright 200 https://careers.mainlinehealth.org/?utm_source=corporate_site&amp
+   (no candidate jobs)
+
+## portsmouth-regional-portsmouth  [careersite / careersite / ]  status=error
+   ERROR: AdapterError: careersite: every jobs.json search failed in the browser: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'; html search 'nurse practitioner': HTTP 403 Attention Required! | Cloudflare; html search 'pediatric nurse practitioner': HTTP 403 Attention Required! | Cloudflare
+   note: jobs.json 'nurse practitioner': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'pediatric nurse practitioner': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'advanced practice provider': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'APRN': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'PICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: html search 'nurse practitioner': HTTP 403 Attention Required! | Cloudflare
+   note: html search 'pediatric nurse practitioner': HTTP 403 Attention Required! | Cloudflare
+   note: sniff: HTTP 403 for https://careers.hcahealthcare.com/search/jobs: bot challenge (Cloudflare)
+   note: sniff: HTTP 403 for https://careers.hcahealthcare.com/pages/catholic-medical-center?bid=5260: bot challenge (Cloudflare)
+   note: generic fallback failed: AdapterError: generic: no page reachable: 403 https://careers.hcahealthcare.com/search/jobs?q=nurse+practitioner&location=Manchester%2C+NH%2C+United+States; playwright 403 https://careers.hcahealthcare.com/search/j
+   (no candidate jobs)
+
+## reston-hospital-center-reston  [careersite / careersite / ]  status=error
+   ERROR: AdapterError: careersite: every jobs.json search failed in the browser: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'; html search 'nurse practitioner': HTTP 403 Attention Required! | Cloudflare; html search 'pediatric nurse practitioner': HTTP 403 Attention Required! | Cloudflare
+   note: jobs.json 'nurse practitioner': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'pediatric nurse practitioner': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'advanced practice provider': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'APRN': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'PICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: html search 'nurse practitioner': HTTP 403 Attention Required! | Cloudflare
+   note: html search 'pediatric nurse practitioner': HTTP 403 Attention Required! | Cloudflare
+   note: sniff: HTTP 403 for https://careers.hcahealthcare.com/search/jobs: bot challenge (Cloudflare)
+   note: sniff: HTTP 403 for https://careers.hcahealthcare.com/pages/catholic-medical-center?bid=5260: bot challenge (Cloudflare)
+   note: generic fallback failed: AdapterError: generic: no page reachable: 403 https://careers.hcahealthcare.com/search/jobs?q=nurse+practitioner&location=Manchester%2C+NH%2C+United+States; playwright 403 https://careers.hcahealthcare.com/search/j
+   (no candidate jobs)
+
+## riddle-hospital-media  [taleo / taleo / ]  status=error
+   ERROR: AdapterError: search 'APRN': Error: Page.title: Execution context was destroyed, most likely because of a navigation; search 'PICU': Error: Page.title: Execution context was destroyed, most likely because of a navigation; search 'NICU': Error: Page.title: Execution context was destroyed, most likely because of a navigation
+   note: career section page: HTTP 404 for https://careers.mainlinehealth.org/careersection/ext/jobsearch.ftl?lang=en: <!DOCTYPE html><html lang="en"><head> 	<meta http-equiv="refresh" content="0; URL=/404" /> 	</head><body></body></html>
+   note: search 'nurse practitioner': Error: Page.title: Execution context was destroyed, most likely because of a navigation
+   note: search 'pediatric nurse practitioner': Error: Page.title: Execution context was destroyed, most likely because of a navigation
+   note: search 'advanced practice provider': Error: Page.title: Execution context was destroyed, most likely because of a navigation
+   note: search 'APRN': Error: Page.title: Execution context was destroyed, most likely because of a navigation
+   note: search 'PICU': Error: Page.title: Execution context was destroyed, most likely because of a navigation
+   note: search 'NICU': Error: Page.title: Execution context was destroyed, most likely because of a navigation
+   note: sniff: page links to Taleo mainline.taleo.net section 2
+   note: taleo failed: AdapterError: search 'APRN': Error: Page.title: Execution context was destroyed, most likely because of a navigation; search 'PICU': Error: Page.title: Executio
+   note: generic: pages reachable but no NP/APP job links found: playwright 200 https://careers.mainlinehealth.org/?utm_source=corporate_site&amp%3Butm_medium=referral&amp%3Butm_campaign=internal_navigation&q=nurse+practitioner; playwright 200 https://careers.mainlinehealth.org/?utm_source=corporate_site&amp
+   (no candidate jobs)
+
+## saint-francis-hartford  [workday / workday / api]  status=ok
+   note: filtered to footprint states via facet Location_Region_State_Province (excluded AL, CA, FL, GA, IA, ID, IL, IN, LA, MI, OH, OR)
+   (no candidate jobs)
+   first board listings: Nurse Practitioner (Gaithersburg, Maryland) || Nurse Practitioner (Saint Francis Healthcare Service - Wilmington, Delaware) || Nurse Practitioner (Saint Francis Healthcare Service - Wilmington, Delaware)
+
+## saint-francis-hospital-wilmington  [workday / workday / api]  status=ok
+   note: filtered to footprint states via facet Location_Region_State_Province (excluded AL, CA, FL, GA, IA, ID, IL, IN, LA, MI, OH, OR)
+   (no candidate jobs)
+   first board listings: Nurse Practitioner (Gaithersburg, Maryland) || Nurse Practitioner (Saint Francis Healthcare Service - Wilmington, Delaware) || Nurse Practitioner (Saint Francis Healthcare Service - Wilmington, Delaware)
+
+## saint-marys-waterbury  [workday / workday / api]  status=ok
+   note: filtered to footprint states via facet Location_Region_State_Province (excluded AL, CA, FL, GA, IA, ID, IL, IN, LA, MI, OH, OR)
+   (no candidate jobs)
+   first board listings: Nurse Practitioner (Gaithersburg, Maryland) || Nurse Practitioner (Saint Francis Healthcare Service - Wilmington, Delaware) || Nurse Practitioner (Saint Francis Healthcare Service - Wilmington, Delaware)
+
+## salem-hospital-salem  [workday / workday / api]  status=ok
+   note: 26 low-priority listings deferred (detail budget/time); they are picked up on later runs
+   (no candidate jobs)
+   first board listings: Nurse Practitioner Oncology MGBCI (Boston-MA) || Nurse Practitioner - Hematology BWH (Boston-MA) || Nurse Practitioner/Physician Assistant, Cardiology (Northampton-MA)
+
+## saratoga-hospital-saratoga-springs  [workday / workday / api]  status=ok
+   (no candidate jobs)
+   first board listings: Nurse Clinician Neuro and Surgical Intensive Care Unit - Full Time (43 New Scotland Avenue Albany, NY 12208) || Nurse Practitioner (391 Myrtle Avenue Albany, NY 12208) || NP, Fixed Program (43 New Scotland Avenue Albany, NY 12208)
+
+## spotsylvania-regional-fredericksburg  [careersite / careersite / ]  status=error
+   ERROR: AdapterError: careersite: every jobs.json search failed in the browser: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'; html search 'nurse practitioner': HTTP 403 Attention Required! | Cloudflare; html search 'pediatric nurse practitioner': HTTP 403 Attention Required! | Cloudflare
+   note: jobs.json 'nurse practitioner': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'pediatric nurse practitioner': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'advanced practice provider': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'APRN': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'PICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: html search 'nurse practitioner': HTTP 403 Attention Required! | Cloudflare
+   note: html search 'pediatric nurse practitioner': HTTP 403 Attention Required! | Cloudflare
+   note: sniff: HTTP 403 for https://careers.hcahealthcare.com/search/jobs: bot challenge (Cloudflare)
+   note: sniff: HTTP 403 for https://careers.hcahealthcare.com/pages/catholic-medical-center?bid=5260: bot challenge (Cloudflare)
+   note: generic fallback failed: AdapterError: generic: no page reachable: 403 https://careers.hcahealthcare.com/search/jobs?q=nurse+practitioner&location=Manchester%2C+NH%2C+United+States; playwright 403 https://careers.hcahealthcare.com/search/j
+   (no candidate jobs)
+
+## st-josephs-hospital-syracuse  [workday / workday / api]  status=ok
+   note: filtered to footprint states via facet Location_Region_State_Province (excluded AL, CA, FL, GA, IA, ID, IL, IN, LA, MI, OH, OR)
+   (no candidate jobs)
+   first board listings: Nurse Practitioner (Gaithersburg, Maryland) || Nurse Practitioner (Saint Francis Healthcare Service - Wilmington, Delaware) || Nurse Practitioner (Saint Francis Healthcare Service - Wilmington, Delaware)
+
+## st-mary-medical-center-langhorne  [workday / workday / api]  status=ok
+   note: filtered to footprint states via facet Location_Region_State_Province (excluded AL, CA, FL, GA, IA, ID, IL, IN, LA, MI, OH, OR)
+   (no candidate jobs)
+   first board listings: Nurse Practitioner (Gaithersburg, Maryland) || Nurse Practitioner (Saint Francis Healthcare Service - Wilmington, Delaware) || Nurse Practitioner (Saint Francis Healthcare Service - Wilmington, Delaware)
+
+## st-peters-hospital-albany  [workday / workday / api]  status=ok
+   note: filtered to footprint states via facet Location_Region_State_Province (excluded AL, CA, FL, GA, IA, ID, IL, IN, LA, MI, OH, OR)
+   (no candidate jobs)
+   first board listings: Nurse Practitioner (Gaithersburg, Maryland) || Nurse Practitioner (Saint Francis Healthcare Service - Wilmington, Delaware) || Nurse Practitioner (Saint Francis Healthcare Service - Wilmington, Delaware)
+
+## stonesprings-hospital-dulles  [careersite / careersite / ]  status=error
+   ERROR: AdapterError: careersite: every jobs.json search failed in the browser: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'; html search 'nurse practitioner': HTTP 403 Attention Required! | Cloudflare; html search 'pediatric nurse practitioner': HTTP 403 Attention Required! | Cloudflare
+   note: jobs.json 'nurse practitioner': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'pediatric nurse practitioner': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'advanced practice provider': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'APRN': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'PICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: html search 'nurse practitioner': HTTP 403 Attention Required! | Cloudflare
+   note: html search 'pediatric nurse practitioner': HTTP 403 Attention Required! | Cloudflare
+   note: sniff: HTTP 403 for https://careers.hcahealthcare.com/search/jobs: bot challenge (Cloudflare)
+   note: sniff: HTTP 403 for https://careers.hcahealthcare.com/pages/catholic-medical-center?bid=5260: bot challenge (Cloudflare)
+   note: generic fallback failed: AdapterError: generic: no page reachable: 403 https://careers.hcahealthcare.com/search/jobs?q=nurse+practitioner&location=Manchester%2C+NH%2C+United+States; playwright 403 https://careers.hcahealthcare.com/search/j
+   (no candidate jobs)
+
+## summerville-medical-center-summerville  [careersite / careersite / ]  status=error
+   ERROR: AdapterError: careersite: every jobs.json search failed in the browser: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'; html search 'nurse practitioner': HTTP 403 Attention Required! | Cloudflare; html search 'pediatric nurse practitioner': HTTP 403 Attention Required! | Cloudflare
+   note: jobs.json 'nurse practitioner': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'pediatric nurse practitioner': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'advanced practice provider': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'APRN': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'PICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: html search 'nurse practitioner': HTTP 403 Attention Required! | Cloudflare
+   note: html search 'pediatric nurse practitioner': HTTP 403 Attention Required! | Cloudflare
+   note: sniff: HTTP 403 for https://careers.hcahealthcare.com/search/jobs: bot challenge (Cloudflare)
+   note: sniff: HTTP 403 for https://careers.hcahealthcare.com/pages/catholic-medical-center?bid=5260: bot challenge (Cloudflare)
+   note: generic fallback failed: AdapterError: generic: no page reachable: 403 https://careers.hcahealthcare.com/search/jobs?q=nurse+practitioner&location=Manchester%2C+NH%2C+United+States; playwright 403 https://careers.hcahealthcare.com/search/j
+   (no candidate jobs)
+
+## thomas-jefferson-university-hospital-philadelphia  [workday / workday / api]  status=ok
+   note: 22 low-priority listings deferred (detail budget/time); they are picked up on later runs
+   (no candidate jobs)
+   first board listings: Trauma - Nurse Practitioner - Einstein Hospital (Einstein Hosp Phila - Tower Bldg) || Hospital Medicine-Per Diem-Advanced Practice Clinician (Philadelphia, PA) || Assistant Professor, Nurse Anesthesia Program, Jefferson College of Nursing, Thomas Jefferson University, Montgomery County (Karabots Medical Building)
+
+## trident-medical-center-north-charleston  [careersite / careersite / ]  status=error
+   ERROR: AdapterError: careersite: every jobs.json search failed in the browser: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'; html search 'nurse practitioner': HTTP 403 Attention Required! | Cloudflare; html search 'pediatric nurse practitioner': HTTP 403 Attention Required! | Cloudflare
+   note: jobs.json 'nurse practitioner': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'pediatric nurse practitioner': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'advanced practice provider': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'APRN': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'PICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!--<![endif]--><head>\n<title>At'
+   note: html search 'nurse practitioner': HTTP 403 Attention Required! | Cloudflare
+   note: html search 'pediatric nurse practitioner': HTTP 403 Attention Required! | Cloudflare
+   note: sniff: HTTP 403 for https://careers.hcahealthcare.com/search/jobs: bot challenge (Cloudflare)
+   note: sniff: HTTP 403 for https://careers.hcahealthcare.com/pages/catholic-medical-center?bid=5260: bot challenge (Cloudflare)
+   note: generic fallback failed: AdapterError: generic: no page reachable: 403 https://careers.hcahealthcare.com/search/jobs?q=nurse+practitioner&location=Manchester%2C+NH%2C+United+States; playwright 403 https://careers.hcahealthcare.com/search/j
+   (no candidate jobs)
+
+## washington-regional-plymouth  [generic / generic / ]  status=error
+   ERROR: AdapterError: generic: no page reachable: None https://www.washingtonregional.org/careers/; playwright Error: Page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.washingtonregional.org/careers/?q=nurse+practitioner
+Call log:
+  -  https://www.washingtonregional.org/careers/?q=nurse+practitioner; playwright Error: Page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.washingtonregional.org/careers/?keywords=nurse+practitioner
+Call lo https://www.washingtonregional.org/careers/?keywords=nurse+practitioner; playw
+   note: sniff: HTTP None for https://www.washingtonregional.org/careers/: ConnectionError: HTTPSConnectionPool(host='www.washingtonregional.org', port=443): Max retries exceeded with url: /careers/ (Caused by NameResolutionError("HTTPSConnection(host='www.washingtonregional.org', port=443):
+   (no candidate jobs)
+
+## wentworth-douglass-dover  [workday / workday / api]  status=ok
+   note: 26 low-priority listings deferred (detail budget/time); they are picked up on later runs
+   (no candidate jobs)
+   first board listings: Nurse Practitioner Oncology MGBCI (Boston-MA) || Nurse Practitioner - Hematology BWH (Boston-MA) || Nurse Practitioner/Physician Assistant, Cardiology (Northampton-MA)

@@ -1,0 +1,60 @@
+run 2026-11-21 wall=423.5s ledger=data/hospitals.json browser=chrome-headed
+
+hospital                                           platform               method           board  list  cand  new   secs  status / error
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+adventist-shady-grove-rockville                    generic->workday       api                139    99     0    0   63.0  ok
+adventist-white-oak-silver-spring                  generic->workday       api                139    40     0    0   63.0  ok
+brigham-and-womens-boston                          workday                api                637   234     1    1   89.1  ok
+columbia-memorial-hospital-hudson                  workday                api                 88     0     0    0   40.8  ok
+concord-hospital-concord                           generic->workday       api                 61    61     0    0   54.9  ok
+cooley-dickinson-northampton                       workday                api                637    33     0    0   89.1  ok
+duker-childrens-albany                             workday                api                 88    88     6    0   40.8  ok
+glens-falls-hospital-glens-falls                   workday                api                 88     0     0    0   40.8  ok
+holy-cross-silver-spring                           workday                api                477    24     0    0   39.8  ok
+jefferson-abington-hospital-abington               workday                api                357     5     0    0   67.2  ok
+jefferson-einstein-montgomery-east-norriton        workday                api                357    94     2    0   67.2  ok
+jefferson-einstein-philadelphia                    workday                api                357   258     0    0   67.2  ok
+jefferson-washington-township-sewell               workday                api                357     0     0    0   67.2  ok
+mass-general-for-children-boston                   workday                api                637   268     3    0   89.1  ok
+musc-columbia-northeast-columbia                   workday                api                418    54     1    0   80.5  ok
+musc-florence-florence                             workday                api                418    34     0    0   80.5  ok
+musc-kershaw-camden                                workday                api                418     8     0    0   80.5  ok
+musc-lancaster-lancaster                           workday                api                418    21     0    0   80.5  ok
+musc-orangeburg-orangeburg                         workday                api                418    27     0    0   80.5  ok
+musc-shawn-jenkins-childrens-charleston            workday                api                418   146     7    0   80.5  ok
+musc-university-medical-center-charleston          workday                api                418   127     1    0   80.5  ok
+newton-wellesley-hospital-newton                   workday                api                637    39     0    0   89.1  ok
+saint-francis-hartford                             workday                api                477   306     0    0   39.8  ok
+saint-francis-hospital-wilmington                  workday                api                477    30     0    0   39.8  ok
+saint-marys-waterbury                              workday                api                477    15     0    0   39.8  ok
+salem-hospital-salem                               workday                api                637    33     0    0   89.1  ok
+saratoga-hospital-saratoga-springs                 workday                api                 88     0     0    0   40.8  ok
+st-josephs-hospital-syracuse                       workday                api                477     0     0    0   39.8  ok
+st-mary-medical-center-langhorne                   workday                api                477    10     0    0   39.8  ok
+st-peters-hospital-albany                          workday                api                477    92     0    0   39.8  ok
+thomas-jefferson-university-hospital-philadelphia  workday                api                357     0     0    0   67.2  ok
+wentworth-douglass-dover                           workday                api                637    30     0    0   89.1  ok
+bryn-mawr-hospital-bryn-mawr                       taleo                                       0     0     0    0  162.6  error: AdapterError: search 'APRN': Error: Page.title: Execution context was destroyed, most likely because of a navigation; search 'PICU': Error: Page.title
+catholic-medical-center-manchester                 careersite                                  0     0     0    0  210.4  error: AdapterError: careersite: every jobs.json search failed in the browser: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!
+chippenham-richmond                                careersite                                  0     0     0    0  210.4  error: AdapterError: careersite: every jobs.json search failed in the browser: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!
+colleton-medical-center-walterboro                 careersite                                  0     0     0    0  210.4  error: AdapterError: careersite: every jobs.json search failed in the browser: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!
+englewood-hospital-englewood                       successfactors         requests             0     0     0    0   54.6  zero_results: board reachable but returned 0 listings for every keyword (check search URL / adapter)
+grand-strand-medical-center-myrtle-beach           careersite                                  0     0     0    0  210.4  error: AdapterError: careersite: every jobs.json search failed in the browser: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!
+henrico-doctors-richmond                           careersite                                  0     0     0    0  210.4  error: AdapterError: careersite: every jobs.json search failed in the browser: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!
+hsc-pediatric-center-washington                    generic                                     0     0     0    0  423.3  error: AdapterError: generic: no page reachable: None https://www.hschealth.org/careers; playwright TimeoutError: Page.goto: Timeout 45000ms exceeded.
+Call l
+johnston-willis-richmond                           careersite                                  0     0     0    0  210.4  error: AdapterError: careersite: every jobs.json search failed in the browser: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!
+lankenau-medical-center-wynnewood                  taleo                                       0     0     0    0  162.6  error: AdapterError: search 'APRN': Error: Page.title: Execution context was destroyed, most likely because of a navigation; search 'PICU': Error: Page.title
+lewisgale-medical-center-salem                     careersite                                  0     0     0    0  210.4  error: AdapterError: careersite: every jobs.json search failed in the browser: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!
+mission-childrens-asheville                        careersite                                  0     0     0    0  210.4  error: AdapterError: careersite: every jobs.json search failed in the browser: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!
+paoli-hospital-paoli                               taleo                                       0     0     0    0  162.6  error: AdapterError: search 'APRN': Error: Page.title: Execution context was destroyed, most likely because of a navigation; search 'PICU': Error: Page.title
+portsmouth-regional-portsmouth                     careersite                                  0     0     0    0  210.4  error: AdapterError: careersite: every jobs.json search failed in the browser: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!
+reston-hospital-center-reston                      careersite                                  0     0     0    0  210.4  error: AdapterError: careersite: every jobs.json search failed in the browser: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!
+riddle-hospital-media                              taleo                                       0     0     0    0  162.6  error: AdapterError: search 'APRN': Error: Page.title: Execution context was destroyed, most likely because of a navigation; search 'PICU': Error: Page.title
+spotsylvania-regional-fredericksburg               careersite                                  0     0     0    0  210.4  error: AdapterError: careersite: every jobs.json search failed in the browser: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!
+stonesprings-hospital-dulles                       careersite                                  0     0     0    0  210.4  error: AdapterError: careersite: every jobs.json search failed in the browser: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!
+summerville-medical-center-summerville             careersite                                  0     0     0    0  210.4  error: AdapterError: careersite: every jobs.json search failed in the browser: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!
+trident-medical-center-north-charleston            careersite                                  0     0     0    0  210.4  error: AdapterError: careersite: every jobs.json search failed in the browser: jobs.json 'NICU': HTTP 403 '<!DOCTYPE html><html class="no-js" lang="en-US"><!
+washington-regional-plymouth                       generic                                     0     0     0    0   35.1  error: AdapterError: generic: no page reachable: None https://www.washingtonregional.org/careers/; playwright Error: Page.goto: net::ERR_NAME_NOT_RESOLVED at
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+hospitals=53 ok=32 not_ok=21 board_listings=2177 candidates=21 new_candidates=1
